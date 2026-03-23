@@ -33,16 +33,16 @@ tags: [ai-tools-compared, troubleshooting]
 
 To fix a broken build after a Cursor project-wide refactor, start by running `git diff --stat` to identify all modified files, then clean and rebuild with `rm -rf node_modules package-lock.json && npm install`. The most common causes are broken import paths, out-of-sync TypeScript type definitions, and stale build caches. This guide provides a systematic five-step recovery process covering import fixes, type consistency, configuration files, and dependency resolution.
 
-## Key Takeaways
+Key Takeaways
 
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **The most common causes**: are broken import paths, out-of-sync TypeScript type definitions, and stale build caches.
-- **Use type-safe refactoring with**: TypeScript's rename feature instead of AI-only changes 3.
-- **Does Cursor offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use `git diff HEAD~1**: -- src/` to see exactly what changed in the last commit, then selectively restore files that are hard to fix.
+- Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- The most common causes: are broken import paths, out-of-sync TypeScript type definitions, and stale build caches.
+- Use type-safe refactoring with: TypeScript's rename feature instead of AI-only changes 3.
+- Does Cursor offer a: free tier? Most major tools offer some form of free tier or trial period.
+- What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
+- Use `git diff HEAD~1: -- src/` to see exactly what changed in the last commit, then selectively restore files that are hard to fix.
 
-## Understanding What Happens During Project-Wide Refactor
+Understanding What Happens During Project-Wide Refactor
 
 When you use Cursor's project-wide refactor capability, the AI analyzes your entire codebase and applies changes across multiple files simultaneously. This includes renaming variables, updating function signatures, moving code between modules, and rewriting imports. The problem is that automated refactoring doesn't always account for:
 
@@ -56,15 +56,15 @@ When you use Cursor's project-wide refactor capability, the AI analyzes your ent
 
 - Environment-specific configuration
 
-Cursor's AI operates on statistical patterns derived from your code context. When it renames a symbol like `UserService` to `UserManager`, it traverses files it can identify via language server indexing—but it can miss files that aren't in the active workspace window, files that reference the symbol as a string (dynamic imports, config files, Jest module mappers), or files that are generated at build time. This is why a refactor that looks complete in the editor can still break the build.
+Cursor's AI operates on statistical patterns derived from your code context. When it renames a symbol like `UserService` to `UserManager`, it traverses files it can identify via language server indexing, but it can miss files that aren't in the active workspace window, files that reference the symbol as a string (dynamic imports, config files, Jest module mappers), or files that are generated at build time. This is why a refactor that looks complete in the editor can still break the build.
 
-## Common Build Errors After Project-Wide Refactor
+Common Build Errors After Project-Wide Refactor
 
-### Module Resolution Failures
+Module Resolution Failures
 
 The most frequent issue you'll encounter is module resolution failures. After refactoring, imports often point to non-existent paths or use outdated module names.
 
-**Error messages you might see:**
+Error messages you might see:
 
 - `Cannot find module '@/components/Header'`
 
@@ -74,11 +74,11 @@ The most frequent issue you'll encounter is module resolution failures. After re
 
 These errors almost always mean the file was renamed or moved, but one or more import sites weren't updated. Cursor's project-wide rename misses files outside the workspace index or references inside template strings.
 
-### TypeScript Compilation Errors
+TypeScript Compilation Errors
 
 TypeScript errors explode after a refactor because type definitions get out of sync with implementation.
 
-**Typical errors:**
+Typical errors:
 
 - `Type error: Property 'x' is missing in type 'Y'`
 
@@ -88,11 +88,11 @@ TypeScript errors explode after a refactor because type definitions get out of s
 
 When Cursor updates a function signature but leaves one call site using the old argument shape, TypeScript catches the mismatch. Interface renames are especially problematic because TypeScript's structural typing means the error can surface far from the original change.
 
-### Dependency Conflicts
+Dependency Conflicts
 
 Refactoring can introduce incompatible dependency versions or orphaned packages.
 
-**Watch for:**
+Watch for:
 
 - `ERESOLVE could not resolve`
 
@@ -102,49 +102,49 @@ Refactoring can introduce incompatible dependency versions or orphaned packages.
 
 This typically happens when Cursor rewrites package import paths during a rename (for example, changing `lodash` usages to `lodash-es`) but doesn't update `package.json` to add the new dependency.
 
-## Step-by-Step Fix Guide
+Step-by-Step Fix Guide
 
-### Step 1: Identify the Scope of Damage
+Step 1: Identify the Scope of Damage
 
 Before making changes, understand the extent of the refactor damage:
 
 ```bash
-# Check git status to see all modified files
+Check git status to see all modified files
 git status
 
-# See the diff of changes
+See the diff of changes
 git diff --stat
 
-# Look for untracked files that might be orphaned
+Look for untracked files that might be orphaned
 git status -u
 ```
 
 Run your build to get a complete error list:
 
 ```bash
-# For npm projects
+For npm projects
 npm run build 2>&1 | tee build-errors.log
 
-# For yarn
+For yarn
 yarn build 2>&1 | tee build-errors.log
 
-# For pnpm
+For pnpm
 pnpm build 2>&1 | tee build-errors.log
 ```
 
 Parse the error log to group errors by type before starting fixes. Fixing all TypeScript errors first, then module errors, prevents you from chasing cascading failures.
 
-### Step 2: Fix Import Statements
+Step 2: Fix Import Statements
 
 Import issues are usually the quickest to resolve. Cursor often misses updating imports when files move or rename.
 
 Use this diagnostic script to find broken imports:
 
 ```bash
-# Find all import statements referencing old names
+Find all import statements referencing old names
 grep -r "from ['\"]@old/module" --include="*.ts" --include="*.tsx" --include="*.js" --include="*.jsx" .
 
-# Find relative imports to moved files
+Find relative imports to moved files
 grep -r "from ['\"]\.\." --include="*.ts" --include="*.tsx" src/
 ```
 
@@ -163,7 +163,7 @@ For TypeScript projects, verify your `tsconfig.json` paths configuration:
 
 If Cursor renamed a directory (for example, `components/ui` to `components/design-system`), you need to update path aliases in `tsconfig.json`, `vite.config.ts`, and `jest.config.js` simultaneously. Missing one of these files is the most common reason a fix seems to work in the editor but still fails at build time.
 
-### Step 3: Restore Type Consistency
+Step 3: Restore Type Consistency
 
 TypeScript errors after refactoring typically stem from:
 
@@ -186,26 +186,26 @@ Enum values may have been renamed. Enums are particularly fragile, so search for
 grep -r "Status\." --include="*.ts" src/
 ```
 
-For complex type hierarchies, run the TypeScript compiler directly rather than through your bundler—it gives cleaner error output and locates the originating type mismatch rather than just the symptom:
+For complex type hierarchies, run the TypeScript compiler directly rather than through your bundler, it gives cleaner error output and locates the originating type mismatch rather than just the symptom:
 
 ```bash
 npx tsc --noEmit 2>&1 | head -60
 ```
 
-### Step 4: Clean and Rebuild
+Step 4: Clean and Rebuild
 
 Cached files often cause false positives after refactoring:
 
 ```bash
-# Clear node_modules and reinstall
+Clear node_modules and reinstall
 rm -rf node_modules package-lock.json
 npm install
 
-# Clear TypeScript cache
+Clear TypeScript cache
 rm -rf .tsbuildinfo
 rm -rf node_modules/.cache
 
-# Clear any bundler cache
+Clear any bundler cache
 rm -rf .next  # Next.js
 rm -rf dist   # Vite/Webpack
 rm -rf build  # Create React App
@@ -213,19 +213,19 @@ rm -rf build  # Create React App
 
 After clearing caches, rebuild incrementally when possible. For Vite projects, run `vite build --watch` temporarily to see errors as they occur file by file. For Next.js, `next build` with `--debug` flag shows which pages are failing and why.
 
-### Step 5: Fix Configuration Files
+Step 5: Fix Configuration Files
 
 Build configurations often reference old names. Check these common files:
 
-- `tsconfig.json` — path aliases and includes
+- `tsconfig.json`. path aliases and includes
 
-- `next.config.js` or `next.config.mjs` — webpack aliases
+- `next.config.js` or `next.config.mjs`. webpack aliases
 
-- `vite.config.ts` — resolve aliases
+- `vite.config.ts`. resolve aliases
 
-- `jest.config.js` — module name mappers
+- `jest.config.js`. module name mappers
 
-- `.eslintrc` — rule configurations referencing old names
+- `.eslintrc`. rule configurations referencing old names
 
 Example vite.config.ts fix:
 
@@ -256,56 +256,56 @@ module.exports = {
 }
 ```
 
-## Diagnostic Tips for Complex Cases
+Diagnostic Tips for Complex Cases
 
-### Circular Dependency Detection
+Circular Dependency Detection
 
 Run this to find circular dependencies:
 
 ```bash
-# Using npm
+Using npm
 npm install -D circular-dependency-plugin
 
-# Or use Node's built-in analyzer
+Or use Node's built-in analyzer
 node -e "require('module')._load('./src/index.js', {}, true)"
 ```
 
 Cursor's refactor can introduce circular dependencies when it moves an utility function from a low-level module to a higher-level one that imports from the first. The build fails with confusing errors because the circular reference is detected late in the module graph resolution.
 
-### Version Conflict Resolution
+Version Conflict Resolution
 
 If you see dependency conflicts:
 
 ```bash
-# Analyze dependency tree
+Analyze dependency tree
 npm ls <package-name>
 
-# Find what requires the old package
+Find what requires the old package
 npm why <package-name>
 
-# Use npm-check-updates to see available updates
+Use npm-check-updates to see available updates
 npx npm-check-updates
 ```
 
-### Rollback Strategy
+Rollback Strategy
 
 If the refactor broke too much, consider a staged rollback:
 
 ```bash
-# Create a backup branch before major refactors
+Create a backup branch before major refactors
 git branch backup-pre-refactor
 
-# Revert specific files
+Revert specific files
 git checkout HEAD -- src/components/OldComponent.tsx
 
-# Or use git reflog to find before-refactor state
+Or use git reflog to find before-refactor state
 git reflog
 git checkout <commit-hash> -- .
 ```
 
 A partial rollback is often more efficient than a full one. Use `git diff HEAD~1 -- src/` to see exactly what changed in the last commit, then selectively restore files that are hard to fix. This preserves the valid refactor changes while recovering the broken ones.
 
-## Prevention
+Prevention
 
 Avoid future build breaks with these practices:
 
@@ -317,35 +317,35 @@ Avoid future build breaks with these practices:
 
 4. Test the build after each major change rather than waiting until the end
 
-5. Keep a checklist of all config files that reference symbol names—`tsconfig.json`, `jest.config.js`, `vite.config.ts`, and any custom scripts are all candidates
+5. Keep a checklist of all config files that reference symbol names, `tsconfig.json`, `jest.config.js`, `vite.config.ts`, and any custom scripts are all candidates
 
 6. Run `npx tsc --noEmit` before committing after a Cursor refactor to catch type issues before they enter the build pipeline
 
 {% endraw %}
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Cursor offer a free tier?**
+Does Cursor offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Cursor's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Cursor Multi-File Edit Breaking Code Fix (2026)](/cursor-multi-file-edit-breaking-code-fix-2026/)
 - [Configuring Cursor AI Notepads for Reusable Project Context](/configuring-cursor-ai-notepads-for-reusable-project-context-/)
@@ -353,4 +353,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
 - [How to Use AI Inline Chat to Refactor Single Function Step](/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

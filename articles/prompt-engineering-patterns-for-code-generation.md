@@ -33,16 +33,16 @@ tags: [ai-tools-compared]
 
 The difference between a prompt that produces working code and one that produces plausible-looking garbage is usually structure, not length. These patterns work across Claude, GPT-4o, and Gemini. Each includes a before/after example showing the actual output difference.
 
-## Key Takeaways
+Key Takeaways
 
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **The role + stack**: + constraint triple removes the three most common sources of useless AI code: wrong library choice, wrong async approach, and missing configurability.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **What data structure best**: represents this problem and why 2.
-- **Without "do not use regex for splitting**:" every model defaults to `line.split(",")` which breaks on `"Smith, John",30,NYC`.
+- Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- The role + stack: + constraint triple removes the three most common sources of useless AI code: wrong library choice, wrong async approach, and missing configurability.
+- How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
+- What data structure best: represents this problem and why 2.
+- Without "do not use regex for splitting:" every model defaults to `line.split(",")` which breaks on `"Smith, John",30,NYC`.
 
-## Pattern 1: Role + Stack + Constraint Priming
+Pattern 1: Role + Stack + Constraint Priming
 
 Most developers write: "Write a function that caches API responses."
 
@@ -59,9 +59,9 @@ Write a cache decorator that wraps async FastAPI route handlers.
 
 This produces code that uses `aioredis` instead of `redis-py` (async-compatible), hashes parameters in a stable way, and accepts `@cache(ttl=300)` syntax. The role + stack + constraint triple removes the three most common sources of useless AI code: wrong library choice, wrong async approach, and missing configurability.
 
-## Pattern 2: Show the Interface, Ask for the Implementation
+Pattern 2: Show the Interface, Ask for the Implementation
 
-Don't describe what you want — show the exact signature and docstring, then ask for the body.
+Don't describe what you want. show the exact signature and docstring, then ask for the body.
 
 ```python
 async def get_user_recommendations(
@@ -84,12 +84,12 @@ async def get_user_recommendations(
 
 When the AI sees a complete signature with a precise docstring, it cannot diverge on interface design. You get implementation-only output. This pattern eliminates 80% of follow-up prompts asking to "change the return type" or "add error handling."
 
-## Pattern 3: Provide the Failing Test
+Pattern 3: Provide the Failing Test
 
 Give the AI a failing test and ask it to write code that makes it pass.
 
 ```python
-# Prompt: Make this test pass. Do not modify the test.
+Prompt: Make this test pass. Do not modify the test.
 
 def test_rate_limiter():
     limiter = RateLimiter(requests_per_second=2)
@@ -106,9 +106,9 @@ def test_rate_limiter():
     assert limiter.current_count() == 1
 ```
 
-The test is the specification. The AI cannot misunderstand what `requests_per_second` means because the test shows exactly what it should do. This pattern also produces code that is trivially testable — because it was written to pass a test.
+The test is the specification. The AI cannot misunderstand what `requests_per_second` means because the test shows exactly what it should do. This pattern also produces code that is trivially testable. because it was written to pass a test.
 
-## Pattern 4: Chain-of-Thought for Algorithmic Code
+Pattern 4: Chain-of-Thought for Algorithmic Code
 
 For anything involving algorithms or non-trivial logic, ask the AI to reason before it codes.
 
@@ -121,15 +121,15 @@ Before writing any code, explain in plain language:
 Then write the implementation.
 
 Problem: Given a list of intervals [start, end], merge all overlapping intervals.
-Example: [[1,3],[2,6],[8,10],[15,18]] -> [[1,6],[8,10],[15,18]]
+[[1,3],[2,6],[8,10],[15,18]] -> [[1,6],[8,10],[15,18]]
 ```
 
-Forcing the reasoning step first catches O(n^2) solutions or missing sort steps before any code is written — and if the reasoning is wrong, you can correct it cheaply.
+Forcing the reasoning step first catches O(n^2) solutions or missing sort steps before any code is written. and if the reasoning is wrong, you can correct it cheaply.
 
 ```python
-# Reasoning output (abbreviated):
-# "Sort by start time first — O(n log n). Then iterate, merging when
-# current.start <= last_merged.end. Edge cases: empty list, single interval."
+Reasoning output (abbreviated):
+"Sort by start time first. O(n log n). Then iterate, merging when
+current.start <= last_merged.end. Edge cases: empty list, single interval."
 
 def merge_intervals(intervals: list[list[int]]) -> list[list[int]]:
     if not intervals:
@@ -148,7 +148,7 @@ def merge_intervals(intervals: list[list[int]]) -> list[list[int]]:
     return merged
 ```
 
-## Pattern 5: Negative Constraints
+Pattern 5: Negative Constraints
 
 Tell the AI what NOT to do.
 
@@ -169,7 +169,7 @@ DO:
 
 Negative constraints force the model out of its default patterns. Without "do not use regex for splitting," every model defaults to `line.split(",")` which breaks on `"Smith, John",30,NYC`. The negative constraint eliminates this before a token is generated.
 
-## Pattern 6: Incremental Build Pattern
+Pattern 6: Incremental Build Pattern
 
 For complex features, build in stages:
 
@@ -187,7 +187,7 @@ Stage 4: Write tests for each function in Stage 3.
 
 This prevents the AI from making architectural decisions you haven't reviewed. By the time implementation is written, the interface is locked and correct.
 
-## Pattern 7: Self-Review Loop
+Pattern 7: Self-Review Loop
 
 After generating code, prompt the AI to critique it.
 
@@ -206,16 +206,16 @@ For each issue found, rate severity (critical/medium/low) and suggest the fix.
 Models are better at spotting bugs in code than writing bug-free code from scratch. Sample output:
 
 ```
-[CRITICAL] Line 12: SQL query uses string formatting — SQL injection risk.
+[CRITICAL] Line 12: SQL query uses string formatting. SQL injection risk.
   Fix: Use parameterized queries via cursor.execute(query, (user_id,))
 
-[MEDIUM] Line 18: No connection pooling — creates new connection per call.
+[MEDIUM] Line 18: No connection pooling. creates new connection per call.
 
 [LOW] Line 24: Returns None on empty result instead of empty list.
   Fix: Change `return result or None` to `return result or []`
 ```
 
-## Combining Patterns
+Combining Patterns
 
 The highest-quality code generation comes from stacking patterns:
 
@@ -239,22 +239,22 @@ Do NOT: use encoding/json directly (use h.encoder helper), return 500 for valida
 
 This prompt reliably produces production-quality handler code on the first attempt.
 
-## Testing Prompt Quality
+Testing Prompt Quality
 
-The best metric is "tokens until production-ready" — how much additional input (edits, clarifications) is needed before the code works.
+The best metric is "tokens until production-ready". how much additional input (edits, clarifications) is needed before the code works.
 
-**Test case: Implement a connection pool with backpressure**
+Test case: Implement a connection pool with backpressure
 
 ```python
-# Bad prompt (high token cost)
+Bad prompt (high token cost)
 "Write a connection pool"
 → Generic pool, no backpressure, 3 follow-ups needed = 4,200 total tokens
 
-# Medium prompt (moderate token cost)
+Medium prompt (moderate token cost)
 "Write a connection pool that supports backpressure using semaphores"
 → Has backpressure, but no monitoring, 1 follow-up = 2,800 tokens
 
-# Good prompt (low token cost)
+Good prompt (low token cost)
 "You are a senior Python engineer. Stack: asyncio, psycopg3, prometheus.
 Implement AsyncConnectionPool that:
 1. Maintains pool size between min_size and max_size
@@ -272,19 +272,19 @@ Implement the class."
 → Production-ready on first try = 1,200 tokens
 ```
 
-Bad prompts cost 4,200 tokens. Good prompts cost 1,200 tokens. **Structured prompts save money and time.**
+Bad prompts cost 4,200 tokens. Good prompts cost 1,200 tokens. Structured prompts save money and time.
 
-## Real Workflow: Building an Event Router
+Real Workflow: Building an Event Router
 
 Demonstrating full pattern stacking on a real task:
 
 ```python
-# Complete prompt using all 7 patterns
+Complete prompt using all 7 patterns
 
 You are a senior TypeScript/Node.js engineer. Stack: Node.js 20, TypeScript 5.3, EventEmitter2.
 Constraints:
 - All event handlers are async
-- No global state — handlers receive context object
+- No global state. handlers receive context object
 - Event names use dot notation (user.created, order.shipped)
 
 INTERFACE FIRST:
@@ -327,17 +327,17 @@ Before writing code, explain:
 
 NEGATIVE CONSTRAINTS:
 Do NOT:
-- Use global EventEmitter — pass as constructor argument
-- Return early if one handler fails — all handlers should run
-- Use sync callbacks — all handlers must be async
-- Use lodash or minimatch — implement pattern matching directly
+- Use global EventEmitter. pass as constructor argument
+- Return early if one handler fails. all handlers should run
+- Use sync callbacks. all handlers must be async
+- Use lodash or minimatch. implement pattern matching directly
 
 GO:
 ```
 
-This produces clean, testable, production-ready code on the first attempt — saving 3-5 review cycles.
+This produces clean, testable, production-ready code on the first attempt. saving 3-5 review cycles.
 
-## Effectiveness by Language
+Effectiveness by Language
 
 Patterns work across languages, but some need tuning:
 
@@ -349,9 +349,9 @@ Patterns work across languages, but some need tuning:
 | Rust | 88% | Lifetime constraints need explicit mention |
 | Java | 85% | Verbose; generics require extra clarity |
 
-**Lower success with Java:** Fewer examples in training data for newer patterns. Stick to simple role/stack/constraint for Java.
+Lower success with Java: Fewer examples in training data for newer patterns. Stick to simple role/stack/constraint for Java.
 
-## Measuring Pattern Impact
+Measuring Pattern Impact
 
 Tested on 50 code generation tasks (10 in each language: Python, TypeScript, Go, Java, Rust):
 
@@ -364,53 +364,53 @@ Tested on 50 code generation tasks (10 in each language: Python, TypeScript, Go,
 | + Negative Constraints | 980 | 82% |
 | All 7 patterns (stacked) | 820 | 89% |
 
-Stacking all patterns reduces token spend by **79%** vs. unstructured prompts.
+Stacking all patterns reduces token spend by 79% vs. unstructured prompts.
 
-## Common Mistakes to Avoid
+Common Mistakes to Avoid
 
 ```python
-# ❌ Too vague — wastes tokens
+ Too vague. wastes tokens
 "Write a database query function"
 
-# ✅ Specific — saves tokens
+ Specific. saves tokens
 "Write a PostgreSQL parameterized query function that:
 - Takes a query string and list of parameters
 - Returns typed results (generic <T>)
 - Throws QueryError (not generic Error) on failure
 - Includes connection pooling via pgx"
 
-# ❌ Unclear constraint
+ Unclear constraint
 "Don't use bad patterns"
 
-# ✅ Clear constraint
+ Clear constraint
 "Do NOT: use string.split() for CSV parsing (breaks on quoted fields),
 use synchronous I/O, return untyped results"
 
-# ❌ Missing context
+ Missing context
 "Generate an auth middleware"
 
-# ✅ With context
+ With context
 "You are building Express.js middleware for JWT auth.
 We use RS256 keys stored in environment as base64.
 Attach the decoded token to req.user. Return 401 with message 'Invalid token' on failure."
 ```
 
-## CLI Tool: Prompt Quality Linter
+CLI Tool: Prompt Quality Linter
 
 A simple script to score prompt quality:
 
 ```bash
 #!/bin/bash
-# prompt_linter.sh — check if prompt has good patterns
+prompt_linter.sh. check if prompt has good patterns
 
 prompt_file=$1
 
 check_pattern() {
     if grep -q "$1" "$prompt_file"; then
-        echo "✓ $2"
+        echo " $2"
         return 1
     fi
-    echo "✗ $2"
+    echo " $2"
     return 0
 }
 
@@ -425,47 +425,47 @@ check_pattern "Explain\|before\|reason" "Chain of thought" && score=$((score+5))
 
 echo "Prompt Quality Score: $score / 100"
 if [ $score -ge 80 ]; then
-    echo "✓ Ready to submit to AI"
+    echo " Ready to submit to AI"
 else
-    echo "✗ Improve prompt quality before submitting"
+    echo " Improve prompt quality before submitting"
 fi
 ```
 
 Usage:
 ```bash
 ./prompt_linter.sh my_prompt.txt
-# Output:
-# ✓ Role defined
-# ✓ Stack specified
-# ✗ Negative constraints
-# ✓ Interface shown
-# ...
-# Prompt Quality Score: 75 / 100
+Output:
+ Role defined
+ Stack specified
+ Negative constraints
+ Interface shown
+...
+Prompt Quality Score: 75 / 100
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How to Move Copilot Suggested Code Patterns to Cursor Snippe](/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)
 - [How to Move Copilot Suggested Code Patterns to Cursor](/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
@@ -473,5 +473,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Transfer Your Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code/)
 - [Best AI-Powered Platform Engineering Tools for Developer Sel](/best-ai-powered-platform-engineering-tools-for-developer-sel/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

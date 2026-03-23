@@ -15,9 +15,9 @@ tags: [ai-tools-compared]
 
 {% raw %}
 
-Retrieval-augmented generation solves the context window problem: instead of cramming your entire knowledge base into a prompt, you fetch only the relevant chunks at query time. Pinecone makes this fast at scale. This guide builds a working RAG chatbot from scratch — document ingestion, vector search, and a streaming FastAPI endpoint.
+Retrieval-augmented generation solves the context window problem: instead of cramming your entire knowledge base into a prompt, you fetch only the relevant chunks at query time. Pinecone makes this fast at scale. This guide builds a working RAG chatbot from scratch. document ingestion, vector search, and a streaming FastAPI endpoint.
 
-## Table of Contents
+Table of Contents
 
 - [Architecture Overview](#architecture-overview)
 - [Prerequisites](#prerequisites)
@@ -31,7 +31,7 @@ Retrieval-augmented generation solves the context window problem: instead of cra
 - [Re-Ranking Retrieved Chunks](#re-ranking-retrieved-chunks)
 - [Related Reading](#related-reading)
 
-## Architecture Overview
+Architecture Overview
 
 ```
 Documents → Chunker → Embedder → Pinecone Index
@@ -43,7 +43,7 @@ User Query → Embedder → Pinecone Search → Top-K Chunks
 
 Three moving parts: ingestion pipeline, retrieval, and generation. Each has failure modes worth understanding.
 
-## Prerequisites
+Prerequisites
 
 ```bash
 pip install pinecone-client openai anthropic fastapi uvicorn \
@@ -51,17 +51,17 @@ pip install pinecone-client openai anthropic fastapi uvicorn \
 ```
 
 ```bash
-# .env
+.env
 PINECONE_API_KEY=your_pinecone_key
 PINECONE_INDEX_NAME=rag-docs
 OPENAI_API_KEY=your_openai_key      # for embeddings
 ANTHROPIC_API_KEY=your_anthropic_key # for generation
 ```
 
-## Step 1: Document Ingestion
+Step 1: Document Ingestion
 
 ```python
-# ingest.py
+ingest.py
 import os
 import hashlib
 from pathlib import Path
@@ -152,7 +152,7 @@ def ingest_documents(docs: list[dict]):
 
     print(f"Ingested {len(vectors)} chunks from {len(docs)} documents")
 
-# Example usage
+Example usage
 if __name__ == "__main__":
     sample_docs = [
         {
@@ -167,10 +167,10 @@ if __name__ == "__main__":
     ingest_documents(sample_docs)
 ```
 
-## Step 2: Retrieval
+Step 2: Retrieval
 
 ```python
-# retrieval.py
+retrieval.py
 import os
 from pinecone import Pinecone
 from openai import OpenAI
@@ -232,10 +232,10 @@ def format_context_block(contexts: list[dict]) -> str:
     return "\n\n---\n\n".join(parts)
 ```
 
-## Step 3: Generation with Claude
+Step 3: Generation with Claude
 
 ```python
-# generation.py
+generation.py
 import os
 from anthropic import Anthropic
 from retrieval import retrieve_context, format_context_block
@@ -292,10 +292,10 @@ Question: {query}"""
     }
 ```
 
-## Step 4: FastAPI Endpoint
+Step 4: FastAPI Endpoint
 
 ```python
-# api.py
+api.py
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
@@ -307,7 +307,7 @@ from anthropic import Anthropic
 app = FastAPI(title="RAG Chatbot API")
 client = Anthropic()
 
-# In-memory session store (use Redis in production)
+In-memory session store (use Redis in production)
 sessions: dict[str, list[dict]] = {}
 
 class ChatRequest(BaseModel):
@@ -345,16 +345,16 @@ async def clear_session(session_id: str):
 async def health():
     return {"status": "ok"}
 
-# Run with: uvicorn api:app --reload
+Run with: uvicorn api:app --reload
 ```
 
-## Common Failure Modes
+Common Failure Modes
 
-**Low retrieval relevance (score < 0.7 consistently)**
+Low retrieval relevance (score < 0.7 consistently)
 
-Your chunks are too large. Drop `chunk_size` from 512 to 256. Large chunks dilute the embedding signal. Also check that your documents are prose — code-heavy docs need a different chunking strategy.
+Your chunks are too large. Drop `chunk_size` from 512 to 256. Large chunks dilute the embedding signal. Also check that your documents are prose. code-heavy docs need a different chunking strategy.
 
-**Hallucination despite good retrieval**
+Hallucination despite good retrieval
 
 The system prompt's "answer only from context" instruction works ~90% of the time. For higher reliability, add a verification step:
 
@@ -370,7 +370,7 @@ def verify_grounded(answer: str, contexts: list[dict]) -> bool:
     )
 ```
 
-**Rate limits on ingestion**
+Rate limits on ingestion
 
 OpenAI's embedding API allows 1M tokens/minute on tier 2. For large document sets, add exponential backoff:
 
@@ -383,15 +383,15 @@ def embed_batch_with_retry(texts: list[str]) -> list[list[float]]:
     return embed_batch(texts)
 ```
 
-## Chunk Strategy by Document Type
+Chunk Strategy by Document Type
 
 Not all documents chunk the same way. Using 512-token fixed-size chunks works fine for prose documentation but breaks poorly for structured content.
 
-**API reference docs**: Split by endpoint or method. A chunk should contain one complete endpoint description — mixing two endpoint descriptions into one chunk dilutes the embedding for both.
+API reference docs: Split by endpoint or method. A chunk should contain one complete endpoint description. mixing two endpoint descriptions into one chunk dilutes the embedding for both.
 
-**Markdown with headers**: Use `RecursiveCharacterTextSplitter` with `"\n## "` as a high-priority separator. This keeps H2 sections together, which typically represent coherent concepts.
+Markdown with headers: Use `RecursiveCharacterTextSplitter` with `"\n## "` as a high-priority separator. This keeps H2 sections together, which typically represent coherent concepts.
 
-**Code-heavy docs**: Add a custom splitter that respects code fence boundaries. A chunk that cuts across a code block mid-function will embed poorly and retrieve inaccurately.
+Code-heavy docs: Add a custom splitter that respects code fence boundaries. A chunk that cuts across a code block mid-function will embed poorly and retrieve inaccurately.
 
 ```python
 CODE_AWARE_SEPARATORS = [
@@ -413,7 +413,7 @@ splitter = RecursiveCharacterTextSplitter(
 )
 ```
 
-## Multi-Tenant Isolation with Namespaces
+Multi-Tenant Isolation with Namespaces
 
 If you're serving multiple customers or projects from one Pinecone index, use namespace isolation rather than separate indexes. Namespaces are free and keep your index count manageable.
 
@@ -441,9 +441,9 @@ def retrieve_for_tenant(
 
 This pattern lets you offer per-customer knowledge bases without provisioning separate indexes or worrying about data leakage between tenants.
 
-## Re-Ranking Retrieved Chunks
+Re-Ranking Retrieved Chunks
 
-Cosine similarity ranking is fast but imperfect. A cross-encoder re-ranker improves relevance by scoring each candidate chunk against the full query — computationally heavier, but worth it for precision-sensitive use cases.
+Cosine similarity ranking is fast but imperfect. A cross-encoder re-ranker improves relevance by scoring each candidate chunk against the full query. computationally heavier, but worth it for precision-sensitive use cases.
 
 ```python
 from sentence_transformers import CrossEncoder
@@ -463,12 +463,12 @@ def rerank(query: str, candidates: list[dict]) -> list[dict]:
 
 Run the initial Pinecone search with `top_k=20`, then re-rank and pass only the top 5 to the LLM. This maintains Pinecone's speed advantage while improving the final answer quality significantly.
 
-## Related Articles
+Related Articles
 
 - [How to Build a RAG Pipeline with LangChain 2026](/how-to-build-a-rag-pipeline-with-langchain-2026/)
 - [How to Build AI Pipelines with Prefect](/how-to-build-ai-pipelines-with-prefect)
 - [How to Build Semantic Search with Embeddings](/how-to-build-semantic-search-with-embeddings/)
 - [How to Build Voice AI Apps with Claude](/how-to-build-voice-ai-apps-with-claude)
 - [ChatGPT vs Custom Chatbot for Business: A Developer Guide](/chatgpt-vs-custom-chatbot-for-business/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

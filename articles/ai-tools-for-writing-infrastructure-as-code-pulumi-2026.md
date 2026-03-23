@@ -17,7 +17,7 @@ intent-checked: true
 
 Writing Pulumi infrastructure-as-code (IaC) requires understanding both cloud provider APIs and programmatic resource composition. AI assistants excel at this because Pulumi's code-first approach maps well to how LLMs reason about code generation. Claude, GitHub Copilot, and Cursor each have distinct strengths when generating TypeScript and Python Pulumi programs. The key difference lies in context window size, code understanding depth, and real-time completion accuracy.
 
-## Table of Contents
+Table of Contents
 
 - [Why Pulumi IaC Is Different From Other Code](#why-pulumi-iac-is-different-from-other-code)
 - [Tool Comparison: Claude vs Copilot vs Cursor](#tool-comparison-claude-vs-copilot-vs-cursor)
@@ -30,37 +30,37 @@ Writing Pulumi infrastructure-as-code (IaC) requires understanding both cloud pr
 - [Testing Generated Infrastructure Code](#testing-generated-infrastructure-code)
 - [Cost Comparison: Per-Project Basis](#cost-comparison-per-project-basis)
 
-## Why Pulumi IaC Is Different From Other Code
+Why Pulumi IaC Is Different From Other Code
 
 Traditional Terraform uses HCL, a declarative language specifically designed for infrastructure. Pulumi uses general-purpose languages (Python, TypeScript, Go, C#) to define infrastructure through SDK calls. This means you're writing code that calls Pulumi provider APIs, manages state through object references, and often needs to handle cross-stack dependencies.
 
 AI assistants trained on large codebases understand both language semantics and Pulumi SDK patterns. However, they differ significantly in:
 
-- **Context window**: How much of your existing stack they can see at once
-- **Pulumi SDK version accuracy**: Whether they generate deprecated or current API calls
-- **State management comprehension**: Understanding stack references and outputs
-- **Performance optimization awareness**: Whether they suggest parallel resource creation
+- Context window: How much of your existing stack they can see at once
+- Pulumi SDK version accuracy: Whether they generate deprecated or current API calls
+- State management comprehension: Understanding stack references and outputs
+- Performance optimization awareness: Whether they suggest parallel resource creation
 
-## Tool Comparison: Claude vs Copilot vs Cursor
+Tool Comparison: Claude vs Copilot vs Cursor
 
-### Claude (Opus or Sonnet)
+Claude (Opus or Sonnet)
 
 Claude excels at Pulumi IaC generation through its extended context window (200K tokens) and deep code reasoning. You can paste your entire existing stack, architecture diagrams, and AWS/GCP documentation simultaneously.
 
-**Strengths:**
+Strengths:
 - 200K context window allows analyzing 20+ files of existing infrastructure
 - Excellent at explaining why a specific Pulumi pattern is needed
 - Strong at generating cross-stack resource references
 - Handles complex dependency chains without referencing outdated patterns
 
-**Weaknesses:**
+Weaknesses:
 - Requires explicit prompting to use latest Pulumi SDK versions
 - No real-time IDE integration without third-party tools
 - Slower response times than lighter models
 
-**Real pricing:** Claude API: $3/1M input tokens, $15/1M output tokens (Opus). For a 50,000-token infrastructure context: ~$0.15 input cost.
+Real pricing: Claude API: $3/1M input tokens, $15/1M output tokens (Opus). For a 50,000-token infrastructure context: ~$0.15 input cost.
 
-**Example prompt pattern:**
+Example prompt pattern:
 ```
 I have a TypeScript Pulumi stack that creates:
 1. VPC with 3 subnets across 2 AZs
@@ -79,25 +79,25 @@ Generate the Pulumi TypeScript code following my existing patterns.
 
 Claude will generate complete, idiomatic TypeScript that matches your existing code style and properly references the Aurora endpoint through stack exports.
 
-### GitHub Copilot
+GitHub Copilot
 
-Copilot operates directly in your IDE and learns from your codebase. It's optimized for velocity—quick completions and line-by-line suggestions. Copilot uses GPT-4 as its underlying model but with codebase-specific context.
+Copilot operates directly in your IDE and learns from your codebase. It's optimized for velocity, quick completions and line-by-line suggestions. Copilot uses GPT-4 as its underlying model but with codebase-specific context.
 
-**Strengths:**
+Strengths:
 - Real-time inline completion while typing
 - Learns from your specific Pulumi patterns immediately
 - Fast iteration on single functions or resources
 - Works without explicit prompting
 
-**Weaknesses:**
+Weaknesses:
 - Limited context window (~8K tokens) restricts cross-file understanding
 - Often generates deprecated Pulumi APIs without explicit version control
 - Struggles with complex multi-resource dependencies
 - Cannot see external documentation unless you paste it
 
-**Real pricing:** $10/month for individuals, $21/month for business accounts. Enterprise: custom pricing.
+Real pricing: $10/month for individuals, $21/month for business accounts. Enterprise: custom pricing.
 
-**Practical example:**
+Practical example:
 You're writing a new ECS service definition. Copilot watches your existing Pulumi patterns and suggests:
 
 ```typescript
@@ -110,25 +110,25 @@ const taskRole = new aws.iam.Role("app-task-role", {
 
 Copilot learns from your codebase that you use specific role naming conventions and immediately suggests completions aligned with your style.
 
-### Cursor IDE
+Cursor IDE
 
 Cursor is an AI-native IDE built on VSCode. It provides AI assistance directly in your editor with both fast completions and longer-form generation through Ctrl+K. Cursor supports multiple backend models (Claude, GPT-4, Sonnet).
 
-**Strengths:**
+Strengths:
 - Full IDE integration with file navigation context
 - Can read entire repository structure automatically
 - Fast "Cmd+K" generation mode for larger code blocks
 - Supports swapping between Claude and GPT-4 backends
 - Git-aware: understands your commit history and patterns
 
-**Weaknesses:**
+Weaknesses:
 - Requires switching IDEs (though VSCode-compatible)
 - Subscription cost on top of model pricing
 - Learning curve for power users comfortable with standard VSCode
 
-**Real pricing:** $20/month for Cursor Pro with unlimited Claude usage.
+Real pricing: $20/month for Cursor Pro with unlimited Claude usage.
 
-**Practical workflow:**
+Practical workflow:
 You open your `infrastructure/vpc.ts` file. Cursor sees the entire project structure. You press Cmd+K and write:
 
 ```
@@ -139,7 +139,7 @@ in the application stack.
 
 Cursor generates both files, understanding the project structure automatically.
 
-## Comparison Table: Capabilities Matrix
+Comparison Table: Capabilities Matrix
 
 | Feature | Claude | Copilot | Cursor |
 |---------|--------|---------|--------|
@@ -153,11 +153,11 @@ Cursor generates both files, understanding the project structure automatically.
 | Stack reference generation | Excellent | Fair | Excellent |
 | Learning from codebase | No | Yes | Yes |
 
-## Real-World Examples: TypeScript Pulumi Generation
+Real-World Examples: TypeScript Pulumi Generation
 
-### Example 1: VPC + RDS Stack with Network Access
+Example 1: VPC + RDS Stack with Network Access
 
-**Prompt to Claude:**
+Prompt to Claude:
 ```
 I'm using Pulumi TypeScript to create a secure RDS PostgreSQL cluster.
 
@@ -170,7 +170,7 @@ Requirements:
 - Enable automated backups with 7-day retention
 ```
 
-**Claude's output (simplified):**
+Claude's output (simplified):
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
 import * as aws from "@pulumi/aws";
@@ -232,9 +232,9 @@ This approach:
 - Implements security group ingress rules
 - Exports endpoint/port for cross-stack consumption
 
-### Example 2: ECS Service with Auto-scaling
+Example 2: ECS Service with Auto-scaling
 
-**Prompt to Claude:**
+Prompt to Claude:
 ```
 Create a Pulumi TypeScript ECS service with:
 - Service runs in existing VPC (pass in subnet/SG IDs from stack ref)
@@ -247,7 +247,7 @@ Create a Pulumi TypeScript ECS service with:
 Assume previous stack exports dbEndpoint and dbPassword.
 ```
 
-**Result pattern (key sections):**
+Result pattern (key sections):
 ```typescript
 const dbStackRef = new pulumi.StackReference("prod/db");
 const dbEndpoint = dbStackRef.getOutput("dbEndpoint");
@@ -343,111 +343,111 @@ new aws.appautoscaling.Policy("cpu-scaling", {
 
 Claude generates complete, production-ready patterns including proper IAM roles, cross-stack references, and auto-scaling thresholds.
 
-## Practical Workflow: Which Tool for Which Task
+Practical Workflow: Which Tool for Which Task
 
-### Use Claude When:
+Use Claude When:
 - Designing large infrastructure (5+ interconnected stacks)
 - You need to paste existing infrastructure and reason about it
 - Generating complex cross-service patterns (multi-region, disaster recovery)
 - You want detailed explanation of "why" certain patterns exist
 - Cost: $0.50-2.00 per large infrastructure generation
 
-### Use Copilot When:
+Use Copilot When:
 - Writing individual resources within existing patterns
 - You need real-time completion while typing
 - Your team already has the patterns established
 - Speed over explanation matters
 - Cost: Fixed $10-21/month regardless of usage
 
-### Use Cursor When:
+Use Cursor When:
 - You want IDE-integrated AI with full project context
 - Generating multiple files simultaneously
 - You want to learn from your own codebase patterns
 - You're switching IDEs anyway
 - Cost: $20/month for unlimited Claude usage
 
-## CLI Commands for Pulumi Workflow
+CLI Commands for Pulumi Workflow
 
 Deploy and preview your generated code:
 
 ```bash
-# Initialize a new Pulumi project
+Initialize a new Pulumi project
 pulumi new aws-typescript
 
-# Preview changes before deployment
+Preview changes before deployment
 pulumi preview --stack prod
 
-# Deploy infrastructure
+Deploy infrastructure
 pulumi up --stack prod
 
-# Refresh stack state (useful after manual changes)
+Refresh stack state (useful after manual changes)
 pulumi refresh --stack prod
 
-# Destroy infrastructure
+Destroy infrastructure
 pulumi destroy --stack prod
 
-# List stack references available to other stacks
+List stack references available to other stacks
 pulumi stack select prod
 pulumi stack export
 ```
 
-## Decision Framework: Accuracy vs Velocity
+Decision Framework: Accuracy vs Velocity
 
 Ask yourself these questions:
 
-1. **How large is the infrastructure change?** (1-2 resources vs entire new stack)
+1. How large is the infrastructure change? (1-2 resources vs entire new stack)
  - Small: Use Copilot for velocity
  - Large: Use Claude for accuracy
 
-2. **Do you need to reference existing infrastructure?**
+2. Do you need to reference existing infrastructure?
  - Yes, across many stacks: Claude's context window wins
  - No, isolated resources: Copilot/Cursor sufficient
 
-3. **Is your team already on a specific IDE?**
+3. Is your team already on a specific IDE?
  - Already on VSCode: Cursor eliminates friction
  - Different editors: Claude API is universal
 
-4. **What's your error tolerance?**
+4. What's your error tolerance?
  - Low (production): Claude with explicit version pinning
  - Medium (staging): Copilot is acceptable
  - High (dev): Any tool with quick iteration
 
-5. **How often do you write IaC?**
+5. How often do you write IaC?
  - Daily: Cursor ($20/month) pays for itself
  - Weekly: Claude ($3-5/week API cost) more economical
  - Monthly: Copilot ($10/month) simplest
 
-## Common Mistakes AI Tools Make
+Common Mistakes AI Tools Make
 
 All three tools occasionally generate:
 
-- **Deprecated Pulumi APIs**: Always specify `@pulumi/aws@6.0.0` or later in prompts
-- **Missing IAM policies**: AI suggests resource creation but omits role/policy attachment
-- **Hardcoded values**: Wrap environment-specific values in `config.require()`
-- **Missing cross-stack exports**: Prompt explicitly: "What should I export from this stack?"
-- **Insufficient error handling**: Pulumi imports can fail; AI doesn't always add try-catch
+- Deprecated Pulumi APIs: Always specify `@pulumi/aws@6.0.0` or later in prompts
+- Missing IAM policies: AI suggests resource creation but omits role/policy attachment
+- Hardcoded values: Wrap environment-specific values in `config.require()`
+- Missing cross-stack exports: Prompt explicitly: "What should I export from this stack?"
+- Insufficient error handling: Pulumi imports can fail; AI doesn't always add try-catch
 
-## Testing Generated Infrastructure Code
+Testing Generated Infrastructure Code
 
 Before deploying generated Pulumi code:
 
 ```bash
-# Lint TypeScript
+Lint TypeScript
 npx tsc --noEmit
 
-# Validate stack can be serialized
+Validate stack can be serialized
 pulumi preview --verbose
 
-# Check for unused variables
+Check for unused variables
 npm run lint
 
-# Test stack references in isolation
+Test stack references in isolation
 pulumi stack ls
 pulumi stack select staging
 pulumi stack export > export.json
 ```
 
-## Cost Comparison: Per-Project Basis
+Cost Comparison: Per-Project Basis
 
 For a typical infrastructure project (5 stacks, ~1000 lines total):
 
@@ -460,29 +460,29 @@ For a typical infrastructure project (5 stacks, ~1000 lines total):
 
 Most teams find combined approach optimal: Cursor for daily editing, Claude for complex designs, Copilot as fallback.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Best AI Assistants for Pulumi Infrastructure Code](/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
 - [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
@@ -490,4 +490,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best AI Tools for Writing AWS CDK Infrastructure Code](/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
 - [Best Workflow for Using AI to Write Infrastructure as Code F](/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

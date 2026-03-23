@@ -18,22 +18,22 @@ tags: [ai-tools-compared, guides]
 
 If you have been using GitHub Copilot with custom instructions and want to switch to Cursor, you need to understand how to migrate your configuration. Both tools use configuration files to customize AI behavior, but the formats differ significantly. This guide walks you through converting Copilot custom instructions into Cursor rules files, with practical examples and common conversion patterns.
 
-## Key Takeaways
+Key Takeaways
 
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Copilot offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Cursor**: on the other hand, uses `.cursorrules` files that support structured YAML-like syntax with distinct sections for different types of instructions.
-- **Only use let when**: the variable must be reassigned later.
+- Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- Does Copilot offer a: free tier? Most major tools offer some form of free tier or trial period.
+- How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
+- Cursor: on the other hand, uses `.cursorrules` files that support structured YAML-like syntax with distinct sections for different types of instructions.
+- Only use let when: the variable must be reassigned later.
 
-## Key Differences Between Copilot and Cursor Configuration
+Key Differences Between Copilot and Cursor Configuration
 
 GitHub Copilot stores custom instructions in your VSCode settings under `github.copilot.chat.instructions`. The setting accepts a single string containing your guidelines. Cursor, on the other hand, uses `.cursorrules` files that support structured YAML-like syntax with distinct sections for different types of instructions.
 
 Copilot custom instructions work as flat text guidelines that Copilot appends to its system prompt. Cursor rules files provide more organization, allowing you to define separate rules for code generation, chat behavior, file handling, and project-specific conventions.
 
-## Finding Your Copilot Custom Instructions
+Finding Your Copilot Custom Instructions
 
 Before migrating, locate your existing Copilot configuration. In VSCode, go to Settings and search for "Chat: Instructions" under GitHub Copilot Chat. You can also check your `.vscode/settings.json` file directly:
 
@@ -45,17 +45,17 @@ Before migrating, locate your existing Copilot configuration. In VSCode, go to S
 
 Copy this content somewhere safe. You will transform this into Cursor's format.
 
-## Converting Basic Guidelines
+Converting Basic Guidelines
 
 The simplest conversion involves taking your plain text instructions and structuring them for Cursor. Here is an example of converting a Copilot instruction to Cursor format.
 
-**Copilot custom instruction:**
+Copilot custom instruction:
 
 ```
 Always use const instead of let unless variable reassignment is needed. Use async/await over Promise chains. Add JSDoc comments to all exported functions.
 ```
 
-**Cursor rules file (.cursorrules):**
+Cursor rules file (.cursorrules):
 
 ```yaml
 rules:
@@ -73,17 +73,17 @@ rules:
       and @throws tags where applicable.
 ```
 
-## Handling Project-Specific Rules
+Handling Project-Specific Rules
 
 If your Copilot instructions include project-specific guidelines, you can express these in Cursor's project context section. Cursor supports defining rules that apply only to specific file types or directories.
 
-**Copilot instruction for a React project:**
+Copilot instruction for a React project:
 
 ```
 When creating React components, use functional components with hooks. Always use TypeScript. Name components using PascalCase.
 ```
 
-**Cursor rules for the same:**
+Cursor rules for the same:
 
 ```yaml
 project:
@@ -91,7 +91,7 @@ project:
   type: "webapp"
 
 fileRules:
-  - pattern: "**/*.tsx"
+  - pattern: "/*.tsx"
     rules:
       - description: "Use functional components"
         rule: |
@@ -103,17 +103,17 @@ fileRules:
           Export components as default when the file contains only one component.
 ```
 
-## Migrating Code Style Preferences
+Migrating Code Style Preferences
 
 Code style rules often form the bulk of custom instructions. Cursor handles these more elegantly with its linting integration and automatic formatting awareness.
 
-**Copilot instruction:**
+Copilot instruction:
 
 ```
 Use 2 spaces for indentation. Always use single quotes for strings in JavaScript. Add trailing commas in multiline objects and arrays.
 ```
 
-**Cursor rules:**
+Cursor rules:
 
 ```yaml
 codeStyle:
@@ -126,11 +126,11 @@ linting:
   autoFixOnSave: true
 ```
 
-## Including Example Code
+Including Example Code
 
 Cursor rules files support embedding example code snippets, which helps the AI understand your expected output format. This was difficult to express in Copilot's flat instruction format.
 
-**Cursor rules with examples:**
+Cursor rules with examples:
 
 ```yaml
 rules:
@@ -150,31 +150,31 @@ rules:
       Use this interface for every controller response.
 ```
 
-## Defining File Ignore Patterns
+Defining File Ignore Patterns
 
 Cursor lets you specify which files the AI should ignore or treat differently. This is useful for excluding generated files, node_modules, or build artifacts from AI analysis.
 
-**Cursor ignore rules:**
+Cursor ignore rules:
 
 ```yaml
 ignore:
-  - "**/node_modules/**"
-  - "**/dist/**"
-  - "**/build/**"
-  - "**/*.min.js"
-  - "**/coverage/**"
-  - ".git/**"
+  - "/node_modules/"
+  - "/dist/"
+  - "/build/"
+  - "/*.min.js"
+  - "/coverage/"
+  - ".git/"
 ```
 
-## Creating Multiple Rule Files
+Creating Multiple Rule Files
 
 Cursor supports organizing rules across multiple files. You can create a base `.cursorrules` file in your project root and additional rule files for specific purposes or modules.
 
 Common organization:
-- `.cursorrules` — Main project rules
-- `.cursorrules.tests` — Testing-specific guidelines
-- `.cursorrules.api` — API and backend conventions
-- `.cursorrules.frontend` — Frontend and UI guidelines
+- `.cursorrules`. Main project rules
+- `.cursorrules.tests`. Testing-specific guidelines
+- `.cursorrules.api`. API and backend conventions
+- `.cursorrules.frontend`. Frontend and UI guidelines
 
 Reference these files in your main configuration:
 
@@ -184,7 +184,7 @@ extends:
   - ".cursorrules.api"
 ```
 
-## Testing Your Migrated Rules
+Testing Your Migrated Rules
 
 After converting your instructions, test the new rules by asking Cursor to generate code that should follow your guidelines. Verify that:
 
@@ -195,32 +195,32 @@ After converting your instructions, test the new rules by asking Cursor to gener
 
 If something does not work as expected, adjust the rules and test again. Cursor's rule system is more powerful than Copilot's but requires more precise formatting.
 
-## Common Conversion Mistakes to Avoid
+Common Conversion Mistakes to Avoid
 
 When migrating, watch for these common issues:
 
-**Problem:** Putting too much in a single rule.
+Problem: Putting too much in a single rule.
 
-**Solution:** Break complex guidelines into multiple smaller rules with clear descriptions.
+Solution: Break complex guidelines into multiple smaller rules with clear descriptions.
 
-**Problem:** Using Copilot-specific terminology.
+Problem: Using Copilot-specific terminology.
 
-**Solution:** Replace references to "Copilot" with generic AI assistant terms that work with any tool.
+Solution: Replace references to "Copilot" with generic AI assistant terms that work with any tool.
 
-**Problem:** Forgetting to escape special characters.
+Problem: Forgetting to escape special characters.
 
-**Solution:** In YAML, special characters like `:`, `{`, `}`, and `[` need proper escaping or quoting.
+Solution: In YAML, special characters like `:`, `{`, `}`, and `[` need proper escaping or quoting.
 
-## Advanced Cursor Rules Configuration
+Advanced Cursor Rules Configuration
 
 Once you understand basic migration patterns, you can use Cursor's more sophisticated capabilities.
 
-### Dynamic Rules Based on File Context
+Dynamic Rules Based on File Context
 
 Cursor supports rules that apply differently based on file type, directory, or project context.
 
 ```yaml
-# .cursorrules
+.cursorrules
 
 rules:
   - description: "General coding standards"
@@ -230,9 +230,9 @@ rules:
       - DRY (Don't Repeat Yourself)
       - Clear naming conventions
 
-# File type specific rules
+File type specific rules
 fileRules:
-  - pattern: "**/*.ts"
+  - pattern: "/*.ts"
     rules:
       - description: "TypeScript strict mode"
         rule: |
@@ -242,7 +242,7 @@ fileRules:
           - Use interfaces for object types, never implicit any
           - Use readonly where appropriate for immutability
 
-  - pattern: "**/*.test.ts"
+  - pattern: "/*.test.ts"
     rules:
       - description: "Test-specific conventions"
         rule: |
@@ -252,7 +252,7 @@ fileRules:
           - Mock external dependencies, never make real HTTP calls
           - Include both happy path and error case tests
 
-  - pattern: "src/api/**/*.ts"
+  - pattern: "src/api//*.ts"
     rules:
       - description: "API endpoint conventions"
         rule: |
@@ -263,7 +263,7 @@ fileRules:
           - Log all requests and errors
           - Handle errors gracefully with descriptive messages
 
-# Directory-specific architecture rules
+Directory-specific architecture rules
 directoryRules:
   - path: "src/components"
     rules:
@@ -290,11 +290,11 @@ directoryRules:
 
 This structure replaces Copilot's flat instructions with precise, contextual guidance that Cursor applies automatically.
 
-### Custom Rule Syntax and Inheritance
+Custom Rule Syntax and Inheritance
 
 For large projects or teams, inherit from base rules and extend them. Create a main `.cursorrules` file with company-wide standards, then create specialized `.cursorrules.react`, `.cursorrules.api`, etc. files that extend the base rules with domain-specific guidance.
 
-### Rule Enforcement with Examples
+Rule Enforcement with Examples
 
 Make rules more effective by including concrete examples Cursor can reference:
 
@@ -304,7 +304,7 @@ rules:
     rule: |
       Use async/await with try-catch for error handling.
 
-      **GOOD:**
+      GOOD:
       ```typescript
  async function fetchUser(id: string) {
  try {
@@ -318,7 +318,7 @@ rules:
  }
  ```
 
-      **BAD:**
+      BAD:
       ```typescript
  function fetchUser(id: string) {
  return fetch(`/api/users/${id}`)
@@ -337,7 +337,7 @@ rules:
       For complex state (> 3 variables): useReducer provides clarity
       For shared state across many components: Context API or state library
 
-      **GOOD (simple state):**
+      GOOD (simple state):
       ```typescript
  const UserForm = () => {
  const [name, setName] = useState('');
@@ -346,7 +346,7 @@ rules:
  };
  ```
 
-      **GOOD (complex state):**
+      GOOD (complex state):
       ```typescript
  type FormState = { name: string; email: string; phone: string; };
  type FormAction = { type: 'setName'; value: string } | { type: 'reset' };
@@ -362,7 +362,7 @@ rules:
  ```
 ```
 
-### Performance Optimization in Rules
+Performance Optimization in Rules
 
 For developers concerned about performance, include specific Cursor rule guidance:
 
@@ -392,33 +392,33 @@ rules:
       Bad: `import _ from 'lodash'`
 ```
 
-## Integrating Rules Across Your Team
+Integrating Rules Across Your Team
 
-When rolling out Cursor rules across a team, start with minimal rules focused on your most important conventions. Get team feedback after a week of use, then iterate based on what works in practice. Document the rationale for each rule—explain WHY each convention exists, not just WHAT. This helps developers understand and internalize the conventions.
+When rolling out Cursor rules across a team, start with minimal rules focused on your most important conventions. Get team feedback after a week of use, then iterate based on what works in practice. Document the rationale for each rule, explain WHY each convention exists, not just WHAT. This helps developers understand and internalize the conventions.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Copilot offer a free tier?**
+Does Copilot offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Copilot's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How to Migrate Cursor Rules File](/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
 - [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
@@ -426,5 +426,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [ChatGPT Custom GPT Not Following Instructions](/chatgpt-custom-gpt-not-following-instructions/)
 - [How to Create Custom Instructions for AI Coding Tools That E](/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

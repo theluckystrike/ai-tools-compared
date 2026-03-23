@@ -20,14 +20,14 @@ Configuring CursorRules effectively transforms Cursor from a generic code editor
 
 This guide covers the most effective strategies for configuring CursorRules specifically for Python FastAPI projects that use Pydantic for data modeling.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Advanced CursorRules Patterns for FastAPI](#advanced-cursorrules-patterns-for-fastapi)
 - [Comparison: CursorRules vs CLAUDE.md vs GitHub Copilot Settings](#comparison-cursorrules-vs-claudemd-vs-github-copilot-settings)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -37,13 +37,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand CursorRules Structure
+Step 1: Understand CursorRules Structure
 
 CursorRules files (`.cursorrules`) allow you to define project-specific instructions that Cursor uses when generating code, answering questions, and providing suggestions. For FastAPI projects, the configuration should reflect your stack, coding conventions, and architectural patterns.
 
 A `.cursorrules` file sits at your project root and applies to all files within that project. The file uses YAML format with clear sections for different aspects of your development workflow.
 
-### Step 2: Essential CursorRules Configuration
+Step 2: Essential CursorRules Configuration
 
 The foundation of an effective CursorRules setup for FastAPI projects includes several key components. First, specify your Python version and key dependencies. This helps Cursor understand which language features and standard library functions are available.
 
@@ -71,7 +71,7 @@ imports:
   relative_style: no_relative
 ```
 
-### Step 3: Pydantic Model Configuration
+Step 3: Pydantic Model Configuration
 
 Pydantic models are central to FastAPI development, handling request validation, response serialization, and type coercion. Your CursorRules should specify exactly how these models should be structured.
 
@@ -92,9 +92,9 @@ pydantic:
     exclude_none: true
 ```
 
-When Cursor generates new endpoints, this configuration ensures consistent Pydantic model patterns across your codebase. The `validate_assignment: true` setting ensures that Pydantic validates data when attributes are modified after initialization—an essential practice for data integrity.
+When Cursor generates new endpoints, this configuration ensures consistent Pydantic model patterns across your codebase. The `validate_assignment: true` setting ensures that Pydantic validates data when attributes are modified after initialization, an essential practice for data integrity.
 
-### Step 4: FastAPI Endpoint Conventions
+Step 4: FastAPI Endpoint Conventions
 
 Your CursorRules should encode your preferred endpoint patterns. Define how route handlers, dependencies, and error handling should be structured.
 
@@ -117,7 +117,7 @@ fastapi:
 
 This configuration tells Cursor to generate async endpoints by default and to include proper response models. The error handling section ensures consistent exception patterns throughout your application.
 
-### Step 5: Code Generation Patterns
+Step 5: Code Generation Patterns
 
 Specify the patterns Cursor should use when generating new code. For FastAPI projects, this includes route decorators, dependency injection, and database operations.
 
@@ -139,7 +139,7 @@ code_generation:
 
 The type hints requirement is particularly important. With proper type annotations, FastAPI can automatically generate OpenAPI documentation, and Pydantic can perform validation.
 
-### Step 6: Validation and Testing Guidelines
+Step 6: Validation and Testing Guidelines
 
 Configure how Cursor should approach validation logic and test generation. This ensures generated code includes proper validation and test coverage.
 
@@ -160,7 +160,7 @@ testing:
 
 The validator pattern ensures Cursor generates Pydantic field validators correctly, using the `@field_validator` decorator from Pydantic v2.
 
-### Step 7: Example: Complete CursorRules File
+Step 7: Example: Complete CursorRules File
 
 Here is a complete example demonstrating how these configurations work together:
 
@@ -202,15 +202,15 @@ code_generation:
 
 This configuration provides a solid foundation for FastAPI development with Pydantic. When you create a new endpoint or model, Cursor understands your conventions and generates code that matches your project's style.
 
-### Step 8: Step-by-Step Setup Workflow
+Step 8: Step-by-Step Setup Workflow
 
 Here is the sequence to follow when configuring CursorRules for a new or existing FastAPI project.
 
-**Step 1 — Create the file at the project root.** Run `touch .cursorrules` in your project root. This file must live at the top level, not inside `app/` or `src/`. Cursor reads it when you open the project folder.
+Step 1. Create the file at the project root. Run `touch .cursorrules` in your project root. This file must live at the top level, not inside `app/` or `src/`. Cursor reads it when you open the project folder.
 
-**Step 2 — Define your stack.** Fill in the `language`, `python_version`, and `dependencies` sections first. These form the basis for all code generation decisions Cursor makes. If you are using Pydantic v1, set `version: "1.x"` — mixing v1 and v2 syntax is a common source of generated code errors.
+Step 2. Define your stack. Fill in the `language`, `python_version`, and `dependencies` sections first. These form the basis for all code generation decisions Cursor makes. If you are using Pydantic v1, set `version: "1.x"`. mixing v1 and v2 syntax is a common source of generated code errors.
 
-**Step 3 — Add your project architecture.** Describe your folder structure so Cursor places generated files in the right locations. A typical FastAPI project structure entry looks like this:
+Step 3. Add your project architecture. Describe your folder structure so Cursor places generated files in the right locations. A typical FastAPI project structure entry looks like this:
 
 ```yaml
 project_structure:
@@ -228,7 +228,7 @@ project_structure:
     - integration/
 ```
 
-**Step 4 — Set your code style rules.** Specify line length, docstring format, and type annotation requirements. These prevent Cursor from generating code that fails your linter:
+Step 4. Set your code style rules. Specify line length, docstring format, and type annotation requirements. These prevent Cursor from generating code that fails your linter:
 
 ```yaml
 style:
@@ -238,13 +238,13 @@ style:
   string_quotes: double
 ```
 
-**Step 5 — Commit the file to version control.** Your `.cursorrules` file should be committed to git so the entire team benefits from the same configuration. Add a comment at the top explaining the file's purpose for developers who haven't used Cursor before.
+Step 5. Commit the file to version control. Your `.cursorrules` file should be committed to git so the entire team benefits from the same configuration. Add a comment at the top explaining the file's purpose for developers who haven't used Cursor before.
 
-**Step 6 — Verify with a test generation.** Open a router file and ask Cursor to generate a new CRUD endpoint. Review the output against your conventions. If it diverges, refine the relevant section of `.cursorrules` and regenerate. Iteration is normal — two or three rounds usually produces a configuration that generates idiomatic code reliably.
+Step 6. Verify with a test generation. Open a router file and ask Cursor to generate a new CRUD endpoint. Review the output against your conventions. If it diverges, refine the relevant section of `.cursorrules` and regenerate. Iteration is normal. two or three rounds usually produces a configuration that generates idiomatic code reliably.
 
-## Advanced CursorRules Patterns for FastAPI
+Advanced CursorRules Patterns for FastAPI
 
-### Encoding Your Authentication Pattern
+Encoding Your Authentication Pattern
 
 If your project uses a specific authentication strategy, encode it so Cursor generates correct dependency injection:
 
@@ -259,7 +259,7 @@ auth:
 
 With this section, when you ask Cursor to add authentication to an endpoint, it generates the correct `Depends(get_current_user)` import and parameter rather than inventing its own auth pattern.
 
-### Background Task Configuration
+Background Task Configuration
 
 For projects that use Celery or FastAPI background tasks heavily:
 
@@ -274,7 +274,7 @@ background_tasks:
     backoff: exponential
 ```
 
-### Response Model Inheritance Patterns
+Response Model Inheritance Patterns
 
 When your project uses a base response schema with a consistent envelope format, tell Cursor about it:
 
@@ -287,7 +287,7 @@ response_patterns:
 
 Cursor then wraps generated response schemas in the correct base class without being asked.
 
-## Comparison: CursorRules vs CLAUDE.md vs GitHub Copilot Settings
+Comparison: CursorRules vs CLAUDE.md vs GitHub Copilot Settings
 
 | Feature | CursorRules | CLAUDE.md | Copilot editorconfig |
 |---|---|---|---|
@@ -301,7 +301,7 @@ Cursor then wraps generated response schemas in the correct base class without b
 
 If your team uses multiple AI tools, maintaining parallel configuration files is worthwhile. The conventions you define in `.cursorrules` should mirror what you document in `CLAUDE.md` so both tools generate consistent code regardless of which developer uses which tool.
 
-### Step 9: Project-Specific Customization
+Step 9: Project-Specific Customization
 
 Beyond the basics, customize your CursorRules for your specific project architecture. If your project uses a particular folder structure or follows specific patterns, encode those in the configuration.
 
@@ -332,39 +332,39 @@ architecture:
 
 These project-specific settings help Cursor generate code that fits your architectural decisions rather than generic patterns.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Q: Does `.cursorrules` work the same way in all versions of Cursor?**
+Q: Does `.cursorrules` work the same way in all versions of Cursor?
 A: The core YAML format is consistent, but specific keys may behave differently across Cursor versions. Check the Cursor changelog when updating to see if any CursorRules syntax changed. Keeping `.cursorrules` in version control means you can diff changes when upgrading.
 
-**Q: Can I have different CursorRules for different parts of a monorepo?**
+Q: Can I have different CursorRules for different parts of a monorepo?
 A: Cursor reads the `.cursorrules` file from the project root you open. For a monorepo with multiple services, open each service subdirectory as a separate Cursor workspace with its own `.cursorrules` file tailored to that service's stack.
 
-**Q: How does CursorRules interact with my `pyproject.toml` or `setup.cfg`?**
+Q: How does CursorRules interact with my `pyproject.toml` or `setup.cfg`?
 A: Cursor reads `pyproject.toml` independently for tool configuration (Black, mypy, ruff). CursorRules supplements this by providing architectural and behavioral guidance that tool config files cannot express. The two files are complementary, not redundant.
 
-**Q: Should I put secrets or environment variable names in CursorRules?**
+Q: Should I put secrets or environment variable names in CursorRules?
 A: No. CursorRules is committed to version control and should contain no secrets. Reference environment variable names (like `DATABASE_URL`) as strings if you want Cursor to generate correct `pydantic-settings` field names, but never include actual values.
 
-**Q: How often should I update CursorRules?**
+Q: How often should I update CursorRules?
 A: Review it when you add a major dependency, change your authentication strategy, restructure your folder layout, or onboard new team members. A quarterly review is a good default for active projects. Outdated CursorRules generates code that diverges from your actual codebase, which is worse than no configuration at all.
 
-### Step 10: Perform Maintenance and Updates
+Step 10: Perform Maintenance and Updates
 
 Review and update your CursorRules periodically as your project evolves. When you add new dependencies or change architectural patterns, reflect those changes in the configuration file.
 
@@ -372,7 +372,7 @@ A well-maintained CursorRules file reduces friction in daily development. New te
 
 The time invested in configuring CursorRules properly pays dividends through improved code quality, faster development cycles, and reduced cognitive load when working with complex FastAPI and Pydantic patterns.
 
-## Related Articles
+Related Articles
 
 - [Best Way to Structure CursorRules for Microservices Project](/best-way-to-structure-cursorrules-for-microservices-project-/)
 - [Best Way to Configure AI Coding Tools to Follow Your Databas](/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
@@ -380,5 +380,5 @@ The time invested in configuring CursorRules properly pays dividends through imp
 - [AI Code Generation for Python FastAPI Endpoints](/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 - [Best Way to Structure Claude MD File for Python Django Proje](/best-way-to-structure-claude-md-file-for-python-django-proje/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

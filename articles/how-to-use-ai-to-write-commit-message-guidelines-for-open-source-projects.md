@@ -18,13 +18,13 @@ voice-checked: true
 
 AI can help you create commit message guidelines for your open source project that ensure consistency, improve code review efficiency, and make your project's history more meaningful. By using AI tools, you can develop detailed conventions tailored to your project's specific needs without spending hours researching best practices.
 
-## Why Commit Message Guidelines Matter
+Why Commit Message Guidelines Matter
 
 Well-crafted commit message guidelines serve multiple critical purposes for open source projects. They create a consistent history that makes it easy to understand when and why changes were made, which is invaluable for debugging, code reviews, and onboarding new contributors.
 
 When your project has clear commit message conventions, contributors know exactly what's expected of them. This reduces the back-and-forth during pull requests and helps maintainers quickly assess whether changes align with project standards. Additionally, tools like `git log`, `git blame`, and automated changelog generators work much better when commits follow consistent formatting.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -34,11 +34,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Analyzing Your Project's Needs
+Step 1: Analyzing Your Project's Needs
 
 Before creating commit message guidelines, understand your project's specific requirements. AI can help you analyze your project type and determine what conventions will be most valuable.
 
-### Project Type Considerations
+Project Type Considerations
 
 Different types of projects benefit from different commit message approaches:
 
@@ -50,7 +50,7 @@ Different types of projects benefit from different commit message approaches:
 
 - Documentation projects: Highlight which files or sections changed and why
 
-### Team Size and Contributor Profile
+Team Size and Contributor Profile
 
 Consider your project's contributor ecosystem when designing guidelines:
 
@@ -60,11 +60,11 @@ Consider your project's contributor ecosystem when designing guidelines:
 
 - Projects with diverse contributors: Need explicit examples and clear explanations of each convention
 
-### Step 2: Create Your Commit Message Framework
+Step 2: Create Your Commit Message Framework
 
 AI can help you design a commit message structure that balances comprehensiveness with ease of use. Here's a proven framework that works well for most open source projects:
 
-### The Conventional Commits Format
+The Conventional Commits Format
 
 The Conventional Commits specification provides an excellent foundation:
 
@@ -96,7 +96,7 @@ Common commit types include:
 
 - ci: CI/CD configuration changes
 
-### Example Prompt for AI
+Example Prompt for AI
 
 Use this prompt to generate tailored commit message guidelines:
 
@@ -118,11 +118,11 @@ Include:
 7. Examples of good vs bad commit messages
 ```
 
-### Step 3: Developing Detailed Conventions
+Step 3: Developing Detailed Conventions
 
 Once you have a basic framework, use AI to elaborate on specific aspects of your conventions.
 
-### Writing Effective Subject Lines
+Writing Effective Subject Lines
 
 The subject line is the most important part of a commit message. It should be:
 
@@ -135,20 +135,20 @@ The subject line is the most important part of a commit message. It should be:
 AI can help you generate examples that demonstrate these principles:
 
 ```
-# Good examples
+Good examples
 feat(auth): add OAuth2 support for GitHub login
 fix(api): resolve null pointer in user endpoint
 docs(readme): update installation instructions
 refactor(db): simplify connection pooling logic
 
-# Bad examples
+Bad examples
 fixed stuff
 update
 WIP
 asdfgh
 ```
 
-### Handling Breaking Changes
+Handling Breaking Changes
 
 Clearly communicating breaking changes is crucial for library maintainers. Your guidelines should specify how to denote and document them:
 
@@ -165,33 +165,33 @@ an object with a 'data' key. Users must update their code:
 [{ "id": 1, "name": "John" }]
 ```
 
-### Issue and Pull Request References
+Issue and Pull Request References
 
 Your guidelines should specify how to reference issues and PRs:
 
 ```
-# Reference an issue being fixed
+Reference an issue being fixed
 fix: resolve memory leak in cache (#123)
 
-# Reference multiple issues
+Reference multiple issues
 feat(ui): add dark mode toggle (#45, #67)
 
-# Close an issue via commit
+Close an issue via commit
 fix: update dependencies (#100)
 
 Closes #100
 ```
 
-### Step 4: Create Documentation
+Step 4: Create Documentation
 
 Once you've developed your commit message conventions, use AI to create documentation.
 
-### Including Examples
+Including Examples
 
 Provide multiple examples for each commit type to make the guidelines accessible:
 
 ```
-### Step 5: Fix Commits
+Step 5: Fix Commits
 
 fix: resolve null pointer in user authentication
 
@@ -207,7 +207,7 @@ Fix commits should include:
 - If applicable, what testing was done
 ```
 
-### Adding Quick Reference Cards
+Adding Quick Reference Cards
 
 Create a concise reference that contributors can keep handy:
 
@@ -229,22 +229,22 @@ Rules:
 - No period at end
 ```
 
-### Step 6: Enforcing Conventions
+Step 6: Enforcing Conventions
 
 Document how your project enforces commit message standards.
 
-### Pre-commit Hooks
+Pre-commit Hooks
 
 Set up automated validation:
 
 ```bash
 #!/bin/bash
-# .husky/commit-msg
+.husky/commit-msg
 
 commit_msg_file=$1
 commit_msg=$(cat $commit_msg_file)
 
-# CheckConventionalCommits format
+CheckConventionalCommits format
 if ! echo "$commit_msg" | grep -qE '^(feat|fix|docs|style|refactor|test|chore|perf|ci)(\(.+\))?: .+'; then
     echo "Invalid commit message format."
     echo "Expected: <type>(<scope>): <description>"
@@ -253,7 +253,7 @@ if ! echo "$commit_msg" | grep -qE '^(feat|fix|docs|style|refactor|test|chore|pe
 fi
 ```
 
-### CI/CD Validation
+CI/CD Validation
 
 Add GitHub Actions to validate commits in pull requests:
 
@@ -285,11 +285,11 @@ jobs:
           done
 ```
 
-### Step 7: Adapting Conventions Over Time
+Step 7: Adapting Conventions Over Time
 
 Your commit message guidelines should evolve with your project.
 
-### Reviewing Effectiveness
+Reviewing Effectiveness
 
 Periodically evaluate whether your conventions are working:
 
@@ -299,7 +299,7 @@ Periodically evaluate whether your conventions are working:
 
 - Do the conventions catch the types of changes that matter most?
 
-### Updating Guidelines
+Updating Guidelines
 
 When you need to update conventions:
 
@@ -311,44 +311,44 @@ When you need to update conventions:
 
 4. Announce changes in your project's communication channels
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use ai to write commit message guidelines?**
+How long does it take to use ai to write commit message guidelines?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [AI Git Commit Message Generators Compared 2026](/ai-git-commit-message-generators-compared/)
 - [How to Write Git Commit Messages Using AI](/how-to-write--git-commit-messages-using-ai-from-diffs/)
@@ -356,5 +356,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best AI Assistant for Creating Open Source Project Branding](/best-ai-assistant-for-creating-open-source-project-branding-/)
 - [Best AI Assistant for Drafting Open Source Partnership and](/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

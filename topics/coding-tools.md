@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Tools — Assistants, Autocomplete, and Code Generation"
+title: "AI Coding Tools. Assistants, Autocomplete, and Code Generation"
 description: "Comparisons and guides for AI coding tools: Copilot, Cursor, Claude Code, Codeium, Tabnine, and more."
 permalink: /topics/coding-tools/
 ---

@@ -17,7 +17,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Database schema diffing is more than `ALTER TABLE` generation. A good schema diff tool identifies breaking changes, flags unsafe migrations (locking issues, large table rewrites), and generates rollback scripts. AI adds a layer on top: natural language explanation of what changed and why it might be dangerous. This guide covers Atlas, pgcmp, and building a Claude-powered schema diff pipeline.
 
-## What AI Adds to Schema Diffing
+What AI Adds to Schema Diffing
 
 Traditional schema diff tools tell you *what* changed. AI tells you:
 
@@ -27,24 +27,24 @@ Traditional schema diff tools tell you *what* changed. AI tells you:
 - What the rollback strategy should be
 - Lock acquisition estimates for large table operations
 
-## Atlas (ariga.io)
+Atlas (ariga.io)
 
 Atlas is an open-source schema management tool with a built-in diff engine and an AI explanation layer (Atlas Cloud).
 
-**Basic schema diff:**
+Basic schema diff:
 
 ```bash
-# Compare current DB schema to desired state
+Compare current DB schema to desired state
 atlas schema diff \
   --from "postgres://user:pass@localhost/prod_db" \
   --to "file://schema.hcl" \
   --dev-url "docker://postgres/15/dev"
 ```
 
-**Atlas HCL schema definition:**
+Atlas HCL schema definition:
 
 ```hcl
-# schema.hcl
+schema.hcl
 table "users" {
   schema = schema.public
   column "id" {
@@ -68,7 +68,7 @@ table "users" {
 }
 ```
 
-**Atlas diff output:**
+Atlas diff output:
 
 ```sql
 -- Planned Changes:
@@ -76,13 +76,13 @@ table "users" {
 ALTER TABLE "users" ADD COLUMN "email_verified_at" timestamptz NULL;
 ```
 
-Atlas marks this as safe — adding a nullable column is a non-blocking operation. It flags unsafe operations like adding a NOT NULL column without a default on a large table.
+Atlas marks this as safe. adding a nullable column is a non-blocking operation. It flags unsafe operations like adding a NOT NULL column without a default on a large table.
 
-**Atlas Cloud AI explanation** (for paid tier):
+Atlas Cloud AI explanation (for paid tier):
 
 ```
 This migration adds an email_verified_at column to the users table.
-Risk: LOW — Adding a nullable column in PostgreSQL takes an exclusive lock
+Risk: LOW. Adding a nullable column in PostgreSQL takes an exclusive lock
 briefly but does not rewrite the table. Safe for online deployment.
 
 If your users table has > 10M rows, consider monitoring lock wait time.
@@ -90,12 +90,12 @@ No application queries will break unless you add NOT NULL to this column
 in a future migration without a default value.
 ```
 
-## pgcmp
+pgcmp
 
 pgcmp is a PostgreSQL-specific schema comparison tool that produces detailed diff reports. It compares two database schemas and outputs differences in tables, columns, indexes, constraints, and functions.
 
 ```bash
-# Install and compare two Postgres schemas
+Install and compare two Postgres schemas
 npm install -g pgcmp
 
 pgcmp \
@@ -139,12 +139,12 @@ pgcmp output (JSON excerpt):
 
 pgcmp correctly flags `varchar(20) → varchar(50)` as non-breaking (increasing varchar length is safe in Postgres). It flags `varchar(50) → varchar(20)` as breaking.
 
-## Building a Claude-Powered Schema Diff Analyzer
+Building a Claude-Powered Schema Diff Analyzer
 
 For teams without dedicated schema tooling, use Claude to analyze schema diffs and provide migration safety assessments:
 
 ```python
-# schema_diff_analyzer.py
+schema_diff_analyzer.py
 import anthropic
 import subprocess
 import json
@@ -303,7 +303,7 @@ def get_table_row_counts(db_url: str, tables: list[str]) -> dict[str, int]:
     return counts
 ```
 
-## Claude Analysis Example
+Claude Analysis Example
 
 Input migration:
 
@@ -318,7 +318,7 @@ ALTER TABLE products ALTER COLUMN price TYPE numeric(12,4);
 CREATE INDEX CONCURRENTLY idx_orders_priority ON orders(priority_level);
 ```
 
-**Claude's safety assessment:**
+Claude's safety assessment:
 
 ```json
 {
@@ -345,7 +345,7 @@ CREATE INDEX CONCURRENTLY idx_orders_priority ON orders(priority_level);
 }
 ```
 
-## Tool Comparison
+Tool Comparison
 
 | Feature | Atlas | pgcmp | Claude DIY |
 |---|---|---|---|
@@ -357,7 +357,7 @@ CREATE INDEX CONCURRENTLY idx_orders_priority ON orders(priority_level);
 | Custom rules | Via providers | No | Via prompt |
 | Cost | Open source + paid Cloud | Free | API costs |
 
-## Related Reading
+Related Reading
 
 - [AI Tools for Database Schema Migration Review 2026](/ai-tools-for-database-schema-migration-review-2026/)
 - [How to Use AI for PostgreSQL Query Optimization](/ai-for-postgresql-query-optimization/)
@@ -366,6 +366,6 @@ CREATE INDEX CONCURRENTLY idx_orders_priority ON orders(priority_level);
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -15,19 +15,19 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-Traditional formatters like Prettier and Black apply fixed rules. AI-powered formatters can understand context — they can normalize idioms, apply team-specific style preferences, rename variables for clarity, and transform legacy patterns. This guide shows how to build one using Claude or GPT-4 as the formatting engine.
+Traditional formatters like Prettier and Black apply fixed rules. AI-powered formatters can understand context. they can normalize idioms, apply team-specific style preferences, rename variables for clarity, and transform legacy patterns. This guide shows how to build one using Claude or GPT-4 as the formatting engine.
 
-## Architecture Overview
+Architecture Overview
 
 An AI-powered formatter has three components:
 
-1. **Parser** — convert source to AST or extract code blocks for context
-2. **AI engine** — Claude or GPT-4 with a formatting-focused system prompt
-3. **Output reconciler** — merge formatted output back, handle diff-only mode
+1. Parser. convert source to AST or extract code blocks for context
+2. AI engine. Claude or GPT-4 with a formatting-focused system prompt
+3. Output reconciler. merge formatted output back, handle diff-only mode
 
 The key design decision: operate on raw text vs. AST. AST-based formatters are more precise but complex. Text-based formatters are simpler and work for most cases.
 
-## Building a Basic TypeScript Formatter
+Building a Basic TypeScript Formatter
 
 Start with a TypeScript formatter that enforces team conventions beyond what Prettier handles:
 
@@ -97,7 +97,7 @@ for (const file of files) {
 }
 ```
 
-## Adding Diff Mode and Batch Processing
+Adding Diff Mode and Batch Processing
 
 For CI integration, you need diff output instead of in-place rewrites:
 
@@ -164,12 +164,12 @@ async function formatDirectory(
 }
 ```
 
-## Building a Python Idiom Formatter
+Building a Python Idiom Formatter
 
 For Python, focus on idiomatic rewrites:
 
 ```python
-# python_formatter.py
+python_formatter.py
 import anthropic
 import sys
 from pathlib import Path
@@ -229,7 +229,7 @@ if __name__ == "__main__":
     sys.exit(0 if changed == 0 or fix_mode else 1)
 ```
 
-## Caching and Cost Control
+Caching and Cost Control
 
 AI formatting is expensive at scale. Add a content hash cache:
 
@@ -268,7 +268,7 @@ async function formatWithCache(source: string): Promise<string> {
 
 Add `.formatter-cache.json` to `.gitignore`. This reduces API calls by 80-90% on repeated runs.
 
-## Handling Large Files: Chunking Strategy
+Handling Large Files: Chunking Strategy
 
 Files over 4,000 lines can exceed model context limits. The right approach is function-level chunking, not line-based splitting, because splitting mid-function produces broken output:
 
@@ -329,11 +329,11 @@ async function formatLargeFile(filePath: string): Promise<string> {
 
 This preserves import context at the top of the file and avoids truncating functions mid-body.
 
-## Prompt Engineering for Consistent Output
+Prompt Engineering for Consistent Output
 
 The biggest source of non-determinism in AI formatters is prompt quality. Two techniques that improve consistency:
 
-**Anchor with examples:** Instead of describing rules abstractly, include a before/after example pair in the system prompt. Claude is significantly more consistent when it can pattern-match against a concrete example.
+Anchor with examples: Instead of describing rules abstractly, include a before/after example pair in the system prompt. Claude is significantly more consistent when it can pattern-match against a concrete example.
 
 ```typescript
 const SYSTEM_WITH_EXAMPLES = `You are a TypeScript formatter. Apply these rules:
@@ -351,12 +351,12 @@ function greet(name: string): string {
 Apply the same transformations (type hints, template literals) to all functions.`;
 ```
 
-**Constrain scope explicitly:** Adding "Do not rename variables. Do not change logic. Do not add or remove imports." prevents the model from making unsolicited improvements. AI tools tend toward overcorrection when not explicitly bounded.
+Constrain scope explicitly: Adding "Do not rename variables. Do not change logic. Do not add or remove imports." prevents the model from making unsolicited improvements. AI tools tend toward overcorrection when not explicitly bounded.
 
-## CI/CD Integration
+CI/CD Integration
 
 ```yaml
-# .github/workflows/format-check.yml
+.github/workflows/format-check.yml
 name: AI Format Check
 on: [pull_request]
 
@@ -373,25 +373,25 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          npx ts-node formatter.ts --dry-run src/**/*.ts
+          npx ts-node formatter.ts --dry-run src//*.ts
           # Exit 1 if any changes detected
 ```
 
 One practical limitation: AI formatters are slower than Prettier (seconds vs. milliseconds per file). For large codebases, run the AI formatter only on changed files in PRs, not on the entire tree. Use `git diff --name-only HEAD~1` to get the changed file list and pass it to the formatter.
 
-## Claude vs GPT-4 as the Formatting Engine
+Claude vs GPT-4 as the Formatting Engine
 
 Both models work, but they differ in output reliability:
 
-**Instruction adherence:** Claude is more consistent about returning only the formatted code without commentary. GPT-4 sometimes adds preamble like "Here is the formatted code:" before the actual output, which breaks the formatter pipeline unless you strip it. Adding "Return ONLY the code. No explanations." to the system prompt fixes this for GPT-4.
+Instruction adherence: Claude is more consistent about returning only the formatted code without commentary. GPT-4 sometimes adds preamble like "Here is the formatted code:" before the actual output, which breaks the formatter pipeline unless you strip it. Adding "Return ONLY the code. No explanations." to the system prompt fixes this for GPT-4.
 
-**Determinism:** Neither model is fully deterministic, but Claude with temperature=0 produces more consistent output across runs on the same input. GPT-4 at temperature=0 still occasionally produces different orderings for import sort operations.
+Determinism: Neither model is fully deterministic, but Claude with temperature=0 produces more consistent output across runs on the same input. GPT-4 at temperature=0 still occasionally produces different orderings for import sort operations.
 
-**Code preservation:** Claude is more conservative about preserving comments and unused variables when instructed to "preserve all comments." GPT-4 occasionally drops inline comments that appear on the same line as code it restructures.
+Code preservation: Claude is more conservative about preserving comments and unused variables when instructed to "preserve all comments." GPT-4 occasionally drops inline comments that appear on the same line as code it restructures.
 
 For a production formatter, test both models against your codebase's actual code samples before committing to one. A formatter that occasionally corrupts comments is worse than no formatter at all.
 
-## Related Reading
+Related Reading
 
 - [How to Build AI-Powered Linting Rules](/build-ai-powered-linting-rules/)
 - [Claude vs GPT-4 for Writing Unit Test Mocks](/claude-vs-gpt4-for-unit-test-mocks/)
@@ -400,6 +400,6 @@ For a production formatter, test both models against your codebase's actual code
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -33,29 +33,29 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Developers who have invested time building custom snippets and templates in Cursor AI often face a challenge when trying to move to WindSurf. While both editors share roots in Visual Studio Code, their approaches to custom AI-assisted content differ in ways that affect how you transfer your workflows. This guide walks through the practical steps of migrating your Cursor snippets and templates to WindSurf, with working code examples you can apply immediately.
 
-## Key Takeaways
+Key Takeaways
 
-- **On Windows**: check `%APPDATA%\Cursor\User\snippets\`.
-- **On macOS**: they're typically stored in `~/Library/Application Support/Cursor/User/snippets/` or `~/.cursor/extensions/`.
-- **On macOS**: this is `~/Library/Application Support/WindSurf/User/snippets/`.
-- **WindSurf, developed by Codeium, takes a different approach**: it uses a combination of VS Code's native snippet system and its own AI context files.
-- **WindSurf uses the `scope`**: field to define where the snippet applies, and the JSON format requires careful attention to commas between properties.
-- **WindSurf uses a different**: mechanism called `windrules` for project-specific AI behavior.
+- On Windows: check `%APPDATA%\Cursor\User\snippets\`.
+- On macOS: they're typically stored in `~/Library/Application Support/Cursor/User/snippets/` or `~/.cursor/extensions/`.
+- On macOS: this is `~/Library/Application Support/WindSurf/User/snippets/`.
+- WindSurf, developed by Codeium, takes a different approach: it uses a combination of VS Code's native snippet system and its own AI context files.
+- WindSurf uses the `scope`: field to define where the snippet applies, and the JSON format requires careful attention to commas between properties.
+- WindSurf uses a different: mechanism called `windrules` for project-specific AI behavior.
 
-## Understanding the Difference Between Cursor and WindSurf
+Understanding the Difference Between Cursor and WindSurf
 
-Cursor stores user snippets in a JSON format within its configuration directory. These snippets appear as AI-completable options when you type trigger words or invoke the AI completion feature. WindSurf, developed by Codeium, takes a different approach—it uses a combination of VS Code's native snippet system and its own AI context files.
+Cursor stores user snippets in a JSON format within its configuration directory. These snippets appear as AI-completable options when you type trigger words or invoke the AI completion feature. WindSurf, developed by Codeium, takes a different approach, it uses a combination of VS Code's native snippet system and its own AI context files.
 
 Before migrating, locate your Cursor snippet files. On macOS, they're typically stored in `~/Library/Application Support/Cursor/User/snippets/` or `~/.cursor/extensions/`. On Windows, check `%APPDATA%\Cursor\User\snippets\`. You'll find JSON files containing your custom snippets and template definitions.
 
-## Exporting Your Cursor Snippets
+Exporting Your Cursor Snippets
 
 Start by gathering all your Cursor snippets. Create a backup directory and copy the relevant files:
 
 ```bash
 mkdir ~/cursor-migration-backup
 cp -r ~/.cursor/User/snippets/* ~/cursor-migration-backup/ 2>/dev/null
-# Also check for template files
+Also check for template files
 find ~/.cursor -name "*.cursortemplate" -o -name "*template*.json" 2>/dev/null | xargs -I {} cp {} ~/cursor-migration-backup/
 ```
 
@@ -83,7 +83,7 @@ Open each JSON file and examine its structure. Cursor snippets typically follow 
 
 Note the use of tabstops ( `$1`, `$2` ) for cursor positioning after expansion.
 
-## Converting to WindSurf Format
+Converting to WindSurf Format
 
 WindSurf supports VS Code-compatible snippets directly. The primary conversion involves transforming your Cursor JSON snippets into VS Code's snippet format, which WindSurf recognizes automatically.
 
@@ -118,25 +118,25 @@ Now create your snippet file with the `.code-snippets` extension:
 
 The structure closely mirrors Cursor's format, with a few key differences. WindSurf uses the `scope` field to define where the snippet applies, and the JSON format requires careful attention to commas between properties.
 
-## Migrating AI Prompt Templates
+Migrating AI Prompt Templates
 
 If you've created custom AI prompt templates in Cursor, these require more attention. Cursor stores prompt templates in a separate configuration file, typically named `cursorrules` or stored in the `.cursorrules` file at your project root. WindSurf uses a different mechanism called `windrules` for project-specific AI behavior.
 
 Extract your Cursor rules:
 
 ```bash
-# Find and copy your cursorrules files
+Find and copy your cursorrules files
 find ~ -name ".cursorrules" -o -name "cursorrules.json" 2>/dev/null
 ```
 
-Create a corresponding `windrules` file in your project root. The format differs significantly—Cursor uses a more verbose JSON structure while Windurf prefers a simpler YAML-like format:
+Create a corresponding `windrules` file in your project root. The format differs significantly, Cursor uses a more verbose JSON structure while Windurf prefers a simpler YAML-like format:
 
 ```yaml
-# windrules
+windrules
 version: "1.0"
 context:
   - type: "file"
-    pattern: "**/*.{ts,tsx}"
+    pattern: "/*.{ts,tsx}"
   - type: "directory"
     path: "./src"
 
@@ -161,9 +161,9 @@ custom_prompts:
     {{code}}
 ```
 
-## Handling Tab Completion Differences
+Handling Tab Completion Differences
 
-Cursor's Tab completion behaves slightly differently from WindSurf's. In Cursor, pressing Tab accepts the entire suggestion instantly. WindSurf uses a two-step process—you preview the suggestion, then press Tab to accept. Adjust your snippet trigger prefixes to account for this:
+Cursor's Tab completion behaves slightly differently from WindSurf's. In Cursor, pressing Tab accepts the entire suggestion instantly. WindSurf uses a two-step process, you preview the suggestion, then press Tab to accept. Adjust your snippet trigger prefixes to account for this:
 
 ```json
 {
@@ -178,7 +178,7 @@ Cursor's Tab completion behaves slightly differently from WindSurf's. In Cursor,
 }
 ```
 
-## Batch Migration Script
+Batch Migration Script
 
 For developers with extensive snippet collections, create a migration script:
 
@@ -218,23 +218,23 @@ if __name__ == "__main__":
 
 Run this script after installing WindSurf to batch-convert your snippet collection.
 
-## Feature Comparison: Cursor vs WindSurf Snippets
+Feature Comparison: Cursor vs WindSurf Snippets
 
 Understanding which features translate directly and which require manual adjustment helps you prioritize migration effort:
 
 | Feature | Cursor | WindSurf | Migration Effort |
 |---|---|---|---|
-| Basic snippet JSON format | `.json` in User/snippets | `.code-snippets` in User/snippets | Low — rename extension |
+| Basic snippet JSON format | `.json` in User/snippets | `.code-snippets` in User/snippets | Low. rename extension |
 | Tabstops (`$1`, `$2`) | Supported | Supported | None |
 | Placeholder labels (`${1:name}`) | Supported | Supported | None |
-| `scope` field for file types | Not required | Required for scoping | Low — add field |
-| AI rules file | `.cursorrules` | `.windrules` | Medium — reformat |
+| `scope` field for file types | Not required | Required for scoping | Low. add field |
+| AI rules file | `.cursorrules` | `.windrules` | Medium. reformat |
 | AI context injection | Via rules file | Via rules file + Cascade | Medium |
 | Editor-wide AI shortcuts | Cmd+K / Cmd+L | Cmd+I (Cascade) | Manual remapping |
 
 Items marked Low can be handled by the batch migration script above. Items marked Medium require manual review of your `.cursorrules` content and rewriting in WindSurf's preferred YAML structure.
 
-## Migrating Workspace-Level Snippets
+Migrating Workspace-Level Snippets
 
 Beyond user-level snippets, Cursor supports workspace-specific snippets stored inside your project's `.vscode/` directory. WindSurf reads the same directory, so these snippets often migrate without any changes. Verify by opening WindSurf in your project root and triggering the snippet prefix in a relevant file.
 
@@ -242,17 +242,17 @@ If workspace snippets fail to appear, check that the `.code-snippets` file is pr
 
 For teams sharing snippets across multiple developers via version control, move your workspace snippets into `.vscode/` and commit them to the repository. Both editors will pick them up automatically, making the transition gradual rather than a hard cutover.
 
-## Translating Cursor Composer Prompts to WindSurf Cascade
+Translating Cursor Composer Prompts to WindSurf Cascade
 
-Cursor's Composer is a multi-file AI editing interface. Developers who use Composer heavily often have refined prompt patterns saved in notes or documentation—these need to be adapted for WindSurf's Cascade interface, which operates similarly but with different context controls.
+Cursor's Composer is a multi-file AI editing interface. Developers who use Composer heavily often have refined prompt patterns saved in notes or documentation, these need to be adapted for WindSurf's Cascade interface, which operates similarly but with different context controls.
 
 Key differences to account for when translating prompts:
 
-**Context scope.** In Cursor Composer, you use `@file` and `@folder` mentions to add context. In WindSurf Cascade, context is controlled through the windrules file or by highlighting code before opening Cascade. Explicitly referencing file paths in your prompt text still works in both tools.
+Context scope. In Cursor Composer, you use `@file` and `@folder` mentions to add context. In WindSurf Cascade, context is controlled through the windrules file or by highlighting code before opening Cascade. Explicitly referencing file paths in your prompt text still works in both tools.
 
-**Multi-step instructions.** Cascade handles sequential instructions well when you number them clearly. If your Cursor Composer prompts use implicit ordering ("first do X, then Y"), make the order explicit in WindSurf to avoid step-skipping.
+Multi-step instructions. Cascade handles sequential instructions well when you number them clearly. If your Cursor Composer prompts use implicit ordering ("first do X, then Y"), make the order explicit in WindSurf to avoid step-skipping.
 
-**Refactoring prompts.** Cursor Composer allows you to apply changes across multiple files in a single session. WindSurf Cascade supports the same capability—open the relevant files in tabs before starting a Cascade session, and they become available in context automatically.
+Refactoring prompts. Cursor Composer allows you to apply changes across multiple files in a single session. WindSurf Cascade supports the same capability, open the relevant files in tabs before starting a Cascade session, and they become available in context automatically.
 
 A Cursor Composer prompt like:
 
@@ -271,13 +271,13 @@ in both files and any imports that reference the old type.
 
 The @ syntax is optional in Cascade if the files are already open in your editor workspace. The explicit file path reference serves the same purpose.
 
-## Verifying Your Migration
+Verifying Your Migration
 
 After migration, restart WindSurf and test each snippet by typing its prefix. Check that tabstops work correctly and that the `scope` settings apply to the right file types. Open the Command Palette (Cmd+Shift+P) and search for "Snippets" to see all loaded user snippets.
 
-Compare the output with your original Cursor setup. If certain snippets don't appear, check that the JSON syntax is valid—missing commas or malformed structures cause silent failures.
+Compare the output with your original Cursor setup. If certain snippets don't appear, check that the JSON syntax is valid, missing commas or malformed structures cause silent failures.
 
-## Maintaining Both Editors
+Maintaining Both Editors
 
 Many developers use both Cursor and WindSurf during transition periods. Create a sync script that copies your snippets to both editors:
 
@@ -286,10 +286,10 @@ Many developers use both Cursor and WindSurf during transition periods. Create a
 SNIPPETS_DIR="$HOME/Library/Application Support/WindSurf/User/snippets"
 CURSOR_SNIPPETS="$HOME/.cursor/User/snippets"
 
-# Sync from Cursor to WindSurf
+Sync from Cursor to WindSurf
 rsync -av --include='*/' --include='*.json' --exclude='*' "$CURSOR_SNIPPETS/" "$SNIPPETS_DIR/"
 
-# Rename to code-snippets
+Rename to code-snippets
 for file in "$SNIPPETS_DIR"/*.json; do
     mv "$file" "${file%.json}.code-snippets"
 done
@@ -299,29 +299,29 @@ echo "Snippets synchronized"
 
 This approach keeps both editors in sync while you evaluate WindSurf's capabilities.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to migrate cursor ai snippets and templates?**
+How long does it take to migrate cursor ai snippets and templates?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Migrate VSCode Copilot Keybindings](/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
 - [How to Migrate Cursor Rules File](/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
@@ -329,5 +329,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Move Copilot Suggested Code Patterns to Cursor](/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
 - [How to Transfer Cursor Editor Theme and Layout](/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

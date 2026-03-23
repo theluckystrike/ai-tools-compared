@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Pulumi Programs"
-description: "Compare Claude Code, Copilot, and Cursor for writing Pulumi infrastructure — TypeScript stacks, component resources, state management, and provider config"
+description: "Compare Claude Code, Copilot, and Cursor for writing Pulumi infrastructure. TypeScript stacks, component resources, state management, and provider config"
 date: 2026-03-22
 author: theluckystrike
 permalink: ai-tools-for-writing-pulumi-programs
@@ -15,11 +15,11 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-Pulumi's strength over Terraform is using real programming languages — but that means AI tools need to know both the cloud provider's resource model and the idiomatic TypeScript/Python patterns for Pulumi. Most AI tools know AWS CDK better than Pulumi, which causes subtle errors: wrong import paths, missing `Output` type handling, and incorrect ComponentResource patterns.
+Pulumi's strength over Terraform is using real programming languages. but that means AI tools need to know both the cloud provider's resource model and the idiomatic TypeScript/Python patterns for Pulumi. Most AI tools know AWS CDK better than Pulumi, which causes subtle errors: wrong import paths, missing `Output` type handling, and incorrect ComponentResource patterns.
 
 This guide tests Claude Code, GitHub Copilot, and Cursor on real Pulumi tasks in TypeScript.
 
-## Table of Contents
+Table of Contents
 
 - [Task 1: EKS Cluster with Node Groups](#task-1-eks-cluster-with-node-groups)
 - [Task 2: ComponentResource Pattern](#task-2-componentresource-pattern)
@@ -33,20 +33,20 @@ This guide tests Claude Code, GitHub Copilot, and Cursor on real Pulumi tasks in
 - [Secrets](#secrets)
 - [Related Reading](#related-reading)
 
-## Task 1: EKS Cluster with Node Groups
+Task 1: EKS Cluster with Node Groups
 
-**Prompt:** "Create a Pulumi TypeScript stack for an EKS cluster with two node groups: one for general workloads, one spot instance group for batch jobs."
+Prompt: "Create a Pulumi TypeScript stack for an EKS cluster with two node groups: one for general workloads, one spot instance group for batch jobs."
 
-**Copilot's output (simplified):**
+Copilot's output (simplified):
 
 ```typescript
-// Copilot — WRONG: uses CDK-style constructs
+// Copilot. WRONG: uses CDK-style constructs
 import * as eks from "@aws-cdk/aws-eks";  // Wrong! This is CDK, not Pulumi
 ```
 
 Copilot confused `@aws-cdk/aws-eks` with `@pulumi/eks`. A common mistake because AWS CDK patterns dominate training data.
 
-**Claude's output:**
+Claude's output:
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -139,21 +139,21 @@ Claude correctly:
 - Diversified spot instance types for availability
 - Added Kubernetes labels and taints for workload scheduling
 
-## Task 2: ComponentResource Pattern
+Task 2: ComponentResource Pattern
 
-Pulumi's `ComponentResource` is the equivalent of a CDK Construct — a reusable infrastructure building block. Most AI tools don't know the pattern.
+Pulumi's `ComponentResource` is the equivalent of a CDK Construct. a reusable infrastructure building block. Most AI tools don't know the pattern.
 
-**Prompt:** "Write a Pulumi ComponentResource for a S3 bucket with encryption, versioning, and lifecycle rules."
+Prompt: "Write a Pulumi ComponentResource for a S3 bucket with encryption, versioning, and lifecycle rules."
 
-**Cursor's output:**
+Cursor's output:
 
 ```typescript
-// Cursor — missing ComponentResource pattern
+// Cursor. missing ComponentResource pattern
 export const myBucket = new aws.s3.Bucket("bucket", { ... });
 // Not a ComponentResource, just a standalone resource
 ```
 
-**Claude's output:**
+Claude's output:
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -238,14 +238,14 @@ const appStorage = new SecureBucket("app-storage", {
 export const storageBucketName = appStorage.bucketName;
 ```
 
-The `registerOutputs` call is critical — without it, Pulumi can't track the component's outputs correctly. Only Claude included it.
+The `registerOutputs` call is critical. without it, Pulumi can't track the component's outputs correctly. Only Claude included it.
 
-## Task 3: Output Handling
+Task 3: Output Handling
 
 Pulumi's `Output<T>` type is the most common source of bugs in AI-generated Pulumi code. This pattern causes runtime errors:
 
 ```typescript
-// WRONG — can't use Output as string directly
+// WRONG. can't use Output as string directly
 const url = `https://${loadBalancer.dnsName}/api`; // Error: dnsName is Output<string>
 ```
 
@@ -272,21 +272,21 @@ const connectionString = pulumi.all([dbHost, dbPort, dbName]).apply(
 
 Copilot and Cursor both generate `${}` string interpolation mistakes on `Output<T>` values in roughly 40% of cases.
 
-## Task 4: Stack References and Cross-Stack Dependencies
+Task 4: Stack References and Cross-Stack Dependencies
 
-A test that separates strong Pulumi knowledge from surface-level familiarity is the `StackReference` pattern. Teams that run multiple stacks — network, cluster, application — need to pass outputs from one stack to another without hardcoding values.
+A test that separates strong Pulumi knowledge from surface-level familiarity is the `StackReference` pattern. Teams that run multiple stacks. network, cluster, application. need to pass outputs from one stack to another without hardcoding values.
 
-**Prompt:** "Our networking stack exports a VPC ID and subnet IDs. Write a Pulumi TypeScript stack that consumes those outputs and creates a RDS instance in the private subnets."
+Prompt: "Our networking stack exports a VPC ID and subnet IDs. Write a Pulumi TypeScript stack that consumes those outputs and creates a RDS instance in the private subnets."
 
-**Copilot's output:**
+Copilot's output:
 
 ```typescript
-// Copilot — uses config instead of StackReference
+// Copilot. uses config instead of StackReference
 const config = new pulumi.Config();
 const vpcId = config.require("vpcId");  // Wrong: this requires manual config, not stack wiring
 ```
 
-**Claude's output:**
+Claude's output:
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -338,9 +338,9 @@ export const dbEndpoint = db.endpoint;
 export const dbPort = db.port;
 ```
 
-This is correct Pulumi idiom. The `StackReference` class is the right way to consume cross-stack outputs, and it produces a proper dependency in the Pulumi graph — meaning that if the networking stack changes its VPC ID, Pulumi knows this stack may need to update.
+This is correct Pulumi idiom. The `StackReference` class is the right way to consume cross-stack outputs, and it produces a proper dependency in the Pulumi graph. meaning that if the networking stack changes its VPC ID, Pulumi knows this stack may need to update.
 
-## Tool Comparison
+Tool Comparison
 
 | Task | Claude Code | Copilot | Cursor |
 |---|---|---|---|
@@ -351,38 +351,38 @@ This is correct Pulumi idiom. The `StackReference` class is the right way to con
 | Config and secrets | Uses `pulumi.Config` | Sometimes hardcodes | Usually correct |
 | Stack references | Correct | Often missing | Sometimes correct |
 
-## Configuring AI Tools for Better Pulumi Output
+Configuring AI Tools for Better Pulumi Output
 
 Each tool has settings or prompting strategies that improve Pulumi output quality.
 
-### For Claude Code
+For Claude Code
 
 Adding a `CLAUDE.md` file to your Pulumi project root gives Claude persistent context about your stack conventions:
 
 ```markdown
-# Pulumi Project Context
+Pulumi Project Context
 
-## Stack Organization
-- networking/ — VPC, subnets, NAT gateways
-- platform/ — EKS cluster, IAM roles
-- application/ — Services, RDS, ElastiCache
+Stack Organization
+- networking/. VPC, subnets, NAT gateways
+- platform/. EKS cluster, IAM roles
+- application/. Services, RDS, ElastiCache
 
-## Stack Reference Pattern
+Stack Reference Pattern
 Use `new pulumi.StackReference(`myorg/{stack}/{env}`)` to consume outputs.
 Our org name is "myorg".
 
-## Naming Convention
+Naming Convention
 Resources: `{component}-{env}` (e.g., "api-db-production")
 Tags: always include Environment, Team, ManagedBy=pulumi
 
-## Secrets
+Secrets
 Use `pulumi.Config.requireSecret()` for all sensitive values.
 Never use plain `config.require()` for passwords or API keys.
 ```
 
 With this context file, Claude will follow your team's patterns without needing to be reminded in every prompt.
 
-### For GitHub Copilot
+For GitHub Copilot
 
 Copilot benefits from inline comments that declare intent before the code:
 
@@ -394,7 +394,7 @@ export class RedisCluster extends pulumi.ComponentResource {
 
 These comments prime Copilot's completion toward the correct pattern.
 
-### For Cursor
+For Cursor
 
 Cursor's `.cursorrules` file can enforce Pulumi-specific requirements:
 
@@ -407,7 +407,7 @@ When writing Pulumi TypeScript:
 - Export all important resource outputs from the stack
 ```
 
-## Related Reading
+Related Reading
 
 - [Best AI Assistants for Pulumi Infrastructure Code in TypeScript](/best-ai-assistants-for-pulumi-infrastructure-code-in-typescr/)
 - [Claude vs GPT-4 Terraform Pulumi Infrastructure Code](/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
@@ -416,7 +416,7 @@ When writing Pulumi TypeScript:
 
 ---
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
 - [Best AI Tools for Writing AWS CDK Infrastructure Code](/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
@@ -424,5 +424,5 @@ When writing Pulumi TypeScript:
 - [Best AI Assistants for Pulumi Infrastructure Code](/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
 - [Best AI Tools for Go Microservice Development](/best-ai-tools-for-go-microservice-development)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

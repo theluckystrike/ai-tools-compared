@@ -18,7 +18,7 @@ intent-checked: true
 
 Most engineers write good code comments but hate writing documentation. Modern AI can transform those inline comments into professional API documentation: OpenAPI specs, Markdown guides, and interactive API references. This guide covers the best tools and workflows.
 
-## Table of Contents
+Table of Contents
 
 - [Why AI-Generated Docs Matter](#why-ai-generated-docs-matter)
 - [Extracting Comments: The Foundation](#extracting-comments-the-foundation)
@@ -34,7 +34,7 @@ Most engineers write good code comments but hate writing documentation. Modern A
 - [Validating AI-Generated OpenAPI Specs](#validating-ai-generated-openapi-specs)
 - [Choosing the Right Tool for Your Documentation Needs](#choosing-the-right-tool-for-your-documentation-needs)
 
-## Why AI-Generated Docs Matter
+Why AI-Generated Docs Matter
 
 Manual API documentation drifts. Code changes but docs don't. AI tools solve this by:
 - Extracting documentation directly from current code
@@ -44,11 +44,11 @@ Manual API documentation drifts. Code changes but docs don't. AI tools solve thi
 
 A single integration can generate docs for 50 endpoints in 2 minutes.
 
-## Extracting Comments: The Foundation
+Extracting Comments: The Foundation
 
 Before AI can generate docs, extract code comments into a format AI understands:
 
-**Example: Python FastAPI with good comments**
+Python FastAPI with good comments
 
 ```python
 from fastapi import FastAPI, HTTPException, Query
@@ -91,8 +91,7 @@ async def create_payment(request: PaymentRequest) -> PaymentResponse:
         HTTPException(409): Idempotency key already used with different amount
         HTTPException(422): Payment method declined or insufficient funds
 
-    Example:
-        ```bash
+    ```bash
  curl -X POST http://localhost:8000/payments \
  -H "Content-Type: application/json" \
  -d '{"amount": 99.99, "currency": "USD", "idempotency_key": "unique-123"}'
@@ -105,11 +104,11 @@ async def create_payment(request: PaymentRequest) -> PaymentResponse:
     pass
 ```
 
-## Claude for OpenAPI Specification Generation
+Claude for OpenAPI Specification Generation
 
 Claude excels at understanding code structure and generating precise OpenAPI 3.0 specs.
 
-**Example: Ask Claude to generate OpenAPI from code**
+Ask Claude to generate OpenAPI from code
 
 ```plaintext
 Prompt:
@@ -201,7 +200,7 @@ components:
       bearerFormat: JWT
 ```
 
-## Python Script: Extract Comments and Generate Docs
+Python Script: Extract Comments and Generate Docs
 
 ```python
 import ast
@@ -245,17 +244,17 @@ Generate {format} that would appear in an API reference guide."""
     )
     return message.content[0].text
 
-# Usage
+Usage
 docs = extract_function_docs("api.py")
 markdown = generate_api_docs(docs, format="markdown")
 print(markdown)
 ```
 
-## GPT-4 for Markdown Documentation
+GPT-4 for Markdown Documentation
 
 GPT-4 generates clear, user-friendly Markdown documentation quickly.
 
-**Example: From code to user guide**
+From code to user guide
 
 ```plaintext
 Prompt:
@@ -268,7 +267,7 @@ and common errors.
 
 GPT-4 generates polished guides faster than Claude, though with slightly less technical precision.
 
-## Tool Comparison: Documentation Generation
+Tool Comparison: Documentation Generation
 
 | Tool | Strength | Best For | Cost |
 |------|----------|----------|------|
@@ -278,39 +277,39 @@ GPT-4 generates polished guides faster than Claude, though with slightly less te
 | Speakeasy | SDK generation from specs | Multi-language SDKs | $199/month+ |
 | Mintlify | Template-based docs site | Polished docs site | Free tier available |
 
-## Workflow: Comment → OpenAPI → Website
+Workflow: Comment → OpenAPI → Website
 
-**Step 1: Extract comments**
+Step 1: Extract comments
 
 ```bash
-# Use AST parsing for Python, similar tools for other languages
+Use AST parsing for Python, similar tools for other languages
 python extract_docs.py api.py > extracted_comments.json
 ```
 
-**Step 2: Claude generates OpenAPI**
+Step 2: Claude generates OpenAPI
 
 ```bash
 cat extracted_comments.json | claude-api \
   "Generate OpenAPI 3.0 spec from these comments" > openapi.yaml
 ```
 
-**Step 3: Validate spec**
+Step 3: Validate spec
 
 ```bash
-# Use built-in validators
+Use built-in validators
 swagger-cli validate openapi.yaml
 ```
 
-**Step 4: Generate docs site**
+Step 4: Generate docs site
 
 ```bash
-# Use Swagger UI, ReDoc, or Mintlify
+Use Swagger UI, ReDoc, or Mintlify
 docker run -p 8080:8080 \
   -v $(pwd)/openapi.yaml:/spec/openapi.yaml \
   swaggerapi/swagger-ui
 ```
 
-## Code Example: End-to-End Documentation Generation
+Code Example: End-to-End Documentation Generation
 
 ```python
 #!/usr/bin/env python3
@@ -403,7 +402,7 @@ Generate well-structured Markdown with sections for each endpoint."""
         )
         return message.content[0].text
 
-# Usage
+Usage
 if __name__ == "__main__":
     generator = APIDocGenerator("api.py")
 
@@ -422,12 +421,12 @@ if __name__ == "__main__":
     print("Markdown docs saved to API_DOCS.md")
 ```
 
-## Best Practices
+Best Practices
 
-**1. Write clear docstrings**: AI generates better docs from detailed comments.
+1. Write clear docstrings: AI generates better docs from detailed comments.
 
 ```python
-# Good - Claude can extract this
+Good - Claude can extract this
 def transfer_funds(source_id: str, destination_id: str, amount: float):
     """
     Transfer funds between accounts.
@@ -446,10 +445,10 @@ def transfer_funds(source_id: str, destination_id: str, amount: float):
     """
 ```
 
-**2. Include examples in comments**: AI uses these in documentation.
+2. Include examples in comments: AI uses these in documentation.
 
 ```python
-# Example in comment - AI extracts for docs
+Example in comment - AI extracts for docs
 """
 curl -X POST /transfers \
   -H "Authorization: Bearer token" \
@@ -457,7 +456,7 @@ curl -X POST /transfers \
 """
 ```
 
-**3. Specify rate limits and auth in comments**
+3. Specify rate limits and auth in comments
 
 ```python
 """
@@ -467,22 +466,22 @@ Webhook events: transfer.completed, transfer.failed
 """
 ```
 
-## Keeping Docs in Sync with Code Changes
+Keeping Docs in Sync with Code Changes
 
-The biggest documentation problem is not generation — it is staleness. API docs that drift from the actual implementation erode developer trust faster than having no docs at all.
+The biggest documentation problem is not generation. it is staleness. API docs that drift from the actual implementation erode developer trust faster than having no docs at all.
 
 Treat documentation generation as part of your CI/CD pipeline rather than a manual step. Add a workflow job that regenerates the OpenAPI spec on every push to main and commits the result:
 
 ```yaml
-# .github/workflows/docs.yml
+.github/workflows/docs.yml
 name: Regenerate API Docs
 
 on:
   push:
     branches: [main]
     paths:
-      - 'api/**/*.py'
-      - 'src/**/*.py'
+      - 'api//*.py'
+      - 'src//*.py'
 
 jobs:
   regenerate-docs:
@@ -510,79 +509,79 @@ jobs:
 
 This approach eliminates documentation drift entirely for teams that already use CI. The cost per regeneration is typically under $0.10 for a medium-sized API.
 
-## Language-Specific Comment Extraction Strategies
+Language-Specific Comment Extraction Strategies
 
 Different languages need different extraction approaches. Python's `ast` module works well, but TypeScript, Go, and Java each have better-suited tooling.
 
-**TypeScript with TSDoc:**
+TypeScript with TSDoc:
 TypeScript projects using TSDoc can use the `@microsoft/tsdoc` parser to extract structured comments programmatically. The parsed output includes parameter descriptions, return types, and examples that map directly to OpenAPI request/response schemas.
 
-**Go with `go/doc`:**
+Go with `go/doc`:
 Go's standard library includes `go/doc` for parsing godoc comments. An AI-assisted workflow extracts function signatures and their associated comments, then uses Claude to generate REST endpoint documentation even though Go's HTTP handlers often lack the explicit structure of FastAPI.
 
-**Java with Javadoc:**
+Java with Javadoc:
 Java's `javadoc` tool produces XML output that AI can consume directly. Pass the Javadoc XML to Claude with a prompt asking for OpenAPI 3.0 output, and it resolves cross-references between `@param`, `@return`, and `@throws` tags into proper schema definitions.
 
 The universal principle: get your comment data into a structured intermediate format (JSON or XML) before handing it to the AI. Unstructured text extraction produces inconsistent documentation quality.
 
-## Validating AI-Generated OpenAPI Specs
+Validating AI-Generated OpenAPI Specs
 
 AI-generated OpenAPI specs frequently contain subtle errors: incorrect schema references, missing required fields in the top-level info object, or invalid HTTP status codes. Always validate before publishing.
 
 ```bash
-# Install validation tools
+Install validation tools
 npm install -g @stoplight/spectral-cli swagger-cli
 
-# Validate with Spectral (checks style + correctness)
+Validate with Spectral (checks style + correctness)
 spectral lint openapi.yaml
 
-# Validate with swagger-cli (checks schema validity)
+Validate with swagger-cli (checks schema validity)
 swagger-cli validate openapi.yaml
 ```
 
-Spectral supports custom rulesets, letting you enforce your team's API design standards automatically — for example, requiring all endpoints to have a description, or flagging generic 400 responses without a response schema.
+Spectral supports custom rulesets, letting you enforce your team's API design standards automatically. for example, requiring all endpoints to have a description, or flagging generic 400 responses without a response schema.
 
 Add both validators to your CI pipeline and treat spec validation failures the same as test failures: block the PR until resolved. This creates a positive feedback loop where developers improve their code comments because they see immediate feedback when the AI-generated docs fail validation.
 
-## Choosing the Right Tool for Your Documentation Needs
+Choosing the Right Tool for Your Documentation Needs
 
-The comparison table in this guide covers Claude and GPT-4 as AI backends, but the most important decision is not which AI to use — it is which documentation format to target.
+The comparison table in this guide covers Claude and GPT-4 as AI backends, but the most important decision is not which AI to use. it is which documentation format to target.
 
-- **OpenAPI YAML**: Choose this when you need to generate SDKs, mock servers, or integrate with API gateways. Claude excels here.
-- **Markdown guides**: Choose this for developer-facing tutorials and getting-started content. GPT-4 produces more conversational prose.
-- **Interactive docs (Swagger UI, ReDoc)**: These consume your OpenAPI spec automatically — generate the spec with AI, publish with these tools.
-- **Mintlify or ReadMe**: For teams that want a branded documentation site with minimal setup, these platforms accept OpenAPI specs and add search, versioning, and analytics on top.
+- OpenAPI YAML: Choose this when you need to generate SDKs, mock servers, or integrate with API gateways. Claude excels here.
+- Markdown guides: Choose this for developer-facing tutorials and getting-started content. GPT-4 produces more conversational prose.
+- Interactive docs (Swagger UI, ReDoc): These consume your OpenAPI spec automatically. generate the spec with AI, publish with these tools.
+- Mintlify or ReadMe: For teams that want a branded documentation site with minimal setup, these platforms accept OpenAPI specs and add search, versioning, and analytics on top.
 
 Start with OpenAPI generation even if you only plan to display Markdown docs initially. A valid OpenAPI spec is reusable: tools can generate client libraries, test suites, and mock servers from it at any time.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
 - [AI Tools for Automated API Documentation Generation in 2026](/ai-tools-for-automated-api-documentation-generation-2026/)
 - [Best AI Tools for Generating API Documentation From Code](/best-ai-tools-for-generating-api-documentation-from-code-2026/)
 - [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-for-converting-code-comments-into-developer-facing-/)
 - [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-for-automated-code-documentation-generation-2026/---)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

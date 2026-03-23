@@ -17,7 +17,7 @@ voice-checked: true
 
 Proc macros remain one of Rust's most powerful features, enabling code generation at compile time, custom derive implementations, and DSL creation. But how well do modern AI coding tools handle this advanced Rust feature? I tested several leading AI assistants with various macro tasks to find out.
 
-## Table of Contents
+Table of Contents
 
 - [Testing Methodology](#testing-methodology)
 - [Test Results at a Glance](#test-results-at-a-glance)
@@ -28,7 +28,7 @@ Proc macros remain one of Rust's most powerful features, enabling code generatio
 - [Practical Recommendations](#practical-recommendations)
 - [Best Practices When Working with AI-Generated Macros](#best-practices-when-working-with-ai-generated-macros)
 
-## Testing Methodology
+Testing Methodology
 
 I evaluated four major AI coding tools: Claude (via Cursor), GitHub Copilot, Gemini, and GPT-4. Each tool was given three macro-related tasks of increasing complexity:
 
@@ -40,7 +40,7 @@ I evaluated four major AI coding tools: Claude (via Cursor), GitHub Copilot, Gem
 
 I then compiled the generated code with Rust 1.78 and checked for errors. The results reveal significant variation in macro generation capability.
 
-## Test Results at a Glance
+Test Results at a Glance
 
 | Tool | Declarative Macros | Attribute Macros | Proc Macros | Overall Score |
 
@@ -54,15 +54,15 @@ I then compiled the generated code with Rust 1.78 and checked for errors. The re
 
 | Gemini | 70% | 50% | 30% | 50% |
 
-## Declarative Macro Generation
+Declarative Macro Generation
 
 Declarative macros (`macro_rules!`) are the most common form and generally handled well by all tools. However, quality varies.
 
-**Prompt given to AI tools:**
+Prompt given to AI tools:
 
 > Write a Rust macro that creates getter methods for struct fields. It should take a struct and generate getter methods for each field.
 
-### Claude's Output
+Claude's Output
 
 ```rust
 macro_rules! getters {
@@ -76,7 +76,7 @@ macro_rules! getters {
 }
 ```
 
-This works but has a limitation—it hardcodes `&str` return type. A better version handles multiple types:
+This works but has a limitation, it hardcodes `&str` return type. A better version handles multiple types:
 
 ```rust
 macro_rules! getters {
@@ -92,7 +92,7 @@ macro_rules! getters {
 
 Claude attempted the simpler version first, then refined when prompted for generic support. The iterative approach worked well.
 
-### GitHub Copilot's Output
+GitHub Copilot's Output
 
 Copilot generated a similar macro but with subtle issues in the repetition pattern:
 
@@ -110,15 +110,15 @@ macro_rules! getters {
 
 The input syntax is awkward and the return type still hardcoded. Copilot struggles with macro repetition rules compared to other tasks.
 
-## Attribute Macro Generation
+Attribute Macro Generation
 
 Attribute macros (`#[...]`) proved more challenging. These require understanding the `proc_macro` crate and the `TokenStream` manipulation API.
 
-**Test prompt:**
+Test prompt:
 
 > Create a `#[debug_display]` attribute macro that implements `fmt::Debug` and `fmt::Display` for a struct using its fields.
 
-### Claude's Attempt
+Claude's Attempt
 
 Claude produced a working solution:
 
@@ -153,9 +153,9 @@ pub fn debug_display(_attr: TokenStream, item: TokenStream) -> TokenStream {
 }
 ```
 
-This compiles and works. Claude correctly used `quote!` for code generation and understood the `syn` crate's API. However, the repetition syntax had a minor bug—the loop needed adjustment.
+This compiles and works. Claude correctly used `quote!` for code generation and understood the `syn` crate's API. However, the repetition syntax had a minor bug, the loop needed adjustment.
 
-### GPT-4's Attempt
+GPT-4's Attempt
 
 GPT-4 generated the basic structure but missed the `syn` crate integration:
 
@@ -170,11 +170,11 @@ pub fn debug_display(attr: TokenStream, item: TokenStream) -> TokenStream {
 
 The output was skeletal. GPT-4 understands Rust but struggles with the proc macro ecosystem's specific APIs.
 
-## Procedural Macro for Custom Derive
+Procedural Macro for Custom Derive
 
 The hardest test: a full custom derive implementing `Serialize` for a struct. This requires generating code that implements a trait.
 
-### Claude's Solution
+Claude's Solution
 
 Claude produced functional code:
 
@@ -219,7 +219,7 @@ pub fn derive_serialize(input: TokenStream) -> TokenStream {
 
 This compiles and correctly implements serialization. The key was using `$(#field_ids),*` for repetition.
 
-### Copilot's Struggles
+Copilot's Struggles
 
 Copilot produced:
 
@@ -233,29 +233,29 @@ pub fn derive_serialize(item: TokenStream) -> TokenStream {
 
 It provided only a stub. Procedural macros are clearly outside Copilot's strong suit.
 
-## Key Findings
+Key Findings
 
-**1. Claude excels at macro generation.** It understands the `proc_macro`, `syn`, and `quote` ecosystem. It generates idiomatic code that follows Rust best practices.
+1. Claude excels at macro generation. It understands the `proc_macro`, `syn`, and `quote` ecosystem. It generates idiomatic code that follows Rust best practices.
 
-**2. All tools struggle with repetition patterns.** The `$()*` and `$()*,*` syntax in declarative macros trips up AI models. Expect to iterate and refine.
+2. All tools struggle with repetition patterns. The `$()*` and `$()*,*` syntax in declarative macros trips up AI models. Expect to iterate and refine.
 
-**3. Context matters significantly.** Providing existing code context improves macro generation by 30-40%. Blank-slate macro generation often misses important details.
+3. Context matters significantly. Providing existing code context improves macro generation by 30-40%. Blank-slate macro generation often misses important details.
 
-**4. Proc macro generation requires specific knowledge.** Models trained on general Rust code haven't seen as many proc macro examples. Results vary wildly.
+4. Proc macro generation requires specific knowledge. Models trained on general Rust code haven't seen as many proc macro examples. Results vary wildly.
 
-## Practical Recommendations
+Practical Recommendations
 
 For developers working with macros:
 
-1. **Use Claude for proc macros** — It has the best understanding of the `syn`/`quote` ecosystem
+1. Use Claude for proc macros. It has the best understanding of the `syn`/`quote` ecosystem
 
-2. **Iterate with prompts** — Start simple, then refine with specific type requirements
+2. Iterate with prompts. Start simple, then refine with specific type requirements
 
-3. **Provide context** — Include existing macros in your codebase as reference
+3. Provide context. Include existing macros in your codebase as reference
 
-4. **Verify generated code** — Always compile and test macro-generated code
+4. Verify generated code. Always compile and test macro-generated code
 
-## Best Practices When Working with AI-Generated Macros
+Best Practices When Working with AI-Generated Macros
 
 When using AI to help with macros, structure your prompts effectively:
 
@@ -275,29 +275,29 @@ macro_rules! my_macro {
 }
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Rust offer a free tier?**
+Does Rust offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Rust's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How Well Do AI Tools Handle Rust Lifetime Elision Rules Corr](/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
 - [How Well Do AI Tools Generate Correct Go Interface Implement](/how-well-do-ai-tools-generate-correct-go-interface-implement/)
@@ -305,5 +305,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
 - [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

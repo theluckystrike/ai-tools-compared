@@ -31,32 +31,32 @@ tags: [ai-tools-compared]
 
 GitHub Copilot Extensions let you build custom agents that appear as `@your-agent` in Copilot Chat. Users can invoke your extension directly from their editor or github.com, and you handle the conversation with your own backend. This guide covers the full build: registering the app, handling authentication, streaming responses, and deploying.
 
-## Key Takeaways
+Key Takeaways
 
-- **Users can invoke your**: extension directly from their editor or github.com, and you handle the conversation with your own backend.
-- **You choose the LLM**: the data sources, and the business logic.
-- **GitHub handles the user**: interface (Copilot Chat in VS Code, JetBrains, github.com) and passes messages to your endpoint.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
+- Users can invoke your: extension directly from their editor or github.com, and you handle the conversation with your own backend.
+- You choose the LLM: the data sources, and the business logic.
+- GitHub handles the user: interface (Copilot Chat in VS Code, JetBrains, github.com) and passes messages to your endpoint.
+- What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- Consider a security review: if your application handles sensitive user data.
 
-## What Copilot Extensions Can Do
+What Copilot Extensions Can Do
 
 A Copilot Extension is a GitHub App that receives conversation messages and returns streaming SSE responses in the OpenAI chat completions format. Use cases include:
 
-- `@docs` — Answer questions from your internal documentation
-- `@jira` — Create and update tickets from the chat interface
-- `@runbook` — Execute runbooks or check system status
-- `@review` — Apply custom code review rules beyond what Copilot knows
+- `@docs`. Answer questions from your internal documentation
+- `@jira`. Create and update tickets from the chat interface
+- `@runbook`. Execute runbooks or check system status
+- `@review`. Apply custom code review rules beyond what Copilot knows
 
 The key architectural point: your extension runs your own backend code. You choose the LLM, the data sources, and the business logic. GitHub handles the user interface (Copilot Chat in VS Code, JetBrains, github.com) and passes messages to your endpoint.
 
-## Prerequisites
+Prerequisites
 
 - GitHub account with Copilot access (Individual, Business, or Enterprise)
 - A public HTTPS endpoint (or ngrok for development)
 - Node.js 20+
 
-## Step 1: Register the GitHub App
+Step 1: Register the GitHub App
 
 1. Go to Settings > Developer settings > GitHub Apps > New GitHub App
 2. Set the callback URL and webhook URL to your endpoint
@@ -66,7 +66,7 @@ The key architectural point: your extension runs your own backend code. You choo
 
 Save the App ID, Client ID, and generate a Private Key (PEM file).
 
-## Step 2: Build the Agent Server
+Step 2: Build the Agent Server
 
 ```javascript
 // server.js
@@ -120,7 +120,7 @@ app.listen(3000, () => console.log('Extension running on :3000'));
 
 The `verifyAndParseRequest` call validates the request signature using GitHub's public key. Skip this and you risk accepting forged requests.
 
-## Step 3: Implement Response Logic
+Step 3: Implement Response Logic
 
 Replace the simple `generateResponse` with your actual logic. Here's an example that queries internal docs:
 
@@ -166,7 +166,7 @@ async function searchInternalDocs(query) {
 }
 ```
 
-## Step 4: Handle Streaming Properly
+Step 4: Handle Streaming Properly
 
 For better user experience, stream tokens as they arrive from the LLM:
 
@@ -196,7 +196,7 @@ async function streamResponse(res, userMessage, conversationHistory) {
 }
 ```
 
-## Step 5: Reference Files from the Editor
+Step 5: Reference Files from the Editor
 
 When users `@mention` files in Copilot Chat, those files are included in the payload. Access them:
 
@@ -226,23 +226,23 @@ const files = extractFileContext(payload.messages);
 const fileContext = files.map(f => `File: ${f.path}\n\`\`\`\n${f.content}\n\`\`\``).join('\n');
 ```
 
-## Step 6: Local Development with ngrok
+Step 6: Local Development with ngrok
 
 ```bash
-# Install ngrok
+Install ngrok
 brew install ngrok
 
-# Start your server
+Start your server
 node server.js
 
-# In another terminal, expose it
+In another terminal, expose it
 ngrok http 3000
 
-# Copy the https URL (e.g., https://abc123.ngrok.io)
-# Update your GitHub App's Agent URL to https://abc123.ngrok.io/agent
+Copy the https URL (e.g., https://abc123.ngrok.io)
+Update your GitHub App's Agent URL to https://abc123.ngrok.io/agent
 ```
 
-## Step 7: Error Handling and Resilience
+Step 7: Error Handling and Resilience
 
 Production extensions need to handle failures gracefully. The critical rule: never close the SSE connection with an HTTP error code after you've started streaming. Once you send headers and the acknowledgment event, return errors as text events instead:
 
@@ -290,7 +290,7 @@ async function withTimeout(promise, ms = 25000) {
 const responseText = await withTimeout(generateResponse(lastMessage, messages));
 ```
 
-## Testing the Extension
+Testing the Extension
 
 Once deployed and installed, invoke your extension in VS Code Copilot Chat:
 
@@ -301,7 +301,7 @@ Once deployed and installed, invoke your extension in VS Code Copilot Chat:
 
 The `@workspace` reference passes your current open files as context.
 
-### Testing Locally Before Deployment
+Testing Locally Before Deployment
 
 Use a test script to simulate Copilot's request format without needing ngrok:
 
@@ -338,13 +338,13 @@ async function testExtension(message) {
 testExtension('What are the deployment steps?');
 ```
 
-## Deployment Checklist
+Deployment Checklist
 
 Before publishing your extension:
 
 - Verify signature validation is working (test with invalid signatures)
 - Add rate limiting (GitHub limits to 100 requests/min per user by default)
-- Handle errors gracefully — return a text event with the error message rather than closing the connection
+- Handle errors gracefully. return a text event with the error message rather than closing the connection
 - Set `GITHUB_WEBHOOK_SECRET` for webhook event verification
 - Add request logging with thread IDs for debugging conversations
 
@@ -361,7 +361,7 @@ const limiter = rateLimit({
 app.use('/agent', limiter);
 ```
 
-## Choosing the Right LLM Backend
+Choosing the Right LLM Backend
 
 Your extension isn't locked to any single model. The choice of backend LLM affects cost, latency, and quality in ways that matter at production scale.
 
@@ -386,7 +386,7 @@ async function generateResponse(messages, backend = 'claude-haiku') {
 }
 ```
 
-## Publishing Your Extension
+Publishing Your Extension
 
 Once your extension works locally and passes testing, you can publish it to the GitHub Marketplace so other organizations can install it. The publication process requires:
 
@@ -395,31 +395,31 @@ Once your extension works locally and passes testing, you can publish it to the 
 3. Provide a privacy policy URL covering how you handle conversation data
 4. Set a pricing model (free, paid per seat, or usage-based)
 
-For internal tools, skip marketplace publication entirely — install the GitHub App directly on your organization and distribute it via your internal developer portal.
+For internal tools, skip marketplace publication entirely. install the GitHub App directly on your organization and distribute it via your internal developer portal.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to build a custom github copilot extension?**
+How long does it take to build a custom github copilot extension?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Best Practices for Writing GitHub Copilot Custom Instruction](/best-practices-for-writing-github-copilot-custom-instruction/)
 - [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
@@ -427,5 +427,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Completely Free Alternatives to GitHub Copilot That Actually](/completely-free-alternatives-to-github-copilot-that-actually/)
 - [Continue Dev vs GitHub Copilot: Open Source Comparison](/continue-dev-vs-github-copilot-open-source-comparison/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

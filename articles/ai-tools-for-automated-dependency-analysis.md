@@ -15,20 +15,20 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-Dependency analysis is one of the highest-ROI applications for AI in engineering. A dependency graph can tell you what depends on what — but understanding *why*, predicting the blast radius of an upgrade, and prioritizing which vulnerabilities to fix first requires reasoning that pure graph analysis can't do. AI bridges that gap.
+Dependency analysis is one of the highest-ROI applications for AI in engineering. A dependency graph can tell you what depends on what. but understanding *why*, predicting the blast radius of an upgrade, and prioritizing which vulnerabilities to fix first requires reasoning that pure graph analysis can't do. AI bridges that gap.
 
-## Three Problems AI Solves Well
+Three Problems AI Solves Well
 
-1. **Circular dependency explanation**: Not just "A→B→A exists" but "this cycle forms because auth imports config which imports auth for logging"
-2. **Upgrade impact analysis**: "If I upgrade lodash from 4.17.15 to 4.17.21, which of my 47 dependencies actually use it?"
-3. **Vulnerability prioritization**: "Of these 12 CVEs, which are exploitable given my actual call graph?"
+1. Circular dependency explanation: Not just "A→B→A exists" but "this cycle forms because auth imports config which imports auth for logging"
+2. Upgrade impact analysis: "If I upgrade lodash from 4.17.15 to 4.17.21, which of my 47 dependencies actually use it?"
+3. Vulnerability prioritization: "Of these 12 CVEs, which are exploitable given my actual call graph?"
 
-## Setup: Build a Dependency Graph
+Setup: Build a Dependency Graph
 
 Start with the actual dependency data. Here's how to extract it for npm, pip, and Go:
 
 ```python
-# dep_graph.py
+dep_graph.py
 import subprocess
 import json
 from pathlib import Path
@@ -77,12 +77,12 @@ def detect_circular_deps_python() -> list[str]:
     return cycles
 ```
 
-### Visualizing the Graph Before Analysis
+Visualizing the Graph Before Analysis
 
 Before sending data to an AI, build a visual. Claude and GPT-4 reason better when you can point to a specific subgraph:
 
 ```python
-# visualize_deps.py — output a Mermaid diagram for large graphs
+visualize_deps.py. output a Mermaid diagram for large graphs
 def to_mermaid(edges: list[dict], max_edges: int = 50) -> str:
     lines = ["graph LR"]
     for edge in edges[:max_edges]:
@@ -91,15 +91,15 @@ def to_mermaid(edges: list[dict], max_edges: int = 50) -> str:
         lines.append(f"    {src} --> {dst}")
     return "\n".join(lines)
 
-# Paste the Mermaid output into a prompt for visual context
+Paste the Mermaid output into a prompt for visual context
 ```
 
 Mermaid diagrams paste cleanly into Claude prompts and allow you to ask questions like "explain the path between `auth-service` and `db-driver` in this graph."
 
-## AI Analysis: Circular Dependency Explanation
+AI Analysis: Circular Dependency Explanation
 
 ```python
-# analyze_deps.py
+analyze_deps.py
 from anthropic import Anthropic
 import json
 
@@ -131,7 +131,7 @@ Provide:
 1. ROOT_CAUSE: Why does this cycle likely exist? (1-2 sentences)
 2. BREAK_STRATEGY: Most practical way to break the cycle
 3. CODE_CHANGE: Describe the specific refactoring needed
-4. RISK: Low/Medium/High — how difficult is the fix?"""
+4. RISK: Low/Medium/High. how difficult is the fix?"""
         }]
     )
     return response.content[0].text
@@ -170,7 +170,7 @@ Based on semantic versioning and common knowledge of {package}:
     return response.content[0].text
 ```
 
-### Practical Upgrade Workflow
+Practical Upgrade Workflow
 
 The most effective pattern combines automated graph extraction with AI reasoning in a pull request comment:
 
@@ -180,7 +180,7 @@ The most effective pattern combines automated graph extraction with AI reasoning
 
 This lets reviewers see the expected blast radius before merging, not after discovering broken tests.
 
-## Vulnerability Blast Radius Analysis
+Vulnerability Blast Radius Analysis
 
 ```python
 def analyze_vulnerability_blast_radius(
@@ -229,7 +229,7 @@ Exposed endpoints/surfaces:
 {endpoints_str}
 
 Provide:
-EXPLOITABILITY: [Critical/High/Medium/Low] — can this actually be reached?
+EXPLOITABILITY: [Critical/High/Medium/Low]. can this actually be reached?
 ATTACK_VECTOR: How would an attacker trigger this?
 AFFECTED_FEATURES: What parts of the product are at risk?
 IMMEDIATE_MITIGATION: What to do right now if patching is delayed?
@@ -239,12 +239,12 @@ PRIORITY: Should this block the current release?"""
     return response.content[0].text
 ```
 
-### Integrating with Snyk or Dependabot Output
+Integrating with Snyk or Dependabot Output
 
 Snyk and Dependabot surface CVEs but don't tell you whether your code actually reaches the vulnerable function. Combine their output with AI blast radius analysis:
 
 ```python
-# snyk_bridge.py — pipe Snyk JSON output into Claude blast radius analysis
+snyk_bridge.py. pipe Snyk JSON output into Claude blast radius analysis
 import json, subprocess
 
 def get_snyk_vulns() -> list[dict]:
@@ -269,7 +269,7 @@ def triage_snyk_vulns(dep_graph: dict) -> list[dict]:
     return results
 ```
 
-## Unused Dependency Detection
+Unused Dependency Detection
 
 ```python
 import ast
@@ -328,21 +328,21 @@ Format as a table: Package | Safe | Reason"""
     return response.content[0].text
 ```
 
-### False Positives to Watch For
+False Positives to Watch For
 
 The static import scanner misses several legitimate patterns. Tell Claude about these when asking for removal advice:
 
-- **Pytest plugins** (`pytest-cov`, `pytest-asyncio`) are loaded by pytest automatically with no import
-- **Django apps** in `INSTALLED_APPS` that register themselves via `AppConfig`
-- **Celery tasks** auto-discovered via `autodiscover_tasks()`
-- **Packages used only in config files** (e.g., `gunicorn` listed in `Procfile` but never imported)
+- Pytest plugins (`pytest-cov`, `pytest-asyncio`) are loaded by pytest automatically with no import
+- Django apps in `INSTALLED_APPS` that register themselves via `AppConfig`
+- Celery tasks auto-discovered via `autodiscover_tasks()`
+- Packages used only in config files (e.g., `gunicorn` listed in `Procfile` but never imported)
 
 Claude will flag these as `Maybe` with an explanation when you provide the project description.
 
-## CI Integration
+CI Integration
 
 ```yaml
-# .github/workflows/dep-analysis.yml
+.github/workflows/dep-analysis.yml
 name: Dependency Analysis
 
 on:
@@ -383,7 +383,7 @@ jobs:
             });
 ```
 
-### Caching Graph Data Between Runs
+Caching Graph Data Between Runs
 
 Regenerating the full dependency graph on every CI run is slow. Cache it using the lock file as a cache key:
 
@@ -392,7 +392,7 @@ Regenerating the full dependency graph on every CI run is slow. Cache it using t
   uses: actions/cache@v4
   with:
     path: /tmp/dep-graph.json
-    key: dep-graph-${{ hashFiles('**/package-lock.json', '**/requirements.txt', '**/go.sum') }}
+    key: dep-graph-${{ hashFiles('/package-lock.json', '/requirements.txt', '/go.sum') }}
 
 - name: Build graph if not cached
   run: |
@@ -403,7 +403,7 @@ Regenerating the full dependency graph on every CI run is slow. Cache it using t
 
 This reduces CI time by 60-80% on large monorepos where the dependency structure changes infrequently.
 
-## Tool Comparison
+Tool Comparison
 
 | Tool | Circular Deps | Vuln Analysis | Upgrade Impact | AI Explanation |
 |---|---|---|---|---|
@@ -415,12 +415,12 @@ This reduces CI time by 60-80% on large monorepos where the dependency structure
 
 The AI-powered approach is the only one that combines detection with reasoning about impact and prioritization.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Generating Dependency Update Pull Request](/ai-tools-for-generating-dependency-update-pull-request-descr/)
 - [AI Tools for Cohort Analysis](/ai-tools-for-cohort-analysis/)
 - [How to Use AI for Cloud Migration Planning and Dependency](/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
 - [How to Use AI to Resolve Python Import Circular Dependency](/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
 - [How to Use AI to Resolve NPM Peer Dependency Conflict](/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

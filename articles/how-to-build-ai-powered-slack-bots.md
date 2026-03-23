@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Build AI-Powered Slack Bots"
-description: "Build a Slack bot powered by Claude or GPT-4 — slash commands, message events, context-aware threads, and production deployment with Python Bolt"
+description: "Build a Slack bot powered by Claude or GPT-4. slash commands, message events, context-aware threads, and production deployment with Python Bolt"
 date: 2026-03-22
 author: theluckystrike
 permalink: how-to-build-ai-powered-slack-bots
@@ -17,7 +17,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Slack bots backed by LLMs are the fastest path to getting AI into your team's workflow without forcing everyone to learn a new tool. This guide builds a production-ready bot with slash commands, thread-aware conversation history, and structured responses.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Architecture
+Step 1: Architecture
 
 ```
 Slack → Bolt App (FastAPI) → Claude/GPT-4 → Slack Response
@@ -37,7 +37,7 @@ Slack → Bolt App (FastAPI) → Claude/GPT-4 → Slack Response
 
 The Slack Bolt SDK handles the OAuth, event routing, and response timing. Your bot focuses on the AI layer.
 
-### Step 2: Set Up
+Step 2: Set Up
 
 ```bash
 pip install slack-bolt anthropic redis fastapi uvicorn python-dotenv
@@ -49,7 +49,7 @@ Create a Slack app at api.slack.com:
 - Add slash commands: `/ask`, `/summarize`
 
 ```bash
-# .env
+.env
 SLACK_BOT_TOKEN=xoxb-...
 SLACK_APP_TOKEN=xapp-...  # For Socket Mode
 SLACK_SIGNING_SECRET=...
@@ -57,10 +57,10 @@ ANTHROPIC_API_KEY=...
 REDIS_URL=redis://localhost:6379
 ```
 
-### Step 3: Core Bot Implementation
+Step 3: Core Bot Implementation
 
 ```python
-# bot.py
+bot.py
 import os
 import json
 from dotenv import load_dotenv
@@ -111,7 +111,7 @@ def ask_claude(user_message: str, history: list[dict]) -> str:
     )
     return response.content[0].text
 
-# Handle @mentions in channels
+Handle @mentions in channels
 @app.event("app_mention")
 def handle_mention(event, say, client):
     channel_id = event["channel"]
@@ -147,7 +147,7 @@ def handle_mention(event, say, client):
 
     say(text=response_text, thread_ts=thread_ts)
 
-# /ask slash command
+/ask slash command
 @app.command("/ask")
 def handle_ask(ack, command, respond):
     ack()  # Must acknowledge within 3 seconds
@@ -175,7 +175,7 @@ def handle_ask(ack, command, respond):
     })
 ```
 
-### Step 4: Slash Command: /summarize
+Step 4: Slash Command: /summarize
 
 A more complex command that fetches channel history from Slack and summarizes it:
 
@@ -256,7 +256,7 @@ Conversation:
     })
 ```
 
-### Step 5: Handling Slash Command Timeouts
+Step 5: Handling Slash Command Timeouts
 
 Slack requires a response within 3 seconds. For slow AI calls, use the `respond` URL pattern:
 
@@ -282,10 +282,10 @@ def handle_analyze(ack, command, respond):
     thread.start()
 ```
 
-### Step 6: Run the Bot
+Step 6: Run the Bot
 
 ```python
-# main.py
+main.py
 if __name__ == "__main__":
     handler = SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"])
     handler.start()
@@ -304,7 +304,7 @@ handler = SlackRequestHandler(app)
 async def events(req: Request):
     return await handler.handle(req)
 
-# uvicorn main:api --host 0.0.0.0 --port 8080
+uvicorn main:api --host 0.0.0.0 --port 8080
 ```
 
 ```dockerfile
@@ -317,7 +317,7 @@ EXPOSE 8080
 CMD ["uvicorn", "main:api", "--host", "0.0.0.0", "--port", "8080"]
 ```
 
-### Step 7: Rate Limiting and Cost Control
+Step 7: Rate Limiting and Cost Control
 
 ```python
 RATE_LIMIT_REQUESTS = 10   # Per user per hour
@@ -330,23 +330,23 @@ def check_rate_limit(user_id: str) -> bool:
         r.expire(key, RATE_LIMIT_WINDOW)
     return count <= RATE_LIMIT_REQUESTS
 
-# In your handler:
+In your handler:
 if not check_rate_limit(event["user"]):
     say("You've hit the rate limit. Try again in an hour.", thread_ts=thread_ts)
     return
 ```
 
-## Choosing Between Claude and GPT-4 for Slack Bots
+Choosing Between Claude and GPT-4 for Slack Bots
 
 Both Claude and GPT-4 work well as Slack bot backends, but they have different strengths that matter in practice.
 
-**Claude (Anthropic)** follows instructions with high fidelity. When you give it formatting rules — "use Slack markdown, keep responses scannable, don't use hyphens for lists" — it tends to follow them consistently across long conversations. Claude also handles ambiguous multi-part questions gracefully without hallucinating confidence.
+Claude (Anthropic) follows instructions with high fidelity. When you give it formatting rules. "use Slack markdown, keep responses scannable, don't use hyphens for lists". it tends to follow them consistently across long conversations. Claude also handles ambiguous multi-part questions gracefully without hallucinating confidence.
 
-**GPT-4 (OpenAI)** is faster on short queries and has a larger ecosystem of function-calling examples. If your bot needs to trigger external actions (create Jira ticket, look up a user in your database) via structured function calls, GPT-4's JSON mode can be slightly more predictable.
+GPT-4 (OpenAI) is faster on short queries and has a larger ecosystem of function-calling examples. If your bot needs to trigger external actions (create Jira ticket, look up a user in your database) via structured function calls, GPT-4's JSON mode can be slightly more predictable.
 
-**Practical recommendation**: Use Claude for Q&A bots, knowledge-base assistants, and writing-heavy tasks. Use GPT-4 with function calling for action-oriented bots that orchestrate API calls.
+Practical recommendation: Use Claude for Q&A bots, knowledge-base assistants, and writing-heavy tasks. Use GPT-4 with function calling for action-oriented bots that orchestrate API calls.
 
-## Slack Block Kit for Richer Responses
+Slack Block Kit for Richer Responses
 
 Plain text responses work, but Block Kit lets you build interactive messages with buttons, dropdowns, and input modals. Here is a pattern for responses that include an action button:
 
@@ -394,7 +394,7 @@ def handle_negative_feedback(ack, body, respond):
 
 Collecting feedback this way is the fastest route to improving your bot's system prompt. Negative feedback clusters will show you exactly which question types the AI is handling poorly.
 
-## Deployment Options Compared
+Deployment Options Compared
 
 | Option | Cost | Complexity | Best for |
 |---|---|---|---|
@@ -406,29 +406,29 @@ Collecting feedback this way is the fastest route to improving your bot's system
 
 For most teams, Fly.io or Railway offers the best developer experience for production bots. Both support persistent WebSocket connections for Socket Mode and can scale to zero when idle.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
-**Bot not responding to mentions**
+Bot not responding to mentions
 
 Verify that `app_mentions:read` is in your bot's OAuth scopes and that Event Subscriptions are enabled in your Slack app settings. In Socket Mode, the `SLACK_APP_TOKEN` must start with `xapp-`, not `xoxb-`.
 
-**Redis connection errors in production**
+Redis connection errors in production
 
 Use `redis://` for unencrypted connections and `rediss://` for TLS. Most managed Redis providers (Redis Cloud, Upstash) require TLS. Upstash's free tier works well for bots with under 10,000 commands per day.
 
-## Related Articles
+Related Articles
 
 - [How to Build Voice AI Apps with Claude](/how-to-build-voice-ai-apps-with-claude)
 - [How to Use AI for Incident Response Automation](/how-to-use-ai-for-incident-response-automation/)
@@ -436,7 +436,7 @@ Use `redis://` for unencrypted connections and `rediss://` for TLS. Most managed
 - [How to Build AI-Powered CLI Tools 2026](/how-to-build-ai-powered-cli-tools-2026/)
 - [How to Build AI Agents with Claude Agent SDK](/how-to-build-ai-agents-with-claude-agent-sdk/)
 - [Best Onboarding Automation Workflow for Remote Companies](https://welikeremotestack.com/best-onboarding-automation-workflow-for-remote-companies-using-slack-bots-and-notion-templates/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```
 {% endraw %}

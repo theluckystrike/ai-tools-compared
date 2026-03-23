@@ -17,7 +17,7 @@ voice-checked: true
 
 To migrate Copilot chat history to Cursor AI, export the JSON conversation files from `~/Library/Application Support/Visual Studio Code/User/GlobalStorage/github.copilot-chat/`, parse them into a context document, and place the result in your project root where Cursor indexes it automatically. There is no direct import path between the two tools, so the migration involves extracting, reformatting, and recreating context through Cursor's `.cursorrules` and `@`-mention system.
 
-## Table of Contents
+Table of Contents
 
 - [Why Migrate to Cursor AI](#why-migrate-to-cursor-ai)
 - [Prerequisites](#prerequisites)
@@ -26,13 +26,13 @@ To migrate Copilot chat history to Cursor AI, export the JSON conversation files
 - [Best Practices for the Transition](#best-practices-for-the-transition)
 - [Troubleshooting](#troubleshooting)
 
-## Why Migrate to Cursor AI
+Why Migrate to Cursor AI
 
 Cursor AI builds on VS Code with integrated AI capabilities that differ from Copilot's approach. While Copilot provides inline suggestions and chat within GitHub's ecosystem, Cursor offers a fully integrated AI assistant that understands your entire codebase. Many developers find Cursor's contextual awareness more powerful for complex refactoring tasks and multi-file operations.
 
 The migration involves three main areas: exporting your Copilot conversation history, transferring project-specific context, and configuring Cursor to match your workflow preferences.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -42,21 +42,21 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand What You Are Actually Migrating
+Step 1: Understand What You Are Actually Migrating
 
 Before exploring the mechanics, it helps to be clear about what "migrating Copilot history" actually means in practice. There are three distinct categories of value stored in Copilot's history:
 
-1. **Conversation transcripts** — The raw back-and-forth text between you and the AI. These are rarely useful to replay verbatim, but they contain decisions and explanations.
-2. **Project-specific context** — Architecture decisions, naming conventions, and constraints that came up in conversations and shaped how the codebase evolved.
-3. **Reusable prompts** — Patterns you found yourself repeating, such as "generate a Jest test for this function following our existing test style."
+1. Conversation transcripts. The raw back-and-forth text between you and the AI. These are rarely useful to replay verbatim, but they contain decisions and explanations.
+2. Project-specific context. Architecture decisions, naming conventions, and constraints that came up in conversations and shaped how the codebase evolved.
+3. Reusable prompts. Patterns you found yourself repeating, such as "generate a Jest test for this function following our existing test style."
 
 Only the second and third categories are worth migrating in a structured way. Conversation transcripts are useful as a reference archive, but trying to inject raw chat history into Cursor's context window just creates noise. Focus the migration effort on extracting the durable knowledge.
 
-### Step 2: Exporting Copilot Chat History
+Step 2: Exporting Copilot Chat History
 
 GitHub Copilot stores chat conversations locally on your machine. The exact location depends on your operating system and Copilot version. Here's how to locate and export your data.
 
-### Finding Copilot Data on macOS
+Finding Copilot Data on macOS
 
 Your Copilot history lives in application support folders. Open Terminal and navigate to the correct directory:
 
@@ -72,7 +72,7 @@ mkdir ~/copilot-migration
 cp -r ~/Library/Application\ Support/Visual\ Studio\ Code/User/GlobalStorage/github.copilot-chat/* ~/copilot-migration/
 ```
 
-### Finding Copilot Data on Windows
+Finding Copilot Data on Windows
 
 Windows users can find Copilot data in a similar location:
 
@@ -82,7 +82,7 @@ Windows users can find Copilot data in a similar location:
 
 Use File Explorer to navigate there and copy the contents to your migration folder.
 
-### Exporting via GitHub API
+Exporting via GitHub API
 
 For a more structured export, use GitHub's API to retrieve Copilot usage data:
 
@@ -94,7 +94,7 @@ curl -H "Authorization: token YOUR_GITHUB_TOKEN" \
 
 This provides usage statistics but not individual chat messages. For complete conversation history, the local files remain your primary source.
 
-### Step 3: Reading and Parsing Copilot Conversations
+Step 3: Reading and Parsing Copilot Conversations
 
 Copilot stores conversations as JSON files. Here's a Node.js script to extract and format your chat history:
 
@@ -139,11 +139,11 @@ Run this script to create a portable file containing your conversation history:
 node parse-copilot-history.js
 ```
 
-### Step 4: Importing Context into Cursor
+Step 4: Importing Context into Cursor
 
 Cursor handles context differently than Copilot. Instead of storing conversation history as standalone files, Cursor integrates context directly into your project workspace. Here's how to transfer your valuable project knowledge.
 
-### Creating a Context Reference Document
+Creating a Context Reference Document
 
 Generate a document that captures important context from your Copilot conversations:
 
@@ -163,7 +163,7 @@ function generateContextDocument(conversations, outputPath) {
 
 Save this as `PROJECT_CONTEXT.md` in your project root. Cursor automatically indexes Markdown files, making this context available to its AI.
 
-### Using Cursor's Context Features
+Using Cursor's Context Features
 
 Cursor provides several ways to provide context:
 
@@ -175,11 +175,11 @@ Cursor provides several ways to provide context:
 
 For each significant Copilot conversation, manually recreate the context in Cursor by referencing the relevant files and explaining the project-specific requirements.
 
-### Step 5: Configure Cursor for Your Workflow
+Step 5: Configure Cursor for Your Workflow
 
 After transferring history, configure Cursor to match your preferences.
 
-### Setting Up Keyboard Shortcuts
+Setting Up Keyboard Shortcuts
 
 Cursor uses many VS Code shortcuts but adds AI-specific ones. Check your keybindings:
 
@@ -198,7 +198,7 @@ Cursor uses many VS Code shortcuts but adds AI-specific ones. Check your keybind
 }
 ```
 
-### Adjusting AI Parameters
+Adjusting AI Parameters
 
 Cursor's settings allow fine-tuning AI behavior. Access settings via `Cmd+,` and search for "Cursor AI":
 
@@ -208,7 +208,7 @@ Cursor's settings allow fine-tuning AI behavior. Access settings via `Cmd+,` and
 
 - Context window: Adjust based on your project's complexity
 
-## Migrating Custom Copilot Extensions
+Migrating Custom Copilot Extensions
 
 If you use Copilot extensions or custom prompts, recreate them in Cursor. Cursor supports custom instructions through:
 
@@ -226,7 +226,7 @@ You are working on a React TypeScript project.
 - Follow the component structure: components/, hooks/, utils/
 ```
 
-## Copilot vs Cursor: Feature Comparison
+Copilot vs Cursor: Feature Comparison
 
 Understanding the differences helps you know what to reconfigure after migration:
 
@@ -241,9 +241,9 @@ Understanding the differences helps you know what to reconfigure after migration
 | GitHub integration | Native | Via extensions |
 | Price | $10/mo individual | $20/mo Pro |
 
-The most important difference for context migration is codebase indexing. Cursor's automatic codebase index means you do not need to manually feed file contents into every conversation — Cursor already knows your project structure. This changes how you write prompts: instead of pasting function signatures to provide context, you reference them with `@filename` and Cursor retrieves the content.
+The most important difference for context migration is codebase indexing. Cursor's automatic codebase index means you do not need to manually feed file contents into every conversation. Cursor already knows your project structure. This changes how you write prompts: instead of pasting function signatures to provide context, you reference them with `@filename` and Cursor retrieves the content.
 
-## Best Practices for the Transition
+Best Practices for the Transition
 
 Migrating to a new AI assistant requires adjustment. Follow these recommendations:
 
@@ -257,7 +257,7 @@ Test before abandoning: Keep Copilot accessible for a week while you adjust to C
 
 Invest in your `.cursorrules` file: This is the highest-use configuration step in the migration. A well-written rules file prevents Cursor from making suggestions that contradict your project conventions, reducing the cognitive load of reviewing AI output during the adjustment period.
 
-### Step 6: Validating the Migration
+Step 6: Validating the Migration
 
 After completing the migration steps, run a structured validation to confirm Cursor is providing equivalent or better assistance compared to your Copilot setup.
 
@@ -268,46 +268,46 @@ A practical validation checklist:
 - Ask Cursor a project-specific question that relies on your `.cursorrules` context and confirm the response respects your stated conventions.
 - Test escalating complexity: start with single-function completion, then a new feature request, then an architectural question. Each tier should benefit from the codebase index.
 
-Track your time-to-first-useful-suggestion during the first week. Most developers find Cursor's first-day performance roughly equivalent to Copilot's, with quality improving noticeably by day 3–5 as the codebase index refines and you learn how to frame prompts for Cursor's model selection. The transition cost is real but short-lived — typically under a week before Cursor's codebase awareness begins paying dividends on complex tasks where Copilot's limited context window was previously a bottleneck.
+Track your time-to-first-useful-suggestion during the first week. Most developers find Cursor's first-day performance roughly equivalent to Copilot's, with quality improving noticeably by day 3–5 as the codebase index refines and you learn how to frame prompts for Cursor's model selection. The transition cost is real but short-lived. typically under a week before Cursor's codebase awareness begins paying dividends on complex tasks where Copilot's limited context window was previously a bottleneck.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to migrate copilot chat history and context to cursor ai?**
+How long does it take to migrate copilot chat history and context to cursor ai?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Use AI Chat History Effectively for Iterating on Code](/how-to-use-ai-chat-history-effectively-for-iterating-on-code/)
 - [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
@@ -315,4 +315,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Migrate GitHub Copilot Workspace Setup to Cursor Background](/migrate-github-copilot-workspace-setup-to-cursor-background-/)
 - [How to Migrate VSCode Copilot Keybindings](/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

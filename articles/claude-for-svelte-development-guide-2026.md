@@ -14,7 +14,7 @@ tags: [ai-tools-compared, claude-ai]
 ---
 {% raw %}
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```
 {% endraw %}

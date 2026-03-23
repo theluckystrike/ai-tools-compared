@@ -15,19 +15,19 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-PostgreSQL query optimization is one of those tasks where AI tools earn their keep fast. A slow query plan, a missing index, a correlated subquery eating CPU — AI assistants can spot these patterns and suggest fixes in seconds. This guide shows how to use Claude, GPT-4, and GitHub Copilot to tune real Postgres queries, interpret EXPLAIN output, and redesign schemas when needed.
+PostgreSQL query optimization is one of those tasks where AI tools earn their keep fast. A slow query plan, a missing index, a correlated subquery eating CPU. AI assistants can spot these patterns and suggest fixes in seconds. This guide shows how to use Claude, GPT-4, and GitHub Copilot to tune real Postgres queries, interpret EXPLAIN output, and redesign schemas when needed.
 
-## Why AI Accelerates Postgres Tuning
+Why AI Accelerates Postgres Tuning
 
 Manual query optimization requires you to read EXPLAIN ANALYZE output, understand planner decisions, know index types, and recognize anti-patterns. AI tools compress that feedback loop. You paste the query + plan, and get actionable rewrites instead of spending 20 minutes reading docs.
 
 The three main use cases:
 
-1. **EXPLAIN ANALYZE interpretation** — translate planner output into plain English
-2. **Query rewrites** — replace correlated subqueries, CTEs with poor estimates, or sequential scans
-3. **Index recommendations** — suggest which indexes to create, when to use partial or covering indexes
+1. EXPLAIN ANALYZE interpretation. translate planner output into plain English
+2. Query rewrites. replace correlated subqueries, CTEs with poor estimates, or sequential scans
+3. Index recommendations. suggest which indexes to create, when to use partial or covering indexes
 
-## Setting Up the Workflow
+Setting Up the Workflow
 
 Before pasting to an AI tool, gather the full context:
 
@@ -58,7 +58,7 @@ WHERE tablename IN ('orders', 'customers', 'order_items');
 
 Paste all three outputs together when prompting. The more context, the more accurate the suggestion.
 
-## Claude for Query Analysis
+Claude for Query Analysis
 
 Claude handles long EXPLAIN ANALYZE output well and gives structured responses. A good prompt:
 
@@ -79,7 +79,7 @@ Claude's typical response identifies:
 - Why the planner chose that path (bad statistics, no index, low selectivity estimate)
 - A concrete rewrite or index DDL
 
-**Sample output Claude generates:**
+Sample output Claude generates:
 
 ```sql
 -- Claude's suggested composite index
@@ -104,11 +104,11 @@ ANALYZE orders;
 
 Claude will also flag if a partial index won't help because the planner's row estimate is wrong, and suggest `SET enable_seqscan = off` to verify if an index would actually be used.
 
-## GPT-4 for Rewriting Correlated Subqueries
+GPT-4 for Rewriting Correlated Subqueries
 
 GPT-4 is strong at pattern recognition. It excels at spotting N+1 subqueries and replacing them with set-based rewrites.
 
-**Before (slow correlated subquery):**
+Before (slow correlated subquery):
 
 ```sql
 -- This runs the subquery once per row in customers
@@ -119,7 +119,7 @@ FROM customers c
 WHERE c.tier = 'premium';
 ```
 
-**GPT-4 rewrite:**
+GPT-4 rewrite:
 
 ```sql
 -- Lateral join or aggregation subquery pushed down
@@ -148,7 +148,7 @@ WHERE c.tier = 'premium';
 
 GPT-4 explains the tradeoff between `LATERAL` and the CTE approach, noting that `NOT MATERIALIZED` (Postgres 12+) lets the planner inline the CTE rather than materializing it separately.
 
-## GitHub Copilot for Inline Index Design
+GitHub Copilot for Inline Index Design
 
 Copilot's strength is in-editor suggestions while you're writing migrations. It recognizes patterns from surrounding code.
 
@@ -163,7 +163,7 @@ ON orders (customer_id, status)
 INCLUDE (total, created_at);
 ```
 
-The `INCLUDE` clause suggestion is notable — Copilot often adds covering columns based on what it sees in nearby SELECT statements. Not always correct, but a strong starting point.
+The `INCLUDE` clause suggestion is notable. Copilot often adds covering columns based on what it sees in nearby SELECT statements. Not always correct, but a strong starting point.
 
 For `pg_stat_statements` analysis, Copilot can generate the diagnostic query:
 
@@ -181,22 +181,22 @@ ORDER BY total_exec_time DESC
 LIMIT 20;
 ```
 
-## Comparing Output Quality
+Comparing Output Quality
 
 | Task | Claude | GPT-4 | Copilot |
 |---|---|---|---|
-| EXPLAIN ANALYZE reading | Excellent — node-by-node breakdown | Good — identifies key nodes | Weak — no context |
+| EXPLAIN ANALYZE reading | Excellent. node-by-node breakdown | Good. identifies key nodes | Weak. no context |
 | Correlated subquery rewrite | Strong | Excellent | Moderate (in-file only) |
 | Index DDL suggestions | Strong, includes CONCURRENTLY | Strong | Good with INCLUDE columns |
 | Statistics/vacuum advice | Yes | Sometimes | No |
 | Schema redesign | Good for normalized schemas | Good | No |
 
-## Handling Bloated CTEs
+Handling Bloated CTEs
 
 A common anti-pattern: CTEs used as optimization fences (pre-Postgres 12 behavior that many devs still write):
 
 ```sql
--- Old pattern — Postgres 12+ doesn't materialize by default, but many devs still use it
+-- Old pattern. Postgres 12+ doesn't materialize by default, but many devs still use it
 WITH expensive_cte AS (
   SELECT customer_id, AVG(total) as avg_order
   FROM orders
@@ -213,7 +213,7 @@ Prompt Claude: "Is this CTE being materialized? How do I verify, and should I us
 
 Claude explains: in Postgres 12+, CTEs without side effects are not materialized by default unless they're referenced more than once. It suggests adding `EXPLAIN` to verify, and shows how to force inlining with `NOT MATERIALIZED` if needed, or force materialization with `MATERIALIZED` when the CTE result is used multiple times and re-computation would be expensive.
 
-## Real Workflow: Paste EXPLAIN, Get Fix
+Real Workflow: Paste EXPLAIN, Get Fix
 
 The fastest workflow:
 
@@ -236,13 +236,13 @@ Tell me: (1) what the bottleneck is, (2) what index to create, (3) any query rew
 
 Claude typically returns a diagnosis in under 30 seconds and includes copy-paste DDL.
 
-## Automating Query Optimization with a CI Pipeline
+Automating Query Optimization with a CI Pipeline
 
 Build a system that catches slow queries before production:
 
 ```python
 #!/usr/bin/env python3
-# query_optimizer_ci.py — Find slow queries and get fixes
+query_optimizer_ci.py. Find slow queries and get fixes
 
 import psycopg2
 import anthropic
@@ -330,7 +330,7 @@ if __name__ == "__main__":
 Run this in CI/CD after tests pass:
 
 ```yaml
-# .github/workflows/query-optimization.yml
+.github/workflows/query-optimization.yml
 name: Query Performance Check
 on: [pull_request]
 
@@ -373,7 +373,7 @@ jobs:
             });
 ```
 
-## Query Optimization Decision Tree
+Query Optimization Decision Tree
 
 Claude can generate a decision tree for your specific database:
 
@@ -405,12 +405,12 @@ Start with an EXPLAIN ANALYZE output. For each node:
    → No: Query is optimized
 ```
 
-## Production Query Monitoring
+Production Query Monitoring
 
 Use AI to continuously monitor and fix slow queries in production:
 
 ```python
-# monitor_production_queries.py — Daily report of slow queries
+monitor_production_queries.py. Daily report of slow queries
 
 import subprocess
 import anthropic
@@ -461,18 +461,18 @@ Keep this brief for email (max 200 words)."""
     subprocess.run(["mail", "-s", "Daily DB Query Report", "team@example.com"],
                    input=report.encode())
 
-# Run daily
+Run daily
 send_daily_report()
 ```
 
 Schedule with cron:
 
 ```bash
-# Every morning at 8 AM
+Every morning at 8 AM
 0 8 * * * /usr/bin/python3 /opt/monitor_production_queries.py
 ```
 
-## Query Tuning Patterns by Problem Type
+Query Tuning Patterns by Problem Type
 
 Claude recognizes these patterns:
 
@@ -485,7 +485,7 @@ Claude recognizes these patterns:
 | Missing statistics | Cardinality estimates way off | Run ANALYZE | 2-5x |
 | Unnecessary sorting | ORDER BY on unindexed column | Add index or use LIMIT | 2-20x |
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for SQL Query Optimization and Database](/best-ai-tools-for-sql-query-optimization-and-database-performance/)
 - [AI Tools for Database Performance Optimization Query](/ai-tools-for-database-performance-optimization-query-analysis/)
@@ -493,6 +493,6 @@ Claude recognizes these patterns:
 - [Best AI Assistant for SQL Query Optimization](/best-ai-assistant-for-sql-query-optimization/)
 - [AI Tools for Debugging Postgres Query Planner Choosing](/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

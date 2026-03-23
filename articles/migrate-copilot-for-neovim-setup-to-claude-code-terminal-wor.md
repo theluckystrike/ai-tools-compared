@@ -17,7 +17,7 @@ voice-checked: true
 
 To migrate from Copilot for Neovim to Claude Code's terminal workflow, install Claude Code via `brew install anthropic-cli` or the direct installer, authenticate with `claude auth`, then run `claude` from your project root to start an AI session with full codebase context. Instead of accepting inline suggestions as you type, you describe what you need in the terminal and review the generated code before applying it. This shift from passive suggestion acceptance to explicit AI collaboration gives you deeper project analysis, multi-file refactoring capabilities, and more control over every line that enters your codebase.
 
-## Table of Contents
+Table of Contents
 
 - [Why Consider the Terminal Workflow](#why-consider-the-terminal-workflow)
 - [Prerequisites](#prerequisites)
@@ -27,15 +27,15 @@ To migrate from Copilot for Neovim to Claude Code's terminal workflow, install C
 - [Performance Characteristics](#performance-characteristics)
 - [Troubleshooting](#troubleshooting)
 
-## Why Consider the Terminal Workflow
+Why Consider the Terminal Workflow
 
-Copilot for Neovim provides inline suggestions as you type, which works well for quick completions. However, this approach has limitations. The suggestions appear in your buffer, which can interrupt your flow when you need to dismiss them frequently. The terminal workflow with Claude Code takes a different approach—it keeps AI interactions separate from your editing buffer, giving you more explicit control over when and how you engage with AI assistance.
+Copilot for Neovim provides inline suggestions as you type, which works well for quick completions. However, this approach has limitations. The suggestions appear in your buffer, which can interrupt your flow when you need to dismiss them frequently. The terminal workflow with Claude Code takes a different approach, it keeps AI interactions separate from your editing buffer, giving you more explicit control over when and how you engage with AI assistance.
 
 Claude Code excels at understanding project context. When you run it from your project root, it reads your codebase and provides relevant suggestions based on your entire project structure. This contrasts with Copilot's focus on the current file and recent context. For larger projects where understanding dependencies and architectural patterns matters, this difference becomes significant.
 
 Another advantage involves multi-step refactoring. In Neovim with Copilot, you typically work with single-line or small-block suggestions. Claude Code in the terminal can handle larger transformations across multiple files, making it particularly useful for tasks like updating deprecated API calls, extracting repeated code patterns into reusable functions, or explaining complex code sections in detail.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -45,7 +45,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Set Up Claude Code
+Step 1: Set Up Claude Code
 
 Installation takes just a few minutes. If you use Homebrew on macOS, run:
 
@@ -73,7 +73,7 @@ For project-specific configuration, create a `.claude/settings.local.json` file 
 {
   "permissions": {
     "allow": [
-      "Bash($SHELL, my-project/**)",
+      "Bash($SHELL, my-project/)",
       "Read($ANY)",
       "Write($ANY)"
     ],
@@ -87,11 +87,11 @@ For project-specific configuration, create a `.claude/settings.local.json` file 
 
 The permissions system gives you fine-grained control over what Claude Code can do in your project, addressing a common concern when giving AI tools filesystem access.
 
-### Step 2: Your New Terminal Workflow
+Step 2: Your New Terminal Workflow
 
 The fundamental shift involves moving from inline suggestions to explicit AI conversations. Instead of accepting or dismissing Copilot suggestions as you type, you invoke Claude Code when you need assistance and work with it as a collaborative partner.
 
-### Starting a Session
+Starting a Session
 
 From your project directory, initiate a new session:
 
@@ -108,7 +108,7 @@ Explain the authentication flow in this codebase, focusing on how tokens are val
 
 The tool analyzes your code and provides a detailed explanation, referencing specific files and functions. This level of analysis would require multiple Copilot queries to match.
 
-### Practical Workflow Examples
+Practical Workflow Examples
 
 For code completion, you describe what you need rather than waiting for inline suggestions:
 
@@ -134,7 +134,7 @@ This error appears in production but not locally: "Connection refused" on line 4
 
 Claude Code considers your entire codebase and can identify configuration differences that might cause environment-specific issues.
 
-## Migrating Your Workflow Habits
+Migrating Your Workflow Habits
 
 The transition requires adjusting some habits you may have developed with Copilot.
 
@@ -144,7 +144,7 @@ The keyboard shortcut workflow changes significantly. Copilot users often use Ta
 
 Consider keeping a terminal window dedicated to Claude Code for ongoing conversations. You can reference the same session across multiple tasks, maintaining context as you work through different problems in your project.
 
-### Step 3: Optimization Tips
+Step 3: Optimization Tips
 
 To get the most out of Claude Code in the terminal, use specific file references in your requests. Instead of "fix this function," try "update the handleRequest function in api/users.js to return proper HTTP status codes."
 
@@ -163,17 +163,17 @@ For repetitive tasks, Claude Code supports a slash commands system. Create custo
 
 This customization brings some of the convenience of Copilot's quick actions while maintaining the terminal workflow's explicit control.
 
-### Step 4: Making the Switch
+Step 4: Making the Switch
 
-The migration from Copilot for Neovim to Claude Code terminal workflow represents a shift from passive suggestion acceptance to active AI collaboration. You gain deeper project analysis, better multi-file refactoring capabilities, and more control over your AI interactions. The adjustment period is brief—most developers find their new workflow within a week.
+The migration from Copilot for Neovim to Claude Code terminal workflow represents a shift from passive suggestion acceptance to active AI collaboration. You gain deeper project analysis, better multi-file refactoring capabilities, and more control over your AI interactions. The adjustment period is brief, most developers find their new workflow within a week.
 
 Start by using Claude Code for one task per day, then gradually expand as you discover where it provides the most value. The terminal becomes your new AI-powered development environment, one that scales with your project's complexity.
 
-## Real-World Task Comparisons: Copilot Neovim vs Claude Code Terminal
+Real-World Task Comparisons: Copilot Neovim vs Claude Code Terminal
 
 Let's compare how the same tasks play out with each tool:
 
-**Task 1: Add error handling to an async function**
+Task 1: Add error handling to an async function
 
 *Copilot for Neovim workflow:*
 1. Type the async function signature
@@ -188,7 +188,7 @@ Let's compare how the same tasks play out with each tool:
 3. Apply it if satisfied
 4. Time: 1-2 minutes with better error handling
 
-**Task 2: Understand a complex codebase section**
+Task 2: Understand a complex codebase section
 
 *Copilot for Neovim workflow:*
 1. Navigate to the file
@@ -203,7 +203,7 @@ Let's compare how the same tasks play out with each tool:
 3. Ask follow-up: "What happens when a token expires?"
 4. Time: 5-10 minutes with understanding
 
-**Task 3: Refactor across multiple files**
+Task 3: Refactor across multiple files
 
 *Copilot for Neovim workflow:*
 1. Use vim's search-and-replace or manual editing
@@ -218,7 +218,7 @@ Let's compare how the same tasks play out with each tool:
 
 The pattern is clear: Claude Code scales better for multi-file work that Neovim + Copilot handles piecemeal.
 
-## Advanced Claude Code Configuration for Neovim Veterans
+Advanced Claude Code Configuration for Neovim Veterans
 
 Neovim users are often comfortable with configuration files. use this:
 
@@ -229,7 +229,7 @@ Create `.claude/config.json` in your project root:
   "version": "1.0",
   "permissions": {
     "allow": [
-      "Bash($SHELL, **)",
+      "Bash($SHELL, )",
       "Read($ANY)",
       "Write($ANY)"
     ]
@@ -268,38 +268,38 @@ Create project-specific commands in `.claude/settings.local.json`:
 
 This lets Claude Code run your project commands directly and verify changes work.
 
-### Step 5: Hybrid Workflow: Neovim + Claude Code Together
+Step 5: Hybrid Workflow: Neovim + Claude Code Together
 
 You don't have to abandon Neovim. Instead, create a hybrid:
 
-**For inline coding:** Copilot for Neovim still works great for single-function completions. You're already familiar with it.
+For inline coding: Copilot for Neovim still works great for single-function completions. You're already familiar with it.
 
-**For complex analysis and refactoring:** Switch to Claude Code terminal in a split window.
+For complex analysis and refactoring: Switch to Claude Code terminal in a split window.
 
 Real workflow example:
 
 ```bash
-# Terminal 1: Neovim editing
+Terminal 1: Neovim editing
 nvim src/api/users.ts
 
-# Terminal 2: Claude Code analysis
+Terminal 2: Claude Code analysis
 cd /path/to/project
 claude "Help me understand the request flow for user authentication"
-# Review explanation
+Review explanation
 claude "Update this flow to use JWT tokens instead of sessions"
-# Apply the changes made in Terminal 1 from Claude's suggestions
+Apply the changes made in Terminal 1 from Claude's suggestions
 ```
 
 Many developers find this rhythm works better than choosing one or the other. Use the right tool for the right task.
 
-### Step 6: Handling Neovim-Specific Concerns
+Step 6: Handling Neovim-Specific Concerns
 
-**Lost muscle memory for inline completion:** Your fingers are used to accepting Copilot suggestions. Claude Code requires explicit requests. This feels like a step backward initially.
+Lost muscle memory for inline completion: Your fingers are used to accepting Copilot suggestions. Claude Code requires explicit requests. This feels like a step backward initially.
 
 Solution: Create terminal aliases for common Claude Code prompts:
 
 ```bash
-# Add to .zshrc or .bashrc
+Add to .zshrc or .bashrc
 alias claude-test="claude 'Write detailed unit tests covering edge cases for the last changed file'"
 alias claude-doc="claude 'Generate JSDoc comments for all exported functions'"
 alias claude-fix="claude 'Fix any linting errors and formatting issues'"
@@ -307,40 +307,40 @@ alias claude-fix="claude 'Fix any linting errors and formatting issues'"
 
 Now typing `claude-test` is almost as fast as accepting an inline suggestion.
 
-**Losing the "flow" of continuous coding:** With Copilot, you stay in Neovim. With Claude Code, you're switching context to the terminal.
+Losing the "flow" of continuous coding: With Copilot, you stay in Neovim. With Claude Code, you're switching context to the terminal.
 
 Solution: Use Claude Code's `--output-file` flag to send results directly to files:
 
 ```bash
 claude "Generate unit tests for the auth module" --output-file tests/auth.test.ts
-# File is written directly, you can review in Neovim immediately
+File is written directly, you can review in Neovim immediately
 ```
 
-**Fear that local file access is risky:** Claude Code asks for permission before accessing files.
+Fear that local file access is risky: Claude Code asks for permission before accessing files.
 
 Solution: Review your `.claude/settings.local.json` permissions carefully:
 
 ```json
 {
   "permissions": {
-    "allow": ["Read(src/**)", "Write(src/api/**, src/utils/**)"],
-    "deny": ["Write(node_modules/**)", "Bash(rm -rf)"]
+    "allow": ["Read(src/)", "Write(src/api/, src/utils/)"],
+    "deny": ["Write(node_modules/)", "Bash(rm -rf)"]
   }
 }
 ```
 
 This explicitly allows reading all src files but only writing to api and utils directories. Dangerous commands are blocked.
 
-## Performance Characteristics
+Performance Characteristics
 
 Claude Code feels different from Copilot because the model is different. Real performance numbers:
 
-**Claude 3.5 Sonnet (Claude Code default):**
+Claude 3.5 Sonnet (Claude Code default):
 - Input tokens: $3 per 1M tokens
 - Output tokens: $15 per 1M tokens
 - Typical session: 50-100 output tokens = $0.001-0.002
 
-**GitHub Copilot:**
+GitHub Copilot:
 - $10/month fixed
 - Unlimited usage
 
@@ -348,58 +348,58 @@ The monthly cost comparison:
 - Light user (5 Claude sessions daily): $0.10/month + API costs ≈ $2-5/month
 - Heavy user (20 Claude sessions daily): $0.30/month + API costs ≈ $15-20/month
 
-So Claude Code becomes cost-competitive with Copilot only for heavy daily usage. But for many Neovim users doing focused deep work, fewer but higher-quality sessions is the actual pattern—making Claude Code the cheaper option.
+So Claude Code becomes cost-competitive with Copilot only for heavy daily usage. But for many Neovim users doing focused deep work, fewer but higher-quality sessions is the actual pattern, making Claude Code the cheaper option.
 
-### Step 7: Migration Timeline and Expectations
+Step 7: Migration Timeline and Expectations
 
-**Days 1-3:** Awkward. You'll miss inline suggestions and reach for Copilot in Neovim habitually.
+Days 1-3: Awkward. You'll miss inline suggestions and reach for Copilot in Neovim habitually.
 
-**Days 4-7:** You'll discover Claude Code shines for understanding complex code. You'll start using it more.
+Days 4-7: You'll discover Claude Code shines for understanding complex code. You'll start using it more.
 
-**Week 2:** You'll stop opening Copilot for refactoring tasks, recognizing Claude Code is faster.
+Week 2: You'll stop opening Copilot for refactoring tasks, recognizing Claude Code is faster.
 
-**Week 3-4:** You'll have settled into a rhythm where each tool has its place.
+Week 3-4: You'll have settled into a rhythm where each tool has its place.
 
 Most Neovim users find the transition easier than GUI editor users because they're already comfortable with terminal-based workflows. The jump to "AI in the terminal" feels natural.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to migrate from copilot for neovim?**
+How long does it take to migrate from copilot for neovim?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Migrate GitHub Copilot Workspace Setup to Cursor Background](/migrate-github-copilot-workspace-setup-to-cursor-background-/)
 - [aider vs Claude Code: Terminal AI Coding Assistants Compared](/aider-vs-claude-code-terminal-ai-comparison/)
@@ -407,6 +407,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Does Claude Code Send Terminal Output to Anthropic Servers P](/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
 - [Claude Code Coverage Reporting Setup Guide](/claude-code-coverage-reporting-setup-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```

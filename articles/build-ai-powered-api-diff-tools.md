@@ -17,7 +17,7 @@ tags: [ai-tools-compared, artificial-intelligence, api]
 
 An API diff tool tells you what changed between two API versions. An AI-powered one tells you what changed, which changes are breaking, which clients will be affected, and what migration steps consumers need to take. This guide shows how to build one using Claude as the analysis engine.
 
-## What Makes a Change "Breaking"
+What Makes a Change "Breaking"
 
 Not all API changes are equal. Breaking changes break existing client code without modification:
 
@@ -32,10 +32,10 @@ Not all API changes are equal. Breaking changes break existing client code witho
 | Change HTTP status code | Maybe | 200 → 201 is usually fine, 200 → 400 is breaking |
 | Change authentication method | Yes | OAuth → API key requires client changes |
 
-## Tool Architecture
+Tool Architecture
 
 ```python
-# api_diff.py — main diff tool
+api_diff.py. main diff tool
 
 import json
 import yaml
@@ -175,10 +175,10 @@ Generate a migration guide for API consumers."""
  )
 ```
 
-## CLI Tool
+CLI Tool
 
 ```python
-# api_diff_cli.py
+api_diff_cli.py
 import click
 import json
 from api_diff import load_spec, compute_structural_diff, analyze_diff_with_claude
@@ -220,13 +220,13 @@ def diff(old_spec, new_spec, old_version, new_version, output, fail_on_breaking)
 
  elif output == 'markdown':
  click.echo(f"# API Diff: {old_version} → {new_version}")
- click.echo(f"\n**Severity:** {result.severity.upper()}")
+ click.echo(f"\nSeverity: {result.severity.upper()}")
  click.echo(f"\n## Breaking Changes ({len(result.breaking_changes)})")
  for change in result.breaking_changes:
  click.echo(f"\n### `{change['endpoint']}`")
- click.echo(f"- **Change:** {change['change']}")
- click.echo(f"- **Impact:** {change['impact']}")
- click.echo(f"- **Migration:** {change['migration']}")
+ click.echo(f"- Change: {change['change']}")
+ click.echo(f"- Impact: {change['impact']}")
+ click.echo(f"- Migration: {change['migration']}")
  click.echo(f"\n## Migration Guide\n\n{result.migration_guide}")
 
  else: # text
@@ -249,7 +249,7 @@ if __name__ == '__main__':
  diff()
 ```
 
-## Sample Output
+Sample Output
 
 ```bash
 $ python api_diff_cli.py openapi-v1.yaml openapi-v2.yaml --old-version v1 --new-version v2
@@ -261,7 +261,7 @@ Non-breaking changes: 5
 BREAKING CHANGES:
  [DELETE /api/v1/users/{id}]: Endpoint removed
  Impact: Clients calling DELETE /users/:id will receive 404
- Fix: Migrate to DELETE /api/v2/users/{id} — identical behavior
+ Fix: Migrate to DELETE /api/v2/users/{id}. identical behavior
 
  [POST /api/v1/orders]: New required field 'shipping_address_id' added to request body
  Impact: Clients not sending shipping_address_id will receive 422
@@ -272,10 +272,10 @@ BREAKING CHANGES:
  Fix: Update price handling to expect number type (e.g., 29.99 instead of "29.99")
 ```
 
-## CI Integration
+CI Integration
 
 ```yaml
-# .github/workflows/api-diff.yml
+.github/workflows/api-diff.yml
 name: API Breaking Change Check
 on:
  pull_request:
@@ -303,7 +303,7 @@ jobs:
  --fail-on-breaking
 ```
 
-## Related Reading
+Related Reading
 
 - [AI Tools for Automated Swagger Documentation](/ai-tools-automated-swagger-docs/)
 - [AI-Powered Database Schema Diff Tools](/ai-powered-database-schema-diff-tools/)
@@ -311,6 +311,6 @@ jobs:
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -17,10 +17,10 @@ voice-checked: true
 
 AWS bills are notoriously hard to analyze. The line items are cryptic, the pricing models vary by service, and the optimization opportunities require understanding your workload patterns. AI tools are useful here not because they understand AWS better than a specialized tool like Spot.io or CloudHealth, but because they can contextualize cost data against your actual infrastructure code and suggest specific changes.
 
-## Step 1: Export Your Cost Data
+Step 1: Export Your Cost Data
 
 ```bash
-# Export last 90 days of cost data via AWS CLI
+Export last 90 days of cost data via AWS CLI
 aws ce get-cost-and-usage \
   --time-period Start=2025-12-22,End=2026-03-22 \
   --granularity MONTHLY \
@@ -28,7 +28,7 @@ aws ce get-cost-and-usage \
   --group-by Type=DIMENSION,Key=SERVICE \
   --output json > cost-export.json
 
-# Also get resource-level data for EC2
+Also get resource-level data for EC2
 aws ce get-cost-and-usage \
   --time-period Start=2026-02-01,End=2026-03-01 \
   --granularity DAILY \
@@ -43,7 +43,7 @@ aws ce get-cost-and-usage \
   --output json > ec2-cost-by-type.json
 ```
 
-## Step 2: AI-Assisted Cost Analysis
+Step 2: AI-Assisted Cost Analysis
 
 Feed the export to Claude with context about your workload:
 
@@ -71,7 +71,7 @@ Cost data (last 90 days):
 {json.dumps(cost_export, indent=2)[:3000]}
 
 Identify:
-1. Services with highest spend — are they expected given the workload?
+1. Services with highest spend. are they expected given the workload?
 2. Instance types that are likely oversized
 3. Any services with zero usage this period
 4. Data transfer costs that suggest architectural inefficiency
@@ -97,7 +97,7 @@ analysis = analyze_costs(cost_data, workload)
 print(analysis)
 ```
 
-**Typical Claude output:**
+Typical Claude output:
 
 ```
 COST ANALYSIS RESULTS
@@ -115,14 +115,14 @@ COST ANALYSIS RESULTS
    1-year reserved instances save ~$580/year vs on-demand.
 
 4. S3 Intelligent Tiering (Estimated savings: $45/month, Low effort)
-   Enable on buckets with >100GB — objects move to infrequent access automatically.
+   Enable on buckets with >100GB. objects move to infrequent access automatically.
 
 5. Inter-AZ Data Transfer (Investigate)
    $180/month in inter-AZ transfer suggests services not co-located
    for hot paths. Review security group rules and load balancer targets.
 ```
 
-## Step 3: Generate Rightsizing Terraform Changes
+Step 3: Generate Rightsizing Terraform Changes
 
 ```python
 def generate_terraform_changes(recommendation: str, current_tf: str) -> str:
@@ -139,7 +139,7 @@ Current Terraform:
 {current_tf}
 
 Requirements:
-- Minimal diff — only change what's necessary
+- Minimal diff. only change what's necessary
 - Add a comment explaining the change and expected savings
 - Note if the change requires destroy/recreate
 - Make instance type configurable via variable
@@ -149,7 +149,7 @@ Requirements:
     return response.content[0].text
 ```
 
-**Input:**
+Input:
 
 ```hcl
 resource "aws_instance" "web" {
@@ -160,13 +160,13 @@ resource "aws_instance" "web" {
 }
 ```
 
-**Claude's output:**
+Claude's output:
 
 ```hcl
 variable "web_instance_type" {
   description = "EC2 instance type for web tier. Downsized from m5.xlarge (40% avg CPU). Estimated savings: $340/month."
   type        = string
-  default     = "m5.large"  # was m5.xlarge — rightsized 2026-03-22
+  default     = "m5.large"  # was m5.xlarge. rightsized 2026-03-22
 }
 
 resource "aws_instance" "web" {
@@ -177,7 +177,7 @@ resource "aws_instance" "web" {
 }
 ```
 
-## Step 4: Instance Scheduler for Dev/Staging
+Step 4: Instance Scheduler for Dev/Staging
 
 Claude-generated Lambda for stopping/starting environments on schedule:
 
@@ -213,7 +213,7 @@ def lambda_handler(event, context):
 ```
 
 ```hcl
-# CloudWatch Events rules for the schedule
+CloudWatch Events rules for the schedule
 resource "aws_cloudwatch_event_rule" "stop_dev" {
   name                = "stop-dev-staging"
   schedule_expression = "cron(0 20 ? * MON-FRI *)"
@@ -225,13 +225,13 @@ resource "aws_cloudwatch_event_rule" "start_dev" {
 }
 ```
 
-## Step 5: AWS Compute Optimizer Analysis
+Step 5: AWS Compute Optimizer Analysis
 
 ```bash
-# Enable Compute Optimizer (free)
+Enable Compute Optimizer (free)
 aws compute-optimizer update-enrollment-status --status Active
 
-# Get EC2 recommendations after 24h
+Get EC2 recommendations after 24h
 aws compute-optimizer get-ec2-instance-recommendations \
   --output json > compute-optimizer-recommendations.json
 ```
@@ -247,23 +247,23 @@ Prioritize these AWS Compute Optimizer recommendations by:
 [paste recommendations JSON]
 ```
 
-## Step 6: Identify Idle and Orphaned Resources
+Step 6: Identify Idle and Orphaned Resources
 
-One of the most overlooked cost categories is orphaned resources — things that exist but serve no workload. Claude can help identify them when given the right CLI output.
+One of the most overlooked cost categories is orphaned resources. things that exist but serve no workload. Claude can help identify them when given the right CLI output.
 
 ```bash
-# Find unattached EBS volumes
+Find unattached EBS volumes
 aws ec2 describe-volumes \
   --filters Name=status,Values=available \
   --query 'Volumes[*].{ID:VolumeId,Size:Size,Type:VolumeType,AZ:AvailabilityZone}' \
   --output json > unattached-volumes.json
 
-# Find Elastic IPs not associated to running instances
+Find Elastic IPs not associated to running instances
 aws ec2 describe-addresses \
   --query 'Addresses[?AssociationId==null].[PublicIp,AllocationId]' \
   --output json > idle-eips.json
 
-# Find load balancers with no registered targets
+Find load balancers with no registered targets
 aws elbv2 describe-load-balancers --output json > albs.json
 aws elbv2 describe-target-groups --output json > target-groups.json
 ```
@@ -283,7 +283,7 @@ Target groups: [paste target-groups.json]
 
 Idle EBS volumes cost $0.10/GB-month (gp3). A 500GB forgotten snapshot or volume adds $50/month for nothing. Elastic IPs cost $3.60/month each when unattached. Most accounts accumulate 10-30 of these over time.
 
-## Step 7: NAT Gateway vs VPC Endpoints
+Step 7: NAT Gateway vs VPC Endpoints
 
 NAT Gateway charges $0.045/GB for all outbound traffic from private subnets. If your Lambda functions or EC2 instances are calling AWS APIs (S3, DynamoDB, Secrets Manager, SSM) through a NAT Gateway, you're paying for traffic that could go through free VPC endpoints instead.
 
@@ -301,7 +301,7 @@ Provide the Terraform resource blocks for each endpoint.
 
 Claude generates the endpoint Terraform and also flags which services support Gateway endpoints (free: S3, DynamoDB) vs Interface endpoints ($0.01/AZ/hour but cheaper than NAT at scale).
 
-## Savings Summary by Category
+Savings Summary by Category
 
 | Optimization | Typical Savings | Effort |
 |---|---|---|
@@ -314,34 +314,34 @@ Claude generates the endpoint Terraform and also flags which services support Ga
 | Orphaned resources cleanup | $50-300/month (varies) | Low |
 | EBS volume rightsizing | 10-20% of EBS spend | Low |
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Cloud Cost Optimization Across AWS Azure](/best-ai-tools-for-cloud-cost-optimization-across-aws-azure-g/)
 - [Best AI Assistants for AWS CloudFormation Template](/best-ai-assistants-for-aws-cloudformation-template-generatio/)
 - [How Much Does Cursor AI Actually Cost Per Month All](/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
 - [GitHub Copilot vs Amazon Codewhisperer for AWS Development](/github-copilot-vs-amazon-codewhisperer-for-aws-development-2026/)
 - [AI Tools for Writing AWS CDK Infrastructure 2026](/ai-tools-for-writing-aws-cdk-infrastructure-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Are there any hidden costs I should know about?**
+Are there any hidden costs I should know about?
 
 Watch for overage charges, API rate limit fees, and costs for premium features not included in base plans. Some tools charge extra for storage, team seats, or advanced integrations. Read the full pricing page including footnotes before signing up.
 
-**Is the annual plan worth it over monthly billing?**
+Is the annual plan worth it over monthly billing?
 
 Annual plans typically save 15-30% compared to monthly billing. If you have used the tool for at least 3 months and plan to continue, the annual discount usually makes sense. Avoid committing annually before you have validated the tool fits your needs.
 
-**Can I change plans later without losing my data?**
+Can I change plans later without losing my data?
 
 Most tools allow plan changes at any time. Upgrading takes effect immediately, while downgrades typically apply at the next billing cycle. Your data and settings are preserved across plan changes in most cases, but verify this with the specific tool.
 
-**Do student or nonprofit discounts exist?**
+Do student or nonprofit discounts exist?
 
 Many AI tools and software platforms offer reduced pricing for students, educators, and nonprofits. Check the tool's pricing page for a discount section, or contact their sales team directly. Discounts of 25-50% are common for qualifying organizations.
 
-**What happens to my work if I cancel my subscription?**
+What happens to my work if I cancel my subscription?
 
 Policies vary widely. Some tools let you access your data for a grace period after cancellation, while others lock you out immediately. Export your important work before canceling, and check the terms of service for data retention policies.
 {% endraw %}

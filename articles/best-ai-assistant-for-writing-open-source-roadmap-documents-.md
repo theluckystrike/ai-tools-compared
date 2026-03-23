@@ -20,7 +20,7 @@ Open source maintainers often face the challenge of communicating project direct
 
 This guide evaluates the best AI assistants for writing open source roadmap documents from issue and milestone data in 2026, with practical workflows you can implement immediately.
 
-## Table of Contents
+Table of Contents
 
 - [Why AI Assistants Transform Roadmap Documentation](#why-ai-assistants-transform-roadmap-documentation)
 - [Top AI Assistants for Roadmap Generation](#top-ai-assistants-for-roadmap-generation)
@@ -28,7 +28,7 @@ This guide evaluates the best AI assistants for writing open source roadmap docu
 - [Practical Workflow: Automated Roadmap Generation](#practical-workflow-automated-roadmap-generation)
 - [Choosing the Right AI Assistant](#choosing-the-right-ai-assistant)
 
-## Why AI Assistants Transform Roadmap Documentation
+Why AI Assistants Transform Roadmap Documentation
 
 Writing roadmap documents manually requires reviewing dozens or hundreds of issues, identifying themes, prioritizing features, and crafting clear explanations. This process becomes repetitive, especially for active projects with frequent contributions.
 
@@ -46,13 +46,13 @@ AI assistants handle this workload effectively by:
 
 The key advantage is processing large volumes of issues quickly while producing structured output that human maintainers can refine.
 
-## Top AI Assistants for Roadmap Generation
+Top AI Assistants for Roadmap Generation
 
-### 1. Claude (Anthropic)
+1. Claude (Anthropic)
 
 Claude excels at understanding GitHub issue structures and transforming them into coherent narrative documents. Its large context window allows processing hundreds of issues in a single conversation, making it suitable for larger projects.
 
-**Strengths:**
+Strengths:
 
 - Processes extensive issue data without losing context
 
@@ -62,13 +62,13 @@ Claude excels at understanding GitHub issue structures and transforming them int
 
 - Adapts tone to match project style
 
-**Workflow example:**
+Workflow example:
 
 ```python
 import requests
 from anthropic import Anthropic
 
-# Fetch issues from a milestone
+Fetch issues from a milestone
 def get_milestone_issues(owner, repo, milestone_number, token):
     url = f"https://api.github.com/repos/{owner}/{repo}/issues"
     params = {
@@ -80,7 +80,7 @@ def get_milestone_issues(owner, repo, milestone_number, token):
     response = requests.get(url, params=params, headers=headers)
     return response.json()
 
-# Prepare issues for AI processing
+Prepare issues for AI processing
 issues_text = "\n\n".join([
     f"Issue #{issue['number']}: {issue['title']}\n"
     f"Labels: {', '.join([l['name'] for l in issue['labels']])}\n"
@@ -88,7 +88,7 @@ issues_text = "\n\n".join([
     for issue in milestone_issues
 ])
 
-# Send to Claude for roadmap generation
+Send to Claude for roadmap generation
 client = Anthropic(api_key="your-api-key")
 response = client.messages.create(
     model="claude-sonnet-4-20250514",
@@ -113,11 +113,11 @@ print(response.content[0].text)
 
 Claude produces organized roadmap sections with thematic groupings and priority indicators, requiring minimal editing.
 
-### 2. ChatGPT (OpenAI)
+2. ChatGPT (OpenAI)
 
 ChatGPT offers fast processing and good integration options through APIs. It's particularly effective for generating standardized roadmap templates that you can customize for specific projects.
 
-**Strengths:**
+Strengths:
 
 - Quick turnaround for roadmap drafts
 
@@ -127,12 +127,12 @@ ChatGPT offers fast processing and good integration options through APIs. It's p
 
 - Handles multiple output formats (Markdown, HTML, JSON)
 
-**Workflow example:**
+Workflow example:
 
 ```python
 import openai
 
-# Generate roadmap from issue data
+Generate roadmap from issue data
 openai.api_key = "your-api-key"
 
 issues_data = """
@@ -150,15 +150,15 @@ Issues:
 {issues_data}
 
 Output format:
-## Q2 2026 Roadmap
+Q2 2026 Roadmap
 
-### High Priority
+High Priority
 [Grouped issues with descriptions]
 
-### Medium Priority
+Medium Priority
 [Grouped issues with descriptions]
 
-### Nice to Have
+Nice to Have
 [Grouped issues with descriptions]
 
 Include effort estimates: S (Small), M (Medium), L (Large)
@@ -173,11 +173,11 @@ response = openai.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-### 3. Gemini (Google)
+3. Gemini (Google)
 
 Gemini performs well when processing mixed data sources, making it useful if your roadmap pulls from GitHub issues, project boards, and other tools simultaneously.
 
-**Strengths:**
+Strengths:
 
 - Excellent multimodal processing
 
@@ -187,7 +187,7 @@ Gemini performs well when processing mixed data sources, making it useful if you
 
 - Fast processing for large issue sets
 
-**Workflow example:**
+Workflow example:
 
 ```python
 import google.generativeai as genai
@@ -224,7 +224,7 @@ response = model.generate_content(roadmap_prompt)
 print(response.text)
 ```
 
-## Practical Workflow: Automated Roadmap Generation
+Practical Workflow: Automated Roadmap Generation
 
 Combining these AI tools with GitHub's API creates a powerful automated pipeline:
 
@@ -280,14 +280,14 @@ Write a professional roadmap document with:
 
     return response.choices[0].message.content
 
-# Usage
+Usage
 roadmap = generate_roadmap("your-org", "your-repo", 1, openai_client)
 print(roadmap)
 ```
 
 This script fetches milestone issues, categorizes them by label, and generates a formatted roadmap document. You can schedule it to run automatically or trigger it when milestones update.
 
-## Choosing the Right AI Assistant
+Choosing the Right AI Assistant
 
 Consider these factors when selecting an AI tool for roadmap generation:
 
@@ -305,34 +305,34 @@ Consider these factors when selecting an AI tool for roadmap generation:
 
 For projects with hundreds of issues, Claude's larger context window provides advantages. For quick templates and cost-effective processing, ChatGPT works well. Gemini suits teams already using Google Workspace.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Best AI Assistant for Writing Open Source Plugin Development](/best-ai-assistant-for-writing-open-source-plugin-development/)
 - [Best AI for Writing: Open Source Maintainer Burnout](/best-ai-for-writing-open-source-maintainer-burnout-preventio/)
 - [Effective Workflow for AI-Assisted Open Source Contribution](/effective-workflow-for-ai-assisted-open-source-contribution-/)
 - [Best AI for Writing Good First Issue Descriptions That](/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
 - [Best AI Assistant for Drafting Open Source Partnership](/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

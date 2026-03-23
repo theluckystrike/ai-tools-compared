@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Build AI Documentation Chatbots 2026"
-description: "Build a documentation chatbot with RAG, OpenAI embeddings, pgvector, and a streaming chat API — with source citation, follow-up handling, and deployment guide"
+description: "Build a documentation chatbot with RAG, OpenAI embeddings, pgvector, and a streaming chat API. with source citation, follow-up handling, and deployment guide"
 date: 2026-03-22
 author: theluckystrike
 permalink: /how-to-build-ai-documentation-chatbots-2026/
@@ -15,11 +15,11 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-# How to Build AI Documentation Chatbots 2026
+How to Build AI Documentation Chatbots 2026
 
-A documentation chatbot lets users ask natural language questions and get answers grounded in your actual docs — not hallucinated. The core pattern is Retrieval-Augmented Generation (RAG): embed the docs, retrieve relevant chunks at query time, and pass them as context to the LLM.
+A documentation chatbot lets users ask natural language questions and get answers grounded in your actual docs. not hallucinated. The core pattern is Retrieval-Augmented Generation (RAG): embed the docs, retrieve relevant chunks at query time, and pass them as context to the LLM.
 
-## Architecture
+Architecture
 
 ```
 Docs (Markdown/HTML) → Chunker → Embedder → pgvector
@@ -28,13 +28,13 @@ User question → Embedder → Vector search → Context window → LLM → Answ
 ```
 
 This guide uses:
-- **FastAPI** for the backend
-- **pgvector** for vector storage
-- **OpenAI** for embeddings + chat
-- **Server-Sent Events** for streaming
-- **Anthropic Claude** as an alternative LLM
+- FastAPI for the backend
+- pgvector for vector storage
+- OpenAI for embeddings + chat
+- Server-Sent Events for streaming
+- Anthropic Claude as an alternative LLM
 
-## Step 1: Database Setup
+Step 1: Database Setup
 
 Before ingesting, you need the pgvector extension and a table for doc sections:
 
@@ -59,10 +59,10 @@ CREATE INDEX ON doc_sections USING hnsw (embedding vector_cosine_ops)
 
 The HNSW index gives sub-millisecond query times for collections up to a few hundred thousand sections. IVFFlat is better for millions of rows but requires tuning `lists` based on row count.
 
-## Step 2: Ingest Documentation
+Step 2: Ingest Documentation
 
 ```python
-# ingest.py
+ingest.py
 import os
 import asyncio
 from pathlib import Path
@@ -146,10 +146,10 @@ async def ingest_docs(docs_dir: str):
         print("Ingestion complete")
 ```
 
-## Step 3: Chat API with Streaming
+Step 3: Chat API with Streaming
 
 ```python
-# api/chat.py
+api/chat.py
 import json
 import asyncio
 from typing import AsyncIterator
@@ -196,7 +196,7 @@ async def retrieve_context(question: str, top_k: int = 5) -> list[dict]:
 
 def build_system_prompt(context_sections: list[dict]) -> str:
     context = "\n\n---\n\n".join(
-        f"**{s['title']}** (source: {s['source']})\n{s['content']}"
+        f"{s['title']} (source: {s['source']})\n{s['content']}"
         for s in context_sections
     )
     return f"""You are a documentation assistant. Answer questions using only the provided documentation context.
@@ -248,7 +248,7 @@ async def chat(req: ChatRequest):
     )
 ```
 
-## Step 4: Simple Frontend
+Step 4: Simple Frontend
 
 ```javascript
 // chat.js
@@ -293,12 +293,12 @@ function renderSources(sources) {
 }
 ```
 
-## Step 5: Conversation History Management
+Step 5: Conversation History Management
 
 Multi-turn conversations need history pruning to avoid overflowing the context window. A practical approach:
 
 ```python
-# utils/history.py
+utils/history.py
 import tiktoken
 
 ENCODER = tiktoken.get_encoding("cl100k_base")
@@ -325,7 +325,7 @@ def prune_history(history: list[dict], max_tokens: int = MAX_HISTORY_TOKENS) -> 
 
 Call `prune_history(req.history)` before passing history to the LLM. This prevents `400 context_length_exceeded` errors in long sessions while keeping the conversation coherent.
 
-## Step 6: Caching Embeddings with Redis
+Step 6: Caching Embeddings with Redis
 
 Re-embedding the same question repeatedly wastes money and adds latency. Cache embedding vectors:
 
@@ -355,12 +355,12 @@ async def get_or_create_embedding(text: str) -> list[float]:
 
 For a docs site with typical question patterns, this cache achieves 60-80% hit rates, dropping average response latency by 100-200ms.
 
-## Step 7: Webhook-Based Re-ingestion
+Step 7: Webhook-Based Re-ingestion
 
 Trigger re-ingestion automatically when docs change rather than on a fixed schedule. Here is a minimal FastAPI webhook endpoint that queues re-ingestion via a background task:
 
 ```python
-# api/webhook.py
+api/webhook.py
 import hmac
 import hashlib
 from fastapi import APIRouter, Request, HTTPException, BackgroundTasks
@@ -388,18 +388,18 @@ async def docs_updated(request: Request, background_tasks: BackgroundTasks):
 
 Point your GitHub or GitLab webhook at `/webhooks/docs-updated` with a shared secret. Every merged PR to the docs repo triggers a fresh ingestion within seconds.
 
-## Deployment Checklist
+Deployment Checklist
 
 - Set `X-Accel-Buffering: no` on Nginx to prevent SSE buffering
 - Add a 30-second timeout on Nginx for streaming responses
 - Rate-limit the `/chat` endpoint (10 req/min per IP is reasonable)
 - Cache embeddings for repeated questions using Redis with a 1-hour TTL
 - Run `ingest.py` as a cron job or webhook trigger when docs change
-- Monitor embedding cost: `text-embedding-3-small` is $0.02/1M tokens — ingesting 10,000 sections of 500 tokens each costs about $0.10
+- Monitor embedding cost: `text-embedding-3-small` is $0.02/1M tokens. ingesting 10,000 sections of 500 tokens each costs about $0.10
 - Set a similarity threshold (0.65 in the example) to avoid surfacing irrelevant context
 - Log unanswered questions (empty context returns) to identify gaps in your docs
 
-## Related Reading
+Related Reading
 
 - [How to Build Semantic Search with Embeddings](/how-to-build-semantic-search-with-embeddings/)
 - [How to Build AI-Powered Code Search](/how-to-build-ai-powered-code-search-2026/)
@@ -408,7 +408,7 @@ Point your GitHub or GitLab webhook at `/webhooks/docs-updated` with a shared se
 - [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
 ---
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Automated Code Documentation](/ai-tools-for-automated-code-documentation)
 - [How to Use AI to Create Onboarding Documentation for New](/how-to-use-ai-to-create-onboarding-documentation-for-new-tea/)
@@ -416,6 +416,6 @@ Point your GitHub or GitLab webhook at `/webhooks/docs-updated` with a shared se
 - [How to Build AI Pipelines with Prefect](/how-to-build-ai-pipelines-with-prefect)
 - [How to Build Voice AI Apps with Claude](/how-to-build-voice-ai-apps-with-claude)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

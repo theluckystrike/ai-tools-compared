@@ -21,7 +21,7 @@ GitHub Copilot agent mode transforms how developers handle complex coding workfl
 
 This guide covers practical approaches for using Copilot agent mode in your development workflow.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Practical Example: Building a Feature End-to-End](#practical-example-building-a-feature-end-to-end)
@@ -29,7 +29,7 @@ This guide covers practical approaches for using Copilot agent mode in your deve
 - [Getting Started](#getting-started)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -39,19 +39,19 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Agent Mode vs. Traditional Completions
+Step 1: Understand Agent Mode vs. Traditional Completions
 
 Traditional Copilot suggestions appear as you type, offering inline completions for the current line or function. Agent mode takes a different approach: you describe what you want to accomplish, and Copilot plans and executes the changes across your project.
 
 Agent mode works best when you have a clear objective but the implementation requires changes in multiple files. For example, adding authentication to a React application might involve creating context providers, updating routing, modifying API handlers, and adding protected route components. Doing this manually takes time; agent mode can coordinate these changes in a single session.
 
-### Step 2: Activating Agent Mode
+Step 2: Activating Agent Mode
 
 Agent mode is available in VS Code through the GitHub Copilot Chat interface. Open the chat panel and select the agent mode option from the dropdown menu. You can also activate it using the `/agent` command in the chat input.
 
 The interface shows agent mode active through a dedicated indicator. Once activated, you provide high-level instructions rather than asking specific questions. Copilot analyzes your codebase, proposes a plan, and asks for confirmation before making changes.
 
-## Practical Example: Building a Feature End-to-End
+Practical Example: Building a Feature End-to-End
 
 Consider a scenario where you need to add user notification preferences to an existing application. The feature requires:
 
@@ -77,7 +77,7 @@ Copilot agent mode analyzes your project structure, identifies the relevant file
 
 Review the plan carefully. Agent mode may make assumptions about your project structure that differ from your implementation. If something looks incorrect, provide feedback before proceeding.
 
-### Step 3: Work with Complex Refactoring
+Step 3: Work with Complex Refactoring
 
 Agent mode excels at refactoring tasks that span multiple files. Suppose you need to migrate from a class-based component architecture to functional components in a React application. This involves:
 
@@ -89,7 +89,7 @@ Agent mode excels at refactoring tasks that span multiple files. Suppose you nee
 
 - Verifying the build passes after changes
 
-With agent mode, you can describe the migration goal and scope. The agent analyzes dependencies, identifies all affected files, and executes changes systematically. You maintain control throughout—the agent shows you each change and you confirm before proceeding.
+With agent mode, you can describe the migration goal and scope. The agent analyzes dependencies, identifies all affected files, and executes changes systematically. You maintain control throughout, the agent shows you each change and you confirm before proceeding.
 
 ```javascript
 // Before refactoring (class component)
@@ -121,7 +121,7 @@ const UserProfile = () => {
 };
 ```
 
-### Step 4: Handling Debugging Across Files
+Step 4: Handling Debugging Across Files
 
 Debugging often requires tracing issues through multiple files. Agent mode can analyze error messages and trace through your codebase to identify root causes.
 
@@ -129,7 +129,7 @@ When you encounter a bug, describe the error in detail. Include stack traces and
 
 For instance, if you are seeing authentication failures in production, you might provide the error message and describe the flow. The agent can trace through authentication middleware, token validation logic, and database queries to find where the issue occurs.
 
-## Best Practices for Effective Agent Mode Usage
+Best Practices for Effective Agent Mode Usage
 
 Provide context in your requests. The more information Copilot has about your project structure, coding conventions, and specific requirements, the better the results. Include relevant file paths, describe your architecture, and mention any constraints or preferences.
 
@@ -139,13 +139,13 @@ Review every change before accepting. Agent mode makes intelligent guesses about
 
 Use the chat history to iterate. If the first attempt does not quite match what you need, provide feedback. The conversational interface allows you to refine the results without starting over.
 
-### Step 5: Limitations to Consider
+Step 5: Limitations to Consider
 
-Agent mode works best with well-structured projects. If your codebase lacks clear organization or has inconsistent patterns, the results may require more manual cleanup. Large files can also pose challenges—the agent may have difficulty with files exceeding several thousand lines.
+Agent mode works best with well-structured projects. If your codebase lacks clear organization or has inconsistent patterns, the results may require more manual cleanup. Large files can also pose challenges, the agent may have difficulty with files exceeding several thousand lines.
 
 Some tasks still benefit from human judgment. Architectural decisions, performance optimizations, and security-sensitive changes often require careful consideration that AI assistants cannot fully replicate. Use agent mode as a powerful tool but maintain oversight for critical decisions.
 
-### Step 6: When Agent Mode Makes Sense
+Step 6: When Agent Mode Makes Sense
 
 Agent mode is particularly valuable for:
 
@@ -161,7 +161,7 @@ Agent mode is particularly valuable for:
 
 For simple, single-file changes, traditional completions or inline edits are often faster. Agent mode adds overhead that is unnecessary for straightforward modifications.
 
-## Getting Started
+Getting Started
 
 Open VS Code with the GitHub Copilot extension installed. Ensure you have an active Copilot subscription that includes agent mode access. Start with a small, contained task to build familiarity with how the agent works.
 
@@ -169,14 +169,14 @@ Pay attention to how agent mode interprets your requests and adjust your communi
 
 Agent mode represents a significant evolution in AI-assisted development. By understanding when and how to use it effectively, you can accelerate complex development tasks while maintaining code quality.
 
-### Step 7: Structuring Agent Mode Requests for Maximum Effectiveness
+Step 7: Structuring Agent Mode Requests for Maximum Effectiveness
 
 The way you phrase requests dramatically impacts agent mode results. Effective requests include:
 
-1. **Clear objective** - what you want to accomplish in one sentence
-2. **Scope boundaries** - which files or areas the agent can modify
-3. **Technical constraints** - compatibility requirements, frameworks, libraries
-4. **Success criteria** - how you'll know the task is complete
+1. Clear objective - what you want to accomplish in one sentence
+2. Scope boundaries - which files or areas the agent can modify
+3. Technical constraints - compatibility requirements, frameworks, libraries
+4. Success criteria - how you'll know the task is complete
 
 Example structured request:
 
@@ -202,7 +202,7 @@ Success criteria:
 
 This level of detail prevents agent mode from making incorrect assumptions.
 
-### Step 8: Handling Agent Mode Failures and Iterations
+Step 8: Handling Agent Mode Failures and Iterations
 
 When agent mode produces incomplete or incorrect results, provide specific feedback rather than starting over:
 
@@ -212,7 +212,7 @@ Use: "The notification service connected to the wrong database. Update the conne
 
 This targeted feedback trains the agent to refine its approach rather than restarting from scratch.
 
-### Step 9: Cost Considerations for Agent Mode
+Step 9: Cost Considerations for Agent Mode
 
 Agent mode typically costs more per interaction than traditional completions because the agent explores multiple code paths. For a $20 Copilot monthly subscription, agent mode requests count against your usage quota. Consider using agent mode strategically:
 
@@ -221,17 +221,17 @@ Agent mode typically costs more per interaction than traditional completions bec
 - Code review and analysis (worth the cost)
 - Auto-completion for obvious patterns (use inline instead)
 
-### Step 10: Comparing Agent Mode Across Tools
+Step 10: Comparing Agent Mode Across Tools
 
-**GitHub Copilot Agent Mode** - Best for VS Code users, integrates with GitHub repositories, strong for multi-file changes
+GitHub Copilot Agent Mode - Best for VS Code users, integrates with GitHub repositories, strong for multi-file changes
 
-**Cursor Composer** - Similar functionality with additional file manipulation capabilities, better for large-scale refactoring
+Cursor Composer - Similar functionality with additional file manipulation capabilities, better for large-scale refactoring
 
-**Claude with Code** - Requires file uploads/context but handles very complex reasoning about codebases
+Claude with Code - Requires file uploads/context but handles very complex reasoning about codebases
 
 Test a small refactoring task with your primary tool, then benchmark against alternatives if cost is a concern.
 
-### Step 11: Security and Code Review with Agent Mode
+Step 11: Security and Code Review with Agent Mode
 
 Never accept agent mode changes without reviewing them. Even well-structured requests can produce security issues or performance problems. Establish a review process:
 
@@ -243,63 +243,63 @@ Never accept agent mode changes without reviewing them. Even well-structured req
 
 This process is faster than manual implementation but maintains code safety standards.
 
-### Step 12: Exporting and Sharing Agent Mode Results
+Step 12: Exporting and Sharing Agent Mode Results
 
 After agent mode completes a complex task, export the results for team reference:
 
 ```bash
-# Generate a detailed change summary
+Generate a detailed change summary
 git diff HEAD~1..HEAD > task_completion.patch
 
-# Create a summary document
+Create a summary document
 cat > task_summary.md << EOF
-### Step 13: Task: [Your task description]
-### Step 14: Files modified: $(git diff HEAD~1..HEAD --name-only | wc -l)
-### Step 15: Lines changed: $(git diff HEAD~1..HEAD --stat | tail -1)
-### Step 16: Approach: [How agent mode solved the problem]
+Step 13: Task: [Your task description]
+Step 14: Files modified: $(git diff HEAD~1..HEAD --name-only | wc -l)
+Step 15: Lines changed: $(git diff HEAD~1..HEAD --stat | tail -1)
+Step 16: Approach: [How agent mode solved the problem]
 EOF
 ```
 
 This documentation helps team members understand architectural decisions and ensures knowledge transfer beyond the original developer.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use copilot agent mode for multi-step coding tasks?**
+How long does it take to use copilot agent mode for multi-step coding tasks?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Cursor AI Background Agent Feature for Autonomous Multi Step](/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
 - [Best Practices for Breaking Down Complex Coding Tasks](/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
@@ -307,4 +307,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 - [How to Use Copilot to Write Dockerfiles for Multi-Stage Buil](/how-to-use-copilot-to-write-dockerfiles-for-multi-stage-buil/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

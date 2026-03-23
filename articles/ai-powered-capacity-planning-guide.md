@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI for Infrastructure Capacity Planning"
-description: "Use Claude and data analysis tools to build AI-powered capacity planning — forecast resource needs, model traffic growth, and automate scaling decisions"
+description: "Use Claude and data analysis tools to build AI-powered capacity planning. forecast resource needs, model traffic growth, and automate scaling decisions"
 date: 2026-03-22
 author: theluckystrike
 permalink: ai-powered-capacity-planning-guide
@@ -15,9 +15,9 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-Capacity planning is the art of having enough resources before you need them without paying for idle infrastructure. The old approach — overprovision by 2x and hope — is expensive. AI-assisted planning uses historical metrics, growth models, and anomaly detection to make data-driven forecasts.
+Capacity planning is the art of having enough resources before you need them without paying for idle infrastructure. The old approach. overprovision by 2x and hope. is expensive. AI-assisted planning uses historical metrics, growth models, and anomaly detection to make data-driven forecasts.
 
-## Table of Contents
+Table of Contents
 
 - [What AI Adds to Capacity Planning](#what-ai-adds-to-capacity-planning)
 - [Step 1: Collect and Prepare Metrics](#step-1-collect-and-prepare-metrics)
@@ -33,7 +33,7 @@ Capacity planning is the art of having enough resources before you need them wit
 - [Choosing Your Forecasting Horizon](#choosing-your-forecasting-horizon)
 - [Related Reading](#related-reading)
 
-## What AI Adds to Capacity Planning
+What AI Adds to Capacity Planning
 
 Traditional capacity planning uses linear extrapolation. AI-assisted planning adds:
 - Seasonal pattern detection (weekly, monthly, annual cycles)
@@ -43,10 +43,10 @@ Traditional capacity planning uses linear extrapolation. AI-assisted planning ad
 
 The biggest practical gain is speed. A human analyst reviewing 90 days of CloudWatch data across 20 services might take a full day. The pipeline below runs end-to-end in about four minutes and surfaces the same insights in a structured format that engineers can act on immediately.
 
-## Step 1: Collect and Prepare Metrics
+Step 1: Collect and Prepare Metrics
 
 ```python
-# capacity_data.py
+capacity_data.py
 import pandas as pd
 from datetime import datetime, timedelta
 import boto3  # or use Prometheus, Datadog, etc.
@@ -103,10 +103,10 @@ def fetch_service_metrics(service_name: str) -> dict[str, pd.DataFrame]:
     }
 ```
 
-## Step 2: Generate Forecasts with Prophet
+Step 2: Generate Forecasts with Prophet
 
 ```python
-# forecaster.py
+forecaster.py
 from prophet import Prophet  # pip install prophet
 import pandas as pd
 import json
@@ -158,7 +158,7 @@ def forecast_metric(
     }
 ```
 
-## Step 3: AI-Powered Capacity Analysis
+Step 3: AI-Powered Capacity Analysis
 
 ```python
 def analyze_capacity_needs(
@@ -191,7 +191,7 @@ Budget constraints: {json.dumps(budget_constraints, indent=2) if budget_constrai
 {json.dumps(metrics_summary, indent=2)}
 
 Provide:
-1. CAPACITY_RISK: [Critical/High/Medium/Low] — will current capacity handle predicted load?
+1. CAPACITY_RISK: [Critical/High/Medium/Low]. will current capacity handle predicted load?
 2. BOTTLENECK: Which resource will be first to constrain the service?
 3. RECOMMENDED_CHANGES: Specific infrastructure changes (instance sizes, counts, autoscaling rules)
 4. TIMELINE: When to make each change
@@ -203,7 +203,7 @@ Be specific with numbers. Reference the forecast peaks in your analysis."""
     )
     return response.content[0].text
 
-# Example usage
+Example usage
 service_name = "order-service"
 current_config = {
     "instance_type": "t3.large",
@@ -223,7 +223,7 @@ analysis = analyze_capacity_needs(service_name, forecasts, current_config)
 print(analysis)
 ```
 
-## Step 4: Autoscaling Policy Generation
+Step 4: Autoscaling Policy Generation
 
 Claude can generate autoscaling policies from capacity analysis:
 
@@ -273,7 +273,7 @@ Base the policy on best practices for production ECS services."""
     return {"raw_recommendation": response.content[0].text}
 ```
 
-## Step 5: Capacity Planning Report
+Step 5: Capacity Planning Report
 
 ```python
 def generate_capacity_report(services: list[str]) -> str:
@@ -303,26 +303,26 @@ Service analyses:
 {json.dumps([{"service": a["service"], "summary": a["analysis"][:300]} for a in all_analyses], indent=2)}
 
 Format:
-## Executive Summary (3-4 sentences)
+Executive Summary (3-4 sentences)
 
-## High Priority Actions (must do this week)
+High Priority Actions (must do this week)
 
-## Upcoming Capacity Events (next 30 days)
+Upcoming Capacity Events (next 30 days)
 
-## Cost Optimization Opportunities
+Cost Optimization Opportunities
 
-Keep it concise — this is a weekly standup artifact, not a novel."""
+Keep it concise. this is a weekly standup artifact, not a novel."""
         }]
     )
 
     return response.content[0].text
 
-# Schedule as a weekly job
+Schedule as a weekly job
 report = generate_capacity_report(["order-service", "inventory-service", "payment-service"])
-# Send to #infra-capacity Slack channel
+Send to #infra-capacity Slack channel
 ```
 
-## Step 6: Anomaly-Driven Capacity Alerts
+Step 6: Anomaly-Driven Capacity Alerts
 
 Forecasts tell you what to expect under normal growth. Anomaly detection tells you when something unexpected is happening right now. Combining both gives you both strategic and tactical visibility:
 
@@ -387,7 +387,7 @@ def post_to_slack(webhook_url: str, message: str) -> None:
     )
     urllib.request.urlopen(req, timeout=5)
 
-# Wire it together
+Wire it together
 for service in ["order-service", "inventory-service", "payment-service"]:
     df = fetch_service_metrics(service)["cpu_utilization"]
     if df.empty:
@@ -397,11 +397,11 @@ for service in ["order-service", "inventory-service", "payment-service"]:
         explanation = explain_anomalies(service, anomalies)
         post_to_slack(
             os.environ["SLACK_CAPACITY_WEBHOOK"],
-            f":warning: *Capacity anomaly — {service}*\n{explanation}"
+            f":warning: *Capacity anomaly. {service}*\n{explanation}"
         )
 ```
 
-## Choosing Your Forecasting Horizon
+Choosing Your Forecasting Horizon
 
 Different decisions require different planning horizons. A rough guide:
 
@@ -412,14 +412,14 @@ Different decisions require different planning horizons. A rough guide:
 | 30 days | Prophet with growth events | Right-size reserved instances |
 | 90+ days | Trend extrapolation + LLM judgment | Budget submissions, architecture changes |
 
-For horizons beyond 30 days, statistical confidence intervals widen significantly. At that point the LLM's role shifts from interpreting numbers to synthesizing qualitative signals — roadmap commitments, sales pipeline, seasonal business patterns — into a coherent planning narrative.
+For horizons beyond 30 days, statistical confidence intervals widen significantly. At that point the LLM's role shifts from interpreting numbers to synthesizing qualitative signals. roadmap commitments, sales pipeline, seasonal business patterns. into a coherent planning narrative.
 
-## Related Articles
+Related Articles
 
 - [How to Use AI for Capacity Planning and Resource Right](/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
 - [How to Use AI to Create Milestone Planning Documents](/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
 - [How to Use AI for Cloud Migration Planning and Dependency](/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
 - [How to Use AI for Predicting Infrastructure Scaling Needs](/how-to-use-ai-for-predicting-infrastructure-scaling-needs-au/)
 - [AI Tools for Automated Infrastructure Drift Detection: Co](/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

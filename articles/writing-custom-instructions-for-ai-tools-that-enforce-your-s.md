@@ -20,7 +20,7 @@ Write custom instructions for AI tools by specifying all required security heade
 
 This guide shows you how to create effective custom instructions for AI coding tools that enforce your security header standards across all projects.
 
-## Why Security Headers Need Explicit Instructions
+Why Security Headers Need Explicit Instructions
 
 
 Modern web frameworks rarely enable security headers out of the box. An AI tool generating an Express.js middleware might include basic CORS configuration, but it won't automatically add Strict-Transport-Security, Content-Security-Policy, or X-Content-Type-Options headers unless specifically instructed. This creates inconsistent security posture across your codebase.
@@ -30,7 +30,7 @@ Custom instructions solve this problem by establishing a permanent context that 
 Security headers are one of the lowest-effort, highest-impact security controls available. Tools like securityheaders.com and Mozilla Observatory grade your headers automatically and are commonly used by security auditors. Missing a header like `X-Frame-Options` leaves your site vulnerable to clickjacking. Missing `Content-Security-Policy` leaves it vulnerable to cross-site scripting injection. When AI tools omit these headers from generated server code, those vulnerabilities propagate silently into production.
 
 
-## Understanding the Required Headers
+Understanding the Required Headers
 
 
 Before writing instructions, understand what each header does and what value it should carry:
@@ -45,10 +45,10 @@ Before writing instructions, understand what each header does and what value it 
 | Referrer-Policy | Controls referrer information leakage | `strict-origin-when-cross-origin` |
 | Permissions-Policy | Restricts browser feature access | `geolocation=(), microphone=(), camera=()` |
 
-Note: `X-XSS-Protection` is deprecated in modern browsers but still relevant for supporting older clients. Browsers with CSP properly configured do not rely on it, but including it costs nothing and helps with legacy browser compatibility.
+`X-XSS-Protection` is deprecated in modern browsers but still relevant for supporting older clients. Browsers with CSP properly configured do not rely on it, but including it costs nothing and helps with legacy browser compatibility.
 
 
-## Creating Effective Security Header Instructions
+Creating Effective Security Header Instructions
 
 
 Effective security header instructions must be specific and actionable. Here's a practical template you can adapt for your organization:
@@ -72,20 +72,20 @@ When generating any web server code, include a security middleware module that a
 This instruction works across different AI tools, whether you use Claude Code, Cursor, GitHub Copilot, or other assistants. The key is placing these instructions where the AI will consistently reference them.
 
 
-## Implementing Instructions in Different AI Tools
+Implementing Instructions in Different AI Tools
 
 
 Each AI coding tool handles custom instructions differently. Understanding these mechanisms ensures your security header requirements get applied consistently.
 
 
-### Claude Code and Projects
+Claude Code and Projects
 
 
 Create a `.claude/settings.json` file or use project-specific instructions in the project directory. You can also include instructions in a dedicated `CLAUDE.md` file at your project root:
 
 
 ```markdown
-# Security Requirements
+Security Requirements
 
 All generated server code must include security headers. See SECURITY.md for requirements.
 ```
@@ -95,9 +95,9 @@ Create a separate `SECURITY.md` with detailed header specifications:
 
 
 ```markdown
-# Security Header Standards
+Security Header Standards
 
-## Required Headers
+Required Headers
 
 All HTTP responses must include these headers:
 
@@ -108,7 +108,7 @@ All HTTP responses must include these headers:
 | X-Content-Type-Options | nosniff |
 | X-Frame-Options | DENY |
 
-## Implementation
+Implementation
 
 Use framework-specific middleware. For Express.js, use helmet with explicit configuration.
 ```
@@ -117,7 +117,7 @@ Use framework-specific middleware. For Express.js, use helmet with explicit conf
 This separation keeps instructions organized while remaining accessible to AI tools. Claude Code reads both files automatically when they exist at the project root.
 
 
-### Cursor Rules
+Cursor Rules
 
 
 Cursor uses a `.cursorrules` file in your project root. Add security header enforcement:
@@ -136,10 +136,10 @@ Security Requirements:
 - Never use wildcard CSP directives in production code
 ```
 
-The `Never disable security headers for development` rule is critical. A common anti-pattern is adding `if (process.env.NODE_ENV === 'development') return next()` inside security middleware—AI tools may suggest this to avoid HTTPS errors locally, but it creates a false sense of security and often gets committed to production branches.
+The `Never disable security headers for development` rule is critical. A common anti-pattern is adding `if (process.env.NODE_ENV === 'development') return next()` inside security middleware, AI tools may suggest this to avoid HTTPS errors locally, but it creates a false sense of security and often gets committed to production branches.
 
 
-### GitHub Copilot
+GitHub Copilot
 
 
 Copilot respects instructions in `.github/copilot-instructions.md` or inline comments. Use a combination approach:
@@ -155,7 +155,7 @@ app.use(securityMiddleware);
 For repository-wide rules, create `.github/copilot-instructions.md`:
 
 ```markdown
-# Copilot Instructions
+Copilot Instructions
 
 When generating server-side code for this project:
 - Always apply the security middleware defined in src/middleware/security.ts
@@ -164,7 +164,7 @@ When generating server-side code for this project:
 ```
 
 
-### ChatGPT Custom GPTs and API
+ChatGPT Custom GPTs and API
 
 
 For ChatGPT-based workflows, embed security header requirements in the system prompt of your Custom GPT or in the `system` field of your API requests:
@@ -174,13 +174,13 @@ You are a backend code assistant. When generating Node.js, Python, or Go server 
 ```
 
 
-## Framework-Specific Implementation Examples
+Framework-Specific Implementation Examples
 
 
 Your instructions should include framework-specific guidance since security header implementation varies significantly between frameworks.
 
 
-### Express.js with Helmet
+Express.js with Helmet
 
 
 When generating Express.js code, your instructions should specify using the helmet middleware:
@@ -204,10 +204,10 @@ app.use(helmet({
 }));
 ```
 
-Helmet is the de facto standard for Express security headers. It ships with sensible defaults and lets you override individual headers. Always pin the version in your `package.json`—helmet's defaults have changed across major versions, and an upgrade can alter your CSP policy silently.
+Helmet is the de facto standard for Express security headers. It ships with sensible defaults and lets you override individual headers. Always pin the version in your `package.json`, helmet's defaults have changed across major versions, and an upgrade can alter your CSP policy silently.
 
 
-### Next.js Configuration
+Next.js Configuration
 
 
 For Next.js applications, security headers belong in `next.config.js`:
@@ -234,7 +234,7 @@ module.exports = {
 ```
 
 
-### Nginx Configuration
+Nginx Configuration
 
 
 For reverse proxy setups, include header directives in your server block:
@@ -249,10 +249,10 @@ add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
 ```
 
-The `always` keyword ensures headers are added to all responses, including error responses (4xx, 5xx). Without it, headers only appear on successful responses—which means error pages are unprotected.
+The `always` keyword ensures headers are added to all responses, including error responses (4xx, 5xx). Without it, headers only appear on successful responses, which means error pages are unprotected.
 
 
-## Testing Your Implementation
+Testing Your Implementation
 
 
 After implementing custom instructions, verify they work by generating sample code and checking the output. Create a test prompt:
@@ -270,19 +270,19 @@ You can also use automated tools to verify headers in deployed applications:
 
 
 ```bash
-# Using curl to check headers
+Using curl to check headers
 curl -I https://yourdomain.com
 
-# Expected output should include:
-# Strict-Transport-Security: max-age=31536000
-# X-Content-Type-Options: nosniff
-# X-Frame-Options: DENY
+Expected output should include:
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
 ```
 
 For a grade, submit your domain to securityheaders.com or run Mozilla Observatory against it. An An or A+ rating indicates your headers are complete and correctly configured.
 
 
-## Maintaining Security Header Instructions
+Maintaining Security Header Instructions
 
 
 Security standards evolve, and your instructions should too. Schedule quarterly reviews of your security header requirements to account for new threats, browser changes, or regulatory updates.
@@ -294,50 +294,50 @@ Track changes to your instruction files in version control. When updating header
 Document any exceptions or project-specific variations. Some applications might require relaxed CSP policies or custom CORS configurations. Rather than weakening your base instructions, create supplementary rules for specific use cases.
 
 
-## Common Pitfalls to Avoid
+Common Pitfalls to Avoid
 
 
 Several mistakes reduce the effectiveness of security header instructions. Avoid these common issues:
 
 
-**Overly broad instructions** that generate vague code don't help. Instead of "add security headers," specify exactly which headers and their values.
+Overly broad instructions that generate vague code don't help. Instead of "add security headers," specify exactly which headers and their values.
 
 
-**Inconsistent placement** of instructions across projects creates gaps. Use a centralized location that applies to all repositories, or explicitly document where instructions live in each project.
+Inconsistent placement of instructions across projects creates gaps. Use a centralized location that applies to all repositories, or explicitly document where instructions live in each project.
 
 
-**Missing framework-specific guidance** leads to generic code that doesn't work in your stack. Include implementation examples for each framework your team uses.
+Missing framework-specific guidance leads to generic code that doesn't work in your stack. Include implementation examples for each framework your team uses.
 
 
-**Failing to test** means you won't discover issues until a security audit catches them. Regularly generate sample code to verify instructions remain effective.
+Failing to test means you won't discover issues until a security audit catches them. Regularly generate sample code to verify instructions remain effective.
 
-**Environment-conditional bypasses** are a frequent AI suggestion. Instructions should explicitly forbid patterns like disabling headers in development mode.
+Environment-conditional bypasses are a frequent AI suggestion. Instructions should explicitly forbid patterns like disabling headers in development mode.
 ---
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance on securing AI-generated code. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories. Helmet.js is open source and free for Express. Next.js headers configuration requires no additional libraries. For AI tool instructions, the `.cursorrules` and `CLAUDE.md` mechanisms are available on all tiers including free.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Writing security header instructions is straightforward once you understand what each header does. The table in this article provides a starting point. Adapting the instructions for your specific framework and verifying output with curl or securityheaders.com takes less than a hour for most projects.
 
-## Related Articles
+Related Articles
 
 - [Writing Custom Instructions That Make AI Follow Your Team's](/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
 - [ChatGPT Custom GPT Not Following Instructions](/chatgpt-custom-gpt-not-following-instructions/)
@@ -345,4 +345,4 @@ Writing security header instructions is straightforward once you understand what
 - [How to Create Custom Instructions for AI Tools to Generate](/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
 - [How to Set Up Custom Instructions for AI Tools to Match Your](/how-to-set-up-custom-instructions-for-ai-tools-to-match-your/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

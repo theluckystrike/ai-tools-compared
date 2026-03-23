@@ -19,7 +19,7 @@ Write custom instructions for AI coding tools by defining your error response sc
 
 This guide shows you practical techniques for writing custom instructions that ensure AI-generated error handling code always follows your error response schema.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Why AI Deviates From Your Schema Without Instructions](#why-ai-deviates-from-your-schema-without-instructions)
@@ -27,7 +27,7 @@ This guide shows you practical techniques for writing custom instructions that e
 - [Advanced: TypeScript Type-Driven Instructions](#advanced-typescript-type-driven-instructions)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Error Response Schemas
+Step 1: Understand Error Response Schemas
 
 Before writing custom instructions, you need a clearly defined error response schema. Most modern APIs use a standardized format like this:
 
@@ -61,15 +61,15 @@ Before writing custom instructions, you need a clearly defined error response sc
 
 This schema includes a success flag, nested error object with code, message, details array, timestamp, and request ID. Your custom instructions must communicate this structure clearly.
 
-## Why AI Deviates From Your Schema Without Instructions
+Why AI Deviates From Your Schema Without Instructions
 
-AI coding assistants learn from millions of codebases and naturally produce the patterns they have seen most frequently. GPT-4 and Claude have ingested thousands of Express.js, FastAPI, and Django projects, each with different error response conventions. Without explicit guidance, the model picks the structure that statistically fits the surrounding code—which may be RFC 7807 Problem Details, a flat `{ error: "message" }` object, or any number of other patterns.
+AI coding assistants learn from millions of codebases and naturally produce the patterns they have seen most frequently. GPT-4 and Claude have ingested thousands of Express.js, FastAPI, and Django projects, each with different error response conventions. Without explicit guidance, the model picks the structure that statistically fits the surrounding code, which may be RFC 7807 Problem Details, a flat `{ error: "message" }` object, or any number of other patterns.
 
 The result is drift: the first endpoint your AI generates returns `{ success, error: { code, message } }`, the second returns `{ status: "error", message: "..." }`, and the third returns `{ errors: [...] }`. Consumers of your API now need branching logic to handle every variant. Custom instructions lock the AI into a single canonical structure before it writes a single line.
 
-### Step 2: Writing Effective Custom Instructions
+Step 2: Writing Effective Custom Instructions
 
-### Specify the Exact Schema Structure
+Specify the Exact Schema Structure
 
 The most important rule is being explicit about your error response structure. Instead of saying "use proper error formatting," specify every field:
 
@@ -90,7 +90,7 @@ When generating error responses, always use this exact structure:
 
 This level of detail prevents AI from inventing fields or using different structures across endpoints.
 
-### Define Error Code Conventions
+Define Error Code Conventions
 
 Your custom instructions should specify how error codes are formatted and what codes are available. Create a clear mapping:
 
@@ -107,7 +107,7 @@ Error codes must use UPPERCASE_WITH_UNDERSCORES format. Use these codes:
 
 With this guidance, AI generates consistent error codes instead of variations like "validation-error," "invalid_input," or "bad_request."
 
-### Include Code Generation Examples
+Include Code Generation Examples
 
 Concrete examples are more effective than abstract rules. Provide a complete example of error handling in your target language:
 
@@ -132,7 +132,7 @@ app.use((err, req, res, next) => {
 
 Place this example in your custom instructions to show the AI exactly how error handling should look in your codebase.
 
-### Specify HTTP Status Code Mappings
+Specify HTTP Status Code Mappings
 
 Error response schemas often pair with specific HTTP status codes. Make these mappings explicit:
 
@@ -149,14 +149,14 @@ Map error codes to HTTP status codes:
 
 This ensures AI generates both the correct response body and the appropriate status code.
 
-### Step 3: Practical Implementation
+Step 3: Practical Implementation
 
-### For Cursor and Cline Users
+For Cursor and Cline Users
 
 Add custom instructions to your `.cursorrules` or project-specific rules file:
 
 ```
-### Step 4: Error Handling
+Step 4: Error Handling
 
 All error responses must follow our API error schema defined in docs/error-schema.md.
 
@@ -165,19 +165,18 @@ When throwing errors in TypeScript:
 2. Include error code, message, and validation details
 3. Use the ErrorResponseBuilder utility from lib/errors
 
-Example:
 throw new ValidationError('Email validation failed', {
   field: 'email',
   details: ['Invalid email format']
 });
 ```
 
-### For Claude Code Users
+For Claude Code Users
 
 Create a `CLAUDE.md` file in your project root with error handling instructions:
 
 ```
-# Error Response Requirements
+Error Response Requirements
 
 All API error responses must conform to the schema in ./schemas/error-response.json.
 
@@ -189,12 +188,12 @@ throw ErrorFormatter.validation('Invalid input', {
 });
 ```
 
-### For GitHub Copilot Users
+For GitHub Copilot Users
 
 Add inline instructions or create a `.github/copilot-instructions.md` file:
 
 ```
-# Error Response Format
+Error Response Format
 
 Always generate error responses matching our standard format:
 - success: false
@@ -205,7 +204,7 @@ Always generate error responses matching our standard format:
 - error.requestId: generate or use incoming request ID
 ```
 
-## Tool-by-Tool Configuration Comparison
+Tool-by-Tool Configuration Comparison
 
 Different AI tools vary in how persistently they honor custom instructions. Understanding these differences helps you calibrate how detailed your instructions need to be:
 
@@ -220,7 +219,7 @@ Different AI tools vary in how persistently they honor custom instructions. Unde
 
 Tools that read project-level config files on every request (Cursor, Claude Code, Cline) provide more consistent adherence than tools that rely on account-level settings or inline prompting. For critical schema enforcement, project-level config files are the most reliable mechanism.
 
-## Advanced: TypeScript Type-Driven Instructions
+Advanced: TypeScript Type-Driven Instructions
 
 If your project uses TypeScript, embedding your type definitions directly into the custom instructions is the most precise way to communicate your schema. AI models parse TypeScript interface definitions accurately and generate code that satisfies the type contracts:
 
@@ -256,9 +255,9 @@ interface ApiResponse<T> {
 }
 ```
 
-With these type definitions in your custom instructions, the AI will generate code that satisfies the type checker automatically—no runtime surprises.
+With these type definitions in your custom instructions, the AI will generate code that satisfies the type checker automatically, no runtime surprises.
 
-### Step 5: Test Your Custom Instructions
+Step 5: Test Your Custom Instructions
 
 After adding custom instructions, verify they work by asking AI to generate error handling code. Check for:
 
@@ -274,7 +273,7 @@ A useful verification workflow is to ask the AI to generate error handling for t
 
 If the AI deviates from your schema, refine your instructions with more specific examples or constraints.
 
-### Step 6: Common Pitfalls to Avoid
+Step 6: Common Pitfalls to Avoid
 
 Being too vague: Instructions like "use good error handling" leave too much room for interpretation. Be specific about every field and format.
 
@@ -284,52 +283,52 @@ Forgetting validation details: Many APIs include field-level validation errors. 
 
 Ignoring language differences: Error handling patterns differ between languages. Provide examples for each language you use.
 
-Omitting the "why": AI models follow instructions more reliably when the instructions include brief rationale. Adding "so that API consumers can parse errors without branching logic" after your schema definition improves adherence—the model treats the instruction as a meaningful constraint rather than an arbitrary rule.
+Omitting the "why": AI models follow instructions more reliably when the instructions include brief rationale. Adding "so that API consumers can parse errors without branching logic" after your schema definition improves adherence, the model treats the instruction as a meaningful constraint rather than an arbitrary rule.
 
 Not versioning your instructions: Store your `.cursorrules`, `CLAUDE.md`, and related files in version control. When your schema evolves, update the instructions at the same time. Drift between your actual schema and your AI instructions is a common source of inconsistent code in growing codebases.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to write custom instructions that make ai follow your?**
+How long does it take to write custom instructions that make ai follow your?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Write Custom Instructions for AI That Follow Your](/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 - [How to Write ChatGPT Custom Instructions](/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
 - [How to Write Custom Instructions That Make AI Respect Your](/how-to-write-custom-instructions-that-make-ai-respect-your-api-rate-limit-patterns/)
 - [How to Set Up Custom Instructions for AI Tools to Match](/how-to-set-up-custom-instructions-for-ai-tools-to-match-your/)
 - [How to Create Custom Instructions for AI Coding Tools That](/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

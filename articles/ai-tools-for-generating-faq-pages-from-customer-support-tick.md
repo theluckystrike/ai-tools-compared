@@ -18,7 +18,7 @@ intent-checked: true
 
 Building an FAQ page from your customer support ticket history can reduce repeat inquiries by 30-40%. This guide compares AI approaches for extracting common questions and generating clean FAQ content from raw support tickets.
 
-## Table of Contents
+Table of Contents
 
 - [Why Generate FAQs from Support Tickets](#why-generate-faqs-from-support-tickets)
 - [Approaches to FAQ Generation](#approaches-to-faq-generation)
@@ -34,7 +34,7 @@ Building an FAQ page from your customer support ticket history can reduce repeat
 - [Updating FAQs Over Time](#updating-faqs-over-time)
 - [Conclusion](#conclusion)
 
-## Why Generate FAQs from Support Tickets
+Why Generate FAQs from Support Tickets
 
 Customer support teams sit on goldmines of data. Every ticket represents a real user problem that likely affects hundreds of other customers. Manually reviewing thousands of tickets to identify common questions is time-consuming and error-prone.
 
@@ -42,11 +42,11 @@ AI tools can process entire ticket databases in minutes, clustering similar issu
 
 When you build a continuously-updated FAQ from real ticket data, you capture the exact language your customers use. That matters for search: customers who Google a problem use the same phrasing they use when submitting a ticket. Matching that vocabulary improves both your search ranking and the chance that users find the answer without opening a new ticket.
 
-## Approaches to FAQ Generation
+Approaches to FAQ Generation
 
 There are three main approaches to automating FAQ creation from support tickets. Each has trade-offs in accuracy, cost, and implementation complexity.
 
-### 1. Traditional NLP with Clustering
+1. Traditional NLP with Clustering
 
 This approach uses sentence embeddings and clustering algorithms to group similar tickets:
 
@@ -54,16 +54,16 @@ This approach uses sentence embeddings and clustering algorithms to group simila
 from sklearn.cluster import KMeans
 from sentence_transformers import SentenceTransformer
 
-# Embed all ticket summaries
+Embed all ticket summaries
 model = SentenceTransformer('all-MiniLM-L6-v2')
 embeddings = model.encode(ticket_summaries)
 
-# Find clusters (adjust n_clusters based on your data)
+Find clusters (adjust n_clusters based on your data)
 n_clusters = 20
 kmeans = KMeans(n_clusters=n_clusters, random_state=42)
 clusters = kmeans.fit_predict(embeddings)
 
-# Extract representative questions from each cluster
+Extract representative questions from each cluster
 for i in range(n_clusters):
     cluster_tickets = [t for t, c in zip(tickets, clusters) if c == i]
     # Use centroid to find most representative ticket
@@ -72,7 +72,7 @@ for i in range(n_clusters):
 
 This method works well for identifying topics but requires additional processing to generate actual FAQ questions. The quality depends heavily on your embedding model's performance.
 
-### 2. LLM-Based Extraction
+2. LLM-Based Extraction
 
 Large language models excel at understanding context and generating natural questions. Here's a practical implementation:
 
@@ -112,7 +112,7 @@ def generate_faq_from_tickets(tickets, max_faqs=15):
 
 This approach produces more natural, human-readable questions. However, you'll want to review outputs for accuracy since LLMs can occasionally generate incorrect information.
 
-### 3. Hybrid Approach (Recommended)
+3. Hybrid Approach (Recommended)
 
 The most effective solution combines clustering for organization with LLMs for generation:
 
@@ -139,7 +139,7 @@ def hybrid_faq_pipeline(tickets):
     return faqs
 ```
 
-## Pulling Tickets from Common Helpdesk Platforms
+Pulling Tickets from Common Helpdesk Platforms
 
 Before you can run any pipeline you need the raw ticket data. Most platforms offer REST APIs that return JSON. Here is a minimal fetch for Zendesk and Freshdesk:
 
@@ -147,7 +147,7 @@ Before you can run any pipeline you need the raw ticket data. Most platforms off
 import requests
 import os
 
-# --- Zendesk ---
+--- Zendesk ---
 def fetch_zendesk_tickets(subdomain, email, api_token, days_back=180):
     """Fetch closed tickets from the last N days."""
     from datetime import datetime, timedelta
@@ -170,7 +170,7 @@ def fetch_zendesk_tickets(subdomain, email, api_token, days_back=180):
         params = {}          # next_page already includes all params
     return tickets
 
-# --- Freshdesk ---
+--- Freshdesk ---
 def fetch_freshdesk_tickets(domain, api_key, days_back=180):
     """Fetch resolved tickets using the filter endpoint."""
     url = f"https://{domain}.freshdesk.com/api/v2/tickets/filter"
@@ -178,7 +178,7 @@ def fetch_freshdesk_tickets(domain, api_key, days_back=180):
     tickets = []
     page = 1
     while True:
-        resp = requests.get(url, params={**params, "page": page},
+        resp = requests.get(url, params={params, "page": page},
                             auth=(api_key, "X"))
         if resp.status_code == 404:
             break
@@ -193,7 +193,7 @@ def fetch_freshdesk_tickets(domain, api_key, days_back=180):
 
 Both functions return a list of dicts. Normalize them into a shared schema before feeding them to the clustering step.
 
-## Tool Comparison
+Tool Comparison
 
 | Aspect | Traditional NLP | LLM-Based | Hybrid |
 |--------|-----------------|-----------|--------|
@@ -203,9 +203,9 @@ Both functions return a list of dicts. Normalize them into a shared schema befor
 | Answer Generation | Requires extra step | Built-in | Built-in |
 | Customization | High | Medium | High |
 
-## Practical Implementation Tips
+Practical Implementation Tips
 
-### Preprocessing Your Ticket Data
+Preprocessing Your Ticket Data
 
 Clean your data before processing:
 
@@ -232,12 +232,12 @@ def preprocess_tickets(tickets):
 
 A few preprocessing rules that consistently improve output quality:
 
-- Strip quoted reply chains — the original question is in the first message block
+- Strip quoted reply chains. the original question is in the first message block
 - Remove agent signatures using a regex pattern matched against your team's names
 - Collapse whitespace and convert HTML entities so embeddings see clean text
 - Filter tickets resolved in under two minutes; they are usually spam or misfires
 
-### Evaluating Output Quality
+Evaluating Output Quality
 
 Not all generated FAQs are useful. Implement a validation step:
 
@@ -259,7 +259,7 @@ def validate_faq(faq, existing_faqs):
     return True, "Valid"
 ```
 
-### Scoring and Ranking FAQs
+Scoring and Ranking FAQs
 
 Frequency alone is a poor ranking signal. A ticket that arrives 500 times a year is important, but a ticket that arrives 50 times and always escalates to a senior engineer is equally critical. Combine signals:
 
@@ -276,7 +276,7 @@ def score_faq(faq, ticket_cluster):
 
 FAQs with high escalation weight often represent confusing product behaviours that need better UX, not just documentation. Flag them separately for product review.
 
-## Keeping FAQs Fresh
+Keeping FAQs Fresh
 
 A static FAQ goes stale within weeks. Schedule an incremental run that:
 
@@ -308,19 +308,19 @@ def incremental_faq_update(existing_faqs, since_date):
     return existing_faqs, changed
 ```
 
-## Common Challenges
+Common Challenges
 
-**Ticket Noise**: Support tickets often contain greetings, signatures, and unrelated details. Preprocessing significantly impacts quality.
+Ticket Noise: Support tickets often contain greetings, signatures, and unrelated details. Preprocessing significantly impacts quality.
 
-**Similar Questions**: Customers ask the same problem in dozens of ways. Clustering helps group these, but you'll need to normalize questions to a canonical form.
+Similar Questions: Customers ask the same problem in dozens of ways. Clustering helps group these, but you'll need to normalize questions to a canonical form.
 
-**Outdated Information**: Products change. Build a pipeline that flags FAQs needing review when you release new features. A simple approach: tag FAQ entries with the product version they were generated under and alert when that version goes EOL.
+Outdated Information: Products change. Build a pipeline that flags FAQs needing review when you release new features. A simple approach: tag FAQ entries with the product version they were generated under and alert when that version goes EOL.
 
-**Language Variations**: Non-English tickets require multilingual models or translation steps. The `paraphrase-multilingual-MiniLM-L12-v2` SentenceTransformer model handles 50+ languages without a separate translation step.
+Language Variations: Non-English tickets require multilingual models or translation steps. The `paraphrase-multilingual-MiniLM-L12-v2` SentenceTransformer model handles 50+ languages without a separate translation step.
 
-**PII Exposure**: Never include customer names, email addresses, order IDs, or any other personal data in published FAQs. Run a dedicated anonymization pass using a library like `presidio-analyzer` before any LLM call.
+PII Exposure: Never include customer names, email addresses, order IDs, or any other personal data in published FAQs. Run a dedicated anonymization pass using a library like `presidio-analyzer` before any LLM call.
 
-## Building an End-to-End FAQ Pipeline
+Building an End-to-End FAQ Pipeline
 
 Here's a complete Python pipeline for FAQ generation from real support data:
 
@@ -481,7 +481,7 @@ Format as JSON: {{"question": "...", "answer": "...", "link": "..."}}"""
 
         return output
 
-# Usage
+Usage
 pipeline = FAQPipeline(api_key="sk-...")
 result = pipeline.run(
     "support_tickets.json",
@@ -490,18 +490,18 @@ result = pipeline.run(
 )
 ```
 
-## Integration with Documentation Systems
+Integration with Documentation Systems
 
-### Publishing Generated FAQs to Jekyll/GitHub Pages
+Publishing Generated FAQs to Jekyll/GitHub Pages
 
 ```bash
 #!/bin/bash
-# publish-faqs.sh
+publish-faqs.sh
 
 FAQS_FILE="generated_faqs.json"
 DOCS_DIR="_docs"
 
-# Convert JSON to markdown
+Convert JSON to markdown
 python3 << 'EOF'
 import json
 import os
@@ -512,13 +512,13 @@ with open("generated_faqs.json") as f:
 
 os.makedirs("_docs/faq", exist_ok=True)
 
-# Create index page
+Create index page
 index_content = f"""---
 layout: default
 title: FAQ
 ---
 
-# Frequently Asked Questions
+Frequently Asked Questions
 
 Last updated: {data['generated_at']}
 
@@ -528,7 +528,7 @@ Last updated: {data['generated_at']}
 
 for i, faq in enumerate(data['faqs']):
     index_content += f"""
-## {faq['question']}
+{faq['question']}
 
 {faq['answer']}
 
@@ -540,16 +540,16 @@ with open("_docs/faq/index.md", "w") as f:
 print("FAQ pages created")
 EOF
 
-# Push to git
+Push to git
 git add _docs/faq/
 git commit -m "Auto-generate FAQ from support tickets"
 git push origin main
 ```
 
-### Updating Intercom or Zendesk Knowledge Base
+Updating Intercom or Zendesk Knowledge Base
 
 ```python
-# sync-to-zendesk.py
+sync-to-zendesk.py
 import requests
 import json
 
@@ -586,7 +586,7 @@ def sync_faqs_to_zendesk(faqs_file):
             print(f"Failed: {response.status_code} - {response.text}")
 ```
 
-## Measuring FAQ Effectiveness
+Measuring FAQ Effectiveness
 
 Track whether generated FAQs actually reduce support volume:
 
@@ -612,25 +612,25 @@ def measure_faq_impact(before_tickets, after_tickets, faq_published_date):
         print(f"  {category}: {reduction_pct:.0f}% reduction")
 ```
 
-## Updating FAQs Over Time
+Updating FAQs Over Time
 
 Regenerate FAQs monthly to capture new trends:
 
 ```bash
-# cron-daily-faq-update.sh
+cron-daily-faq-update.sh
 0 2 1 * * /path/to/faq-pipeline/update_faqs.sh
 
-# update_faqs.sh
+update_faqs.sh
 #!/bin/bash
 cd /path/to/faq-pipeline
 
-# Fetch latest tickets
+Fetch latest tickets
 python fetch_tickets.py --days 90 --output recent_tickets.json
 
-# Regenerate FAQs
+Regenerate FAQs
 python generate_faqs.py recent_tickets.json generated_faqs.json
 
-# Check for changes
+Check for changes
 if git diff generated_faqs.json | grep -q "question"; then
     # Publish updates
     python sync_to_zendesk.py generated_faqs.json
@@ -640,7 +640,7 @@ if git diff generated_faqs.json | grep -q "question"; then
 fi
 ```
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-for-self-service-support-portals/)
 - [AI Tools for Support Quality Assurance](/ai-tools-for-support-quality-assurance/)
@@ -648,5 +648,5 @@ fi
 - [Drift vs ChatGPT for Customer Support: A Technical](/drift-vs-chatgpt-for-customer-support/)
 - [AI Tools for Education Student](/ai-tools-for-education-student-support/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

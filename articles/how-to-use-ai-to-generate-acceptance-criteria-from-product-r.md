@@ -35,15 +35,15 @@ Generating acceptance criteria from product requirement documents is a repetitiv
 
 This guide shows you practical approaches to generate acceptance criteria using AI, with concrete examples you can apply immediately.
 
-## Key Takeaways
+Key Takeaways
 
-- **Most contain a mix of user stories**: feature descriptions, business rules, and technical constraints.
-- **Password requirements**: minimum 8 characters, at least one uppercase letter, one number, and one
+- Most contain a mix of user stories: feature descriptions, business rules, and technical constraints.
+- Password requirements: minimum 8 characters, at least one uppercase letter, one number, and one
 special character.
-- **User must click link**: within 24 hours to activate account.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- User must click link: within 24 hours to activate account.
+- What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -53,9 +53,9 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand the Input: Product Requirement Documents
+Step 1: Understand the Input: Product Requirement Documents
 
-Product requirement documents (PRDs) come in various formats—Google Docs, Confluence pages, Notion files, or plain text. Most contain a mix of user stories, feature descriptions, business rules, and technical constraints. The challenge is extracting unambiguous, testable conditions from these documents.
+Product requirement documents (PRDs) come in various formats, Google Docs, Confluence pages, Notion files, or plain text. Most contain a mix of user stories, feature descriptions, business rules, and technical constraints. The challenge is extracting unambiguous, testable conditions from these documents.
 
 A typical PRD entry might look like this:
 
@@ -70,7 +70,7 @@ User Authentication Feature
 
 From this brief description, you need to generate specific acceptance criteria that QA can test and developers can implement.
 
-### Step 2: Prompting AI to Extract Acceptance Criteria
+Step 2: Prompting AI to Extract Acceptance Criteria
 
 The key to getting useful output is providing clear context. Here's a structured approach:
 
@@ -84,7 +84,7 @@ Requirements:
 [Your PRD content here]
 ```
 
-### Example: Authentication Feature
+Authentication Feature
 
 Input PRD:
 
@@ -120,7 +120,7 @@ AI-generated acceptance criteria:
 
 | AC-9 | Account inactive until verified | Attempt login before verification |
 
-### Step 3: Automate with CLI Tools
+Step 3: Automate with CLI Tools
 
 For teams processing multiple requirements, you can build a simple CLI tool using the OpenAI API or Claude API:
 
@@ -166,7 +166,7 @@ Run it with:
 python ac_generator.py "Your PRD text here" "your-api-key"
 ```
 
-### Step 4: Handling Complex Business Rules
+Step 4: Handling Complex Business Rules
 
 Real-world requirements often contain nested logic. Here's how to handle them:
 
@@ -205,12 +205,12 @@ This produces testable scenarios like:
 
 | $100 order, member | 15% discount | 10%+5%, capped |
 
-### Step 5: Integration with Test Management
+Step 5: Integration with Test Management
 
 For automated test generation, output criteria in a format your framework understands:
 
 ```python
-# Pytest-compatible output
+Pytest-compatible output
 ACCEPTANCE_CRITERIA = {
     "AC-1": {
         "condition": "Email validation works",
@@ -248,17 +248,17 @@ def generate_tests():
             globals()[test_name] = test_wrapper
 ```
 
-## Best Practices for Better Results
+Best Practices for Better Results
 
-**Provide context in your prompts.** Include information about your tech stack, testing framework, and any existing conventions. This helps AI generate criteria that fit your workflow.
+Provide context in your prompts. Include information about your tech stack, testing framework, and any existing conventions. This helps AI generate criteria that fit your workflow.
 
-**Review and refine.** AI output is a starting point. Always have a developer or QA engineer review generated criteria for completeness and accuracy.
+Review and refine. AI output is a starting point. Always have a developer or QA engineer review generated criteria for completeness and accuracy.
 
-**Iterate on prompts.** If output quality is poor, adjust your prompt with more specific instructions. Include examples of good acceptance criteria in your prompt.
+Iterate on prompts. If output quality is poor, adjust your prompt with more specific instructions. Include examples of good acceptance criteria in your prompt.
 
-**Maintain a criteria library.** Store successful AI-generated criteria as reference material. This improves future outputs and creates documentation.
+Maintain a criteria library. Store successful AI-generated criteria as reference material. This improves future outputs and creates documentation.
 
-### Step 6: Common Pitfalls to Avoid
+Step 6: Common Pitfalls to Avoid
 
 Generated criteria sometimes miss implicit requirements. Always verify:
 
@@ -274,44 +274,44 @@ Generated criteria sometimes miss implicit requirements. Always verify:
 
 AI excels at extracting explicit requirements but may miss unstated assumptions. Manual review remains essential.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use ai to generate acceptance criteria from product?**
+How long does it take to use ai to generate acceptance criteria from product?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Product Managers Converting Customer](/ai-tools-for-product-managers-converting-customer-interview-/)
 - [AI Tools for Product Managers Drafting Release](/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
@@ -319,5 +319,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best AI for Product Managers Creating Stakeholder Update Dec](/best-ai-for-product-managers-creating-stakeholder-update-dec/)
 - [Best AI for Product Managers Creating User Persona Documents](/best-ai-for-product-managers-creating-user-persona-documents/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

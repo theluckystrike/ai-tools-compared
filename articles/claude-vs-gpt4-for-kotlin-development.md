@@ -14,13 +14,13 @@ tags: [ai-tools-compared, comparison, claude-ai]
 ---
 
 {% raw %}
-# Claude vs GPT-4 for Kotlin Development
+Claude vs GPT-4 for Kotlin Development
 
-Kotlin has enough unique features — coroutines, sealed classes, extension functions, null safety — that AI tools that excel at Java often generate Kotlin that's technically correct but stylistically wrong. This comparison tests Claude and GPT-4 on tasks that are distinctly Kotlin, not just Java with different syntax.
+Kotlin has enough unique features. coroutines, sealed classes, extension functions, null safety. that AI tools that excel at Java often generate Kotlin that's technically correct but stylistically wrong. This comparison tests Claude and GPT-4 on tasks that are distinctly Kotlin, not just Java with different syntax.
 
 ---
 
-## Test Setup
+Test Setup
 
 Tasks tested:
 1. Writing idiomatic coroutine code (not just wrapping in `runBlocking`)
@@ -31,16 +31,16 @@ Tasks tested:
 
 ---
 
-## Test 1: Coroutines — Idiomatic vs Technically Correct
+Test 1: Coroutines. Idiomatic vs Technically Correct
 
-**Prompt:**
+Prompt:
 ```
 Write a function that fetches user data and their orders concurrently
 from two separate API endpoints. Handle errors gracefully and return
 a combined result. Use Kotlin coroutines.
 ```
 
-**Claude:**
+Claude:
 
 ```kotlin
 import kotlinx.coroutines.*
@@ -80,7 +80,7 @@ Claude correctly:
 - Used `async`/`await` for concurrent execution
 - Returned a sealed class result type
 
-**GPT-4:**
+GPT-4:
 
 ```kotlin
 import kotlinx.coroutines.*
@@ -100,23 +100,23 @@ suspend fun fetchUserWithOrders(userId: String): UserWithOrders {
 ```
 
 GPT-4 output is functional but has two issues:
-1. Catches and rethrows `CancellationException` as `RuntimeException` — breaks coroutine cancellation
-2. Uses `withContext(Dispatchers.IO)` unnecessarily if the functions are already `suspend` — adds overhead
+1. Catches and rethrows `CancellationException` as `RuntimeException`. breaks coroutine cancellation
+2. Uses `withContext(Dispatchers.IO)` unnecessarily if the functions are already `suspend`. adds overhead
 
 For production Kotlin code, Claude's output is significantly safer.
 
 ---
 
-## Test 2: Sealed Class Domain Modeling
+Test 2: Sealed Class Domain Modeling
 
-**Prompt:**
+Prompt:
 ```
 Model a payment processing domain with sealed classes.
 States: Pending, Processing, Succeeded, Failed, Refunded.
 Include transition functions that return the next valid state or an error.
 ```
 
-**Claude:**
+Claude:
 
 ```kotlin
 import java.time.Instant
@@ -203,20 +203,20 @@ fun PaymentState.markSucceeded(): Result<PaymentState.Succeeded> =
     }
 ```
 
-**GPT-4** generated a similar structure but used an `enum class` for state names inside a regular class, then added `when` statements that weren't exhaustive and didn't use Kotlin's `Result` type — it returned nullable types instead. The code worked but missed idiomatic patterns.
+GPT-4 generated a similar structure but used an `enum class` for state names inside a regular class, then added `when` statements that weren't exhaustive and didn't use Kotlin's `Result` type. it returned nullable types instead. The code worked but missed idiomatic patterns.
 
 ---
 
-## Test 3: Spring Boot Suspend Controller
+Test 3: Spring Boot Suspend Controller
 
-**Prompt:**
+Prompt:
 ```
 Write a Spring Boot controller in Kotlin with suspend functions
 for a REST endpoint that fetches data from a database using R2DBC.
 Include proper error handling and response types.
 ```
 
-**Claude:**
+Claude:
 
 ```kotlin
 import org.springframework.http.ResponseEntity
@@ -260,11 +260,11 @@ interface UserRepository : CoroutineCrudRepository<User, Long> {
 }
 ```
 
-GPT-4 generated valid Spring Boot code but used `@Async` annotations instead of `suspend` functions — mixing threading models in a way that undermines the purpose of using coroutines with R2DBC.
+GPT-4 generated valid Spring Boot code but used `@Async` annotations instead of `suspend` functions. mixing threading models in a way that undermines the purpose of using coroutines with R2DBC.
 
 ---
 
-## Comparison Summary
+Comparison Summary
 
 | Task | Claude | GPT-4 |
 |------|--------|-------|
@@ -278,27 +278,27 @@ GPT-4 generated valid Spring Boot code but used `@Async` annotations instead of 
 
 ---
 
-## When GPT-4 Performs Better
+When GPT-4 Performs Better
 
 GPT-4 has an edge on:
-- **Generating boilerplate quickly** — data transfer objects, mappers, converters
-- **Gradle build file configuration** — more up-to-date knowledge of Kotlin Gradle DSL
-- **Android XML layout generation** — more training data on Android UI patterns
-- **Explaining Java-to-Kotlin migration steps** — clear, step-by-step
+- Generating boilerplate quickly. data transfer objects, mappers, converters
+- Gradle build file configuration. more up-to-date knowledge of Kotlin Gradle DSL
+- Android XML layout generation. more training data on Android UI patterns
+- Explaining Java-to-Kotlin migration steps. clear, step-by-step
 
 ---
 
-## Practical Recommendation
+Practical Recommendation
 
 For coroutines, sealed classes, and anything that requires understanding Kotlin's type system and idioms: use Claude. The CancellationException handling alone can save debugging hours.
 
-For rapid boilerplate generation — data classes, repository interfaces, mapper functions — either tool works fine and GPT-4's speed advantage may matter.
+For rapid boilerplate generation. data classes, repository interfaces, mapper functions. either tool works fine and GPT-4's speed advantage may matter.
 
 In Cursor, use Claude as the backend model when working on Kotlin with coroutines. The codebase context + Claude's Kotlin idiom understanding is the strongest combination available.
 
 ---
 
-## Related Reading
+Related Reading
 
 - [AI Code Completion for Kotlin Compose Multiplatform](/ai-code-completion-for-kotlin-compose-multiplatform-shared-u/)
 - [Claude vs ChatGPT for Refactoring Legacy Java to Kotlin](/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
@@ -306,5 +306,5 @@ In Cursor, use Claude as the backend model when working on Kotlin with coroutine
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

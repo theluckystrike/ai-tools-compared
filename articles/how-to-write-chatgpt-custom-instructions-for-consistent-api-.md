@@ -18,14 +18,14 @@ voice-checked: true
 
 ChatGPT's custom instructions feature lets you define persistent context that shapes every conversation. For developers working on API design, well-crafted custom instructions mean you get consistent, high-quality suggestions without repeating the same context across sessions. This guide shows you how to write custom instructions that deliver reliable API design recommendations tailored to your project requirements and coding standards.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Advanced Custom Instruction Techniques](#advanced-custom-instruction-techniques)
 - [Advanced Custom Instruction Techniques](#advanced-custom-instruction-techniques)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Custom Instructions in ChatGPT
+Step 1: Understand Custom Instructions in ChatGPT
 
 Custom instructions live in your ChatGPT settings and apply to every new conversation. They consist of two fields: "What would you like ChatGPT to know about you?" and "How would you like ChatGPT to respond?" Both fields work together to establish the context and behavioral patterns you want the model to follow.
 
@@ -51,7 +51,7 @@ For API design work, you need to address several dimensions in your instructions
 
 The key to effective custom instructions is specificity. Generic statements like "write good API code" produce generic results. Concrete, measurable requirements generate precise, useful suggestions.
 
-### Step 2: Writing the Profile Section
+Step 2: Writing the Profile Section
 
 The first field should establish your technical context. Include your primary language, framework, and any specific constraints your projects typically face.
 
@@ -66,7 +66,7 @@ with JSON request/response bodies. Error responses use problem details format (R
 
 This tells ChatGPT exactly what tools and patterns you use, eliminating the need to repeat this information in every prompt. The model will suggest Pydantic models, FastAPI route handlers, and JWT-based auth patterns because it knows those are your standards.
 
-### Step 3: Defining Response Behavior
+Step 3: Defining Response Behavior
 
 The second custom instruction field controls how ChatGPT structures its responses. For API design, you want suggestions that are immediately usable in your codebase, not abstract concepts.
 
@@ -87,9 +87,9 @@ and path, 2) Request model with field types and validation, 3) Response model,
 4) Implementation code, 5) Example request/response, 6) Common error cases.
 ```
 
-### Step 4: Examples of Effective Custom Instructions
+Step 4: Examples of Effective Custom Instructions
 
-### Example 1: Microservices Developer
+Example 1: Microservices Developer
 
 If you work on microservices architectures, your instructions might emphasize:
 
@@ -102,7 +102,7 @@ Version APIs using URI versioning (/v1/, /v2/). Include rate limiting in all end
 
 With these instructions, ChatGPT will suggest gRPC definitions, URI versioning strategies, and Go idioms like middleware chains for rate limiting.
 
-### Example 2: Enterprise Java Developer
+Example 2: Enterprise Java Developer
 
 For enterprise Java environments:
 
@@ -116,7 +116,7 @@ Validation uses Bean Validation with custom constraint annotations.
 
 The model will generate Spring annotations, reactive programming patterns, and validation constraints matching enterprise requirements.
 
-### Example 3: TypeScript/Node.js Developer
+Example 3: TypeScript/Node.js Developer
 
 For TypeScript environments:
 
@@ -130,7 +130,7 @@ Follow DDD principles with clear separation of controllers, services, and reposi
 
 This produces TypeScript-first suggestions with proper typing, Zod schemas, and NestJS patterns.
 
-### Step 5: Test and Refining Your Instructions
+Step 5: Test and Refining Your Instructions
 
 After setting up custom instructions, test them with a few API design questions:
 
@@ -160,7 +160,7 @@ If something misses the mark, refine your instructions. Common adjustments inclu
 
 - Including documentation expectations
 
-## Advanced Custom Instruction Techniques
+Advanced Custom Instruction Techniques
 
 For more sophisticated control, use conditional instructions:
 
@@ -178,7 +178,7 @@ When suggesting improvements, cite specific benefits (performance, security, mai
 If I could achieve the same result with less code, show the simpler approach.
 ```
 
-### Step 6: Maintaining Consistency Across Sessions
+Step 6: Maintaining Consistency Across Sessions
 
 Custom instructions persist until you change them, which creates consistency but also requires maintenance. Review and update your instructions when:
 
@@ -190,11 +190,11 @@ Custom instructions persist until you change them, which creates consistency but
 
 Consider keeping a backup of your custom instructions in a document. This lets you maintain different instruction sets for different project types and quickly swap between contexts.
 
-### Step 7: Custom Instructions Library
+Step 7: Custom Instructions Library
 
 Save these ready-to-use instruction templates for different tech stacks:
 
-### Next.js with Supabase
+Next.js with Supabase
 
 ```
 Profile: I build full-stack applications using Next.js 15, TypeScript strict mode, and Supabase for PostgreSQL backend. I use Server Actions for API logic, client components with React hooks, and Zod for validation. Authentication uses Supabase Auth with JWT. Database access through Supabase client library with RLS policies.
@@ -202,7 +202,7 @@ Profile: I build full-stack applications using Next.js 15, TypeScript strict mod
 Response: When I request API endpoints, show: 1) Server Action code with proper error handling, 2) TypeScript types for request/response, 3) Zod validation schemas, 4) RLS policy requirements, 5) Client-side usage example. Include database schema assumptions.
 ```
 
-### Django with Django REST Framework
+Django with Django REST Framework
 
 ```
 Profile: I develop with Django 5.0 and Django REST Framework. Using PostgreSQL with django-environ for configuration. Models use Django ORM with proper relationships and constraints. Authentication via drf-spectacular and OpenAPI 3.0 documentation.
@@ -210,7 +210,7 @@ Profile: I develop with Django 5.0 and Django REST Framework. Using PostgreSQL w
 Response: For API endpoints, provide: 1) Serializer class definition with field validation, 2) ViewSet implementation with proper queryset filtering, 3) Pagination and permission classes, 4) URL routing configuration, 5) Example API calls. Always include docstrings following Django conventions.
 ```
 
-### Rust with Actix-web
+Rust with Actix-web
 
 ```
 Profile: I write APIs in Rust using Actix-web framework. Database access through SQLx with compile-time query verification. Error handling with custom error types implementing ResponseError. Serde for JSON serialization with derive macros. All endpoints require explicit error types and Result returns.
@@ -218,7 +218,7 @@ Profile: I write APIs in Rust using Actix-web framework. Database access through
 Response: When suggesting endpoints, show: 1) Handler function with proper type signatures, 2) Request/response struct definitions with Serde attributes, 3) Custom error enum implementation, 4) Database query code, 5) Endpoint registration in App configuration. Use #[derive(Serialize, Deserialize)] consistently.
 ```
 
-### Go with Gin
+Go with Gin
 
 ```
 Profile: I build REST APIs in Go 1.21+ using Gin web framework. Database access through GORM ORM with PostgreSQL. Error handling returns errors as part of function signatures. Validation uses struct tags with popular validators. All responses use consistent JSON envelope format.
@@ -226,9 +226,9 @@ Profile: I build REST APIs in Go 1.21+ using Gin web framework. Database access 
 Response: For API suggestions, provide: 1) Handler function with gin.Context parameter, 2) Struct definitions with struct tags for validation and JSON serialization, 3) GORM query examples with proper error checking, 4) Middleware setup if needed, 5) Curl examples. Follow Go conventions: CamelCase for exported functions, lowercase for packages.
 ```
 
-## Advanced Custom Instruction Techniques
+Advanced Custom Instruction Techniques
 
-### Conditional Instructions for Multiple Workflows
+Conditional Instructions for Multiple Workflows
 
 ```
 Add these conditional instructions to your response profile:
@@ -244,7 +244,7 @@ If I mention "urgent" or "quick": Provide the most concise solution without exte
 If I reference a specific file: Ask for the file content first before suggesting changes.
 ```
 
-### Style and Tone Customization
+Style and Tone Customization
 
 ```
 Style guidance:
@@ -260,12 +260,12 @@ Example tone:
 Good: Use typed error responses to prevent information leakage in production. Example: return status 500 with generic 'Internal Error' rather than stacktraces."
 ```
 
-### Step 8: Measuring Custom Instruction Effectiveness
+Step 8: Measuring Custom Instruction Effectiveness
 
 Track whether custom instructions are improving suggestion quality:
 
 ```python
-# Simple metric tracking
+Simple metric tracking
 import json
 from datetime import datetime
 
@@ -305,9 +305,9 @@ def analyze_effectiveness():
 
 Track acceptance rates before and after updating instructions. If acceptance rate drops, revert instructions and try different wording.
 
-### Step 9: Integration with Workflow
+Step 9: Integration with Workflow
 
-### ChatGPT Plus Workflow
+ChatGPT Plus Workflow
 
 1. Open ChatGPT
 2. Custom instructions automatically load
@@ -315,7 +315,7 @@ Track acceptance rates before and after updating instructions. If acceptance rat
 4. Receive suggestions aligned with your standards
 5. Copy code directly into your project or IDE
 
-### API Design Assistant Strategy
+API Design Assistant Strategy
 
 Use ChatGPT for exploratory design:
 
@@ -334,13 +334,13 @@ Session Flow:
    (Produces production-ready code)
 ```
 
-### Step 10: Updating Instructions Over Time
+Step 10: Updating Instructions Over Time
 
 Maintenance schedule:
 
-- **Monthly**: Review acceptance rates and adjust wording if needed
-- **Quarterly**: Update with new technology versions or framework changes
-- **Annually**: review with team for standardization
+- Monthly: Review acceptance rates and adjust wording if needed
+- Quarterly: Update with new technology versions or framework changes
+- Annually: review with team for standardization
 
 Example update:
 
@@ -351,44 +351,44 @@ After: "Use JWT with RS256 algorithm, 15-minute expiry for access tokens, 7-day 
 
 Specific instructions yield better results than generic ones.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to write chatgpt custom instructions?**
+How long does it take to write chatgpt custom instructions?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Write Custom Instructions for AI That Follow Your](/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 - [How to Write Custom Instructions That Make AI Follow Your](/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
@@ -396,5 +396,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [ChatGPT Custom GPT Not Following Instructions](/chatgpt-custom-gpt-not-following-instructions/)
 - [How to Create Custom System Prompt for ChatGPT API That Enfo](/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

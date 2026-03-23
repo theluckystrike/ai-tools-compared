@@ -32,22 +32,22 @@ categories: [guides]
 
 Video content dominates the internet, but processing and extracting value from hours of footage remains challenging. For developers building applications that handle video content, AI-powered summarization tools offer practical solutions.
 
-## Key Takeaways
+Key Takeaways
 
-- **Whisper large-v3 consistently produces**: the most accurate transcriptions, which directly improves summary quality since the LLM works from cleaner input.
-- **Use GPT-4o Vision or**: Gemini 1.5 Pro to process key frames extracted at regular intervals.
-- **Extract one frame every 5-10 seconds**: then send a batch of frames with a prompt asking the model to describe what is happening on screen.
-- **Extractive methods identify and**: clip the most important segments from a video.
-- **Most production tools combine**: both approaches.
-- **The choice between approaches**: depends on your use case.
+- Whisper large-v3 consistently produces: the most accurate transcriptions, which directly improves summary quality since the LLM works from cleaner input.
+- Use GPT-4o Vision or: Gemini 1.5 Pro to process key frames extracted at regular intervals.
+- Extract one frame every 5-10 seconds: then send a batch of frames with a prompt asking the model to describe what is happening on screen.
+- Extractive methods identify and: clip the most important segments from a video.
+- Most production tools combine: both approaches.
+- The choice between approaches: depends on your use case.
 
-## Understanding Video Summarization Approaches
+Understanding Video Summarization Approaches
 
-Video summarization generally falls into two categories: **extractive** and **abstractive**. Extractive methods identify and clip the most important segments from a video. Abstractive methods generate new text descriptions that capture the video's essence. Most production tools combine both approaches.
+Video summarization generally falls into two categories: extractive and abstractive. Extractive methods identify and clip the most important segments from a video. Abstractive methods generate new text descriptions that capture the video's essence. Most production tools combine both approaches.
 
 The choice between approaches depends on your use case. If you need quick highlights from sports or surveillance footage, extractive works well. For educational content or meetings, abstractive summaries provide more context.
 
-## Tool Comparison: AI Video Summarization Options in 2026
+Tool Comparison: AI Video Summarization Options in 2026
 
 Before looking at implementation, here is how the leading tools compare across the dimensions that matter most for developer use cases:
 
@@ -61,9 +61,9 @@ Before looking at implementation, here is how the leading tools compare across t
 
 For most production applications, Whisper combined with a capable LLM delivers the best quality-to-cost ratio. Cloud APIs excel when you need tight integration with existing cloud infrastructure.
 
-## Cloud APIs for Quick Integration
+Cloud APIs for Quick Integration
 
-### Google Cloud Video Intelligence
+Google Cloud Video Intelligence
 
 Google's Video Intelligence API provides shot change detection and label annotation. While it does not generate full summaries, you can build summarization pipelines using its outputs.
 
@@ -89,7 +89,7 @@ def analyze_video_shots(video_uri: str, credentials_path: str):
 
 This approach works well when you need timestamps for key segments. You can then use these timestamps to extract clips or generate chapter markers.
 
-### AWS Rekognition Video
+AWS Rekognition Video
 
 AWS provides similar capabilities through Rekognition, with the added benefit of content moderation and celebrity recognition. For developers already in the AWS ecosystem, this integrates cleanly with other AWS services.
 
@@ -114,9 +114,9 @@ def get_video_labels(bucket: str, key: str):
             return labels
 ```
 
-## Open-Source Libraries for Custom Solutions
+Open-Source Libraries for Custom Solutions
 
-### Transformers for Video Understanding
+Transformers for Video Understanding
 
 The Hugging Face Transformers library now supports video understanding tasks. While primarily focused on text, you can combine video processing libraries with transformer models for custom summarization.
 
@@ -146,14 +146,14 @@ def summarize_video_frames(frames):
     model = VideoMAEForVideoClassification.from_pretrained("MCKRN/videoMAE-small")
 
     inputs = processor(frames, return_tensors="pt")
-    outputs = model(**inputs)
+    outputs = model(inputs)
 
     # Get predicted labels
     predicted_class_idx = outputs.logits.argmax(-1).item()
     return model.config.id2label[predicted_class_idx]
 ```
 
-### Sumy for Text-Based Summarization
+Sumy for Text-Based Summarization
 
 If your video includes audio with transcription, text summarization tools work directly on the transcript. Sumy offers multiple algorithms for extractive summarization.
 
@@ -177,7 +177,7 @@ def summarize_transcript(transcript_text: str, sentence_count: int = 5):
     return " ".join([str(sentence) for sentence in summary])
 ```
 
-## Building a Complete Pipeline
+Building a Complete Pipeline
 
 For production applications, you typically need to chain multiple services together. Here is a practical architecture:
 
@@ -222,7 +222,7 @@ class VideoSummarizer:
         }
 ```
 
-## Real-World Workflow: Meeting Recording Summarization
+Real-World Workflow: Meeting Recording Summarization
 
 One of the highest-value use cases for video summarization is processing recorded meetings. Here is a production-ready workflow that handles Zoom or Google Meet recordings stored in S3:
 
@@ -275,7 +275,7 @@ def summarize_meeting_recording(s3_bucket: str, s3_key: str) -> dict:
 
 This workflow processes a 60-minute meeting in roughly 4-6 minutes on an M2 Mac using the Whisper `medium` model, or about 90 seconds with GPU acceleration.
 
-## Performance Benchmarks
+Performance Benchmarks
 
 Testing the major approaches on a standard 30-minute educational video reveals significant differences in speed, accuracy, and cost:
 
@@ -289,20 +289,20 @@ Testing the major approaches on a standard 30-minute educational video reveals s
 
 WER = Word Error Rate. Lower is better. Whisper large-v3 consistently produces the most accurate transcriptions, which directly improves summary quality since the LLM works from cleaner input.
 
-## Local Processing Options
+Local Processing Options
 
 For privacy-sensitive applications or cost optimization, local processing matters. Several tools enable on-device summarization:
 
 Whisper.cpp is a C++ port optimized for efficient local transcription. Faster Whisper adds GPU acceleration to the same approach. VideoDB handles local video analysis with scene detection built in.
 
 ```bash
-# Running Whisper.cpp for local transcription
+Running Whisper.cpp for local transcription
 ./main -m models/ggml-base.bin -f input_video.mp3 --output-txt
 ```
 
 The performance trade-off depends on your hardware. Modern GPUs process video significantly faster than CPU-only solutions.
 
-## Choosing the Right Tool
+Choosing the Right Tool
 
 Select your approach based on these factors:
 
@@ -320,23 +320,23 @@ Select your approach based on these factors:
 
 | Latency | Network-dependent | Variable | Local |
 
-For most applications, a hybrid approach works best—cloud APIs for initial processing, open-source tools for customization, and local processing for privacy-critical content.
+For most applications, a hybrid approach works best, cloud APIs for initial processing, open-source tools for customization, and local processing for privacy-critical content.
 
-## FAQ
+FAQ
 
-**Q: Can I summarize videos without audio, such as screen recordings?**
+Q: Can I summarize videos without audio, such as screen recordings?
 Yes, but you need vision-capable models. Use GPT-4o Vision or Gemini 1.5 Pro to process key frames extracted at regular intervals. Extract one frame every 5-10 seconds, then send a batch of frames with a prompt asking the model to describe what is happening on screen.
 
-**Q: What is the best approach for very long videos (2+ hours)?**
+Q: What is the best approach for very long videos (2+ hours)?
 Chunk the transcript into 4,000-token segments, summarize each chunk independently, then pass all chunk summaries to the LLM for a final consolidated summary. This map-reduce pattern avoids context limit issues and works reliably with any LLM.
 
-**Q: How do I handle speaker identification in meeting recordings?**
+Q: How do I handle speaker identification in meeting recordings?
 AssemblyAI's diarization feature identifies different speakers automatically. Alternatively, use `pyannote-audio` locally with `pip install pyannote.audio` and align its speaker segments with Whisper's transcript timestamps.
 
-**Q: Is Whisper accurate enough for technical content with jargon?**
+Q: Is Whisper accurate enough for technical content with jargon?
 Whisper large-v3 handles technical vocabulary reasonably well but will occasionally mishear domain-specific terms. Post-process transcripts with a custom vocabulary list using `--initial_prompt "This recording discusses Kubernetes, Helm, and GitOps"` to prime the model with relevant terminology.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
 - [AI Tools for Video Color Grading](/ai-tools-for-video-color-grading/)
@@ -344,4 +344,4 @@ Whisper large-v3 handles technical vocabulary reasonably well but will occasiona
 - [AI Tools for Video Frame Interpolation](/ai-tools-for-video-frame-interpolation/)
 - [AI Tools for Video Lip Sync 2026](/ai-tools-for-video-lip-sync-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

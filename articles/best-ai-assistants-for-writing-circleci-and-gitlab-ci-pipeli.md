@@ -18,7 +18,7 @@ voice-checked: true
 
 Writing CI/CD pipeline configurations requires understanding orchestration syntax, dependency management, caching strategies, and deployment workflows. This article evaluates how different AI coding assistants handle CircleCI and GitLab CI configuration files, helping you choose the right tool for your DevOps workflow.
 
-## Table of Contents
+Table of Contents
 
 - [Why AI Assistance Matters for CI/CD Configs](#why-ai-assistance-matters-for-cicd-configs)
 - [CircleCI Configuration with AI Assistance](#circleci-configuration-with-ai-assistance)
@@ -29,11 +29,11 @@ Writing CI/CD pipeline configurations requires understanding orchestration synta
 - [Workflow: Prompting AI for Pipeline Generation](#workflow-prompting-ai-for-pipeline-generation)
 - [Tips for Better AI Assistance](#tips-for-better-ai-assistance)
 
-## Why AI Assistance Matters for CI/CD Configs
+Why AI Assistance Matters for CI/CD Configs
 
-CI/CD configuration files use domain-specific syntax that differs from general-purpose code. A `.gitlab-ci.yml` or `config.yml` for CircleCI has unique constructs—workflows, jobs, steps, orbs, and runners—that most general-purpose code completion tools struggle to understand. The right AI assistant recognizes these patterns and suggests appropriate configurations based on your project's needs.
+CI/CD configuration files use domain-specific syntax that differs from general-purpose code. A `.gitlab-ci.yml` or `config.yml` for CircleCI has unique constructs, workflows, jobs, steps, orbs, and runners, that most general-purpose code completion tools struggle to understand. The right AI assistant recognizes these patterns and suggests appropriate configurations based on your project's needs.
 
-## CircleCI Configuration with AI Assistance
+CircleCI Configuration with AI Assistance
 
 CircleCI uses a YAML-based configuration with orbs (reusable packages), executors, and workflows. Let's examine how different AI tools handle a typical CircleCI setup.
 
@@ -78,7 +78,7 @@ GitHub Copilot provides basic completion for CircleCI syntax but often suggests 
 
 This works but misses CircleCI best practices like using pre-built images from the CircleCI Convenience Images repository or using orbs for common operations.
 
-## GitLab CI/CD Configuration Patterns
+GitLab CI/CD Configuration Patterns
 
 GitLab CI uses a slightly different approach with `stages`, `image` specifications, and `rules` for conditional execution. A comparable pipeline structure looks different:
 
@@ -127,7 +127,7 @@ docker-build:
 
 The tool recognizes environment variables like `$CI_REGISTRY` and `$CI_COMMIT_SHA` that GitLab provides automatically.
 
-## Comparing AI Tools for CI/CD Configs
+Comparing AI Tools for CI/CD Configs
 
 | Feature | Claude Code | Cursor | GitHub Copilot | ChatGPT |
 |---------|-------------|--------|----------------|---------|
@@ -141,11 +141,11 @@ The tool recognizes environment variables like `$CI_REGISTRY` and `$CI_COMMIT_SH
 
 Claude Code consistently provides the most relevant suggestions for CI/CD configurations. It understands the CircleCI orb ecosystem and knows which orbs are well-maintained. For GitLab CI, it recognizes patterns like using `extends` for job reuse and `rules` for conditional execution.
 
-Cursor offers solid completion but sometimes suggests outdated orb versions or missing required parameters. GitHub Copilot works best as a general-purpose tool but lacks deep knowledge of CI/CD-specific patterns. ChatGPT performs well when given the full config file as context—its suggestions improve significantly when you paste your existing YAML and ask for targeted additions.
+Cursor offers solid completion but sometimes suggests outdated orb versions or missing required parameters. GitHub Copilot works best as a general-purpose tool but lacks deep knowledge of CI/CD-specific patterns. ChatGPT performs well when given the full config file as context, its suggestions improve significantly when you paste your existing YAML and ask for targeted additions.
 
-## Practical Examples
+Practical Examples
 
-### Caching Dependencies
+Caching Dependencies
 
 A common need is configuring dependency caches to speed up pipelines. For Node.js projects, Claude Code suggests:
 
@@ -170,7 +170,7 @@ A common need is configuring dependency caches to speed up pipelines. For Node.j
 
 The tool recognizes the cache key pattern using checksums and understands which directories to cache.
 
-### Multi-Platform Testing
+Multi-Platform Testing
 
 When you need to test across multiple operating systems:
 
@@ -198,7 +198,7 @@ workflows:
 
 Claude Code understands parameterized executors and workflow matrix jobs, suggesting appropriate configurations for matrix builds.
 
-### Deployment to Kubernetes with GitLab CI
+Deployment to Kubernetes with GitLab CI
 
 For teams deploying to Kubernetes via GitLab, a well-structured deploy stage looks like this:
 
@@ -223,9 +223,9 @@ deploy-staging:
     - docker-build
 ```
 
-When you describe this deployment pattern to Claude Code, it suggests the `needs` keyword automatically to enforce that the deploy job waits for the build job rather than relying on stage ordering alone. GitHub Copilot often omits the `needs` field, relying on implicit stage sequencing—which works but loses the DAG optimization benefits.
+When you describe this deployment pattern to Claude Code, it suggests the `needs` keyword automatically to enforce that the deploy job waits for the build job rather than relying on stage ordering alone. GitHub Copilot often omits the `needs` field, relying on implicit stage sequencing, which works but loses the DAG optimization benefits.
 
-### Security Scanning in GitLab CI
+Security Scanning in GitLab CI
 
 GitLab provides built-in security scanner templates. AI assistants differ in whether they know these templates exist:
 
@@ -242,7 +242,7 @@ variables:
 
 Claude Code recommends the `include:` directive with GitLab's security templates immediately when you ask about pipeline security scanning. Copilot typically suggests writing custom scanning scripts from scratch, missing the native template system entirely.
 
-## Parallelism and Test Splitting
+Parallelism and Test Splitting
 
 One of the most impactful optimizations for slow CI pipelines is parallel test execution. AI assistants differ significantly in how well they understand CircleCI's native parallelism and GitLab CI's parallel keyword.
 
@@ -258,7 +258,7 @@ test-parallel:
     - run:
         name: Split and run tests
         command: |
-          TESTFILES=$(circleci tests glob "src/**/*.test.js" | circleci tests split --split-by=timings)
+          TESTFILES=$(circleci tests glob "src//*.test.js" | circleci tests split --split-by=timings)
           npx jest $TESTFILES --ci --reporters=default --reporters=jest-junit
     - store_test_results:
         path: test-results
@@ -283,58 +283,58 @@ test:
 
 GitLab's `$CI_NODE_INDEX` and `$CI_NODE_TOTAL` environment variables enable the Jest sharding approach. Claude Code and Cursor both suggest this pattern. GitHub Copilot rarely suggests parallel sharding unprompted.
 
-## Workflow: Prompting AI for Pipeline Generation
+Workflow: Prompting AI for Pipeline Generation
 
 Follow this systematic approach when using AI to generate CI/CD configs:
 
-1. **Paste your full stack context** — Share your package.json, Dockerfile, and current config (if any) so the AI has complete context.
-2. **Specify your cloud target** — Tell the AI whether you're deploying to AWS ECS, GKE, Heroku, or another platform. This determines which orbs or deployment scripts are appropriate.
-3. **Request incremental additions** — Start with a basic test job, verify it works, then ask the AI to add caching, parallelization, and deployment steps one at a time.
-4. **Ask for security review** — After the config is functional, prompt the AI to audit for secret exposure and suggest masking patterns.
-5. **Validate orb versions** — Always verify suggested orb versions against the CircleCI orb registry or GitLab's documentation. AI training data may include deprecated versions.
+1. Paste your full stack context. Share your package.json, Dockerfile, and current config (if any) so the AI has complete context.
+2. Specify your cloud target. Tell the AI whether you're deploying to AWS ECS, GKE, Heroku, or another platform. This determines which orbs or deployment scripts are appropriate.
+3. Request incremental additions. Start with a basic test job, verify it works, then ask the AI to add caching, parallelization, and deployment steps one at a time.
+4. Ask for security review. After the config is functional, prompt the AI to audit for secret exposure and suggest masking patterns.
+5. Validate orb versions. Always verify suggested orb versions against the CircleCI orb registry or GitLab's documentation. AI training data may include deprecated versions.
 
-## Tips for Better AI Assistance
+Tips for Better AI Assistance
 
-1. **Provide context** — Include your project's package.json, Dockerfile, or existing CI configs so the AI understands your stack.
+1. Provide context. Include your project's package.json, Dockerfile, or existing CI configs so the AI understands your stack.
 
-2. **Specify versions** — Ask for specific versions of orbs or Docker images to avoid deprecated suggestions.
+2. Specify versions. Ask for specific versions of orbs or Docker images to avoid deprecated suggestions.
 
-3. **Review security** — AI tools may suggest configurations that expose secrets. Always verify environment variable handling.
+3. Review security. AI tools may suggest configurations that expose secrets. Always verify environment variable handling.
 
-4. **Iterate on suggestions** — Start with a basic configuration and ask the AI to expand it with caching, parallelization, or deployment steps.
+4. Iterate on suggestions. Start with a basic configuration and ask the AI to expand it with caching, parallelization, or deployment steps.
 
-5. **Use documentation links** — When the AI suggests an orb or GitLab feature, verify it exists in the official documentation.
+5. Use documentation links. When the AI suggests an orb or GitLab feature, verify it exists in the official documentation.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does GitLab offer a free tier?**
+Does GitLab offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check GitLab's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
 - [AI Tools for Generating CI/CD Pipeline Configs 2026](/ai-tools-for-generating-ci-cd-pipeline-configs-2026/)
 - [Which AI Tool Is Better for Writing CircleCI Config YAML](/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
 - [AI Tools for Writing Redis Caching Strategies 2026](/ai-tools-for-writing-redis-caching-strategies-2026/)
 - [AI Tools for Writing Kubernetes Operators 2026](/ai-tools-for-writing-kubernetes-operators-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```
 {% endraw %}

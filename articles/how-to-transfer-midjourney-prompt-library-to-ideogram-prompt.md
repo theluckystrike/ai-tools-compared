@@ -18,7 +18,7 @@ voice-checked: true
 
 Transfer your Midjourney prompt library to Ideogram by stripping Midjourney-specific parameters (`--ar`, `--stylize`, `--v`), mapping aspect ratios to Ideogram's preset options, and converting style values into natural language descriptions. Use the Python converter scripts below to batch-process your entire prompt collection from a CSV export. Text-heavy prompts for logos and typography will often produce better results on Ideogram without additional modification.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand the Platform Differences
+Step 1: Understand the Platform Differences
 
 Midjourney and Ideogram take fundamentally different approaches to image generation. Midjourney uses a Discord-based command system with parameters like `--ar` for aspect ratio, `--stylize` for artistic strength, and `--v` for model version. Prompts are space-separated with double-dash parameters appended at the end.
 
@@ -36,11 +36,11 @@ Ideogram operates through a web interface and API, accepting natural language pr
 
 The most significant difference lies in text rendering. If your Midjourney prompts contain text elements for logos, signage, or typography-focused designs, Ideogram will likely produce superior results without additional prompting tricks. Ideogram was specifically designed with text generation as a core capability, whereas Midjourney treats text as an afterthought. This alone makes prompt migration valuable for many use cases.
 
-Additionally, Ideogram supports a `magic_prompt` API parameter that automatically enhances your prompts with additional detail. Setting `magic_prompt: "ON"` acts similarly to Midjourney's higher `--stylize` values — it gives the model creative latitude to interpret your prompt rather than producing a literal rendering.
+Additionally, Ideogram supports a `magic_prompt` API parameter that automatically enhances your prompts with additional detail. Setting `magic_prompt: "ON"` acts similarly to Midjourney's higher `--stylize` values. it gives the model creative latitude to interpret your prompt rather than producing a literal rendering.
 
-### Step 2: Converting Midjourney Parameters to Ideogram Format
+Step 2: Converting Midjourney Parameters to Ideogram Format
 
-### Aspect Ratio Conversion
+Aspect Ratio Conversion
 
 Midjourney uses the `--ar` parameter followed by width:height values. Ideogram uses preset aspect ratio options. Here's a conversion function:
 
@@ -61,7 +61,7 @@ def convert_aspect_ratio(mj_param):
     return ratio_map.get(mj_param.lower(), "square")
 ```
 
-### Style Parameter Mapping
+Style Parameter Mapping
 
 Midjourney's `--stylize` parameter (0-1000) controls artistic interpretation. Ideogram handles this differently through prompt language. Higher stylize values in Midjourney mean more artistic freedom. For Ideogram, you express this through descriptive adjectives and through the `style_type` API parameter:
 
@@ -86,7 +86,7 @@ def convert_stylize_to_ideogram_style(stylize_value):
         return "DESIGN"
 ```
 
-### Version Parameter Handling
+Version Parameter Handling
 
 Midjourney uses `--v` or `--version` to select model versions. Ideogram automatically uses its latest model. Remove version parameters when converting:
 
@@ -101,7 +101,7 @@ def strip_mj_version_params(prompt):
     return cleaned.strip()
 ```
 
-### Step 3: Build a Complete Prompt Converter
+Step 3: Build a Complete Prompt Converter
 
 Here's a Python script that converts Midjourney prompts to Ideogram format:
 
@@ -178,7 +178,7 @@ class MidjourneyToIdeogramConverter:
             "aspect_ratio": params["aspect_ratio"]
         }
 
-# Example usage
+Example usage
 converter = MidjourneyToIdeogramConverter()
 
 mj_prompt = "a futuristic cityscape at sunset, neon lights, cyberpunk aesthetic --ar 16:9 --stylize 750 --v 6"
@@ -196,9 +196,9 @@ This produces:
 }
 ```
 
-### Step 4: Handling Complex Prompt Patterns
+Step 4: Handling Complex Prompt Patterns
 
-### Multi-Prompt Segments
+Multi-Prompt Segments
 
 Midjourney allows weighted prompts using `::` syntax. Ideogram doesn't support this directly. You need to decide how to handle weighted elements:
 
@@ -222,7 +222,7 @@ def handle_weighted_segments(prompt):
     return prompt
 ```
 
-### Seed and Chaos Parameters
+Seed and Chaos Parameters
 
 Midjourney's `--seed` and `--chaos` parameters have no direct Ideogram equivalents. The converter should simply strip these:
 
@@ -246,7 +246,7 @@ def strip_non_transferable_params(prompt):
     return prompt.strip()
 ```
 
-### Step 5: Batch Processing Your Prompt Library
+Step 5: Batch Processing Your Prompt Library
 
 For large prompt collections, process them in batches:
 
@@ -278,12 +278,12 @@ def batch_convert_library(input_file, output_file):
 
     return len(results)
 
-# Usage
+Usage
 count = batch_convert_library('midjourney_prompts.csv', 'ideogram_prompts.csv')
 print(f"Converted {count} prompts")
 ```
 
-### Step 6: Use the Ideogram API After Conversion
+Step 6: Use the Ideogram API After Conversion
 
 Once your prompts are converted, you can submit them programmatically using Ideogram's REST API:
 
@@ -315,7 +315,7 @@ def generate_ideogram_image(prompt, aspect_ratio="square", style_type="GENERAL")
 
     return response.json()
 
-# Example with a converted prompt
+Example with a converted prompt
 result = generate_ideogram_image(
     prompt="a futuristic cityscape at sunset, neon lights, cyberpunk aesthetic. Highly artistic, expressive style.",
     aspect_ratio="landscape_16_9",
@@ -324,9 +324,9 @@ result = generate_ideogram_image(
 print(result["data"][0]["url"])
 ```
 
-Ideogram V_2_TURBO is the recommended model for batch processing due to its speed. Use V_2 for highest quality when processing curated prompts. API keys are available from ideogram.ai — pricing starts at $0.04 per image for Turbo and $0.08 for standard quality.
+Ideogram V_2_TURBO is the recommended model for batch processing due to its speed. Use V_2 for highest quality when processing curated prompts. API keys are available from ideogram.ai. pricing starts at $0.04 per image for Turbo and $0.08 for standard quality.
 
-### Step 7: Style Type Mapping Reference
+Step 7: Style Type Mapping Reference
 
 Ideogram's `style_type` parameter has no direct Midjourney equivalent, but this mapping works well in practice:
 
@@ -338,56 +338,56 @@ Ideogram's `style_type` parameter has no direct Midjourney equivalent, but this 
 | Anime/manga | `--niji 6` | ANIME |
 | 3D render | `--v 6 --style raw` | GENERAL + descriptive |
 
-### Step 8: Limitations and Manual Review
+Step 8: Limitations and Manual Review
 
 Automated conversion handles approximately 80% of prompts effectively. However, certain Midjourney features require manual intervention:
 
-- **Style references** (`--sref`): These cannot be automatically converted. Describe the referenced style in natural language instead.
+- Style references (`--sref`): These cannot be automatically converted. Describe the referenced style in natural language instead.
 
-- **Image prompts** (`--iw` with URLs): Ideogram handles image references through its image-to-image endpoint, which requires a separate workflow from text-to-image.
+- Image prompts (`--iw` with URLs): Ideogram handles image references through its image-to-image endpoint, which requires a separate workflow from text-to-image.
 
-- **Complex weighted prompts**: May need manual consolidation. When Midjourney uses `subject1::2 background::0.5`, translate to priority-ordered natural language: "a [subject1] with [background] in the distance".
+- Complex weighted prompts: May need manual consolidation. When Midjourney uses `subject1::2 background::0.5`, translate to priority-ordered natural language: "a [subject1] with [background] in the distance".
 
 After running your conversion, review prompts containing these elements manually to ensure the converted version maintains your intended output.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to transfer midjourney prompt library to ideogram?**
+How long does it take to transfer midjourney prompt library to ideogram?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Transfer Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
 - [How to Transfer Your Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code/)
@@ -395,5 +395,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Switching from Dall E to Midjourney Prompt Format Difference](/switching-from-dall-e-to-midjourney-prompt-format-difference/)
 - [Switching from Midjourney to Dall E 3 Prompt Adaptation Guid](/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

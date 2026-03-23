@@ -26,7 +26,7 @@ Claude 3.5 Sonnet produces production-grade rate limiting implementations with e
 | Cursor | Full file generation | Reads existing middleware | Understands existing Redis setup | $20/month (Pro) |
 | Codeium | Basic pattern suggestions | Common languages | Template-based | Free tier available |
 
-## Table of Contents
+Table of Contents
 
 - [Three Rate Limiting Algorithms Explained](#three-rate-limiting-algorithms-explained)
 - [Claude 3.5 Sonnet: Distributed Rate Limiting](#claude-35-sonnet-distributed-rate-limiting)
@@ -35,15 +35,15 @@ Claude 3.5 Sonnet produces production-grade rate limiting implementations with e
 - [Real-World Implementation Considerations](#real-world-implementation-considerations)
 - [Choosing Your AI Tool](#choosing-your-ai-tool)
 
-## Three Rate Limiting Algorithms Explained
+Three Rate Limiting Algorithms Explained
 
-Token bucket allocates requests like coins dropped into a bucket. The bucket holds a maximum number of tokens (capacity). Every interval, new tokens are added. Each request consumes one token. When the bucket empties, requests are rejected. This algorithm handles burst traffic well—you can process 100 requests instantly if tokens are available, then throttle back to normal rates.
+Token bucket allocates requests like coins dropped into a bucket. The bucket holds a maximum number of tokens (capacity). Every interval, new tokens are added. Each request consumes one token. When the bucket empties, requests are rejected. This algorithm handles burst traffic well, you can process 100 requests instantly if tokens are available, then throttle back to normal rates.
 
 Sliding window tracks requests in a rolling time frame. Rather than fixed periods (0-60 seconds, 60-120 seconds), sliding window records individual request timestamps and counts how many fall within the last 60 seconds. If a request at second 65 would exceed the limit when combined with requests at seconds 5-60, it's rejected. This method is more accurate than token bucket but requires storing timestamps.
 
 Leaky bucket treats requests as water flowing into a bucket with a hole in the bottom. Requests arrive at variable rates but leak out at a constant rate. This smooths traffic spikes. If requests arrive faster than they leak, new requests overflow the bucket and are rejected. Leaky bucket is harder to implement efficiently but provides the smoothest traffic shaping.
 
-## Claude 3.5 Sonnet: Distributed Rate Limiting
+Claude 3.5 Sonnet: Distributed Rate Limiting
 
 Claude excels at implementing rate limiting that works across multiple servers. When asked for "a rate limiter that handles concurrent requests across load-balanced servers," Claude generates:
 
@@ -193,12 +193,12 @@ class DistributedRateLimiter:
         return allowed, remaining
 ```
 
-Claude's implementation uses Lua scripts executed atomically in Redis—critical for distributed systems. Without atomicity, race conditions occur where two servers check simultaneously, both see tokens available, and both consume the same token.
+Claude's implementation uses Lua scripts executed atomically in Redis, critical for distributed systems. Without atomicity, race conditions occur where two servers check simultaneously, both see tokens available, and both consume the same token.
 
 The code also includes explicit error handling and backpressure mechanisms:
 
 ```python
-# Flask middleware example
+Flask middleware example
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -235,12 +235,12 @@ def rate_limit_check():
 
 Claude also explains the tradeoff explicitly: token bucket handles burst traffic (good for user experience), sliding window provides accuracy (good for SLA enforcement), and leaky bucket smooths traffic (good for downstream stability).
 
-## ChatGPT-4: Excellent Algorithm Explanations
+ChatGPT-4: Excellent Algorithm Explanations
 
 ChatGPT-4 produces clear explanations of rate limiting concepts but generates code that doesn't consider distributed deployment:
 
 ```python
-# Basic token bucket (ChatGPT-4 typical response)
+Basic token bucket (ChatGPT-4 typical response)
 class TokenBucket:
     def __init__(self, capacity, refill_rate):
         self.capacity = capacity
@@ -263,21 +263,21 @@ This pattern works for single-server applications but fails under load-balancing
 
 ChatGPT-4 excels when asked specifically about algorithm differences: "Explain why sliding window is more accurate than token bucket." The explanation clearly contrasts the accuracy vs. memory tradeoff.
 
-## Copilot: IDE Integration Convenience
+Copilot: IDE Integration Convenience
 
 GitHub Copilot provides fast suggestions within your IDE. When typing `def rate_limit(` in VS Code, Copilot suggests implementations immediately. The suggestions are typically correct for single-server scenarios but rarely include the distributed system considerations necessary for production APIs.
 
 Copilot excels at generating decorators and middleware patterns:
 
 ```python
-# Copilot generates this well
+Copilot generates this well
 @app.route('/api/data')
 @rate_limit(max_requests=100, period_seconds=60)
 def get_data():
     return {'data': 'example'}
 ```
 
-## Real-World Implementation Considerations
+Real-World Implementation Considerations
 
 Token bucket works best for:
 - Burst-tolerant APIs (social media, content delivery)
@@ -294,7 +294,7 @@ Leaky bucket works best for:
 - Preventing server overload from traffic spikes
 - Load balancing across backend services
 
-## Choosing Your AI Tool
+Choosing Your AI Tool
 
 Use Claude 3.5 Sonnet when implementing rate limiting across distributed servers or when you need to justify algorithm selection to stakeholders. Claude produces code with explicit Lua atomicity and clear comments explaining why decisions matter.
 
@@ -304,33 +304,33 @@ Use Copilot for single-server applications or rapid prototyping when deployment 
 
 For production APIs, Claude provides safer implementations by default. Token bucket via Claude includes atomicity. Token bucket via Copilot creates race conditions.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Are free AI tools good enough for ai tools for writing api rate limiting code?**
+Are free AI tools good enough for ai tools for writing api rate limiting code?
 
 Free tiers work for basic tasks and evaluation, but paid plans typically offer higher rate limits, better models, and features needed for professional work. Start with free options to find what works for your workflow, then upgrade when you hit limitations.
 
-**How do I evaluate which tool fits my workflow?**
+How do I evaluate which tool fits my workflow?
 
 Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
-**Do these tools work offline?**
+Do these tools work offline?
 
 Most AI-powered tools require an internet connection since they run models on remote servers. A few offer local model options with reduced capability. If offline access matters to you, check each tool's documentation for local or self-hosted options.
 
-**Can I use these tools with a distributed team across time zones?**
+Can I use these tools with a distributed team across time zones?
 
 Most modern tools support asynchronous workflows that work well across time zones. Look for features like async messaging, recorded updates, and timezone-aware scheduling. The best choice depends on your team's specific communication patterns and size.
 
-**Should I switch tools if something better comes out?**
+Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Generating API Rate Limiting Code 2026](/best-ai-tools-for-generating-api-rate-limiting-code-2026/)
 - [Best AI Tools for Automated API Rate Limiting and Abuse](/best-ai-tools-for-automated-api-rate-limiting-and-abuse-dete/)
 - [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
 - [Best AI Tools for Writing Kubernetes Operator Code](/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
 - [Best AI Tools for Generating API Documentation From Code](/best-ai-tools-for-generating-api-documentation-from-code-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

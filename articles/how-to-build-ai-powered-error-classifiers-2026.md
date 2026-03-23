@@ -15,11 +15,11 @@ tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
 
 {% raw %}
 
-# How to Build AI-Powered Error Classifiers 2026
+How to Build AI-Powered Error Classifiers 2026
 
-Error classifiers automatically categorize application errors, assign severity levels, and route them to the right team — without requiring manual rules for every error type. This guide builds a two-stage classifier: embedding-based similarity search for known errors, LLM fallback for novel ones.
+Error classifiers automatically categorize application errors, assign severity levels, and route them to the right team. without requiring manual rules for every error type. This guide builds a two-stage classifier: embedding-based similarity search for known errors, LLM fallback for novel ones.
 
-## Architecture
+Architecture
 
 ```
 Error log entry
@@ -37,12 +37,12 @@ LLM classification with few-shot examples
 Store labeled result for future similarity hits
 ```
 
-## Step 1: Error Normalization
+Step 1: Error Normalization
 
-Raw errors contain noise that breaks similarity — unique IDs, timestamps, and memory addresses change per occurrence.
+Raw errors contain noise that breaks similarity. unique IDs, timestamps, and memory addresses change per occurrence.
 
 ```python
-# normalizer.py
+normalizer.py
 import re
 from dataclasses import dataclass
 
@@ -87,10 +87,10 @@ def normalize_error(error_text: str) -> NormalizedError:
     )
 ```
 
-## Step 2: Embedding-Based Similarity Classifier
+Step 2: Embedding-Based Similarity Classifier
 
 ```python
-# classifier.py
+classifier.py
 from dataclasses import dataclass
 from openai import AsyncOpenAI
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -156,10 +156,10 @@ async def classify_by_similarity(
     )
 ```
 
-## Step 3: LLM Fallback Classifier
+Step 3: LLM Fallback Classifier
 
 ```python
-# llm_classifier.py
+llm_classifier.py
 import json
 from openai import AsyncOpenAI
 from normalizer import NormalizedError
@@ -240,10 +240,10 @@ async def classify_with_llm(error: NormalizedError) -> ErrorClassification:
     )
 ```
 
-## Step 4: Full Pipeline
+Step 4: Full Pipeline
 
 ```python
-# pipeline.py
+pipeline.py
 async def classify_error(
     error_text: str,
     session: AsyncSession,
@@ -283,7 +283,7 @@ async def classify_error(
     return classification
 ```
 
-## Step 5: Database Schema
+Step 5: Database Schema
 
 You need pgvector installed on PostgreSQL to store and query embeddings efficiently.
 
@@ -309,14 +309,14 @@ CREATE INDEX ON error_examples USING ivfflat (embedding vector_cosine_ops)
 CREATE INDEX ON error_examples (category);
 ```
 
-Seed the table with a handful of hand-labeled examples before deploying — 5-10 per category is enough to bootstrap the similarity path.
+Seed the table with a handful of hand-labeled examples before deploying. 5-10 per category is enough to bootstrap the similarity path.
 
-## Step 6: Routing Alerts
+Step 6: Routing Alerts
 
 Once you have a classification, route it to the right destination:
 
 ```python
-# router.py
+router.py
 import httpx
 
 SLACK_CHANNELS = {
@@ -347,7 +347,7 @@ async def route_classification(
         "channel": channel,
         "text": (
             f"{severity_emoji} *{classification.category.upper()}* "
-            f"[{classification.severity}] — {classification.explanation}\n"
+            f"[{classification.severity}]. {classification.explanation}\n"
             f"```{error_text[:300]}```"
         ),
     }
@@ -361,7 +361,7 @@ async def route_classification(
         await trigger_pagerduty(routing_key, classification, error_text)
 ```
 
-## Evaluation
+Evaluation
 
 After a few hundred classifications, measure accuracy on a held-out test set:
 
@@ -376,13 +376,13 @@ def evaluate_classifier(test_cases: list[dict]) -> None:
 
 Target accuracy: >90% on seen error types (similarity path), >75% on novel errors (LLM path). The similarity database grows over time, shifting more classifications to the fast path.
 
-### Tuning the Similarity Threshold
+Tuning the Similarity Threshold
 
 The `threshold=0.85` default is conservative. Lower it if you find the LLM is being invoked too often for errors that look similar to known ones. Raise it if you see the similarity path making incorrect matches for errors that only superficially resemble labeled examples.
 
 A good workflow: run a batch of 500 recent production errors through both paths independently, compare disagreements, and adjust the threshold to minimize disagreements on clearly similar pairs.
 
-## Cost Profile
+Cost Profile
 
 At scale, keeping LLM calls rare is the main cost lever:
 
@@ -394,7 +394,7 @@ At scale, keeping LLM calls rare is the main cost lever:
 
 After the first week of operation, most production errors route through the similarity path. The LLM path handles new error types introduced by deployments, which are relatively rare once a service stabilizes.
 
-## Related Reading
+Related Reading
 
 - [How to Build Semantic Search with Embeddings](/how-to-build-semantic-search-with-embeddings/)
 - [AI-Powered Observability Configuration Tools](/ai-powered-observability-configuration-tools-2026/)
@@ -403,7 +403,7 @@ After the first week of operation, most production errors route through the simi
 
 ---
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Go Error Wrapping and Sentinel Error](/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
 - [Best AI Tools for Writing Idiomatic Rust Error Handling](/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
@@ -411,6 +411,6 @@ After the first week of operation, most production errors route through the simi
 - [Copilot vs Cursor for Writing Rust Error Handling](/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
 - [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

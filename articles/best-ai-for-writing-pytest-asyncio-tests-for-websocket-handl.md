@@ -17,7 +17,7 @@ voice-checked: true
 
 Claude Code stands out for WebSocket handler testing because it deeply understands pytest-asyncio patterns, async context management, and WebSocket lifecycle handling. When generating asyncio tests for WebSocket handlers, Claude properly uses @pytest.mark.asyncio decorators, structures async fixtures correctly, includes error case coverage, and manages WebSocket lifecycle semantics accurately.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding the Testing Requirements for WebSocket Handlers](#understanding-the-testing-requirements-for-websocket-handlers)
 - [Top AI Tools for WebSocket Handler Testing](#top-ai-tools-for-websocket-handler-testing)
@@ -29,7 +29,7 @@ Claude Code stands out for WebSocket handler testing because it deeply understan
 - [Best Practices When Using AI for Test Generation](#best-practices-when-using-ai-for-test-generation)
 - [Related Reading](#related-reading)
 
-## Understanding the Testing Requirements for WebSocket Handlers
+Understanding the Testing Requirements for WebSocket Handlers
 
 WebSocket handler functions differ significantly from traditional HTTP endpoint tests. When testing async WebSocket handlers, you must account for several critical aspects:
 
@@ -45,15 +45,15 @@ WebSocket handler functions differ significantly from traditional HTTP endpoint 
 
 A well-written pytest asyncio test for a WebSocket handler should use pytest-asyncio fixtures properly, handle the async context correctly, and verify both successful scenarios and error conditions.
 
-## Top AI Tools for WebSocket Handler Testing
+Top AI Tools for WebSocket Handler Testing
 
-### 1. Claude Code (Anthropic)
+1. Claude Code (Anthropic)
 
 Claude Code has emerged as a strong contender for writing pytest asyncio tests for WebSocket handlers. Its deep understanding of Python's asyncio library and pytest-asyncio plugin makes it particularly effective at generating tests that properly handle async contexts.
 
 When prompted to generate WebSocket handler tests, Claude Code typically produces code that correctly uses `@pytest.mark.asyncio` decorators, properly structures async test functions, and includes appropriate cleanup logic. It understands the nuances of pytest-asyncio's fixture scoping and can generate parameterized tests for multiple WebSocket scenarios.
 
-**Strengths:**
+Strengths:
 
 - Excellent understanding of pytest-asyncio patterns
 
@@ -63,13 +63,13 @@ When prompted to generate WebSocket handler tests, Claude Code typically produce
 
 - Context-aware suggestions for WebSocket lifecycle management
 
-**Pricing:** Claude Code offers a free tier with generous limits, with paid plans starting at $20/month for heavier usage.
+Pricing: Claude Code offers a free tier with generous limits, with paid plans starting at $20/month for heavier usage.
 
-### 2. GitHub Copilot (Microsoft)
+2. GitHub Copilot (Microsoft)
 
 Copilot has improved significantly in handling async Python testing, though it sometimes requires more specific prompting to generate correct pytest asyncio code. For WebSocket handler tests, Copilot works best when you provide clear context about the WebSocket library being used (such as websockets, FastAPI's WebSocket, or aiohttp).
 
-**Strengths:**
+Strengths:
 
 - Tight IDE integration with VS Code
 
@@ -77,19 +77,19 @@ Copilot has improved significantly in handling async Python testing, though it s
 
 - Suggestions improve with explicit comments about async requirements
 
-**Limitations:**
+Limitations:
 
 - May generate synchronous test code that needs manual async conversion
 
 - Sometimes misses proper fixture cleanup
 
-**Pricing:** Copilot costs $10/month for individuals, with Copilot Business at $19/user/month.
+Pricing: Copilot costs $10/month for individuals, with Copilot Business at $19/user/month.
 
-### 3. Cursor AI
+3. Cursor AI
 
 Cursor, built on top of VS Code with AI capabilities, provides a solid experience for generating WebSocket handler tests. Its Tab completion and Compose features work well for iteratively building test cases.
 
-**Strengths:**
+Strengths:
 
 - Good context awareness within project files
 
@@ -97,13 +97,13 @@ Cursor, built on top of VS Code with AI capabilities, provides a solid experienc
 
 - Strong Python and async understanding
 
-**Pricing:** Free tier available, with Pro plans starting at $20/month.
+Pricing: Free tier available, with Pro plans starting at $20/month.
 
-### 4. Codeium
+4. Codeium
 
 Codeium offers a free tier that makes it accessible for developers testing WebSocket handlers on a budget. Its autocomplete capabilities cover pytest asyncio patterns reasonably well.
 
-**Strengths:**
+Strengths:
 
 - Free personal plan available
 
@@ -111,15 +111,15 @@ Codeium offers a free tier that makes it accessible for developers testing WebSo
 
 - Good for smaller projects
 
-**Limitations:**
+Limitations:
 
 - Less sophisticated than Claude or Copilot for complex async scenarios
 
 - May require more manual refinement
 
-**Pricing:** Free for individual developers, Team plans at $12/user/month.
+Pricing: Free for individual developers, Team plans at $12/user/month.
 
-## AI Tool Comparison for Async WebSocket Testing
+AI Tool Comparison for Async WebSocket Testing
 
 | Tool | Async Pattern Accuracy | Fixture Handling | Error Case Coverage | Free Tier | Price |
 |------|----------------------|-----------------|--------------------:|-----------|-------|
@@ -128,7 +128,7 @@ Codeium offers a free tier that makes it accessible for developers testing WebSo
 | Cursor AI | Good | Good | Good | Yes (limited) | $20/month |
 | Codeium | Fair | Fair | Basic | Yes | $12/user/month |
 
-## Practical Example: Generating a WebSocket Handler Test
+Practical Example: Generating a WebSocket Handler Test
 
 Here's an example of what a quality AI-generated pytest asyncio test for a WebSocket handler should look like:
 
@@ -182,7 +182,7 @@ async def test_handler_error_on_disconnect(handler):
 
 A good AI assistant should generate code similar to this, including proper async/await usage, appropriate fixtures, and meaningful test names.
 
-## Advanced Patterns: FastAPI WebSocket Testing
+Advanced Patterns: FastAPI WebSocket Testing
 
 For teams using FastAPI, the testing setup involves the `TestClient` in async mode or httpx's `AsyncClient`. Here is a more complete example covering the full lifecycle:
 
@@ -245,21 +245,21 @@ async def test_websocket_disconnect_cleanup():
 
 When prompted with the FastAPI app structure and handler code, Claude Code generates tests at this quality level without requiring manual correction of async patterns.
 
-## Step-by-Step: Getting the Best WebSocket Tests from AI
+Step-by-Step: Getting the Best WebSocket Tests from AI
 
-**Step 1 — Provide the handler code as context.** Paste your WebSocket handler function and any dependencies into the chat or editor context before asking for tests. AI tools generate significantly more accurate tests when they can see the actual implementation.
+Step 1. Provide the handler code as context. Paste your WebSocket handler function and any dependencies into the chat or editor context before asking for tests. AI tools generate significantly more accurate tests when they can see the actual implementation.
 
-**Step 2 — Specify the testing framework explicitly.** State which version of pytest-asyncio you are using and whether you use `asyncio_mode = "auto"` in your `pytest.ini`. This prevents the common mistake of mixing decorator styles:
+Step 2. Specify the testing framework explicitly. State which version of pytest-asyncio you are using and whether you use `asyncio_mode = "auto"` in your `pytest.ini`. This prevents the common mistake of mixing decorator styles:
 
 ```ini
-# pytest.ini
+pytest.ini
 [pytest]
 asyncio_mode = auto
 ```
 
-**Step 3 — Ask for error cases separately.** First request the happy path tests, verify they are correct, then ask specifically for disconnection, timeout, and malformed message scenarios. Separating these keeps each generated block focused and easier to review.
+Step 3. Ask for error cases separately. First request the happy path tests, verify they are correct, then ask specifically for disconnection, timeout, and malformed message scenarios. Separating these keeps each generated block focused and easier to review.
 
-**Step 4 — Request fixture cleanup explicitly.** Ask the AI to add `yield`-based fixtures so that connections are always closed even when assertions fail:
+Step 4. Request fixture cleanup explicitly. Ask the AI to add `yield`-based fixtures so that connections are always closed even when assertions fail:
 
 ```python
 @pytest.fixture
@@ -272,37 +272,37 @@ async def ws_client(handler):
         await handler.disconnect(client)
 ```
 
-**Step 5 — Run and iterate.** Generated tests rarely pass on the first run without any adjustment. Feed the error output back to the AI and ask it to fix the specific failure. Two or three iterations typically produces a passing, maintainable test suite.
+Step 5. Run and iterate. Generated tests rarely pass on the first run without any adjustment. Feed the error output back to the AI and ask it to fix the specific failure. Two or three iterations typically produces a passing, maintainable test suite.
 
-## Choosing the Right Tool for Your Needs
+Choosing the Right Tool for Your Needs
 
 The best AI tool for writing pytest asyncio tests depends on your specific requirements:
 
-- **For async understanding:** Claude Code excels with its deep understanding of Python asyncio patterns
+- For async understanding: Claude Code excels with its deep understanding of Python asyncio patterns
 
-- **For IDE integration:** GitHub Copilot or Cursor provide VS Code experiences
+- For IDE integration: GitHub Copilot or Cursor provide VS Code experiences
 
-- **For budget constraints:** Codeium offers strong free capabilities
+- For budget constraints: Codeium offers strong free capabilities
 
-- **For teams already using specific platforms:** Consider the tool that integrates best with your existing workflow
+- For teams already using specific platforms: Consider the tool that integrates best with your existing workflow
 
 Consider testing multiple tools with a sample WebSocket handler to see which produces the most accurate and maintainable test code for your specific use case.
 
-## Best Practices When Using AI for Test Generation
+Best Practices When Using AI for Test Generation
 
 Regardless of which tool you choose, follow these practices:
 
-1. **Review generated tests carefully** - AI can sometimes miss edge cases specific to your implementation
+1. Review generated tests carefully - AI can sometimes miss edge cases specific to your implementation
 
-2. **Provide context** - Include your WebSocket library imports and handler class structure in comments
+2. Provide context - Include your WebSocket library imports and handler class structure in comments
 
-3. **Test incrementally** - Generate tests for happy paths first, then add error cases
+3. Test incrementally - Generate tests for happy paths first, then add error cases
 
-4. **Verify async behavior** - Ensure all I/O operations use proper await syntax
+4. Verify async behavior - Ensure all I/O operations use proper await syntax
 
-5. **Check fixture cleanup** - Verify that async resources are properly released
+5. Check fixture cleanup - Verify that async resources are properly released
 
-## Related Reading
+Related Reading
 
 - [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
 - [AI Tools for Writing pytest Tests for Click or Typer CLI Com](/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
@@ -311,29 +311,29 @@ Regardless of which tool you choose, follow these practices:
 - [Best AI for Writing pytest Asyncio Tests for WebSocket Handl](/best-ai-for-writing-pytest-asyncio-tests-for-websocket-handl/)
 - [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 - [AI Tools for Writing pytest Tests for Click or Typer CLI](/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
@@ -341,4 +341,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
 - [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

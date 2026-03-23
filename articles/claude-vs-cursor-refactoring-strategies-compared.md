@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude vs Cursor: Refactoring Strategy Comparison"
-description: "Compare Claude Code and Cursor Composer for multi-file refactoring of 50k+ line codebases — context strategies, verification loops, and when to use each"
+description: "Compare Claude Code and Cursor Composer for multi-file refactoring of 50k+ line codebases. context strategies, verification loops, and when to use each"
 date: 2026-03-22
 author: theluckystrike
 permalink: /claude-vs-cursor-refactoring-strategies-compared/
@@ -17,48 +17,48 @@ voice-checked: true
 
 Large codebase refactoring is the hardest thing to do with AI assistance. The context window fills fast, changes ripple across files in unexpected ways, and a partial refactor is often worse than no refactor. This guide documents what actually works when using Claude Code and Cursor Composer for refactoring 50,000+ line codebases.
 
-# Phase 3: Use Cursor for complex individual files
+Phase 3: Use Cursor for complex individual files
 
-# Phase 4: Final verification
+Phase 4: Final verification
 claude "Run the full test suite, mypy, and ruff.
-- **The context window fills fast**: changes ripple across files in unexpected ways, and a partial refactor is often worse than no refactor.
+- The context window fills fast: changes ripple across files in unexpected ways, and a partial refactor is often worse than no refactor.
 
-## The Core Problem: Context Limits
+The Core Problem: Context Limits
 
 Both tools run into the same constraint: you can't fit a large codebase into one context window. The strategies differ in how they work around this.
 
-**Claude Code approach**: Runs in an agentic loop, reads files as needed, maintains a mental model of the codebase over multiple tool calls. Can handle large refactors by decomposing them into layers.
+Claude Code approach: Runs in an agentic loop, reads files as needed, maintains a mental model of the codebase over multiple tool calls. Can handle large refactors by decomposing them into layers.
 
-**Cursor Composer approach**: You manually `@` mention files. Cursor has better IDE integration (inline diffs, file tree context) but depends on you knowing which files to include.
+Cursor Composer approach: You manually `@` mention files. Cursor has better IDE integration (inline diffs, file tree context) but depends on you knowing which files to include.
 
-## Setup: Claude Code for Large Refactors
+Setup: Claude Code for Large Refactors
 
 ```bash
-# Install Claude Code
+Install Claude Code
 npm install -g @anthropic-ai/claude-code
 
-# Initialize in your repo
+Initialize in your repo
 cd /path/to/large-repo
 claude
 
-# Give it a CLAUDE.md with codebase context
+Give it a CLAUDE.md with codebase context
 cat > CLAUDE.md << 'EOF'
-# Codebase Overview
+Codebase Overview
 - Python 3.12 FastAPI application
 - 50k lines across 120 files
 - PostgreSQL via SQLAlchemy 2.0 (async)
 - Repository pattern: models/ → repositories/ → services/ → routers/
 - Tests in tests/ using pytest-asyncio
 
-# Naming Conventions
+Naming Conventions
 - All DB operations go through repository classes, never direct session queries in services
 - Pydantic v2 for all schemas (no v1 compatibility layer)
 EOF
 ```
 
-## Refactoring Task 1: Migrate from sync to async SQLAlchemy
+Refactoring Task 1: Migrate from sync to async SQLAlchemy
 
-**Claude Code approach:**
+Claude Code approach:
 
 ```
 Refactor this codebase from synchronous SQLAlchemy to async SQLAlchemy 2.0.
@@ -72,7 +72,7 @@ The migration involves:
 
 Start by listing all files that import from sqlalchemy or db/ directory.
 Then create a migration plan before touching any files.
-Do NOT make all changes at once — do one layer at a time (db → repositories → services → routers).
+Do NOT make all changes at once. do one layer at a time (db → repositories → services → routers).
 After each layer, run: pytest tests/ -x -q and report results.
 ```
 
@@ -82,7 +82,7 @@ Claude Code will:
 3. Modify files layer by layer
 4. Run tests after each layer and fix failures before proceeding
 
-**Cursor Composer approach for the same task:**
+Cursor Composer approach for the same task:
 
 ```
 @db/session.py @repositories/user_repository.py @services/user_service.py @routers/users.py
@@ -94,11 +94,11 @@ make all methods async.
 
 Cursor does it faster for the files you specify but requires you to identify every affected file manually. For 120 files, this is impractical.
 
-## Refactoring Task 2: Extract a Service Layer
+Refactoring Task 2: Extract a Service Layer
 
 Codebase has logic scattered in route handlers. Extract it into service classes.
 
-**Claude Code handles this well:**
+Claude Code handles this well:
 
 ```
 This codebase has business logic directly in FastAPI route handlers.
@@ -107,12 +107,12 @@ Extract it following the existing repository pattern:
 - For each router file, extract non-routing logic into a service class
 - Services should use dependency injection (FastAPI Depends)
 - Keep route handlers thin: validate input → call service → return response
-- Start with routers/payments.py — it's the most complex
+- Start with routers/payments.py. it's the most complex
 ```
 
 Claude reads `routers/payments.py`, identifies what's business logic vs routing, creates `services/payment_service.py`, updates the router to use it, and tests.
 
-**Cursor Composer for this task:**
+Cursor Composer for this task:
 
 ```
 @routers/payments.py
@@ -124,11 +124,11 @@ Keep the router thin.
 
 Cursor's output is higher quality for a single file because it has full file context and generates clean diffs. The tradeoff: you repeat this for every router file.
 
-## Refactoring Task 3: Breaking Up God Classes
+Refactoring Task 3: Breaking Up God Classes
 
-One common refactoring challenge is a "god class" — a module that has grown to handle too many concerns. Both tools approach this differently.
+One common refactoring challenge is a "god class". a module that has grown to handle too many concerns. Both tools approach this differently.
 
-**Claude Code prompt for god class decomposition:**
+Claude Code prompt for god class decomposition:
 
 ```
 UserService in services/user_service.py has grown to 1,400 lines and handles:
@@ -152,7 +152,7 @@ Rules:
 
 Claude Code is particularly good at this because it can scan all callers of the original class to ensure nothing breaks during extraction.
 
-**Cursor for the same task:**
+Cursor for the same task:
 
 ```
 @services/user_service.py @tests/test_user_service.py
@@ -164,14 +164,14 @@ Keep UserService delegating to AuthService for backward compatibility.
 
 Cursor produces a cleaner extraction for that one concern. You then repeat the process for each group of methods.
 
-## Verification Strategy
+Verification Strategy
 
 Verification is where both tools need explicit guidance.
 
-**For Claude Code, add a verification script:**
+For Claude Code, add a verification script:
 
 ```python
-# scripts/verify-refactor.py
+scripts/verify-refactor.py
 import subprocess
 import sys
 
@@ -203,31 +203,31 @@ After every batch of changes, run: python scripts/verify-refactor.py
 Fix all failures before continuing to the next file/module.
 ```
 
-## Context Management for Claude Code
+Context Management for Claude Code
 
 For very large refactors, decompose into separate sessions:
 
 ```
-# Session 1:
+Session 1:
 "Refactor the db/ layer and repositories/ only.
 Create a commit when done: git commit -m 'refactor: async SQLAlchemy db layer'"
 
-# Session 2 (new claude session):
+Session 2 (new claude session):
 "The db/ and repositories/ layers have been migrated to async SQLAlchemy.
 Now migrate services/ to use the async repositories."
 
-# Session 3:
+Session 3:
 "The db, repository, and service layers are async.
 Now update routers/ to use async services and add await where needed."
 ```
 
 Breaking the refactor into discrete commits also gives you safe rollback points.
 
-## Prompt Engineering Patterns That Work
+Prompt Engineering Patterns That Work
 
 Both tools benefit from well-structured refactoring prompts. These patterns consistently produce better results:
 
-**The "constraint-first" pattern** — state what must NOT change before what should change:
+The "constraint-first" pattern. state what must NOT change before what should change:
 
 ```
 Do not change any public method signatures.
@@ -235,7 +235,7 @@ Do not modify files outside of services/ and tests/.
 Now: extract the billing logic from UserService into BillingService.
 ```
 
-**The "breadcrumb" pattern** — explicitly tell Claude what has already been done in prior sessions:
+The "breadcrumb" pattern. explicitly tell Claude what has already been done in prior sessions:
 
 ```
 Context: We have already migrated db/ and repositories/ to async.
@@ -244,7 +244,7 @@ The following files still need migration: [list]
 Start with services/order_service.py.
 ```
 
-**The "rollback checkpoint" pattern** — commit before each risky change:
+The "rollback checkpoint" pattern. commit before each risky change:
 
 ```
 Before changing routers/payments.py, commit current state:
@@ -253,7 +253,7 @@ Then proceed with the refactor.
 If tests fail, we can git reset --hard HEAD to recover.
 ```
 
-## Cursor's Strength: Targeted Edits
+Cursor's Strength: Targeted Edits
 
 Where Cursor beats Claude Code: when you know exactly what needs changing and want high-quality targeted diffs.
 
@@ -271,32 +271,32 @@ Add soft delete support:
 
 Cursor handles this in one shot with clean per-file diffs you can review individually.
 
-## Combining Both Tools
+Combining Both Tools
 
 The optimal workflow for large refactors:
 
-1. **Claude Code** for planning — analyze the codebase and produce a migration plan
-2. **Claude Code** for mechanical bulk changes — renaming, import updates, adding awaits
-3. **Cursor** for quality-sensitive individual file edits where you want clean diffs
-4. **Claude Code** for testing and verification — it can run tests and fix failures iteratively
+1. Claude Code for planning. analyze the codebase and produce a migration plan
+2. Claude Code for mechanical bulk changes. renaming, import updates, adding awaits
+3. Cursor for quality-sensitive individual file edits where you want clean diffs
+4. Claude Code for testing and verification. it can run tests and fix failures iteratively
 
 ```bash
-# Phase 1: Get the plan
+Phase 1: Get the plan
 claude "Analyze this codebase and create a detailed migration plan for [refactor].
 List files in order, dependencies between changes, and risk for each step.
 Write the plan to REFACTOR_PLAN.md but do not start making changes yet."
 
-# Phase 2: Execute mechanical changes
+Phase 2: Execute mechanical changes
 claude "Execute steps 1-5 from REFACTOR_PLAN.md.
 After each step, run pytest and fix failures before continuing."
 
-# Phase 3: Use Cursor for complex individual files
+Phase 3: Use Cursor for complex individual files
 
-# Phase 4: Final verification
+Phase 4: Final verification
 claude "Run the full test suite, mypy, and ruff. Fix any remaining issues."
 ```
 
-## Performance Comparison
+Performance Comparison
 
 | Dimension | Claude Code | Cursor Composer |
 |---|---|---|
@@ -310,26 +310,26 @@ claude "Run the full test suite, mypy, and ruff. Fix any remaining issues."
 | God class decomposition | Strong (scans all callers) | Good for one class at a time |
 | Prompt-driven planning | Excellent | Limited |
 
-## When to Use Which Tool
+When to Use Which Tool
 
-Use **Claude Code** when:
+Use Claude Code when:
 - The refactor touches more than 10 files
 - You need automated test-run-and-fix loops
 - You don't know exactly which files are affected
 - The migration is mechanical (rename, add await, change import paths)
 
-Use **Cursor Composer** when:
+Use Cursor Composer when:
 - You have 1-5 files with clear, bounded changes
 - You want inline diff review before applying changes
 - The edit is quality-sensitive (new API design, complex logic restructuring)
 - You're already in the IDE and want minimal context switching
 
-## Related Articles
+Related Articles
 
 - [Claude Code vs Cursor for Large Codebase Refactoring](/claude-code-vs-cursor-for-large-codebase-refactoring/)
 - [Claude Code vs Cursor Composer](/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
 - [Claude Code Losing Context Across Sessions](/claude-code-losing-context-across-sessions-fix/)
 - [Claude Code vs Cursor for Backend Development](/claude-code-vs-cursor-for-backend-development/)
 - [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-pair-programming-tools-comparison-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

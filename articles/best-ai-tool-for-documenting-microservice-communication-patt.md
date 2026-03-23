@@ -198,29 +198,29 @@ score: 8
 
 Modern microservice architectures can quickly become difficult to understand as services multiply and communication paths grow complex. Maintaining accurate documentation of how services interact, what dependencies exist, and where potential bottlenecks or failures might propagate has become a significant challenge for development teams. AI-powered tools now offer practical solutions for automatically generating and updating this critical documentation.
 
-## Key Takeaways
+Key Takeaways
 
-- **AI documentation tools analyze code, logs, and traffic patterns** to automatically generate service dependency maps and communication diagrams.
-- **Look for tools that integrate with your CI/CD pipeline** to keep documentation current without manual updates.
-- **The best solutions combine static code analysis with runtime observation** for comprehensive dependency tracking.
-- **Open-source options exist** alongside commercial offerings, making this accessible for teams of various sizes.
+- AI documentation tools analyze code, logs, and traffic patterns to automatically generate service dependency maps and communication diagrams.
+- Look for tools that integrate with your CI/CD pipeline to keep documentation current without manual updates.
+- The best solutions combine static code analysis with runtime observation for comprehensive dependency tracking.
+- Open-source options exist alongside commercial offerings, making this accessible for teams of various sizes.
 
-## Why Microservice Documentation Matters
+Why Microservice Documentation Matters
 
 When you have dozens or hundreds of services communicating through APIs, message queues, and event streams, understanding the overall architecture becomes essential for:
 
-- **Onboarding new team members** who need to understand system relationships quickly
-- **Incident response** where understanding failure propagation paths is critical
-- **Capacity planning** where understanding communication volumes informs resource allocation
-- **Security audits** where data flow tracking ensures proper access controls
+- Onboarding new team members who need to understand system relationships quickly
+- Incident response where understanding failure propagation paths is critical
+- Capacity planning where understanding communication volumes informs resource allocation
+- Security audits where data flow tracking ensures proper access controls
 
 Manual documentation quickly becomes stale as teams make changes. AI tools that automatically detect and document these relationships solve this problem by continuously analyzing your codebase and runtime behavior.
 
-## Approaches to AI-Powered Documentation
+Approaches to AI-Powered Documentation
 
 Different tools take different approaches to solving this problem. Understanding these approaches helps you choose the right solution for your architecture.
 
-### Static Code Analysis
+Static Code Analysis
 
 Some tools analyze your source code to identify service dependencies by examining:
 
@@ -231,7 +231,7 @@ Some tools analyze your source code to identify service dependencies by examinin
 
 This approach works well for understanding intended communication paths but may miss dynamically resolved dependencies or runtime-specific behaviors.
 
-### Runtime Observation
+Runtime Observation
 
 Other tools observe actual service communication during operation by:
 
@@ -242,16 +242,16 @@ Other tools observe actual service communication during operation by:
 
 This approach captures real communication patterns but requires existing infrastructure to be in place.
 
-### Hybrid Solutions
+Hybrid Solutions
 
 The most effective tools combine both approaches, using static analysis to establish baseline relationships and runtime observation to validate and enrich the documentation.
 
-## Practical Implementation Example
+Practical Implementation Example
 
 Here's how you might use an AI documentation tool in a typical microservice environment. This example uses a configuration file that many tools accept:
 
 ```yaml
-# documentation-config.yaml
+documentation-config.yaml
 services:
   - name: user-service
     path: ./services/user-service
@@ -276,7 +276,7 @@ output:
 
 When processed, this generates documentation showing how user-service calls order-service, which then communicates with payment-service, including the HTTP endpoints and data formats involved.
 
-## Extracting Dependencies from Code Automatically
+Extracting Dependencies from Code Automatically
 
 Rather than waiting for a commercial tool, you can build a lightweight dependency scanner in Python. The following script walks a polyglot service directory, parses HTTP client calls and message bus subscriptions, and outputs a Mermaid diagram that renders directly in GitHub or Confluence:
 
@@ -286,7 +286,7 @@ import os
 import re
 from pathlib import Path
 
-# Patterns for common HTTP clients and message brokers
+Patterns for common HTTP clients and message brokers
 HTTP_PATTERNS = {
     "python": re.compile(r'requests\.(get|post|put|delete|patch)\(["\']https?://([^/\'"]+)'),
     "javascript": re.compile(r'fetch\(["\']https?://([^/\'"]+)'),
@@ -336,7 +336,7 @@ def generate_mermaid(services_root: Path) -> str:
             lines.append(f'    {svc_dir.name} -->|publish| {safe}["{topic}"]')
     return "\n".join(lines)
 
-# Usage
+Usage
 diagram = generate_mermaid(Path("./services"))
 Path("./docs/architecture/dependency-graph.md").write_text(
     f"```mermaid\n{diagram}\n```\n"
@@ -345,50 +345,50 @@ Path("./docs/architecture/dependency-graph.md").write_text(
 
 Drop this into a pre-commit hook or CI step and your architecture diagram stays in sync with the code automatically.
 
-## Comparing Leading Tools
+Comparing Leading Tools
 
 Several AI-powered solutions have emerged for addressing microservice documentation challenges. Each has distinct strengths.
 
-### Tool A: Static Analysis Focus
+Tool A: Static Analysis Focus
 
 This tool excels at quickly scanning large codebases to identify dependencies. It parses multiple languages and can detect both synchronous HTTP calls and asynchronous message patterns. The primary strength lies in immediately showing all potential communication paths without requiring deployment.
 
-**Strengths:**
+Strengths:
 - Fast initial scan
 - No runtime setup required
 - Good for greenfield projects
 
-**Limitations:**
+Limitations:
 - Cannot verify actual communication
 - May flag deprecated endpoints
 
-### Tool B: Runtime Observation Focus
+Tool B: Runtime Observation Focus
 
 This tool integrates deeply with service meshes like Istio and Linkerd, observing actual traffic to generate accurate communication diagrams. It can identify communication frequency, latency patterns, and error rates alongside the basic dependency graph.
 
-**Strengths:**
+Strengths:
 - Reflects actual behavior
 - Includes performance metrics
 - Updates automatically
 
-**Limitations:**
+Limitations:
 - Requires service mesh deployment
 - Initial setup takes longer
 
-### Tool C: Integrated Platform
+Tool C: Integrated Platform
 
 This approach combines multiple data sources including code analysis, tracing systems, and configuration repositories. It uses AI to interpret relationships and generate human-readable documentation explaining not just what communicates, but why and how.
 
-**Strengths:**
+Strengths:
 - Most comprehensive view
 - AI-generated context and explanations
 - Continuous updates
 
-**Limitations:**
+Limitations:
 - Higher resource requirements
 - More complex configuration
 
-## Using LLMs to Narrate Architecture Diagrams
+Using LLMs to Narrate Architecture Diagrams
 
 Raw dependency graphs show edges and nodes, but they do not explain business intent. You can feed a parsed dependency map to an LLM and ask it to write a plain-English narrative that engineers can paste into a runbook:
 
@@ -423,7 +423,7 @@ Write in plain English. Do not include the raw JSON in your response."""
     )
     return response.content[0].text
 
-# Example
+Example
 graph = {
     "nodes": ["api-gateway", "user-service", "order-service", "payment-service", "notification-service"],
     "edges": [
@@ -439,19 +439,19 @@ print(narrate_dependency_graph(graph))
 
 The resulting narrative can be committed alongside the Mermaid diagram so both humans and search engines can index the architecture description.
 
-## Integrating Documentation into CI/CD
+Integrating Documentation into CI/CD
 
 Documentation that requires a manual step to update will drift. Automate the update inside your pipeline:
 
 ```yaml
-# .github/workflows/architecture-docs.yml
+.github/workflows/architecture-docs.yml
 name: Update Architecture Docs
 
 on:
   push:
     branches: [main]
     paths:
-      - 'services/**'
+      - 'services/'
 
 jobs:
   generate-docs:
@@ -481,44 +481,44 @@ jobs:
 
 This workflow triggers only when service code changes, regenerates the Mermaid diagram, uses the LLM to refresh the narrative, and commits the result back to the repository.
 
-## Choosing the Right Tool for Your Needs
+Choosing the Right Tool for Your Needs
 
 Consider these factors when selecting a tool:
 
-**Team Size and Experience**
+Team Size and Experience
 Larger teams with established DevOps practices benefit from tools requiring more configuration. Smaller teams may prefer simpler setups.
 
-**Existing Infrastructure**
+Existing Infrastructure
 If you already run a service mesh, runtime observation tools integrate easily. If starting fresh, static analysis tools offer a faster path to initial documentation.
 
-**Documentation Requirements**
+Documentation Requirements
 Teams needing high-level architecture diagrams benefit from any tool. Teams requiring detailed protocol specifications need more comprehensive solutions.
 
-**Budget Considerations**
+Budget Considerations
 Open-source options exist for basic dependency mapping. Commercial tools offer more sophisticated AI interpretation and visualization features.
 
-## Implementation Recommendations
+Implementation Recommendations
 
 Regardless of which tool you choose, follow these practices for successful documentation:
 
-1. **Start with a focused scope**: Document one domain or team area first, then expand.
+1. Start with a focused scope: Document one domain or team area first, then expand.
 
-2. **Validate generated documentation**: AI tools make mistakes. Review and correct initial output.
+2. Validate generated documentation: AI tools make mistakes. Review and correct initial output.
 
-3. **Integrate into workflows**: Connect documentation generation to your deployment pipeline so updates happen automatically.
+3. Integrate into workflows: Connect documentation generation to your deployment pipeline so updates happen automatically.
 
-4. **Establish ownership**: Assign responsibility for reviewing and maintaining documentation accuracy.
+4. Establish ownership: Assign responsibility for reviewing and maintaining documentation accuracy.
 
-5. **Use version control**: Keep documentation in Git alongside your code to track changes and enable rollback.
+5. Use version control: Keep documentation in Git alongside your code to track changes and enable rollback.
 
-## Advanced Configuration Examples
+Advanced Configuration Examples
 
-### Kubernetes Service Mesh Documentation
+Kubernetes Service Mesh Documentation
 
 For teams running Istio or Linkerd, here's how to configure comprehensive service documentation:
 
 ```yaml
-# service-documentation-config.yaml
+service-documentation-config.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -560,7 +560,7 @@ data:
 
 This configuration allows the tool to automatically generate docs including SLA definitions, error handling patterns, and retry logic for each service.
 
-### gRPC Protocol Buffer Documentation
+gRPC Protocol Buffer Documentation
 
 For microservices using Protocol Buffers, AI tools can extract and document RPC definitions automatically:
 
@@ -579,14 +579,14 @@ The AI tool parses this and generates:
 - Rate limits and timeout guidance
 - Example requests and responses in multiple languages
 
-## Real-World Integration Scenarios
+Real-World Integration Scenarios
 
-### Scenario 1: Event-Driven Architecture
+Scenario 1: Event-Driven Architecture
 
 In systems using message brokers like RabbitMQ or Kafka:
 
 ```python
-# kafka-doc-extraction.py
+kafka-doc-extraction.py
 def extract_event_documentation(kafka_cluster, consumer_group):
     """Extract documentation from Kafka topics and consumers"""
     topics = kafka_cluster.list_topics()
@@ -616,13 +616,13 @@ def extract_event_documentation(kafka_cluster, consumer_group):
     return documentation
 ```
 
-### Scenario 2: REST API Gateway Dependencies
+Scenario 2: REST API Gateway Dependencies
 
 When services expose REST APIs behind an API gateway:
 
 ```bash
 #!/bin/bash
-# extract-openapi-docs.sh
+extract-openapi-docs.sh
 for service in $(list_services); do
   # Extract OpenAPI spec from each service
   curl -s "http://${service}:8080/openapi.json" > "docs/${service}-openapi.json"
@@ -632,41 +632,41 @@ for service in $(list_services); do
     | grep -oE 'http://[a-z-]+' | sort -u >> service-dependencies.txt
 done
 
-# Generate dependency graph
+Generate dependency graph
 python generate-dependency-graph.py service-dependencies.txt
 ```
 
-## Troubleshooting Common Documentation Issues
+Troubleshooting Common Documentation Issues
 
-**Problem: Documentation shows dead services**
+Problem: Documentation shows dead services
 Solution: The tool should only include services that actively communicate. Configure it to ignore services with zero traffic over a 7-day window, or manually mark deprecated services as archived.
 
-**Problem: Circular dependencies not clearly documented**
+Problem: Circular dependencies not clearly documented
 Solution: Use visualization tools that highlight circular dependencies in red. Document fallback behaviors when services in a cycle fail.
 
-**Problem: Documentation lag during rapid deployments**
+Problem: Documentation lag during rapid deployments
 Solution: Configure the tool to run on deployment events, not just on schedules. Use webhooks to trigger documentation updates within seconds of service changes.
 
-## CLI Tools for Documentation Generation
+CLI Tools for Documentation Generation
 
 Popular open-source and commercial tools include:
 
 ```bash
-# AsyncAPI for event-driven systems
+AsyncAPI for event-driven systems
 npm install -g @asyncapi/cli
 
-# Documenting Kafka topics
+Documenting Kafka topics
 asyncapi-cli generate html docs/kafka-events.yaml
 
-# GraphQL Schema documentation
+GraphQL Schema documentation
 npm install -g graphdoc
 graphdoc -s schema.graphql -o ./docs
 
-# Docker Compose service documentation
+Docker Compose service documentation
 docker-compose-viz -m image -f docker-compose.yml > architecture.png
 ```
 
-## Validation and Quality Assurance
+Validation and Quality Assurance
 
 Ensure documentation accuracy with automated validation:
 
@@ -694,10 +694,10 @@ def validate_documentation(docs, actual_traffic_logs):
     return discrepancies
 ```
 
-## Conclusion
+Conclusion
 
 AI tools for documenting microservice communication patterns have matured significantly, offering practical solutions for teams struggling to maintain accurate architecture documentation. The best choice depends on your specific infrastructure, team capabilities, and documentation requirements. Start with a tool that matches your current setup, then expand as your documentation needs grow.
 
 The investment in automated documentation pays dividends through faster incident response, smoother onboarding, and clearer architectural understanding across your team.
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

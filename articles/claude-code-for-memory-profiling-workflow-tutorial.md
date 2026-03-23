@@ -18,7 +18,7 @@ intent-checked: true
 
 Claude Code is an AI-powered CLI tool that can significantly accelerate your memory profiling workflow. This tutorial walks you through using Claude Code to identify memory leaks, analyze heap snapshots, optimize memory usage, and debug memory issues effectively.
 
-## Table of Contents
+Table of Contents
 
 - [Why Use Claude Code for Memory Profiling?](#why-use-claude-code-for-memory-profiling)
 - [Setting Up Your Memory Profiling Environment](#setting-up-your-memory-profiling-environment)
@@ -27,13 +27,13 @@ Claude Code is an AI-powered CLI tool that can significantly accelerate your mem
 - [Using Claude Code for Memory Analysis](#using-claude-code-for-memory-analysis)
 - [Best Practices for Continuous Memory Profiling](#best-practices-for-continuous-memory-profiling)
 
-## Why Use Claude Code for Memory Profiling?
+Why Use Claude Code for Memory Profiling?
 
 Traditional memory profiling requires manual investigation of heap snapshots, allocation timelines, and memory traces. While tools like Chrome DevTools, Node.js built-in diagnostics, and specialized profilers are powerful, they can be overwhelming, especially when tracking down elusive memory leaks. Claude Code acts as an intelligent assistant that helps you interpret memory profiling data, identifies potential leak patterns, and guides you through the entire debugging workflow.
 
 The key advantage is that Claude Code understands both your codebase and common memory management patterns, allowing it to provide context-aware recommendations that would otherwise require extensive experience to develop.
 
-## Setting Up Your Memory Profiling Environment
+Setting Up Your Memory Profiling Environment
 
 Before examining memory profiling, ensure your environment is properly configured. You'll need Node.js installed along with the built-in memory profiling tools.
 
@@ -124,9 +124,9 @@ app.listen(3000, () => {
 });
 ```
 
-## Memory Profiling Workflow with Claude Code
+Memory Profiling Workflow with Claude Code
 
-### Step 1: Baseline Memory Measurement
+Step 1: Baseline Memory Measurement
 
 Start by establishing a baseline using Node.js built-in memory tracking:
 
@@ -150,14 +150,14 @@ app.get('/debug/heap-snapshot', (req, res) => {
 For continuous memory monitoring:
 
 ```bash
-# Run with memory tracking
+Run with memory tracking
 node --expose-gc app.js
 
-# Or use the heapstats module
+Or use the heapstats module
 npm install heapstats
 ```
 
-### Step 2: Identifying Memory Leaks
+Step 2: Identifying Memory Leaks
 
 Once you have memory profiling data, engage Claude Code to help interpret the results. Provide the memory snapshot or heap dump and ask specific questions:
 
@@ -177,7 +177,7 @@ Claude Code can help you identify patterns like:
 
 - Unbounded cache or data structure growth
 
-### Step 3: Analyzing Heap Snapshots
+Step 3: Analyzing Heap Snapshots
 
 Take multiple heap snapshots at different times to identify growth patterns:
 
@@ -219,9 +219,9 @@ app.get('/debug/compare', (req, res) => {
 });
 ```
 
-## Debugging Common Memory Issues
+Debugging Common Memory Issues
 
-### Fix 1: Bounded Cache with LRU
+Fix 1: Bounded Cache with LRU
 
 Replace unbounded cache with a bounded LRU cache:
 
@@ -264,7 +264,7 @@ class LRUCache {
 const lruCache = new LRUCache(100); // Max 100 entries
 ```
 
-### Fix 2: Proper Event Listener Cleanup
+Fix 2: Proper Event Listener Cleanup
 
 Ensure event listeners are properly removed:
 
@@ -300,7 +300,7 @@ const handlerId = addHandler(app, (req) => process(req));
 removeHandler(app, handlerId);
 ```
 
-### Fix 3: Closure Leak Prevention
+Fix 3: Closure Leak Prevention
 
 Break closure references when no longer needed:
 
@@ -337,29 +337,29 @@ function createHandler() {
 }
 ```
 
-## Using Claude Code for Memory Analysis
+Using Claude Code for Memory Analysis
 
 Engage Claude Code with specific memory profiling questions:
 
-### Example Prompts
+Example Prompts
 
-1. **Analyzing heap dumps:**
+1. Analyzing heap dumps:
 
 > "I have a heap snapshot showing 500MB heap size for a simple Express server. The expected size is around 100MB. Analyze what objects are consuming the most memory."
 
-2. **Identifying leak patterns:**
+2. Identifying leak patterns:
 
 > "Looking at this memory timeline, the heap grows steadily even though requests are processed correctly. What could be causing this gradual growth?"
 
-3. **Optimizing memory usage:**
+3. Optimizing memory usage:
 
 > "My Node.js application processes large JSON files but memory spikes to 2GB. How can I process these files streaming to reduce memory footprint?"
 
-4. **Debugging specific issues:**
+4. Debugging specific issues:
 
 > "I'm using a global array to store user sessions. The array keeps growing even after users log out. What's wrong and how do I fix it?"
 
-## Best Practices for Continuous Memory Profiling
+Best Practices for Continuous Memory Profiling
 
 Integrate memory profiling into your development workflow:
 
@@ -373,29 +373,29 @@ Integrate memory profiling into your development workflow:
 
 5. Implement memory budgets: Define acceptable memory limits for different operations
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to complete this setup?**
+How long does it take to complete this setup?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Claude Code for Node.js Profiling Workflow Tutorial](/claude-code-for-nodejs-profiling-workflow-tutorial/)
 - [Claude Code Profiler Integration Guide](/claude-code-profiler-integration-guide/)
@@ -403,5 +403,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Claude Code for Taint Analysis Workflow Tutorial Guide](/claude-code-for-taint-analysis-workflow-tutorial-guide/)
 - [Best AI Tools for Reviewing Embedded C Code for Memory](/best-ai-tools-for-reviewing-embedded-c-code-for-memory-leak-and-buffer-overflow/)
 - [Claude Code for Faker.js Test Data Workflow Guide](https://welikeremotestack.com/claude-code-for-faker-js-test-data-workflow-guide/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

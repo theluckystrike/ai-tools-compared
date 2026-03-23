@@ -18,7 +18,7 @@ voice-checked: true
 
 Claude API bills extended thinking tokens at the standard output token rate. When extended thinking is enabled, the model generates internal reasoning tokens that are invisible in the final response but count toward your output token total. This means your output token cost increases proportionally to the complexity of the reasoning task, even though only the final answer appears in the response. Below is a practical breakdown of the billing mechanism, cost implications, and strategies to optimize your spending.
 
-## Table of Contents
+Table of Contents
 
 - [What Is Extended Thinking in Claude API](#what-is-extended-thinking-in-claude-api)
 - [How Output Tokens Are Billed](#how-output-tokens-are-billed)
@@ -31,15 +31,15 @@ Claude API bills extended thinking tokens at the standard output token rate. Whe
 - [Building a Cost-Aware Routing Layer](#building-a-cost-aware-routing-layer)
 - [Step-by-Step Workflow: Benchmarking Extended Thinking for Your Use Case](#step-by-step-workflow-benchmarking-extended-thinking-for-your-use-case)
 
-## What Is Extended Thinking in Claude API
+What Is Extended Thinking in Claude API
 
 Extended thinking is a feature that allows Claude models to engage in deeper reasoning before producing their final response. When enabled, the model breaks down complex problems, explores multiple approaches, and reasons through its solution before delivering the actual output. This results in more thoughtful, accurate responses for tasks that require complex reasoning, coding, or analysis.
 
 The feature works by having the model generate internal reasoning tokens that are not visible in the final response but are still processed and billed as output tokens. These reasoning tokens represent the model's "thought process" as it works through your request.
 
-## How Output Tokens Are Billed
+How Output Tokens Are Billed
 
-When using the Claude API, you're charged based on the number of tokens processed—both input tokens (what you send) and output tokens (what the model generates). Extended thinking specifically affects output token billing because the reasoning process generates additional tokens beyond the visible response.
+When using the Claude API, you're charged based on the number of tokens processed, both input tokens (what you send) and output tokens (what the model generates). Extended thinking specifically affects output token billing because the reasoning process generates additional tokens beyond the visible response.
 
 Here's the basic cost structure:
 
@@ -49,7 +49,7 @@ Here's the basic cost structure:
 
 Extended thinking increases output tokens because the model generates reasoning tokens before producing its final answer. These reasoning tokens count toward your output token limit and are billed at the standard output token rate.
 
-## Current Pricing Structure
+Current Pricing Structure
 
 Claude API pricing varies by model. Here's a general breakdown for the main models:
 
@@ -65,7 +65,7 @@ Claude API pricing varies by model. Here's a general breakdown for the main mode
 
 When you enable extended thinking, the output tokens include both the visible response and the internal reasoning tokens. The exact number of reasoning tokens depends on the complexity of your request.
 
-## Practical Code Examples
+Practical Code Examples
 
 Here's how to enable extended thinking in your API calls:
 
@@ -118,7 +118,7 @@ console.log(message.content);
 console.log(message.usage);
 ```
 
-## Understanding Token Usage in Responses
+Understanding Token Usage in Responses
 
 To understand exactly how extended thinking affects your billing, examine the usage object in the API response:
 
@@ -130,15 +130,15 @@ response = client.messages.create(
     messages=[{"role": "user", "content": "Solve this complex problem..."}]
 )
 
-# Usage breakdown
+Usage breakdown
 print(f"Input tokens: {response.usage.input_tokens}")
 print(f"Output tokens: {response.usage.output_tokens}")
-# Extended thinking tokens are included in output_tokens
+Extended thinking tokens are included in output_tokens
 ```
 
 The `output_tokens` field includes both the visible response tokens and the reasoning tokens. You can estimate the reasoning token count by comparing output counts between requests with and without extended thinking for similar queries.
 
-## How Much Do Reasoning Tokens Add?
+How Much Do Reasoning Tokens Add?
 
 The number of reasoning tokens varies significantly based on task complexity. Simple questions generate few or no reasoning tokens. Complex multi-step problems can generate hundreds or thousands of reasoning tokens before the model delivers its answer.
 
@@ -152,13 +152,13 @@ Here are approximate ranges based on task type, using Claude 3.5 Sonnet pricing 
 | Complex debugging | 1,000–3,000 | ~$0.03 |
 | System architecture | 2,000–6,000 | ~$0.075 |
 
-These are estimates — actual token counts depend on the model version, your specific prompt, and how deep the reasoning chain runs. Monitor your actual usage with the tracking pattern described in the next section to build an accurate picture for your workload.
+These are estimates. actual token counts depend on the model version, your specific prompt, and how deep the reasoning chain runs. Monitor your actual usage with the tracking pattern described in the next section to build an accurate picture for your workload.
 
-## Cost Optimization Strategies
+Cost Optimization Strategies
 
 Managing costs with extended thinking requires careful consideration of when to use the feature:
 
-**Use extended thinking for:**
+Use extended thinking for:
 
 - Complex coding problems requiring multi-step reasoning
 
@@ -168,7 +168,7 @@ Managing costs with extended thinking requires careful consideration of when to 
 
 - Debugging and code review tasks
 
-**Skip extended thinking for:**
+Skip extended thinking for:
 
 - Simple queries and factual lookups
 
@@ -189,7 +189,7 @@ message = client.messages.create(
 )
 ```
 
-## Monitoring Your Spending
+Monitoring Your Spending
 
 Implement logging to track your extended thinking usage over time:
 
@@ -222,11 +222,11 @@ def track_request(prompt, enable_extended_thinking=True):
 
     return response, cost
 
-# Test with extended thinking
+Test with extended thinking
 response, cost = track_request("Explain the time complexity of merge sort")
 ```
 
-## Building a Cost-Aware Routing Layer
+Building a Cost-Aware Routing Layer
 
 For applications that serve a mix of simple and complex queries, routing requests dynamically between models with and without extended thinking can significantly reduce costs without degrading quality on the queries that need it.
 
@@ -274,48 +274,48 @@ def smart_completion(prompt: str) -> dict:
 
 This pattern works well for internal tooling and developer assistants where you have some control over the query distribution. For customer-facing products, consider a fallback approach: start without extended thinking and retry with it only when the initial response fails a quality check.
 
-## Step-by-Step Workflow: Benchmarking Extended Thinking for Your Use Case
+Step-by-Step Workflow: Benchmarking Extended Thinking for Your Use Case
 
 Before committing to extended thinking across your application, run a structured benchmark to measure whether the quality improvement justifies the cost increase for your specific workload.
 
-**Step 1: Select representative prompts.** Pick 20–30 prompts from your actual production logs that span the range of complexity in your workload. Include both simple and complex cases.
+Step 1: Select representative prompts. Pick 20–30 prompts from your actual production logs that span the range of complexity in your workload. Include both simple and complex cases.
 
-**Step 2: Run each prompt twice.** Send each prompt once with extended thinking enabled and once without. Use the same `max_tokens` value for both runs. Record the input tokens, output tokens, and response content for each.
+Step 2: Run each prompt twice. Send each prompt once with extended thinking enabled and once without. Use the same `max_tokens` value for both runs. Record the input tokens, output tokens, and response content for each.
 
-**Step 3: Score the responses.** Use a simple rubric: correctness (0–3), completeness (0–3), and clarity (0–2). Have at least two reviewers score each response independently and average the scores.
+Step 3: Score the responses. Use a simple rubric: correctness (0–3), completeness (0–3), and clarity (0–2). Have at least two reviewers score each response independently and average the scores.
 
-**Step 4: Calculate the cost delta.** For each prompt pair, compute the extra cost from extended thinking: `(extended_output_tokens - standard_output_tokens) / 1_000_000 * output_rate`.
+Step 4: Calculate the cost delta. For each prompt pair, compute the extra cost from extended thinking: `(extended_output_tokens - standard_output_tokens) / 1_000_000 * output_rate`.
 
-**Step 5: Compute quality-per-dollar.** Divide the quality improvement score by the extra cost for each prompt pair. This ratio tells you where extended thinking delivers the best return. Prompts with high ratios belong in the "always use extended thinking" bucket; prompts with ratios near zero or negative belong in the "never use" bucket.
+Step 5: Compute quality-per-dollar. Divide the quality improvement score by the extra cost for each prompt pair. This ratio tells you where extended thinking delivers the best return. Prompts with high ratios belong in the "always use extended thinking" bucket; prompts with ratios near zero or negative belong in the "never use" bucket.
 
-**Step 6: Implement tiered routing.** Use the prompt characteristics you identified in step 5 to build a classifier (as shown in the routing example above) that assigns each incoming request to the appropriate tier.
+Step 6: Implement tiered routing. Use the prompt characteristics you identified in step 5 to build a classifier (as shown in the routing example above) that assigns each incoming request to the appropriate tier.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Are reasoning tokens visible in the API response?**
+Are reasoning tokens visible in the API response?
 No. Reasoning tokens are internal to the model's processing and do not appear in the response content. You can infer their approximate count by comparing `output_tokens` between requests with and without extended thinking on similar prompts.
 
-**Does extended thinking always improve response quality?**
+Does extended thinking always improve response quality?
 Not always. For simple questions, extended thinking adds tokens without meaningfully improving the answer. The feature provides the most benefit for tasks that genuinely require multi-step reasoning, such as algorithm design, complex debugging, or mathematical proofs.
 
-**Can I set a maximum budget for reasoning tokens?**
+Can I set a maximum budget for reasoning tokens?
 Not directly. You control the overall `max_tokens` budget, which includes both reasoning and response tokens. Setting a lower `max_tokens` limit constrains the total output but does not separately cap reasoning tokens.
 
-**How does extended thinking affect response latency?**
+How does extended thinking affect response latency?
 Extended thinking increases latency because the model must complete its reasoning process before generating the visible response. Expect latency to increase roughly in proportion to the number of reasoning tokens generated.
 
-**Is extended thinking available on all Claude models?**
+Is extended thinking available on all Claude models?
 Extended thinking availability varies by model version. Check the Anthropic API documentation for the current list of supported models and the required beta header values.
 
-**Should I use extended thinking in production by default?**
+Should I use extended thinking in production by default?
 No. The recommended pattern is to enable it selectively based on query complexity. Using it by default will increase costs substantially for the majority of requests that do not benefit from extended reasoning.
 
-## Related Articles
+Related Articles
 
 - [Claude API Tool Use Function Calling Pricing How Tokens Are](/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
 - [How to Use Claude API Cheaply for Small Coding Projects](/how-to-use-claude-api-cheaply-for-small-coding-projects/)
 - [ChatGPT API Assistants API Pricing Threads and Runs Cost](/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
 - [Claude API vs OpenAI API Pricing Breakdown 2026](/claude-api-vs-openai-api-pricing-breakdown-2026/)
 - [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

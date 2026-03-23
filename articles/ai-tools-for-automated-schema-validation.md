@@ -18,17 +18,17 @@ Schema drift silently breaks APIs, corrupts databases, and causes midnight pages
 
 This guide covers three approaches: AI-generated validation rules, LLM-assisted schema review in CI, and schema evolution analysis.
 
-## Key Takeaways
+Key Takeaways
 
-- **Manual review catches maybe**: 60% of issues.
-- **Breaking changes (field removal**: type change, number reuse in Protobuf)
+- Manual review catches maybe: 60% of issues.
+- Breaking changes (field removal: type change, number reuse in Protobuf)
           2.
-- **Missing required fields that**: could cause null pointer errors 4.
-- **Schema drift silently breaks APIs**: corrupts databases, and causes midnight pages.
+- Missing required fields that: could cause null pointer errors 4.
+- Schema drift silently breaks APIs: corrupts databases, and causes midnight pages.
 - Backward compatibility issues
           3.
 
-## The Problem With Manual Schema Review
+The Problem With Manual Schema Review
 
 Consider this Protobuf change:
 
@@ -53,21 +53,21 @@ message UserEvent {
 
 A human reviewer focused on the new `metadata` field might miss the field number collision. An AI tool reviewing the schema diff will catch it every time.
 
-## Approach 1: AI Schema Review in CI
+Approach 1: AI Schema Review in CI
 
 This GitHub Action sends schema diffs to Claude for review before merge:
 
 ```yaml
-# .github/workflows/schema-review.yml
+.github/workflows/schema-review.yml
 name: AI Schema Review
 
 on:
   pull_request:
     paths:
-      - '**/*.proto'
-      - '**/*.json'
-      - '**/schema.sql'
-      - '**/migrations/**'
+      - '/*.proto'
+      - '/*.json'
+      - '/schema.sql'
+      - '/migrations/'
 
 jobs:
   schema-review:
@@ -155,12 +155,12 @@ jobs:
             });
 ```
 
-## Approach 2: JSON Schema Generation and Validation
+Approach 2: JSON Schema Generation and Validation
 
 AI can generate JSON Schema from example payloads, then validate new examples against it:
 
 ```python
-# schema_validator.py
+schema_validator.py
 import json
 import jsonschema
 from anthropic import Anthropic
@@ -219,7 +219,7 @@ def validate_payload(payload: dict, schema: dict) -> dict:
     return {"valid": False, "errors": error_list}
 
 
-# Usage example
+Usage example
 if __name__ == "__main__":
     training_examples = [
         {
@@ -258,7 +258,7 @@ if __name__ == "__main__":
             print(f"  [{err['path']}] {err['message']}")
 ```
 
-**Sample generated schema output:**
+Sample generated schema output:
 
 ```json
 {
@@ -294,12 +294,12 @@ if __name__ == "__main__":
 
 Claude correctly inferred the enum from two examples, the `usr_` ID prefix pattern, and the `date-time` format.
 
-## Approach 3: SQL Schema Migration Analysis
+Approach 3: SQL Schema Migration Analysis
 
 Before running migrations, use AI to predict impact:
 
 ```python
-# migration_analyzer.py
+migration_analyzer.py
 from anthropic import Anthropic
 import re
 
@@ -352,7 +352,7 @@ def analyze_migration(migration_sql: str) -> list[dict]:
     return issues
 
 
-# Test migration
+Test migration
 test_migration = """
 ALTER TABLE users ADD COLUMN last_login_ip VARCHAR(45) NOT NULL;
 CREATE INDEX idx_users_email ON users (email);
@@ -366,7 +366,7 @@ for issue in issues:
     print(f"  Fix: {issue.get('fix', '')}\n")
 ```
 
-**Output for the test migration:**
+Output for the test migration:
 
 ```
 [HIGH] Adding NOT NULL column without DEFAULT will lock table and fail if existing rows exist
@@ -375,14 +375,14 @@ for issue in issues:
 [MEDIUM] CREATE INDEX without CONCURRENTLY will lock table for reads+writes during index build
   Fix: Use CREATE INDEX CONCURRENTLY idx_users_email ON users (email)
 
-[HIGH] DROP COLUMN legacy_status is irreversible — data will be lost
+[HIGH] DROP COLUMN legacy_status is irreversible. data will be lost
   Fix: Rename to _deprecated_legacy_status first, verify no app references, drop in next release
 
-[MEDIUM] Foreign key on category_id has no index — JOIN and DELETE operations will be slow
+[MEDIUM] Foreign key on category_id has no index. JOIN and DELETE operations will be slow
   Fix: Add CREATE INDEX idx_products_category_id ON products (category_id)
 ```
 
-## Tool Comparison
+Tool Comparison
 
 | Tool | Schema Types | CI Integration | Custom Rules | Cost |
 |
@@ -395,12 +395,12 @@ for issue in issues:
 
 For polyglot schemas (Protobuf + JSON + SQL in one repo), an AI-based approach is the only tool that handles all three in a unified pipeline.
 
-## Related Reading
+Related Reading
 
 - [AI Tools for Automated Data Pipeline Testing](/best-ai-tools-for-data-pipeline-debugging-2026/)
 - [Best AI Tools for Writing Ansible Playbooks](/best-ai-tools-for-writing-ansible-playbooks-and-roles-automa/)
 - [AI Tools for Automated PR Description Generation](/ai-tools-for-automated-pr-description-generation/)
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

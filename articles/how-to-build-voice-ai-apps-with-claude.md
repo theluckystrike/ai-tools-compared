@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Build Voice AI Apps with Claude"
-description: "Build voice AI applications using Claude for understanding and response — integrate with Whisper STT, ElevenLabs TTS, and WebSockets for real-time audio"
+description: "Build voice AI applications using Claude for understanding and response. integrate with Whisper STT, ElevenLabs TTS, and WebSockets for real-time audio"
 date: 2026-03-22
 author: theluckystrike
 permalink: how-to-build-voice-ai-apps-with-claude
@@ -15,9 +15,9 @@ tags: [ai-tools-compared, artificial-intelligence, claude-ai]
 
 {% raw %}
 
-Voice AI apps require three components working in sequence: speech-to-text, language understanding and response, and text-to-speech. Claude handles the middle layer exceptionally well — reasoning, long context, and nuanced responses. This guide builds a complete voice assistant using Whisper for STT, Claude for reasoning, and ElevenLabs for TTS.
+Voice AI apps require three components working in sequence: speech-to-text, language understanding and response, and text-to-speech. Claude handles the middle layer exceptionally well. reasoning, long context, and nuanced responses. This guide builds a complete voice assistant using Whisper for STT, Claude for reasoning, and ElevenLabs for TTS.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Architecture
+Step 1: Architecture
 
 ```
 Microphone → Web Audio API → WebSocket
@@ -37,9 +37,9 @@ Microphone → Web Audio API → WebSocket
                           Browser ← WebSocket ← Audio Stream
 ```
 
-The WebSocket approach gives you streaming responses — audio starts playing before the full response is generated.
+The WebSocket approach gives you streaming responses. audio starts playing before the full response is generated.
 
-### Step 2: Set Up
+Step 2: Set Up
 
 ```bash
 pip install fastapi uvicorn websockets anthropic openai elevenlabs \
@@ -47,17 +47,17 @@ pip install fastapi uvicorn websockets anthropic openai elevenlabs \
 ```
 
 ```bash
-# .env
+.env
 ANTHROPIC_API_KEY=...
 OPENAI_API_KEY=...           # For Whisper API
 ELEVENLABS_API_KEY=...
 ELEVENLABS_VOICE_ID=...      # Get from ElevenLabs dashboard
 ```
 
-### Step 3: Backend: FastAPI Voice Server
+Step 3: Backend: FastAPI Voice Server
 
 ```python
-# voice_server.py
+voice_server.py
 import os
 import io
 import asyncio
@@ -86,7 +86,7 @@ SYSTEM_PROMPT = """You are a helpful voice assistant. Your responses will be
 converted to speech, so follow these rules:
 
 - Keep responses concise: 1-3 sentences for simple questions, 4-6 for complex
-- Never use markdown, bullet points, or formatting — just natural speech
+- Never use markdown, bullet points, or formatting. just natural speech
 - Spell out abbreviations (e.g., say "kilobytes" not "KB")
 - Avoid starting responses with filler phrases like "Certainly!" or "Of course!"
 - If you need to list items, use natural connectors: "First..., then..., and finally..."
@@ -212,7 +212,7 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
         await websocket.send_json({"type": "error", "message": str(e)})
 ```
 
-### Step 4: Frontend: Browser Voice Client
+Step 4: Frontend: Browser Voice Client
 
 ```html
 <!-- index.html -->
@@ -231,7 +231,7 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
 </head>
 <body>
   <h1>Voice Assistant</h1>
-  <div id="status" class="ready">Ready — hold Space to speak</div>
+  <div id="status" class="ready">Ready. hold Space to speak</div>
   <div><strong>You said:</strong><div id="transcript"></div></div>
   <div><strong>Assistant:</strong><div id="response"></div></div>
 
@@ -246,14 +246,14 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
 
     ws.onmessage = async (event) => {
       if (event.data instanceof Blob) {
-        // Audio response — play it
+        // Audio response. play it
         const arrayBuffer = await event.data.arrayBuffer();
         const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
         const source = audioCtx.createBufferSource();
         source.buffer = audioBuffer;
         source.connect(audioCtx.destination);
         source.start();
-        setStatus('ready', 'Ready — hold Space to speak');
+        setStatus('ready', 'Ready. hold Space to speak');
         return;
       }
 
@@ -269,7 +269,7 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
           setStatus('processing', `Processing: ${msg.stage}...`);
           break;
         case 'silence':
-          setStatus('ready', 'Silence detected — try again');
+          setStatus('ready', 'Silence detected. try again');
           break;
         case 'error':
           setStatus('ready', `Error: ${msg.message}`);
@@ -321,7 +321,7 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
 </html>
 ```
 
-### Step 5: Streaming TTS for Lower Latency
+Step 5: Streaming TTS for Lower Latency
 
 The above sends the full response as one audio blob. For longer responses, stream sentence by sentence:
 
@@ -349,7 +349,7 @@ async def stream_response_as_audio(
 
 This cuts perceived latency from ~3 seconds to ~800ms for the first audio chunk.
 
-### Step 6: Cost Estimate
+Step 6: Cost Estimate
 
 Per 1-minute conversation (roughly 10 exchanges):
 - Whisper: 10 * 5-second clips = 50 seconds at $0.006/min = $0.005
@@ -358,27 +358,27 @@ Per 1-minute conversation (roughly 10 exchanges):
 
 Total: ~$0.055 per 1-minute conversation
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Articles
+Related Articles
 
 - [How to Build AI Pipelines with Prefect](/how-to-build-ai-pipelines-with-prefect)
 - [How to Build Custom MCP Servers for Claude](/how-to-build-custom-mcp-servers-for-claude)
 - [How to Use the Claude API for Automated Code Review](/how-to-use-claude-api-for-automated-code-review/)
 - [How to Use Claude API Cheaply for Small Coding Projects](/how-to-use-claude-api-cheaply-for-small-coding-projects/)
 - [Claude API vs OpenAI API Pricing Breakdown 2026](/claude-api-vs-openai-api-pricing-breakdown-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -15,17 +15,17 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 {% raw %}
 
-Laravel is one of the most opinionated PHP frameworks — it has specific conventions for Eloquent relationships, service providers, form requests, job queues, and API resources. AI tools that don't know Laravel idioms generate technically correct PHP that violates framework conventions. This guide compares Claude and GPT-4 on real Laravel tasks.
+Laravel is one of the most opinionated PHP frameworks. it has specific conventions for Eloquent relationships, service providers, form requests, job queues, and API resources. AI tools that don't know Laravel idioms generate technically correct PHP that violates framework conventions. This guide compares Claude and GPT-4 on real Laravel tasks.
 
-## Testing Methodology
+Testing Methodology
 
 Tasks run across both models with identical prompts. Evaluated on: framework idiom correctness, use of Laravel helpers vs. raw PHP, proper use of Eloquent vs. Query Builder, and handling of edge cases like N+1 prevention.
 
-## Task 1: Eloquent Relationship with Eager Loading
+Task 1: Eloquent Relationship with Eager Loading
 
-**Prompt:** "Write an Eloquent model for a `Post` that belongs to a `User` and has many `Comments`. Include a scope for published posts and a method that returns the post with its author and top 3 comments."
+Prompt: "Write an Eloquent model for a `Post` that belongs to a `User` and has many `Comments`. Include a scope for published posts and a method that returns the post with its author and top 3 comments."
 
-**Claude's output:**
+Claude's output:
 
 ```php
 <?php
@@ -73,7 +73,7 @@ class Post extends Model
 
 Claude uses return type declarations, proper relationship typing, scoped query methods with `Builder` type hints, and constrained eager loading with column selection. This is idiomatic Laravel 11.
 
-**GPT-4's output:**
+GPT-4's output:
 
 ```php
 <?php
@@ -113,13 +113,13 @@ class Post extends Model
 
 GPT-4's output works but lacks return type hints, doesn't constrain the eager loaded columns (potential data leak / memory issue), and uses the older `function($q)` syntax rather than the arrow function. Functional, but not idiomatic Laravel 11.
 
-**Winner: Claude** — more complete type hints, constrained eager loading, arrow function syntax.
+Winner: Claude. more complete type hints, constrained eager loading, arrow function syntax.
 
-## Task 2: Form Request Validation
+Task 2: Form Request Validation
 
-**Prompt:** "Create a Laravel Form Request for creating an order. Fields: user_id (required, exists in users), items (required array, each has product_id and quantity), shipping_address (required object with street, city, zip). Add custom error messages."
+Prompt: "Create a Laravel Form Request for creating an order. Fields: user_id (required, exists in users), items (required array, each has product_id and quantity), shipping_address (required object with street, city, zip). Add custom error messages."
 
-**Claude:**
+Claude:
 
 ```php
 <?php
@@ -163,9 +163,9 @@ class CreateOrderRequest extends FormRequest
 
 Claude correctly uses dot-notation wildcard rules for nested arrays (`items.*.product_id`), which is the correct Laravel approach. It also adds sensible range constraints on quantity.
 
-**GPT-4** produces similar output but sometimes misses the `'array'` rule on `shipping_address`, validating it as a flat field. Claude consistently handles nested array validation.
+GPT-4 produces similar output but sometimes misses the `'array'` rule on `shipping_address`, validating it as a flat field. Claude consistently handles nested array validation.
 
-### The `prepareForValidation` Hook
+The `prepareForValidation` Hook
 
 Claude will also add the `prepareForValidation` method unprompted when sanitizing inputs makes sense:
 
@@ -178,11 +178,11 @@ protected function prepareForValidation(): void
 }
 ```
 
-This pattern — overwriting `user_id` from the authenticated user rather than trusting client input — is a security best practice that Claude applies when the prompt mentions authenticated endpoints. GPT-4 omits it unless the security concern is spelled out explicitly.
+This pattern. overwriting `user_id` from the authenticated user rather than trusting client input. is a security best practice that Claude applies when the prompt mentions authenticated endpoints. GPT-4 omits it unless the security concern is spelled out explicitly.
 
-## Task 3: Queue Job with Retry Logic
+Task 3: Queue Job with Retry Logic
 
-**Prompt:** "Write a Laravel queue job that sends an order confirmation email. Handle failures: retry up to 3 times with exponential backoff, log the failure, send Slack notification on final failure."
+Prompt: "Write a Laravel queue job that sends an order confirmation email. Handle failures: retry up to 3 times with exponential backoff, log the failure, send Slack notification on final failure."
 
 ```php
 <?php
@@ -239,7 +239,7 @@ class SendOrderConfirmationEmail implements ShouldQueue
 
 Claude uses the `backoff()` method (correct for custom backoff intervals in Laravel), `readonly` constructor promotion, and the `failed()` method with proper Throwable typing. GPT-4 sometimes outputs `$this->release(30)` inside `handle()` in a try/catch, which is a legacy pattern.
 
-### Unique Jobs and Preventing Duplicates
+Unique Jobs and Preventing Duplicates
 
 For jobs where duplicate execution would be harmful (double-charging, duplicate emails), Claude generates the `ShouldBeUnique` interface correctly:
 
@@ -261,7 +261,7 @@ class SendOrderConfirmationEmail implements ShouldQueue, ShouldBeUnique
 
 The `uniqueFor` property ensures the lock expires after a hour even if the job fails without releasing it. GPT-4 generates the `uniqueId()` method but regularly omits `uniqueFor`, which can cause jobs to stay locked indefinitely on worker crash.
 
-## Task 4: API Resource Transformation
+Task 4: API Resource Transformation
 
 Both models handle API Resources, but Claude includes conditional fields and meta more naturally:
 
@@ -286,7 +286,7 @@ public function toArray(Request $request): array
 
 `whenLoaded()` prevents N+1 issues in resource responses. Claude includes this by default. GPT-4 includes it when reminded.
 
-### Resource Collections with Metadata
+Resource Collections with Metadata
 
 For paginated API responses, Claude also generates the `ResourceCollection` wrapper with cursor pagination metadata:
 
@@ -330,7 +330,7 @@ class PostCollection extends ResourceCollection
 
 GPT-4 generates a flat `toArray` that merges pagination into the top level, which breaks API consumers expecting a consistent `data` + `meta` envelope.
 
-## Task 5: Service Container and Dependency Injection
+Task 5: Service Container and Dependency Injection
 
 Both models understand the service container, but Claude produces more testable patterns using interface binding:
 
@@ -376,21 +376,21 @@ class OrderController extends Controller
 
 Claude's use of constructor injection with interfaces makes the controller fully mockable in tests. GPT-4 frequently reaches for `app()->make()` inside methods, which defeats testability.
 
-## Overall Comparison
+Overall Comparison
 
 | Task | Claude | GPT-4 |
 |---|---|---|
-| Eloquent relationships + eager loading | Excellent — constrained columns, typed | Good — works, no constraints |
-| Form Request nested array validation | Excellent | Good — sometimes misses array rule |
-| Queue jobs with backoff | Excellent — backoff(), failed() | Good — sometimes legacy pattern |
-| Unique jobs | Excellent — includes uniqueFor | Partial — misses uniqueFor |
+| Eloquent relationships + eager loading | Excellent. constrained columns, typed | Good. works, no constraints |
+| Form Request nested array validation | Excellent | Good. sometimes misses array rule |
+| Queue jobs with backoff | Excellent. backoff(), failed() | Good. sometimes legacy pattern |
+| Unique jobs | Excellent. includes uniqueFor | Partial. misses uniqueFor |
 | API Resources with whenLoaded | Excellent by default | Good when prompted |
-| Service container / DI | Excellent — interface binding | Good — prefers app()->make() |
+| Service container / DI | Excellent. interface binding | Good. prefers app()->make() |
 | PHP 8.x idioms | Current (readonly, arrow fns) | Mostly current |
 
-For routine Laravel tasks — generating models, migrations, controllers — both models perform acceptably. The gap opens on edge cases: N+1 prevention, backoff configuration, unique job locks, and constructor-injected interfaces vs. service locator calls. Claude handles these without prompting; GPT-4 handles them when prompted.
+For routine Laravel tasks. generating models, migrations, controllers. both models perform acceptably. The gap opens on edge cases: N+1 prevention, backoff configuration, unique job locks, and constructor-injected interfaces vs. service locator calls. Claude handles these without prompting; GPT-4 handles them when prompted.
 
-## Related Articles
+Related Articles
 
 - [Claude vs Copilot for Swift Development 2026](/claude-vs-copilot-for-swift-development-2026/)
 - [Claude vs GPT-4 for Data Analysis Tasks](/claude-vs-gpt4-for-data-analysis/)
@@ -398,6 +398,6 @@ For routine Laravel tasks — generating models, migrations, controllers — bot
 - [Claude Max vs Claude Pro Actual Difference](/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
 - [Claude Code vs Cursor for Backend Development](/claude-code-vs-cursor-for-backend-development/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

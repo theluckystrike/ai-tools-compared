@@ -14,11 +14,11 @@ voice-checked: true
 intent-checked: true
 ---
 
-## Why GraphQL Documentation Matters
+Why GraphQL Documentation Matters
 
-GraphQL schemas are self-documenting in theory but inadequate in practice. A well-documented schema prevents integration errors, reduces support tickets, and enables frontend teams to build faster. AI tools can automatically generate field descriptions, argument explanations, and resolver documentation from code—saving hours of manual work per schema.
+GraphQL schemas are self-documenting in theory but inadequate in practice. A well-documented schema prevents integration errors, reduces support tickets, and enables frontend teams to build faster. AI tools can automatically generate field descriptions, argument explanations, and resolver documentation from code, saving hours of manual work per schema.
 
-## Tool Comparison: GraphQL Documentation
+Tool Comparison: GraphQL Documentation
 
 | Tool | Schema Parsing | Description Generation | Interactive Docs | Price | Best For |
 |------|---------------|----------------------|------------------|-------|----------|
@@ -28,11 +28,11 @@ GraphQL schemas are self-documenting in theory but inadequate in practice. A wel
 | Apollo GraphQL Tools | Built-in | Template-based | Yes, native | Free/Paid | Apollo stack |
 | Cursor IDE | Excellent | Real-time generation | Via extension | $20/mo | IDE workflow |
 
-## Claude 3.5 Sonnet: Best Overall Documentation
+Claude 3.5 Sonnet: Best Overall Documentation
 
-Claude excels at understanding GraphQL semantics. Paste a schema and request documentation—it generates field descriptions, resolver logic explanations, and usage examples.
+Claude excels at understanding GraphQL semantics. Paste a schema and request documentation, it generates field descriptions, resolver logic explanations, and usage examples.
 
-**Example Prompt:**
+Example Prompt:
 ```
 Document this GraphQL schema with detailed descriptions for all types,
 fields, and arguments. Include usage examples for complex queries.
@@ -58,14 +58,13 @@ type Post {
 }
 ```
 
-**Claude's Output Example:**
+Claude's Output Example:
 ```graphql
 """
 Retrieves a single user by their unique identifier.
 Throws a 404 error if the user doesn't exist.
 
-Example:
-  query {
+query {
     user(id: "usr_123") {
       email
       posts {
@@ -84,8 +83,7 @@ Arguments:
   first: Maximum number of users to return (default: 20, max: 100)
   after: Cursor from previous response for pagination
 
-Example:
-  query {
+query {
     users(first: 10, after: "cursor_xyz") {
       edges {
         node {
@@ -119,40 +117,40 @@ type User {
 }
 ```
 
-**Why This Works:**
+Why This Works:
 - Understands resolver context (pagination patterns, error cases)
 - Generates realistic query examples
 - Explains field relationships clearly
 - Identifies edge cases (permission checks, rate limits)
 
-**Claude's Cost:** ~$0.05 for a medium schema (15K tokens).
+Claude's Cost: ~$0.05 for a medium schema (15K tokens).
 
-## ChatGPT-4: Quick Schema Explanations
+ChatGPT-4: Quick Schema Explanations
 
 Use ChatGPT-4 to understand what a schema does conceptually. Paste unfamiliar schemas and ask "explain this GraphQL schema for a junior developer."
 
-**Sample Prompt:**
+Sample Prompt:
 ```
 A GraphQL schema uses these types: Query, User, Post, Comment.
 Each Post belongs to one User. Each Comment belongs to one Post and one User.
 Explain what queries a frontend could run against this.
 ```
 
-**Expected Response:**
+Expected Response:
 - List of valid query patterns
 - Mutation examples (create, update, delete)
 - Potential N+1 problem areas
 - Authentication/permission considerations
 
-**When to Use:** Learning new APIs, reviewing third-party schemas, training documentation.
+When to Use: Learning new APIs, reviewing third-party schemas, training documentation.
 
-**ChatGPT-4 Cost:** $20/month (ChatGPT Plus).
+ChatGPT-4 Cost: $20/month (ChatGPT Plus).
 
-## GitHub Copilot: Inline Documentation as You Type
+GitHub Copilot: Inline Documentation as You Type
 
 Copilot generates GraphQL schema comments in real-time as you define types and fields.
 
-**Workflow:**
+Workflow:
 ```graphql
 type Product {
   """
@@ -167,7 +165,7 @@ type Product {
 }
 ```
 
-**Typical Output:**
+Typical Output:
 ```graphql
 """
 Unique identifier for the product (UUID).
@@ -180,15 +178,15 @@ Human-readable product name. Must be unique within the catalog.
 name: String!
 ```
 
-**Limitation:** Basic descriptions. Doesn't explain resolver complexity or edge cases.
+Limitation: Basic descriptions. Doesn't explain resolver complexity or edge cases.
 
-**Copilot Cost:** $10/month (includes Copilot Chat).
+Copilot Cost: $10/month (includes Copilot Chat).
 
 ---
 
-## Real-World Documentation Patterns
+Real-World Documentation Patterns
 
-### Pattern 1: Documenting Paginated Types
+Pattern 1: Documenting Paginated Types
 ```graphql
 """
 Connection pattern for cursor-based pagination. Allows efficient
@@ -200,8 +198,7 @@ Pagination logic:
   - last: Backward pagination (limit)
   - before: Backward pagination (cursor)
 
-Example:
-  query {
+query {
     users(first: 20, after: "cursor_abc") {
       edges {
         node { id, name }
@@ -240,16 +237,16 @@ type PageInfo {
 }
 ```
 
-### Pattern 2: Documenting Complex Arguments
+Pattern 2: Documenting Complex Arguments
 ```graphql
 """
 Filters for advanced product search. All filters are combined with AND logic.
-Example: minPrice AND maxPrice AND category AND status
+minPrice AND maxPrice AND category AND status
 """
 input ProductFilter {
   """
   Price range (inclusive). Both must be positive integers.
-  Example: minPrice: 1000, maxPrice: 50000 (prices in cents)
+  minPrice: 1000, maxPrice: 50000 (prices in cents)
   """
   minPrice: Int
   maxPrice: Int
@@ -289,8 +286,7 @@ type Query {
     - QUERY_TOO_SHORT: search query < 3 chars
     - RATE_LIMITED: exceeded 100 requests/minute
 
-  Example:
-    query {
+  query {
       products(
         filter: { minPrice: 1000, category: "electronics" }
         sortBy: PRICE_ASC
@@ -308,7 +304,7 @@ type Query {
 }
 ```
 
-### Pattern 3: Documenting Mutations with Error States
+Pattern 3: Documenting Mutations with Error States
 ```graphql
 """
 Result of a user account creation attempt.
@@ -328,7 +324,7 @@ type CreateUserPayload {
 
   """
   List of validation errors if creation failed.
-  Example: [{ field: "email", message: "Already in use" }]
+  [{ field: "email", message: "Already in use" }]
   """
   errors: [ValidationError!]!
 }
@@ -350,8 +346,7 @@ type Mutation {
     - WEAK_PASSWORD: Password doesn't meet security requirements
     - RATE_LIMITED: Max 5 signup attempts per IP per hour
 
-  Example:
-    mutation {
+  mutation {
       createUser(
         email: "user@example.com"
         password: "SecurePass123"
@@ -371,36 +366,36 @@ type Mutation {
 
 ---
 
-## AI-Powered Documentation Workflow
+AI-Powered Documentation Workflow
 
-**Step 1: Extract Schema**
+Step 1: Extract Schema
 ```bash
-# Using Apollo CLI
+Using Apollo CLI
 apollo schema:download schema.graphql --endpoint https://api.example.com/graphql
 ```
 
-**Step 2: Document with Claude**
+Step 2: Document with Claude
 ```
 Prompt: "Read this GraphQL schema and generate comprehensive JSDoc-style
 descriptions for every type, field, and argument. Include realistic examples
 for 3 common query patterns."
 ```
 
-**Step 3: Integrate Documentation**
+Step 3: Integrate Documentation
 ```graphql
-# Claude generates descriptions with proper formatting
-# Paste back into schema.graphql
+Claude generates descriptions with proper formatting
+Paste back into schema.graphql
 ```
 
-**Step 4: Generate Interactive Docs**
+Step 4: Generate Interactive Docs
 ```bash
-# Use tools like Apollo Studio or Hasura Console
-# They automatically parse GraphQL descriptions and render them
+Use tools like Apollo Studio or Hasura Console
+They automatically parse GraphQL descriptions and render them
 ```
 
 ---
 
-## Documentation Quality Checklist
+Documentation Quality Checklist
 
 | Element | Should Include | Example |
 |---------|---------------|---------|
@@ -412,29 +407,29 @@ for 3 common query patterns."
 
 ---
 
-## FAQ
+FAQ
 
-**Q: Should I use GraphQL descriptions or external docs?**
+Q: Should I use GraphQL descriptions or external docs?
 A: Use both. Descriptions in the schema for inline reference, external docs for tutorials and architectural context.
 
-**Q: Can AI generate accurate descriptions for custom resolvers?**
+Q: Can AI generate accurate descriptions for custom resolvers?
 A: Partially. AI excels at standard patterns (CRUD, pagination). For custom business logic, provide resolver code and context.
 
-**Q: How often should I update documentation?**
+Q: How often should I update documentation?
 A: Every schema change. Automated with CI/CD: generate descriptions on each PR, commit back to repository.
 
-**Q: What's the performance impact of documentation strings?**
+Q: What's the performance impact of documentation strings?
 A: Negligible. Descriptions are metadata, not fetched in queries unless explicitly requested via introspection.
 
-**Q: Which format is best for generated docs?**
+Q: Which format is best for generated docs?
 A: GraphQL comments (""") are standard. Export to Markdown/HTML using tools like Spectaql or Apollo Studio.
 
-**Q: Can AI generate resolver implementation docs?**
+Q: Can AI generate resolver implementation docs?
 A: Yes. Provide resolver code + schema. Claude can explain data flow, performance characteristics, and edge cases.
 
 ---
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Writing Database Schema Design 2026](/best-ai-tools-for-writing-database-schema-design-2026/)
 - [How to Use Claude for API Design 2026](/how-to-use-claude-for-api-design-2026/)
@@ -443,4 +438,4 @@ A: Yes. Provide resolver code + schema. Claude can explain data flow, performanc
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

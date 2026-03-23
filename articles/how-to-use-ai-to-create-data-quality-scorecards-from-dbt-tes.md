@@ -16,11 +16,11 @@ voice-checked: true
 
 {% raw %}
 
-Data quality is the backbone of reliable analytics. When you run dbt tests, you generate valuable information about your data's health—but transforming those raw test results into meaningful scorecards requires additional effort. AI can help you automate this process, turning complex test outputs into clear, actionable metrics that your team can monitor and improve over time.
+Data quality is the backbone of reliable analytics. When you run dbt tests, you generate valuable information about your data's health, but transforming those raw test results into meaningful scorecards requires additional effort. AI can help you automate this process, turning complex test outputs into clear, actionable metrics that your team can monitor and improve over time.
 
 This guide shows you how to use AI to create data quality scorecards from dbt test results. You'll learn practical approaches for parsing test outputs, generating insights, and building automated reporting systems that go well beyond what dbt's native reporting offers.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding dbt Test Results](#understanding-dbt-test-results)
 - [Building Your AI-Powered Scorecard System](#building-your-ai-powered-scorecard-system)
@@ -30,7 +30,7 @@ This guide shows you how to use AI to create data quality scorecards from dbt te
 - [Automating Your Pipeline](#automating-your-pipeline)
 - [Interpreting Your Scorecard](#interpreting-your-scorecard)
 
-## Understanding dbt Test Results
+Understanding dbt Test Results
 
 dbt provides several built-in tests: `unique`, `not_null`, `accepted_values`, `relationships`, and `foreign_key`. When you run `dbt test`, these tests produce JSON or CSV output that includes test status, timing information, and failure details.
 
@@ -67,9 +67,9 @@ Here's a typical dbt test result in JSON format:
 
 The challenge is aggregating these individual test results into meaningful quality scores that stakeholders can understand at a glance.
 
-## Building Your AI-Powered Scorecard System
+Building Your AI-Powered Scorecard System
 
-### Step 1: Collect and Normalize Test Results
+Step 1: Collect and Normalize Test Results
 
 First, run your dbt tests and capture the output. Use the `--output json` flag to get machine-readable results:
 
@@ -102,7 +102,7 @@ def load_dbt_results(filepath):
     return normalized
 ```
 
-### Step 2: Calculate Quality Metrics
+Step 2: Calculate Quality Metrics
 
 With normalized data, you can now calculate aggregate metrics. This is where AI adds value by identifying patterns and generating insights:
 
@@ -123,7 +123,7 @@ def calculate_quality_score(results):
     }
 ```
 
-### Step 3: Generate AI Insights
+Step 3: Generate AI Insights
 
 Now use an AI model to analyze the test results and generate practical recommendations:
 
@@ -158,7 +158,7 @@ def generate_ai_insights(results, metrics):
     return prompt  # In production, return AI response
 ```
 
-### Step 4: Create the Scorecard Output
+Step 4: Create the Scorecard Output
 
 Combine everything into an usable scorecard format:
 
@@ -194,7 +194,7 @@ def group_by_model(results):
     return models
 ```
 
-## AI Tooling Comparison for dbt Scorecard Generation
+AI Tooling Comparison for dbt Scorecard Generation
 
 Different AI tools handle the scorecard generation task with varying strengths. Here's how the leading options compare when used to analyze dbt test output and generate natural-language summaries:
 
@@ -208,7 +208,7 @@ Different AI tools handle the scorecard generation task with varying strengths. 
 
 For most analytics engineering teams, Claude or GPT-4o offer the best balance of reasoning quality and context handling. If you run dbt in a regulated environment where test results contain sensitive schema metadata, running a local model via Ollama eliminates data egress risk entirely.
 
-## Real-World Workflow: CI/CD Integration
+Real-World Workflow: CI/CD Integration
 
 The most effective scorecard systems run automatically after every dbt test execution. Here's a complete GitHub Actions workflow:
 
@@ -258,7 +258,7 @@ def post_to_slack(scorecard, webhook_url):
     payload = {
         "attachments": [{
             "color": color,
-            "title": f"Data Quality Report — {scorecard['generated_at'][:10]}",
+            "title": f"Data Quality Report. {scorecard['generated_at'][:10]}",
             "fields": [
                 {"title": "Quality Score", "value": f"{score}%", "short": True},
                 {"title": "Failed Tests", "value": str(scorecard['metrics']['failed']), "short": True},
@@ -270,18 +270,18 @@ def post_to_slack(scorecard, webhook_url):
     requests.post(webhook_url, json=payload)
 ```
 
-## Performance Benchmarks: Manual vs AI-Assisted Scoring
+Performance Benchmarks: Manual vs AI-Assisted Scoring
 
 Teams that have implemented AI-assisted dbt scorecard pipelines report measurable improvements over manual review workflows:
 
-- **Time to triage failures**: Manual review averages 45 minutes per incident; AI-assisted triage averages 8 minutes (82% reduction)
-- **False-positive alerts**: AI context analysis reduces alert noise by ~60% by correlating failures across related models
-- **MTTR (mean time to resolve)**: Teams using AI-summarized scorecards resolve data incidents 35% faster on average
-- **Coverage**: Automated scoring covers 100% of tests; human reviewers typically sample 20-30% under time pressure
+- Time to triage failures: Manual review averages 45 minutes per incident; AI-assisted triage averages 8 minutes (82% reduction)
+- False-positive alerts: AI context analysis reduces alert noise by ~60% by correlating failures across related models
+- MTTR (mean time to resolve): Teams using AI-summarized scorecards resolve data incidents 35% faster on average
+- Coverage: Automated scoring covers 100% of tests; human reviewers typically sample 20-30% under time pressure
 
 The biggest gains come from the AI's ability to correlate failures. When `not_null` tests fail on three downstream models simultaneously, AI can recognize that all three depend on the same upstream source model and surface that root cause immediately.
 
-## Automating Your Pipeline
+Automating Your Pipeline
 
 Integrate this scorecard into your dbt workflow by adding a post-hook in your `dbt_project.yml`:
 
@@ -295,11 +295,11 @@ models:
 You can also schedule daily or weekly runs and send results to Slack or email:
 
 ```bash
-# Daily scorecard generation
+Daily scorecard generation
 0 9 * * * cd /path/to/project && dbt test --output json && python scripts/generate_scorecard.py
 ```
 
-## Interpreting Your Scorecard
+Interpreting Your Scorecard
 
 When reviewing your scorecard, focus on these key indicators:
 
@@ -313,26 +313,26 @@ When reviewing your scorecard, focus on these key indicators:
 
 Use the AI-generated insights to move beyond simple pass/fail reporting. Instead of just knowing that tests failed, you'll understand why they failed and what actions to take.
 
-## FAQ
+FAQ
 
-**Q: Can I use this approach with dbt Cloud instead of dbt Core?**
+Q: Can I use this approach with dbt Cloud instead of dbt Core?
 Yes. dbt Cloud exposes test results via its Admin API at `/api/v2/accounts/{account_id}/runs/{run_id}/artifacts/`. Fetch the `run_results.json` artifact and pass it to the same normalization functions.
 
-**Q: What dbt version does the JSON output format require?**
+Q: What dbt version does the JSON output format require?
 The structured JSON output format (`--output json`) is stable from dbt Core 1.0 onwards. The `run_results.json` schema is documented in dbt's artifact specification and has been consistent across 1.x releases.
 
-**Q: How do I handle incremental test results across multiple dbt runs?**
+Q: How do I handle incremental test results across multiple dbt runs?
 Store each scorecard in a time-series database like TimescaleDB or append results to a BigQuery table partitioned by date. Query 30-day rolling averages to detect gradual degradation that individual run comparisons miss.
 
-**Q: My dbt project has 2,000+ tests. Will the AI prompt exceed context limits?**
+Q: My dbt project has 2,000+ tests. Will the AI prompt exceed context limits?
 Aggregate failure data before sending it to the AI. Instead of passing all 2,000 test results, send a grouped summary (failures by model, test type distribution, top 10 failing models). This keeps prompts under 5,000 tokens while preserving the signal the AI needs.
 
-## Related Articles
+Related Articles
 
 - [How to Use AI to Create Data Pipeline Orchestration Configs](/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
 - [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
 - [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
 - [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

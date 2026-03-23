@@ -28,7 +28,7 @@ Claude Code excels at creating Playwright tests for file uploads and downloads b
 
 This guide explores how AI assistants can help you create effective Playwright tests for file upload and download flows, with practical examples you can apply immediately.
 
-## Table of Contents
+Table of Contents
 
 - [What Makes an AI Assistant Effective for Playwright Test Generation](#what-makes-an-ai-assistant-effective-for-playwright-test-generation)
 - [File Upload Testing with Playwright](#file-upload-testing-with-playwright)
@@ -42,7 +42,7 @@ This guide explores how AI assistants can help you create effective Playwright t
 - [Performance and Stress Testing for Uploads](#performance-and-stress-testing-for-uploads)
 - [Integrating with CI/CD Pipelines](#integrating-with-cicd-pipelines)
 
-## What Makes an AI Assistant Effective for Playwright Test Generation
+What Makes an AI Assistant Effective for Playwright Test Generation
 
 Not all AI assistants handle code generation equally. When evaluating AI tools for creating Playwright tests, several capabilities matter most.
 
@@ -50,7 +50,7 @@ An effective AI assistant should understand Playwright's API thoroughly, includi
 
 Context awareness matters significantly. The best AI assistants can maintain conversation context across multiple turns, allowing you to refine tests iteratively. They should also understand your specific testing framework setup, whether you use Jest, Mocha, or another test runner.
 
-## File Upload Testing with Playwright
+File Upload Testing with Playwright
 
 Playwright provides strong APIs for handling file uploads. The key is using `setInputFiles()` to programmatically select files for upload input elements.
 
@@ -81,7 +81,7 @@ test('should upload a file successfully', async ({ page }) => {
 
 AI assistants can generate variations of this test for different scenarios, such as multiple file uploads or different file types. You can ask an AI to modify the test to handle drag-and-drop uploads by adding the appropriate interaction patterns.
 
-## File Download Testing with Playwright
+File Download Testing with Playwright
 
 Testing downloads requires a different approach. Playwright's download API allows you to intercept and verify downloaded files.
 
@@ -112,7 +112,7 @@ test('should download a file successfully', async ({ page }) => {
 
 AI assistants excel at generating these download tests because they can incorporate error handling and cross-browser considerations that you might otherwise overlook.
 
-## Handling Dynamic File Names and Paths
+Handling Dynamic File Names and Paths
 
 Real-world applications often generate dynamic filenames or use temporary directories. An AI assistant can help you write flexible tests that handle these scenarios.
 
@@ -135,7 +135,7 @@ test('should handle dynamically named downloads', async ({ page }) => {
 });
 ```
 
-## Testing Upload Validation and Error Handling
+Testing Upload Validation and Error Handling
 
  test coverage includes negative test cases. AI can help generate tests for validation scenarios efficiently.
 
@@ -173,7 +173,7 @@ test('should reject invalid file types', async ({ page }) => {
 });
 ```
 
-## Using AI to Accelerate Test Development
+Using AI to Accelerate Test Development
 
 When working with an AI assistant, provide clear context to get better results. Include your Playwright version, test runner setup, and any specific libraries you use.
 
@@ -181,7 +181,7 @@ Instead of a vague request like "write a download test," try something more spec
 
 The AI can then generate a test tailored to your exact requirements, saving you from adapting generic code.
 
-## Best Practices for AI-Generated Tests
+Best Practices for AI-Generated Tests
 
 AI-generated tests require review and refinement. Always verify the generated code handles edge cases relevant to your application.
 
@@ -189,7 +189,7 @@ Maintain your test files in version control and run them consistently in your CI
 
 Consider creating a library of reusable test utilities for common upload and download scenarios. You can ask AI to help design these utilities based on patterns that emerge across your tests.
 
-## Advanced File Upload Scenarios
+Advanced File Upload Scenarios
 
 Real-world applications require testing complex upload scenarios beyond basic file selection:
 
@@ -285,7 +285,7 @@ test('should maintain file order in multi-file upload', async ({ page }) => {
 });
 ```
 
-## Testing Upload Security and Validation
+Testing Upload Security and Validation
 
 Security testing is critical for file upload functionality:
 
@@ -358,7 +358,7 @@ test('should rate limit uploads per user', async ({ page }) => {
 });
 ```
 
-## Performance and Stress Testing for Uploads
+Performance and Stress Testing for Uploads
 
 Test upload performance under various conditions:
 
@@ -411,7 +411,7 @@ test('upload performance benchmarking', async ({ page }) => {
 });
 ```
 
-## Integrating with CI/CD Pipelines
+Integrating with CI/CD Pipelines
 
 Ensure upload tests run reliably in CI environments:
 
@@ -457,33 +457,33 @@ test.describe('File upload tests (CI-compatible)', () => {
 });
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Best AI Assistant for Creating Playwright Tests for Multi](/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
 - [Which AI Is Better for Writing Playwright End-to-End Tests](/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
 - [Best AI Assistant for Creating Jest Tests That Verify Error](/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
 - [Best AI for Creating Jest Tests That Verify Correct Suspense](/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 - [Best AI Assistant for Creating Test Data Factories with Real](/best-ai-assistant-for-creating-test-data-factories-with-real/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

@@ -15,18 +15,18 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-# How to Build AI-Powered Code Search 2026
+How to Build AI-Powered Code Search 2026
 
 Code search powered by embeddings finds functions by what they do, not just what they're named. A query like "parse JWT from Authorization header" returns relevant functions even if they're named `extractToken` or `getBearer`. This guide builds a complete code search pipeline using tree-sitter for AST parsing and OpenAI embeddings.
 
-## Why AST Parsing Matters
+Why AST Parsing Matters
 
 Splitting code by lines misses logical boundaries. A function that spans 40 lines becomes multiple incomplete chunks. Tree-sitter parses source code into an AST, letting you extract functions and classes as complete semantic units.
 
-## Step 1: Extract Code Units with Tree-sitter
+Step 1: Extract Code Units with Tree-sitter
 
 ```python
-# extractor.py
+extractor.py
 from dataclasses import dataclass
 from pathlib import Path
 import tree_sitter_python as tspython
@@ -41,7 +41,7 @@ LANGUAGES = {
     ".tsx": Language(tstypescript.language_typescript()),
 }
 
-# tree-sitter queries to extract functions/methods
+tree-sitter queries to extract functions/methods
 FUNCTION_QUERIES = {
     ".py": """
         (function_definition
@@ -116,7 +116,7 @@ def extract_units(file_path: Path) -> list[CodeUnit]:
 
         code = source[node.start_byte:node.end_byte].decode("utf-8")
 
-        # Skip very short units (< 3 lines) — likely not useful
+        # Skip very short units (< 3 lines). likely not useful
         if code.count("\n") < 2:
             continue
 
@@ -132,10 +132,10 @@ def extract_units(file_path: Path) -> list[CodeUnit]:
     return units
 ```
 
-## Step 2: Index Code Units
+Step 2: Index Code Units
 
 ```python
-# indexer.py
+indexer.py
 import os
 import asyncio
 from pathlib import Path
@@ -203,10 +203,10 @@ async def index_repository(repo_path: str, extensions: list[str] = None):
     print("Indexing complete")
 ```
 
-## Step 3: Search API
+Step 3: Search API
 
 ```python
-# search_api.py
+search_api.py
 from fastapi import FastAPI
 from pydantic import BaseModel
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -275,10 +275,10 @@ async def search_code(req: CodeSearchRequest):
     ]
 ```
 
-## CLI Interface
+CLI Interface
 
 ```python
-# cli.py
+cli.py
 import asyncio
 import click
 from rich.console import Console
@@ -309,14 +309,14 @@ def search(query: str, lang: str | None, top_k: int, url: str):
 
     for i, result in enumerate(results, 1):
         score_pct = int(result["score"] * 100)
-        header = f"[{i}] {result['name']} — {result['file_path']}:{result['start_line']} ({score_pct}% match)"
+        header = f"[{i}] {result['name']}. {result['file_path']}:{result['start_line']} ({score_pct}% match)"
         syntax = Syntax(result["code"], result["language"],
                        theme="monokai", line_numbers=True,
                        start_line=result["start_line"])
         console.print(Panel(syntax, title=header, border_style="blue"))
 ```
 
-## Database Schema
+Database Schema
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS vector;
@@ -340,12 +340,12 @@ CREATE INDEX ON code_units USING ivfflat (embedding vector_cosine_ops)
 CREATE INDEX ON code_units (language);
 ```
 
-## Keeping the Index Fresh
+Keeping the Index Fresh
 
 A static index goes stale as soon as developers push new code. The simplest incremental update strategy is a file-hash cache: store a SHA-256 of each indexed file and skip re-embedding files that have not changed.
 
 ```python
-# incremental_indexer.py
+incremental_indexer.py
 import hashlib
 from pathlib import Path
 
@@ -373,7 +373,7 @@ async def index_incremental(repo_path: str, session: AsyncSession) -> dict:
                 stats["skipped"] += 1
                 continue
 
-            # File is new or changed — delete old units and re-index
+            # File is new or changed. delete old units and re-index
             await session.execute(
                 text("DELETE FROM code_units WHERE file_path = :path"),
                 {"path": str(file)}
@@ -396,7 +396,7 @@ async def index_incremental(repo_path: str, session: AsyncSession) -> dict:
 
 Run this on a git post-commit hook or as a CI step after every merge to main. For repositories with 10,000+ functions, incremental indexing completes in seconds rather than minutes.
 
-## Tuning Embedding Quality
+Tuning Embedding Quality
 
 The default `make_embedding_text` function concatenates the filename, function name, and full source code. For better retrieval on specific query types, consider augmenting the text with docstrings and inferred purpose:
 
@@ -431,7 +431,7 @@ def make_embedding_text_enriched(unit: CodeUnit) -> str:
 
 The enriched format improves recall for natural-language queries against well-documented codebases. For undocumented code, the plain format performs comparably since the model infers semantics from the code itself.
 
-## Performance at Scale
+Performance at Scale
 
 For repositories with more than 50,000 code units, the IVFFlat index becomes critical. The `lists` parameter controls the trade-off between index build time, query speed, and recall:
 
@@ -443,7 +443,7 @@ For repositories with more than 50,000 code units, the IVFFlat index becomes cri
 
 After inserting a large batch of new embeddings, run `VACUUM ANALYZE code_units` to refresh statistics and ensure the index planner uses the vector index rather than a sequential scan.
 
-## Related Reading
+Related Reading
 
 - [How to Build Semantic Search with Embeddings](/how-to-build-semantic-search-with-embeddings/)
 - [How to Build AI Documentation Chatbots](/how-to-build-ai-documentation-chatbots-2026/)
@@ -452,7 +452,7 @@ After inserting a large batch of new embeddings, run `VACUUM ANALYZE code_units`
 
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Build an AI-Powered Code Linter](/how-to-build-ai-powered-code-linter/)
 - [How to Use AI Codebase Search to Find Relevant Code Before](/how-to-use-ai-codebase-search-to-find-relevant-code-before-g/)
@@ -460,6 +460,6 @@ After inserting a large batch of new embeddings, run `VACUUM ANALYZE code_units`
 - [Claude Code vs ChatGPT Code Interpreter Comparison](/claude-code-vs-chatgpt-code-interpreter-comparison/)
 - [Best AI Tool for Software Engineers Code Review 2026](/best-ai-tool-for-software-engineers-code-review-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

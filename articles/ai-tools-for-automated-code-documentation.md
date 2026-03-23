@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated Code Documentation"
-description: "Compare Claude, GPT-4, and open-source tools for auto-generating code documentation — docstrings, API references, architecture docs, and inline comments"
+description: "Compare Claude, GPT-4, and open-source tools for auto-generating code documentation. docstrings, API references, architecture docs, and inline comments"
 date: 2026-03-22
 author: theluckystrike
 permalink: ai-tools-for-automated-code-documentation
@@ -17,12 +17,12 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Code documentation has two failure modes: missing entirely, or present but wrong. AI tools solve the first problem well and are getting better at the second. This guide covers practical workflows for generating docstrings, API references, and architecture documentation at scale.
 
-## Approach 1: Batch Docstring Generation
+Approach 1: Batch Docstring Generation
 
 The highest-ROI use case is adding docstrings to existing functions that have none. This script processes an entire module:
 
 ```python
-# docstring_generator.py
+docstring_generator.py
 import ast
 import os
 from pathlib import Path
@@ -100,7 +100,7 @@ Rules:
 - Document return value
 - Document exceptions that can be raised
 - Note any important side effects
-- Do NOT describe the implementation — describe the contract
+- Do NOT describe the implementation. describe the contract
 
 Return only the docstring content (without triple quotes), no explanation.
 
@@ -155,7 +155,7 @@ def add_docstrings_to_file(
 
     return {"file": filepath, "added": len(additions), "functions": additions}
 
-# Process entire module
+Process entire module
 def document_module(module_path: str, style: str = "google"):
     for py_file in Path(module_path).rglob("*.py"):
         if "test_" in py_file.name or "__pycache__" in str(py_file):
@@ -165,7 +165,7 @@ def document_module(module_path: str, style: str = "google"):
             print(f"Added {result['added']} docstrings to {py_file.name}")
 ```
 
-## Approach 2: Architecture Documentation from Code
+Approach 2: Architecture Documentation from Code
 
 ```python
 def generate_architecture_doc(repo_path: str) -> str:
@@ -200,27 +200,27 @@ File structure with classes and functions:
 {json.dumps(structure, indent=2)[:5000]}
 
 Write documentation covering:
-1. **Overview**: What does this codebase do? (infer from names)
-2. **Module Structure**: Purpose of each module/package
-3. **Key Components**: Most important classes and their responsibilities
-4. **Data Flow**: How data moves through the system (infer from module names)
-5. **External Dependencies**: Any obvious external integrations
+1. Overview: What does this codebase do? (infer from names)
+2. Module Structure: Purpose of each module/package
+3. Key Components: Most important classes and their responsibilities
+4. Data Flow: How data moves through the system (infer from module names)
+5. External Dependencies: Any obvious external integrations
 
-Format as markdown. Be concise — one paragraph per major component."""
+Format as markdown. Be concise. one paragraph per major component."""
         }]
     )
     return response.content[0].text
 
-# Save to docs/
+Save to docs/
 Path("docs/architecture.md").write_text(
     generate_architecture_doc("src/")
 )
 ```
 
-## Approach 3: API Reference Generation with MkDocs
+Approach 3: API Reference Generation with MkDocs
 
 ```python
-# generate_api_docs.py
+generate_api_docs.py
 def generate_mkdocs_page(module_path: str) -> str:
     """Generate a MkDocs-compatible markdown page for a Python module."""
     source = Path(module_path).read_text()
@@ -257,18 +257,18 @@ Source:
     )
     return response.content[0].text
 
-# GitHub Action to regenerate on push
+GitHub Action to regenerate on push
 ```
 
 ```yaml
-# .github/workflows/docs.yml
+.github/workflows/docs.yml
 name: Update API Docs
 
 on:
   push:
     branches: [main]
     paths:
-      - 'src/**/*.py'
+      - 'src//*.py'
 
 jobs:
   generate-docs:
@@ -291,7 +291,7 @@ jobs:
           publish_dir: ./site
 ```
 
-## Approach 4: Inline Comment Quality Review
+Approach 4: Inline Comment Quality Review
 
 AI can also review existing documentation for accuracy:
 
@@ -323,10 +323,10 @@ Source:
     )
     return response.content[0].text
 
-# Run on every PR as a documentation quality gate
+Run on every PR as a documentation quality gate
 ```
 
-## Approach 5: Changelog and Release Notes Generation
+Approach 5: Changelog and Release Notes Generation
 
 One underused application is generating changelogs directly from git commits and diffs. This eliminates the friction of writing release notes manually:
 
@@ -361,12 +361,12 @@ Files changed:
 {diff_stat[:1000]}
 
 Format as Keep a Changelog (https://keepachangelog.com):
-## [{version}] - YYYY-MM-DD
+[{version}] - YYYY-MM-DD
 
-### Added
-### Changed
-### Fixed
-### Removed
+Added
+Changed
+Fixed
+Removed
 
 Group commits by type. Skip trivial commits (typos, formatting).
 Translate technical commit messages into user-facing language."""
@@ -377,7 +377,7 @@ Translate technical commit messages into user-facing language."""
 
 This pairs well with a pre-release GitHub Action that auto-creates a draft release with the generated changelog, which an engineer then reviews and edits before publishing.
 
-## Tool Comparison
+Tool Comparison
 
 | Tool | Docstrings | API Ref | Architecture Docs | Accuracy Review | Changelog |
 |---|---|---|---|---|---|
@@ -389,14 +389,14 @@ This pairs well with a pre-release GitHub Action that auto-creates a draft relea
 
 The AI-based approaches (Claude and GPT-4) are the only ones that generate documentation where none exists. Tools like Sphinx require docstrings to already be present.
 
-**Claude vs GPT-4 for documentation**: Claude follows style guides more consistently. When you tell it to use Google style docstrings throughout a 20-function module, it stays consistent where GPT-4 may drift between styles. For changelog generation, both tools perform similarly, but Claude produces more user-focused language rather than mirroring the raw commit messages.
+Claude vs GPT-4 for documentation: Claude follows style guides more consistently. When you tell it to use Google style docstrings throughout a 20-function module, it stays consistent where GPT-4 may drift between styles. For changelog generation, both tools perform similarly, but Claude produces more user-focused language rather than mirroring the raw commit messages.
 
-## Integration with Pre-commit Hooks
+Integration with Pre-commit Hooks
 
 To enforce documentation as part of the development workflow, add a pre-commit hook that blocks commits with undocumented public functions:
 
 ```yaml
-# .pre-commit-config.yaml
+.pre-commit-config.yaml
 repos:
   - repo: local
     hooks:
@@ -409,7 +409,7 @@ repos:
 ```
 
 ```python
-# scripts/check_docstrings.py
+scripts/check_docstrings.py
 import ast
 import sys
 
@@ -438,12 +438,12 @@ if issues:
 
 This keeps docstring debt from accumulating without requiring every developer to remember to write them. Pair it with a weekly CI job that uses Claude to auto-generate drafts for any remaining gaps.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-for-automated-code-documentation-generation-2026/)
 - [Best AI Tools for Code Documentation Generation 2026](/best-ai-tools-for-code-documentation-generation-2026/)
 - [Best AI Tools for Generating API Documentation From Code](/best-ai-tools-for-generating-api-documentation-from-code-2026/)
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
 - [Best AI Tools for Automated Code Review 2026](/best-ai-tools-for-automated-code-review-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

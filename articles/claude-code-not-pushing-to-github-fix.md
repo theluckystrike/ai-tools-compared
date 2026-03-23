@@ -33,34 +33,34 @@ tags: [ai-tools-compared, troubleshooting, claude-ai]
 
 To fix Claude Code not pushing to GitHub, first test your SSH connection with `ssh -T git@github.com` and verify your remote URL with `git remote -v`. Most push failures resolve by regenerating your SSH key or Personal Access Token and ensuring the remote URL matches your authentication method (SSH vs HTTPS). If you are behind a corporate firewall, configure SSH to use port 443 by setting `HostName ssh.github.com` and `Port 443` in `~/.ssh/config`.
 
-## Key Takeaways
+Key Takeaways
 
-- **Add the key to the SSH agent**: ```bash
+- Add the key to the SSH agent: ```bash
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 ```
 
 4.
-- **If you are behind a corporate firewall**: configure SSH to use port 443 by setting `HostName ssh.github.com` and `Port 443` in `~/.ssh/config`.
-- **`remote**: error: GH007: Your push would publish a private email address.`
+- If you are behind a corporate firewall: configure SSH to use port 443 by setting `HostName ssh.github.com` and `Port 443` in `~/.ssh/config`.
+- `remote: error: GH007: Your push would publish a private email address.`
 GitHub's email privacy setting is blocking the push because your commit email is your real address.
-- **A token with only `read**: org` or `user` scopes cannot push code.
-- **Most push failures resolve**: by regenerating your SSH key or Personal Access Token and ensuring the remote URL matches your authentication method (SSH vs HTTPS).
-- **This happens frequently on**: machines used for multiple GitHub accounts.
+- A token with only `read: org` or `user` scopes cannot push code.
+- Most push failures resolve: by regenerating your SSH key or Personal Access Token and ensuring the remote URL matches your authentication method (SSH vs HTTPS).
+- This happens frequently on: machines used for multiple GitHub accounts.
 
-## Understanding the Push Failure
+Understanding the Push Failure
 
 When Claude Code attempts to push to GitHub and fails, the issue typically falls into one of several categories: authentication problems, SSH key misconfiguration, repository permissions, or network issues. Identifying which category applies to your situation is the first step toward resolution.
 
 Ensure you have access to your terminal and your GitHub account, as some solutions require actions in both environments.
 
-## Authentication Issues
+Authentication Issues
 
-### Personal Access Token Problems
+Personal Access Token Problems
 
 If you're using HTTPS instead of SSH, authentication failures often stem from expired or missing Personal Access Tokens (PAT). GitHub deprecated password authentication for Git operations, so you need a PAT.
 
-**Fix:**
+Fix:
 
 1. Generate a new PAT at GitHub.com → Settings → Developer settings → Personal access tokens → Fine-grained tokens
 
@@ -80,11 +80,11 @@ git remote set-url origin https://YOUR_USERNAME:YOUR_PAT@github.com/user/repo.gi
 
 Alternatively, use the Git Credential Manager to store your credentials securely.
 
-### SSH Key Authentication
+SSH Key Authentication
 
 SSH keys provide a more secure and convenient method for GitHub authentication.
 
-**Fix:**
+Fix:
 
 1. Check if you have an SSH key:
 
@@ -119,13 +119,13 @@ ssh-add ~/.ssh/id_ed25519
 git remote set-url origin git@github.com:username/repository.git
 ```
 
-## SSH Configuration Problems
+SSH Configuration Problems
 
-### Host Key Verification
+Host Key Verification
 
 GitHub's SSH host keys must be verified to prevent man-in-the-middle attacks. If you receive a "Host key verification failed" error, you need to add GitHub's host keys.
 
-**Fix:**
+Fix:
 
 ```bash
 ssh-keyscan github.com >> ~/.ssh/known_hosts
@@ -133,11 +133,11 @@ ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 This adds GitHub's SSH host keys to your known hosts file.
 
-### SSH Config Issues
+SSH Config Issues
 
 Your SSH configuration might be interfering with GitHub connections.
 
-**Fix:**
+Fix:
 
 Edit your SSH config file:
 
@@ -163,13 +163,13 @@ ssh -T git@github.com
 
 You should see: "Hi [username]! You've successfully authenticated..."
 
-## Repository and Permission Issues
+Repository and Permission Issues
 
-### Branch Protection Rules
+Branch Protection Rules
 
 If you're pushing to a protected branch and lack permissions, the push will fail.
 
-**Fix:**
+Fix:
 
 1. Check if your branch is protected in GitHub → Repository → Settings → Branches
 
@@ -181,11 +181,11 @@ If you're pushing to a protected branch and lack permissions, the push will fail
 
  - Use a force push if you have admin rights (not recommended for shared branches)
 
-### Repository Access
+Repository Access
 
 Ensure you have push permissions to the repository.
 
-**Fix:**
+Fix:
 
 1. Verify you're added as a collaborator or team member with push access
 
@@ -193,13 +193,13 @@ Ensure you have push permissions to the repository.
 
 3. Confirm your GitHub account has the correct permissions
 
-## Network and Connection Issues
+Network and Connection Issues
 
-### Firewall and Proxy Blocks
+Firewall and Proxy Blocks
 
 Corporate firewalls or proxies might block Git traffic.
 
-**Fix:**
+Fix:
 
 1. Test your connection:
 
@@ -223,11 +223,11 @@ Host github.com
     IdentityFile ~/.ssh/id_ed25519
 ```
 
-### DNS Resolution
+DNS Resolution
 
 DNS issues can prevent GitHub resolution.
 
-**Fix:**
+Fix:
 
 Try using GitHub's IP address directly:
 
@@ -250,13 +250,13 @@ Host github.com
     Port 443
 ```
 
-## Git Configuration Problems
+Git Configuration Problems
 
-### Global Git Settings
+Global Git Settings
 
 Incorrect Git configuration can cause push failures.
 
-**Fix:**
+Fix:
 
 Verify your Git configuration:
 
@@ -271,7 +271,7 @@ git config --global user.name "Your Name"
 git config --global user.email "your_email@example.com"
 ```
 
-### Remote Configuration
+Remote Configuration
 
 Check your remote URL for typos:
 
@@ -285,15 +285,15 @@ The URL should be either:
 
 - HTTPS: `https://github.com/username/repo.git`
 
-## Reading Git Push Error Messages
+Reading Git Push Error Messages
 
 Git push errors are usually actionable if you read them carefully. Here are the most common messages and what they mean:
 
-**`remote: Permission to user/repo.git denied to other-user.`**
+`remote: Permission to user/repo.git denied to other-user.`
 Your SSH key or token is authenticated as a different GitHub account than the one with access to the repo. This happens frequently on machines used for multiple GitHub accounts. Fix: check `ssh -T git@github.com` to see which account is active, and update your SSH config to use an account-specific host alias:
 
 ```
-# ~/.ssh/config
+~/.ssh/config
 Host github-work
     HostName github.com
     User git
@@ -307,20 +307,20 @@ Host github-personal
 
 Then update your remote URL: `git remote set-url origin git@github-work:yourorg/repo.git`
 
-**`error: failed to push some refs to 'origin'`**
+`error: failed to push some refs to 'origin'`
 The remote has commits your local branch doesn't have. Run `git pull --rebase origin main` to incorporate upstream changes, then retry the push.
 
-**`remote: error: GH007: Your push would publish a private email address.`**
+`remote: error: GH007: Your push would publish a private email address.`
 GitHub's email privacy setting is blocking the push because your commit email is your real address. Either disable email privacy in GitHub settings, or configure a GitHub no-reply email:
 
 ```bash
 git config --global user.email "12345678+username@users.noreply.github.com"
 ```
 
-**`[rejected] main -> main (non-fast-forward)`**
-Same as the "failed to push some refs" error — upstream has diverged. Rebase or merge before pushing.
+`[rejected] main -> main (non-fast-forward)`
+Same as the "failed to push some refs" error. upstream has diverged. Rebase or merge before pushing.
 
-## Personal Access Token Scope Errors
+Personal Access Token Scope Errors
 
 When using HTTPS with a PAT and you see `remote: Repository not found` or `403 Forbidden`, the token likely lacks the required scopes. GitHub Fine-grained tokens require these permissions for push access:
 
@@ -342,18 +342,18 @@ curl -H "Authorization: Bearer YOUR_TOKEN" \
 
 If `push` is `false` in the permissions block, the token lacks write access to that specific repository.
 
-## Git Credential Cache and Keychain Issues
+Git Credential Cache and Keychain Issues
 
 On macOS, credential failures often come from stale keychain entries. Git may be silently using an old expired PAT stored in the system keychain:
 
 ```bash
-# List stored GitHub credentials
+List stored GitHub credentials
 git credential-osxkeychain get <<EOF
 protocol=https
 host=github.com
 EOF
 
-# Remove a stale credential
+Remove a stale credential
 git credential-osxkeychain erase <<EOF
 protocol=https
 host=github.com
@@ -362,13 +362,13 @@ EOF
 
 After erasing, the next `git push` will prompt for credentials. Enter your username and new PAT. On Linux, check `~/.git-credentials` or your configured credential helper (`git config --global credential.helper`) for stale entries.
 
-## Claude Code Specific Issues
+Claude Code Specific Issues
 
-### Project Directory Permissions
+Project Directory Permissions
 
 Claude Code needs proper permissions to run Git commands.
 
-**Fix:**
+Fix:
 
 1. Ensure you're in the correct working directory
 
@@ -380,7 +380,7 @@ Claude Code needs proper permissions to run Git commands.
 ls -la .git
 ```
 
-### Reinitialize Git
+Reinitialize Git
 
 If the Git repository is corrupted, reinitialize:
 
@@ -391,7 +391,7 @@ git remote add origin git@github.com:username/repo.git
 
 Then re-add your files and commit.
 
-## Diagnostic Checklist
+Diagnostic Checklist
 
 When troubleshooting, work through this checklist:
 
@@ -407,7 +407,7 @@ When troubleshooting, work through this checklist:
 
 6. Are your Git credentials configured? (`git config --global -l`)
 
-## Preventive Measures
+Preventive Measures
 
 - Use SSH keys instead of HTTPS to avoid token expiration
 
@@ -419,29 +419,29 @@ When troubleshooting, work through this checklist:
 
 - Use two-factor authentication on GitHub for added security
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to complete this setup?**
+How long does it take to complete this setup?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/chatgpt-slow-response-fix-2026/)
 - [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/cursor-ai-making-too-many-api-calls-fix/)
@@ -449,6 +449,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 - [Claude Code Losing Context Across Sessions Fix](/claude-code-losing-context-across-sessions-fix/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

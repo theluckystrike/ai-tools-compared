@@ -15,9 +15,9 @@ voice-checked: true
 ---
 {% raw %}
 
-Write CursorRules for Go projects by explicitly defining goroutine lifecycle management, channel usage patterns, and error propagation strategies. These rules ensure AI generates code following Go's idiomatic concurrency model rather than generic async patterns—specifying exact requirements for sync.WaitGroup usage, error channels, worker pool patterns, and proper cleanup to prevent subtle concurrency bugs.
+Write CursorRules for Go projects by explicitly defining goroutine lifecycle management, channel usage patterns, and error propagation strategies. These rules ensure AI generates code following Go's idiomatic concurrency model rather than generic async patterns, specifying exact requirements for sync.WaitGroup usage, error channels, worker pool patterns, and proper cleanup to prevent subtle concurrency bugs.
 
-## Table of Contents
+Table of Contents
 
 - [Why CursorRules Matter for Go Projects](#why-cursorrules-matter-for-go-projects)
 - [Configuring Concurrency Patterns in CursorRules](#configuring-concurrency-patterns-in-cursorrules)
@@ -28,13 +28,13 @@ Write CursorRules for Go projects by explicitly defining goroutine lifecycle man
 - [Testing Considerations](#testing-considerations)
 - [Final Configuration Tips](#final-configuration-tips)
 
-## Why CursorRules Matter for Go Projects
+Why CursorRules Matter for Go Projects
 
 Golang's concurrency model and error handling differ significantly from other languages. The language's approach to concurrency through goroutines and channels, combined with explicit error returns instead of exceptions, requires AI assistants to understand these idiomatic patterns. Without proper guidance, AI tools often generate code that either fails to compile or violates Go conventions.
 
 When you configure CursorRules specifically for your Golang project, you ensure that every code suggestion follows your team's established patterns for goroutine lifecycle management, channel usage, and error propagation. This consistency reduces review cycles and prevents subtle bugs that emerge from inconsistent concurrency implementations.
 
-## Configuring Concurrency Patterns in CursorRules
+Configuring Concurrency Patterns in CursorRules
 
 Your CursorRules should explicitly define how the AI should handle goroutine creation, management, and cleanup. Rather than allowing generic async patterns, specify exact requirements for your concurrency model.
 
@@ -67,7 +67,7 @@ This pattern demonstrates proper goroutine lifecycle management: explicit wait g
 
 When your project uses worker pools or task queues, specify the exact pattern your team employs. Whether you use a simple channel-based approach or a library like errgroup for parallel operation coordination, the AI needs explicit instructions to match your implementation.
 
-## Enforcing Error Handling Conventions
+Enforcing Error Handling Conventions
 
 Go's error handling philosophy requires explicit error checking after every operation that can fail. AI assistants sometimes take shortcuts or generate verbose error handling that doesn't match your project's style. CursorRules should address both the presence and format of error handling.
 
@@ -113,7 +113,7 @@ func validateInput(input *Request) error {
 }
 ```
 
-## Structuring Context Propagation
+Structuring Context Propagation
 
 Golang's context package provides the standard mechanism for request-scoped values and cancellation. Your CursorRules should ensure the AI consistently propagates context through your call stacks.
 
@@ -128,7 +128,7 @@ func (s *Service) ProcessWithTimeout(ctx context.Context, req *Request) (*Respon
 }
 ```
 
-## Channel Patterns and Buffering
+Channel Patterns and Buffering
 
 Channel behavior varies based on your use case. Unbuffered channels provide synchronization guarantees while buffered channels improve throughput for batch processing. Your CursorRules should specify when to use each type.
 
@@ -152,7 +152,7 @@ For producer-consumer patterns where producers shouldn't block, specify buffered
 jobs := make(chan Job, 100)
 ```
 
-## Integrating with Existing Code
+Integrating with Existing Code
 
 Review your project's existing implementations to identify patterns the AI should emulate. Extract common patterns from your codebase and incorporate them into CursorRules. Include actual code examples from your project rather than abstract descriptions.
 
@@ -186,7 +186,7 @@ func retryWithBackoff(ctx context.Context, op func() error) error {
 
 Include this exact implementation in your CursorRules so the AI generates consistent retry logic.
 
-## Testing Considerations
+Testing Considerations
 
 Your CursorRules should also address testing patterns. Go's testing package requires specific conventions. Specify how tests should handle table-driven testing, when to use subtests, and how to structure test helper functions:
 
@@ -217,35 +217,35 @@ func TestProcess(t *testing.T) {
 }
 ```
 
-## Final Configuration Tips
+Final Configuration Tips
 
 Keep your CursorRules focused and specific rather than. Include only patterns that differ from standard Go idioms or that your project implements differently. Review and update CursorRules as your project evolves, ensuring new team members receive consistent guidance from the AI assistant.
 
 The goal is generating code that passes your CI/CD pipeline without modification, with proper goroutine cleanup, idiomatic error handling, and consistent patterns throughout your codebase.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Cursor offer a free tier?**
+Does Cursor offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Cursor's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Writing Effective CursorRules for React TypeScript Projects](/writing-effective-cursorrules-for-react-typescript-projects-/)
 - [Writing Claude Md Files That Teach AI Your Project Specific](/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
@@ -253,5 +253,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Writing CLAUDE.md Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
 - [Writing CLAUDE MD Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

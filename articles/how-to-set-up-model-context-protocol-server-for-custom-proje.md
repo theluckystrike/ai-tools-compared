@@ -20,7 +20,7 @@ Setting up a Model Context Protocol server for your custom project documentation
 
 This guide walks you through building a MCP server that serves your documentation to Claude, Cursor, and other compatible AI tools.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Step 1: Initialize Your MCP Server Project](#step-1-initialize-your-mcp-server-project)
@@ -32,7 +32,7 @@ This guide walks you through building a MCP server that serves your documentatio
 - [Best Practices](#best-practices)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, ensure you have:
 
@@ -44,7 +44,7 @@ Before you begin, ensure you have:
 
 - Basic familiarity with TypeScript or JavaScript
 
-## Step 1: Initialize Your MCP Server Project
+Step 1: Initialize Your MCP Server Project
 
 Create a new directory for your MCP server and initialize it with the necessary dependencies:
 
@@ -67,30 +67,30 @@ Create a TypeScript configuration file:
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*"]
+  "include": ["src//*"]
 }
 ```
 
-## Step 2: Structure Your Documentation
+Step 2: Structure Your Documentation
 
 Organize your project documentation in a way that MCP can easily parse. A clean structure helps your server deliver relevant information to AI tools:
 
 ```
 myproject/
-├── docs/
-│   ├── architecture/
-│   │   └── system-design.md
-│   ├── api/
-│   │   └── endpoints.md
-│   ├── setup/
-│   │   └── local-development.md
-│   └── conventions/
-│       └── coding-standards.md
+ docs/
+    architecture/
+       system-design.md
+    api/
+       endpoints.md
+    setup/
+       local-development.md
+    conventions/
+        coding-standards.md
 ```
 
 Each document should have clear headings and practical content that an AI assistant can reference when generating code or answering questions.
 
-## Step 3: Build the MCP Server
+Step 3: Build the MCP Server
 
 Create your server implementation in `src/index.ts`. This server will read your documentation files and expose them through MCP tools:
 
@@ -288,7 +288,7 @@ async function main() {
 main().catch(console.error);
 ```
 
-## Step 4: Configure Your AI Tool
+Step 4: Configure Your AI Tool
 
 Each AI tool has its own method for adding MCP servers. For Claude Desktop, create or edit `~/Library/Application Support/Claude/claude_desktop_config.json`:
 
@@ -319,7 +319,7 @@ For Cursor, add the server configuration in Settings → MCP Servers:
 }
 ```
 
-## Step 5: Test Your Implementation
+Step 5: Test Your Implementation
 
 Build and test your server:
 
@@ -330,74 +330,74 @@ node dist/index.js
 
 Verify the server is working by checking if your AI tool can access the documentation tools. In Claude, you should see three new tools available: `search_docs`, `get_doc`, and `list_docs`.
 
-## Using Your Documentation Server
+Using Your Documentation Server
 
 Once configured, your AI coding assistant can now reference your project documentation. Here are practical examples:
 
-**Asking about architecture:**
+Asking about architecture:
 
 > "How is authentication handled in this project?"
 
 The AI will search your docs for authentication-related content and provide accurate guidance based on your actual implementation.
 
-**Getting setup instructions:**
+Getting setup instructions:
 
 > "What are the steps to set up local development?"
 
 The AI retrieves your setup documentation and provides precise instructions.
 
-**Finding API conventions:**
+Finding API conventions:
 
 > "What format should I use for API response errors?"
 
 Your conventions document gets searched and relevant details are extracted.
 
-## Best Practices
+Best Practices
 
 Keep your documentation server effective by following these practices:
 
-**Update documentation regularly.** Your MCP server serves static content, so rebuild and restart when docs change.
+Update documentation regularly. Your MCP server serves static content, so rebuild and restart when docs change.
 
-**Use clear, scannable headings.** AI tools parse markdown headings to understand document structure quickly.
+Use clear, scannable headings. AI tools parse markdown headings to understand document structure quickly.
 
-**Include code examples.** Practical examples help AI tools generate more accurate code that matches your patterns.
+Include code examples. Practical examples help AI tools generate more accurate code that matches your patterns.
 
-**Add troubleshooting sections.** Common issues and solutions in your docs help AI assistants diagnose problems faster.
+Add troubleshooting sections. Common issues and solutions in your docs help AI assistants diagnose problems faster.
 
-## Troubleshooting
+Troubleshooting
 
 If your server isn't connecting, verify the path to your compiled JavaScript is correct. Check that your documentation directory exists and contains markdown files. For permission issues, ensure Node has read access to your docs directory.
 
 Some AI tools require a restart after adding MCP server configuration. Close and reopen the application to load the new server.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set up model context protocol server for custom?**
+How long does it take to set up model context protocol server for custom?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Create Model Context Protocol Server That Serves API](/how-to-create-model-context-protocol-server-that-serves-api-/)
 - [How to Build Model Context Protocol Server That Provides Rea](/how-to-build-model-context-protocol-server-that-provides-rea/)
 - [How to Build a Model Context Protocol Server That Serves](/how-to-build-model-context-protocol-server-that-serves-opena/)
 - [How to Build Model Context Protocol Server for Internal](/how-to-build-model-context-protocol-server-for-internal-desi/)
 - [How to Set Up Model Context Protocol Server for Internal](/how-to-set-up-model-context-protocol-server-for-internal-pac/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

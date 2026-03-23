@@ -27,7 +27,7 @@ Automate semantic versioning with Claude Code by configuring version detection r
 
 Semantic versioning (SemVer) has become the standard for version numbering in modern software development. When combined with Claude Code's powerful automation capabilities, you can create a version management system that eliminates manual version bumps and ensures consistent releases.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Semantic Versioning Basics](#understanding-semantic-versioning-basics)
 - [Setting Up Claude Code for Version Management](#setting-up-claude-code-for-version-management)
@@ -45,45 +45,45 @@ Semantic versioning (SemVer) has become the standard for version numbering in mo
 - [Pre-Commit Hooks for Conventional Commits Enforcement](#pre-commit-hooks-for-conventional-commits-enforcement)
 - [Dry-Run Mode Before Publishing](#dry-run-mode-before-publishing)
 
-## Understanding Semantic Versioning Basics
+Understanding Semantic Versioning Basics
 
 Semantic versioning follows the format `MAJOR.MINOR.PATCH`:
 
-- **MAJOR** version when you make incompatible API changes
+- MAJOR version when you make incompatible API changes
 
-- **MINOR** version when you add functionality in a backward-compatible manner
+- MINOR version when you add functionality in a backward-compatible manner
 
-- **PATCH** version when you make backward-compatible bug fixes
+- PATCH version when you make backward-compatible bug fixes
 
 Claude Code can help automate the detection of which version component should be bumped based on your commit messages, pull request labels, and code changes.
 
-## Setting Up Claude Code for Version Management
+Setting Up Claude Code for Version Management
 
 The first step in automating semantic versioning with Claude Code is to create a `CLAUDE.md` file that defines your versioning rules and expectations.
 
 ```markdown
-# Project Versioning Rules
+Project Versioning Rules
 
-## Version File Location
+Version File Location
 - Version is stored in: `package.json`, `pyproject.toml`, or `version.txt`
 
-## Version Bump Rules
+Version Bump Rules
 - Commits with `BREAKING CHANGE:` in body → MAJOR bump
 - Commits with `feat:` prefix → MINOR bump
 - Commits with `fix:`, `perf:`, or `refactor:` → PATCH bump
 
-## Changelog Requirements
+Changelog Requirements
 - Group changes by: Features, Fixes, Breaking Changes, Dependencies
 - Include issue references when available
 - Use present tense for descriptions
 ```
 
-## Automated Version Detection Patterns
+Automated Version Detection Patterns
 
 Claude Code can analyze your codebase to automatically determine the appropriate version bump. Here's a pattern for version detection:
 
 ```python
-# version_detector.py
+version_detector.py
 import re
 from pathlib import Path
 
@@ -116,24 +116,24 @@ def detect_version_bump(commit_messages: list[str]) -> str:
     return "none"
 ```
 
-## Creating a Claude Code Command for Version Bumps
+Creating a Claude Code Command for Version Bumps
 
 You can create custom Claude Code commands that handle the entire version bump process:
 
 ```bash
-# .claude/commands/bump-version.sh
+.claude/commands/bump-version.sh
 #!/bin/bash
 
-# Get current version
+Get current version
 CURRENT_VERSION=$(node -p "require('./package.json').version")
 
-# Analyze commits since last tag
+Analyze commits since last tag
 COMMITS=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:"%s")
 
-# Determine bump type
+Determine bump type
 BUMP_TYPE=$(echo "$COMMITS" | grep -E "(BREAKING CHANGE|feat:|fix:)" | head -1 | sed 's/.*\(BREAKING CHANGE\).*/major/; s/.*\(feat:\).*/minor/; s/.*\(fix:\).*/patch/')
 
-# Apply version bump
+Apply version bump
 if [ "$BUMP_TYPE" = "major" ]; then
     npm version major -m "Bump version to %s"
 elif [ "$BUMP_TYPE" = "minor" ]; then
@@ -143,11 +143,11 @@ else
 fi
 ```
 
-## Integrating with Release Workflows
+Integrating with Release Workflows
 
 Here's how to integrate semantic versioning automation with your release workflow:
 
-### GitHub Actions Integration
+GitHub Actions Integration
 
 ```yaml
 name: Semantic Version Release
@@ -182,7 +182,7 @@ jobs:
           release_name: Release v${{ steps.version.outputs.new_version }}
 ```
 
-### Automated Changelog Generation
+Automated Changelog Generation
 
 ```javascript
 // scripts/generate-changelog.js
@@ -210,7 +210,7 @@ function generateChangelog(commits, version) {
 }
 ```
 
-## Best Practices for Version Automation
+Best Practices for Version Automation
 
 When implementing semantic versioning automation with Claude Code, follow these best practices:
 
@@ -224,82 +224,82 @@ When implementing semantic versioning automation with Claude Code, follow these 
 
 5. Test Automation Thoroughly: Run your version detection logic against historical commits to ensure accuracy.
 
-## Using Claude Code to Enforce Versioning Rules
+Using Claude Code to Enforce Versioning Rules
 
 Claude Code can actively enforce versioning rules during development:
 
 ```markdown
-# Development Context for Claude Code
+Development Context for Claude Code
 
-## Versioning Enforcement Rules
+Versioning Enforcement Rules
 - All PRs must follow Conventional Commits format
 - Breaking changes require MAJOR version bump + migration guide
 - New features require MINOR version bump + documentation update
 - Bug fixes require PATCH version bump
 - Version files must be updated before merging to main
 
-## Before Submitting PR
+Before Submitting PR
 1. Verify commit messages follow convention
 2. Run `npm run version:dry-run` to preview version bump
 3. Ensure changelog entries are added
 4. Update version in appropriate files
 ```
 
-## Multi-Language Version File Synchronization
+Multi-Language Version File Synchronization
 
 Projects often have version strings in multiple files: `package.json` for npm, `pyproject.toml` for Python packages, `Chart.yaml` for Helm charts, and potentially a `VERSION` file for shell scripts to consume. A single version bump must update all of them atomically.
 
 Claude Code can generate the synchronization script from your project layout:
 
 ```bash
-# Prompt Claude Code:
-# "Read the repository and identify all files that contain version strings.
-#  Generate a script that bumps them all simultaneously from the current
-#  version to a new version provided as an argument."
+Prompt Claude Code:
+"Read the repository and identify all files that contain version strings.
+ Generate a script that bumps them all simultaneously from the current
+ version to a new version provided as an argument."
 
-# Generated: scripts/sync-versions.sh
+Generated: scripts/sync-versions.sh
 #!/bin/bash
 set -euo pipefail
 
 NEW_VERSION="${1:?Usage: sync-versions.sh <new-version>}"
 
-# Validate SemVer format
+Validate SemVer format
 if ! [[ "$NEW_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
   echo "Error: version must be in X.Y.Z format" >&2
   exit 1
 fi
 
-# Update package.json
+Update package.json
 jq --arg v "$NEW_VERSION" '.version = $v' package.json > package.json.tmp
 mv package.json.tmp package.json
 
-# Update pyproject.toml
+Update pyproject.toml
 sed -i "s/^version = .*/version = \"$NEW_VERSION\"/" pyproject.toml
 
-# Update Chart.yaml
+Update Chart.yaml
 sed -i "s/^appVersion: .*/appVersion: \"$NEW_VERSION\"/" charts/myapp/Chart.yaml
 
-# Update plain VERSION file
+Update plain VERSION file
 echo "$NEW_VERSION" > VERSION
 
 echo "Version bumped to $NEW_VERSION across all files"
 git diff --stat
 ```
 
-The key advantage is that Claude Code generates this script from your actual project structure rather than a generic template — it scans for version patterns before writing the sync logic.
+The key advantage is that Claude Code generates this script from your actual project structure rather than a generic template. it scans for version patterns before writing the sync logic.
 
-## Pre-Commit Hooks for Conventional Commits Enforcement
+Pre-Commit Hooks for Conventional Commits Enforcement
 
 Automated version detection only works if commit messages consistently follow the convention. Use `commitlint` with a Git pre-commit hook to enforce format before commits land in history:
 
 ```bash
-# Install commitlint
+Install commitlint
 npm install --save-dev @commitlint/config-conventional @commitlint/cli husky
 
-# Configure commitlint
+Configure commitlint
 echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
 
-# Initialize husky and add commit-msg hook
+Initialize husky and add commit-msg hook
 npx husky init
 echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
 ```
@@ -319,50 +319,50 @@ module.exports = {
 };
 ```
 
-## Dry-Run Mode Before Publishing
+Dry-Run Mode Before Publishing
 
 Before any automated release publishes a package, run a dry-run that previews what will change without making network calls:
 
 ```bash
-# npm dry run — prints what would be published
+npm dry run. prints what would be published
 npm publish --dry-run
 
-# For Python packages using hatch or build + twine:
+For Python packages using hatch or build + twine:
 python -m build --sdist --wheel
 twine check dist/*
-# Confirm package contents before upload
+Confirm package contents before upload
 
-# Preview GitHub release notes without creating the release:
+Preview GitHub release notes without creating the release:
 gh release create v${NEW_VERSION} --draft \
   --title "Release v${NEW_VERSION}" \
   --notes "$(node scripts/generate-changelog.js)"
 ```
 
-Claude Code handles dry-run generation well — prompt it with "Add a dry-run mode that previews version changes without modifying files or making network calls" and it correctly adds `--dry-run` flags or conditional logic that skips write operations.
+Claude Code handles dry-run generation well. prompt it with "Add a dry-run mode that previews version changes without modifying files or making network calls" and it correctly adds `--dry-run` flags or conditional logic that skips write operations.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to complete this setup?**
+How long does it take to complete this setup?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Claude Code Parallel Testing Configuration - Complete](/claude-code-parallel-testing-configuration/)
 - [Writing CLAUDE MD Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
@@ -370,5 +370,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best AI Tools for Code Review Automation 2026](/best-ai-tools-for-code-review-automation-2026/)
 - [AI Tools for Detecting Duplicate GitHub Issues Using](/ai-tools-for-detecting-duplicate-github-issues-using-semantic-similarity-matching/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

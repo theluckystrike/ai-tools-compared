@@ -15,13 +15,13 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-# How to Use AI for Kafka Configuration 2026
+How to Use AI for Kafka Configuration 2026
 
-Kafka configuration is dense: dozens of broker properties, topic-level overrides, consumer group settings, and producer tuning knobs — all with production implications if misconfigured. AI tools can generate correct starting points, but you need to understand what to ask for.
+Kafka configuration is dense: dozens of broker properties, topic-level overrides, consumer group settings, and producer tuning knobs. all with production implications if misconfigured. AI tools can generate correct starting points, but you need to understand what to ask for.
 
-## Broker Configuration
+Broker Configuration
 
-**Prompt to Claude:**
+Prompt to Claude:
 ```text
 Generate a production-grade Kafka broker server.properties for a 3-broker cluster.
 Requirements:
@@ -34,31 +34,31 @@ Requirements:
 Include comments explaining each critical setting.
 ```
 
-**Claude output:**
+Claude output:
 
 ```properties
-# ========================
-# Broker Identity
-# ========================
+========================
+Broker Identity
+========================
 broker.id=1  # Unique per broker; override in each broker's config
 
-# ========================
-# Zookeeper / KRaft
-# ========================
-# For KRaft mode (Kafka 3.3+), replace with:
-# process.roles=broker,controller
-# node.id=1
-# controller.quorum.voters=1@broker1:9093,2@broker2:9093,3@broker3:9093
+========================
+Zookeeper / KRaft
+========================
+For KRaft mode (Kafka 3.3+), replace with:
+process.roles=broker,controller
+node.id=1
+controller.quorum.voters=1@broker1:9093,2@broker2:9093,3@broker3:9093
 zookeeper.connect=zookeeper1:2181,zookeeper2:2181,zookeeper3:2181/kafka
 
-# ========================
-# Network
-# ========================
+========================
+Network
+========================
 listeners=PLAINTEXT://:9092,SSL://:9093
 advertised.listeners=PLAINTEXT://broker1.internal:9092,SSL://broker1.internal:9093
 listener.security.protocol.map=PLAINTEXT:PLAINTEXT,SSL:SSL
 
-# TLS/SSL settings
+TLS/SSL settings
 ssl.keystore.location=/etc/kafka/ssl/broker.keystore.jks
 ssl.keystore.password=${env:SSL_KEYSTORE_PASSWORD}
 ssl.key.password=${env:SSL_KEY_PASSWORD}
@@ -67,38 +67,38 @@ ssl.truststore.password=${env:SSL_TRUSTSTORE_PASSWORD}
 ssl.endpoint.identification.algorithm=https
 ssl.client.auth=required
 
-# ========================
-# Log Storage
-# ========================
+========================
+Log Storage
+========================
 log.dirs=/data/kafka/logs
 num.recovery.threads.per.data.dir=4
 
-# Retention: 7 days
+Retention: 7 days
 log.retention.hours=168
 
-# Max 100GB per partition (set per-topic if needed)
+Max 100GB per partition (set per-topic if needed)
 log.retention.bytes=107374182400
 
-# Log compaction enabled by default
+Log compaction enabled by default
 log.cleanup.policy=compact,delete
 
-# Segment size: roll every 1GB or 7 days
+Segment size: roll every 1GB or 7 days
 log.segment.bytes=1073741824
 log.roll.hours=168
 
-# ========================
-# Replication
-# ========================
+========================
+Replication
+========================
 default.replication.factor=3
 min.insync.replicas=2
 
-# Unclean leader election disabled (prefer availability loss over data loss)
+Unclean leader election disabled (prefer availability loss over data loss)
 unclean.leader.election.enable=false
 
-# ========================
-# Performance
-# ========================
-# Socket buffer sizes (match OS net.core.rmem_max / wmem_max)
+========================
+Performance
+========================
+Socket buffer sizes (match OS net.core.rmem_max / wmem_max)
 socket.send.buffer.bytes=1048576
 socket.receive.buffer.bytes=1048576
 socket.request.max.bytes=104857600
@@ -107,21 +107,21 @@ num.network.threads=8
 num.io.threads=16
 queued.max.requests=500
 
-# ========================
-# JMX
-# ========================
-# Set in KAFKA_JMX_OPTS env:
-# -Dcom.sun.jmanagement.jmxremote
-# -Dcom.sun.jmx.remote.port=9999
-# -Dcom.sun.jmx.remote.authenticate=false
-# -Dcom.sun.jmx.remote.ssl=false
+========================
+JMX
+========================
+Set in KAFKA_JMX_OPTS env:
+-Dcom.sun.jmanagement.jmxremote
+-Dcom.sun.jmx.remote.port=9999
+-Dcom.sun.jmx.remote.authenticate=false
+-Dcom.sun.jmx.remote.ssl=false
 ```
 
-Claude covers KRaft mode as an alternative (correct for Kafka 3.3+), uses environment variable references for secrets instead of plaintext passwords, and explicitly disables `unclean.leader.election.enable` — a critical safety setting it notes correctly.
+Claude covers KRaft mode as an alternative (correct for Kafka 3.3+), uses environment variable references for secrets instead of plaintext passwords, and explicitly disables `unclean.leader.election.enable`. a critical safety setting it notes correctly.
 
-## Topic Configuration
+Topic Configuration
 
-**Prompt:**
+Prompt:
 ```text
 Generate Kafka AdminClient Python code to create a topic called "order-events"
 with 12 partitions, replication factor 3, 24-hour retention, compact+delete cleanup,
@@ -140,7 +140,7 @@ admin = AdminClient({"bootstrap.servers": "broker1:9093,broker2:9093,broker3:909
 
 TOPIC = "order-events"
 
-# Create topic
+Create topic
 new_topic = NewTopic(
     TOPIC,
     num_partitions=12,
@@ -163,9 +163,9 @@ for topic, future in result.items():
         print(f"Failed to create topic '{topic}': {e}")
 ```
 
-## Consumer Group Tuning
+Consumer Group Tuning
 
-**Prompt:**
+Prompt:
 ```text
 Write a Kafka consumer configuration for a high-throughput order processor.
 Requirements: manual commit, fetch 10MB batches, poll timeout 500ms,
@@ -174,38 +174,38 @@ Java properties format.
 ```
 
 ```properties
-# Consumer group
+Consumer group
 group.id=order-processor-v2
 client.id=order-processor-${hostname}
 
-# Offset management — manual commit
+Offset management. manual commit
 enable.auto.commit=false
 auto.offset.reset=earliest
 
-# Fetch tuning — large batches
+Fetch tuning. large batches
 fetch.min.bytes=1048576          # Wait for at least 1MB before returning
 fetch.max.bytes=10485760         # Max 10MB per fetch request
 max.partition.fetch.bytes=2097152 # Max 2MB per partition per fetch
 
-# Poll settings
+Poll settings
 max.poll.records=500
 max.poll.interval.ms=300000      # 5 min max between polls before rebalance
 
-# Session and heartbeat
+Session and heartbeat
 session.timeout.ms=30000
 heartbeat.interval.ms=10000      # Must be < session.timeout / 3
 
-# Partition assignment — sticky reduces rebalance overhead
+Partition assignment. sticky reduces rebalance overhead
 partition.assignment.strategy=org.apache.kafka.clients.consumer.StickyAssignor
 
-# Performance
+Performance
 receive.buffer.bytes=1048576
 request.timeout.ms=30000
 ```
 
-## Kafka Streams Topology
+Kafka Streams Topology
 
-**Prompt:**
+Prompt:
 ```text
 Write a Kafka Streams topology in Java that:
 1. Reads from "orders" topic (JSON: {orderId, userId, amount, status})
@@ -251,11 +251,11 @@ orders
 
 Claude uses `ofSizeWithNoGrace` (Kafka Streams 3.0+ API) rather than the deprecated `of()`, which is the correct modern pattern.
 
-## Producer Configuration for High Durability
+Producer Configuration for High Durability
 
 When you need guaranteed delivery with no data loss, producer settings matter as much as broker settings.
 
-**Prompt:**
+Prompt:
 ```text
 Write a Kafka producer configuration for a financial transactions system.
 Requirements: exactly-once semantics, max latency 100ms, acks=all,
@@ -264,46 +264,46 @@ Java properties format with comments.
 ```
 
 ```properties
-# Producer identity
+Producer identity
 client.id=payments-producer-${hostname}
 
-# Durability: require all in-sync replicas to acknowledge
+Durability: require all in-sync replicas to acknowledge
 acks=all
 
-# Idempotent producer — prevents duplicate messages on retry
+Idempotent producer. prevents duplicate messages on retry
 enable.idempotence=true
 
-# Exactly-once semantics (requires idempotence=true)
+Exactly-once semantics (requires idempotence=true)
 transactional.id=payments-producer-${hostname}-${pid}
 
-# Retries: retry up to 10 times with backoff
+Retries: retry up to 10 times with backoff
 retries=10
 retry.backoff.ms=100
 delivery.timeout.ms=120000       # 2 min total delivery timeout
 
-# Batching: balance latency vs throughput
+Batching: balance latency vs throughput
 linger.ms=5                      # Wait up to 5ms for batch fill
 batch.size=65536                 # 64KB batch size
 
-# Compression
+Compression
 compression.type=lz4
 
-# Buffer and request sizing
+Buffer and request sizing
 buffer.memory=33554432           # 32MB producer buffer
 max.request.size=5242880         # 5MB max single message
 
-# Timeouts
+Timeouts
 request.timeout.ms=30000
 metadata.max.age.ms=300000
 ```
 
 The key insight Claude surfaces here: `enable.idempotence=true` automatically sets `acks=all` and `max.in.flight.requests.per.connection=5` if not explicitly set. Setting `transactional.id` upgrades to exactly-once but requires wrapping sends in `beginTransaction()` / `commitTransaction()` blocks in your application code.
 
-## Schema Registry Integration
+Schema Registry Integration
 
 Modern Kafka deployments use Confluent Schema Registry to enforce message contracts. AI excels at generating the boilerplate for schema-aware producers and consumers.
 
-**Prompt:**
+Prompt:
 ```text
 Write Python code to produce Avro-encoded messages to Kafka using
 confluent-kafka with Schema Registry. Schema: {orderId: string, amount: float,
@@ -345,7 +345,7 @@ avro_deserializer = AvroDeserializer(
     lambda obj, ctx: obj,
 )
 
-# Producer
+Producer
 producer_conf = {
     "bootstrap.servers": "broker1:9093",
     "security.protocol": "SSL",
@@ -367,7 +367,7 @@ def produce_order(order_id: str, amount: float):
     )
     producer.flush()
 
-# Consumer
+Consumer
 consumer_conf = {
     "bootstrap.servers": "broker1:9093",
     "group.id": "order-processor",
@@ -391,13 +391,13 @@ while True:
     consumer.commit(message=msg)
 ```
 
-Claude correctly registers the schema automatically via `AvroSerializer` on first produce — no separate schema registration step required. It also uses the logical type `timestamp-millis` annotation on the Avro schema so downstream consumers can interpret the long as a proper timestamp.
+Claude correctly registers the schema automatically via `AvroSerializer` on first produce. no separate schema registration step required. It also uses the logical type `timestamp-millis` annotation on the Avro schema so downstream consumers can interpret the long as a proper timestamp.
 
-## Troubleshooting with AI
+Troubleshooting with AI
 
 AI is also useful for diagnosing Kafka issues from log snippets or metric descriptions.
 
-**Prompt:**
+Prompt:
 ```text
 My Kafka consumer is lagging 500k messages on partition 3 of the "orders" topic.
 Consumer group: order-processor. The consumer CPU is at 10%, network is fine.
@@ -406,30 +406,30 @@ What are the most likely causes and how do I investigate?
 
 Claude's diagnostic response:
 
-1. **Processing bottleneck downstream** — The consumer is fetching but can't process fast enough. Check if your processing code has blocking I/O calls (database writes, HTTP calls) that are serializing within the poll loop. Consider async processing or a thread pool.
+1. Processing bottleneck downstream. The consumer is fetching but can't process fast enough. Check if your processing code has blocking I/O calls (database writes, HTTP calls) that are serializing within the poll loop. Consider async processing or a thread pool.
 
-2. **`max.poll.records` too high** — If poll returns 500 records but processing takes 4 minutes, you'll exceed `max.poll.interval.ms` and trigger rebalance, which resets progress. Reduce `max.poll.records` to 50 and measure processing time per batch.
+2. `max.poll.records` too high. If poll returns 500 records but processing takes 4 minutes, you'll exceed `max.poll.interval.ms` and trigger rebalance, which resets progress. Reduce `max.poll.records` to 50 and measure processing time per batch.
 
-3. **Single-partition hotspot** — Lag only on partition 3 suggests a key skew issue. Check if one producer key maps disproportionately to partition 3 (`hash(key) % 12`). Consider custom partitioner or rekeying.
+3. Single-partition hotspot. Lag only on partition 3 suggests a key skew issue. Check if one producer key maps disproportionately to partition 3 (`hash(key) % 12`). Consider custom partitioner or rekeying.
 
-4. **Investigation commands:**
+4. Investigation commands:
 
 ```bash
-# Check consumer group lag across all partitions
+Check consumer group lag across all partitions
 kafka-consumer-groups.sh --bootstrap-server broker1:9093 \
   --group order-processor --describe
 
-# Check producer throughput per partition
+Check producer throughput per partition
 kafka-log-dirs.sh --bootstrap-server broker1:9093 \
   --topic-list orders --describe | grep "partition:3"
 
-# Monitor consumer lag over time (requires kcat)
+Monitor consumer lag over time (requires kcat)
 kcat -b broker1:9093 -C -t orders -p 3 -o end -e -q | wc -l
 ```
 
-This kind of structured diagnostic output — triage list plus investigation commands — is where AI saves significant time versus searching documentation.
+This kind of structured diagnostic output. triage list plus investigation commands. is where AI saves significant time versus searching documentation.
 
-## Related Reading
+Related Reading
 
 - [Gemini vs Claude for Writing Apache Kafka Consumer/Producer Config](/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
 - [AI-Powered CI/CD Pipeline Optimization](/ai-powered-cicd-pipeline-optimization-2026/)
@@ -438,7 +438,7 @@ This kind of structured diagnostic output — triage list plus investigation com
 - [AI-Powered API Gateway Configuration Tools 2026](/ai-powered-api-gateway-configuration-tools-2026/)
 ---
 
-## Related Articles
+Related Articles
 
 - [Gemini vs Claude for Writing Apache Kafka Consumer Producer](/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
 - [Best AI Tools for Writing Nginx Configurations](/ai-tools-for-nginx-configuration)
@@ -446,6 +446,6 @@ This kind of structured diagnostic output — triage list plus investigation com
 - [How to Use AI to Generate Serverless Framework Configuration](/how-to-use-ai-to-generate-serverless-framework-configuration/)
 - [AI Tools for Generating Nginx Configuration Files 2026](/ai-tools-for-generating-nginx-configuration-files-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

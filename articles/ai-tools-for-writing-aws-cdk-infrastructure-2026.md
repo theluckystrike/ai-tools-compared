@@ -19,17 +19,17 @@ AWS CDK (Cloud Development Kit) replaces CloudFormation YAML templates with obje
 
 AI assistants vary dramatically in CDK capability. Some understand construct libraries and proper property initialization; others generate code that synthesizes but fails on deployment. This guide evaluates tools on real scenarios: VPC + subnet setup, RDS instance provisioning, Lambda function deployment with IAM, and multi-stack applications.
 
-## Claude Opus 4.6 (Best CDK Depth)
+Claude Opus 4.6 (Best CDK Depth)
 
-**Pricing:** $3/MTok input, $15/MTok output via API; Claude.ai subscriptions $20/month.
+Pricing: $3/MTok input, $15/MTok output via API; Claude.ai subscriptions $20/month.
 
-**Strengths:**
+Strengths:
 - Understands CDK versioning and breaking changes. Generates TypeScript using current CDK v2 patterns (not deprecated v1).
 - Correctly handles L3 constructs (high-level abstractions) and L2 constructs (AWS services). Knows when to use ApplicationLoadBalancedFargateService vs building from EC2 constructs.
 - Produces proper IAM policies with least-privilege scope. Doesn't over-grant permissions; accurately uses `actions: ['s3:GetObject']` instead of `'s3:*'`.
 - Handles cross-stack exports and references correctly. Generates proper CloudFormation exports, import mechanisms, and Fn::ImportValue mappings.
 
-**Example Output (VPC + RDS):**
+Example Output (VPC + RDS):
 ```typescript
 import * as cdk from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
@@ -77,19 +77,19 @@ export class DatabaseStack extends cdk.Stack {
 }
 ```
 
-**Weaknesses:**
+Weaknesses:
 - Occasionally over-engineers IAM by suggesting custom policies when AWS managed policies suffice.
 - Sometimes generates code that synths correctly but misses cost optimizations (e.g., suggests t3 when t4g ARM-based would be cheaper).
 - Rarely suggests CDK assertions or testing patterns; test coverage is user-provided.
 
-**Best For:** Production infrastructure, enterprise stacks, multi-account deployments, security-critical configurations.
+Best For: Production infrastructure, enterprise stacks, multi-account deployments, security-critical configurations.
 
-**Cost/Article Ratio:** ~$0.40–$0.60 per complex stack article (VPC + RDS + Lambda + monitoring). Higher upfront cost, lower revision cycles.
+Cost/Article Ratio: ~$0.40–$0.60 per complex stack article (VPC + RDS + Lambda + monitoring). Higher upfront cost, lower revision cycles.
 ---
 
-## ChatGPT 4o (Reliable Basics; Gaps on Advanced Patterns)
+ChatGPT 4o (Reliable Basics; Gaps on Advanced Patterns)
 
-## Table of Contents
+Table of Contents
 
 - [ChatGPT 4o (Reliable Basics; Gaps on Advanced Patterns)](#chatgpt-4o-reliable-basics-gaps-on-advanced-patterns)
 - [GitHub Copilot (Context-Dependent; IDE-Bound)](#github-copilot-context-dependent-ide-bound)
@@ -103,14 +103,14 @@ export class DatabaseStack extends cdk.Stack {
 - [Final Recommendations](#final-recommendations)
 - [Cost Analysis: 12-Month Content Strategy](#cost-analysis-12-month-content-strategy)
 
-**Pricing:** $20/month Pro, or API $0.003/$0.006 per 1K tokens.
+Pricing: $20/month Pro, or API $0.003/$0.006 per 1K tokens.
 
-**Strengths:**
+Strengths:
 - Solid on basic constructs: EC2, S3, DynamoDB, SQS. Generates working boilerplate quickly.
 - Clear explanations of construct parameters and naming conventions.
 - Handles simple multi-stack applications without confusion.
 
-**Example Output (S3 + CloudFront):**
+Example Output (S3 + CloudFront):
 ```typescript
 import * as cdk from 'aws-cdk-lib';
 import * as s3 from 'aws-cdk-lib/aws-s3';
@@ -140,28 +140,28 @@ export class StaticSiteStack extends cdk.Stack {
 }
 ```
 
-**Weaknesses:**
+Weaknesses:
 - Frequently generates default configurations without noting security implications. Example: suggests S3 bucket without versioning or MFA delete for non-production stacks (unclear boundaries).
 - Weak on cross-stack references and stack composition. Often suggests environment variables instead of proper CloudFormation exports.
 - Misses Lambda execution role setup. Generates Lambda without explicitly creating IAM role or explaining role attachment.
 - Doesn't address CDK drift or state management for multi-developer teams.
 
-**Best For:** Tutorial content, getting-started guides, educational articles targeting beginners.
+Best For: Tutorial content, getting-started guides, educational articles targeting beginners.
 
-**Cost/Article Ratio:** ~$0.15–$0.25 per article. Fast output, but requires more editorial review on security and advanced topics.
+Cost/Article Ratio: ~$0.15–$0.25 per article. Fast output, but requires more editorial review on security and advanced topics.
 
 ---
 
-## GitHub Copilot (Context-Dependent; IDE-Bound)
+GitHub Copilot (Context-Dependent; IDE-Bound)
 
-**Pricing:** $10/month, $21/user/month enterprise.
+Pricing: $10/month, $21/user/month enterprise.
 
-**Strengths:**
+Strengths:
 - Excellent for rapid prototyping within VS Code. Understands recent CDK patterns if you've typed similar code nearby.
 - Reduces typing for repetitive constructs: SecurityGroup, Port, SubnetSelection.
 - Works offline; no API latency.
 
-**Example Trigger:**
+Example Trigger:
 ```typescript
 // Copilot autocompletes from comment
 // Create a Lambda function with auto IAM role
@@ -173,75 +173,75 @@ const lambdaFunction = new lambda.Function(this, 'MyFunction', {
 });
 ```
 
-**Weaknesses:**
+Weaknesses:
 - Context window is limited to current file + nearby definitions. Doesn't understand full stack architecture across multiple files.
 - Frequently generates deprecated L1 constructs (CfnSecurityGroup) instead of higher-level L2 abstractions.
 - Misses version-specific changes. Suggests v1 CDK patterns for v2 projects.
 - No understanding of CDK synth output or CloudFormation templates. Generates code that may not synthesize correctly.
 
-**Best For:** Snippets and boilerplate within existing projects; not recommended for generating new stacks from scratch.
+Best For: Snippets and boilerplate within existing projects; not recommended for generating new stacks from scratch.
 
-**Cost/Article Ratio:** Not recommended for CDK article generation. Better suited to supporting developers writing their own code.
+Cost/Article Ratio: Not recommended for CDK article generation. Better suited to supporting developers writing their own code.
 
 ---
 
-## Cursor (Claude Backbone; Strong but Limited Scope)
+Cursor (Claude Backbone; Strong but Limited Scope)
 
-**Pricing:** $20/month Pro, free tier available.
+Pricing: $20/month Pro, free tier available.
 
-**Strengths:**
+Strengths:
 - Uses Claude Opus 4.6 backbone, so inherits strong CDK knowledge.
 - Tab autocomplete integrates Claude reasoning without full conversation overhead.
 - Codebase-aware: understands existing stack definitions when analyzing your project.
 
-**Weaknesses:**
+Weaknesses:
 - Limited by editor context window. Struggles with large multi-stack projects (100+ files).
 - Autocomplete mode is less thoughtful than full chat. Misses nuances in advanced patterns.
 - Pricing: $20/month for individual use; prohibitive for large teams.
 
-**Best For:** Individual developers writing CDK; not cost-effective for content generation at scale.
+Best For: Individual developers writing CDK; not cost-effective for content generation at scale.
 
-**Cost/Article Ratio:** ~$0.30–$0.50 per article. Slower than Claude API for batch generation.
+Cost/Article Ratio: ~$0.30–$0.50 per article. Slower than Claude API for batch generation.
 
 ---
 
-## Codeium (Fast Completions; Weak CDK Knowledge)
+Codeium (Fast Completions; Weak CDK Knowledge)
 
-**Pricing:** Free, $12/month Pro.
+Pricing: Free, $12/month Pro.
 
-**Strengths:**
+Strengths:
 - Lightning-fast autocomplete (<100ms). Useful for flow-state coding.
 - Handles syntax highlighting and basic structure completion.
 
-**Weaknesses:**
+Weaknesses:
 - Weak understanding of CDK construct libraries. Suggests invalid properties or deprecated patterns.
 - Doesn't understand L2 vs L3 construct differences.
 - Frequently generates code with missing imports or incorrect namespacing.
 - No reasoning about IAM roles, security groups, or deployment-critical properties.
 
-**Best For:** Syntax completion only; not for generating functional CDK code.
+Best For: Syntax completion only; not for generating functional CDK code.
 
-**Cost/Article Ratio:** Not recommended. Saves minimal time; increases error correction overhead.
+Cost/Article Ratio: Not recommended. Saves minimal time; increases error correction overhead.
 
 ---
 
-## TabbyML (Open Source; Minimal CDK Support)
+TabbyML (Open Source; Minimal CDK Support)
 
-**Pricing:** Free (self-hosted), enterprise licensing.
+Pricing: Free (self-hosted), enterprise licensing.
 
-**Strengths:**
+Strengths:
 - Privacy-friendly. No external API calls; proprietary infrastructure stays internal.
 
-**Weaknesses:**
+Weaknesses:
 - Training data on CDK is minimal. Generates syntactically valid but semantically incorrect code.
 - Suggests outdated patterns; doesn't track AWS service updates or CDK versioning.
 - No understanding of security best practices (e.g., suggests public S3 buckets, missing IAM policies).
 
-**Best For:** Documentation scaffolding only; unsuitable for production CDK generation.
+Best For: Documentation scaffolding only; unsuitable for production CDK generation.
 
 ---
 
-## Comparison Table
+Comparison Table
 
 | Tool | TypeScript | Constructs | IAM Policies | Cross-Stack | Best Practices | Cost/Article | Recommended |
 |------|-----------|-----------|-------------|-------------|---------------|------------|-------------|
@@ -254,14 +254,14 @@ const lambdaFunction = new lambda.Function(this, 'MyFunction', {
 
 ---
 
-## Practical Workflow: Multi-Stack VPC + RDS + Lambda Application
+Practical Workflow: Multi-Stack VPC + RDS + Lambda Application
 
-**Scenario:** Build a production-ready application with networking, database, and compute layers.
+Scenario: Build a production-ready application with networking, database, and compute layers.
 
-**Prompt 1 (VPC Stack):**
+Prompt 1 (VPC Stack):
 "Write a CDK TypeScript stack that creates a VPC with public and private subnets across 3 AZs. Use VPC CIDR 10.0.0.0/16. Public subnets use /24, private subnets use /24. Include NAT Gateway for private subnet egress."
 
-**Claude Output (30 seconds):**
+Claude Output (30 seconds):
 ```typescript
 import * as cdk from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
@@ -298,10 +298,10 @@ export class NetworkStack extends cdk.Stack {
 }
 ```
 
-**Prompt 2 (Database Stack):**
+Prompt 2 (Database Stack):
 "Create a CDK stack that provisions a PostgreSQL RDS instance in the VPC from NetworkStack. Use t3.small, 20GB storage, encrypted, deletion protection enabled. Accept VPC as constructor parameter."
 
-**Claude Output (20 seconds):**
+Claude Output (20 seconds):
 ```typescript
 import * as cdk from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
@@ -338,10 +338,10 @@ export class DatabaseStack extends cdk.Stack {
 }
 ```
 
-**Prompt 3 (Lambda Stack):**
+Prompt 3 (Lambda Stack):
 "Create a Lambda function that connects to the RDS database. Auto-generate IAM role with least-privilege permissions. Handler is index.handler in src/lambda directory. Add secrets manager permissions to retrieve RDS password."
 
-**Claude Output (25 seconds):**
+Claude Output (25 seconds):
 ```typescript
 import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
@@ -391,7 +391,7 @@ export class ComputeStack extends cdk.Stack {
 }
 ```
 
-**App Integration (bin/main.ts):**
+App Integration (bin/main.ts):
 ```typescript
 import * as cdk from 'aws-cdk-lib';
 import { NetworkStack } from '../lib/network-stack';
@@ -417,23 +417,23 @@ const computeStack = new ComputeStack(
 );
 ```
 
-**Deploy:**
+Deploy:
 ```bash
 cdk synth
 cdk deploy NetworkStack DatabaseStack ComputeStack
 ```
 
-**Total Time:** ~2 minutes (3 prompts + deployment). Cost: ~$0.50 in API calls.
+Total Time: ~2 minutes (3 prompts + deployment). Cost: ~$0.50 in API calls.
 
 ---
 
-## Security Best Practices: Least-Privilege IAM
+Security Best Practices: Least-Privilege IAM
 
 Claude Opus 4.6 excels at generating minimal IAM policies. Example:
 
-**Prompt:** "Generate an IAM policy for a Lambda that reads from a specific S3 bucket (arn:aws:s3:::my-bucket/*) and writes logs to CloudWatch."
+Prompt: "Generate an IAM policy for a Lambda that reads from a specific S3 bucket (arn:aws:s3:::my-bucket/*) and writes logs to CloudWatch."
 
-**Output:**
+Output:
 ```typescript
 const policy = new iam.PolicyStatement({
   effect: iam.Effect.ALLOW,
@@ -459,59 +459,59 @@ actions: ['s3:*'],  // OVERLY PERMISSIVE
 
 ---
 
-## When NOT to Use AI for CDK
+When NOT to Use AI for CDK
 
-1. **Security-critical stacks:** Banking, compliance (PCI-DSS, HIPAA). Code review CDK always.
-2. **Exotic constructs:** Hybrid CDK + CloudFormation mixing. AI struggles with template mixing.
-3. **Custom L1 constructs:** Writing your own constructs requires deep CDK SDK knowledge beyond AI scope.
-
----
-
-## Final Recommendations
-
-- **Production stacks:** Claude Opus 4.6. Cost is negligible ($0.50 per stack); quality and security are unmatched.
-- **Educational content:** ChatGPT 4o for clarity; Claude for depth.
-- **Developer experience:** Copilot or Cursor for IDE integration; not for content generation.
-- **Enterprise:** Claude API with code review pipeline. Generates 95%+ of stack correctly on first attempt.
+1. Security-critical stacks: Banking, compliance (PCI-DSS, HIPAA). Code review CDK always.
+2. Exotic constructs: Hybrid CDK + CloudFormation mixing. AI struggles with template mixing.
+3. Custom L1 constructs: Writing your own constructs requires deep CDK SDK knowledge beyond AI scope.
 
 ---
 
-## Cost Analysis: 12-Month Content Strategy
+Final Recommendations
+
+- Production stacks: Claude Opus 4.6. Cost is negligible ($0.50 per stack); quality and security are unmatched.
+- Educational content: ChatGPT 4o for clarity; Claude for depth.
+- Developer experience: Copilot or Cursor for IDE integration; not for content generation.
+- Enterprise: Claude API with code review pipeline. Generates 95%+ of stack correctly on first attempt.
+
+---
+
+Cost Analysis: 12-Month Content Strategy
 
 Generate 30 CDK stack articles (5 simple, 15 intermediate, 10 advanced):
 - Claude API cost: ~$18 (30 stacks × $0.60 average)
 - ChatGPT 4o equivalent: ~$15 (cheaper but lower quality, more revisions)
 - Time saved vs. manual CDK learning: ~150 hours (worth $7,500–$15,000 at contractor rates)
 
-**Conclusion:** Claude Opus 4.6 is the clear winner for CDK infrastructure content. Reliable, production-safe, and cost-efficient. Use ChatGPT 4o for secondary sources or educational framing. Avoid Copilot and Codeium for stack generation.
+Conclusion: Claude Opus 4.6 is the clear winner for CDK infrastructure content. Reliable, production-safe, and cost-efficient. Use ChatGPT 4o for secondary sources or educational framing. Avoid Copilot and Codeium for stack generation.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does AWS offer a free tier?**
+Does AWS offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check AWS's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Writing AWS CDK Infrastructure Code](/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
 - [Claude vs ChatGPT for Creating AWS CDK Infrastructure](/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
 - [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
 - [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
 - [Best AI Assistant for Preparing for AWS Solutions Architect](/best-ai-assistant-for-preparing-for-aws-solutions-architect/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

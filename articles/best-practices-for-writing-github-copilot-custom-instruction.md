@@ -43,26 +43,26 @@ tags: [ai-tools-compared, best-of]
 
 GitHub Copilot Custom Instructions transform how developers interact with AI-assisted coding. Rather than accepting generic suggestions, you can configure Copilot to understand your project's conventions, coding preferences, and team standards. This guide covers practical strategies for writing custom instructions that genuinely improve your development workflow.
 
-## Key Takeaways
+Key Takeaways
 
-- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
-- **Include details about your**: architecture and commonly used patterns.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Rather than accepting generic**: suggestions, you can configure Copilot to understand your project's conventions, coding preferences, and team standards.
-- **Group related rules together**: and use consistent formatting.
-- **This includes indentation**: naming patterns, and language-specific preferences.
+- Can I use these: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
+- Include details about your: architecture and commonly used patterns.
+- Start with free options: to find what works for your workflow, then upgrade when you hit limitations.
+- Rather than accepting generic: suggestions, you can configure Copilot to understand your project's conventions, coding preferences, and team standards.
+- Group related rules together: and use consistent formatting.
+- This includes indentation: naming patterns, and language-specific preferences.
 
-## Understanding Copilot Custom Instructions
+Understanding Copilot Custom Instructions
 
 GitHub Copilot reads custom instructions from your VSCode settings file (`settings.json`). These instructions act as persistent context that Copilot considers when generating code suggestions. Unlike inline comments that apply to a single session, custom instructions remain active across all your coding sessions within that workspace.
 
 To access custom instructions, open VSCode settings and navigate to GitHub Copilot > Chat, or directly edit your `.vscode/settings.json` file. The key setting is `github.copilot.chat.instructions`, where you define your custom guidelines.
 
-## Structuring Your Custom Instructions
+Structuring Your Custom Instructions
 
 Effective custom instructions follow a clear structure. Group related rules together and use consistent formatting. A well-organized instruction file helps Copilot understand and apply your guidelines accurately.
 
-### Define Your Code Style Preferences
+Define Your Code Style Preferences
 
 Start by specifying your team's coding conventions. This includes indentation, naming patterns, and language-specific preferences.
 
@@ -81,7 +81,7 @@ Start by specifying your team's coding conventions. This includes indentation, n
 
 These style guidelines ensure Copilot generates code that matches your existing codebase. When working on a JavaScript project with specific conventions, stating these preferences eliminates the need to manually correct generated code.
 
-### Specify Documentation Requirements
+Specify Documentation Requirements
 
 Documentation standards vary across teams and projects. Your custom instructions should clearly state what Copilot should include when generating code.
 
@@ -100,7 +100,7 @@ Documentation standards vary across teams and projects. Your custom instructions
 
 By defining documentation requirements upfront, you receive fully documented code that meets team standards without additional prompting.
 
-### Set Testing Expectations
+Set Testing Expectations
 
 Testing requirements often get overlooked in custom instructions. Including testing guidelines ensures Copilot generates testable code and suggests appropriate tests.
 
@@ -117,7 +117,7 @@ Testing requirements often get overlooked in custom instructions. Including test
 }
 ```
 
-## Language-Specific Configuration
+Language-Specific Configuration
 
 Different programming languages require different approaches. Creating language-specific instructions helps Copilot generate more accurate code.
 
@@ -141,7 +141,7 @@ Different programming languages require different approaches. Creating language-
 }
 ```
 
-## Project-Specific Context
+Project-Specific Context
 
 Custom instructions become powerful when they reflect your specific project structure and patterns. Include details about your architecture and commonly used patterns.
 
@@ -159,11 +159,11 @@ Custom instructions become powerful when they reflect your specific project stru
 }
 ```
 
-## Practical Examples
+Practical Examples
 
 Let us examine how these instructions work in practice. Consider a scenario where you need an utility function. Without custom instructions, Copilot might generate something basic. With properly configured instructions, it produces production-ready code.
 
-**Before (generic output):**
+Before (generic output):
 
 ```typescript
 function getUser(id) {
@@ -171,10 +171,10 @@ function getUser(id) {
 }
 ```
 
-**After (with custom instructions applied):**
+After (with custom instructions applied):
 
 ```typescript
-/**
+/
  * Fetches a user by their unique identifier.
  * @param id - The user's unique identifier
  * @returns A promise resolving to the user object
@@ -196,40 +196,40 @@ async function getUserById(id: string): Promise<User> {
 
 The difference stems from clear documentation requirements and architecture guidelines in the custom instructions.
 
-## Iteration and Refinement
+Iteration and Refinement
 
 Writing effective custom instructions requires iteration. Start with broad guidelines and refine based on Copilot's responses. Track which suggestions work well and adjust accordingly.
 
 Maintain a separate reference document for your instructions. This makes it easier to share configurations across projects or team members. Update these instructions when team standards evolve.
 
-## Common Mistakes to Avoid
+Common Mistakes to Avoid
 
 Several pitfalls reduce the effectiveness of custom instructions. Avoid writing overly long instructions that become difficult to maintain. Remove conflicting or redundant rules that confuse Copilot's interpretation.
 
 Do not include instructions that conflict with your project's linter or formatter rules. Copilot should complement your existing tools, not contradict them. Ensure your instructions align with your CI/CD pipeline checks.
 
-## Sharing Configuration Across Teams
+Sharing Configuration Across Teams
 
 Team environments benefit from shared custom instruction files. Store your configuration in a repository-accessible location and reference it in each developer's settings. This ensures consistency across the entire team.
 
 Use version control for your instruction files. Track changes and review modifications just like code. This practice maintains historical context and helps knowledge transfer.
 
-## Automating Instruction Distribution
+Automating Instruction Distribution
 
 Share custom instructions across your team with a configuration management approach:
 
 ```bash
 #!/bin/bash
-# distribute-copilot-instructions.sh
+distribute-copilot-instructions.sh
 
 INSTRUCTIONS_REPO="https://github.com/yourorg/copilot-instructions"
 VSCODE_SETTINGS="$HOME/.config/Code/User/settings.json"
 
-# Clone latest instructions
+Clone latest instructions
 git clone $INSTRUCTIONS_REPO /tmp/copilot-instructions
 cd /tmp/copilot-instructions
 
-# Build settings JSON
+Build settings JSON
 jq -n \
   --arg instructions "$(cat instructions.md)" \
   '{
@@ -239,7 +239,7 @@ jq -n \
     ]
   }' > copilot-settings.json
 
-# Merge with existing settings (preserve other configs)
+Merge with existing settings (preserve other configs)
 jq -s '.[0] * .[1]' "$VSCODE_SETTINGS" copilot-settings.json > temp-settings.json
 mv temp-settings.json "$VSCODE_SETTINGS"
 
@@ -248,7 +248,7 @@ echo "Copilot instructions updated"
 
 Run this script on team machines to synchronize instructions automatically.
 
-## Testing Instructions Effectively
+Testing Instructions Effectively
 
 Before deploying instructions, validate them against realistic coding scenarios:
 
@@ -306,12 +306,12 @@ function validateCopilotOutput(output, expectations) {
 
 Run this test suite after modifying instructions to catch regressions.
 
-## Instruction Versioning Strategy
+Instruction Versioning Strategy
 
 Maintain instruction history for rollback and audit purposes:
 
 ```yaml
-# .vscode/instructions/version-manifest.yml
+.vscode/instructions/version-manifest.yml
 instructions:
   - version: "2.3"
     date: "2026-03-21"
@@ -331,7 +331,7 @@ instructions:
       - "Specified test naming conventions"
     breaking_changes: false
 
-# Deployment checklist
+Deployment checklist
 deployment:
   - notify_team_in_slack
   - wait_24_hours_for_feedback
@@ -341,7 +341,7 @@ deployment:
 
 This structure allows reverting instructions if issues arise.
 
-## Real-World Instruction Performance
+Real-World Instruction Performance
 
 Track actual usage metrics to validate instruction effectiveness:
 
@@ -376,7 +376,7 @@ Track actual usage metrics to validate instruction effectiveness:
 
 Measure these metrics monthly to justify instruction investment.
 
-## Advanced: Conditional Instructions Based on File Type
+Advanced: Conditional Instructions Based on File Type
 
 Create instructions that activate differently based on context:
 
@@ -406,29 +406,29 @@ Create instructions that activate differently based on context:
 
 Copilot detects file type from context and applies relevant rules. This reduces noise while keeping all guidelines in one place.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Are free AI tools good enough for practices for writing github copilot custom instruction?**
+Are free AI tools good enough for practices for writing github copilot custom instruction?
 
 Free tiers work for basic tasks and evaluation, but paid plans typically offer higher rate limits, better models, and features needed for professional work. Start with free options to find what works for your workflow, then upgrade when you hit limitations.
 
-**How do I evaluate which tool fits my workflow?**
+How do I evaluate which tool fits my workflow?
 
 Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
-**Do these tools work offline?**
+Do these tools work offline?
 
 Most AI-powered tools require an internet connection since they run models on remote servers. A few offer local model options with reduced capability. If offline access matters to you, check each tool's documentation for local or self-hosted options.
 
-**Can I use these tools with a distributed team across time zones?**
+Can I use these tools with a distributed team across time zones?
 
 Most modern tools support asynchronous workflows that work well across time zones. Look for features like async messaging, recorded updates, and timezone-aware scheduling. The best choice depends on your team's specific communication patterns and size.
 
-**Should I switch tools if something better comes out?**
+Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
-## Related Articles
+Related Articles
 
 - [How to Build a Custom GitHub Copilot Extension](/how-to-build-custom-copilot-extension/)
 - [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
@@ -436,5 +436,5 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Completely Free Alternatives to GitHub Copilot That Actually](/completely-free-alternatives-to-github-copilot-that-actually/)
 - [Continue Dev vs GitHub Copilot: Open Source Comparison](/continue-dev-vs-github-copilot-open-source-comparison/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

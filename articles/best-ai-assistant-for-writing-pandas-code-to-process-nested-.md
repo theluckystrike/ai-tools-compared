@@ -26,7 +26,7 @@ intent-checked: true
 
 AI assistants can generate strong pandas code for handling paginated APIs with nested JSON by using pd.json_normalize() effectively and implementing proper pagination loops with error handling. Claude excels at producing idiomatic code with type hints and exponential backoff retry logic. GitHub Copilot provides inline suggestions for synchronous requests, while Cursor offers iterative refinement. ChatGPT 4o breaks complex problems into manageable steps with detailed explanations of pandas functions.
 
-## Table of Contents
+Table of Contents
 
 - [Why This Specific Task Is Challenging](#why-this-specific-task-is-challenging)
 - [Key Features to Look for in an AI Assistant](#key-features-to-look-for-in-an-ai-assistant)
@@ -34,7 +34,7 @@ AI assistants can generate strong pandas code for handling paginated APIs with n
 - [Practical Code Example](#practical-code-example)
 - [Optimizing Your Prompts for Better Results](#optimizing-your-prompts-for-better-results)
 
-## Why This Specific Task Is Challenging
+Why This Specific Task Is Challenging
 
 Handling nested JSON from paginated APIs involves several complexities that make AI code generation particularly useful:
 
@@ -48,7 +48,7 @@ Handling nested JSON from paginated APIs involves several complexities that make
 
 5. Data type conversion: Nested structures need proper flattening while preserving data types
 
-## Key Features to Look for in an AI Assistant
+Key Features to Look for in an AI Assistant
 
 When evaluating AI tools for this specific use case, prioritize these capabilities:
 
@@ -62,9 +62,9 @@ When evaluating AI tools for this specific use case, prioritize these capabiliti
 
 - Error handling best practices: Should include retry logic, timeout handling, and logging
 
-## Comparing Top AI Assistants
+Comparing Top AI Assistants
 
-### Claude (Anthropic)
+Claude (Anthropic)
 
 Claude excels at understanding complex nested structures and generating idiomatic pandas code. When prompted with a sample API response, Claude typically produces code that:
 
@@ -86,7 +86,7 @@ Use cursor-based pagination with 'next_cursor' field.
 
 Claude's responses typically include proper type annotations and handle edge cases like empty responses gracefully.
 
-### GitHub Copilot
+GitHub Copilot
 
 Copilot provides strong autocomplete support for pagination patterns. Its strength lies in:
 
@@ -98,11 +98,11 @@ Copilot provides strong autocomplete support for pagination patterns. Its streng
 
 However, Copilot sometimes struggles with complex nested structures, requiring more explicit prompting. For deeply nested JSON, you may need to break down the request into smaller steps.
 
-### Cursor
+Cursor
 
 Cursor offers a good balance between chat-based interaction and inline editing:
 
-- **Composer mode** allows multi-file generation
+- Composer mode allows multi-file generation
 
 - Context awareness helps maintain consistency across files
 
@@ -110,7 +110,7 @@ Cursor offers a good balance between chat-based interaction and inline editing:
 
 Cursor works well when you need to iterate on pagination logic, as you can ask follow-up questions to refine the implementation.
 
-### OpenAI ChatGPT
+OpenAI ChatGPT
 
 ChatGPT provides detailed code explanations and is particularly good at:
 
@@ -122,7 +122,7 @@ ChatGPT provides detailed code explanations and is particularly good at:
 
 For nested JSON processing, ChatGPT 4o handles the complexity well and can generate solutions that include both the fetching logic and the data transformation pipeline.
 
-## Practical Code Example
+Practical Code Example
 
 Here is a strong implementation pattern that top AI assistants generate for handling paginated APIs with nested JSON:
 
@@ -212,7 +212,7 @@ def flatten_nested_json(records: List[Dict], sep: str = '_') -> pd.DataFrame:
     df = pd.json_normalize(records, sep=sep)
     return df
 
-# Example usage
+Example usage
 if __name__ == "__main__":
     API_URL = "https://api.example.com/users"
     HEADERS = {"Authorization": "Bearer YOUR_TOKEN"}
@@ -231,7 +231,7 @@ if __name__ == "__main__":
 
 This pattern demonstrates the key elements that AI assistants should generate: proper typing, error handling, rate limiting, and efficient nested JSON flattening.
 
-## Optimizing Your Prompts for Better Results
+Optimizing Your Prompts for Better Results
 
 To get the best results from AI assistants for this specific task, structure your prompts with:
 
@@ -263,29 +263,29 @@ Generate pandas code to fetch all users across all pages and flatten the nested
 address and orders fields into separate columns. Use cursor-based pagination.
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
 - [Best AI for Generating pandas Code to Merge Data from Multip](/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
@@ -293,6 +293,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best AI Assistant for Designers Writing User Journey Maps](/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
 - [Best AI Assistant for Product Managers Writing Sprint](/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```

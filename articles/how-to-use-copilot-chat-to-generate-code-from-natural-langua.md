@@ -23,7 +23,7 @@ GitHub Copilot Chat provides a powerful interface for generating code through na
 
 This guide covers practical techniques for using Copilot Chat effectively to generate code from natural language descriptions.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -33,7 +33,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Access Copilot Chat
+Step 1: Access Copilot Chat
 
 
 Copilot Chat is available in VS Code, Visual Studio, and JetBrains IDEs through the GitHub Copilot extension. In VS Code, you access it via the chat icon in the sidebar or by pressing `Cmd+I` on Mac or `Ctrl+I` on Windows. The chat interface provides a conversation where you can explain what you want to build, ask questions about code, or request specific implementations.
@@ -42,13 +42,13 @@ Copilot Chat is available in VS Code, Visual Studio, and JetBrains IDEs through 
 Before generating code, ensure you have the latest version of the Copilot extension installed and that you are signed in with an account that has access to Copilot Chat features.
 
 
-### Step 2: Basic Code Generation
+Step 2: Basic Code Generation
 
 
 The simplest way to generate code is by describing what you want in natural language. Your description should include relevant context such as the programming language, the desired functionality, and any specific requirements or constraints.
 
 
-### Example: Generating a Function
+Generating a Function
 
 
 When you need a specific function, describe it clearly with input parameters, return type, and what the function should do:
@@ -75,13 +75,13 @@ function factorial(n: number): number {
 This response gives you a working implementation you can copy directly into your codebase.
 
 
-### Step 3: Providing Context for Better Results
+Step 3: Providing Context for Better Results
 
 
 The quality of generated code improves significantly when you provide adequate context. Instead of a minimal prompt, include information about your existing code structure, coding conventions, and the specific requirements of your implementation.
 
 
-### Example: Contextual Prompt
+Contextual Prompt
 
 
 A simple prompt like "create a user service" produces generic code. A more effective prompt includes specifics:
@@ -152,13 +152,13 @@ export class UserService {
 ```
 
 
-### Step 4: Generate Code for Different Scenarios
+Step 4: Generate Code for Different Scenarios
 
 
 Copilot Chat handles various coding scenarios effectively when you frame your requests appropriately.
 
 
-### Database Queries
+Database Queries
 
 
 For database operations, specify the ORM or query builder you are using:
@@ -170,7 +170,7 @@ grouped by customer, showing the total amount spent per customer, ordered from h
 ```
 
 
-### API Endpoints
+API Endpoints
 
 
 When you need API endpoints, describe the route, method, request body, and response:
@@ -183,7 +183,7 @@ On success, return the created product with status 201. On validation error, ret
 ```
 
 
-### Test Files
+Test Files
 
 
 Generate tests by specifying the testing framework and what you are testing:
@@ -195,13 +195,13 @@ Include tests for valid cards, invalid cards, and edge cases like empty strings.
 ```
 
 
-### Step 5: Refining Generated Code
+Step 5: Refining Generated Code
 
 
 After receiving initial code, you can refine it through follow-up messages. This iterative approach helps you shape the output to match your exact needs.
 
 
-### Iterative Improvements
+Iterative Improvements
 
 
 Start with a basic request and then add requirements:
@@ -219,7 +219,7 @@ Start with a basic request and then add requirements:
 This approach produces more focused code than attempting to specify everything in a single prompt.
 
 
-### Step 6: Work with File Context
+Step 6: Work with File Context
 
 
 Copilot Chat can read files in your workspace, allowing you to generate code that integrates with existing code. Reference files by name or use the @mention feature:
@@ -234,7 +234,7 @@ and handles concurrent update conflicts
 This makes Copilot aware of your existing code structure and generates code that fits naturally.
 
 
-## Best Practices for Effective Prompts
+Best Practices for Effective Prompts
 
 
 Structure your prompts to include what you need clearly:
@@ -254,7 +254,7 @@ Structure your prompts to include what you need clearly:
 Avoid ambiguous prompts. Instead of "make a function that processes data," specify exactly what processing means in your context.
 
 
-### Step 7: Common Use Cases
+Step 7: Common Use Cases
 
 
 Copilot Chat excels at generating boilerplate code, handling repetitive patterns, and implementing well-defined algorithms. Common effective use cases include:
@@ -273,7 +273,7 @@ Copilot Chat excels at generating boilerplate code, handling repetitive patterns
 - Writing test cases and mock data
 
 
-### Step 8: Limitations and Workarounds
+Step 8: Limitations and Workarounds
 
 
 Copilot Chat works best with well-defined tasks. Complex requirements benefit from breaking them into smaller, sequential requests. For intricate logic, provide examples or reference implementations in your prompt. Always review generated code before integrating it into production systems.
@@ -285,44 +285,44 @@ Generated code may occasionally use outdated patterns or deprecated APIs. Check 
 
 {% raw %}
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use copilot chat to generate code from natural?**
+How long does it take to use copilot chat to generate code from natural?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Copilot Chat Not Responding in GitHub Fix](/copilot-chat-not-responding-in-github-fix/)
 - [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
@@ -330,5 +330,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Transfer Copilot Inline Chat Shortcuts](/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
 - [How to Use AI Chat History Effectively for Iterating on Code](/how-to-use-ai-chat-history-effectively-for-iterating-on-code/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

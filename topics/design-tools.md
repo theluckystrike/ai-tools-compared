@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Design Tools — Image Generation, UI Mockups, and Visual AI"
+title: "AI Design Tools. Image Generation, UI Mockups, and Visual AI"
 description: "Comparisons of AI design tools: Midjourney, DALL-E, Figma AI, Canva, and more for visual creation."
 permalink: /topics/design-tools/
 ---

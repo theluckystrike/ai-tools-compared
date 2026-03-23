@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools on a Budget — Free Tiers, Pricing & Value"
+title: "AI Tools on a Budget. Free Tiers, Pricing & Value"
 description: "Find the best free and affordable AI coding tools. Compare free tiers, pricing plans, and budget-friendly alternatives for Copilot, Claude, ChatGPT, and more."
 permalink: /topics/ai-free-budget-tools/
 intent-checked: true
@@ -8,13 +8,13 @@ voice-checked: true
 date: 2026-03-21
 ---
 
-# AI Tools on a Budget — Free Tiers, Pricing & Value Comparisons
+# AI Tools on a Budget. Free Tiers, Pricing & Value Comparisons
 
 Not every developer needs an enterprise AI subscription. Many AI coding tools offer generous free tiers, and knowing which paid plans deliver real value matters when budgets are tight. This hub collects our pricing breakdowns, free tier analyses, and cost comparisons across Copilot, Cursor, Codeium, Tabnine, ChatGPT, Claude, Perplexity, and Midjourney. We cover monthly vs annual savings, what features are locked behind paywalls, and whether paid upgrades are worth it for junior developers, small teams, and side projects.
 
 ---
 
-## Articles in This Topic (102)
+Articles in This Topic (102)
 
 - [AI Coding Tools Under $10 Per Month Ranked](/ai-coding-tools-under-10-dollars-per-month-ranked/)
 - [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)

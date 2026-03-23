@@ -15,18 +15,18 @@ voice-checked: true
 ---
 {% raw %}
 
-Use AI to generate Playwright authentication tests using the storageState feature to capture authenticated sessions once, then reuse them across tests. AI assistants generate code that records login state to JSON, loads it in subsequent tests, and eliminates repeated login overhead—reducing test execution time significantly while maintaining proper session management and eliminating inter-test dependencies.
+Use AI to generate Playwright authentication tests using the storageState feature to capture authenticated sessions once, then reuse them across tests. AI assistants generate code that records login state to JSON, loads it in subsequent tests, and eliminates repeated login overhead, reducing test execution time significantly while maintaining proper session management and eliminating inter-test dependencies.
 
 Playwright's storage state feature solves this problem by capturing authenticated session data once and reusing it across tests. When you combine this capability with AI-generated test code, you get fast, maintainable authentication tests that don't require repeated login overhead.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Best Practices for AI-Generated Authentication Tests](#best-practices-for-ai-generated-authentication-tests)
 - [Advanced Storage State Management](#advanced-storage-state-management)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -36,11 +36,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Playwright Storage State
+Step 1: Understand Playwright Storage State
 
 Playwright provides a mechanism to save and load authentication state through the `storageState` option. Instead of executing login steps in every test, you record the authenticated state once and reuse it. This approach reduces test execution time and eliminates dependencies between tests.
 
-The storage state contains cookies, local storage, and session storage—the complete authentication context needed to restore a logged-in session. Playwright can export this state to a JSON file and load it when creating new browser contexts.
+The storage state contains cookies, local storage, and session storage, the complete authentication context needed to restore a logged-in session. Playwright can export this state to a JSON file and load it when creating new browser contexts.
 
 ```javascript
 // Recording authentication state
@@ -67,7 +67,7 @@ const { chromium } = require('playwright');
 
 Once you have the `auth-state.json` file, you can launch new contexts with the authenticated state pre-loaded.
 
-### Step 2: Prompting AI for Authentication Flow Tests
+Step 2: Prompting AI for Authentication Flow Tests
 
 When working with AI coding assistants to generate authentication tests, specificity matters. A vague prompt produces generic code that won't match your application's actual flow. Provide the AI with clear context about your authentication mechanism, the page structure, and how you want to use stored state.
 
@@ -87,7 +87,7 @@ Use these selectors: [data-testid="email"], [data-testid="password"], [data-test
 
 The AI will generate tests that incorporate the storage state option in the context creation, skipping the login steps for authenticated tests.
 
-### Step 3: Generated Test Structure
+Step 3: Generated Test Structure
 
 AI-generated authentication tests with stored state typically follow a consistent pattern. The tests separate concerns between unauthenticated and authenticated scenarios, using the storage state only where appropriate.
 
@@ -123,7 +123,7 @@ test.describe('Authentication Flow', () => {
 
 The key is ensuring the AI understands when to use storage state versus when to test unauthenticated behavior.
 
-### Step 4: Manage Multiple User Types
+Step 4: Manage Multiple User Types
 
 Real applications often have different user roles with varying permissions. AI can help generate tests for multiple authenticated states, but you need to specify each role in your prompts. Request separate storage state files for each user type.
 
@@ -136,7 +136,7 @@ Create separate storage state files: regular-user-state.json and admin-user-stat
 
 The AI will configure Playwright to load the appropriate state file based on the test's user role.
 
-## Best Practices for AI-Generated Authentication Tests
+Best Practices for AI-Generated Authentication Tests
 
 Review the generated code carefully. AI can make mistakes with selectors, timing, or assertions. Verify that the test actually checks what you expect.
 
@@ -157,7 +157,7 @@ module.exports = {
 
 Keep your storage state files up to date. If your authentication mechanism changes, regenerate the state files and verify that existing tests still pass.
 
-### Step 5: Automate State Generation
+Step 5: Automate State Generation
 
 You can also use AI to generate scripts that create storage state files automatically. This is useful in CI/CD pipelines where you need fresh authentication state before running tests.
 
@@ -171,7 +171,7 @@ Write a Node.js script using Playwright that:
 
 This automation ensures your test state remains current without manual intervention.
 
-## Advanced Storage State Management
+Advanced Storage State Management
 
 For complex applications with multiple environments and user roles:
 
@@ -193,7 +193,7 @@ module.exports = {
   projects: [
     {
       name: 'auth-setup',
-      testMatch: '**/auth.setup.ts',
+      testMatch: '/auth.setup.ts',
     },
     {
       name: 'authenticated-tests',
@@ -209,7 +209,7 @@ module.exports = {
 };
 ```
 
-### Step 6: Authentication Setup Script
+Step 6: Authentication Setup Script
 
 AI can generate setup scripts that create multiple authentication states:
 
@@ -227,7 +227,7 @@ setup('authenticate as admin', async ({ page, context }) => {
   await page.click('[data-testid="login-button"]');
 
   // Wait for dashboard and verify admin features
-  await page.waitForURL('**/dashboard');
+  await page.waitForURL('/dashboard');
   await page.waitForSelector('[data-testid="admin-panel"]');
 
   // Save authenticated state
@@ -242,7 +242,7 @@ setup('authenticate as regular user', async ({ page, context }) => {
   await page.click('[data-testid="login-button"]');
 
   // Wait for dashboard (without admin features)
-  await page.waitForURL('**/dashboard');
+  await page.waitForURL('/dashboard');
 
   // Save authenticated state
   await context.storageState({ path: 'auth-state/user-state.json' });
@@ -254,14 +254,14 @@ setup('authenticate as guest', async ({ page, context }) => {
   await page.click('[data-testid="guest-login"]');
 
   // Handle any guest-specific flows
-  await page.waitForURL('**/guest-dashboard');
+  await page.waitForURL('/guest-dashboard');
 
   // Save authenticated state
   await context.storageState({ path: 'auth-state/guest-state.json' });
 });
 ```
 
-### Step 7: Handling OAuth and Social Login
+Step 7: Handling OAuth and Social Login
 
 For applications using OAuth providers, AI can generate appropriate test patterns:
 
@@ -288,7 +288,7 @@ test('OAuth authentication workflow', async ({ browser }) => {
   await popup.click('[name="commit"]');
 
   // Return to main app
-  await page.waitForURL('**/dashboard');
+  await page.waitForURL('/dashboard');
 
   // Verify OAuth token is stored
   const cookies = await context.cookies();
@@ -301,7 +301,7 @@ test('OAuth authentication workflow', async ({ browser }) => {
 });
 ```
 
-### Step 8: Test Session Expiration and Renewal
+Step 8: Test Session Expiration and Renewal
 
 AI assists in generating tests for auth state lifecycle:
 
@@ -356,7 +356,7 @@ test('token refresh flow', async ({ page }) => {
 });
 ```
 
-### Step 9: Parallel Test Execution with Different Auth States
+Step 9: Parallel Test Execution with Different Auth States
 
 ```javascript
 test.describe('Parallel tests with different auth', () => {
@@ -380,7 +380,7 @@ test.describe('Parallel tests with different auth', () => {
 });
 ```
 
-### Step 10: Debugging Storage State Issues
+Step 10: Debugging Storage State Issues
 
 When storage state tests fail, use AI-assisted debugging:
 
@@ -402,49 +402,49 @@ test('debug storage state', async ({ page, context }) => {
 });
 ```
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use ai to generate playwright authentication flow?**
+How long does it take to use ai to generate playwright authentication flow?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Which AI Is Better for Writing Playwright End-to-End Tests](/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
 - [Best AI Tools for Writing Playwright Tests 2026](/best-ai-tools-for-writing-playwright-tests-2026/)
 - [Best AI Tools for Writing Playwright E2E Tests 2026](/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
 - [Best AI Tools for Writing Playwright Tests](/ai-tools-for-writing-playwright-tests-guide)
 - [How to Use AI to Generate Playwright Keyboard Navigation](/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

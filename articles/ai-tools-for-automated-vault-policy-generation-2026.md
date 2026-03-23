@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated Vault Policy Generation 2026"
-description: "Use Claude and ChatGPT to generate HashiCorp Vault HCL policies — path permissions, token roles, AppRole auth, and Kubernetes auth integration with real."
+description: "Use Claude and ChatGPT to generate HashiCorp Vault HCL policies. path permissions, token roles, AppRole auth, and Kubernetes auth integration with real."
 date: 2026-03-22
 author: theluckystrike
 permalink: /ai-tools-for-automated-vault-policy-generation-2026/
@@ -15,11 +15,11 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-# AI Tools for Automated Vault Policy Generation 2026
+AI Tools for Automated Vault Policy Generation 2026
 
-HashiCorp Vault policies are written in HCL with path-based access control. Getting the paths right — especially for KV v2 (which adds a `data/` prefix) vs KV v1 — is a common source of errors. AI tools handle Vault policy generation well with the right context.
+HashiCorp Vault policies are written in HCL with path-based access control. Getting the paths right. especially for KV v2 (which adds a `data/` prefix) vs KV v1. is a common source of errors. AI tools handle Vault policy generation well with the right context.
 
-## Setting Up Claude for Vault Work
+Setting Up Claude for Vault Work
 
 Always specify the Vault version and KV engine version:
 
@@ -33,9 +33,9 @@ Our auth methods: AppRole for services, Kubernetes auth for pods.
 
 This prevents the most common mistake: writing `secret/myapp/*` when you need `secret/data/myapp/*` for KV v2.
 
-## Basic Application Policy
+Basic Application Policy
 
-**Prompt:**
+Prompt:
 ```text
 Write a Vault policy for an application called "orders-service".
 It needs to:
@@ -45,50 +45,50 @@ It needs to:
 - NOT be able to write or delete any secrets
 ```
 
-**Claude output:**
+Claude output:
 
 ```hcl
-# Policy: orders-service
-# Grants read-only access to orders-service secrets and database credentials
+Policy: orders-service
+Grants read-only access to orders-service secrets and database credentials
 
-# KV v2: read secrets
+KV v2: read secrets
 path "secret/data/orders-service/*" {
   capabilities = ["read"]
 }
 
-# KV v2: list secret names (metadata path for listing)
+KV v2: list secret names (metadata path for listing)
 path "secret/metadata/orders-service/*" {
   capabilities = ["list"]
 }
 
-# KV v2: list the top-level directory
+KV v2: list the top-level directory
 path "secret/metadata/orders-service" {
   capabilities = ["list"]
 }
 
-# Dynamic database credentials (read-only, Vault generates these)
+Dynamic database credentials (read-only, Vault generates these)
 path "database/creds/orders-service-role" {
   capabilities = ["read"]
 }
 
-# Allow the service to renew its own token
+Allow the service to renew its own token
 path "auth/token/renew-self" {
   capabilities = ["update"]
 }
 
-# Allow the service to look up its own token info
+Allow the service to look up its own token info
 path "auth/token/lookup-self" {
   capabilities = ["read"]
 }
 ```
 
-Claude correctly separates the `data/` path (for reading secret values) from the `metadata/` path (required for listing). It also adds `auth/token/renew-self` and `auth/token/lookup-self` — standard additions that most generated policies miss, causing token renewal failures.
+Claude correctly separates the `data/` path (for reading secret values) from the `metadata/` path (required for listing). It also adds `auth/token/renew-self` and `auth/token/lookup-self`. standard additions that most generated policies miss, causing token renewal failures.
 
 ChatGPT often writes `secret/orders-service/*` without the `data/` prefix, which works for KV v1 but silently fails in KV v2.
 
-## AppRole Authentication
+AppRole Authentication
 
-**Prompt:**
+Prompt:
 ```text
 Write Vault configuration to set up AppRole auth for orders-service.
 The role should: use the orders-service policy, have a 24-hour token TTL,
@@ -97,10 +97,10 @@ and bind to CIDR 10.0.0.0/8.
 Include the Terraform configuration and the initial credential bootstrap commands.
 ```
 
-**Claude output:**
+Claude output:
 
 ```hcl
-# Terraform: enable AppRole auth and configure role
+Terraform: enable AppRole auth and configure role
 
 resource "vault_auth_backend" "approle" {
   type = "approle"
@@ -128,31 +128,31 @@ output "role_id" {
 ```
 
 ```bash
-# Bootstrap: retrieve Role ID (not secret, can be stored in config)
+Bootstrap: retrieve Role ID (not secret, can be stored in config)
 ROLE_ID=$(vault read -field=role_id auth/approle/role/orders-service/role-id)
 
-# Generate a Secret ID (keep secret, rotate regularly)
+Generate a Secret ID (keep secret, rotate regularly)
 SECRET_ID=$(vault write -field=secret_id -f auth/approle/role/orders-service/secret-id)
 
-# Login and get a token
+Login and get a token
 vault write auth/approle/login \
   role_id="${ROLE_ID}" \
   secret_id="${SECRET_ID}"
 ```
 
-## Kubernetes Auth Integration
+Kubernetes Auth Integration
 
-**Prompt:**
+Prompt:
 ```text
 Write Vault Kubernetes auth configuration for a pod in namespace "production",
 service account "orders-service-sa". The pod should receive the orders-service policy.
 Include both the Vault configuration and the Kubernetes service account manifest.
 ```
 
-**Claude output:**
+Claude output:
 
 ```hcl
-# Terraform: Kubernetes auth backend role
+Terraform: Kubernetes auth backend role
 resource "vault_kubernetes_auth_backend_role" "orders_service" {
   backend                          = "kubernetes"
   role_name                        = "orders-service"
@@ -167,7 +167,7 @@ resource "vault_kubernetes_auth_backend_role" "orders_service" {
 ```
 
 ```yaml
-# Kubernetes: ServiceAccount and RBAC
+Kubernetes: ServiceAccount and RBAC
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -177,7 +177,7 @@ metadata:
     vault.hashicorp.com/role: "orders-service"  # used by Vault Agent Injector
 
 ---
-# Pod spec snippet with Vault Agent Injector annotations
+Pod spec snippet with Vault Agent Injector annotations
 metadata:
   annotations:
     vault.hashicorp.com/agent-inject: "true"
@@ -189,13 +189,13 @@ metadata:
       {{- end }}
 ```
 
-Claude includes the Vault Agent Injector annotation template — the HCL-like templating that transforms Vault secret values into the format your application expects.
+Claude includes the Vault Agent Injector annotation template. the HCL-like templating that transforms Vault secret values into the format your application expects.
 
-## Policy Linting
+Policy Linting
 
 Claude can also review existing policies for overly broad permissions:
 
-**Prompt:**
+Prompt:
 ```text
 Review this Vault policy for security issues:
 path "secret/*" { capabilities = ["read", "list", "create", "update"] }
@@ -203,15 +203,15 @@ path "sys/*" { capabilities = ["read"] }
 ```
 
 Claude's response:
-- `secret/*` with create/update is overly permissive — gives write access to all secrets
-- `sys/*` is dangerous — `sys/` contains Vault's own configuration, audit logs, and health endpoints. Read access to `sys/` includes `sys/config/ui` and `sys/seal-status`
+- `secret/*` with create/update is overly permissive. gives write access to all secrets
+- `sys/*` is dangerous. `sys/` contains Vault's own configuration, audit logs, and health endpoints. Read access to `sys/` includes `sys/config/ui` and `sys/seal-status`
 - Recommend narrowing to specific paths: `secret/data/myapp/*` and removing `sys/*` entirely unless specific sys paths are required
 
-## Dynamic Secrets for Databases
+Dynamic Secrets for Databases
 
 One of Vault's most powerful features is generating short-lived database credentials on demand. AI tools can generate both the Vault configuration and the application integration code.
 
-**Prompt:**
+Prompt:
 ```text
 Write Vault Terraform configuration to set up dynamic PostgreSQL credentials.
 Database: postgres.internal:5432, dbname: orders.
@@ -258,13 +258,13 @@ resource "vault_database_secret_backend_role" "orders_service" {
 }
 ```
 
-The `ALTER DEFAULT PRIVILEGES` statement ensures the dynamic user can access tables created after the role was configured — a detail that Claude adds proactively. Without it, dynamic users lose access to new tables without a policy change.
+The `ALTER DEFAULT PRIVILEGES` statement ensures the dynamic user can access tables created after the role was configured. a detail that Claude adds proactively. Without it, dynamic users lose access to new tables without a policy change.
 
-## Secret Versioning and Rollback
+Secret Versioning and Rollback
 
 KV v2 stores multiple versions of each secret, and AI can help generate the management scripts:
 
-**Prompt:**
+Prompt:
 ```text
 Write a bash script to:
 1. Write a new version of secret/data/orders-service/config
@@ -281,7 +281,7 @@ SECRET_PATH="secret/data/orders-service/config"
 METADATA_PATH="secret/metadata/orders-service/config"
 HEALTH_URL="http://orders-service:8080/health"
 
-# Write new version
+Write new version
 echo "Writing new secret version..."
 NEW_VERSION=$(vault kv put -mount=secret orders-service/config \
   DB_HOST="postgres.internal" \
@@ -291,10 +291,10 @@ NEW_VERSION=$(vault kv put -mount=secret orders-service/config \
 
 echo "Wrote version: ${NEW_VERSION}"
 
-# Wait for application to pick up new secret
+Wait for application to pick up new secret
 sleep 5
 
-# Health check
+Health check
 HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${HEALTH_URL}")
 if [ "${HTTP_CODE}" != "200" ]; then
   echo "Health check failed (HTTP ${HTTP_CODE}). Rolling back to version $((NEW_VERSION - 1))..."
@@ -305,7 +305,7 @@ fi
 
 echo "Health check passed. Deployment successful."
 
-# Clean up old versions — keep last 5
+Clean up old versions. keep last 5
 CURRENT_VERSION=$(vault kv metadata get -mount=secret -format=json orders-service/config \
   | jq -r '.data.current_version')
 
@@ -316,23 +316,23 @@ if [ "${CURRENT_VERSION}" -gt 5 ]; then
 fi
 ```
 
-Claude uses `vault kv rollback` (available in Vault 1.9+) rather than a manual version re-write, which is the correct approach — rollback promotes an existing version as the new HEAD without creating ambiguous state.
+Claude uses `vault kv rollback` (available in Vault 1.9+) rather than a manual version re-write, which is the correct approach. rollback promotes an existing version as the new HEAD without creating ambiguous state.
 
-## Audit Log Analysis
+Audit Log Analysis
 
-**Prompt:**
+Prompt:
 ```text
 Write a jq command to analyze Vault audit logs and find the top 10 secrets
 being accessed most frequently, showing path and request count.
 ```
 
 ```bash
-# Vault audit log is JSONL — one JSON object per line
+Vault audit log is JSONL. one JSON object per line
 cat /var/log/vault/audit.log | \
   jq -r 'select(.type == "request") | .request.path' | \
   sort | uniq -c | sort -rn | head -10
 
-# Filter to only successful reads in the last hour
+Filter to only successful reads in the last hour
 cat /var/log/vault/audit.log | \
   jq -r --arg cutoff "$(date -u -d '1 hour ago' +%Y-%m-%dT%H:%M:%SZ)" \
   'select(.type == "response" and .time >= $cutoff and .response.auth != null)
@@ -342,7 +342,7 @@ cat /var/log/vault/audit.log | \
 
 AI is particularly useful for Vault audit log queries because the JSONL format and nested structure make ad-hoc jq expressions tedious to write correctly. Claude handles the nested field selection and date filtering without needing multiple iterations.
 
-## Related Reading
+Related Reading
 
 - [AI-Powered Feature Flag Management Tools](/ai-powered-feature-flag-management-tools-2026/)
 - [AI-Powered Observability Configuration Tools](/ai-powered-observability-configuration-tools-2026/)
@@ -351,10 +351,10 @@ AI is particularly useful for Vault audit log queries because the JSONL format a
 
 ---
 
-## Related Articles
-## Database Role Provisioning
+Related Articles
+Database Role Provisioning
 
-**Prompt:**
+Prompt:
 ```text
 Write Vault configuration for dynamic database credentials.
 - Postgres database at db.prod.internal:5432
@@ -365,16 +365,16 @@ Write Vault configuration for dynamic database credentials.
 Include the Terraform configuration and policy.
 ```
 
-**Claude output:**
+Claude output:
 
 ```hcl
-# Enable database secrets engine
+Enable database secrets engine
 resource "vault_mount" "database" {
   path = "database"
   type = "database"
 }
 
-# Configure Postgres connection
+Configure Postgres connection
 resource "vault_database_connection" "postgres" {
   backend       = vault_mount.database.path
   name          = "postgres"
@@ -389,7 +389,7 @@ resource "vault_database_connection" "postgres" {
   }
 }
 
-# Read-only role
+Read-only role
 resource "vault_database_secret_backend_role" "orders_ro" {
   backend             = vault_mount.database.path
   name                = "orders-service-ro"
@@ -404,7 +404,7 @@ resource "vault_database_secret_backend_role" "orders_ro" {
   max_ttl     = 86400 # 24 hours
 }
 
-# Read-write role
+Read-write role
 resource "vault_database_secret_backend_role" "orders_rw" {
   backend             = vault_mount.database.path
   name                = "orders-service-rw"
@@ -420,10 +420,10 @@ resource "vault_database_secret_backend_role" "orders_rw" {
 }
 ```
 
-**Policy for services to use database credentials:**
+Policy for services to use database credentials:
 
 ```hcl
-# Policy: orders-service-db-access
+Policy: orders-service-db-access
 path "database/creds/orders-service-ro" {
   capabilities = ["read"]
 }
@@ -437,11 +437,11 @@ path "auth/token/renew-self" {
 }
 ```
 
-Claude correctly uses `{{username}}`, `{{password}}`, and `{{expiration}}` placeholders — Vault substitutes these when creating roles.
+Claude correctly uses `{{username}}`, `{{password}}`, and `{{expiration}}` placeholders. Vault substitutes these when creating roles.
 
-## SSH Certificate Signing (Host Access)
+SSH Certificate Signing (Host Access)
 
-**Prompt:**
+Prompt:
 ```text
 Generate Vault SSH CA configuration for signing user certificates.
 - SSH CA keypair stored in Vault
@@ -450,23 +450,23 @@ Generate Vault SSH CA configuration for signing user certificates.
 - Policy for developers to request signed certificates
 ```
 
-**Claude output:**
+Claude output:
 
 ```hcl
-# Enable SSH secrets engine
+Enable SSH secrets engine
 resource "vault_mount" "ssh" {
   path = "ssh"
   type = "ssh"
 }
 
-# Configure SSH CA
+Configure SSH CA
 resource "vault_ssh_secret_backend_ca" "ca" {
   backend = vault_mount.ssh.path
   # Vault generates the CA keypair; store pub key in authorized_keys on servers
   generate_signing_key = true
 }
 
-# SSH role for user certificates (8-hour TTL)
+SSH role for user certificates (8-hour TTL)
 resource "vault_ssh_secret_backend_role" "user_cert" {
   backend = vault_mount.ssh.path
   name    = "user-cert"
@@ -483,14 +483,14 @@ resource "vault_ssh_secret_backend_role" "user_cert" {
   allowed_domains = "prod-*.internal,staging-*.internal"
 }
 
-# Output CA public key to distribute to servers
+Output CA public key to distribute to servers
 output "ssh_ca_public_key" {
   value     = vault_ssh_secret_backend_ca.ca.public_key
   sensitive = true
 }
 ```
 
-**Policy for developers:**
+Policy for developers:
 
 ```hcl
 path "ssh/sign/user-cert" {
@@ -502,22 +502,22 @@ path "auth/token/lookup-self" {
 }
 ```
 
-**Usage:**
+Usage:
 
 ```bash
-# 1. Request signed certificate from Vault
+1. Request signed certificate from Vault
 vault write -field=signed_certificate ssh/sign/user-cert \
   username=ubuntu \
   public_key=@~/.ssh/id_rsa.pub > ~/.ssh/id_rsa-cert.pub
 
-# 2. SSH using certificate (no password)
+2. SSH using certificate (no password)
 ssh -i ~/.ssh/id_rsa -i ~/.ssh/id_rsa-cert.pub ubuntu@prod-web-01.internal
 
-# 3. SSH servers validate certificate against CA public key
-# (installed in /etc/ssh/trusted-user-ca-keys.pub)
+3. SSH servers validate certificate against CA public key
+(installed in /etc/ssh/trusted-user-ca-keys.pub)
 ```
 
-## Tool Comparison
+Tool Comparison
 
 | Feature | Claude | ChatGPT |
 |---------|--------|---------|
@@ -530,7 +530,7 @@ ssh -i ~/.ssh/id_rsa -i ~/.ssh/id_rsa-cert.pub ubuntu@prod-web-01.internal
 | Policy review feedback | Identifies overly broad paths | Generic feedback |
 | Terraform + HCL | Both correct | HCL formatting issues |
 
-## Related Reading
+Related Reading
 
 - [AI-Powered Feature Flag Management Tools](/ai-powered-feature-flag-management-tools-2026/)
 - [AI-Powered Observability Configuration Tools](/ai-powered-observability-configuration-tools-2026/)
@@ -544,6 +544,6 @@ ssh -i ~/.ssh/id_rsa -i ~/.ssh/id_rsa-cert.pub ubuntu@prod-web-01.internal
 - [How to Configure AI Coding Tools to Exclude Secrets and Env](/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-for-automated-changelog-generation-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -18,7 +18,7 @@ intent-checked: true
 
 Claude Code is an AI-powered CLI tool that can significantly accelerate your Node.js profiling workflow. This tutorial walks you through using Claude Code to identify performance bottlenecks, analyze CPU and memory profiles, and optimize your applications effectively.
 
-## Table of Contents
+Table of Contents
 
 - [Why Use Claude Code for Node.js Profiling?](#why-use-claude-code-for-nodejs-profiling)
 - [Setting Up Your Profiling Environment](#setting-up-your-profiling-environment)
@@ -29,13 +29,13 @@ Claude Code is an AI-powered CLI tool that can significantly accelerate your Nod
 - [Async Performance and Event Loop Analysis](#async-performance-and-event-loop-analysis)
 - [Best Practices for Continuous Profiling](#best-practices-for-continuous-profiling)
 
-## Why Use Claude Code for Node.js Profiling?
+Why Use Claude Code for Node.js Profiling?
 
 Traditional Node.js profiling requires manual investigation of flame graphs, heap snapshots, and performance metrics. While powerful, these tools can be overwhelming, especially when you're new to performance optimization. Claude Code acts as an intelligent assistant that helps you interpret profiling data, suggests targeted optimizations, and guides you through the entire profiling workflow.
 
 The key advantage is that Claude Code understands both your codebase and Node.js performance patterns, allowing it to provide context-aware recommendations that would otherwise require extensive experience to develop.
 
-## Setting Up Your Profiling Environment
+Setting Up Your Profiling Environment
 
 Before exploring profiling, ensure your environment is properly configured. You'll need Node.js installed along with the built-in performance hooks and optionally, external profiling tools like 0x or clinic.js.
 
@@ -107,9 +107,9 @@ app.listen(3000, () => {
 });
 ```
 
-## Profiling Workflow with Claude Code
+Profiling Workflow with Claude Code
 
-### Step 1: Baseline Performance Measurement
+Step 1: Baseline Performance Measurement
 
 Start by establishing a baseline using Node.js built-in performance tools. The `--inspect` flag enables Chrome DevTools integration:
 
@@ -131,7 +131,7 @@ node --prof-process isolate-*.log | head -50
 
 This is where Claude Code becomes invaluable. Instead of manually parsing complex output, you can ask Claude Code to analyze the results and explain what the data means in the context of your application.
 
-### Step 2: Identifying Bottlenecks
+Step 2: Identifying Bottlenecks
 
 Once you have profiling data, engage Claude Code to help interpret the results. Provide the profiling output and ask specific questions:
 
@@ -147,7 +147,7 @@ Claude Code can help you understand patterns like:
 
 - Callback hell and unnecessary async overhead
 
-### Step 3: Memory Profiling
+Step 3: Memory Profiling
 
 For memory issues, use heap snapshots:
 
@@ -177,11 +177,11 @@ app.get('/debug/snapshot', (req, res) => {
 });
 ```
 
-## Optimizing Based on Profiling Insights
+Optimizing Based on Profiling Insights
 
 After identifying bottlenecks, use Claude Code to implement optimizations. Here's how to approach common issues:
 
-### Optimizing Search Operations
+Optimizing Search Operations
 
 Replace O(n²) nested loops with efficient data structures:
 
@@ -220,7 +220,7 @@ app.get('/api/search', (req, res) => {
 });
 ```
 
-### Optimizing Memory Usage
+Optimizing Memory Usage
 
 Send only necessary data to clients:
 
@@ -248,28 +248,28 @@ app.get('/api/all-users', (req, res) => {
 });
 ```
 
-## Using clinic.js and 0x for Deeper Profiling
+Using clinic.js and 0x for Deeper Profiling
 
 While Node's built-in `--prof` flag covers most cases, two tools provide more targeted analysis when you need to go deeper.
 
-**clinic.js** from NearForm packages three specialized profilers:
+clinic.js from NearForm packages three specialized profilers:
 
 ```bash
 npm install -g clinic
 
-# Flame graph for CPU hotspots
+Flame graph for CPU hotspots
 clinic flame -- node app.js
 
-# Event loop health checks
+Event loop health checks
 clinic doctor -- node app.js
 
-# Async I/O visualization
+Async I/O visualization
 clinic bubbleprof -- node app.js
 ```
 
-When you pass profiling output to Claude Code, be specific about what clinic reported. For example: "clinic doctor flagged that my event loop delay is consistently above 30ms during the `/api/search` endpoint. Here is the output—what should I investigate first?" Claude Code can correlate the delay with the synchronous nested loop in the search handler and suggest moving the duplicate-detection logic to a Set-based approach that runs in O(n) rather than O(n²).
+When you pass profiling output to Claude Code, be specific about what clinic reported. For example: "clinic doctor flagged that my event loop delay is consistently above 30ms during the `/api/search` endpoint. Here is the output, what should I investigate first?" Claude Code can correlate the delay with the synchronous nested loop in the search handler and suggest moving the duplicate-detection logic to a Set-based approach that runs in O(n) rather than O(n²).
 
-**0x** produces interactive flamegraph HTML files from a single command:
+0x produces interactive flamegraph HTML files from a single command:
 
 ```bash
 npm install -g 0x
@@ -278,7 +278,7 @@ npm install -g 0x
 
 After generating the flamegraph, paste the top hot-path function names into Claude Code. Asking "which of these functions should I prioritize for optimization given this is a read-heavy Express API?" gives you prioritized, context-aware guidance rather than generic advice.
 
-## Interpreting CPU Profiles with Claude Code
+Interpreting CPU Profiles with Claude Code
 
 A typical `--prof-process` output excerpt:
 
@@ -295,7 +295,7 @@ Provide this to Claude Code along with your source code and ask: "Function `sear
 
 The key to useful analysis is providing both the profile output and the relevant source code in the same Claude Code session. Without source context, you get generic Node.js advice. With source context, Claude Code points to specific lines and generates concrete refactors.
 
-## Async Performance and Event Loop Analysis
+Async Performance and Event Loop Analysis
 
 A common source of Node.js performance problems is blocking the event loop with synchronous work. Claude Code is particularly useful here because the pattern is easy to miss during code review but shows up clearly in profiling data.
 
@@ -323,7 +323,7 @@ app.post('/api/import', (req, res) => {
 
 Provide this pattern to Claude Code and ask it to audit your existing endpoints for similar blocking calls. It will scan your codebase and flag `fs.readFileSync`, `crypto.pbkdf2Sync`, and similar synchronous APIs that should be replaced with async equivalents or offloaded to worker threads.
 
-## Best Practices for Continuous Profiling
+Best Practices for Continuous Profiling
 
 Integrate profiling into your development workflow using these strategies:
 
@@ -337,21 +337,21 @@ Integrate profiling into your development workflow using these strategies:
 
 5. Profile in a staging environment that mirrors production: Profiling on a developer laptop misses real-world factors like network latency, database query plans under realistic data volumes, and concurrent user load. Use a staging environment with production-equivalent data for meaningful results.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set this up?**
+How long does it take to set this up?
 
 For a straightforward project, expect 30-60 minutes to instrument your app, run an initial profile, and get useful output into Claude Code. Complex configurations with custom middleware or database layers may take longer.
 
-**Do I need prior profiling experience?**
+Do I need prior profiling experience?
 
 Basic Node.js familiarity is sufficient. Each step above is explained with context, and Claude Code compensates for experience gaps by interpreting profiling output for you rather than requiring you to already know what the numbers mean.
 
-**Can I adapt this for a different framework like Fastify or Koa?**
+Can I adapt this for a different framework like Fastify or Koa?
 
 Yes. The profiling flags (`--prof`, `--inspect`) and external tools (clinic.js, 0x) work at the Node.js process level, not the framework level. Swap the Express-specific code for your framework's equivalent patterns and the workflow is identical.
 
-## Related Articles
+Related Articles
 
 - [Claude Code for Memory Profiling Workflow Tutorial](/claude-code-for-memory-profiling-workflow-tutorial/)
 - [Claude Code Profiler Integration Guide](/claude-code-profiler-integration-guide/)
@@ -359,5 +359,5 @@ Yes. The profiling flags (`--prof`, `--inspect`) and external tools (clinic.js, 
 - [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
 - [Claude Code Runbook Documentation Guide](/claude-code-runbook-documentation-guide/)
 - [Claude Code for Faker.js Test Data Workflow Guide](https://welikeremotestack.com/claude-code-for-faker-js-test-data-workflow-guide/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

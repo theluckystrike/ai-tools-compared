@@ -17,7 +17,7 @@ voice-checked: true
 
 Choose Claude if you need production-grade scripts with modular functions, structured error handling, logging, and type hints straight from the conversion. Choose Gemini if you need a fast, concise translation of linear notebook logic for prototyping or one-off scripts. Claude consistently produces more deployable code, while Gemini prioritizes speed and simplicity at the cost of production readiness.
 
-## Table of Contents
+Table of Contents
 
 - [The Conversion Challenge](#the-conversion-challenge)
 - [Test Methodology](#test-methodology)
@@ -30,38 +30,38 @@ Choose Claude if you need production-grade scripts with modular functions, struc
 - [Step-by-Step Conversion Workflow with Claude](#step-by-step-conversion-workflow-with-claude)
 - [Hybrid Workflow](#hybrid-workflow)
 
-## The Conversion Challenge
+The Conversion Challenge
 
-Jupyter notebooks encourage iterative exploration with inline visualizations, cell-by-cell execution, and explanatory markdown. Production code requires different patterns: proper module structure, error handling, logging, and maintainable function hierarchies. The conversion process involves more than stripping out cell magic commands—it requires restructuring logic into deployable, testable code.
+Jupyter notebooks encourage iterative exploration with inline visualizations, cell-by-cell execution, and explanatory markdown. Production code requires different patterns: proper module structure, error handling, logging, and maintainable function hierarchies. The conversion process involves more than stripping out cell magic commands, it requires restructuring logic into deployable, testable code.
 
 The specific challenges that AI tools must address during conversion include handling cell magic commands (`%matplotlib inline`, `%%time`, `!pip install`), removing display-only output calls like `df.head()` that have no equivalent in scripts, restructuring global variables into function parameters, and ensuring that notebook execution order (which may not be top-to-bottom) becomes deterministic in the resulting script.
 
-## Test Methodology
+Test Methodology
 
 I converted the same exploratory notebook into a production script using both Claude and Gemini, then evaluated the output across several dimensions: code organization, error handling, dependency management, and execution correctness.
 
-**Sample Notebook Content (Before Conversion):**
+Sample Notebook Content (Before Conversion):
 
 ```python
-# Jupyter notebook exploration
+Jupyter notebook exploration
 import pandas as pd
 import numpy as np
 
-# Cell 1: Load and explore data
+Cell 1: Load and explore data
 df = pd.read_csv('sales_data.csv')
 print(df.head())
 print(df.describe())
 
-# Cell 2: Data cleaning
+Cell 2: Data cleaning
 df = df.dropna(subset=['revenue'])
 df['revenue'] = df['revenue'].astype(float)
 
-# Cell 3: Analysis
+Cell 3: Analysis
 avg_revenue = df.groupby('category')['revenue'].mean()
 print(avg_revenue)
 ```
 
-## Claude's Approach
+Claude's Approach
 
 Claude generates production scripts with a strong emphasis on modularity and error handling. When prompted to convert a notebook, Claude typically produces:
 
@@ -77,7 +77,7 @@ import logging
 from pathlib import Path
 from typing import Optional
 
-# Configure logging
+Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -139,7 +139,7 @@ if __name__ == "__main__":
     main()
 ```
 
-**Strengths of Claude's output:**
+Strengths of Claude's output:
 
 - Full docstrings and type hints
 
@@ -151,13 +151,13 @@ if __name__ == "__main__":
 
 - Input validation before processing
 
-**Weaknesses:**
+Weaknesses:
 
 - More verbose initial output
 
 - May require adjusting logging levels for different environments
 
-## Gemini's Approach
+Gemini's Approach
 
 Gemini tends to produce more concise conversions, focusing on getting functional code quickly:
 
@@ -179,7 +179,7 @@ if __name__ == "__main__":
     print(results)
 ```
 
-**Strengths of Gemini's output:**
+Strengths of Gemini's output:
 
 - Faster, more concise generation
 
@@ -187,7 +187,7 @@ if __name__ == "__main__":
 
 - Lower initial complexity
 
-**Weaknesses:**
+Weaknesses:
 
 - Minimal error handling
 
@@ -197,36 +197,36 @@ if __name__ == "__main__":
 
 - May include notebook-specific patterns that fail in production
 
-## Comparative Analysis
+Comparative Analysis
 
-### Code Organization
+Code Organization
 
 Claude structures output into logical modules with clear function boundaries. Gemini provides a more direct translation that preserves notebook-style linear execution. For production systems where multiple teams may contribute, Claude's organized approach reduces onboarding time.
 
-### Error Handling
+Error Handling
 
 When testing with corrupted input files, Claude's script failed gracefully with informative error messages. Gemini's script raised unhandled exceptions without context, requiring manual debugging.
 
 ```python
-# Claude-style error handling
+Claude-style error handling
 except FileNotFoundError:
     logger.error(f"File not found: {file_path}")
     raise
 
-# Gemini-style (typical)
+Gemini-style (typical)
 df = pd.read_csv(file_path)  # Crashes without context
 ```
 
-### Dependency Management
+Dependency Management
 
 Claude explicitly handles import errors and validates dependencies. Gemini assumes dependencies are pre-installed, which works for internal tools but creates deployment issues.
 
-### Testing Readiness
+Testing Readiness
 
 The modular structure of Claude's output naturally supports unit testing:
 
 ```python
-# Easy to test individual functions
+Easy to test individual functions
 def test_clean_data():
     test_df = pd.DataFrame({
         'category': ['A', 'B', None],
@@ -238,7 +238,7 @@ def test_clean_data():
 
 Gemini's monolithic functions require more effort to isolate for testing.
 
-## Feature Comparison Table
+Feature Comparison Table
 
 | Feature | Claude | Gemini |
 |---|---|---|
@@ -253,19 +253,19 @@ Gemini's monolithic functions require more effort to isolate for testing.
 | `__main__` guard | Always present | Present most of the time |
 | CI-ready output | Yes, with minor review | Requires additions |
 
-## Handling Notebook-Specific Patterns
+Handling Notebook-Specific Patterns
 
 Both tools handle the most common notebook artifacts, but behave differently on edge cases.
 
-**Magic commands:** Claude replaces `%time` with Python's `time` module and wraps measured blocks. Gemini strips them without substitution. For notebooks relying on `%%capture` or `%%writefile`, Claude will suggest replacements; Gemini silently removes them.
+Magic commands: Claude replaces `%time` with Python's `time` module and wraps measured blocks. Gemini strips them without substitution. For notebooks relying on `%%capture` or `%%writefile`, Claude will suggest replacements; Gemini silently removes them.
 
-**Display calls:** `df.head()`, `plt.show()`, and `display()` calls get different treatment. Claude converts display calls into return values or removes them with an explanatory comment. Gemini removes them without comment, which can obscure which data was being inspected at each stage.
+Display calls: `df.head()`, `plt.show()`, and `display()` calls get different treatment. Claude converts display calls into return values or removes them with an explanatory comment. Gemini removes them without comment, which can obscure which data was being inspected at each stage.
 
-**Global state:** Notebooks commonly mutate a global `df` variable across cells. Claude refactors this into a pipeline where each function receives and returns a DataFrame. Gemini often preserves the mutation pattern, which can create subtle bugs in production where execution order matters.
+Global state: Notebooks commonly mutate a global `df` variable across cells. Claude refactors this into a pipeline where each function receives and returns a DataFrame. Gemini often preserves the mutation pattern, which can create subtle bugs in production where execution order matters.
 
-## When to Choose Each Tool
+When to Choose Each Tool
 
-**Choose Claude when:**
+Choose Claude when:
 
 - Building production pipelines that others will maintain
 
@@ -277,7 +277,7 @@ Both tools handle the most common notebook artifacts, but behave differently on 
 
 - The notebook will be run on a schedule or as part of a CI/CD pipeline
 
-**Choose Gemini when:**
+Choose Gemini when:
 
 - Rapid prototyping with minimal overhead
 
@@ -289,7 +289,7 @@ Both tools handle the most common notebook artifacts, but behave differently on 
 
 - The script will be reviewed and extended manually before deployment
 
-## Step-by-Step Conversion Workflow with Claude
+Step-by-Step Conversion Workflow with Claude
 
 The most reliable results come from a structured prompt rather than pasting the notebook and asking for a conversion. Use this workflow:
 
@@ -301,7 +301,7 @@ The most reliable results come from a structured prompt rather than pasting the 
 
 This five-step workflow produces deployment-ready code in under ten minutes for notebooks under 200 lines.
 
-## Hybrid Workflow
+Hybrid Workflow
 
 Many developers use both tools sequentially: Gemini for quick initial conversion, then Claude for refinement and hardening. This combines Gemini's speed with Claude's production quality:
 
@@ -311,25 +311,25 @@ Many developers use both tools sequentially: Gemini for quick initial conversion
 
 The hybrid approach works well when you need a fast first draft to review before investing time in production hardening. Gemini's output gives you a readable starting point; Claude's refactoring pass adds the structure required for deployment.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can either tool handle notebooks with `ipywidgets` or interactive elements?**
+Can either tool handle notebooks with `ipywidgets` or interactive elements?
 Both tools strip interactive widgets. Claude typically adds a comment explaining what the widget did and suggests a CLI argument or config file as a replacement. Gemini removes them without comment.
 
-**What about notebooks that call external APIs or databases?**
+What about notebooks that call external APIs or databases?
 Claude adds connection pooling scaffolding and suggests environment variables for credentials. Gemini passes connection strings directly into function calls, which requires manual remediation before production use.
 
-**How do both tools handle visualization code (matplotlib, plotly)?**
+How do both tools handle visualization code (matplotlib, plotly)?
 Claude wraps plot generation in functions that accept a `save_path` parameter, making plots saveable without a display. Gemini typically removes `plt.show()` calls and leaves the plot generation code intact, which may not execute correctly in headless environments.
 
-**Is there a size limit for notebooks either tool handles well?**
+Is there a size limit for notebooks either tool handles well?
 Both tools perform well on notebooks under 300 lines. Above 500 lines, Claude maintains better context coherence across the full file. Gemini may lose track of variable names defined early in long notebooks.
 
-## Related Articles
+Related Articles
 
 - [Gemini vs Claude for Summarizing Quarterly Earnings Call](/gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/)
 - [Switching from Gemini Advanced to Claude Pro: What You](/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
 - [Gemini vs Claude for Writing Apache Kafka Consumer Producer](/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
 - [Gemini vs Claude for Multimodal Coding](/gemini-vs-claude-multimodal-coding-tasks/)
 - [Gemini vs Claude for Analyzing Large CSV Datasets Over](/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

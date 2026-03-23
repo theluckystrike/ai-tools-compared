@@ -17,15 +17,15 @@ voice-checked: true
 
 Manage AI tool configurations across client projects by using environment-specific configuration files with API keys isolated in .env files, implementing a project switcher script for instant context switching, and maintaining separate configuration directories for each client. This approach prevents data leaks, reduces setup time, and keeps your multi-client workflow consistent across all projects.
 
-# Copilot Instructions
+Copilot Instructions
 
 This project uses Python 3.11 with strict type hints.
-- **Instead**: use environment-specific files that load based on the active project context.
-- **If you use a**: single AI platform account for multiple clients, create separate API keys per project.
-- **Here is how to**: handle the most common ones across client projects: ### Cursor Cursor reads `.cursorrules` from the project root.
-- **Always use the internal**: logging library at `internal/logger`.
+- Instead: use environment-specific files that load based on the active project context.
+- If you use a: single AI platform account for multiple clients, create separate API keys per project.
+- handle the most common ones across client projects: ### Cursor Cursor reads `.cursorrules` from the project root.
+- Always use the internal: logging library at `internal/logger`.
 
-## Table of Contents
+Table of Contents
 
 - [Use Environment-Specific Configuration Files](#use-environment-specific-configuration-files)
 - [Implement a Project Switcher Script](#implement-a-project-switcher-script)
@@ -40,7 +40,7 @@ This project uses Python 3.11 with strict type hints.
 - [Multi-Tool Configuration Matrix](#multi-tool-configuration-matrix)
 - [Document Your Workflow](#document-your-workflow)
 
-## Use Environment-Specific Configuration Files
+Use Environment-Specific Configuration Files
 
 The foundation of multi-client project management is separating configuration from code. Never hardcode API keys, endpoints, or client-specific settings directly in your scripts. Instead, use environment-specific files that load based on the active project context.
 
@@ -48,27 +48,27 @@ Create a directory structure like this:
 
 ```
 projects/
-├── client-alpha/
-│   ├── .env
-│   ├── config.yaml
-│   └── prompts/
-├── client-beta/
-│   ├── .env
-│   └── config.yaml
-└── shared/
-    ├── lib/
-    └── templates/
+ client-alpha/
+    .env
+    config.yaml
+    prompts/
+ client-beta/
+    .env
+    config.yaml
+ shared/
+     lib/
+     templates/
 ```
 
 Each client directory contains its own `.env` file with API keys and endpoint URLs. The shared directory holds reusable code that references these config files dynamically.
 
-## Implement a Project Switcher Script
+Implement a Project Switcher Script
 
 A simple shell script or Python utility helps you switch between client contexts instantly. Here is a practical example:
 
 ```bash
 #!/bin/bash
-# switch-project.sh
+switch-project.sh
 
 PROJECT_DIR="$HOME/projects"
 CONFIG_DIR="$PROJECT_DIR/.configs"
@@ -87,7 +87,7 @@ if [ ! -f "$ENV_FILE" ]; then
     exit 1
 fi
 
-# Export variables from the selected project's .env
+Export variables from the selected project's .env
 export $(cat "$ENV_FILE" | grep -v '^#' | xargs)
 echo "Switched to project: $CLIENT"
 echo "API Endpoint: $AI_API_ENDPOINT"
@@ -95,7 +95,7 @@ echo "API Endpoint: $AI_API_ENDPOINT"
 
 Run it with `./switch-project.sh client-alpha` to load that client's environment. This approach works with any AI tool that respects environment variables.
 
-## Use Configuration Management Tools
+Use Configuration Management Tools
 
 For more complex setups, tools like `direnv` automate environment loading when you enter a project directory. Add this to your `.envrc`:
 
@@ -108,7 +108,7 @@ Then place a `.env` file in each project root. When you `cd` into the directory,
 Another option is using a tool like `SOPS` (Secrets OperationS) with `age` encryption to store sensitive config values. This keeps your configuration files version-controlled without exposing secrets:
 
 ```yaml
-# config.sops.yaml
+config.sops.yaml
 openai_api_key: ENC[AES256_GCM,data:...,iv:...]
 anthropic_api_key: ENC[AES256_GCM,data:...,iv:...]
 client_name: "acme-corp"
@@ -116,12 +116,12 @@ client_name: "acme-corp"
 
 Decrypt only the values you need for the active project using `sops -d config.sops.yaml`.
 
-## Template Your Project Scaffolding
+Template Your Project Scaffolding
 
 When starting a new client project, use templates to ensure consistent structure. Create a starter template with placeholder configs:
 
 ```yaml
-# template-config.yaml
+template-config.yaml
 ai_service: "{{AI_SERVICE}}"
 model: "{{MODEL}}"
 temperature: 0.7
@@ -152,18 +152,18 @@ def init_project(client_name: str, template_path: str, output_path: str):
 
 This ensures every new client project starts with the right structure and avoids missing critical settings.
 
-## Isolate API Keys and Credentials
+Isolate API Keys and Credentials
 
 Never share API keys across clients. Each client should have its own credentials. If you use a single AI platform account for multiple clients, create separate API keys per project. Most providers support this through their dashboard.
 
 Store these keys in a secrets manager rather than plain text files if your workflow permits. Tools like HashiCorp Vault, AWS Secrets Manager, or even a simple encrypted YAML file work well. The key principle remains: isolate credentials so that compromising one client does not affect others.
 
-## Use Version Control Safely
+Use Version Control Safely
 
 Add your config directories to `.gitignore` while keeping template files tracked:
 
 ```
-# .gitignore
+.gitignore
 projects/*/.env
 projects/*/config.yaml
 !projects/template/
@@ -171,7 +171,7 @@ projects/*/config.yaml
 
 This preserves the directory structure in your repo without committing secrets. Document the expected file names and formats in a `README.md` so team members know what to create.
 
-## Automate Context Switching in Your AI Tools
+Automate Context Switching in Your AI Tools
 
 Many AI coding assistants and CLI tools support custom configuration files. For example, if you use `aider` or similar tools:
 
@@ -193,51 +193,51 @@ alias use-alpha="cp ~/.ai-tools/client-alpha.json ~/.ai-tools/config.json"
 alias use-beta="cp ~/.ai-tools/client-beta.json ~/.ai-tools/config.json"
 ```
 
-## Tool-Specific Configuration Patterns
+Tool-Specific Configuration Patterns
 
 Different AI coding tools have their own configuration conventions. Here is how to handle the most common ones across client projects:
 
-### Cursor
+Cursor
 
 Cursor reads `.cursorrules` from the project root. Keep a per-client version of this file and symlink or copy it when switching:
 
 ```bash
-# On switch
+On switch
 cp ~/projects/client-alpha/.cursorrules ~/active-project/.cursorrules
 ```
 
 The `.cursorrules` file holds project-specific instructions about coding style, framework preferences, and off-limits patterns. This is especially valuable for clients with strict style guides or proprietary API conventions.
 
-### Claude Code
+Claude Code
 
 Claude Code respects `CLAUDE.md` in the project root and any parent directories. For multi-client work, maintain a `CLAUDE.md` per client directory:
 
 ```markdown
-# CLAUDE.md for Client Alpha
+CLAUDE.md for Client Alpha
 
-## Project Context
+Project Context
 This is a fintech API project. Never suggest external dependencies without approval.
 Always use the internal logging library at `internal/logger`.
 
-## Coding Standards
+Coding Standards
 - Go 1.22+
 - Error wrapping with `fmt.Errorf("...: %w", err)`
 - All handlers must log request ID from context
 ```
 
-### GitHub Copilot
+GitHub Copilot
 
 Copilot uses `.github/copilot-instructions.md` for workspace instructions. Add this file per repo:
 
 ```markdown
-# Copilot Instructions
+Copilot Instructions
 
 This project uses Python 3.11 with strict type hints.
 Follow PEP 8. Use `ruff` for linting.
-Database access goes through the repository pattern only — never direct ORM calls in handlers.
+Database access goes through the repository pattern only. never direct ORM calls in handlers.
 ```
 
-## Multi-Tool Configuration Matrix
+Multi-Tool Configuration Matrix
 
 If you use different AI tools for different clients, track the configuration files each tool expects:
 
@@ -249,37 +249,37 @@ If you use different AI tools for different clients, track the configuration fil
 | Aider | .aider.conf.yml | Per directory | Via --config flag |
 | Continue | config.json | Global | Via profile switching |
 
-## Document Your Workflow
+Document Your Workflow
 
 Maintain a simple internal wiki or README explaining your setup. Include the directory structure, how to add a new client, and emergency steps if a key is compromised. This helps if you step away from a project and return months later or if another team member needs to take over.
 
 Treat your client configuration infrastructure as code: version control the templates, document the switching procedure, and test the setup on a staging machine before relying on it for billable work.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**What is the biggest risk when managing AI configs across multiple clients?**
+What is the biggest risk when managing AI configs across multiple clients?
 
-Cross-contamination — accidentally using one client's API key or system prompt for another client's work. Automation (direnv, project switcher scripts) eliminates most of this risk. Manual switching is error-prone.
+Cross-contamination. accidentally using one client's API key or system prompt for another client's work. Automation (direnv, project switcher scripts) eliminates most of this risk. Manual switching is error-prone.
 
-**Should I use separate AI accounts per client or one shared account?**
+Should I use separate AI accounts per client or one shared account?
 
 Prefer separate API keys within one account rather than entirely separate accounts. Most providers allow you to create multiple API keys with different labels. This keeps billing consolidated while maintaining credential isolation.
 
-**How do I handle clients who have corporate data residency requirements?**
+How do I handle clients who have corporate data residency requirements?
 
 Some clients require that data never leave a specific cloud region. Check whether your AI provider supports regional endpoints (Anthropic, OpenAI, and Azure all do). Configure the `api_endpoint` in each client's `.env` to point at the appropriate regional URL.
 
-**Can I automate the entire project switch in one command?**
+Can I automate the entire project switch in one command?
 
 Yes. Combine your switcher script with direnv and a post-switch hook that opens the right project directory in your editor. A single `switch-client.sh client-alpha` command can load env vars, open VS Code/Cursor, and set terminal title in one step.
 
 {% endraw %}
 
-## Related Articles
+Related Articles
 
 - [Best Practices for AI Coding Tool Project Configuration](/best-practices-for-ai-coding-tool-project-configuration-in-l/)
 - [Cheapest AI Tool for Generating Entire Project](/cheapest-ai-tool-for-generating-entire-project-from-description/)
 - [Best Practices for Maintaining AI Tool Configuration Files](/best-practices-for-maintaining-ai-tool-configuration-files-a/)
 - [Best Practices for Sharing AI Tool Configuration Files](/best-practices-for-sharing-ai-tool-configuration-files-acros/)
 - [Best Practices for AI Tool Customization Files When Onboardi](/best-practices-for-ai-tool-customization-files-when-onboardi/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

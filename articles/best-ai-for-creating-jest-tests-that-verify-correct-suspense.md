@@ -28,7 +28,7 @@ intent-checked: true
 
 Claude produces the most reliable Jest tests for React Suspense because it correctly implements `waitFor` and `findBy` queries for async behavior, properly handles error boundaries, and understands React's concurrent rendering model. Other AI tools like GitHub Copilot generate working basic tests but often miss edge cases around error handling and concurrent features, while Claude consistently generates tests that work on first use without manual refinement.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Suspense and Lazy Loading Test Requirements](#understanding-suspense-and-lazy-loading-test-requirements)
 - [Key Challenges in Testing Suspense](#key-challenges-in-testing-suspense)
@@ -37,7 +37,7 @@ Claude produces the most reliable Jest tests for React Suspense because it corre
 - [Recommendations by Use Case](#recommendations-by-use-case)
 - [Best Practices for AI-Generated Suspense Tests](#best-practices-for-ai-generated-suspense-tests)
 
-## Understanding Suspense and Lazy Loading Test Requirements
+Understanding Suspense and Lazy Loading Test Requirements
 
 React Suspense lets components pause rendering while waiting for async operations. Testing these patterns involves verifying:
 
@@ -51,7 +51,7 @@ React Suspense lets components pause rendering while waiting for async operation
 
 Modern React applications use `React.lazy()` and `<Suspense>` boundaries extensively for code splitting. Writing tests for these patterns requires proper handling of async behavior.
 
-## Key Challenges in Testing Suspense
+Key Challenges in Testing Suspense
 
 When testing Suspense, you encounter several technical hurdles:
 
@@ -69,13 +69,13 @@ A common failure mode is generating a test that uses `getBy` queries immediately
 
 Another subtlety is the `act()` warning. When Suspense boundaries resolve outside of an `act()` call, React logs a warning about state updates. Properly structured tests wrap async operations to suppress these warnings and keep test output clean. Claude tends to get this right consistently; other tools require explicit prompting.
 
-## AI Tool Comparison for Suspense Testing
+AI Tool Comparison for Suspense Testing
 
-### Claude (Anthropic)
+Claude (Anthropic)
 
 Claude excels at generating Suspense tests. It understands React's concurrent rendering model and produces tests that properly handle async behavior.
 
-**Strengths:**
+Strengths:
 
 - Correctly implements `waitFor` and `findBy` queries
 
@@ -109,11 +109,11 @@ test('Suspense shows fallback during lazy load', async () => {
 
 Claude generates tests that properly await async transitions and verify both loading and success states. When prompted with a component that uses `React.lazy()` plus an error boundary, Claude generates the complete test scaffold including a reusable ErrorBoundary class component, proper `console.error` suppression (React logs expected errors even when caught), and cleanup in `afterEach` hooks.
 
-### GitHub Copilot
+GitHub Copilot
 
 Copilot provides solid basic Suspense tests but sometimes misses edge cases around error boundaries and concurrent mode.
 
-**Strengths:**
+Strengths:
 
 - Good for simple loading state tests
 
@@ -121,7 +121,7 @@ Copilot provides solid basic Suspense tests but sometimes misses edge cases arou
 
 - Quick inline suggestions
 
-**Weaknesses:**
+Weaknesses:
 
 - Sometimes generates tests that don't wait properly
 
@@ -144,13 +144,13 @@ test('lazy component loads', async () => {
 });
 ```
 
-The generated code works for straightforward cases but may require manual refinement for complex scenarios. Copilot's inline suggestion model shines when you're already in a test file and have existing patterns for it to follow — it extrapolates well from context. The gap appears when starting from scratch on an unfamiliar pattern.
+The generated code works for straightforward cases but may require manual refinement for complex scenarios. Copilot's inline suggestion model shines when you're already in a test file and have existing patterns for it to follow. it extrapolates well from context. The gap appears when starting from scratch on an unfamiliar pattern.
 
-### Cursor
+Cursor
 
 Cursor combines AI assistance with IDE features, making it useful for building test suites. Its agent mode can refactor and improve Suspense tests.
 
-**Strengths:**
+Strengths:
 
 - Multi-file context awareness
 
@@ -158,7 +158,7 @@ Cursor combines AI assistance with IDE features, making it useful for building t
 
 - Good integration with test runners
 
-**Weaknesses:**
+Weaknesses:
 
 - Suggestions vary in quality
 
@@ -168,11 +168,11 @@ Cursor combines AI assistance with IDE features, making it useful for building t
 
 Cursor's agent mode is particularly useful for updating an existing test suite to cover new Suspense patterns. If you have 20 existing component tests and want to add Suspense coverage, Cursor can read all existing files, understand your project's testing conventions, and generate consistent additions. This contextual awareness sets it apart from tools that treat each prompt in isolation.
 
-### Aider
+Aider
 
 Aider works well for terminal-based test generation, particularly when you need to generate multiple test files or test suites.
 
-**Strengths:**
+Strengths:
 
 - Good for batch test generation
 
@@ -180,7 +180,7 @@ Aider works well for terminal-based test generation, particularly when you need 
 
 - Strong refactoring capabilities
 
-**Weaknesses:**
+Weaknesses:
 
 - No native React Testing Library awareness
 
@@ -190,9 +190,9 @@ Aider works well for terminal-based test generation, particularly when you need 
 
 Aider works best when you write explicit instructions in your prompt. Instead of "add tests for this Suspense component," prompt it with "add Jest tests using React Testing Library that use waitFor to handle async Suspense resolution and include an error boundary test case." That level of specificity reliably produces correct output.
 
-## Practical Testing Patterns
+Practical Testing Patterns
 
-### Testing Lazy Loading
+Testing Lazy Loading
 
 ```javascript
 import { lazy, Suspense } from 'react';
@@ -220,7 +220,7 @@ describe('LazyDashboard', () => {
 });
 ```
 
-### Testing Error Boundaries with Suspense
+Testing Error Boundaries with Suspense
 
 ```javascript
 import { lazy, Suspense } from 'react';
@@ -270,7 +270,7 @@ afterEach(() => {
 
 Claude generates this suppression automatically. Other tools require you to add it manually or prompt explicitly for it.
 
-### Testing Suspense with Data Fetching
+Testing Suspense with Data Fetching
 
 ```javascript
 import { createResource } from 'simple-cache-resource';
@@ -302,9 +302,9 @@ test('Suspense handles async data fetching', async () => {
 });
 ```
 
-### Testing Nested Suspense Boundaries
+Testing Nested Suspense Boundaries
 
-Real applications often nest Suspense boundaries — an outer boundary for page-level loading and inner boundaries for individual widgets. Testing nested boundaries requires verifying that each resolves independently:
+Real applications often nest Suspense boundaries. an outer boundary for page-level loading and inner boundaries for individual widgets. Testing nested boundaries requires verifying that each resolves independently:
 
 ```javascript
 test('nested Suspense boundaries resolve independently', async () => {
@@ -334,7 +334,7 @@ test('nested Suspense boundaries resolve independently', async () => {
 
 Claude handles this pattern well when given the component structure as context. Copilot and Aider both require explicit prompting to generate tests for nested boundary scenarios.
 
-## Recommendations by Use Case
+Recommendations by Use Case
 
 For test suites: Use Claude with explicit instructions about React Testing Library and async handling.
 
@@ -344,9 +344,9 @@ For refactoring existing tests: Cursor's agent mode provides useful improvements
 
 For CI/CD integration: Aider generates tests efficiently in terminal workflows when given sufficiently detailed prompts.
 
-When correctness on first generation matters — such as when adding tests to CI pipelines that must pass before merging — Claude's consistent output makes it the practical choice. The cost of a debugging a subtly wrong async test often exceeds the cost of an AI tool subscription.
+When correctness on first generation matters. such as when adding tests to CI pipelines that must pass before merging. Claude's consistent output makes it the practical choice. The cost of a debugging a subtly wrong async test often exceeds the cost of an AI tool subscription.
 
-## Best Practices for AI-Generated Suspense Tests
+Best Practices for AI-Generated Suspense Tests
 
 1. Always verify async behavior: AI-generated tests should use `waitFor` or `findBy` queries
 
@@ -362,34 +362,34 @@ When correctness on first generation matters — such as when adding tests to CI
 
 7. Test with `act()`: Wrap state updates and async resolutions in `act()` to avoid React warnings in test output
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Best AI for Creating Jest Tests That Verify Correct React](/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
 - [Best AI Assistant for Creating Jest Tests That Verify Error](/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
 - [Best AI for Creating Jest Tests That Cover Race Conditions](/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
 - [Best AI Assistant for Creating Playwright Tests for Multi](/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
 - [Best AI Tool for Generating Jest Test Cases from React](/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

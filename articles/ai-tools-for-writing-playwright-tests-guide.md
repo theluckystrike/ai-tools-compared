@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Playwright Tests"
-description: "Compare Claude Code, Copilot, and Cursor for writing Playwright tests — page objects, network mocking, auth setup, and complex interaction patterns"
+description: "Compare Claude Code, Copilot, and Cursor for writing Playwright tests. page objects, network mocking, auth setup, and complex interaction patterns"
 date: 2026-03-22
 author: theluckystrike
 permalink: ai-tools-for-writing-playwright-tests-guide
@@ -17,7 +17,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Playwright tests fail in two ways: they don't test the right thing, or they fail on CI because of timing issues and environment differences. AI tools can write Playwright code quickly, but the quality gap shows up in locator strategy, wait handling, and test isolation. This guide covers the patterns that separate good Playwright AI output from bad.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -27,21 +27,21 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: The Test Quality Spectrum
+Step 1: The Test Quality Spectrum
 
 ```
-Level 1: Brittle — querySelector selectors, arbitrary sleeps
-Level 2: Functional — getByRole/getByTestId, basic waits
-Level 3: Production — page object model, auth fixtures, network mocking
+Level 1: Brittle. querySelector selectors, arbitrary sleeps
+Level 2: Functional. getByRole/getByTestId, basic waits
+Level 3: Production. page object model, auth fixtures, network mocking
 ```
 
 Most AI tools default to Level 1-2. Claude Code with context consistently reaches Level 3.
 
-### Step 2: Task 1: Login Flow with Auth State
+Step 2: Task 1: Login Flow with Auth State
 
-**Prompt:** "Write a Playwright test for login. Email/password form, redirects to dashboard on success."
+Prompt: "Write a Playwright test for login. Email/password form, redirects to dashboard on success."
 
-**Copilot's output:**
+Copilot's output:
 
 ```typescript
 test('user can login', async ({ page }) => {
@@ -59,10 +59,10 @@ This works in isolation but:
 - Doesn't save auth state (means logging in before every test)
 - Uses CSS selectors instead of accessible locators
 
-**Claude's output:**
+Claude's output:
 
 ```typescript
-// tests/auth.setup.ts — Run once to create auth state
+// tests/auth.setup.ts. Run once to create auth state
 import { test as setup, expect } from '@playwright/test';
 import path from 'path';
 
@@ -76,7 +76,7 @@ setup('authenticate', async ({ page }) => {
   await page.getByRole('button', { name: 'Sign in' }).click();
 
   // Wait for dashboard to confirm auth succeeded
-  await page.waitForURL('**/dashboard', { timeout: 10_000 });
+  await page.waitForURL('/dashboard', { timeout: 10_000 });
   await expect(page.getByRole('heading', { name: /welcome/i })).toBeVisible();
 
   // Save auth state for reuse across tests
@@ -97,7 +97,7 @@ export default defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-        storageState: '.auth/user.json'  // Reuse auth state — no login per test
+        storageState: '.auth/user.json'  // Reuse auth state. no login per test
       },
       dependencies: ['setup']
     }
@@ -106,7 +106,7 @@ export default defineConfig({
 ```
 
 ```typescript
-// tests/dashboard.spec.ts — Uses saved auth state
+// tests/dashboard.spec.ts. Uses saved auth state
 import { test, expect } from '@playwright/test';
 
 test.describe('Dashboard', () => {
@@ -123,19 +123,19 @@ test.describe('Dashboard', () => {
 });
 ```
 
-### Step 3: Task 2: Page Object Model
+Step 3: Task 2: Page Object Model
 
-**Prompt:** "Create a Page Object for a shopping cart page."
+Prompt: "Create a Page Object for a shopping cart page."
 
-**Cursor's output:**
+Cursor's output:
 
 ```typescript
-// Cursor — flat functions, no class
+// Cursor. flat functions, no class
 async function addToCart(page: Page, productId: string) { ... }
 async function getCartCount(page: Page) { ... }
 ```
 
-**Claude's output:**
+Claude's output:
 
 ```typescript
 // tests/pages/CartPage.ts
@@ -195,7 +195,7 @@ export class CartPage {
 
   async proceedToCheckout() {
     await this.checkoutButton.click();
-    await this.page.waitForURL('**/checkout/**');
+    await this.page.waitForURL('/checkout/');
   }
 }
 
@@ -212,9 +212,9 @@ test('removing last item shows empty state', async ({ page }) => {
 });
 ```
 
-### Step 4: Task 3: Network Mocking
+Step 4: Task 3: Network Mocking
 
-**Prompt:** "Write a test that mocks the payment API to test error handling."
+Prompt: "Write a test that mocks the payment API to test error handling."
 
 ```typescript
 // Claude's network mock implementation
@@ -223,7 +223,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Checkout error handling', () => {
   test('shows error message when payment fails', async ({ page }) => {
     // Mock the payment endpoint BEFORE navigating
-    await page.route('**/api/payments/charge', route => {
+    await page.route('/api/payments/charge', route => {
       route.fulfill({
         status: 402,
         contentType: 'application/json',
@@ -253,8 +253,8 @@ test.describe('Checkout error handling', () => {
       resolvePayment = resolve;
     });
 
-    // Delayed mock — payment hangs until we resolve it
-    await page.route('**/api/payments/charge', async route => {
+    // Delayed mock. payment hangs until we resolve it
+    await page.route('/api/payments/charge', async route => {
       await paymentPromise;
       route.fulfill({
         status: 200,
@@ -272,12 +272,12 @@ test.describe('Checkout error handling', () => {
 
     // Resolve payment and verify success
     resolvePayment!();
-    await page.waitForURL('**/orders/success');
+    await page.waitForURL('/orders/success');
   });
 });
 ```
 
-### Step 5: Task 4: Visual Regression Testing
+Step 5: Task 4: Visual Regression Testing
 
 ```typescript
 // Claude adds visual regression snapshots properly
@@ -296,7 +296,7 @@ test('checkout page layout matches baseline', async ({ page }) => {
 });
 ```
 
-## Tool Comparison
+Tool Comparison
 
 | Pattern | Claude Code | Copilot | Cursor |
 |---|---|---|---|
@@ -307,27 +307,27 @@ test('checkout page layout matches baseline', async ({ page }) => {
 | Network mocking | Route with delayed/error responses | Basic route.fulfill | Correct basics |
 | Visual regression | mask + maxDiffPixels | Basic screenshot | Basic screenshot |
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Articles
+Related Articles
 
 - [Which AI Is Better for Writing Playwright End-to-End Tests](/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
 - [Best AI Tools for Writing Playwright E2E Tests 2026](/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
 - [Best AI Tools for Writing Playwright Tests 2026](/best-ai-tools-for-writing-playwright-tests-2026/)
 - [Best AI for Writing Playwright Tests That Handle Dynamic](/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
 - [Best AI Tools for Writing Cypress Tests](/ai-tools-for-writing-cypress-tests/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

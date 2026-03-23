@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Build AI Pipelines with Prefect"
-description: "Build production AI data pipelines using Prefect — orchestrate LLM calls, embeddings, RAG ingestion, and model evaluation with retry logic and observability"
+description: "Build production AI data pipelines using Prefect. orchestrate LLM calls, embeddings, RAG ingestion, and model evaluation with retry logic and observability"
 date: 2026-03-22
 author: theluckystrike
 permalink: how-to-build-ai-pipelines-with-prefect
@@ -15,16 +15,16 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-Running LLM calls in a script works until it doesn't — an API rate limit drops a batch halfway through, a timeout leaves data in an inconsistent state, or you can't tell which step failed. Prefect solves these problems for AI pipelines: retry policies, state persistence, observability, and scheduling that survives process restarts.
+Running LLM calls in a script works until it doesn't. an API rate limit drops a batch halfway through, a timeout leaves data in an inconsistent state, or you can't tell which step failed. Prefect solves these problems for AI pipelines: retry policies, state persistence, observability, and scheduling that survives process restarts.
 
-## Why Prefect for AI Pipelines
+Why Prefect for AI Pipelines
 
 Three AI-specific reasons:
-- **Retry on rate limits**: Automatically retry Anthropic/OpenAI calls with exponential backoff
-- **Partial completion**: Prefect tasks cache results, so a failed pipeline resumes from where it stopped
-- **Concurrency control**: Limit parallel LLM calls without writing a semaphore
+- Retry on rate limits: Automatically retry Anthropic/OpenAI calls with exponential backoff
+- Partial completion: Prefect tasks cache results, so a failed pipeline resumes from where it stopped
+- Concurrency control: Limit parallel LLM calls without writing a semaphore
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -34,17 +34,17 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Set Up
+Step 1: Set Up
 
 ```bash
 pip install prefect anthropic openai pinecone-client
 prefect server start  # Local server, or use Prefect Cloud
 ```
 
-### Step 2: Pipeline 1: Document Ingestion for RAG
+Step 2: Pipeline 1: Document Ingestion for RAG
 
 ```python
-# ingestion_pipeline.py
+ingestion_pipeline.py
 import asyncio
 from pathlib import Path
 from typing import Optional
@@ -173,7 +173,7 @@ def ingest_documents(
     index_name: str,
     chunk_size: int = 512
 ):
-    """Main ingestion flow — processes documents in parallel."""
+    """Main ingestion flow. processes documents in parallel."""
     docs = [load_document(fp) for fp in file_paths]
 
     # Process all docs concurrently
@@ -204,10 +204,10 @@ def ingest_documents(
     return total_upserted
 ```
 
-### Step 3: Pipeline 2: LLM Batch Processing with Evaluation
+Step 3: Pipeline 2: LLM Batch Processing with Evaluation
 
 ```python
-# evaluation_pipeline.py
+evaluation_pipeline.py
 from prefect import flow, task
 from prefect.artifacts import create_markdown_artifact
 import json
@@ -237,7 +237,7 @@ def process_with_claude(prompt: str, item_id: str) -> dict:
 def evaluate_response(result: dict, expected_pattern: str = None) -> dict:
     """Score a response using Claude as judge."""
     if not expected_pattern:
-        return {**result, "score": None}
+        return {result, "score": None}
 
     judge_response = claude.messages.create(
         model="claude-opus-4-6",
@@ -256,7 +256,7 @@ Return only a JSON object: {{"score": N, "reason": "..."}}"""
     except json.JSONDecodeError:
         evaluation = {"score": 3, "reason": "parse error"}
 
-    return {**result, **evaluation}
+    return {result, evaluation}
 
 @task
 def generate_report(evaluations: list[dict]) -> str:
@@ -267,11 +267,11 @@ def generate_report(evaluations: list[dict]) -> str:
 
     report = f"""# Batch Evaluation Report
 
-# schedule_pipeline.py
+schedule_pipeline.py
 from prefect.deployments import Deployment
 from prefect.server.schemas.schedules import CronSchedule
 
-# Deploy the ingestion pipeline to run daily at 2am
+Deploy the ingestion pipeline to run daily at 2am
 deployment = Deployment.build_from_flow(
     flow=ingest_documents,
     name="nightly-ingestion",
@@ -289,16 +289,16 @@ if __name__ == "__main__":
     print("Deployment created. Run: prefect worker start --pool default")
 ```
 
-### Step 6: Concurrency Limits (Rate Limit Management)
+Step 6: Concurrency Limits (Rate Limit Management)
 
 ```python
-# prefect_concurrency_limits.py
+prefect_concurrency_limits.py
 from prefect import serve
 from prefect.concurrency.sync import concurrency
 
-# Create concurrency limits via CLI:
-# prefect concurrency-limit create openai-embeddings 5
-# prefect concurrency-limit create anthropic-api 10
+Create concurrency limits via CLI:
+prefect concurrency-limit create openai-embeddings 5
+prefect concurrency-limit create anthropic-api 10
 
 @task
 def rate_limited_claude_call(prompt: str) -> str:
@@ -312,27 +312,27 @@ def rate_limited_claude_call(prompt: str) -> str:
     return response.content[0].text
 ```
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Articles
+Related Articles
 
 - [How to Build Voice AI Apps with Claude](/how-to-build-voice-ai-apps-with-claude)
 - [How to Use AI to Create Data Pipeline Orchestration Configs](/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
 - [Prefect vs Dagster for AI Workflows](/prefect-vs-dagster-ai-workflows/)
 - [How to Use AI to Generate Terraform Import Blocks](/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
 - [How to Use AI to Resolve Python Import Circular Dependency](/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

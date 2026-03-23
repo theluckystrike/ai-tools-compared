@@ -8,13 +8,13 @@ voice-checked: true
 date: 2026-03-21
 ---
 
-# AI Documentation Tools — Changelog, API Docs & README Generation
+# AI Documentation Tools. Changelog, API Docs & README Generation
 
 Keeping documentation up to date is one of the most neglected tasks in software development. AI documentation tools now automate changelog generation, create API documentation from code comments, write meaningful commit messages from diffs, and draft release notes. This hub collects our guides on tools that turn code into clear, maintainable docs. Whether you need automated API reference pages, GitHub release descriptions, or pull request summaries, these comparisons help you pick the right tool for your documentation workflow.
 
 ---
 
-## Articles in This Topic (20)
+Articles in This Topic (20)
 
 - [AI Git Commit Message Generators Compared 2026](/ai-git-commit-message-generators-compared/)
 - [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)

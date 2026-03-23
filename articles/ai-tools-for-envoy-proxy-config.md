@@ -14,13 +14,13 @@ tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 {% raw %}
-# AI Tools for Automated Envoy Proxy Configuration
+AI Tools for Automated Envoy Proxy Configuration
 
-Envoy proxy configuration is notoriously verbose. A complete config for a simple service with TLS, retry policies, and rate limiting runs to hundreds of lines of YAML. AI tools can dramatically accelerate this — but they need to be guided carefully, because Envoy's configuration schema is version-sensitive and the AI training data includes many outdated patterns.
+Envoy proxy configuration is notoriously verbose. A complete config for a simple service with TLS, retry policies, and rate limiting runs to hundreds of lines of YAML. AI tools can dramatically accelerate this. but they need to be guided carefully, because Envoy's configuration schema is version-sensitive and the AI training data includes many outdated patterns.
 
 ---
 
-## What AI Is Good For
+What AI Is Good For
 
 - Generating listener and cluster configurations from high-level descriptions
 - Writing HTTP filter chains for common use cases (JWT auth, rate limiting, headers)
@@ -28,7 +28,7 @@ Envoy proxy configuration is notoriously verbose. A complete config for a simple
 - Explaining xDS API structures and resource types
 - Writing Lua filter scripts for custom request manipulation
 
-## What to Verify Manually
+What to Verify Manually
 
 - API version compatibility (v3 vs deprecated v2 fields)
 - Route match priority and ordering
@@ -38,9 +38,9 @@ Envoy proxy configuration is notoriously verbose. A complete config for a simple
 
 ---
 
-## Workflow 1: Generating a Basic Envoy Config
+Workflow 1: Generating a Basic Envoy Config
 
-**Prompt:**
+Prompt:
 
 ```
 Generate an Envoy proxy static configuration (v3 API) for:
@@ -51,7 +51,7 @@ Generate an Envoy proxy static configuration (v3 API) for:
 - Adds x-request-id header if not present
 ```
 
-**Claude's output:**
+Claude's output:
 
 ```yaml
 static_resources:
@@ -108,11 +108,11 @@ This is valid v3 API config. Validate with `envoy --mode validate -c config.yaml
 
 ---
 
-## Workflow 2: Adding Rate Limiting
+Workflow 2: Adding Rate Limiting
 
 Envoy's local rate limiting filter is often simpler than the global rate limiting service for basic use cases.
 
-**Prompt:**
+Prompt:
 
 ```
 Add a local rate limit to the Envoy config above:
@@ -121,7 +121,7 @@ Add a local rate limit to the Envoy config above:
 - Exempt requests with the header X-Internal: true
 ```
 
-**Generated filter config:**
+Generated filter config:
 
 ```yaml
 http_filters:
@@ -159,13 +159,13 @@ http_filters:
       "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
 ```
 
-Note: Per-IP rate limiting with local rate limit requires a descriptor-based approach. For true per-IP limiting, you need the global rate limit service or use a Lua filter. Claude correctly notes this limitation when asked — GPT-4 sometimes generates per-IP config that doesn't actually work with the local rate limit filter.
+Per-IP rate limiting with local rate limit requires a descriptor-based approach. For true per-IP limiting, you need the global rate limit service or use a Lua filter. Claude correctly notes this limitation when asked. GPT-4 sometimes generates per-IP config that doesn't actually work with the local rate limit filter.
 
 ---
 
-## Workflow 3: JWT Authentication Filter
+Workflow 3: JWT Authentication Filter
 
-**Prompt:**
+Prompt:
 
 ```
 Add JWT authentication to the Envoy config:
@@ -235,11 +235,11 @@ Add the JWKS cluster to your static resources:
 
 ---
 
-## Tool Comparison
+Tool Comparison
 
 | Task | Claude | GPT-4 | Copilot |
 |------|--------|-------|---------|
-| v3 API syntax | Accurate | Occasionally uses deprecated v2 fields | Limited — not enough context |
+| v3 API syntax | Accurate | Occasionally uses deprecated v2 fields | Limited. not enough context |
 | Filter chain ordering | Gets it right | Sometimes puts router before other filters | N/A |
 | JWT auth config | Correct, complete | Usually correct | Incomplete |
 | Rate limiting | Explains local vs global correctly | Sometimes generates non-functional per-IP config | N/A |
@@ -247,41 +247,41 @@ Add the JWKS cluster to your static resources:
 | Explaining errors | Clear | Clear | N/A |
 | Lua filters | Generates working Lua | Good | N/A |
 
-**Copilot** is largely unhelpful for Envoy configs — the configs are too specialized and context-heavy for inline completions. Use Claude or GPT-4 in chat mode.
+Copilot is largely unhelpful for Envoy configs. the configs are too specialized and context-heavy for inline completions. Use Claude or GPT-4 in chat mode.
 
 ---
 
-## Common Mistakes to Check
+Common Mistakes to Check
 
-**1. Filter ordering matters:**
+1. Filter ordering matters:
 JWT auth must come before the router filter. Rate limiting should also precede the router. Always verify the order in generated configs.
 
-**2. v2 vs v3 API:**
+2. v2 vs v3 API:
 Configs using `typed_config` with `type.googleapis.com/envoy.extensions.*` are v3. If you see bare filter names without `typed_config`, that's deprecated v2.
 
-**3. Cluster type:**
+3. Cluster type:
 - `LOGICAL_DNS` for DNS-resolved hostnames
 - `STATIC` for IP addresses
 - `EDS` for xDS-managed endpoints
 
-**4. Timeout semantics:**
+4. Timeout semantics:
 `timeout` on the route is the global timeout. `per_try_timeout` is per retry attempt. Both matter for retry policy correctness.
 
 ---
 
-## Prompting Tips
+Prompting Tips
 
 Specify the Envoy version. Version 1.28+ has different filter names for some extensions than 1.24.
 
-Include whether you're running in Docker/Kubernetes or bare metal — affects how you reference clusters and listener addresses.
+Include whether you're running in Docker/Kubernetes or bare metal. affects how you reference clusters and listener addresses.
 
 Ask for validation commands: `envoy --mode validate -c /path/to/config.yaml`
 
-If you're using Envoy as a sidecar with xDS (e.g., in Istio), tell the AI — the config structure is completely different from static configs.
+If you're using Envoy as a sidecar with xDS (e.g., in Istio), tell the AI. the config structure is completely different from static configs.
 
 ---
 
-## Related Reading
+Related Reading
 
 - [AI Tools for Automated Istio Configuration](/ai-tools-for-automated-istio-configuration/)
 - [AI-Powered Distributed Tracing Setup Tools](/ai-powered-distributed-tracing-setup-tools/)
@@ -289,5 +289,5 @@ If you're using Envoy as a sidecar with xDS (e.g., in Istio), tell the AI — th
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

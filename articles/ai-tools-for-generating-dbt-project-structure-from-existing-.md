@@ -17,16 +17,16 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Many data teams accumulate years of SQL queries across their analytics workflows. When it comes time to adopt dbt (data build tool) for better data transformation management, the prospect of manually converting hundreds or thousands of existing queries into a proper dbt project structure becomes overwhelming. AI tools offer a practical solution for automating this migration process while maintaining query functionality and establishing sensible project organization.
 
-## Key Takeaways
+Key Takeaways
 
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Next**: provide context to your AI tool about your data warehouse environment.
+- Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
+- Mastering advanced features takes: 1-2 weeks of regular use.
+- Focus on the 20%: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- Next: provide context to your AI tool about your data warehouse environment.
 
-## Understanding the Migration Challenge
+Understanding the Migration Challenge
 
 
 Converting an existing analytics query library to dbt involves more than just copying SQL files into a new directory structure. A proper dbt project requires organized models, appropriate naming conventions, source definitions, tests, and documentation. Each legacy query typically represents a transformation that needs to be decomposed into discrete, maintainable models.
@@ -35,13 +35,13 @@ Converting an existing analytics query library to dbt involves more than just co
 The manual approach to this migration consumes significant developer time and introduces opportunities for errors. AI-powered tools can accelerate this process by analyzing query patterns, identifying common table expressions, recognizing repeated logic, and generating the corresponding dbt project structure automatically.
 
 
-## How AI Tools Approach the Transformation
+How AI Tools Approach the Transformation
 
 
 Modern AI coding assistants and specialized data tools can parse existing SQL queries and generate appropriate dbt components. The process typically involves several stages that the AI handles intelligently.
 
 
-### Analyzing Query Dependencies
+Analyzing Query Dependencies
 
 
 AI tools examine your existing queries to understand table dependencies, identify source tables, and map how different queries relate to each other. This dependency analysis forms the foundation for organizing models into a logical folder structure.
@@ -68,7 +68,7 @@ GROUP BY o.order_id, o.order_date, c.customer_name, c.customer_email
 An AI tool recognizes the source tables (orders, customers, order_items), identifies the transformation logic, and can generate a corresponding dbt model structure.
 
 
-### Generating dbt Model Files
+Generating dbt Model Files
 
 
 The AI produces YAML configuration and SQL model files that reflect the query structure. For the example above, the tool would generate something similar to:
@@ -95,14 +95,14 @@ GROUP BY o.order_id, o.order_date, c.customer_name, c.customer_email
 The AI automatically converts raw table references to `ref()` macros, organizes models into appropriate directories (staging, intermediate, marts), and sets appropriate materialization strategies.
 
 
-### Creating Source and Staging Layers
+Creating Source and Staging Layers
 
 
 AI tools also generate the staging layer that wraps raw source tables. This is crucial for maintaining a clean separation between raw data and business logic:
 
 
 ```yaml
-# models/staging/stg_orders.yml
+models/staging/stg_orders.yml
 version: 2
 
 models:
@@ -124,7 +124,7 @@ models:
 This automation ensures consistency across your staging models and provides a foundation for testing and documentation.
 
 
-## Practical Workflow for Migration
+Practical Workflow for Migration
 
 
 Using AI tools for this migration follows a structured approach that maximizes efficiency while maintaining quality.
@@ -139,7 +139,7 @@ Next, provide context to your AI tool about your data warehouse environment. Spe
 The AI then processes queries in batches, generating corresponding dbt models. Review the output carefully, particularly around complex joins and window functions, as these often require manual verification to ensure the generated logic matches the original intent.
 
 
-## Limitations and Manual Verification
+Limitations and Manual Verification
 
 
 While AI tools significantly accelerate the migration process, certain aspects require developer attention.
@@ -154,7 +154,7 @@ Data type handling varies between warehouses, and the AI may not always select t
 Finally, test generation requires oversight. While AI can create basic uniqueness and not-null tests, relationship tests between tables and custom business logic tests need explicit definition based on your team's data quality standards.
 
 
-## Building a Maintainable dbt Project
+Building a Maintainable dbt Project
 
 
 The ultimate goal of migrating to dbt extends beyond simply converting queries. You want a project structure that supports ongoing development, enables collaboration, and provides clear data lineage.
@@ -165,70 +165,70 @@ AI-generated models serve as an excellent starting point. After migration, inves
 
 Establish conventions for naming, testing, and versioning early. These conventions become the foundation for your team's dbt development practices and ensure consistency as the project grows.
 
-## Practical dbt Project Structure Generated by AI
+Practical dbt Project Structure Generated by AI
 
 Here's what a well-organized dbt project typically looks like after AI-assisted generation:
 
 ```
 my_analytics/
-├── dbt_project.yml
-├── models/
-│   ├── staging/
-│   │   ├── stg_customers.sql
-│   │   ├── stg_orders.sql
-│   │   ├── stg_payments.sql
-│   │   └── staging.yml
-│   ├── intermediate/
-│   │   ├── int_order_items.sql
-│   │   └── intermediate.yml
-│   └── marts/
-│       ├── core/
-│       │   ├── fact_orders.sql
-│       │   ├── dim_customers.sql
-│       │   └── core.yml
-│       └── finance/
-│           ├── fct_revenue.sql
-│           └── finance.yml
-├── tests/
-│   ├── generic/
-│   └── specific/
-├── macros/
-│   └── cents_to_dollars.sql
-├── seeds/
-└── analyses/
+ dbt_project.yml
+ models/
+    staging/
+       stg_customers.sql
+       stg_orders.sql
+       stg_payments.sql
+       staging.yml
+    intermediate/
+       int_order_items.sql
+       intermediate.yml
+    marts/
+        core/
+           fact_orders.sql
+           dim_customers.sql
+           core.yml
+        finance/
+            fct_revenue.sql
+            finance.yml
+ tests/
+    generic/
+    specific/
+ macros/
+    cents_to_dollars.sql
+ seeds/
+ analyses/
 ```
 
-## CLI Commands for dbt Migrations
+CLI Commands for dbt Migrations
 
 AI tools work best when integrated into your dbt workflow:
 
 ```bash
-# Initialize dbt project
+Initialize dbt project
 dbt init my_analytics
 
-# Run all models
+Run all models
 dbt run
 
-# Test generated models for issues
+Test generated models for issues
 dbt test
 
-# Document all tables and columns
+Document all tables and columns
 dbt docs generate
 
-# Debug specific model
+Debug specific model
 dbt debug
 
-# Run specific model staging layer
+Run specific model staging layer
 dbt run --select tag:staging
 
-# Validate all generated SQL before deployment
+Validate all generated SQL before deployment
 dbt parse
 
-# Get test results in JSON
+Get test results in JSON
 dbt test --select stg_customers --output json
 ```
 
-## Cost Comparison for Migration Tools
+Cost Comparison for Migration Tools
 
 | Tool | Price | Best For | Speed |
 |------|-------|----------|-------|
@@ -237,9 +237,9 @@ dbt test --select stg_customers --output json
 | dbt Cloud IDE | Free - $5000+/month | Native dbt support, lineage visualization | Integrated but vendor-locked |
 | Custom Python script | Free | Batch migration of similar queries | Very fast but less intelligent |
 
-## Real Migration Example: From Raw Queries to dbt
+Real Migration Example: From Raw Queries to dbt
 
-**Original legacy query:**
+Original legacy query:
 ```sql
 SELECT
   customer_id,
@@ -252,7 +252,7 @@ GROUP BY customer_id
 HAVING COUNT(DISTINCT order_id) >= 5
 ```
 
-**AI-generated dbt transformation:**
+AI-generated dbt transformation:
 ```sql
 -- models/marts/core/dim_customers.sql
 {{ config(materialized='table') }}
@@ -299,28 +299,28 @@ models:
         description: Total monetary value of all orders
 ```
 
-## Validation Before Deployment
+Validation Before Deployment
 
 After AI generates your dbt project, validate thoroughly:
 
 ```bash
-# Compile and check syntax without running
+Compile and check syntax without running
 dbt compile
 
-# Run tests on generated models
+Run tests on generated models
 dbt test --select stg_*
 
-# Compare record counts with original queries
+Compare record counts with original queries
 dbt run-operation compare_row_counts --args '{"model": "fact_orders"}'
 
-# Check for null values where not expected
+Check for null values where not expected
 dbt test --select tag:critical_columns
 
-# Validate referential integrity between models
+Validate referential integrity between models
 dbt test --select dbt_expectations
 ```
 
-## Performance Optimization After Generation
+Performance Optimization After Generation
 
 AI-generated models may not include optimal indexing or partitioning. Review and add after initial generation:
 
@@ -341,46 +341,46 @@ AI-generated models may not include optimal indexing or partitioning. Review and
 ) }}
 ```
 
-## Common Issues After Migration
+Common Issues After Migration
 
-**Issue: Models reference wrong source tables**
+Issue: Models reference wrong source tables
 - Solution: Review `sources.yml` file before running, ensure table names match warehouse exactly
 
-**Issue: Tests fail on generated models**
+Issue: Tests fail on generated models
 - Solution: Run `dbt test` immediately after generation, fix failing tests before production use
 
-**Issue: dbt parse errors in generated YAML**
+Issue: dbt parse errors in generated YAML
 - Solution: Validate YAML syntax with `dbt parse` command
 
-**Issue: Generated models produce different results than legacy queries**
+Issue: Generated models produce different results than legacy queries
 - Solution: Compare row counts and sample data between old query and new model until they match
 
 ---
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Go Project Structure and Module](/best-ai-tools-for-go-project-structure-and-module-organization/)
 - [Best Way to Structure CursorRules for Microservices Project](/best-way-to-structure-cursorrules-for-microservices-project-/)
@@ -388,5 +388,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Cheapest AI Tool for Generating an Entire Project](/cheapest-ai-tool-for-generating-entire-project-from-description/)
 - [Cheapest AI Tool for Generating Entire Project](/cheapest-ai-tool-for-generating-entire-project-from-description/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

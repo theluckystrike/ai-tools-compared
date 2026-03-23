@@ -18,14 +18,14 @@ tags: [ai-tools-compared, claude-ai, api]
 
 The Claude API can review pull request diffs and post structured feedback as GitHub comments. The key engineering decisions are: what context to send (diff only vs diff + surrounding file context), how to structure the review prompt to get actionable output, and how to parse the response into per-line GitHub review comments. This guide builds a working PR reviewer from scratch.
 
-## Key Takeaways
+Key Takeaways
 
-- **Asking for free-form feedback**: produces noise.
-- **Your goal is to catch bugs**: security issues, and violations of best practices.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
+- Asking for free-form feedback: produces noise.
+- Your goal is to catch bugs: security issues, and violations of best practices.
+- What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- Consider a security review: if your application handles sensitive user data.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -35,20 +35,20 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Install Dependencies and Set Up Authentication
+Step 1: Install Dependencies and Set Up Authentication
 
 ```bash
 pip install anthropic pygithub python-dotenv
 
-# .env file
+.env file
 ANTHROPIC_API_KEY=sk-ant-...
 GITHUB_TOKEN=ghp_...
 ```
 
-### Step 2: Fetch the PR Diff
+Step 2: Fetch the PR Diff
 
 ```python
-# review_bot.py
+review_bot.py
 import os
 from github import Github
 from anthropic import Anthropic
@@ -83,7 +83,7 @@ def get_pr_diff(repo_name: str, pr_number: int) -> dict:
     }
 ```
 
-### Step 3: Design the Review Prompt
+Step 3: Design the Review Prompt
 
 The prompt structure determines review quality. Asking for free-form feedback produces noise. Asking for structured output with file/line references produces actionable comments:
 
@@ -99,7 +99,7 @@ Review guidelines:
 - Skip style preferences unless they affect readability significantly
 - Skip observations that are already obvious from the diff description
 
-Output format — respond with a JSON object:
+Output format. respond with a JSON object:
 {
   "summary": "1-2 sentence overall assessment",
   "verdict": "approve" | "request_changes" | "comment",
@@ -136,7 +136,7 @@ Changed files:
 Review this pull request for bugs, security issues, and significant problems."""
 ```
 
-### Step 4: Call the Claude API
+Step 4: Call the Claude API
 
 ```python
 import json
@@ -176,7 +176,7 @@ def review_pull_request(repo_name: str, pr_number: int) -> dict:
  }
 ```
 
-### Step 5: Post Review Comments to GitHub
+Step 5: Post Review Comments to GitHub
 
 ```python
 def post_github_review(repo_name: str, pr_number: int, review: dict) -> None:
@@ -193,8 +193,8 @@ def post_github_review(repo_name: str, pr_number: int, review: dict) -> None:
  if review["issues"]:
  comments_text = "\n\n### Issues Found\n\n"
  for issue in review["issues"]:
- severity_icon = "🔴" if issue["severity"] == "critical" else "🟡"
- comments_text += f"**{severity_icon} {issue['severity'].upper()} — {issue['category']}**\n"
+ severity_icon = "" if issue["severity"] == "critical" else ""
+ comments_text += f"{severity_icon} {issue['severity'].upper()}. {issue['category']}\n"
  comments_text += f"`{issue['filename']}` line {issue['line']}\n"
  comments_text += f"{issue['comment']}\n"
  if issue.get("suggestion"):
@@ -205,9 +205,9 @@ def post_github_review(repo_name: str, pr_number: int, review: dict) -> None:
 
 {review['summary']}
 
-**Summary:** {critical_count} critical, {warning_count} warnings
+{critical_count} critical, {warning_count} warnings
 {comments_text}---
-*Reviewed by Claude claude-sonnet-4-6. This is automated analysis — use judgment.*"""
+*Reviewed by Claude claude-sonnet-4-6. This is automated analysis. use judgment.*"""
 
  # Map verdict to GitHub event type
  event_map = {
@@ -223,12 +223,12 @@ def post_github_review(repo_name: str, pr_number: int, review: dict) -> None:
  print(f"Posted review: {review['verdict']} ({critical_count} critical issues)")
 ```
 
-### Step 6: GitHub Actions Webhook Integration
+Step 6: GitHub Actions Webhook Integration
 
 Trigger the reviewer automatically on every PR:
 
 ```yaml
-# .github/workflows/ai-code-review.yml
+.github/workflows/ai-code-review.yml
 name: AI Code Review
 
 on:
@@ -274,7 +274,7 @@ PR_NUMBER: ${{ github.event.pull_request.number }}
  "
 ```
 
-### Step 7: Add File Context Beyond the Diff
+Step 7: Add File Context Beyond the Diff
 
 For better accuracy on complex changes, send the full file alongside the diff:
 
@@ -310,7 +310,7 @@ def build_enhanced_review_prompt(pr_data: dict, repo_name: str, head_sha: str) -
 Review for bugs, security vulnerabilities, and critical issues only."""
 ```
 
-### Step 8: Control Cost and Rate Limits
+Step 8: Control Cost and Rate Limits
 
 ```python
 import time
@@ -331,53 +331,53 @@ def truncate_diff(pr_data: dict, max_chars: int = MAX_DIFF_TOKENS * 4) -> dict:
 
  for f in sorted_files:
  if chars_used + len(f["patch"]) > max_chars:
- f = {**f, "patch": f["patch"][:max_chars - chars_used] + "\n... [truncated]"}
+ f = {f, "patch": f["patch"][:max_chars - chars_used] + "\n... [truncated]"}
  truncated.append(f)
  chars_used += len(f["patch"])
  if chars_used >= max_chars:
  break
 
- return {**pr_data, "files": truncated}
+ return {pr_data, "files": truncated}
 ```
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use the claude api for automated code review?**
+How long does it take to use the claude api for automated code review?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
 - [Claude Code API Backward Compatibility Guide](/claude-code-api-backward-compatibility-guide/)
@@ -385,5 +385,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
 - [Claude Code API Snapshot Testing Guide](/claude-code-api-snapshot-testing-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

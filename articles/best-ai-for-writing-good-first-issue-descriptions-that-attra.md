@@ -19,7 +19,7 @@ score: 9
 
 Writing good first issue descriptions is one of the most effective ways to grow an open source project. When issues are clear, well-structured, and approachable, new contributors feel confident jumping in. AI tools have become surprisingly good at helping maintainers craft these descriptions, and the right tool can transform a vague bug report into an inviting task that actually gets completed.
 
-## What Separates Good First Issues From Bad Ones
+What Separates Good First Issues From Bad Ones
 
 
 Before evaluating AI options, it helps to know what makes an issue description work. A first issue that attracts contributors includes several key elements:
@@ -33,22 +33,22 @@ Before evaluating AI options, it helps to know what makes an issue description w
 
 - Relevant code links: Direct references to files, functions, or modules that need changes
 
-- **Reproduction steps** (for bugs): Precise steps so others can confirm the problem
+- Reproduction steps (for bugs): Precise steps so others can confirm the problem
 
 
 AI tools that understand these elements can generate descriptions that hit all the right points while matching your project's specific tone and conventions.
 
 
-## Comparing AI Tools for Issue Writing
+Comparing AI Tools for Issue Writing
 
 
 Several AI assistants can help with this task, but they vary significantly in how well they understand open source workflows and how much context they can absorb about your project.
 
 
-### Claude and ChatGPT
+Claude and ChatGPT
 
 
-Both Claude and ChatGPT handle issue writing well when given proper context. You can paste in existing issues, your CONTRIBUTING.md file, and code snippets, then ask for improvements. The main difference is in how they handle iteration—Claude tends to preserve your voice more consistently through multiple revision rounds, while ChatGPT sometimes defaults to more generic language.
+Both Claude and ChatGPT handle issue writing well when given proper context. You can paste in existing issues, your CONTRIBUTING.md file, and code snippets, then ask for improvements. The main difference is in how they handle iteration, Claude tends to preserve your voice more consistently through multiple revision rounds, while ChatGPT sometimes defaults to more generic language.
 
 
 A practical approach works well with either tool:
@@ -79,16 +79,16 @@ Please write a clear issue description that:
 This prompt structure gives the AI exactly what it needs to produce a useful result.
 
 
-### GitHub Copilot
+GitHub Copilot
 
 
-Copilot integrates directly into your GitHub workflow and can suggest issue descriptions as you type. Its strength is convenience—you never leave the interface. However, it works best when you already have a solid outline. Copilot struggles more with generating complete descriptions from scratch without significant input.
+Copilot integrates directly into your GitHub workflow and can suggest issue descriptions as you type. Its strength is convenience, you never leave the interface. However, it works best when you already have a solid outline. Copilot struggles more with generating complete descriptions from scratch without significant input.
 
 
 For teams already using Copilot for code, the issue description suggestions are a nice bonus, but they rarely match what you'd get from a dedicated conversation with Claude or ChatGPT.
 
 
-### Cursor and Windsurf
+Cursor and Windsurf
 
 
 These AI-powered editors offer more context-aware suggestions because they understand your entire codebase. When writing issues, they can reference actual functions, classes, and recent changes. This contextual awareness produces more specific and useful descriptions.
@@ -97,13 +97,13 @@ These AI-powered editors offer more context-aware suggestions because they under
 Cursor's advantage is its ability to pull in relevant code automatically when you describe what an issue should cover. You can say "write an issue for the login function that's missing error handling" and it will find the relevant code and incorporate it.
 
 
-## Writing Issue Descriptions That Work
+Writing Issue Descriptions That Work
 
 
 Regardless of which AI tool you choose, the output quality depends heavily on how you frame the request. Here are practical patterns that produce better results.
 
 
-### Include Project Context
+Include Project Context
 
 
 Always tell the AI about your project's domain and terminology. A description written for a Kubernetes operator needs different language than one for a JavaScript UI library. Provide:
@@ -116,7 +116,7 @@ Always tell the AI about your project's domain and terminology. A description wr
 - Links to similar resolved issues for style reference
 
 
-### Specify the Contributor Level
+Specify the Contributor Level
 
 
 Be explicit about whether this is truly a beginner-friendly issue. New contributors need issues that don't require deep domain knowledge. A good prompt:
@@ -127,7 +127,7 @@ This should be approachable for someone's first contribution. They should be abl
 ```
 
 
-### Request Specific Sections
+Request Specific Sections
 
 
 Instead of asking for "a good issue description," request exactly the sections you want:
@@ -146,49 +146,49 @@ Write an issue with these sections:
 This produces more consistent, scannable issues.
 
 
-## Example: Before and After
+Before and After
 
 
 Here's how AI transforms a poor issue description into something that attracts contributors:
 
 
-**Before (poor):**
+Before (poor):
 
 ```
 The login is broken. It doesn't work. Need to fix it.
 ```
 
 
-**After (AI-improved):**
+After (AI-improved):
 
 
 ```
-## Problem
+Problem
 Users report that login fails silently when entering valid credentials. The app displays no error message and simply returns to the login page.
 
-## Expected Behavior
+Expected Behavior
 After entering correct username and password, users should see the dashboard within 3 seconds.
 
-## Actual Behavior
+Actual Behavior
 The page refreshes and returns to login with no feedback. No error appears in browser console.
 
-## Environment
+Environment
 - Browser: Chrome 120+
 - OS: macOS 14, Windows 11
 - App version: 2.3.1
 
-## Acceptance Criteria
+Acceptance Criteria
 - [ ] Login with valid credentials redirects to dashboard
 - [ ] Login with invalid credentials shows specific error message
 - [ ] Error message is accessible (screen reader compatible)
 - [ ] Fix works with both email/password and OAuth providers
 
-## Relevant Code
+Relevant Code
 - `auth/login.js` - authentication handler
 - `components/LoginForm.vue` - form component
 - `api/auth.ts` - API client
 
-## Difficulty
+Difficulty
 This is a good first issue. It involves one API endpoint and one form component. No database changes required.
 ```
 
@@ -196,7 +196,7 @@ This is a good first issue. It involves one API endpoint and one form component.
 The AI version includes everything a new contributor needs to get started immediately.
 
 
-## Tips for Better AI-Generated Issues
+Tips for Better AI-Generated Issues
 
 
 Getting the best results requires some refinement:
@@ -217,7 +217,7 @@ Getting the best results requires some refinement:
 5. Keep issues focused: If an issue touches multiple areas, consider splitting it. AI can help identify natural break points.
 
 
-## Automating Good First Issue Creation
+Automating Good First Issue Creation
 
 Create a GitHub Actions workflow that drafts good-first-issues automatically:
 
@@ -296,7 +296,7 @@ jobs:
 
 This automation reviews every labeled issue and suggests enhancements as a comment.
 
-## Measuring Issue Quality Impact
+Measuring Issue Quality Impact
 
 Track how well-written issues correlate with contributor engagement:
 
@@ -307,7 +307,7 @@ Track how well-written issues correlate with contributor engagement:
 | Completion rate by new contributors | 25% | 72% | 188% increase |
 | Average PR quality from first issues | 6.2/10 | 8.1/10 | 31% better |
 
-## Issue Template for AI Prompting
+Issue Template for AI Prompting
 
 Create a standard template that AI tools understand:
 
@@ -317,10 +317,10 @@ difficulty: beginner|intermediate|advanced
 estimated_time: 30min|1hour|2hours|4hours+
 ---
 
-## Problem
+Problem
 [What's broken or missing?]
 
-## Table of Contents
+Table of Contents
 
 - [Problem](#problem)
 - [Expected vs Actual](#expected-vs-actual)
@@ -331,39 +331,39 @@ estimated_time: 30min|1hour|2hours|4hours+
 - [CLI for Batch Issue Improvement](#cli-for-batch-issue-improvement)
 - [Issue Writing Checklist for AI](#issue-writing-checklist-for-ai)
 
-## Expected vs Actual
+Expected vs Actual
 [How should it work? How does it currently work?]
 
-## Reproduction Steps
+Reproduction Steps
 1. [Step 1]
 2. [Step 2]
 
-## Acceptance Criteria
+Acceptance Criteria
 - [ ] Criterion 1
 - [ ] Criterion 2
 
-## Resources
+Resources
 - [Link to relevant code]
 - [Link to documentation]
 
-## For Beginners
+For Beginners
 [This explains the simpler version of the problem...]
 ```
 
 When using this template with AI tools, response quality improves significantly because the structure is explicit.
 
-## CLI for Batch Issue Improvement
+CLI for Batch Issue Improvement
 
 Process multiple existing issues efficiently:
 
 ```bash
 #!/bin/bash
-# improve-issues.sh - Batch process existing issues
+improve-issues.sh - Batch process existing issues
 
 REPO=$1
 LABEL=${2:-"good-first-issue"}
 
-# Get all issues with label
+Get all issues with label
 gh issue list \
  --repo "$REPO" \
  --label "$LABEL" \
@@ -395,7 +395,7 @@ echo "Review and apply manually to each issue"
 
 Run this to improve all issues in a batch, then review before applying.
 
-## Issue Writing Checklist for AI
+Issue Writing Checklist for AI
 
 Before asking AI to improve an issue, verify it contains:
 
@@ -412,34 +412,34 @@ Before asking AI to improve an issue, verify it contains:
 
 The more complete your input, the better the AI-improved output.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**What if the fix described here does not work?**
+What if the fix described here does not work?
 
 If the primary solution does not resolve your issue, check whether you are running the latest version of the software involved. Clear any caches, restart the application, and try again. If it still fails, search for the exact error message in the tool's GitHub Issues or support forum.
 
-**Could this problem be caused by a recent update?**
+Could this problem be caused by a recent update?
 
 Yes, updates frequently introduce new bugs or change behavior. Check the tool's release notes and changelog for recent changes. If the issue started right after an update, consider rolling back to the previous version while waiting for a patch.
 
-**How can I prevent this issue from happening again?**
+How can I prevent this issue from happening again?
 
 Pin your dependency versions to avoid unexpected breaking changes. Set up monitoring or alerts that catch errors early. Keep a troubleshooting log so you can quickly reference solutions when similar problems recur.
 
-**Is this a known bug or specific to my setup?**
+Is this a known bug or specific to my setup?
 
 Check the tool's GitHub Issues page or community forum to see if others report the same problem. If you find matching reports, you will often find workarounds in the comments. If no one else reports it, your local environment configuration is likely the cause.
 
-**Should I reinstall the tool to fix this?**
+Should I reinstall the tool to fix this?
 
 A clean reinstall sometimes resolves persistent issues caused by corrupted caches or configuration files. Before reinstalling, back up your settings and project files. Try clearing the cache first, since that fixes the majority of cases without a full reinstall.
 
-## Related Articles
+Related Articles
 
 - [Best AI for Writing Good First Issue Descriptions That](/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
 - [Best AI Assistant for Writing Open Source Roadmap Documents](/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
 - [AI Tools for Writing App Store Descriptions 2026](/ai-tools-for-writing-app-store-descriptions-2026/)
 - [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
 - [AI Tools for Analyzing Issue Comment Sentiment to Identify](/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

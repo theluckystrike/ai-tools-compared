@@ -29,26 +29,26 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-LangGraph lets you build AI workflows that maintain state across multiple steps, loop until conditions are met, and route to different agents based on intermediate results. For developer tools, this means you can build a code agent that writes code, runs tests, reads the failure output, fixes the code, and loops until tests pass — without hardcoding the number of steps.
+LangGraph lets you build AI workflows that maintain state across multiple steps, loop until conditions are met, and route to different agents based on intermediate results. For developer tools, this means you can build a code agent that writes code, runs tests, reads the failure output, fixes the code, and loops until tests pass. without hardcoding the number of steps.
 
-## Key Takeaways
+Key Takeaways
 
-- **Use simple LLM calls**: for one-shot tasks or when latency is critical (graph overhead adds ~50ms).
-- **Use streaming for long**: tasks. LangGraph supports streaming intermediate state.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Use simpler tools for**: linear agent chains or one-shot tasks.
-- **Monitor token usage per**: node. Track which nodes consume the most tokens and optimize their prompts.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- Use simple LLM calls: for one-shot tasks or when latency is critical (graph overhead adds ~50ms).
+- Use streaming for long: tasks. LangGraph supports streaming intermediate state.
+- Will this work with: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- Use simpler tools for: linear agent chains or one-shot tasks.
+- Monitor token usage per: node. Track which nodes consume the most tokens and optimize their prompts.
+- What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Why LangGraph for Dev Tools
+Why LangGraph for Dev Tools
 
 Simple LLM calls work for one-shot tasks. Multi-step developer workflows need:
-- **State persistence**: remember what files were modified, what errors occurred
-- **Conditional branching**: route to a fixer if tests fail, to a reviewer if they pass
-- **Loops with exit conditions**: retry until tests pass or after N attempts
-- **Tool calling with tracking**: know which tools were called and what they returned
+- State persistence: remember what files were modified, what errors occurred
+- Conditional branching: route to a fixer if tests fail, to a reviewer if they pass
+- Loops with exit conditions: retry until tests pass or after N attempts
+- Tool calling with tracking: know which tools were called and what they returned
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -58,13 +58,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Install ation
+Step 1: Install ation
 
 ```bash
 pip install langgraph langchain-anthropic langchain-core
 ```
 
-### Step 2: Example: Test-Driven Code Agent
+Step 2: Example: Test-Driven Code Agent
 
 This agent writes code to pass a test suite, runs the tests, reads failures, and iterates:
 
@@ -158,7 +158,7 @@ def should_continue(state: CodeAgentState) -> str:
         return 'fix'
     return 'test'
 
-# Build the graph
+Build the graph
 builder = StateGraph(CodeAgentState)
 builder.add_node('write', write_initial_code)
 builder.add_node('test', run_tests)
@@ -183,7 +183,7 @@ result = graph.invoke({
 print(f"Status: {result['status']}, Iterations: {result['iterations']}")
 ```
 
-### Step 3: Example: Multi-Stage Code Review Pipeline
+Step 3: Example: Multi-Stage Code Review Pipeline
 
 Route code through different reviewers in parallel:
 
@@ -245,7 +245,7 @@ builder.add_edge('performance', 'verdict')
 builder.add_edge('verdict', END)
 ```
 
-### Step 4: Persisting State Between Runs
+Step 4: Persisting State Between Runs
 
 LangGraph supports checkpointing to resume long-running agent tasks:
 
@@ -258,17 +258,17 @@ graph = builder.compile(checkpointer=checkpointer)
 config = {"configurable": {"thread_id": "pr-review-1234"}}
 result = graph.invoke(initial_state, config=config)
 
-# Resume from where it stopped
+Resume from where it stopped
 graph.invoke(None, config=config)
 ```
 
-This is useful for long-running tasks like refactoring an entire repository — you can pause, inspect the state, and resume without starting over.
+This is useful for long-running tasks like refactoring an entire repository. you can pause, inspect the state, and resume without starting over.
 
-## When to Use LangGraph vs Simple Prompts
+When to Use LangGraph vs Simple Prompts
 
 Use LangGraph when your workflow has more than 2 sequential LLM calls, conditional branching, retry loops, or multiple specialized agents. Use simple LLM calls for one-shot tasks or when latency is critical (graph overhead adds ~50ms).
 
-### Step 5: Error Handling and Observability
+Step 5: Error Handling and Observability
 
 Production LangGraph workflows need proper error handling and logging:
 
@@ -292,7 +292,7 @@ def safe_node(func):
     return wrapper
 ```
 
-## LangGraph vs Alternatives Comparison
+LangGraph vs Alternatives Comparison
 
 | Feature | LangGraph | CrewAI | AutoGen | Custom Code |
 |---------|-----------|--------|---------|-------------|
@@ -305,15 +305,15 @@ def safe_node(func):
 
 Choose LangGraph when your workflow needs state persistence, conditional branching, or retry loops. Use simpler tools for linear agent chains or one-shot tasks.
 
-## Production Deployment Tips
+Production Deployment Tips
 
-1. **Set hard iteration limits.** Always cap the number of retry loops to prevent runaway costs.
-2. **Cache LLM responses.** If the same code appears in multiple runs, cache the AI output by content hash.
-3. **Use streaming for long tasks.** LangGraph supports streaming intermediate state.
-4. **Monitor token usage per node.** Track which nodes consume the most tokens and optimize their prompts.
-5. **Test with deterministic mocks.** Replace LLM calls with recorded responses during unit testing.
+1. Set hard iteration limits. Always cap the number of retry loops to prevent runaway costs.
+2. Cache LLM responses. If the same code appears in multiple runs, cache the AI output by content hash.
+3. Use streaming for long tasks. LangGraph supports streaming intermediate state.
+4. Monitor token usage per node. Track which nodes consume the most tokens and optimize their prompts.
+5. Test with deterministic mocks. Replace LLM calls with recorded responses during unit testing.
 
-### Step 6: Example: Automated Documentation Generator
+Step 6: Example: Automated Documentation Generator
 
 Build a graph that reads source code, generates documentation, validates it against the code, and iterates:
 
@@ -355,48 +355,48 @@ def should_retry(state: DocGenState) -> str:
 
 This pattern works for any task where AI output needs verification against a ground truth.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+Related Reading
 
 - [How to Build an AI-Powered Code Linter](/how-to-build-ai-powered-code-linter/)
 - [How to Build an AI Code Review Bot](/how-to-build-ai-code-review-bot/)
 - [Prompt Engineering Patterns for Code Generation](/prompt-engineering-patterns-for-code-generation/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to build custom ai dev tools with langgraph?**
+How long does it take to build custom ai dev tools with langgraph?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Will this work with my existing CI/CD pipeline?**
+Will this work with my existing CI/CD pipeline?
 
 The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ. You may need to adapt file paths, environment variable names, and trigger conditions to match your pipeline tool. The underlying workflow logic stays the same.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 

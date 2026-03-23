@@ -17,11 +17,11 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Standard linters enforce syntax and style. AI-powered linting rules can detect semantic anti-patterns, enforce team-specific conventions, and generate natural language explanations for violations. This guide covers two approaches: using AI to generate custom ESLint rules, and building an AI linting layer that runs alongside standard linters.
 
-## Approach 1: AI-Generated ESLint Rules
+Approach 1: AI-Generated ESLint Rules
 
 ESLint rules operate on the AST (Abstract Syntax Tree). Writing them from scratch requires deep ESLint API knowledge. AI tools can generate the rule code from a plain English description.
 
-**Prompt to Claude:**
+Prompt to Claude:
 
 ```
 Write an ESLint rule called "no-direct-env-access" that:
@@ -32,7 +32,7 @@ Write an ESLint rule called "no-direct-env-access" that:
 - Works with ESLint 8+ flat config format
 ```
 
-**Claude's ESLint rule:**
+Claude's ESLint rule:
 
 ```javascript
 // rules/no-direct-env-access.js
@@ -45,7 +45,7 @@ const ALLOWED_FILE_PATTERNS = [
   /environment\.(ts|js|mjs)$/,
 ];
 
-/** @type {import('eslint').Rule.RuleModule} */
+/ @type {import('eslint').Rule.RuleModule} */
 module.exports = {
   meta: {
     type: 'suggestion',
@@ -123,7 +123,7 @@ module.exports = {
 };
 ```
 
-**Flat config registration:**
+Flat config registration:
 
 ```javascript
 // eslint.config.js
@@ -145,9 +145,9 @@ export default [
 ];
 ```
 
-### Writing Rules for React-Specific Patterns
+Writing Rules for React-Specific Patterns
 
-The same approach works for React-specific conventions. Here is a rule that catches direct DOM manipulation inside React components — a common mistake in teams migrating from jQuery or vanilla JS:
+The same approach works for React-specific conventions. Here is a rule that catches direct DOM manipulation inside React components. a common mistake in teams migrating from jQuery or vanilla JS:
 
 ```javascript
 // rules/no-direct-dom-in-react.js
@@ -204,12 +204,12 @@ module.exports = {
 };
 ```
 
-## Approach 2: AI Linting Layer
+Approach 2: AI Linting Layer
 
 An AI linting layer runs after standard linters and catches semantic issues that AST-based rules can't detect:
 
 ```python
-# ai_linter.py
+ai_linter.py
 import anthropic
 import json
 import subprocess
@@ -292,7 +292,7 @@ if __name__ == "__main__":
     sys.exit(1 if total_issues > 0 else 0)
 ```
 
-**Example AI linting output:**
+Example AI linting output:
 
 ```
 AI Lint: src/api/users.js
@@ -300,11 +300,11 @@ AI Lint: src/api/users.js
     Fix: Use parameterized query: db.query('SELECT * FROM users WHERE id = $1', [userId])
   WARNING line 67 [unhandled_rejection]: Promise-returning function called without await or .catch()
     Fix: Add await or .catch((err) => logger.error(err)) to sendEmail() call
-  WARNING line 89 [n_plus_one_query]: Loop contains a database query — fetches N queries for N items
+  WARNING line 89 [n_plus_one_query]: Loop contains a database query. fetches N queries for N items
     Fix: Fetch all items in one query using WHERE id IN (...) before the loop
 ```
 
-### Feeding Existing Linter Output to the AI
+Feeding Existing Linter Output to the AI
 
 The `existing_lint_output` parameter lets you chain standard linters with the AI layer. Run ESLint first, pass its output to the AI, and instruct the AI not to repeat what ESLint already found. This avoids duplication and focuses the AI on genuinely semantic issues:
 
@@ -324,18 +324,18 @@ def lint_file_with_chain(file_path: str) -> list[dict]:
     return run_ai_lint(file_path, existing_lint_output=eslint_output)
 ```
 
-## GPT-4 for Rule Generation
+GPT-4 for Rule Generation
 
 GPT-4 generates ESLint rules with similar quality to Claude. The main difference: Claude is more likely to include `hasSuggestions: true` and the `suggest` property (auto-fix suggestions without auto-applying), which is the correct ESLint 8+ pattern. GPT-4 often generates rules with `fixable: 'code'` that auto-apply changes, which is more aggressive.
 
 For Python, both tools generate `pylint` plugin rules and `flake8` extensions, but Claude more consistently generates the correct `check_node` method signature for pylint.
 
-### Generating Pylint Checkers
+Generating Pylint Checkers
 
 For Python codebases, here is the equivalent approach for pylint:
 
 ```python
-# checkers/no_print_statements.py
+checkers/no_print_statements.py
 """Pylint checker: disallow print() calls in production code."""
 from pylint.checkers import BaseChecker
 from pylint.interfaces import IAstroidChecker
@@ -348,7 +348,7 @@ class NoPrintStatementChecker(BaseChecker):
     name = 'no-print-statements'
     msgs = {
         'W9001': (
-            'print() call found — use logging instead',
+            'print() call found. use logging instead',
             'no-print-statement',
             'Use the logging module instead of print() for production output.',
         ),
@@ -379,10 +379,10 @@ def register(linter):
 
 Claude generates this with the correct `visit_call` AST visitor method and the `register()` function required by pylint's plugin system. GPT-4 sometimes uses `visit_expr` or other incorrect visitor names.
 
-## CI Integration
+CI Integration
 
 ```yaml
-# .github/workflows/ai-lint.yml
+.github/workflows/ai-lint.yml
 name: AI Lint Check
 on: [pull_request]
 
@@ -403,17 +403,17 @@ jobs:
           fi
 ```
 
-### Cost Control in CI
+Cost Control in CI
 
 AI linting on every PR can accumulate costs quickly. A few strategies to manage this:
 
-- **File size limit** — Skip AI lint for files over 500 lines; the context window cost grows and the signal-to-noise ratio drops
-- **Changed lines only** — Pass only the git diff hunks to the AI rather than the full file
-- **Caching** — Hash the file content and cache the AI lint result; re-use the cached result if the file hasn't changed since the last run
-- **Severity threshold** — Only block PRs on `error` severity findings; treat `warning` as informational
+- File size limit. Skip AI lint for files over 500 lines; the context window cost grows and the signal-to-noise ratio drops
+- Changed lines only. Pass only the git diff hunks to the AI rather than the full file
+- Caching. Hash the file content and cache the AI lint result; re-use the cached result if the file hasn't changed since the last run
+- Severity threshold. Only block PRs on `error` severity findings; treat `warning` as informational
 
 ```python
-# Cost-aware wrapper
+Cost-aware wrapper
 import hashlib
 import json
 from pathlib import Path
@@ -434,7 +434,7 @@ def cached_ai_lint(file_path: str) -> list[dict]:
     return findings
 ```
 
-## Related Reading
+Related Reading
 
 - [How to Build AI-Powered Code Formatters](/build-ai-powered-code-formatters/)
 - [Open Source AI Code Linting Tools with Automatic Fix Suggestions](/open-source-ai-code-linting-tools-with-automatic-fix-suggest/)
@@ -442,6 +442,6 @@ def cached_ai_lint(file_path: str) -> list[dict]:
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

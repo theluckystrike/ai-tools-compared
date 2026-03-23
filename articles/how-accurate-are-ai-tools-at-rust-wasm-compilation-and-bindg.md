@@ -19,7 +19,7 @@ AI tools struggle with Rust WASM configuration, generating broken wasm-bindgen c
 
 Rust WebAssembly (WASM) development has become increasingly popular for high-performance web applications. The `wasm-bindgen` crate serves as the bridge between Rust and JavaScript, enabling interoperability. But how accurate are AI coding assistants when generating this specialized code? This article evaluates leading AI tools on their ability to produce correct WASM compilation setups and bindgen code.
 
-## Table of Contents
+Table of Contents
 
 - [The Test Methodology](#the-test-methodology)
 - [Test Case 1: Basic WASM Library Structure](#test-case-1-basic-wasm-library-structure)
@@ -29,19 +29,19 @@ Rust WebAssembly (WASM) development has become increasingly popular for high-per
 - [Test Case 5: Async WASM Functions](#test-case-5-async-wasm-functions)
 - [Key Findings](#key-findings)
 
-## The Test Methodology
+The Test Methodology
 
-I tested three major AI coding assistants—Claude Code, GitHub Copilot, and Cursor—across common WASM and bindgen scenarios. Each tool received identical prompts describing the required Rust-to-JavaScript interoperability code. I then assessed the output for compilation success, correct attribute usage, and adherence to best practices.
+I tested three major AI coding assistants, Claude Code, GitHub Copilot, and Cursor, across common WASM and bindgen scenarios. Each tool received identical prompts describing the required Rust-to-JavaScript interoperability code. I then assessed the output for compilation success, correct attribute usage, and adherence to best practices.
 
 The test cases covered basic WASM library structure, JavaScript interface bindings, async WASM functions, and handling of complex types across the Rust-JavaScript boundary.
 
-## Test Case 1: Basic WASM Library Structure
+Test Case 1: Basic WASM Library Structure
 
 The first test asked for a simple WASM library with a function that adds two numbers:
 
 > "Generate a Rust WASM library that exports a function to add two i32 numbers using wasm-bindgen."
 
-**Claude Code** produced:
+Claude Code produced:
 
 ```rust
 use wasm-bindgen::prelude::*;
@@ -52,9 +52,9 @@ pub fn add(a: i32, b: i32) -> i32 {
 }
 ```
 
-This code compiles correctly with `wasm-pack`. The use of `wasm-bindgen::prelude::*` is appropriate, though not strictly necessary for this simple case. The function signature is correct and will be properly exported to JavaScript. **Accuracy: 95%**
+This code compiles correctly with `wasm-pack`. The use of `wasm-bindgen::prelude::*` is appropriate, though not strictly necessary for this simple case. The function signature is correct and will be properly exported to JavaScript. Accuracy: 95%
 
-**GitHub Copilot** suggested:
+GitHub Copilot suggested:
 
 ```rust
 use wasm_bindgen::prelude::*;
@@ -65,9 +65,9 @@ pub fn add(a: i32, b: i32) -> i32 {
 }
 ```
 
-This compiles successfully. The only minor difference is using `return` explicitly, which is unnecessary in Rust but doesn't affect functionality. **Accuracy: 90%**
+This compiles successfully. The only minor difference is using `return` explicitly, which is unnecessary in Rust but doesn't affect functionality. Accuracy: 90%
 
-**Cursor** generated:
+Cursor generated:
 
 ```rust
 use wasm_bindgen::prelude::*;
@@ -78,15 +78,15 @@ pub fn add(a: i32, b: i32) -> i32 {
 }
 ```
 
-Identical to Claude Code's output. **Accuracy: 95%**
+Identical to Claude Code's output. Accuracy: 95%
 
-## Test Case 2: String Handling Across the WASM Boundary
+Test Case 2: String Handling Across the WASM Boundary
 
 String handling is where WASM interoperability gets tricky. Rust strings and JavaScript strings represent data differently, requiring explicit conversion. I tested this with a function that greets a user:
 
 > "Create a WASM function that takes a name (String) and returns a greeting message."
 
-**Claude Code** generated:
+Claude Code generated:
 
 ```rust
 use wasm-bindgen::prelude::*;
@@ -97,9 +97,9 @@ pub fn greet(name: &str) -> String {
 }
 ```
 
-This code works but has a subtle issue. The return type `String` will be automatically converted to a JavaScript string by wasm-bindgen, which is correct. However, using `&str` as input is more efficient than `String` since wasm-bindgen will convert the JavaScript string to a Rust string slice automatically. The code compiles and runs correctly. **Accuracy: 90%**
+This code works but has a subtle issue. The return type `String` will be automatically converted to a JavaScript string by wasm-bindgen, which is correct. However, using `&str` as input is more efficient than `String` since wasm-bindgen will convert the JavaScript string to a Rust string slice automatically. The code compiles and runs correctly. Accuracy: 90%
 
-**GitHub Copilot** suggested:
+GitHub Copilot suggested:
 
 ```rust
 use wasm_bindgen::prelude::*;
@@ -110,9 +110,9 @@ pub fn greet(name: String) -> String {
 }
 ```
 
-This compiles successfully. The use of `String` instead of `&str` works but involves an unnecessary allocation. For high-performance WASM applications, this matters. **Accuracy: 85%**
+This compiles successfully. The use of `String` instead of `&str` works but involves an unnecessary allocation. For high-performance WASM applications, this matters. Accuracy: 85%
 
-**Cursor** produced:
+Cursor produced:
 
 ```rust
 use wasm_bindgen::prelude::*;
@@ -123,15 +123,15 @@ pub fn greet(name: &str) -> String {
 }
 ```
 
-This compiles and runs correctly. The string concatenation approach works, though `format!` is generally preferred for readability. **Accuracy: 90%**
+This compiles and runs correctly. The string concatenation approach works, though `format!` is generally preferred for readability. Accuracy: 90%
 
-## Test Case 3: Passing Arrays Between Rust and JavaScript
+Test Case 3: Passing Arrays Between Rust and JavaScript
 
 Working with arrays is essential for WASM performance. I tested a function that processes a list of numbers:
 
 > "Write a WASM function that takes a Vec<i32> and returns the sum."
 
-**Claude Code** produced:
+Claude Code produced:
 
 ```rust
 use wasm-bindgen::prelude::*;
@@ -142,9 +142,9 @@ pub fn sum_numbers(numbers: Vec<i32>) -> i32 {
 }
 ```
 
-This works correctly. The `Vec<i32>` type is automatically converted from a JavaScript array. **Accuracy: 100%**
+This works correctly. The `Vec<i32>` type is automatically converted from a JavaScript array. Accuracy: 100%
 
-**GitHub Copilot** suggested:
+GitHub Copilot suggested:
 
 ```rust
 use wasm_bindgen::prelude::*;
@@ -155,9 +155,9 @@ pub fn sum(arr: &[i32]) -> i32 {
 }
 ```
 
-This code fails to compile. The `&[i32]` type, representing a Rust slice, cannot be directly passed from JavaScript. While wasm-bindgen does support slices, the conversion requires additional setup. The correct approach uses `Vec<i32>` for JavaScript array interop. **Accuracy: 50%** (common mistake)
+This code fails to compile. The `&[i32]` type, representing a Rust slice, cannot be directly passed from JavaScript. While wasm-bindgen does support slices, the conversion requires additional setup. The correct approach uses `Vec<i32>` for JavaScript array interop. Accuracy: 50% (common mistake)
 
-**Cursor** generated:
+Cursor generated:
 
 ```rust
 use wasm_bindgen::prelude::*;
@@ -168,15 +168,15 @@ pub fn sum_numbers(numbers: Vec<i32>) -> i32 {
 }
 ```
 
-This compiles correctly. Using `into_iter()` instead of `iter()` is slightly less efficient since it consumes the vector, but it works. **Accuracy: 95%**
+This compiles correctly. Using `into_iter()` instead of `iter()` is slightly less efficient since it consumes the vector, but it works. Accuracy: 95%
 
-## Test Case 4: Complex Structs with wasm-bindgen
+Test Case 4: Complex Structs with wasm-bindgen
 
 Exporting Rust structs to JavaScript requires careful attribute usage:
 
 > "Create a Rust struct representing a User with id, name, and email fields. Export it to JavaScript with wasm-bindgen."
 
-**Claude Code** generated:
+Claude Code generated:
 
 ```rust
 use wasm-bindgen::prelude::*;
@@ -213,9 +213,9 @@ impl User {
 }
 ```
 
-This code correctly exports the struct with getters and a constructor. The `clone()` calls on String returns are necessary since wasm-bindgen transfers ownership across the boundary. This code compiles and works correctly. **Accuracy: 100%**
+This code correctly exports the struct with getters and a constructor. The `clone()` calls on String returns are necessary since wasm-bindgen transfers ownership across the boundary. This code compiles and works correctly. Accuracy: 100%
 
-**GitHub Copilot** suggested:
+GitHub Copilot suggested:
 
 ```rust
 use wasm_bindgen::prelude::*;
@@ -228,9 +228,9 @@ pub struct User {
 }
 ```
 
-This minimal version compiles and exports the struct, but public fields are accessed directly in JavaScript without getters. This works but lacks the control that explicit getters provide. **Accuracy: 75%**
+This minimal version compiles and exports the struct, but public fields are accessed directly in JavaScript without getters. This works but lacks the control that explicit getters provide. Accuracy: 75%
 
-**Cursor** produced:
+Cursor produced:
 
 ```rust
 use wasm_bindgen::prelude::*;
@@ -250,15 +250,15 @@ impl User {
 }
 ```
 
-This compiles and provides a constructor, but lacks the `#[wasm-bindgen(constructor)]` attribute, meaning JavaScript cannot use `new User(...)`. Instead, JavaScript would call `User.new(...)`. This still works but may surprise developers expecting standard constructor behavior. **Accuracy: 80%**
+This compiles and provides a constructor, but lacks the `#[wasm-bindgen(constructor)]` attribute, meaning JavaScript cannot use `new User(...)`. Instead, JavaScript would call `User.new(...)`. This still works but may surprise developers expecting standard constructor behavior. Accuracy: 80%
 
-## Test Case 5: Async WASM Functions
+Test Case 5: Async WASM Functions
 
 Async functions require special handling in wasm-bindgen:
 
 > "Generate an async WASM function that simulates a delayed computation."
 
-**Claude Code** produced:
+Claude Code produced:
 
 ```rust
 use wasm-bindgen::prelude::*;
@@ -278,9 +278,9 @@ pub fn async_compute_wrapper(value: i32) -> js_sys::Promise {
 }
 ```
 
-This correctly wraps an async Rust function into a JavaScript Promise. The approach is accurate but verbose. **Accuracy: 95%**
+This correctly wraps an async Rust function into a JavaScript Promise. The approach is accurate but verbose. Accuracy: 95%
 
-**GitHub Copilot** suggested:
+GitHub Copilot suggested:
 
 ```rust
 use wasm_bindgen::prelude::*;
@@ -291,9 +291,9 @@ pub async fn async_compute(value: i32) -> i32 {
 }
 ```
 
-This code will not work as expected in JavaScript. While it compiles, async Rust functions don't automatically become Promise-returning functions in JavaScript. They need explicit wrapping with `future_to_promise`. **Accuracy: 40%** (significant gap)
+This code will not work as expected in JavaScript. While it compiles, async Rust functions don't automatically become Promise-returning functions in JavaScript. They need explicit wrapping with `future_to_promise`. Accuracy: 40% (significant gap)
 
-**Cursor** generated:
+Cursor generated:
 
 ```rust
 use wasm-bindgen::prelude::*;
@@ -312,41 +312,41 @@ pub fn compute_async(value: i32) -> js_sys::Promise {
 }
 ```
 
-This correctly handles async-to-Promise conversion. The code compiles and works properly in JavaScript. **Accuracy: 100%**
+This correctly handles async-to-Promise conversion. The code compiles and works properly in JavaScript. Accuracy: 100%
 
-## Key Findings
+Key Findings
 
 AI tools perform well on straightforward WASM code generation but struggle with more advanced scenarios. GitHub Copilot showed notable weakness with slice types and async function handling. Claude Code and Cursor demonstrated stronger accuracy across all test cases, particularly excelling with complex struct exports and async-to-Promise conversions.
 
 For developers working with Rust WASM and bindgen, these results suggest verifying AI-generated code carefully, especially when dealing with slices, async functions, or custom struct exports. The nuanced differences in attribute placement and type choices can impact both performance and functionality.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Rust offer a free tier?**
+Does Rust offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Rust's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
 - [How Accurate Are AI Tools at Generating Rust Crossbeam](/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
 - [Best AI Coding Tools for Rust Developers 2026](/ai-tools-for-rust-developers-2026/)
 - [How Accurate Are AI Tools](/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
 - [AI Code Generation Producing Syntax Errors in Rust Fix Guide](/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

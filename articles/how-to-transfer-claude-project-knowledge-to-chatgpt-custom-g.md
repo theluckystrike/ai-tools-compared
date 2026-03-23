@@ -19,7 +19,7 @@ voice-checked: true
 
 Export your Claude Project's instructions and uploaded files, then restructure them as a Custom GPT system prompt and knowledge documents. Copy project instructions directly into the GPT's "Instructions" field, convert uploaded reference files into the GPT's knowledge base, and remap conversation starters to match ChatGPT's format. This guide covers the full export-to-import workflow with code examples for automating the conversion.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -29,7 +29,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand the Platform Differences
+Step 1: Understand the Platform Differences
 
 
 Claude Projects store knowledge as files, instructions, and context that the AI can reference during conversations. You typically populate these with project documentation, coding standards, API references, and custom instructions that shape how Claude responds to your queries.
@@ -41,20 +41,20 @@ ChatGPT Custom GPTs work differently. You configure them through a combination o
 The key challenge involves converting your Claude Project's accumulated knowledge into a format that works effectively in the Custom GPT environment.
 
 
-### Step 2: Exporting Your Claude Project Knowledge
+Step 2: Exporting Your Claude Project Knowledge
 
 
 Before you can transfer knowledge, you need to export it from Claude Projects. The process involves several components:
 
 
-### Retrieving Project Instructions
+Retrieving Project Instructions
 
 
 Your Claude Project likely contains custom instructions that define how the AI behaves. Find these in your project configuration:
 
 
 ```
-# claude_project_instructions.md
+claude_project_instructions.md
 You are a Python expert specializing in FastAPI development.
 Always use type hints, write docstrings, and follow PEP 8.
 When writing async code, prefer asyncio over threading.
@@ -64,38 +64,38 @@ When writing async code, prefer asyncio over threading.
 Copy these instructions into a text file you can later paste into your Custom GPT's instructions field.
 
 
-### Exporting Knowledge Files
+Exporting Knowledge Files
 
 
 Claude Projects typically store knowledge in markdown files, text files, or JSON. Identify your key knowledge files:
 
 
 ```bash
-# Common locations in a Claude Project
+Common locations in a Claude Project
 project/
-├── docs/
-│   ├── api-reference.md
-│   ├── coding-standards.md
-│   └── architecture.md
-├── prompts/
-│   ├── review-instructions.txt
-│   └── test-generation.txt
-└── context/
-    ├── project-background.md
-    └── team-context.md
+ docs/
+    api-reference.md
+    coding-standards.md
+    architecture.md
+ prompts/
+    review-instructions.txt
+    test-generation.txt
+ context/
+     project-background.md
+     team-context.md
 ```
 
 
 Gather all these files. You will upload them to your Custom GPT's knowledge base.
 
 
-### Step 3: Configure Your Custom GPT
+Step 3: Configure Your Custom GPT
 
 
 Now that you have exported your knowledge, set up the Custom GPT to use it effectively.
 
 
-### Setting Instructions
+Setting Instructions
 
 
 Paste your Claude Project instructions into the Instructions field of your Custom GPT. Format them clearly:
@@ -119,7 +119,7 @@ When answering questions:
 ```
 
 
-### Uploading Knowledge Files
+Uploading Knowledge Files
 
 
 Upload your exported knowledge files to the Knowledge section. ChatGPT supports markdown, PDF, text, and other document formats. Prioritize files that contain:
@@ -141,24 +141,24 @@ For the best results, organize your files logically. A folder structure like thi
 
 ```
 knowledge/
-├── 01-project-overview/
-│   └── background.md
-├── 02-coding-standards/
-│   ├── python-style.md
-│   ├── testing-standards.md
-│   └── code-review-guidelines.md
-└── 03-api-reference/
-    └── endpoints.md
+ 01-project-overview/
+    background.md
+ 02-coding-standards/
+    python-style.md
+    testing-standards.md
+    code-review-guidelines.md
+ 03-api-reference/
+     endpoints.md
 ```
 
 
-### Step 4: Preserving Context Through Conversation Design
+Step 4: Preserving Context Through Conversation Design
 
 
 Custom GPTs do not maintain persistent context between sessions like Claude Projects do. You compensate for this through careful conversation design.
 
 
-### Creating Effective Conversation Starters
+Creating Effective Conversation Starters
 
 
 Conversation starters help users tap into your knowledge immediately:
@@ -176,7 +176,7 @@ Conversation starters help users tap into your knowledge immediately:
 Each starter should trigger a specific area of your transferred knowledge.
 
 
-### Building Reference Prompts
+Building Reference Prompts
 
 
 Include reference prompts in your instructions that users can invoke:
@@ -193,13 +193,13 @@ When users ask about APIs, refer to endpoints.md
 ```
 
 
-## Migrating Code Analysis Patterns
+Migrating Code Analysis Patterns
 
 
 If your Claude Project includes code analysis patterns, convert them to Custom GPT instructions:
 
 
-**Claude Project pattern:**
+Claude Project pattern:
 
 ```
 When reviewing code, check for:
@@ -211,7 +211,7 @@ When reviewing code, check for:
 ```
 
 
-**Custom GPT instruction:**
+Custom GPT instruction:
 
 ```
 When reviewing code, always check these five areas and provide specific feedback:
@@ -223,14 +223,14 @@ When reviewing code, always check these five areas and provide specific feedback
 ```
 
 
-### Step 5: Transferring Prompt Engineering Knowledge
+Step 5: Transferring Prompt Engineering Knowledge
 
 
 If you have refined prompts in Claude Projects, adapt them for the Custom GPT format:
 
 
 ```python
-# Claude Project prompt file: generate_tests.py
+Claude Project prompt file: generate_tests.py
 """
 Generate pytest tests for the given Python code.
 
@@ -256,7 +256,7 @@ When generating tests:
 ```
 
 
-### Step 6: Automate the Transfer Process
+Step 6: Automate the Transfer Process
 
 
 For ongoing synchronization between Claude Projects and Custom GPTs, consider a simple script:
@@ -264,7 +264,7 @@ For ongoing synchronization between Claude Projects and Custom GPTs, consider a 
 
 ```python
 #!/usr/bin/env python3
-# sync_to_gpt.py
+sync_to_gpt.py
 import os
 import shutil
 from datetime import datetime
@@ -299,25 +299,25 @@ if __name__ == "__main__":
 Run this script periodically to keep your Custom GPT knowledge current with your Claude Project.
 
 
-### Step 7: Validating Your Transfer
+Step 7: Validating Your Transfer
 
 
 After configuring your Custom GPT, test it thoroughly:
 
 
-1. **Ask questions** that would trigger specific knowledge areas in Claude
+1. Ask questions that would trigger specific knowledge areas in Claude
 
-2. **Verify responses** reference the correct files and conventions
+2. Verify responses reference the correct files and conventions
 
-3. **Check tone and style** matches your original Claude Project instructions
+3. Check tone and style matches your original Claude Project instructions
 
-4. **Test edge cases** where knowledge areas might overlap
+4. Test edge cases where knowledge areas might overlap
 
 
 Iterate on your instructions based on test results. Custom GPTs often need instruction refinement to match Claude's behavior precisely.
 
 
-### Step 8: When Custom GPTs Work Well
+Step 8: When Custom GPTs Work Well
 
 
 Custom GPTs excel at providing consistent responses based on uploaded documentation. They work particularly well for:
@@ -337,44 +337,44 @@ However, Custom GPTs lack Claude Projects' ability to execute code, run tests, o
 ---
 
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to transfer claude project knowledge to chatgpt custom?**
+How long does it take to transfer claude project knowledge to chatgpt custom?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Transfer Claude Project Knowledge to ChatGPT Custom (2)](/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
 - [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
@@ -382,5 +382,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Switching from Windsurf to Cursor How to Transfer Project](/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
 - [How to Transfer Notion AI Workflows to Claude Projects 2026](/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

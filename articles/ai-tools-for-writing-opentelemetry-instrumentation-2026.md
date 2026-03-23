@@ -17,7 +17,7 @@ intent-checked: true
 
 Use Claude 3.5 Sonnet for designing instrumentation strategies that span multiple services, GitHub Copilot for generating boilerplate span and metric code while you code, or ChatGPT 4o for quick debugging when span attributes are missing or traces don't correlate. This guide walks through how each tool handles OpenTelemetry context propagation, sampling decisions, and SDK configuration across Python, Go, and Node.js applications.
 
-## Table of Contents
+Table of Contents
 
 - [OpenTelemetry's Instrumentation Challenge](#opentelemetrys-instrumentation-challenge)
 - [Claude 3.5 Sonnet: Designing Observable Services](#claude-35-sonnet-designing-observable-services)
@@ -28,22 +28,22 @@ Use Claude 3.5 Sonnet for designing instrumentation strategies that span multipl
 - [Sampling Strategies](#sampling-strategies)
 - [Configuration Across Environments](#configuration-across-environments)
 
-## OpenTelemetry's Instrumentation Challenge
+OpenTelemetry's Instrumentation Challenge
 
 Effective observability requires consistent span naming, proper trace context propagation between services, and meaningful attributes on every span. Most teams struggle with:
 
-- **Inconsistent span names** across services (is it "db.query" or "database.execute"? "http.server.request" or "request.handle"?)
-- **Lost trace context** when async operations or message queues break the call chain
-- **Missing attributes** on critical spans (customer ID, API version, error codes)
-- **Sampling logic** that either discards interesting errors or overwhelming the backend with noise
+- Inconsistent span names across services (is it "db.query" or "database.execute"? "http.server.request" or "request.handle"?)
+- Lost trace context when async operations or message queues break the call chain
+- Missing attributes on critical spans (customer ID, API version, error codes)
+- Sampling logic that either discards interesting errors or overwhelming the backend with noise
 
 AI assistants can generate correct instrumentation patterns, but they need context about your system topology and observability goals. Claude excels at this design phase. Copilot works well for routine span additions. ChatGPT helps debug context propagation issues.
 
-## Claude 3.5 Sonnet: Designing Observable Services
+Claude 3.5 Sonnet: Designing Observable Services
 
 Claude understands that instrumentation is an architectural decision. Provide your service topology and Claude generates a consistent naming scheme and context propagation strategy.
 
-**Example prompt:**
+Example prompt:
 
 ```
 I have a Node.js Express API that calls a Python background service
@@ -52,7 +52,7 @@ payment API. I need distributed traces that show the full request
 path from user browser to database. Design an OpenTelemetry strategy.
 ```
 
-**Claude's output includes:**
+Claude's output includes:
 
 ```javascript
 // Express middleware that extracts trace context from HTTP headers
@@ -126,27 +126,27 @@ def process_job(ch, method, properties, body):
         call_payment_api()
 ```
 
-**Strengths of Claude:**
+Strengths of Claude:
 - Understands trace context propagation semantics (W3C Trace Context, Jaeger, Zipkin differences)
 - Generates consistent span naming across services
 - Designs attribute schemas that support correlation queries
 - Suggests sampling strategies (probabilistic, tail-based, error-based)
 
-**Limitations:**
+Limitations:
 - Cannot verify against your actual deployed services
 - Requires detailed system topology description to be accurate
 - May not know about team-specific attribute conventions
 
-**Best for:** Initial observability architecture, migrating from old instrumentation, onboarding new team members to tracing best practices.
+Best for: Initial observability architecture, migrating from old instrumentation, onboarding new team members to tracing best practices.
 
-## GitHub Copilot: Routine Instrumentation While Coding
+GitHub Copilot: Routine Instrumentation While Coding
 
 Copilot excels at generating repetitive instrumentation code. When you start typing span creation, Copilot completes the pattern.
 
-**Real example in VS Code:**
+Real example in VS Code:
 
 ```python
-# You type:
+You type:
 def process_payment(order_id, amount):
     tracer = get_tracer(__name__)
     with tracer.start_as_current_span("payment.process") as span:
@@ -160,25 +160,25 @@ def process_payment(order_id, amount):
         span.set_attribute("order.status", order.status)
 ```
 
-**Strengths:**
+Strengths:
 - Fast attribute addition without leaving your editor
 - Learns your team's naming patterns over time
 - Works across Go, Python, JavaScript, Java
 - Completes metric collection boilerplate
 
-**Weaknesses:**
+Weaknesses:
 - Attributes may be inconsistent with other services
 - Doesn't understand trace context propagation; you must handle this manually
 - May suggest redundant attributes
 - Cannot design end-to-end tracing strategies
 
-**Best for:** Adding instrumentation to existing code, completing repetitive span attributes, generating metric counters and histograms.
+Best for: Adding instrumentation to existing code, completing repetitive span attributes, generating metric counters and histograms.
 
-## ChatGPT 4o: Debugging Broken Traces
+ChatGPT 4o: Debugging Broken Traces
 
 When traces are missing context or don't correlate between services, ChatGPT helps diagnose the issue. It's particularly good at explaining context propagation problems.
 
-**Example interaction:**
+Example interaction:
 
 ```
 User: "My traces show the Express service and Python worker as
@@ -194,20 +194,20 @@ ChatGPT 4o suggests:
 
 ChatGPT walks through the debugging process systematically, which is faster than searching docs.
 
-**Strengths:**
+Strengths:
 - Good at explaining context propagation flow
 - Quickly identifies common configuration mistakes
 - Suggests logging statements that help debug tracing issues
 - Available on free tier (slower inference)
 
-**Weaknesses:**
+Weaknesses:
 - Cannot see your actual code or system setup
 - May suggest outdated OpenTelemetry APIs
 - Lacks deep understanding of different propagators
 
-**Best for:** Troubleshooting broken traces, explaining why spans aren't correlating, understanding context propagation concepts.
+Best for: Troubleshooting broken traces, explaining why spans aren't correlating, understanding context propagation concepts.
 
-## Tool Comparison Table
+Tool Comparison Table
 
 | Feature | Claude | Copilot | ChatGPT 4o |
 |---------|--------|---------|-----------|
@@ -220,9 +220,9 @@ ChatGPT walks through the debugging process systematically, which is faster than
 | Debugging broken traces | Good | Poor | Excellent |
 | Multi-service topology understanding | Excellent | Fair | Good |
 
-## Instrumentation Patterns by Tool
+Instrumentation Patterns by Tool
 
-### Pattern 1: HTTP Server Instrumentation (Claude)
+Pattern 1: HTTP Server Instrumentation (Claude)
 
 Claude generates the complete middleware with proper error handling:
 
@@ -251,7 +251,7 @@ func tracingMiddleware(next http.Handler) http.Handler {
 }
 ```
 
-### Pattern 2: Database Query Instrumentation (Copilot)
+Pattern 2: Database Query Instrumentation (Copilot)
 
 Copilot quickly completes db query spans:
 
@@ -271,12 +271,12 @@ def execute_query(query, params):
         return result
 ```
 
-### Pattern 3: Message Queue Instrumentation (Claude)
+Pattern 3: Message Queue Instrumentation (Claude)
 
 Claude ensures context propagation across the queue:
 
 ```python
-# Producer
+Producer
 def send_message(topic, message, context_data):
     carrier = {}
     propagation.inject(context_data, carrier, defaultTextMapSetter)
@@ -286,7 +286,7 @@ def send_message(topic, message, context_data):
         'trace_context': carrier
     }))
 
-# Consumer
+Consumer
 def consume_messages():
     for msg in consumer:
         payload = json.loads(msg.value)
@@ -298,18 +298,18 @@ def consume_messages():
             process_job(payload['data'])
 ```
 
-## Sampling Strategies
+Sampling Strategies
 
 Claude can design sampling strategies that balance cost and observability:
 
-**Head-based sampling (simple but loses context):**
+Head-based sampling (simple but loses context):
 ```python
 sampler = ParentBased(TraceIDRatioBased(0.1))  # 10% of all traces
 ```
 
-**Tail-based sampling (preserves errors but requires collector):**
+Tail-based sampling (preserves errors but requires collector):
 ```
-# Jaeger or OTel Collector config
+Jaeger or OTel Collector config
 exporters:
   - name: jaeger
     sampling:
@@ -322,50 +322,50 @@ exporters:
         threshold: 0.01  # 1% of other requests
 ```
 
-## Configuration Across Environments
+Configuration Across Environments
 
 Claude generates environment-specific configurations:
 
 ```yaml
-# production: verbose for errors, sparse for happy path
+production: verbose for errors, sparse for happy path
 OTEL_TRACES_SAMPLER=jaeger_remote
 OTEL_TRACES_SAMPLER_ARG=http://otel-collector:14268/sampling
 
-# staging: 10% of all traces for cost control
+staging: 10% of all traces for cost control
 OTEL_TRACES_SAMPLER=traceidratio
 OTEL_TRACES_SAMPLER_ARG=0.1
 
-# development: 100% sampling to catch all issues
+development: 100% sampling to catch all issues
 OTEL_TRACES_SAMPLER=always_on
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get my team to adopt a new tool?**
+How do I get my team to adopt a new tool?
 
 Start with a small pilot group of willing early adopters. Let them use it for 2-3 weeks, then gather their honest feedback. Address concerns before rolling out to the full team. Forced adoption without buy-in almost always fails.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Generating OpenTelemetry Instrumentation Code](/ai-tools-for-generating-opentelemetry-instrumentation-2026/---)
 - [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
 - [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools/best-ai-tools-for-github-actions-workflows/)
 - [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 - [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

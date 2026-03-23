@@ -17,7 +17,7 @@ intent-checked: true
 
 Large codebase migrations are grueling. Your Python 2 legacy system has 50,000 lines across 200 files. Java 8 codebases need modern stream APIs and records. JavaScript CommonJS modules need conversion to ESM. AI tools now handle these migrations with remarkable accuracy, cutting months of manual work into weeks. This guide compares real AI tools with concrete metrics on accuracy, handling of edge cases, and actual costs.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -27,11 +27,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Python 2 to Python 3 Migration with AI
+Step 1: Python 2 to Python 3 Migration with AI
 
 Python 2 reached end-of-life in 2020. Migrating large codebases requires handling print statements, division operators, unicode/string differences, imports, and deprecated libraries.
 
-### Migration Example: Print Statements and Print Functions
+Migration Example: Print Statements and Print Functions
 
 Python 2 code:
 ```python
@@ -49,14 +49,14 @@ x = input("Enter value: ")
 
 Copilot X (Claude-powered code context) correctly handles this:
 ```bash
-# Run Claude locally or via API with your migration context
+Run Claude locally or via API with your migration context
 echo "print 'value is', x" | claude-migrate --from python2 --to python3
-# Output: print("value is", x)
+Output: print("value is", x)
 ```
 
 Copilot-based tools achieve 87% accuracy on print statement conversion, 92% on division operator fixes (`/` vs `//`), but only 61% on unicode handling due to context-dependent string encodings.
 
-### Real Codebase: Scrapy Library Migration
+Real Codebase: Scrapy Library Migration
 
 A 40,000-line web scraping project required:
 - 1,200 `print` statement conversions (99% correct with Copilot)
@@ -64,33 +64,33 @@ A 40,000-line web scraping project required:
 - 180 dictionary `.iteritems()` → `.items()` conversions (94% correct)
 - 50 unicode/bytes edge cases (manual review needed)
 
-**Tool Performance:**
+Tool Performance:
 - Copilot X (now Claude-based): 6 hours human review time, $2.40 API cost
 - GPT-4 via OpenAI API: 7 hours review time, $8.50 API cost
 - Anthropic Claude (direct): 5 hours review time, $1.80 API cost, best unicode handling
 
-**Migration Process:**
+Migration Process:
 ```bash
-# 1. Analyze legacy code
+1. Analyze legacy code
 copilot --analyze python2_codebase/
 
-# 2. Generate migration suggestions
+2. Generate migration suggestions
 copilot --migrate --from-version 2 --to-version 3 > migration_plan.md
 
-# 3. Apply transformations
+3. Apply transformations
 copilot --apply migration_plan.md --output python3_codebase/
 
-# 4. Run tests
+4. Run tests
 cd python3_codebase && python -m pytest tests/
 ```
 
 Success metric: 94% of the codebase compiled without errors after first pass. The remaining 6% had implicit unicode dependencies that required domain knowledge.
 
-### Step 2: Java 8 to Java 21 Migration
+Step 2: Java 8 to Java 21 Migration
 
 Java 8 introduced streams and lambdas. Java 11+ added var keyword. Java 17+ introduced records and sealed classes. Java 21 added virtual threads and pattern matching.
 
-### Lambda and Stream API Conversion
+Lambda and Stream API Conversion
 
 Java 8 code:
 ```java
@@ -111,7 +111,7 @@ List<String> names = users.stream()
 public record User(String name, int age) {}
 ```
 
-### Enterprise Codebase: Spring Boot Migration
+Enterprise Codebase: Spring Boot Migration
 
 A 65,000-line financial services application migrated from Java 8 to Java 21. Key transformations:
 
@@ -138,25 +138,25 @@ for (int i = 0; i < 1000; i++) {
 }
 ```
 
-Copilot-based tools handle stream migration at 94% accuracy but struggle with virtual thread integration (52% accuracy) because the patterns are fundamentally different—not just syntax changes.
+Copilot-based tools handle stream migration at 94% accuracy but struggle with virtual thread integration (52% accuracy) because the patterns are fundamentally different, not just syntax changes.
 
-**Tool Comparison for Java Migration:**
+Tool Comparison for Java Migration:
 - GitHub Copilot: 14 hours manual review, good for familiar patterns, struggled with virtual threads
 - Amazon CodeWhisperer: 16 hours manual review, better performance tracking awareness
 - Anthropic Claude: 10 hours manual review, best documentation generation for new APIs
 - IntelliJ IDEA refactoring: 9 hours manual review, but limited to Java syntax level
 
-**Cost Analysis:**
+Cost Analysis:
 - Copilot Pro: $20/month subscription + unlimited API use
 - CodeWhisperer: Free tier sufficient, individual pay-per-use $0.34/hour
 - Claude API: $0.003/token input, migration project ~$12.50
 - IntelliJ Premium: $199/year, no API costs but tool-specific
 
-### Step 3: JavaScript CommonJS to ESM Migration
+Step 3: JavaScript CommonJS to ESM Migration
 
 CommonJS was Node.js standard for 20+ years. ES Modules (ESM) are now standard, but migration breaks default exports, require patterns, and __dirname handling.
 
-### CJS vs ESM Comparison
+CJS vs ESM Comparison
 
 CommonJS pattern:
 ```javascript
@@ -190,7 +190,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 add(5, 3);
 ```
 
-### Large NPM Package Migration
+Large NPM Package Migration
 
 A 25,000-line utility library with 400 CommonJS modules converted to ESM:
 
@@ -219,30 +219,30 @@ const getParser = async (type) => {
 
 Copilot handles straightforward conversions well (98%) but struggles with dynamic imports (62% accuracy).
 
-**Tool Performance on 400-Module ESM Migration:**
+Tool Performance on 400-Module ESM Migration:
 - GitHub Copilot: 18 hours review, excels at syntax conversion, dynamic import issues
 - Anthropic Claude: 14 hours review, better pattern recognition, fewer false conversions
 - OpenAI GPT-4: 20 hours review, verbose suggestions, requires more filtering
 
-## Cost and Timeline Comparison: Real-World Metrics
+Cost and Timeline Comparison: Real-World Metrics
 
 For a realistic enterprise migration (50,000+ lines across 200+ files), the economics are compelling:
 
-**Hidden Costs of Manual Migration:**
+Hidden Costs of Manual Migration:
 - Opportunity cost: Engineers could ship features instead
 - Bug introduction rate: 8-12% of manually migrated code has logical errors
 - Verification time: Test suite must run after every refactor
 - Knowledge loss: Team members leave, taking migration context with them
 - Regression risk: Changes compound with ongoing development
 
-**For a realistic enterprise migration (50,000+ lines across 200+ files):
+For a realistic enterprise migration (50,000+ lines across 200+ files):
 
 | Project Scope | Manual Refactoring | AI-Assisted | Savings |
 |---|---|---|---|
 | Python 2→3 (40K lines) | 200 hours | 28 hours | 86% |
 | Java 8→21 (65K lines) | 280 hours | 42 hours | 85% |
 | CJS→ESM (25K lines) | 120 hours | 18 hours | 85% |
-| **Combined (130K lines)** | **600 hours** | **88 hours** | **85%** |
+| Combined (130K lines) | 600 hours | 88 hours | 85% |
 
 Tool costs for combined 130K-line migration:
 - GitHub Copilot: $20/month + API overages = ~$45 total
@@ -250,34 +250,34 @@ Tool costs for combined 130K-line migration:
 - Anthropic Claude API: ~$15 token-based
 - GPT-4 API: ~$35
 
-### Step 4: Critical Edge Cases and Limitations
+Step 4: Critical Edge Cases and Limitations
 
 No AI tool achieves 100% accuracy. Plan for these manual interventions:
 
-**Python 2→3:**
+Python 2→3:
 - Unicode string handling (string vs bytes context-dependent)
 - Legacy C extension modules requiring recompilation
 - Implicit metaclass behavior in custom classes
 
-**Java 8→21:**
+Java 8→21:
 - Virtual thread integration requires understanding concurrency models
 - Custom annotation processing may break
 - Gradle/Maven version compatibility issues
 
-**CJS→ESM:**
+CJS→ESM:
 - Circular dependency resolution (different in ESM)
 - Native C++ modules requiring build tool updates
 - Performance-critical lazy-loading patterns
 
-### Step 5: Practical Implementation Strategy and Execution
+Step 5: Practical Implementation Strategy and Execution
 
 Before running any migration, establish ground truth about your codebase and plan accordingly:
 
-1. **Scope accurately**: Use AST analysis to categorize transformations. 80% of changes are mechanical; plan 5-10% manual review time.
+1. Scope accurately: Use AST analysis to categorize transformations. 80% of changes are mechanical; plan 5-10% manual review time.
 
-**AST-based analysis example:**
+AST-based analysis example:
 ```bash
-# Python: Count print statements vs other patterns
+Python: Count print statements vs other patterns
 python3 -c "
 import ast
 import os
@@ -303,61 +303,61 @@ print(f'Total print statements: {total_prints}')
 
 This tells you exactly what patterns to expect in your migration.
 
-2. **Validate incrementally**: Apply migrations to 10% of codebase first, measure accuracy, adjust prompts.
+2. Validate incrementally: Apply migrations to 10% of codebase first, measure accuracy, adjust prompts.
 
-3. **Cost optimization**: For under 50K lines, use Claude API ($20-40 total). For 50K-200K, use Copilot subscription ($20/month) with focused prompts. For 200K+, negotiate custom API plans.
+3. Cost optimization: For under 50K lines, use Claude API ($20-40 total). For 50K-200K, use Copilot subscription ($20/month) with focused prompts. For 200K+, negotiate custom API plans.
 
-4. **Test coverage is essential**: Run full test suite after each 10% migration increment. AI conversions that compile may not preserve behavior.
+4. Test coverage is essential: Run full test suite after each 10% migration increment. AI conversions that compile may not preserve behavior.
 
-5. **Document assumptions**: Record which patterns the AI struggled with for your codebase. This guides manual review and future migrations.
+5. Document assumptions: Record which patterns the AI struggled with for your codebase. This guides manual review and future migrations.
 
-### Step 6: Recommended Tools by Scale
+Step 6: Recommended Tools by Scale
 
-- **Under 20K lines**: Use Claude directly via API, best cost-performance ratio
-- **20K-100K lines**: GitHub Copilot with manual validation, cheapest subscription model
-- **100K+ lines**: Combination approach—Claude for unique patterns, Copilot for mechanical conversions
-- **Regulatory/financial code**: Expect 20-30% manual review rate regardless of tool
+- Under 20K lines: Use Claude directly via API, best cost-performance ratio
+- 20K-100K lines: GitHub Copilot with manual validation, cheapest subscription model
+- 100K+ lines: Combination approach, Claude for unique patterns, Copilot for mechanical conversions
+- Regulatory/financial code: Expect 20-30% manual review rate regardless of tool
 
 Migration with AI tools is no longer optional for large legacy systems. The bottleneck shifts from raw conversion effort to testing and validation. Invest in test suites before migration starts.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Are free AI tools good enough for ai tools for code migration python 2?**
+Are free AI tools good enough for ai tools for code migration python 2?
 
 Free tiers work for basic tasks and evaluation, but paid plans typically offer higher rate limits, better models, and features needed for professional work. Start with free options to find what works for your workflow, then upgrade when you hit limitations.
 
-**How do I evaluate which tool fits my workflow?**
+How do I evaluate which tool fits my workflow?
 
 Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
-**Do these tools work offline?**
+Do these tools work offline?
 
 Most AI-powered tools require an internet connection since they run models on remote servers. A few offer local model options with reduced capability. If offline access matters to you, check each tool's documentation for local or self-hosted options.
 
-**How quickly do AI tool recommendations go out of date?**
+How quickly do AI tool recommendations go out of date?
 
 AI tools evolve rapidly, with major updates every few months. Feature comparisons from 6 months ago may already be outdated. Check the publication date on any review and verify current features directly on each tool's website before purchasing.
 
-**Should I switch tools if something better comes out?**
+Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
-## Related Articles
+Related Articles
 
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 - [Best AI Tools for Code Migration Between Languages 2026](/best-ai-tools-for-code-migration-between-languages-2026/)
@@ -365,4 +365,4 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [AI Code Completion for Java Record Classes and Sealed Interf](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 - [AI Code Generation for Java Reactive Programming with Projec](/ai-code-generation-for-java-reactive-programming-with-projec/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

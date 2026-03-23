@@ -31,23 +31,23 @@ tags: [ai-tools-compared, comparison]
 
 {% raw %}
 
-Choose Cody by Sourcegraph if you work with large, complex codebases and need AI that understands your entire repository—Cody indexes all your code and generates suggestions matching your project's existing patterns and conventions. Choose GitHub Copilot if you want the most polished IDE integration, already use GitHub's ecosystem, and work primarily with popular frameworks where Copilot's training data advantage shines. Cody offers a more generous free tier; Copilot costs $10 per month with broader IDE support.
+Choose Cody by Sourcegraph if you work with large, complex codebases and need AI that understands your entire repository, Cody indexes all your code and generates suggestions matching your project's existing patterns and conventions. Choose GitHub Copilot if you want the most polished IDE integration, already use GitHub's ecosystem, and work primarily with popular frameworks where Copilot's training data advantage shines. Cody offers a more generous free tier; Copilot costs $10 per month with broader IDE support.
 
-## Key Takeaways
+Key Takeaways
 
-- **Cody offers a more**: generous free tier; Copilot costs $10 per month with broader IDE support.
-- **Choose GitHub Copilot if**: you want the most polished IDE integration, already use GitHub's ecosystem, and work primarily with popular frameworks where Copilot's training data advantage shines.
-- **Cody's completions are slightly slower on average**: typically 200-400ms — because the retrieval step adds latency.
-- **The free and Pro**: tiers use Sourcegraph's cloud indexing service, which encrypts data in transit and at rest.
-- **Week 3**: Disable Copilot for new files, use only for complex edits
+- Cody offers a more: generous free tier; Copilot costs $10 per month with broader IDE support.
+- Choose GitHub Copilot if: you want the most polished IDE integration, already use GitHub's ecosystem, and work primarily with popular frameworks where Copilot's training data advantage shines.
+- Cody's completions are slightly slower on average: typically 200-400ms. because the retrieval step adds latency.
+- The free and Pro: tiers use Sourcegraph's cloud indexing service, which encrypts data in transit and at rest.
+- Week 3: Disable Copilot for new files, use only for complex edits
 3.
-- **It uses OpenAI's models**: (specifically GPT-4 and newer variants) to generate code suggestions based on your current file and surrounding context.
+- It uses OpenAI's models: (specifically GPT-4 and newer variants) to generate code suggestions based on your current file and surrounding context.
 
-## Core Architecture and Context Awareness
+Core Architecture and Context Awareness
 
 GitHub Copilot integrates directly into Visual Studio Code, JetBrains IDEs, and other editors through the GitHub Copilot extension. It uses OpenAI's models (specifically GPT-4 and newer variants) to generate code suggestions based on your current file and surrounding context.
 
-Cody, built by Sourcegraph, takes a fundamentally different approach. Cody indexes your entire codebase—including private repositories—and uses that context to provide more relevant suggestions. When you request code help, Cody understands your project's patterns, existing functions, and codebase-specific conventions.
+Cody, built by Sourcegraph, takes a fundamentally different approach. Cody indexes your entire codebase, including private repositories, and uses that context to provide more relevant suggestions. When you request code help, Cody understands your project's patterns, existing functions, and codebase-specific conventions.
 
 Cody uses embeddings-based retrieval over your repository: it converts code snippets into vector representations and retrieves semantically similar code when generating suggestions. This means it can surface an utility function written six months ago in a different module when it is relevant to your current task. Copilot's context is limited to open files and a sliding window of recent code, with some workspace-level context added in the Copilot Chat extension.
 
@@ -61,7 +61,7 @@ function calculateUserScore(userData, activityLog) {
 }
 ```
 
-## Code Generation and Completion Quality
+Code Generation and Completion Quality
 
 Both tools handle common coding patterns well. The real difference shows up with project-specific code.
 
@@ -91,7 +91,7 @@ Cody shines when:
 
 Consider this scenario: you need to write a data transformation function. Copilot will suggest a generic implementation based on the function name. Cody can reference similar transformations already in your codebase and suggest something that matches your established patterns.
 
-## Feature Comparison Table
+Feature Comparison Table
 
 | Feature | GitHub Copilot | Cody (Sourcegraph) |
 |---|---|---|
@@ -105,7 +105,7 @@ Consider this scenario: you need to write a data transformation function. Copilo
 | Self-hosted option | No | Yes (Enterprise) |
 | Model choices | OpenAI GPT-4 variants | Claude, GPT-4, Mixtral |
 
-## Codebase Awareness and Chat Features
+Codebase Awareness and Chat Features
 
 Cody's standout feature is its chat interface that understands your entire codebase. You can ask questions like:
 
@@ -122,16 +122,16 @@ Copilot's chat (available in Copilot Chat) provides similar functionality but wi
 Example comparison in a terminal session:
 
 ```bash
-# Asking Copilot about a function
+Asking Copilot about a function
 "Explain what this auth middleware does"
 
-# Asking Cody the same question
+Asking Cody the same question
 "Explain what this auth middleware does and show me where it's used across the codebase"
 ```
 
-Cody's response to the second query includes file paths, line numbers, and a summary of how the middleware integrates with the rest of the request pipeline — information Copilot cannot provide without that codebase index.
+Cody's response to the second query includes file paths, line numbers, and a summary of how the middleware integrates with the rest of the request pipeline. information Copilot cannot provide without that codebase index.
 
-## Pricing and Accessibility
+Pricing and Accessibility
 
 GitHub Copilot offers:
 
@@ -155,17 +155,17 @@ Cody provides:
 
 For individual developers, Cody's free tier is more generous, while Copilot integrates more smoothly with GitHub's ecosystem. Teams already on Sourcegraph Enterprise can often get Cody included in their existing contract, which changes the cost calculus significantly.
 
-## IDE Integration and Performance
+IDE Integration and Performance
 
 Both tools integrate well with major IDEs. Copilot feels more "native" in VS Code since it's built by Microsoft/GitHub. Cody's extension works similarly but adds the initial indexing time when you first open a project.
 
 In terms of response speed, both tools are comparable for inline completions. Chat responses from Cody can sometimes take longer due to the additional codebase analysis.
 
-Copilot's inline ghost text is noticeably fast, often completing suggestions in under 100ms on a stable connection. Cody's completions are slightly slower on average — typically 200-400ms — because the retrieval step adds latency. For developers who rely heavily on ghost-text tab completion for flow state, Copilot may feel snappier. For those who use chat-based interactions more often, Cody's depth compensates for the speed difference.
+Copilot's inline ghost text is noticeably fast, often completing suggestions in under 100ms on a stable connection. Cody's completions are slightly slower on average. typically 200-400ms. because the retrieval step adds latency. For developers who rely heavily on ghost-text tab completion for flow state, Copilot may feel snappier. For those who use chat-based interactions more often, Cody's depth compensates for the speed difference.
 
-## Which Should You Choose?
+Which Should You Choose?
 
-Choose **GitHub Copilot** if you:
+Choose GitHub Copilot if you:
 
 - Work primarily with well-documented, popular frameworks
 
@@ -177,7 +177,7 @@ Choose **GitHub Copilot** if you:
 
 - Do most of your AI interaction through inline completions rather than chat
 
-Choose **Cody by Sourcegraph** if you:
+Choose Cody by Sourcegraph if you:
 
 - Work with large, complex codebases
 
@@ -191,9 +191,9 @@ Choose **Cody by Sourcegraph** if you:
 
 - Need to choose between AI models (Claude, GPT-4, or open-source alternatives)
 
-## Real-World Workflow Differences
+Real-World Workflow Differences
 
-Here's how each tool handles a common development task—adding a new API endpoint:
+Here's how each tool handles a common development task, adding a new API endpoint:
 
 With Copilot, you might:
 
@@ -215,35 +215,35 @@ With Cody, you could:
 
 4. You get a suggestion that already matches your project's conventions, including the exact error handling pattern your team uses
 
-A second workflow difference shows up in code review. Copilot can explain a function you select. Cody can explain a function and then trace how data flows through it to other parts of the system — useful when reviewing a pull request in an unfamiliar part of the codebase.
+A second workflow difference shows up in code review. Copilot can explain a function you select. Cody can explain a function and then trace how data flows through it to other parts of the system. useful when reviewing a pull request in an unfamiliar part of the codebase.
 
-## FAQ
+FAQ
 
-**Q: Can Cody index private repositories securely?**
+Q: Can Cody index private repositories securely?
 
 Yes. Cody Enterprise supports on-premise deployment, meaning your code never leaves your infrastructure. The free and Pro tiers use Sourcegraph's cloud indexing service, which encrypts data in transit and at rest. For teams with strict data sovereignty requirements, the self-hosted option is the key differentiator.
 
-**Q: Does GitHub Copilot Business add codebase context that the individual plan lacks?**
+Q: Does GitHub Copilot Business add codebase context that the individual plan lacks?
 
 Copilot Business adds organization-wide policy controls and audit logs but does not fundamentally change the context model. Copilot Enterprise (a separate, higher-cost tier) adds Bing-powered GitHub documentation search and limited codebase-level awareness, narrowing but not closing the gap with Cody.
 
-**Q: Which tool works better in JetBrains IDEs?**
+Q: Which tool works better in JetBrains IDEs?
 
 Both have JetBrains plugins. Copilot's JetBrains plugin is generally considered more stable because it has been available longer and benefits from Microsoft's distribution resources. Cody's JetBrains plugin works well for chat-based interactions but has historically lagged slightly behind the VS Code version for inline completions.
 
-**Q: Can I use both tools simultaneously?**
+Q: Can I use both tools simultaneously?
 
 Yes. Many developers use Copilot for fast inline completions during active coding and Cody for deep repository questions when they need broader context. Running both extensions simultaneously does not cause conflicts, though it increases memory usage in the IDE.
 
-## Making the Decision
+Making the Decision
 
-Try both tools during their free trial periods. Pay attention to how often you need to correct suggestions versus accepting them as-is — that ratio will make the decision for you. Track specifically whether the corrections you make involve project-specific conventions (Cody wins) or simply preference differences (a wash).
+Try both tools during their free trial periods. Pay attention to how often you need to correct suggestions versus accepting them as-is. that ratio will make the decision for you. Track specifically whether the corrections you make involve project-specific conventions (Cody wins) or simply preference differences (a wash).
 
-## Performance Benchmarking: Latency and Accuracy
+Performance Benchmarking: Latency and Accuracy
 
 Here's how the tools perform on real development tasks:
 
-### Latency Measurements (milliseconds)
+Latency Measurements (milliseconds)
 
 | Task | Copilot | Cody | Winner |
 |------|---------|------|--------|
@@ -254,23 +254,23 @@ Here's how the tools perform on real development tasks:
 
 Copilot is noticeably faster for inline completions. Cody's latency for repository-wide context is acceptable for chat but makes inline completion feel slow. Most developers accept this trade-off for better context.
 
-### Accuracy on Framework-Specific Code
+Accuracy on Framework-Specific Code
 
 Test on a React codebase:
 - Copilot: 87% of suggestions are directly usable (common patterns)
 - Cody: 72% directly usable, but 18% require minor edits to match project conventions
 
-Copilot's advantage is pure completion accuracy. Cody's advantage is contextual relevance—you accept fewer suggestions overall but they're more aligned with your existing patterns.
+Copilot's advantage is pure completion accuracy. Cody's advantage is contextual relevance, you accept fewer suggestions overall but they're more aligned with your existing patterns.
 
-## Implementation Guide: Setting Up Both Tools
+Implementation Guide: Setting Up Both Tools
 
-### GitHub Copilot Setup
+GitHub Copilot Setup
 
 ```bash
-# For VS Code
+For VS Code
 code --install-extension GitHub.copilot
 
-# Configure in settings.json
+Configure in settings.json
 {
   "github.copilot.enable": {
     "*": true,
@@ -282,13 +282,13 @@ code --install-extension GitHub.copilot
 }
 ```
 
-### Cody Setup
+Cody Setup
 
 ```bash
-# For VS Code
+For VS Code
 code --install-extension sourcegraph.cody-ai
 
-# Configure in settings.json
+Configure in settings.json
 {
   "cody.serverUrl": "https://sourcegraph.com",
   "cody.useContext": "smart",
@@ -297,7 +297,7 @@ code --install-extension sourcegraph.cody-ai
 }
 ```
 
-## Workflow Optimization: Using Both Tools
+Workflow Optimization: Using Both Tools
 
 Many professional teams use both with clear workflows:
 
@@ -336,9 +336,9 @@ Configure VS Code keybindings for efficiency:
 }
 ```
 
-## Cost Analysis: Which Provides Better Value
+Cost Analysis: Which Provides Better Value
 
-### For Individual Developers
+For Individual Developers
 
 Monthly cost breakdown:
 
@@ -348,9 +348,9 @@ Monthly cost breakdown:
 | Using open-source code | $10 | Free | Cody (free tier) |
 | Private proprietary repo | $10 | $12 | Copilot (established trust) |
 
-Cody's free tier is genuinely usable—30 chat messages/month and unlimited completions. For individual developers, this covers light usage. Copilot's free tier is much more limited.
+Cody's free tier is genuinely usable, 30 chat messages/month and unlimited completions. For individual developers, this covers light usage. Copilot's free tier is much more limited.
 
-### For Teams
+For Teams
 
 | Scenario | Copilot Business | Cody Enterprise | Value Winner |
 |---|---|---|---|
@@ -360,14 +360,14 @@ Cody's free tier is genuinely usable—30 chat messages/month and unlimited comp
 
 Cody's custom pricing for teams sometimes beats Copilot's linear per-user model, especially for larger organizations.
 
-## Hybrid Setup: Recommendations
+Hybrid Setup: Recommendations
 
-### For Teams Using Monorepos
+For Teams Using Monorepos
 
 Use Cody for codebase understanding (massive advantage with full context), use Copilot for single-file implementations (faster typing experience).
 
 ```bash
-# VS Code tasks.json for team workflows
+VS Code tasks.json for team workflows
 {
   "tasks": [
     {
@@ -384,23 +384,23 @@ Use Cody for codebase understanding (massive advantage with full context), use C
 }
 ```
 
-### For Open-Source Maintainers
+For Open-Source Maintainers
 
 Both tools offer free tiers for public repositories. Test both:
 - Copilot: Generally 90/day limit for public repos (still useful)
 - Cody: Full functionality on public repos with minor rate limits
 
-## Migration Path: Switching Between Tools
+Migration Path: Switching Between Tools
 
 If you're currently on Copilot and considering Cody:
 
-1. **Week 1-2**: Run Cody alongside Copilot, monitor quality
-2. **Week 3**: Disable Copilot for new files, use only for complex edits
-3. **Week 4+**: Evaluate whether Cody's context awareness outweighs Copilot's speed
+1. Week 1-2: Run Cody alongside Copilot, monitor quality
+2. Week 3: Disable Copilot for new files, use only for complex edits
+3. Week 4+: Evaluate whether Cody's context awareness outweighs Copilot's speed
 
 If the latency bothers you, keep both. Disable Copilot for chat (use Cody), use Copilot for inline completion (faster).
 
-## Related Articles
+Related Articles
 
 - [AI Code Completion Latency Comparison](/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
 - [Best Practices for Writing GitHub Copilot Custom Instruction](/best-practices-for-writing-github-copilot-custom-instruction/)
@@ -408,5 +408,5 @@ If the latency bothers you, keep both. Disable Copilot for chat (use Cody), use 
 - [Continue Dev vs GitHub Copilot: Open Source Comparison](/continue-dev-vs-github-copilot-open-source-comparison/)
 - [Copilot Chat Not Responding in GitHub Fix](/copilot-chat-not-responding-in-github-fix/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

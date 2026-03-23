@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Productivity Tools — Workflow Automation and Efficiency"
+title: "AI Productivity Tools. Workflow Automation and Efficiency"
 description: "Comparisons of AI productivity tools for developers: CI/CD, DevOps, testing, budgets, and workflow optimization."
 permalink: /topics/productivity/
 ---

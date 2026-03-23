@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Build Custom MCP Servers for Claude"
-description: "Build custom Model Context Protocol servers to extend Claude with tools, resources, and prompts — complete guide with Python and Node.js examples"
+description: "Build custom Model Context Protocol servers to extend Claude with tools, resources, and prompts. complete guide with Python and Node.js examples"
 date: 2026-03-22
 author: theluckystrike
 permalink: how-to-build-custom-mcp-servers-for-claude
@@ -15,11 +15,11 @@ tags: [ai-tools-compared, claude-ai]
 
 {% raw %}
 
-Model Context Protocol (MCP) lets you extend Claude with custom tools, expose data sources as resources, and define reusable prompts — all without modifying Claude's core behavior. A custom MCP server can give Claude access to your internal APIs, databases, or file systems in a controlled, auditable way.
+Model Context Protocol (MCP) lets you extend Claude with custom tools, expose data sources as resources, and define reusable prompts. all without modifying Claude's core behavior. A custom MCP server can give Claude access to your internal APIs, databases, or file systems in a controlled, auditable way.
 
 This guide builds three real MCP servers: a database query tool, a REST API wrapper, and a file watcher resource.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -29,7 +29,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: How MCP Works
+Step 1: How MCP Works
 
 Claude communicates with MCP servers over stdio or HTTP. The server advertises its capabilities (tools, resources, prompts) and Claude decides when to call them based on context.
 
@@ -39,17 +39,17 @@ Claude (client) ←→ MCP Protocol ←→ Your MCP Server ←→ Data Sources
 ```
 
 Three primitive types:
-- **Tools**: Functions Claude can call (like function calling in the API)
-- **Resources**: Read-only data Claude can access (files, DB records, API responses)
-- **Prompts**: Reusable prompt templates with arguments
+- Tools: Functions Claude can call (like function calling in the API)
+- Resources: Read-only data Claude can access (files, DB records, API responses)
+- Prompts: Reusable prompt templates with arguments
 
-### Step 2: Set Up
+Step 2: Set Up
 
 ```bash
-# Python SDK
+Python SDK
 pip install mcp
 
-# Node.js SDK
+Node.js SDK
 npm install @modelcontextprotocol/sdk
 ```
 
@@ -69,10 +69,10 @@ Configure Claude Desktop to load your server in `~/Library/Application Support/C
 }
 ```
 
-### Step 3: Server 1: Database Query Tool (Python)
+Step 3: Server 1: Database Query Tool (Python)
 
 ```python
-# db_server.py
+db_server.py
 import asyncio
 import os
 import json
@@ -213,7 +213,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-### Step 4: Server 2: REST API Wrapper (Node.js)
+Step 4: Server 2: REST API Wrapper (Node.js)
 
 ```typescript
 // api_server.ts
@@ -320,12 +320,12 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-### Step 5: Server 3: File Watcher Resource
+Step 5: Server 3: File Watcher Resource
 
 Resources expose live data Claude can read. This one exposes log files:
 
 ```python
-# log_resource_server.py
+log_resource_server.py
 import asyncio
 import os
 from pathlib import Path
@@ -373,7 +373,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-### Step 6: Registering Multiple Servers
+Step 6: Registering Multiple Servers
 
 ```json
 {
@@ -402,7 +402,7 @@ if __name__ == "__main__":
 
 Once registered, Claude can use all three servers in a single conversation: query the database, call the internal API, and read log files as needed.
 
-### Step 7: Security Checklist
+Step 7: Security Checklist
 
 - Restrict SQL to SELECT only; use a read-only DB user
 - Validate all file paths against an allowed base directory
@@ -410,27 +410,27 @@ Once registered, Claude can use all three servers in a single conversation: quer
 - Log all tool calls with timestamps and arguments
 - Set `ALLOWED_SCHEMAS` or equivalent for DB servers to limit data exposure
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Articles
+Related Articles
 
 - [How to Build Custom AI Coding Workflows with MCP Server](/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
 - [Claude MCP Server Connection Failed Fix (2026)](/claude-mcp-server-connection-failed-fix-2026/)
 - [Migrating from ChatGPT Plugins to Claude MCP Tools](/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
 - [How to Build Model Context Protocol Server That Provides Rea](/how-to-build-model-context-protocol-server-that-provides-rea/)
 - [Transfer ChatGPT Custom GPTs to Claude Projects](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -17,7 +17,7 @@ voice-checked: true
 
 When your DALL-E image generation request fails, it can halt your entire workflow. Whether you're building an AI-powered application or creating assets for a project, understanding why these failures occur and how to recover from them is essential. This guide walks you through the most common causes of DALL-E generation failures and provides practical retry strategies you can implement today.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Common DALL-E Failure Modes
+Step 1: Common DALL-E Failure Modes
 
 DALL-E API requests fail for several predictable reasons. Recognizing the error type is the first step toward resolving it.
 
@@ -41,9 +41,9 @@ Timeout errors occur when the generation takes longer than the allowed window. T
 
 Invalid request errors stem from malformed prompts, incorrect parameter values, or exceeding size limits. These 400-level errors often include specific details about what went wrong.
 
-### Step 2: Step-by-Step Retry Strategies
+Step 2: Step-by-Step Retry Strategies
 
-### 1. Implement Exponential Backoff
+1. Implement Exponential Backoff
 
 Rather than retrying immediately after a failure, use exponential backoff to space out your retry attempts. This approach reduces load on the API and increases your chances of success during temporary service disruptions.
 
@@ -69,7 +69,7 @@ def generate_with_retry(prompt, api_key, max_retries=5):
         if response.status_code == 200:
             return response.json()
         elif response.status_code == 429:
-            wait_time = 2 ** attempt
+            wait_time = 2  attempt
             print(f"Rate limited. Waiting {wait_time} seconds...")
             time.sleep(wait_time)
         else:
@@ -81,7 +81,7 @@ def generate_with_retry(prompt, api_key, max_retries=5):
 
 This pattern starts with a 2-second wait, then 4, 8, 16, and 32 seconds between retries. Adjust these values based on your API tier and tolerance for latency.
 
-### 2. Handle Rate Limits Properly
+2. Handle Rate Limits Properly
 
 When you receive a 429 error, respect the `Retry-After` header if present. This value tells you exactly how long to wait. If no header exists, the exponential backoff approach works well.
 
@@ -93,7 +93,7 @@ def handle_rate_limit(response):
     return None
 ```
 
-### 3. Validate Prompts Before Sending
+3. Validate Prompts Before Sending
 
 Content policy violations require prompt modification. Create a pre-validation function to catch problematic terms:
 
@@ -108,13 +108,13 @@ def validate_prompt(prompt):
 
     return True, None
 
-# Usage
+Usage
 is_valid, error = validate_prompt("Generate a landscape with mountains")
 if not is_valid:
     print(f"Cannot proceed: {error}")
 ```
 
-### 4. Set Appropriate Timeouts
+4. Set Appropriate Timeouts
 
 Configure your HTTP client with reasonable timeouts. A 60-second timeout typically accommodates most DALL-E generations, but you may need to adjust based on your use case.
 
@@ -127,7 +127,7 @@ session.timeout = (10, 60)  # 10 seconds for connection, 60 for response
 response = session.post(url, headers=headers, json=data)
 ```
 
-### 5. Use Circuit Breaker Pattern
+5. Use Circuit Breaker Pattern
 
 For production systems, implement a circuit breaker to prevent cascading failures. When errors exceed a threshold, the circuit "opens" and immediately fails requests without calling the API, giving the service time to recover.
 
@@ -154,23 +154,23 @@ class CircuitBreaker:
             raise e
 ```
 
-### Step 3: Diagnostic Checklist
+Step 3: Diagnostic Checklist
 
 When DALL-E failures persist, work through this checklist:
 
-1. Verify API key validity — check that your key hasn't expired and has the correct permissions
+1. Verify API key validity. check that your key hasn't expired and has the correct permissions
 
-2. Review prompt for policy violations — remove or rephrase potentially problematic terms
+2. Review prompt for policy violations. remove or rephrase potentially problematic terms
 
-3. Check your rate limit status — monitor your usage against your tier's limits
+3. Check your rate limit status. monitor your usage against your tier's limits
 
-4. Test with a simple prompt — determine if the issue is prompt-specific or systemic
+4. Test with a simple prompt. determine if the issue is prompt-specific or systemic
 
-5. Examine response headers — look for specific error codes and messages
+5. Examine response headers. look for specific error codes and messages
 
-6. Check OpenAI status page — service disruptions affect all users
+6. Check OpenAI status page. service disruptions affect all users
 
-### Step 4: Reducing Failure Frequency
+Step 4: Reducing Failure Frequency
 
 Preventive measures minimize retry scenarios. Consider these practices:
 
@@ -182,7 +182,7 @@ Monitoring and alerting catch patterns in your failures. Track failure rates and
 
 Graceful degradation prepares for total outages. Cache successful generations and have fallback content ready for when the API is unavailable.
 
-### Step 5: Complete Production-Ready Retry Implementation
+Step 5: Complete Production-Ready Retry Implementation
 
 For production systems, build a retry manager that handles all failure modes:
 
@@ -237,7 +237,7 @@ class DALLERetryManager:
             return retry_after
 
         # Exponential backoff with jitter
-        base_delay = 2 ** attempt
+        base_delay = 2  attempt
         jitter = base_delay * 0.1  # 10% jitter
         import random
         return int(base_delay + random.uniform(0, jitter))
@@ -299,14 +299,14 @@ class DALLERetryManager:
         logger.error("Max retries exceeded")
         return None
 
-# Usage example
+Usage example
 manager = DALLERetryManager(api_key="your-api-key")
 result = manager.generate_with_retry(
     prompt="A serene mountain landscape with a clear blue sky"
 )
 ```
 
-### Step 6: When All Else Fails
+Step 6: When All Else Fails
 
 If you continue experiencing failures after implementing these strategies, consider these options:
 
@@ -320,7 +320,7 @@ If you continue experiencing failures after implementing these strategies, consi
 
 - Implement caching for successful generations to reduce repeated requests
 
-### Step 7: Monitor and Alerting
+Step 7: Monitor and Alerting
 
 Track failure patterns to identify systemic issues:
 
@@ -350,10 +350,10 @@ class FailureMonitor:
         return failure_rate.get("429", 0) > threshold
 
 monitor = FailureMonitor()
-# Log failures as they occur
+Log failures as they occur
 monitor.log_failure("429")
 monitor.log_failure("200")
-# Check if alerting is needed
+Check if alerting is needed
 if monitor.should_alert():
     # Send alert to monitoring system
     print("High rate limit failure rate detected")
@@ -361,44 +361,44 @@ if monitor.should_alert():
 
 DALL-E failures don't have to break your workflow. With proper error handling, retry logic, diagnostic procedures, and monitoring, you can build resilient systems that recover gracefully from transient failures and provide visibility into systemic issues.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does DALL-E offer a free tier?**
+Does DALL-E offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check DALL-E's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
 - [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
@@ -406,4 +406,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Use AI to Build Data Pipeline Retry and Dead Letter](/how-to-use-ai-to-build-data-pipeline-retry-and-dead-letter-2/)
 - [Best AI for Fixing Android Gradle Sync Failed Errors in Larg](/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

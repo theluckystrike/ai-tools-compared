@@ -17,7 +17,7 @@ voice-checked: true
 
 Automated accessibility testing catches roughly 30-40% of WCAG violations. The rest require human or AI-augmented judgment: color contrast in context, keyboard navigation flows, screen reader announcement ordering. AI tools are closing that gap by interpreting violations, suggesting fixes, and testing interaction patterns that static analysis misses.
 
-## The Baseline: axe-core in CI
+The Baseline: axe-core in CI
 
 Every accessibility pipeline starts with axe-core. It's the most accurate open-source rule engine and integrates with every major testing framework.
 
@@ -61,9 +61,9 @@ test.describe('Accessibility', () => {
 });
 ```
 
-## Adding AI Triage to axe-core Output
+Adding AI Triage to axe-core Output
 
-axe-core produces detailed JSON violations. The signal-to-noise ratio is low — many violations are duplicates or low-priority. Claude triages them effectively.
+axe-core produces detailed JSON violations. The signal-to-noise ratio is low. many violations are duplicates or low-priority. Claude triages them effectively.
 
 ```typescript
 // scripts/triage-a11y.ts
@@ -105,12 +105,12 @@ triageViolations(violations);
 Run it:
 
 ```bash
-# Save axe results to JSON first (modify your test to write results)
+Save axe results to JSON first (modify your test to write results)
 npx playwright test --reporter=json | jq '.violations' > axe-results.json
 npx ts-node scripts/triage-a11y.ts
 ```
 
-## Claude for WCAG Audit from Screenshots
+Claude for WCAG Audit from Screenshots
 
 For components not easily tested with axe-core (custom charts, complex data tables, video players), use Claude's vision capabilities:
 
@@ -147,7 +147,7 @@ Audit this screenshot of a {component_description} for WCAG 2.1 AA compliance.
 Check:
 1. Color contrast (estimate if text meets 4.5:1 for normal text, 3:1 for large text)
 2. Text sizing (is anything below 16px equivalent?)
-3. Interactive elements — do they have visible focus indicators?
+3. Interactive elements. do they have visible focus indicators?
 4. Are error states clearly communicated without relying on color alone?
 5. Are form labels visually associated with their inputs?
 
@@ -159,7 +159,7 @@ List each issue found with the specific WCAG criterion (e.g., 1.4.3 Contrast Min
     )
     return response.content[0].text
 
-# Example usage
+Example usage
 issues = audit_screenshot(
     "screenshots/checkout-form.png",
     "checkout form with credit card fields"
@@ -167,7 +167,7 @@ issues = audit_screenshot(
 print(issues)
 ```
 
-## Playwright + Claude for Keyboard Navigation Testing
+Playwright + Claude for Keyboard Navigation Testing
 
 Keyboard navigation testing is hard to automate with static rules. This pattern uses Playwright to drive keyboard interaction and Claude to evaluate the results:
 
@@ -208,7 +208,7 @@ test('form is fully keyboard navigable', async ({ page }) => {
     await page.keyboard.press('Tab');
   }
 
-  // Log for debugging — paste into Claude for analysis
+  // Log for debugging. paste into Claude for analysis
   console.log('Focus order:', focusTrail.join('\n'));
 
   // Basic assertion: all interactive elements received focus
@@ -216,7 +216,7 @@ test('form is fully keyboard navigable', async ({ page }) => {
     return document.activeElement?.textContent?.includes('Submit');
   });
 
-  // This just verifies tab reaches submit — Claude audits the full trail
+  // This just verifies tab reaches submit. Claude audits the full trail
   expect(focusTrail.some(f => f.includes('Submit'))).toBe(true);
 });
 ```
@@ -234,37 +234,37 @@ Evaluate:
 4. Are there any focus traps (focus order loops without an escape)?
 ```
 
-## Deque's axe DevTools Pro with AI Features
+Deque's axe DevTools Pro with AI Features
 
 Deque's paid tier adds AI-powered guided tests that extend beyond static rule checking. Key features:
 
-- **Intelligent Guided Tests**: AI generates a test script for specific WCAG criteria and walks through it step by step with manual verification points
-- **Issue Grouping**: Clusters similar violations so you fix one and retest, not 47 individual instances
-- **Fix Recommendations**: Context-aware fixes, not just rule descriptions
+- Intelligent Guided Tests: AI generates a test script for specific WCAG criteria and walks through it step by step with manual verification points
+- Issue Grouping: Clusters similar violations so you fix one and retest, not 47 individual instances
+- Fix Recommendations: Context-aware fixes, not just rule descriptions
 
 ```bash
-# Install axe DevTools CLI (requires license)
+Install axe DevTools CLI (requires license)
 npm install --save-dev @axe-devtools/cli
 
-# Run a guided test on a URL
+Run a guided test on a URL
 axe-devtools test --url https://staging.example.com/checkout \
   --tags wcag2aa \
   --guided \
   --output results/checkout.json
 ```
 
-The guided test output includes a `remediationGuidance` field with specific HTML fixes — more actionable than axe-core's generic descriptions.
+The guided test output includes a `remediationGuidance` field with specific HTML fixes. more actionable than axe-core's generic descriptions.
 
-## CI Pipeline Integration
+CI Pipeline Integration
 
 ```yaml
-# .github/workflows/accessibility.yml
+.github/workflows/accessibility.yml
 name: Accessibility Tests
 on:
   pull_request:
     paths:
-      - 'src/**'
-      - 'public/**'
+      - 'src/'
+      - 'public/'
 
 jobs:
   a11y:
@@ -290,18 +290,18 @@ jobs:
           path: test-results/
 ```
 
-## Color Contrast Checking at Scale
+Color Contrast Checking at Scale
 
 ```python
-# scripts/check-contrast.py
-# Check all color combinations in your CSS design tokens
+scripts/check-contrast.py
+Check all color combinations in your CSS design tokens
 
 import anthropic
 import json
 
 client = anthropic.Anthropic()
 
-# Extract from your design tokens
+Extract from your design tokens
 color_pairs = [
     {"fg": "#6B7280", "bg": "#FFFFFF", "usage": "secondary text on white"},
     {"fg": "#374151", "bg": "#F9FAFB", "usage": "body text on gray background"},
@@ -330,7 +330,7 @@ Flag any failures.
 print(response.content[0].text)
 ```
 
-## Tool Comparison Summary
+Tool Comparison Summary
 
 | Tool | Automated Rules | AI Triage | Visual Audit | Keyboard Nav | Cost |
 |---|---|---|---|---|---|
@@ -340,34 +340,34 @@ print(response.content[0].text)
 | Claude Vision | No | N/A | Yes | No | Per image |
 | Playwright + Claude | No | N/A | No | Yes | Per run |
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Qa Engineers Creating Accessibility Testing](/ai-tools-for-qa-engineers-creating-accessibility-testing-che/)
 - [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 - [AI Tools for Automated Load Testing Script Generation](/ai-tools-for-automated-load-testing-script-generation-and-an/)
 - [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
 - [AI Tools for Auditing Accessible Responsive Design](/ai-tools-for-auditing-accessible-responsive-design-breakpoin/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 {% endraw %}

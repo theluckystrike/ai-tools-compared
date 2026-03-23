@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI for Network Policy Generation 2026"
-description: "Use Claude to generate Kubernetes NetworkPolicy, Calico GlobalNetworkPolicy, and AWS security group rules — with default-deny, egress control, and namespacing"
+description: "Use Claude to generate Kubernetes NetworkPolicy, Calico GlobalNetworkPolicy, and AWS security group rules. with default-deny, egress control, and namespacing"
 date: 2026-03-22
 author: theluckystrike
 permalink: /how-to-use-ai-for-network-policy-generation-2026/
@@ -15,24 +15,24 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-# How to Use AI for Network Policy Generation 2026
+How to Use AI for Network Policy Generation 2026
 
-Kubernetes NetworkPolicy objects are easy to get wrong — a missing `podSelector`, wrong `namespaceSelector`, or forgotten DNS egress rule can silently break connectivity or leave services over-exposed. AI tools are good at generating policy boilerplate, but you need to understand what to ask for.
+Kubernetes NetworkPolicy objects are easy to get wrong. a missing `podSelector`, wrong `namespaceSelector`, or forgotten DNS egress rule can silently break connectivity or leave services over-exposed. AI tools are good at generating policy boilerplate, but you need to understand what to ask for.
 
-## Default Deny All
+Default Deny All
 
 Start with a default deny posture and add explicit allow rules. Never start with an allow-all.
 
-**Prompt to Claude:**
+Prompt to Claude:
 ```text
 Generate Kubernetes NetworkPolicy default-deny policies for a namespace called "production".
 Deny all ingress AND egress by default. Apply to all pods in the namespace.
 ```
 
-**Claude output:**
+Claude output:
 
 ```yaml
-# Default deny all ingress
+Default deny all ingress
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -45,7 +45,7 @@ spec:
   # no ingress rules = deny all
 
 ---
-# Default deny all egress
+Default deny all egress
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -58,11 +58,11 @@ spec:
   # no egress rules = deny all
 ```
 
-The `podSelector: {}` (empty selector) applies to all pods in the namespace. Most mistakes here involve a missing `policyTypes` field — without it, Kubernetes only applies the policy type that has rules defined.
+The `podSelector: {}` (empty selector) applies to all pods in the namespace. Most mistakes here involve a missing `policyTypes` field. without it, Kubernetes only applies the policy type that has rules defined.
 
-## Allow Specific Traffic
+Allow Specific Traffic
 
-**Prompt:**
+Prompt:
 ```text
 Write NetworkPolicy for a 3-tier app in namespace "production":
 - frontend (app: frontend) receives ingress on port 80/443 from the internet (no podSelector restriction)
@@ -72,10 +72,10 @@ Write NetworkPolicy for a 3-tier app in namespace "production":
 - api pods can egress to external HTTPS (port 443) for third-party APIs
 ```
 
-**Claude output:**
+Claude output:
 
 ```yaml
-# Allow ingress to frontend from anywhere
+Allow ingress to frontend from anywhere
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -96,7 +96,7 @@ spec:
       # No "from" block = allow from anywhere (including internet via LoadBalancer)
 
 ---
-# Allow API to receive only from frontend
+Allow API to receive only from frontend
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -118,7 +118,7 @@ spec:
           protocol: TCP
 
 ---
-# Allow Postgres to receive only from API on port 5432
+Allow Postgres to receive only from API on port 5432
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -140,7 +140,7 @@ spec:
           protocol: TCP
 
 ---
-# Allow all pods to reach DNS (kube-dns in kube-system)
+Allow all pods to reach DNS (kube-dns in kube-system)
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -165,7 +165,7 @@ spec:
           protocol: TCP
 
 ---
-# Allow API to reach external HTTPS
+Allow API to reach external HTTPS
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -190,15 +190,15 @@ spec:
           protocol: TCP
 ```
 
-The DNS egress policy requires both `namespaceSelector` and `podSelector` in a single `to` entry — they're AND'd, not OR'd (when in the same list item). Claude gets this right. ChatGPT often writes them as separate entries, which creates an OR condition and is too permissive.
+The DNS egress policy requires both `namespaceSelector` and `podSelector` in a single `to` entry. they're AND'd, not OR'd (when in the same list item). Claude gets this right. ChatGPT often writes them as separate entries, which creates an OR condition and is too permissive.
 
-The external egress policy uses `ipBlock` with `except` to allow external traffic while blocking RFC 1918 ranges — preventing lateral movement through external egress rules.
+The external egress policy uses `ipBlock` with `except` to allow external traffic while blocking RFC 1918 ranges. preventing lateral movement through external egress rules.
 
-## Calico GlobalNetworkPolicy
+Calico GlobalNetworkPolicy
 
 For Calico, you can write cluster-wide policies:
 
-**Prompt:**
+Prompt:
 ```text
 Write a Calico GlobalNetworkPolicy that:
 - Blocks all traffic between production and staging namespaces
@@ -241,9 +241,9 @@ spec:
     - Ingress
 ```
 
-## AWS Security Group Generation
+AWS Security Group Generation
 
-**Prompt:**
+Prompt:
 ```text
 Generate Terraform for AWS security groups for the same 3-tier app.
 ALB → web (port 80, 443), web → app (port 8080), app → RDS (port 5432).
@@ -328,13 +328,13 @@ resource "aws_security_group" "rds" {
 }
 ```
 
-Claude uses security group references (not CIDR blocks) for inter-tier rules — this is correct for AWS and survives IP changes. ChatGPT sometimes uses CIDR blocks, which is less secure.
+Claude uses security group references (not CIDR blocks) for inter-tier rules. this is correct for AWS and survives IP changes. ChatGPT sometimes uses CIDR blocks, which is less secure.
 
-## Cross-Namespace Policy with NamespaceSelector
+Cross-Namespace Policy with NamespaceSelector
 
 When services in different namespaces need to communicate, the `namespaceSelector` must be combined precisely. A common pattern is allowing a shared `ingress-nginx` namespace to forward traffic into application namespaces:
 
-**Prompt:**
+Prompt:
 ```text
 Write a NetworkPolicy that allows pods in the "ingress-nginx" namespace to reach
 pods labeled "app: api" in the "production" namespace on port 8080.
@@ -366,20 +366,20 @@ spec:
           protocol: TCP
 ```
 
-The key here is placing both selectors in the same list item (AND semantics). Moving them to separate list items would allow any pod in any namespace labeled `ingress-nginx`, or any pod labeled `ingress-nginx` in any namespace — both of which are too broad.
+The key here is placing both selectors in the same list item (AND semantics). Moving them to separate list items would allow any pod in any namespace labeled `ingress-nginx`, or any pod labeled `ingress-nginx` in any namespace. both of which are too broad.
 
-## Policy Validation with kubectl
+Policy Validation with kubectl
 
 After generating policies, validate them before applying:
 
 ```bash
-# Dry-run apply to catch YAML syntax errors
+Dry-run apply to catch YAML syntax errors
 kubectl apply --dry-run=server -f network-policies/
 
-# Check which policies affect a pod
+Check which policies affect a pod
 kubectl describe pod api-deployment-abc123 -n production | grep -A5 "Network Policy"
 
-# Verify policy is applied
+Verify policy is applied
 kubectl get networkpolicy -n production
 ```
 
@@ -387,7 +387,7 @@ Claude can also generate a verification script that tests connectivity between p
 
 ```bash
 #!/bin/bash
-# verify-network-policies.sh
+verify-network-policies.sh
 NAMESPACE="production"
 
 echo "Testing: frontend → api (should succeed)"
@@ -405,19 +405,19 @@ kubectl exec -n $NAMESPACE deploy/api -- curl -s -o /dev/null -w "%{http_code}" 
 
 Run this script before and after applying policies to confirm the access matrix matches intent.
 
-## Common Mistakes Claude Catches
+Common Mistakes Claude Catches
 
 When you paste an existing NetworkPolicy and ask Claude to review it, it reliably catches these problems:
 
-**Missing policyTypes.** A policy with only `ingress` rules but no `policyTypes: [Ingress]` field does nothing — Kubernetes ignores it. Claude flags this immediately.
+Missing policyTypes. A policy with only `ingress` rules but no `policyTypes: [Ingress]` field does nothing. Kubernetes ignores it. Claude flags this immediately.
 
-**OR vs AND semantics.** When you need namespace AND pod selector together, they must be in a single `from` entry. Separate entries create an OR condition. Claude explains this in comments when generating policies.
+OR vs AND semantics. When you need namespace AND pod selector together, they must be in a single `from` entry. Separate entries create an OR condition. Claude explains this in comments when generating policies.
 
-**Forgotten DNS egress.** Default-deny egress blocks DNS resolution on port 53, which breaks almost everything silently. Claude always adds the DNS egress exception when generating default-deny policies.
+Forgotten DNS egress. Default-deny egress blocks DNS resolution on port 53, which breaks almost everything silently. Claude always adds the DNS egress exception when generating default-deny policies.
 
-**ipBlock not excluding RFC 1918.** Allowing `0.0.0.0/0` egress without excepting private ranges lets pods reach internal services through external routing. Claude includes the `except` block automatically.
+ipBlock not excluding RFC 1918. Allowing `0.0.0.0/0` egress without excepting private ranges lets pods reach internal services through external routing. Claude includes the `except` block automatically.
 
-## Related Reading
+Related Reading
 
 - [AI-Powered Service Mesh Configuration](/ai-powered-service-mesh-configuration-2026/)
 - [AI-Powered API Gateway Configuration Tools](/ai-powered-api-gateway-configuration-tools-2026/)
@@ -426,7 +426,7 @@ When you paste an existing NetworkPolicy and ask Claude to review it, it reliabl
 
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Use AI to Generate Kubernetes Network Policies](/how-to-use-ai-to-generate-kubernetes-network-policies-correc/)
 - [AI Tools for Writing Kubernetes Network Policies 2026](/ai-tools-for-writing-kubernetes-network-policies-2026/)
@@ -434,6 +434,6 @@ When you paste an existing NetworkPolicy and ask Claude to review it, it reliabl
 - [AI Policy Management Tools Enterprise Compliance](/ai-policy-management-tools-enterprise-compliance-2026/)
 - [How to Write an Enterprise Acceptable Use Policy for AI](/how-to-write-enterprise-acceptable-use-policy-for-ai-coding-assistants/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

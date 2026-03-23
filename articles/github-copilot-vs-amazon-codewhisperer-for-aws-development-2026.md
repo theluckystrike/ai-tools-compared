@@ -17,7 +17,7 @@ intent-checked: true
 
 AWS development demands precision. A misconfigured IAM policy opens security holes. A broken Lambda function crashes your data pipeline. CloudFormation templates with typos fail deployments. GitHub Copilot and Amazon CodeWhisperer both claim AWS expertise, but one consistently generates correct Lambda functions while the other struggles with IAM permissions. This benchmark covers real projects: Lambda handlers, CDK infrastructure, IAM policies, and CloudFormation templates, with accuracy metrics and cost comparison.
 
-## Table of Contents
+Table of Contents
 
 - [AWS Lambda Function Generation](#aws-lambda-function-generation)
 - [AWS CDK Infrastructure Code](#aws-cdk-infrastructure-code)
@@ -28,11 +28,11 @@ AWS development demands precision. A misconfigured IAM policy opens security hol
 - [Recommendations by Use Case](#recommendations-by-use-case)
 - [Practical Metrics for Your Decision](#practical-metrics-for-your-decision)
 
-## AWS Lambda Function Generation
+AWS Lambda Function Generation
 
 Lambda is the most common AWS workload AI tools assist with. Both Copilot and CodeWhisperer have seen countless Lambda examples in training data.
 
-### Test Case 1: S3 Event-Driven Lambda
+Test Case 1: S3 Event-Driven Lambda
 
 Requirement: Lambda triggered by S3 PUT events, process image files, store metadata in DynamoDB.
 
@@ -120,9 +120,9 @@ def lambda_handler(event, context):
         print(f"Error: {str(e)}")
 ```
 
-Verdict: CodeWhisperer cleaner, fewer import issues. Copilot verbose but more defensive.
+CodeWhisperer cleaner, fewer import issues. Copilot verbose but more defensive.
 
-### Test Case 2: Async DynamoDB Stream Processing
+Test Case 2: Async DynamoDB Stream Processing
 
 Lambda triggered by DynamoDB Streams to send notifications via SNS:
 
@@ -131,7 +131,7 @@ Amazon CodeWhisperer accuracy: 89% (forgets to handle binary stream data, misses
 
 Actual CodeWhisperer output showed `json.loads(event['body'])` on DynamoDB stream events (incorrect structure), requiring 5 minutes correction.
 
-### Benchmark Results: 20 Lambda scenarios
+Benchmark Results: 20 Lambda scenarios
 
 | Scenario | Copilot Accuracy | CodeWhisperer Accuracy | First-Run Success |
 |---|---|---|---|
@@ -146,13 +146,13 @@ Actual CodeWhisperer output showed `json.loads(event['body'])` on DynamoDB strea
 | Secrets Manager retrieval | 94% | 96% | CodeWhisperer |
 | Step Functions callback | 82% | 78% | Copilot |
 
-**Winner: GitHub Copilot (91% average accuracy)**
+Winner: GitHub Copilot (91% average accuracy)
 
-## AWS CDK Infrastructure Code
+AWS CDK Infrastructure Code
 
 CDK is AWS's Infrastructure as Code framework using TypeScript/Python. It requires understanding construct patterns and AWS resource dependencies.
 
-### Test Case: VPC with Private Subnets, NAT Gateway, RDS
+Test Case: VPC with Private Subnets, NAT Gateway, RDS
 
 Requirement: Create a VPC with public/private subnets, NAT Gateway, and RDS MySQL database in private subnets.
 
@@ -257,7 +257,7 @@ Issues: Uses correct MySQL version, includes backup retention and logging, simpl
 
 CodeWhisperer wins this round with fewer issues, though Copilot's explicit security group approach is more secure by default.
 
-### CDK Benchmark: 15 infrastructure scenarios
+CDK Benchmark: 15 infrastructure scenarios
 
 | Infrastructure Pattern | Copilot | CodeWhisperer | Winner |
 |---|---|---|---|
@@ -272,13 +272,13 @@ CodeWhisperer wins this round with fewer issues, though Copilot's explicit secur
 | IAM roles | 68% | 72% | CodeWhisperer |
 | Load balancer | 85% | 89% | CodeWhisperer |
 
-**Winner: Amazon CodeWhisperer (87% average)**
+Winner: Amazon CodeWhisperer (87% average)
 
-## IAM Policy Generation
+IAM Policy Generation
 
 This is where security matters most. An overly permissive policy is a massive vulnerability. An overly restrictive policy breaks functionality.
 
-### Test Case: Lambda needing S3 read access to one bucket
+Test Case: Lambda needing S3 read access to one bucket
 
 Requirement: Lambda execution role with read-only access to `my-uploads-bucket` S3 bucket, nothing else.
 
@@ -319,7 +319,7 @@ Amazon CodeWhisperer:
 
 Mostly correct, but ListBucket should have resource `arn:aws:s3:::my-uploads-bucket`, not with `/*`. This will fail at runtime.
 
-### IAM Benchmark: 12 scenarios
+IAM Benchmark: 12 scenarios
 
 | Permission Requirement | Copilot Correctness | CodeWhisperer Correctness | Issues |
 |---|---|---|---|
@@ -336,26 +336,26 @@ Mostly correct, but ListBucket should have resource `arn:aws:s3:::my-uploads-buc
 | KMS decrypt key | 79% | 75% | Both incomplete |
 | Cross-service IAM | 68% | 64% | Both struggle |
 
-**Winner: GitHub Copilot (89% correct policies)**
+Winner: GitHub Copilot (89% correct policies)
 
 Critical insight: CodeWhisperer tends to include more permissions than necessary (security risk). Copilot tends toward minimal permissions but sometimes misses required permissions.
 
-## CloudFormation Template Generation
+CloudFormation Template Generation
 
 CloudFormation YAML requires exact property names and AWS type references. Typos cause deployment failures with confusing error messages.
 
-### Test Case: ALB with target group
+Test Case: ALB with target group
 
 GitHub Copilot accuracy: 92% (correct property names, minor formatting)
 Amazon CodeWhisperer accuracy: 94% (slightly cleaner YAML structure)
 
 However, when asking for advanced features (path-based routing, WAF integration), Copilot dropped to 78% while CodeWhisperer maintained 85%.
 
-### Full Benchmark: 18 CloudFormation scenarios
+Full Benchmark: 18 CloudFormation scenarios
 
-**Winner: Amazon CodeWhisperer (86% vs 81%)**
+Winner: Amazon CodeWhisperer (86% vs 81%)
 
-## Cost Comparison for AWS Development
+Cost Comparison for AWS Development
 
 | Tool | Pricing | Monthly Cost (40 hrs/month) | Annual |
 |---|---|---|---|
@@ -365,10 +365,10 @@ However, when asking for advanced features (path-based routing, WAF integration)
 | Amazon CodeWhisperer Pro | $99/month per seat | $99 | $1,188 |
 | Amazon CodeWhisperer Individual | $0.34/hour | $13.60 | $163 |
 
-For solo developers or small teams: **GitHub Copilot ($10/month)** is cheaper.
-For enterprise with multiple developers: **CodeWhisperer Free tier** (if sufficient) or CodeWhisperer Individual ($0.34/hour).
+For solo developers or small teams: GitHub Copilot ($10/month) is cheaper.
+For enterprise with multiple developers: CodeWhisperer Free tier (if sufficient) or CodeWhisperer Individual ($0.34/hour).
 
-## Overall Accuracy Summary
+Overall Accuracy Summary
 
 | Domain | Copilot | CodeWhisperer | Winner |
 |---|---|---|---|
@@ -376,27 +376,27 @@ For enterprise with multiple developers: **CodeWhisperer Free tier** (if suffici
 | CDK infrastructure | 84% | 87% | CodeWhisperer |
 | IAM policies | 89% | 81% | Copilot |
 | CloudFormation | 81% | 86% | CodeWhisperer |
-| **Weighted Average** | **86.5%** | **85.8%** | **Copilot** |
+| Weighted Average | 86.5% | 85.8% | Copilot |
 
-## Recommendations by Use Case
+Recommendations by Use Case
 
-**Choose GitHub Copilot if:**
+Choose GitHub Copilot if:
 - Primary focus is Lambda/Python development
 - IAM policy generation is critical (higher accuracy)
 - You need general-purpose code assistance (works for non-AWS code)
 - Budget is tight ($10/month is unbeatable)
 
-**Choose Amazon CodeWhisperer if:**
+Choose Amazon CodeWhisperer if:
 - Heavy CDK/IaC development
 - CloudFormation template generation is frequent
 - You're already in AWS ecosystem (Console integration)
 - Your org has Enterprise Support (integrated billing)
 - Free tier meets your usage needs
 
-**Hybrid approach:**
+Hybrid approach:
 Use CodeWhisperer for infrastructure (CDK, CloudFormation) and Copilot for application code (Lambda, policies). Many teams use both.
 
-## Practical Metrics for Your Decision
+Practical Metrics for Your Decision
 
 Test each tool with your actual codebase:
 1. Generate 10 Lambda functions with both tools
@@ -408,29 +408,29 @@ For AWS development specifically, neither tool is perfect. Budget 10-15% code re
 
 Copilot's accuracy edge on policies tips the scales for security-sensitive work. CodeWhisperer's infrastructure strength matters for DevOps-heavy teams. Pick based on your primary AWS activity pattern.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can I use Copilot and GitHub together?**
+Can I use Copilot and GitHub together?
 
 Yes, many users run both tools simultaneously. Copilot and GitHub serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
 
-**Which is better for beginners, Copilot or GitHub?**
+Which is better for beginners, Copilot or GitHub?
 
 It depends on your background. Copilot tends to work well if you prefer a guided experience, while GitHub gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
 
-**Is Copilot or GitHub more expensive?**
+Is Copilot or GitHub more expensive?
 
 Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
 
-**How often do Copilot and GitHub update their features?**
+How often do Copilot and GitHub update their features?
 
 Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
 
-**What happens to my data when using Copilot or GitHub?**
+What happens to my data when using Copilot or GitHub?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-## Related Articles
+Related Articles
 
 - [Best Practices for Writing GitHub Copilot Custom Instruction](/best-practices-for-writing-github-copilot-custom-instruction/)
 - [Completely Free Alternatives to GitHub Copilot That Actually](/completely-free-alternatives-to-github-copilot-that-actually/)
@@ -438,4 +438,4 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Copilot Chat Not Responding in GitHub Fix](/copilot-chat-not-responding-in-github-fix/)
 - [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

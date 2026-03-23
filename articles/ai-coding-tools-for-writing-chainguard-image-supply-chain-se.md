@@ -17,7 +17,7 @@ voice-checked: true
 
 Chainguard images provide hardened, minimal container images designed for security and supply chain integrity. Writing effective security policies for these images requires understanding SLSA provenance, SBOM generation, and image verification workflows. AI coding tools can accelerate policy creation by translating your security requirements into policy-as-code formats while ensuring you cover the essential supply chain security controls.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Chainguard Image Supply Chain Security](#understanding-chainguard-image-supply-chain-security)
 - [AI-Assisted Policy Generation Workflow](#ai-assisted-policy-generation-workflow)
@@ -32,7 +32,7 @@ Chainguard images provide hardened, minimal container images designed for securi
 - [Best Practices for AI-Generated Policies](#best-practices-for-ai-generated-policies)
 - [Monitoring Policy Effectiveness](#monitoring-policy-effectiveness)
 
-## Understanding Chainguard Image Supply Chain Security
+Understanding Chainguard Image Supply Chain Security
 
 Chainguard enforces supply chain security through multiple layers. The images are built using Tekton pipelines that produce SLSA Level 3 provenance, meaning you can verify every step of the build process. Each image includes a SBOM (Software Bill of Materials) in SPDX format, listing all included packages and their versions.
 
@@ -40,13 +40,13 @@ When you adopt Chainguard images, your security policies should address three ke
 
 The policy language you'll work with often combines Cosign (for signature verification), Kyverno or OPA Gatekeeper (for Kubernetes policy enforcement), and custom scripts for ongoing compliance checks. AI assistants familiar with Kubernetes policy ecosystems can help generate these configurations from your security requirements.
 
-## AI-Assisted Policy Generation Workflow
+AI-Assisted Policy Generation Workflow
 
 Working with AI coding tools to create Chainguard supply chain policies requires providing clear context about your environment. Describe your Kubernetes cluster configuration, your CI/CD pipeline tools, and your specific compliance requirements. The more precise your description, the more accurate the generated policy will be.
 
 A well-structured prompt to an AI assistant might include your image registry details, the verification tools you use, and any specific constraints like required SLSA levels or allowed package sources. The AI can then generate the appropriate Cosign verification commands, admission controller policies, and runtime security configurations.
 
-## Practical Examples
+Practical Examples
 
 Consider a scenario where you need to enforce Chainguard image usage across your Kubernetes clusters. Here's how you might work with an AI assistant to generate the necessary policies:
 
@@ -108,7 +108,7 @@ spec:
 
 This policy enforces multiple security controls simultaneously. The first rule verifies Cosign signatures for all distroless images, while the second ensures SBOM attestations exist before deployment proceeds.
 
-## Advanced Policy Configurations
+Advanced Policy Configurations
 
 For organizations with stricter requirements, AI tools can help generate policies that address dependency verification and automatic updates. Chainguard images are rebuilt frequently to patch vulnerabilities, so your policies should account for the update cadence while maintaining verification rigor.
 
@@ -136,7 +136,7 @@ vulns_below_threshold(img) := vuln {
 
 The key is defining your vulnerability thresholds clearly. AI assistants can help translate your risk tolerance into specific CVE severity filters and exception handling rules.
 
-## Automating Policy Enforcement
+Automating Policy Enforcement
 
 Beyond admission controllers, your supply chain policies should extend to CI/CD pipelines. AI-generated policies can integrate with GitHub Actions or GitLab CI to verify images before they reach your registry. This shift-left approach catches misconfigurations earlier in the delivery process.
 
@@ -162,12 +162,12 @@ A GitHub Actions workflow might verify Chainguard images at build time:
       us.gcr.io/distroless/base:latest
 ```
 
-## Runtime Security Policies for Chainguard Images
+Runtime Security Policies for Chainguard Images
 
 Beyond admission control, implement runtime security policies that validate Chainguard image characteristics after deployment. Use tools like Falco or Tracee to monitor container behavior:
 
 ```yaml
-# Falco rules for Chainguard image runtime monitoring
+Falco rules for Chainguard image runtime monitoring
 - rule: Unexpected Process in Chainguard Container
   desc: Detects processes not part of Chainguard's intended image
   condition: >
@@ -191,12 +191,12 @@ Beyond admission control, implement runtime security policies that validate Chai
   priority: CRITICAL
 ```
 
-## Network Policy Integration with Chainguard Verification
+Network Policy Integration with Chainguard Verification
 
 Combine supply chain verification with network controls. Ensure only verified Chainguard images can communicate with sensitive resources:
 
 ```yaml
-# NetworkPolicy that requires verified images
+NetworkPolicy that requires verified images
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -237,12 +237,12 @@ webhooks:
   failurePolicy: Fail
 ```
 
-## Vulnerability Scanning Integration
+Vulnerability Scanning Integration
 
 Generate policies that integrate with vulnerability scanners like Trivy or Grype:
 
 ```yaml
-# OPA Gatekeeper policy requiring vulnerability scan results
+OPA Gatekeeper policy requiring vulnerability scan results
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sRequiredVulnerabilityScans
 metadata:
@@ -258,12 +258,12 @@ spec:
     scannerRequired: true
 ```
 
-## Supply Chain Transparency Reporting
+Supply Chain Transparency Reporting
 
 Generate complete reports of your supply chain security posture:
 
 ```python
-# Generate supply chain security report
+Generate supply chain security report
 import json
 from datetime import datetime
 
@@ -289,19 +289,19 @@ def generate_supply_chain_report(cluster_name):
 
     return report
 
-# Output report to JSON
+Output report to JSON
 report = generate_supply_chain_report("production")
 with open("supply-chain-report.json", "w") as f:
     json.dump(report, f, indent=2)
 ```
 
-## Continuous Policy Refinement
+Continuous Policy Refinement
 
 As your Chainguard adoption matures, refine policies based on operational experience:
 
 ```yaml
-# Progressive policy tightening
-# Phase 1: Permissive - audit only
+Progressive policy tightening
+Phase 1: Permissive - audit only
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
@@ -310,18 +310,18 @@ spec:
   validationFailureAction: Audit  # Alert but don't block
   # ... rules ...
 
-# Phase 2: Moderate - soft enforcement
+Phase 2: Moderate - soft enforcement
 spec:
   validationFailureAction: Audit
   # Stricter rules, but still non-blocking
 
-# Phase 3: Strict - hard enforcement
+Phase 3: Strict - hard enforcement
 spec:
   validationFailureAction: Enforce  # Block violations
   # Most restrictive rules
 ```
 
-## Best Practices for AI-Generated Policies
+Best Practices for AI-Generated Policies
 
 When using AI tools to generate Chainguard supply chain policies, verify the generated code against current Cosign syntax and Chainguard documentation. Policy formats evolve, and AI training data may include outdated examples. Always test policies in a non-production environment before deployment.
 
@@ -329,29 +329,29 @@ Maintain version control for your policies alongside your application code. This
 
 The combination of Chainguard's hardened images and well-designed AI-assisted policies creates a strong defense-in-depth strategy for container supply chain security.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Writing Flutter Golden Image Snapshot Tests](/ai-tools-for-writing-flutter-golden-image-snapshot-tests-for/)
 - [AI Tools for API Security Testing](/ai-tools-for-api-security-testing/)
@@ -360,21 +360,21 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Configure AI Coding Tools](/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
 Include clear rationale comments in policies explaining which security requirements each rule addresses. This helps future maintainers understand policy intent and decide whether rules need adjustment as threats evolve.
 
-## Monitoring Policy Effectiveness
+Monitoring Policy Effectiveness
 
 After deployment, monitor whether policies achieve their security goals without creating excessive false positives:
 
 ```bash
-# Check for policy violations
+Check for policy violations
 kubectl get clusterpolicies
 
-# Audit policy enforcement logs
+Audit policy enforcement logs
 kubectl logs -l app=kyverno -c audit | grep "policy violation"
 
-# Track metrics over time
-# - Policy violations per day
-# - Time to remediation
-# - False positive rate
+Track metrics over time
+- Policy violations per day
+- Time to remediation
+- False positive rate
 ```
 
 High false positive rates indicate policies need adjustment. Zero violations might indicate policies are too permissive. The goal is meaningful enforcement that improves security without blocking legitimate workloads.

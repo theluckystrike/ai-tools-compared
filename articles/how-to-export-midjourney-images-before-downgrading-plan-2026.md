@@ -30,24 +30,24 @@ tags: [ai-tools-compared]
 ---
 
 
-Midjourney offers powerful AI image generation, but subscription costs add up quickly. If you're considering downgrading your plan—whether moving from Pro to Standard or Standard to Basic—you need to export your generated images first. Once you downgrade, you lose access to your previous generations stored on Midjourney's servers. This guide covers practical methods for developers and power users to export Midjourney images before downgrading, with code examples and automation strategies.
+Midjourney offers powerful AI image generation, but subscription costs add up quickly. If you're considering downgrading your plan, whether moving from Pro to Standard or Standard to Basic, you need to export your generated images first. Once you downgrade, you lose access to your previous generations stored on Midjourney's servers. This guide covers practical methods for developers and power users to export Midjourney images before downgrading, with code examples and automation strategies.
 
-## Key Takeaways
+Key Takeaways
 
-- **The 2026 pricing structure**: shows the practical impact: Pro plan users get 2000+ fast hours monthly with full access to all features and image storage.
-- **This guide covers practical**: methods for developers and power users to export Midjourney images before downgrading, with code examples and automation strategies.
-- **Downgrading to Standard reduces**: this to 200 fast hours and limits certain advanced features.
-- **Right-click the image and**: select "Save Image" or use the reaction buttons (envelope icon) to have Midjourney DM you the image file.
-- **Then use a library**: like discord.js to listen for Midjourney bot responses and extract image URLs.
-- **Click any image to view it full-size**: then use the download button to save it.
+- The 2026 pricing structure: shows the practical impact: Pro plan users get 2000+ fast hours monthly with full access to all features and image storage.
+- This guide covers practical: methods for developers and power users to export Midjourney images before downgrading, with code examples and automation strategies.
+- Downgrading to Standard reduces: this to 200 fast hours and limits certain advanced features.
+- Right-click the image and: select "Save Image" or use the reaction buttons (envelope icon) to have Midjourney DM you the image file.
+- Then use a library: like discord.js to listen for Midjourney bot responses and extract image URLs.
+- Click any image to view it full-size: then use the download button to save it.
 
-## Why Export Before Downgrading
+Why Export Before Downgrading
 
-Midjourney stores your image generations on their servers while your subscription remains active. When you downgrade, access to higher-tier features—and in some cases, your image history—becomes restricted or disappears entirely. Unlike a local-first workflow where you own everything, Midjourney's cloud-centric model means your generations live on their infrastructure until you explicitly download them.
+Midjourney stores your image generations on their servers while your subscription remains active. When you downgrade, access to higher-tier features, and in some cases, your image history, becomes restricted or disappears entirely. Unlike a local-first workflow where you own everything, Midjourney's cloud-centric model means your generations live on their infrastructure until you explicitly download them.
 
-The 2026 pricing structure shows the practical impact: Pro plan users get 2000+ fast hours monthly with full access to all features and image storage. Downgrading to Standard reduces this to 200 fast hours and limits certain advanced features. Your generated images don't automatically transfer—you must download them before the downgrade takes effect.
+The 2026 pricing structure shows the practical impact: Pro plan users get 2000+ fast hours monthly with full access to all features and image storage. Downgrading to Standard reduces this to 200 fast hours and limits certain advanced features. Your generated images don't automatically transfer, you must download them before the downgrade takes effect.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -57,7 +57,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Method 1: Manual Discord Export
+Step 1: Method 1: Manual Discord Export
 
 The simplest approach uses Midjourney's built-in Discord functionality. Each generated image appears in your Discord channel with download options.
 
@@ -65,7 +65,7 @@ Navigate to your Midjourney server in Discord. Find the image you want to preser
 
 For bulk manual export, open your server settings, go to "Privacy Settings," and enable "Allow server members to download images." This lets you right-click and save multiple images quickly in Discord's desktop or web client.
 
-### Step 2: Method 2: Discord Bot API for Automated Export
+Step 2: Method 2: Discord Bot API for Automated Export
 
 Developers can automate image export using Discord's API. This approach requires more setup but scales to hundreds or thousands of images.
 
@@ -128,15 +128,15 @@ client.login('YOUR_BOT_TOKEN');
 
 This script listens for messages from the Midjourney bot (user ID 936929561302675456) and automatically downloads any attached images. Run this while you're actively generating images to capture everything in real-time.
 
-### Step 3: Method 3: Midjourney Web Gallery Export
+Step 3: Method 3: Midjourney Web Gallery Export
 
 Midjourney's web interface at midjourney.com provides an alternative export method. Log in to your account and navigate to "Midjourney Web" or "Gallery" (the exact name varies by current UI). This web interface displays your generation history in a browsable format.
 
 The web gallery shows thumbnails of your previous generations. Click any image to view it full-size, then use the download button to save it. For bulk export, you can open multiple images in new tabs and use a batch download approach.
 
-The web interface has limitations—it's primarily designed for viewing rather than mass export. Large archives spanning months of generation may take considerable time to navigate and download manually.
+The web interface has limitations, it's primarily designed for viewing rather than mass export. Large archives spanning months of generation may take considerable time to navigate and download manually.
 
-### Step 4: Method 4: Browser Automation with Puppeteer or Playwright
+Step 4: Method 4: Browser Automation with Puppeteer or Playwright
 
 For large archives, browser automation provides the most powerful solution. Use Puppeteer or Playwright to programmatically navigate your Midjourney web gallery and download images at scale.
 
@@ -186,7 +186,7 @@ exportMidjourneyGallery().catch(console.error);
 
 This approach gives you programmatic control over the export process. You can enhance it with rate limiting, retry logic, and progress tracking for large archives.
 
-### Step 5: Method 5: Using Midjourney's API (If Available)
+Step 5: Method 5: Using Midjourney's API (If Available)
 
 Midjourney has been gradually rolling out official API access to select partners and enterprise customers. If you have API access, you can query your generation history programmatically.
 
@@ -214,7 +214,7 @@ for gen in generations:
 
 This method provides the cleanest integration but remains limited to users with official API access.
 
-## Best Practices Before Downgrading
+Best Practices Before Downgrading
 
 Regardless of which export method you choose, follow these practices before downgrading your Midjourney plan:
 
@@ -224,9 +224,9 @@ Second, preserve metadata alongside images. Create a simple JSON or CSV file tra
 
 Third, test your export method before the downgrade. Run a small batch of downloads and verify the files are accessible and undamaged. This validation prevents surprises when you need to export your entire archive.
 
-Fourth, consider redundant storage. Save exports to multiple locations—local drive, cloud storage (Google Drive, Dropbox, AWS S3), or external backup. This protects against local hardware failures.
+Fourth, consider redundant storage. Save exports to multiple locations, local drive, cloud storage (Google Drive, Dropbox, AWS S3), or external backup. This protects against local hardware failures.
 
-### Step 6: Automated Batch Export with Python
+Step 6: Automated Batch Export with Python
 
 For developers managing large Midjourney archives, Python automation provides efficient bulk export:
 
@@ -262,7 +262,7 @@ class MidjourneyExporter:
                         return True
             except asyncio.TimeoutError:
                 if attempt < max_retries - 1:
-                    await asyncio.sleep(2 ** attempt)  # Exponential backoff
+                    await asyncio.sleep(2  attempt)  # Exponential backoff
                 continue
         print(f"Failed to download: {filename}")
         return False
@@ -283,7 +283,7 @@ class MidjourneyExporter:
         """Close session."""
         await self.session.close()
 
-# Usage
+Usage
 async def main():
     image_urls = [
         "https://cdn.midjourney.com/image1.png",
@@ -298,7 +298,7 @@ async def main():
 asyncio.run(main())
 ```
 
-### Step 7: Metadata Management
+Step 7: Metadata Management
 
 Preserve context alongside your images to make future retrieval easier:
 
@@ -328,7 +328,7 @@ class ImageMetadata:
         with open(self.metadata_file, 'w') as f:
             json.dump(self.catalog, f, indent=2)
 
-# Usage
+Usage
 metadata = ImageMetadata("./exports")
 metadata.add_image(
     "midjourney_001.png",
@@ -338,21 +338,21 @@ metadata.add_image(
 metadata.save()
 ```
 
-### Step 8: Organizing Exported Images
+Step 8: Organizing Exported Images
 
 Create a structured directory layout for easy navigation:
 
 ```
 exports/
-├── 2026_march/
-│   ├── landscapes/
-│   │   ├── mountain_range_001.png
-│   │   ├── sunset_ocean_002.png
-│   └── character_designs/
-│   │   ├── hero_concept_001.png
-│   │   ├── villain_sketches_001.png
-├── 2026_february/
-└── metadata.json
+ 2026_march/
+    landscapes/
+       mountain_range_001.png
+       sunset_ocean_002.png
+    character_designs/
+       hero_concept_001.png
+       villain_sketches_001.png
+ 2026_february/
+ metadata.json
 ```
 
 Script to organize by category:
@@ -366,7 +366,7 @@ def organize_exports(base_dir, category_mapping):
     """
     Organize images into categories based on filename patterns.
     category_mapping: dict mapping pattern to folder name
-    Example: {"space": "fields", "character": "characters"}
+    {"space": "fields", "character": "characters"}
     """
     for filename in os.listdir(base_dir):
         if not filename.endswith(('.png', '.jpg', '.jpeg')):
@@ -386,7 +386,7 @@ def organize_exports(base_dir, category_mapping):
         shutil.move(src, dst)
         print(f"Moved {filename} to {target_folder}/")
 
-# Usage
+Usage
 organize_exports(
     "./exports",
     {
@@ -398,41 +398,41 @@ organize_exports(
 )
 ```
 
-### Step 9: Downgrade Timeline Checklist
+Step 9: Downgrade Timeline Checklist
 
-**Two Weeks Before Downgrade:**
+Two Weeks Before Downgrade:
 - Review your generation history
 - Identify images worth preserving
 - Test export method on small sample (10-20 images)
 
-**One Week Before:**
+One Week Before:
 - Begin export process for high-value images
 - Verify exports are complete and accessible
 - Back up exported images to cloud storage
 
-**Three Days Before:**
+Three Days Before:
 - Export remaining images
 - Test compressed archives (if using ZIP)
 - Confirm cloud backups are complete
 
-**Day Before Downgrade:**
+Day Before Downgrade:
 - Final verification that all important images are locally available
 - Test cloud backup access from different device
 - Make note of any images still in progress
 
-**After Downgrade:**
+After Downgrade:
 - Attempt to access images through Midjourney web interface (confirm they're gone)
 - Verify local and cloud backups are intact
 - Delete temporary export files from device if storage is tight
 
-### Step 10: Storage Calculation
+Step 10: Storage Calculation
 
 Before exporting, estimate storage needs:
 
-- **Single image:** 2-4 MB (PNG), 1-2 MB (JPG)
-- **100 images:** 200-400 MB
-- **1,000 images:** 2-4 GB
-- **Pro plan user (2000+ hours):** Approximately 20,000-50,000 images = 40-200 GB
+- Single image: 2-4 MB (PNG), 1-2 MB (JPG)
+- 100 images: 200-400 MB
+- 1,000 images: 2-4 GB
+- Pro plan user (2000+ hours): Approximately 20,000-50,000 images = 40-200 GB
 
 For reference:
 - USB 3.0 drive: $20-50 for 256 GB
@@ -442,44 +442,44 @@ For reference:
 
 Choose storage method based on your collection size and access patterns.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to export midjourney images before downgrading plan?**
+How long does it take to export midjourney images before downgrading plan?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Export Dall E Generated Images at Full Resolution](/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
 - [Ideogram vs Midjourney for Text in Images Compared](/ideogram-vs-midjourney-for-text-in-images-compared/)
@@ -487,4 +487,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
 - [AI Tools for Generating Website Hero Images Compared](/ai-tools-for-generating-website-hero-images-compared/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

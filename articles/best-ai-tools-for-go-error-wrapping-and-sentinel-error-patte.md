@@ -18,7 +18,7 @@ voice-checked: true
 
 Claude generates clean, idiomatic Go error handling with proper error wrapping using `errors.Is()` and `errors.As()`, while ChatGPT sometimes suggests older patterns. Choose Claude for Go error wrapping; it understands Go 1.13+ error handling semantics consistently. This guide compares AI assistants' ability to generate production-ready error handling patterns in Go.
 
-## Table of Contents
+Table of Contents
 
 - [Why Error Handling Patterns Matter in Go](#why-error-handling-patterns-matter-in-go)
 - [Claude Code](#claude-code)
@@ -30,13 +30,13 @@ Claude generates clean, idiomatic Go error handling with proper error wrapping u
 - [AI Tool Decision Matrix](#ai-tool-decision-matrix)
 - [Common Pitfalls AI Tools Make](#common-pitfalls-ai-tools-make)
 
-## Why Error Handling Patterns Matter in Go
+Why Error Handling Patterns Matter in Go
 
-Go's `error` interface is minimal—just a single method returning a string. Yet this simplicity enables powerful patterns when combined with the language's built-in wrapping capabilities. Sentinel errors (predefined error values for comparison) and error wrapping (preserving context through the call stack) are essential for building maintainable Go applications.
+Go's `error` interface is minimal, just a single method returning a string. Yet this simplicity enables powerful patterns when combined with the language's built-in wrapping capabilities. Sentinel errors (predefined error values for comparison) and error wrapping (preserving context through the call stack) are essential for building maintainable Go applications.
 
 When an AI assistant understands these patterns, it can generate more useful error handling code, suggest appropriate wrapping strategies, and help you design error types that fit your application's architecture.
 
-## Claude Code
+Claude Code
 
 Claude Code stands out for its deep understanding of Go's error handling patterns. It recognizes when to use sentinel errors versus custom error types, and it applies the `%w` verb correctly for wrapping errors with additional context.
 
@@ -87,7 +87,7 @@ func (e *ValidationError) Unwrap() error {
 
 This pattern allows callers to use `errors.As()` to extract detailed validation information while still preserving the underlying error chain.
 
-## GitHub Copilot
+GitHub Copilot
 
 GitHub Copilot provides inline suggestions that handle common error wrapping scenarios. It recognizes patterns like database operations, file I/O, and HTTP request handling, then suggests appropriate error wrapping with context.
 
@@ -113,7 +113,7 @@ The suggestion includes proper wrapping with `%w`, adding context at each layer.
 
 For sentinel errors, Copilot typically suggests the pattern once you define the sentinel, then applies it consistently in related functions.
 
-## Zed AI
+Zed AI
 
 Zed's AI assistant integrates directly into the editor, providing real-time feedback as you write error handling code. Its strength lies in understanding the broader context of your codebase, particularly when you have established error handling patterns.
 
@@ -148,7 +148,7 @@ func (h *Handler) ProcessRequest(req *Request) error {
 
 Zed handles both `errors.Is()` and `errors.As()` correctly, understanding the distinction between sentinel errors and custom error types.
 
-## Cursor
+Cursor
 
 Cursor offers a hybrid approach with its "edit" and "chat" modes. For error handling, the chat mode works well when you need to discuss error strategy or get recommendations on structuring your error types.
 
@@ -180,7 +180,7 @@ func (s *Service) FetchResource(id string) (*Resource, error) {
 
 Cursor helps maintain consistency by recognizing patterns across your codebase and suggesting aligned error handling approaches.
 
-## Recommendations
+Recommendations
 
 For Go error handling specifically, Claude Code provides the most assistance. It understands the nuances of Go's error wrapping verbs (`%w` versus `%v`), correctly implements the `Unwrap()` methods, and generates idiomatic error handling that follows Go best practices.
 
@@ -188,11 +188,11 @@ If you work primarily in an editor environment, Zed offers tight integration wit
 
 GitHub Copilot handles basic error wrapping well but requires more oversight to ensure idiomatic Go patterns.
 
-Regardless of which tool you choose, always verify that error wrapping preserves the information callers need—whether that's checking against sentinel errors with `errors.Is()` or extracting custom error types with `errors.As()`.
+Regardless of which tool you choose, always verify that error wrapping preserves the information callers need, whether that's checking against sentinel errors with `errors.Is()` or extracting custom error types with `errors.As()`.
 
-## Error Handling Pattern Examples
+Error Handling Pattern Examples
 
-### HTTP Handler with Proper Error Wrapping
+HTTP Handler with Proper Error Wrapping
 
 ```go
 package handlers
@@ -291,7 +291,7 @@ func httpStatusFromError(err error) int {
 }
 ```
 
-### Database Operations with Error Context
+Database Operations with Error Context
 
 ```go
 package database
@@ -412,7 +412,7 @@ func isDeadlockError(err error) bool {
 }
 ```
 
-### Testing Error Handling with Table-Driven Tests
+Testing Error Handling with Table-Driven Tests
 
 ```go
 package handlers
@@ -473,7 +473,7 @@ func TestErrorHandling(t *testing.T) {
 }
 ```
 
-## AI Tool Decision Matrix
+AI Tool Decision Matrix
 
 | Scenario | Best Tool | Why |
 |----------|-----------|-----|
@@ -483,44 +483,44 @@ func TestErrorHandling(t *testing.T) {
 | Generating test cases for errors | Claude | Understands error scenarios systematically |
 | Quick error pattern suggestion | Codeium | Free and fast for standard patterns |
 
-## Common Pitfalls AI Tools Make
+Common Pitfalls AI Tools Make
 
-1. **Using %v instead of %w**: AI sometimes suggests `fmt.Errorf("error: %v", err)` instead of `%w`. Always review error formatting.
+1. Using %v instead of %w: AI sometimes suggests `fmt.Errorf("error: %v", err)` instead of `%w`. Always review error formatting.
 
-2. **Forgetting Unwrap()**: Custom error types need `Unwrap()` for `errors.As()` to work. Claude usually gets this right; Copilot sometimes omits it.
+2. Forgetting Unwrap(): Custom error types need `Unwrap()` for `errors.As()` to work. Claude usually gets this right; Copilot sometimes omits it.
 
-3. **Sentinel error definition**: AI might define sentinels as empty structs instead of errors.New(). Use `errors.New()` for true sentinels.
+3. Sentinel error definition: AI might define sentinels as empty structs instead of errors.New(). Use `errors.New()` for true sentinels.
 
-4. **Error type assertions instead of As()**: Old pattern: `if err, ok := err.(MyError); ok {}`. Modern pattern: `if errors.As(err, &MyError) {}`. Claude uses modern patterns; older AI versions might suggest the deprecated approach.
+4. Error type assertions instead of As(): Old pattern: `if err, ok := err.(MyError); ok {}`. Modern pattern: `if errors.As(err, &MyError) {}`. Claude uses modern patterns; older AI versions might suggest the deprecated approach.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Are free AI tools good enough for ai tools for go error wrapping and sentinel error?**
+Are free AI tools good enough for ai tools for go error wrapping and sentinel error?
 
 Free tiers work for basic tasks and evaluation, but paid plans typically offer higher rate limits, better models, and features needed for professional work. Start with free options to find what works for your workflow, then upgrade when you hit limitations.
 
-**How do I evaluate which tool fits my workflow?**
+How do I evaluate which tool fits my workflow?
 
 Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
-**Do these tools work offline?**
+Do these tools work offline?
 
 Most AI-powered tools require an internet connection since they run models on remote servers. A few offer local model options with reduced capability. If offline access matters to you, check each tool's documentation for local or self-hosted options.
 
-**How quickly do AI tool recommendations go out of date?**
+How quickly do AI tool recommendations go out of date?
 
 AI tools evolve rapidly, with major updates every few months. Feature comparisons from 6 months ago may already be outdated. Check the publication date on any review and verify current features directly on each tool's website before purchasing.
 
-**Should I switch tools if something better comes out?**
+Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Writing Idiomatic Rust Error Handling](/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
 - [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
 - [Copilot vs Cursor for Writing Rust Error Handling](/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
 - [Best AI Assistant for Creating API Error Code Reference Documentation 2026](/best-ai-assistant-for-creating-api-error-code-reference-docu/)
 - [Best AI Assistant for Creating Jest Tests That Verify Error](/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

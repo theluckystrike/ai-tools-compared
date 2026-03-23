@@ -17,7 +17,7 @@ intent-checked: true
 
 Infrastructure-as-code requires precision: a single misconfigured security group breaks deployments; missing resource dependencies create race conditions. When using AI to generate Terraform or Pulumi code, the difference between Claude and GPT-4 impacts whether your infrastructure deploys cleanly or requires debugging.
 
-## Table of Contents
+Table of Contents
 
 - [The Core Differences](#the-core-differences)
 - [Comparing Generated Code Quality](#comparing-generated-code-quality)
@@ -25,23 +25,23 @@ Infrastructure-as-code requires precision: a single misconfigured security group
 - [Code Example: Multi-Region Terraform](#code-example-multi-region-terraform)
 - [When to Use Each Tool](#when-to-use-each-tool)
 
-## The Core Differences
+The Core Differences
 
 Claude excels at maintaining context across large IaC files and understanding implicit resource dependencies. GPT-4 generates faster code but sometimes misses cross-resource interactions. Pulumi (Python-based) favors Claude's superior Python understanding; Terraform (HCL-based) sees more parity.
 
-### Claude for Complex Multi-Resource Deployments
+Claude for Complex Multi-Resource Deployments
 
 Claude's extended context window (200k tokens) handles entire infrastructure stacks. It remembers earlier resource definitions and builds dependent resources correctly.
 
-**Example: RDS database with proper VPC integration**
+RDS database with proper VPC integration
 
 ```hcl
-# What you ask Claude:
-# "Generate a Terraform module for a production PostgreSQL RDS
-# instance in a private subnet with proper security groups,
-# parameter groups, and automated backups."
+What you ask Claude:
+"Generate a Terraform module for a production PostgreSQL RDS
+instance in a private subnet with proper security groups,
+parameter groups, and automated backups."
 
-# Claude generates (abbreviated):
+Claude generates (abbreviated):
 resource "aws_security_group" "rds" {
   name = "postgres-rds-sg"
   vpc_id = aws_vpc.main.id
@@ -112,21 +112,21 @@ Claude automatically includes:
 
 GPT-4 might generate similar code but often forgets parameter groups or misses the `depends_on` directives, requiring debugging.
 
-### GPT-4 for Rapid Iteration and Quick Modules
+GPT-4 for Rapid Iteration and Quick Modules
 
 GPT-4 generates infrastructure code faster, making it better for prototyping. Use it when speed matters more than perfection.
 
-**Example: Lambda function with basic IAM role**
+Lambda function with basic IAM role
 
 ```python
-# Pulumi (Python) - Ask GPT-4:
-# "Create a Lambda function that reads from S3 and logs to CloudWatch"
+Pulumi (Python) - Ask GPT-4:
+"Create a Lambda function that reads from S3 and logs to CloudWatch"
 
 import pulumi
 import pulumi_aws as aws
 import json
 
-# GPT-4 generates quickly:
+GPT-4 generates quickly:
 assume_role_policy = json.dumps({
     "Version": "2012-10-17",
     "Statement": [{
@@ -138,7 +138,7 @@ assume_role_policy = json.dumps({
 
 role = aws.iam.Role("lambda_role", assume_role_policy=assume_role_policy)
 
-# CloudWatch logs policy
+CloudWatch logs policy
 logs_policy = aws.iam.RolePolicy("lambda_logs", role=role,
     policy=json.dumps({
         "Version": "2012-10-17",
@@ -153,7 +153,7 @@ logs_policy = aws.iam.RolePolicy("lambda_logs", role=role,
         }]
     }))
 
-# S3 read policy
+S3 read policy
 s3_policy = aws.iam.RolePolicy("lambda_s3", role=role,
     policy=json.dumps({
         "Version": "2012-10-17",
@@ -173,7 +173,7 @@ function = aws.lambda_.Function("my_function",
 
 GPT-4 excels here: generates working code quickly, though it might lack sophistication like VPC configuration or reserved concurrency.
 
-## Comparing Generated Code Quality
+Comparing Generated Code Quality
 
 | Metric | Claude | GPT-4 |
 |--------|--------|-------|
@@ -187,42 +187,42 @@ GPT-4 excels here: generates working code quickly, though it might lack sophisti
 | Python (Pulumi) accuracy | Excellent (95%) | Good (85%) |
 | HCL (Terraform) accuracy | Very good (90%) | Very good (90%) |
 
-## Practical Workflow: Claude First, GPT-4 Refine
+Practical Workflow: Claude First, GPT-4 Refine
 
-**Phase 1 - Claude: Architecture & Dependencies**
-
-```hcl
-# Ask Claude:
-# "Design a multi-tier VPC with public/private subnets,
-# RDS, ALB, and ECS. Show dependencies."
-
-# Claude outputs complete, dependency-aware architecture
-```
-
-**Phase 2 - GPT-4: Rapid module generation**
+Phase 1 - Claude: Architecture & Dependencies
 
 ```hcl
-# Ask GPT-4:
-# "Generate the variables.tf and outputs.tf files for the VPC module"
+Ask Claude:
+"Design a multi-tier VPC with public/private subnets,
+RDS, ALB, and ECS. Show dependencies."
 
-# GPT-4 quickly scaffolds input/output structure
+Claude outputs complete, dependency-aware architecture
 ```
 
-**Phase 3 - Claude: Validation**
+Phase 2 - GPT-4: Rapid module generation
 
 ```hcl
-# Paste complete Terraform and ask Claude:
-# "Review this for security, performance, and cost optimization"
+Ask GPT-4:
+"Generate the variables.tf and outputs.tf files for the VPC module"
 
-# Claude identifies resource leaks, missing backups, etc.
+GPT-4 quickly scaffolds input/output structure
 ```
 
-## Code Example: Multi-Region Terraform
+Phase 3 - Claude: Validation
+
+```hcl
+Paste complete Terraform and ask Claude:
+"Review this for security, performance, and cost optimization"
+
+Claude identifies resource leaks, missing backups, etc.
+```
+
+Code Example: Multi-Region Terraform
 
 Here's a production pattern combining Claude's initial design with iterative refinement:
 
 ```hcl
-# Main configuration (Claude generated)
+Main configuration (Claude generated)
 terraform {
   required_version = ">= 1.0"
   required_providers {
@@ -259,7 +259,7 @@ provider "aws" {
   region = var.secondary_region
 }
 
-# VPC Configuration (Primary Region)
+VPC Configuration (Primary Region)
 resource "aws_vpc" "primary" {
   cidr_block           = var.primary_vpc_cidr
   enable_dns_hostnames = true
@@ -292,7 +292,7 @@ resource "aws_subnet" "private_primary" {
   tags = { Name = "${var.project_name}-private-subnet-${count.index + 1}" }
 }
 
-# NAT Gateway for private subnets
+NAT Gateway for private subnets
 resource "aws_eip" "nat" {
   count  = length(var.public_subnet_cidrs)
   domain = "vpc"
@@ -310,7 +310,7 @@ resource "aws_nat_gateway" "primary" {
   tags       = { Name = "${var.project_name}-nat-${count.index + 1}" }
 }
 
-# Route Tables
+Route Tables
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.primary.id
 
@@ -350,7 +350,7 @@ data "aws_availability_zones" "primary" {
   state = "available"
 }
 
-# Output for secondary region use
+Output for secondary region use
 output "primary_vpc_id" {
   value       = aws_vpc.primary.id
   description = "Primary VPC ID"
@@ -362,51 +362,51 @@ output "private_subnet_ids" {
 }
 ```
 
-## When to Use Each Tool
+When to Use Each Tool
 
-**Use Claude when:**
+Use Claude when:
 - Building complex, multi-resource deployments (databases, VPC, load balancers)
 - You need explanations of why resources depend on each other
 - Security is critical (least-privilege, encryption)
 - You have existing infrastructure to understand before writing new code
 
-**Use GPT-4 when:**
+Use GPT-4 when:
 - You need boilerplate code quickly (variables.tf, outputs.tf)
 - Building simple modules (single Lambda, S3 bucket)
 - Prototyping before fine-tuning with Claude
 - You're comfortable reviewing and fixing generated code
 
-**Use specialized tools when:**
+Use specialized tools when:
 - Using Pulumi's AI features directly (integrated, optimized for Pulumi)
 - Running Terraform validation/review (native tools like Terraform plan)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can I use Claude and Terraform together?**
+Can I use Claude and Terraform together?
 
 Yes, many users run both tools simultaneously. Claude and Terraform serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
 
-**Which is better for beginners, Claude or Terraform?**
+Which is better for beginners, Claude or Terraform?
 
 It depends on your background. Claude tends to work well if you prefer a guided experience, while Terraform gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
 
-**Is Claude or Terraform more expensive?**
+Is Claude or Terraform more expensive?
 
 Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
 
-**How often do Claude and Terraform update their features?**
+How often do Claude and Terraform update their features?
 
 Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
 
-**What happens to my data when using Claude or Terraform?**
+What happens to my data when using Claude or Terraform?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
 - [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
 - [Claude Code Runbook Documentation Guide](/claude-code-runbook-documentation-guide/)
 - [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
 - [Best AI Tools for Infrastructure as Code 2026](/ai-tools-for-infrastructure-as-code-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

@@ -18,7 +18,7 @@ voice-checked: true
 
 Automating semantic versioning saves time and reduces human error when releasing software. AI-powered tools now exist that analyze your commit messages, pull request titles, and diffs to recommend whether you should bump the major, minor, or patch version. This article examines practical approaches to implementing such automation in your development workflow.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Semver in Automated Workflows](#understanding-semver-in-automated-workflows)
 - [How AI Analyzes Commit History](#how-ai-analyzes-commit-history)
@@ -30,19 +30,19 @@ Automating semantic versioning saves time and reduces human error when releasing
 - [Limitations and Considerations](#limitations-and-considerations)
 - [Choosing the Right Approach](#choosing-the-right-approach)
 
-## Understanding Semver in Automated Workflows
+Understanding Semver in Automated Workflows
 
 Semantic versioning follows a three-number format: `major.minor.patch`. Each increment carries specific meaning:
 
-- **Major** (1.0.0 → 2.0.0): Breaking changes that are not backward compatible
+- Major (1.0.0 → 2.0.0): Breaking changes that are not backward compatible
 
-- **Minor** (1.0.0 → 1.1.0): New features that maintain backward compatibility
+- Minor (1.0.0 → 1.1.0): New features that maintain backward compatibility
 
-- **Patch** (1.0.0 → 1.0.1): Bug fixes that maintain backward compatibility
+- Patch (1.0.0 → 1.0.1): Bug fixes that maintain backward compatibility
 
 Manually determining the correct bump type becomes tedious as projects grow. Commit history analysis using AI can scan through hundreds of commits to identify patterns that indicate breaking changes, new features, or fixes.
 
-## How AI Analyzes Commit History
+How AI Analyzes Commit History
 
 Modern AI tools examine several data points when generating version bump recommendations:
 
@@ -54,9 +54,9 @@ Modern AI tools examine several data points when generating version bump recomme
 
 4. File changes: Modifications to public interfaces, configuration schemas, or database migrations
 
-## Practical Implementation Approaches
+Practical Implementation Approaches
 
-### Using Commit Message Conventions
+Using Commit Message Conventions
 
 The Conventional Commits specification provides a structured format that AI tools can parse effectively:
 
@@ -72,14 +72,14 @@ chore: update dependencies
 
 AI tools scan for specific prefixes and scope indicators. When "BREAKING CHANGE:" appears in the body, the tool immediately recommends a major version bump.
 
-### Building a Simple Analysis Script
+Building a Simple Analysis Script
 
 You can create a basic version bump analyzer using common utilities. Here's a practical example:
 
 ```bash
 #!/bin/bash
 
-# Analyze recent commits for version bump recommendation
+Analyze recent commits for version bump recommendation
 COMMITS=$(git log --oneline -20)
 
 echo "Analyzing last 20 commits..."
@@ -97,7 +97,7 @@ fi
 
 This script provides a starting point. AI-enhanced versions can analyze the actual diff content, not just commit messages, for more accurate recommendations.
 
-### AI-Powered Analysis Tools
+AI-Powered Analysis Tools
 
 Several approaches exist for adding AI intelligence to version bump analysis:
 
@@ -139,7 +139,7 @@ def get_version_bump_recommendation(repo_path):
 
 This example demonstrates how to feed commit data into a LLM for intelligent analysis.
 
-## Integration with Release Workflows
+Integration with Release Workflows
 
 Combining AI version bump recommendations with automated release pipelines creates a powerful workflow:
 
@@ -152,7 +152,7 @@ Combining AI version bump recommendations with automated release pipelines creat
 4. Changelog generation: Using AI-identified change types to categorize entries
 
 ```yaml
-# Example GitHub Actions workflow
+Example GitHub Actions workflow
 name: Version Bump and Release
 
 on:
@@ -181,7 +181,7 @@ jobs:
           release_name: Release v${{ env.RECOMMENDATION }}
 ```
 
-## Tool Comparison: semantic-release vs release-please vs AI-Enhanced Analysis
+Tool Comparison: semantic-release vs release-please vs AI-Enhanced Analysis
 
 Not all automation tools approach version bumping the same way. Understanding where each fits helps you choose the right combination.
 
@@ -193,13 +193,13 @@ Not all automation tools approach version bumping the same way. Understanding wh
 | LLM + custom script | AI semantic analysis | Very High | High | Full control |
 | changesets | Developer-authored | Exact | Moderate | Monorepo-friendly |
 
-**semantic-release** remains the most widely adopted option. It parses Conventional Commits automatically, determines bump type, generates changelogs, and publishes to npm or GitHub Releases in one pipeline step. The plugin ecosystem covers most edge cases.
+semantic-release remains the most widely adopted option. It parses Conventional Commits automatically, determines bump type, generates changelogs, and publishes to npm or GitHub Releases in one pipeline step. The plugin ecosystem covers most edge cases.
 
-**release-please**, Google's alternative, creates pull requests with proposed version bumps and changelog drafts. A human reviews and merges. This hybrid model works well for teams that want automation assistance without fully automated releases.
+release-please, Google's alternative, creates pull requests with proposed version bumps and changelog drafts. A human reviews and merges. This hybrid model works well for teams that want automation assistance without fully automated releases.
 
-**LLM-enhanced analysis** outperforms both when your team does not consistently follow commit conventions. An LLM can read "removed the legacy payment endpoint that was deprecated in v2" and correctly infer a major bump even without a "BREAKING CHANGE:" footer.
+LLM-enhanced analysis outperforms both when your team does not consistently follow commit conventions. An LLM can read "removed the legacy payment endpoint that was deprecated in v2" and correctly infer a major bump even without a "BREAKING CHANGE:" footer.
 
-## Advanced: Multi-Package Monorepo Versioning
+Advanced: Multi-Package Monorepo Versioning
 
 Monorepos add complexity. When multiple packages share a repository, a single commit may warrant a patch bump in one package and a major bump in another. AI analysis helps here because it can associate specific files changed with specific packages.
 
@@ -242,17 +242,17 @@ def recommend_bumps(since_tag):
 
 This pattern is foundational to tools like `changesets`, which requires developers to explicitly declare the impact of their changes on each affected package. Combining changesets declarations with LLM validation catches cases where a developer underestimated the impact of their changes.
 
-## Step-by-Step: Setting Up AI Version Analysis in CI
+Step-by-Step: Setting Up AI Version Analysis in CI
 
 Here is a complete workflow for integrating AI-powered version bump analysis into a GitHub Actions pipeline:
 
-**Step 1: Install dependencies**
+Step 1: Install dependencies
 
 ```bash
 npm install --save-dev @semantic-release/changelog @semantic-release/git conventional-changelog-conventionalcommits
 ```
 
-**Step 2: Create `.releaserc.json`**
+Step 2: Create `.releaserc.json`
 
 ```json
 {
@@ -267,15 +267,15 @@ npm install --save-dev @semantic-release/changelog @semantic-release/git convent
 }
 ```
 
-**Step 3: Add AI validation step**
+Step 3: Add AI validation step
 
 Before the release runs, call your LLM analysis script to validate that the automated recommendation matches the AI's assessment. Mismatches are flagged for human review rather than automatically overridden.
 
-**Step 4: Configure branch protection**
+Step 4: Configure branch protection
 
 Require passing CI checks (including the AI validation step) before merging. This ensures every release has been analyzed before code hits main.
 
-## Limitations and Considerations
+Limitations and Considerations
 
 AI-powered version analysis has boundaries. Some scenarios require human judgment:
 
@@ -287,21 +287,21 @@ AI-powered version analysis has boundaries. Some scenarios require human judgmen
 
 Always review AI recommendations before publishing releases, especially for major versions.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can AI tools analyze private repositories?**
+Can AI tools analyze private repositories?
 Yes, when self-hosted. Using OpenAI or Anthropic APIs means your commit data is sent to their servers. For sensitive repositories, run a local model via Ollama or LM Studio to keep all data on-premise.
 
-**What if my team does not follow Conventional Commits?**
+What if my team does not follow Conventional Commits?
 This is exactly where LLM analysis adds the most value. Regex-based tools fail entirely without conventions; LLMs can infer intent from natural language commit messages like "fixed the thing that broke logins" and recommend a patch bump.
 
-**How do I handle rollbacks in the versioning scheme?**
+How do I handle rollbacks in the versioning scheme?
 Rollbacks do not generally warrant a new release. Document the rollback in a patch release if you need a clean audit trail, but avoid retroactively modifying version numbers already published to a registry.
 
-**Should I fully automate version bumping in production?**
+Should I fully automate version bumping in production?
 For internal packages and libraries, full automation is reasonable. For public APIs or npm packages used by external teams, keep a human approval step. The cost of a wrong major bump (breaking consumer code) outweighs the benefit of saved minutes.
 
-## Choosing the Right Approach
+Choosing the Right Approach
 
 For small projects, conventional commit-based tools like `conventional-changelog` provide sufficient automation. As projects grow and commit histories become complex, AI-enhanced analysis offers better accuracy through semantic understanding.
 
@@ -315,12 +315,12 @@ Consider these factors when selecting a tool:
 
 - Risk tolerance: Critical projects may require human review of recommendations
 
-## Related Articles
+Related Articles
 
 - [How Accurate Are AI Tools at Generating Rust Crossbeam](/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
 - [AI Coding Tools for Automating Changelog Generation from](/ai-coding-tools-for-automating-changelog-generation-from-con/)
 - [AI Tools for Creating Automated Release Changelog](/ai-tools-for-creating-automated-release-changelog-from-conve/)
 - [AI Tools for Generating Dependency Update Pull Request](/ai-tools-for-generating-dependency-update-pull-request-descr/)
 - [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

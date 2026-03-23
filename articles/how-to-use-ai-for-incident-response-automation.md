@@ -14,20 +14,20 @@ voice-checked: true
 ---
 {% raw %}
 
-## The Incident Response Automation Stack
+The Incident Response Automation Stack
 
 A practical AI-assisted incident response setup connects four things: a monitoring source (PagerDuty, Datadog, or CloudWatch), a webhook receiver, an AI model to triage and propose actions, and a communication channel (Slack or Teams) for human review.
 
-The goal is not full automation of resolution — it's reducing the time from "alert fired" to "engineer understands what's broken and what to try first."
+The goal is not full automation of resolution. it's reducing the time from "alert fired" to "engineer understands what's broken and what to try first."
 
 ---
 
-## Step 1: Receive PagerDuty Webhooks
+Step 1: Receive PagerDuty Webhooks
 
 Set up a lightweight receiver that forwards incident payloads to your triage function:
 
 ```python
-# triage_server.py — Flask webhook receiver
+triage_server.py. Flask webhook receiver
 from flask import Flask, request, jsonify
 import hmac, hashlib, os
 from triage import analyze_incident
@@ -58,12 +58,12 @@ def pagerduty_webhook():
 
 ---
 
-## Step 2: AI Triage with Claude
+Step 2: AI Triage with Claude
 
 The triage function sends incident details to Claude and returns a structured response with severity assessment, likely root cause hypotheses, and suggested runbook steps:
 
 ```python
-# triage.py
+triage.py
 import anthropic
 import json
 
@@ -91,19 +91,19 @@ def analyze_incident(incident: dict) -> dict:
             )
         }]
     )
-    # Claude returns JSON inside a code block — parse it
+    # Claude returns JSON inside a code block. parse it
     content = response.content[0].text
     return json.loads(content.strip("```json\n").strip("```"))
 ```
 
 ---
 
-## Step 3: Post Triage to Slack
+Step 3: Post Triage to Slack
 
 Send the AI triage result as a formatted Slack message with action buttons for acknowledgment:
 
 ```python
-# slack_notify.py
+slack_notify.py
 import os
 from slack_sdk import WebClient
 
@@ -150,7 +150,7 @@ def post_triage_result(incident: dict, triage: dict):
 
 ---
 
-## Step 4: Automated Post-Mortem Drafts
+Step 4: Automated Post-Mortem Drafts
 
 After an incident is resolved, Claude can draft the post-mortem from the incident timeline:
 
@@ -180,14 +180,14 @@ Timeline:
 
 ---
 
-## Integrating with Datadog and CloudWatch
+Integrating with Datadog and CloudWatch
 
-PagerDuty is one trigger source, but many teams use Datadog or CloudWatch directly. The same pattern applies — receive the alert webhook, enrich it with AI triage, post to Slack.
+PagerDuty is one trigger source, but many teams use Datadog or CloudWatch directly. The same pattern applies. receive the alert webhook, enrich it with AI triage, post to Slack.
 
-**Datadog webhook handler:**
+Datadog webhook handler:
 
 ```python
-# datadog_webhook.py
+datadog_webhook.py
 from flask import Flask, request, jsonify
 import hashlib, hmac, os
 from triage import analyze_incident
@@ -219,10 +219,10 @@ def datadog_webhook():
     return jsonify({"status": "ok"}), 200
 ```
 
-**CloudWatch SNS → Lambda → Slack:**
+CloudWatch SNS → Lambda → Slack:
 
 ```python
-# lambda_function.py (AWS Lambda)
+lambda_function.py (AWS Lambda)
 import json, boto3, os
 import anthropic
 
@@ -266,27 +266,27 @@ This Lambda runs in under a second, costs fractions of a cent per invocation, an
 
 ---
 
-## Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use ai for incident response automation?**
+How long does it take to use ai for incident response automation?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Will this work with my existing CI/CD pipeline?**
+Will this work with my existing CI/CD pipeline?
 
 The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ. You may need to adapt file paths, environment variable names, and trigger conditions to match your pipeline tool. The underlying workflow logic stays the same.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 {% endraw %}

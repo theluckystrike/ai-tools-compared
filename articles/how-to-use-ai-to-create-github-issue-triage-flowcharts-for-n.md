@@ -18,7 +18,7 @@ voice-checked: true
 
 GitHub issue triage is often the first point of contact between maintainers and potential contributors. For new maintainers taking over a project or those managing growing open source repositories, establishing a clear triage workflow prevents bottlenecks, reduces contributor frustration, and ensures bugs receive appropriate attention. AI tools can accelerate the creation of these flowcharts significantly, transforming what might be hours of diagramming into a structured conversation that produces actionable results.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding the Triage Workflow Requirements](#understanding-the-triage-workflow-requirements)
 - [Prerequisites](#prerequisites)
@@ -26,7 +26,7 @@ GitHub issue triage is often the first point of contact between maintainers and 
 - [Advanced Automation with GitHub Actions](#advanced-automation-with-github-actions)
 - [Comparison: Manual vs AI-Assisted Triage](#comparison-manual-vs-ai-assisted-triage)
 
-## Understanding the Triage Workflow Requirements
+Understanding the Triage Workflow Requirements
 
 Before generating any flowchart, you need to articulate the decision points that govern your triage process. A typical GitHub issue triage workflow involves several key stages: initial categorization, severity assessment, priority determination, and routing to the appropriate channel or maintainer.
 
@@ -36,15 +36,15 @@ Consider the questions your team asks when a new issue arrives:
 
 - Does the issue contain sufficient information to be actionable?
 
-- What is the scope of impact—is it a critical production issue or a minor cosmetic problem?
+- What is the scope of impact, is it a critical production issue or a minor cosmetic problem?
 
-- Who should handle this—an existing maintainer, a new contributor, or the community at large?
+- Who should handle this, an existing maintainer, a new contributor, or the community at large?
 
 - Should this be marked for a specific milestone or version?
 
 These questions form the nodes and branches of your flowchart. AI tools excel at translating these decision trees into visual diagrams, especially when you provide clear prompts describing your existing process.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -54,13 +54,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Generate Flowcharts with AI
+Step 1: Generate Flowcharts with AI
 
 Modern AI coding assistants and chat tools can generate flowchart definitions in formats like Mermaid.js, which GitHub renders natively in Markdown files. This makes Mermaid an ideal output format since it integrates directly into your repository's documentation.
 
 When prompting an AI tool, structure your request to include the specific issue types your project handles, the information required for each category, and the escalation paths. Here's a practical example of how to frame your prompt:
 
-**Effective prompt template:**
+Effective prompt template:
 
 > "Create a Mermaid.js flowchart for GitHub issue triage in an open source JavaScript project. The workflow should handle bug reports, feature requests, and documentation improvements. Bugs require steps to verify reproducibility and check for duplicate reports. Feature requests need a discussion thread check and category assignment (enhancement, new feature, refactoring). Documentation issues route to a separate docs repo. Include decision nodes for closing invalid issues, marking needs-confirmation, and assigning priority labels (p1-critical, p2-high, p3-normal, p4-low)."
 
@@ -101,11 +101,11 @@ flowchart TD
     P4 --> Backlog[Add to Backlog]
 ```
 
-### Step 2: Customizing for Your Project Size
+Step 2: Customizing for Your Project Size
 
 Small projects with a handful of contributors need simpler workflows than large enterprise open source projects. Adjust your AI prompts based on your actual operational needs.
 
-**For small projects (1-5 maintainers):**
+For small projects (1-5 maintainers):
 
 - Focus on basic categorization (bug vs feature vs question)
 
@@ -113,7 +113,7 @@ Small projects with a handful of contributors need simpler workflows than large 
 
 - Route everything to a single triage queue rather than individual assignees
 
-**For medium projects (5-20 maintainers):**
+For medium projects (5-20 maintainers):
 
 - Add specialized paths for different subsystems (frontend, backend, documentation)
 
@@ -121,7 +121,7 @@ Small projects with a handful of contributors need simpler workflows than large 
 
 - Add security issue handling with private reporting paths
 
-**For large projects (20+ maintainers):**
+For large projects (20+ maintainers):
 
 - Add triager role assignments
 
@@ -133,11 +133,11 @@ Small projects with a handful of contributors need simpler workflows than large 
 
 Your AI prompt should explicitly state your project scale so the generated flowchart matches your operational reality.
 
-### Step 3: Integrate Labels and Automation
+Step 3: Integrate Labels and Automation
 
 Effective triage flowcharts should reference GitHub Labels and automation tools. Include these details in your AI prompts for more actionable outputs:
 
-**Label integration example:**
+Label integration example:
 
 ```
 When generating, include these GitHub labels:
@@ -148,12 +148,12 @@ When generating, include these GitHub labels:
 - help-wanted, triage/accepted
 ```
 
-**Automation hooks:**
+Automation hooks:
 
 GitHub Actions can automate parts of your triage workflow. Consider generating automation code alongside your flowchart:
 
 ```yaml
-# Example: Auto-label new issues based on keywords
+Auto-label new issues based on keywords
 name: Issue Triage
 on:
   issues:
@@ -188,9 +188,9 @@ jobs:
             }
 ```
 
-### Step 4: Maintaining and Evolving Your Flowchart
+Step 4: Maintaining and Evolving Your Flowchart
 
-Your triage flowchart is a living document. Set up a process to review and update it quarterly or whenever your contribution patterns change significantly. AI tools can help with this too—paste your existing Mermaid diagram and ask for modifications rather than starting from scratch.
+Your triage flowchart is a living document. Set up a process to review and update it quarterly or whenever your contribution patterns change significantly. AI tools can help with this too, paste your existing Mermaid diagram and ask for modifications rather than starting from scratch.
 
 Common evolution triggers include:
 
@@ -202,63 +202,63 @@ Common evolution triggers include:
 
 - Feedback from new contributors about unclear processes
 
-### Step 5: Practical Implementation Steps
+Step 5: Practical Implementation Steps
 
-1. **Document your current informal process** - Write down the decisions you currently make when triaging issues, even if they're not written anywhere
+1. Document your current informal process - Write down the decisions you currently make when triaging issues, even if they're not written anywhere
 
-2. **Generate an initial flowchart** - Use the prompt templates above with your specific project details
+2. Generate an initial flowchart - Use the prompt templates above with your specific project details
 
-3. **Review with existing contributors** - Ask your current community what confusion points exist
+3. Review with existing contributors - Ask your current community what confusion points exist
 
-4. **Integrate into documentation** - Place the flowchart in CONTRIBUTING.md or a dedicated TRIAGE.md file
+4. Integrate into documentation - Place the flowchart in CONTRIBUTING.md or a dedicated TRIAGE.md file
 
-5. **Link labels and automation** - Ensure every branch point has corresponding GitHub labels
+5. Link labels and automation - Ensure every branch point has corresponding GitHub labels
 
-6. **Test and iterate** - Use the flowchart for a month, then refine based on actual issues encountered
+6. Test and iterate - Use the flowchart for a month, then refine based on actual issues encountered
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use ai to create github issue triage flowcharts?**
+How long does it take to use ai to create github issue triage flowcharts?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Advanced Automation with GitHub Actions
+Advanced Automation with GitHub Actions
 
 Automate triage decisions using AI-powered workflows:
 
 ```python
-# github_issue_triage_bot.py
+github_issue_triage_bot.py
 import anthropic
 import json
 from typing import Optional
@@ -328,7 +328,7 @@ Return as JSON with these exact keys: type, severity, priority, labels, assignee
 
 This bot can automatically label and assign issues in GitHub Actions workflows.
 
-### Step 6: Triage Performance Metrics
+Step 6: Triage Performance Metrics
 
 Measure the effectiveness of your AI-enhanced triage workflow:
 
@@ -388,12 +388,12 @@ class TriageAnalytics:
 
 Track these metrics monthly to continuously improve triage quality.
 
-### Step 7: Multi-Repository Triage Orchestration
+Step 7: Multi-Repository Triage Orchestration
 
 Manage triage across multiple related repositories:
 
 ```yaml
-# .github/workflows/multi-repo-triage.yml
+.github/workflows/multi-repo-triage.yml
 name: Multi-Repo Triage Coordination
 
 on:
@@ -434,7 +434,7 @@ jobs:
 
 This workflow ensures consistent triage across a monorepo or multiple related projects.
 
-## Comparison: Manual vs AI-Assisted Triage
+Comparison: Manual vs AI-Assisted Triage
 
 Real data from open-source projects:
 
@@ -448,7 +448,7 @@ Real data from open-source projects:
 
 AI-assisted triage cuts issue processing time by 60% while improving consistency.
 
-### Step 8: Scaling Triage for 1000+ Issues Per Month
+Step 8: Scaling Triage for 1000+ Issues Per Month
 
 Production-grade implementation for high-volume projects:
 
@@ -513,12 +513,12 @@ class ScalableTriageSystem:
 
 This scales to 1000s of issues/month by batching and parallelizing API calls.
 
-### Step 9: Custom Label Taxonomy Design
+Step 9: Custom Label Taxonomy Design
 
 Different projects benefit from different label structures:
 
 ```yaml
-# Standard SaaS label taxonomy
+Standard SaaS label taxonomy
 labels:
   type:
     - bug
@@ -548,7 +548,7 @@ labels:
     - review
     - blocked
 
-# Open Source label taxonomy (more contributor-focused)
+Open Source label taxonomy (more contributor-focused)
 labels:
   type: [bug, feature, documentation]
   difficulty: [easy, medium, hard]
@@ -558,24 +558,24 @@ labels:
 
 Choose labels that support your specific workflow rather than generic defaults.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does AI triage training take?**
+How long does AI triage training take?
 AI doesn't need training for general triage. However, customizing it to your specific labels and patterns requires 10-20 example issues. Feed these into Claude with your preferences.
 
-**Can AI identify duplicate issues across old and new reports?**
+Can AI identify duplicate issues across old and new reports?
 Yes, if you provide context of previously triaged issues. Create a vector database of old issues and have Claude search for semantic similarity.
 
-**What if AI makes consistently wrong decisions for our type of issues?**
+What if AI makes consistently wrong decisions for our type of issues?
 Provide negative examples: "Here's a bug issue you categorized as feature - here's why that's wrong..." Claude learns from corrections quickly.
 
-**Should we trust AI for critical security issues?**
+Should we trust AI for critical security issues?
 No. Critical security issues should always get human review before public visibility. Use AI for initial categorization only.
 
-**How do we prevent label explosion?**
+How do we prevent label explosion?
 Limit to 10-15 core labels. Revisit quarterly and consolidate overlapping labels. AI works better with focused, consistent label sets.
 
-## Related Articles
+Related Articles
 
 - [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
 - [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-github-actions-workflows/)
@@ -583,5 +583,5 @@ Limit to 10-15 core labels. Revisit quarterly and consolidate overlapping labels
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 - [How to Use AI to Optimize GitHub Actions Workflow Run Times](/how-to-use-ai-to-optimize-github-actions-workflow-run-times-/)
 - [Best Open Source CRM for Remote Agency Self-Hosted Compared](https://welikeremotestack.com/best-open-source-crm-for-remote-agency-self-hosted-compared-/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -31,16 +31,16 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Marketing claims for AI coding tools are unreliable. "10x productivity" and "generates correct code" mean nothing without a reproducible evaluation framework. This guide shows how to run your own accuracy tests on the tools you're considering, using your actual codebase and task types.
 
-## Key Takeaways
+Key Takeaways
 
-- **A model with 85%**: accuracy at $15 per million tokens costs more per correct output than one with 78% accuracy at $3 per million tokens.
-- **No model approaches 90% on those**: iterative use is still necessary.
-- **A cheaper model that**: requires one follow-up prompt can still cost less per solved task than the most accurate model used once.
-- **Tier can be 'bronze' (5%)**: 'silver' (10%), 'gold' (15%), 'platinum' (25%).
-- **Models that score below**: 10% are essentially ignoring the reference files and generating from training data alone, which explains poor performance on domain-specific tasks.
-- **The 4-8 hour setup**: is a one-time cost; the framework runs in minutes and can be re-used every quarter as models update.
+- A model with 85%: accuracy at $15 per million tokens costs more per correct output than one with 78% accuracy at $3 per million tokens.
+- No model approaches 90% on those: iterative use is still necessary.
+- A cheaper model that: requires one follow-up prompt can still cost less per solved task than the most accurate model used once.
+- Tier can be 'bronze' (5%): 'silver' (10%), 'gold' (15%), 'platinum' (25%).
+- Models that score below: 10% are essentially ignoring the reference files and generating from training data alone, which explains poor performance on domain-specific tasks.
+- The 4-8 hour setup: is a one-time cost; the framework runs in minutes and can be re-used every quarter as models update.
 
-## Why Vendor Benchmarks Don't Transfer
+Why Vendor Benchmarks Don't Transfer
 
 HumanEval measures whether a model can implement simple algorithmic functions from docstrings. SWE-bench measures GitHub issue resolution. Neither measures what you actually care about:
 
@@ -50,12 +50,12 @@ HumanEval measures whether a model can implement simple algorithmic functions fr
 
 Run your own evaluations. They take 2-4 hours to set up and give you directly actionable data.
 
-## Step 1: Build Your Evaluation Task Set
+Step 1: Build Your Evaluation Task Set
 
 Create 20-30 tasks representative of your actual work. Categorize them:
 
 ```python
-# evaluation/tasks.py
+evaluation/tasks.py
 TASKS = [
     # Category: New function implementation
     {
@@ -99,10 +99,10 @@ TASKS = [
 ]
 ```
 
-## Step 2: Automated Evaluation Runner
+Step 2: Automated Evaluation Runner
 
 ```python
-# evaluation/runner.py
+evaluation/runner.py
 import subprocess
 import anthropic
 import openai
@@ -191,7 +191,7 @@ def run_tests(task, generated_code):
  Path(target_file).write_text(original)
 ```
 
-## Step 3: Metrics That Matter
+Step 3: Metrics That Matter
 
 Don't just track pass/fail. Track:
 
@@ -228,17 +228,17 @@ def calculate_metrics(results):
  }
 ```
 
-**Key metrics to compare:**
+Key metrics to compare:
 
 | Metric | What it measures |
 |--------|-----------------|
 | First-pass test success rate | Code correctness without iteration |
 | Category breakdown | Where each model is weakest |
 | Latency | Time-to-result for interactive use |
-| Context utilization | Did it use the reference files? |
+| Context usage | Did it use the reference files? |
 | Code style conformance | Does it match your patterns? |
 
-## Step 4: Blind Comparison
+Step 4: Blind Comparison
 
 For style and readability evaluation, use blind comparison. Present generated code samples to reviewers without identifying the model:
 
@@ -262,7 +262,7 @@ def create_blind_comparison(task, responses_by_model):
 
 Ask reviewers to score each option on: correctness, code style match, completeness, and whether they'd merge it without modification.
 
-## Realistic Pass Rates
+Realistic Pass Rates
 
 Based on running this framework on a Python/Django codebase:
 
@@ -273,13 +273,13 @@ Based on running this framework on a Python/Django codebase:
 | Claude Haiku 4.5 | 72% | 51% | 22% |
 | Gemini 1.5 Pro | 80% | 63% | 35% |
 
-"Hard" tasks were refactoring requests with multiple interacting files. No model approaches 90% on those — iterative use is still necessary.
+"Hard" tasks were refactoring requests with multiple interacting files. No model approaches 90% on those. iterative use is still necessary.
 
-## Step 5: Measuring Context Window Utilization
+Step 5: Measuring Context Window Utilization
 
 A model's raw pass rate is only part of the picture. How well it uses the context you provide determines whether it can handle real codebase tasks, not just isolated function generation.
 
-Add a context utilization metric to your runner. After each response, check whether the generated code references patterns, class names, or function signatures from the reference files you supplied:
+Add a context usage metric to your runner. After each response, check whether the generated code references patterns, class names, or function signatures from the reference files you supplied:
 
 ```python
 def measure_context_utilization(task, generated_code):
@@ -312,9 +312,9 @@ def measure_context_utilization(task, generated_code):
  }
 ```
 
-Models that score above 30% utilization on hard tasks are genuinely integrating with your codebase context. Models that score below 10% are essentially ignoring the reference files and generating from training data alone, which explains poor performance on domain-specific tasks.
+Models that score above 30% usage on hard tasks are genuinely integrating with your codebase context. Models that score below 10% are essentially ignoring the reference files and generating from training data alone, which explains poor performance on domain-specific tasks.
 
-## Step 6: Cost-Adjusted Accuracy
+Step 6: Cost-Adjusted Accuracy
 
 For teams evaluating models at scale, raw accuracy without cost context can mislead purchasing decisions. A model with 85% accuracy at $15 per million tokens costs more per correct output than one with 78% accuracy at $3 per million tokens.
 
@@ -337,7 +337,7 @@ def cost_adjusted_metrics(results, pricing_per_million_tokens):
 
 For medium-difficulty tasks where the gap between top models is 3-5 percentage points, cost-adjusted metrics often reverse the ranking. A cheaper model that requires one follow-up prompt can still cost less per solved task than the most accurate model used once.
 
-## Comparing Evaluation Approaches
+Comparing Evaluation Approaches
 
 Different evaluation strategies suit different team situations:
 
@@ -351,7 +351,7 @@ Different evaluation strategies suit different team situations:
 
 For most teams, the automated test runner approach gives the best return on evaluation investment. The 4-8 hour setup is a one-time cost; the framework runs in minutes and can be re-used every quarter as models update.
 
-## Making the Decision
+Making the Decision
 
 After running your evaluation suite, you will have accuracy data by task category, difficulty, and cost. Use this to match models to task types rather than picking a single winner for everything:
 
@@ -361,33 +361,33 @@ After running your evaluation suite, you will have accuracy data by task categor
 
 This tiered approach gives better outcomes than a single model selection, and the evaluation framework you built makes it straightforward to re-run tests as model capabilities evolve every few months.
 
-## Related Reading
+Related Reading
 
 - [AI Coding Productivity Measurement: How to Track If Tools Save Time](/ai-coding-productivity-measurement-how-to-track-if-tools-save-time/)
 - [Devin vs SWE-Agent for Autonomous Coding](/devin-vs-swe-agent-autonomous-coding/)
 - [AI Autocomplete Accuracy Comparison: Copilot vs Codeium vs Tabnine](/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to evaluate ai coding assistant accuracy?**
+How long does it take to evaluate ai coding assistant accuracy?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude vs GPT-4 for Writing SQL Queries 2026"
-description: "Compare Claude and GPT-4o for generating complex SQL — window functions, CTEs, recursive queries, and query plan analysis on PostgreSQL and BigQuery"
+description: "Compare Claude and GPT-4o for generating complex SQL. window functions, CTEs, recursive queries, and query plan analysis on PostgreSQL and BigQuery"
 date: 2026-03-22
 author: theluckystrike
 permalink: /claude-vs-gpt4-for-writing-sql-queries-2026/
@@ -15,11 +15,11 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 {% raw %}
 
-# Claude vs GPT-4 for Writing SQL Queries 2026
+Claude vs GPT-4 for Writing SQL Queries 2026
 
-Writing complex SQL — window functions, CTEs, recursive queries, and multi-join aggregations — is where AI tools earn their keep. This comparison benchmarks Claude and GPT-4o on real-world SQL generation tasks against a PostgreSQL 16 database.
+Writing complex SQL. window functions, CTEs, recursive queries, and multi-join aggregations. is where AI tools earn their keep. This comparison benchmarks Claude and GPT-4o on real-world SQL generation tasks against a PostgreSQL 16 database.
 
-## Schema Used in Tests
+Schema Used in Tests
 
 ```sql
 -- Users and their subscription tiers
@@ -49,9 +49,9 @@ CREATE TABLE subscriptions (
 );
 ```
 
-## Test 1: Cohort Retention Analysis
+Test 1: Cohort Retention Analysis
 
-**Prompt:**
+Prompt:
 ```text
 Write a PostgreSQL query to calculate weekly cohort retention.
 Group users by signup week. For each cohort, calculate what % of users
@@ -60,7 +60,7 @@ Return: cohort_week, cohort_size, retained_w1, retained_w2, retained_w3, retaine
 as percentages.
 ```
 
-### Claude Output
+Claude Output
 
 ```sql
 WITH cohorts AS (
@@ -110,18 +110,18 @@ NULLS LAST;
 
 Claude's query is correct and handles the edge case of pre-signup events (the `WHERE` clause in `user_activity` that excludes activity before cohort week). It uses `DISTINCT` in the COUNT to avoid double-counting users active in multiple weeks, and `INTERVAL` for type-safe week comparison.
 
-### GPT-4o Output
+GPT-4o Output
 
 GPT-4o generates a working query but:
 - Uses `EXTRACT(EPOCH FROM ...)/ 604800` for week difference (fragile and hard to read)
 - Missing the pre-signup event filter
 - Uses `CASE WHEN weeks = 1` instead of interval comparison (wrong if events table uses different precision)
 
-**Verdict: Claude** — more precise handling of interval arithmetic.
+Claude. more precise handling of interval arithmetic.
 
-## Test 2: Running Total with Reset
+Test 2: Running Total with Reset
 
-**Prompt:**
+Prompt:
 ```text
 Write a PostgreSQL query to calculate a user's consecutive active days (streak).
 A user is "active" on a day if they have at least one event.
@@ -129,7 +129,7 @@ The streak resets if they miss a day. Return user_id, current_streak (as of toda
 and longest_streak_ever.
 ```
 
-### Claude Output
+Claude Output
 
 ```sql
 WITH daily_activity AS (
@@ -179,16 +179,16 @@ ORDER BY current_streak DESC NULLS LAST;
 
 The `date - ROW_NUMBER() * INTERVAL '1 day'` trick for grouping consecutive dates is the standard PostgreSQL pattern. Claude implements it correctly and uses `FILTER` on the aggregate (SQL:2003 syntax) for clean conditional aggregation.
 
-## Test 3: Recursive CTE — Organizational Hierarchy
+Test 3: Recursive CTE. Organizational Hierarchy
 
-**Prompt:**
+Prompt:
 ```text
 The users table has a manager_id column (self-referential FK).
 Write a recursive CTE that returns the full reporting chain for a given user (id = 42),
 including their level in the hierarchy and the path from root to user.
 ```
 
-**Claude output:**
+Claude output:
 
 ```sql
 WITH RECURSIVE reporting_chain AS (
@@ -230,9 +230,9 @@ ORDER BY depth DESC;
 
 The cycle guard (`WHERE u.id <> ALL(rc.path)`) prevents infinite loops on malformed data. Claude uses `ARRAY` accumulation for both the path (IDs) and a human-readable path string.
 
-## Test 4: JSONB Query — Properties Aggregation
+Test 4: JSONB Query. Properties Aggregation
 
-**Prompt:**
+Prompt:
 ```text
 The events.properties column contains JSONB.
 For 'checkout' events, aggregate: total count, avg order_value (properties->>'order_value'),
@@ -274,13 +274,13 @@ SELECT
     (SELECT jsonb_agg(row_to_json(product_counts.*)) FROM product_counts) AS top_products;
 ```
 
-Claude correctly uses `jsonb_array_elements_text` with `LATERAL` to unnest the product ID array — this is the PostgreSQL-idiomatic approach. GPT-4o sometimes uses `json_each` (for plain JSON) or misses the `LATERAL` keyword.
+Claude correctly uses `jsonb_array_elements_text` with `LATERAL` to unnest the product ID array. this is the PostgreSQL-idiomatic approach. GPT-4o sometimes uses `json_each` (for plain JSON) or misses the `LATERAL` keyword.
 
-## Test 5: Query Plan Analysis
+Test 5: Query Plan Analysis
 
-This is where the comparison gets interesting. When given a slow query and its `EXPLAIN ANALYZE` output, both tools can suggest fixes — but the quality of reasoning differs.
+This is where the comparison gets interesting. When given a slow query and its `EXPLAIN ANALYZE` output, both tools can suggest fixes. but the quality of reasoning differs.
 
-**Prompt:**
+Prompt:
 ```text
 This query takes 8 seconds on a 10M row events table:
 
@@ -302,7 +302,7 @@ EXPLAIN ANALYZE output:
 What indexes should I add?
 ```
 
-**Claude's response:**
+Claude's response:
 
 ```sql
 -- The Seq Scan with 8.4M rows removed means no useful index exists.
@@ -326,13 +326,13 @@ LIMIT 100;
 -- Estimated query time after index: 800ms-1.2s
 ```
 
-Claude explains the reasoning: the composite index on `(event_type, occurred_at)` allows the planner to do an index range scan on the exact `event_type = 'page_view'` partition and then filter by date — eliminating the sequential scan. The partial index (`WHERE occurred_at > NOW() - INTERVAL '90 days'`) keeps the index small since data older than 90 days is never queried with this pattern.
+Claude explains the reasoning: the composite index on `(event_type, occurred_at)` allows the planner to do an index range scan on the exact `event_type = 'page_view'` partition and then filter by date. eliminating the sequential scan. The partial index (`WHERE occurred_at > NOW() - INTERVAL '90 days'`) keeps the index small since data older than 90 days is never queried with this pattern.
 
 GPT-4o suggests a similar index but omits the partial index option and doesn't explain why the column order matters (high-cardinality filter first, range filter second).
 
-## Test 6: BigQuery vs PostgreSQL Syntax Differences
+Test 6: BigQuery vs PostgreSQL Syntax Differences
 
-**Prompt:**
+Prompt:
 ```text
 I'm migrating this PostgreSQL window function query to BigQuery.
 What needs to change?
@@ -350,7 +350,7 @@ FROM events;
 Claude's migration output:
 
 ```sql
--- BigQuery version (mostly identical — standard SQL window functions are portable)
+-- BigQuery version (mostly identical. standard SQL window functions are portable)
 SELECT
   user_id,
   SUM(order_value) OVER (
@@ -370,7 +370,7 @@ FROM `project.dataset.events`;
 
 Claude proactively lists the PostgreSQL-specific types that won't migrate cleanly, even though the question only asked about the window function. This is the pattern where Claude's broader context awareness is useful: it answers the stated question and flags adjacent issues.
 
-## Summary: When to Use Each Tool
+When to Use Each Tool
 
 Claude is stronger for:
 - Complex multi-step queries requiring precise interval and timestamp arithmetic
@@ -384,9 +384,9 @@ GPT-4o is comparable for:
 - Generating CREATE TABLE schemas from descriptions
 - Explaining what an existing query does
 
-For production SQL work — especially analytics queries with window functions, CTEs, and JSONB — Claude produces fewer subtle errors. The interval arithmetic and pre-signup event filter in Test 1, the LATERAL usage in Test 4, and the partial index recommendation in Test 5 are all things GPT-4o missed or got wrong.
+For production SQL work. especially analytics queries with window functions, CTEs, and JSONB. Claude produces fewer subtle errors. The interval arithmetic and pre-signup event filter in Test 1, the LATERAL usage in Test 4, and the partial index recommendation in Test 5 are all things GPT-4o missed or got wrong.
 
-## Related Articles
+Related Articles
 
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 - [Best Self Hosted AI Model for Writing SQL Queries from](/best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/)
@@ -394,6 +394,6 @@ For production SQL work — especially analytics queries with window functions, 
 - [Best AI for Writing dbt Macros That Generate Dynamic SQL](/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
 - [Best AI for Writing SQL Performance Tuning Recommendations](/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

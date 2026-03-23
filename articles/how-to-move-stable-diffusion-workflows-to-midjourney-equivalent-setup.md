@@ -19,7 +19,7 @@ Move Stable Diffusion to Midjourney by translating your custom models to Midjour
 
 Moving your AI image generation workflows from Stable Diffusion to Midjourney requires understanding the fundamental differences between these two platforms. While Stable Diffusion runs locally with extensive customization options, Midjourney operates through Discord with its own prompt syntax and generation pipeline. This guide walks you through converting your existing workflows step by step.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -29,13 +29,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand the Platform Differences
+Step 1: Understand the Platform Differences
 
 Stable Diffusion gives you complete control over the generation process. You can modify models, embed custom embeddings, and fine-tune every parameter through APIs like Automatic1111 or ComfyUI. Midjourney abstracts much of this complexity, focusing on producing high-quality results through its curated model versions and Discord-based interface.
 
 The key challenge lies in translating your existing Stable Diffusion prompts, Loras, and workflow patterns into Midjourney's equivalent functionality. This involves understanding how prompt weighting, style modifiers, and generation parameters map between the two systems.
 
-### Step 2: Converting Stable Diffusion Prompts to Midjourney Syntax
+Step 2: Converting Stable Diffusion Prompts to Midjourney Syntax
 
 One of the first hurdles you'll face is converting your existing Stable Diffusion prompts. Midjourney uses a different syntax for specifying weights and parameters. Here's a Python tool that helps automate this conversion:
 
@@ -123,19 +123,19 @@ chmod +x prompt_converter.py
 python3 prompt_converter.py
 ```
 
-### Step 3: Create Equivalent Workflow Configurations
+Step 3: Create Equivalent Workflow Configurations
 
 Your Stable Diffusion workflows likely use config files to manage model paths, VAE settings, and sampling parameters. Here's how to create equivalent configurations for Midjourney through Discord bot commands:
 
 ```yaml
-# midjourney-workflow-config.yaml
-# Equivalent workflow configuration for Midjourney operations
-# Note: Midjourney uses Discord, so this config documents equivalent settings
+midjourney-workflow-config.yaml
+Equivalent workflow configuration for Midjourney operations
+Midjourney uses Discord, so this config documents equivalent settings
 
 workflow_version: "1.0"
 platform: "midjourney"
 
-# These map SD parameters to MJ equivalents:
+These map SD parameters to MJ equivalents:
 parameter_mapping:
   sampler:
     # SD samplers to MJ style presets
@@ -156,7 +156,7 @@ parameter_mapping:
     12: "--iw 0.75"
     20: "--iw 1.0"
 
-# Style presets that approximate SD model differences
+Style presets that approximate SD model differences
 style_presets:
   realistic: "--style raw"
   anime: "--niji"
@@ -164,25 +164,25 @@ style_presets:
   photographic: "--photo"
 ```
 
-### Step 4: Build a Batch Migration Pipeline
+Step 4: Build a Batch Migration Pipeline
 
 When migrating large prompt libraries, you'll want a batch processing solution. This Bash script processes directories of prompts and converts them systematically:
 
 ```bash
 #!/bin/bash
-# Batch prompt converter for migrating Stable Diffusion prompts to Midjourney
+Batch prompt converter for migrating Stable Diffusion prompts to Midjourney
 
 INPUT_DIR="sd_prompts"
 OUTPUT_DIR="mj_prompts"
 LOG_FILE="migration_log.txt"
 
-# Create output directory
+Create output directory
 mkdir -p "$OUTPUT_DIR"
 
-# Initialize log
+Initialize log
 echo "Prompt Migration - $(date)" > "$LOG_FILE"
 
-# Process each prompt file
+Process each prompt file
 for prompt_file in "$INPUT_DIR"/*.txt; do
     if [ -f "$prompt_file" ]; then
         filename=$(basename "$prompt_file")
@@ -213,7 +213,7 @@ chmod +x batch_convert.sh
 ./batch_convert.sh
 ```
 
-### Step 5: Set Up Equivalent Image Processing
+Step 5: Set Up Equivalent Image Processing
 
 Stable Diffusion often uses img2img for variations and inpainting. Midjourney handles these through different parameters and the Discord interface. Here's how to map these workflows:
 
@@ -288,7 +288,7 @@ class ImageWorkflowMapper:
         upscale_arg = upscale_map.get(scale, "--upbeta")
         return f"{prompt} {upscale_arg}"
 
-# Example usage
+Example usage
 if __name__ == "__main__":
     mapper = ImageWorkflowMapper()
 
@@ -301,7 +301,7 @@ if __name__ == "__main__":
     print(f"MJ: {mj_result}")
 ```
 
-### Step 6: Manage Workflow State and History
+Step 6: Manage Workflow State and History
 
 Unlike Stable Diffusion's local file-based workflow storage, Midjourney stores job history in Discord. Here's a Python class for tracking your migrated workflows:
 
@@ -378,7 +378,7 @@ class MJWorkflowTracker:
                     f.write(f"# From SD: {job['sd_source']}\n")
                 f.write("\n")
 
-# Usage example
+Usage example
 if __name__ == "__main__":
     tracker = MJWorkflowTracker()
 
@@ -395,64 +395,64 @@ if __name__ == "__main__":
     print(f"Found {len(similar)} similar prompts")
 ```
 
-### Step 7: Practical Migration Checklist
+Step 7: Practical Migration Checklist
 
 Use this checklist when moving your workflows:
 
-1. **Export existing prompts** - Extract all prompts from your SD database
+1. Export existing prompts - Extract all prompts from your SD database
 
-2. **Convert prompt syntax** - Run through the Python converter script
+2. Convert prompt syntax - Run through the Python converter script
 
-3. **Map parameters** - Translate sampling, steps, and CFG settings
+3. Map parameters - Translate sampling, steps, and CFG settings
 
-4. **Document style preferences** - Note which LoRAs and embeddings you used
+4. Document style preferences - Note which LoRAs and embeddings you used
 
-5. **Set up Discord** - Configure your Midjourney bot channels
+5. Set up Discord - Configure your Midjourney bot channels
 
-6. **Test conversions** - Run sample prompts and compare outputs
+6. Test conversions - Run sample prompts and compare outputs
 
-7. **Build reference library** - Use the tracker to maintain consistency
+7. Build reference library - Use the tracker to maintain consistency
 
-8. **Batch process** - Migrate entire prompt collections systematically
+8. Batch process - Migrate entire prompt collections systematically
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to move stable diffusion workflows to midjourney?**
+How long does it take to move stable diffusion workflows to midjourney?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Will this work with my existing CI/CD pipeline?**
+Will this work with my existing CI/CD pipeline?
 
 The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ. You may need to adapt file paths, environment variable names, and trigger conditions to match your pipeline tool. The underlying workflow logic stays the same.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Move Stable Diffusion Workflows to Midjourney](/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
 - [How to Move Midjourney Style References to Stable Diffusion](/how-to-move-midjourney-style-references-to-stable-diffusion-/)
@@ -461,4 +461,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Stable Diffusion ComfyUI vs Automatic1111 Comparison](/stable-diffusion-comfyui-vs-automatic1111-comparison/)
 - [Claude Code for Faker.js Test Data Workflow Guide](https://welikeremotestack.com/claude-code-for-faker-js-test-data-workflow-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

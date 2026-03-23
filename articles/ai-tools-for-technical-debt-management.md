@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI for Technical Debt Management"
-description: "Practical workflows for using AI to identify, quantify, prioritize, and incrementally fix technical debt — with tools, prompts, and measurement strategies"
+description: "Practical workflows for using AI to identify, quantify, prioritize, and incrementally fix technical debt. with tools, prompts, and measurement strategies"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-technical-debt-management/
@@ -15,7 +15,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 ---
 layout: default
 title: "How to Use AI for Technical Debt Management"
-description: "Practical workflows for using AI to identify, quantify, prioritize, and incrementally fix technical debt — with tools, prompts, and measurement strategies"
+description: "Practical workflows for using AI to identify, quantify, prioritize, and incrementally fix technical debt. with tools, prompts, and measurement strategies"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-technical-debt-management/
@@ -31,21 +31,21 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Technical debt accumulates in every codebase. AI tools don't eliminate debt, but they can accelerate the three stages that matter: identifying it systematically, prioritizing what to fix, and generating the refactored code. This guide covers practical workflows for each stage.
 
-## Key Takeaways
+Key Takeaways
 
-- **The Community Edition is**: free and covers the most common debt patterns for Java, Python, JavaScript, and TypeScript.
-- **CRITICAL - likely to cause bugs**: security issues, or major maintenance problems
+- The Community Edition is: free and covers the most common debt patterns for Java, Python, JavaScript, and TypeScript.
+- CRITICAL - likely to cause bugs: security issues, or major maintenance problems
 2.
-- **A CRITICAL issue that**: takes 30 minutes and affects only one file scores higher than an IMPORTANT issue that touches 20 files.
-- **Its debt remediation time**: estimates are more accurate than manual guesses because they're based on aggregated data from millions of repositories.
-- **This is a useful**: prioritization signal that pure code analysis misses.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- A CRITICAL issue that: takes 30 minutes and affects only one file scores higher than an IMPORTANT issue that touches 20 files.
+- Its debt remediation time: estimates are more accurate than manual guesses because they're based on aggregated data from millions of repositories.
+- This is a useful: prioritization signal that pure code analysis misses.
+- What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Stage 1: Identification
+Stage 1: Identification
 
 AI-assisted debt identification goes beyond what linters catch. Linters find style violations; AI identifies architectural problems, outdated patterns, and code that works but was written before modern idioms existed.
 
-### Codebase Audit Prompt
+Codebase Audit Prompt
 
 Paste a file or module into Claude with this prompt:
 
@@ -65,13 +65,13 @@ For each issue include:
 
 This produces a structured list you can add directly to your issue tracker.
 
-### Automated Scanning Script
+Automated Scanning Script
 
 For a large codebase, run AI analysis across multiple files systematically:
 
 ```python
 #!/usr/bin/env python3
-# scripts/debt_audit.py
+scripts/debt_audit.py
 
 import anthropic
 from pathlib import Path
@@ -146,9 +146,9 @@ def generate_report(results: list[dict]) -> str:
  important = sum(1 for r in results for i in r.get('issues', []) if i['category'] == 'IMPORTANT')
  high_debt = sorted(results, key=lambda r: r.get('debt_score', 0), reverse=True)[:10]
 
- report = f"""# Technical Debt Audit — {datetime.now().strftime('%Y-%m-%d')}
+ report = f"""# Technical Debt Audit. {datetime.now().strftime('%Y-%m-%d')}
 
-## Top 10 Most Indebted Files
+Top 10 Most Indebted Files
 """
  for r in high_debt:
  report += f"\n### {r['file']} (Score: {r.get('debt_score', 0)}/10)\n"
@@ -167,7 +167,7 @@ if __name__ == '__main__':
 
 Run this on a 200-file codebase in about 10 minutes at ~$2-3 in API costs with Claude Haiku.
 
-## Stage 2: Prioritization
+Stage 2: Prioritization
 
 Raw debt lists are not actionable. Prioritize by combining impact and effort:
 
@@ -187,7 +187,7 @@ def prioritize_debt(audit_results: list[dict]) -> list[dict]:
  (effort_cost.get(issue['fix_effort'], 2) + risk_penalty.get(issue['fix_risk'], 1))
  )
  prioritized.append({
- **issue,
+ issue,
  'file': result['file'],
  'priority_score': round(score, 2)
  })
@@ -197,7 +197,7 @@ def prioritize_debt(audit_results: list[dict]) -> list[dict]:
 
 The prioritization formula rewards: high category issues that are easy to fix with low risk. A CRITICAL issue that takes 30 minutes and affects only one file scores higher than an IMPORTANT issue that touches 20 files.
 
-## Stage 3: Fixing with AI Assistance
+Stage 3: Fixing with AI Assistance
 
 For identified debt items, AI generates the refactored code:
 
@@ -236,25 +236,25 @@ Return the complete updated file."""
 
 The "fix ONLY this specific issue" instruction prevents AI from over-refactoring, which introduces risk.
 
-## Specific AI Tools for Technical Debt
+Specific AI Tools for Technical Debt
 
-### SonarQube with AI Assistance
+SonarQube with AI Assistance
 
-SonarQube's long-standing static analysis engine now integrates AI explanations for flagged issues. Its debt remediation time estimates are more accurate than manual guesses because they're based on aggregated data from millions of repositories. The Community Edition is free and covers the most common debt patterns for Java, Python, JavaScript, and TypeScript. Pair SonarQube's systematic scanning with Claude or GPT-4 for generating the actual fix code—SonarQube finds it, the LLM fixes it.
+SonarQube's long-standing static analysis engine now integrates AI explanations for flagged issues. Its debt remediation time estimates are more accurate than manual guesses because they're based on aggregated data from millions of repositories. The Community Edition is free and covers the most common debt patterns for Java, Python, JavaScript, and TypeScript. Pair SonarQube's systematic scanning with Claude or GPT-4 for generating the actual fix code, SonarQube finds it, the LLM fixes it.
 
-### CodeClimate Velocity
+CodeClimate Velocity
 
 CodeClimate adds a team-productivity lens to technical debt: it correlates high-debt files with developer velocity data, showing which files slow down your team the most during pull requests. This is a useful prioritization signal that pure code analysis misses. A 300-line god class that nobody touches is less important than a 100-line module that every PR touches.
 
-### GitHub Copilot for Refactoring
+GitHub Copilot for Refactoring
 
 Copilot's inline refactoring suggestions (triggered via `/fix` and `/refactor` in Copilot Chat) work well for targeted debt items. The key is specificity: "Refactor this function to eliminate the nested callbacks and use async/await instead" produces better results than "improve this code." Copilot also explains its changes, which helps reviewers understand the before/after difference.
 
-### Cursor with Codebase Context
+Cursor with Codebase Context
 
 Cursor's `@codebase` feature lets you ask questions about debt patterns across your entire project: "Find all places where we're catching exceptions and silently swallowing them" or "Show me all functions longer than 50 lines that lack unit tests." This kind of codebase-wide query is difficult with traditional tools and fast with Cursor's indexed context.
 
-### Tool Comparison
+Tool Comparison
 
 | Tool | Best For | Cost | Language Support |
 |---|---|---|---|
@@ -266,12 +266,12 @@ Cursor's `@codebase` feature lets you ask questions about debt patterns across y
 
 DeepSource deserves special mention: it can automatically open pull requests with fixes for certain debt categories, closing the loop without human intervention for low-risk issues.
 
-## Measuring Progress
+Measuring Progress
 
 Track debt reduction over time:
 
 ```bash
-# Add to CI pipeline — fail if debt score exceeds threshold
+Add to CI pipeline. fail if debt score exceeds threshold
 python scripts/debt_audit.py --output json | \
  python -c "
 import sys, json
@@ -286,7 +286,7 @@ print(f'OK: 0 critical issues')
 
 Set a zero-critical-debt policy: new code can't introduce critical technical debt. Existing debt is tracked and paid down sprint by sprint.
 
-## The 20% Time Model
+The 20% Time Model
 
 The most successful teams allocate 20% of each sprint to debt reduction. AI makes this viable because:
 - AI identifies debt faster than manual review
@@ -295,33 +295,33 @@ The most successful teams allocate 20% of each sprint to debt reduction. AI make
 
 A developer who would previously fix 2 debt items in a sprint can address 6-8 with AI assistance.
 
-## Related Reading
+Related Reading
 
 - [How to Use AI Coding Assistants for Technical Debt Reduction](/how-to-use-ai-coding-assistants-for-technical-debt-reduction/)
 - [AI Code Review Automation Tools Comparison](/ai-code-review-automation-tools-comparison/)
 - [Free AI Tools for Code Refactoring That Actually Improve Quality](/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use ai for technical debt management?**
+How long does it take to use ai for technical debt management?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 

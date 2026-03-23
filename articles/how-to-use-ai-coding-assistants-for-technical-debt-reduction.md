@@ -19,7 +19,7 @@ Use AI to tackle technical debt by identifying debt patterns, generating targete
 
 This guide shows you how to use AI tools systematically to tackle technical debt in your projects.
 
-## Table of Contents
+Table of Contents
 
 - [Identifying Technical Debt with AI Assistance](#identifying-technical-debt-with-ai-assistance)
 - [Creating a Systematic Reduction Workflow](#creating-a-systematic-reduction-workflow)
@@ -27,14 +27,14 @@ This guide shows you how to use AI tools systematically to tackle technical debt
 - [Tracking Progress Over Time](#tracking-progress-over-time)
 - [Best Practices for Sustainable Debt Reduction](#best-practices-for-sustainable-debt-reduction)
 
-## Identifying Technical Debt with AI Assistance
+Identifying Technical Debt with AI Assistance
 
 The first step in reducing technical debt involves knowing where it exists. AI assistants can analyze your codebase to surface problems that are easy to miss during normal development.
 
 Use your AI assistant to scan for common debt patterns:
 
 ```python
-# Prompt your AI assistant with this pattern
+Prompt your AI assistant with this pattern
 """
 Analyze this Python codebase for technical debt indicators:
 1. Functions longer than 50 lines
@@ -57,26 +57,26 @@ Different languages have different debt signatures. For JavaScript and TypeScrip
 
 - Hardcoded strings that should be constants or i18n keys
 
-## Creating a Systematic Reduction Workflow
+Creating a Systematic Reduction Workflow
 
 Randomly fixing debt items leads to wasted effort. A systematic approach ensures you get maximum impact from the time invested.
 
-### Step 1: Categorize and Score Debt
+Step 1: Categorize and Score Debt
 
 Create a simple scoring system for debt items:
 
 ```python
 debt_score = impact * effort_remaining / fix_complexity
 
-# Where:
-# - impact: business value lost (1-10 scale)
-# - effort_remaining: developer hours to fix
-# - fix_complexity: risk of introducing bugs (1-5 scale)
+Where:
+- impact: business value lost (1-10 scale)
+- effort_remaining: developer hours to fix
+- fix_complexity: risk of introducing bugs (1-5 scale)
 ```
 
 High-impact, low-complexity items should be addressed first. Use your AI assistant to estimate effort_remaining and fix_complexity by analyzing the affected code.
 
-### Step 2: Batch Similar Tasks
+Step 2: Batch Similar Tasks
 
 Group similar debt fixes together. AI assistants work more efficiently when asked to address multiple instances of the same pattern. For example:
 
@@ -86,26 +86,26 @@ Group similar debt fixes together. AI assistants work more efficiently when aske
 
 - Updating deprecated API calls throughout the codebase
 
-### Step 3: Automate Detection
+Step 3: Automate Detection
 
 Set up your AI assistant to flag new debt as it appears. In your code review workflow:
 
 ```bash
-# Use AI in pre-commit hooks to catch debt early
-# Example with a CLI AI tool
+Use AI in pre-commit hooks to catch debt early
+Example with a CLI AI tool
 ai-review --check-types --check-complexity --max-function-lines 40
 ```
 
 Most AI coding assistants integrate with Git hooks or CI/CD pipelines to provide real-time feedback on code quality.
 
-## Practical Examples
+Practical Examples
 
-### Example 1: Adding Type Hints to Legacy Python Code
+Example 1: Adding Type Hints to Legacy Python Code
 
 Legacy Python code often lacks type annotations. AI assistants can add them systematically:
 
 ```python
-# Before: Legacy function without type hints
+Before: Legacy function without type hints
 def process_user_data(user_data, config):
     results = []
     for item in user_data:
@@ -114,7 +114,7 @@ def process_user_data(user_data, config):
             results.append(processed)
     return results
 
-# After: AI-assisted type hints
+After: AI-assisted type hints
 from typing import TypedDict, Any
 
 class UserItem(TypedDict):
@@ -139,7 +139,7 @@ def process_user_data(
 
 Ask your AI assistant to add types incrementally, one module at a time, rather than attempting a full codebase conversion in one pass.
 
-### Example 2: Extracting Repeated Logic
+Example 2: Extracting Repeated Logic
 
 Repeated code blocks are a prime target for AI-assisted refactoring:
 
@@ -189,18 +189,18 @@ function updateUser(id, data) {
 }
 ```
 
-### Example 3: Modernizing Deprecated APIs
+Example 3: Modernizing Deprecated APIs
 
 Dependencies evolve, and older code often uses deprecated APIs. AI can identify and update these:
 
 ```python
-# Before: Deprecated requests usage
+Before: Deprecated requests usage
 import requests
 
 response = requests.get(url)
 data = response.json()
 
-# After: Modern approach with proper error handling
+After: Modern approach with proper error handling
 import httpx
 
 try:
@@ -214,12 +214,12 @@ except httpx.HTTPStatusError as e:
     logger.error(f"HTTP error {e.response.status_code} for {url}")
 ```
 
-## Tracking Progress Over Time
+Tracking Progress Over Time
 
 Systematic debt reduction requires visibility into your efforts. Create a simple tracking mechanism:
 
 ```python
-# debt_tracker.py
+debt_tracker.py
 from datetime import datetime
 from dataclasses import dataclass
 
@@ -271,7 +271,7 @@ class DebtTracker:
 
 Run this weekly to measure your debt reduction velocity.
 
-## Best Practices for Sustainable Debt Reduction
+Best Practices for Sustainable Debt Reduction
 
 - Start small: Begin with high-impact, low-risk items like adding type hints or extracting constants. These build momentum without introducing bugs.
 
@@ -285,29 +285,29 @@ Run this weekly to measure your debt reduction velocity.
 
 AI coding assistants transform technical debt from an overwhelming problem into manageable, measurable work. The key lies in using them systematically rather than randomly. Identify debt, prioritize it, batch similar fixes, track progress, and maintain discipline. Your codebase will become more maintainable with each iteration.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use ai coding assistants for technical debt reduction?**
+How long does it take to use ai coding assistants for technical debt reduction?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
 - [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
@@ -315,4 +315,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [AI Coding Assistants for Typescript Graphql Resolver and](/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
 - [aider vs Claude Code: Terminal AI Coding Assistants Compared](/aider-vs-claude-code-terminal-ai-comparison/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

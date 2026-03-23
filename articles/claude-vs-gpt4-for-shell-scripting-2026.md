@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude vs GPT-4 for Shell Scripting 2026"
-description: "Head-to-head comparison of Claude and GPT-4o for Bash scripting — error handling, portability, safety, and complex script generation with real benchmarks"
+description: "Head-to-head comparison of Claude and GPT-4o for Bash scripting. error handling, portability, safety, and complex script generation with real benchmarks"
 date: 2026-03-22
 author: theluckystrike
 permalink: /claude-vs-gpt4-for-shell-scripting-2026/
@@ -15,13 +15,13 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 {% raw %}
 
-# Claude vs GPT-4 for Shell Scripting 2026
+Claude vs GPT-4 for Shell Scripting 2026
 
 Shell scripts are unforgiving. A missing quote, an unset variable check, or a `rm -rf` without a guard can cause real damage. This comparison tests Claude and GPT-4o on five real-world scripting tasks.
 
-## Test 1: Safe File Processing Script
+Test 1: Safe File Processing Script
 
-**Prompt:**
+Prompt:
 ```text
 Write a Bash script that processes all .log files in a directory.
 For each file: count lines, find unique IPs (format X.X.X.X), write results to a CSV.
@@ -29,7 +29,7 @@ The script should: use strict mode, handle missing directory argument,
 not fail if no .log files exist, be POSIX-portable where possible.
 ```
 
-### Claude Output
+Claude Output
 
 ```bash
 #!/usr/bin/env bash
@@ -52,10 +52,10 @@ if [[ ! -d "${LOG_DIR}" ]]; then
     exit 1
 fi
 
-# Write CSV header
+Write CSV header
 echo "filename,line_count,unique_ip_count,unique_ips" > "${OUTPUT_CSV}"
 
-# Collect .log files; handle case where none exist
+Collect .log files; handle case where none exist
 shopt -s nullglob
 log_files=("${LOG_DIR}"/*.log)
 shopt -u nullglob
@@ -91,7 +91,7 @@ echo "Results written to ${OUTPUT_CSV} (${#log_files[@]} files processed)"
 
 Claude uses `set -euo pipefail`, `IFS=$'\n\t'`, `shopt -s nullglob` for the empty directory case, properly quoted variables throughout, and `printf` for safe CSV output (not `echo`). The IP regex is standard and portable.
 
-### GPT-4o Output
+GPT-4o Output
 
 GPT-4o produces a functional script but:
 - Omits `IFS` setting (word splitting issues on filenames with spaces)
@@ -99,11 +99,11 @@ GPT-4o produces a functional script but:
 - Missing `shopt -s nullglob` (script errors if no `.log` files exist)
 - Uses `echo` for CSV output without quoting
 
-**Verdict: Claude** — significantly safer for production use.
+Claude. significantly safer for production use.
 
-## Test 2: Deployment Script with Rollback
+Test 2: Deployment Script with Rollback
 
-**Prompt:**
+Prompt:
 ```text
 Write a deployment script that:
 1. Pulls a Docker image (IMAGE_TAG from env)
@@ -113,7 +113,7 @@ Write a deployment script that:
 5. Logs all actions with timestamps
 ```
 
-### Claude Output
+Claude Output
 
 ```bash
 #!/usr/bin/env bash
@@ -184,9 +184,9 @@ Key details Claude gets right: `trap cleanup_new ERR` for automatic rollback on 
 
 GPT-4o wrote a similar script but forgot the `trap` and tested against the production port instead of an isolated one.
 
-## Test 3: Argument Parsing
+Test 3: Argument Parsing
 
-**Prompt:**
+Prompt:
 ```text
 Write a Bash script with long options: --input FILE (required), --output DIR (default: /tmp),
 --verbose (flag), --format [json|csv|tsv] (default: json). Show usage on --help.
@@ -236,19 +236,19 @@ done
 ${VERBOSE} && echo "Processing ${INPUT} → ${OUTPUT} (format: ${FORMAT})" >&2
 ```
 
-Both Claude and GPT-4o handle argument parsing well. Claude's version adds input validation (file existence check, format enum validation) without being asked — GPT-4o skips these unless specified.
+Both Claude and GPT-4o handle argument parsing well. Claude's version adds input validation (file existence check, format enum validation) without being asked. GPT-4o skips these unless specified.
 
-## Test 4: Process Monitor
+Test 4: Process Monitor
 
-**Prompt:**
+Prompt:
 ```text
 Write a script that monitors a process by name, restarts it if it crashes,
 with a maximum of 5 restarts in 60 seconds (circuit breaker pattern). Log everything.
 ```
 
-Claude implements the circuit breaker correctly using an array of timestamps and checking how many falls within the window. GPT-4o uses a simple counter without the time window — it would restart 5 times quickly then refuse to restart after a single recovery.
+Claude implements the circuit breaker correctly using an array of timestamps and checking how many falls within the window. GPT-4o uses a simple counter without the time window. it would restart 5 times quickly then refuse to restart after a single recovery.
 
-**Claude's full process monitor:**
+Claude's full process monitor:
 
 ```bash
 #!/usr/bin/env bash
@@ -263,7 +263,7 @@ log() {
     printf '[%s] %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$*" | tee -a "${LOG_FILE}"
 }
 
-# Ring buffer of restart timestamps
+Ring buffer of restart timestamps
 restart_times=()
 
 is_running() {
@@ -310,9 +310,9 @@ done
 
 This is a meaningful difference: the time-windowed restart counter prevents the monitor from permanently locking out a process that had a burst of failures but is now stable, while still protecting against rapid crash loops.
 
-## Test 5: Parallel Task Runner
+Test 5: Parallel Task Runner
 
-**Prompt:**
+Prompt:
 ```text
 Write a Bash script that runs up to N jobs in parallel, reads commands from stdin,
 captures each job's exit code and output, and prints a summary at the end.
@@ -361,10 +361,10 @@ while IFS= read -r cmd; do
     fi
 done
 
-# Wait for remaining jobs
+Wait for remaining jobs
 wait
 
-# Print summary
+Print summary
 echo ""
 echo "=== Job Summary ==="
 pass=0; fail=0
@@ -386,7 +386,7 @@ echo "Result: ${pass} passed, ${fail} failed out of ${job_id} jobs"
 
 GPT-4o tends to use `xargs -P` for parallelism, which is simpler but doesn't capture per-job output or exit codes separately. Claude's version maintains full observability of each job.
 
-## Summary Scorecard
+Summary Scorecard
 
 | Test | Claude | GPT-4o | Notes |
 |---|---|---|---|
@@ -398,11 +398,11 @@ GPT-4o tends to use `xargs -P` for parallelism, which is simpler but doesn't cap
 | POSIX portability notes | Yes | Sometimes | Claude proactively notes bash-isms |
 | Destructive operation guards | Always | Usually | Claude never writes unguarded rm -rf |
 
-**Overall: Claude is the stronger shell scripting tool for production scripts.** The gap is clearest in safety-critical patterns: trap-based cleanup, proper glob expansion, time-windowed circuit breakers, and guarded destructive operations. GPT-4o produces functional scripts that usually work, but lacks Claude's habit of adding defensive layers unprompted.
+Overall: Claude is the stronger shell scripting tool for production scripts. The gap is clearest in safety-critical patterns: trap-based cleanup, proper glob expansion, time-windowed circuit breakers, and guarded destructive operations. GPT-4o produces functional scripts that usually work, but lacks Claude's habit of adding defensive layers unprompted.
 
-For inline autocomplete in editors, GitHub Copilot remains convenient — it's fast and context-aware within a file. But for generating complete, production-ready scripts from a prompt, Claude is the better choice in 2026.
+For inline autocomplete in editors, GitHub Copilot remains convenient. it's fast and context-aware within a file. But for generating complete, production-ready scripts from a prompt, Claude is the better choice in 2026.
 
-## Related Reading
+Related Reading
 
 - [Best AI Tools for Writing Shell Scripts for Server Automation](/best-ai-tools-for-writing-shell-scripts-for-server-automatio/)
 - [Best AI Tools for Writing Makefiles](/best-ai-tools-for-writing-makefiles-2026/)
@@ -411,7 +411,7 @@ For inline autocomplete in editors, GitHub Copilot remains convenient — it's f
 - [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
 ---
 
-## Related Articles
+Related Articles
 
 - [AI-Powered Log Analysis Tools for Debugging](/ai-log-analysis-tools-for-debugging/)
 - [How to Use AI for Log Anomaly Detection](/how-to-use-ai-for-log-anomaly-detection)
@@ -419,6 +419,6 @@ For inline autocomplete in editors, GitHub Copilot remains convenient — it's f
 - [How to Use Claude for Debugging Failed CI/CD Pipeline](/how-to-use-claude-for-debugging-failed-ci-cd-pipeline-logs/)
 - [Claude vs Cursor: Refactoring Strategy Comparison](/claude-vs-cursor-refactoring-strategies-compared/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

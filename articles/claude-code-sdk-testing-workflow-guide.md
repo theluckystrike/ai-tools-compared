@@ -18,7 +18,7 @@ layout: default
 
 This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 
-## Table of Contents
+Table of Contents
 
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
@@ -26,11 +26,11 @@ This guide provides practical steps and best practices to help you accomplish th
 - [Performance Testing](#performance-testing)
 - [Troubleshooting](#troubleshooting)
 
-## Introduction
+Introduction
 
 Testing is a critical aspect of SDK development, ensuring reliability, stability, and correct behavior across different use cases. This guide covers establishing testing workflows for Claude Code SDK implementations.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -40,19 +40,19 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Set Up Your Test Environment
+Step 1: Set Up Your Test Environment
 
 Before writing tests, ensure your development environment is properly configured:
 
 ```bash
-# Install dependencies
+Install dependencies
 npm install --save-dev jest @testing-library/react vitest
 
-# Install SDK dependencies
+Install SDK dependencies
 npm install @anthropic-ai/claude-code-sdk
 ```
 
-### Step 2: Unit Testing Fundamentals
+Step 2: Unit Testing Fundamentals
 
 Unit tests form the foundation of your testing strategy. Focus on testing individual functions and methods in isolation:
 
@@ -80,7 +80,7 @@ describe('ClaudeCodeClient', () => {
 });
 ```
 
-### Step 3: Integration Testing
+Step 3: Integration Testing
 
 Integration tests verify that your SDK works correctly with external services:
 
@@ -106,7 +106,7 @@ describe('Claude Code SDK Integration', () => {
 });
 ```
 
-### Step 4: Mock Testing Strategies
+Step 4: Mock Testing Strategies
 
 When testing without API access or to control responses, use mocking:
 
@@ -144,7 +144,7 @@ describe('Mocked SDK Tests', () => {
 });
 ```
 
-### Step 5: End-to-End Testing
+Step 5: End-to-End Testing
 
 E2E tests validate complete user workflows:
 
@@ -177,12 +177,12 @@ describe('Complete SDK Workflow', () => {
 });
 ```
 
-### Step 6: Continuous Integration Setup
+Step 6: Continuous Integration Setup
 
 Automate your tests in CI/CD pipelines:
 
 ```yaml
-# GitHub Actions workflow
+GitHub Actions workflow
 name: SDK Tests
 
 on: [push, pull_request]
@@ -211,7 +211,7 @@ jobs:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
 ```
 
-## Test Coverage Best Practices
+Test Coverage Best Practices
 
 Maintain high test coverage across your SDK:
 
@@ -223,7 +223,7 @@ Maintain high test coverage across your SDK:
 
 - Configuration: Test all configuration options
 
-## Performance Testing
+Performance Testing
 
 Ensure your SDK meets performance requirements:
 
@@ -245,13 +245,13 @@ describe('Performance Tests', () => {
 });
 ```
 
-### Step 7: Structuring Your Test Suite for Long-Term Maintainability
+Step 7: Structuring Your Test Suite for Long-Term Maintainability
 
 As your SDK usage grows, disorganized tests become a liability. A well-structured test suite reduces maintenance burden and makes it easier to onboard new developers.
 
-**Group tests by behavior, not by method name.** Instead of `describe('completions.create')`, write `describe('when generating code with valid parameters')`. This naming convention surfaces intent immediately and makes failures easier to diagnose.
+Group tests by behavior, not by method name. Instead of `describe('completions.create')`, write `describe('when generating code with valid parameters')`. This naming convention surfaces intent immediately and makes failures easier to diagnose.
 
-**Use a shared fixtures module** to keep test data centralized. Duplicating mock responses across test files leads to inconsistencies when the API response shape changes:
+Use a shared fixtures module to keep test data centralized. Duplicating mock responses across test files leads to inconsistencies when the API response shape changes:
 
 ```typescript
 // tests/fixtures/completions.ts
@@ -266,13 +266,13 @@ export const rateLimitError = new Error('Rate limit exceeded');
 rateLimitError.name = 'ClaudeRateLimitError';
 ```
 
-**Apply the test pyramid principle.** Aim for roughly 70% unit tests, 20% integration tests, and 10% E2E tests. Unit tests run in milliseconds; E2E tests against live APIs take seconds and cost tokens. Keeping this ratio ensures fast feedback loops without sacrificing confidence.
+Apply the test pyramid principle. Aim for roughly 70% unit tests, 20% integration tests, and 10% E2E tests. Unit tests run in milliseconds; E2E tests against live APIs take seconds and cost tokens. Keeping this ratio ensures fast feedback loops without sacrificing confidence.
 
-### Step 8: Handling Flaky Tests in SDK Workflows
+Step 8: Handling Flaky Tests in SDK Workflows
 
 SDK tests that hit real APIs introduce flakiness from network timeouts, rate limits, and non-deterministic model outputs. Address each category explicitly.
 
-**Rate limit flakiness**: Add exponential backoff in your test retry configuration:
+Rate limit flakiness: Add exponential backoff in your test retry configuration:
 
 ```typescript
 // jest.config.ts
@@ -283,7 +283,7 @@ export default {
 };
 ```
 
-**Non-deterministic output**: For tests that verify generated code correctness, avoid asserting on exact string matches. Instead, test structural properties:
+Non-deterministic output: For tests that verify generated code correctness, avoid asserting on exact string matches. Instead, test structural properties:
 
 ```typescript
 it('should return valid TypeScript', async () => {
@@ -300,9 +300,9 @@ it('should return valid TypeScript', async () => {
 });
 ```
 
-**Network timeouts**: Set conservative timeouts per test and use mock servers for the bulk of your test runs. Reserve live API calls for a nightly integration suite that runs outside of PR checks.
+Network timeouts: Set conservative timeouts per test and use mock servers for the bulk of your test runs. Reserve live API calls for a nightly integration suite that runs outside of PR checks.
 
-### Step 9: Snapshot Testing for SDK Response Schemas
+Step 9: Snapshot Testing for SDK Response Schemas
 
 When your application depends on specific shapes of API responses, snapshot tests catch regressions from schema changes automatically.
 
@@ -336,9 +336,9 @@ describe('Response schema snapshots', () => {
 });
 ```
 
-Run `jest --updateSnapshot` when you intentionally update the response schema. Commit the updated snapshot file so reviewers can see exactly what changed. This pattern is especially useful when upgrading SDK versions — broken snapshots immediately surface breaking changes.
+Run `jest --updateSnapshot` when you intentionally update the response schema. Commit the updated snapshot file so reviewers can see exactly what changed. This pattern is especially useful when upgrading SDK versions. broken snapshots immediately surface breaking changes.
 
-### Step 10: Test Token Usage and Cost Controls
+Step 10: Test Token Usage and Cost Controls
 
 Production SDK integrations need safeguards against runaway token consumption. Test your cost control logic as a first-class concern:
 
@@ -370,44 +370,44 @@ describe('Token usage controls', () => {
 
 Pair these tests with alerting in production to catch unexpected cost spikes early. A well-tested token management layer prevents the kind of billing surprises that turn small experiments into expensive incidents.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to complete this setup?**
+How long does it take to complete this setup?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Claude Code Screen Reader Testing Workflow](/claude-code-screen-reader-testing-workflow/)
 - [Claude Code API Snapshot Testing Guide](/claude-code-api-snapshot-testing-guide/)
@@ -416,5 +416,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Claude Code for Memory Profiling Workflow Tutorial](/claude-code-for-memory-profiling-workflow-tutorial/)
 - [Claude Code for Faker.js Test Data Workflow Guide](https://welikeremotestack.com/claude-code-for-faker-js-test-data-workflow-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

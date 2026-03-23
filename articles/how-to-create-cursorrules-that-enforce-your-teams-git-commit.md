@@ -18,18 +18,18 @@ intent-checked: true
 
 Consistent commit messages are the backbone of a maintainable codebase. When every developer follows the same format, reading history becomes trivial, generating changelogs is automated, and code reviews flow smoother. Yet enforcing this consistency across a team often falls apart in practice. This guide shows you how to use CursorRules to automatically validate and enforce your team's git commit message format, catching violations before they reach your repository's history.
 
-## Table of Contents
+Table of Contents
 
 - [What Are CursorRules?](#what-are-cursorrules)
 - [Prerequisites](#prerequisites)
 - [Advanced CursorRule Configuration](#advanced-cursorrule-configuration)
 - [Troubleshooting](#troubleshooting)
 
-## What Are CursorRules?
+What Are CursorRules?
 
 CursorRules are configuration files that define how Cursor (an AI-powered code editor) behaves when working with specific projects. These rules can validate code, suggest improvements, and enforce coding standards. What makes CursorRules powerful is their ability to intercept actions and provide feedback in real-time. You can extend this capability to validate git commit messages before they're finalized.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -39,7 +39,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Set Up Your Commit Message Convention
+Step 1: Set Up Your Commit Message Convention
 
 Before creating the CursorRule, establish your commit message convention. Most teams adopt either Conventional Commits or a custom format that suits their workflow.
 
@@ -63,12 +63,12 @@ fix(api): resolve null pointer exception in user endpoint
 docs(readme): update installation instructions
 ```
 
-### Step 2: Create the CursorRule for Commit Validation
+Step 2: Create the CursorRule for Commit Validation
 
 Create a `.cursorrules` file in your project root. This file will contain the validation logic that Cursor applies when you attempt to commit. Here's a practical implementation:
 
 ```yaml
-# .cursorrules
+.cursorrules
 commit_validation:
   enabled: true
   convention: conventional_commits
@@ -90,7 +90,7 @@ commit_validation:
 
 This configuration establishes the baseline rules. The `enabled` flag turns validation on, `convention` identifies your chosen format, and the remaining fields specify exact requirements.
 
-### Step 3: Implementing Validation Logic
+Step 3: Implementing Validation Logic
 
 The `.cursorrules` file above provides configuration, but you need actual validation behavior. Create a validation script that Cursor can reference:
 
@@ -155,7 +155,7 @@ Hook this validation into your git workflow using a commit-msg hook:
 
 ```bash
 #!/bin/bash
-# .git/hooks/commit-msg
+.git/hooks/commit-msg
 
 COMMIT_MSG_FILE=$1
 COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
@@ -169,12 +169,12 @@ Make the hook executable:
 chmod +x .git/hooks/commit-msg
 ```
 
-## Advanced CursorRule Configuration
+Advanced CursorRule Configuration
 
 For teams wanting stricter enforcement, extend your CursorRule with additional constraints:
 
 ```yaml
-# .cursorrules - Advanced configuration
+.cursorrules - Advanced configuration
 commit_validation:
   enabled: true
 
@@ -209,7 +209,7 @@ commit_validation:
 
 This configuration requires scopes for features and fixes, mandates body text for significant changes, and enforces a footer pattern for linking issues or PRs.
 
-### Step 4: Use Husky to Share Hooks Across the Team
+Step 4: Use Husky to Share Hooks Across the Team
 
 A common problem with git hooks is that `.git/hooks/` is not tracked by version control, so new team members miss the validation entirely. Husky solves this by storing hooks in a committed directory and installing them automatically via `npm install`.
 
@@ -223,14 +223,14 @@ npx husky init
 Then create the hook file that Husky manages:
 
 ```bash
-# .husky/commit-msg
+.husky/commit-msg
 #!/bin/sh
 node scripts/validate-commit.js "$(cat $1)"
 ```
 
-Commit `.husky/` to your repository. Every developer who runs `npm install` gets the hooks installed automatically. Combined with your `.cursorrules` file—which is also committed—the full enforcement stack travels with the repository.
+Commit `.husky/` to your repository. Every developer who runs `npm install` gets the hooks installed automatically. Combined with your `.cursorrules` file, which is also committed, the full enforcement stack travels with the repository.
 
-### Step 5: Generate Changelogs from Validated Commits
+Step 5: Generate Changelogs from Validated Commits
 
 One of the largest payoffs from enforcing Conventional Commits is automated changelog generation. Once every commit follows the format, tools like `conventional-changelog` or `release-please` can parse your git history and produce structured changelogs automatically.
 
@@ -244,19 +244,19 @@ Add the generator to your package scripts:
 }
 ```
 
-Run it before each release to produce a changelog that groups commits by type—features, fixes, performance improvements, and breaking changes—without any manual editing. The discipline enforced by your CursorRule and Husky hook pays dividends here: messy commit messages produce messy changelogs.
+Run it before each release to produce a changelog that groups commits by type, features, fixes, performance improvements, and breaking changes, without any manual editing. The discipline enforced by your CursorRule and Husky hook pays dividends here: messy commit messages produce messy changelogs.
 
-### Step 6: Distributing Rules Across Your Team
+Step 6: Distributing Rules Across Your Team
 
 Once you've created and tested your CursorRules, distribute them consistently. The simplest approach is committing the `.cursorrules` file to your repository. Team members clone the repo and Cursor automatically picks up the rules.
 
 For organization-wide rules, consider a shared configuration repository that teams can include as a git submodule. This approach ensures every project uses the same baseline rules while allowing project-specific overrides.
 
-### Step 7: Handling Edge Cases and Exemptions
+Step 7: Handling Edge Cases and Exemptions
 
 Real teams hit edge cases that pure regex validation struggles with. A few patterns appear repeatedly.
 
-**Merge commits.** Git auto-generates merge commit messages like `Merge branch 'feature/auth' into main`. These don't follow Conventional Commits format and shouldn't be rejected. Update your validation script to skip messages that start with `Merge`:
+Merge commits. Git auto-generates merge commit messages like `Merge branch 'feature/auth' into main`. These don't follow Conventional Commits format and shouldn't be rejected. Update your validation script to skip messages that start with `Merge`:
 
 ```javascript
 function validateCommit(message) {
@@ -268,16 +268,16 @@ function validateCommit(message) {
 }
 ```
 
-**WIP commits on feature branches.** Some developers use `wip:` as a shorthand while mid-task. Rather than banning WIP commits outright, you can allow them on non-main branches by reading the current branch name inside the hook:
+WIP commits on feature branches. Some developers use `wip:` as a shorthand while mid-task. Rather than banning WIP commits outright, you can allow them on non-main branches by reading the current branch name inside the hook:
 
 ```bash
 #!/bin/bash
-# .husky/commit-msg
+.husky/commit-msg
 
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 MSG=$(cat "$1")
 
-# Allow WIP only on feature branches
+Allow WIP only on feature branches
 if echo "$BRANCH" | grep -qE "^(feature|fix|chore)/"; then
   if echo "$MSG" | grep -qi "^wip:"; then
     exit 0
@@ -287,7 +287,7 @@ fi
 node scripts/validate-commit.js "$MSG"
 ```
 
-**Breaking change notation.** Conventional Commits signals breaking changes with a `!` after the type or a `BREAKING CHANGE:` footer. Add explicit support for this in your validation regex so valid breaking change commits are not rejected:
+Breaking change notation. Conventional Commits signals breaking changes with a `!` after the type or a `BREAKING CHANGE:` footer. Add explicit support for this in your validation regex so valid breaking change commits are not rejected:
 
 ```javascript
 // Allow breaking change marker
@@ -296,68 +296,68 @@ const pattern = /^(\w+)(?:\(([^)]+)\))?(!)?:\ (.+)$/;
 
 Documenting these edge cases in your `.cursorrules` file or an adjacent `CONTRIBUTING.md` prevents the inevitable "why did my commit get rejected?" question from new team members.
 
-### Step 8: Test Your Implementation
+Step 8: Test Your Implementation
 
 Before rolling out to your team, validate the rules work correctly. Create test commit messages covering various scenarios:
 
 ```bash
-# These should pass
+These should pass
 git commit -m "feat(api): add user authentication"
 git commit -m "fix(db): resolve connection timeout"
 git commit -m "docs: update README"
 
-# These should fail
+These should fail
 git commit -m "WIP: some changes"
 git commit -m "feat: Added new feature"
 git commit -m "update stuff"
 ```
 
-Run each test and confirm the validation behaves as expected. Adjust your rules based on feedback from team members—strictness must balance with practicality.
+Run each test and confirm the validation behaves as expected. Adjust your rules based on feedback from team members, strictness must balance with practicality.
 
-### Step 9: Maintaining Your Rules Over Time
+Step 9: Maintaining Your Rules Over Time
 
 As your project evolves, your commit conventions will too. Review your CursorRules during quarterly planning or when taking on new project types. Keep the documentation current so new team members understand the reasoning behind each rule.
 
-A well-maintained commit message convention, enforced through CursorRules, eliminates guesswork and keeps your git history clean. Your future self—and your teammates—will thank you when browsing through months of commits to find that specific change.
+A well-maintained commit message convention, enforced through CursorRules, eliminates guesswork and keeps your git history clean. Your future self, and your teammates, will thank you when browsing through months of commits to find that specific change.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Cursor offer a free tier?**
+Does Cursor offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Cursor's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How to Create .cursorrules That Enforce Your Teams React](/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
 - [Create CursorRules That Teach Cursor Your Team's State](/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
@@ -366,5 +366,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Practices for Versioning CursorRules Files Across Team](/best-practices-for-versioning-cursorrules-files-across-team-/)
 - [How to Create Remote Employee Exit Interview Process](https://welikeremotestack.com/how-to-create-remote-employee-exit-interview-process-for-distributed-teams/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

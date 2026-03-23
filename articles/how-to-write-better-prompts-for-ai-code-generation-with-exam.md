@@ -32,23 +32,23 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 AI coding assistants have become indispensable tools for developers, but their effectiveness depends heavily on how you communicate with them. The difference between a vague request and a well-structured prompt can mean the difference between usable code and a complete rewrite. This guide provides practical techniques for writing prompts that generate higher-quality code output.
 
-## Key Takeaways
+Key Takeaways
 
-- **Can you refine this**: approach and provide production-ready code? ``` This technique improves accuracy on complex problems by 30-50%.
-- **Include**: - Best practices for cache keys
+- Can you refine this: approach and provide production-ready code? ``` This technique improves accuracy on complex problems by 30-50%.
+- Include: - Best practices for cache keys
 - Fallback strategies
 - Common pitfalls
 - Performance metrics
 
 Structure your response for someone with 2 years of experience.
-- **AI models work best**: when they understand your background situation, including the programming language, framework, and the specific problem you are solving.
-- **A weak prompt provides no context**: ```
+- AI models work best: when they understand your background situation, including the programming language, framework, and the specific problem you are solving.
+- A weak prompt provides no context: ```
 Write a function to process user data.
-- **Instead of**: ```
+- Instead of: ```
 Build a complete user authentication system with registration, login, password reset, and JWT token management.
-- **Use the reqwest and**: serde crates.
+- Use the reqwest and: serde crates.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -58,7 +58,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: The Foundation: Clear Context and Intent
+Step 1: The Foundation: Clear Context and Intent
 
 Before writing any prompt, establish the context. AI models work best when they understand your background situation, including the programming language, framework, and the specific problem you are solving.
 
@@ -76,7 +76,7 @@ Write a Python function using FastAPI and Pydantic v2 that validates incoming us
 
 The second version specifies the language, framework, validation requirements, and expected behavior. This specificity eliminates guesswork and produces immediately usable code.
 
-### Step 2: Specify Input and Output Formats
+Step 2: Specify Input and Output Formats
 
 One of the most effective prompt improvements involves clearly defining what the code should accept as input and what it should produce as output. This reduces iterations and rework.
 
@@ -88,7 +88,7 @@ Create a JavaScript function that converts an array of transaction objects into 
 
 This prompt tells the AI exactly what the input looks like and precisely what structure the output should have. The resulting code will match your expected data structures without requiring multiple refinement cycles.
 
-## Include Constraints and Requirements
+Include Constraints and Requirements
 
 Code rarely exists in isolation. It must integrate with existing systems, follow organizational patterns, and meet specific performance or security requirements. Including these constraints in your prompts prevents the AI from generating code that needs extensive modification.
 
@@ -105,7 +105,7 @@ Write a TypeScript function using the Express framework that handles file upload
 
 This approach produces production-ready code that aligns with your requirements from the start.
 
-### Step 3: Provide Examples of Expected Behavior
+Step 3: Provide Examples of Expected Behavior
 
 When possible, include concrete examples of expected input and output. This technique, often called few-shot prompting, significantly improves accuracy for complex transformations or calculations.
 
@@ -127,7 +127,7 @@ Generate a TypeScript function that performs this transformation with proper err
 
 The example clarifies naming conventions (camelCase), data types, and error handling expectations that would otherwise require clarification.
 
-### Step 4: Break Complex Tasks into Steps
+Step 4: Break Complex Tasks into Steps
 
 For complex functionality, consider decomposing your request into logical steps. This improves both the quality of individual components and their integration.
 
@@ -159,7 +159,7 @@ Finally, write middleware to authenticate JWT tokens from request headers.
 
 This structured approach produces modular, maintainable code with clear separation of concerns.
 
-### Step 5: Specify Code Style and Conventions
+Step 5: Specify Code Style and Conventions
 
 AI models generate code in various styles unless you specify your preferences. Include requirements for naming conventions, documentation patterns, and architectural approaches.
 
@@ -176,7 +176,7 @@ Write a Rust function to fetch and parse JSON from a REST API endpoint. Use the 
 
 This produces code that matches your codebase conventions without post-generation refactoring.
 
-### Step 6: Request Test Coverage
+Step 6: Request Test Coverage
 
 Including test requirements in your prompts ensures the generated code comes with verification. This practice catches edge cases and prevents regressions.
 
@@ -194,7 +194,7 @@ Create a Python function to calculate compound interest with parameters for prin
 
 The resulting code arrives with built-in test coverage, immediately ready for integration.
 
-### Step 7: Iterate and Refine
+Step 7: Iterate and Refine
 
 Even well-crafted prompts may require refinement. Treat prompt writing as an iterative process. When the output misses the mark, analyze what information was missing or ambiguous, then update your prompt accordingly.
 
@@ -210,9 +210,9 @@ Common refinement triggers include:
 
 Document your successful prompt patterns for recurring tasks. This creates a personal library of optimized prompts that consistently produce quality results.
 
-## Advanced Prompt Engineering Techniques
+Advanced Prompt Engineering Techniques
 
-### Chain-of-Thought Prompting
+Chain-of-Thought Prompting
 
 Force the AI to reason through the problem step-by-step:
 
@@ -236,7 +236,7 @@ Can you refine this approach and provide production-ready code?
 
 This technique improves accuracy on complex problems by 30-50%.
 
-### Negative Prompting
+Negative Prompting
 
 Tell the AI what NOT to do:
 
@@ -257,7 +257,7 @@ DO use:
 
 Negative constraints often prevent more problems than positive requirements alone.
 
-### Role-Based Prompting
+Role-Based Prompting
 
 Assign the AI a specific expertise role:
 
@@ -277,7 +277,7 @@ Structure your response for someone with 2 years of experience.
 
 This helps the AI calibrate its response complexity appropriately.
 
-### Multi-Modal Prompting
+Multi-Modal Prompting
 
 Include code samples and architecture diagrams:
 
@@ -300,9 +300,9 @@ Only show the modified functions, not the entire file.
 
 Including context dramatically improves output relevance.
 
-### Step 8: Prompt Template Library
+Step 8: Prompt Template Library
 
-### API Endpoint Template
+API Endpoint Template
 
 ```
 Create a [METHOD] endpoint at [PATH] that:
@@ -331,7 +331,7 @@ Include:
 - Unit tests with 3 scenarios
 ```
 
-### Database Query Template
+Database Query Template
 
 ```
 Create a [Language] function that:
@@ -358,7 +358,7 @@ Include:
 - Example usage
 ```
 
-### Component Template
+Component Template
 
 ```
 Create a [Framework] component: [ComponentName]
@@ -389,7 +389,7 @@ Include:
 - Accessibility features (ARIA, keyboard nav)
 ```
 
-### Step 9: Measuring Prompt Effectiveness
+Step 9: Measuring Prompt Effectiveness
 
 Track which prompts work best:
 
@@ -453,31 +453,31 @@ class PromptEffectiveness:
         }
 ```
 
-### Step 10: Common Pitfalls in Prompt Writing
+Step 10: Common Pitfalls in Prompt Writing
 
-### Too Vague
-❌ "Create a function"
-✅ "Create a TypeScript function that validates email addresses using regex, returning {valid: boolean, errors: string[]}"
+Too Vague
+ "Create a function"
+ "Create a TypeScript function that validates email addresses using regex, returning {valid: boolean, errors: string[]}"
 
-### Incomplete Context
-❌ "Fix this bug"
-✅ "Fix the bug in index.ts line 45 where getUserData returns undefined for users with no profile picture. Include error handling and unit tests."
+Incomplete Context
+ "Fix this bug"
+ "Fix the bug in index.ts line 45 where getUserData returns undefined for users with no profile picture. Include error handling and unit tests."
 
-### Inconsistent Requirements
-❌ "Make it simple but with all edge cases"
-✅ "Create a basic implementation (under 50 lines) that handles the happy path. Add error handling for these 3 specific edge cases."
+Inconsistent Requirements
+ "Make it simple but with all edge cases"
+ "Create a basic implementation (under 50 lines) that handles the happy path. Add error handling for these 3 specific edge cases."
 
-### Mixed Multiple Tasks
-❌ "Refactor this code, add tests, optimize performance, and add documentation"
-✅ "Refactor this function to use modern async/await patterns. That's task 1. Then [next task]..."
+Mixed Multiple Tasks
+ "Refactor this code, add tests, optimize performance, and add documentation"
+ "Refactor this function to use modern async/await patterns. That's task 1. Then [next task]..."
 
-### Missing Quality Criteria
-❌ "Generate a component"
-✅ "Generate a component that: passes strict TypeScript, includes accessibility attributes, works on mobile, has Storybook stories for 3 states"
+Missing Quality Criteria
+ "Generate a component"
+ "Generate a component that: passes strict TypeScript, includes accessibility attributes, works on mobile, has Storybook stories for 3 states"
 
-## Prompt Composition Best Practices
+Prompt Composition Best Practices
 
-### Structure for Maximum Clarity
+Structure for Maximum Clarity
 
 ```
 [CONTEXT]
@@ -516,44 +516,44 @@ Here's similar code in my project:
 
 This structure makes it trivial for AI to understand and respond appropriately.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to write better prompts for ai code generation?**
+How long does it take to write better prompts for ai code generation?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Write System Prompts for AI Assistants That Produce](/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
 - [How to Write System Prompts for AI Coding Assistants Project](/how-to-write-system-prompts-for-ai-coding-assistants-project/)
@@ -561,4 +561,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
 - [Best Workflow for Using AI to Write Infrastructure as Code F](/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

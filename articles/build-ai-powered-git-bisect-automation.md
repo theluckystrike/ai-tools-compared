@@ -17,13 +17,13 @@ tags: [ai-tools-compared, artificial-intelligence, automation]
 
 `git bisect` is one of the most powerful debugging tools in a developer's toolkit, but it requires writing a test script and manually interpreting results. AI-powered bisect automation handles the entire workflow: it generates the test script from a bug description, runs the binary search, and explains exactly which commit introduced the regression.
 
-## How Git Bisect Works (Brief)
+How Git Bisect Works (Brief)
 
 Git bisect performs a binary search through commit history to find the first "bad" commit. You mark a known good commit and a known bad commit, then run a test script that exits 0 (good) or non-zero (bad) for each tested commit. Git bisect needs `log2(N)` test runs to find the culprit in N commits.
 
 The bottleneck: writing the test script.
 
-## Architecture of the Automated Tool
+Architecture of the Automated Tool
 
 ```
 Bug description
@@ -41,10 +41,10 @@ Bug description
  Root cause explanation + diff analysis
 ```
 
-## Step 1: Generate the Test Script
+Step 1: Generate the Test Script
 
 ```python
-# ai_bisect.py
+ai_bisect.py
 import anthropic
 import subprocess
 import tempfile
@@ -195,10 +195,10 @@ Explain:
     return message.content[0].text
 ```
 
-## Step 2: The CLI Interface
+Step 2: The CLI Interface
 
 ```python
-# ai_bisect_cli.py
+ai_bisect_cli.py
 import click
 from ai_bisect import generate_bisect_script, run_bisect, analyze_bad_commit
 import re
@@ -221,7 +221,7 @@ def bisect(repo, good, bad, bug, dry_run):
     click.echo("=" * 40)
 
     if dry_run:
-        click.echo("\nDry run mode — not running bisect.")
+        click.echo("\nDry run mode. not running bisect.")
         return
 
     if not click.confirm("\nRun bisect with this script?"):
@@ -248,7 +248,7 @@ if __name__ == '__main__':
     bisect()
 ```
 
-## Example Session
+Example Session
 
 ```bash
 $ python ai_bisect_cli.py \
@@ -262,16 +262,16 @@ Generated test script:
 #!/bin/bash
 set -e
 
-# Build the project
+Build the project
 npm run build 2>/dev/null || exit 125
 
-# Test login with uppercase email
+Test login with uppercase email
 HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
   -X POST http://localhost:3000/api/login \
   -H "Content-Type: application/json" \
   -d '{"email": "User@Example.com", "password": "testpassword"}')
 
-# 200 or 401 = good (request processed), 500 = bad
+200 or 401 = good (request processed), 500 = bad
 if [ "$HTTP_STATUS" = "500" ]; then
   exit 1  # bad commit
 elif [ "$HTTP_STATUS" = "200" ] || [ "$HTTP_STATUS" = "401" ]; then
@@ -292,18 +292,18 @@ Analyzing bad commit: abc1234def5678...
 
 Root cause analysis:
 The commit "Fix: normalize email before lookup" introduced the bug on line 47 of
-auth/login.js. The developer called `.toLower()` instead of `.toLowerCase()` — a
+auth/login.js. The developer called `.toLower()` instead of `.toLowerCase()`. a
 typo that causes a TypeError at runtime when an email with uppercase letters is
 provided. The fix is to change `.toLower()` to `.toLowerCase()` on line 47.
 ```
 
-## Handling Flaky Tests
+Handling Flaky Tests
 
 The script can incorporate retry logic for flaky tests:
 
 ```bash
 #!/bin/bash
-# Generated with retry logic for flaky integration tests
+Generated with retry logic for flaky integration tests
 MAX_RETRIES=3
 RETRY=0
 
@@ -324,12 +324,12 @@ done
 exit 1  # consistently failing = bad commit
 ```
 
-## GitHub Actions Integration
+GitHub Actions Integration
 
 Run AI-powered bisect automatically when a regression test fails on main:
 
 ```yaml
-# .github/workflows/ai-bisect.yml
+.github/workflows/ai-bisect.yml
 name: AI Bisect on Regression
 
 on:
@@ -397,16 +397,16 @@ Trigger from any GitHub issue or PR comment: `/bisect good=v2.3.0 bug="search re
 
 ---
 
-## Strategies for Better AI Test Script Generation
+Strategies for Better AI Test Script Generation
 
 The quality of the generated test script depends on how precisely you describe the bug. A vague description generates an imprecise test; a precise description generates a tight binary predicate.
 
-**Imprecise:**
+Imprecise:
 ```
 Bug: Login is broken
 ```
 
-**Precise:**
+Precise:
 ```
 Bug: POST /api/login returns HTTP 500 when the email field contains uppercase
 letters. Example: {"email": "User@EXAMPLE.com", "password": "abc123"} → 500.
@@ -417,19 +417,19 @@ Test command to reproduce: curl -X POST http://localhost:3000/api/login
 
 Additional prompting strategies that improve script quality:
 
-1. **Provide the known-good reproduction step**: If you know the curl command, SQL query, or test that demonstrates the bug, include it in the description. Claude will incorporate it directly.
+1. Provide the known-good reproduction step: If you know the curl command, SQL query, or test that demonstrates the bug, include it in the description. Claude will incorporate it directly.
 
-2. **Name the affected file or function if known**: "The bug is in auth/normalizer.js, specifically the email normalization path" dramatically narrows the generated test.
+2. Name the affected file or function if known: "The bug is in auth/normalizer.js, specifically the email normalization path" dramatically narrows the generated test.
 
-3. **Specify the build command**: If your project has a non-standard build step, include it. Claude defaults to `npm run build`, `make`, or `go build` based on the project files it detects — but an explicit build command prevents skip-on-build-failure errors.
+3. Specify the build command: If your project has a non-standard build step, include it. Claude defaults to `npm run build`, `make`, or `go build` based on the project files it detects. but an explicit build command prevents skip-on-build-failure errors.
 
-4. **Add performance constraints**: "Build takes 3 minutes; prefer a test that avoids a full rebuild" causes Claude to generate a test that restarts only the relevant service rather than rebuilding from scratch.
+4. Add performance constraints: "Build takes 3 minutes; prefer a test that avoids a full rebuild" causes Claude to generate a test that restarts only the relevant service rather than rebuilding from scratch.
 
 For repositories with strong test coverage, instruct Claude to use the existing test suite as the oracle: "Use `npm test -- --grep 'email normalization'` as the bisect predicate." This produces more reliable results than generating ad-hoc curl commands.
 
 ---
 
-## Related Reading
+Related Reading
 
 - [AI Code Review Automation Tools Comparison](/ai-code-review-automation-tools-comparison/)
 - [How to Use AI for WebAssembly Development](/ai-for-webassembly-development/)
@@ -438,6 +438,6 @@ For repositories with strong test coverage, instruct Claude to use the existing 
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

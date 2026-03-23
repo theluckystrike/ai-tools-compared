@@ -19,7 +19,7 @@ Use inline chat to refactor functions by selecting the target function, describi
 
 AI inline chat in Visual Studio Code represents a significant shift in how developers approach code refactoring. Instead of switching between your editor and a separate AI chat interface, you can refactor functions directly where you write code. This guide walks you through using AI inline chat to refactor a single function, from understanding the feature to executing precise transformations.
 
-## Table of Contents
+Table of Contents
 
 - [What Is AI Inline Chat](#what-is-ai-inline-chat)
 - [Preparing Your Function for Refactoring](#preparing-your-function-for-refactoring)
@@ -35,13 +35,13 @@ AI inline chat in Visual Studio Code represents a significant shift in how devel
 - [Testing After Refactoring](#testing-after-refactoring)
 - [Framework-Specific Refactoring](#framework-specific-refactoring)
 
-## What Is AI Inline Chat
+What Is AI Inline Chat
 
 AI inline chat integrates large language model capabilities directly into VS Code's editing experience. Unlike traditional AI assistants that require context switching, inline chat appears within your editor and can modify code in place. When you refactor a single function, this approach offers several advantages: immediate visual feedback, the ability to preview changes before applying them, and integration with your existing workflow.
 
 The feature works by analyzing the code you select or the context around your cursor, then generating transformations based on natural language prompts. You describe what you want to accomplish, and the AI suggests modified code that you can accept, modify, or reject.
 
-## Preparing Your Function for Refactoring
+Preparing Your Function for Refactoring
 
 Before invoking AI inline chat, ensure your target function is isolated and well-defined. Consider this JavaScript function that needs refactoring:
 
@@ -60,17 +60,17 @@ function calculateTotal(items) {
 
 This function calculates a total by iterating through items and adding their prices multiplied by quantities. While functional, it uses older JavaScript patterns that could benefit from modernization.
 
-## Step-by-Step Refactoring Process
+Step-by-Step Refactoring Process
 
-### Step 1: Open Inline Chat
+Step 1: Open Inline Chat
 
 In VS Code, activate AI inline chat by pressing `Cmd+I` on Mac or `Ctrl+I` on Windows. A chat interface appears at the top of your editor with an input field. You can also access it through the Command Palette by searching for "Inline Chat."
 
-### Step 2: Select Your Target Code
+Step 2: Select Your Target Code
 
 Highlight the function you want to refactor. Selection ensures the AI understands exactly which code to transform. Without selection, inline chat uses the surrounding context, which may produce less precise results.
 
-### Step 3: Describe Your Refactoring Goal
+Step 3: Describe Your Refactoring Goal
 
 Type a specific instruction in the chat input. For our example, you might say:
 
@@ -80,7 +80,7 @@ Refactor this function to use reduce and modern JavaScript syntax
 
 The more specific your instruction, the better the results. Avoid vague requests like "improve this code" and instead specify what improvement you want.
 
-### Step 4: Review AI Suggestions
+Step 4: Review AI Suggestions
 
 The AI generates a modified version of your function. For our example, you might receive:
 
@@ -97,11 +97,11 @@ function calculateTotal(items) {
 
 The inline chat displays the proposed changes directly in your editor, allowing you to see exactly what will change.
 
-### Step 5: Apply or Modify the Changes
+Step 5: Apply or Modify the Changes
 
 Accept the suggestion by pressing `Tab` or clicking the accept button. If the result isn't quite right, you can modify your prompt and regenerate, or manually adjust the suggested code before accepting.
 
-## Common Refactoring Scenarios
+Common Refactoring Scenarios
 
 AI inline chat handles various refactoring tasks effectively:
 
@@ -115,7 +115,7 @@ Improving Readability: Describe "simplify this nested condition" to flatten comp
 
 Adding Error Handling: Prompt "add try-catch error handling" to make functions more strong.
 
-## Tips for Effective Refactoring
+Tips for Effective Refactoring
 
 Start with small, focused functions rather than large code blocks. The AI performs better when it has clear, bounded code to analyze. If you have a lengthy function, break it into smaller pieces first, then refactor each piece individually.
 
@@ -123,7 +123,7 @@ Use precise language in your prompts. Instead of "make this better," specify exa
 
 Review changes carefully before accepting. AI suggestions may introduce subtle bugs or change behavior slightly. Run your test suite after applying significant refactoring to verify correctness.
 
-## Handling Edge Cases
+Handling Edge Cases
 
 Sometimes AI inline chat produces unexpected results. If the suggestion breaks your code's logic, you can:
 
@@ -137,15 +137,15 @@ Sometimes AI inline chat produces unexpected results. If the suggestion breaks y
 
 For instance, if you ask to "add error handling" and the AI introduces unwanted side effects, try a more specific prompt like "add try-catch only for external API calls, not for validation errors."
 
-## Language and Framework Support
+Language and Framework Support
 
 AI inline chat works across many programming languages, though effectiveness varies. JavaScript, TypeScript, Python, and Java receive strong support because they have extensive training data. For less common languages, you may need to be more explicit in your prompts or accept that the AI might suggest patterns more common in mainstream languages.
 
 The feature also understands framework-specific patterns. You can ask for "React useEffect cleanup" or "Django ORM query optimization," and the AI recognizes these frameworks' conventions.
 
-## Advanced Refactoring Examples
+Advanced Refactoring Examples
 
-### Converting Callbacks to Promises
+Converting Callbacks to Promises
 
 ```javascript
 // Original function
@@ -197,7 +197,7 @@ async function fetchUserData(userId) {
 }
 ```
 
-### Extracting Complex Logic
+Extracting Complex Logic
 
 ```typescript
 // Original complex function
@@ -262,7 +262,7 @@ calculateTotal(): number {
 }
 ```
 
-## Refactoring Patterns AI Handles Well
+Refactoring Patterns AI Handles Well
 
 | Pattern | Success Rate | Notes |
 |---------|-------------|-------|
@@ -274,7 +274,7 @@ calculateTotal(): number {
 | Loop to functional methods | 90% | Works well for common cases |
 | Class extraction | 75% | Sometimes misses dependencies |
 
-## Iterative Refactoring Workflow
+Iterative Refactoring Workflow
 
 Rather than asking for drastic changes, use multiple inline chat steps:
 
@@ -352,7 +352,7 @@ function processOrders(orders: Order[]): Order[] {
 }
 ```
 
-## Handling Refactoring Failures
+Handling Refactoring Failures
 
 When inline chat produces incorrect results:
 
@@ -384,72 +384,72 @@ function sum(a, b) {
 }
 ```
 
-## Testing After Refactoring
+Testing After Refactoring
 
 Always run tests after using inline chat:
 
 ```bash
-# Run all tests
+Run all tests
 npm test
 
-# Run specific test file
+Run specific test file
 npm test -- test/shopping-cart.test.js
 
-# Run with coverage to verify behavior didn't change
+Run with coverage to verify behavior didn't change
 npm test -- --coverage
 
-# Compare before/after behavior
+Compare before/after behavior
 git diff --word-diff
 ```
 
-## Framework-Specific Refactoring
+Framework-Specific Refactoring
 
 AI inline chat understands framework patterns:
 
-**React:**
+React:
 - "Convert class component to functional component with hooks"
 - "Extract custom hook from this logic"
 - "Optimize with useMemo to prevent re-renders"
 
-**Angular:**
+Angular:
 - "Extract to a separate service"
 - "Add RxJS operators for better stream handling"
 - "Convert callback to Observable"
 
-**Vue:**
+Vue:
 - "Convert to Composition API"
 - "Extract to a composable"
 - "Optimize template with v-memo"
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use ai inline chat to refactor single function?**
+How long does it take to use ai inline chat to refactor single function?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Best AI Inline Chat Features in VS Code Compared to](/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
 - [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
 - [How to Transfer Copilot Inline Chat Shortcuts](/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
 - [How to Use AI Inline Completion](/how-to-use-ai-inline-completion-for-writing-function-signatures-quickly/)
 - [How to Use Copilot Chat to Generate Code from Natural](/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```

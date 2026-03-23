@@ -32,24 +32,24 @@ tags: [ai-tools-compared]
 
 Building internal tools that bridge AI assistants with your package registry documentation requires a solid integration strategy. The Model Context Protocol (MCP) provides a standardized way for AI models to interact with external services, making it an ideal choice for creating a documentation server that your AI coding assistants can query directly. This guide walks you through setting up an MCP server specifically designed for internal package registry documentation.
 
-## Key Takeaways
+Key Takeaways
 
-- **Your internal package registry**: documentation becomes accessible through a consistent API that any MCP-compatible AI assistant can use.
-- **MCP uses a JSON-RPC**: 2.0 transport over stdio or HTTP/SSE.
-- **Most package registries expose**: endpoints like `/api/packages/{name}` or support npm registry compatibility at `/{packageName}`.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **For a package registry**: documentation server, you primarily use tools for search and retrieval and resources for exposing package metadata files directly.
-- **Most internal registries using**: Verdaccio, Nexus, or JFrog already provide the necessary endpoints.
+- Your internal package registry: documentation becomes accessible through a consistent API that any MCP-compatible AI assistant can use.
+- MCP uses a JSON-RPC: 2.0 transport over stdio or HTTP/SSE.
+- Most package registries expose: endpoints like `/api/packages/{name}` or support npm registry compatibility at `/{packageName}`.
+- Will this work with: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- For a package registry: documentation server, you primarily use tools for search and retrieval and resources for exposing package metadata files directly.
+- Most internal registries using: Verdaccio, Nexus, or JFrog already provide the necessary endpoints.
 
-### Step 1: Understand the Model Context Protocol
+Step 1: Understand the Model Context Protocol
 
 The Model Context Protocol defines how AI assistants communicate with external tools and data sources. Rather than hardcoding integrations for each AI provider, MCP offers an unified interface that works across different AI platforms. Your internal package registry documentation becomes accessible through a consistent API that any MCP-compatible AI assistant can use.
 
 An MCP server acts as a bridge between the AI and your internal systems. When a developer asks an AI assistant about a specific package, version requirements, or API documentation, the MCP server retrieves that information from your documentation sources and returns it in a format the AI can process.
 
-MCP uses a JSON-RPC 2.0 transport over stdio or HTTP/SSE. The protocol defines three primitive types that servers can expose: **tools** (callable functions), **resources** (readable data sources), and **prompts** (reusable templates). For a package registry documentation server, you primarily use tools for search and retrieval and resources for exposing package metadata files directly.
+MCP uses a JSON-RPC 2.0 transport over stdio or HTTP/SSE. The protocol defines three primitive types that servers can expose: tools (callable functions), resources (readable data sources), and prompts (reusable templates). For a package registry documentation server, you primarily use tools for search and retrieval and resources for exposing package metadata files directly.
 
-## Prerequisites and Initial Setup
+Prerequisites and Initial Setup
 
 Before building your MCP server, ensure you have Node.js version 18 or higher installed. You'll also need a package registry that exposes documentation through an API or static files. Most internal registries using Verdaccio, Nexus, or JFrog already provide the necessary endpoints.
 
@@ -75,7 +75,7 @@ Configure your TypeScript compiler:
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*"]
+  "include": ["src//*"]
 }
 ```
 
@@ -92,7 +92,7 @@ Add build scripts to `package.json`:
 }
 ```
 
-### Step 2: Create the MCP Server Implementation
+Step 2: Create the MCP Server Implementation
 
 Create a file named `src/server.ts` with the following implementation:
 
@@ -199,7 +199,7 @@ await server.connect(transport);
 
 This server exposes two tools that AI assistants can call: `get_package_docs` retrieves documentation for a specific package, and `search_packages` allows searching across your registry.
 
-### Step 3: Adding a Third Tool: List Available Packages
+Step 3: Adding a Third Tool: List Available Packages
 
 Extend the server with a listing tool so developers can discover what packages exist without knowing exact names:
 
@@ -243,7 +243,7 @@ if (name === 'list_packages') {
 }
 ```
 
-### Step 4: Configure Your AI Assistant
+Step 4: Configure Your AI Assistant
 
 After implementing the server, you need to configure your AI assistant to use it. Most MCP-compatible assistants use a configuration file to specify available servers:
 
@@ -270,7 +270,7 @@ claude mcp add registry-docs node /path/to/mcp-registry-docs/dist/server.js \
   --env REGISTRY_URL=https://your-registry.internal
 ```
 
-### Step 5: Connecting to Your Internal Registry
+Step 5: Connecting to Your Internal Registry
 
 The implementation above uses a placeholder fetch call. For production use, replace the `fetchPackageDoc` function with actual calls to your registry's API. Most package registries expose endpoints like `/api/packages/{name}` or support npm registry compatibility at `/{packageName}`.
 
@@ -295,7 +295,7 @@ async function fetchPackageDoc(packageName: string): Promise<PackageDoc> {
 
 This flexibility allows your MCP server to aggregate documentation from multiple sources, creating an unified interface for AI assistants.
 
-### Step 6: Test Your Implementation
+Step 6: Test Your Implementation
 
 Test the server manually before connecting it to an AI assistant:
 
@@ -326,7 +326,7 @@ describe('fetchPackageDoc', () => {
 });
 ```
 
-### Step 7: Deploy ment Considerations
+Step 7: Deploy ment Considerations
 
 When deploying your MCP server to production, consider the following: run the server as a local process that the AI assistant starts on demand, use environment variables for sensitive configuration like registry authentication tokens, implement caching to reduce latency and registry load, and monitor usage to understand which packages developers query most frequently.
 
@@ -357,44 +357,44 @@ app.listen(3000);
 
 This lets you deploy the MCP server as a shared internal service behind your corporate VPN, so every developer's AI assistant connects to the same documentation source without each running a local copy.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set up model context protocol server for internal?**
+How long does it take to set up model context protocol server for internal?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Will this work with my existing CI/CD pipeline?**
+Will this work with my existing CI/CD pipeline?
 
 The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ. You may need to adapt file paths, environment variable names, and trigger conditions to match your pipeline tool. The underlying workflow logic stays the same.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Build Model Context Protocol Server for Internal Desi](/how-to-build-model-context-protocol-server-for-internal-desi/)
 - [How to Set Up Model Context Protocol Server for Custom Proje](/how-to-set-up-model-context-protocol-server-for-custom-proje/)
@@ -402,5 +402,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Set Up Model Context Protocol for Feeding Jira Ticket](/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)
 - [How to Set Up Model Context Protocol for Feeding Monitoring](/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -17,7 +17,7 @@ intent-checked: true
 
 CSS media query breakpoints failing to match expected viewport sizes ranks among the most frustrating responsive design problems developers face. Your layout breaks at seemingly random widths, or a breakpoint triggers several pixels away from where you defined it. Understanding why this happens and how AI tools can accelerate debugging saves hours of frustration.
 
-## Table of Contents
+Table of Contents
 
 - [Why Media Query Breakpoints Misbehave](#why-media-query-breakpoints-misbehave)
 - [How AI Tools Accelerate Media Query Debugging](#how-ai-tools-accelerate-media-query-debugging)
@@ -31,23 +31,23 @@ CSS media query breakpoints failing to match expected viewport sizes ranks among
 - [Handling Browser-Specific Quirks](#handling-browser-specific-quirks)
 - [Transition and Animation Breakpoint Timing](#transition-and-animation-breakpoint-timing)
 
-## Why Media Query Breakpoints Misbehave
+Why Media Query Breakpoints Misbehave
 
 Before examining AI-assisted solutions, recognizing the common culprits behind breakpoint mismatches helps you debug more effectively.
 
-**Scrollbar width consumption** affects viewport calculations. When browser scrollbars occupy space, the viewport width differs from the document width. On systems with visible scrollbars, a "1000px" viewport might actually provide only 984px of usable space.
+Scrollbar width consumption affects viewport calculations. When browser scrollbars occupy space, the viewport width differs from the document width. On systems with visible scrollbars, a "1000px" viewport might actually provide only 984px of usable space.
 
-**Device pixel ratio** complicates matters on high-density displays. A CSS pixel does not equal one physical pixel on Retina displays, which means breakpoint calculations sometimes behave unexpectedly across devices.
+Device pixel ratio complicates matters on high-density displays. A CSS pixel does not equal one physical pixel on Retina displays, which means breakpoint calculations sometimes behave unexpectedly across devices.
 
-**Border-box inclusion** changes how padding and borders factor into width calculations. Without proper box-sizing rules, padding adds to element widths rather than subtracting from them.
+Border-box inclusion changes how padding and borders factor into width calculations. Without proper box-sizing rules, padding adds to element widths rather than subtracting from them.
 
-**Browser zoom levels** and **transform scaling** both alter effective viewport dimensions in ways that break naive breakpoint assumptions.
+Browser zoom levels and transform scaling both alter effective viewport dimensions in ways that break naive breakpoint assumptions.
 
-## How AI Tools Accelerate Media Query Debugging
+How AI Tools Accelerate Media Query Debugging
 
 Modern AI coding assistants help in several ways when tracking down breakpoint issues.
 
-### Analyzing CSS Rule Conflicts
+Analyzing CSS Rule Conflicts
 
 AI tools excel at scanning your stylesheets and identifying conflicting media query rules. When multiple breakpoints overlap or override each other unexpectedly, AI can map the cascade and highlight where conflicts occur.
 
@@ -64,7 +64,7 @@ AI tools excel at scanning your stylesheets and identifying conflicting media qu
 
 An AI assistant can recognize that the 800px rule will always override the 768px rule at overlapping widths and suggest reorganizing your breakpoints into a logical hierarchy.
 
-### Generating Debug Helpers
+Generating Debug Helpers
 
 AI tools rapidly generate diagnostic code to expose what's actually happening in your browser. Instead of manually writing console logs and visual overlays, you can prompt an AI to create debugging utilities.
 
@@ -85,7 +85,7 @@ window.addEventListener('resize', logViewportInfo);
 window.addEventListener('load', logViewportInfo);
 ```
 
-### Suggesting Breakpoint Strategies
+Suggesting Breakpoint Strategies
 
 AI assistants understand responsive design patterns and can recommend more resilient approaches. Rather than fighting with exact pixel values, AI might suggest container-based queries or CSS custom properties that adapt more gracefully.
 
@@ -103,11 +103,11 @@ AI assistants understand responsive design patterns and can recommend more resil
 }
 ```
 
-## Practical Debugging Workflow with AI
+Practical Debugging Workflow with AI
 
 Combine AI assistance with systematic debugging to resolve breakpoint issues efficiently.
 
-### Step 1: Verify Actual Viewport Dimensions
+Step 1: Verify Actual Viewport Dimensions
 
 Start by confirming what your browser actually reports. AI can generate a bookmarklet or overlay that displays real-time viewport information directly on your page.
 
@@ -127,11 +127,11 @@ Start by confirming what your browser actually reports. AI can generate a bookma
 })();
 ```
 
-### Step 2: Map Your Active Styles
+Step 2: Map Your Active Styles
 
 Ask AI to generate a script that logs all currently applied media queries and their resulting styles for your element. This reveals which rules actually influence your layout at any given width.
 
-### Step 3: Test Across Simulated Viewports
+Step 3: Test Across Simulated Viewports
 
 Use AI to write Puppeteer or Playwright tests that systematically verify your breakpoints across a range of viewport sizes:
 
@@ -150,7 +150,7 @@ for (const size of viewportSizes) {
 }
 ```
 
-## Preventing Breakpoint Problems
+Preventing Breakpoint Problems
 
 AI tools also help prevent issues before they occur.
 
@@ -160,13 +160,13 @@ Document your breakpoints: Ask AI to generate a style guide from your existing m
 
 Implement continuous testing: AI-assisted setup of visual regression tests catches breakpoint regressions before deployment.
 
-## When AI Falls Short
+When AI Falls Short
 
 AI tools accelerate debugging but cannot replace understanding. Certain issues require manual investigation: browser-specific quirks, complex interaction between third-party stylesheets, or deeply nested transform effects. AI provides starting points and eliminates tedious tasks, but developers must still interpret results in context.
 
 The most effective approach combines AI efficiency with solid fundamentals. Understand how viewport calculations work, use AI to automate detection and generate diagnostic code, then apply your judgment to interpret findings and implement solutions.
 
-## Testing Breakpoints Across Device Classes
+Testing Breakpoints Across Device Classes
 
 Different device classes have different characteristics that affect breakpoint behavior:
 
@@ -202,30 +202,30 @@ for (const device of deviceProfiles) {
 
 This device-focused approach ensures your breakpoints work across the actual devices your users access.
 
-## Common Viewport Calculation Errors
+Common Viewport Calculation Errors
 
 Many breakpoint issues stem from incorrect viewport size assumptions:
 
 ```css
-/* ❌ Wrong: Assumes specific viewport width */
+/*  Wrong: Assumes specific viewport width */
 @media (min-width: 768px) {
   .sidebar { width: 250px; }
 }
 /* On iPad at 768px with scrollbar visible, actual content width is ~752px */
 
-/* ✓ Correct: Use container queries instead */
+/*  Correct: Use container queries instead */
 @container (min-width: 40rem) {
   .sidebar { width: 250px; }
 }
 
-/* ✓ Alternative: Account for scrollbar explicitly */
+/*  Alternative: Account for scrollbar explicitly */
 @media (min-width: 784px) {
   /* 768px + 16px scrollbar = 784px safe margin */
   .sidebar { width: 250px; }
 }
 ```
 
-## Debugging with Chrome DevTools Integration
+Debugging with Chrome DevTools Integration
 
 AI tools can help generate DevTools commands to automate breakpoint investigation:
 
@@ -266,7 +266,7 @@ async function debugMediaQueries(url) {
 
     console.log(`\n=== Breakpoint: ${width}px ===`);
     Object.entries(mediaQueryMatches).forEach(([media, matches]) => {
-      console.log(`${matches ? '✓' : '✗'} ${media}`);
+      console.log(`${matches ? '' : ''} ${media}`);
     });
   }
 
@@ -276,7 +276,7 @@ async function debugMediaQueries(url) {
 debugMediaQueries('https://example.com');
 ```
 
-## Preventing Breakpoint Regressions
+Preventing Breakpoint Regressions
 
 Once you've fixed breakpoint issues, prevent them from reoccurring:
 
@@ -314,7 +314,7 @@ test('responsive layout matches design at all breakpoints', async ({ page }) => 
 
 This approach catches breakpoint regressions before they reach production.
 
-## Handling Browser-Specific Quirks
+Handling Browser-Specific Quirks
 
 Different browsers handle media queries slightly differently:
 
@@ -337,7 +337,7 @@ Different browsers handle media queries slightly differently:
 
 Always test on actual devices and across browsers, not just in DevTools simulators.
 
-## Transition and Animation Breakpoint Timing
+Transition and Animation Breakpoint Timing
 
 Breakpoint changes can cause layout jumps if not handled carefully:
 
@@ -371,29 +371,29 @@ window.addEventListener('load', () => {
 });
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**What if the fix described here does not work?**
+What if the fix described here does not work?
 
 If the primary solution does not resolve your issue, check whether you are running the latest version of the software involved. Clear any caches, restart the application, and try again. If it still fails, search for the exact error message in the tool's GitHub Issues or support forum.
 
-**Could this problem be caused by a recent update?**
+Could this problem be caused by a recent update?
 
 Yes, updates frequently introduce new bugs or change behavior. Check the tool's release notes and changelog for recent changes. If the issue started right after an update, consider rolling back to the previous version while waiting for a patch.
 
-**How can I prevent this issue from happening again?**
+How can I prevent this issue from happening again?
 
 Pin your dependency versions to avoid unexpected breaking changes. Set up monitoring or alerts that catch errors early. Keep a troubleshooting log so you can quickly reference solutions when similar problems recur.
 
-**Is this a known bug or specific to my setup?**
+Is this a known bug or specific to my setup?
 
 Check the tool's GitHub Issues page or community forum to see if others report the same problem. If you find matching reports, you will often find workarounds in the comments. If no one else reports it, your local environment configuration is likely the cause.
 
-**Should I reinstall the tool to fix this?**
+Should I reinstall the tool to fix this?
 
 A clean reinstall sometimes resolves persistent issues caused by corrupted caches or configuration files. Before reinstalling, back up your settings and project files. Try clearing the cache first, since that fixes the majority of cases without a full reinstall.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
 - [Best AI Assistant for Debugging CSS Custom Property](/best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/)
@@ -401,4 +401,4 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 - [Best AI Assistant for Debugging CSS Z Index Stacking Context](/best-ai-assistant-for-debugging-css-z-index-stacking-context/)
 - [Best AI for Debugging CSS Flexbox Alignment Issues Across](/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

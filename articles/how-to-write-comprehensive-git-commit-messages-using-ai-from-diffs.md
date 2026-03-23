@@ -17,7 +17,7 @@ intent-checked: true
 
 Writing a good git commit message is often overlooked until your team needs to debug a production issue weeks later. Instead of manually crafting commit messages from memory, you can feed your code diff into an AI model and receive a well-structured message that explains the "why" behind the code change, lists all modified functions, and includes relevant context. This approach eliminates vague messages like "fix bug" or "update code" while saving developers 5-10 minutes per commit on message composition.
 
-## Table of Contents
+Table of Contents
 
 - [Why AI-Generated Commit Messages Matter](#why-ai-generated-commit-messages-matter)
 - [Prerequisites](#prerequisites)
@@ -25,13 +25,13 @@ Writing a good git commit message is often overlooked until your team needs to d
 - [Best Practices for AI-Generated Commits](#best-practices-for-ai-generated-commits)
 - [Troubleshooting](#troubleshooting)
 
-## Why AI-Generated Commit Messages Matter
+Why AI-Generated Commit Messages Matter
 
 A commit message serves multiple purposes. It provides immediate context for code review, enables future developers to understand changes without reading the full diff, and creates a searchable history of architectural decisions. Teams using detailed commit messages spend less time tracing through git blame and more time shipping features.
 
-Most developers skip detailed messages because they're tedious to write. An AI model can extract the essence of a diff—which functions changed, what breaking changes were introduced, which edge cases were handled—and present this in a standardized format. This standardization helps with automated tooling, changelog generation, and compliance requirements.
+Most developers skip detailed messages because they're tedious to write. An AI model can extract the essence of a diff, which functions changed, what breaking changes were introduced, which edge cases were handled, and present this in a standardized format. This standardization helps with automated tooling, changelog generation, and compliance requirements.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -41,43 +41,43 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: AI Tools for Commit Message Generation
+Step 1: AI Tools for Commit Message Generation
 
-### Copilot CLI with Git Integration
+Copilot CLI with Git Integration
 
 GitHub Copilot CLI supports git commit message generation directly in your terminal:
 
 ```bash
-# Stage your changes
+Stage your changes
 git add src/auth.ts src/database.ts
 
-# Use Copilot to generate commit message
+Use Copilot to generate commit message
 gh copilot suggest -t git-commit
 
-# Output example:
-# feat(auth): implement JWT refresh token rotation with sliding window expiration
+Output example:
+feat(auth): implement JWT refresh token rotation with sliding window expiration
 #
-# - Add RefreshTokenManager class with configurable TTL and rotation threshold
-# - Implement sliding window expiration: new token issued with each refresh
-# - Add audit logging for all token rotation events
-# - Update database schema with token_version tracking
-# - Tests: 12 new test cases covering edge cases and token collisions
+- Add RefreshTokenManager class with configurable TTL and rotation threshold
+- Implement sliding window expiration: new token issued with each refresh
+- Add audit logging for all token rotation events
+- Update database schema with token_version tracking
+- Tests: 12 new test cases covering edge cases and token collisions
 ```
 
 The model analyzes your staged changes and generates a message following conventional commits format. You can edit the output before committing.
 
-### Git Hooks with Claude API
+Git Hooks with Claude API
 
 A more sophisticated approach uses git hooks to automatically prompt Claude API before commit:
 
 ```bash
 #!/bin/bash
-# .git/hooks/pre-commit (requires setup)
+.git/hooks/pre-commit (requires setup)
 
-# Get diff of staged changes
+Get diff of staged changes
 DIFF=$(git diff --cached)
 
-# Call Claude API with diff
+Call Claude API with diff
 COMMIT_MSG=$(curl -s https://api.anthropic.com/v1/messages \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
   -H "content-type: application/json" \
@@ -91,24 +91,24 @@ COMMIT_MSG=$(curl -s https://api.anthropic.com/v1/messages \
     }]
   }" | jq -r '.content[0].text')
 
-# Write to commit message file for editor
+Write to commit message file for editor
 echo "$COMMIT_MSG" > .git/COMMIT_EDITMSG
 ```
 
 This hook runs before the commit editor opens, allowing you to review and modify the suggested message.
 
-### Conventional Commits with Codeium
+Conventional Commits with Codeium
 
 Codeium's code analysis tools support semantic commit messages:
 
 ```python
-# Example: Code diff that Codeium analyzes
-# Before
+Code diff that Codeium analyzes
+Before
 def calculate_price(items):
     total = sum(item['price'] for item in items)
     return total
 
-# After
+After
 def calculate_price(items, tax_rate=0.0, currency='USD'):
     """Calculate total price with optional tax.
 
@@ -126,17 +126,17 @@ def calculate_price(items, tax_rate=0.0, currency='USD'):
 
     return round(total, 2)
 
-# AI-generated message:
-# feat(pricing): add tax and currency support with rounding
+AI-generated message:
+feat(pricing): add tax and currency support with rounding
 #
-# - Refactor calculate_price to accept optional tax_rate (0-1.0 decimal)
-# - Add multi-currency support with convert_currency integration
-# - Implement banker's rounding to 2 decimal places for currency safety
-# - Add complete docstring with arg types and descriptions
-# - Breaking change: price calculation now returns rounded float instead of raw sum
+- Refactor calculate_price to accept optional tax_rate (0-1.0 decimal)
+- Add multi-currency support with convert_currency integration
+- Implement banker's rounding to 2 decimal places for currency safety
+- Add complete docstring with arg types and descriptions
+- Breaking change: price calculation now returns rounded float instead of raw sum
 ```
 
-## Comparison: AI Commit Message Tools
+Comparison: AI Commit Message Tools
 
 | Feature | Copilot CLI | Claude Hook | Codeium | Git-AI |
 |---------|------------|-------------|---------|---------|
@@ -148,7 +148,7 @@ def calculate_price(items, tax_rate=0.0, currency='USD'):
 | Setup complexity | Low | Medium | Low | Medium |
 | Multi-language support | Excellent | Excellent | Good | Good |
 
-### Step 2: Build a Custom Solution
+Step 2: Build a Custom Solution
 
 For teams with specific commit message requirements, building a simple Python script provides maximum control:
 
@@ -206,13 +206,13 @@ if __name__ == '__main__':
 
 Usage: `python commit-ai.py MYCO`
 
-## Best Practices for AI-Generated Commits
+Best Practices for AI-Generated Commits
 
-**Always review generated messages.** AI can misinterpret the intention of a change, especially with refactoring. A 10-second review prevents misleading messages in your history. The AI sees code changes but doesn't always understand architectural intent or business context that shaped the change.
+Always review generated messages. AI can misinterpret the intention of a change, especially with refactoring. A 10-second review prevents misleading messages in your history. The AI sees code changes but doesn't always understand architectural intent or business context that shaped the change.
 
-**Maintain consistent scope definitions.** If your team uses `feat(auth)`, `fix(database)`, and `docs(api)`, train the AI on these patterns by providing examples in your hook system. Consistency across commits enables tools that parse commit history for changelog generation and automated versioning.
+Maintain consistent scope definitions. If your team uses `feat(auth)`, `fix(database)`, and `docs(api)`, train the AI on these patterns by providing examples in your hook system. Consistency across commits enables tools that parse commit history for changelog generation and automated versioning.
 
-**Use git trailers for metadata.** AI tools should generate standard trailers like `Closes: #123` or `Reviewed-by: jane@example.com`:
+Use git trailers for metadata. AI tools should generate standard trailers like `Closes: #123` or `Reviewed-by: jane@example.com`:
 
 ```
 feat(payment): handle declined cards with retry queue
@@ -229,25 +229,25 @@ Co-Authored-By: payment-lib-team
 
 These trailers are parsed by GitHub, GitLab, and other platforms to link commits to issues, track authorship, and trigger CI workflows.
 
-**Disable AI suggestions for trivial changes.** Minor formatting fixes or version bumps don't need elaborate messages. Set a minimum diff size threshold (e.g., 10+ lines) before invoking the AI. This keeps your commit history focused on substantive changes.
+Disable AI suggestions for trivial changes. Minor formatting fixes or version bumps don't need elaborate messages. Set a minimum diff size threshold (e.g., 10+ lines) before invoking the AI. This keeps your commit history focused on substantive changes.
 
-**Configure AI system prompts for your code style.** Every team's conventions differ. Invest time in crafting system prompts that reflect your organization's commit message philosophy, whether that's detailed technical descriptions or concise action items.
+Configure AI system prompts for your code style. Every team's conventions differ. Invest time in crafting system prompts that reflect your organization's commit message philosophy, whether that's detailed technical descriptions or concise action items.
 
-### Step 3: Integration with Development Workflows
+Step 3: Integration with Development Workflows
 
 AI commit messages integrate into modern git workflows:
 
-**Pre-commit hooks:** Trigger message generation before committing, catching empty or vague messages before they reach history. This prevents commits like "wip" or "fix" from polluting your history.
+Pre-commit hooks: Trigger message generation before committing, catching empty or vague messages before they reach history. This prevents commits like "wip" or "fix" from polluting your history.
 
-**GitHub Actions:** Analyze PR commits using AI and suggest improvements or enforce consistency. A workflow can post comments on PRs with commit message quality suggestions.
+GitHub Actions: Analyze PR commits using AI and suggest improvements or enforce consistency. A workflow can post comments on PRs with commit message quality suggestions.
 
-**Changelog generation:** Tools like Conventional Changelog parse AI-generated commit messages to automatically build release notes. If every commit follows conventional format, your changelog generates automatically from commit history.
+Changelog generation: Tools like Conventional Changelog parse AI-generated commit messages to automatically build release notes. If every commit follows conventional format, your changelog generates automatically from commit history.
 
-**Semantic versioning:** Extract breaking changes and new features from commit messages to automatically determine version bumps (major.minor.patch). A commit with `BREAKING CHANGE:` trailer automatically triggers a major version bump.
+Semantic versioning: Extract breaking changes and new features from commit messages to automatically determine version bumps (major.minor.patch). A commit with `BREAKING CHANGE:` trailer automatically triggers a major version bump.
 
-Example: A team using Conventional Commits with AI generation can fully automate their release process from commit to deployment.
+A team using Conventional Commits with AI generation can fully automate their release process from commit to deployment.
 
-### Step 4: Real-World Example: Refactoring Scenario
+Step 4: Real-World Example: Refactoring Scenario
 
 Imagine refactoring authentication logic. Without AI:
 
@@ -280,48 +280,48 @@ This message immediately tells reviewers:
 
 Future developers debugging authentication issues can read this message and understand exactly where password logic lives and why it was restructured.
 
-### Step 5: Footer
+Step 5: Footer
 
-AI commit message generation works best as part of a broader development workflow that emphasizes code quality and team communication. Pair this with pre-commit linters and code review processes for maximum effectiveness. Consider your team's naming conventions and commit history before deploying automation—the goal is to amplify good practices, not enforce arbitrary standards.
+AI commit message generation works best as part of a broader development workflow that emphasizes code quality and team communication. Pair this with pre-commit linters and code review processes for maximum effectiveness. Consider your team's naming conventions and commit history before deploying automation, the goal is to amplify good practices, not enforce arbitrary standards.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to write git commit messages using ai?**
+How long does it take to write git commit messages using ai?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [AI Git Commit Message Generators Compared 2026](/ai-git-commit-message-generators-compared/)
 - [Create CursorRules That Enforce Your Team's Git Commit](/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
@@ -329,4 +329,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Effective Strategies for Using AI to Write API](/effective-strategies-for-using-ai-to-write--api/)
 - [Best AI for Resolving Git Merge Conflict Markers in Complex](/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

@@ -15,9 +15,9 @@ voice-checked: true
 
 {% raw %}
 
-CloudFormation template authoring is tedious by design: every resource type has dozens of properties, dependency ordering matters, and IAM policies require precise action names. AI tools vary significantly in their CloudFormation accuracy — some generate templates with deprecated properties or incorrect dependency chains. This guide compares Claude, GitHub Copilot, and the cfn-lint-integrated workflow.
+CloudFormation template authoring is tedious by design: every resource type has dozens of properties, dependency ordering matters, and IAM policies require precise action names. AI tools vary significantly in their CloudFormation accuracy. some generate templates with deprecated properties or incorrect dependency chains. This guide compares Claude, GitHub Copilot, and the cfn-lint-integrated workflow.
 
-## What Good CloudFormation Generation Looks Like
+What Good CloudFormation Generation Looks Like
 
 Before comparing tools, establish what a good generated template requires:
 
@@ -28,7 +28,7 @@ Before comparing tools, establish what a good generated template requires:
 - Outputs for cross-stack reference
 - No deprecated properties (e.g., using `SubnetIds` instead of `SubnetId` on ECS)
 
-## Test Scenario: ECS Fargate Service with ALB
+Test Scenario: ECS Fargate Service with ALB
 
 All three tools were tested on the same prompt:
 
@@ -43,11 +43,11 @@ Generate a CloudFormation template for:
 - Parameters: Environment, ImageTag, CertificateArn, VpcId, SubnetIds
 ```
 
-## Claude's Output Quality
+Claude's Output Quality
 
 Claude (Opus) generates templates that pass `cfn-lint` with zero warnings on the first attempt, approximately 80% of the time. Key observations:
 
-**Claude handles dependency chains correctly:**
+Claude handles dependency chains correctly:
 
 ```yaml
 Resources:
@@ -77,7 +77,7 @@ Resources:
               awslogs-stream-prefix: ecs
 ```
 
-**Claude generates least-privilege IAM correctly:**
+Claude generates least-privilege IAM correctly:
 
 ```yaml
   TaskRole:
@@ -106,7 +106,7 @@ Resources:
 
 Note the specific actions (`GetParameter`, not `ssm:*`) and the ARN scoped to the environment parameter path.
 
-**Auto-scaling configuration (correct target tracking):**
+Auto-scaling configuration (correct target tracking):
 
 ```yaml
   ScalableTarget:
@@ -133,23 +133,23 @@ Note the specific actions (`GetParameter`, not `ssm:*`) and the ARN scoped to th
         ScaleOutCooldown: 60
 ```
 
-Claude correctly uses `ECSService.Name` (not `ECSService`) in the ResourceId — a common error that breaks auto-scaling setup.
+Claude correctly uses `ECSService.Name` (not `ECSService`) in the ResourceId. a common error that breaks auto-scaling setup.
 
-## GitHub Copilot
+GitHub Copilot
 
 Copilot generates reasonable CloudFormation when editing inside an existing template file. In isolation (empty file), the quality drops.
 
-**Common Copilot issues:**
+Common Copilot issues:
 
 1. Uses deprecated `Cluster` property format instead of current syntax
 2. IAM policies often use `ecs-tasks.amazonaws.com` without the correct assume role format for newer resource types
 3. Sometimes generates `!Sub` expressions with incorrect variable references (`${ClusterName}` when the resource is `ECSCluster`)
 4. Auto-scaling resources frequently have incorrect `ResourceId` format
 
-**Copilot works well for:**
+Copilot works well for:
 
 ```yaml
-# When you type "# Parameter for environment" and let Copilot complete:
+When you type "# Parameter for environment" and let Copilot complete:
 Parameters:
   Environment:
     Type: String
@@ -161,27 +161,27 @@ Parameters:
     ConstraintDescription: Must be production, staging, or development
 ```
 
-Parameter blocks with `AllowedValues` are Copilot's strongest area — the patterns are formulaic and it generates them consistently.
+Parameter blocks with `AllowedValues` are Copilot's strongest area. the patterns are formulaic and it generates them consistently.
 
-## cfn-lint Integration Workflow
+cfn-lint Integration Workflow
 
 Regardless of which AI tool you use, add cfn-lint to your validation loop:
 
 ```bash
-# Install
+Install
 pip install cfn-lint
 
-# Validate a template
+Validate a template
 cfn-lint template.yaml
 
-# Validate with specific rules
+Validate with specific rules
 cfn-lint template.yaml --include-checks W
 
-# Output JSON for AI processing
+Output JSON for AI processing
 cfn-lint template.yaml --format json > lint-results.json
 ```
 
-**Using Claude to fix lint errors:**
+Using Claude to fix lint errors:
 
 ```python
 import anthropic
@@ -228,7 +228,7 @@ Return only the corrected YAML template with no other text.
     )
     return response.content[0].text
 
-# Iterative fix loop
+Iterative fix loop
 template = initial_template
 for attempt in range(3):
     template = fix_cfn_template(template)
@@ -239,9 +239,9 @@ for attempt in range(3):
         break
 ```
 
-## Outputs and Cross-Stack References
+Outputs and Cross-Stack References
 
-AI tools often skip Outputs — remind them explicitly:
+AI tools often skip Outputs. remind them explicitly:
 
 ```
 Also generate Outputs for cross-stack reference:
@@ -252,7 +252,7 @@ Also generate Outputs for cross-stack reference:
 - TaskRoleArn (for other services that need the same SSM access)
 ```
 
-**Claude's output section:**
+Claude's output section:
 
 ```yaml
 Outputs:
@@ -281,16 +281,16 @@ Outputs:
       Name: !Sub "${AWS::StackName}-TaskRoleArn"
 ```
 
-## Validation Pipeline in CI
+Validation Pipeline in CI
 
 ```yaml
-# .github/workflows/cfn-validate.yml
+.github/workflows/cfn-validate.yml
 name: CloudFormation Validation
 on:
   pull_request:
     paths:
-      - 'infrastructure/**/*.yaml'
-      - 'infrastructure/**/*.yml'
+      - 'infrastructure//*.yaml'
+      - 'infrastructure//*.yml'
 
 jobs:
   validate:
@@ -300,10 +300,10 @@ jobs:
       - name: Install cfn-lint
         run: pip install cfn-lint
       - name: Lint all templates
-        run: cfn-lint infrastructure/**/*.yaml
+        run: cfn-lint infrastructure//*.yaml
       - name: Validate with AWS
         run: |
-          for template in infrastructure/**/*.yaml; do
+          for template in infrastructure//*.yaml; do
             echo "Validating: $template"
             aws cloudformation validate-template \
               --template-body file://$template \
@@ -314,22 +314,22 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 ```
 
-## Verdict
+Verdict
 
-**Claude** generates the most accurate CloudFormation on first pass. It handles dependency ordering, IAM least-privilege, and auto-scaling resource IDs correctly. Use it for initial template generation.
+Claude generates the most accurate CloudFormation on first pass. It handles dependency ordering, IAM least-privilege, and auto-scaling resource IDs correctly. Use it for initial template generation.
 
-**Copilot** is useful for adding individual resources to existing templates and generating parameter blocks. Not reliable for complex multi-resource templates from scratch.
+Copilot is useful for adding individual resources to existing templates and generating parameter blocks. Not reliable for complex multi-resource templates from scratch.
 
-**cfn-lint loop** is essential regardless of which tool generates the template. Three iterations of Claude + cfn-lint fix produces clean templates for 95%+ of scenarios.
+cfn-lint loop is essential regardless of which tool generates the template. Three iterations of Claude + cfn-lint fix produces clean templates for 95%+ of scenarios.
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Writing Helm Charts](/best-ai-tools-for-writing-helm-charts/)
 - [Best AI Tools for Writing Kubernetes Custom Resource](/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
 - [Best AI Assistants for AWS CloudFormation Template](/best-ai-assistants-for-aws-cloudformation-template-generatio/)
 - [Best AI Tools for Writing GitHub Actions Reusable Workflow](/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
 - [Best AI Tools for Writing Unit Test Mocks 2026](/best-ai-tools-for-writing-unit-test-mocks-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 
 | Tool | Template Generation | Resource Coverage | Drift Detection | Pricing |
@@ -340,25 +340,25 @@ Built by theluckystrike — More at [zovo.one](https://zovo.one)
 | Amazon CodeWhisperer | AWS-optimized suggestions | Native AWS resource support | Integrated with AWS tooling | Free tier available |
 | Cursor | Context-aware template generation | Good with existing stacks | Can read stack outputs | $20/month (Pro) |
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Are free AI tools good enough for ai tools for writing cloudformation templates?**
+Are free AI tools good enough for ai tools for writing cloudformation templates?
 
 Free tiers work for basic tasks and evaluation, but paid plans typically offer higher rate limits, better models, and features needed for professional work. Start with free options to find what works for your workflow, then upgrade when you hit limitations.
 
-**How do I evaluate which tool fits my workflow?**
+How do I evaluate which tool fits my workflow?
 
 Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
-**Do these tools work offline?**
+Do these tools work offline?
 
 Most AI-powered tools require an internet connection since they run models on remote servers. A few offer local model options with reduced capability. If offline access matters to you, check each tool's documentation for local or self-hosted options.
 
-**How quickly do AI tool recommendations go out of date?**
+How quickly do AI tool recommendations go out of date?
 
 AI tools evolve rapidly, with major updates every few months. Feature comparisons from 6 months ago may already be outdated. Check the publication date on any review and verify current features directly on each tool's website before purchasing.
 
-**Should I switch tools if something better comes out?**
+Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 {% endraw %}

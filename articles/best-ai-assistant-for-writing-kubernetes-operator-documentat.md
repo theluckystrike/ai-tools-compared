@@ -16,7 +16,7 @@ tags: [ai-tools-compared, kubernetes, operators, crd, documentation, devops, inf
 {% raw %}
 Writing documentation for Kubernetes Operators can feel like a repetitive task. You define Custom Resource Definitions (CRDs) with extensive schemas, then need to document each field, its type, defaults, and valid values. This article shows how AI assistants streamline the process of generating operator documentation directly from your CRD specifications.
 
-## Why Documenting Operators Is Challenging
+Why Documenting Operators Is Challenging
 
 Kubernetes Operators extend the Kubernetes API with Custom Resources. Each Custom Resource Definition specifies the structure your operator understands. When building production-grade operators, these schemas often include:
 
@@ -27,11 +27,11 @@ Kubernetes Operators extend the Kubernetes API with Custom Resources. Each Custo
 
 Manually maintaining documentation that reflects these specs requires significant effort. A small change in your CRD can invalidate several paragraphs of documentation. AI assistants solve this problem by reading your schema and generating accurate documentation automatically.
 
-## How AI Assistants Process CRD Specifications
+How AI Assistants Process CRD Specifications
 
 Modern AI coding assistants understand Kubernetes resources and can interpret CRD syntax. When you provide a CRD specification, these tools can extract field information and produce structured documentation.
 
-### Input Format: Your CRD YAML
+Input Format: Your CRD YAML
 
 Here's a typical CRD specification you might feed to an AI assistant:
 
@@ -99,7 +99,7 @@ spec:
                       format: date-time
 ```
 
-### Prompting the AI Assistant
+Prompting the AI Assistant
 
 To generate documentation, provide your CRD to the AI with a clear request:
 
@@ -112,7 +112,7 @@ Generate API reference documentation for this Kubernetes CRD. Include:
 5. Example Custom Resource manifests
 ```
 
-### Example Output
+Example Output
 
 The AI generates documentation similar to this:
 
@@ -142,11 +142,11 @@ spec:
     connectionString: redis-master:6379
 ```
 
-## Advanced Documentation Features
+Advanced Documentation Features
 
 Beyond basic API references, AI assistants can generate several other documentation types from your CRD specifications.
 
-### Status Conditions Documentation
+Status Conditions Documentation
 
 Kubernetes operators commonly expose status conditions. An AI assistant can explain what each condition type means in the context of your operator:
 
@@ -157,7 +157,7 @@ Include troubleshooting guidance for each condition.
 
 The output might explain that a `Pending` phase indicates the operator is still initializing the cache, while `Failed` would detail specific error conditions like connection failures or memory exhaustion.
 
-### Validation Rule Documentation
+Validation Rule Documentation
 
 If your CRD includes CEL validation rules, AI assistants can explain what they enforce:
 
@@ -169,7 +169,7 @@ x-kubernetes-validations:
 
 The AI documents these rules in plain language, helping users understand why certain values are rejected.
 
-### Migration Guides
+Migration Guides
 
 When updating operator versions, AI assistants can compare old and new CRD versions:
 
@@ -180,12 +180,12 @@ List all breaking changes, new required fields, and deprecated parameters.
 
 This helps users understand what changes they need to make to their existing Custom Resources.
 
-## Automating Documentation with a Script
+Automating Documentation with a Script
 
 For teams with multiple operators, you can wrap the AI call in a script that processes every CRD file in a directory and writes the resulting documentation to Markdown files automatically:
 
 ```python
-# generate_docs.py
+generate_docs.py
 import os
 import glob
 import anthropic
@@ -236,21 +236,21 @@ if __name__ == "__main__":
     out_dir = sys.argv[2] if len(sys.argv) > 2 else "./docs/api"
     os.makedirs(out_dir, exist_ok=True)
 
-    for crd_file in glob.glob(f"{crd_dir}/**/*.yaml", recursive=True):
+    for crd_file in glob.glob(f"{crd_dir}//*.yaml", recursive=True):
         generate_docs_for_crd(crd_file, out_dir)
 ```
 
 Run it as part of your CI pipeline after any CRD change:
 
 ```yaml
-# .github/workflows/docs.yml
+.github/workflows/docs.yml
 - name: Generate CRD docs
   run: python generate_docs.py config/crd/bases docs/api
   env:
     ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 ```
 
-## Comparing AI Assistants for This Task
+Comparing AI Assistants for This Task
 
 Not every AI assistant handles CRD documentation equally well. Here is how the major options compare across the criteria that matter for this use case:
 
@@ -265,26 +265,26 @@ Claude tends to produce the most structurally complete output on first attempt, 
 
 For automated pipelines using the API, Claude is generally the strongest choice. For interactive one-off documentation sessions directly in your editor, Cursor offers the lowest-friction experience since it can read your CRD files directly from the filesystem without copy-pasting.
 
-## Practical Workflow
+Practical Workflow
 
 Integrating AI-assisted documentation into your operator development workflow follows a straightforward pattern:
 
-1. **Define your CRD first**: Write complete CRD specifications with proper descriptions, defaults, and validation rules.
-2. **Generate initial documentation**: Feed the CRD to your AI assistant and request API reference documentation.
-3. **Review and enhance**: Add context that only a human author can provide, such as usage scenarios and troubleshooting tips.
-4. **Automate on changes**: Set up CI/CD to regenerate documentation when CRD files change.
+1. Define your CRD first: Write complete CRD specifications with proper descriptions, defaults, and validation rules.
+2. Generate initial documentation: Feed the CRD to your AI assistant and request API reference documentation.
+3. Review and enhance: Add context that only a human author can provide, such as usage scenarios and troubleshooting tips.
+4. Automate on changes: Set up CI/CD to regenerate documentation when CRD files change.
 
 This workflow ensures documentation stays synchronized with your implementation.
 
-## Keeping Documentation in Sync
+Keeping Documentation in Sync
 
-The biggest maintenance problem with operator documentation is drift — the CRD evolves but the documentation does not. Two strategies prevent this:
+The biggest maintenance problem with operator documentation is drift. the CRD evolves but the documentation does not. Two strategies prevent this:
 
-**Hash-based staleness detection**: Store a hash of the CRD file alongside the generated docs. In CI, recompute the hash and skip regeneration if nothing changed. Fail the pipeline if docs are missing for any CRD that has changed.
+Hash-based staleness detection: Store a hash of the CRD file alongside the generated docs. In CI, recompute the hash and skip regeneration if nothing changed. Fail the pipeline if docs are missing for any CRD that has changed.
 
 ```bash
 #!/bin/bash
-# check_docs_fresh.sh
+check_docs_fresh.sh
 for crd in config/crd/bases/*.yaml; do
   name=$(basename "$crd" .yaml)
   doc="docs/api/${name}-reference.md"
@@ -301,9 +301,9 @@ done
 echo "All docs are fresh"
 ```
 
-**Version-pinned generation**: Include the CRD `metadata.resourceVersion` or a manual `docs-version` annotation in the generated file header. Reviewers can spot at a glance whether documentation reflects the current CRD version.
+Version-pinned generation: Include the CRD `metadata.resourceVersion` or a manual `docs-version` annotation in the generated file header. Reviewers can spot at a glance whether documentation reflects the current CRD version.
 
-## Integration with Documentation Pipelines
+Integration with Documentation Pipelines
 
 Modern documentation for operators should live in version control and regenerate on every CRD change. Set up a GitHub Actions workflow that feeds updated CRDs to an AI assistant and commits generated docs:
 
@@ -312,7 +312,7 @@ name: Generate Operator Docs
 on:
   push:
     paths:
-      - 'config/crd/**'
+      - 'config/crd/'
 jobs:
   generate-docs:
     runs-on: ubuntu-latest
@@ -380,7 +380,7 @@ Format as Markdown suitable for publishing in operator docs.
 
     return message.content[0].text
 
-# Generate and save
+Generate and save
 with open('crd-bundle.yaml') as f:
     crd_content = f.read()
 
@@ -389,7 +389,7 @@ with open('docs/api-reference.md', 'w') as f:
     f.write(docs)
 ```
 
-## Comparison: AI Tools for Operator Docs
+Comparison: AI Tools for Operator Docs
 
 | Tool | Speed | Accuracy | CRD Understanding | Integration | Cost |
 |---|---|---|---|---|---|
@@ -401,9 +401,9 @@ with open('docs/api-reference.md', 'w') as f:
 
 Claude excels here because it can hold large YAML documents in context and understand Kubernetes API conventions deeply. For enterprise operators with 50+ fields, Claude generates more complete references without hallucinating field descriptions.
 
-## Advanced Patterns
+Advanced Patterns
 
-### Generating TypedMeta Helpers from CRDs
+Generating TypedMeta Helpers from CRDs
 
 Your operator code often needs strongly-typed accessors. Claude can generate these:
 
@@ -414,7 +414,7 @@ strong typing for this resource in client code. Use the @kubernetes/client-node 
 
 Claude will generate interfaces, constants for status phases, and helper functions for common patterns like checking conditions.
 
-### Webhook Documentation
+Webhook Documentation
 
 If your CRD has validation or mutation webhooks defined in annotations, ask Claude to document the webhook contracts:
 
@@ -426,7 +426,7 @@ Extract webhook configurations from this CRD. For each webhook, generate:
 4. Failure modes and what happens when validation fails
 ```
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Writing Kubernetes Operators 2026](/ai-tools-for-writing-kubernetes-operators-2026/)
 - [Best AI Tools for Writing Kubernetes Custom Resource](/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
@@ -434,5 +434,5 @@ Extract webhook configurations from this CRD. For each webhook, generate:
 - [Best AI Tools for Go Kubernetes Operator Development](/best-ai-tools-for-go-kubernetes-operator-development-with-kubebuilder-2026/)
 - [Best AI Tools for Writing Kubernetes Manifests and Helm](/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

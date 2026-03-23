@@ -27,7 +27,7 @@ voice-checked: true
 
 Claude Code excels at generating Playwright tests for multi-step form wizards because it understands complex state preservation, conditional navigation, step-specific validation, and asynchronous wait strategies. When given your form structure, Claude produces maintainable tests with proper selectors, correct async handling, and meaningful assertions that account for wizard-specific patterns like progress indicators and data persistence across steps.
 
-## Table of Contents
+Table of Contents
 
 - [Why Multi-Step Form Wizards Need Specialized Testing](#why-multi-step-form-wizards-need-specialized-testing)
 - [What Makes an AI Assistant Effective for This Use Case](#what-makes-an-ai-assistant-effective-for-this-use-case)
@@ -41,21 +41,21 @@ Claude Code excels at generating Playwright tests for multi-step form wizards be
 - [Performance Testing for Large Wizards](#performance-testing-for-large-wizards)
 - [Testing Accessibility in Multi-Step Forms](#testing-accessibility-in-multi-step-forms)
 
-## Why Multi-Step Form Wizards Need Specialized Testing
+Why Multi-Step Form Wizards Need Specialized Testing
 
 Multi-step form wizards differ from simple single-page forms in several critical ways. Each step typically maintains partial form state that must persist when users navigate forward or backward. Conditional fields may appear or disappear based on previous selections. Progress indicators track completion status. Validation rules apply differently at each step, and some fields may only validate after users reach specific stages.
 
 Consider a typical checkout wizard with four steps: Shipping Information, Payment Details, Review Order, and Confirmation. Tests must verify that users cannot proceed without completing required fields, that selected shipping options affect total costs, that users can navigate back without losing entered data, and that the final order contains correct information from all previous steps.
 
-## What Makes an AI Assistant Effective for This Use Case
+What Makes an AI Assistant Effective for This Use Case
 
 The best AI assistants for Playwright test generation share several characteristics. They understand Playwright's API including locators, assertions, and configuration options. They recognize common wizard patterns like step indicators, back/next navigation, and form state preservation. They generate maintainable code with proper selectors instead of brittle XPath expressions. They handle async operations and wait strategies correctly. They produce tests that are readable and easy to debug when failures occur.
 
 Poor AI assistants generate tests with hardcoded waits, brittle selectors that break when UI changes, missing assertions, or incorrect handling of form state. These issues create flaky tests that waste development time.
 
-## Comparing Top AI Assistants for Playwright Wizard Testing
+Comparing Top AI Assistants for Playwright Wizard Testing
 
-### Claude Code (Anthropic)
+Claude Code (Anthropic)
 
 Claude Code demonstrates strong understanding of Playwright patterns and generates clean, maintainable test code. When prompted with a multi-step form scenario, it produces well-structured tests with appropriate wait strategies and meaningful test names.
 
@@ -103,25 +103,25 @@ test.describe('Registration Wizard', () => {
 
 Claude Code excels at understanding context and generating relevant follow-up tests. It handles conditional logic well and produces tests that account for wizard-specific behaviors.
 
-### GitHub Copilot
+GitHub Copilot
 
 Copilot integrates tightly with VS Code and provides real-time suggestions as you write tests. It works well for generating individual test cases but sometimes struggles with complex wizard flows that require understanding across multiple steps.
 
 Strengths include fast suggestions and good autocomplete for Playwright methods. Limitations include occasionally suggesting outdated patterns and less understanding of wizard-specific testing patterns compared to specialized prompts.
 
-### Cursor
+Cursor
 
 Cursor combines AI assistance with IDE features, making it useful for test generation and maintenance. It handles refactoring well, which helps when updating wizard tests after UI changes.
 
 For multi-step forms, Cursor performs best when given explicit context about the wizard structure and validation rules. Its agent mode can interact with your application directly, which helps when exploring complex flows.
 
-## Practical Strategies for AI-Assisted Wizard Testing
+Practical Strategies for AI-Assisted Wizard Testing
 
-### Provide Complete Context
+Provide Complete Context
 
 When prompting AI assistants, include the wizard's step structure, validation requirements, and any conditional logic. Instead of a vague request like "test the checkout flow," specify: "Create tests for a four-step checkout wizard where step 2 shows different fields based on shipping method selected in step 1, and step 3 displays dynamically calculated totals."
 
-### Use Page Object Patterns
+Use Page Object Patterns
 
 AI-generated tests work best when structured around page objects. This makes tests more maintainable and easier to update when wizard UI changes. Ask AI assistants to generate page object methods for each wizard step:
 
@@ -144,11 +144,11 @@ export class CheckoutWizard {
 }
 ```
 
-### Test Edge Cases Specifically
+Test Edge Cases Specifically
 
 Wizard flows have numerous edge cases that AI sometimes overlooks. Explicitly request tests for: back navigation preserving entered data, session timeout handling, browser refresh mid-wizard, concurrent tab modifications, and step skipping attempts via direct URL access.
 
-### Validate State Transitions
+Validate State Transitions
 
 Ensure your tests verify that wizard state updates correctly. Check that progress indicators reflect actual completion, that URL parameters track current step, and that form data persists appropriately between steps:
 
@@ -164,7 +164,7 @@ test('form data persists when navigating back', async ({ page }) => {
 });
 ```
 
-## Recommendations
+Recommendations
 
 For teams working primarily with multi-step form wizards, Claude Code currently provides the best balance of understanding, code quality, and maintainability. Its context window allows it to grasp complex wizard structures, and its generated tests follow Playwright best practices.
 
@@ -172,7 +172,7 @@ However, the ideal choice depends on your workflow. Teams already using VS Code 
 
 Regardless of which assistant you choose, provide detailed context about your wizard's specific behaviors. The more precisely you describe your multi-step form's logic, validation rules, and expected user interactions, the more accurate and useful the generated tests will be.
 
-## Testing Dynamic Field Visibility in Wizards
+Testing Dynamic Field Visibility in Wizards
 
 Many wizards show/hide fields based on previous selections. AI can help generate tests for these conditional scenarios:
 
@@ -211,7 +211,7 @@ test('conditional validation triggers for conditional fields', async ({ page }) 
 });
 ```
 
-## Managing State Across Browser Navigation
+Managing State Across Browser Navigation
 
 Test that wizard state persists when users leave and return:
 
@@ -254,7 +254,7 @@ test('wizard state survives page refresh', async ({ page }) => {
 });
 ```
 
-## Testing Wizard Progress Indicators
+Testing Wizard Progress Indicators
 
 Verify progress tracking works correctly:
 
@@ -292,7 +292,7 @@ test('progress indicator updates correctly', async ({ page }) => {
 });
 ```
 
-## Testing Error Recovery in Multi-Step Forms
+Testing Error Recovery in Multi-Step Forms
 
 Handle error scenarios gracefully:
 
@@ -305,7 +305,7 @@ test('recovers from server error and allows retry', async ({ page }) => {
 
   // Mock server error on first attempt
   let requestCount = 0;
-  await page.route('**/api/wizard/validate-step-1', route => {
+  await page.route('/api/wizard/validate-step-1', route => {
     requestCount++;
     if (requestCount === 1) {
       route.abort('failed');
@@ -328,7 +328,7 @@ test('handles timeout during form submission', async ({ page }) => {
   await page.goto('/wizard/step-1');
 
   // Mock slow response
-  await page.route('**/api/wizard/**', route => {
+  await page.route('/api/wizard/', route => {
     route.abort('timedout');
   });
 
@@ -343,7 +343,7 @@ test('handles timeout during form submission', async ({ page }) => {
 });
 ```
 
-## Performance Testing for Large Wizards
+Performance Testing for Large Wizards
 
 Test that wizards with many steps remain performant:
 
@@ -380,7 +380,7 @@ test('large wizard (20+ steps) maintains acceptable performance', async ({ page 
 });
 ```
 
-## Testing Accessibility in Multi-Step Forms
+Testing Accessibility in Multi-Step Forms
 
 Ensure wizards are accessible to all users:
 
@@ -422,29 +422,29 @@ test('wizard announcements for screen readers', async ({ page }) => {
 });
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Best AI Assistant for Creating Playwright Tests for File Upl](/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
 - [Best AI Assistant for Creating Playwright Tests for Table](/best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/)
@@ -452,5 +452,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best AI Assistant for Creating Jest Tests That Verify Error](/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
 - [Best AI for Writing Playwright Multi Browser Test Matrices](/best-ai-for-writing-playwright-multi-browser-test-matrices-with-github-actions-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

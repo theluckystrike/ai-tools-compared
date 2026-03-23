@@ -15,22 +15,22 @@ voice-checked: true
 
 {% raw %}
 
-E2E test generation is one of the most time-consuming parts of QA. Writing Playwright tests that are reliable, maintainable, and cover realistic user flows takes days. AI tools can compress this to hours — if you know how to direct them past the common failure modes of generated tests (flaky selectors, hardcoded waits, missing assertions).
+E2E test generation is one of the most time-consuming parts of QA. Writing Playwright tests that are reliable, maintainable, and cover realistic user flows takes days. AI tools can compress this to hours. if you know how to direct them past the common failure modes of generated tests (flaky selectors, hardcoded waits, missing assertions).
 
-## Approach 1: Playwright MCP with Claude
+Approach 1: Playwright MCP with Claude
 
 The Playwright MCP (Model Context Protocol) server gives Claude direct browser control. Claude can navigate your app, observe DOM state, and generate tests based on what it actually sees.
 
-**Setup:**
+Setup:
 
 ```bash
-# Install Playwright MCP
+Install Playwright MCP
 npm install -g @playwright/mcp
 
-# Start the MCP server
+Start the MCP server
 playwright-mcp --port 3001
 
-# Configure Claude to use the MCP server in your .claude.json
+Configure Claude to use the MCP server in your .claude.json
 ```
 
 ```json
@@ -44,7 +44,7 @@ playwright-mcp --port 3001
 }
 ```
 
-**Prompt to Claude:**
+Prompt to Claude:
 
 ```
 Using the Playwright MCP, navigate to http://localhost:3000/checkout.
@@ -56,12 +56,12 @@ Generate a complete Playwright test suite covering:
 4. Accessibility: verify all form elements have labels and focus states
 
 Use data-testid attributes where available, fall back to ARIA roles.
-No hardcoded waits — use waitForSelector and network idle states.
+No hardcoded waits. use waitForSelector and network idle states.
 ```
 
 Claude will interact with the browser, observe what's there, and generate tests grounded in the actual DOM rather than guesses.
 
-## Approach 2: Claude from User Stories
+Approach 2: Claude from User Stories
 
 When you have a spec but not a running app, Claude can generate the test scaffolding from user stories:
 
@@ -79,7 +79,7 @@ def generate_tests_from_stories(user_stories: list, app_context: str) -> str:
         system="""You are a QA engineer writing Playwright tests.
 Follow these rules:
 - Use data-testid selectors first, ARIA roles second, CSS last
-- No page.waitForTimeout() — use explicit waits
+- No page.waitForTimeout(). use explicit waits
 - Each test is independent and self-contained
 - Use test.beforeEach for navigation, not beforeAll
 - Mock network calls with page.route() for external services
@@ -124,7 +124,7 @@ tests = generate_tests_from_stories(stories, context)
 print(tests)
 ```
 
-**Sample output from Claude:**
+Sample output from Claude:
 
 ```typescript
 // tests/auth/login.spec.ts
@@ -170,8 +170,8 @@ test.describe('Authentication', () => {
 
   // Covers: As an admin, I can log in and see the admin dashboard
   test('admin login redirects to admin dashboard', async ({ page }) => {
-    // Mock admin credentials check — in real test, use test admin account
-    await page.route('**/api/auth/login', async route => {
+    // Mock admin credentials check. in real test, use test admin account
+    await page.route('/api/auth/login', async route => {
       const body = route.request().postDataJSON();
       if (body.email === 'admin@example.com') {
         await route.fulfill({
@@ -193,7 +193,7 @@ test.describe('Authentication', () => {
 });
 ```
 
-## Approach 3: Cursor for Test Maintenance
+Approach 3: Cursor for Test Maintenance
 
 When you have existing tests that are breaking due to UI changes, Cursor is faster than Claude for targeted fixes:
 
@@ -210,9 +210,9 @@ Update the tests to:
 3. Keep all existing assertions
 ```
 
-Cursor shows you exactly what changed in a clean diff — faster for this type of targeted update than navigating with Claude Code.
+Cursor shows you exactly what changed in a clean diff. faster for this type of targeted update than navigating with Claude Code.
 
-## Network Mocking Pattern
+Network Mocking Pattern
 
 Generated tests often break in CI because they hit external services. Use Claude to add proper network mocking:
 
@@ -222,12 +222,12 @@ Generated tests often break in CI because they hit external services. Use Claude
 Add network mocking for all external API calls in this test file.
 - Stripe API calls: return test fixtures from tests/fixtures/stripe/
 - Email service calls: mock and verify they were called with correct params
-- Do not mock our own API — let those go through to the test server
+- Do not mock our own API. let those go through to the test server
 
 Create fixtures directory and realistic JSON responses if they don't exist.
 ```
 
-**Pattern Claude generates:**
+Pattern Claude generates:
 
 ```typescript
 // tests/fixtures/stripe/payment-intent-success.json
@@ -242,7 +242,7 @@ Create fixtures directory and realistic JSON responses if they don't exist.
 // In the test:
 test.beforeEach(async ({ page }) => {
   // Mock Stripe API
-  await page.route('**/api.stripe.com/**', async route => {
+  await page.route('/api.stripe.com/', async route => {
     const url = route.request().url();
     if (url.includes('payment_intents')) {
       const fixture = require('./fixtures/stripe/payment-intent-success.json');
@@ -258,7 +258,7 @@ test.beforeEach(async ({ page }) => {
 });
 ```
 
-## Page Object Model Generation
+Page Object Model Generation
 
 For larger test suites, Claude generates the full Page Object Model:
 
@@ -278,7 +278,7 @@ Each page class should expose:
 Base the selectors on data-testid attributes.
 ```
 
-**Claude's output:**
+Claude's output:
 
 ```typescript
 // tests/pages/CheckoutPage.ts
@@ -343,10 +343,10 @@ export class CheckoutPage {
 }
 ```
 
-## CI Configuration
+CI Configuration
 
 ```yaml
-# .github/workflows/e2e.yml
+.github/workflows/e2e.yml
 name: E2E Tests
 on:
   push:
@@ -379,7 +379,7 @@ jobs:
           path: playwright-report/
 ```
 
-## Tool Comparison
+Tool Comparison
 
 | Use Case | Best Tool |
 |---|---|
@@ -390,34 +390,34 @@ jobs:
 | Generate Page Object Model | Claude |
 | Fix flaky timing issues | Claude Code (runs and fixes) |
 
-## Related Articles
+Related Articles
 
 - [Which AI Is Better for Writing Playwright End-to-End Tests](/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
 - [Best AI Assistant for Creating Playwright Tests for Multi](/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
 - [Best AI Tools for Writing Playwright E2E Tests 2026](/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
 - [AI for Automated Regression Test Generation from Bug](/ai-for-automated-regression-test-generation-from-bug-reports/)
 - [Best AI Assistant for Creating Playwright Tests for File](/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 {% endraw %}

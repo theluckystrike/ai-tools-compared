@@ -31,15 +31,15 @@ tags: [ai-tools-compared, workflow, artificial-intelligence, automation]
 
 Git workflow tasks are repetitive, context-dependent, and time-consuming when done manually. Writing commit messages that actually explain the "why", describing PRs completely, and naming branches consistently are tasks AI handles well. This guide covers specific automation workflows with working code.
 
-## Key Takeaways
+Key Takeaways
 
-- **Use 'git add' first."**: exit 1 fi # Count approximate token size (rough: 4 chars per token) DIFF_SIZE=${#DIFF} if [ $DIFF_SIZE -gt 40000 ]; then echo "Diff too large for AI ($DIFF_SIZE chars).
-- **Recommend which version to keep**: or how to merge them
+- Use 'git add' first.": exit 1 fi # Count approximate token size (rough: 4 chars per token) DIFF_SIZE=${#DIFF} if [ $DIFF_SIZE -gt 40000 ]; then echo "Diff too large for AI ($DIFF_SIZE chars).
+- Recommend which version to keep: or how to merge them
 3.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **This guide covers ai-powered**: commit messages, pr description generator, what changed, with specific setup instructions
+- What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- This guide covers ai-powered: commit messages, pr description generator, what changed, with specific setup instructions
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -49,13 +49,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: AI-Powered Commit Messages
+Step 1: AI-Powered Commit Messages
 
 The most common git automation task: generating commit messages from staged diffs.
 
 ```bash
 #!/bin/bash
-# scripts/ai-commit.sh — generate commit message from staged diff
+scripts/ai-commit.sh. generate commit message from staged diff
 
 DIFF=$(git diff --staged)
 
@@ -64,7 +64,7 @@ if [ -z "$DIFF" ]; then
   exit 1
 fi
 
-# Count approximate token size (rough: 4 chars per token)
+Count approximate token size (rough: 4 chars per token)
 DIFF_SIZE=${#DIFF}
 if [ $DIFF_SIZE -gt 40000 ]; then
   echo "Diff too large for AI ($DIFF_SIZE chars). Summarizing changed files only."
@@ -88,7 +88,7 @@ response = client.messages.create(
 Rules:
 - First line: imperative mood, max 72 chars, no period (e.g. "Add user authentication")
 - Blank line after subject
-- Body: explain WHY this change was made (not what — the diff shows that)
+- Body: explain WHY this change was made (not what. the diff shows that)
 - Body lines: max 72 chars
 - No generic messages like "Update files" or "Fix bug"
 - If it's a bug fix, describe what was broken
@@ -131,11 +131,11 @@ Add an alias to `~/.gitconfig`:
 
 Now `git aic` generates a commit message, shows it for review, and commits on confirmation.
 
-### Step 2: PR Description Generator
+Step 2: PR Description Generator
 
 ```python
 #!/usr/bin/env python3
-# scripts/generate-pr.py — generate PR title and description from branch diff
+scripts/generate-pr.py. generate PR title and description from branch diff
 
 import subprocess
 import sys
@@ -195,16 +195,16 @@ Code diff (sample):
 Output format:
 TITLE: <concise title under 72 chars>
 
-### Step 3: What changed
+Step 3: What changed
 <2-4 bullet points describing the changes>
 
-### Step 4: Why
+Step 4: Why
 <1-2 sentences on the motivation/problem solved>
 
-### Step 5: Test
+Step 5: Test
 <how to verify this works>
 
-### Step 6: Notes for reviewer
+Step 6: Notes for reviewer
 <anything specific to check or context that helps review>"""
         }]
     )
@@ -215,7 +215,7 @@ info = get_branch_info()
 description = generate_pr_description(info)
 print(description)
 
-# Optionally: create the PR with gh CLI
+Optionally: create the PR with gh CLI
 if '--create' in sys.argv:
     lines = description.strip().split('\n')
     title = lines[0].replace('TITLE: ', '').strip()
@@ -228,23 +228,23 @@ if '--create' in sys.argv:
     ])
 ```
 
-### Step 7: AI Git Hook: Pre-Push Code Review
+Step 7: AI Git Hook: Pre-Push Code Review
 
 Run a lightweight AI check before pushing to catch obvious issues:
 
 ```bash
 #!/bin/bash
-# .git/hooks/pre-push — AI review before push
-# Make executable: chmod +x .git/hooks/pre-push
+.git/hooks/pre-push. AI review before push
+Make executable: chmod +x .git/hooks/pre-push
 
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
-# Skip for main branch (handled by CI)
+Skip for main branch (handled by CI)
 if [ "$BRANCH" = "main" ] || [ "$BRANCH" = "master" ]; then
   exit 0
 fi
 
-# Get diff against main
+Get diff against main
 DIFF=$(git diff main...HEAD --unified=2 2>/dev/null || git diff HEAD~1 --unified=2)
 
 if [ -z "$DIFF" ]; then
@@ -299,11 +299,11 @@ fi
 
 This hook costs under $0.002 per push and catches the most common "oops before merge" mistakes.
 
-### Step 8: Branch Naming from Issue Titles
+Step 8: Branch Naming from Issue Titles
 
 ```python
 #!/usr/bin/env python3
-# scripts/branch-from-issue.py <github-issue-url>
+scripts/branch-from-issue.py <github-issue-url>
 
 import sys
 import subprocess
@@ -372,13 +372,13 @@ print(f"Creating branch: {branch_name}")
 subprocess.run(['git', 'checkout', '-b', branch_name])
 ```
 
-### Step 9: Merge Conflict Assistant
+Step 9: Merge Conflict Assistant
 
 When `git merge` produces conflicts, get AI help understanding them:
 
 ```bash
 #!/bin/bash
-# scripts/resolve-conflict.sh <conflicted-file>
+scripts/resolve-conflict.sh <conflicted-file>
 
 FILE=$1
 if [ -z "$FILE" ]; then
@@ -425,22 +425,22 @@ print(response.content[0].text)
 PYTHON
 ```
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+Related Reading
 
 - [AI Git Commit Message Generators Compared](/ai-git-commit-message-generators-compared/)
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-for-automated-changelog-generation-2026/)
@@ -448,27 +448,27 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Example: GitHub Actions workflow for assessment tracking](https://welikeremotestack.com/how-to-set-up-remote-hiring-pipeline-with-async-interviews-f/)
 - [Remote Content Team Collaboration Workflow for Distributed](https://welikeremotestack.com/remote-content-team-collaboration-workflow-for-distributed-seo-writers-2026-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use ai for git workflow automation?**
+How long does it take to use ai for git workflow automation?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 

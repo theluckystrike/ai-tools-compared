@@ -18,7 +18,7 @@ If you use Neovim as your primary editor, you have likely explored ways to integ
 
 This article compares the leading open-source AI code completion tools for Neovim that run locally without cloud API dependencies. Each solution has distinct trade-offs in setup complexity, model quality, and resource requirements.
 
-## Table of Contents
+Table of Contents
 
 - [Why Skip Cloud API Keys?](#why-skip-cloud-api-keys)
 - [CodeLLama (via Ollama)](#codellama-via-ollama)
@@ -36,25 +36,25 @@ This article compares the leading open-source AI code completion tools for Neovi
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Integration with Other Tools](#integration-with-other-tools)
 
-## Why Skip Cloud API Keys?
+Why Skip Cloud API Keys?
 
 Cloud-based AI code completion services send your code to external servers. This raises legitimate concerns around data privacy, especially when working with proprietary codebases. Additionally, reliance on external services means your completion workflow depends on internet connectivity and service availability.
 
 Running AI code completion locally gives you complete control over your data. You can use the tools on airplanes, in secure facilities, or in regions with limited internet access. The upfront investment in hardware and setup pays off over time with no per-token costs.
 
-## CodeLLama (via Ollama)
+CodeLLama (via Ollama)
 
 Ollama has become the simplest way to run large language models locally. It supports CodeLLama, a model specifically designed for code generation and completion.
 
-### Setup
+Setup
 
 First, install Ollama on your system:
 
 ```bash
-# macOS
+macOS
 brew install ollama
 
-# Linux
+Linux
 curl -fsSL https://ollama.com/install.sh | sh
 ```
 
@@ -64,7 +64,7 @@ Pull the CodeLLama model:
 ollama pull codellama
 ```
 
-### Neovim Integration
+Neovim Integration
 
 Use the `completor` plugin or configure `nvim-cmp` with a custom source. Here is a basic setup using `nvim-cmp`:
 
@@ -86,11 +86,11 @@ return {
 
 You will need to configure the Ollama endpoint and model in your setup. This approach provides completions from a model running entirely on your machine.
 
-## CodeGeex
+CodeGeex
 
 CodeGeex is an open-source code generation model maintained by the THUDM research group. It specializes in code completion and supports multiple programming languages.
 
-### Installation
+Installation
 
 CodeGeex can be deployed as a local server using the official implementation:
 
@@ -106,7 +106,7 @@ Run the server locally:
 python codegeex/benchmark/api.py --port 8080
 ```
 
-### Neovim Integration
+Neovim Integration
 
 Connect Neovim using a custom completion source. You can use `vim-go` or write a simple Python script that interfaces with the API:
 
@@ -139,11 +139,11 @@ end
 
 This requires additional Lua dependencies, but demonstrates the core approach.
 
-## CodeGen (Salesforce)
+CodeGen (Salesforce)
 
 CodeGen was developed by Salesforce Research and is available in multiple sizes. The model excels at code generation tasks and can run locally through various frameworks.
 
-### Running with Hugging Face Transformers
+Running with Hugging Face Transformers
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -154,35 +154,35 @@ model = AutoModelForCausalLM.from_pretrained(model_name)
 
 def complete_code(prompt):
     inputs = tokenizer(prompt, return_tensors="pt")
-    outputs = model.generate(**inputs, max_new_tokens=50)
+    outputs = model.generate(inputs, max_new_tokens=50)
     return tokenizer.decode(outputs[0])
 ```
 
 For Neovim integration, wrap this Python script in a VimEx command or use the `completor` framework to create a custom source.
 
-## StarCoder
+StarCoder
 
 StarCoder is a code-focused language model developed by BigCode. It was trained on permissively licensed code from GitHub, making it a responsible choice for commercial projects.
 
-### Quick Start with llama.cpp
+Quick Start with llama.cpp
 
 For running StarCoder efficiently on consumer hardware, use the quantized version with llama.cpp:
 
 ```bash
-# Download the quantized StarCoder model
+Download the quantized StarCoder model
 wget https://huggingface.co/TheBloke/StarCoder-GGML/resolve/main/starcoder-q4_0.gguf
 
-# Run with llama.cpp
+Run with llama.cpp
 ./main -m starcoder-q4_0.gguf --n-gpu-layers 1 -c 2048
 ```
 
 Configure your Neovim completion plugin to query this local endpoint. The setup requires more configuration than Ollama but provides more control over the model behavior.
 
-## Qwen2.5-Coder
+Qwen2.5-Coder
 
 Qwen2.5-Coder (from Alibaba's Qwen team) emerged as a strong contender in late 2025. The 7B and 14B variants perform competitively with CodeLLama 34B on most benchmarks while running comfortably on consumer hardware.
 
-### Setup via Ollama
+Setup via Ollama
 
 ```bash
 ollama pull qwen2.5-coder:7b
@@ -190,17 +190,17 @@ ollama pull qwen2.5-coder:7b
 
 Then configure your completion source to use `qwen2.5-coder` as the model name. The model has notably better instruction-following for fill-in-the-middle (FIM) tasks than earlier Qwen iterations, which translates to more accurate inline completions rather than pure next-token generation.
 
-## Neovim Plugins Purpose-Built for Local Completion
+Neovim Plugins Purpose-Built for Local Completion
 
 Beyond generic cmp sources, several plugins are specifically designed for local LLM completion workflows:
 
-- **gen.nvim**: Lightweight plugin that speaks directly to any Ollama endpoint; requires zero extra dependencies and exposes completions through a simple `:Gen` command interface.
-- **llm.nvim**: Supports multiple backends (Ollama, llama.cpp HTTP server) and offers streaming completions that display tokens as they arrive rather than waiting for the full response.
-- **copilot.lua** (unofficial): Forks of the official Copilot plugin have been adapted to redirect requests to local endpoints, preserving the ghost-text completion UX while eliminating the cloud dependency.
+- gen.nvim: Lightweight plugin that speaks directly to any Ollama endpoint; requires zero extra dependencies and exposes completions through a simple `:Gen` command interface.
+- llm.nvim: Supports multiple backends (Ollama, llama.cpp HTTP server) and offers streaming completions that display tokens as they arrive rather than waiting for the full response.
+- copilot.lua (unofficial): Forks of the official Copilot plugin have been adapted to redirect requests to local endpoints, preserving the ghost-text completion UX while eliminating the cloud dependency.
 
-For daily driver use, llm.nvim with streaming enabled provides the most responsive feel. Latency on a 7B quantized model running on Apple Silicon or a mid-range NVIDIA GPU is typically under 500ms for short completions—fast enough to not disrupt flow.
+For daily driver use, llm.nvim with streaming enabled provides the most responsive feel. Latency on a 7B quantized model running on Apple Silicon or a mid-range NVIDIA GPU is typically under 500ms for short completions, fast enough to not disrupt flow.
 
-## Comparing the Options
+Comparing the Options
 
 | Tool | Model Size | Hardware Requirements | Setup Complexity |
 |------|-----------|----------------------|------------------|
@@ -216,13 +216,13 @@ CodeGeex and CodeGen offer specialized code models but require more manual setup
 
 StarCoder excels when you need the most efficient resource usage. The quantized versions run smoothly on laptops without dedicated GPUs.
 
-## Hardware Considerations
+Hardware Considerations
 
 Local AI code completion demands computational resources. A modern multi-core CPU can handle smaller models, but GPU acceleration dramatically improves response times. NVIDIA GPUs with CUDA support work best. Apple Silicon Macs can also run these models efficiently through Metal acceleration in some frameworks.
 
 RAM usage scales with model size. Plan for at least 8GB of available memory for smaller models, and 16GB or more for larger implementations.
 
-## Performance Tips
+Performance Tips
 
 To get the best experience from local AI code completion in Neovim:
 
@@ -232,11 +232,11 @@ To get the best experience from local AI code completion in Neovim:
 - Cache completions locally to avoid redundant API calls
 - Prefer fill-in-the-middle (FIM) capable models (CodeLLama Instruct, Qwen2.5-Coder) for inline completion over pure next-token models
 
-## Advanced Configuration: Building a Production Setup
+Advanced Configuration: Building a Production Setup
 
 For developers committed to self-hosted completions, here's a production-ready architecture:
 
-**Infrastructure Stack:**
+Infrastructure Stack:
 ```
 Neovim Editor
   ↓
@@ -249,14 +249,14 @@ vLLM or Ollama (inference server)
 Quantized CodeLLama model (GPU inference)
 ```
 
-**Example: Ollama + nvim-cmp Setup**
+Ollama + nvim-cmp Setup
 
 First, install Ollama and pull a model:
 ```bash
-# Install Ollama (https://ollama.ai)
+Install Ollama (https://ollama.ai)
 ollama pull codellama:7b-instruct
 
-# Start Ollama service
+Start Ollama service
 ollama serve --host 127.0.0.1:11434
 ```
 
@@ -320,9 +320,9 @@ cmp.setup({
 })
 ```
 
-**Production Considerations:**
+Production Considerations:
 
-1. **Response Caching**: Cache completions for identical context to reduce latency
+1. Response Caching: Cache completions for identical context to reduce latency
 ```lua
 local completion_cache = {}
 
@@ -336,13 +336,13 @@ function get_completion_cached(prompt)
 end
 ```
 
-2. **Timeout Handling**: Set timeouts for inference to prevent hanging
+2. Timeout Handling: Set timeouts for inference to prevent hanging
 ```bash
-# In Ollama startup
+In Ollama startup
 timeout 5 curl http://127.0.0.1:11434/api/generate ...
 ```
 
-3. **Error Recovery**: Gracefully fall back to LSP if AI completion fails
+3. Error Recovery: Gracefully fall back to LSP if AI completion fails
 ```lua
 function source:complete(params, callback)
   local success, result = pcall(function()
@@ -358,32 +358,32 @@ function source:complete(params, callback)
 end
 ```
 
-## Model Selection for Different Languages
+Model Selection for Different Languages
 
 Not all models excel equally across languages:
 
-**For Python/Go/Rust:**
+For Python/Go/Rust:
 - CodeLLama 13B (best overall balance)
 - DeepSeek Coder (if you have GPU resources)
 - StarCoder 15B (good alternative)
 
-**For JavaScript/TypeScript:**
+For JavaScript/TypeScript:
 - Qwen Coder (excellent for JS/TS)
 - CodeLLama 13B+ (needs more VRAM)
 - CodeGeex (specialized for JS)
 
-**For C/C++/Java:**
+For C/C++/Java:
 - CodeLLama 70B (if you have resources)
 - StarCoder (surprisingly good for C++)
 - Specialized Java model if available
 
-## Benchmarking Your Setup
+Benchmarking Your Setup
 
 Before deploying, benchmark completion quality and speed:
 
 ```bash
 #!/bin/bash
-# Benchmark completion latency
+Benchmark completion latency
 
 MODEL="codellama:7b"
 ITERATIONS=10
@@ -408,29 +408,29 @@ done
 Track:
 - Average latency (should be <2s for coding)
 - Completion quality (matches what you'd write)
-- GPU utilization (staying below 80%)
+- GPU usage (staying below 80%)
 - Memory usage (not exceeding available VRAM)
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
-**Issue: Completions are very slow (>5s)**
+Issue: Completions are very slow (>5s)
 - Reduce context length: `--n-ctx 512` instead of 2048
 - Use quantized models (4-bit or 8-bit)
 - Add more VRAM or use smaller models
 
-**Issue: Out of memory errors**
+Issue: Out of memory errors
 - Check model size: `ollama list`
 - Use 7B parameter models instead of 13B+
 - Enable 4-bit quantization in your model pull command
 
-**Issue: Completions don't match the current context**
+Issue: Completions don't match the current context
 - Increase context window in your prompt
 - Provide more surrounding code to the API
 - Use a larger model with better code understanding
 
-## Integration with Other Tools
+Integration with Other Tools
 
-**GitHub Copilot Comparison:**
+GitHub Copilot Comparison:
 | Aspect | Local Completion | GitHub Copilot |
 |--------|------------------|-----------------|
 | Privacy | Complete (local) | Data sent to GitHub |
@@ -442,34 +442,34 @@ Track:
 
 Local completion makes sense when privacy matters more than raw speed, or when you want to avoid recurring subscription costs.
 
-## Related Articles
+Related Articles
 
 - [Open Source AI Code Linting Tools With Automatic Fix](/open-source-ai-code-linting-tools-with-automatic-fix-suggest/)
 - [AI Code Completion for Flutter BLoC Pattern Event and State](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 - [AI Code Completion for Java Record Classes and Sealed](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Neovim offer a free tier?**
+Does Neovim offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Neovim's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 {% endraw %}

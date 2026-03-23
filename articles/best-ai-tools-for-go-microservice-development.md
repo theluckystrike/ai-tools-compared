@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Go Microservice Development"
-description: "Compare AI coding tools for Go microservices in 2026 — gRPC services, middleware, error handling, and testing with Claude Code, Copilot, and Cursor"
+description: "Compare AI coding tools for Go microservices in 2026. gRPC services, middleware, error handling, and testing with Claude Code, Copilot, and Cursor"
 date: 2026-03-22
 author: theluckystrike
 permalink: best-ai-tools-for-go-microservice-development
@@ -15,11 +15,11 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 {% raw %}
 
-Go is the dominant language for microservices, and AI tools vary significantly in their Go idiom knowledge. The gap between "compiles" and "idiomatic Go" is where most AI tools fall short — returning errors with `fmt.Errorf` wrapping vs `errors.As`, using goroutines without proper context cancellation, or generating middleware that doesn't follow the standard `http.Handler` pattern.
+Go is the dominant language for microservices, and AI tools vary significantly in their Go idiom knowledge. The gap between "compiles" and "idiomatic Go" is where most AI tools fall short. returning errors with `fmt.Errorf` wrapping vs `errors.As`, using goroutines without proper context cancellation, or generating middleware that doesn't follow the standard `http.Handler` pattern.
 
 This guide tests Claude Code, Copilot, and Cursor on four real Go microservice tasks.
 
-## Table of Contents
+Table of Contents
 
 - [Task 1: gRPC Service with Interceptors](#task-1-grpc-service-with-interceptors)
 - [Task 2: HTTP Middleware Chain](#task-2-http-middleware-chain)
@@ -28,7 +28,7 @@ This guide tests Claude Code, Copilot, and Cursor on four real Go microservice t
 - [Summary](#summary)
 - [Related Reading](#related-reading)
 
-## Task 1: gRPC Service with Interceptors
+Task 1: gRPC Service with Interceptors
 
 ```protobuf
 // proto/user.proto
@@ -53,9 +53,9 @@ message User {
 }
 ```
 
-**Prompt:** "Implement the gRPC server with a logging interceptor and request validation."
+Prompt: "Implement the gRPC server with a logging interceptor and request validation."
 
-**Copilot's server:**
+Copilot's server:
 
 ```go
 // Copilot generated (simplified)
@@ -68,7 +68,7 @@ func (s *UserServer) GetUser(ctx context.Context, req *pb.GetUserRequest) (*pb.U
 
 No validation, no interceptors, and no context propagation from the interceptor.
 
-**Claude's server:**
+Claude's server:
 
 ```go
 package main
@@ -93,7 +93,7 @@ type UserServer struct {
     repo UserRepository
 }
 
-// Logging interceptor — logs method, duration, and error code
+// Logging interceptor. logs method, duration, and error code
 func loggingInterceptor(logger *slog.Logger) grpc.UnaryServerInterceptor {
     return func(
         ctx context.Context,
@@ -119,7 +119,7 @@ func loggingInterceptor(logger *slog.Logger) grpc.UnaryServerInterceptor {
     }
 }
 
-// Validation interceptor — returns InvalidArgument for bad requests
+// Validation interceptor. returns InvalidArgument for bad requests
 func validationInterceptor() grpc.UnaryServerInterceptor {
     return func(
         ctx context.Context,
@@ -186,9 +186,9 @@ func main() {
 
 Claude used `grpc.ChainUnaryInterceptor`, proper gRPC status codes for each error type, and `log/slog` (the modern Go logger).
 
-## Task 2: HTTP Middleware Chain
+Task 2: HTTP Middleware Chain
 
-**Prompt:** "Write a middleware chain for an HTTP service with request ID injection, CORS, and rate limiting."
+Prompt: "Write a middleware chain for an HTTP service with request ID injection, CORS, and rate limiting."
 
 ```go
 // Claude's middleware (idiomatic Go)
@@ -293,13 +293,13 @@ func Chain(h http.Handler, middlewares ...func(http.Handler) http.Handler) http.
 
 Cursor and Copilot both produced middleware that worked but was less idiomatic: Cursor stored request IDs as strings in context (not typed keys), and Copilot's rate limiter stored limiters in a non-concurrent-safe map.
 
-## Task 3: Error Wrapping and Handling
+Task 3: Error Wrapping and Handling
 
 ```go
 // Prompt: "Show idiomatic Go error handling for a multi-layer
 // service (handler → service → repository)"
 
-// Claude's approach — all three layers
+// Claude's approach. all three layers
 package main
 
 import (
@@ -369,7 +369,7 @@ func (h *Handler) GetUserHandler(w http.ResponseWriter, r *http.Request) {
             }
             return
         }
-        // Unknown error — don't leak internals
+        // Unknown error. don't leak internals
         slog.ErrorContext(r.Context(), "unexpected error", "err", err)
         http.Error(w, "internal server error", http.StatusInternalServerError)
         return
@@ -378,7 +378,7 @@ func (h *Handler) GetUserHandler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-## Task 4: Table-Driven Tests
+Task 4: Table-Driven Tests
 
 ```go
 // Claude's test pattern for the UserService
@@ -440,12 +440,12 @@ func TestUserService_GetUser(t *testing.T) {
 }
 ```
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Writing Go GRPC Service Definitions](/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
 - [Best AI Tools for Mobile App Development 2026](/ai-tools-for-mobile-app-development-2026/)
 - [How to Use AI to Generate pytest Tests for Celery Task](/how-to-use-ai-to-generate-pytest-tests-for-celery-task-chain/)
 - [AI Tools for Microservice Architecture](/ai-tools-for-microservice-architecture-design/)
 - [Best AI Tools for Python Celery Task Queue Code Generation](/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

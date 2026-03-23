@@ -17,7 +17,7 @@ voice-checked: true
 
 Use AI coding assistants to generate Virtual Thread implementations using `Executors.newVirtualThreadPerTaskExecutor()` instead of traditional thread pools, and to implement structured concurrency with scoped values for context propagation. Virtual Threads represent a major change from thread-per-request models, and AI tools help developers avoid common pitfalls by understanding the distinction between blocking and non-blocking operations in the Virtual Thread context.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Virtual Threads Fundamentals](#understanding-virtual-threads-fundamentals)
 - [Structured Concurrency with Scoped Values](#structured-concurrency-with-scoped-values)
@@ -35,7 +35,7 @@ Use AI coding assistants to generate Virtual Thread implementations using `Execu
 - [Production Deployment Considerations](#production-deployment-considerations)
 - [Tool Recommendations by Use Case](#tool-recommendations-by-use-case)
 
-## Understanding Virtual Threads Fundamentals
+Understanding Virtual Threads Fundamentals
 
 Virtual Threads represent a major change from the thread-per-request model that has dominated Java web applications for years. A traditional servlet container might allocate a thread pool of 200 threads to handle requests, but with Virtual Threads, you can spawn millions of virtual threads because they are much lighter than platform threads.
 
@@ -52,9 +52,9 @@ Future<String> result = executor.submit(() -> {
 
 AI coding tools can generate this pattern while explaining why `newVirtualThreadPerTaskExecutor()` is preferred over thread pools for most I/O-bound workloads.
 
-## Structured Concurrency with Scoped Values
+Structured Concurrency with Scoped Values
 
-One of the significant advancements in Project Loom is structured concurrency, which ensures that related tasks complete together and errors propagate correctly. In 2026, AI assistants are particularly helpful in generating code that uses scoped values—another Loom feature that replaces ThreadLocal with a more efficient, cancelable alternative.
+One of the significant advancements in Project Loom is structured concurrency, which ensures that related tasks complete together and errors propagate correctly. In 2026, AI assistants are particularly helpful in generating code that uses scoped values, another Loom feature that replaces ThreadLocal with a more efficient, cancelable alternative.
 
 Consider this pattern for passing context across virtual thread boundaries:
 
@@ -74,7 +74,7 @@ void processRequest() {
 
 AI tools can generate this pattern while teaching developers when to use ScopedValue versus traditional ThreadLocal, highlighting the memory efficiency and proper cancellation behavior of ScopedValue.
 
-## Channel-Based Communication
+Channel-Based Communication
 
 Project Loom introduces `java.util.concurrent.Flow` improvements and channel-like patterns for communication between Virtual Threads. AI coding assistants help developers implement producer-consumer patterns using structured concurrency:
 
@@ -96,7 +96,7 @@ try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
 
 This pattern ensures both tasks complete before proceeding, and if one fails, the other is automatically cancelled. AI tools generate these patterns while explaining how `StructuredTaskScope` simplifies error handling and resource management.
 
-## Common Pitfalls AI Helps Avoid
+Common Pitfalls AI Helps Avoid
 
 Experienced developers know that Virtual Threads require different optimization strategies than platform threads. AI coding assistants help identify performance anti-patterns that could undermine the benefits of Virtual Threads.
 
@@ -130,7 +130,7 @@ executor.submit(() -> {
 });
 ```
 
-## Best Practices for AI-Assisted Virtual Thread Development
+Best Practices for AI-Assisted Virtual Thread Development
 
 When working with AI coding assistants in 2026, follow these practices for optimal Virtual Thread implementation.
 
@@ -142,13 +142,13 @@ Third, test with realistic load. AI-generated code might work perfectly in unit 
 
 Fourth, monitor memory usage. One of Virtual Threads' key benefits is reduced memory footprint, but incorrect usage patterns can negate this advantage. AI tools can suggest monitoring approaches that track Virtual Thread creation and memory consumption.
 
-## Future Outlook
+Future Outlook
 
 As Project Loom continues evolving, AI coding assistants will play an increasingly important role in helping developers adopt new patterns. The combination of AI assistance and Virtual Threads represents a powerful approach to building scalable Java applications in 2026 and beyond.
 
 The learning curve for Virtual Threads is manageable when you use AI tools as a teaching mechanism. Rather than memorizing every detail about structured concurrency and scoped values, developers can rely on AI assistants to generate correct implementations while explaining the reasoning behind each pattern.
 
-## Real-World Performance Comparison: Virtual Threads vs Thread Pools
+Real-World Performance Comparison: Virtual Threads vs Thread Pools
 
 Understanding when to use Virtual Threads requires performance data. Consider a typical REST API handling HTTP requests with database access:
 
@@ -192,7 +192,7 @@ For 10,000 concurrent operations:
 
 AI tools like Claude and Cursor understand these tradeoffs and generate appropriate solutions based on your load requirements.
 
-## Pinning and Blocking Detection
+Pinning and Blocking Detection
 
 Virtual Threads run on "carrier threads" managed by Java's scheduler. When you perform certain operations, Virtual Threads pin to their carrier thread, preventing other Virtual Threads from using it. This degrades performance and defeats the purpose of Virtual Threads.
 
@@ -224,7 +224,7 @@ performLockFreeWork();
 
 Claude Code, when asked about Virtual Thread best practices, proactively flags synchronized blocks and suggests alternatives. GitHub Copilot might generate synchronized code without warning, requiring developers to catch the issue during review.
 
-## Structured Concurrency: Nursery Pattern
+Structured Concurrency: Nursery Pattern
 
 Project Loom introduces `StructuredTaskScope`, which ensures all spawned tasks complete before continuing. This pattern prevents resource leaks and improves error handling:
 
@@ -263,7 +263,7 @@ executor.awaitTermination(5, TimeUnit.SECONDS);
 
 The difference: StructuredTaskScope guarantees all tasks complete together and handles cancellation automatically. The older approach requires manual shutdown and doesn't ensure proper cancellation.
 
-## Scoped Values in Depth
+Scoped Values in Depth
 
 ThreadLocal variables, previously the standard for request-scoped context, don't work well with Virtual Threads because context switches between Virtual Threads are so frequent.
 
@@ -302,14 +302,14 @@ void processRequest() {
 ```
 
 The advantages:
-1. No removal required—scope is automatic
-2. Immutable—prevents accidental mutations
-3. Better performance—no cleanup needed
+1. No removal required, scope is automatic
+2. Immutable, prevents accidental mutations
+3. Better performance, no cleanup needed
 4. Works naturally with Virtual Threads
 
 Claude Code generates the Scoped Value approach proactively. GitHub Copilot might suggest ThreadLocal patterns because they're more common in existing codebases.
 
-## Virtual Thread Pool Sizing
+Virtual Thread Pool Sizing
 
 Unlike traditional thread pools where sizing matters significantly (too small = bottleneck, too large = memory waste), Virtual Thread pools don't require careful sizing.
 
@@ -335,7 +335,7 @@ ExecutorService bounded = Executors.newThreadPerTaskExecutor(
 
 AI tools should explain this distinction. Copilot might generate unbounded executors. Claude Code typically includes sensible limits.
 
-## Testing Virtual Thread Code
+Testing Virtual Thread Code
 
 Testing Virtual Thread code requires different approaches than traditional threading:
 
@@ -362,7 +362,7 @@ void testVirtualThreadConcurrency() throws Exception {
 
 The test submits 10,000 tasks, something impossible with traditional thread pools. Claude Code generates this pattern correctly. Copilot's suggestions might use traditional fixed pools, limiting test concurrency.
 
-## Migration Path: From Thread Pools to Virtual Threads
+Migration Path: From Thread Pools to Virtual Threads
 
 Migrating existing applications to Virtual Threads requires systematic refactoring. AI tools help identify where changes are needed.
 
@@ -384,7 +384,7 @@ ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor();
 
 Claude Code can refactor entire codebases given sufficient context, generating all required changes coordinated. Cursor provides good inline suggestions for individual changes. Copilot handles local transformations but struggles with large-scale refactoring.
 
-## Production Deployment Considerations
+Production Deployment Considerations
 
 Running Virtual Thread code in production requires monitoring changes:
 
@@ -416,39 +416,39 @@ Monitor:
 
 AI tools should suggest these monitoring patterns proactively for production systems.
 
-## Tool Recommendations by Use Case
+Tool Recommendations by Use Case
 
-**GitHub Copilot**: Best for developers already familiar with Virtual Threads looking for quick suggestions. Good for syntax and boilerplate generation.
+GitHub Copilot: Best for developers already familiar with Virtual Threads looking for quick suggestions. Good for syntax and boilerplate generation.
 
-**Claude Code**: Best for refactoring and learning about Virtual Thread patterns. Excellent for explaining why certain patterns work better with Virtual Threads.
+Claude Code: Best for refactoring and learning about Virtual Thread patterns. Excellent for explaining why certain patterns work better with Virtual Threads.
 
-**Cursor**: Good middle ground offering both inline suggestions and conversational refinement.
+Cursor: Good middle ground offering both inline suggestions and conversational refinement.
 
 For teams migrating large codebases to Virtual Threads, Claude Code's understanding provides the most value despite higher per-interaction costs.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Loom offer a free tier?**
+Does Loom offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Loom's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Code Generation for Java Reactive Programming with Projec](/ai-code-generation-for-java-reactive-programming-with-projec/)
 - [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
@@ -456,11 +456,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Code Generation Quality for Java Spring Security](/ai-code-generation-quality-for-java-spring-security-configur/)
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-## Related Reading
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
+Related Reading
 
 - [AI Code Generation Quality for Java Spring Security](/ai-code-generation-quality-for-java-spring-security-configur/)
 - [AI Code Generation Quality for Java Pattern Matching](/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
 - [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

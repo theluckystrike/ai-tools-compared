@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI for Log Anomaly Detection"
-description: "Build AI-powered log anomaly detection with Claude, OpenAI embeddings, and Python — parse, cluster, and alert on unusual log patterns in production"
+description: "Build AI-powered log anomaly detection with Claude, OpenAI embeddings, and Python. parse, cluster, and alert on unusual log patterns in production"
 date: 2026-03-22
 author: theluckystrike
 permalink: how-to-use-ai-for-log-anomaly-detection
@@ -19,7 +19,7 @@ Production logs contain the answer to most incidents, but finding anomalies in 1
 
 This guide builds a practical log anomaly detector using OpenAI embeddings for pattern clustering and Claude for root cause analysis.
 
-## The Architecture
+The Architecture
 
 ```
 Raw Logs → Parser → Normalizer → Embedder
@@ -33,17 +33,17 @@ Raw Logs → Parser → Normalizer → Embedder
 
 Two phases: an offline baseline phase that learns normal patterns, and an online detection phase that scores new logs against that baseline.
 
-## Step 1: Log Parsing and Normalization
+Step 1: Log Parsing and Normalization
 
 Raw logs are noisy. Normalize before embedding to improve cluster quality:
 
 ```python
-# log_normalizer.py
+log_normalizer.py
 import re
 from dataclasses import dataclass
 from datetime import datetime
 
-# Patterns to replace with stable tokens
+Patterns to replace with stable tokens
 REPLACEMENTS = [
     (r'\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b', '<UUID>'),
     (r'\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b', '<IP>'),
@@ -92,12 +92,12 @@ def parse_log_line(line: str) -> ParsedLog:
     )
 ```
 
-## Step 2: Build a Baseline with Embeddings
+Step 2: Build a Baseline with Embeddings
 
 Embed a sample of normal logs and build a cluster centroid database:
 
 ```python
-# baseline_builder.py
+baseline_builder.py
 import numpy as np
 import json
 from openai import OpenAI
@@ -152,10 +152,10 @@ def save_baseline(baseline: dict, path: str = "log_baseline.json"):
     print(f"Baseline saved to {path}")
 ```
 
-## Step 3: Online Anomaly Detection
+Step 3: Online Anomaly Detection
 
 ```python
-# detector.py
+detector.py
 import numpy as np
 import json
 from openai import OpenAI
@@ -165,7 +165,7 @@ oai = OpenAI()
 anthropic = Anthropic()
 
 EMBED_MODEL = "text-embedding-3-small"
-ANOMALY_THRESHOLD = 0.35  # cosine distance — tune based on your logs
+ANOMALY_THRESHOLD = 0.35  # cosine distance. tune based on your logs
 
 class LogAnomalyDetector:
     def __init__(self, baseline_path: str = "log_baseline.json"):
@@ -265,10 +265,10 @@ Provide:
                     print(f"\n{analysis}\n{'='*60}")
 ```
 
-## Step 4: Wiring It Together
+Step 4: Wiring It Together
 
 ```python
-# run_detector.py
+run_detector.py
 import sys
 from detector import LogAnomalyDetector
 
@@ -326,19 +326,19 @@ if __name__ == "__main__":
     detector.process_stream(tail_log_file(log_path), alert_callback=slack_alert)
 ```
 
-## Tuning the Threshold
+Tuning the Threshold
 
 The 0.35 cosine distance threshold is a starting point. Calibrate it on your logs:
 
 ```python
-# tune_threshold.py
+tune_threshold.py
 import json
 import numpy as np
 from detector import LogAnomalyDetector
 
 detector = LogAnomalyDetector()
 
-# Load a labeled sample (100 normal, 20 known anomalies)
+Load a labeled sample (100 normal, 20 known anomalies)
 with open("labeled_logs.json") as f:
     labeled = json.load(f)
 
@@ -367,7 +367,7 @@ for threshold in thresholds:
 print(f"\nBest threshold: {best_threshold:.2f} (F1={best_f1:.2f})")
 ```
 
-## Cost Estimate
+Cost Estimate
 
 For 10,000 log lines/minute filtered to ~500 ERROR/WARN lines:
 - Embeddings: 500 * 100 tokens avg = 50k tokens/min = ~$0.01/min = ~$14/day
@@ -375,12 +375,12 @@ For 10,000 log lines/minute filtered to ~500 ERROR/WARN lines:
 
 Total: under $15/day for production anomaly detection with root cause analysis.
 
-## Related Articles
+Related Articles
 
 - [AI-Powered Log Analysis Tools for Debugging](/ai-log-analysis-tools-for-debugging/)
 - [Best AI Tools for Debugging Production Incidents](/best-ai-tools-for-debugging-production-incidents-with-log-analysis/)
 - [Claude vs GPT-4 for Shell Scripting 2026](/claude-vs-gpt4-for-shell-scripting-2026/)
 - [AI Powered Log Analysis Tools for Production Debugging](/ai-powered-log-analysis-tools-for-production-debugging-compa/)
 - [Effective Workflow for Using AI](/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

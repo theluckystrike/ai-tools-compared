@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Build AI-Powered CLI Tools 2026"
-description: "Build CLI tools with embedded AI using Python, Claude API, and Click — streaming output, tool use, context management, and packaging as a standalone binary"
+description: "Build CLI tools with embedded AI using Python, Claude API, and Click. streaming output, tool use, context management, and packaging as a standalone binary"
 date: 2026-03-22
 author: theluckystrike
 permalink: /how-to-build-ai-powered-cli-tools-2026/
@@ -15,29 +15,29 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-AI-powered CLI tools are useful for developer workflows: generating code from specs, summarizing logs, reviewing diffs, or automating repetitive tasks. This guide covers building a production-quality AI CLI with Python, Click, and the Anthropic SDK — including streaming output, tool use, conversation context management, and packaging.
+AI-powered CLI tools are useful for developer workflows: generating code from specs, summarizing logs, reviewing diffs, or automating repetitive tasks. This guide covers building a production-quality AI CLI with Python, Click, and the Anthropic SDK. including streaming output, tool use, conversation context management, and packaging.
 
-## Project Structure
+Project Structure
 
 ```
 ai-cli/
-├── src/
-│   └── aicli/
-│       ├── __init__.py
-│       ├── cli.py          # Click commands
-│       ├── client.py       # Anthropic client wrapper
-│       ├── tools.py        # Tool definitions for function calling
-│       └── context.py      # Conversation history management
-├── pyproject.toml
-└── tests/
+ src/
+    aicli/
+        __init__.py
+        cli.py          # Click commands
+        client.py       # Anthropic client wrapper
+        tools.py        # Tool definitions for function calling
+        context.py      # Conversation history management
+ pyproject.toml
+ tests/
 ```
 
 The `src` layout (as opposed to a flat layout) avoids import path issues when running tests and makes packaging with `hatchling` or `setuptools` straightforward. Keep the Anthropic client isolated in `client.py` so commands in `cli.py` stay focused on user-facing logic.
 
-## The Core Client
+The Core Client
 
 ```python
-# src/aicli/client.py
+src/aicli/client.py
 import os
 import sys
 from typing import Iterator
@@ -74,7 +74,7 @@ class AIClient:
         system: str = "",
         history: list[dict] | None = None,
     ) -> str:
-        """Non-streaming complete — returns full response."""
+        """Non-streaming complete. returns full response."""
         messages = list(history or [])
         messages.append({"role": "user", "content": prompt})
 
@@ -87,12 +87,12 @@ class AIClient:
         return response.content[0].text
 ```
 
-Use `stream_response` for interactive commands where the user is watching output. Use `complete` for commands that pipe output to another tool or write to a file — streaming to a pipe is harmless but adds complexity without benefit.
+Use `stream_response` for interactive commands where the user is watching output. Use `complete` for commands that pipe output to another tool or write to a file. streaming to a pipe is harmless but adds complexity without benefit.
 
-## Streaming CLI Output
+Streaming CLI Output
 
 ```python
-# src/aicli/cli.py
+src/aicli/cli.py
 import sys
 import click
 from pathlib import Path
@@ -202,19 +202,19 @@ def generate(prompt: str, output: str | None, lang: str):
 The `--no-markdown` flag is important for commands used in shell pipelines. When the output is piped to `grep`, `jq`, or another tool, Rich markdown rendering adds ANSI escape codes that break downstream processing. Check `sys.stdout.isatty()` if you want to auto-detect pipes:
 
 ```python
-# Auto-detect whether to render markdown
+Auto-detect whether to render markdown
 if markdown and sys.stdout.isatty():
  # render with Rich
 else:
  # plain text output
 ```
 
-## Conversation Context Management
+Conversation Context Management
 
 For multi-turn conversations, you need to manage history without exceeding the context window:
 
 ```python
-# src/aicli/context.py
+src/aicli/context.py
 import json
 from pathlib import Path
 from dataclasses import dataclass, asdict, field
@@ -285,12 +285,12 @@ def chat(session: str):
 
 Saving history to a JSON file lets sessions persist across invocations. Store the file in a per-project location (`.aicli-session.json` in the current directory) so different projects have separate contexts, or in `~/.aicli/sessions/` with a project hash for global sessions.
 
-## Adding Tool Use (Function Calling)
+Adding Tool Use (Function Calling)
 
-Tool use lets the CLI perform actions on behalf of the model — reading files, running shell commands, or querying APIs:
+Tool use lets the CLI perform actions on behalf of the model. reading files, running shell commands, or querying APIs:
 
 ```python
-# src/aicli/tools.py
+src/aicli/tools.py
 import subprocess
 from pathlib import Path
 
@@ -370,12 +370,12 @@ def complete_with_tools(self, prompt: str, system: str = "") -> str:
  messages.append({"role": "user", "content": tool_results})
 ```
 
-Tool use is powerful but adds latency — each tool call requires a round trip to the API. Use it for commands where the model needs to reason about actual file contents or command output, not for commands where you can provide the context upfront.
+Tool use is powerful but adds latency. each tool call requires a round trip to the API. Use it for commands where the model needs to reason about actual file contents or command output, not for commands where you can provide the context upfront.
 
-## Packaging as a Binary
+Packaging as a Binary
 
 ```toml
-# pyproject.toml
+pyproject.toml
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
@@ -399,15 +399,15 @@ Install globally with `pipx install .` for an isolated binary available as `aicl
 pip install pyinstaller
 pyinstaller --onefile --name aicli src/aicli/cli.py
 
-# Result: dist/aicli — a standalone executable, no Python required
+dist/aicli. a standalone executable, no Python required
 ```
 
 PyInstaller binaries are larger (30-80MB for a Python CLI with dependencies) but require no setup on target machines. For internal tools, `pipx` is simpler. For distribution to non-Python users, PyInstaller is the right choice.
 
-## Distribution via Homebrew
+Distribution via Homebrew
 
 ```ruby
-# Formula/aicli.rb
+Formula/aicli.rb
 class Aicli < Formula
  include Language::Python::Virtualenv
 
@@ -427,12 +427,12 @@ end
 
 For a Homebrew tap, generate the resource hashes with `brew extract` or `poet` (a tool that generates Homebrew resource blocks from PyPI packages). Keep the formula in a `homebrew-tap` repository under your GitHub organization and users install with `brew install yourorg/tap/aicli`.
 
-## Testing AI CLI Commands
+Testing AI CLI Commands
 
 Testing CLI tools that call the Anthropic API requires mocking the client:
 
 ```python
-# tests/test_cli.py
+tests/test_cli.py
 import pytest
 from click.testing import CliRunner
 from unittest.mock import patch, MagicMock
@@ -476,14 +476,14 @@ def test_ask_with_file(runner, tmp_path):
 
 Keep tests focused on CLI behavior (argument parsing, output format, exit codes) rather than AI response quality. Mock the Anthropic client to avoid API costs in CI and ensure deterministic test results.
 
-## Related Reading
+Related Reading
 
 - [Best AI Tools for Go CLI Tool Development](/best-ai-tools-for-go-cli-tool-development-with-cobra-viper-2/)
 - [How to Build AI-Powered Code Search](/how-to-build-ai-powered-code-search-2026/)
 - [How to Build AI-Powered Error Classifiers](/how-to-build-ai-powered-error-classifiers-2026/)
 - [How to Build an AI-Powered Code Linter](/how-to-build-ai-powered-code-linter/)
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Generating OpenAPI Specs](/best-ai-tools-for-generating-openapi-specs/)
 - [AI-Powered API Gateway Configuration Tools 2026](/ai-powered-api-gateway-configuration-tools-2026/)
@@ -491,6 +491,6 @@ Keep tests focused on CLI behavior (argument parsing, output format, exit codes)
 - [How to Create Custom System Prompt for ChatGPT API That](/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
 - [AI Tools for Creating System Context Diagrams Using C4](/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

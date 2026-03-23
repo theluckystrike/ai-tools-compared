@@ -15,11 +15,11 @@ voice-checked: true
 
 {% raw %}
 
-The Claude Agent SDK gives you a structured way to build agents that call tools, maintain conversation state, and hand off between sub-agents. Unlike raw API calls, the SDK handles the agentic loop — the back-and-forth between model responses and tool execution — so your code focuses on what the agent should do, not how to manage message history.
+The Claude Agent SDK gives you a structured way to build agents that call tools, maintain conversation state, and hand off between sub-agents. Unlike raw API calls, the SDK handles the agentic loop. the back-and-forth between model responses and tool execution. so your code focuses on what the agent should do, not how to manage message history.
 
 This guide walks through installation, a basic single-agent setup, tool definitions, multi-turn loops, and a realistic deployment pattern using sub-agents.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -29,11 +29,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Install ation and Project Setup
+Step 1: Install ation and Project Setup
 
 ```bash
 pip install anthropic
-# or with extras for async support
+or with extras for async support
 pip install "anthropic[async]"
 ```
 
@@ -41,10 +41,10 @@ Create a project layout:
 
 ```
 my-agent/
-├── agent.py
-├── tools.py
-├── main.py
-└── .env
+ agent.py
+ tools.py
+ main.py
+ .env
 ```
 
 Set your API key in `.env`:
@@ -53,12 +53,12 @@ Set your API key in `.env`:
 ANTHROPIC_API_KEY=sk-ant-...
 ```
 
-### Step 2: Defining Tools
+Step 2: Defining Tools
 
-The SDK uses JSON Schema to describe tools. Each tool needs a `name`, `description`, and `input_schema`. Precise descriptions matter more than you might expect — the model reads them to decide when to call the tool.
+The SDK uses JSON Schema to describe tools. Each tool needs a `name`, `description`, and `input_schema`. Precise descriptions matter more than you might expect. the model reads them to decide when to call the tool.
 
 ```python
-# tools.py
+tools.py
 import subprocess
 import json
 
@@ -125,19 +125,19 @@ def read_file(path: str) -> str:
 
 def dispatch_tool(name: str, inputs: dict) -> str:
     if name == "run_shell":
-        return run_shell(**inputs)
+        return run_shell(inputs)
     elif name == "read_file":
-        return read_file(**inputs)
+        return read_file(inputs)
     else:
         return f"ERROR: unknown tool {name}"
 ```
 
-### Step 3: The Agentic Loop
+Step 3: The Agentic Loop
 
 The core pattern is a while loop that sends messages, checks for tool calls in the response, executes them, appends results, and repeats until the model returns a final text response with no pending tool calls.
 
 ```python
-# agent.py
+agent.py
 import anthropic
 from tools import TOOLS, dispatch_tool
 
@@ -189,10 +189,10 @@ def run_agent(task: str, max_turns: int = 20) -> str:
     return f"Agent stopped after {max_turns} turns without completing."
 ```
 
-### Step 4: Run the Agent
+Step 4: Run the Agent
 
 ```python
-# main.py
+main.py
 import os
 from dotenv import load_dotenv
 from agent import run_agent
@@ -215,12 +215,12 @@ Run it:
 python main.py
 ```
 
-### Step 5: Adding a Sub-Agent Pattern
+Step 5: Adding a Sub-Agent Pattern
 
 For complex tasks, split work across specialized sub-agents. A coordinator agent decomposes the goal and spawns sub-agents with narrower scopes.
 
 ```python
-# coordinator.py
+coordinator.py
 import anthropic
 from tools import TOOLS, dispatch_tool
 
@@ -301,7 +301,7 @@ def coordinate(goal: str) -> str:
     return synthesis.content[0].text
 ```
 
-### Step 6: Streaming Responses
+Step 6: Streaming Responses
 
 For user-facing agents, stream output so users see progress in real time:
 
@@ -326,7 +326,7 @@ def run_agent_streaming(task: str):
     return final
 ```
 
-### Step 7: Error Handling and Retries
+Step 7: Error Handling and Retries
 
 Production agents need retry logic around API calls and tool failures:
 
@@ -340,7 +340,7 @@ def safe_api_call(fn, retries=3, backoff=2.0):
             return fn()
         except RateLimitError:
             if attempt < retries - 1:
-                time.sleep(backoff * (2 ** attempt))
+                time.sleep(backoff * (2  attempt))
             else:
                 raise
         except APIStatusError as e:
@@ -352,7 +352,7 @@ def safe_api_call(fn, retries=3, backoff=2.0):
 
 Wrap your `client.messages.create(...)` calls inside `safe_api_call(lambda: ...)`.
 
-### Step 8: Token Budget Management
+Step 8: Token Budget Management
 
 Long agentic loops accumulate tokens fast. Track usage and bail out before hitting limits:
 
@@ -361,16 +361,16 @@ MAX_INPUT_TOKENS = 150_000  # leave headroom under 200k context
 
 total_input = 0
 
-# Inside the loop, after each response:
+Inside the loop, after each response:
 total_input += response.usage.input_tokens
 if total_input > MAX_INPUT_TOKENS:
     return "Agent terminated: approaching context limit. Partial result: ..."
 ```
 
-### Step 9: Deploy as a FastAPI Service
+Step 9: Deploy as a FastAPI Service
 
 ```python
-# server.py
+server.py
 from fastapi import FastAPI
 from pydantic import BaseModel
 from agent import run_agent
@@ -401,59 +401,59 @@ curl -X POST http://localhost:8080/run \
   -d '{"task": "List the 5 largest files in /tmp"}'
 ```
 
-### Step 10: Key Decisions When Building Agents
+Step 10: Key Decisions When Building Agents
 
-**Model selection**: Use Opus for planning and final synthesis; use Sonnet for sub-task execution. This cuts costs by 4-5x on long pipelines without meaningful quality loss on well-scoped tasks.
+Model selection: Use Opus for planning and final synthesis; use Sonnet for sub-task execution. This cuts costs by 4-5x on long pipelines without meaningful quality loss on well-scoped tasks.
 
-**Tool granularity**: Prefer fewer, broader tools over many narrow ones. A single `run_shell` tool beats 10 separate tools for ls, cat, git, etc. The model composes commands naturally.
+Tool granularity: Prefer fewer, broader tools over many narrow ones. A single `run_shell` tool beats 10 separate tools for ls, cat, git, etc. The model composes commands naturally.
 
-**System prompt length**: Keep system prompts under 500 words. Long prompts dilute attention and slow the model's tool-use decisions. Put task-specific context in the user message instead.
+System prompt length: Keep system prompts under 500 words. Long prompts dilute attention and slow the model's tool-use decisions. Put task-specific context in the user message instead.
 
-**Max turns**: Set it low in development (5-8) to catch infinite loops early. Raise it only after validating the agent completes typical tasks within budget.
+Max turns: Set it low in development (5-8) to catch infinite loops early. Raise it only after validating the agent completes typical tasks within budget.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Articles
+Related Articles
 
 - [How to Build Custom MCP Servers for Claude](/how-to-build-custom-mcp-servers-for-claude)
 - [Claude Code SDK Testing Workflow Guide](/claude-code-sdk-testing-workflow-guide/)
 - [Claude Code API Client TypeScript Guide: Build Type-Safe](/claude-code-api-client-typescript-guide/)
 - [How to Use the Claude API for Automated Code Review](/how-to-use-claude-api-for-automated-code-review/)
 - [Best AI Tools for Support Agent Assist](/best-ai-tools-for-support-agent-assist/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to build ai agents with claude agent sdk?**
+How long does it take to build ai agents with claude agent sdk?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Will this work with my existing CI/CD pipeline?**
+Will this work with my existing CI/CD pipeline?
 
 The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ. You may need to adapt file paths, environment variable names, and trigger conditions to match your pipeline tool. The underlying workflow logic stays the same.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 {% endraw %}

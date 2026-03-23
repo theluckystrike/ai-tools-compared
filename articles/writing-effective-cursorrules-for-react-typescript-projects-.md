@@ -17,7 +17,7 @@ voice-checked: true
 
 Write CursorRules for React TypeScript projects by specifying TypeScript configuration (strict mode, jsx setting, module resolution), React hook rules (exhaustiveDeps warnings), and component patterns (functional/arrow function preference). These rules ensure Cursor AI generates code following your team's established conventions for component composition, prop typing, hook patterns, and state management approaches.
 
-## Table of Contents
+Table of Contents
 
 - [Why CursorRules Matter for React TypeScript](#why-cursorrules-matter-for-react-typescript)
 - [Setting Up Basic React TypeScript Rules](#setting-up-basic-react-typescript-rules)
@@ -34,7 +34,7 @@ Write CursorRules for React TypeScript projects by specifying TypeScript configu
 - [Imports](#imports)
 - [Testing](#testing)
 
-## Why CursorRules Matter for React TypeScript
+Why CursorRules Matter for React TypeScript
 
 When working with React and TypeScript, projects often develop unique patterns around component composition, prop typing, and state management. Without explicit guidance, AI assistants may generate code that conflicts with your established conventions. CursorRules solve this by providing persistent context about your project's specific requirements.
 
@@ -42,12 +42,12 @@ A well-structured CursorRules file acts as documentation and enforcement mechani
 
 For React TypeScript projects in particular, this matters because the surface area of valid code is large. You can write a React component as a function declaration, an arrow function, a class component, or using `React.memo`. TypeScript props can use `interface`, `type`, or inline annotations. State management can use `useState`, `useReducer`, Zustand, Redux, Jotai, or Recoil. CursorRules let you narrow this space to what your team actually uses.
 
-## Setting Up Basic React TypeScript Rules
+Setting Up Basic React TypeScript Rules
 
 Start with project-specific configuration details that affect every file:
 
 ```yaml
-# .cursorrules
+.cursorrules
 {
   "typescript": {
     "strict": true,
@@ -68,11 +68,11 @@ This establishes the foundation. Next, address component structure specifically.
 
 The `moduleResolution: "bundler"` setting matches the default for Vite and other modern bundlers. If your project uses `node16` or `nodenext` (common in Node.js libraries), update this value accordingly. Cursor will use these settings to infer path resolution behavior when generating imports.
 
-## Component Pattern Rules
+Component Pattern Rules
 
 React TypeScript projects benefit from consistent component patterns. Define how components should be written, including file organization, naming conventions, and typing approaches.
 
-### Functional Components with Explicit Props
+Functional Components with Explicit Props
 
 For projects using explicit prop interfaces:
 
@@ -116,7 +116,7 @@ Export named exports, not default exports, for all components.
 
 Consistent naming makes codebase navigation faster and eliminates debates about conventions during code review.
 
-### Handling Compound Components
+Handling Compound Components
 
 Compound components require special consideration in your rules. These patterns where a parent component manages state while child components render content need explicit guidance:
 
@@ -161,7 +161,7 @@ function Tab({ index, children }: { index: number; children: React.ReactNode }) 
 
 Specify that compound components should use Context for state sharing, with clear separation between parent and child files.
 
-## Custom Hooks Patterns
+Custom Hooks Patterns
 
 Custom hooks deserve their own section in CursorRules. Define naming conventions, return types, and error handling approaches:
 
@@ -207,14 +207,14 @@ Rules should specify that hooks must start with "use", handle cleanup properly, 
 Custom hooks go in src/hooks/. Each hook lives in its own file named useHookName.ts.
 Hooks that fetch data must handle loading, error, and data states.
 Hooks must clean up effects (abort controllers, event listeners, timers) in the useEffect return function.
-Never call a hook conditionally — enforce React's rules of hooks.
+Never call a hook conditionally. enforce React's rules of hooks.
 ```
 
-## State Management Conventions
+State Management Conventions
 
 For projects using different state management solutions, include specific rules for each:
 
-### React Context for Global State
+React Context for Global State
 
 ```typescript
 // AuthContext.tsx
@@ -264,7 +264,7 @@ export function useAuth() {
 
 Specify that context should always include a custom hook with runtime validation, typed values properly, and include proper cleanup where needed.
 
-### Zustand Store Conventions
+Zustand Store Conventions
 
 If your project uses Zustand, your CursorRules should specify the store file structure and typing pattern:
 
@@ -292,7 +292,7 @@ export const useUserStore = create<UserState>((set) => ({
 
 Add a rule specifying that Zustand stores are named `useEntityStore`, live in `src/stores/`, and that selectors are extracted into separate hooks to avoid unnecessary re-renders.
 
-## Import Organization
+Import Organization
 
 Consistent import ordering improves readability and reduces merge conflicts:
 
@@ -323,9 +323,9 @@ import { formatDate } from '@/utils';
 import styles from './UserProfile.module.css';
 ```
 
-Define the exact import order and enforce separation between type and value imports. Note that tools like `eslint-plugin-import` and `@typescript-eslint/consistent-type-imports` can enforce import ordering automatically—reference these in your CursorRules so Cursor generates code that will pass your linter on the first attempt.
+Define the exact import order and enforce separation between type and value imports. Note that tools like `eslint-plugin-import` and `@typescript-eslint/consistent-type-imports` can enforce import ordering automatically, reference these in your CursorRules so Cursor generates code that will pass your linter on the first attempt.
 
-## Testing Considerations
+Testing Considerations
 
 CursorRules should also address testing patterns. Specify your testing library (Vitest vs Jest, React Testing Library vs Enzyme) and the coverage expectations:
 
@@ -367,72 +367,72 @@ Use vi.fn() for mocks, not jest.fn(). Use screen queries, not container queries.
 Test user behavior, not implementation details. Do not test internal state directly.
 ```
 
-## Putting It All Together: A Complete CursorRules Template
+Putting It All Together: A Complete CursorRules Template
 
 Here is a complete starting template for a React TypeScript project using Vite, Zustand, and React Query:
 
 ```
-# React TypeScript Project Rules
+React TypeScript Project Rules
 
-## TypeScript
+TypeScript
 - strict: true, no implicit any
 - Use interface for component props, type for unions and utility types
 - Prefer unknown over any when typing external data
 
-## Components
+Components
 - Functional components only, no class components
 - Named exports only, no default exports
 - Props interface named ComponentNameProps
 - File named ComponentName.tsx in src/components/
 
-## Hooks
+Hooks
 - Custom hooks in src/hooks/useHookName.ts
 - Always handle loading, error, data states in data fetching hooks
 - Clean up all side effects
 
-## State Management
+State Management
 - Local state: useState or useReducer
 - Global state: Zustand stores in src/stores/
 - Server state: React Query (useQuery, useMutation)
 
-## Imports
+Imports
 - Group: React, external libs, internal components, hooks, types, utils, styles
 - Use type imports for type-only imports
 
-## Testing
+Testing
 - Vitest + React Testing Library
 - Test files colocate with source files
 - No testing implementation details
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers building React TypeScript applications who want Cursor AI to generate code that matches their team's established patterns, rather than generic boilerplate.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Check Cursor's changelog for the latest `.cursorrules` capabilities, as the format and supported options change across versions.
 
-**Does Cursor offer a free tier?**
+Does Cursor offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Cursor's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Copy the complete CursorRules template from this article into a `.cursorrules` file at your project root. Open a component file, trigger a generation, and see how it changes the output. Refine the rules based on what Cursor gets wrong in that first generation.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
-CursorRules are plain text—there is no special syntax to learn beyond what your project already uses. The main challenge is identifying which rules matter most for your codebase. Start with component patterns and import ordering, then add state management and testing rules once those are working.
+CursorRules are plain text, there is no special syntax to learn beyond what your project already uses. The main challenge is identifying which rules matter most for your codebase. Start with component patterns and import ordering, then add state management and testing rules once those are working.
 
-## Related Articles
+Related Articles
 
 - [Writing CursorRules for Golang Projects with Specific](/writing-cursorrules-for-golang-projects-with-specific-concur/)
 - [How to Create .cursorrules That Enforce Your Teams React](/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
 - [AI Coding Assistant Comparison for React Component](/ai-coding-assistant-comparison-for-react-component-generatio/)
 - [Cursor vs Windsurf for React Development 2026](/cursor-vs-windsurf-for-react-development-2026/)
 - [Create CursorRules That Teach Cursor Your Team's State](/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

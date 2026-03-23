@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Nginx Configurations"
-description: "Compare Claude, Copilot, and Cursor for generating nginx configs — reverse proxy, SSL termination, rate limiting, caching, and security headers"
+description: "Compare Claude, Copilot, and Cursor for generating nginx configs. reverse proxy, SSL termination, rate limiting, caching, and security headers"
 date: 2026-03-22
 author: theluckystrike
 permalink: ai-tools-for-nginx-configuration
@@ -17,7 +17,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Nginx configuration has a deceptively simple syntax but a long tail of security and performance pitfalls: misconfigured SSL ciphers, missing security headers, rate limiting that blocks legitimate traffic, and proxy settings that leak internal server details. AI tools that generate nginx configs without understanding the security implications can introduce vulnerabilities.
 
-## Table of Contents
+Table of Contents
 
 - [The Security Baseline Test](#the-security-baseline-test)
 - [Task 2: Caching Layer Configuration](#task-2-caching-layer-configuration)
@@ -29,15 +29,15 @@ Nginx configuration has a deceptively simple syntax but a long tail of security 
 - [Practical Advice for Using AI with Nginx](#practical-advice-for-using-ai-with-nginx)
 - [Related Reading](#related-reading)
 
-## The Security Baseline Test
+The Security Baseline Test
 
 Every AI tool was given this prompt:
 > "Write a nginx configuration for a Node.js app running on port 3000, with HTTPS, Let's Encrypt SSL, and production security settings."
 
-**Copilot's output (selected security issues):**
+Copilot's output (selected security issues):
 
 ```nginx
-# Copilot — missing critical security headers
+Copilot. missing critical security headers
 server {
     listen 443 ssl;
     ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
@@ -51,21 +51,21 @@ server {
 }
 ```
 
-**Claude's complete configuration:**
+Claude's complete configuration:
 
 ```nginx
-# /etc/nginx/sites-available/myapp
+/etc/nginx/sites-available/myapp
 
-# Rate limiting zone — 10 requests/second per IP
+Rate limiting zone. 10 requests/second per IP
 limit_req_zone $binary_remote_addr zone=api:10m rate=10r/s;
 
-# Upstream definition for health checks
+Upstream definition for health checks
 upstream nodejs_app {
     server 127.0.0.1:3000;
     keepalive 32;
 }
 
-# Redirect HTTP to HTTPS
+Redirect HTTP to HTTPS
 server {
     listen 80;
     listen [::]:80;
@@ -81,7 +81,7 @@ server {
     }
 }
 
-# HTTPS server
+HTTPS server
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
@@ -184,12 +184,12 @@ server {
 }
 ```
 
-## Task 2: Caching Layer Configuration
+Task 2: Caching Layer Configuration
 
-**Prompt:** "Add nginx caching for API responses with cache invalidation support."
+Prompt: "Add nginx caching for API responses with cache invalidation support."
 
 ```nginx
-# Claude's caching configuration
+Claude's caching configuration
 http {
     # Cache storage location and size
     proxy_cache_path /var/cache/nginx/api
@@ -238,10 +238,10 @@ http {
 }
 ```
 
-## Task 3: Load Balancing Configuration
+Task 3: Load Balancing Configuration
 
 ```nginx
-# Claude's load balancer with health checks
+Claude's load balancer with health checks
 upstream backend_pool {
     # Least connections algorithm for uneven request distribution
     least_conn;
@@ -250,7 +250,7 @@ upstream backend_pool {
     server 10.0.1.11:3000 weight=2 max_fails=3 fail_timeout=30s;
     server 10.0.1.12:3000 weight=1 max_fails=3 fail_timeout=30s;
 
-    # Backup server — only used if all primary servers are down
+    # Backup server. only used if all primary servers are down
     server 10.0.1.20:3000 backup;
 
     keepalive 32;
@@ -272,10 +272,10 @@ server {
 }
 ```
 
-## Task 4: Security-Hardened API Gateway
+Task 4: Security-Hardened API Gateway
 
 ```nginx
-# Claude's API gateway with auth and injection protection
+Claude's API gateway with auth and injection protection
 server {
     # Block common injection patterns in query strings
     set $block_query 0;
@@ -316,12 +316,12 @@ server {
 }
 ```
 
-## Task 5: Geo-Blocking and Bot Mitigation
+Task 5: Geo-Blocking and Bot Mitigation
 
 One scenario where Copilot and Cursor both produced incomplete output was geo-blocking combined with bot mitigation. Claude generated a complete working block using the MaxMind GeoIP2 module:
 
 ```nginx
-# Requires: ngx_http_geoip2_module and MaxMind GeoLite2-Country database
+Requires: ngx_http_geoip2_module and MaxMind GeoLite2-Country database
 geoip2 /usr/share/GeoIP/GeoLite2-Country.mmdb {
     $geoip2_data_country_code country iso_code;
 }
@@ -343,7 +343,7 @@ server {
         return 403 "Service not available in your region";
     }
 
-    # Additional bot fingerprinting — real browsers send Accept-Language
+    # Additional bot fingerprinting. real browsers send Accept-Language
     # Known scrapers often omit it
     set $bot_score 0;
     if ($http_user_agent = "") { set $bot_score 1; }
@@ -359,9 +359,9 @@ server {
 }
 ```
 
-This configuration demonstrates an important difference between tools: Claude explained that the `if` directive is safe here because it is used only to set variables and return responses — the two contexts where nginx documentation permits `if` at the server level. Copilot generated a syntactically similar block but omitted the explanation, leaving engineers unaware of the known footgun with `if` inside location blocks.
+This configuration demonstrates an important difference between tools: Claude explained that the `if` directive is safe here because it is used only to set variables and return responses. the two contexts where nginx documentation permits `if` at the server level. Copilot generated a syntactically similar block but omitted the explanation, leaving engineers unaware of the known footgun with `if` inside location blocks.
 
-## Why Security Context Matters More Than Syntax
+Why Security Context Matters More Than Syntax
 
 All three tools can write syntactically valid nginx config. The differentiator is whether the tool understands the security implications of each directive. A quick evaluation checklist:
 
@@ -377,7 +377,7 @@ All three tools can write syntactically valid nginx config. The differentiator i
 
 The pattern is consistent: Claude tends to generate configs that would pass a Mozilla Observatory scan on the first attempt. The others require one or two review cycles to reach the same standard.
 
-## Tool Comparison
+Tool Comparison
 
 | Feature | Claude | Copilot | Cursor |
 |---|---|---|---|
@@ -390,7 +390,7 @@ The pattern is consistent: Claude tends to generate configs that would pass a Mo
 | Load balancing | Health checks, retries | Round-robin only | Partial |
 | Geo-blocking | Full GeoIP2 example | Incomplete | Not attempted |
 
-## Practical Advice for Using AI with Nginx
+Practical Advice for Using AI with Nginx
 
 Regardless of which tool you use, apply these steps before any AI-generated nginx config reaches production:
 
@@ -398,9 +398,9 @@ Regardless of which tool you use, apply these steps before any AI-generated ngin
 2. Test SSL with `testssl.sh` or the Qualys SSL Labs scanner
 3. Verify security headers with Mozilla Observatory
 4. Load test rate limiting with `wrk` or `vegeta` to confirm burst behaviour
-5. Check that `proxy_next_upstream` settings match your upstream's idempotency guarantees — retrying a POST on a payment endpoint is dangerous
+5. Check that `proxy_next_upstream` settings match your upstream's idempotency guarantees. retrying a POST on a payment endpoint is dangerous
 
-## Related Reading
+Related Reading
 
 - [Best AI Tools for Writing Nginx Configs](/best-ai-tools-for-writing-nginx-configs-2026/)
 - [AI Tools for Generating Nginx and Caddy Reverse Proxy Configs](/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
@@ -409,7 +409,7 @@ Regardless of which tool you use, apply these steps before any AI-generated ngin
 
 ---
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Generating Nginx Configuration Files 2026](/ai-tools-for-generating-nginx-configuration-files-2026/)
 - [Best AI Tools for Writing Nginx Configs in 2026](/best-ai-tools-for-writing-nginx-configs-2026/---)
@@ -417,5 +417,5 @@ Regardless of which tool you use, apply these steps before any AI-generated ngin
 - [AI Tools for API Security Testing](/ai-tools-for-api-security-testing/)
 - [Writing Custom Instructions for AI Tools That Enforce Your](/writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

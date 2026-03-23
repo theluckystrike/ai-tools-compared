@@ -15,21 +15,21 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-Writing OpenAPI/Swagger documentation by hand is a maintenance burden — it drifts from the actual API. AI tools can generate accurate OpenAPI specs from existing route handlers, models, and validation schemas, then keep them in sync as the codebase changes. This guide covers automated Swagger doc generation pipelines using Claude and GPT-4.
+Writing OpenAPI/Swagger documentation by hand is a maintenance burden. it drifts from the actual API. AI tools can generate accurate OpenAPI specs from existing route handlers, models, and validation schemas, then keep them in sync as the codebase changes. This guide covers automated Swagger doc generation pipelines using Claude and GPT-4.
 
-## The Problem with Manual Swagger Docs
+The Problem with Manual Swagger Docs
 
 Manual OpenAPI specs go stale. A route gets a new query parameter, someone forgets to update the spec. AI-assisted documentation either generates the spec from code (snapshot approach) or runs as a CI check that detects drift.
 
 The three automation levels:
 
-1. **One-shot generation** — paste code, get OpenAPI YAML
-2. **Script-based extraction** — parse routes/models programmatically, send to AI for spec generation
-3. **CI drift detection** — AI compares spec to current code on each PR
+1. One-shot generation. paste code, get OpenAPI YAML
+2. Script-based extraction. parse routes/models programmatically, send to AI for spec generation
+3. CI drift detection. AI compares spec to current code on each PR
 
-## Level 1: One-Shot from Express Routes
+Level 1: One-Shot from Express Routes
 
-**Prompt to Claude:**
+Prompt to Claude:
 
 ```
 Generate a complete OpenAPI 3.1 spec for these Express.js route handlers.
@@ -39,7 +39,7 @@ Format as YAML.
 [paste route handlers]
 ```
 
-**Express handlers:**
+Express handlers:
 
 ```javascript
 // routes/users.js
@@ -69,7 +69,7 @@ router.post('/users', async (req, res) => {
 });
 ```
 
-**Claude's generated OpenAPI spec:**
+Claude's generated OpenAPI spec:
 
 ```yaml
 openapi: 3.1.0
@@ -205,12 +205,12 @@ components:
                 type: string
 ```
 
-## Level 2: Automated Pipeline Script
+Level 2: Automated Pipeline Script
 
 Script that extracts all routes and sends them to Claude in bulk:
 
 ```python
-# swagger_generator.py
+swagger_generator.py
 import ast
 import os
 import anthropic
@@ -263,7 +263,7 @@ def generate_openapi_spec(source_code: str, api_title: str) -> str:
 
 
 def validate_openapi_yaml(spec_yaml: str) -> bool:
-    """Basic validation — check required top-level keys."""
+    """Basic validation. check required top-level keys."""
     try:
         spec = yaml.safe_load(spec_yaml)
         required = {'openapi', 'info', 'paths'}
@@ -293,12 +293,12 @@ if __name__ == "__main__":
         sys.exit(1)
 ```
 
-## FastAPI: Augmenting Auto-Generated Docs
+FastAPI: Augmenting Auto-Generated Docs
 
 FastAPI auto-generates OpenAPI from type hints, but the descriptions are empty. Use Claude to enrich them:
 
 ```python
-# enrich_fastapi_docs.py
+enrich_fastapi_docs.py
 import json
 import anthropic
 
@@ -326,7 +326,7 @@ Return the complete JSON.
     return json.loads(message.content[0].text)
 
 
-# Usage with FastAPI
+Usage with FastAPI
 from fastapi import FastAPI
 import uvicorn
 
@@ -339,12 +339,12 @@ async def enrich_docs():
     app.openapi_schema = enriched
 ```
 
-## Spring Boot: Extracting from Controllers
+Spring Boot: Extracting from Controllers
 
 Spring Boot's `@RestController` annotations contain more structured information than Express route handlers. Claude can parse the Java code and produce accurate specs:
 
 ```python
-# spring_swagger_generator.py
+spring_swagger_generator.py
 import os
 import re
 import anthropic
@@ -397,20 +397,20 @@ if __name__ == "__main__":
 
 Claude handles Spring's annotation-heavy style well. It correctly maps `@PathVariable String id` to an OpenAPI path parameter and `@RequestBody @Valid CreateUserDto dto` to a required request body with schema derived from the DTO fields.
 
-## Comparing Claude vs GPT-4 for Spec Generation
+Comparing Claude vs GPT-4 for Spec Generation
 
 Both tools produce valid OpenAPI YAML, but they differ in two ways:
 
-**Schema completeness:** Claude tends to infer more response schemas from variable names and comments. If a route returns `{ id, email, createdAt }`, Claude creates a named schema `UserResponse` in `components/schemas`. GPT-4 sometimes inlines the schema directly in the path, which works but reduces reusability.
+Schema completeness: Claude tends to infer more response schemas from variable names and comments. If a route returns `{ id, email, createdAt }`, Claude creates a named schema `UserResponse` in `components/schemas`. GPT-4 sometimes inlines the schema directly in the path, which works but reduces reusability.
 
-**Error response handling:** Claude consistently generates 401, 403, 404, and 500 responses based on middleware patterns it sees in the code (`authenticate`, `authorize`, etc.). GPT-4 often only generates the happy-path 200/201 unless you explicitly ask for error responses in the prompt.
+Error response handling: Claude consistently generates 401, 403, 404, and 500 responses based on middleware patterns it sees in the code (`authenticate`, `authorize`, etc.). GPT-4 often only generates the happy-path 200/201 unless you explicitly ask for error responses in the prompt.
 
-**Prompt tip:** Add "Include all error response schemas (400, 401, 403, 404, 422, 500) and use $ref for reusable error schemas" to get GPT-4 closer to Claude's default output quality.
+Prompt tip: Add "Include all error response schemas (400, 401, 403, 404, 422, 500) and use $ref for reusable error schemas" to get GPT-4 closer to Claude's default output quality.
 
-## CI Drift Detection
+CI Drift Detection
 
 ```yaml
-# .github/workflows/swagger-drift.yml
+.github/workflows/swagger-drift.yml
 name: Check Swagger Drift
 on: [pull_request]
 
@@ -428,19 +428,19 @@ jobs:
           python compare_specs.py openapi.yaml /tmp/generated-spec.yaml
 ```
 
-The `compare_specs.py` script can use a simple YAML diff or send both specs to Claude with the prompt: "List all breaking changes between spec A and spec B. A breaking change is a removed path, removed parameter, or changed response schema that would break existing clients." This catches regressions that naive string diffs miss — like renaming a field or changing a parameter from optional to required.
+The `compare_specs.py` script can use a simple YAML diff or send both specs to Claude with the prompt: "List all breaking changes between spec A and spec B. A breaking change is a removed path, removed parameter, or changed response schema that would break existing clients." This catches regressions that naive string diffs miss. like renaming a field or changing a parameter from optional to required.
 
-## Keeping Specs Current Over Time
+Keeping Specs Current Over Time
 
 One-shot generation solves the bootstrap problem. The harder challenge is keeping the spec accurate as routes change. The most reliable pattern:
 
-1. **Store the spec in version control** — treat `openapi.yaml` like production code, not generated output
-2. **Generate a "shadow spec" in CI** — regenerate from current code on every PR
-3. **Diff and alert** — fail the build if the shadow spec has paths not in the committed spec, or if committed spec has paths not in the code
+1. Store the spec in version control. treat `openapi.yaml` like production code, not generated output
+2. Generate a "shadow spec" in CI. regenerate from current code on every PR
+3. Diff and alert. fail the build if the shadow spec has paths not in the committed spec, or if committed spec has paths not in the code
 
 This catches both directions of drift: code added without spec updates, and spec updates without corresponding code changes.
 
-## Related Reading
+Related Reading
 
 - [Best AI Tools for Writing Swagger API Documentation 2026](/best-ai-tools-for-writing-swagger-api-documentation-2026/)
 - [How to Build AI-Powered API Diff Tools](/build-ai-powered-api-diff-tools/)
@@ -449,6 +449,6 @@ This catches both directions of drift: code added without spec updates, and spec
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

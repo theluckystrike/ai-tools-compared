@@ -18,7 +18,7 @@ voice-checked: true
 
 Model Context Protocol (MCP) has become the standard for connecting AI assistants to external data sources. If you're building AI-powered workflows that need access to Jira tickets, MCP provides a clean, maintainable approach to this integration. This guide walks through setting up MCP to feed Jira ticket context to your AI tools.
 
-## Table of Contents
+Table of Contents
 
 - [Why Use MCP for Jira Integration](#why-use-mcp-for-jira-integration)
 - [Prerequisites](#prerequisites)
@@ -30,7 +30,7 @@ Model Context Protocol (MCP) has become the standard for connecting AI assistant
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Extending the Integration](#extending-the-integration)
 
-## Why Use MCP for Jira Integration
+Why Use MCP for Jira Integration
 
 MCP defines a standardized way for AI applications to communicate with external services. Instead of hardcoding Jira API calls into your AI prompts or building custom integrations, MCP lets you define resources and tools that any compatible AI assistant can use.
 
@@ -46,7 +46,7 @@ The key benefits include:
 
 Before MCP, the typical approach was to copy-paste Jira ticket descriptions into a chat window. That breaks down at scale: you forget context, miss linked issues, and cannot include rich comment threads. MCP solves this by making Jira data a first-class resource that the AI can query on demand during a conversation.
 
-## Prerequisites
+Prerequisites
 
 Before starting, ensure you have:
 
@@ -58,7 +58,7 @@ Before starting, ensure you have:
 
 You'll also need a Jira API token. For Jira Cloud, generate one at [id.atlassian.com/manage-profile/security/api-tokens](https://id.atlassian.com/manage-profile/security/api-tokens).
 
-## Step 1: Install the Jira MCP Server
+Step 1: Install the Jira MCP Server
 
 The official MCP servers repository includes a Jira integration. Install it using npm:
 
@@ -77,11 +77,11 @@ npm run build
 
 For teams with strict dependency policies, the local clone approach is better: it pins the exact server version and lets you audit the source code before it runs with your Jira credentials. You can also vendor the build artifacts into your team's shared tooling repo.
 
-## Step 2: Configure MCP for Your Jira Instance
+Step 2: Configure MCP for Your Jira Instance
 
 Create a configuration file for the Jira MCP server. The location depends on your AI tool:
 
-**For Claude Desktop** (macOS):
+For Claude Desktop (macOS):
 
 ```bash
 mkdir -p ~/Library/Application\ Support/Claude/claude_desktop_config.json
@@ -91,7 +91,7 @@ For Cursor/Windsurf:
 
 ```bash
 mkdir -p ~/.cursor/settings/
-# or
+or
 mkdir -p ~/.windsurf/settings/
 ```
 
@@ -141,7 +141,7 @@ export JIRA_EMAIL="your-email@company.com"
 export JIRA_API_TOKEN="your-api-token"
 ```
 
-## Step 3: Verify the Connection
+Step 3: Verify the Connection
 
 Restart your AI tool after updating the configuration. Most tools notify you when MCP servers connect successfully.
 
@@ -157,15 +157,15 @@ You can also verify at the MCP server level by running the server directly and c
 
 ```bash
 npx -y @modelcontextprotocol/server-jira
-# Expected output: MCP server started, listening on stdio
-# Available tools: get_issue, search_issues, get_project, list_projects
+Expected output: MCP server started, listening on stdio
+Available tools: get_issue, search_issues, get_project, list_projects
 ```
 
-## Step 4: Use Jira Context in AI Conversations
+Step 4: Use Jira Context in AI Conversations
 
 Once connected, you can reference Jira tickets naturally in your prompts. Here are practical patterns:
 
-### Fetch Specific Ticket Details
+Fetch Specific Ticket Details
 
 ```
 What's the current status of PROJ-123 and who is assigned?
@@ -173,7 +173,7 @@ What's the current status of PROJ-123 and who is assigned?
 
 The MCP server retrieves the ticket and the AI provides a summary.
 
-### Search Tickets by Criteria
+Search Tickets by Criteria
 
 ```
 Show me all high-priority bugs assigned to me that are due this week
@@ -181,7 +181,7 @@ Show me all high-priority bugs assigned to me that are due this week
 
 The AI uses MCP tools to search Jira and present relevant results.
 
-### Include Ticket Context in Code Reviews
+Include Ticket Context in Code Reviews
 
 When asking for code review help:
 
@@ -192,7 +192,7 @@ and the acceptance criteria include testing OAuth flow.
 
 The AI understands the full context without you copying-pasting ticket details.
 
-### Summarize Ticket Threads
+Summarize Ticket Threads
 
 ```
 Summarize the discussion on PROJ-789 including all comments and activity
@@ -200,7 +200,7 @@ Summarize the discussion on PROJ-789 including all comments and activity
 
 The MCP server fetches the full conversation history.
 
-### Generate Commit Messages from Tickets
+Generate Commit Messages from Tickets
 
 One underused pattern is generating commit messages directly from ticket context:
 
@@ -211,11 +211,11 @@ Include the ticket number in the footer.
 
 The AI reads the ticket summary, acceptance criteria, and type, then produces a commit message that matches your team's format. This is faster and more consistent than writing messages manually, especially for bug fixes where the ticket already contains the root cause.
 
-## Step 5: Customize for Your Workflow
+Step 5: Customize for Your Workflow
 
 The Jira MCP server supports several tools beyond basic ticket retrieval. Customize your setup by enabling specific capabilities:
 
-### Enable Project-Specific Tools
+Enable Project-Specific Tools
 
 Configure which projects the MCP server can access:
 
@@ -235,7 +235,7 @@ Configure which projects the MCP server can access:
 }
 ```
 
-### Restrict by Issue Types
+Restrict by Issue Types
 
 If you only need certain issue types:
 
@@ -243,7 +243,7 @@ If you only need certain issue types:
 npx -y @modelcontextprotocol/server-jira --types Bug,Task,Story
 ```
 
-### Add Custom Field Access
+Add Custom Field Access
 
 By default, MCP retrieves standard fields. To include custom fields, specify them in configuration:
 
@@ -264,9 +264,9 @@ By default, MCP retrieves standard fields. To include custom fields, specify the
 }
 ```
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
-Connection timeout: Verify your Jira URL is accessible and your API token has not expired. Corporate firewalls may block the connection—consider running the MCP server locally behind your firewall.
+Connection timeout: Verify your Jira URL is accessible and your API token has not expired. Corporate firewalls may block the connection, consider running the MCP server locally behind your firewall.
 
 Authentication errors: Double-check that your email matches the account used to generate the API token. For Jira Server instances, ensure your API token is generated correctly for your version.
 
@@ -274,9 +274,9 @@ Missing ticket data: Some custom fields require explicit permission. Contact you
 
 Rate limiting: Jira Cloud imposes API rate limits. If you hit them frequently, implement caching in your AI prompts or reduce query frequency.
 
-**MCP server not appearing in AI tool:** On Claude Desktop, the config file must be valid JSON — a trailing comma or missing brace will silently prevent the server from loading. Use `python3 -m json.tool < ~/Library/Application\ Support/Claude/claude_desktop_config.json` to validate the file before restarting the application.
+MCP server not appearing in AI tool: On Claude Desktop, the config file must be valid JSON. a trailing comma or missing brace will silently prevent the server from loading. Use `python3 -m json.tool < ~/Library/Application\ Support/Claude/claude_desktop_config.json` to validate the file before restarting the application.
 
-## Extending the Integration
+Extending the Integration
 
 For more advanced workflows, consider combining Jira MCP with other MCP servers. For example, connect to GitHub MCP to link commits and PRs with Jira tickets automatically:
 
@@ -295,38 +295,38 @@ For more advanced workflows, consider combining Jira MCP with other MCP servers.
 }
 ```
 
-This lets your AI assistant understand the full development context—code changes, ticket status, and review history—in one conversation. A practical example: ask Claude "which open PRs have no linked Jira ticket?" and it can cross-reference both data sources to give you a concrete list.
+This lets your AI assistant understand the full development context, code changes, ticket status, and review history, in one conversation. A practical example: ask Claude "which open PRs have no linked Jira ticket?" and it can cross-reference both data sources to give you a concrete list.
 
 You can also combine Jira MCP with a Slack MCP server to pull in conversation context. When a ticket has been discussed in a Slack thread but the discussion never made it back into Jira comments, this multi-server setup lets the AI see the full picture.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set up model context protocol for feeding jira?**
+How long does it take to set up model context protocol for feeding jira?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Build Model Context Protocol Server That Provides](/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
 - [How to Build Model Context Protocol Server That Provides Rea](/how-to-build-model-context-protocol-server-that-provides-rea/)
 - [How to Set Up Model Context Protocol Server for Custom](/how-to-set-up-model-context-protocol-server-for-custom-proje/)
 - [How to Set Up Model Context Protocol for Feeding Monitoring](/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
 - [How to Set Up Model Context Protocol Server Providing Live](/how-to-set-up-model-context-protocol-server-providing-live-d/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -15,21 +15,21 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-Chaos engineering is the practice of deliberately injecting failures to find weaknesses before production does. The bottleneck isn't running experiments — it's designing them well. Choosing the right failure modes, estimating blast radius, and writing the experiment config all take expertise. AI tools can compress this from days to hours.
+Chaos engineering is the practice of deliberately injecting failures to find weaknesses before production does. The bottleneck isn't running experiments. it's designing them well. Choosing the right failure modes, estimating blast radius, and writing the experiment config all take expertise. AI tools can compress this from days to hours.
 
-## What AI Does Well in Chaos Engineering
+What AI Does Well in Chaos Engineering
 
 Three things:
-1. **Experiment design**: Given your architecture, suggest high-value failure scenarios
-2. **Config generation**: Write Litmus, Chaos Mesh, or AWS FIS experiment configs
-3. **Blast radius analysis**: Review an experiment definition and predict what could break
+1. Experiment design: Given your architecture, suggest high-value failure scenarios
+2. Config generation: Write Litmus, Chaos Mesh, or AWS FIS experiment configs
+3. Blast radius analysis: Review an experiment definition and predict what could break
 
-## Step 1: Architecture-Driven Experiment Design
+Step 1: Architecture-Driven Experiment Design
 
 Feed Claude your architecture and ask it to generate a chaos experiment backlog:
 
 ```python
-# chaos_planner.py
+chaos_planner.py
 from anthropic import Anthropic
 
 client = Anthropic()
@@ -77,7 +77,7 @@ backlog = generate_experiment_backlog(ARCHITECTURE_DESCRIPTION)
 print(backlog)
 ```
 
-**Sample output (condensed):**
+Sample output (condensed):
 
 ```
 NAME: payment-service-latency
@@ -104,10 +104,10 @@ PRIORITY: P2
 TOOLING: AWS FIS (stop EC2 instance)
 ```
 
-## Step 2: Generate Litmus Experiment Configs
+Step 2: Generate Litmus Experiment Configs
 
 ```python
-# chaos_config_generator.py
+chaos_config_generator.py
 from anthropic import Anthropic
 import yaml
 
@@ -133,7 +133,7 @@ Return only the YAML, no explanation."""
     )
     return response.content[0].text
 
-# Example experiment
+Example experiment
 order_pod_kill = {
     "name": "order-service-pod-kill",
     "target_namespace": "production",
@@ -151,11 +151,11 @@ yaml_config = generate_litmus_experiment(order_pod_kill)
 print(yaml_config)
 ```
 
-**Generated ChaosEngine YAML:**
+Generated ChaosEngine YAML:
 
 ```yaml
-# ChaosEngine for order-service pod deletion
-# This experiment validates K8s self-healing for stateless services
+ChaosEngine for order-service pod deletion
+This experiment validates K8s self-healing for stateless services
 apiVersion: litmuschaos.io/v1alpha1
 kind: ChaosEngine
 metadata:
@@ -207,7 +207,7 @@ spec:
               probePollingInterval: 2
 ```
 
-## Step 3: Blast Radius Analysis
+Step 3: Blast Radius Analysis
 
 Before running any experiment, have Claude review it for unexpected blast radius:
 
@@ -246,7 +246,7 @@ analysis = analyze_blast_radius(yaml_config, ARCHITECTURE_DESCRIPTION)
 print(analysis["analysis"])
 ```
 
-## Step 4: Automated Istio Fault Injection
+Step 4: Automated Istio Fault Injection
 
 For network chaos without cluster-level permissions:
 
@@ -274,7 +274,7 @@ Return only the YAML."""
     )
     return response.content[0].text
 
-# Example: Add 2s delay to 30% of payment service → Stripe calls
+Add 2s delay to 30% of payment service → Stripe calls
 istio_config = generate_istio_fault_injection(
     service_name="payment-service",
     fault_type="delay",
@@ -285,7 +285,7 @@ istio_config = generate_istio_fault_injection(
 print(istio_config)
 ```
 
-**Output:**
+Output:
 
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
@@ -314,7 +314,7 @@ spec:
             host: api.stripe.com
 ```
 
-## Step 5: Generating AWS FIS Experiment Templates
+Step 5: Generating AWS FIS Experiment Templates
 
 AWS Fault Injection Service is the right tool for infrastructure-level experiments that affect EC2 instances, ECS tasks, or RDS failovers. Claude can generate FIS templates directly:
 
@@ -355,24 +355,24 @@ fis_template = generate_fis_template(rds_failover)
 print(fis_template)
 ```
 
-## Running a Safe Chaos Workflow
+Running a Safe Chaos Workflow
 
 ```bash
 #!/bin/bash
-# chaos_run.sh — safe chaos experiment execution
+chaos_run.sh. safe chaos experiment execution
 
 EXPERIMENT=$1
 NAMESPACE="production"
 
 echo "=== Pre-flight checks ==="
-# Verify all pods healthy before starting
+Verify all pods healthy before starting
 kubectl get pods -n $NAMESPACE | grep -v Running
 if [ $? -eq 0 ]; then
   echo "WARNING: Unhealthy pods detected. Aborting."
   exit 1
 fi
 
-# Check error rate baseline
+Check error rate baseline
 ERROR_RATE=$(curl -s "http://prometheus:9090/api/v1/query?query=sum(rate(http_requests_total{status=~'5..'}[5m]))/sum(rate(http_requests_total[5m]))" | jq '.data.result[0].value[1]')
 echo "Baseline error rate: ${ERROR_RATE}"
 
@@ -389,7 +389,7 @@ echo "=== Cleanup ==="
 kubectl delete -f $EXPERIMENT
 ```
 
-## AI Tool Comparison for Chaos Engineering
+AI Tool Comparison for Chaos Engineering
 
 | Task | Claude | GPT-4 | Manual |
 |---|---|---|---|
@@ -403,12 +403,12 @@ Claude's advantage in chaos engineering comes from its ability to reason about s
 
 GPT-4 is roughly equivalent for experiment design but produces slightly more YAML syntax errors in Litmus configs, requiring an extra validation step.
 
-## Related Articles
+Related Articles
 
 - [Best AI-Powered Platform Engineering Tools for Developer](/best-ai-powered-platform-engineering-tools-for-developer-sel/)
 - [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
 - [AI Tools for Microservice Architecture](/ai-tools-for-microservice-architecture-design/)
 - [How to Use the Claude API for Automated Code Review](/how-to-use-claude-api-for-automated-code-review/)
 - [AI-Powered API Gateway Configuration Tools 2026](/ai-powered-api-gateway-configuration-tools-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

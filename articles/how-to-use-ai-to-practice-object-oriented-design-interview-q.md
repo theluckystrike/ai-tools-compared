@@ -18,7 +18,7 @@ intent-checked: true
 
 Use AI tools combined with UML diagrams to practice object-oriented design interviews effectively. AI serves as an intelligent practice partner that generates problems, validates your designs against SOLID principles, and provides immediate feedback on class relationships and architectural decisions. This approach accelerates preparation by automating the feedback loop while you focus on developing strong design intuition.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding the OOD Interview Format](#understanding-the-ood-interview-format)
 - [AI Tool Comparison for OOD Practice](#ai-tool-comparison-for-ood-practice)
@@ -31,9 +31,9 @@ Use AI tools combined with UML diagrams to practice object-oriented design inter
 - [Common Mistakes to Avoid](#common-mistakes-to-avoid)
 - [Related Reading](#related-reading)
 
-## Understanding the OOD Interview Format
+Understanding the OOD Interview Format
 
-In object-oriented design interviews, interviewers present a problem—such as designing a parking lot, a restaurant management system, or a deck of cards. Your task is to identify the key entities, define their relationships, and demonstrate solid OOP principles. This is where UML diagrams become invaluable, allowing you to visualize class structures before writing code.
+In object-oriented design interviews, interviewers present a problem, such as designing a parking lot, a restaurant management system, or a deck of cards. Your task is to identify the key entities, define their relationships, and demonstrate solid OOP principles. This is where UML diagrams become invaluable, allowing you to visualize class structures before writing code.
 
 The challenge most developers face is that OOD requires a different skill set than algorithmic coding. You need to think about:
 
@@ -45,7 +45,7 @@ The challenge most developers face is that OOD requires a different skill set th
 
 - Communicating your thought process clearly
 
-## AI Tool Comparison for OOD Practice
+AI Tool Comparison for OOD Practice
 
 Different AI tools offer meaningfully different experiences as practice partners for object-oriented design:
 
@@ -59,11 +59,11 @@ Different AI tools offer meaningfully different experiences as practice partners
 
 Claude and ChatGPT are the clear choices for OOD practice. Claude particularly excels at maintaining the interviewer persona across a long session and catching subtle SOLID principle violations. For generating starter code from your design, Copilot supplements well after the design phase.
 
-## Using AI as Your Practice Partner
+Using AI as Your Practice Partner
 
 AI tools can serve as an excellent practice partner for OOD interviews. Here's how to use them effectively:
 
-### Generate Practice Problems
+Generate Practice Problems
 
 Start by asking AI to generate OOD problems at various difficulty levels:
 
@@ -73,7 +73,7 @@ at intermediate difficulty level, each focusing on
 different design patterns and SOLID principles"
 ```
 
-### Get Instant Feedback on Your Designs
+Get Instant Feedback on Your Designs
 
 After sketching your UML diagram, describe it to the AI and ask for feedback:
 
@@ -86,9 +86,9 @@ Is this design sound? What improvements would you suggest?"
 
 The AI can then identify issues like tight coupling, violation of single responsibility, or missing abstractions.
 
-## Practical Workflow for OOD Practice
+Practical Workflow for OOD Practice
 
-### Step 1: Understand Requirements Deeply
+Step 1: Understand Requirements Deeply
 
 Before jumping to code or diagrams, clarify all requirements. Use AI to help you think through edge cases:
 
@@ -98,9 +98,9 @@ I consider? Think about: full capacity, payment methods,
 multiple vehicle types, lost tickets, premium spots"
 ```
 
-### Step 2: Identify Core Entities
+Step 2: Identify Core Entities
 
-List out all nouns in the problem description—these typically become your classes. AI can help validate your entity selection:
+List out all nouns in the problem description, these typically become your classes. AI can help validate your entity selection:
 
 ```
 "Given a Coffee Shop management system, I identified:
@@ -108,12 +108,12 @@ Order, Customer, Barista, MenuItem, and Payment.
 Are there any missing entities or redundant ones?"
 ```
 
-### Step 3: Apply SOLID Principles
+Step 3: Apply SOLID Principles
 
 Here's where AI becomes particularly useful. After initial design, ask for SOLID analysis:
 
 ```python
-# Example: Checking Single Responsibility
+Checking Single Responsibility
 class Order:
     def __init__(self, customer, items):
         self.customer = customer
@@ -134,7 +134,7 @@ class Order:
 
 AI can explain why mixing payment processing with order management violates the Single Responsibility Principle and suggest refactoring.
 
-### Step 4: Create UML Diagrams
+Step 4: Create UML Diagrams
 
 Use ASCII or markdown-based UML to sketch your design, then validate with AI:
 
@@ -151,21 +151,21 @@ Is this association correct? Should Board contain Cells
 or should it be the other way around?"
 ```
 
-## SOLID Principles Reference for Interview Practice
+SOLID Principles Reference for Interview Practice
 
 Keeping these definitions sharp allows you to invoke them naturally under pressure. Use AI to test your understanding of each:
 
-**Single Responsibility Principle (SRP):** A class should have only one reason to change. In practice, this means separating data storage, business logic, and presentation into distinct classes. Prompt AI: "Give me three examples from my parking lot design where SRP might be violated."
+Single Responsibility Principle (SRP): A class should have only one reason to change. In practice, this means separating data storage, business logic, and presentation into distinct classes. Prompt AI: "Give me three examples from my parking lot design where SRP might be violated."
 
-**Open/Closed Principle (OCP):** Classes should be open for extension but closed for modification. Designed correctly, adding a new vehicle type to your parking lot should require adding a class, not modifying existing ones. Prompt AI: "How would I apply OCP to support motorcycle parking without changing the existing Vehicle class?"
+Open/Closed Principle (OCP): Classes should be open for extension but closed for modification. Designed correctly, adding a new vehicle type to your parking lot should require adding a class, not modifying existing ones. Prompt AI: "How would I apply OCP to support motorcycle parking without changing the existing Vehicle class?"
 
-**Liskov Substitution Principle (LSP):** Subclasses must be substitutable for their parent class without breaking the program. Prompt AI: "Create a scenario where my inheritance hierarchy violates LSP and show me how to fix it."
+Liskov Substitution Principle (LSP): Subclasses must be substitutable for their parent class without breaking the program. Prompt AI: "Create a scenario where my inheritance hierarchy violates LSP and show me how to fix it."
 
-**Interface Segregation Principle (ISP):** No client should be forced to depend on methods it does not use. Prompt AI: "Review my IVehicle interface and tell me if any implementing classes would have unused methods."
+Interface Segregation Principle (ISP): No client should be forced to depend on methods it does not use. Prompt AI: "Review my IVehicle interface and tell me if any implementing classes would have unused methods."
 
-**Dependency Inversion Principle (DIP):** Depend on abstractions, not concrete implementations. Prompt AI: "Show me how to refactor the PaymentProcessor class to depend on a PaymentGateway interface instead of StripeClient directly."
+Dependency Inversion Principle (DIP): Depend on abstractions, not concrete implementations. Prompt AI: "Show me how to refactor the PaymentProcessor class to depend on a PaymentGateway interface instead of StripeClient directly."
 
-## Sample Practice Session
+Sample Practice Session
 
 Here's a complete example of using AI to practice OOD:
 
@@ -180,7 +180,7 @@ drinks, different drink types (espresso, latte, cappuccino),
 inventory management, and payments. Apply SOLID principles.
 ```
 
-**AI Response** (abbreviated):
+AI Response (abbreviated):
 
 ```
 Key classes:
@@ -201,9 +201,9 @@ This design applies:
 
 You can then build upon this, adding features and complexity as you practice.
 
-## Advanced Techniques
+Advanced Techniques
 
-### Practice Design Pattern Recognition
+Practice Design Pattern Recognition
 
 Ask AI to present problems that naturally require specific patterns:
 
@@ -213,7 +213,7 @@ the Observer pattern, and then show the ideal class
 diagram solution"
 ```
 
-### Mock Interview Simulation
+Mock Interview Simulation
 
 For more realistic practice, have AI act as the interviewer:
 
@@ -223,7 +223,7 @@ Present me with a system design problem. Ask follow-up
 questions about my choices. Provide feedback at the end."
 ```
 
-### Compare Multiple Solutions
+Compare Multiple Solutions
 
 After solving a problem, ask AI to show alternative approaches:
 
@@ -233,19 +233,19 @@ vehicle-parking-spot relationship? Compare the
 trade-offs of each approach"
 ```
 
-## Building a 4-Week Study Plan with AI
+Building a 4-Week Study Plan with AI
 
 A structured schedule makes AI practice sessions compound over time rather than feel repetitive:
 
-**Week 1 — Fundamentals.** Practice three problems per session focused purely on entity identification and basic class relationships. No design patterns yet. Use AI to validate that your class list covers all requirements before drawing any diagram.
+Week 1. Fundamentals. Practice three problems per session focused purely on entity identification and basic class relationships. No design patterns yet. Use AI to validate that your class list covers all requirements before drawing any diagram.
 
-**Week 2 — SOLID principles.** Take your Week 1 designs and ask AI to find every SOLID violation. Refactor each one. This is more valuable than solving new problems because it deepens understanding of why the principles exist.
+Week 2. SOLID principles. Take your Week 1 designs and ask AI to find every SOLID violation. Refactor each one. This is more valuable than solving new problems because it deepens understanding of why the principles exist.
 
-**Week 3 — Design patterns.** Solve one problem per day that requires a specific pattern: Factory, Observer, Strategy, Decorator, Command. Ask AI to explain why each pattern fits and what alternative patterns were considered.
+Week 3. Design patterns. Solve one problem per day that requires a specific pattern: Factory, Observer, Strategy, Decorator, Command. Ask AI to explain why each pattern fits and what alternative patterns were considered.
 
-**Week 4 — Mock interviews.** Run full 45-minute mock sessions where AI maintains the interviewer role throughout. Debrief after each session with: "What were the three weakest points in my design and how would a senior engineer have approached them differently?"
+Week 4. Mock interviews. Run full 45-minute mock sessions where AI maintains the interviewer role throughout. Debrief after each session with: "What were the three weakest points in my design and how would a senior engineer have approached them differently?"
 
-## Common Mistakes to Avoid
+Common Mistakes to Avoid
 
 When practicing OOD with AI, watch out for these pitfalls:
 
@@ -255,25 +255,25 @@ When practicing OOD with AI, watch out for these pitfalls:
 
 3. Skipping UML: Visualizing before coding prevents costly mistakes
 
-4. Forgetting SOLID: Each principle exists for a reason—apply them purposefully
+4. Forgetting SOLID: Each principle exists for a reason, apply them purposefully
 
 5. Accepting AI feedback uncritically: AI can occasionally suggest over-designed solutions. Push back and ask for a simpler alternative to develop your own judgment.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Q: How long should a typical OOD mock session last?**
+Q: How long should a typical OOD mock session last?
 Target 30 to 45 minutes per problem, mirroring real interview conditions. Spend the first 10 minutes on requirements clarification, 15 minutes on the initial design, 10 minutes refining with SOLID feedback, and 5 minutes discussing trade-offs.
 
-**Q: Can AI generate UML diagrams directly?**
+Q: Can AI generate UML diagrams directly?
 Text-based UML is reliable. Image generation tools like GPT-4o with DALL-E or specialized tools like PlantUML (which AI can generate input for) produce visual diagrams. Ask AI to output PlantUML syntax, then render it in a viewer for visual feedback.
 
-**Q: How do I know if my AI practice is translating to real interviews?**
+Q: How do I know if my AI practice is translating to real interviews?
 The signal is whether you can explain your design decisions without prompting. If you need to ask AI why a choice was made, you haven't internalized it yet. Practice articulating your reasoning out loud while solving problems.
 
-**Q: Is OOD practice with AI a substitute for peer practice?**
+Q: Is OOD practice with AI a substitute for peer practice?
 No, but it is a powerful complement. AI gives you unlimited reps and immediate feedback. Peer practice develops your communication skills and exposes you to divergent thinking. Both are necessary for interview readiness.
 
-## Related Reading
+Related Reading
 
 - [AI Tools for Product Managers Converting Customer](/ai-tools-for-product-managers-converting-customer-interview-/)
 - [AI Tools for Video Object Tracking](/ai-tools-for-video-object-tracking/)
@@ -281,7 +281,7 @@ No, but it is a powerful complement. AI gives you unlimited reps and immediate f
 - [AI Tools for Interior Design Visualization Compared](/ai-tools-for-interior-design-visualization-compared/)
 - [Best AI Tool for Game Developers Design Docs Writing](/best-ai-tool-for-game-developers-design-docs-writing/)
 
-## Related Articles
+Related Articles
 
 - [Which AI Generates Better SwiftUI Views From Design Swift UI](/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
 - [AI Tools for Auditing Accessible Responsive Design](/ai-tools-for-auditing-accessible-responsive-design-breakpoin/)
@@ -289,5 +289,5 @@ No, but it is a powerful complement. AI gives you unlimited reps and immediate f
 - [Best AI Tool for Game Developers Design Docs Writing](/best-ai-tool-for-game-developers-design-docs-writing/)
 - [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

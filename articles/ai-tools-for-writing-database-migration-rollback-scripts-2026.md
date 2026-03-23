@@ -14,7 +14,7 @@ voice-checked: true
 intent-checked: true
 ---
 
-## Table of Contents
+Table of Contents
 
 - [Overview](#overview)
 - [Why Rollback Scripts Matter](#why-rollback-scripts-matter)
@@ -28,11 +28,11 @@ intent-checked: true
 - [Recommended Workflow](#recommended-workflow)
 - [Critical AI Limitations](#critical-ai-limitations)
 
-## Overview
+Overview
 
-Database migrations are critical infrastructure. Rollback scripts must be precise—a bad rollback causes data loss or corruption. AI coding assistants generate migration code, but quality varies significantly across tools. This guide evaluates how Claude, GitHub Copilot, Cursor, and ChatGPT handle rollback generation for Flyway, Liquibase, Prisma, and raw SQL.
+Database migrations are critical infrastructure. Rollback scripts must be precise, a bad rollback causes data loss or corruption. AI coding assistants generate migration code, but quality varies significantly across tools. This guide evaluates how Claude, GitHub Copilot, Cursor, and ChatGPT handle rollback generation for Flyway, Liquibase, Prisma, and raw SQL.
 
-## Why Rollback Scripts Matter
+Why Rollback Scripts Matter
 
 Production databases demand safety. Every migration requires:
 - Forward script (applies change)
@@ -49,21 +49,21 @@ Bad rollbacks cause:
 
 AI tools often miss idempotency, error handling, and data preservation logic.
 
-## AI Tools Evaluated
+AI Tools Evaluated
 
-### Claude (claude-opus-4-6)
+Claude (claude-opus-4-6)
 
-**Strengths:**
+Strengths:
 - Understands transaction boundaries explicitly
 - Generates idempotent checks (`IF EXISTS` patterns)
 - Adds data preservation steps before destructive operations
 - Handles Flyway, Liquibase, Prisma, and raw SQL fluently
 
-**Weaknesses:**
+Weaknesses:
 - Slower iteration (requires full conversation context)
 - No IDE plugin (web/API access only)
 
-**Example: Adding Column with Rollback**
+Adding Column with Rollback
 
 Prompt:
 ```
@@ -121,21 +121,21 @@ Key advantages:
 - Wraps in transaction for atomicity
 - Includes verification queries
 
-### GitHub Copilot
+GitHub Copilot
 
-**Strengths:**
+Strengths:
 - Fast inline suggestions
 - Good at common Flyway patterns
 - IDE-integrated workflow
 - Understands context from adjacent migrations
 
-**Weaknesses:**
+Weaknesses:
 - Generates unsafe scripts (missing `IF EXISTS`)
 - Incomplete rollback logic
 - No data backup consideration
 - Poor with complex transactions
 
-**Example Output:**
+Example Output:
 
 ```sql
 -- V001__add_email_verified_column.sql
@@ -152,20 +152,20 @@ Problems:
 - No data preservation
 - No index cleanup
 
-### Cursor IDE
+Cursor IDE
 
-**Strengths:**
+Strengths:
 - Fast test-driven migration generation
 - Understands project migration patterns
 - Ctrl+K for quick snippets
 - Good at Prisma schema migrations
 
-**Weaknesses:**
+Weaknesses:
 - Less cautious than Claude
 - Limited context for multi-migration dependencies
 - Struggles with complex rollback scenarios
 
-**Example: Prisma Migration**
+Prisma Migration
 
 Prompt: "Generate Prisma migration for adding email_verified field with rollback"
 
@@ -182,20 +182,20 @@ ALTER TABLE "User" ADD COLUMN "emailVerified" BOOLEAN NOT NULL DEFAULT false;
 
 Issue: Prisma's auto-generated migrations don't include manual rollback scripts. Cursor doesn't address this limitation.
 
-### ChatGPT (GPT-4)
+ChatGPT (GPT-4)
 
-**Strengths:**
+Strengths:
 - Accessible web interface
 - Good explanations of migration concepts
 - Handles multiple database dialects
 
-**Weaknesses:**
+Weaknesses:
 - Less aware of modern migration tools
 - Often generates MySQL-specific syntax for all databases
 - Missing transaction semantics
 - Less reliable idempotency
 
-**Typical Output:**
+Typical Output:
 
 ```sql
 ALTER TABLE users ADD COLUMN email_verified TINYINT(1) DEFAULT 0;
@@ -207,7 +207,7 @@ Problems:
 - No index considerations
 - No transaction safety
 
-## Feature Comparison Table
+Feature Comparison Table
 
 | Feature | Claude | Copilot | Cursor | ChatGPT |
 |---------|--------|---------|--------|---------|
@@ -221,13 +221,13 @@ Problems:
 | PostgreSQL Dialect | 9/10 | 8/10 | 7/10 | 7/10 |
 | Cost | Paid | $10-19/mo | $20/mo | Paid |
 
-## Detailed Workflow Examples
+Detailed Workflow Examples
 
-### Flyway: Safe Column Removal
+Flyway: Safe Column Removal
 
-**Scenario:** Remove deprecated `legacy_id` column from production.
+Scenario: Remove deprecated `legacy_id` column from production.
 
-**Claude Approach:**
+Claude Approach:
 
 ```sql
 -- V002__remove_legacy_id_column.sql
@@ -254,7 +254,7 @@ WHERE table_name = 'users' AND column_name = 'legacy_id';
 COMMIT;
 ```
 
-**Rollback Script:**
+Rollback Script:
 
 ```sql
 -- V002__remove_legacy_id_column.rollback.sql
@@ -277,7 +277,7 @@ DROP TABLE IF EXISTS audit_rollback_legacy_id_20260321;
 COMMIT;
 ```
 
-**Copilot Output:**
+Copilot Output:
 
 ```sql
 ALTER TABLE users DROP COLUMN legacy_id;
@@ -285,11 +285,11 @@ ALTER TABLE users DROP COLUMN legacy_id;
 
 Massive gap in safety.
 
-### Liquibase: Safe Foreign Key Addition
+Liquibase: Safe Foreign Key Addition
 
-**Scenario:** Add foreign key constraint with validation.
+Scenario: Add foreign key constraint with validation.
 
-**Claude Approach:**
+Claude Approach:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -326,7 +326,7 @@ Massive gap in safety.
 </databaseChangeLog>
 ```
 
-**Cursor Output:**
+Cursor Output:
 
 ```xml
 <changeSet id="add_fk" author="app">
@@ -344,11 +344,11 @@ Cursor missing:
 - Delete/update behavior specification
 - Explicit rollback instructions
 
-### Prisma: Handling Schema Evolution
+Prisma: Handling Schema Evolution
 
-**Scenario:** Rename column without data loss.
+Scenario: Rename column without data loss.
 
-**Claude Approach (with raw SQL):**
+Claude Approach (with raw SQL):
 
 ```typescript
 // prisma/migrations/[timestamp]_rename_phone_to_mobile/migration.sql
@@ -382,7 +382,7 @@ model User {
 }
 ```
 
-**Cursor Output:**
+Cursor Output:
 
 ```typescript
 // prisma/migrations/[timestamp]_rename_phone_to_mobile/migration.sql
@@ -391,12 +391,12 @@ ALTER TABLE "User" RENAME COLUMN "phone" TO "mobile";
 
 Problem: Prisma doesn't support `RENAME COLUMN` across all databases (not PostgreSQL-native).
 
-## Safety Checklist Generated by Claude
+Safety Checklist Generated by Claude
 
 Claude generates safety checklists:
 
 ```markdown
-## Pre-Migration Checklist
+Pre-Migration Checklist
 
 - [ ] Backup database (full backup + point-in-time recovery)
 - [ ] Verify all data integrity constraints
@@ -407,7 +407,7 @@ Claude generates safety checklists:
 - [ ] Schedule during maintenance window
 - [ ] Prepare rollback communication plan
 
-## Migration Validation Queries
+Migration Validation Queries
 
 SELECT COUNT(*) FROM table WHERE [integrity_condition];
 SELECT * FROM pg_stat_user_tables WHERE relname = 'table_name';
@@ -417,7 +417,7 @@ SELECT * FROM information_schema.table_constraints
 
 Copilot, Cursor, and ChatGPT rarely include such checklists.
 
-## Cost Analysis
+Cost Analysis
 
 | Tool | Monthly Cost | Quality Score | ROI |
 |------|--------------|---------------|-----|
@@ -428,75 +428,75 @@ Copilot, Cursor, and ChatGPT rarely include such checklists.
 
 Claude's cost is justified by production readiness. One prevented data loss (value: $10k+) offsets months of subscriptions.
 
-## Recommended Workflow
+Recommended Workflow
 
-### For Critical Migrations (Production)
+For Critical Migrations (Production)
 
-1. **Design Phase:** Use Claude to architect migration strategy
-2. **Implementation Phase:** Use Claude to generate migration + rollback
-3. **Validation Phase:** Generate verification queries with Claude
-4. **Testing Phase:** Run in staging, verify rollback with Claude guidance
-5. **Production Phase:** Execute migration with Claude-generated checklist
+1. Design Phase: Use Claude to architect migration strategy
+2. Implementation Phase: Use Claude to generate migration + rollback
+3. Validation Phase: Generate verification queries with Claude
+4. Testing Phase: Run in staging, verify rollback with Claude guidance
+5. Production Phase: Execute migration with Claude-generated checklist
 
-### For Development/Non-Critical
+For Development/Non-Critical
 
 1. Use Cursor/Copilot for rapid scaffolding
 2. Review with Claude before merging
 3. Claude validates rollback completeness
 
-## Critical AI Limitations
+Critical AI Limitations
 
 All tools struggle with:
 
-**Data Dependencies:**
+Data Dependencies:
 - Cross-schema foreign keys
 - Application-level constraints
 - Materialized view dependencies
 - Event/trigger interactions
 
-**Solution:** Pair AI generation with manual verification of dependency graph.
+Solution: Pair AI generation with manual verification of dependency graph.
 
-**Timing Issues:**
+Timing Issues:
 - Long-running migrations on huge tables
 - Index rebuilding during downtime
 - Concurrent write handling
 
-**Solution:** Add explicit comments with `-- SLOW OPERATION` flags that Claude recognizes.
+Solution: Add explicit comments with `-- SLOW OPERATION` flags that Claude recognizes.
 
-**Database-Specific Syntax:**
+Database-Specific Syntax:
 - PostgreSQL vs MySQL vs SQL Server variations
 - Version-specific features
 - Transaction isolation levels
 
-**Solution:** Always specify database type and version in prompts.
+Solution: Always specify database type and version in prompts.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 - [Best AI Tools for Writing Database Seed Scripts 2026](/best-ai-tools-for-writing-database-seed-scripts-2026/)
 - [AI-Powered Database Migration Tools Comparison 2026](/ai-powered-database-migration-tools-comparison/)
 - [AI Code Completion for Writing Shell Commands Inside](/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

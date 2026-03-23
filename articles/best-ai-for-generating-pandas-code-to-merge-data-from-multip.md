@@ -18,7 +18,7 @@ voice-checked: true
 
 When you need to combine data from multiple API endpoints into unified pandas DataFrames, AI coding assistants can significantly accelerate your workflow. This comparison evaluates which tools excel at generating pandas merge, join, and concat operations when working with data from diverse API sources.
 
-## Table of Contents
+Table of Contents
 
 - [The Challenge: Merging Data from Multiple APIs](#the-challenge-merging-data-from-multiple-apis)
 - [Tool Comparison](#tool-comparison)
@@ -29,15 +29,15 @@ When you need to combine data from multiple API endpoints into unified pandas Da
 - [Prompting Tips for Better AI-Generated Merge Code](#prompting-tips-for-better-ai-generated-merge-code)
 - [Recommendation](#recommendation)
 
-## The Challenge: Merging Data from Multiple APIs
+The Challenge: Merging Data from Multiple APIs
 
-Real-world data pipelines often pull from multiple REST APIs—CRM systems, analytics platforms, third-party services. Each API returns data in different formats, with varying schemas and relationship structures. Writing efficient pandas code to unify this data requires understanding merge strategies, handling duplicates, managing memory, and dealing with missing values.
+Real-world data pipelines often pull from multiple REST APIs, CRM systems, analytics platforms, third-party services. Each API returns data in different formats, with varying schemas and relationship structures. Writing efficient pandas code to unify this data requires understanding merge strategies, handling duplicates, managing memory, and dealing with missing values.
 
 The best AI coding assistants can generate production-ready pandas merge code that handles these complexities. Here's how the leading tools perform.
 
-## Tool Comparison
+Tool Comparison
 
-### GitHub Copilot
+GitHub Copilot
 
 Copilot excels at understanding the context around API response structures. When you provide sample JSON or describe the relationship between API endpoints, Copilot generates accurate merge code with appropriate join types.
 
@@ -54,14 +54,14 @@ Copilot's strengths include:
 Example prompt and generated code:
 
 ```python
-# Fetch user data from users API and orders from orders API
+Fetch user data from users API and orders from orders API
 users_response = requests.get("https://api.example.com/users")
 orders_response = requests.get("https://api.example.com/orders")
 
 users_df = pd.DataFrame(users_response.json())
 orders_df = pd.DataFrame(orders_response.json())
 
-# Merge users with their orders using left join to keep all users
+Merge users with their orders using left join to keep all users
 merged_df = pd.merge(
     users_df,
     orders_df,
@@ -70,11 +70,11 @@ merged_df = pd.merge(
     indicator=True
 )
 
-# Identify users with no orders
+Identify users with no orders
 no_orders = merged_df[merged_df["_merge"] == "left_only"]
 ```
 
-### Claude (Anthropic)
+Claude (Anthropic)
 
 Claude provides detailed pandas code with explanatory comments. It handles complex scenarios like handling duplicate keys, managing different data types between DataFrames, and optimizing merge performance.
 
@@ -89,17 +89,17 @@ Claude excels at:
 - Providing alternative approaches
 
 ```python
-# Users and products from different API endpoints
+Users and products from different API endpoints
 users = pd.DataFrame(apis.get_users())
 products = pd.DataFrame(apis.get_products())
 
-# Reviews API returns product_name instead of product_id
+Reviews API returns product_name instead of product_id
 reviews = pd.DataFrame(apis.get_reviews())
 
-# Standardize for merge - handle naming inconsistency
+Standardize for merge - handle naming inconsistency
 reviews_standardized = reviews.rename(columns={"product_name": "product_id"})
 
-# Multi-step merge with validation
+Multi-step merge with validation
 user_reviews = pd.merge(
     users[["id", "name", "email"]],
     reviews_standardized,
@@ -108,21 +108,21 @@ user_reviews = pd.merge(
     how="inner"
 )
 
-# Validate no many-to-many merge occurred
+Validate no many-to-many merge occurred
 assert not user_reviews.duplicated(subset=["id"]).any(), "Duplicate keys detected"
 ```
 
-### Codeium
+Codeium
 
 Codeium focuses on fast, context-aware suggestions. It handles straightforward merge scenarios efficiently but may require more explicit prompting for complex join operations.
 
 ```python
-# Combining data from three API sources
+Combining data from three API sources
 customer_df = pd.DataFrame(customers_api.get_all())
 transaction_df = pd.DataFrame(transactions_api.get_all())
 support_df = pd.DataFrame(support_tickets_api.get_all())
 
-# Create unified customer view
+Create unified customer view
 customer_view = pd.merge(
     customer_df,
     transaction_df,
@@ -139,24 +139,24 @@ customer_view = pd.merge(
 )
 ```
 
-### Tabnine
+Tabnine
 
 Tabnine adapts to your coding patterns over time. It works well for consistent API response structures and can learn your preferred merge strategies.
 
 ```python
-# Aggregate data from marketing API
+Aggregate data from marketing API
 campaigns = pd.DataFrame(marketing_api.campaigns())
 leads = pd.DataFrame(marketing_api.leads())
 conversions = pd.DataFrame(marketing_api.conversions())
 
-# Combine with concat for stacking similar records
+Combine with concat for stacking similar records
 all_leads = pd.concat(
     [leads, conversions],
     ignore_index=True,
     sort=False
 )
 
-# Then merge with campaigns
+Then merge with campaigns
 final_df = pd.merge(
     campaigns,
     all_leads,
@@ -165,7 +165,7 @@ final_df = pd.merge(
 )
 ```
 
-## Head-to-Head Capability Comparison
+Head-to-Head Capability Comparison
 
 | Capability | GitHub Copilot | Claude | Codeium | Tabnine |
 |---|---|---|---|---|
@@ -177,7 +177,7 @@ final_df = pd.merge(
 | Speed of first suggestion | Fast | Moderate | Very Fast | Fast |
 | Custom project pattern learning | Moderate | Low | Moderate | Excellent |
 
-## Performance Considerations
+Performance Considerations
 
 When merging data from multiple API sources, consider these performance factors:
 
@@ -188,18 +188,18 @@ When merging data from multiple API sources, consider these performance factors:
 3. Index vs column merges: For large DataFrames, setting the index and using `join()` can be faster than `merge()`.
 
 ```python
-# Optimized approach for large datasets
+Optimized approach for large datasets
 users_df = users_df.set_index("user_id")
 orders_df = orders_df.set_index("user_id")
 
-# join is faster than merge for index-based operations
+join is faster than merge for index-based operations
 result = users_df.join(orders_df, how="left", rsuffix="_order")
 ```
 
 4. Handling string keys: API IDs often come as strings. Ensure consistent types before merging to avoid unexpected results.
 
 ```python
-# Normalize data types before merge
+Normalize data types before merge
 users_df["user_id"] = users_df["user_id"].astype(str)
 orders_df["user_id"] = orders_df["user_id"].astype(str)
 ```
@@ -207,7 +207,7 @@ orders_df["user_id"] = orders_df["user_id"].astype(str)
 5. Chunked merges for very large datasets: When API pagination returns data in chunks, merging incrementally avoids loading the full dataset into memory at once.
 
 ```python
-# Process paginated API responses without blowing memory
+Process paginated API responses without blowing memory
 results = []
 page = 1
 
@@ -220,34 +220,34 @@ while True:
     results.append(merged_batch)
     page += 1
 
-# Concatenate all merged batches at the end
+Concatenate all merged batches at the end
 final_df = pd.concat(results, ignore_index=True)
 ```
 
-## Handling Schema Inconsistencies Across APIs
+Handling Schema Inconsistencies Across APIs
 
-One of the most common challenges when merging data from multiple APIs is schema drift—APIs change their response structure over time, and different services use different naming conventions for the same concept. AI tools vary significantly in how well they handle this.
+One of the most common challenges when merging data from multiple APIs is schema drift, APIs change their response structure over time, and different services use different naming conventions for the same concept. AI tools vary significantly in how well they handle this.
 
 Claude and Copilot both excel when you provide schema examples in comments. A comment block like this before your merge code dramatically improves AI suggestion quality:
 
 ```python
-# Users API response structure:
-# {"id": 1, "email": "user@example.com", "created_at": "2026-01-01T00:00:00Z"}
+Users API response structure:
+{"id": 1, "email": "user@example.com", "created_at": "2026-01-01T00:00:00Z"}
 #
-# Orders API response structure:
-# {"order_id": "ord_123", "user_id": 1, "amount": 49.99, "status": "shipped"}
+Orders API response structure:
+{"order_id": "ord_123", "user_id": 1, "amount": 49.99, "status": "shipped"}
 #
-# Goal: Left join users to orders on users.id = orders.user_id
+Goal: Left join users to orders on users.id = orders.user_id
 ```
 
 With this context, both Claude and Copilot reliably generate merge code that handles the `id` vs `user_id` naming discrepancy, selects only the needed columns, and applies the correct join direction.
 
-## Verifying Merge Results
+Verifying Merge Results
 
 Always validate your merge operations to catch data quality issues:
 
 ```python
-# Check for unmatched records
+Check for unmatched records
 merge_result = pd.merge(
     users_df,
     orders_df,
@@ -259,15 +259,15 @@ merge_result = pd.merge(
 unmatched = merge_result[merge_result["_merge"] == "left_only"]
 print(f"Users without orders: {len(unmatched)}")
 
-# Verify row counts make sense
+Verify row counts make sense
 print(f"Original users: {len(users_df)}")
 print(f"Merged result: {len(merge_result)}")
 print(f"Unique users in result: {merge_result['user_id'].nunique()}")
 ```
 
-If your merged DataFrame has more rows than the larger of the two source DataFrames, you likely have a many-to-many join that is producing cartesian product rows. This is rarely intentional and will inflate any aggregations downstream. All four AI tools will generate a merge that technically runs without error in this situation—only Claude reliably adds the assertion check to detect it.
+If your merged DataFrame has more rows than the larger of the two source DataFrames, you likely have a many-to-many join that is producing cartesian product rows. This is rarely intentional and will inflate any aggregations downstream. All four AI tools will generate a merge that technically runs without error in this situation, only Claude reliably adds the assertion check to detect it.
 
-## Prompting Tips for Better AI-Generated Merge Code
+Prompting Tips for Better AI-Generated Merge Code
 
 The quality of AI-generated pandas merge code correlates strongly with how much context you provide in your prompt. Use these patterns to get better results from any of the four tools:
 
@@ -279,43 +279,43 @@ The quality of AI-generated pandas merge code correlates strongly with how much 
 
 These contextual hints reduce the number of iterations required to get correct merge code from roughly four to five cycles down to one or two.
 
-## Recommendation
+Recommendation
 
 For developers working with pandas and API data integration:
 
-- **GitHub Copilot** offers the best balance of accuracy and IDE integration. It understands pandas semantics well and generates correct join types with minimal prompting.
+- GitHub Copilot offers the best balance of accuracy and IDE integration. It understands pandas semantics well and generates correct join types with minimal prompting.
 
-- **Claude** provides more detailed, commented code and handles complex edge cases better. Choose Claude when dealing with intricate merge scenarios or when you need explanatory context.
+- Claude provides more detailed, commented code and handles complex edge cases better. Choose Claude when dealing with intricate merge scenarios or when you need explanatory context.
 
-- **Codeium** works well for straightforward merge operations with fast suggestion times.
+- Codeium works well for straightforward merge operations with fast suggestion times.
 
-- **Tabnine** excels when you want the tool to learn your specific patterns over time.
+- Tabnine excels when you want the tool to learn your specific patterns over time.
 
 The right choice depends on your specific use case, but all four tools can significantly reduce the time spent writing pandas merge code for API data integration.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Generating pandas Merge and Join Operations Fro](/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
 - [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
@@ -323,5 +323,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best AI Coding Tools for Python Data Science and pandas Work](/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 - [pandas AI vs Polars AI Data Processing Compared](/pandas-ai-vs-polars-ai-data-processing/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

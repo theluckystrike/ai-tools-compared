@@ -17,7 +17,7 @@ voice-checked: true
 
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding the Core Differences](#understanding-the-core-differences)
 - [Quick Comparison](#quick-comparison)
@@ -30,13 +30,13 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - [Cost Comparison and Pricing (2026)](#cost-comparison-and-pricing-2026)
 - [Which Tool Should You Choose](#which-tool-should-you-choose)
 
-## Understanding the Core Differences
+Understanding the Core Differences
 
 GitHub Copilot functions as an intelligent code completion engine that suggests code as you type. It integrates with popular IDEs like VS Code and JetBrains through extensions, offering inline suggestions based on your current file and surrounding context. The model has been trained on public repositories, including substantial Terraform infrastructure code.
 
 Cursor takes a different approach by embedding AI capabilities directly into a fork of VS Code. It provides more context awareness through features like "Codebase Indexing" and "Chat," allowing you to reference your entire project when asking for assistance. Cursor's agent mode can execute multi-step code modifications across files.
 
-## Quick Comparison
+Quick Comparison
 
 | Feature | Copilot | Cursor |
 |---|---|---|
@@ -47,7 +47,7 @@ Cursor takes a different approach by embedding AI capabilities directly into a f
 | Pricing | $10/month | $10/month |
 | Inline Chat | Available | Available |
 
-## Starting a Terraform Module from Scratch
+Starting a Terraform Module from Scratch
 
 When initializing a new Terraform module, both tools can help but with varying effectiveness.
 
@@ -70,7 +70,7 @@ Copilot will suggest the corresponding resource block, though you may need to re
 
 Cursor's approach feels more collaborative from the start. You can open a chat window and describe what you need: "Create a S3 bucket module with versioning and lifecycle rules." Cursor can generate the entire module structure in one go, including variables, outputs, and the main resource configuration. Since Cursor indexes your project, it remembers what you've created and maintains consistency across files.
 
-## Handling Variable and Output Definitions
+Handling Variable and Output Definitions
 
 Terraform modules benefit from well-structured variable definitions and outputs. Copilot handles these reasonably well when you provide clear comments:
 
@@ -96,7 +96,7 @@ Copilot often suggests common patterns, but it may not always understand the spe
 
 Cursor excels here because you can have an ongoing conversation about your module's interface. You can ask Cursor to "add a variable for server-side encryption with a default of AES256" and it will add the appropriate configuration to your variables file, maintaining consistency with your existing code.
 
-## Resource Configuration and Best Practices
+Resource Configuration and Best Practices
 
 This is where the practical differences become most apparent. Terraform has specific patterns for organizing resources, handling dependencies, and following the HashiCorp style guide.
 
@@ -118,7 +118,7 @@ This is generally solid, though you should verify that it matches your naming co
 
 Cursor can do more complex refactoring. If you decide to change your tagging strategy across the entire module, Cursor can update multiple files based on a single instruction. For example, changing from a project-based tag to an environment-based tag across variables, resources, and outputs.
 
-## Working with Module Dependencies
+Working with Module Dependencies
 
 Terraform modules frequently depend on other modules or need to provision resources in a specific order. Both tools handle `depends_on` and `count`/`for_each` patterns, but Cursor's context awareness gives it an advantage.
 
@@ -134,7 +134,7 @@ output "rds_connection_string" {
 
 Cursor maintains awareness of what resources exist in your module and can suggest outputs that reference the correct attributes.
 
-## Test and Validation Workflows
+Test and Validation Workflows
 
 Writing tests for Terraform modules is crucial. Copilot can help with Terratest patterns:
 
@@ -164,12 +164,12 @@ func TestS3BucketModule(t *testing.T) {
 
 Cursor can assist with both the Terraform configuration and the test code, maintaining consistency between them. If you add a new output to your module, Cursor can update your test to verify it.
 
-## Complete Module Example: DynamoDB Table with Backups
+Complete Module Example: DynamoDB Table with Backups
 
 Here's a realistic Terraform module that both tools can help create. Cursor typically generates more complete structures faster, while Copilot works best when you guide it step by step:
 
 ```hcl
-# modules/dynamodb_table/variables.tf
+modules/dynamodb_table/variables.tf
 variable "table_name" {
   description = "Name of the DynamoDB table"
   type        = string
@@ -193,7 +193,7 @@ variable "backup_retention_days" {
   default     = 30
 }
 
-# modules/dynamodb_table/main.tf
+modules/dynamodb_table/main.tf
 resource "aws_dynamodb_table" "main" {
   name           = var.table_name
   billing_mode   = var.billing_mode
@@ -214,7 +214,7 @@ resource "aws_dynamodb_table" "main" {
   }
 }
 
-# modules/dynamodb_table/outputs.tf
+modules/dynamodb_table/outputs.tf
 output "table_arn" {
   value = aws_dynamodb_table.main.arn
 }
@@ -226,25 +226,25 @@ output "table_name" {
 
 Both tools can generate this, but Cursor typically produces it as a cohesive unit, while Copilot works better when you scaffold each file first.
 
-## Cost Comparison and Pricing (2026)
+Cost Comparison and Pricing (2026)
 
-- **GitHub Copilot**: $10/month individual, $19/month business
-- **Cursor**: $20/month Pro, unlimited usage
-- **Claude Code**: Free CLI + pay-as-you-go API ($3 per 1M input tokens)
+- GitHub Copilot: $10/month individual, $19/month business
+- Cursor: $20/month Pro, unlimited usage
+- Claude Code: Free CLI + pay-as-you-go API ($3 per 1M input tokens)
 
 For Terraform development specifically, cost-per-query matters less than iteration speed. Cursor's codebase indexing justifies higher cost when you're developing multiple related modules.
 
-## Which Tool Should You Choose
+Which Tool Should You Choose
 
-For Terraform module development from scratch, **Cursor generally provides a better experience**. Its ability to maintain context across your entire module, have conversational interactions about infrastructure requirements, and perform multi-file refactoring makes it well-suited for infrastructure work where consistency matters.
+For Terraform module development from scratch, Cursor generally provides a better experience. Its ability to maintain context across your entire module, have conversational interactions about infrastructure requirements, and perform multi-file refactoring makes it well-suited for infrastructure work where consistency matters.
 
-**GitHub Copilot remains useful if:**
+GitHub Copilot remains useful if:
 - You prefer traditional IDE integration
 - You're comfortable guiding the completion engine with explicit code patterns
 - You work well with incremental improvements to existing modules
 - You're generating boilerplate when you already know the structure
 
-**Claude Code works well for:**
+Claude Code works well for:
 - Terminal-first developers who prefer CLI workflows
 - Refactoring large existing modules
 - Explaining infrastructure patterns and debugging errors
@@ -252,29 +252,29 @@ For Terraform module development from scratch, **Cursor generally provides a bet
 
 Both tools improve dramatically with clear, descriptive comments in your Terraform code. Taking time to document your variable purposes and resource intentions helps either assistant provide more accurate suggestions. The key difference is workflow: Cursor for collaborative, context-aware development; Copilot for quick completions within existing editors.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can I use Copilot and Cursor together?**
+Can I use Copilot and Cursor together?
 
 Yes, many users run both tools simultaneously. Copilot and Cursor serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
 
-**Which is better for beginners, Copilot or Cursor?**
+Which is better for beginners, Copilot or Cursor?
 
 It depends on your background. Copilot tends to work well if you prefer a guided experience, while Cursor gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
 
-**Is Copilot or Cursor more expensive?**
+Is Copilot or Cursor more expensive?
 
 Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
 
-**Can AI-generated tests replace manual test writing entirely?**
+Can AI-generated tests replace manual test writing entirely?
 
 Not yet. AI tools generate useful test scaffolding and catch common patterns, but they often miss edge cases specific to your business logic. Use AI-generated tests as a starting point, then add cases that cover your unique requirements and failure modes.
 
-**What happens to my data when using Copilot or Cursor?**
+What happens to my data when using Copilot or Cursor?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Writing Terraform Modules 2026](/best-ai-tools-for-writing-terraform-modules-2026/)
 - [How to Use Copilot for Writing Terraform Provider Configurat](/how-to-use-copilot-for-writing-terraform-provider-configurat/)
@@ -282,4 +282,4 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Copilot vs Cursor for Writing pytest Fixtures](/copilot-vs-cursor-for-writing--pytest-fixtures-/)
 - [Copilot vs Cursor for Writing Rust Error Handling with](/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

@@ -18,26 +18,26 @@ voice-checked: true
 
 Build a production-ready TypeScript API client for Claude Code by using compile-time type checking, IntelliSense support, and strong typing patterns. TypeScript ensures your integration catches errors at compile-time rather than runtime, enables confident refactoring, provides self-documenting code structure, and improves developer productivity through IDE support.
 
-## Table of Contents
+Table of Contents
 
 - [Why TypeScript for Claude Code Integration](#why-typescript-for-claude-code-integration)
 - [Prerequisites](#prerequisites)
 - [Best Practices for Production Use](#best-practices-for-production-use)
 - [Troubleshooting](#troubleshooting)
 
-## Why TypeScript for Claude Code Integration
+Why TypeScript for Claude Code Integration
 
 TypeScript provides several advantages when working with Claude Code's API:
 
-- **Compile-time type checking** catches errors before deployment
+- Compile-time type checking catches errors before deployment
 
-- **IntelliSense support** in your IDE improves developer productivity
+- IntelliSense support in your IDE improves developer productivity
 
-- **Self-documenting code** reduces the need for external documentation
+- Self-documenting code reduces the need for external documentation
 
-- **Refactoring confidence** when making changes to your integration
+- Refactoring confidence when making changes to your integration
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -47,7 +47,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Set Up Your TypeScript Project
+Step 1: Set Up Your TypeScript Project
 
 Begin by initializing a new TypeScript project with the necessary dependencies:
 
@@ -72,12 +72,12 @@ Create a `tsconfig.json` file with strict type checking enabled:
     "outDir": "./dist",
     "declaration": true
   },
-  "include": ["src/**/*"],
+  "include": ["src//*"],
   "exclude": ["node_modules", "dist"]
 }
 ```
 
-### Step 2: Defining Type-Safe API Types
+Step 2: Defining Type-Safe API Types
 
 Create a types file that defines all the request and response types for the Claude Code API:
 
@@ -123,7 +123,7 @@ export interface Usage {
 }
 ```
 
-### Step 3: Build the API Client Class
+Step 3: Build the API Client Class
 
 Create a reusable client class that handles authentication, request formatting, and error handling:
 
@@ -215,7 +215,7 @@ export class ClaudeCodeError extends Error {
 }
 ```
 
-### Step 4: Use the Client in Your Application
+Step 4: Use the Client in Your Application
 
 Here's how to integrate the client into your TypeScript application:
 
@@ -254,11 +254,11 @@ async function main() {
 main();
 ```
 
-## Best Practices for Production Use
+Best Practices for Production Use
 
 When deploying your TypeScript API client in production, consider these patterns:
 
-**1. Use dependency injection for testability**
+1. Use dependency injection for testability
 
 ```typescript
 interface HttpClient {
@@ -273,7 +273,7 @@ class ProductionHttpClient implements HttpClient {
 }
 ```
 
-**2. Implement request caching for repeated queries**
+2. Implement request caching for repeated queries
 
 ```typescript
 const cache = new Map<string, { data: unknown; timestamp: number }>();
@@ -288,7 +288,7 @@ async function getCachedCompletion(key: string): Promise<unknown | null> {
 }
 ```
 
-**3. Add structured logging**
+3. Add structured logging
 
 ```typescript
 function logRequest(params: CompletionRequest): void {
@@ -300,7 +300,7 @@ function logRequest(params: CompletionRequest): void {
 }
 ```
 
-### Step 5: Publish Your Client Library
+Step 5: Publish Your Client Library
 
 When you're ready to share your client with other developers, configure your `package.json` for npm publishing:
 
@@ -323,7 +323,7 @@ When you're ready to share your client with other developers, configure your `pa
 }
 ```
 
-### Step 6: Use TypeScript Generics for Flexible Response Handling
+Step 6: Use TypeScript Generics for Flexible Response Handling
 
 The API client above uses a fixed response shape, but real-world applications often need to handle multiple response formats. TypeScript generics let you build a single method that infers the correct return type based on the request:
 
@@ -350,7 +350,7 @@ const embedding = await client.request<EmbeddingResponse>('embeddings', embeddin
 
 This pattern eliminates type assertions scattered throughout calling code and makes the client extensible without breaking existing consumers.
 
-### Step 7: Validating Responses at Runtime with Zod
+Step 7: Validating Responses at Runtime with Zod
 
 Compile-time types prevent mistakes in your code, but they cannot guard against API schema changes at runtime. Integrating Zod adds a runtime safety layer:
 
@@ -391,11 +391,11 @@ async createCompletion(request: CompletionRequest): Promise<CompletionResponse> 
 
 When the API returns an unexpected field or changes a type, Zod throws a descriptive error immediately rather than silently passing malformed data further into your application. This is especially important in production systems where bugs from malformed API responses are difficult to trace.
 
-### Step 8: Error Handling Patterns Worth Adopting
+Step 8: Error Handling Patterns Worth Adopting
 
 strong error handling distinguishes production-grade clients from prototype code. Beyond basic try/catch, consider these patterns:
 
-**Discriminated union results** return a result type instead of throwing, letting callers decide how to handle failures:
+Discriminated union results return a result type instead of throwing, letting callers decide how to handle failures:
 
 ```typescript
 type Result<T> =
@@ -425,7 +425,7 @@ if (result.success) {
 }
 ```
 
-**Context-enriched errors** attach request metadata to thrown errors, so you can correlate errors with specific API calls in your monitoring dashboard:
+Context-enriched errors attach request metadata to thrown errors, so you can correlate errors with specific API calls in your monitoring dashboard:
 
 ```typescript
 throw new ClaudeCodeError(
@@ -439,44 +439,44 @@ This small addition means every error in your logs links back to the exact model
 
 Building a type-safe TypeScript client for Claude Code ensures your integration handles edge cases gracefully while providing excellent developer experience through autocomplete and type hints.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to build type-safe?**
+How long does it take to build type-safe?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Best AI Features for Generating API Client Code from](/best-ai-features-for-generating-api-client-code-from-openapi/)
 - [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
@@ -484,5 +484,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [AI Tools for Generating API Client SDKs 2026](/ai-tools-for-generating-api-client-sdks-2026/)
 - [How to Use the Claude API for Automated Code Review](/how-to-use-claude-api-for-automated-code-review/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

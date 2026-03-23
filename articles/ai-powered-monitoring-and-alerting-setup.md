@@ -17,7 +17,7 @@ voice-checked: true
 
 Traditional monitoring generates alerts; AI-augmented monitoring explains them. The difference matters at 3 AM when an engineer needs to know not just that p95 latency spiked but why, which services are affected downstream, and what the recovery steps are. This guide walks through a practical setup using Prometheus, Grafana, and Claude for alert triage and runbook automation.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Architecture Overview
+Step 1: Architecture Overview
 
 ```
 [Services] → [Prometheus] → [AlertManager] → [Alert Webhook]
@@ -41,10 +41,10 @@ Before you begin, make sure you have the following ready:
 
 The triage service intercepts AlertManager webhooks, fetches relevant metrics from Prometheus, and sends an enriched context bundle to Claude for analysis before paging the on-call engineer.
 
-### Step 2: Prometheus Setup with Key Recording Rules
+Step 2: Prometheus Setup with Key Recording Rules
 
 ```yaml
-# prometheus/recording-rules.yml
+prometheus/recording-rules.yml
 groups:
   - name: service_slos
     interval: 30s
@@ -90,10 +90,10 @@ groups:
           description: "p95 latency is {{ $value | humanizeDuration }}"
 ```
 
-### Step 3: AlertManager Webhook Configuration
+Step 3: AlertManager Webhook Configuration
 
 ```yaml
-# alertmanager/config.yml
+alertmanager/config.yml
 route:
   group_by: ['alertname', 'job']
   group_wait: 30s
@@ -110,10 +110,10 @@ receivers:
           bearer_token: '${TRIAGE_SERVICE_TOKEN}'
 ```
 
-### Step 4: The AI Triage Service
+Step 4: The AI Triage Service
 
 ```python
-# triage_service.py
+triage_service.py
 from fastapi import FastAPI, Request, HTTPException
 from pydantic import BaseModel
 import anthropic
@@ -170,7 +170,7 @@ async def gather_context(alert: dict) -> dict:
         f'sum by (status) (rate(http_requests_total{{job="{job}", status=~"[45].."}}[5m]))'
     )
 
-    # Dependent services — check if they're also degraded
+    # Dependent services. check if they're also degraded
     context["upstream_errors"] = await prom.query(
         'job:http_errors:rate5m > 0.01'
     )
@@ -256,12 +256,12 @@ async def notify_slack(alert: dict, analysis: str):
         await http.post(slack_webhook, json=message)
 ```
 
-### Step 5: Automated Runbook Generation
+Step 5: Automated Runbook Generation
 
 Use Claude to generate runbooks from historical incidents:
 
 ```python
-# scripts/generate-runbook.py
+scripts/generate-runbook.py
 import anthropic
 
 client = anthropic.Anthropic()
@@ -290,19 +290,19 @@ Based on these historical incidents:
 {incidents_text}
 
 Format the runbook as:
-## Overview
-### Step 6: When This Fires
-### Step 7: Diagnostic Steps (numbered, with specific commands)
-### Step 8: Common Root Causes
-### Step 9: Resolution Steps by Root Cause
-### Step 10: Escalation Path
-### Step 11: Prevention
+Overview
+Step 6: When This Fires
+Step 7: Diagnostic Steps (numbered, with specific commands)
+Step 8: Common Root Causes
+Step 9: Resolution Steps by Root Cause
+Step 10: Escalation Path
+Step 11: Prevention
 """
         }]
     )
     return response.content[0].text
 
-# Example
+Example
 incidents = [
     {
         "date": "2026-02-15",
@@ -324,11 +324,11 @@ runbook = generate_runbook("HighErrorRate", incidents)
 print(runbook)
 ```
 
-### Step 12: Grafana Dashboard with AI Annotations
+Step 12: Grafana Dashboard with AI Annotations
 
 ```python
-# scripts/annotate-dashboard.py
-# Adds AI-generated explanations as Grafana annotations at anomaly points
+scripts/annotate-dashboard.py
+Adds AI-generated explanations as Grafana annotations at anomaly points
 
 import httpx
 import anthropic
@@ -385,10 +385,10 @@ async def post_grafana_annotation(timestamp: str, text: str, dashboard_id: int):
         )
 ```
 
-### Step 13: Deploy ment
+Step 13: Deploy ment
 
 ```bash
-# docker-compose.yml excerpt
+docker-compose.yml excerpt
 version: '3.8'
 services:
   triage-service:
@@ -402,49 +402,49 @@ services:
       - prometheus
 ```
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Articles
+Related Articles
 
 - [How to Use AI for Writing Prometheus Alerting Rules](/how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/)
 - [AI Tools for Generating Prometheus Alerting Rules (2026)](/ai-tools-for-generating-prometheus-alerting-rules-2026/)
 - [How to Set Up Model Context Protocol for Feeding Monitoring](/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
 - [How to Use AI for Writing Effective Prometheus Recording](/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
 - [How to Use AI for Incident Response Automation](/how-to-use-ai-for-incident-response-automation/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to guide?**
+How long does it take to guide?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Will this work with my existing CI/CD pipeline?**
+Will this work with my existing CI/CD pipeline?
 
 The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ. You may need to adapt file paths, environment variable names, and trigger conditions to match your pipeline tool. The underlying workflow logic stays the same.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 {% endraw %}

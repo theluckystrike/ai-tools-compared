@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Build Semantic Search with Embeddings"
-description: "Step-by-step guide to building semantic search using OpenAI embeddings, pgvector, and a FastAPI backend — with chunking, indexing, and query code"
+description: "Step-by-step guide to building semantic search using OpenAI embeddings, pgvector, and a FastAPI backend. with chunking, indexing, and query code"
 date: 2026-03-22
 author: theluckystrike
 permalink: /how-to-build-semantic-search-with-embeddings/
@@ -15,11 +15,11 @@ tags: [ai-tools-compared]
 
 {% raw %}
 
-# How to Build Semantic Search with Embeddings
+How to Build Semantic Search with Embeddings
 
-Semantic search finds results by meaning, not keyword match. A query for "server crash" returns documents about "application outage" and "process died" — things a LIKE query would miss. This guide builds a complete semantic search pipeline: embedding generation, vector storage in Postgres with pgvector, and a FastAPI query endpoint.
+Semantic search finds results by meaning, not keyword match. A query for "server crash" returns documents about "application outage" and "process died". things a LIKE query would miss. This guide builds a complete semantic search pipeline: embedding generation, vector storage in Postgres with pgvector, and a FastAPI query endpoint.
 
-## Architecture
+Architecture
 
 ```
 Documents → Chunker → Embedding Model → pgvector (Postgres)
@@ -28,11 +28,11 @@ User query → Embedding Model → cosine similarity search
 ```
 
 The key components:
-- **Embedding model**: OpenAI `text-embedding-3-small` (1536 dims, fast, cheap)
-- **Vector store**: pgvector extension on Postgres
-- **API**: FastAPI with async SQLAlchemy
+- Embedding model: OpenAI `text-embedding-3-small` (1536 dims, fast, cheap)
+- Vector store: pgvector extension on Postgres
+- API: FastAPI with async SQLAlchemy
 
-## Step 1: Set Up pgvector
+Step 1: Set Up pgvector
 
 ```sql
 -- Enable extension
@@ -59,14 +59,14 @@ CREATE INDEX ON documents USING ivfflat (embedding vector_cosine_ops)
 CREATE INDEX ON documents USING gin(to_tsvector('english', content));
 ```
 
-The `ivfflat` index trades some recall for speed. For exact search (smaller datasets), use `CREATE INDEX ON documents USING hnsw (embedding vector_cosine_ops)` — HNSW has better recall but slower build time.
+The `ivfflat` index trades some recall for speed. For exact search (smaller datasets), use `CREATE INDEX ON documents USING hnsw (embedding vector_cosine_ops)`. HNSW has better recall but slower build time.
 
-## Step 2: Document Chunking
+Step 2: Document Chunking
 
 Chunking strategy matters more than the embedding model. Too large = noisy vectors. Too small = lost context.
 
 ```python
-# chunker.py
+chunker.py
 from dataclasses import dataclass
 import tiktoken
 
@@ -106,10 +106,10 @@ def chunk_text(
 
 The 64-token overlap prevents sentences from being split across chunks with no context on either side.
 
-## Step 3: Embedding Generation and Indexing
+Step 3: Embedding Generation and Indexing
 
 ```python
-# indexer.py
+indexer.py
 import asyncio
 import hashlib
 from openai import AsyncOpenAI
@@ -162,10 +162,10 @@ async def index_document(source_id: str, content: str) -> int:
     return len(chunks)
 ```
 
-## Step 4: Query API
+Step 4: Query API
 
 ```python
-# api.py
+api.py
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -233,7 +233,7 @@ async def search(req: SearchRequest):
 
 The `<=>` operator is pgvector's cosine distance. `1 - distance = similarity`, so 0.7 minimum score means 70% semantic similarity.
 
-## Hybrid Search
+Hybrid Search
 
 For production, combine semantic search with BM25 (full-text) and rerank:
 
@@ -268,7 +268,7 @@ LIMIT :top_k;
 
 RRF (Reciprocal Rank Fusion) with k=60 is a well-tested method for combining ranked lists without needing to tune weights.
 
-## Choosing the Right Embedding Model
+Choosing the Right Embedding Model
 
 The embedding model you choose has a direct impact on search quality and cost. Here is a practical comparison of the most widely used options in 2026:
 
@@ -284,7 +284,7 @@ For most applications, `text-embedding-3-small` is the right choice. It outperfo
 
 If you are running on-premises or need sub-10ms embedding latency for high-throughput workloads, `nomic-embed-text` via Ollama or a local FastAPI wrapper is a solid self-hosted option.
 
-### Dimensionality Reduction
+Dimensionality Reduction
 
 OpenAI's third-generation models support shortening embeddings via the `dimensions` parameter. This trades some accuracy for lower storage and faster similarity computation:
 
@@ -298,15 +298,15 @@ response = await client.embeddings.create(
 
 At 512 dimensions, `text-embedding-3-large` is still competitive with `text-embedding-3-small` at full dimensions, while using one-sixth the storage per vector.
 
-## Re-Ranking with a Cross-Encoder
+Re-Ranking with a Cross-Encoder
 
 Vector similarity retrieves candidates but does not guarantee relevance ordering. A cross-encoder re-ranker reads each (query, candidate) pair jointly and produces a calibrated relevance score. This is the standard two-stage retrieval approach:
 
-1. **Stage 1 — ANN retrieval**: Fetch top-50 candidates from pgvector using cosine similarity
-2. **Stage 2 — Re-ranking**: Pass all 50 pairs through a cross-encoder, return the top-10
+1. Stage 1. ANN retrieval: Fetch top-50 candidates from pgvector using cosine similarity
+2. Stage 2. Re-ranking: Pass all 50 pairs through a cross-encoder, return the top-10
 
 ```python
-# reranker.py
+reranker.py
 from sentence_transformers import CrossEncoder
 
 reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
@@ -340,11 +340,11 @@ async def search(req: SearchRequest):
     ]
 ```
 
-The `ms-marco-MiniLM-L-6-v2` model is 23MB and runs in ~5ms per pair on CPU — fast enough for 50 candidates without GPU.
+The `ms-marco-MiniLM-L-6-v2` model is 23MB and runs in ~5ms per pair on CPU. fast enough for 50 candidates without GPU.
 
-## Metadata Filtering
+Metadata Filtering
 
-Real search workloads need metadata pre-filters — for example, search only within a specific tenant, document type, or date range. pgvector supports combining vector search with regular SQL predicates:
+Real search workloads need metadata pre-filters. for example, search only within a specific tenant, document type, or date range. pgvector supports combining vector search with regular SQL predicates:
 
 ```sql
 SELECT
@@ -367,7 +367,7 @@ Pass `doc_types` as a Postgres array: `{"doc_types": ["policy", "runbook"]}`. Th
 
 For high-cardinality metadata, add a btree index: `CREATE INDEX ON documents ((metadata->>'tenant_id'));`.
 
-## Performance Notes
+Performance Notes
 
 - At 1M rows, IVFFlat with `lists=1000` queries in ~20ms on an 8-core server
 - Embedding a single query with `text-embedding-3-small` takes ~50ms
@@ -376,24 +376,24 @@ For high-cardinality metadata, add a btree index: `CREATE INDEX ON documents ((m
 - HNSW build time is 5–10x slower than IVFFlat but query time is more predictable under load
 - For 10M+ rows, consider partitioning the `documents` table by tenant or date to keep per-partition index sizes manageable
 
-## Operational Checklist
+Operational Checklist
 
 Before shipping semantic search to production, verify:
 
 - [ ] `pg_prewarm('documents_embedding_idx')` runs at Postgres startup to warm the index into shared buffers
-- [ ] Embedding dimension in `vector(N)` matches your model's output — mismatches fail silently and return garbage scores
+- [ ] Embedding dimension in `vector(N)` matches your model's output. mismatches fail silently and return garbage scores
 - [ ] Re-indexing pipeline handles document updates idempotently via `ON CONFLICT DO UPDATE`
 - [ ] Query latency budget: ANN (~20ms) + embedding API (~50ms) + re-ranking (~25ms) = ~95ms P95 target
 - [ ] Rate limit handling: exponential backoff on OpenAI 429 responses during bulk indexing
 - [ ] `SET LOCAL ivfflat.probes = 10;` in your search transaction to increase recall without a full `HNSW` migration
 
-## Related Articles
+Related Articles
 
 - [Switching from ChatGPT Search to Perplexity Pro Search](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 - [How to Build AI-Powered Code Search 2026](/how-to-build-ai-powered-code-search-2026/)
 - [Switching from ChatGPT Search to Perplexity Pro: Explained](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 - [How to Build a RAG Pipeline with LangChain 2026](/how-to-build-a-rag-pipeline-with-langchain-2026/)
 - [How to Build a RAG Chatbot with Pinecone](/how-to-build-rag-chatbot-with-pinecone)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

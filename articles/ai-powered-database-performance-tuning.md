@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI-Powered Database Performance Tuning Tools"
-description: "Compare AI tools for PostgreSQL and MySQL performance tuning — query analysis, index recommendations, EXPLAIN plan interpretation, and slow query fixes"
+description: "Compare AI tools for PostgreSQL and MySQL performance tuning. query analysis, index recommendations, EXPLAIN plan interpretation, and slow query fixes"
 date: 2026-03-22
 author: theluckystrike
 permalink: ai-powered-database-performance-tuning
@@ -15,9 +15,9 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-Database performance tuning requires reading query plans, understanding statistics, and knowing which indexes help and which hurt. This is historically expert-only territory — but AI tools have gotten good enough to replace a lot of that expertise for the 80% case. This guide covers practical AI-assisted tuning for PostgreSQL and MySQL.
+Database performance tuning requires reading query plans, understanding statistics, and knowing which indexes help and which hurt. This is historically expert-only territory. but AI tools have gotten good enough to replace a lot of that expertise for the 80% case. This guide covers practical AI-assisted tuning for PostgreSQL and MySQL.
 
-## Table of Contents
+Table of Contents
 
 - [The Core Workflow](#the-core-workflow)
 - [Prerequisites: Enabling Query Tracking](#prerequisites-enabling-query-tracking)
@@ -31,7 +31,7 @@ Database performance tuning requires reading query plans, understanding statisti
 - [Tool Comparison](#tool-comparison)
 - [Related Reading](#related-reading)
 
-## The Core Workflow
+The Core Workflow
 
 ```
 Identify slow queries (pg_stat_statements / slow query log)
@@ -43,9 +43,9 @@ AI interpretation → Index recommendations → Query rewrite suggestions
 Measure improvement (before/after latency)
 ```
 
-This loop works for both reactive tuning (fix slow queries in production) and proactive tuning (review new queries before they ship). The AI component fits at the interpretation and recommendation step — not at the measurement step, which requires real query execution.
+This loop works for both reactive tuning (fix slow queries in production) and proactive tuning (review new queries before they ship). The AI component fits at the interpretation and recommendation step. not at the measurement step, which requires real query execution.
 
-## Prerequisites: Enabling Query Tracking
+Prerequisites: Enabling Query Tracking
 
 Before you can identify slow queries, you need the data. For PostgreSQL:
 
@@ -75,10 +75,10 @@ SET ENABLED = 'YES'
 WHERE NAME = 'events_statements_history_long';
 ```
 
-## Extracting Slow Queries
+Extracting Slow Queries
 
 ```python
-# query_harvester.py
+query_harvester.py
 import psycopg2
 import json
 from anthropic import Anthropic
@@ -124,7 +124,7 @@ def get_explain_plan(conn_string: str, query: str) -> str:
     return "\n".join(row[0] for row in rows)
 ```
 
-## AI Query Plan Interpretation
+AI Query Plan Interpretation
 
 ```python
 def interpret_query_plan(
@@ -186,7 +186,7 @@ def batch_analyze_slow_queries(conn_string: str) -> list[dict]:
     return results
 ```
 
-## Index Recommendation Engine
+Index Recommendation Engine
 
 ```python
 def recommend_indexes(
@@ -256,7 +256,7 @@ Based on column types and naming patterns (foreign keys, timestamps, status fiel
     return response.content[0].text
 ```
 
-## Reading EXPLAIN Output: What the AI Sees
+Reading EXPLAIN Output: What the AI Sees
 
 To understand why AI interpretation helps, here's what a typical slow query plan looks like:
 
@@ -269,11 +269,11 @@ Gather  (cost=1000.00..45231.43 rows=1 width=208) (actual time=18241.321..18241.
         Rows Removed by Filter: 1483721
 ```
 
-A developer without database experience sees numbers. Claude sees: "Sequential scan on 1.5 million rows removing almost all of them — this table needs a composite index on `(status, created_at)`. The parallel workers are compensating but the fundamental problem is that there's no index on `status`."
+A developer without database experience sees numbers. Claude sees: "Sequential scan on 1.5 million rows removing almost all of them. this table needs a composite index on `(status, created_at)`. The parallel workers are compensating but the fundamental problem is that there's no index on `status`."
 
 The natural language output gets developers to the right fix without requiring them to memorize query plan node types.
 
-## Query Rewrite Examples
+Query Rewrite Examples
 
 AI tools are particularly good at rewriting anti-patterns. Give Claude these and it consistently fixes them:
 
@@ -322,9 +322,9 @@ Rules:
     return response.content[0].text
 ```
 
-For the leading wildcard case, Claude typically recommends a full-text search index (`CREATE INDEX USING gin(to_tsvector('english', name))`) along with the rewritten query using `@@` instead of `LIKE`. This is a non-obvious fix that most developers need to look up — the AI surfaces it immediately.
+For the leading wildcard case, Claude typically recommends a full-text search index (`CREATE INDEX USING gin(to_tsvector('english', name))`) along with the rewritten query using `@@` instead of `LIKE`. This is a non-obvious fix that most developers need to look up. the AI surfaces it immediately.
 
-## Automated Slow Query Report
+Automated Slow Query Report
 
 ```python
 def generate_tuning_report(conn_string: str, output_path: str = "db_tuning_report.md"):
@@ -336,7 +336,7 @@ def generate_tuning_report(conn_string: str, output_path: str = "db_tuning_repor
         f.write(f"Generated: {__import__('datetime').date.today()}\n\n")
 
         for i, item in enumerate(analyses, 1):
-            f.write(f"## Query #{i} — {item['mean_ms']}ms avg ({item['calls']} calls)\n\n")
+            f.write(f"## Query #{i}. {item['mean_ms']}ms avg ({item['calls']} calls)\n\n")
             f.write(f"```sql\n{item['query']}\n```\n\n")
             f.write(item["analysis"])
             f.write("\n\n---\n\n")
@@ -350,15 +350,15 @@ if __name__ == "__main__":
 
 Schedule this as a weekly cron job and route the report to a Slack channel. Teams that do this consistently find performance regressions during the week they're introduced rather than after they've affected enough users to appear in support tickets.
 
-## When AI Recommendations Fall Short
+When AI Recommendations Fall Short
 
 AI tuning tools have two common failure modes worth knowing.
 
-**Write-heavy tables**: Index recommendations from AI tools optimize for read performance. On a table with 10,000 writes per second, adding an index on every filtered column will slow writes enough to create a different kind of incident. Always check `n_dead_tup` and `last_autovacuum` alongside index recommendations for high-write tables.
+Write-heavy tables: Index recommendations from AI tools optimize for read performance. On a table with 10,000 writes per second, adding an index on every filtered column will slow writes enough to create a different kind of incident. Always check `n_dead_tup` and `last_autovacuum` alongside index recommendations for high-write tables.
 
-**Optimizer statistics mismatch**: If `ANALYZE` hasn't run recently, the query planner is working from stale statistics. AI interpretation of the plan will be correct but the recommendations may not match production behavior. Run `ANALYZE table_name` before capturing EXPLAIN output for analysis.
+Optimizer statistics mismatch: If `ANALYZE` hasn't run recently, the query planner is working from stale statistics. AI interpretation of the plan will be correct but the recommendations may not match production behavior. Run `ANALYZE table_name` before capturing EXPLAIN output for analysis.
 
-## Tool Comparison
+Tool Comparison
 
 | Tool | Query Analysis | Index Recs | Plan Interpretation | Cost |
 |---|---|---|---|---|
@@ -368,9 +368,9 @@ AI tuning tools have two common failure modes worth knowing.
 | pganalyze | Automated | Good | Limited | $149+/mo |
 | OtterTune | ML-based | Yes | No narrative | $400+/mo |
 
-Claude's advantage is explaining *why* a query is slow in plain language — useful for developers who aren't database experts. pganalyze and OtterTune are better for automated monitoring at scale; Claude is better for understanding and teaching.
+Claude's advantage is explaining *why* a query is slow in plain language. useful for developers who aren't database experts. pganalyze and OtterTune are better for automated monitoring at scale; Claude is better for understanding and teaching.
 
-## Related Reading
+Related Reading
 
 - [Best AI Tools for SQL Query Optimization](/best-ai-tools-for-sql-query-optimization-and-database-performance/)
 - [How to Use AI for Log Anomaly Detection](/how-to-use-ai-for-log-anomaly-detection/)
@@ -379,7 +379,7 @@ Claude's advantage is explaining *why* a query is slow in plain language — use
 
 ---
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Database Performance Optimization Query](/ai-tools-for-database-performance-optimization-query-analysis/)
 - [AI-Powered Database Query Optimization Tools 2026](/ai-powered-database-query-optimization-tools/)
@@ -387,5 +387,5 @@ Claude's advantage is explaining *why* a query is slow in plain language — use
 - [Best AI Tools for SQL Query Optimization and Database](/best-ai-tools-for-sql-query-optimization-and-database-performance/)
 - [AI Tools for Automated Performance Profiling](/ai-tools-automated-performance-profiling/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

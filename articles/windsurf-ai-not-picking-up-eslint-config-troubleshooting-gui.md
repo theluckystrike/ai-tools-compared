@@ -17,14 +17,14 @@ voice-checked: true
 
 Windsurf AI offers intelligent code assistance that integrates with your project's linting tools, but sometimes it fails to recognize your ESLint configuration. This creates a frustrating experience where the AI suggests code that violates your project's style guidelines or ignores your custom rules. This guide walks through the most common causes and practical solutions to get Windsurf properly detecting your ESLint setup.
 
-## Table of Contents
+Table of Contents
 
 - [Why Windsurf Fails to Detect ESLint Config](#why-windsurf-fails-to-detect-eslint-config)
 - [Diagnostic Steps](#diagnostic-steps)
 - [Solutions for Common Scenarios](#solutions-for-common-scenarios)
 - [Verification](#verification)
 - [Quick Reference Checklist](#quick-reference-checklist)
-- [Advanced Configuration: Workspace Settings Deep Dive](#advanced-configuration-workspace-settings-deep-dive)
+- [Advanced Configuration: Workspace Settings Deep Dive](#advanced-configuration-workspace-settings-deep detailed look)
 - [ESLint Configuration Examples](#eslint-configuration-examples)
 - [Debugging ESLint Detection with CLI Commands](#debugging-eslint-detection-with-cli-commands)
 - [Windsurf-Specific Troubleshooting](#windsurf-specific-troubleshooting)
@@ -33,31 +33,31 @@ Windsurf AI offers intelligent code assistance that integrates with your project
 - [Integration with CI/CD Pipelines](#integration-with-cicd-pipelines)
 - [Quick Reference Checklist](#quick-reference-checklist)
 
-## Why Windsurf Fails to Detect ESLint Config
+Why Windsurf Fails to Detect ESLint Config
 
 Several factors can prevent Windsurf from picking up your ESLint configuration. Understanding these root causes helps you diagnose the specific issue in your project.
 
-### Non-Standard File Locations
+Non-Standard File Locations
 
 Windsurf expects your ESLint configuration in recognized locations. If you use a non-standard filename or store it in an unusual directory, Windsurf may not find it. The most common locations Windsurf looks for are `.eslintrc.js`, `.eslintrc.cjs`, `.eslintrc.json`, `.eslintrc.yml`, or `eslint.config.js` in your project root.
 
-### Project Root Detection Issues
+Project Root Detection Issues
 
 Windsurf needs to correctly identify your project root to locate configuration files. If your workspace contains multiple projects or uses a monorepo structure, Windsurf might be looking in the wrong directory for your ESLint config.
 
-### Missing Dependencies
+Missing Dependencies
 
 If your project lacks the required ESLint packages in `node_modules`, Windsurf cannot read your configuration. This happens frequently when developers set up ESLint globally or copy configuration files without installing dependencies.
 
-### Cache and Indexing Problems
+Cache and Indexing Problems
 
 Windsurf maintains an internal index of your project files. Stale cache entries can cause it to use outdated configuration or miss new configuration files entirely.
 
-## Diagnostic Steps
+Diagnostic Steps
 
 Follow these steps to identify why Windsurf is not detecting your ESLint configuration.
 
-### Step 1: Verify Your Configuration File Exists
+Step 1: Verify Your Configuration File Exists
 
 Check that your ESLint config file exists in a recognized location:
 
@@ -89,7 +89,7 @@ export default [
 ];
 ```
 
-### Step 2: Validate Your Configuration
+Step 2: Validate Your Configuration
 
 Run ESLint from the command line to confirm your configuration is valid:
 
@@ -99,15 +99,15 @@ npx eslint --print-config . > /dev/null 2>&1 && echo "Config is valid"
 
 If this command fails, fix your configuration before troubleshooting Windsurf.
 
-### Step 3: Check Windsurf Workspace Settings
+Step 3: Check Windsurf Workspace Settings
 
 Open Windsurf settings (Cmd/Ctrl + ,) and verify:
 
-1. **Workspace Folder**: Ensure Windsurf has the correct project folder open
-2. **ESLint Enabled**: Verify that ESLint integration is enabled in settings
-3. **Node Path**: Confirm Windsurf is using the correct Node.js path
+1. Workspace Folder: Ensure Windsurf has the correct project folder open
+2. ESLint Enabled: Verify that ESLint integration is enabled in settings
+3. Node Path: Confirm Windsurf is using the correct Node.js path
 
-### Step 4: Inspect Windsurf Logs
+Step 4: Inspect Windsurf Logs
 
 Windsurf logs diagnostic information that can reveal detection issues. Access logs through:
 
@@ -120,20 +120,20 @@ Look for messages like:
 - "Failed to load ESLint"
 - "Using workspace ESLint configuration"
 
-## Solutions for Common Scenarios
+Solutions for Common Scenarios
 
-### Solution 1: Rename to Standard Filename
+Solution 1: Rename to Standard Filename
 
 If your config uses a non-standard name, rename it:
 
 ```bash
-# If you have eslint.config.mjs, rename to eslint.config.js
+If you have eslint.config.mjs, rename to eslint.config.js
 mv eslint.config.mjs eslint.config.js
 ```
 
 For ESLint flat config, use `eslint.config.js` or `eslint.config.mjs` in the project root.
 
-### Solution 2: Specify Config Path Explicitly
+Solution 2: Specify Config Path Explicitly
 
 If your config lives in a subdirectory, tell ESLint where to find it:
 
@@ -150,7 +150,7 @@ To make Windsurf use this path, add it to your VS Code settings:
 }
 ```
 
-### Solution 3: Reinstall Dependencies
+Solution 3: Reinstall Dependencies
 
 Remove and reinstall your node_modules to ensure all ESLint packages are properly installed:
 
@@ -165,7 +165,7 @@ Verify the installation:
 npm list eslint
 ```
 
-### Solution 4: Clear Windsurf Cache
+Solution 4: Clear Windsurf Cache
 
 Clear Windsurf's cache and restart:
 
@@ -173,14 +173,14 @@ Clear Windsurf's cache and restart:
 2. Remove the cache directory:
 
 ```bash
-# macOS
+macOS
 rm -rf ~/Library/Application\ Support/Windsurf/logs
 rm -rf ~/.cache/windsurf
 ```
 
 3. Reopen your project in Windsurf
 
-### Solution 5: Configure Monorepo Projects
+Solution 5: Configure Monorepo Projects
 
 For monorepos, explicitly tell Windsurf which subproject to use:
 
@@ -204,7 +204,7 @@ import apiConfig from './packages/api/eslint.config.js';
 export default [webConfig, apiConfig];
 ```
 
-## Verification
+Verification
 
 After applying solutions, verify Windsurf recognizes your ESLint config:
 
@@ -215,7 +215,7 @@ After applying solutions, verify Windsurf recognizes your ESLint config:
 
 You should see warnings or errors matching your ESLint rules. If you see generic errors or no feedback, the configuration is still not being detected.
 
-## Quick Reference Checklist
+Quick Reference Checklist
 
 Use this checklist to ensure complete configuration:
 
@@ -227,7 +227,7 @@ Use this checklist to ensure complete configuration:
 - [ ] ESLint extension enabled in VS Code settings
 - [ ] Cache cleared after configuration changes
 
-## Advanced Configuration: Workspace Settings Deep Dive
+Advanced Configuration: Workspace Settings Deep Dive
 
 For complex setups, create a `.vscode/settings.json` at your project root with granular ESLint configuration:
 
@@ -266,9 +266,9 @@ For teams running multiple Node versions, ensure Windsurf uses the correct runti
 }
 ```
 
-## ESLint Configuration Examples
+ESLint Configuration Examples
 
-### Modern ESLint (Flat Config) with Full Features
+Modern ESLint (Flat Config) with Full Features
 
 ```javascript
 // eslint.config.js - ESLint 9+
@@ -279,11 +279,11 @@ import importPlugin from 'eslint-plugin-import';
 
 export default [
   {
-    ignores: ['dist/**', 'build/**', 'node_modules/**']
+    ignores: ['dist/', 'build/', 'node_modules/']
   },
   js.configs.recommended,
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    files: ['/*.{js,jsx,ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: 'module',
@@ -316,7 +316,7 @@ export default [
 ];
 ```
 
-### Legacy JSON Config (.eslintrc.json)
+Legacy JSON Config (.eslintrc.json)
 
 ```json
 {
@@ -346,7 +346,7 @@ export default [
   },
   "overrides": [
     {
-      "files": ["**/*.ts", "**/*.tsx"],
+      "files": ["/*.ts", "/*.tsx"],
       "rules": {
         "@typescript-eslint/no-unused-vars": "warn"
       }
@@ -355,28 +355,28 @@ export default [
 }
 ```
 
-## Debugging ESLint Detection with CLI Commands
+Debugging ESLint Detection with CLI Commands
 
 Test your configuration directly before relying on Windsurf:
 
 ```bash
-# Verify ESLint finds your config
+Verify ESLint finds your config
 npx eslint --debug-config . 2>&1 | head -50
 
-# Print what ESLint sees
+Print what ESLint sees
 npx eslint --print-config src/index.js | jq '.rules | keys' | head -20
 
-# Run ESLint on a single file to test rules
+Run ESLint on a single file to test rules
 npx eslint src/app.js --format=compact
 
-# Check which version is running
+Check which version is running
 npx eslint --version
 
-# Inspect what eslint-config-prettier does
+Inspect what eslint-config-prettier does
 npx eslint --print-config . | jq '.rules | to_entries[] | select(.value == false)' | head
 ```
 
-## Windsurf-Specific Troubleshooting
+Windsurf-Specific Troubleshooting
 
 Windsurf uses VS Code's ESLint extension internally. Access advanced debugging through the Command Palette:
 
@@ -386,11 +386,11 @@ Windsurf uses VS Code's ESLint extension internally. Access advanced debugging t
 
 Common error patterns:
 
-- **"Cannot find module '@scope/config'"** — Your extended config package isn't installed. Run `npm install @scope/config`
-- **"Unexpected token"** — Your .eslintrc has syntax errors. Use `npx eslint --print-config` to identify the issue
-- **"Field number X has already been used"** — ESLint rules object has duplicate keys; check for typos in rule names
+- "Cannot find module '@scope/config'". Your extended config package isn't installed. Run `npm install @scope/config`
+- "Unexpected token". Your .eslintrc has syntax errors. Use `npx eslint --print-config` to identify the issue
+- "Field number X has already been used". ESLint rules object has duplicate keys; check for typos in rule names
 
-## Performance Tuning for Windsurf ESLint Integration
+Performance Tuning for Windsurf ESLint Integration
 
 If ESLint linting is slow or blocking Windsurf, adjust these settings:
 
@@ -416,7 +416,7 @@ If ESLint linting is slow or blocking Windsurf, adjust these settings:
 
 Setting `run: "onSave"` instead of `onChange` prevents constant checking as you type. For monorepos, limiting working directories reduces the scope ESLint must analyze.
 
-## Testing Your Config with Sample Files
+Testing Your Config with Sample Files
 
 Create a test file to verify Windsurf will detect your rules:
 
@@ -431,13 +431,13 @@ function badly_named(){} // Should trigger naming-convention if enabled
 
 In Windsurf, open this file. You should see red underlines matching your .eslintrc rules. If you don't see errors after 2-3 seconds, your config isn't loading.
 
-## Integration with CI/CD Pipelines
+Integration with CI/CD Pipelines
 
 Once Windsurf detects your ESLint config properly, ensure your CI/CD runs the same checks:
 
 ```bash
 #!/bin/bash
-# lint.sh
+lint.sh
 set -e
 
 echo "Running ESLint..."
@@ -449,7 +449,7 @@ npx tsc --noEmit
 echo "All checks passed!"
 ```
 
-## Quick Reference Checklist
+Quick Reference Checklist
 
 Use this checklist to ensure complete configuration:
 
@@ -467,33 +467,33 @@ Most developers resolve this issue by ensuring their ESLint config follows stand
 
 If you continue experiencing issues after trying these solutions, check the Windsurf documentation for your specific version, as configuration options may vary between releases.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Windsurf offer a free tier?**
+Does Windsurf offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Windsurf's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Does WindSurf AI Send Entire Project Context or Just Open](/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
 - [Windsurf AI Flows Feature How It Chains Multiple Editing](/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
 - [Switching from Windsurf to Cursor How to Transfer Project](/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
 - [Cursor Free Plan vs Windsurf Free Plan Which Gives](/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
 - [Switching from Windsurf Free to Cursor Free What Is](/switching-from-windsurf-free-to-cursor-free-what-is-different/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

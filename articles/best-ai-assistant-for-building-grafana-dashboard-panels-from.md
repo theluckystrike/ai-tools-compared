@@ -17,7 +17,7 @@ voice-checked: true
 
 Building effective Grafana dashboards requires transforming raw Prometheus queries into meaningful visualizations. AI assistants have become valuable tools for developers looking to speed up this process, whether you are new to PromQL or need help optimizing complex queries for dashboard panels. This guide evaluates the best AI assistants for building Grafana dashboard panels from Prometheus queries in 2026.
 
-## Table of Contents
+Table of Contents
 
 - [Why Use AI Assistants for Grafana Panel Creation](#why-use-ai-assistants-for-grafana-panel-creation)
 - [Top AI Assistants for Grafana Panel Development](#top-ai-assistants-for-grafana-panel-development)
@@ -27,19 +27,19 @@ Building effective Grafana dashboards requires transforming raw Prometheus queri
 - [Choosing the Right Tool](#choosing-the-right-tool)
 - [Best Practices](#best-practices)
 
-## Why Use AI Assistants for Grafana Panel Creation
+Why Use AI Assistants for Grafana Panel Creation
 
 Creating Grafana panels involves more than just writing PromQL queries. You need to choose appropriate visualization types, set correct time ranges, configure thresholds, and ensure your queries return meaningful data. An AI assistant can help with all of these aspects, especially when working with unfamiliar metrics or complex aggregation patterns.
 
 The main benefits include faster query development, automatic optimization suggestions, help with panel configuration, and guidance on choosing the right visualization for your data type.
 
-## Top AI Assistants for Grafana Panel Development
+Top AI Assistants for Grafana Panel Development
 
-### 1. Claude (Anthropic)
+1. Claude (Anthropic)
 
 Claude stands out for understanding Prometheus query language and Grafana panel configuration. It handles complex PromQL patterns well and can explain what specific queries do, making it useful for learning while working.
 
-**Strengths:**
+Strengths:
 
 - Strong understanding of PromQL syntax and functions
 
@@ -49,7 +49,7 @@ Claude stands out for understanding Prometheus query language and Grafana panel 
 
 - Helps debug query issues
 
-**Example prompt and response:**
+Example prompt and response:
 
 Prompt:
 
@@ -67,11 +67,11 @@ sum(rate(http_requests_errors_total[5m])) / sum(rate(http_requests_total[5m])) *
 
 And explain that this calculates the error percentage over a 5-minute rate, multiplying by 100 to get a percentage value.
 
-### 2. GitHub Copilot
+2. GitHub Copilot
 
 Copilot works directly in your IDE, making it convenient if you are writing Grafana provisioning files or dashboard JSON definitions as code. It understands YAML and JSON structures used in Grafana configurations.
 
-**Strengths:**
+Strengths:
 
 - IDE integration with VS Code and JetBrains
 
@@ -81,7 +81,7 @@ Copilot works directly in your IDE, making it convenient if you are writing Graf
 
 - Context-aware suggestions based on existing code
 
-**Example workflow:**
+Example workflow:
 
 When you are writing a Grafana dashboard YAML file, Copilot can suggest panel configurations:
 
@@ -99,11 +99,11 @@ panels:
       h: 8
 ```
 
-### 3. Cursor
+3. Cursor
 
 Cursor offers a chat-based interface with strong code understanding. It can work with entire dashboard configurations and has good context awareness for Prometheus metrics patterns.
 
-**Strengths:**
+Strengths:
 
 - Chat interface for interactive query development
 
@@ -113,7 +113,7 @@ Cursor offers a chat-based interface with strong code understanding. It can work
 
 - Multi-file context understanding
 
-**Example use case:**
+Example use case:
 
 You can paste your existing Prometheus query and ask Cursor to optimize it:
 
@@ -129,11 +129,11 @@ Cursor might suggest adding namespace filtering:
 sum(rate(container_cpu_usage_seconds_total{namespace="production",container!=""}[5m])) by (pod)
 ```
 
-### 4. Claude Code (Terminal-based)
+4. Claude Code (Terminal-based)
 
 For developers who prefer working in the terminal, Claude Code provides command-line access to AI assistance. It is particularly useful when you need to generate dashboard configurations programmatically.
 
-**Strengths:**
+Strengths:
 
 - Terminal-based workflow
 
@@ -143,7 +143,7 @@ For developers who prefer working in the terminal, Claude Code provides command-
 
 - Good for CI/CD integrated dashboard generation
 
-## AI Assistant Comparison Table
+AI Assistant Comparison Table
 
 Choosing the right tool depends on your workflow and the complexity of your dashboards. Here is a side-by-side breakdown.
 
@@ -159,11 +159,11 @@ Choosing the right tool depends on your workflow and the complexity of your dash
 
 For greenfield dashboard development with complex PromQL, Claude or Cursor provide the deepest support. For teams already living in VS Code and managing dashboards as code in Git, Copilot's IDE integration often wins on convenience.
 
-## Practical Examples
+Practical Examples
 
-### Example 1: CPU Utilization Panel
+Example 1: CPU Utilization Panel
 
-Building a CPU utilization panel requires the right PromQL and panel settings:
+Building a CPU usage panel requires the right PromQL and panel settings:
 
 ```promql
 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
@@ -177,7 +177,7 @@ This query calculates CPU usage percentage by taking idle time and subtracting f
 
 - Set appropriate rate intervals (1m, 5m, 15m)
 
-### Example 2: Memory Usage with Thresholds
+Example 2: Memory Usage with Thresholds
 
 For memory panels with warning and critical thresholds:
 
@@ -205,7 +205,7 @@ An AI can help you configure Grafana field configurations:
 }
 ```
 
-### Example 3: Custom Ratio Queries
+Example 3: Custom Ratio Queries
 
 When you need to calculate custom ratios between metrics:
 
@@ -218,7 +218,7 @@ sum(rate(api_requests_total{service="auth"}[5m]))
 
 AI assistants help ensure you use matching labels and appropriate rate intervals for both metrics.
 
-### Example 4: SLO Burn Rate Panel
+Example 4: SLO Burn Rate Panel
 
 Burn rate panels are among the trickiest to write correctly. AI assistants reduce iteration time significantly here. A 1-hour burn rate alert for a 99.9% SLO looks like this:
 
@@ -232,21 +232,21 @@ Burn rate panels are among the trickiest to write correctly. AI assistants reduc
 
 When the burn rate exceeds 14, your error budget for a 30-day window will be exhausted in under 2 hours. Ask an AI assistant to generate both the fast-burn (1h/5m window pair) and slow-burn (6h/30m window pair) queries for a complete SLO alert setup.
 
-## Step-by-Step: Using an AI Assistant for a New Dashboard
+Step-by-Step: Using an AI Assistant for a New Dashboard
 
 Here is a repeatable workflow for building Grafana panels with AI assistance.
 
-**Step 1 — Describe your metrics.** Before prompting, list your metric names, their labels, and what each represents. The more specific you are, the better the query output.
+Step 1. Describe your metrics. Before prompting, list your metric names, their labels, and what each represents. The more specific you are, the better the query output.
 
-**Step 2 — Request the PromQL first.** Ask for the query in isolation before asking for full panel JSON. This makes it easy to test in Grafana Explore before committing.
+Step 2. Request the PromQL first. Ask for the query in isolation before asking for full panel JSON. This makes it easy to test in Grafana Explore before committing.
 
-**Step 3 — Test in Explore.** Paste the generated query into Grafana Explore to verify it returns data. If labels do not match, share the actual label output with the AI and ask it to adjust.
+Step 3. Test in Explore. Paste the generated query into Grafana Explore to verify it returns data. If labels do not match, share the actual label output with the AI and ask it to adjust.
 
-**Step 4 — Request panel configuration.** Once the query is working, ask the AI to generate the panel JSON or YAML, including visualization type, thresholds, and legend format.
+Step 4. Request panel configuration. Once the query is working, ask the AI to generate the panel JSON or YAML, including visualization type, thresholds, and legend format.
 
-**Step 5 — Validate thresholds against real data.** AI-generated threshold values (70% for warning, 85% for critical) are reasonable defaults but should be calibrated against your actual operational baselines.
+Step 5. Validate thresholds against real data. AI-generated threshold values (70% for warning, 85% for critical) are reasonable defaults but should be calibrated against your actual operational baselines.
 
-## Choosing the Right Tool
+Choosing the Right Tool
 
 Consider these factors when selecting an AI assistant:
 
@@ -258,7 +258,7 @@ Consider these factors when selecting an AI assistant:
 
 4. Query complexity: Simple panels can be created with basic prompts. Complex queries involving multiple aggregations, subqueries, or recording rules benefit from AI assistants with stronger PromQL understanding.
 
-## Best Practices
+Best Practices
 
 When working with AI assistants for Grafana panel creation:
 
@@ -272,22 +272,22 @@ When working with AI assistants for Grafana panel creation:
 
 - Pin your Grafana version: Dashboard JSON schema differs between Grafana 9.x and 10.x; tell your AI which version you are targeting to avoid compatibility issues
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can AI assistants write recording rules as well as panel queries?**
-Yes. Claude and Cursor both handle Prometheus recording rule syntax well. Provide your existing query and ask for a recording rule definition—this is especially useful for expensive cardinality-heavy queries that you want pre-computed.
+Can AI assistants write recording rules as well as panel queries?
+Yes. Claude and Cursor both handle Prometheus recording rule syntax well. Provide your existing query and ask for a recording rule definition, this is especially useful for expensive cardinality-heavy queries that you want pre-computed.
 
-**What if the AI generates a query that returns no data?**
+What if the AI generates a query that returns no data?
 Paste the empty-result query plus your actual metric names (from `{__name__=~".*"}` or `label_values()`) back into the chat. Ask the AI to reconcile the label discrepancy. This back-and-forth usually resolves label mismatches in one or two iterations.
 
-**Should I use AI to generate entire dashboard JSON from scratch?**
-For simple dashboards (under 10 panels), yes—AI-generated JSON is a practical starting point. For complex dashboards, use AI for individual panels and assemble the dashboard yourself to maintain control over layout and row structure.
+Should I use AI to generate entire dashboard JSON from scratch?
+For simple dashboards (under 10 panels), yes, AI-generated JSON is a practical starting point. For complex dashboards, use AI for individual panels and assemble the dashboard yourself to maintain control over layout and row structure.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Generating Grafana Dashboard JSON Templates](/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
 - [AI Tools for Creating Grafana SLO Dashboard Panels](/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
 - [Best AI Assistant for Building Superset Dashboard Charts](/best-ai-assistant-for-building-superset-dashboard-charts-fro/)
 - [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 - [Best AI Assistant for Generating SQL Recursive Queries](/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

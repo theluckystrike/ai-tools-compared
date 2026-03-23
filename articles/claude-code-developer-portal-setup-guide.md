@@ -32,28 +32,28 @@ tags: [ai-tools-compared, claude-ai]
 
 Claude Code transforms how teams build and maintain developer portals. Instead of manually writing documentation or wrestling with static site generators, you can use Claude Code's AI capabilities to generate, organize, and keep your portal current. This guide walks through setting up a developer portal from scratch using Claude Code, with practical examples and automation strategies.
 
-## Key Takeaways
+Key Takeaways
 
-- **A team of 5**: generating documentation daily would spend $150/month for AI-powered portal generation.
-- **When requesting a tutorial**: provide context about your API's purpose and common use cases:
+- A team of 5: generating documentation daily would spend $150/month for AI-powered portal generation.
+- When requesting a tutorial: provide context about your API's purpose and common use cases:
 
 ```
 Generate a tutorial for implementing authentication using OAuth 2.0
 with our API.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Instead of manually writing**: documentation or wrestling with static site generators, you can use Claude Code's AI capabilities to generate, organize, and keep your portal current.
-- **When you use Claude**: Code for portal setup, you gain several advantages.
-- **First**: documentation stays synchronized with your actual code because Claude Code reads your implementation directly.
+- Will this work with: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- Instead of manually writing: documentation or wrestling with static site generators, you can use Claude Code's AI capabilities to generate, organize, and keep your portal current.
+- When you use Claude: Code for portal setup, you gain several advantages.
+- First: documentation stays synchronized with your actual code because Claude Code reads your implementation directly.
 
-## Why Use Claude Code for Developer Portals
+Why Use Claude Code for Developer Portals
 
-Developer portals serve as the central hub for API documentation, SDKs, code examples, and integration guides. Traditional approaches require significant maintenance effort—every API change triggers manual updates across multiple documentation files. Claude Code changes this workflow by understanding your codebase and generating relevant documentation automatically.
+Developer portals serve as the central hub for API documentation, SDKs, code examples, and integration guides. Traditional approaches require significant maintenance effort, every API change triggers manual updates across multiple documentation files. Claude Code changes this workflow by understanding your codebase and generating relevant documentation automatically.
 
 When you use Claude Code for portal setup, you gain several advantages. First, documentation stays synchronized with your actual code because Claude Code reads your implementation directly. Second, you can generate consistent formatting across all your docs without enforcing strict templates. Third, the interactive nature of Claude Code means you can iterate on documentation through conversation rather than editing files repeatedly.
 
 The terminal-first approach also means your documentation workflow integrates naturally with version control and CI/CD pipelines. You can generate docs as part of your build process, ensuring that every commit produces accurate, up-to-date documentation.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -63,30 +63,30 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Structuring Your Developer Portal
+Step 1: Structuring Your Developer Portal
 
 A well-organized developer portal needs clear hierarchy and logical grouping. Start with a directory structure that separates different types of content:
 
 ```
 developer-portal/
-├── docs/
-│   ├── api-reference/
-│   ├── guides/
-│   └── tutorials/
-├── examples/
-│   ├── quickstarts/
-│   └── full-samples/
-└── sdks/
+ docs/
+    api-reference/
+    guides/
+    tutorials/
+ examples/
+    quickstarts/
+    full-samples/
+ sdks/
 ```
 
 Claude Code can generate this structure and populate it with initial content. Use the `Write` tool to create the directory structure, then ask Claude Code to analyze your API and generate corresponding documentation files.
 
-### API Reference Generation
+API Reference Generation
 
 The core of any developer portal is the API reference. Rather than maintaining OpenAPI specs manually, let Claude Code analyze your codebase and generate the reference documentation:
 
 ```bash
-# Analyze your API implementation
+Analyze your API implementation
 claude-code analyze ./src/api --output ./docs/api-reference
 ```
 
@@ -101,7 +101,7 @@ claude-code analyze ./src/api \
   --output ./docs/api-reference
 ```
 
-### Step 2: Integrate Interactive Documentation
+Step 2: Integrate Interactive Documentation
 
 Static documentation serves readers well, but interactive elements help developers test APIs directly from the portal. Consider adding an API playground that connects to your actual endpoints during development:
 
@@ -122,17 +122,17 @@ async function testEndpoint(endpoint, params) {
 
 Claude Code helps you embed such interactive elements into your documentation pages. Simply describe what you want the component to do, and Claude Code generates the implementation.
 
-### Step 3: Automate Documentation Updates
+Step 3: Automate Documentation Updates
 
 The real power of using Claude Code for developer portals emerges when you automate documentation updates. Set up a CI pipeline that triggers documentation regeneration on every code change:
 
 ```yaml
-# .github/workflows/docs.yml
+.github/workflows/docs.yml
 name: Update Documentation
 on:
   push:
     branches: [main]
-    paths: ['src/**']
+    paths: ['src/']
 
 jobs:
   generate-docs:
@@ -153,7 +153,7 @@ jobs:
 
 This workflow ensures your developer portal always reflects the current state of your codebase. Developers making API changes see their modifications documented automatically.
 
-### Step 4: Build Tutorial Content
+Step 4: Build Tutorial Content
 
 Beyond API references, developer portals need tutorials that guide users through common integration scenarios. Claude Code excels at generating these step-by-step guides because it understands your specific implementation details.
 
@@ -170,7 +170,7 @@ with our API. The tutorial should cover:
 
 Claude Code produces a detailed guide tailored to your actual API structure, including working code examples that developers can copy and adapt.
 
-### Step 5: Maintaining Portal Quality
+Step 5: Maintaining Portal Quality
 
 As your developer portal grows, maintaining consistency becomes challenging. Claude Code helps enforce standards across all documentation:
 
@@ -182,7 +182,7 @@ As your developer portal grows, maintaining consistency becomes challenging. Cla
 
 Run these quality checks as part of your CI pipeline to catch issues before they reach users.
 
-### Step 6: Deploy ment Options
+Step 6: Deploy ment Options
 
 Your Claude Code-generated portal can deploy to various platforms:
 
@@ -198,9 +198,9 @@ Your Claude Code-generated portal can deploy to various platforms:
 
 | Cloudflare Pages | Performance-focused | Git integration | Free / $20+ | 20-50ms avg latency |
 
-Most static site generators work well with Claude Code output. Generate markdown files, then build with Jekyll, Hugo, or Docusaurus—the choice depends on your team's preferences and existing tooling.
+Most static site generators work well with Claude Code output. Generate markdown files, then build with Jekyll, Hugo, or Docusaurus, the choice depends on your team's preferences and existing tooling.
 
-### Vercel Deployment Example
+Vercel Deployment Example
 
 Vercel integrates directly with GitHub and automatically builds on each commit. Configure your build settings:
 
@@ -213,7 +213,7 @@ Vercel integrates directly with GitHub and automatically builds on each commit. 
     "CLAUDE_API_KEY": "@claude_api_key"
   },
   "functions": {
-    "api/**/*.js": {
+    "api//*.js": {
       "memory": 1024,
       "maxDuration": 30
     }
@@ -223,12 +223,12 @@ Vercel integrates directly with GitHub and automatically builds on each commit. 
 
 With Vercel, your portal rebuilds automatically on every documentation change. The platform provides edge caching, analytics, and preview deployments before merging to main.
 
-### Netlify with Environment Variables
+Netlify with Environment Variables
 
 Netlify allows you to hook into build processes and set environment variables for documentation generation:
 
 ```toml
-# netlify.toml
+netlify.toml
 [build]
   command = "npm run build:docs"
   functions = "api"
@@ -246,7 +246,7 @@ Netlify allows you to hook into build processes and set environment variables fo
 
 Netlify's split testing feature allows you to A/B test different documentation layouts or explore variations of API explanations without affecting production traffic.
 
-### Step 7: Measuring Portal Effectiveness
+Step 7: Measuring Portal Effectiveness
 
 Developer portal analytics reveal which docs users find helpful and where they struggle. Track these metrics to continuously improve:
 
@@ -260,7 +260,7 @@ Developer portal analytics reveal which docs users find helpful and where they s
 
 Use this data to prioritize documentation improvements. Ask Claude Code to enhance sections that users frequently abandon or struggle to understand.
 
-### Analytics Integration
+Analytics Integration
 
 Integrate analytics tools to measure engagement and identify problems. Most modern platforms support Google Analytics or custom events:
 
@@ -297,18 +297,18 @@ Integrate analytics tools to measure engagement and identify problems. Most mode
 
 Setup alerts for unusual patterns: if a specific guide receives no views for 30 days, mark it for review and update.
 
-### Feedback Loop with Claude Code
+Feedback Loop with Claude Code
 
 Create an automated feedback workflow that feeds user issues back into documentation:
 
 ```bash
 #!/bin/bash
-# docs/refresh-based-on-feedback.sh
+docs/refresh-based-on-feedback.sh
 
-# Pull recent issues labeled "documentation"
+Pull recent issues labeled "documentation"
 gh issue list --label "documentation" --state open --json title,body > /tmp/doc-issues.json
 
-# Ask Claude Code to analyze issues and suggest updates
+Ask Claude Code to analyze issues and suggest updates
 claude-code analyze-docs \
   --issues /tmp/doc-issues.json \
   --docs ./docs \
@@ -317,7 +317,7 @@ claude-code analyze-docs \
 
 This creates a continuous improvement cycle where user feedback directly informs documentation updates.
 
-### Step 8: Pricing and Cost Optimization
+Step 8: Pricing and Cost Optimization
 
 Claude Code itself offers flexible pricing for documentation generation:
 
@@ -332,12 +332,12 @@ For teams generating large volumes of documentation, the Team plan provides unli
 Calculate your actual costs by tracking API usage:
 
 ```bash
-# Monitor Claude Code API usage
+Monitor Claude Code API usage
 claude-code analytics --period last_month
-# Output shows: 45,230 API calls, $22.61 cost
+Output shows: 45,230 API calls, $22.61 cost
 ```
 
-### Step 9: Dynamic Content Generation at Scale
+Step 9: Dynamic Content Generation at Scale
 
 For portals serving many products or APIs, consider dynamic generation strategies:
 
@@ -366,44 +366,44 @@ async function generateEndpointDocs(apiSpec) {
 
 This approach keeps documentation fresh as your API evolves without requiring manual rewrites.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to guide?**
+How long does it take to guide?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Will this work with my existing CI/CD pipeline?**
+Will this work with my existing CI/CD pipeline?
 
 The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ. You may need to adapt file paths, environment variable names, and trigger conditions to match your pipeline tool. The underlying workflow logic stays the same.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Best AI for Writing Internal Developer Portal Content](/best-ai-for-writing-internal-developer-portal-content-from-s/)
 - [Claude Code Coverage Reporting Setup Guide](/claude-code-coverage-reporting-setup-guide/)
@@ -411,5 +411,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-for-converting-code-comments-into-developer-facing-/)
 - [Gemini Code Assist Enterprise Pricing Per Developer](/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```

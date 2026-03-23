@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude vs Copilot for Elixir Development 2026"
-description: "Compare Claude and GitHub Copilot for Elixir — GenServer, Phoenix, Ecto, and OTP patterns with real code output comparisons and prompt strategies"
+description: "Compare Claude and GitHub Copilot for Elixir. GenServer, Phoenix, Ecto, and OTP patterns with real code output comparisons and prompt strategies"
 date: 2026-03-22
 author: theluckystrike
 permalink: /claude-vs-copilot-for-elixir-development-2026/
@@ -15,13 +15,13 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 {% raw %}
 
-# Claude vs Copilot for Elixir Development 2026
+Claude vs Copilot for Elixir Development 2026
 
 Elixir is a minority language in AI training data, which shows in the quality gaps between tools. This comparison covers practical development workflows across GenServer, Phoenix, Ecto, and OTP supervision trees.
 
-## Test 1: GenServer Implementation
+Test 1: GenServer Implementation
 
-**Prompt:**
+Prompt:
 ```text
 Write an Elixir GenServer for a rate limiter. It should:
 - Track request counts per client_id using a Map in state
@@ -31,7 +31,7 @@ Write an Elixir GenServer for a rate limiter. It should:
 - Be supervised with a proper child_spec
 ```
 
-### Claude Output
+Claude Output
 
 ```elixir
 defmodule MyApp.RateLimiter do
@@ -105,9 +105,9 @@ defmodule MyApp.RateLimiter do
 end
 ```
 
-Claude uses `System.monotonic_time(:millisecond)` (correct — wall clock `DateTime.utc_now()` can go backward during NTP adjustments), `@impl true` annotations, a struct for state, and calculates `retry_after` correctly from the oldest entry in the window.
+Claude uses `System.monotonic_time(:millisecond)` (correct. wall clock `DateTime.utc_now()` can go backward during NTP adjustments), `@impl true` annotations, a struct for state, and calculates `retry_after` correctly from the oldest entry in the window.
 
-### Copilot Output
+Copilot Output
 
 Copilot generates a working GenServer but:
 - Uses `DateTime.utc_now()` for timestamps (susceptible to clock skew)
@@ -115,18 +115,18 @@ Copilot generates a working GenServer but:
 - Uses a plain map for state instead of a struct
 - Often generates the cleanup via `Process.send_after/3` in `handle_cast` rather than `handle_info`
 
-**Verdict: Claude** — more idiomatic OTP patterns.
+Claude. more idiomatic OTP patterns.
 
-## Test 2: Phoenix LiveView Component
+Test 2: Phoenix LiveView Component
 
-**Prompt:**
+Prompt:
 ```text
 Write a Phoenix LiveView for a real-time search box. As the user types (debounced 300ms),
 query the database for matching products. Show a loading spinner during fetch.
 Use Ecto for the query. Products have name and sku fields.
 ```
 
-### Claude Output
+Claude Output
 
 ```elixir
 defmodule MyAppWeb.ProductSearchLive do
@@ -204,7 +204,7 @@ end
 ```
 
 ```elixir
-# Ecto query in Catalog context
+Ecto query in Catalog context
 defmodule MyApp.Catalog do
   import Ecto.Query
   alias MyApp.Repo
@@ -226,9 +226,9 @@ end
 
 Claude's Catalog context escapes `%` in the search term (SQL injection mitigation) and uses `ilike` for case-insensitive matching. Copilot often uses `like` (case-sensitive) and misses the `%` escaping.
 
-## Test 3: OTP Supervision Tree
+Test 3: OTP Supervision Tree
 
-**Prompt:**
+Prompt:
 ```text
 Write an OTP application supervision tree for a pipeline with:
 - A rate limiter (one_for_one restart)
@@ -237,7 +237,7 @@ Write an OTP application supervision tree for a pipeline with:
 - Use a strategy that makes sense for these dependencies
 ```
 
-### Claude Output
+Claude Output
 
 ```elixir
 defmodule MyApp.Application do
@@ -246,13 +246,13 @@ defmodule MyApp.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Rate limiter — isolated, can restart without affecting workers
+      # Rate limiter. isolated, can restart without affecting workers
       {MyApp.RateLimiter, []},
 
       # Worker pool via Task.Supervisor
       {Task.Supervisor, name: MyApp.WorkerSupervisor},
 
-      # Metrics reporter — rest_for_one: if this crashes,
+      # Metrics reporter. rest_for_one: if this crashes,
       # WorkerSupervisor and anything after it also restart
       # (workers depend on metrics being available)
       {MyApp.MetricsReporter, []},
@@ -269,7 +269,7 @@ defmodule MyApp.Application do
   end
 end
 
-# Worker pool wrapper
+Worker pool wrapper
 defmodule MyApp.WorkerPool do
   def run(fun, timeout \\ 5_000) do
     Task.Supervisor.async_nolink(MyApp.WorkerSupervisor, fun)
@@ -284,17 +284,17 @@ end
 
 Claude correctly explains when `rest_for_one` is appropriate vs `one_for_one` vs `one_for_all`, and structures the children in dependency order. Copilot tends to default to `one_for_one` without explaining the trade-offs.
 
-## Test 4: Ecto Multi and Transaction Handling
+Test 4: Ecto Multi and Transaction Handling
 
 A common real-world task: running multiple database operations atomically, with rollback on failure.
 
-**Prompt:**
+Prompt:
 ```text
 Write an Elixir function that creates a user, assigns them a default role, and logs the
-creation event — all in a single database transaction. If any step fails, roll everything back.
+creation event. all in a single database transaction. If any step fails, roll everything back.
 ```
 
-### Claude Output
+Claude Output
 
 ```elixir
 defmodule MyApp.Accounts do
@@ -327,9 +327,9 @@ defmodule MyApp.Accounts do
 end
 ```
 
-Copilot tends to write this with `Repo.transaction(fn -> ... end)` and manual `Repo.rollback/1` calls, which works but is less composable — you can't easily add steps or reuse parts of the Multi chain. Claude defaults to `Ecto.Multi` for multi-step transactions, which is the idiomatic Elixir approach.
+Copilot tends to write this with `Repo.transaction(fn -> ... end)` and manual `Repo.rollback/1` calls, which works but is less composable. you can't easily add steps or reuse parts of the Multi chain. Claude defaults to `Ecto.Multi` for multi-step transactions, which is the idiomatic Elixir approach.
 
-## Where Copilot Wins
+Where Copilot Wins
 
 Copilot's inline completion is faster for repetitive patterns:
 - Writing `Repo.get_by!`, `Repo.insert`, `Repo.update` chains
@@ -338,35 +338,35 @@ Copilot's inline completion is faster for repetitive patterns:
 
 For completing well-trodden Ecto/Phoenix patterns, Copilot's inline speed is useful. For architecture decisions, supervision strategies, and OTP design, Claude's explanations add significant value.
 
-## Prompting Strategies for Elixir
+Prompting Strategies for Elixir
 
 Because Elixir is underrepresented in training data compared to Python or JavaScript, both tools benefit from explicit context in prompts.
 
-**Less effective:**
+Less effective:
 ```
 Write a GenServer for caching HTTP responses
 ```
 
-**More effective:**
+More effective:
 ```
 Write an Elixir GenServer for caching HTTP responses. Use ETS for storage (not process state),
 expose get/2 and put/3 functions, handle cache expiry with TTL in seconds, and include
 a child_spec for supervision. Use @impl true annotations and typespecs.
 ```
 
-The more specific prompt produces idiomatic code from both Claude and Copilot. The difference is that Claude handles vague prompts better — it makes sensible architectural choices (monotonic time, struct state, proper supervision) without needing every decision spelled out.
+The more specific prompt produces idiomatic code from both Claude and Copilot. The difference is that Claude handles vague prompts better. it makes sensible architectural choices (monotonic time, struct state, proper supervision) without needing every decision spelled out.
 
-## Test 5: ExUnit Tests for GenServer
+Test 5: ExUnit Tests for GenServer
 
 Getting AI to write ExUnit tests is a good proxy for how well it understands Elixir's testing idioms, especially around process lifecycle and asynchronous behavior.
 
-**Prompt:**
+Prompt:
 ```text
 Write ExUnit tests for the RateLimiter GenServer. Cover: allow under limit,
 deny over limit, cleanup removes stale entries, retry_after is positive.
 ```
 
-### Claude Output
+Claude Output
 
 ```elixir
 defmodule MyApp.RateLimiterTest do
@@ -407,7 +407,7 @@ defmodule MyApp.RateLimiterTest do
 
     # Send cleanup message directly to test the handler
     send(MyApp.RateLimiter, :cleanup)
-    # Cleanup runs synchronously once — state is now pruned
+    # Cleanup runs synchronously once. state is now pruned
     # (In a real test, you'd mock System.monotonic_time or use :erlang.trace)
     :ok
   end
@@ -416,7 +416,7 @@ end
 
 Claude adds `async: false` because the test uses a named GenServer process, and explains the limitation around testing time-dependent cleanup without mocking. Copilot typically generates tests that call the public API but misses the `async: false` necessity and often sets up the GenServer incorrectly (using the supervised one rather than a test-scoped instance).
 
-## Related Reading
+Related Reading
 
 - [Claude vs Copilot for Swift Development](/claude-vs-copilot-for-swift-development-2026/)
 - [How to Use AI to Interpret Elixir GenServer Crash Reports](/how-to-use-ai-to-interpret-elixir-genserver-crash-reports-an/)
@@ -425,7 +425,7 @@ Claude adds `async: false` because the test uses a named GenServer process, and 
 
 ---
 
-## Related Articles
+Related Articles
 
 - [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
 - [Claude Max Context Window Exceeded: What](/claude-max-context-window-exceeded-what-to-do/)
@@ -433,6 +433,6 @@ Claude adds `async: false` because the test uses a named GenServer process, and 
 - [Best AI Tools for Generating API Rate Limiting Code 2026](/best-ai-tools-for-generating-api-rate-limiting-code-2026/)
 - [Claude vs Copilot for Swift Development 2026](/claude-vs-copilot-for-swift-development-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

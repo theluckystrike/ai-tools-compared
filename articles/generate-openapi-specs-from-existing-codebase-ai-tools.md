@@ -17,7 +17,7 @@ intent-checked: true
 
 Most legacy APIs lack OpenAPI specifications, making it impossible to generate SDKs, documentation, or proper contract testing. Manually writing OpenAPI specs is tedious and error-prone. Modern AI tools can analyze your existing API code and generate complete, accurate OpenAPI 3.0 specifications in minutes. This guide shows exactly how to use Claude, ChatGPT, and specialized tools to turn any API into a properly documented specification.
 
-## Table of Contents
+Table of Contents
 
 - [Why Generate OpenAPI from Code?](#why-generate-openapi-from-code)
 - [Tool Comparison for OpenAPI Generation](#tool-comparison-for-openapi-generation)
@@ -29,18 +29,18 @@ Most legacy APIs lack OpenAPI specifications, making it impossible to generate S
 - [Real-World Example: Convert Legacy REST API](#real-world-example-convert-legacy-rest-api)
 - [Validation Checklist](#validation-checklist)
 
-## Why Generate OpenAPI from Code?
+Why Generate OpenAPI from Code?
 
 OpenAPI specs enable:
-- **Auto-generated client SDKs** in 15+ languages
-- **API documentation** that stays in sync with implementation
-- **Contract testing** to catch breaking changes
-- **API gateway configuration** and mock servers
-- **Team onboarding** (developers see all endpoints immediately)
+- Auto-generated client SDKs in 15+ languages
+- API documentation that stays in sync with implementation
+- Contract testing to catch breaking changes
+- API gateway configuration and mock servers
+- Team onboarding (developers see all endpoints immediately)
 
 The challenge: documenting your actual behavior requires inspecting hundreds of lines of controller code. AI tools automate this extraction.
 
-## Tool Comparison for OpenAPI Generation
+Tool Comparison for OpenAPI Generation
 
 | Tool | Best For | Code Context | Accuracy | Price |
 |------|----------|--------------|----------|-------|
@@ -50,48 +50,48 @@ The challenge: documenting your actual behavior requires inspecting hundreds of 
 | OpenAPI Generator | Code-to-spec with templates | AST-based | 70% | Free |
 | AWS API Gateway + Claude | Managed API documentation | AWS logs | 85% | $0.003/request |
 
-**Recommendation**: Use Claude 3.5 Sonnet for initial generation (paste entire codebase), then use ChatGPT-4 for quick updates to individual endpoints.
+Use Claude 3.5 Sonnet for initial generation (paste entire codebase), then use ChatGPT-4 for quick updates to individual endpoints.
 
-## Step 1: Extract Your API Code
+Step 1: Extract Your API Code
 
 Gather all controller/route code in one file for AI analysis.
 
-### Express.js Example
+Express.js Example
 
 ```bash
-# Combine all route files
+Combine all route files
 find ./src/routes -name "*.js" -o -name "*.ts" | xargs cat > api_code.txt
 
-# Add middleware definitions too
+Add middleware definitions too
 find ./src/middleware -name "*.js" | xargs cat >> api_code.txt
 ```
 
 Create a summary file with endpoint list:
 
 ```bash
-# Quick reference of all routes
+Quick reference of all routes
 grep -r "app\.\(get\|post\|put\|delete\)" ./src/routes | \
   sed "s/.*app\.\([a-z]*\)('\([^']*\)'.*/\1 \2/" > routes_summary.txt
 ```
 
-### Django Example
+Django Example
 
 ```bash
-# Extract URLconf patterns
+Extract URLconf patterns
 find ./myapp -name "urls.py" | xargs cat > api_urls.txt
 
-# Get view signatures
+Get view signatures
 grep -r "def\s\+\w\+.*Request\|class.*APIView\|class.*ViewSet" ./myapp > views_summary.txt
 ```
 
-### Spring Boot Example
+Spring Boot Example
 
 ```bash
-# Extract all controller methods
+Extract all controller methods
 find ./src -name "*Controller.java" | xargs grep -A 5 "@GetMapping\|@PostMapping\|@RequestMapping" > controller_methods.txt
 ```
 
-## Step 2: Generate with Claude
+Step 2: Generate with Claude
 
 Paste your code to Claude with this prompt:
 
@@ -194,27 +194,27 @@ components:
           format: date-time
 ```
 
-## Step 3: Generate Client SDKs
+Step 3: Generate Client SDKs
 
 Once you have an OpenAPI spec, generate SDKs automatically:
 
 ```bash
-# Install OpenAPI Generator
+Install OpenAPI Generator
 brew install openapi-generator
 
-# Generate Python client
+Generate Python client
 openapi-generator generate \
   -i openapi.yaml \
   -g python \
   -o ./python-client
 
-# Generate TypeScript client
+Generate TypeScript client
 openapi-generator generate \
   -i openapi.yaml \
   -g typescript-axios \
   -o ./typescript-client
 
-# Generate Go client
+Generate Go client
 openapi-generator generate \
   -i openapi.yaml \
   -g go \
@@ -229,16 +229,16 @@ from openapi_client import ApiClient, CustomerApi
 client = ApiClient()
 customer_api = CustomerApi(api_client=client)
 
-# Get customer (generated from spec)
+Get customer (generated from spec)
 customer = customer_api.get_customer(id="123e4567-e89b-12d3-a456-426614174000")
 print(customer.email)
 ```
 
-## Step 4: Advanced OpenAPI Features
+Step 4: Advanced OpenAPI Features
 
 Ask Claude to enhance your spec with advanced features:
 
-### Request Body Validation
+Request Body Validation
 
 ```yaml
 /orders:
@@ -266,7 +266,7 @@ Ask Claude to enhance your spec with advanced features:
                   zip: "97201"
 ```
 
-### Authentication Schemes
+Authentication Schemes
 
 ```yaml
 components:
@@ -285,7 +285,7 @@ security:
   - api_key: []
 ```
 
-### Rate Limiting Headers
+Rate Limiting Headers
 
 ```yaml
 responses:
@@ -306,11 +306,11 @@ responses:
         description: Unix timestamp when limit resets
 ```
 
-## Step 5: Keep OpenAPI In Sync
+Step 5: Keep OpenAPI In Sync
 
 Set up automation to update your spec as code changes:
 
-### Express.js with Swagger JSDoc
+Express.js with Swagger JSDoc
 
 ```bash
 npm install swagger-jsdoc swagger-ui-express
@@ -319,7 +319,7 @@ npm install swagger-jsdoc swagger-ui-express
 Add JSDoc comments to routes:
 
 ```javascript
-/**
+/
  * @swagger
  * /customers:
  *   get:
@@ -350,7 +350,7 @@ const spec = swaggerJsdoc({
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(spec));
 ```
 
-### Django with drf-spectacular
+Django with drf-spectacular
 
 ```bash
 pip install drf-spectacular
@@ -359,23 +359,23 @@ pip install drf-spectacular
 Auto-generates from DRF serializers and viewsets:
 
 ```python
-# settings.py
+settings.py
 INSTALLED_APPS = ['drf_spectacular']
 
 SPECTACULAR_SETTINGS = {
     'SCHEMA_PATH_PREFIX': '/api/v[0-9]',
 }
 
-# urls.py
+urls.py
 from drf_spectacular.views import SpectacularAPIView
 urlpatterns = [
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
 ]
 ```
 
-## Real-World Example: Convert Legacy REST API
+Real-World Example: Convert Legacy REST API
 
-**Original undocumented endpoints**:
+Original undocumented endpoints:
 ```python
 @app.route('/api/products', methods=['GET'])
 def get_products():
@@ -400,7 +400,7 @@ def create_product():
     return jsonify(product.to_dict()), 201
 ```
 
-**Ask Claude**: "Convert this Flask API to OpenAPI 3.0 spec with proper schemas"
+Ask Claude: "Convert this Flask API to OpenAPI 3.0 spec with proper schemas"
 
 Claude generates:
 
@@ -486,7 +486,7 @@ components:
           type: number
 ```
 
-## Validation Checklist
+Validation Checklist
 
 After Claude generates your spec, verify:
 
@@ -497,29 +497,29 @@ After Claude generates your spec, verify:
 - Required fields properly marked
 - Examples are realistic and valid
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-openapi-spec-generation/)
 - [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
@@ -527,4 +527,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Which AI Generates Better SwiftUI Views From Design Swift UI](/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
 - [AI Tools for Writing OpenAPI Specifications in 2026](/articles/ai-tools-for-writing-openapi-specifications-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

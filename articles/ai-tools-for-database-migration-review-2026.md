@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Database Migration Review 2026"
-description: "Use Claude to review Alembic, Flyway, and Liquibase migrations before production — catching table locks, missing rollbacks, and data loss risks"
+description: "Use Claude to review Alembic, Flyway, and Liquibase migrations before production. catching table locks, missing rollbacks, and data loss risks"
 date: 2026-03-22
 author: theluckystrike
 permalink: /ai-tools-for-database-migration-review-2026/
@@ -17,7 +17,7 @@ voice-checked: true
 
 Migration review is where AI provides measurable value: it reads migration code faster than humans, knows the failure modes for each database engine, and can flag risks that only appear in specific scenarios (large table, concurrent access, replication lag). This guide shows how to build an automated migration review pipeline using Claude.
 
-## The Review Pipeline
+The Review Pipeline
 
 ```
 Developer pushes migration → CI triggers review webhook
@@ -31,10 +31,10 @@ Review posted as PR comment (pass/fail/warn)
 Merge blocked if any Critical findings
 ```
 
-## Migration Review Service
+Migration Review Service
 
 ```python
-# review_service/main.py
+review_service/main.py
 from fastapi import FastAPI, Request
 import anthropic
 import httpx
@@ -180,7 +180,7 @@ def format_review_comment(reviews: list[dict]) -> str:
         if review["result"]["verdict"] == "WARN" and overall_verdict == "PASS":
             overall_verdict = "WARN"
 
-    verdict_emoji = {"PASS": "✅", "WARN": "⚠️", "FAIL": "❌"}
+    verdict_emoji = {"PASS": "", "WARN": "", "FAIL": ""}
     comment_lines = [
         f"## Database Migration Review {verdict_emoji[overall_verdict]} {overall_verdict}",
         "",
@@ -197,14 +197,14 @@ def format_review_comment(reviews: list[dict]) -> str:
 
         for finding in result.get("findings", []):
             sev = finding["severity"]
-            sev_emoji = {"CRITICAL": "🔴", "WARNING": "🟡", "INFO": "🔵"}[sev]
+            sev_emoji = {"CRITICAL": "", "WARNING": "", "INFO": ""}[sev]
             line_ref = f" (line {finding['line']})" if finding.get("line") else ""
-            comment_lines.append(f"{sev_emoji} **{sev}**{line_ref}: {finding['finding']}")
+            comment_lines.append(f"{sev_emoji} {sev}{line_ref}: {finding['finding']}")
             comment_lines.append(f"   → {finding['recommendation']}")
             comment_lines.append("")
 
     comment_lines.append("---")
-    comment_lines.append("_Review by AI migration reviewer — always verify before applying to production_")
+    comment_lines.append("_Review by AI migration reviewer. always verify before applying to production_")
 
     return "\n".join(comment_lines)
 
@@ -235,12 +235,12 @@ async def review_pr(request: Request):
     return {"status": "reviewed", "verdict": overall, "file_count": len(reviews)}
 ```
 
-## Example Review Output
+Example Review Output
 
 For this migration:
 
 ```python
-# alembic/versions/abc123_add_index.py
+alembic/versions/abc123_add_index.py
 def upgrade():
     op.create_index(
         'ix_orders_customer_id',
@@ -271,22 +271,22 @@ Claude returns:
       "recommendation": "Add a docstring explaining the query pattern this index supports."
     }
   ],
-  "summary": "Index creation will cause brief table lock — use CONCURRENTLY for production safety."
+  "summary": "Index creation will cause brief table lock. use CONCURRENTLY for production safety."
 }
 ```
 
-## GitHub Actions Integration
+GitHub Actions Integration
 
 ```yaml
-# .github/workflows/migration-review.yml
+.github/workflows/migration-review.yml
 name: Migration Review
 on:
   pull_request:
     paths:
-      - '**/migrations/**'
-      - '**/alembic/**'
-      - '**/*migration*.sql'
-      - '**/*migration*.py'
+      - '/migrations/'
+      - '/alembic/'
+      - '/*migration*.sql'
+      - '/*migration*.py'
 
 jobs:
   review:
@@ -306,19 +306,19 @@ jobs:
         run: |
           VERDICT=$(curl -s https://review-service.internal/verdict/${{ github.event.number }})
           if [ "$VERDICT" = "FAIL" ]; then
-            echo "Migration review failed — fix critical issues before merging"
+            echo "Migration review failed. fix critical issues before merging"
             exit 1
           fi
 ```
 
-## Testing the Review Service Locally
+Testing the Review Service Locally
 
 ```python
-# test_review.py
+test_review.py
 import asyncio
 from review_service.main import review_migration
 
-# Dangerous migration
+Dangerous migration
 dangerous = """
 def upgrade():
     op.execute("UPDATE users SET status = 'active'")
@@ -328,7 +328,7 @@ def downgrade():
     pass
 """
 
-# Safe migration
+Safe migration
 safe = """
 def upgrade():
     op.add_column(
@@ -352,20 +352,11 @@ async def main():
 asyncio.run(main())
 ```
 
-## Tool Comparison: AI Models for Migration Review
+Tool Comparison: AI Models for Migration Review
 
-Not every AI model performs equally well on migration analysis. Here is how the leading models behave on database schema work.
+Not every AI model performs equally well on migration analysis. it understands the difference between `ALTER TABLE ... ADD COLUMN` (lock-free in PostgreSQL 11+) versus `ALTER TABLE ... ADD COLUMN NOT NULL DEFAULT expr` (full table rewrite in PostgreSQL 10 and below), and surfaces these distinctions correctly in its findings.
 
-| Model | Strength | Weakness |
-|---|---|---|
-| Claude Opus 4.6 | Deep reasoning about lock semantics, multi-step DDL patterns | Verbose explanations |
-| GPT-4o | Strong on common Alembic patterns, good JSON output | Misses PostgreSQL-specific lock behaviors |
-| Gemini 1.5 Pro | Fast review, good for Flyway XML | Less reliable on complex rollback chains |
-| Mistral Large | Low cost, fast | Higher miss rate on implicit transaction issues |
-
-For production pipelines, Claude Opus 4.6 is the current best choice: it understands the difference between `ALTER TABLE ... ADD COLUMN` (lock-free in PostgreSQL 11+) versus `ALTER TABLE ... ADD COLUMN NOT NULL DEFAULT expr` (full table rewrite in PostgreSQL 10 and below), and surfaces these distinctions correctly in its findings.
-
-## Extending the Review for Flyway and Liquibase
+Extending the Review for Flyway and Liquibase
 
 The same review service works with Flyway SQL migrations and Liquibase XML changesets. Update the file pattern matching in `get_migration_files()` to include the relevant paths:
 
@@ -379,40 +370,40 @@ if any(pat in filename for pat in [
 
 For Liquibase YAML changesets, include the format in the review prompt so Claude knows to look for `runOnChange`, `failOnError`, and `preConditions` blocks, which carry their own risk surface.
 
-## Deployment Considerations
+Deployment Considerations
 
 Run the review service behind an internal load balancer, not on the public internet. Migration content often contains table names, column names, and business logic that should stay within your network perimeter. Use mTLS or a shared secret header for authentication between GitHub Actions and the review endpoint. Keep API keys for the Claude API in a secrets manager (AWS Secrets Manager or HashiCorp Vault), not in environment variables baked into Docker images.
 
 For teams running many PRs simultaneously, add a queue (Redis or SQS) in front of the review worker to avoid overwhelming the Anthropic API rate limits. The `claude-opus-4-6` model allows 5 requests per minute on the default tier; batch small migrations into a single prompt to stay within that limit during peak CI hours.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Database Schema Migration Review 2026](/ai-tools-for-database-schema-migration-review-2026/)
 - [AI Tools for Automated Migration Testing 2026](/ai-tools-for-automated-migration-testing-2026/)
 - [Best AI Tools for Database Schema Migration Review 2026](/best-ai-tools-for-database-schema-migration-review-2026/)
 - [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
 - [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Is this product worth the price?**
+Is this product worth the price?
 
 Value depends on your usage frequency and specific needs. If you use this product daily for core tasks, the cost usually pays for itself through time savings. For occasional use, consider whether a free alternative covers enough of your needs.
 
-**What are the main drawbacks of this product?**
+What are the main drawbacks of this product?
 
 No tool is perfect. Common limitations include pricing for advanced features, learning curve for power features, and occasional performance issues during peak usage. Weigh these against the specific benefits that matter most to your workflow.
 
-**How does this product compare to its closest competitor?**
+How does this product compare to its closest competitor?
 
 The best competitor depends on which features matter most to you. For some users, a simpler or cheaper alternative works fine. For others, this product's specific strengths justify the investment. Try both before committing to an annual plan.
 
-**Does this product have good customer support?**
+Does this product have good customer support?
 
 Support quality varies by plan tier. Free and basic plans typically get community forum support and documentation. Paid plans usually include email support with faster response times. Enterprise plans often include dedicated support contacts.
 
-**Can I migrate away from this product if I decide to switch?**
+Can I migrate away from this product if I decide to switch?
 
 Check the export options before committing. Most tools let you export your data, but the format and completeness of exports vary. Test the export process early so you are not locked in if your needs change later.
 {% endraw %}

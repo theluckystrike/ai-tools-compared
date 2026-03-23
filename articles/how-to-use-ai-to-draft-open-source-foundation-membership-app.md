@@ -19,7 +19,7 @@ AI tools improve foundation membership applications by drafting initial sections
 
 This guide shows developers and power users how to use AI to draft effective membership application documents for foundations like the Apache Software Foundation, Linux Foundation, OpenJS Foundation, and similar organizations.
 
-## Table of Contents
+Table of Contents
 
 - [Why Use AI for Membership Applications](#why-use-ai-for-membership-applications)
 - [Prerequisites](#prerequisites)
@@ -27,13 +27,13 @@ This guide shows developers and power users how to use AI to draft effective mem
 - [Foundation-Specific Requirements](#foundation-specific-requirements)
 - [Troubleshooting](#troubleshooting)
 
-## Why Use AI for Membership Applications
+Why Use AI for Membership Applications
 
 Membership applications for open source foundations typically require several components: a personal statement, contribution history, technical background, community involvement documentation, and future commitment plans. Each section demands careful articulation of your experience and goals.
 
 AI assists by generating initial drafts, suggesting improvements to unclear passages, helping structure complex ideas, and ensuring your documentation follows foundation-specific conventions. The technology handles the mechanical aspects of writing, allowing you to focus on the substantive content that only you can provide.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Set Up Your AI Workflow
+Step 1: Set Up Your AI Workflow
 
 Before drafting, gather your contribution data. Most foundations want concrete examples rather than general statements. Prepare a list including:
 
@@ -61,11 +61,11 @@ Before drafting, gather your contribution data. Most foundations want concrete e
 
 With this information ready, you can prompt AI tools effectively. The quality of AI-generated content depends significantly on the context you provide.
 
-### Step 2: Drafting the Personal Statement
+Step 2: Drafting the Personal Statement
 
 The personal statement introduces you and explains your interest in the foundation. AI excels at transforming rough ideas into coherent paragraphs.
 
-**Example prompt for personal statement:**
+Example prompt for personal statement:
 
 ```
 Write a 200-word personal statement for an Apache Software Foundation
@@ -78,24 +78,24 @@ and mentor new contributors.
 
 The AI generates a draft that you then refine with your specific details and voice. This approach saves time while ensuring your authentic story comes through.
 
-### Step 3: Documenting Contributions Systematically
+Step 3: Documenting Contributions Systematically
 
 Foundations want quantifiable evidence of your contributions. AI helps structure this information into professional documentation.
 
-**Template for contribution section:**
+Template for contribution section:
 
 ```markdown
-### Step 4: Technical Contributions
+Step 4: Technical Contributions
 
-### Apache Kafka Contributions
-- **Pull Requests Submitted:** 15
-- **Pull Requests Merged:** 8
-- **Key Contributions:**
+Apache Kafka Contributions
+- Pull Requests Submitted: 15
+- Pull Requests Merged: 8
+- Key Contributions:
   - #4521: Improved partition leader election performance by 20%
   - #4890: Fixed memory leak in network request handling
   - #5102: Added diagnostic logging for consumer group rebalancing
 
-### Community Participation
+Community Participation
 - Mailing list responses: 50+ answered questions
 - Code reviews performed: 12
 - Issues reported: 5 (with reproducible test cases)
@@ -103,13 +103,13 @@ Foundations want quantifiable evidence of your contributions. AI helps structure
 
 AI can generate this structure from your raw contribution data, formatting it according to foundation expectations. You supply the numbers; AI handles the presentation.
 
-### Step 5: Addressing Governance and Commitment Questions
+Step 5: Addressing Governance and Commitment Questions
 
 Most foundations ask about your intended involvement and understanding of project governance. These questions require thoughtful responses that demonstrate genuine interest in community health beyond code contributions.
 
 AI helps by providing frameworks for these responses. For example, when asked about how you would handle disagreements with other contributors, AI can suggest the collaborative approach foundations expect while you add specific examples from your experience.
 
-**Example response structure:**
+Example response structure:
 
 ```
 Regarding conflict resolution, I believe in:
@@ -123,9 +123,9 @@ Regarding conflict resolution, I believe in:
 In my Kafka contributions, I have demonstrated this approach by...
 ```
 
-### Step 6: Review and Refinement
+Step 6: Review and Refinement
 
-AI generates first drafts, but your review is essential. Verify all technical details, ensure accuracy of contribution numbers, and add specific examples that only you possess. Foundations have review committees who evaluate applications for authenticity—your voice and specific experiences must come through clearly.
+AI generates first drafts, but your review is essential. Verify all technical details, ensure accuracy of contribution numbers, and add specific examples that only you possess. Foundations have review committees who evaluate applications for authenticity, your voice and specific experiences must come through clearly.
 
 Common refinements include:
 
@@ -137,7 +137,7 @@ Common refinements include:
 
 - Ensuring consistent tone throughout the document
 
-### Step 7: Automate Repetitive Sections
+Step 7: Automate Repetitive Sections
 
 If you apply to multiple foundations, AI helps adapt core content for each organization's specific requirements. The Apache Software Foundation emphasizes individual merit and community involvement. The Linux Foundation focuses on corporate sponsorship and project contribution. OpenJS Foundation values JavaScript ecosystem engagement.
 
@@ -150,7 +150,7 @@ and cross-project collaboration:
 [insert your contribution summary]
 ```
 
-### Step 8: Practical Tips for Better Results
+Step 8: Practical Tips for Better Results
 
 Provide AI with specific context rather than generic requests. Instead of "Write about my Kafka contributions," specify the exact repositories, contribution types, and impact areas you want to highlight.
 
@@ -158,9 +158,9 @@ Iterate on drafts. AI-generated content improves with feedback. Request revision
 
 Maintain accuracy throughout. AI sometimes generates plausible-sounding but incorrect information. Verify all dates, numbers, and technical claims independently.
 
-### Step 9: Real-World Application Examples
+Step 9: Real-World Application Examples
 
-### Apache Software Foundation Application
+Apache Software Foundation Application
 
 ```
 Prompt to AI:
@@ -199,7 +199,7 @@ higher bars for community contribution quality.
 ```
 ```
 
-### Linux Foundation Application
+Linux Foundation Application
 
 Different foundations emphasize different aspects. For Linux Foundation:
 
@@ -213,7 +213,7 @@ Include: 5 years Linux kernel work, 15 enterprise deployments managed,
 partnership work between 3 projects
 ```
 
-### OpenJS Foundation Application
+OpenJS Foundation Application
 
 ```
 Prompt to AI:
@@ -222,38 +222,38 @@ impact. I've contributed to Node.js core, created 12 popular npm packages
 (10M monthly downloads), and maintain ecosystem health through standards work.
 ```
 
-### Step 10: Multi-Foundation Application Template
+Step 10: Multi-Foundation Application Template
 
 For applying to multiple foundations, create a master document then adapt:
 
 ```markdown
-# My Open Source Journey - Master Document
+My Open Source Journey - Master Document
 
-## Core Contribution Summary
+Core Contribution Summary
 - Years of experience: 5
 - Projects contributed to: 3 (primary + 2 secondary)
 - Pull requests merged: 47
 - Issues resolved: 23
 
-### Step 11: Foundation-Specific Adaptations
+Step 11: Foundation-Specific Adaptations
 
-### For Apache Software Foundation
-**Emphasis:** Community contribution, individual merit, collaborative spirit
+For Apache Software Foundation
+Emphasis: Community contribution, individual merit, collaborative spirit
 - Adapt: Highlight mentoring, community discussions, code review participation
 - Tone: Community-focused, collaborative
 
-### For Linux Foundation
-**Emphasis:** Enterprise impact, sustainability, cross-project work
+For Linux Foundation
+Emphasis: Enterprise impact, sustainability, cross-project work
 - Adapt: Highlight production deployments, corporate partnerships, maintenance
 - Tone: Professional, business-aware
 
-### For OpenJS Foundation
-**Emphasis:** JavaScript ecosystem health, npm package quality, developer experience
+For OpenJS Foundation
+Emphasis: JavaScript ecosystem health, npm package quality, developer experience
 - Adapt: Highlight package ecosystem work, tooling improvements, developer education
 - Tone: Technical, ecosystem-focused
 ```
 
-### Step 12: Converting Git Data to Application Content
+Step 12: Converting Git Data to Application Content
 
 Extract and format your actual contribution data:
 
@@ -364,7 +364,7 @@ Focus on:
 """
  return prompt
 
-# Usage
+Usage
 analyzer = ContributionAnalyzer(
  repo_path="/path/to/project",
  author_email="user@example.com"
@@ -378,7 +378,7 @@ print("\nAI Prompt:")
 print(prompt)
 ```
 
-## Foundation-Specific Requirements
+Foundation-Specific Requirements
 
 Research exact requirements before drafting:
 
@@ -389,7 +389,7 @@ Research exact requirements before drafting:
 | OpenJS | 750-1000 | Statement + Projects + Vision | 4-6 weeks | Ecosystem, tooling |
 | CNCF | 800-1200 | Statement + Technical Background | 6-8 weeks | Cloud native impact |
 
-### Step 13: Application Checklist
+Step 13: Application Checklist
 
 Before submitting AI-drafted applications:
 
@@ -403,44 +403,44 @@ Before submitting AI-drafted applications:
 - [ ] References/recommendations obtained
 - [ ] Submission deadline confirmed
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use ai to draft open source foundation membership?**
+How long does it take to use ai to draft open source foundation membership?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Use AI to Draft RFC Documents for Proposed Open](/how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/)
 - [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
@@ -450,4 +450,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ```
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

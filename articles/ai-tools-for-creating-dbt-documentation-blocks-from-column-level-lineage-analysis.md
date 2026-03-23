@@ -18,7 +18,7 @@ intent-checked: true
 
 AI tools can automatically generate dbt documentation blocks by analyzing your project's column-level lineage and transformation logic. These tools parse dbt manifests, trace column dependencies across models, and generate YAML descriptions that keep documentation synchronized with your code. Combining pattern-based generation with lineage-aware context produces accurate column descriptions at scale without manual maintenance.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding dbt Documentation Blocks](#understanding-dbt-documentation-blocks)
 - [How AI Tools Extract Column Lineage](#how-ai-tools-extract-column-lineage)
@@ -30,7 +30,7 @@ AI tools can automatically generate dbt documentation blocks by analyzing your p
 - [Moving Forward](#moving-forward)
 - [Related Reading](#related-reading)
 
-## Understanding dbt Documentation Blocks
+Understanding dbt Documentation Blocks
 
 dbt provides a built-in documentation system that relies on YAML-based description files. These files define descriptions for models, columns, and their relationships. A typical documentation block structure looks like this:
 
@@ -50,18 +50,18 @@ models:
         description: "Timestamp when the customer record was first created"
 ```
 
-The challenge emerges when you need to trace how each column flows through your transformation pipeline. Column-level lineage shows you the complete journey—from source table through intermediate transforms to final downstream models. In large projects with dozens of staging, intermediate, and mart layers, tracking this manually becomes error-prone and unsustainable.
+The challenge emerges when you need to trace how each column flows through your transformation pipeline. Column-level lineage shows you the complete journey, from source table through intermediate transforms to final downstream models. In large projects with dozens of staging, intermediate, and mart layers, tracking this manually becomes error-prone and unsustainable.
 
-## How AI Tools Extract Column Lineage
+How AI Tools Extract Column Lineage
 
 Several AI-powered approaches can analyze your dbt project and extract column-level lineage. These tools typically work by parsing your SQL model files and identifying source references.
 
-### Parsing Source References
+Parsing Source References
 
 Modern AI tools can parse dbt's `ref()` and `source()` functions to build lineage graphs:
 
 ```python
-# Example: Extracting column lineage from dbt manifest
+Extracting column lineage from dbt manifest
 import json
 
 def extract_column_lineage(manifest_path):
@@ -83,7 +83,7 @@ def extract_column_lineage(manifest_path):
 
 This extracted lineage then serves as the foundation for AI-generated documentation.
 
-### SQL Parsing for Column-Level Granularity
+SQL Parsing for Column-Level Granularity
 
 Node-level lineage (which model depends on which model) is only the starting point. True column-level lineage requires parsing the SQL within each model to understand exactly how output columns are derived:
 
@@ -110,9 +110,9 @@ def extract_column_references(sql: str, dialect: str = "bigquery") -> dict:
 
 Using `sqlglot` gives you dialect-aware parsing that handles BigQuery, Snowflake, and Redshift syntax differences without requiring a live database connection.
 
-## AI-Powered Documentation Generation Approaches
+AI-Powered Documentation Generation Approaches
 
-### Pattern-Based Generation
+Pattern-Based Generation
 
 One effective approach uses AI to analyze column names, data types, and surrounding context to generate meaningful descriptions:
 
@@ -134,12 +134,12 @@ def generate_column_description(column_name, data_type, sample_values):
 
 This pattern recognition becomes particularly valuable when you have consistent naming conventions across your organization. A column named `arr_usd_monthly` in a SaaS context reliably maps to "Monthly recurring revenue in USD," and a well-prompted AI will infer this from name alone.
 
-### Lineage-Aware Documentation
+Lineage-Aware Documentation
 
 AI tools with full lineage awareness can generate more accurate descriptions by understanding upstream transformations:
 
 ```yaml
-# AI-generated documentation with lineage context
+AI-generated documentation with lineage context
 models:
   - name: fact_orders
     description: "Order fact table with derived metrics from source and staging layers"
@@ -160,14 +160,14 @@ models:
 
 The lineage context helps documentation readers understand not just what a column represents, but where it originates and how it was transformed.
 
-## Practical Implementation Strategies
+Practical Implementation Strategies
 
-### Integrating with Your dbt Workflow
+Integrating with Your dbt Workflow
 
 You can integrate AI documentation generation into your existing CI/CD pipeline:
 
 ```bash
-# Add to your Makefile or dbt run script
+Add to your Makefile or dbt run script
 generate-docs:
     dbt compile --profiles-dir . > /dev/null
     dbt ls --resource-type model --output json > models.json
@@ -180,12 +180,12 @@ generate-docs:
 
 This automation ensures documentation stays current whenever you run `make generate-docs` before a release.
 
-### Using dbt Artifacts
+Using dbt Artifacts
 
 The `manifest.json` and `catalog.json` artifacts generated by dbt contain valuable metadata:
 
 ```python
-# Extract column metadata from dbt artifacts
+Extract column metadata from dbt artifacts
 import json
 
 def get_column_metadata(project_path: str) -> dict:
@@ -216,7 +216,7 @@ def get_column_metadata(project_path: str) -> dict:
 
 This metadata becomes the input for AI documentation generation. The `described` flag lets you skip columns that already have human-written documentation, ensuring AI only fills genuine gaps.
 
-### Batch Generation with Rate Limiting
+Batch Generation with Rate Limiting
 
 For large projects with hundreds of models, you need to handle API rate limits gracefully:
 
@@ -261,17 +261,17 @@ def batch_generate(models: list, delay_seconds: float = 0.5) -> dict:
     return results
 ```
 
-## Best Practices for AI-Generated Documentation
+Best Practices for AI-Generated Documentation
 
-**Review and validate before committing.** AI-generated descriptions provide an excellent starting point, but domain expertise catches inaccuracies. A column named `net_arr` might mean "net annual recurring revenue" in your business context, but an AI trained on general data might describe it more generically. A five-minute review pass before every merge is sufficient for most projects.
+Review and validate before committing. AI-generated descriptions provide an excellent starting point, but domain expertise catches inaccuracies. A column named `net_arr` might mean "net annual recurring revenue" in your business context, but an AI trained on general data might describe it more generically. A five-minute review pass before every merge is sufficient for most projects.
 
-**Establish and share documentation standards.** Provide AI tools with a style guide in the prompt. "Descriptions should be one sentence, present tense, and avoid jargon unless the column name already implies it" produces much more consistent output than an open-ended request.
+Establish and share documentation standards. Provide AI tools with a style guide in the prompt. "Descriptions should be one sentence, present tense, and avoid jargon unless the column name already implies it" produces much more consistent output than an open-ended request.
 
-**Keep generated docs in version control.** Store your `schema.yml` files alongside your dbt models. This creates an audit trail, enables collaborative review through pull requests, and means documentation diffs are visible in code review.
+Keep generated docs in version control. Store your `schema.yml` files alongside your dbt models. This creates an audit trail, enables collaborative review through pull requests, and means documentation diffs are visible in code review.
 
-**Supplement with business context where needed.** AI excels at technical descriptions derived from column names and types. It cannot know that `opportunity_stage_id = 6` means "Closed Won" in your CRM, or that `arr_expansion` excludes seat upgrades per a finance team decision. Add these business rules manually.
+Supplement with business context where needed. AI excels at technical descriptions derived from column names and types. It cannot know that `opportunity_stage_id = 6` means "Closed Won" in your CRM, or that `arr_expansion` excludes seat upgrades per a finance team decision. Add these business rules manually.
 
-## Measuring Documentation Quality
+Measuring Documentation Quality
 
 Track documentation coverage across your project to know where gaps exist:
 
@@ -294,23 +294,23 @@ JOIN dbt_metadata.models m ON c.table_name = m.name
 
 Aim for 100% model-level coverage first, then push column coverage above 80% before expanding AI generation to new domains.
 
-## Tools Worth Exploring
+Tools Worth Exploring
 
-**dbt-osmosis** is the most mature open-source tool for propagating and generating dbt column documentation. It understands column inheritance across models and can fill in missing descriptions using upstream sources.
+dbt-osmosis is the most mature open-source tool for propagating and generating dbt column documentation. It understands column inheritance across models and can fill in missing descriptions using upstream sources.
 
-**Elementary** provides observability tooling that includes documentation coverage tracking as part of its data quality monitoring suite.
+Elementary provides observability tooling that includes documentation coverage tracking as part of its data quality monitoring suite.
 
-**Custom LLM scripts** using the Anthropic or OpenAI APIs give you full control over prompt design and output formatting, which is often worth the additional setup time when your project has unusual conventions.
+Custom LLM scripts using the Anthropic or OpenAI APIs give you full control over prompt design and output formatting, which is often worth the additional setup time when your project has unusual conventions.
 
 The best choice depends on your team's existing tooling, the size of your dbt project, and how much control you need over the generated output style.
 
-## Moving Forward
+Moving Forward
 
-Automating dbt documentation through AI and column-level lineage analysis reduces manual effort while improving consistency. Start small—pick a single domain or mart layer—and iterate on your prompts until the output quality meets your standards. Once patterns mature, expand coverage across your project incrementally.
+Automating dbt documentation through AI and column-level lineage analysis reduces manual effort while improving consistency. Start small, pick a single domain or mart layer, and iterate on your prompts until the output quality meets your standards. Once patterns mature, expand coverage across your project incrementally.
 
 The initial investment in setting up automated documentation pays dividends through improved data discoverability, faster onboarding for new analysts, and reduced time spent answering "what does this column mean?" questions in Slack.
 
-## Related Reading
+Related Reading
 
 - [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
 - [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
@@ -318,7 +318,7 @@ The initial investment in setting up automated documentation pays dividends thro
 - [How to Use AI to Generate Terraform Import Blocks for](/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
 - [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-for-generating-dbt-project-structure-from-existing-/)
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Reviewing Documentation Pull Requests](/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
 - [AI Tools for Creating dbt Model Definitions from Raw](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
@@ -326,27 +326,27 @@ The initial investment in setting up automated documentation pays dividends thro
 - [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-for-generating-dbt-project-structure-from-existing-/)
 - [Best AI Tools for Code Documentation Generation 2026](/best-ai-tools-for-code-documentation-generation-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 

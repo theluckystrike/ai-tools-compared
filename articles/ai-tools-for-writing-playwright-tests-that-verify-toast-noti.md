@@ -18,7 +18,7 @@ voice-checked: true
 
 Toast notifications are an ubiquitous UI pattern in modern web applications. Users expect them to appear at the right time, stay visible long enough to be read, and disappear either automatically or through user interaction. Testing these behaviors thoroughly requires careful consideration of timing, visibility states, and interaction patterns. AI coding assistants can significantly accelerate the process of writing these tests, but understanding what makes a good toast test and how to prompt AI tools effectively remains essential.
 
-## Table of Contents
+Table of Contents
 
 - [Why Toast Notifications Are Tricky to Test](#why-toast-notifications-are-tricky-to-test)
 - [Writing Playwright Tests for Toast Notifications](#writing-playwright-tests-for-toast-notifications)
@@ -35,13 +35,13 @@ Toast notifications are an ubiquitous UI pattern in modern web applications. Use
 - [Performance Testing Toast Implementation](#performance-testing-toast-implementation)
 - [Integration with CI/CD](#integration-with-cicd)
 
-## Why Toast Notifications Are Tricky to Test
+Why Toast Notifications Are Tricky to Test
 
-Toast notifications present unique testing challenges that differ from typical UI elements. The core difficulty lies in their ephemeral nature—they appear, potentially auto-dismiss, and can be manually closed. A test that works perfectly in one environment may fail in another due to timing variations, animation durations, or race conditions between the UI and your assertions.
+Toast notifications present unique testing challenges that differ from typical UI elements. The core difficulty lies in their ephemeral nature, they appear, potentially auto-dismiss, and can be manually closed. A test that works perfectly in one environment may fail in another due to timing variations, animation durations, or race conditions between the UI and your assertions.
 
 When testing toast notifications, you need to verify several distinct behaviors: the toast appears after a trigger action, the toast remains visible for the correct duration, auto-dismissal happens at the expected time, manual dismissal works correctly, and the toast is removed from the DOM after dismissal. Each of these requires different Playwright strategies and timing considerations.
 
-## Writing Playwright Tests for Toast Notifications
+Writing Playwright Tests for Toast Notifications
 
 The fundamental approach involves waiting for the toast to appear, verifying its content and visibility, checking timing-based behaviors, and confirming proper removal. Here's a practical example that demonstrates testing these scenarios:
 
@@ -97,7 +97,7 @@ test.describe('Toast Notification Tests', () => {
 });
 ```
 
-## How AI Tools Can Help
+How AI Tools Can Help
 
 AI coding assistants like GitHub Copilot, Cursor, and Claude Code can accelerate toast test creation by generating boilerplate, suggesting assertions, and handling edge cases you might overlook. The key is providing adequate context in your prompts.
 
@@ -115,7 +115,7 @@ Cursor excels at understanding your entire codebase, including component impleme
 
 Claude Code provides strong reasoning about timing and async behavior, which is particularly valuable for toast tests. When prompted with specific timing requirements, it often generates tests with appropriate waits and timeout configurations.
 
-## Handling Animation and Timing Considerations
+Handling Animation and Timing Considerations
 
 Toast notifications often include CSS animations for appearing and disappearing. Playwright's default waiting strategies generally handle visible elements well, but animations can introduce timing issues. The `toBeVisible()` matcher waits for the element to be attached, stable, and have non-zero dimensions, which usually accounts for entry animations. However, exit animations may require additional waiting.
 
@@ -140,7 +140,7 @@ test('toast dismissal waits for exit animation', async ({ page }) => {
 });
 ```
 
-## Testing Different Toast Types
+Testing Different Toast Types
 
 Many applications support multiple toast types with different behaviors. An AI tool can help generate tests covering each variant:
 
@@ -162,7 +162,7 @@ test.each([
 });
 ```
 
-## Best Practices for AI-Generated Toast Tests
+Best Practices for AI-Generated Toast Tests
 
 When using AI tools to generate toast tests, apply these practices for reliable results. Always verify the timeout values in generated tests match your actual toast configuration. AI tools may assume generic values that don't match your implementation. Specify explicit selectors rather than relying on AI to guess your CSS classes. Provide the actual HTML or component code when possible.
 
@@ -170,7 +170,7 @@ Include tests for edge cases like rapid trigger actions that spawn multiple toas
 
 Finally, run the generated tests multiple times to identify flakiness. Toast timing tests are particularly susceptible to timing-related flakiness in CI environments. Adjust timeouts and waiting strategies as needed.
 
-## Tool Comparison for Toast Tests
+Tool Comparison for Toast Tests
 
 | Tool | Code Generation | Context Awareness | Edge Cases | Cost |
 |------|---|---|---|---|
@@ -180,9 +180,9 @@ Finally, run the generated tests multiple times to identify flakiness. Toast tim
 | Zed AI | Good | Excellent | Good | $100/year |
 | ChatGPT Plus | Good | Limited | Moderate | $20/month |
 
-## Real-World Toast Scenarios
+Real-World Toast Scenarios
 
-### Multiple Toast Types with Different Auto-Dismiss Times
+Multiple Toast Types with Different Auto-Dismiss Times
 
 ```typescript
 test.describe('Multi-type Toast Scenarios', () => {
@@ -226,7 +226,7 @@ test.describe('Multi-type Toast Scenarios', () => {
 });
 ```
 
-### Toast with Custom Actions
+Toast with Custom Actions
 
 ```typescript
 test('toast with action button', async ({ page }) => {
@@ -250,26 +250,26 @@ test('toast with action button', async ({ page }) => {
 });
 ```
 
-## CLI Commands for Test Generation
+CLI Commands for Test Generation
 
 ```bash
-# Generate test from component
+Generate test from component
 npx playwright codegen http://localhost:3000
 
-# Run tests with verbose output
+Run tests with verbose output
 npx playwright test --reporter=list
 
-# Debug flaky tests
+Debug flaky tests
 npx playwright test --debug
 
-# Take screenshots on failure (helpful for AI analysis)
+Take screenshots on failure (helpful for AI analysis)
 npx playwright test --reporter=html --reporter=list
 
-# Check toast test coverage
+Check toast test coverage
 npx playwright test --grep "toast"
 ```
 
-## Debugging Flaky Toast Tests
+Debugging Flaky Toast Tests
 
 When toast tests fail intermittently:
 
@@ -303,7 +303,7 @@ test('debug flaky toast behavior', async ({ page }) => {
 });
 ```
 
-## AI Prompt Best Practices for Toast Tests
+AI Prompt Best Practices for Toast Tests
 
 When asking an AI tool to generate toast tests, be specific:
 
@@ -321,7 +321,7 @@ Good prompt:
 Use page.goto('/app/dashboard') as the starting point"
 ```
 
-## Common Toast Test Mistakes and Fixes
+Common Toast Test Mistakes and Fixes
 
 ```typescript
 // MISTAKE: Racing with animations
@@ -362,7 +362,7 @@ test('right: reliable timeout handling', async ({ page }) => {
 });
 ```
 
-## Performance Testing Toast Implementation
+Performance Testing Toast Implementation
 
 ```typescript
 test('performance: toast rendering', async ({ page }) => {
@@ -380,10 +380,10 @@ test('performance: toast rendering', async ({ page }) => {
 });
 ```
 
-## Integration with CI/CD
+Integration with CI/CD
 
 ```yaml
-# .github/workflows/test-toast.yml
+.github/workflows/test-toast.yml
 name: Toast Tests
 on: [push, pull_request]
 
@@ -407,29 +407,29 @@ jobs:
         run: npx playwright show-report
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 - [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
@@ -444,5 +444,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Writing Playwright Tests That Verify.](/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
 - [Best AI for Creating Jest Tests That Verify Correct.](/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

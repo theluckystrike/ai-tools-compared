@@ -18,7 +18,7 @@ voice-checked: true
 
 GitHub Copilot has become an essential tool for developers, but corporate network environments often block or interfere with its functionality. If you have ever encountered the frustrating "Copilot is not available" message while working behind a corporate proxy or firewall, this guide provides practical solutions to get you back to coding with AI assistance.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding the Problem](#understanding-the-problem)
 - [Diagnosing Your Network Configuration](#diagnosing-your-network-configuration)
@@ -41,7 +41,7 @@ GitHub Copilot has become an essential tool for developers, but corporate networ
 - [Network info:](#network-info)
 - [Contact: IT Service Desk #2525](#contact-it-service-desk-2525)
 
-## Understanding the Problem
+Understanding the Problem
 
 GitHub Copilot communicates with OpenAI's servers (and Microsoft Azure endpoints for enterprise users) through HTTPS connections. Corporate proxies and firewalls inspect, filter, and sometimes block these connections. The result is Copilot failing to load, returning authentication errors, or showing "Copilot could not connect to the server" notifications.
 
@@ -51,31 +51,31 @@ The issue typically manifests in several ways:
 - Error messages mentioning network timeouts or connection failures
 - Copilot dashboard loads but inline suggestions remain unavailable
 
-## Diagnosing Your Network Configuration
+Diagnosing Your Network Configuration
 
 Before applying fixes, identify whether a proxy or firewall is causing the issue. Open your terminal and test connectivity to Copilot's endpoints:
 
 ```bash
-# Test connection to Copilot API
+Test connection to Copilot API
 curl -v https://api.github.com/copilot
 
-# Test connection to GitHub's AI API
+Test connection to GitHub's AI API
 curl -v https://api.github.com/orgs/{org}/copilot/billing
 ```
 
 If these commands fail or timeout, your network is likely blocking or proxying traffic in a way that breaks Copilot. Check your system proxy settings:
 
 ```bash
-# macOS - Check system proxy settings
+macOS - Check system proxy settings
 scutil --proxy
 
-# Linux - Check environment variables
+Linux - Check environment variables
 echo $HTTP_PROXY
 echo $HTTPS_PROXY
 echo $NO_PROXY
 ```
 
-## Solution 1: Configure VS Code Proxy Settings
+Solution 1: Configure VS Code Proxy Settings
 
 Visual Studio Code and its extensions respect the system's proxy settings, but you may need to explicitly configure them for Copilot to work properly.
 
@@ -103,19 +103,19 @@ Replace `http://your-proxy-server:8080` with your actual corporate proxy address
 }
 ```
 
-## Solution 2: Set Environment Variables
+Solution 2: Set Environment Variables
 
 For command-line tools and IDEs that do not have built-in proxy configuration, set environment variables. Add these to your shell profile (`~/.bashrc`, `~/.zshrc`, or `~/.profile`):
 
 ```bash
-# HTTP and HTTPS proxy settings
+HTTP and HTTPS proxy settings
 export HTTP_PROXY="http://your-proxy-server:8080"
 export HTTPS_PROXY="http://your-proxy-server:8080"
 
-# No proxy for local addresses
+No proxy for local addresses
 export NO_PROXY="localhost,127.0.0.1,.local,github.com,api.github.com"
 
-# Alternative lowercase versions (some tools use these)
+Alternative lowercase versions (some tools use these)
 export http_proxy="http://your-proxy-server:8080"
 export https_proxy="http://your-proxy-server:8080"
 export no_proxy="localhost,127.0.0.1,.local,github.com,api.github.com"
@@ -127,98 +127,98 @@ Apply the changes:
 source ~/.zshrc  # or source ~/.bashrc
 ```
 
-## Solution 3: Configure Git to Use Proxy
+Solution 3: Configure Git to Use Proxy
 
 Git operations often trigger Copilot authentication checks. Ensure Git uses your proxy:
 
 ```bash
-# Set proxy for HTTPS connections
+Set proxy for HTTPS connections
 git config --global http.proxy http://your-proxy-server:8080
 
-# Verify the configuration
+Verify the configuration
 git config --global --get http.proxy
 
-# If you need authentication
+If you need authentication
 git config --global http.proxy http://username:password@proxy-server:port
 ```
 
 For NTLM-based corporate proxies (common in Windows environments), consider using `cntlm` or `ntlmaps` as a local proxy helper:
 
 ```bash
-# Install cntlm on macOS
+Install cntlm on macOS
 brew install cntlm
 
-# Configure cntlm in /usr/local/etc/cntlm.conf
-# Then set Git to use localhost:3128
+Configure cntlm in /usr/local/etc/cntlm.conf
+Then set Git to use localhost:3128
 git config --global http.proxy http://localhost:3128
 ```
 
-## Solution 4: Whitelist Copilot Endpoints
+Solution 4: Whitelist Copilot Endpoints
 
 If you have network administrator access, configure your firewall or proxy to allow traffic to Copilot's required endpoints:
 
-**Required domains:**
+Required domains:
 - `api.github.com` - GitHub API and Copilot backend
 - `copilot.github.com` - Copilot-specific endpoints
 - `origin-authentication.webapi.visualstudio.com` - VS Code authentication
 - `vscode.dev` - VS Code web integration
 
-**IP ranges (Azure):**
+IP ranges (Azure):
 Allow traffic to Microsoft's Azure IP ranges where Copilot instances may be hosted.
 
 In a corporate proxy configuration (Squid example):
 
 ```
-# Squid proxy ACL configuration
+Squid proxy ACL configuration
 acl copilot_domains dstdomain .github.com .visualstudio.com .azure.com
 http_access allow copilot_domains
 ```
 
-## Solution 5: Use a SOCKS5 Proxy
+Solution 5: Use a SOCKS5 Proxy
 
 Some corporate firewalls inspect HTTPS traffic deeply, breaking end-to-end encryption that Copilot requires. A SOCKS5 proxy can bypass this inspection:
 
 ```bash
-# Set up SOCKS5 proxy in environment
+Set up SOCKS5 proxy in environment
 export SOCKS_PROXY="socks5://your-socks-proxy:1080"
 export SOCKS5_PROXY="socks5://your-socks-proxy:1080"
 
-# Configure Git to use SOCKS5
+Configure Git to use SOCKS5
 git config --global http.proxy socks5://your-socks-proxy:1080
 ```
 
 VS Code does not natively support SOCKS5 proxies. Use tools like `proxychains` to wrap the VS Code process:
 
 ```bash
-# Install proxychains
+Install proxychains
 brew install proxychains4
 
-# Run VS Code through proxy
+Run VS Code through proxy
 proxychains4 code
 ```
 
-## Solution 6: Check Certificate Issues
+Solution 6: Check Certificate Issues
 
 Corporate proxies often perform SSL inspection, replacing server certificates with their own. This breaks Copilot's connection validation. Two options exist:
 
-**Option A: Disable SSL inspection (requires admin access)**
+Option A: Disable SSL inspection (requires admin access)
 
 Work with your IT department to exclude Copilot endpoints from SSL inspection.
 
-**Option B: Install corporate certificate**
+Option B: Install corporate certificate
 
 If your organization uses a custom CA certificate:
 
 ```bash
-# macOS - Add certificate to system keychain
+macOS - Add certificate to system keychain
 sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain corporate-proxy-ca.crt
 
-# Linux - Add to CA certificates
+Linux - Add to CA certificates
 sudo cp corporate-proxy-ca.crt /usr/local/share/ca-certificates/
 sudo update-ca-certificates
 ```
 
-## Solution 7: Use GitHub Copilot Business or Enterprise
+Solution 7: Use GitHub Copilot Business or Enterprise
 
 Organizations with GitHub Copilot Business or Enterprise can use Microsoft's Azure backbone, which often has better proxy compatibility. These plans provide:
 
@@ -228,71 +228,71 @@ Organizations with GitHub Copilot Business or Enterprise can use Microsoft's Azu
 
 Contact your GitHub administrator to verify your organization's Copilot plan and configuration options.
 
-## Quick Troubleshooting Checklist
+Quick Troubleshooting Checklist
 
 When Copilot fails behind a corporate proxy, work through this checklist:
 
-1. **Verify internet connectivity** — Can you access github.com in your browser?
-2. **Check proxy environment variables** — Are HTTP_PROXY and HTTPS_PROXY set?
-3. **Test API endpoints** — Does `curl api.github.com` succeed?
-4. **Restart your IDE** — Sometimes proxy changes require a full restart
-5. **Check Copilot subscription status** — Ensure your license is active
-6. **Review extension logs** — VS Code: Help > Toggle Developer Tools > Console
+1. Verify internet connectivity. Can you access github.com in your browser?
+2. Check proxy environment variables. Are HTTP_PROXY and HTTPS_PROXY set?
+3. Test API endpoints. Does `curl api.github.com` succeed?
+4. Restart your IDE. Sometimes proxy changes require a full restart
+5. Check Copilot subscription status. Ensure your license is active
+6. Review extension logs. VS Code: Help > Toggle Developer Tools > Console
 
-## Advanced Proxy Debugging
+Advanced Proxy Debugging
 
-### Detailed Network Trace
+Detailed Network Trace
 
 ```bash
-# Verbose curl test with all headers
+Verbose curl test with all headers
 curl -v -x http://your-proxy:8080 \
   -H "Authorization: token your-github-token" \
   https://api.github.com/user
 
-# Monitor actual traffic
+Monitor actual traffic
 tcpdump -i any -n "tcp port 443 or tcp port 8080" | head -50
 
-# Test with strace (Linux)
+Test with strace (Linux)
 strace -e trace=network curl api.github.com
 ```
 
-### Proxy Authentication Testing
+Proxy Authentication Testing
 
 If your proxy requires authentication:
 
 ```bash
-# Test basic auth
+Test basic auth
 curl -v -x http://username:password@proxy:8080 https://api.github.com
 
-# Test NTLM auth (Windows)
-# Use cntlm to bridge NTLM -> HTTP
+Test NTLM auth (Windows)
+Use cntlm to bridge NTLM -> HTTP
 curl -x http://localhost:3128 https://api.github.com
 ```
 
-### TLS/SSL Certificate Issues
+TLS/SSL Certificate Issues
 
 When proxy performs SSL inspection:
 
 ```bash
-# Check certificate chain
+Check certificate chain
 openssl s_client -connect api.github.com:443 -showcerts
 
-# If corporate CA is involved, extract it
+If corporate CA is involved, extract it
 openssl s_client -connect api.github.com:443 -showcerts | \
   sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > corp-ca.crt
 
-# Add to system CA store (macOS)
+Add to system CA store (macOS)
 sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain corp-ca.crt
 ```
 
-## Enterprise Environment Configurations
+Enterprise Environment Configurations
 
-### Example: Squid Proxy Setup
+Squid Proxy Setup
 
 If you manage your proxy:
 
 ```squid
-# /etc/squid/squid.conf
+/etc/squid/squid.conf
 acl github dstdomain api.github.com copilot.github.com
 acl ssl_ports port 443
 acl safe_ports port 80 443 8080
@@ -301,23 +301,23 @@ http_access allow github
 http_access deny !safe_ports
 http_access deny CONNECT !ssl_ports
 
-# Forward to upstream corporate proxy
+Forward to upstream corporate proxy
 cache_peer upstream.corp.proxy parent 8080 0 name=upstream
 cache_peer_access upstream allow all
 
-# SSL bump for inspection (optional)
+SSL bump for inspection (optional)
 https_port 3128 cert=/path/to/cert.pem key=/path/to/key.pem
 ```
 
-### Windows Group Policy Configuration
+Windows Group Policy Configuration
 
 For enterprise Windows administrators:
 
 ```powershell
-# Configure via Group Policy for multiple machines
-# Use Preferences > Windows Settings > Network > Proxy Settings
+Configure via Group Policy for multiple machines
+Use Preferences > Windows Settings > Network > Proxy Settings
 
-# Or via PowerShell for individual machines
+Or via PowerShell for individual machines
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" `
   -Name ProxyServer -Value "proxy.corp:8080"
 
@@ -328,7 +328,7 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet
   -Name ProxyOverride -Value "*.local;<local>"
 ```
 
-## Performance Optimization Through Proxy
+Performance Optimization Through Proxy
 
 Proxies add latency. Minimize impact:
 
@@ -348,7 +348,7 @@ These settings:
 - Keep connections alive to reduce connection overhead
 - Disable proxy certificate validation if corporate CA present
 
-### Caching Strategy Behind Proxy
+Caching Strategy Behind Proxy
 
 Reduce API calls with smart caching:
 
@@ -377,9 +377,9 @@ async function getCachedCompletion(prompt) {
 }
 ```
 
-## Monitoring and Logging
+Monitoring and Logging
 
-### Create Copilot Connection Monitor
+Create Copilot Connection Monitor
 
 ```python
 import requests
@@ -436,7 +436,7 @@ class CopilotProxyMonitor:
             }
             f.write(json.dumps(entry) + '\n')
 
-# Usage
+Usage
 monitor = CopilotProxyMonitor('http://proxy.corp:8080')
 monitor.test_connectivity()
 ```
@@ -444,44 +444,44 @@ monitor.test_connectivity()
 Run this periodically to track proxy-related issues:
 
 ```bash
-# Check connectivity every hour
+Check connectivity every hour
 while true; do
   python monitor.py
   sleep 3600
 done
 ```
 
-## Emergency Workarounds
+Emergency Workarounds
 
 When proxy issues can't be fixed immediately:
 
-### Option 1: Mobile Hotspot Bypass
+Option 1: Mobile Hotspot Bypass
 Use your phone's hotspot to bypass corporate proxy temporarily. Not recommended for sensitive code, but useful for troubleshooting.
 
-### Option 2: SSH Tunnel Through Jump Host
+Option 2: SSH Tunnel Through Jump Host
 
 ```bash
-# If you have access to a machine outside the proxy:
+If you have access to a machine outside the proxy:
 ssh -D 1080 user@external-server.com
 
-# Then use SOCKS5 in Copilot
+Then use SOCKS5 in Copilot
 export SOCKS_PROXY="socks5://localhost:1080"
 ```
 
-### Option 3: VPN (with IT approval)
+Option 3: VPN (with IT approval)
 
 Work with your IT team to authorize a company VPN that doesn't restrict Copilot access. Some corporate VPNs have better Copilot compatibility than others.
 
-## Long-term Solutions
+Long-term Solutions
 
-### Request Copilot as Approved Tool
+Request Copilot as Approved Tool
 
 Document the business value and work with IT to officially approve Copilot:
 
-1. **Show ROI**: Developer productivity gains (typically 20-40%)
-2. **Security**: GitHub Copilot doesn't store code
-3. **Precedent**: List other approved tools using similar endpoints
-4. **Workaround cost**: Show IT the cost of manual workarounds
+1. Show ROI: Developer productivity gains (typically 20-40%)
+2. Security: GitHub Copilot doesn't store code
+3. Precedent: List other approved tools using similar endpoints
+4. Workaround cost: Show IT the cost of manual workarounds
 
 Provide IT with:
 - Domains to whitelist: `api.github.com`, `copilot.github.com`
@@ -489,7 +489,7 @@ Provide IT with:
 - Certificate requirements (if applicable)
 - Bandwidth estimate (<10KB per request)
 
-### Upgrade to GitHub Copilot Enterprise
+Upgrade to GitHub Copilot Enterprise
 
 GitHub Copilot Business/Enterprise has better enterprise proxy support:
 
@@ -508,63 +508,63 @@ Enterprise plans include:
 - Custom endpoint options
 - Dedicated support
 
-## Post-Mortem: Preventing Future Proxy Issues
+Post-Mortem: Preventing Future Proxy Issues
 
 After resolving proxy issues:
 
-1. **Document your configuration** - Save your working proxy settings in team wiki
-2. **Test during onboarding** - New team members test Copilot on day 1
-3. **Monitor continuously** - Use the monitoring script above
-4. **Plan for changes** - When IT updates proxy settings, test Copilot first
+1. Document your configuration - Save your working proxy settings in team wiki
+2. Test during onboarding - New team members test Copilot on day 1
+3. Monitor continuously - Use the monitoring script above
+4. Plan for changes - When IT updates proxy settings, test Copilot first
 
 Create a team runbook:
 
 ```markdown
-# Copilot Behind Corporate Proxy - Team Runbook
+Copilot Behind Corporate Proxy - Team Runbook
 
-## If Copilot stops working:
+If Copilot stops working:
 
 1. Run: `curl -x http://proxy.corp:8080 https://api.github.com`
 2. If that fails, it's a network issue - contact IT
 3. If it works, restart VS Code
 4. If still broken, check ~/.vscode/settings.json for proxy config
 
-## Network info:
+Network info:
 - Proxy: proxy.corp:8080
 - Auth: Use Windows credentials
 - Bypass: localhost,127.0.0.1,.local
 
-## Contact: IT Service Desk #2525
+Contact: IT Service Desk #2525
 ```
 
-## Related Articles
+Related Articles
 
 - [ChatGPT Image Upload Not Working Fix (2026)](/chatgpt-image-upload-not-working-fix-2026/)
 - [Copilot Chat Not Responding in GitHub](/copilot-chat-not-responding-in-github-fix/)
 - [Copilot Enterprise License Not Assigned](/copilot-enterprise-license-not-assigned-fix/)
 - [Copilot Completions Extremely Slow on Large Python Files Fix](/copilot-completions-extremely-slow-on-large-python-files-fix/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**What if the fix described here does not work?**
+What if the fix described here does not work?
 
 If the primary solution does not resolve your issue, check whether you are running the latest version of the software involved. Clear any caches, restart the application, and try again. If it still fails, search for the exact error message in the tool's GitHub Issues or support forum.
 
-**Could this problem be caused by a recent update?**
+Could this problem be caused by a recent update?
 
 Yes, updates frequently introduce new bugs or change behavior. Check the tool's release notes and changelog for recent changes. If the issue started right after an update, consider rolling back to the previous version while waiting for a patch.
 
-**How can I prevent this issue from happening again?**
+How can I prevent this issue from happening again?
 
 Pin your dependency versions to avoid unexpected breaking changes. Set up monitoring or alerts that catch errors early. Keep a troubleshooting log so you can quickly reference solutions when similar problems recur.
 
-**Is this a known bug or specific to my setup?**
+Is this a known bug or specific to my setup?
 
 Check the tool's GitHub Issues page or community forum to see if others report the same problem. If you find matching reports, you will often find workarounds in the comments. If no one else reports it, your local environment configuration is likely the cause.
 
-**Should I reinstall the tool to fix this?**
+Should I reinstall the tool to fix this?
 
 A clean reinstall sometimes resolves persistent issues caused by corrupted caches or configuration files. Before reinstalling, back up your settings and project files. Try clearing the cache first, since that fixes the majority of cases without a full reinstall.
 

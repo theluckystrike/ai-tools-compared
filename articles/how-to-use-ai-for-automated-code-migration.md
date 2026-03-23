@@ -31,15 +31,15 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-Code migration is one of the most time-intensive engineering tasks — and one where AI provides the clearest ROI. Migrating 200 files from one pattern to another is mechanical work that takes weeks manually. With AI-assisted automation, the same migration takes hours. This guide covers practical approaches to three migration types: framework/library upgrades, language ports, and API breaking changes.
+Code migration is one of the most time-intensive engineering tasks. and one where AI provides the clearest ROI. Migrating 200 files from one pattern to another is mechanical work that takes weeks manually. With AI-assisted automation, the same migration takes hours. This guide covers practical approaches to three migration types: framework/library upgrades, language ports, and API breaking changes.
 
-## Key Takeaways
+Key Takeaways
 
 - Replace useHistory() with useNavigate()
 2.
-- **Code migration is one of the most time-intensive engineering tasks**: and one where AI provides the clearest ROI.
-- **Apply ONLY these transformations**: 1.
-- **OLD API**: {old_signature}
+- Code migration is one of the most time-intensive engineering tasks: and one where AI provides the clearest ROI.
+- Apply ONLY these transformations: 1.
+- OLD API: {old_signature}
 
 NEW API:
 {new_signature}
@@ -48,10 +48,10 @@ MIGRATION NOTES:
 {changelog}
 
 Transform any code that calls the old API to use the new API.
-- **If the file doesn't use this API**: return it unchanged.
-- **Test files**: Often use the old API in mock setups with different patterns than production code.
+- If the file doesn't use this API: return it unchanged.
+- Test files: Often use the old API in mock setups with different patterns than production code.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -61,9 +61,9 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Migration Type 1: Library Upgrade with Breaking Changes
+Step 1: Migration Type 1: Library Upgrade with Breaking Changes
 
-Example: Migrating from React Router v5 to v6 (useHistory to useNavigate, Switch to Routes, etc.)
+Migrating from React Router v5 to v6 (useHistory to useNavigate, Switch to Routes, etc.)
 
 ```python
 import anthropic
@@ -135,7 +135,7 @@ print(f"Changed: {len(results['changed'])} files")
 
 Always stage, validate, then apply. Never write AI-migrated code directly over source files without a validation step.
 
-### Step 2: Migration Type 2: Language Port (Python 2 to Python 3)
+Step 2: Migration Type 2: Language Port (Python 2 to Python 3)
 
 For large codebases, use the Anthropic Batch API to process hundreds of files concurrently at 50% cost:
 
@@ -182,7 +182,7 @@ print(f"Batch submitted: {batch.id}")
 print(f"Processing {len(batch_requests)} files at 50% API cost")
 ```
 
-### Step 3: Migration Type 3: Internal API Breaking Changes
+Step 3: Migration Type 3: Internal API Breaking Changes
 
 When you rename a method or change a signature, every call site needs updating.
 
@@ -232,7 +232,7 @@ result = subprocess.run(
 affected_files = result.stdout.strip().split("\n")
 ```
 
-### Step 4: Validation After AI Migration
+Step 4: Validation After AI Migration
 
 ```python
 import ast
@@ -265,9 +265,9 @@ The standard migration workflow:
 5. Human review of files flagged by any check
 6. Apply staging to source
 
-### Step 5: What AI Migration Gets Wrong
+Step 5: What AI Migration Gets Wrong
 
-**Multi-line destructuring:** An AI might correctly identify `useHistory()` but miss:
+Multi-line destructuring: An AI might correctly identify `useHistory()` but miss:
 
 ```javascript
 const { push, replace } = useHistory();
@@ -275,15 +275,15 @@ const { push, replace } = useHistory();
 // Then: push('/path') -> navigate('/path')
 ```
 
-**Dynamic usage:** `const method = condition ? history.push : history.replace` — transformation depends on runtime logic.
+Dynamic usage: `const method = condition ? history.push : history.replace`. transformation depends on runtime logic.
 
-**Test files:** Often use the old API in mock setups with different patterns than production code.
+Test files: Often use the old API in mock setups with different patterns than production code.
 
 Flag these categories for manual review rather than trusting automated migration.
 
-### Step 6: Diff Review Workflow
+Step 6: Diff Review Workflow
 
-The biggest risk with AI migration is silent correctness issues — code that passes the type checker but behaves differently. Build a diff review step into every migration:
+The biggest risk with AI migration is silent correctness issues. code that passes the type checker but behaves differently. Build a diff review step into every migration:
 
 ```python
 import difflib
@@ -298,7 +298,7 @@ def generate_migration_diff(original: str, migrated: str, filepath: str) -> str:
  )
  return "".join(diff)
 
-# Write all diffs to a single review file
+Write all diffs to a single review file
 with open("migration-review.diff", "w") as review:
  for filepath in results["changed"]:
  original = open(filepath).read()
@@ -309,7 +309,7 @@ with open("migration-review.diff", "w") as review:
 
 Run `git diff --stat migration-review.diff` or open it in a tool like `delta` to review all changes before applying. High-confidence mechanical changes (print statements, import renames) need less scrutiny. Low-confidence changes (async addition, parameter reordering) need a human read.
 
-### Step 7: Sizing the Migration
+Step 7: Sizing the Migration
 
 Rule of thumb for estimating AI migration effort:
 
@@ -322,44 +322,44 @@ Rule of thumb for estimating AI migration effort:
 
 The time savings grow with scale. For fewer than 20 files, writing a migration prompt and validation script may take longer than just doing it manually.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use ai for automated code migration?**
+How long does it take to use ai for automated code migration?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 - [Best AI Tools for Code Migration Between Languages 2026](/best-ai-tools-for-code-migration-between-languages-2026/)
@@ -367,5 +367,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
 - [Best AI Tools for Automated Code Review 2026](/best-ai-tools-for-automated-code-review-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

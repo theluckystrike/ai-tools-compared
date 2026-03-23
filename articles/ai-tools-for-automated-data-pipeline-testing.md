@@ -15,11 +15,11 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-Data pipeline failures are quiet — you don't get a stack trace, you get wrong numbers in a dashboard three days later. Automated testing is the fix, but writing data quality tests is tedious. AI tools can generate test suites from sample data, SQL schemas, and business rules in minutes instead of hours.
+Data pipeline failures are quiet. you don't get a stack trace, you get wrong numbers in a dashboard three days later. Automated testing is the fix, but writing data quality tests is tedious. AI tools can generate test suites from sample data, SQL schemas, and business rules in minutes instead of hours.
 
 This guide covers three approaches: AI-generated dbt tests, Great Expectations suite generation, and LLM-based anomaly checks on pipeline outputs.
 
-## Table of Contents
+Table of Contents
 
 - [Why Pipeline Testing Is Underinvested](#why-pipeline-testing-is-underinvested)
 - [Setting Up the Stack](#setting-up-the-stack)
@@ -31,25 +31,25 @@ This guide covers three approaches: AI-generated dbt tests, Great Expectations s
 - [Tool Comparison](#tool-comparison)
 - [Related Reading](#related-reading)
 
-## Why Pipeline Testing Is Underinvested
+Why Pipeline Testing Is Underinvested
 
 Application code has decades of testing culture: unit tests, integration tests, CI pipelines. Data pipelines don't. The reasons are practical: data quality tests require domain knowledge about acceptable value ranges, valid states, and business rules. A generic not_null check doesn't encode that an order with `status = 'shipped'` must have a non-null `shipped_at`. Writing that test requires someone who understands both the SQL and the business logic.
 
 AI tools close this gap by inferring business rules from data patterns and model structure. When you show Claude a model that filters `WHERE created_at >= '2024-01-01'` and a sample row with `status = 'shipped'` and `shipped_at = null`, it knows to generate the constraint test. You don't have to write it.
 
-## Setting Up the Stack
+Setting Up the Stack
 
 Install the dependencies for all three approaches:
 
 ```bash
 pip install anthropic dbt-postgres great-expectations pandas psycopg2-binary pyyaml
 
-# For dbt project initialization (if you don't have one)
+For dbt project initialization (if you don't have one)
 dbt init my_project
 cd my_project
 
-# Configure your profile in ~/.dbt/profiles.yml
-# Then test connection
+Configure your profile in ~/.dbt/profiles.yml
+Then test connection
 dbt debug
 ```
 
@@ -58,15 +58,15 @@ For Great Expectations:
 ```bash
 pip install great-expectations
 great_expectations init
-# Creates great_expectations/ directory with context
+Creates great_expectations/ directory with context
 ```
 
-## Approach 1: AI-Generated dbt Tests
+Approach 1: AI-Generated dbt Tests
 
 dbt's built-in tests (`not_null`, `unique`, `accepted_values`) cover basics. The hard part is writing custom SQL tests for business rules. Claude handles this well.
 
 ```python
-# generate_dbt_tests.py
+generate_dbt_tests.py
 from anthropic import Anthropic
 import yaml
 from pathlib import Path
@@ -107,7 +107,7 @@ Return valid dbt YAML schema format only."""
 
  return yaml.safe_load(yaml_text)
 
-# Example usage
+Example usage
 model_sql = """
 SELECT
  order_id,
@@ -134,7 +134,7 @@ tests = generate_dbt_tests(model_sql, "orders", sample_data)
 print(yaml.dump(tests, default_flow_style=False))
 ```
 
-**Generated dbt YAML:**
+Generated dbt YAML:
 
 ```yaml
 version: 2
@@ -192,14 +192,14 @@ models:
  error_after: {count: 24, period: hour}
 ```
 
-The two custom SQL tests at the bottom are the valuable ones. `not_null` and `unique` are boilerplate — the business rule tests are what actually catch data quality problems in production.
+The two custom SQL tests at the bottom are the valuable ones. `not_null` and `unique` are boilerplate. the business rule tests are what actually catch data quality problems in production.
 
-## Approach 2: Great Expectations Suite Generation
+Approach 2: Great Expectations Suite Generation
 
 Great Expectations needs a test suite for each dataset. Generating one manually takes hours. AI can generate it from a sample DataFrame:
 
 ```python
-# generate_ge_suite.py
+generate_ge_suite.py
 import pandas as pd
 import json
 from anthropic import Anthropic
@@ -281,14 +281,14 @@ def save_ge_suite(expectations: list[dict], suite_name: str, output_dir: str = "
     print(f"Saved {len(expectations)} expectations to {output_path}")
 ```
 
-The key advantage of using the statistical profile rather than raw data is that it's safe to send to an external API. You're not sending actual orders or user records — you're sending distributions, null rates, and sample cardinalities. For regulated data environments this distinction matters.
+The key advantage of using the statistical profile rather than raw data is that it's safe to send to an external API. You're not sending actual orders or user records. you're sending distributions, null rates, and sample cardinalities. For regulated data environments this distinction matters.
 
-## Approach 3: LLM-Based Output Anomaly Detection
+Approach 3: LLM-Based Output Anomaly Detection
 
 For pipelines where the data structure changes between runs, use Claude to analyze output distributions:
 
 ```python
-# pipeline_output_checker.py
+pipeline_output_checker.py
 from anthropic import Anthropic
 import pandas as pd
 import json
@@ -332,7 +332,7 @@ Identify:
 2. DISTRIBUTION_SHIFTS: Are any numeric distributions significantly different?
 3. NULL_CHANGES: Have null rates changed significantly (>5% absolute change)?
 4. MISSING_COLUMNS: Any columns present in baseline but missing from current?
-5. VERDICT: [PASS / WARN / FAIL] — should this pipeline output be trusted?
+5. VERDICT: [PASS / WARN / FAIL]. should this pipeline output be trusted?
 
 Be specific with numbers."""
         }]
@@ -354,18 +354,18 @@ Be specific with numbers."""
     }
 ```
 
-The strength of this approach is catching shifts that fixed thresholds miss. A `total_amount` column where the mean drops from $85 to $12 between runs is suspicious — a fixed not-null check won't catch it, but the LLM comparison will flag it immediately as a distribution shift worth investigating.
+The strength of this approach is catching shifts that fixed thresholds miss. A `total_amount` column where the mean drops from $85 to $12 between runs is suspicious. a fixed not-null check won't catch it, but the LLM comparison will flag it immediately as a distribution shift worth investigating.
 
-## Integrating Anomaly Detection into Airflow
+Integrating Anomaly Detection into Airflow
 
 ```python
-# airflow_dag_with_checks.py
+airflow_dag_with_checks.py
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 import pandas as pd
 
-def run_pipeline_with_check(**context):
+def run_pipeline_with_check(context):
     """Run pipeline and validate output before marking success."""
     # Run your actual pipeline
     current_df = run_etl_pipeline()
@@ -403,16 +403,16 @@ with DAG(
     )
 ```
 
-## CI Integration for dbt
+CI Integration for dbt
 
 ```yaml
-# .github/workflows/dbt-test-gen.yml
+.github/workflows/dbt-test-gen.yml
 name: Generate dbt Tests
 
 on:
   pull_request:
     paths:
-      - 'models/**/*.sql'
+      - 'models//*.sql'
 
 jobs:
   generate-tests:
@@ -439,7 +439,7 @@ jobs:
 
 This workflow triggers on any PR that modifies SQL models. For new models with no test YAML, it generates one. For existing models where the SQL changed, it regenerates the tests from the updated SQL. The `--only-missing-tests` flag prevents overwriting hand-crafted tests with AI-generated ones.
 
-## Tool Comparison
+Tool Comparison
 
 | Tool | dbt Tests | GE Suite | Distribution Checks | Custom Rules |
 |---|---|---|---|---|
@@ -451,12 +451,12 @@ This workflow triggers on any PR that modifies SQL models. For new models with n
 
 Claude's edge over GPT-4 for this use case is consistency: it reliably returns valid YAML and JSON rather than prose explanations mixed with code. For automated pipelines where you're parsing the output programmatically, that matters.
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Data Pipeline Debugging 2026](/best-ai-tools-for-data-pipeline-debugging-2026/)
 - [Best AI Tools for Generating Unit Tests: Legacy](/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
 - [AI Tools for Automated Test Data Generation 2026](/ai-tools-for-automated-test-data-generation-2026/)
 - [Best AI Tools for Generating Unit Tests](/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
 - [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

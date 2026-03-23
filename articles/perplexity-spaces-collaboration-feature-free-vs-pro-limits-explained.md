@@ -32,24 +32,24 @@ tags: [ai-tools-compared, comparison, collaboration]
 
 Perplexity Spaces is a powerful feature that allows users to create shared research environments where teams can collaborate on searches, gather sources, and build knowledge bases together. Understanding the differences between Free and Pro plan limits is essential for choosing the right collaboration setup for your workflow.
 
-## Key Takeaways
+Key Takeaways
 
-- **Free users can only**: share within their organization if the organization uses Perplexity's team features, but the functionality is limited compared to Pro.
-- **Search and Query Limits**: Free users face stricter rate limits on searches, which impacts collaborative research.
-- **Storage and History**: Free plan Spaces retain conversation history for only 7 days, limiting the ability to build long-term collaborative knowledge bases.
-- **Higher Query Limits**: Pro users receive approximately 300 searches per day, enabling intensive collaborative research without hitting rate limits.
-- **Member Limit Conflicts
-Problem**: New team members can't access Space
+- Free users can only: share within their organization if the organization uses Perplexity's team features, but the functionality is limited compared to Pro.
+- Search and Query Limits: Free users face stricter rate limits on searches, which impacts collaborative research.
+- Storage and History: Free plan Spaces retain conversation history for only 7 days, limiting the ability to build long-term collaborative knowledge bases.
+- Higher Query Limits: Pro users receive approximately 300 searches per day, enabling intensive collaborative research without hitting rate limits.
+- Member Limit Conflicts
+Problem: New team members can't access Space
 Solution: Remove least-active member or upgrade
 
-### 3.
-- **Understanding the differences between**: Free and Pro plan limits is essential for choosing the right collaboration setup for your workflow.
+3.
+- Understanding the differences between: Free and Pro plan limits is essential for choosing the right collaboration setup for your workflow.
 
-## What Are Perplexity Spaces?
+What Are Perplexity Spaces?
 
 Perplexity Spaces function as collaborative research workspaces where users can share conversations, organize sources, and build shared knowledge repositories. Teams use Spaces for group research projects, content collaboration, and collective problem-solving. The feature integrates deeply with Perplexity's AI search capabilities, allowing multiple team members to contribute to and benefit from shared research threads.
 
-**Key capabilities of Spaces include:**
+Key capabilities of Spaces include:
 
 - Shared conversation threads with team members
 
@@ -61,21 +61,21 @@ Perplexity Spaces function as collaborative research workspaces where users can 
 
 - Real-time collaboration on research projects
 
-## Free Plan: Collaboration Limits
+Free Plan: Collaboration Limits
 
 The Free plan provides basic access to Perplexity's core search capabilities but imposes significant restrictions on collaboration features.
 
-### Free Plan Space Limitations:
+Free Plan Space Limitations:
 
-**Personal Use Focus:** Free users can create personal Spaces for individual research, but the collaborative features are severely limited. You can create up to 3 Spaces total, with each Space supporting a maximum of 2 members including yourself.
+Personal Use Focus: Free users can create personal Spaces for individual research, but the collaborative features are severely limited. You can create up to 3 Spaces total, with each Space supporting a maximum of 2 members including yourself.
 
-**Search and Query Limits:** Free users face stricter rate limits on searches, which impacts collaborative research. The daily limit is approximately 5 searches per day, making it difficult for teams to conduct thorough collaborative research without quickly hitting restrictions.
+Search and Query Limits: Free users face stricter rate limits on searches, which impacts collaborative research. The daily limit is approximately 5 searches per day, making it difficult for teams to conduct thorough collaborative research without quickly hitting restrictions.
 
-**Storage and History:** Free plan Spaces retain conversation history for only 7 days, limiting the ability to build long-term collaborative knowledge bases. Storage capacity is limited to 100MB across all Spaces.
+Storage and History: Free plan Spaces retain conversation history for only 7 days, limiting the ability to build long-term collaborative knowledge bases. Storage capacity is limited to 100MB across all Spaces.
 
-**Sharing Capabilities:** Sharing Spaces with external collaborators is restricted. Free users can only share within their organization if the organization uses Perplexity's team features, but the functionality is limited compared to Pro.
+Sharing Capabilities: Sharing Spaces with external collaborators is restricted. Free users can only share within their organization if the organization uses Perplexity's team features, but the functionality is limited compared to Pro.
 
-### What Free Users Can Do:
+What Free Users Can Do:
 
 - Create and manage up to 3 personal Spaces
 
@@ -87,23 +87,23 @@ The Free plan provides basic access to Perplexity's core search capabilities but
 
 - Access standard AI-powered search features
 
-## Pro Plan: Enhanced Collaboration Features
+Pro Plan: Enhanced Collaboration Features
 
 The Pro plan unlocks the full potential of Perplexity Spaces for team collaboration, removing the restrictions that limit Free users.
 
-### Pro Plan Space Benefits:
+Pro Plan Space Benefits:
 
-**Unlimited Spaces:** Pro users can create unlimited Spaces, removing the 3-Space cap that restricts Free users. This is particularly valuable for teams managing multiple ongoing research projects or client work.
+Unlimited Spaces: Pro users can create unlimited Spaces, removing the 3-Space cap that restricts Free users. This is particularly valuable for teams managing multiple ongoing research projects or client work.
 
-**Expanded Member Limits:** Pro Spaces support up to 10 members per Space, enabling larger team collaboration. For organizations requiring even broader access, team pricing provides additional scaling options.
+Expanded Member Limits: Pro Spaces support up to 10 members per Space, enabling larger team collaboration. For organizations requiring even broader access, team pricing provides additional scaling options.
 
-**Higher Query Limits:** Pro users receive approximately 300 searches per day, enabling intensive collaborative research without hitting rate limits. This is essential for teams conducting thorough competitive analysis, academic research, or market investigation.
+Higher Query Limits: Pro users receive approximately 300 searches per day, enabling intensive collaborative research without hitting rate limits. This is essential for teams conducting thorough competitive analysis, academic research, or market investigation.
 
-**Extended Storage and History:** Pro plan Spaces retain conversation history for 90 days, with options to export and archive important research threads. Storage capacity increases to 10GB per Space, accommodating extensive source collections and knowledge bases.
+Extended Storage and History: Pro plan Spaces retain conversation history for 90 days, with options to export and archive important research threads. Storage capacity increases to 10GB per Space, accommodating extensive source collections and knowledge bases.
 
-**Advanced Sharing Features:** Pro users can share Spaces with external collaborators via secure links, control permission levels (view-only vs. editing), and integrate with third-party tools like Slack and Notion.
+Advanced Sharing Features: Pro users can share Spaces with external collaborators via secure links, control permission levels (view-only vs. editing), and integrate with third-party tools like Slack and Notion.
 
-### Pro Plan Collaboration Tools:
+Pro Plan Collaboration Tools:
 
 - Unlimited Space creation
 
@@ -121,7 +121,7 @@ The Pro plan unlocks the full potential of Perplexity Spaces for team collaborat
 
 - Priority support for collaboration issues
 
-## Feature-by-Feature Comparison
+Feature-by-Feature Comparison
 
 | Feature | Free Plan | Pro Plan |
 
@@ -145,9 +145,9 @@ The Pro plan unlocks the full potential of Perplexity Spaces for team collaborat
 
 | Custom Integrations | No | Yes |
 
-## Practical Recommendations
+Practical Recommendations
 
-**Choose Free If:**
+Choose Free If:
 
 - You're working solo or in a single partnership
 
@@ -157,7 +157,7 @@ The Pro plan unlocks the full potential of Perplexity Spaces for team collaborat
 
 - Budget constraints prevent paid subscriptions
 
-**Choose Pro If:**
+Choose Pro If:
 
 - You manage a team of 3+ researchers
 
@@ -169,7 +169,7 @@ The Pro plan unlocks the full potential of Perplexity Spaces for team collaborat
 
 - API integrations are needed for workflows
 
-## Making the Switch
+Making the Switch
 
 Upgrading from Free to Pro unlocks immediate access to all collaboration features. Existing Spaces automatically expand to accommodate new members and extended storage. The transition is, with no data loss during the upgrade process.
 
@@ -188,11 +188,11 @@ Suggested files to attach: competitor annual reports, industry whitepapers
 Members: research lead, product manager, strategy analyst
 ```
 
-## Real-World Collaboration Workflows
+Real-World Collaboration Workflows
 
 Different team types use Spaces for distinct purposes:
 
-### Product Teams (5-10 members)
+Product Teams (5-10 members)
 Product teams benefit most from Pro's expanded member limits and extended history:
 
 ```
@@ -208,7 +208,7 @@ Pro Plan Value:
 - 10 member limit includes future hires
 ```
 
-### Content and Editorial Teams
+Content and Editorial Teams
 Editorial teams use Spaces for fact-checking and source management:
 
 ```
@@ -224,7 +224,7 @@ Free Plan Limitation:
 - Limited external sharing affects fact-checking workflow
 ```
 
-### Research Teams
+Research Teams
 Academic and market research teams need deep history and large collections:
 
 ```
@@ -239,7 +239,7 @@ Pro Plan Benefits:
 - Extended storage holds historical datasets
 ```
 
-## Comparing Collaboration Features Beyond Limits
+Comparing Collaboration Features Beyond Limits
 
 The differences go deeper than member counts:
 
@@ -255,7 +255,7 @@ The differences go deeper than member counts:
 | Integration with Notion | No | Yes |
 | Brand customization | No | Yes (Pro Spaces) |
 
-## Migration Strategies from Free to Pro
+Migration Strategies from Free to Pro
 
 If your team outgrows Free tier:
 
@@ -269,7 +269,7 @@ Gotcha: Perplexity doesn't auto-migrate Free Spaces to Pro.
 You must manually recreate or move work.
 ```
 
-## Cost Analysis for Teams
+Cost Analysis for Teams
 
 Pricing breakdown for different team sizes:
 
@@ -288,34 +288,34 @@ Large team (20+):
 - API access essential for scaling
 ```
 
-## Setting Up Effective Spaces for Your Use Case
+Setting Up Effective Spaces for Your Use Case
 
 Configure Spaces for maximum team productivity:
 
 ```
 Space: Competitive Intelligence
-├─ System prompt: "You are a competitive analyst..."
-├─ Suggested sources: Industry reports, earnings calls
-├─ Members: 3 analysts + manager
-├─ Search frequency: 50+ daily searches
-└─ History retention: Critical (keep all 90 days)
+ System prompt: "You are a competitive analyst..."
+ Suggested sources: Industry reports, earnings calls
+ Members: 3 analysts + manager
+ Search frequency: 50+ daily searches
+ History retention: Critical (keep all 90 days)
 
 Space: Product Roadmap Research
-├─ System prompt: "Research feature viability..."
-├─ Attached files: Design system, user research data
-├─ Members: Product + 2 engineers
-├─ Search frequency: 10-20 daily
-└─ External share: Yes, with stakeholder access
+ System prompt: "Research feature viability..."
+ Attached files: Design system, user research data
+ Members: Product + 2 engineers
+ Search frequency: 10-20 daily
+ External share: Yes, with stakeholder access
 
 Space: Content Research Hub
-├─ System prompt: "Verify facts and find authoritative sources..."
-├─ Suggested sources: Academic databases, news archives
-├─ Members: Editor + 2 writers
-├─ Search frequency: 30-40 daily
-└─ Export need: High (PDF reports to stakeholders)
+ System prompt: "Verify facts and find authoritative sources..."
+ Suggested sources: Academic databases, news archives
+ Members: Editor + 2 writers
+ Search frequency: 30-40 daily
+ Export need: High (PDF reports to stakeholders)
 ```
 
-## Evaluating Whether Pro Is Worth the Cost
+Evaluating Whether Pro Is Worth the Cost
 
 Decision matrix for your situation:
 
@@ -333,70 +333,70 @@ If annual value > $2,400, Pro pays for itself
 Most teams save 2-5 hours/month → $2,400-6,000 annual value
 ```
 
-## Common Pain Points to Avoid
+Common Pain Points to Avoid
 
 Free users frequently encounter these bottlenecks:
 
-### 1. Search Quota Exhaustion
+1. Search Quota Exhaustion
 Problem: Team hits 5 searches/day quickly
 Solution: Pro upgrade or async research workflow
 
-### 2. Member Limit Conflicts
+2. Member Limit Conflicts
 Problem: New team members can't access Space
 Solution: Remove least-active member or upgrade
 
-### 3. History Loss
+3. History Loss
 Problem: 7-day retention loses important context
 Solution: Export critical threads before expiration
 
-### 4. External Collaboration Gaps
+4. External Collaboration Gaps
 Problem: Can't share with clients or partners
 Solution: Pro's external sharing with permissions
 
-## Workspace Organization for Collaboration
+Workspace Organization for Collaboration
 
 Structure Spaces for maximum team effectiveness:
 
 ```
 Workspace Structure:
-├── Core Research Spaces (Pro only if shared)
-│   ├── Market Analysis
-│   ├── Competitive Intelligence
-│   └── Trend Monitoring
-├── Project-Based Spaces
-│   ├── Q1 Product Launch
-│   ├── Marketing Campaign Research
-│   └── Sales Enablement
-└── Archived Spaces (history preserved)
-    ├── Q4 2025 Research
-    └── Previous campaign projects
+ Core Research Spaces (Pro only if shared)
+    Market Analysis
+    Competitive Intelligence
+    Trend Monitoring
+ Project-Based Spaces
+    Q1 Product Launch
+    Marketing Campaign Research
+    Sales Enablement
+ Archived Spaces (history preserved)
+     Q4 2025 Research
+     Previous campaign projects
 ```
 
-Avoid mixing unrelated research in single Space—maintain focus and search efficiency.
+Avoid mixing unrelated research in single Space, maintain focus and search efficiency.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can I use Perplexity and the second tool together?**
+Can I use Perplexity and the second tool together?
 
 Yes, many users run both tools simultaneously. Perplexity and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
 
-**Which is better for beginners, Perplexity or the second tool?**
+Which is better for beginners, Perplexity or the second tool?
 
 It depends on your background. Perplexity tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
 
-**Is Perplexity or the second tool more expensive?**
+Is Perplexity or the second tool more expensive?
 
 Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
 
-**How often do Perplexity and the second tool update their features?**
+How often do Perplexity and the second tool update their features?
 
 Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
 
-**What happens to my data when using Perplexity or the second tool?**
+What happens to my data when using Perplexity or the second tool?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-## Related Articles
+Related Articles
 
 - [Switching from ChatGPT Search to Perplexity Pro Search](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 - [Perplexity Pro File Upload Limits and Storage Costs Explaine](/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)
@@ -404,4 +404,4 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Cursor AI Multi File Editing Feature How It Actually Works](/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
 - [Best Free AI Tool for Generating Regex Patterns Explained](/best-free-ai-tool-for-generating-regex-patterns-explained/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

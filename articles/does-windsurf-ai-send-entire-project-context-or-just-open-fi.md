@@ -16,9 +16,9 @@ voice-checked: true
 
 {% raw %}
 
-When using AI-powered code editors like WindSurf, understanding what data gets transmitted to external servers becomes crucial—especially for developers working with proprietary code, sensitive business logic, or in regulated industries. The question "does WindSurf AI send entire project context or just open file to servers" gets to the heart of how modern AI coding assistants balance powerful context awareness with privacy considerations.
+When using AI-powered code editors like WindSurf, understanding what data gets transmitted to external servers becomes crucial, especially for developers working with proprietary code, sensitive business logic, or in regulated industries. The question "does WindSurf AI send entire project context or just open file to servers" gets to the heart of how modern AI coding assistants balance powerful context awareness with privacy considerations.
 
-## Table of Contents
+Table of Contents
 
 - [How WindSurf AI Handles Context](#how-windsurf-ai-handles-context)
 - [The Cascade Agent Context Behavior](#the-cascade-agent-context-behavior)
@@ -35,25 +35,25 @@ When using AI-powered code editors like WindSurf, understanding what data gets t
 - [Setting Up Security Monitoring](#setting-up-security-monitoring)
 - [Audit and Compliance Records](#audit-and-compliance-records)
 
-## How WindSurf AI Handles Context
+How WindSurf AI Handles Context
 
 WindSurf AI, built by Codeium, employs a selective context transmission model. Unlike some AI coding assistants that send your entire codebase to cloud servers for processing, WindSurf takes a more nuanced approach to what it shares externally.
 
-**The short answer:** WindSurf AI primarily sends the currently active file and explicitly referenced files from your project, not the entire codebase by default. However, the actual behavior depends on how you interact with the tool and what features you enable.
+WindSurf AI primarily sends the currently active file and explicitly referenced files from your project, not the entire codebase by default. However, the actual behavior depends on how you interact with the tool and what features you enable.
 
-### What Gets Sent by Default
+What Gets Sent by Default
 
-When you use WindSurf's AI features—such as autocomplete, chat, or the Cascade agent—WindSurf typically sends:
+When you use WindSurf's AI features, such as autocomplete, chat, or the Cascade agent, WindSurf typically sends:
 
-- **The currently open file** — This is the primary context for most AI interactions
+- The currently open file. This is the primary context for most AI interactions
 
-- **Explicitly referenced files** — When you specifically ask the AI to look at or modify another file, that file gets included in the context
+- Explicitly referenced files. When you specifically ask the AI to look at or modify another file, that file gets included in the context
 
-- **Repository structure hints** — WindSurf may send metadata about your project structure (file names, directory organization) to help the AI understand how to navigate your codebase
+- Repository structure hints. WindSurf may send metadata about your project structure (file names, directory organization) to help the AI understand how to navigate your codebase
 
-- **Chat history** — Conversation context within your current session gets preserved and sent with subsequent requests
+- Chat history. Conversation context within your current session gets preserved and sent with subsequent requests
 
-What remains **local** by default includes:
+What remains local by default includes:
 
 - Unopened files in your project
 
@@ -63,7 +63,7 @@ What remains **local** by default includes:
 
 - Local configuration files (unless explicitly opened)
 
-### Configuring Context Scope
+Configuring Context Scope
 
 WindSurf provides settings that let you control how much context the AI can access. You can modify these through the settings:
 
@@ -73,8 +73,8 @@ WindSurf provides settings that let you control how much context the AI can acce
   "windsurf": {
     "context": {
       "maxFiles": 10,
-      "includePatterns": ["src/**", "tests/**"],
-      "excludePatterns": ["**/node_modules/**", "**/.git/**", "**/dist/**"]
+      "includePatterns": ["src/", "tests/"],
+      "excludePatterns": ["/node_modules/", "/.git/", "/dist/"]
     }
   }
 }
@@ -82,9 +82,9 @@ WindSurf provides settings that let you control how much context the AI can acce
 
 This configuration restricts the AI to specific directories and limits how many files can be included in context simultaneously.
 
-## The Cascade Agent Context Behavior
+The Cascade Agent Context Behavior
 
-WindSurf's Cascade agent—the autonomous coding assistant that can perform multi-step tasks—operates differently from simple autocomplete. When Cascade runs, it may index more of your project to understand dependencies and relationships between files.
+WindSurf's Cascade agent, the autonomous coding assistant that can perform multi-step tasks, operates differently from simple autocomplete. When Cascade runs, it may index more of your project to understand dependencies and relationships between files.
 
 For example, if you ask Cascade to "refactor all API endpoints to use the new authentication system," it needs to understand:
 
@@ -96,31 +96,31 @@ For example, if you ask Cascade to "refactor all API endpoints to use the new au
 
 This requires broader context access than editing a single file. WindSurf handles this by creating a local index of your codebase that helps the AI understand relationships without necessarily sending everything to the cloud in real-time.
 
-## Privacy Implications for Developers
+Privacy Implications for Developers
 
 Understanding what gets sent where matters for several practical reasons:
 
-### Working with Sensitive Code
+Working with Sensitive Code
 
 If you're building financial systems, healthcare applications, or government software, you need to know exactly what leaves your machine. WindSurf's model means your proprietary algorithms in unopened files stay local, but any file you actively work with becomes fair game for AI processing.
 
-### Enterprise Deployments
+Enterprise Deployments
 
 Codeium (WindSurf's parent company) offers enterprise plans with additional privacy controls:
 
 ```bash
-# Example: Setting up WindSurf with enterprise privacy options
+Setting up WindSurf with enterprise privacy options
 windsurf config set privacy.mode "enterprise"
 windsurf config set privacy.server "https://your-company-ai-server.com"
 ```
 
 Enterprise deployments can route AI requests through private infrastructure, ensuring that no code ever touches external servers.
 
-### Open Source Considerations
+Open Source Considerations
 
 For open source projects, the privacy concern shifts. Many developers happily use AI assistants with their open source code since the benefit of AI assistance outweighs concerns about exposing code that will eventually be public anyway.
 
-## Comparing WindSurf to Other AI Editors
+Comparing WindSurf to Other AI Editors
 
 The context-handling approach varies across AI coding tools:
 
@@ -136,55 +136,55 @@ The context-handling approach varies across AI coding tools:
 
 | Claude Code | Project directories you select | Local-first with optional cloud |
 
-WindSurf sits in the middle ground—more conservative than sending everything by default, but not as restrictive as truly local-only solutions.
+WindSurf sits in the middle ground, more conservative than sending everything by default, but not as restrictive as truly local-only solutions.
 
-## Practical Recommendations
+Practical Recommendations
 
 To maximize privacy while using WindSurf effectively:
 
-1. **Close sensitive files** when not in active use—the AI can't send what isn't open
+1. Close sensitive files when not in active use, the AI can't send what isn't open
 
-2. **Use exclude patterns** to mark directories that should never be indexed
+2. Use exclude patterns to mark directories that should never be indexed
 
-3. **Review chat history** and clear it when switching to sensitive work
+3. Review chat history and clear it when switching to sensitive work
 
-4. **Consider enterprise plans** if working with highly sensitive code
+4. Consider enterprise plans if working with highly sensitive code
 
-5. **Test your setup** by monitoring network requests during AI interactions
+5. Test your setup by monitoring network requests during AI interactions
 
 You can verify what WindSurf is sending by using network monitoring tools:
 
 ```bash
-# Monitor network requests from WindSurf
+Monitor network requests from WindSurf
 sudo tcpdump -i any -A 'tcp[20:]' | grep -i "codeium\|api"
 ```
 
 This command captures network traffic to see exactly where your code is going.
 
-## Analyzing WindSurf Network Traffic
+Analyzing WindSurf Network Traffic
 
 For developers who want to verify exactly what gets transmitted, you can inspect network requests:
 
 ```bash
-# Use Charles Proxy or similar to inspect HTTPS traffic
-# Or use system-level monitoring:
+Use Charles Proxy or similar to inspect HTTPS traffic
+Or use system-level monitoring:
 sudo tcpdump -i any -n "dst host api.codeium.com" -A | grep -i "POST\|GET"
 ```
 
 This helps confirm that only open files and metadata are sent, not your entire codebase.
 
-## Local-Only Alternatives
+Local-Only Alternatives
 
 If you require truly local-only AI assistance without any external transmission:
 
-- **Continue.dev**: Open-source VS Code extension with local LLM support
-- **Ollama**: Run local language models on your machine
-- **LM Studio**: UI for running local language models
-- **Private deployment**: Host Claude or other LLMs internally
+- Continue.dev: Open-source VS Code extension with local LLM support
+- Ollama: Run local language models on your machine
+- LM Studio: UI for running local language models
+- Private deployment: Host Claude or other LLMs internally
 
 These options trade some capability (smaller models, slower inference) for complete data privacy.
 
-## Hybrid Approaches
+Hybrid Approaches
 
 Many teams use hybrid strategies:
 
@@ -196,7 +196,7 @@ For client projects: Use enterprise/private deployment
 
 This balances productivity with privacy requirements.
 
-## Configuration Best Practices for Privacy
+Configuration Best Practices for Privacy
 
 If using WindSurf, configure it conservatively:
 
@@ -206,16 +206,16 @@ If using WindSurf, configure it conservatively:
     "context": {
       "maxFiles": 5,
       "maxFileSize": 50000,
-      "includePatterns": ["src/**", "lib/**"],
+      "includePatterns": ["src/", "lib/"],
       "excludePatterns": [
-        "**/node_modules/**",
-        "**/.git/**",
-        "**/dist/**",
-        "**/*.env",
-        "**/*secret*",
-        "**/*key*",
-        "**/*token*",
-        "**/*credential*"
+        "/node_modules/",
+        "/.git/",
+        "/dist/",
+        "/*.env",
+        "/*secret*",
+        "/*key*",
+        "/*token*",
+        "/*credential*"
       ]
     },
     "features": {
@@ -233,14 +233,14 @@ This configuration:
 - Blocks any files with secrets in the name
 - Disables Cascade (which needs broader context)
 
-## Understanding Codeium's Privacy Model
+Understanding Codeium's Privacy Model
 
 Codeium publishes security documentation explaining their approach:
 
-- **No training on your code**: Your code is not used to train their AI models
-- **Encryption in transit**: All data sent uses TLS 1.2+
-- **Optional retention**: Requests can be configured not to be stored
-- **GDPR/CCPA compliance**: Respects regional privacy laws
+- No training on your code: Your code is not used to train their AI models
+- Encryption in transit: All data sent uses TLS 1.2+
+- Optional retention: Requests can be configured not to be stored
+- GDPR/CCPA compliance: Respects regional privacy laws
 
 For enterprise customers, Codeium offers:
 - VPC deployment (private network)
@@ -248,7 +248,7 @@ For enterprise customers, Codeium offers:
 - Custom data retention policies
 - Audit logging
 
-## Comparing Data Handling Across AI Editors
+Comparing Data Handling Across AI Editors
 
 | Tool | Transmission | Local Storage | Enterprise Option |
 |------|--------------|---------------|-------------------|
@@ -257,45 +257,45 @@ For enterprise customers, Codeium offers:
 | Claude Code | Selected files | Project cache | Claude Enterprise |
 | Cursor | Similar to VS Code | Configurable | Available |
 
-Each has different privacy models—choose based on your requirements.
+Each has different privacy models, choose based on your requirements.
 
-## Industry-Specific Considerations
+Industry-Specific Considerations
 
-**Healthcare (HIPAA)**
+Healthcare (HIPAA)
 - Cannot use cloud-based tools without business associate agreements
 - Require local deployment or HIPAA-compliant cloud services
 - Patient data must never leave your infrastructure
 
-**Financial (SOC 2)**
+Financial (SOC 2)
 - Requires SOC 2 Type II certification
 - Encryption and audit logging mandatory
 - Some tools provide this; others don't
 
-**Government (FedRAMP)**
+Government (FedRAMP)
 - Typically requires Government Cloud deployment
 - Restricted to US-based data centers
 - Few AI tools meet these requirements
 
-**General Business**
+General Business
 - Standard security practices usually sufficient
 - Encryption in transit and at rest standard
 - GDPR compliance important for EU operations
 
-## Setting Up Security Monitoring
+Setting Up Security Monitoring
 
 Monitor what your AI tool sends by configuring your firewall:
 
 ```bash
-# Mac: Monitor outbound connections
+Mac: Monitor outbound connections
 sudo lsof -i -P -n | grep ESTABLISHED | grep -i "windsurf\|codeium"
 
-# Linux: Monitor DNS queries
+Linux: Monitor DNS queries
 sudo tcpdump -i any -n "port 53" | grep codeium
 ```
 
 This helps verify that external services are only accessed for AI operations, not for data exfiltration.
 
-## Audit and Compliance Records
+Audit and Compliance Records
 
 For compliance purposes, maintain records of:
 - Which AI tools are authorized
@@ -305,34 +305,34 @@ For compliance purposes, maintain records of:
 
 This documentation helps with security reviews and regulatory compliance.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Windsurf offer a free tier?**
+Does Windsurf offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Windsurf's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [What Source Code Context Window Do Different AI Coding Tools](/what-source-code-context-window-do-different-ai-coding-tools/)
 - [Windsurf AI Not Picking Up ESLint Config](/windsurf-ai-not-picking-up-eslint-config-troubleshooting-gui/)
 - [Configuring Cursor AI Notepads for Reusable Project Context](/configuring-cursor-ai-notepads-for-reusable-project-context-/)
 - [How to Use AI Context Management to Work on Large Refactorin](/how-to-use-ai-context-management-to-work-on-large-refactorin/)
 - [Switching from Windsurf to Cursor How to Transfer Project](/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

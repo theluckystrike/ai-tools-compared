@@ -18,7 +18,7 @@ intent-checked: true
 
 Responsive design testing remains one of the most tedious aspects of web development. Manually resizing browser windows, checking each breakpoint, and verifying layout changes across devices consumes significant time. Playwright provides powerful APIs for automating these checks, and AI coding assistants can help generate these tests faster. This guide compares how different AI tools handle writing Playwright tests for responsive layout breakpoint verification.
 
-## Table of Contents
+Table of Contents
 
 - [Why Responsive Breakpoint Testing Matters](#why-responsive-breakpoint-testing-matters)
 - [AI Tool Comparison for Responsive Testing](#ai-tool-comparison-for-responsive-testing)
@@ -26,7 +26,7 @@ Responsive design testing remains one of the most tedious aspects of web develop
 - [Recommendations by Use Case](#recommendations-by-use-case)
 - [Best Practices for AI-Generated Responsive Tests](#best-practices-for-ai-generated-responsive-tests)
 
-## Why Responsive Breakpoint Testing Matters
+Why Responsive Breakpoint Testing Matters
 
 Modern web applications must function across dozens of viewport sizes. CSS media queries control layout changes, but testing these transitions manually creates coverage gaps. Automated responsive tests verify that:
 
@@ -42,13 +42,13 @@ Modern web applications must function across dozens of viewport sizes. CSS media
 
 Playwright's `resize` and `setViewportSize` methods provide the foundation for these tests.
 
-## AI Tool Comparison for Responsive Testing
+AI Tool Comparison for Responsive Testing
 
-### Claude (Anthropic)
+Claude (Anthropic)
 
 Claude produces reliable Playwright tests for responsive breakpoint verification. It understands Playwright's API well and generates tests that properly handle viewport changes and assertions.
 
-**Strengths:**
+Strengths:
 
 - Correctly implements viewport resize and verification
 
@@ -99,11 +99,11 @@ test.describe('Responsive Layout Breakpoints', () => {
 
 Claude consistently generates working tests that cover the key scenarios without requiring extensive refinement.
 
-### GitHub Copilot
+GitHub Copilot
 
 Copilot assists with responsive tests but requires more guidance to produce complete test coverage.
 
-**Strengths:**
+Strengths:
 
 - Quick inline suggestions for viewport-related code
 
@@ -111,7 +111,7 @@ Copilot assists with responsive tests but requires more guidance to produce comp
 
 - Good for single-breakpoint test generation
 
-**Weaknesses:**
+Weaknesses:
 
 - May generate tests for only one viewport size
 
@@ -132,11 +132,11 @@ test('navigation on mobile', async ({ page }) => {
 
 The generated code works but you'll need to expand it manually for breakpoint coverage.
 
-### Cursor
+Cursor
 
 Cursor combines AI assistance with IDE features, making it useful for building responsive test suites through iterative refinement.
 
-**Strengths:**
+Strengths:
 
 - Can refactor existing single-viewport tests into suites
 
@@ -144,7 +144,7 @@ Cursor combines AI assistance with IDE features, making it useful for building r
 
 - Helpful for adding responsive tests to existing test files
 
-**Weaknesses:**
+Weaknesses:
 
 - Quality varies based on context provided
 
@@ -152,11 +152,11 @@ Cursor combines AI assistance with IDE features, making it useful for building r
 
 - Context window limitations with large test files
 
-### Aider
+Aider
 
 Aider works well in terminal workflows for generating responsive tests, especially when combined with existing test infrastructure.
 
-**Strengths:**
+Strengths:
 
 - Efficient for batch test generation
 
@@ -164,7 +164,7 @@ Aider works well in terminal workflows for generating responsive tests, especial
 
 - Good for adding responsive tests to established projects
 
-**Weaknesses:**
+Weaknesses:
 
 - Requires explicit specification of all breakpoints
 
@@ -172,9 +172,9 @@ Aider works well in terminal workflows for generating responsive tests, especial
 
 - Manual verification recommended
 
-## Practical Testing Patterns
+Practical Testing Patterns
 
-### Testing Breakpoint Triggers
+Testing Breakpoint Triggers
 
 ```typescript
 test('CSS breakpoint classes update at correct widths', async ({ page }) => {
@@ -194,7 +194,7 @@ test('CSS breakpoint classes update at correct widths', async ({ page }) => {
 });
 ```
 
-### Testing Element Visibility Across Breakpoints
+Testing Element Visibility Across Breakpoints
 
 ```typescript
 test('elements show/hide at correct breakpoints', async ({ page }) => {
@@ -220,7 +220,7 @@ test('elements show/hide at correct breakpoints', async ({ page }) => {
 });
 ```
 
-### Testing No Horizontal Scroll
+Testing No Horizontal Scroll
 
 ```typescript
 test('no horizontal scroll at any viewport width', async ({ page }) => {
@@ -238,7 +238,7 @@ test('no horizontal scroll at any viewport width', async ({ page }) => {
 });
 ```
 
-### Testing Responsive Images and Media
+Testing Responsive Images and Media
 
 ```typescript
 test('images load appropriate sources at each breakpoint', async ({ page }) => {
@@ -256,7 +256,7 @@ test('images load appropriate sources at each breakpoint', async ({ page }) => {
 });
 ```
 
-## Recommendations by Use Case
+Recommendations by Use Case
 
 For responsive test suites: Use Claude with clear instructions about all required breakpoints and the specific layout elements to verify
 
@@ -266,7 +266,7 @@ For improving existing tests: Cursor's agent mode can expand single-viewport tes
 
 For CI/CD integrated test generation: Aider provides efficient terminal-based workflows
 
-## Best Practices for AI-Generated Responsive Tests
+Best Practices for AI-Generated Responsive Tests
 
 1. Specify all breakpoints explicitly: Tell the AI your exact breakpoint values (e.g., 320px, 768px, 1024px, 1440px)
 
@@ -278,29 +278,29 @@ For CI/CD integrated test generation: Aider provides efficient terminal-based wo
 
 5. Test touch versus pointer interactions: Verify hover states don't break on touch devices
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 - [AI Tools for Writing Playwright Tests That Verify Toast Noti](/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
@@ -308,5 +308,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best AI for Writing Playwright Tests That Handle Dynamic Loa](/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
 - [Best AI Tools for Writing Playwright E2E Tests 2026](/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

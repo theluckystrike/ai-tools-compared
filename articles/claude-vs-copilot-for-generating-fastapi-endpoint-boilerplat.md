@@ -20,7 +20,7 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 
 This article compares both tools based on practical experience, focusing on code quality, context awareness, and developer workflow.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding the Task](#understanding-the-task)
 - [Claude's Approach to FastAPI Code Generation](#claudes-approach-to-fastapi-code-generation)
@@ -32,7 +32,7 @@ This article compares both tools based on practical experience, focusing on code
 - [Practical Recommendations](#practical-recommendations)
 - [When to Use Each Tool](#when-to-use-each-tool)
 
-## Understanding the Task
+Understanding the Task
 
 FastAPI endpoint boilerplate typically includes several components:
 
@@ -48,17 +48,17 @@ FastAPI endpoint boilerplate typically includes several components:
 
 A good AI assistant should generate all of this with minimal prompting while maintaining type safety and following FastAPI best practices.
 
-## Claude's Approach to FastAPI Code Generation
+Claude's Approach to FastAPI Code Generation
 
 Claude excels at understanding project context and generating code blocks. When prompted correctly, Claude can produce entire endpoint modules with all supporting code.
 
-### Example Prompt to Claude
+Example Prompt to Claude
 
 ```
 Create a FastAPI endpoint for user management with CRUD operations using SQLAlchemy. Include Pydantic models, error handling, and proper type hints.
 ```
 
-### Generated Output from Claude
+Generated Output from Claude
 
 Claude typically produces well-structured code with clear separation of concerns:
 
@@ -71,7 +71,7 @@ from datetime import datetime
 
 router = APIRouter(prefix="/users", tags=["users"])
 
-# Database dependency
+Database dependency
 def get_db():
     db = SessionLocal()
     try:
@@ -79,7 +79,7 @@ def get_db():
     finally:
         db.close()
 
-# Pydantic Models
+Pydantic Models
 class UserBase(BaseModel):
     email: EmailStr
     username: str = Field(..., min_length=3, max_length=50)
@@ -102,7 +102,7 @@ class UserUpdate(BaseModel):
     full_name: Optional[str] = None
     is_active: Optional[bool] = None
 
-# Route Handlers
+Route Handlers
 @router.post("/", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = db.query(User).filter(User.email == user.email).first()
@@ -110,7 +110,7 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Email already registered")
 
     hashed_password = hash_password(user.password)
-    new_user = User(**user.model_dump(exclude={"password"}), hashed_password=hashed_password)
+    new_user = User(user.model_dump(exclude={"password"}), hashed_password=hashed_password)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
@@ -126,11 +126,11 @@ def get_user(user_id: int, db: Session = Depends(get_db)):
 
 Claude's strength lies in providing complete, self-contained code blocks with proper imports, type hints, and documentation comments. The model understands Pydantic v2 syntax and integrates it correctly.
 
-## Copilot's Approach to FastAPI Code Generation
+Copilot's Approach to FastAPI Code Generation
 
 Copilot works as an inline autocomplete tool, suggesting code as you type. Its strength is incremental completion rather than generating entire files at once.
 
-### Typical Copilot Workflow
+Typical Copilot Workflow
 
 When working with FastAPI, Copilot suggests completions based on comments and function signatures. You might type:
 
@@ -142,36 +142,36 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
 
 And Copilot would suggest the implementation. The quality depends heavily on existing code patterns in your project.
 
-### Copilot's Strengths
+Copilot's Strengths
 
 Copilot shines when you have existing patterns in your codebase. If you've already written one CRUD endpoint, Copilot replicates the pattern for subsequent endpoints. This consistency can be valuable in large codebases.
 
-However, Copilot sometimes suggests outdated patterns—using Pydantic v1 syntax (`class Config:` instead of `model_config`) or omitting newer FastAPI features like dependency caching.
+However, Copilot sometimes suggests outdated patterns, using Pydantic v1 syntax (`class Config:` instead of `model_config`) or omitting newer FastAPI features like dependency caching.
 
-## Side-by-Side Comparison
+Side-by-Side Comparison
 
 | Aspect | Claude | Copilot |
 
 |--------|--------|---------|
 
-| **Code Completeness** | Generates complete endpoints in one response | Suggests incremental changes |
+| Code Completeness | Generates complete endpoints in one response | Suggests incremental changes |
 
-| **Context Awareness** | Maintains conversation context across prompts | Limited to current file context |
+| Context Awareness | Maintains conversation context across prompts | Limited to current file context |
 
-| **Pydantic v2 Support** | Consistently uses latest syntax | Sometimes suggests v1 patterns |
+| Pydantic v2 Support | Consistently uses latest syntax | Sometimes suggests v1 patterns |
 
-| **Error Handling** | Includes error cases | Basic error handling, needs refinement |
+| Error Handling | Includes error cases | Basic error handling, needs refinement |
 
-| **Type Safety** | Strong type hints throughout | Variable type safety |
+| Type Safety | Strong type hints throughout | Variable type safety |
 
-## Authentication and Security Boilerplate
+Authentication and Security Boilerplate
 
 One of the most revealing differences between the two tools shows up in authentication endpoint generation. A FastAPI JWT auth endpoint involves several moving parts: token creation, dependency injection, password hashing, and HTTP error responses for expired tokens.
 
 When prompted with "Add JWT authentication to the user router," Claude generates the complete OAuth2PasswordBearer setup including the token endpoint, `get_current_user` dependency, and token refresh logic. Copilot generates a token validation function but typically omits the refresh endpoint and error handling for expired tokens unless the developer's existing code already contains those patterns.
 
 ```python
-# Claude-generated auth boilerplate — complete dependency chain
+Claude-generated auth boilerplate. complete dependency chain
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 
@@ -201,7 +201,7 @@ async def get_current_user(
 
 Copilot would generate this correctly only if your project already has `jose`, `SECRET_KEY`, and `ALGORITHM` referenced elsewhere in the open files.
 
-## Testing Boilerplate Generation
+Testing Boilerplate Generation
 
 FastAPI pairs naturally with pytest and `httpx.AsyncClient`. Both tools handle test generation differently.
 
@@ -238,13 +238,13 @@ async def test_create_user_duplicate_email(async_client: AsyncClient, test_user_
 
 Copilot generates reasonable tests inline but rarely adds the duplicate-email negative case unless you write the test name as a comment first.
 
-## Performance and Iteration Speed
+Performance and Iteration Speed
 
-In a real project workflow, the speed difference matters. Claude requires switching context — opening a chat window, framing the prompt, copying the response back. Copilot stays inside the editor with near-zero friction.
+In a real project workflow, the speed difference matters. Claude requires switching context. opening a chat window, framing the prompt, copying the response back. Copilot stays inside the editor with near-zero friction.
 
 For a developer building their fifth CRUD router in the same project, Copilot's tab-completion approach is faster. For a developer starting a new service or working with an unfamiliar FastAPI pattern (background tasks, WebSocket endpoints, streaming responses), Claude's ability to generate a fully working module from scratch saves more time than the context switch costs.
 
-## Practical Recommendations
+Practical Recommendations
 
 For FastAPI endpoint boilerplate specifically, Claude demonstrates clearer understanding of modern FastAPI patterns. It consistently generates code using:
 
@@ -258,9 +258,9 @@ For FastAPI endpoint boilerplate specifically, Claude demonstrates clearer under
 
 Copilot remains valuable for repetitive tasks once you've established patterns, but requires more manual correction for complex FastAPI implementations.
 
-## When to Use Each Tool
+When to Use Each Tool
 
-**Use Claude when:**
+Use Claude when:
 
 - Starting a new FastAPI project and need complete endpoint templates
 
@@ -270,7 +270,7 @@ Copilot remains valuable for repetitive tasks once you've established patterns, 
 
 - Generating authentication, testing, or background task boilerplate from scratch
 
-**Use Copilot when:**
+Use Copilot when:
 
 - Quickly extending existing endpoints with similar functionality
 
@@ -280,21 +280,21 @@ Copilot remains valuable for repetitive tasks once you've established patterns, 
 
 - You need suggestions without leaving the editor
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Does Claude understand FastAPI's async patterns?**
+Does Claude understand FastAPI's async patterns?
 Yes. Claude consistently uses `async def` for route handlers when appropriate and understands the difference between synchronous and asynchronous database sessions. It correctly generates `asyncpg`-based queries when you specify an async ORM like SQLAlchemy with asyncio support.
 
-**Can Copilot learn from my existing FastAPI patterns?**
+Can Copilot learn from my existing FastAPI patterns?
 Copilot improves significantly as your project grows. After you've written 3-4 endpoints with consistent patterns, Copilot's suggestions for the fifth endpoint are noticeably more accurate. It learns from files open in your editor, not from a conversation history.
 
-**Which tool handles background tasks better?**
+Which tool handles background tasks better?
 Claude. Asking Claude to "add a background task that sends a welcome email after user registration" produces a complete `BackgroundTasks` integration. Copilot typically needs you to import `BackgroundTasks` and reference it in the function signature before it suggests the correct body.
 
-**Is there a cost difference?**
-Copilot runs $10-19/month as a flat subscription regardless of usage. Claude API usage is token-based — for code generation sessions, a typical day of FastAPI boilerplate generation runs $1-5 using Sonnet. For occasional use, Claude API is cheaper; for daily heavy use, Copilot's flat rate wins.
+Is there a cost difference?
+Copilot runs $10-19/month as a flat subscription regardless of usage. Claude API usage is token-based. for code generation sessions, a typical day of FastAPI boilerplate generation runs $1-5 using Sonnet. For occasional use, Claude API is cheaper; for daily heavy use, Copilot's flat rate wins.
 
-## Related Articles
+Related Articles
 
 - [Copilot vs Claude for Generating Java Spring Boot](/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
 - [How to Generate Mermaid Sequence Diagrams from API Endpoint](/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
@@ -302,7 +302,7 @@ Copilot runs $10-19/month as a flat subscription regardless of usage. Claude API
 - [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
 - [Best Way to Configure CursorRules for Python FastAPI Project](/best-way-to-configure-cursorrules-for-python-fastapi-project/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```
 {% endraw %}

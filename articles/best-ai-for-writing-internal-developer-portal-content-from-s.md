@@ -14,7 +14,7 @@ intent-checked: true
 voice-checked: true
 ---
 
-## Table of Contents
+Table of Contents
 
 - [Overview](#overview)
 - [Prerequisites](#prerequisites)
@@ -29,11 +29,11 @@ voice-checked: true
 - [Practical Portal Consolidation Workflow](#practical-portal-consolidation-workflow)
 - [Maintaining Quality](#maintaining-quality)
 
-## Overview
+Overview
 
 When scattered wiki documentation exists across Confluence, Notion, scattered markdown files, and email threads, consolidating it into a cohesive internal developer portal becomes essential. A well-structured portal serves as the single source of truth for your engineering organization, reducing onboarding time, support tickets, and knowledge silos.
 
-## Prerequisites
+Prerequisites
 
 Before using AI tools to consolidate wiki content, ensure you have:
 
@@ -43,32 +43,32 @@ Before using AI tools to consolidate wiki content, ensure you have:
 - Tools for content delivery (GitBook, Gitpages, Notion, custom portal software)
 - A review process with subject matter experts who can validate technical accuracy
 
-## Implementation
+Implementation
 
 The consolidation process follows this concrete workflow:
 
-**Step 1: Inventory and Extract** — Audit all existing documentation sources. Export from Confluence via API, pull markdown files from version control, extract key sections from email threads and Slack conversations.
+Step 1: Inventory and Extract. Audit all existing documentation sources. Export from Confluence via API, pull markdown files from version control, extract key sections from email threads and Slack conversations.
 
-**Step 2: Feed to AI Tool** — Use a capable LLM with your entire source material as context. Provide the AI with target structure, audience level, and quality standards.
+Step 2: Feed to AI Tool. Use a capable LLM with your entire source material as context. Provide the AI with target structure, audience level, and quality standards.
 
-**Step 3: Review and Refine** — Subject matter experts review AI output for accuracy, update outdated examples, add missing context.
+Step 3: Review and Refine. Subject matter experts review AI output for accuracy, update outdated examples, add missing context.
 
-**Step 4: Format and Publish** — Convert to your portal's native format and publish with version tracking.
+Step 4: Format and Publish. Convert to your portal's native format and publish with version tracking.
 
-## Common Issues
+Common Issues
 
-**Issue: AI consolidates but loses critical nuance** — Solution: Review with SMEs, have them add inline comments about domain-specific gotchas that the AI might miss.
+Issue: AI consolidates but loses critical nuance. Solution: Review with SMEs, have them add inline comments about domain-specific gotchas that the AI might miss.
 
-**Issue: Code examples are outdated** — Solution: Ask the AI to modernize examples as part of the consolidation prompt. Have developers test all code examples.
+Issue: Code examples are outdated. Solution: Ask the AI to modernize examples as part of the consolidation prompt. Have developers test all code examples.
 
-**Issue: Formatting breaks during conversion** — Solution: Provide the AI with example Markdown or HTML templates showing your exact formatting standards.
+Issue: Formatting breaks during conversion. Solution: Provide the AI with example Markdown or HTML templates showing your exact formatting standards.
 ```
 
 Successful internal developer portal consolidation requires both AI efficiency and human expertise. AI tools accelerate the heavy lifting of combining fragmented sources, while subject matter experts ensure accuracy and completeness.
 
 Many AI writing tools can generate content matching specific structures. This ensures all your portal pages follow a consistent format, improving discoverability and user experience.
 
-### 3. Code Example Transformation
+3. Code Example Transformation
 
 Scattered wiki pages often contain outdated code snippets. AI tools excel at modernizing code examples:
 
@@ -100,7 +100,7 @@ async function getUsers() {
 }
 ```
 
-## Choosing the Right AI Tool
+Choosing the Right AI Tool
 
 Several AI tools work well for technical documentation tasks:
 
@@ -116,11 +116,11 @@ Several AI tools work well for technical documentation tasks:
 
 For consolidating scattered wiki pages, a general-purpose LLM typically provides the most flexibility. You can feed it raw content from multiple sources and instruct it to produce clean, unified documentation.
 
-## Effective Prompting Strategies
+Effective Prompting Strategies
 
 The quality of your AI-generated documentation depends heavily on your prompts. Here are strategies that work well:
 
-**Consolidation prompts with context:**
+Consolidation prompts with context:
 
 ```
 Consolidate these three wiki pages about our deployment process into a single, coherent guide:
@@ -137,7 +137,7 @@ Requirements:
 7. Keep total length under 2000 words
 ```
 
-**Modernization prompts with standards:**
+Modernization prompts with standards:
 
 ```
 Update this legacy code example to use current best practices:
@@ -153,7 +153,7 @@ Apply these standards:
 - Output only the updated code
 ```
 
-**Creation prompts with specifications:**
+Creation prompts with specifications:
 
 ```
 Write a new section for our developer portal explaining our caching strategy. Requirements:
@@ -166,14 +166,14 @@ Write a new section for our developer portal explaining our caching strategy. Re
 - Use the template structure from [existing article link]
 ```
 
-## Advanced Content Transformation Techniques
+Advanced Content Transformation Techniques
 
 Beyond simple consolidation, AI can transform documentation quality in specific ways:
 
-**API Documentation Generation** — Feed raw API schemas (OpenAPI/Swagger) to AI along with examples of well-written endpoint docs. The AI generates documentation maintaining your organization's voice and style.
+API Documentation Generation. Feed raw API schemas (OpenAPI/Swagger) to AI along with examples of well-written endpoint docs. The AI generates documentation maintaining your organization's voice and style.
 
 ```yaml
-# Input: API Schema
+Input: API Schema
 /api/users/{id}/profile:
 GET:
  parameters:
@@ -185,65 +185,65 @@ GET:
  - 200: Profile object
  - 404: User not found
 
-# AI generates complete markdown documentation with examples, error codes, and auth requirements
+AI generates complete markdown documentation with examples, error codes, and auth requirements
 ```
 
-**Example Modernization at Scale** — Extract code examples from old docs, ask AI to update them all at once while maintaining consistency.
+Example Modernization at Scale. Extract code examples from old docs, ask AI to update them all at once while maintaining consistency.
 
-**Multilingual Portal Support** — Consolidate documentation in English, then use AI to translate and localize for other languages while preserving technical terminology.
+Multilingual Portal Support. Consolidate documentation in English, then use AI to translate and localize for other languages while preserving technical terminology.
 
-## Real-World Implementation Results
+Real-World Implementation Results
 
 Organizations consolidating scattered wiki documentation report:
 
-- **50-70% time savings** on initial documentation review vs. manual consolidation
-- **2-3 week projects** reduced to 3-5 days with AI assistance
-- **Higher technical accuracy** when SMEs review AI output (they focus on accuracy rather than writing)
-- **Improved consistency** across all pages when using templates and standardized prompts
-- **Faster onboarding** for new engineers using cleaner, consolidated docs
+- 50-70% time savings on initial documentation review vs. manual consolidation
+- 2-3 week projects reduced to 3-5 days with AI assistance
+- Higher technical accuracy when SMEs review AI output (they focus on accuracy rather than writing)
+- Improved consistency across all pages when using templates and standardized prompts
+- Faster onboarding for new engineers using cleaner, consolidated docs
 
-## Implementation Workflow
+Implementation Workflow
 
 A practical workflow for consolidating wiki content:
 
-1. **Inventory your sources** – List all relevant wiki pages, docs, and files. Note creation dates and last-modified dates.
+1. Inventory your sources – List all relevant wiki pages, docs, and files. Note creation dates and last-modified dates.
 
-2. **Prioritize by usage** – Focus on high-traffic, frequently searched topics first. Check analytics to see what docs people actually search for.
+2. Prioritize by usage – Focus on high-traffic, frequently searched topics first. Check analytics to see what docs people actually search for.
 
-3. **Extract key information** – Automated extraction using AI: export raw content from Confluence/wiki, batch process related documents.
+3. Extract key information – Automated extraction using AI: export raw content from Confluence/wiki, batch process related documents.
 
-4. **Structure consistently** – Apply your portal's template format. Use the same section headers, code example styles, and code language markers across all pages.
+4. Structure consistently – Apply your portal's template format. Use the same section headers, code example styles, and code language markers across all pages.
 
-5. **Review and edit** – Have subject matter experts verify technical accuracy. Create a review checklist for consistency.
+5. Review and edit – Have subject matter experts verify technical accuracy. Create a review checklist for consistency.
 
-6. **Publish and track** – Monitor usage to identify needed updates. Set up redirects from old wiki URLs to new portal locations. Track which pages get the most traffic.
+6. Publish and track – Monitor usage to identify needed updates. Set up redirects from old wiki URLs to new portal locations. Track which pages get the most traffic.
 
-## AI Tools Comparison for Portal Content
+AI Tools Comparison for Portal Content
 
 Different AI tools excel in different aspects of portal consolidation:
 
 | Tool | Strengths | Limitations | Best For |
 |------|-----------|-------------|----------|
-| **Claude** | Excellent at understanding context, handles large documents, strong reasoning | Knowledge cutoff may miss very recent updates | Large-scale consolidation projects, complex restructuring |
-| **ChatGPT** | Good code example generation, widespread availability, chat interface | Can hallucinate outdated information | Iterative refinement, code modernization |
-| **Gemini** | Strong at handling structured data, good table generation | Less contextual awareness than Claude | Schemas, API documentation tables |
-| **Specialized Documentation AI** (GitBook AI, Slite) | Optimized for documentation workflows | Limited flexibility for custom structures | Teams already using these platforms |
+| Claude | Excellent at understanding context, handles large documents, strong reasoning | Knowledge cutoff may miss very recent updates | Large-scale consolidation projects, complex restructuring |
+| ChatGPT | Good code example generation, widespread availability, chat interface | Can hallucinate outdated information | Iterative refinement, code modernization |
+| Gemini | Strong at handling structured data, good table generation | Less contextual awareness than Claude | Schemas, API documentation tables |
+| Specialized Documentation AI (GitBook AI, Slite) | Optimized for documentation workflows | Limited flexibility for custom structures | Teams already using these platforms |
 
-## Practical Portal Consolidation Workflow
+Practical Portal Consolidation Workflow
 
 Here's a concrete approach that works at scale:
 
-**Phase 1: Catalog (Day 1)**
+Phase 1: Catalog (Day 1)
 - List all existing documentation sources with URLs and update dates
 - Identify documentation owners for review assignments
 - Note which sections are outdated or deprecated
 
-**Phase 2: Batch Processing (Day 2-3)**
+Phase 2: Batch Processing (Day 2-3)
 - Group related documentation by topic (Authentication, Deployment, Testing, etc.)
 - Create a consolidation prompt for each topic group
 - Run consolidation in parallel for different topics
 
-**Phase 3: AI-Assisted Consolidation (Day 4-5)**
+Phase 3: AI-Assisted Consolidation (Day 4-5)
 - Feed all source material for a topic to your AI tool with a prompt like:
 
 ```
@@ -262,17 +262,17 @@ Requirements:
 - Output format: Markdown with code blocks
 ```
 
-**Phase 4: Expert Review (Day 6-7)**
+Phase 4: Expert Review (Day 6-7)
 - SMEs review for accuracy, outdated examples, missing domain context
 - Document required corrections
 - Flag any confidential or security-sensitive content
 
-**Phase 5: Refinement and Publishing**
+Phase 5: Refinement and Publishing
 - Apply corrections from review
 - Format for your portal platform
 - Set up redirects from old wiki URLs to new portal
 
-## Maintaining Quality
+Maintaining Quality
 
 AI assists with initial content creation, but human review remains essential. Establish a review process that includes:
 
@@ -286,29 +286,29 @@ AI assists with initial content creation, but human review remains essential. Es
 
 - Ownership assignment so one person is accountable for each page
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Claude Code Developer Portal Setup Guide](/claude-code-developer-portal-setup-guide/)
 - [Best AI Tools for Help Center Content](/best-ai-tools-for-help-center-content/)
@@ -317,4 +317,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 ```
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

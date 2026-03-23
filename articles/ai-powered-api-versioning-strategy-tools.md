@@ -17,7 +17,7 @@ tags: [ai-tools-compared, artificial-intelligence, api]
 
 API versioning is one of those problems that looks simple until you have 50 consumers and a breaking change. AI tools can help in three areas: detecting breaking changes before they ship, generating consumer migration guides automatically, and designing versioning strategies for new APIs.
 
-## Table of Contents
+Table of Contents
 
 - [Why API Versioning is Hard](#why-api-versioning-is-hard)
 - [Breaking Change Detection](#breaking-change-detection)
@@ -29,7 +29,7 @@ API versioning is one of those problems that looks simple until you have 50 cons
 - [Changelog Generation from Spec Diffs](#changelog-generation-from-spec-diffs)
 - [Related Reading](#related-reading)
 
-## Why API Versioning is Hard
+Why API Versioning is Hard
 
 Every API change falls somewhere on a spectrum from "obviously safe" to "definitely breaks consumers." The problem is the middle: changes that seem safe but break specific client patterns.
 
@@ -37,12 +37,12 @@ Adding a new optional field is non-breaking in theory. In practice, a consumer u
 
 The other hard part is documentation lag. Engineering moves faster than docs. Migration guides get written days after the breaking change ships, by which point some consumers have already broken. Automating guide generation at the point of the spec change closes that gap entirely.
 
-## Breaking Change Detection
+Breaking Change Detection
 
 The hardest part of API versioning is knowing what actually breaks consumers. Claude can analyze an OpenAPI spec diff and flag breaking vs non-breaking changes with justifications.
 
 ```python
-# breaking_change_detector.py
+breaking_change_detector.py
 import json
 import yaml
 from pathlib import Path
@@ -127,7 +127,7 @@ Non-breaking: added optional fields, new enum values, new optional parameters.""
     }
 ```
 
-## Migration Guide Generator
+Migration Guide Generator
 
 When you have breaking changes, generate consumer documentation automatically:
 
@@ -157,25 +157,25 @@ Format as developer-facing documentation with:
 4. Deadline: Template for sunset date of old version
 
 Use real code examples in the language-agnostic HTTP format (curl or similar).
-Keep it practical — assume the reader is an engineer with 15 minutes."""
+Keep it practical. assume the reader is an engineer with 15 minutes."""
         }]
     )
     return response.content[0].text
 
-# Example output (for a users endpoint field rename):
+Example output (for a users endpoint field rename):
 EXAMPLE_MIGRATION_GUIDE = """
-## Migration Guide: API v2 to v3
+Migration Guide: API v2 to v3
 
-### Overview
+Overview
 The User object has been updated to use ISO 8601 timestamps and
 consolidate address fields. These changes improve consistency with
 industry standards.
 
-### Breaking Changes
+Breaking Changes
 
 #### 1. Timestamp format changed from Unix epoch to ISO 8601
 
-**Before (v2):**
+Before (v2):
 ```json
 {
  "id": "usr_123",
@@ -184,7 +184,7 @@ industry standards.
 }
 ```
 
-**After (v3):**
+After (v3):
 ```json
 {
  "id": "usr_123",
@@ -193,36 +193,36 @@ industry standards.
 }
 ```
 
-**Migration:** Replace `new Date(user.created_at * 1000)` with `new Date(user.created_at)`.
+Migration: Replace `new Date(user.created_at * 1000)` with `new Date(user.created_at)`.
 
 #### 2. `address_line1` and `address_line2` merged into `address.street`
 
-**Before (v2):**
+Before (v2):
 ```bash
 curl /v2/users/usr_123
-# Returns: { "address_line1": "123 Main St", "address_line2": "Apt 4" }
+Returns: { "address_line1": "123 Main St", "address_line2": "Apt 4" }
 ```
 
-**After (v3):**
+After (v3):
 ```bash
 curl /v3/users/usr_123
-# Returns: { "address": { "street": "123 Main St, Apt 4", "city": "...", "country": "..." } }
+Returns: { "address": { "street": "123 Main St, Apt 4", "city": "...", "country": "..." } }
 ```
 
-### Migration Steps
+Migration Steps
 
 1. Update timestamp parsing: change epoch handling to ISO 8601 parsing
 2. Update address field access: `user.address_line1` → `user.address.street`
 3. Update any address write operations to use nested object format
 4. Update integration tests to assert new response structure
 
-### Deprecation Schedule
-- v2 continues working until **2026-09-30**
+Deprecation Schedule
+- v2 continues working until 2026-09-30
 - After that date, v2 returns `410 Gone`
 """
 ```
 
-## Versioning Strategy Advisor
+Versioning Strategy Advisor
 
 Before building an API, use Claude to recommend the right versioning approach:
 
@@ -255,14 +255,14 @@ For the recommended strategy, provide:
     )
     return response.content[0].text
 
-# Example API description
+Example API description
 api_info = {
     "type": "REST",
     "primary_consumers": "third-party developers (public API)",
     "change_frequency": "quarterly breaking changes expected",
     "client_types": ["mobile apps", "web apps", "server-to-server"],
     "company_size": "50 engineer org",
-    "existing_versioning": "none — greenfield"
+    "existing_versioning": "none. greenfield"
 }
 
 strategy = recommend_versioning_strategy(api_info)
@@ -270,10 +270,10 @@ strategy = recommend_versioning_strategy(api_info)
 
 For a public API with third-party mobile clients, Claude consistently recommends URL versioning (`/v1/`, `/v2/`) with a minimum 12-month deprecation window. For internal APIs with a single consumer team, it usually recommends header versioning to keep URLs clean. The reasoning adapts to the client type, not just pattern-matching.
 
-## Automated Version Bump Detection in CI
+Automated Version Bump Detection in CI
 
 ```yaml
-# .github/workflows/api-version-check.yml
+.github/workflows/api-version-check.yml
 name: API Breaking Change Check
 
 on:
@@ -281,7 +281,7 @@ on:
     paths:
       - 'openapi.yaml'
       - 'openapi.json'
-      - 'api/**/*.yaml'
+      - 'api//*.yaml'
 
 jobs:
   check-breaking-changes:
@@ -313,14 +313,14 @@ jobs:
           print('yes' if 'YES' in data.get('analysis', '') else 'no')
           ")
           if [ "$BREAKING" = "yes" ]; then
-            echo "Breaking changes detected — version bump required"
+            echo "Breaking changes detected. version bump required"
             exit 1
           fi
 ```
 
 This runs on every PR that touches OpenAPI specs. Engineers get an automated comment listing what breaks and what doesn't before the PR is reviewed, not after it merges.
 
-## Consumer Impact Analysis
+Consumer Impact Analysis
 
 ```python
 def assess_consumer_impact(
@@ -352,9 +352,9 @@ CONTACT_PRIORITY: [Immediate/Soon/Low]"""
     return response.content[0].text
 ```
 
-The consumer impact analysis is most useful when you track which endpoints each consumer calls. This data often lives in gateway logs. Export it as a JSON summary and pass it to this function — the output tells you exactly who to contact before the version ships.
+The consumer impact analysis is most useful when you track which endpoints each consumer calls. This data often lives in gateway logs. Export it as a JSON summary and pass it to this function. the output tells you exactly who to contact before the version ships.
 
-## Changelog Generation from Spec Diffs
+Changelog Generation from Spec Diffs
 
 Beyond migration guides, AI can generate changelogs in developer-friendly format:
 
@@ -391,7 +391,7 @@ Use bullet points. Be specific about field names and endpoints."""
     return response.content[0].text
 ```
 
-## Related Reading
+Related Reading
 
 - [AI Tools for Automated Schema Validation](/ai-tools-for-automated-schema-validation/)
 - [Best AI Tools for Writing GitHub Actions Workflows](/best-ai-tools-for-writing-github-actions-workflows-2026/)
@@ -400,7 +400,7 @@ Use bullet points. Be specific about field names and endpoints."""
 
 ---
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Generating API Versioning Documentation and](/ai-tools-for-generating-api-versioning-documentation-and-dep/)
 - [Writing CLAUDE.md Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
@@ -408,5 +408,5 @@ Use bullet points. Be specific about field names and endpoints."""
 - [AI-Powered API Gateway Configuration Tools 2026](/ai-powered-api-gateway-configuration-tools-2026/)
 - [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

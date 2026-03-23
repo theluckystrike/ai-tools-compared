@@ -19,7 +19,7 @@ intent-checked: true
 
 Migrating from ChatGPT Plugins to Claude MCP tools represents a significant shift in how you integrate AI capabilities into your development workflow. While ChatGPT Plugins relied on OpenAPI specifications and a manifest-based approach, Model Context Protocol (MCP) provides a more standardized, bidirectional communication channel between Claude and your tools. This guide walks through the migration process with practical examples.
 
-## Table of Contents
+Table of Contents
 
 - [Architectural Differences](#architectural-differences)
 - [Setting Up Your First MCP Server](#setting-up-your-first-mcp-server)
@@ -34,13 +34,13 @@ Migrating from ChatGPT Plugins to Claude MCP tools represents a significant shif
 - [Performance Optimization for MCP](#performance-optimization-for-mcp)
 - [Testing and Rollout](#testing-and-rollout)
 
-## Architectural Differences
+Architectural Differences
 
 ChatGPT Plugins operated through a request-response model where the plugin exposed endpoints via an OpenAPI manifest. The AI would parse your spec and make HTTP calls to your configured endpoints. This approach worked but had limitations around state management and complex multi-step operations.
 
 MCP takes a different approach. Instead of just exposing REST endpoints, MCP servers can push and pull data, maintain persistent connections, and support tool chaining. The protocol defines standard interfaces for resources, prompts, and tools that Claude can invoke directly.
 
-## Setting Up Your First MCP Server
+Setting Up Your First MCP Server
 
 If you previously ran a ChatGPT Plugin as a local server, the transition to MCP will feel familiar. Here's a basic MCP server using Python:
 
@@ -95,7 +95,7 @@ if __name__ == "__main__":
 
 This server defines a `run_tests` tool that Claude can invoke during conversations. Compare this to the equivalent ChatGPT Plugin approach where you would have needed an OpenAPI spec and a separate HTTP server.
 
-## Converting Plugin Manifests to MCP Resources
+Converting Plugin Manifests to MCP Resources
 
 ChatGPT Plugins used `ai-plugin.json` to describe capabilities. MCP uses resources for similar functionality. If your plugin exposed API documentation or schema information, you can convert it to MCP resources:
 
@@ -124,7 +124,7 @@ async def read_resource(uri: str):
     raise ValueError(f"Unknown resource: {uri}")
 ```
 
-## Authentication Patterns
+Authentication Patterns
 
 Plugin authentication often required managing API keys through headers or OAuth flows. MCP provides more flexible options:
 
@@ -132,13 +132,13 @@ Plugin authentication often required managing API keys through headers or OAuth 
 from mcp.server import Server
 from mcp.server.auth import AuthHandler
 
-# Option 1: API Key authentication
+Option 1: API Key authentication
 auth_handler = AuthHandler(
     required_auth_header="X-API-Key",
     validate_api_key=lambda key: key in valid_api_keys
 )
 
-# Option 2: OAuth flow
+Option 2: OAuth flow
 oauth_handler = AuthHandler(
     oauth_config={
         "client_id": "your-client-id",
@@ -151,14 +151,14 @@ oauth_handler = AuthHandler(
 app = Server("secured-tools", auth_handler=auth_handler)
 ```
 
-This eliminates the need to manually handle authentication in your tool implementations—the protocol manages it for you.
+This eliminates the need to manually handle authentication in your tool implementations, the protocol manages it for you.
 
-## Migrating Your Workflow Patterns
+Migrating Your Workflow Patterns
 
 The real value of migration comes from rethinking your workflows. With ChatGPT Plugins, you might have had separate plugins for different tasks. MCP encourages consolidating these into a cohesive server:
 
 ```python
-# Instead of multiple separate plugins, consolidate into one MCP server
+Instead of multiple separate plugins, consolidate into one MCP server
 @app.list_tools()
 async def list_tools():
     return [
@@ -178,38 +178,38 @@ async def list_tools():
 
 This consolidation means Claude can chain operations that previously required manual coordination. You can ask Claude to "run the tests, and if they pass, deploy to staging and verify the health endpoint" and it will execute the full pipeline autonomously.
 
-## Testing Your Migration
+Testing Your Migration
 
 After converting your plugins, verify the migration works correctly:
 
-1. **Start your MCP server**: `python your_server.py`
-2. **Configure Claude Desktop** to connect to your server via the MCP configuration file
-3. **Test each tool individually** before testing chains
-4. **Compare outputs** between the old plugin and new MCP implementation
+1. Start your MCP server: `python your_server.py`
+2. Configure Claude Desktop to connect to your server via the MCP configuration file
+3. Test each tool individually before testing chains
+4. Compare outputs between the old plugin and new MCP implementation
 
 ```bash
-# Test your MCP server standalone
+Test your MCP server standalone
 echo '{"jsonrpc": "2.0", "method": "tools/list", "id": 1}' | python your_server.py
 ```
 
-## Common Migration Pitfalls
+Common Migration Pitfalls
 
 Several issues commonly arise during migration:
 
-- **Statelessness**: MCP maintains connection state that plugins didn't have. Account for this in your server design.
-- **Response parsing**: Plugin responses were HTTP payloads. MCP tool responses are structured data—adjust your parsing logic.
-- **Error handling**: MCP has standard error response formats. Map your plugin's error codes to MCP-compliant responses.
+- Statelessness: MCP maintains connection state that plugins didn't have. Account for this in your server design.
+- Response parsing: Plugin responses were HTTP payloads. MCP tool responses are structured data, adjust your parsing logic.
+- Error handling: MCP has standard error response formats. Map your plugin's error codes to MCP-compliant responses.
 
-## Advanced MCP Patterns for Development Workflows
+Advanced MCP Patterns for Development Workflows
 
 Beyond basic tool migration, MCP enables sophisticated patterns that weren't practical with plugins.
 
-### Tool Chaining for Complex Workflows
+Tool Chaining for Complex Workflows
 
-One of MCP's primary advantages is transparent tool chaining—Claude can invoke multiple tools in sequence, using outputs from one tool as inputs to another.
+One of MCP's primary advantages is transparent tool chaining, Claude can invoke multiple tools in sequence, using outputs from one tool as inputs to another.
 
 ```python
-# Example: CI/CD Automation Pipeline
+CI/CD Automation Pipeline
 
 @app.list_tools()
 async def list_tools():
@@ -221,18 +221,18 @@ async def list_tools():
         Tool(name="trigger_deployment", ...),
     ]
 
-# User asks Claude:
-# "Run tests, if they pass, lint the code, build a Docker image,
-#  push it to ECR, then trigger staging deployment"
+User asks Claude:
+"Run tests, if they pass, lint the code, build a Docker image,
+ push it to ECR, then trigger staging deployment"
 
-# Claude automatically chains: run_tests -> run_lint -> build -> push -> deploy
+Claude automatically chains: run_tests -> run_lint -> build -> push -> deploy
 ```
 
 With plugins, you'd need to manually invoke each step. With MCP, Claude handles the orchestration based on your natural language request.
 
-### Contextual Tool Availability
+Contextual Tool Availability
 
-MCP supports conditional tool availability—show different tools based on context.
+MCP supports conditional tool availability, show different tools based on context.
 
 ```python
 @app.list_tools()
@@ -257,7 +257,7 @@ async def list_tools():
 
 This eliminates irrelevant tools from Claude's context, improving focus and response quality.
 
-### Long-Running Operations with Polling
+Long-Running Operations with Polling
 
 Plugin workflows often struggled with operations taking longer than HTTP timeouts. MCP handles this better through persistent connections:
 
@@ -282,12 +282,12 @@ async def call_tool(name: str, arguments: dict):
 
 With plugins, the HTTP request would timeout. MCP's persistent connection allows polling until completion.
 
-## Organizing Complex Tool Ecosystems
+Organizing Complex Tool Ecosystems
 
 As your MCP server grows, organize tools logically:
 
 ```python
-# Organize by domain
+Organize by domain
 DATABASE_TOOLS = [
     Tool(name="query_database", ...),
     Tool(name="migrate_schema", ...),
@@ -315,7 +315,7 @@ async def list_tools():
 
 This organization makes your tool list scannable and helps Claude understand groupings.
 
-## Error Handling and Resilience
+Error Handling and Resilience
 
 MCP requires more sophisticated error handling than many plugins implemented.
 
@@ -348,13 +348,13 @@ async def call_tool(name: str, arguments: dict):
 
 Detailed error responses help Claude understand what went wrong and how to recover.
 
-## Performance Optimization for MCP
+Performance Optimization for MCP
 
 Large MCP servers with many tools can slow down Claude's response time as it parses available tools.
 
 ```python
-# Group related tools and use descriptions that help Claude
-# understand which tools to try first
+Group related tools and use descriptions that help Claude
+understand which tools to try first
 
 @app.list_tools()
 async def list_tools():
@@ -375,33 +375,33 @@ async def list_tools():
 
 Tool descriptions should clearly explain the performance characteristics and appropriate use cases.
 
-## Testing and Rollout
+Testing and Rollout
 
 Verify your MCP migration with basic smoke tests for each tool. For organizations with both systems, migrate in phases: set up alongside plugins (Month 1), migrate half your team (Month 2), gather feedback (Month 3), then retire old plugins (Month 4). This approach reduces disruption and lets you learn from early adopters.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does ChatGPT offer a free tier?**
+Does ChatGPT offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check ChatGPT's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How to Build Custom MCP Servers for Claude](/how-to-build-custom-mcp-servers-for-claude)
 - [Transfer ChatGPT Custom GPTs to Claude Projects](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
@@ -409,5 +409,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Migrate ChatGPT System Prompts](/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
 - [ChatGPT vs Claude for Explaining TensorFlow Model](/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
 - [Claude Code for Faker.js Test Data Workflow Guide](https://welikeremotestack.com/claude-code-for-faker-js-test-data-workflow-guide/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

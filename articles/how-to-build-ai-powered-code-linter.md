@@ -31,16 +31,16 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Static linters catch syntax errors and style violations. AI linters catch logic errors, security anti-patterns, and architectural problems that rules-based systems miss. This guide walks through building a working AI code linter: a Node.js CLI tool that calls an LLM API to analyze code and output structured lint results.
 
-## Key Takeaways
+Key Takeaways
 
-- **A typical PR with**: 10 changed files costs under $0.01 with Claude Haiku.
-- **Sends code to Claude Haiku (fast**: cheap) with a lint-focused system prompt
+- A typical PR with: 10 changed files costs under $0.01 with Claude Haiku.
+- Sends code to Claude Haiku (fast: cheap) with a lint-focused system prompt
 3.
-- **The latency is the bigger concern**: running 50 files in parallel takes 3-5 seconds total with the concurrency approach above.
-- **Update the rules file**: as your codebase conventions evolve and commit it alongside your code so everyone uses the same standards.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- The latency is the bigger concern: running 50 files in parallel takes 3-5 seconds total with the concurrency approach above.
+- Update the rules file: as your codebase conventions evolve and commit it alongside your code so everyone uses the same standards.
+- What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -50,7 +50,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: The Architecture
+Step 1: The Architecture
 
 An AI linter differs from ESLint or Pylint in one key way: instead of matching patterns against an AST, it sends code to an LLM with a structured prompt and parses the JSON response. The tradeoff is latency and cost vs. catching nuanced issues.
 
@@ -60,7 +60,7 @@ The tool we'll build:
 3. Returns structured JSON with issue location, severity, and description
 4. Exits with code 1 if errors are found (CI-compatible)
 
-### Step 2: Set Up the Project
+Step 2: Set Up the Project
 
 ```bash
 mkdir ai-linter && cd ai-linter
@@ -68,7 +68,7 @@ npm init -y
 npm install @anthropic-ai/sdk commander glob
 ```
 
-### Step 3: Core Linter Implementation
+Step 3: Core Linter Implementation
 
 ```javascript
 // src/linter.js
@@ -124,7 +124,7 @@ export async function lintFile(filePath) {
 }
 ```
 
-### Step 4: CLI Entry Point
+Step 4: CLI Entry Point
 
 ```javascript
 // src/cli.js
@@ -134,12 +134,12 @@ import { lintFile } from './linter.js';
 
 program
   .name('ai-lint')
-  .argument('[patterns...]', 'File patterns to lint', ['**/*.js', '**/*.ts', '**/*.py'])
+  .argument('[patterns...]', 'File patterns to lint', ['/*.js', '/*.ts', '/*.py'])
   .option('--json', 'Output results as JSON')
   .option('--severity <level>', 'Minimum severity (error|warning|info)', 'warning')
   .action(async (patterns, options) => {
     const files = await glob(patterns, {
-      ignore: ['node_modules/**', '.git/**', 'dist/**']
+      ignore: ['node_modules/', '.git/', 'dist/']
     });
 
     if (files.length === 0) { console.error('No files matched'); process.exit(0); }
@@ -184,15 +184,15 @@ program
 program.parse();
 ```
 
-### Step 5: CI Integration
+Step 5: CI Integration
 
 ```yaml
-# .github/workflows/ai-lint.yml
+.github/workflows/ai-lint.yml
 name: AI Code Lint
 
 on:
   pull_request:
-    paths: ['**/*.js', '**/*.ts', '**/*.py']
+    paths: ['/*.js', '/*.ts', '/*.py']
 
 jobs:
   ai-lint:
@@ -213,7 +213,7 @@ jobs:
 
 Running only on changed files keeps CI costs under control. A typical PR with 10 changed files costs under $0.01 with Claude Haiku.
 
-### Step 6: Adding File-Level Caching
+Step 6: Adding File-Level Caching
 
 ```javascript
 import { createHash } from 'crypto';
@@ -248,16 +248,16 @@ export async function lintFileWithCache(filePath) {
 
 With caching, subsequent runs on unchanged files are instant and free.
 
-### Step 7: Cost and Performance
+Step 7: Cost and Performance
 
 On a 500-line TypeScript file with Claude Haiku:
 - Latency: 1.2-2.5 seconds
 - Cost: ~$0.0008 per file
 - Issue detection: high for logic bugs, medium for security issues
 
-For most teams linting a 50-file PR, total cost is under $0.05. The latency is the bigger concern — running 50 files in parallel takes 3-5 seconds total with the concurrency approach above.
+For most teams linting a 50-file PR, total cost is under $0.05. The latency is the bigger concern. running 50 files in parallel takes 3-5 seconds total with the concurrency approach above.
 
-## Combining AI and Traditional Linters
+Combining AI and Traditional Linters
 
 The best approach uses both traditional linters for fast, deterministic checks and AI linters for nuanced issues:
 
@@ -290,7 +290,7 @@ async function runCombinedLint(files) {
 
 This pipeline ensures you don't waste API calls on files with syntax errors.
 
-### Step 8: Custom Rule Definitions
+Step 8: Custom Rule Definitions
 
 Define project-specific rules in a configuration file:
 
@@ -315,48 +315,48 @@ Define project-specific rules in a configuration file:
 
 Pass these rules to the AI linter's system prompt for consistent enforcement across your team. Update the rules file as your codebase conventions evolve and commit it alongside your code so everyone uses the same standards.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+Related Reading
 
 - [AI Code Review Automation Tools Comparison](/ai-code-review-automation-tools-comparison/)
 - [Prompt Engineering Patterns for Code Generation](/prompt-engineering-patterns-for-code-generation/)
 - [AI Debugging Assistants Compared 2026](/ai-debugging-assistants-compared-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to build an ai-powered code linter?**
+How long does it take to build an ai-powered code linter?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 

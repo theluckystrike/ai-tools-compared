@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Bazel BUILD Files 2026"
-description: "Compare Claude and ChatGPT for generating Bazel BUILD files — Go, Python, Java, proto targets, gazelle integration, and visibility rules with real examples"
+description: "Compare Claude and ChatGPT for generating Bazel BUILD files. Go, Python, Java, proto targets, gazelle integration, and visibility rules with real examples"
 date: 2026-03-22
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-bazel-build-files-2026/
@@ -15,24 +15,24 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 {% raw %}
 
-# Best AI Tools for Writing Bazel BUILD Files 2026
+Best AI Tools for Writing Bazel BUILD Files 2026
 
-Bazel has a steep learning curve — the BUILD language is Starlark (a Python subset), but the rules for each language vary significantly. AI tools help with the boilerplate, but you need to verify dependencies and visibility rules carefully.
+Bazel has a steep learning curve. the BUILD language is Starlark (a Python subset), but the rules for each language vary significantly. AI tools help with the boilerplate, but you need to verify dependencies and visibility rules carefully.
 
-## Why Bazel BUILD Files Are Hard to Write
+Why Bazel BUILD Files Are Hard to Write
 
 BUILD files look simple: a handful of rule invocations with `name`, `srcs`, `deps`, and `visibility`. In practice, the complexity comes from several directions:
 
-- **Rule set differences**: `rules_go`, `rules_python`, `rules_java`, and `rules_proto` each have different conventions for dependency resolution, test setup, and external packages
-- **Gazelle conventions**: External Go deps use `@com_github_...` naming; Python uses `requirement()` calls — these are easy to get wrong
-- **Visibility scoping**: The difference between `//visibility:public`, `//services/orders:__pkg__`, and `//services/orders:__subpackages__` has real architectural consequences
-- **Test embedding**: Go tests use `embed` to include the library under test; Python tests use `deps` — mixing these up produces errors that aren't obvious
+- Rule set differences: `rules_go`, `rules_python`, `rules_java`, and `rules_proto` each have different conventions for dependency resolution, test setup, and external packages
+- Gazelle conventions: External Go deps use `@com_github_...` naming; Python uses `requirement()` calls. these are easy to get wrong
+- Visibility scoping: The difference between `//visibility:public`, `//services/orders:__pkg__`, and `//services/orders:__subpackages__` has real architectural consequences
+- Test embedding: Go tests use `embed` to include the library under test; Python tests use `deps`. mixing these up produces errors that aren't obvious
 
 AI tools can handle the boilerplate reliably, but you need to verify the dep names against your actual Gazelle-generated mapping and visibility rules against your intended architecture.
 
-## Go BUILD Files
+Go BUILD Files
 
-**Prompt to Claude:**
+Prompt to Claude:
 ```text
 Write a Bazel BUILD file for a Go package at //services/orders/handler.
 It implements an HTTP handler. Imports: standard library net/http,
@@ -41,7 +41,7 @@ Include a go_test target for handler_test.go.
 Use rules_go conventions.
 ```
 
-**Claude output:**
+Claude output:
 
 ```python
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
@@ -70,18 +70,18 @@ go_test(
 
 Claude uses `embed` for the test target (which includes the library under test in the same package) and formats the external dependency using the `@com_github_...` Gazelle-generated name format. Standard library imports are not listed in `deps`.
 
-ChatGPT often adds `net/http` to `deps` (wrong — stdlib is implicit) and sometimes uses `go_binary` for a library target.
+ChatGPT often adds `net/http` to `deps` (wrong. stdlib is implicit) and sometimes uses `go_binary` for a library target.
 
-## Go Binary with Multiple Packages
+Go Binary with Multiple Packages
 
-**Prompt:**
+Prompt:
 ```text
 Write a BUILD file for a Go binary at //cmd/api-server.
 It imports: //services/orders/handler, //services/users/handler, //lib/config,
 and external github.com/spf13/cobra.
 ```
 
-**Claude output:**
+Claude output:
 
 ```python
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
@@ -106,11 +106,11 @@ go_binary(
 )
 ```
 
-The `go_library` + `go_binary` pattern with embedding is idiomatic rules_go — it allows the binary to be tested and linked correctly. Claude generates this pattern automatically; ChatGPT often collapses it into a single `go_binary` target without the library, which prevents proper test setup.
+The `go_library` + `go_binary` pattern with embedding is idiomatic rules_go. it allows the binary to be tested and linked correctly. Claude generates this pattern automatically; ChatGPT often collapses it into a single `go_binary` target without the library, which prevents proper test setup.
 
-## Python BUILD Files
+Python BUILD Files
 
-**Prompt:**
+Prompt:
 ```text
 Write a BUILD file for a Python FastAPI service.
 Source: main.py, routers/users.py, routers/orders.py.
@@ -118,7 +118,7 @@ Dependencies: FastAPI, SQLAlchemy, pydantic (from a pip_install WORKSPACE setup)
 Include py_test for tests/test_users.py. Add a py_binary for running the service.
 ```
 
-**Claude output:**
+Claude output:
 
 ```python
 load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
@@ -163,16 +163,16 @@ The `requirement()` function call is the Gazelle/pip_install pattern for third-p
 
 One nuance: you need a `load` statement for `requirement` from your pip_install repository. Claude adds a comment noting you need to load it from your specific pip install name (e.g., `load("@pip//:requirements.bzl", "requirement")`).
 
-## Proto + gRPC BUILD Files
+Proto + gRPC BUILD Files
 
-**Prompt:**
+Prompt:
 ```text
 Write a BUILD file for a proto file at //proto/orders.proto.
 Generate: Go bindings, Python bindings, and a gRPC service.
 Use rules_proto and rules_go. The proto package is "orders.v1".
 ```
 
-**Claude output:**
+Claude output:
 
 ```python
 load("@rules_proto//proto:defs.bzl", "proto_library")
@@ -190,7 +190,7 @@ proto_library(
     ],
 )
 
-# Go bindings
+Go bindings
 go_proto_library(
     name = "orders_go_proto",
     compilers = ["@io_bazel_rules_go//proto:go_grpc"],
@@ -199,14 +199,14 @@ go_proto_library(
     visibility = ["//visibility:public"],
 )
 
-# Python proto bindings
+Python proto bindings
 py_proto_library(
     name = "orders_py_proto",
     deps = [":orders_proto"],
     visibility = ["//visibility:public"],
 )
 
-# Python gRPC bindings
+Python gRPC bindings
 py_grpc_library(
     name = "orders_py_grpc",
     srcs = [":orders_proto"],
@@ -215,11 +215,11 @@ py_grpc_library(
 )
 ```
 
-Claude separates proto, go_proto, py_proto, and py_grpc into distinct targets — this is the correct pattern that allows consumers to depend on only what they need. ChatGPT sometimes collapses these into a single target, which works but forces unnecessary rebuilds.
+Claude separates proto, go_proto, py_proto, and py_grpc into distinct targets. this is the correct pattern that allows consumers to depend on only what they need. ChatGPT sometimes collapses these into a single target, which works but forces unnecessary rebuilds.
 
-## Java BUILD Files
+Java BUILD Files
 
-**Prompt:**
+Prompt:
 ```text
 Write a Bazel BUILD file for a Java service with Spring Boot.
 Sources: src/main/java/com/example/OrderService.java
@@ -227,7 +227,7 @@ External deps: Spring Boot starter web, Spring Data JPA, Hibernate (from maven_i
 Include a java_test for OrderServiceTest.java.
 ```
 
-**Claude output:**
+Claude output:
 
 ```python
 load("@rules_java//java:defs.bzl", "java_binary", "java_library", "java_test")
@@ -264,9 +264,9 @@ java_test(
 
 Maven coordinates in rules_java follow the `@maven//:group_artifact_name` format where dots and hyphens become underscores. Claude handles this conversion correctly. ChatGPT sometimes uses the original Maven coordinate format (`org.springframework.boot:spring-boot-starter-web`) which doesn't work in Bazel.
 
-## Visibility Rules
+Visibility Rules
 
-**Prompt:**
+Prompt:
 ```text
 I have packages: //services/auth, //services/orders, //lib/db.
 Rules: lib/db is public. services/auth is visible to services/orders only.
@@ -274,21 +274,21 @@ services/orders is public. Write the visibility declarations.
 ```
 
 ```python
-# //lib/db/BUILD
+//lib/db/BUILD
 py_library(
     name = "db",
     visibility = ["//visibility:public"],
     ...
 )
 
-# //services/auth/BUILD
+//services/auth/BUILD
 py_library(
     name = "auth",
     visibility = ["//services/orders:__pkg__"],  # only orders package
     ...
 )
 
-# //services/orders/BUILD
+//services/orders/BUILD
 py_library(
     name = "orders",
     visibility = ["//visibility:public"],
@@ -301,7 +301,7 @@ Claude uses `__pkg__` (allows subpackages at that path) correctly. It knows the 
 For package groups spanning multiple packages, Claude correctly uses `package_group`:
 
 ```python
-# Shared access group for internal services
+Shared access group for internal services
 package_group(
     name = "internal_services",
     packages = [
@@ -310,7 +310,7 @@ package_group(
     ],
 )
 
-# Use the group in visibility
+Use the group in visibility
 py_library(
     name = "auth",
     visibility = [":internal_services"],
@@ -318,22 +318,22 @@ py_library(
 )
 ```
 
-## Gazelle Integration
+Gazelle Integration
 
 Claude also explains when to use Gazelle vs manual BUILD files:
 
 ```bash
-# Generate BUILD files automatically with Gazelle
+Generate BUILD files automatically with Gazelle
 bazel run //:gazelle
 
-# Update deps from go.mod
+Update deps from go.mod
 bazel run //:gazelle -- update-repos \
   -from_file=go.mod \
   -to_macro=deps.bzl%go_dependencies \
   -prune
 
-# After generating, manually add visibility rules
-# Gazelle defaults to private; you must explicitly make public
+After generating, manually add visibility rules
+Gazelle defaults to private; you must explicitly make public
 ```
 
 For projects with hundreds of packages, let Gazelle generate the base BUILD files and use AI to add visibility, test targets, and custom rules.
@@ -341,26 +341,26 @@ For projects with hundreds of packages, let Gazelle generate the base BUILD file
 Claude also understands the Gazelle directive system for per-package configuration:
 
 ```python
-# In a BUILD file, Gazelle directives control generation behavior
-# gazelle:go_naming_convention go_default_library
-# gazelle:proto_strip_import_prefix /proto
-# gazelle:resolve go github.com/example/myapp/lib/auth //lib/auth
+In a BUILD file, Gazelle directives control generation behavior
+gazelle:go_naming_convention go_default_library
+gazelle:proto_strip_import_prefix /proto
+gazelle:resolve go github.com/example/myapp/lib/auth //lib/auth
 ```
 
 These `# gazelle:` comments are read by Gazelle during generation and can override naming conventions or force specific resolution for ambiguous imports.
 
-## Custom Rules and Macros
+Custom Rules and Macros
 
 For teams with custom Starlark rules, Claude handles macro generation well:
 
-**Prompt:**
+Prompt:
 ```text
 Write a Starlark macro called service_library that wraps go_library and go_test,
 sets default visibility to internal_services, and enforces that every service
 has a corresponding test file.
-## Cross-Language Dependencies and External Rules
+Cross-Language Dependencies and External Rules
 
-**Prompt:**
+Prompt:
 ```text
 Write BUILD files for a monorepo with:
 - Go service at //services/api
@@ -371,13 +371,13 @@ Write BUILD files for a monorepo with:
 Show the full dependency chain.
 ```
 
-**Claude output:**
+Claude output:
 
 ```python
-# //tools/macros/service.bzl
+//tools/macros/service.bzl
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 
-def service_library(name, srcs, deps = [], test_srcs = None, **kwargs):
+def service_library(name, srcs, deps = [], test_srcs = None, kwargs):
  """Macro for internal service libraries with enforced test coverage.
 
  Args:
@@ -385,7 +385,7 @@ def service_library(name, srcs, deps = [], test_srcs = None, **kwargs):
  srcs: Source files
  deps: Dependencies
  test_srcs: Test files (defaults to [name + "_test.go"])
- **kwargs: Additional args passed to go_library
+ kwargs: Additional args passed to go_library
  """
  if test_srcs == None:
  test_srcs = [name + "_test.go"]
@@ -395,7 +395,7 @@ def service_library(name, srcs, deps = [], test_srcs = None, **kwargs):
  srcs = srcs,
  deps = deps,
  visibility = ["//visibility:__subpackages__", "//services:__subpackages__"],
- **kwargs
+ kwargs
  )
 
  go_test(
@@ -407,7 +407,7 @@ def service_library(name, srcs, deps = [], test_srcs = None, **kwargs):
 ```
 
 The macro pattern is useful for enforcing organizational conventions across hundreds of packages without duplicating the same boilerplate in every BUILD file.
-# //proto/BUILD
+//proto/BUILD
 load("@rules_proto//proto:defs.bzl", "proto_library")
 load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
 load("@com_github_grpc_grpc//bazel:python_rules.bzl", "py_grpc_library", "py_proto_library")
@@ -441,7 +441,7 @@ py_grpc_library(
 
 ---
 
-# //services/api/BUILD
+//services/api/BUILD
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 
 go_library(
@@ -463,7 +463,7 @@ go_binary(
 
 ---
 
-# //services/worker/BUILD
+//services/worker/BUILD
 load("@rules_python//python:defs.bzl", "py_binary", "py_library")
 
 py_library(
@@ -487,15 +487,15 @@ py_binary(
 
 Claude correctly separates proto, go_proto, py_proto, and py_grpc libraries so Go and Python consumers pull only what they need.
 
-## Conditional Rules and Selects
+Conditional Rules and Selects
 
-**Prompt:**
+Prompt:
 ```text
 I have platform-specific code: Windows uses one library, Linux another.
 Write a BUILD file using select() to choose the right dependency.
 ```
 
-**Claude output:**
+Claude output:
 
 ```python
 load("@io_bazel_rules_go//go:def.bzl", "go_library")
@@ -521,9 +521,9 @@ go_library(
 
 The `select()` function chooses based on conditions (platform, OS, build flags). It's cleaner than separate BUILD files per platform.
 
-## Build Cache and Remote Execution
+Build Cache and Remote Execution
 
-**Prompt:**
+Prompt:
 ```text
 I want Bazel to cache build outputs so rebuilds are fast.
 Should I use local cache or remote cache (Bazelisk, BuildBuddy)?
@@ -555,7 +555,7 @@ Performance impact:
 - Cache miss: full build (5-30 minutes depending on project size)
 ```
 
-## Related Reading
+Related Reading
 
 - [Best AI Tools for Writing Makefiles](/best-ai-tools-for-writing-makefiles-2026/)
 - [How to Use AI for Nix Package Management](/how-to-use-ai-for-nix-package-management/)
@@ -564,7 +564,7 @@ Performance impact:
 - [Best AI IDE Features for Writing Configuration Files YAML](/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
 ---
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Writing Dockerfiles](/ai-tools-for-writing-dockerfiles-guide)
 - [Best AI Tools for Writing Makefiles in 2026](/best-ai-tools-for-writing-makefiles-2026/)
@@ -572,6 +572,6 @@ Performance impact:
 - [Best AI Tools for Writing Unit Test Mocks 2026](/best-ai-tools-for-writing-unit-test-mocks-2026/)
 - [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

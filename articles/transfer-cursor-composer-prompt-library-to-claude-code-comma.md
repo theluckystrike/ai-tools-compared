@@ -17,7 +17,7 @@ voice-checked: true
 
 Transfer your Cursor Composer prompts to Claude Code by converting reusable prompts into skill files in `~/.claude/skills/`, migrating `.cursorrules` into a `.claude.md` project file, and using the `-p` flag for one-off prompts. The key adaptation is shifting from Cursor's conversational prompt style to Claude Code's imperative, declarative instruction format stored as Markdown skill definitions.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding the Fundamental Differences](#understanding-the-fundamental-differences)
 - [Mapping Cursor Prompts to Claude Code Skills](#mapping-cursor-prompts-to-claude-code-skills)
@@ -43,39 +43,39 @@ Transfer your Cursor Composer prompts to Claude Code by converting reusable prom
 - [Performance Considerations](#performance-considerations)
 - [Integration with CI/CD](#integration-with-cicd)
 
-## Understanding the Fundamental Differences
+Understanding the Fundamental Differences
 
 Cursor uses a chat-based interface with Composer where you compose prompts in conversation threads. Claude Code operates through a terminal using commands and a skill system. The key distinction is that Cursor prompts are conversational while Claude Code prompts become declarative instructions stored as skills or passed directly through command-line arguments.
 
 Spend time reviewing your existing prompts in Cursor before migrating. Identify which ones define coding standards, which automate repetitive tasks, and which handle specific framework workflows. Categorizing your prompts helps you map them to the appropriate Claude Code mechanism.
 
-## Mapping Cursor Prompts to Claude Code Skills
+Mapping Cursor Prompts to Claude Code Skills
 
 Claude Code skills live in a `~/.claude/skills/` directory or within your project's `.claude/` folder. Each skill contains an `skill.md` file that defines what the skill does and how Claude Code should behave when activated.
 
 Here is how to structure a migrated prompt as a Claude Code skill:
 
 ```markdown
-# Skill: react-component-generator
+Skill: react-component-generator
 
-## Description
+Description
 Generates React functional components with TypeScript, following our team's component patterns.
 
-## Instructions
+Instructions
 - Always use TypeScript for React components
 - Include JSDoc comments for all props
 - Use our internal UI component library
 - Add basic prop validation with TypeScript types
 - Include CSS Modules for styling
 
-## Examples
+Examples
 User: Create a Button component
 Claude: Generates a TypeScript React component with props, CSS Module, and JSDoc
 ```
 
 This structure replaces the conversational prompt you might have used in Cursor's Composer.
 
-## Converting Multi-Step Prompts to Skills
+Converting Multi-Step Prompts to Skills
 
 Cursor prompts often span multiple exchanges as you refine requirements. Claude Code skills work best when they capture the complete workflow in a single definition. Review your multi-turn conversations and consolidate them into a single skill instruction block.
 
@@ -87,9 +87,9 @@ claude -p "Here is my project structure: $(find . -type f -name '*.ts' | head -2
 
 Then inside your skill, reference that context with appropriate instructions.
 
-## Migrating Cursor Rules to Claude-md Files
+Migrating Cursor Rules to Claude-md Files
 
-Cursor rules live in `.cursorrules` files. Claude Code uses `.claude.md` for project-level instructions. The conversion is straightforward since both serve similar purposes—defining how the AI should behave within a project.
+Cursor rules live in `.cursorrules` files. Claude Code uses `.claude.md` for project-level instructions. The conversion is straightforward since both serve similar purposes, defining how the AI should behave within a project.
 
 Transform your Cursor rules like this:
 
@@ -104,7 +104,7 @@ Into a Claude Code project file:
 
 ```markdown
 <!-- .claude.md -->
-# Project Context
+Project Context
 
 - TypeScript strict mode enabled
 - Use Tailwind CSS with @apply for complex utility combinations
@@ -114,7 +114,7 @@ Into a Claude Code project file:
 
 Place this file in your project root, and Claude Code reads it automatically for every session.
 
-## Using Command-Line Arguments for One-Off Prompts
+Using Command-Line Arguments for One-Off Prompts
 
 Some Cursor prompts are quick one-time requests rather than reusable patterns. For these, Claude Code's command-line interface handles the task directly without creating a skill.
 
@@ -132,30 +132,30 @@ claude -p @prompts/refactor-backend.txt
 
 This approach works well for prompts you use infrequently and do not need to formalize as skills.
 
-## Building a Prompt Library Structure
+Building a Prompt Library Structure
 
 Organizing your migrated prompts prevents chaos as your collection grows. A practical directory structure for Claude Code skills looks like this:
 
 ```
 ~/.claude/skills/
-├── coding-standards/
-│   ├── skill.md
-│   └── README.md
-├── frameworks/
-│   ├── react/
-│   ├── nextjs/
-│   └── vue/
-├── automation/
-│   ├── testing/
-│   └── documentation/
-└── utilities/
-    ├── code-review/
-    └── refactoring/
+ coding-standards/
+    skill.md
+    README.md
+ frameworks/
+    react/
+    nextjs/
+    vue/
+ automation/
+    testing/
+    documentation/
+ utilities/
+     code-review/
+     refactoring/
 ```
 
 Each skill folder can contain the main `skill.md` plus supporting files like examples or configuration templates.
 
-## Adapting Prompt Language for Command Execution
+Adapting Prompt Language for Command Execution
 
 Cursor prompts often start with "Can you" or "Please create" because they simulate a conversation. Claude Code commands work better with direct, imperative language. Convert your prompts:
 
@@ -171,7 +171,7 @@ Cursor prompts often start with "Can you" or "Please create" because they simula
 
 The shift from conversational to imperative improves Claude Code's response accuracy.
 
-## Testing Your Migrated Prompts
+Testing Your Migrated Prompts
 
 After converting prompts to skills, test each one thoroughly. Run the skill and verify the output matches your expectations from Cursor. Pay attention to:
 
@@ -185,24 +185,24 @@ Iterate on your skill definitions based on test results. Claude Code's skill sys
 
 Skills provide reusability, the command-line interface offers flexibility, and the `.claude.md` file handles project-specific rules. Start with your most-used prompts, convert them to skills, and expand your library as you discover new patterns.
 
-## Advanced Migration Patterns
+Advanced Migration Patterns
 
-### Handling Complex Context Dependencies
+Handling Complex Context Dependencies
 
 Cursor prompts often depend on conversation history and implicit context. Claude Code requires explicit context. When migrating such prompts, structure your skill to accept context parameters:
 
 ```markdown
-# Skill: code-review-with-standards
+Skill: code-review-with-standards
 
-## Description
+Description
 Reviews code against team coding standards with deep context awareness.
 
-## Parameters
+Parameters
 - `file_path`: Path to file being reviewed
 - `team_standards`: Your coding standard documentation
 - `language`: Programming language (typescript, python, go, etc)
 
-## Instructions
+Instructions
 Review the provided code against the team standards. Include:
 1. Compliance with naming conventions
 2. Error handling patterns
@@ -217,25 +217,25 @@ Then invoke it with full context:
 claude -p "Review this file for our team standards" @path/to/file.ts
 ```
 
-### Converting Cursor's Multi-Turn Conversations
+Converting Cursor's Multi-Turn Conversations
 
 Cursor Composer often involves iterative refinement across multiple messages. For complex workflows, create a series of related skills that work together:
 
 ```bash
-# Step 1: Generate base code
+Step 1: Generate base code
 claude -p @skills/generate-component.txt
 
-# Step 2: Refine based on requirements
+Step 2: Refine based on requirements
 claude -p "Update the component to handle loading states"
 
-# Step 3: Add tests
+Step 3: Add tests
 claude -p @skills/generate-tests.txt
 ```
 
 Document the workflow in your project's `.claude.md`:
 
 ```markdown
-## Code Generation Workflow
+Code Generation Workflow
 
 To generate a new React component:
 
@@ -247,7 +247,7 @@ To generate a new React component:
 Each skill builds on the previous output, maintaining consistency.
 ```
 
-## Skill Performance Comparison
+Skill Performance Comparison
 
 Use this decision matrix to determine whether a prompt should become a skill or remain a command-line invocation:
 
@@ -262,17 +262,17 @@ Use this decision matrix to determine whether a prompt should become a skill or 
 
 Skills in `~/.claude/skills/` are globally available. Project-specific skills live in `.claude/skills/` within your repository.
 
-## Execution Environment Variables
+Execution Environment Variables
 
 Claude Code skills can access environment variables for dynamic behavior:
 
 ```markdown
-# Skill: deploy-service
+Skill: deploy-service
 
-## Description
+Description
 Deploys a service with environment-specific configuration.
 
-## Instructions
+Instructions
 Deployment requires these environment variables to be set:
 - $DEPLOY_ENV: staging or production
 - $API_KEY: Service API key for deployment
@@ -291,7 +291,7 @@ export LOG_LEVEL=verbose
 claude @skills/deploy-service.md
 ```
 
-## Migration Checklist
+Migration Checklist
 
 Ensure your migration is complete and functional:
 
@@ -306,54 +306,54 @@ Ensure your migration is complete and functional:
 - [ ] Train team members on using the new skill system
 - [ ] Monitor which skills get used most; deprecate unused ones monthly
 
-## Performance Considerations
+Performance Considerations
 
 Claude Code executes skills faster than Cursor when the skill is well-structured and self-contained. However, complex skills requiring iterative back-and-forth perform better as command-line sequences where you can adjust based on intermediate results.
 
 Profile your most-used prompts. If a skill consistently produces output requiring immediate revision, it may work better as an interactive command-line session where you refine the prompt after seeing initial results.
 
-## Integration with CI/CD
+Integration with CI/CD
 
 Skills can integrate with your deployment pipeline. Create a skill that your CI system invokes:
 
 ```bash
-# In your GitHub Actions workflow
+In your GitHub Actions workflow
 - name: Code Quality Check
   run: claude @skills/quality-check.md --file=${{ github.workspace }}/src
 ```
 
 This enables automated code review against your exact standards without maintaining a separate linting configuration.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to transfer cursor composer prompt library?**
+How long does it take to transfer cursor composer prompt library?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Will this work with my existing CI/CD pipeline?**
+Will this work with my existing CI/CD pipeline?
 
 The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ. You may need to adapt file paths, environment variable names, and trigger conditions to match your pipeline tool. The underlying workflow logic stays the same.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Transfer Your Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code/)
 - [Claude Code vs Cursor Composer](/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
 - [Claude Code vs Cursor for Large Codebase Refactoring](/claude-code-vs-cursor-for-large-codebase-refactoring/)
 - [How to Switch from Cursor to Claude Code Without Losing](/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
 - [Using Claude Code for Backend and Cursor for Frontend Same](/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```
 {% endraw %}

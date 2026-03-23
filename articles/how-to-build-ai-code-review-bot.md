@@ -29,16 +29,16 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-An AI code review bot runs on every pull request, posts inline comments on specific lines, and enforces the rules your team cares about — without a human having to review every diff. This guide builds a working GitHub Actions bot that reviews PRs using Claude, posts comments as a GitHub App, and runs in under 60 seconds.
+An AI code review bot runs on every pull request, posts inline comments on specific lines, and enforces the rules your team cares about. without a human having to review every diff. This guide builds a working GitHub Actions bot that reviews PRs using Claude, posts comments as a GitHub App, and runs in under 60 seconds.
 
-## Key Takeaways
+Key Takeaways
 
-- **This guide builds a**: working GitHub Actions bot that reviews PRs using Claude, posts comments as a GitHub App, and runs in under 60 seconds.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-- **This guide covers architecture, step 1**: create the github app, step 2: github actions workflow, with specific setup instructions
+- This guide builds a: working GitHub Actions bot that reviews PRs using Claude, posts comments as a GitHub App, and runs in under 60 seconds.
+- What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- Consider a security review: if your application handles sensitive user data.
+- This guide covers architecture, step 1: create the github app, step 2: github actions workflow, with specific setup instructions
 
-## Architecture
+Architecture
 
 The bot runs as a GitHub Actions workflow triggered on `pull_request` events. It:
 
@@ -48,7 +48,7 @@ The bot runs as a GitHub Actions workflow triggered on `pull_request` events. It
 4. Posts inline comments using the GitHub Review API
 5. Submits a summary review (APPROVE, REQUEST_CHANGES, or COMMENT)
 
-## Step 1: Create the GitHub App
+Step 1: Create the GitHub App
 
 1. Go to Settings > Developer settings > GitHub Apps > New
 2. Permissions: Pull requests (Read & write), Contents (Read)
@@ -57,10 +57,10 @@ The bot runs as a GitHub Actions workflow triggered on `pull_request` events. It
 
 Add to repository secrets: `APP_ID` and `APP_PRIVATE_KEY`.
 
-## Step 2: GitHub Actions Workflow
+Step 2: GitHub Actions Workflow
 
 ```yaml
-# .github/workflows/ai-review.yml
+.github/workflows/ai-review.yml
 name: AI Code Review
 
 on:
@@ -91,7 +91,7 @@ jobs:
         run: node .github/scripts/ai-review.js
 ```
 
-## Step 3: The Review Script
+Step 3: The Review Script
 
 ```javascript
 // .github/scripts/ai-review.js
@@ -174,7 +174,7 @@ async function main() {
     body: `## AI Code Review\n\nFound ${allComments.length} issue(s).\n\n*Powered by Claude*`,
     comments: allComments.map(c => ({
       path: c.path, line: c.line,
-      body: `**${c.severity.toUpperCase()}**: ${c.body}`
+      body: `${c.severity.toUpperCase()}: ${c.body}`
     }))
   });
 }
@@ -219,7 +219,7 @@ function parseDiff(diffText) {
 main().catch(console.error);
 ```
 
-## Customizing Review Rules
+Customizing Review Rules
 
 Add team-specific rules to `REVIEW_RULES`:
 
@@ -232,7 +232,7 @@ Additional rules for this codebase:
 `;
 ```
 
-## Cost at Scale
+Cost at Scale
 
 With Claude Haiku:
 - Average PR (500 lines changed): ~$0.002
@@ -241,7 +241,7 @@ With Claude Haiku:
 
 Upgrade to Sonnet for security-critical repositories where false negatives are expensive.
 
-## Handling Large PRs
+Handling Large PRs
 
 Large PRs overwhelm AI models and produce low-quality reviews. Split them into manageable chunks:
 
@@ -267,7 +267,7 @@ function splitDiffBySize(files, maxTokens = 4000) {
 
 For PRs exceeding 2000 lines, consider reviewing only the most critical files (auth, payment, database) and skipping generated code.
 
-## Security-Focused Review Rules
+Security-Focused Review Rules
 
 For repositories handling sensitive data, add security-specific rules:
 
@@ -282,7 +282,7 @@ const SECURITY_RULES = `Additional security checks:
 - Flag missing input validation on file upload endpoints`;
 ```
 
-## Measuring Review Quality
+Measuring Review Quality
 
 Track how often developers accept AI suggestions to improve your review rules:
 
@@ -296,15 +296,15 @@ Track how often developers accept AI suggestions to improve your review rules:
 
 Log every review outcome and periodically retune your prompts based on which comments get accepted versus dismissed.
 
-## Pros and Cons of AI Code Review Bots
+Pros and Cons of AI Code Review Bots
 
-**Advantages:**
+Advantages:
 - Reviews every PR consistently, no reviewer fatigue
 - Catches security patterns human reviewers often miss
 - Available instantly, no waiting for reviewer availability
 - Cost per review is negligible ($0.002 with Haiku)
 
-**Limitations:**
+Limitations:
 - Cannot understand business context or product requirements
 - May flag intentional patterns as issues
 - Cannot review architectural decisions or system design
@@ -312,7 +312,7 @@ Log every review outcome and periodically retune your prompts based on which com
 
 The best approach combines AI review for mechanical checks (security, error handling, performance) with human review for architecture, readability, and business logic.
 
-## Related Reading
+Related Reading
 
 - [AI Code Review Automation Tools Comparison](/ai-code-review-automation-tools-comparison/)
 - [How to Build an AI-Powered Code Linter](/how-to-build-ai-powered-code-linter/)
@@ -320,27 +320,27 @@ The best approach combines AI review for mechanical checks (security, error hand
 - [Remote Developer Code Review Workflow Tools for Teams](https://welikeremotestack.com/remote-developer-code-review-workflow-tools-for-teams-without-synchronous-overlap/)
 - [Async Code Review Process Without Zoom Calls Step by Step](https://welikeremotestack.com/async-code-review-process-without-zoom-calls-step-by-step/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to build an ai code review?**
+How long does it take to build an ai code review?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 

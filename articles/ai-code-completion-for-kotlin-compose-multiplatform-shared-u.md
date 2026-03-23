@@ -19,7 +19,7 @@ Building shared UI components with Kotlin Compose Multiplatform (KMP) allows tea
 
 This guide examines practical strategies for getting the most out of AI code completion when working with Kotlin Compose Multiplatform shared UI components.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding KMP Shared UI Architecture](#understanding-kmp-shared-ui-architecture)
 - [Configuring AI Tools for KMP Projects](#configuring-ai-tools-for-kmp-projects)
@@ -35,7 +35,7 @@ This guide examines practical strategies for getting the most out of AI code com
 - [Testing AI-Generated Shared Components](#testing-ai-generated-shared-components)
 - [Best Practices for KMP AI Assistance](#best-practices-for-kmp-ai-assistance)
 
-## Understanding KMP Shared UI Architecture
+Understanding KMP Shared UI Architecture
 
 Kotlin Compose Multiplatform enables you to write UI code once and deploy it across platforms. The shared code typically lives in a common module, while platform-specific implementations reside in separate source sets.
 
@@ -58,7 +58,7 @@ fun SharedButton(
 
 AI tools need to understand this structure to provide relevant suggestions. Without proper context, they may suggest Android-only or iOS-only APIs that won't compile in the shared module.
 
-## Configuring AI Tools for KMP Projects
+Configuring AI Tools for KMP Projects
 
 Most AI code completion tools work best when they understand your project's architecture. Provide clear context about your KMP setup:
 
@@ -68,9 +68,9 @@ Most AI code completion tools work best when they understand your project's arch
 
 When using tools like GitHub Copilot, Cursor, or Claude Code, include a brief project context file that explains your KMP structure. This helps the AI avoid suggesting platform-specific imports or APIs that would break your shared code.
 
-## Common Pitfalls and How to Avoid Them
+Common Pitfalls and How to Avoid Them
 
-### Platform-Specific API Suggestions
+Platform-Specific API Suggestions
 
 AI tools frequently suggest Material 3 components that exist only on Android. For shared UI, you need either custom implementations or the limited set of Compose APIs available across platforms.
 
@@ -105,7 +105,7 @@ fun SharedTopBar(
 
 The AI may initially suggest Android-only components. You can mitigate this by explicitly specifying that your code targets the common source set and requires cross-platform compatible APIs.
 
-### Expect/Actual Pattern Confusion
+Expect/Actual Pattern Confusion
 
 KMP uses the expect/actual pattern for platform-specific implementations. AI tools sometimes struggle with this distinction, potentially suggesting implementations where declarations are needed.
 
@@ -129,12 +129,12 @@ actual fun PlatformText(text: String) {
 
 When working with expect/actual declarations, guide your AI tool to understand which file belongs to which source set to prevent incorrect suggestions.
 
-## Optimizing AI Prompts for KMP UI Development
+Optimizing AI Prompts for KMP UI Development
 
 Clear, specific prompts yield better results. Instead of generic requests, specify the context:
 
-- **Instead of**: "Create a button component"
-- **Try**: "Create a shared Compose button component that works in commonMain, using only cross-platform APIs"
+- Instead of: "Create a button component"
+- Try: "Create a shared Compose button component that works in commonMain, using only cross-platform APIs"
 
 For more complex components, provide the expected structure:
 
@@ -148,7 +148,7 @@ For more complex components, provide the expected structure:
 
 This approach helps the AI generate code that actually compiles in your shared module rather than requiring extensive rework.
 
-## Advanced KMP UI Patterns with AI Assistance
+Advanced KMP UI Patterns with AI Assistance
 
 When working with more complex UI patterns, providing detailed specifications helps AI tools generate production-ready code. Consider a feature-request screen component that appears across all platforms:
 
@@ -221,7 +221,7 @@ fun FeatureRequestCard(
 
 Guide your AI tool by specifying cross-platform constraints explicitly: mention that custom icons should use vector drawable resources available on both Android and iOS, specify that animations should use standard Compose values, and note which Material Design components are safe for shared code.
 
-## Handling AI Suggestions for Conditional Rendering
+Handling AI Suggestions for Conditional Rendering
 
 KMP projects often need platform-specific rendering logic within shared UI. AI tools should understand when to use expect/actual pattern versus composing shared components:
 
@@ -259,32 +259,32 @@ expect fun PlatformStatusIndicator()
 
 When prompting AI tools, explain that shared code should defer platform-specific decisions to expect/actual implementations rather than using `if (Platform.isAndroid)` patterns that require conditional imports.
 
-## Context Management for Complex KMP Projects
+Context Management for Complex KMP Projects
 
 Large KMP projects with multiple modules benefit from explicit context files. When working with AI tools, reference these documented boundaries:
 
 Create a `KMP_ARCHITECTURE.md` file at your project root:
 
 ```markdown
-# KMP Architecture Guide
+KMP Architecture Guide
 
-## Module Structure
-- `shared/` — Common code and shared UI (commonMain)
-- `shared/src/androidMain/` — Android-specific implementations
-- `shared/src/iosMain/` — iOS-specific implementations
+Module Structure
+- `shared/`. Common code and shared UI (commonMain)
+- `shared/src/androidMain/`. Android-specific implementations
+- `shared/src/iosMain/`. iOS-specific implementations
 
-## UI Patterns
+UI Patterns
 - Shared composables live in `commonMain/kotlin/ui/`
 - Use `Modifier` extensions for layout concerns
 - Custom components should accept `Modifier` as final optional parameter
 
-## Forbidden Patterns in Shared Code
+Forbidden Patterns in Shared Code
 - Android-specific imports (android.*)
 - iOS-specific imports (Foundation)
 - kotlinx.serialization without proper versions
 - Reflection (use inline serializers instead)
 
-## Safe Cross-Platform APIs
+Safe Cross-Platform APIs
 - All basic Compose functions (Box, Column, Row, etc.)
 - Text, Image, Button (basic Material components)
 - Modifier builders and extensions
@@ -293,7 +293,7 @@ Create a `KMP_ARCHITECTURE.md` file at your project root:
 
 Reference this guide when prompting your AI tool, which helps it understand your project's constraints without re-learning them each conversation.
 
-## Testing AI-Generated Shared Components
+Testing AI-Generated Shared Components
 
 Always verify AI-generated code works across all target platforms. A component that compiles successfully on Android might fail on iOS due to subtle API differences:
 
@@ -301,7 +301,7 @@ Always verify AI-generated code works across all target platforms. A component t
 2. Run the app on Android, iOS (or simulator), and web targets
 3. Check for runtime differences in layout or behavior
 
-## Best Practices for KMP AI Assistance
+Best Practices for KMP AI Assistance
 
 Maintain a project-specific reference that AI tools can access, documenting:
 
@@ -312,40 +312,40 @@ Maintain a project-specific reference that AI tools can access, documenting:
 
 This reference becomes part of your project context, enabling AI tools to provide more accurate suggestions over time.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Best AI for Writing Correct Kotlin Multiplatform Shared](/best-ai-for-writing-correct-kotlin-multiplatform-shared-code/)
 - [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
 - [Best Air Gapped AI Code Completion Solutions for Offline](/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 - [Running Starcoder2 Locally for Code Completion](/running-starcoder2-locally-for-code-completion-without-sendi/)
 - [AI Code Completion for Java Record Classes and Sealed](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-## Related Reading
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
+Related Reading
 
 - [Best AI for Writing Correct Kotlin Multiplatform Shared](/best-ai-for-writing-correct-kotlin-multiplatform-shared-code/)
 - [Open Source AI Code Completion for Neovim Without Cloud API](/open-source-ai-code-completion-for-neovim-without-cloud-api-/)
 - [Best Air Gapped AI Code Completion Solutions for Offline](/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

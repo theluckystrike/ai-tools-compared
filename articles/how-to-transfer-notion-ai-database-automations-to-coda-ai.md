@@ -18,7 +18,7 @@ voice-checked: true
 
 Transfer Notion AI database automations to Coda AI by exporting your Notion data via the API, recreating table structures in Coda, replacing external AI scripts with Coda's native `AI.Generate` formula columns, and rebuilding triggers using Coda's built-in automation system. The key architectural shift is that Notion relies on external services for AI processing, while Coda embeds AI directly into its formula language, eliminating the need for middleware scripts. This guide walks through the full migration with code examples for both platforms.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Platform Comparison: Notion AI vs Coda AI for Automations](#platform-comparison-notion-ai-vs-coda-ai-for-automations)
@@ -26,7 +26,7 @@ Transfer Notion AI database automations to Coda AI by exporting your Notion data
 - [Advanced: Using Coda API for Complex AI Tasks](#advanced-using-coda-api-for-complex-ai-tasks)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand the Architectural Differences
+Step 1: Understand the Architectural Differences
 
 Notion stores data in a block-based system with databases as collections of pages. Each page can contain blocks, and database properties provide structured fields. AI features in Notion work primarily through the Notion AI button, which generates content within pages, and through integrations with external AI services via the Notion API.
 
@@ -44,26 +44,26 @@ Coda combines documents and spreadsheets into a single platform called "docs." C
 
 The key distinction: Notion AI operates mostly as a user-initiated action, while Coda AI allows you to embed AI responses directly into table columns using formulas.
 
-## Platform Comparison: Notion AI vs Coda AI for Automations
+Platform Comparison: Notion AI vs Coda AI for Automations
 
 Before migrating, it helps to understand exactly where the two platforms differ in capability:
 
 | Feature | Notion AI | Coda AI |
 |---|---|---|
 | AI trigger model | Manual (user-clicks) or external webhook | Formula column (auto-recalculates) or button |
-| AI formula language | None — requires external API calls | Native `AI.Generate`, `AI.Summarize`, `AI.Classify` |
-| Middleware required | Yes (Zapier, Make, custom scripts) | No — automations are native |
+| AI formula language | None. requires external API calls | Native `AI.Generate`, `AI.Summarize`, `AI.Classify` |
+| Middleware required | Yes (Zapier, Make, custom scripts) | No. automations are native |
 | Model selection | Notion-hosted (limited control) | Specify model per formula (GPT-4o, Claude, etc.) |
 | Relational data | Relations + Rollups | Lookup columns + Filter formulas |
 | Automation triggers | Webhook-based via integrations | Native: row change, form submit, schedule |
 | API access | Full REST API | Full REST API |
 | Cost model | Per-workspace AI add-on | AI tokens consumed per generation |
 
-The most significant operational change is eliminating middleware. If your Notion setup relies on Zapier or Make workflows to call OpenAI and write results back, that entire layer disappears in Coda — the AI formula column handles it natively.
+The most significant operational change is eliminating middleware. If your Notion setup relies on Zapier or Make workflows to call OpenAI and write results back, that entire layer disappears in Coda. the AI formula column handles it natively.
 
-### Step 2: Mapping Notion Database Automations to Coda
+Step 2: Mapping Notion Database Automations to Coda
 
-### Property Types Comparison
+Property Types Comparison
 
 Notion databases support property types including text, number, date, select, multi-select, checkbox, relation, rollup, and formula. Coda tables use similar types but with different names and behaviors.
 
@@ -91,15 +91,15 @@ Coda Table Structure:
 - Tags (multi-select)
 ```
 
-### Automations Comparison
+Automations Comparison
 
 Notion uses "relations" to link databases and "rollups" to aggregate data. Coda uses "lookup" columns and formulas that can reference other tables directly.
 
 For automations, Notion relies on Slack notifications, webhooks through integrations like Zapier, or the Notion API. Coda has native automation triggers that fire on row changes, form submissions, or schedules.
 
-## Migrating AI-Generated Content
+Migrating AI-Generated Content
 
-### Notion API Approach
+Notion API Approach
 
 When you need AI to process Notion database items, you typically use the Notion API combined with an external AI service. Here is a JavaScript example using the Notion API:
 
@@ -123,7 +123,7 @@ async function generateSummary(pageId) {
 }
 ```
 
-### Coda AI Approach
+Coda AI Approach
 
 Coda integrates AI directly into formulas. You can create an AI Summary column using the `AI.Generate` formula:
 
@@ -137,9 +137,9 @@ AI.Generate(
 
 Coda AI formulas support specifying the model, temperature, and other parameters. The AI column recalculates when source data changes, providing automatic updates without external scripts.
 
-### Step 3: Build Equivalent Automations
+Step 3: Build Equivalent Automations
 
-### Notion to Slack Notification
+Notion to Slack Notification
 
 In Notion, you might have a webhook triggering when a status changes to "Review":
 
@@ -151,7 +151,7 @@ In Notion, you might have a webhook triggering when a status changes to "Review"
 }
 ```
 
-### Coda Native Automation
+Coda Native Automation
 
 Coda handles this natively without external services:
 
@@ -165,7 +165,7 @@ Coda handles this natively without external services:
 
 For more complex workflows, Coda supports "Button" columns that users click to trigger sequences of actions.
 
-### Step 4: Handling Relational Data
+Step 4: Handling Relational Data
 
 Notion databases use "relations" to link between databases. Coda uses lookup columns and the `Filter()` function for similar functionality.
 
@@ -186,7 +186,7 @@ Coda equivalent using formulas:
 Filter(Tasks, [Assignee] = CurrentUser())
 ```
 
-### Step 5: Exporting Notion Data for Migration
+Step 5: Exporting Notion Data for Migration
 
 Before you can recreate anything in Coda, you need your Notion data out. The Notion API is the most reliable extraction path for database contents, especially when you have more than a few hundred rows.
 
@@ -251,7 +251,7 @@ print(f"Exported {len(rows)} rows")
 
 This script handles pagination automatically, which is critical for databases over 100 rows. The Notion API caps each response at 100 items; the `has_more` / `next_cursor` loop collects the full dataset.
 
-### Step 6: Practical Migration Steps
+Step 6: Practical Migration Steps
 
 1. Export Notion data: Use the Notion API or a tool like `notion2md` to export database contents
 
@@ -265,7 +265,7 @@ This script handles pagination automatically, which is critical for databases ov
 
 6. Test thoroughly: Verify all triggers, actions, and AI generations work as expected
 
-## Advanced: Using Coda API for Complex AI Tasks
+Advanced: Using Coda API for Complex AI Tasks
 
 For sophisticated AI processing beyond formula capabilities, use the Coda API:
 
@@ -291,48 +291,48 @@ async function processWithCodaAI(tableId, rowId, content) {
 }
 ```
 
-### Step 7: Migration Pitfalls and How to Avoid Them
+Step 7: Migration Pitfalls and How to Avoid Them
 
-**AI formula columns recalculate on every edit.** If your Coda table has a large number of rows and your AI formula references a frequently-edited column, you can burn through AI tokens quickly. Use the "Locked" formula mode in Coda to prevent recalculation after the initial generation, similar to a cache.
+AI formula columns recalculate on every edit. If your Coda table has a large number of rows and your AI formula references a frequently-edited column, you can burn through AI tokens quickly. Use the "Locked" formula mode in Coda to prevent recalculation after the initial generation, similar to a cache.
 
-**Rollup logic behaves differently in Coda.** Notion's rollup property aggregates values from related databases using simple operations (count, sum, average). Coda achieves the same with formulas like `Sum(Filter(Tasks, [Project] = [Project]).Hours)`. The expressiveness is higher in Coda, but you need to manually translate each rollup.
+Rollup logic behaves differently in Coda. Notion's rollup property aggregates values from related databases using simple operations (count, sum, average). Coda achieves the same with formulas like `Sum(Filter(Tasks, [Project] = [Project]).Hours)`. The expressiveness is higher in Coda, but you need to manually translate each rollup.
 
-**Notion's block structure doesn't map 1:1 to Coda text columns.** Rich text with nested blocks, callouts, and embeds in Notion simplifies to plain text when exported via the API. If your content relies heavily on Notion's block formatting, plan for a content cleanup pass after migration.
+Notion's block structure doesn't map 1:1 to Coda text columns. Rich text with nested blocks, callouts, and embeds in Notion simplifies to plain text when exported via the API. If your content relies heavily on Notion's block formatting, plan for a content cleanup pass after migration.
 
-**Test automations with a single row before enabling globally.** Coda automations that send Slack messages or emails can fire for every matching row when first enabled on an existing table. Create a test row, run the automation manually, verify the output, then enable it on the full dataset.
+Test automations with a single row before enabling globally. Coda automations that send Slack messages or emails can fire for every matching row when first enabled on an existing table. Create a test row, run the automation manually, verify the output, then enable it on the full dataset.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does a full Notion-to-Coda migration take?**
+How long does a full Notion-to-Coda migration take?
 For a single database with under 500 rows and straightforward automations, expect 4-8 hours of setup and testing. Complex workspaces with dozens of interrelated databases and custom integrations can take several days. The data export and import is fast; the time investment is in recreating and validating formula logic.
 
-**Can I run Notion and Coda in parallel during migration?**
+Can I run Notion and Coda in parallel during migration?
 Yes, and it is recommended. Keep Notion as the source of truth while you build and validate the Coda equivalent. Once the Coda setup passes all your acceptance tests, redirect your team's workflow. Avoid writing to both systems simultaneously, as sync conflicts are difficult to resolve.
 
-**Does Coda AI support Claude as well as GPT models?**
+Does Coda AI support Claude as well as GPT models?
 Coda's AI formula layer uses Coda's own AI infrastructure, which abstracts the underlying model. Check Coda's current documentation for the specific models available in your plan tier. For direct model selection, use the Coda API with an external AI call as shown in the advanced section above.
 
-## Related Articles
+Related Articles
 
 - [How to Transfer Notion AI Workflows to Claude Projects 2026](/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
 - [Notion AI Not Working as Expected Fix (2026)](/notion-ai-not-working-as-expected-fix-2026/)
 - [Notion AI vs ChatGPT for Content Creation Compared](/notion-ai-vs-chatgpt-for-content-creation-compared/)
 - [Notion AI vs Google Docs AI: Complete Writing Features](/notion-ai-writing-features-vs-google-docs-ai-compared/)
 - [How to Set Up Model Context Protocol with Local Database](/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

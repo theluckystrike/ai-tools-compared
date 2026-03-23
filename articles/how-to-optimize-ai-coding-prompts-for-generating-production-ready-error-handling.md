@@ -19,7 +19,7 @@ Generate production-ready error handling by explicitly requesting typed errors, 
 
 Error handling remains one of the most critical yet frequently neglected aspects of production software. When you delegate code generation to AI tools, getting strong error handling requires specific prompting strategies. This guide shows you how to craft prompts that produce production-ready error handling code across multiple programming languages and frameworks.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -29,13 +29,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: The Problem with Generic Error Handling Prompts
+Step 1: The Problem with Generic Error Handling Prompts
 
 Most developers ask AI tools for error handling using vague requests like "add error handling" or "handle exceptions properly." These prompts produce generic try-catch blocks that catch Exception without distinguishing between recoverable errors, programming bugs, and system failures.
 
 Production-grade error handling demands specificity. Your prompts must communicate the error categories your application encounters, the recovery strategies appropriate for each, logging requirements, and whether errors should propagate or be contained.
 
-### Step 2: Prompt Structure for Production Error Handling
+Step 2: Prompt Structure for Production Error Handling
 
 Effective error handling prompts contain five distinct components:
 
@@ -60,9 +60,9 @@ Handle three error categories:
 Include structured logging with request IDs, and use custom exception classes.
 ```
 
-### Step 3: Language-Specific Prompt Optimization
+Step 3: Language-Specific Prompt Optimization
 
-### Python FastAPI Applications
+Python FastAPI Applications
 
 For Python, specify exception class hierarchies and FastAPI's HTTPException usage. Include Pydantic validation requirements in your prompt:
 
@@ -99,7 +99,7 @@ class ErrorHandler:
         )
 ```
 
-### JavaScript/TypeScript Node.js Applications
+JavaScript/TypeScript Node.js Applications
 
 For TypeScript, emphasize type-safe error handling and proper typing for error objects:
 
@@ -153,7 +153,7 @@ const errorMiddleware = (
 };
 ```
 
-### Java Spring Boot Applications
+Java Spring Boot Applications
 
 For Spring Boot, specify exception handler annotations and proper HTTP status mapping:
 
@@ -164,9 +164,9 @@ DatabaseConnectionException (503), and generic exceptions (500).
 Include request tracking with MDC logging, and return RFC 7807 Problem Details.
 ```
 
-## Advanced Prompt Techniques
+Advanced Prompt Techniques
 
-### Retry and Circuit Breaker Patterns
+Retry and Circuit Breaker Patterns
 
 Production systems require more than basic error catching. Include retry logic and circuit breaker patterns in your prompts:
 
@@ -177,7 +177,7 @@ On circuit open, raise CircuitBreakerOpenError with retry-after header.
 On retry, use exponential backoff with jitter (base: 1s, max: 30s).
 ```
 
-### Asynchronous Error Handling
+Asynchronous Error Handling
 
 For async code, specify how errors propagate through event loops:
 
@@ -188,7 +188,7 @@ Collect all failures, log partial successes, and return a result object
 with { successful: [...], failed: [...], partial: boolean }.
 ```
 
-### Error Recovery Strategies
+Error Recovery Strategies
 
 Production error handling often includes recovery attempts:
 
@@ -200,7 +200,7 @@ Create a TypeScript function that attempts file processing with three strategies
 Log each strategy attempt with timing, and include metrics for strategy effectiveness.
 ```
 
-### Step 4: Test Your Error Handling Prompts
+Step 4: Test Your Error Handling Prompts
 
 Validate AI-generated error handling by prompting for test cases:
 
@@ -212,7 +212,7 @@ Generate Jest test cases for the error handling code above:
 4) Test that error responses include request ID for correlation
 ```
 
-### Step 5: Common Prompt Failures and Fixes
+Step 5: Common Prompt Failures and Fixes
 
 Problem: AI generates catch(Exception e) that hides bugs
 
@@ -230,44 +230,44 @@ Problem: Inconsistent error formats across endpoints
 
 Fix: Request a unified error response schema and global error handler
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to optimize ai coding prompts for generating production?**
+How long does it take to optimize ai coding prompts for generating production?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Best AI Tools for Writing Idiomatic Rust Error Handling](/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
 - [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
@@ -275,4 +275,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Writing Claude Md Files That Teach AI Your Project Specific](/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
 - [How to Optimize Your AI Coding Tool Configuration for Specif](/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

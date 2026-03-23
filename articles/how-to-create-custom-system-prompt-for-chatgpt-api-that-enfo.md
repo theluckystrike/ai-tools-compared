@@ -17,13 +17,13 @@ voice-checked: true
 
 Custom system prompts give you control over how the ChatGPT API behaves in your applications. When you need consistent code output that follows your team's coding standards, a well-crafted system prompt becomes essential. This guide shows you how to create effective system prompts that enforce coding standards across your AI-generated code.
 
-## Why System Prompts Matter for Code Generation
+Why System Prompts Matter for Code Generation
 
 The system prompt sets the foundation for every response the API produces. Unlike user messages that change with each request, the system prompt persists throughout the conversation and shapes the model's behavior globally. When your team requires consistent code formatting, specific naming conventions, or enforcement of best practices, the system prompt is where you define those requirements.
 
 Without explicit instructions, the model generates code based on its training data, which may not align with your organization's standards. A custom system prompt solves this by establishing clear expectations before any user code requests arrive.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -33,11 +33,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Build an Effective Coding Standards System Prompt
+Step 1: Build an Effective Coding Standards System Prompt
 
 An effective system prompt for enforcing coding standards contains several key components. Start with your language preferences, then specify formatting rules, and finally add any architectural constraints your team follows.
 
-### Structure Your Prompt Clearly
+Structure Your Prompt Clearly
 
 Organize your system prompt into distinct sections. This helps the model understand and follow each requirement:
 
@@ -75,7 +75,7 @@ DOCUMENTATION
 - Include usage examples for complex functions
 ```
 
-### Add Project-Specific Context
+Add Project-Specific Context
 
 Your system prompt should also reference your specific project requirements. Include information about your tech stack, testing requirements, and any framework-specific patterns:
 
@@ -88,7 +88,7 @@ PROJECT REQUIREMENTS
 - Follow the repository's commit message format
 ```
 
-### Step 2: Implementation Example
+Step 2: Implementation Example
 
 Here's how to use these prompts with the OpenAI API in Python:
 
@@ -132,7 +132,7 @@ def generate_code_with_standards(user_request: str) -> str:
 
 The `temperature` parameter set to 0.3 produces more consistent, predictable output. Higher values introduce randomness that may result in non-standard code patterns.
 
-### Step 3: Enforcing Standards Across Multiple Languages
+Step 3: Enforcing Standards Across Multiple Languages
 
 If your project spans multiple programming languages, create language-specific sections in your system prompt:
 
@@ -152,7 +152,7 @@ GO STANDARDS
 
 The model will switch between standards based on the language requested in the user's message.
 
-### Step 4: Test Your System Prompt
+Step 4: Test Your System Prompt
 
 After creating your system prompt, verify it works correctly. Generate code for several scenarios and check against your standards checklist:
 
@@ -182,7 +182,7 @@ function calculateTotal(items) {
 }
 ```
 
-### Step 5: Prompt Priority and Instruction Conflict Resolution
+Step 5: Prompt Priority and Instruction Conflict Resolution
 
 One challenge teams encounter is that the model sometimes prioritizes user-message instructions over system-prompt rules. A user might say "use var instead of const for this one" and the model complies, overriding your standard. You can mitigate this by adding an explicit override policy to your system prompt:
 
@@ -197,7 +197,7 @@ OVERRIDE POLICY
 
 This locks in your standards while still giving senior developers an escape hatch for legitimate exceptions.
 
-### Step 6: Use System Prompts for Code Review Integration
+Step 6: Use System Prompts for Code Review Integration
 
 Beyond code generation, system prompts work well for automated code review workflows. Structure the prompt to act as a reviewer rather than a generator:
 
@@ -233,25 +233,25 @@ def review_code(code_snippet: str) -> str:
 
 Setting `temperature` to 0.1 for review tasks produces highly deterministic output, which is what you want when catching rule violations consistently across the team.
 
-### Step 7: Handling Context Length and Prompt Efficiency
+Step 7: Handling Context Length and Prompt Efficiency
 
 Long system prompts consume tokens on every API call, which adds up at scale. A 500-token system prompt on a high-traffic endpoint can represent meaningful cost overhead over millions of requests. Balance completeness against efficiency:
 
-- **Essentials first**: Put your most important rules at the top. The model weighs early instructions more heavily.
-- **Remove redundancy**: "Always use const; never use let or var" is more efficient than three separate bullet points saying the same thing.
-- **Use references sparingly**: Linking to external style guides in your prompt does not help — the model cannot access URLs. Inline the actual rules instead.
-- **Compress examples**: One well-chosen correct/incorrect pair is usually more effective than five mediocre examples.
+- Essentials first: Put your most important rules at the top. The model weighs early instructions more heavily.
+- Remove redundancy: "Always use const; never use let or var" is more efficient than three separate bullet points saying the same thing.
+- Use references sparingly: Linking to external style guides in your prompt does not help. the model cannot access URLs. Inline the actual rules instead.
+- Compress examples: One well-chosen correct/incorrect pair is usually more effective than five mediocre examples.
 
 A practical target for most teams is 300–500 tokens for the system prompt. Measure token usage with OpenAI's tokenizer tool or the `tiktoken` library before deploying at scale.
 
-### Step 8: Maintaining Consistency Over Time
+Step 8: Maintaining Consistency Over Time
 
 Your coding standards evolve, and your system prompt should too. Keep your prompt in version control alongside your code. When standards change, update the prompt and regenerate any affected code to maintain consistency.
 
 Consider creating a shared prompt template that team members can import:
 
 ```python
-# prompts/coding_standards.py
+prompts/coding_standards.py
 
 def get_coding_standards_prompt() -> str:
     return """You are a code generation assistant..."""
@@ -259,44 +259,44 @@ def get_coding_standards_prompt() -> str:
 
 This approach ensures everyone uses the same prompt version and makes updates straightforward. Pair the prompt file with a changelog comment at the top documenting what changed and when, so the team always knows the rationale behind each version.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to create custom system prompt for chatgpt api that?**
+How long does it take to create custom system prompt for chatgpt api that?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Create Custom System Prompts for AI That Match Your](/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
 - [How to Migrate ChatGPT System Prompts](/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
@@ -304,4 +304,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Write ChatGPT Custom Instructions](/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
 - [How to Create Reusable Prompt Templates for Common AI Coding](/how-to-create-reusable-prompt-templates-for-common-ai-coding/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

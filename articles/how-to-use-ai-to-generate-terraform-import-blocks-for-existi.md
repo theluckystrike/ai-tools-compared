@@ -16,11 +16,11 @@ voice-checked: true
 
 {% raw %}
 
-When managing infrastructure at scale, you often encounter a common challenge: existing cloud resources that were created manually or through other means need to be brought under Terraform management. The traditional approach requires manually writing import blocks—a tedious process that involves looking up resource IDs, identifying the correct import syntax, and ensuring the generated Terraform code matches the existing configuration. This is where AI coding assistants can significantly accelerate your workflow.
+When managing infrastructure at scale, you often encounter a common challenge: existing cloud resources that were created manually or through other means need to be brought under Terraform management. The traditional approach requires manually writing import blocks, a tedious process that involves looking up resource IDs, identifying the correct import syntax, and ensuring the generated Terraform code matches the existing configuration. This is where AI coding assistants can significantly accelerate your workflow.
 
 This guide shows you how to use AI tools to generate Terraform import blocks for existing resources, reducing hours of manual work to minutes.
 
-## Table of Contents
+Table of Contents
 
 - [Why Import Blocks Matter in Terraform](#why-import-blocks-matter-in-terraform)
 - [Which AI Tools Work Best for Terraform Import Blocks](#which-ai-tools-work-best-for-terraform-import-blocks)
@@ -31,17 +31,17 @@ This guide shows you how to use AI tools to generate Terraform import blocks for
 - [Limitations to Understand](#limitations-to-understand)
 - [Best Practices for AI-Assisted Imports](#best-practices-for-ai-assisted-imports)
 
-## Why Import Blocks Matter in Terraform
+Why Import Blocks Matter in Terraform
 
 Terraform import blocks allow you to bring existing infrastructure under Terraform's control without destroying and recreating resources. This is essential for:
 
-- **Migrating legacy infrastructure** to Infrastructure as Code
+- Migrating legacy infrastructure to Infrastructure as Code
 
-- **Recovering state** from accidentally deleted Terraform state files
+- Recovering state from accidentally deleted Terraform state files
 
-- **Managing resources** created through console, CLI, or other IaC tools
+- Managing resources created through console, CLI, or other IaC tools
 
-- **Onboarding projects** where resources predate your Terraform implementation
+- Onboarding projects where resources predate your Terraform implementation
 
 The import block syntax in Terraform looks like this:
 
@@ -54,32 +54,30 @@ import {
 
 For each resource you need to import, you must know the resource type, the target resource address, and the unique identifier from your cloud provider. When managing hundreds of resources across multiple accounts, this becomes overwhelming quickly.
 
-## Which AI Tools Work Best for Terraform Import Blocks
+Which AI Tools Work Best for Terraform Import Blocks
 
 Several AI coding assistants handle Terraform generation well, each with different strengths:
 
-- **Claude (claude-opus-4 / claude-sonnet-4)**: Excels at understanding complex HCL relationships and generating accurate resource configurations. Strong at multi-resource dependency chains.
-- **GitHub Copilot**: Useful inline as you type import blocks in your editor; suggests resource types based on open files.
-- **ChatGPT GPT-4o**: Good for interactive iteration where you refine requirements across multiple turns.
-- **Amazon Q Developer**: Purpose-built for AWS resources, with native knowledge of AWS resource identifiers and provider quirks.
+- Claude (claude-opus-4 / claude-sonnet-4): Excels at understanding complex HCL relationships and generating accurate resource configurations. Strong at multi-resource dependency chains.
+- GitHub Copilot: Useful inline as you type import blocks in your editor; suggests resource types based on open files.
+- ChatGPT GPT-4o: Good for interactive iteration where you refine requirements across multiple turns.
+- Amazon Q Developer: Purpose-built for AWS resources, with native knowledge of AWS resource identifiers and provider quirks.
 
 For bulk Terraform import generation, Claude and Amazon Q tend to produce the fewest errors because they have deeper infrastructure-specific training. For quick one-off imports while already in VS Code, Copilot's in-editor context wins on convenience.
 
-## Using AI to Generate Import Blocks
+Using AI to Generate Import Blocks
 
-AI assistants can help in several ways: identifying what resources exist in your cloud environment, determining the correct resource types, and generating the appropriate import blocks. Here's how to approach this effectively.
-
-### Step 1: Gather Your Resource Information
+AI assistants can help in several ways: identifying what resources exist in your cloud environment, determining the correct resource types, and generating the appropriate import blocks. Gather Your Resource Information
 
 Before asking AI for help, collect basic information about the resources you want to import:
 
-- **Cloud provider** (AWS, Azure, GCP, etc.)
+- Cloud provider (AWS, Azure, GCP, etc.)
 
-- **Resource types** you know exist (EC2 instances, S3 buckets, etc.)
+- Resource types you know exist (EC2 instances, S3 buckets, etc.)
 
-- **Output from `terraform state pull`** if you have any existing state
+- Output from `terraform state pull` if you have any existing state
 
-- **Cloud provider CLI output** listing resources
+- Cloud provider CLI output listing resources
 
 For AWS, you might run:
 
@@ -98,7 +96,7 @@ gcloud sql instances list --format="value(name)"
 
 Provide this information to your AI assistant as context.
 
-### Step 2: Craft an Effective Prompt
+Step 2: Craft an Effective Prompt
 
 The quality of AI-generated import blocks depends heavily on how you frame your request. Here's an effective prompt structure:
 
@@ -116,7 +114,7 @@ The quality of AI-generated import blocks depends heavily on how you frame your 
 
 > Format the output as complete Terraform code that can be applied directly."
 
-### Step 3: Review AI-Generated Code Carefully
+Step 3: Review AI-Generated Code Carefully
 
 AI generates correct import blocks most of the time, but you must verify the output. Check these common issues:
 
@@ -148,7 +146,7 @@ provider "aws" {
 }
 ```
 
-### Practical Example: Importing an AWS VPC
+Practical Example: Importing an AWS VPC
 
 Suppose you have an existing VPC with ID `vpc-0a1b2c3d4e5f6g7h8` that you need to manage with Terraform. Here's how to work with AI to generate the import:
 
@@ -182,7 +180,7 @@ resource "aws_vpc" "main" {
 
 After generating this code, run `terraform plan` to verify Terraform can read the existing VPC and reconcile any differences between your configuration and the actual state.
 
-## Advanced AI Strategies for Bulk Imports
+Advanced AI Strategies for Bulk Imports
 
 When dealing with dozens or hundreds of resources, adjust your approach:
 
@@ -203,7 +201,7 @@ import {
 
 Cross-reference documentation: When AI generates import blocks for unfamiliar resource types, ask it to include comments referencing the official Terraform provider documentation.
 
-## Automating Resource Discovery Before Prompting
+Automating Resource Discovery Before Prompting
 
 Instead of manually running CLI commands, automate resource discovery with a script that feeds directly into your AI prompt:
 
@@ -240,12 +238,12 @@ print(json.dumps(resources, indent=2))
 
 Feed this output directly into your AI prompt. With resource names already in JSON format, Claude or ChatGPT can generate properly named Terraform resources with meaningful identifiers rather than generic `example` labels.
 
-## Validating AI Output with terraform plan
+Validating AI Output with terraform plan
 
 Never apply AI-generated import blocks without running `terraform plan -generate-config-out=generated.tf` first. This Terraform 1.5+ feature generates resource configurations automatically based on what the provider discovers:
 
 ```bash
-# Write the import block to a file
+Write the import block to a file
 cat > imports.tf << 'EOF'
 import {
   to = aws_vpc.main
@@ -253,17 +251,17 @@ import {
 }
 EOF
 
-# Let Terraform generate the matching resource config
+Let Terraform generate the matching resource config
 terraform plan -generate-config-out=generated.tf
 
-# Review the generated file before applying
+Review the generated file before applying
 cat generated.tf
 terraform apply
 ```
 
 This approach combines AI-generated import blocks with Terraform's native config generation, giving you a double-verification pass. The AI handles the import block structure; Terraform fills in the exact resource attributes from your live infrastructure.
 
-## Limitations to Understand
+Limitations to Understand
 
 AI tools have boundaries you should recognize:
 
@@ -277,43 +275,43 @@ AI tools have boundaries you should recognize:
 
 - Provider version mismatches: AI trained before a provider major version bump may generate outdated resource argument names
 
-## Best Practices for AI-Assisted Imports
+Best Practices for AI-Assisted Imports
 
-1. **Always run `terraform plan` before applying** import blocks to verify what will change
+1. Always run `terraform plan` before applying import blocks to verify what will change
 
-2. **Use separate import files** per resource type or environment for organization
+2. Use separate import files per resource type or environment for organization
 
-3. **Add meaningful tags** to imported resources for better management
+3. Add meaningful tags to imported resources for better management
 
-4. **Version your provider** explicitly to avoid unexpected behavior changes
+4. Version your provider explicitly to avoid unexpected behavior changes
 
-5. **Backup your state** before running imports on production resources
+5. Backup your state before running imports on production resources
 
-6. **Iterate with the AI** — if the first output has errors, paste the error message back and ask for a correction
+6. Iterate with the AI. if the first output has errors, paste the error message back and ask for a correction
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use ai to generate terraform import blocks?**
+How long does it take to use ai to generate terraform import blocks?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Use AI to Resolve Python Import Circular Dependency E](/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
 - [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
@@ -321,5 +319,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
 - [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

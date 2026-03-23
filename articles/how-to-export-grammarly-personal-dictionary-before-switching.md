@@ -17,7 +17,7 @@ voice-checked: true
 
 Export your Grammarly personal dictionary by locating the local SQLite database on Windows (`%APPDATA%\Grammarly\GrammarlyAppData\userdictionary\`) or macOS (`~/Library/Application Support/Grammarly/`), then extracting the word list with a Python script or SQLite viewer. For browser extension users, pull dictionary data from Local Storage via Developer Tools. Once exported, you can import your custom words into Claude, VS Code, Neovim, or any other tool that supports custom dictionaries.
 
-## Why Your Personal Dictionary Matters
+Why Your Personal Dictionary Matters
 
 Your Grammarly personal dictionary contains words that the tool has learned to recognize as correct in your writing context. These might include:
 
@@ -33,7 +33,7 @@ Your Grammarly personal dictionary contains words that the tool has learned to r
 
 When you stop using Grammarly, all these custom entries vanish unless you export them first. The good news is that Grammarly does provide ways to access your dictionary data, though the methods require some technical steps.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -43,11 +43,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Method 1: Export via Grammarly Desktop Application
+Step 1: Method 1: Export via Grammarly Desktop Application
 
 The Grammarly desktop application for Windows and macOS stores your personal dictionary locally. Here is how to find and export it.
 
-### On Windows
+On Windows
 
 Your personal dictionary is stored in a SQLite database. Navigate to:
 
@@ -96,7 +96,7 @@ else:
     print(f"Dictionary database not found at: {db_path}")
 ```
 
-### On macOS
+On macOS
 
 The database location differs on macOS:
 
@@ -114,11 +114,11 @@ db_path = os.path.expanduser(
 )
 ```
 
-### Step 2: Method 2: Browser Extension Dictionary Export
+Step 2: Method 2: Browser Extension Dictionary Export
 
 If you primarily use the Grammarly browser extension, your dictionary syncs to Grammarly's servers. You can access it through the web application or by inspecting browser storage.
 
-### Using Browser Developer Tools
+Using Browser Developer Tools
 
 Open the browser where you have Grammarly installed, then:
 
@@ -152,11 +152,11 @@ dictionaryKeys.forEach(key => {
 });
 ```
 
-### Step 3: Method 3: Manual Word List Recovery
+Step 3: Method 3: Manual Word List Recovery
 
 If other methods fail, you can rebuild your dictionary systematically. This takes more time but works reliably.
 
-### Track Words from Your Writing
+Track Words from Your Writing
 
 Create a script that extracts unique words from your documents and identify which ones you added to Grammarly:
 
@@ -183,7 +183,7 @@ def extract_words_from_directory(directory, extensions=['.md', '.txt', '.py', '.
 
     return word_counts
 
-# Usage
+Usage
 word_counts = extract_words_from_directory('./my-writing-projects')
 print(f"Found {len(word_counts)} unique words")
 print("\nMost common words (likely in your dictionary):")
@@ -193,33 +193,33 @@ for word, count in word_counts.most_common(50):
 
 This gives you a list of frequently used words, making it easier to remember which ones you added to Grammarly.
 
-### Step 4: Importing Words Into Claude and Other Tools
+Step 4: Importing Words Into Claude and Other Tools
 
 Once you have your exported word list, you can import it into your new AI assistant or text editor.
 
-### For Claude (via Claude Code)
+For Claude (via Claude Code)
 
 Create a custom words file that Claude can reference. Add entries to your project configuration:
 
 ```bash
-# Create a .claude-words file in your project
+Create a .claude-words file in your project
 cat > .claude-custom-words << 'EOF'
-# Custom words and terms for Claude to recognize
-# Add your Grammarly personal dictionary words here
+Custom words and terms for Claude to recognize
+Add your Grammarly personal dictionary words here
 
-# Technical terms
-# AcmeCorp
-# APIGateway
-# Auth0
-# CI/CD
-# PostgreSQL
+Technical terms
+AcmeCorp
+APIGateway
+Auth0
+CI/CD
+PostgreSQL
 
-# Project-specific terms
-# [Add your custom terms here]
+Project-specific terms
+[Add your custom terms here]
 EOF
 ```
 
-### For VS Code with Spell Checker
+For VS Code with Spell Checker
 
 If you use VS Code with a spell-checking extension, import your words:
 
@@ -237,7 +237,7 @@ If you use VS Code with a spell-checking extension, import your words:
 }
 ```
 
-### For Text Editors (Neovim, Emacs)
+For Text Editors (Neovim, Emacs)
 
 Add to your spell checker configuration:
 
@@ -260,17 +260,17 @@ CI/CD
 PostgreSQL
 ```
 
-### Step 5: What the Grammarly Dictionary Actually Stores
+Step 5: What the Grammarly Dictionary Actually Stores
 
 Before exporting, it helps to know exactly what Grammarly saves. The personal dictionary typically contains two categories of entries:
 
-**Accepted words** — terms you marked as "correct" when Grammarly flagged them. These include product names like `Kubernetes`, `Terraform`, or `PostgreSQL`, acronyms like `IAM`, `RBAC`, or `SLA`, and non-standard spellings you intentionally use. Every time you clicked "Add to dictionary," Grammarly stored the word in this table.
+Accepted words. terms you marked as "correct" when Grammarly flagged them. These include product names like `Kubernetes`, `Terraform`, or `PostgreSQL`, acronyms like `IAM`, `RBAC`, or `SLA`, and non-standard spellings you intentionally use. Every time you clicked "Add to dictionary," Grammarly stored the word in this table.
 
-**Ignored patterns** — some versions of Grammarly also store patterns or phrases you have suppressed from suggestions. These may not appear in the same SQLite table as accepted words. Check all tables when running the extraction script.
+Ignored patterns. some versions of Grammarly also store patterns or phrases you have suppressed from suggestions. These may not appear in the same SQLite table as accepted words. Check all tables when running the extraction script.
 
 The most common table names are `user_dictionary`, `personal_words`, and `dictionary_entries`. Run `SELECT name FROM sqlite_master WHERE type='table';` before querying to see what your installation contains.
 
-### Step 6: Cross-Platform Word List Consolidation
+Step 6: Cross-Platform Word List Consolidation
 
 If you use Grammarly on both Windows and macOS (or on a work machine and a personal machine), you likely have two separate local databases with overlapping but different word sets. Merge them before importing into your new tool:
 
@@ -299,7 +299,7 @@ def extract_words_from_db(db_path):
     conn.close()
     return words
 
-# Merge from multiple machines
+Merge from multiple machines
 windows_db = "/path/to/windows/userdictionary.db"
 mac_db = os.path.expanduser(
     "~/Library/Application Support/Grammarly/GrammarlyAppData/userdictionary/userdictionary.db"
@@ -307,7 +307,7 @@ mac_db = os.path.expanduser(
 
 all_words = extract_words_from_db(windows_db) | extract_words_from_db(mac_db)
 
-# Write merged list
+Write merged list
 with open("merged-dictionary.txt", "w") as f:
     for word in sorted(all_words):
         f.write(word + "\n")
@@ -317,12 +317,12 @@ print(f"Merged {len(all_words)} unique words")
 
 This produces a single `merged-dictionary.txt` that you can import into any target tool.
 
-### Step 7: Importing Into LanguageTool (Self-Hosted)
+Step 7: Importing Into LanguageTool (Self-Hosted)
 
 LanguageTool is a popular Grammarly alternative that can run self-hosted. Its personal dictionary is a plain text file with one word per line, stored at `~/.languagetool/personalDictionary.txt` on Linux and macOS.
 
 ```bash
-# Copy your exported word list directly
+Copy your exported word list directly
 cp merged-dictionary.txt ~/.languagetool/personalDictionary.txt
 ```
 
@@ -337,30 +337,30 @@ If you use the LanguageTool VS Code extension, the custom words list is configur
 
 For large dictionaries, use the import script above to generate the JSON array automatically and paste the output into `settings.json` under `languageToolLint.dictionary`.
 
-### Step 8: Validating the Export
+Step 8: Validating the Export
 
 After exporting and importing, validate that your most critical terms are present. Create a quick test file with the technical words that matter most to your workflow, then run your new spell checker against it. Any flagged terms that should have been imported need to be added manually.
 
 ```bash
-# Count words in export to verify completeness
+Count words in export to verify completeness
 wc -l merged-dictionary.txt
 ```
 
 A complete export typically contains between 50 and 500 words for an active developer. If your export shows fewer than 20 words and you have used Grammarly for years, the database path may be wrong or the account may have used cloud sync rather than local storage.
 
-### Step 9: Automate the Export Process
+Step 9: Automate the Export Process
 
 For ongoing use, consider a script that backs up your dictionary regularly:
 
 ```bash
 #!/bin/bash
-# backup-grammarly-dictionary.sh
+backup-grammarly-dictionary.sh
 
 DATE=$(date +%Y-%m-%d)
 DEST_DIR="$HOME/Documents/dictionary-backups"
 mkdir -p "$DEST_DIR"
 
-# Copy from common locations
+Copy from common locations
 if [ -d "$APPDATA/Grammarly/GrammarlyAppData/userdictionary" ]; then
     cp -r "$APPDATA/Grammarly/GrammarlyAppData/userdictionary" "$DEST_DIR/grammarly-$DATE"
     echo "Backed up Windows Grammarly dictionary"
@@ -376,44 +376,44 @@ echo "Backup complete: $DEST_DIR"
 
 Run this weekly or monthly to keep your dictionary safe.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to export grammarly personal dictionary before switching?**
+How long does it take to export grammarly personal dictionary before switching?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Switching from Grammarly to ChatGPT for Editing Workflow Mig](/switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/)
 - [Export Perplexity Collections Before Switching to ChatGPT Se](/export-perplexity-collections-before-switching-to-chatgpt-se/)
@@ -421,6 +421,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Grammarly AI Not Working in Browser Fix (2026)](/grammarly-ai-not-working-in-browser-fix-2026/)
 - [Grammarly Business vs ChatGPT Team for Enterprises](/grammarly-business-vs-chatgpt-team-for-enterprises/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```

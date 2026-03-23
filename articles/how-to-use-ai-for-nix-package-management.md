@@ -15,11 +15,11 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-# How to Use AI for Nix Package Management
+How to Use AI for Nix Package Management
 
-Nix has one of the steepest learning curves in developer tooling. The language is purely functional, error messages are cryptic, and the ecosystem has diverged between legacy channels and Flakes. AI tools can significantly reduce the time to get working derivations — if you prompt them correctly.
+Nix has one of the steepest learning curves in developer tooling. The language is purely functional, error messages are cryptic, and the ecosystem has diverged between legacy channels and Flakes. AI tools can significantly reduce the time to get working derivations. if you prompt them correctly.
 
-## Setting Context: Flakes vs Legacy
+Setting Context: Flakes vs Legacy
 
 Start every Nix session by specifying your environment:
 
@@ -31,9 +31,9 @@ Assume nix-darwin for macOS or NixOS modules where relevant.
 
 This prevents Claude from generating pre-flake patterns like `import <nixpkgs> {}` which don't work in flake contexts.
 
-## Writing a Derivation with stdenv
+Writing a Derivation with stdenv
 
-**Prompt:**
+Prompt:
 ```text
 Write a Nix derivation for a Rust CLI tool. Source is a GitHub tarball at
 github.com/example/mytool, version 0.4.2, SHA256 = abc123.
@@ -41,7 +41,7 @@ The tool uses cargo build --release. It needs openssl as a build dep.
 The binary should be installed to $out/bin/mytool.
 ```
 
-**Claude output:**
+Claude output:
 
 ```nix
 { lib
@@ -79,11 +79,11 @@ rustPlatform.buildRustPackage rec {
 
 Claude correctly uses `rustPlatform.buildRustPackage` instead of raw `stdenv.mkDerivation` for Rust projects. It separates `nativeBuildInputs` (build-time) from `buildInputs` (runtime), which is important for cross-compilation.
 
-One thing to correct: the `cargoHash` needs to be computed. Tell Claude: "The cargoHash is unknown — set it to the empty hash so Nix prints the correct one." Claude will then produce `cargoHash = lib.fakeHash;`, which triggers Nix to print the real hash on first build.
+One thing to correct: the `cargoHash` needs to be computed. Tell Claude: "The cargoHash is unknown. set it to the empty hash so Nix prints the correct one." Claude will then produce `cargoHash = lib.fakeHash;`, which triggers Nix to print the real hash on first build.
 
-## Flake devShell
+Flake devShell
 
-**Prompt:**
+Prompt:
 ```text
 Write a flake.nix with a devShell for a Python 3.12 project. Include:
 - python with packages: fastapi, uvicorn, sqlalchemy, alembic, pytest
@@ -92,7 +92,7 @@ Write a flake.nix with a devShell for a Python 3.12 project. Include:
 - shellHook that prints "Dev environment ready"
 ```
 
-**Claude output:**
+Claude output:
 
 ```nix
 {
@@ -149,11 +149,11 @@ Write a flake.nix with a devShell for a Python 3.12 project. Include:
 
 This is a production-quality flake. The `shellHook` handles PostgreSQL initialization and auto-start, sets `PGDATA` to the project directory so it doesn't conflict with system Postgres, and uses `postgresql_16` from nixpkgs directly.
 
-## NixOS Module Configuration
+NixOS Module Configuration
 
 For system-level config, Claude handles NixOS module syntax well:
 
-**Prompt:**
+Prompt:
 ```text
 Write a NixOS module that configures a systemd service running a Node.js app.
 The app is at /srv/myapp, runs with node server.js, needs PORT=3000 env var,
@@ -222,15 +222,15 @@ in {
 }
 ```
 
-Claude adds systemd hardening options (`NoNewPrivileges`, `ProtectSystem`) and the `ReadWritePaths` override — details that most generated configs miss.
+Claude adds systemd hardening options (`NoNewPrivileges`, `ProtectSystem`) and the `ReadWritePaths` override. details that most generated configs miss.
 
-## Debugging Nix Build Failures with AI
+Debugging Nix Build Failures with AI
 
 When a derivation fails, paste the full error into Claude with context about your nixpkgs version. Common failure patterns Claude diagnoses well:
 
-**Missing build inputs:** Nix errors like `error: cannot find -lssl` mean the library isn't in `buildInputs`. Claude identifies the package name (`pkgs.openssl`) and the correct input list.
+Missing build inputs: Nix errors like `error: cannot find -lssl` mean the library isn't in `buildInputs`. Claude identifies the package name (`pkgs.openssl`) and the correct input list.
 
-**Phase override issues:** If a project has a non-standard build system, Claude writes the correct `buildPhase` and `installPhase` overrides:
+Phase override issues: If a project has a non-standard build system, Claude writes the correct `buildPhase` and `installPhase` overrides:
 
 ```nix
 buildPhase = ''
@@ -242,16 +242,16 @@ installPhase = ''
 '';
 ```
 
-**Impure fetches:** Any network access during build fails in the Nix sandbox. Claude suggests converting `fetchurl` with hash mismatches and flags when a derivation tries to access the network at build time.
+Impure fetches: Any network access during build fails in the Nix sandbox. Claude suggests converting `fetchurl` with hash mismatches and flags when a derivation tries to access the network at build time.
 
-**String interpolation in paths:** A common mistake is writing `"${pkgs.nodejs}/bin"` where Nix expects a derivation reference. Claude catches these and uses proper store path interpolation patterns.
+String interpolation in paths: A common mistake is writing `"${pkgs.nodejs}/bin"` where Nix expects a derivation reference. Claude catches these and uses proper store path interpolation patterns.
 
-## Overlay Patterns for Customizing nixpkgs
+Overlay Patterns for Customizing nixpkgs
 
 For customizing nixpkgs packages without forking, overlays are the right tool:
 
 ```nix
-# In flake.nix outputs:
+In flake.nix outputs:
 nixpkgs.overlays = [
   (final: prev: {
     # Override a package version
@@ -273,16 +273,16 @@ nixpkgs.overlays = [
 
 Claude generates overlay syntax correctly. The key distinction: use `final` for packages that should resolve against the final overlaid set (enabling other overlays to see them), and `prev` for the original pre-overlay packages. Claude explains this when asked.
 
-## Where AI Struggles with Nix
+Where AI Struggles with Nix
 
-- **`cargoHash` and `vendorHash`** — always need to be determined via Nix's hash mismatch output; AI can't compute these
-- **Overlays** — Claude sometimes writes syntactically correct overlays that don't compose properly with other overlays
-- **NixOS module options types** — `types.attrs` is almost always wrong; ask Claude to use `types.attrsOf` with a submodule
-- **Cross-compilation** — `depsBuildBuild`, `depsBuildHost`, etc. are often mixed up
+- `cargoHash` and `vendorHash`. always need to be determined via Nix's hash mismatch output; AI can't compute these
+- Overlays. Claude sometimes writes syntactically correct overlays that don't compose properly with other overlays
+- NixOS module options types. `types.attrs` is almost always wrong; ask Claude to use `types.attrsOf` with a submodule
+- Cross-compilation. `depsBuildBuild`, `depsBuildHost`, etc. are often mixed up
 
-## Packaging a Node.js Application
+Packaging a Node.js Application
 
-**Prompt:**
+Prompt:
 ```text
 Write a Nix derivation for a Node.js application. Source is at github.com/example/myapp.
 The package.json is at the root. Build with npm ci && npm run build.
@@ -330,7 +330,7 @@ stdenv.mkDerivation rec {
 
 The key insight: `nativeBuildInputs` are tools used during build, `buildInputs` are runtime dependencies, and `propagatedBuildInputs` are propagated to packages that depend on this derivation.
 
-## Using nixpkgs-unstable vs Stable
+Using nixpkgs-unstable vs Stable
 
 For production, ask Claude to help you lock nixpkgs:
 
@@ -361,7 +361,7 @@ Claude produces:
 
 Run `nix flake lock` to create flake.lock, which pins exact commit hashes. This ensures reproducibility across team members.
 
-## Debugging Derivation Builds
+Debugging Derivation Builds
 
 When a derivation fails, ask Claude for debugging strategies:
 
@@ -377,7 +377,7 @@ Claude explains:
 - Add `set -x` to buildPhase to see command execution
 - Use `builtins.trace` for debugging Nix expressions
 
-## NixOS Configuration Management
+NixOS Configuration Management
 
 For full system configuration, ask Claude to generate NixOS modules:
 
@@ -433,7 +433,7 @@ in {
 
 This is a solid pattern for declarative system configuration.
 
-## Common Mistakes to Catch
+Common Mistakes to Catch
 
 When Claude generates Nix code, watch for:
 - Using `types.attrs` instead of `types.attrsOf types.str`
@@ -442,13 +442,13 @@ When Claude generates Nix code, watch for:
 - Hardcoding paths like `/usr/bin/python` instead of using `${pkgs.python3}/bin/python`
 - Not using `$out` for install phase output paths
 
-## Related Articles
+Related Articles
 
 - [Claude Code Semantic Versioning Automation: A Complete Guide](/claude-code-semantic-versioning-automation/)
 - [Best AI Tools for Writing Bazel BUILD Files 2026](/best-ai-tools-for-writing-bazel-build-files-2026/)
 - [AI Tools for Automated SSL Certificate Management](/ai-tools-for-automated-ssl-certificate-management-and-monito/)
 - [Effective Context Management Strategies for AI Coding](/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
 - [AI Policy Management Tools Enterprise Compliance](/ai-policy-management-tools-enterprise-compliance-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

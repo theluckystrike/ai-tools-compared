@@ -17,7 +17,7 @@ voice-checked: true
 
 AI-generated code requires specific review patterns that catch hallucinations, missing error handling, and subtle bugs before they reach production. This guide covers the checklist, code patterns, and questions that reveal whether AI output is actually production-ready or requires substantial rework.
 
-## Table of Contents
+Table of Contents
 
 - [Start with Understanding the Generated Code](#start-with-understanding-the-generated-code)
 - [AI Code Review Tool Comparison](#ai-code-review-tool-comparison)
@@ -32,7 +32,7 @@ AI-generated code requires specific review patterns that catch hallucinations, m
 - [Gradually Build Trust Through Experience](#gradually-build-trust-through-experience)
 - [Related Reading](#related-reading)
 
-## Start with Understanding the Generated Code
+Start with Understanding the Generated Code
 
 AI tools can produce code that looks correct but follows unexpected patterns or makes questionable assumptions. Always read through the code line-by-line before evaluating its functionality. Pay special attention to variable names, function purposes, and the overall logic flow.
 
@@ -48,7 +48,7 @@ def get_user_data(user_id, db_connection):
 
 The immediate red flag is the string interpolation in the SQL query. This code is vulnerable to SQL injection. Even though the AI produced functional-looking code, it contains a serious security flaw that requires correction.
 
-## AI Code Review Tool Comparison
+AI Code Review Tool Comparison
 
 Different tools assist the review process in different ways. Knowing which tool to reach for at each stage saves significant time:
 
@@ -63,7 +63,7 @@ Different tools assist the review process in different ways. Knowing which tool 
 
 Run at minimum a linter plus one security scanner on every AI-generated file before it enters code review.
 
-## Verify Security Implications
+Verify Security Implications
 
 Security review should be your first priority when examining AI-generated code. AI models sometimes produce code that works but ignores security best practices. Look for these common issues:
 
@@ -78,12 +78,12 @@ Security review should be your first priority when examining AI-generated code. 
 For example, when reviewing code that handles file operations:
 
 ```python
-# AI generated - needs review
+AI generated - needs review
 def read_config(filename):
     with open(filename, 'r') as f:
         return json.load(f)
 
-# Better version with security considerations
+Better version with security considerations
 def read_config(filename):
     # Validate filename to prevent path traversal
     safe_path = os.path.normpath(os.path.join(CONFIG_DIR, filename))
@@ -94,14 +94,14 @@ def read_config(filename):
         return json.load(f)
 ```
 
-## Run the Code Locally First
+Run the Code Locally First
 
 Never commit AI-generated code without running it in a local environment. Create a small test case that exercises the main functionality. This serves two purposes: it confirms the code actually works, and it helps you understand how the code behaves under different conditions.
 
 Set up a minimal test environment:
 
 ```bash
-# Create a test file to validate AI-generated code
+Create a test file to validate AI-generated code
 python -c "
 from your_module import your_function
 result = your_function(test_input)
@@ -112,7 +112,7 @@ print('Basic test passed')
 
 If the code involves database operations or external services, mock those dependencies rather than testing against production systems.
 
-## Compare Against Existing Codebase Patterns
+Compare Against Existing Codebase Patterns
 
 AI-generated code often looks different from your project's established style. Review whether the new code follows your team's conventions for:
 
@@ -126,7 +126,7 @@ AI-generated code often looks different from your project's established style. R
 
 If your codebase uses async/await consistently but the AI generated synchronous code, that's a signal to either adapt the code or discuss whether async is necessary for this particular function.
 
-## Check for Missing Edge Cases
+Check for Missing Edge Cases
 
 AI models frequently generate code that handles the happy path but fails on edge cases. Examine whether the code properly handles:
 
@@ -175,24 +175,24 @@ def process_order(order_id):
     send_notification(order.customer_email)
 ```
 
-## Use Linters and Type Checkers
+Use Linters and Type Checkers
 
 Run your project's linters and type checkers on AI-generated code. These tools catch common mistakes that might slip past manual review:
 
 ```bash
-# Run common Python linters
+Run common Python linters
 ruff check new_file.py
 mypy new_file.py
 pylint new_file.py
 
-# For JavaScript/TypeScript
+For JavaScript/TypeScript
 eslint new_file.js
 tsc --noEmit new_file.ts
 ```
 
 AI-generated code often triggers linting warnings about unused variables, missing type annotations, or style inconsistencies. Fix these issues before committing.
 
-## Write Tests for AI-Generated Functions
+Write Tests for AI-Generated Functions
 
 Treat AI-generated code with the same testing standards as manually written code. Create unit tests that cover:
 
@@ -221,25 +221,25 @@ def test_handles_empty_input():
     assert result['status'] == 'error'
 ```
 
-## Step-by-Step Review Workflow
+Step-by-Step Review Workflow
 
 This seven-step sequence gives your team a repeatable process for every AI-generated file:
 
-**Step 1 — First read, no execution.** Read the entire file from top to bottom. Understand what the code intends to do. Flag anything that looks unfamiliar, unexpectedly clever, or out of place with a comment.
+Step 1. First read, no execution. Read the entire file from top to bottom. Understand what the code intends to do. Flag anything that looks unfamiliar, unexpectedly clever, or out of place with a comment.
 
-**Step 2 — Security scan.** Run Snyk or Semgrep before touching anything else. Address critical and high findings before proceeding. Never defer security fixes to a follow-up ticket.
+Step 2. Security scan. Run Snyk or Semgrep before touching anything else. Address critical and high findings before proceeding. Never defer security fixes to a follow-up ticket.
 
-**Step 3 — Static analysis.** Run your linter and type checker. Fix all warnings, not just errors. AI-generated code frequently has unused imports and shadowed variables that create maintenance debt.
+Step 3. Static analysis. Run your linter and type checker. Fix all warnings, not just errors. AI-generated code frequently has unused imports and shadowed variables that create maintenance debt.
 
-**Step 4 — Local execution.** Run the code in an isolated environment. Use mocks for external dependencies. Confirm that the happy path produces expected output.
+Step 4. Local execution. Run the code in an isolated environment. Use mocks for external dependencies. Confirm that the happy path produces expected output.
 
-**Step 5 — Edge case testing.** Manually test at least three edge cases beyond the happy path: empty input, maximum input size, and one invalid input type. If the code fails any of these, revise before writing formal tests.
+Step 5. Edge case testing. Manually test at least three edge cases beyond the happy path: empty input, maximum input size, and one invalid input type. If the code fails any of these, revise before writing formal tests.
 
-**Step 6 — Write unit tests.** Cover the happy path, the edge cases you just tested, and at minimum one error condition. Aim for 80% branch coverage on AI-generated functions.
+Step 6. Write unit tests. Cover the happy path, the edge cases you just tested, and at minimum one error condition. Aim for 80% branch coverage on AI-generated functions.
 
-**Step 7 — Code review submission.** Submit the PR with a note indicating the code was AI-assisted. This signals reviewers to apply appropriate scrutiny and prevents false assumptions about how deeply the author tested it.
+Step 7. Code review submission. Submit the PR with a note indicating the code was AI-assisted. This signals reviewers to apply appropriate scrutiny and prevents false assumptions about how deeply the author tested it.
 
-## Document Your Review Process
+Document Your Review Process
 
 Maintain a checklist of items your team reviews for all AI-generated code:
 
@@ -259,31 +259,31 @@ Maintain a checklist of items your team reviews for all AI-generated code:
 
 This ensures consistent quality regardless of which team member reviewed the code or which AI tool generated it.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Q: How do I tell my team which parts of a PR are AI-generated?**
+Q: How do I tell my team which parts of a PR are AI-generated?
 Add a comment at the top of AI-generated files or functions noting the tool used and the prompt that produced the code. This context helps reviewers calibrate their scrutiny and makes it easier to regenerate or modify the code later.
 
-**Q: Should AI-generated code require more reviewers?**
+Q: Should AI-generated code require more reviewers?
 Not necessarily more reviewers, but more methodical reviewers. One experienced engineer applying the full checklist above is more valuable than two reviewers doing a quick scan.
 
-**Q: Do AI tools like CodeRabbit replace manual review?**
-No. Automated tools catch a class of deterministic issues—syntax errors, known vulnerability patterns, style violations—but miss business logic errors, misunderstood requirements, and subtle race conditions that require understanding the broader system.
+Q: Do AI tools like CodeRabbit replace manual review?
+No. Automated tools catch a class of deterministic issues, syntax errors, known vulnerability patterns, style violations, but miss business logic errors, misunderstood requirements, and subtle race conditions that require understanding the broader system.
 
-**Q: How do I handle AI-generated code that uses deprecated APIs?**
+Q: How do I handle AI-generated code that uses deprecated APIs?
 Flag deprecated API usage during the static analysis step. Ask the AI to regenerate the relevant function using the current API, then re-run the full review cycle on the updated code.
 
-## Gradually Build Trust Through Experience
+Gradually Build Trust Through Experience
 
 As you review more AI-generated code, you'll notice patterns in what each tool does well and where it struggles. Some AI assistants excel at boilerplate code but struggle with complex business logic. Others generate elegant algorithms but miss security considerations. Use this knowledge to focus your review efforts on the areas where each tool needs the most oversight.
 
 Over time, your team can create specific guidelines for working with your preferred AI coding assistant, reducing review time while maintaining code quality.
 
-## Related Articles
+Related Articles
 
 - [AI Code Review Automation Tools Comparison 2026](/ai-code-review-automation-tools-comparison/)
 - [Best AI Tool for Software Engineers Code Review 2026](/best-ai-tool-for-software-engineers-code-review-2026/)
 - [Claude Code vs ChatGPT Code Interpreter Comparison](/claude-code-vs-chatgpt-code-interpreter-comparison/)
 - [Best Prompting Strategies for Getting Accurate Code From AI](/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
 - [How to Use AI Codebase Search to Find Relevant Code Before](/how-to-use-ai-codebase-search-to-find-relevant-code-before-g/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

@@ -8,13 +8,13 @@ voice-checked: true
 date: 2026-03-21
 ---
 
-# AI IDE & Editor Extensions — VS Code, JetBrains, Vim & Neovim
+# AI IDE & Editor Extensions. VS Code, JetBrains, Vim & Neovim
 
 Your choice of IDE shapes how you interact with AI coding assistants. VS Code, JetBrains IntelliJ, Vim, and Neovim each offer different AI extension ecosystems with varying levels of integration. This hub covers autocomplete behavior differences between editors, keybinding migration guides when switching tools, and setup instructions for getting the most out of AI features in your preferred development environment. From Copilot in Neovim to Cursor AI editor themes, find the right configuration for your workflow.
 
 ---
 
-## Articles in This Topic (120)
+Articles in This Topic (120)
 
 - [AI Audit Trail and Evidence Collection Tools](/ai-audit-trail-and-evidence-collection-tools-2026/)
 - [AI Autocomplete Accuracy Comparison: Copilot vs Codeium Vs](/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
@@ -133,6 +133,6 @@ Your choice of IDE shapes how you interact with AI coding assistants. VS Code, J
 - [Sora vs Runway AI Video Generation: A Technical](/sora-vs-runway-ai-video-generation/)
 - [Steve AI vs Raw Shorts: AI Video Creation Comparison for](/steve-ai-vs-raw-shorts-ai-video/)
 - [Switching from Copilot to Codeium What Extensions to Install](/switching-from-copilot-to-codeium-what-extensions-to-install/)
-- [Synthesia vs HeyGen AI Avatar Videos — A Developer](/synthesia-vs-heygen-ai-avatar-videos/)
+- [Synthesia vs HeyGen AI Avatar Videos. A Developer](/synthesia-vs-heygen-ai-avatar-videos/)
 - [What Code Snippets Get Logged in AI Coding Tool Provider Aud](/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
 - [aider vs Claude Code: Terminal AI Coding Assistants Compared](/aider-vs-claude-code-terminal-ai-comparison/)

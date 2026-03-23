@@ -16,11 +16,11 @@ voice-checked: true
 
 {% raw %}
 
-Product managers spend hours manually reviewing customer interview transcripts, searching for patterns that could inform product decisions. This manual process doesn't scale—teams conducting dozens of interviews monthly end up with thousands of unanalyzed minutes. Automating transcript analysis using AI tools transforms this bottleneck into an efficient pipeline that produces actionable insight reports in minutes instead of hours.
+Product managers spend hours manually reviewing customer interview transcripts, searching for patterns that could inform product decisions. This manual process doesn't scale, teams conducting dozens of interviews monthly end up with thousands of unanalyzed minutes. Automating transcript analysis using AI tools transforms this bottleneck into an efficient pipeline that produces actionable insight reports in minutes instead of hours.
 
 This guide walks through practical approaches to building an automated transcript-to-insights pipeline, targeting developers and power users who want to integrate AI-powered analysis into their workflows.
 
-## Table of Contents
+Table of Contents
 
 - [The Transcript Analysis Pipeline](#the-transcript-analysis-pipeline)
 - [Python Implementation for Transcript Processing](#python-implementation-for-transcript-processing)
@@ -29,13 +29,13 @@ This guide walks through practical approaches to building an automated transcrip
 - [Building the Complete Workflow](#building-the-complete-workflow)
 - [Practical Considerations](#practical-considerations)
 
-## The Transcript Analysis Pipeline
+The Transcript Analysis Pipeline
 
-A typical customer interview yields 30-60 minutes of transcript text. The analysis challenge involves extracting structured information: pain points, feature requests, competitor mentions, sentiment indicators, and actionable quotes. Doing this manually across multiple interviews compounds the time investment.
+A typical customer interview yields 30-60 minutes of transcript text. The analysis challenge involves extracting structured information: problems, feature requests, competitor mentions, sentiment indicators, and actionable quotes. Doing this manually across multiple interviews compounds the time investment.
 
 The pipeline architecture consists of four stages: transcript ingestion, chunking and preprocessing, AI-powered analysis, and report generation. Each stage has implementation considerations worth understanding before building.
 
-## Python Implementation for Transcript Processing
+Python Implementation for Transcript Processing
 
 Here's a production-ready approach using Python with common libraries:
 
@@ -119,7 +119,7 @@ class TranscriptProcessor:
         return 'neutral'
 
     def _calculate_priority(self, text: str) -> int:
-        # Higher priority for explicit pain points
+        # Higher priority for explicit problems
         urgency_words = ['critical', 'blocking', 'immediately', 'urgent']
         if any(w in text.lower() for w in urgency_words):
             return 3
@@ -160,7 +160,7 @@ class TranscriptProcessor:
             sentiments[i.sentiment] += 1
         return sentiments
 
-# Usage example
+Usage example
 processor = TranscriptProcessor()
 raw_transcript = """
 Speaker 1: So tell me about your experience with our product.
@@ -179,7 +179,7 @@ print(json.dumps(report, indent=2))
 
 This provides the foundation. The next section covers integrating actual language models for more sophisticated analysis.
 
-## Integrating Language Models for Deeper Analysis
+Integrating Language Models for Deeper Analysis
 
 The keyword-based approach above works for basic categorization, but production workflows benefit from LLM integration. Here's how to connect to OpenAI's API:
 
@@ -195,7 +195,7 @@ class LLMTranscriptAnalyzer:
     def analyze_transcript(self, transcript: str, interview_context: str = "") -> Dict:
         system_prompt = """You are a product research analyst. Analyze customer interview
 transcripts and extract:
-1. Key pain points (with severity 1-5)
+1. Key problems (with severity 1-5)
 2. Feature requests (with frequency mentions)
 3. Competitor mentions (with sentiment)
 4. buying signals
@@ -231,7 +231,7 @@ Return structured JSON."""
 
 The LLM approach captures nuance that rule-based systems miss. It identifies context-dependent insights like distinguishing between a feature someone mentions versus one they actively want.
 
-## Automating Report Generation
+Automating Report Generation
 
 Once analysis completes, the final step transforms raw insights into stakeholder-ready reports:
 
@@ -240,7 +240,7 @@ class ReportGenerator:
     def generate_markdown(self, analysis: Dict, template: str = "standard") -> str:
         sections = [
             "# Interview Insights Report\n",
-            f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M')}\n",
+            f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}\n",
             "## Executive Summary\n",
             self._write_summary(analysis),
             "## Key Pain Points\n",
@@ -254,15 +254,15 @@ class ReportGenerator:
 
     def _write_summary(self, analysis: Dict) -> str:
         total_issues = sum(analysis.get('summary', {}).get('by_category', {}).values())
-        return f"This interview revealed **{total_issues}** actionable insights across {len(analysis.get('summary', {}).get('by_category', {}))} categories.\n"
+        return f"This interview revealed {total_issues} actionable insights across {len(analysis.get('summary', {}).get('by_category', {}))} categories.\n"
 
     def _write_pain_points(self, pain_points: List[Dict]) -> str:
         if not pain_points:
-            return "No significant pain points identified.\n"
+            return "No significant problems identified.\n"
 
         lines = []
         for pp in sorted(pain_points, key=lambda x: x.get('severity', 0), reverse=True):
-            lines.append(f"- **[Severity {pp.get('severity', '?')}]** {pp.get('description', '')}")
+            lines.append(f"- [Severity {pp.get('severity', '?')}] {pp.get('description', '')}")
         return "\n".join(lines) + "\n"
 
     def _write_feature_requests(self, requests: List[Dict]) -> str:
@@ -283,7 +283,7 @@ class ReportGenerator:
         return "\n".join(f"- [ ] {item}" for item in items) + "\n"
 ```
 
-## Building the Complete Workflow
+Building the Complete Workflow
 
 Combining these components creates an end-to-end pipeline:
 
@@ -304,8 +304,8 @@ def process_interview_pipeline(transcript_text: str, metadata: Dict) -> str:
 
     # Merge analyses
     combined = {
-        **analysis_to_dict(basic_insights),
-        **llm_analysis,
+        analysis_to_dict(basic_insights),
+        llm_analysis,
         'metadata': metadata
     }
 
@@ -315,7 +315,7 @@ def process_interview_pipeline(transcript_text: str, metadata: Dict) -> str:
 
 This workflow processes interviews in minutes rather than hours. Run it as a scheduled job or trigger manually after each interview completes.
 
-## Practical Considerations
+Practical Considerations
 
 When implementing this pipeline, consider these operational factors:
 
@@ -327,36 +327,36 @@ Categorization consistency: Human reviewers disagree on categorization. Define c
 
 Privacy concerns: Customer interviews often contain sensitive information. Implement data handling policies and consider running analysis locally using open-source models for highly confidential conversations.
 
-The automation doesn't eliminate human review—it accelerates the parts that machines handle well, freeing product managers to focus on interpretation and action planning.
+The automation doesn't eliminate human review, it accelerates the parts that machines handle well, freeing product managers to focus on interpretation and action planning.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Product Managers Drafting Release](/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
 - [Best AI for Product Managers Creating Stakeholder Update](/best-ai-for-product-managers-creating-stakeholder-update-dec/)
 - [Best AI for Product Managers Creating User Persona Documents](/best-ai-for-product-managers-creating-user-persona-documents/)
 - [AI Tools for Customer Health Scoring](/ai-tools-for-customer-health-scoring/)
 - [Best AI Tools for Customer Onboarding: A Developer Guide](/best-ai-tools-for-customer-onboarding/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

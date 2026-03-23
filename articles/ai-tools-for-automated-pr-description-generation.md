@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated PR Description Generation"
-description: "Compare AI tools that auto-generate pull request descriptions from diffs — Claude, GPT-4, GitHub Copilot, and open-source options with real examples"
+description: "Compare AI tools that auto-generate pull request descriptions from diffs. Claude, GPT-4, GitHub Copilot, and open-source options with real examples"
 date: 2026-03-22
 author: theluckystrike
 permalink: ai-tools-for-automated-pr-description-generation
@@ -14,11 +14,11 @@ tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 {% raw %}
-A good PR description saves your team hours of archaeology. A bad one — "fixed stuff" — forces reviewers to read every line. AI tools can auto-generate descriptions from diffs, but the quality varies wildly depending on how the tool processes context.
+A good PR description saves your team hours of archaeology. A bad one. "fixed stuff". forces reviewers to read every line. AI tools can auto-generate descriptions from diffs, but the quality varies wildly depending on how the tool processes context.
 
 This guide covers the main options: a Claude-powered GitHub Action, GPT-4 via the API, and the built-in GitHub Copilot PR description feature.
 
-## Table of Contents
+Table of Contents
 
 - [The Test Diff](#the-test-diff)
 - [Option 1: Claude via GitHub Actions](#option-1-claude-via-github-actions)
@@ -42,16 +42,16 @@ This guide covers the main options: a Claude-powered GitHub Action, GPT-4 via th
 - [Measuring Description Quality Over Time](#measuring-description-quality-over-time)
 - [Related Reading](#related-reading)
 
-## The Test Diff
+The Test Diff
 
 All tools were given the same diff: a 200-line change adding Redis caching to a FastAPI endpoint, including a new `CacheManager` class, TTL configuration, and a cache invalidation hook.
 
-## Option 1: Claude via GitHub Actions
+Option 1: Claude via GitHub Actions
 
 This approach uses a GitHub Action that sends your diff to the Anthropic API and patches the PR body.
 
 ```yaml
-# .github/workflows/pr-description.yml
+.github/workflows/pr-description.yml
 name: Auto PR Description
 
 on:
@@ -110,33 +110,33 @@ jobs:
             });
 ```
 
-**Claude's generated output for the test diff:**
+Claude's generated output for the test diff:
 
 ```markdown
-## What Changed
+What Changed
 
 - Added `CacheManager` class wrapping Redis with TTL support and key namespacing
 - `GET /products/{id}` endpoint now checks cache before hitting the database;
   cache miss triggers DB query + write-through to Redis
 - Cache invalidation hook added to `POST /products/{id}` update endpoint
 
-## Why It Matters
+Why It Matters
 
 Reduces database load on the products endpoint by ~80% for repeated reads,
 targeting the P95 latency from 340ms to under 50ms.
 
-## Testing Notes
+Testing Notes
 
-- Run `pytest tests/test_cache.py` — 12 new tests covering hit/miss/eviction
+- Run `pytest tests/test_cache.py`. 12 new tests covering hit/miss/eviction
 - Requires Redis running locally: `docker run -p 6379:6379 redis:7`
 ```
 
-Clean, accurate, and picks up the latency motivation from a code comment. The 500-line diff limit is a real constraint — large PRs need chunking.
+Clean, accurate, and picks up the latency motivation from a code comment. The 500-line diff limit is a real constraint. large PRs need chunking.
 
-## Option 2: GPT-4 via API
+Option 2: GPT-4 via API
 
 ```python
-# scripts/generate_pr_description.py
+scripts/generate_pr_description.py
 import subprocess
 import sys
 import os
@@ -194,35 +194,35 @@ if __name__ == "__main__":
     print("PR description updated.")
 ```
 
-**GPT-4's output for the same diff:**
+GPT-4's output for the same diff:
 
 ```markdown
-## Option 3: GitHub Copilot Built-In
+Option 3: GitHub Copilot Built-In
 
 Copilot's PR description feature (available in GitHub.com UI) requires no setup. Click "Copilot" button in the PR description field.
 
-**Strengths:**
+Strengths:
 - Zero configuration
 - Reads full diff including file tree context
 - Integrated into the PR UI
 
-**Weaknesses:**
+Weaknesses:
 - No customization of output format
 - Can't enforce your team's PR template structure
 - Output often too verbose (500+ words)
-- No programmatic access — can't run in CI
+- No programmatic access. can't run in CI
 
-**Copilot's output for the test diff:**
+Copilot's output for the test diff:
 
 ```markdown
-## Description
+Description
 
 This pull request introduces a caching layer to the FastAPI application to
 improve the performance of product retrieval operations.
 
-### Changes Made
+Changes Made
 
-**New Files:**
+New Files:
 - `app/cache.py`: Implements `CacheManager` class using Redis...
 
 [...continues for 400 more words about every function signature]
@@ -230,7 +230,7 @@ improve the performance of product retrieval operations.
 
 Copilot reads the diff deeply but doesn't know when to stop. Good for large PRs where you want full coverage; bad for teams that want concise descriptions.
 
-## Comparison Table
+Comparison Table
 
 | Tool | Setup | Format Control | Diff Size Limit | Cost |
 |---|---|---|---|---|
@@ -239,14 +239,14 @@ Copilot reads the diff deeply but doesn't know when to stop. Good for large PRs 
 | Copilot built-in | Zero | None | Full diff | Included in Copilot |
 | Open-source (pr-agent) | 1 hour | Config file | Chunked | Free + API cost |
 
-## PR Agent (Open Source)
+PR Agent (Open Source)
 
 For teams wanting more control, `pr-agent` by CodiumAI is worth evaluating:
 
 ```bash
 pip install pr-agent
 
-# Configure in .pr_agent.toml
+Configure in .pr_agent.toml
 [config]
 model = "claude-opus-4-6"
 [pr_description]
@@ -260,26 +260,26 @@ Always include:
 
 PR agent supports multiple models, custom templates, and ticket linking (Jira/Linear). It's the right choice for teams with existing review workflows.
 
-## Custom Prompt Engineering
+Custom Prompt Engineering
 
 The biggest ROI improvement comes from prompt tuning. This prompt consistently produces descriptions that match PR templates:
 
 ```python
 SYSTEM_PROMPT = """You write PR descriptions for a team that uses this template:
 
-## TL;DR
+TL;DR
 One sentence.
 
-## What changed
+What changed
 - Bullet per logical change
 
-## Why
+Why
 One sentence justification.
 
-## Testing
+Testing
 - How to verify
 
-## Breaking changes
+Breaking changes
 None / [list with migration steps]
 
 Rules:
@@ -291,11 +291,11 @@ Rules:
 
 Pass this as the system prompt regardless of which model you use.
 
-## Handling Large Diffs
+Handling Large Diffs
 
 The biggest practical problem with AI PR descriptions is diff size. Anything over 500 lines pushes against token limits and produces vague summaries. Two approaches work well.
 
-**Chunked summarization**: Split the diff by file, summarize each file independently, then combine the file summaries into a final description.
+Chunked summarization: Split the diff by file, summarize each file independently, then combine the file summaries into a final description.
 
 ```python
 def summarize_large_diff(diff: str, max_chunk_lines: int = 200) -> str:
@@ -337,7 +337,7 @@ def summarize_large_diff(diff: str, max_chunk_lines: int = 200) -> str:
  return final.content[0].text
 ```
 
-**Semantic diff filtering**: For very large diffs, strip test files and auto-generated code before sending to the model. Test changes rarely add signal to the PR description, and generated files (migrations, protobuf output) are noise.
+Semantic diff filtering: For very large diffs, strip test files and auto-generated code before sending to the model. Test changes rarely add signal to the PR description, and generated files (migrations, protobuf output) are noise.
 
 ```bash
 git diff origin/main...HEAD \
@@ -347,7 +347,7 @@ git diff origin/main...HEAD \
  | head -600 > /tmp/filtered.diff
 ```
 
-## Enforcing Team PR Templates
+Enforcing Team PR Templates
 
 Most teams have a PR template in `.github/PULL_REQUEST_TEMPLATE.md`. The AI should fill that template rather than invent its own structure. Pass the template content directly in the system prompt:
 
@@ -365,7 +365,7 @@ PR_TEMPLATE = get_pr_template()
 
 SYSTEM_PROMPT = f"""Fill in this PR template based on the diff provided.
 Keep all section headers exactly as written.
-If a section is not applicable, write 'N/A' — do not delete the section.
+If a section is not applicable, write 'N/A'. do not delete the section.
 
 Template:
 {PR_TEMPLATE}"""
@@ -373,12 +373,12 @@ Template:
 
 This approach guarantees the AI output matches what reviewers expect to see, and makes the generated description easier to edit manually if needed.
 
-## Measuring Description Quality Over Time
+Measuring Description Quality Over Time
 
 Track whether AI-generated descriptions correlate with faster reviews. Add a label to AI-generated PRs and then query GitHub's API after merge:
 
 ```bash
-# Get average review time for AI-described vs manual PRs
+Get average review time for AI-described vs manual PRs
 gh api graphql -f query='
 {
  repository(owner: "org", name: "repo") {
@@ -393,9 +393,9 @@ gh api graphql -f query='
 }'
 ```
 
-Teams consistently report 20-40% reduction in reviewer question comments on PRs with AI-generated descriptions — the model surfaces context that authors forget to mention.
+Teams consistently report 20-40% reduction in reviewer question comments on PRs with AI-generated descriptions. the model surfaces context that authors forget to mention.
 
-## Related Reading
+Related Reading
 
 - [Best AI Tools for Writing GitHub Actions Workflows](/best-ai-tools-for-writing-github-actions-workflows-2026/)
 - [AI Tools for Automated Code Documentation Generation](/ai-tools-for-automated-code-documentation-generation-2026/)
@@ -403,7 +403,7 @@ Teams consistently report 20-40% reduction in reviewer question comments on PRs 
 - [AI for Automated Regression Test Generation from Bug](/ai-for-automated-regression-test-generation-from-bug-reports/)
 ---
 
-## Related Articles
+Related Articles
 
 - [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-for-automated-code-documentation-generation-2026/---)
 - [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-github-actions-workflows/)
@@ -411,6 +411,6 @@ Teams consistently report 20-40% reduction in reviewer question comments on PRs 
 - [AI Tools for Automated Schema Validation](/ai-tools-for-automated-schema-validation)
 - [Best AI Tools for Automated Code Review 2026](/best-ai-tools-for-automated-code-review-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

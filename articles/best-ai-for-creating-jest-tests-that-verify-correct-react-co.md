@@ -28,7 +28,7 @@ voice-checked: true
 
 Testing React Context Providers requires a different approach than testing regular components. Your tests must verify that the provider correctly maintains state, exposes the right values to consumers, handles updates properly, and gracefully handles edge cases. AI coding assistants can significantly accelerate this process when you know how to prompt them effectively.
 
-## Table of Contents
+Table of Contents
 
 - [Why Context Provider Testing Is Different](#why-context-provider-testing-is-different)
 - [Claude Code and Cursor: Best for Context Testing](#claude-code-and-cursor-best-for-context-testing)
@@ -37,21 +37,21 @@ Testing React Context Providers requires a different approach than testing regul
 - [Prompting Strategies That Work](#prompting-strategies-that-work)
 - [When AI-Generated Tests Need Manual Review](#when-ai-generated-tests-need-manual-review)
 
-## Why Context Provider Testing Is Different
+Why Context Provider Testing Is Different
 
 React Context Providers wrap your application state and distribute it through a component tree. Unlike simple components, they involve:
 
-- **State management logic** that must be verified independently
+- State management logic that must be verified independently
 
-- **Multiple consumer types** (hooks, render props, direct context access)
+- Multiple consumer types (hooks, render props, direct context access)
 
-- **Update propagation** that must work correctly through the tree
+- Update propagation that must work correctly through the tree
 
-- **Default values** that should be used when no provider is present
+- Default values that should be used when no provider is present
 
 Testing these behaviors manually takes time. AI assistants can generate the boilerplate, but you need to guide them to produce tests that actually verify correct behavior rather than just rendering.
 
-## Claude Code and Cursor: Best for Context Testing
+Claude Code and Cursor: Best for Context Testing
 
 Both Claude Code and Cursor excel at generating context provider tests because they maintain conversation context and can understand your specific implementation. They work well for:
 
@@ -209,7 +209,7 @@ describe('AuthProvider', () => {
 });
 ```
 
-## GitHub Copilot: Fast for Simple Patterns
+GitHub Copilot: Fast for Simple Patterns
 
 GitHub Copilot works well for context providers that follow common patterns. It can quickly generate basic test scaffolding when you have a typical provider structure. The limitation is that it may not capture all the edge cases specific to your implementation.
 
@@ -223,73 +223,73 @@ Copilot performs best when:
 
 For more complex providers with async operations, custom hooks, or intricate state logic, Copilot often requires more manual correction.
 
-## What to Verify in Your Context Tests
+What to Verify in Your Context Tests
 
 Regardless of which AI tool you use, ensure your tests cover these critical behaviors:
 
-1. **Initial state verification** — Confirm default values match your specifications
+1. Initial state verification. Confirm default values match your specifications
 
-2. **State update accuracy** — Verify state changes propagate correctly
+2. State update accuracy. Verify state changes propagate correctly
 
-3. **Async operation handling** — Test loading states, error states, and race conditions
+3. Async operation handling. Test loading states, error states, and race conditions
 
-4. **Consumer error boundaries** — Ensure proper errors when context is misused
+4. Consumer error boundaries. Ensure proper errors when context is misused
 
-5. **Stable references** — Verify that provided values don't cause unnecessary re-renders
+5. Stable references. Verify that provided values don't cause unnecessary re-renders
 
-6. **Provider nesting** — Test behavior when providers are nested or overwritten
+6. Provider nesting. Test behavior when providers are nested or overwritten
 
-## Prompting Strategies That Work
+Prompting Strategies That Work
 
 Getting good context tests from AI requires specific prompting techniques:
 
-**Include the full provider code** in your prompt. Don't assume the AI knows your implementation details.
+Include the full provider code in your prompt. Don't assume the AI knows your implementation details.
 
-**Specify the testing library** you use (@testing-library/react, Enzyme, React Test Renderer). Different libraries require different approaches.
+Specify the testing library you use (@testing-library/react, Enzyme, React Test Renderer). Different libraries require different approaches.
 
-**List exact behaviors** you want tested. "Test that the context works" produces weak tests. "Test that login sets user, handles loading during fetch, and clears user on logout" produces focused tests.
+List exact behaviors you want tested. "Test that the context works" produces weak tests. "Test that login sets user, handles loading during fetch, and clears user on logout" produces focused tests.
 
-**Mention edge cases** explicitly: "Also test what happens when the API returns an error."
+Mention edge cases explicitly: "Also test what happens when the API returns an error."
 
-**Reference your existing test patterns** if you have them: "Follow the same pattern as our other context tests in tests/auth/."
+Reference your existing test patterns if you have them: "Follow the same pattern as our other context tests in tests/auth/."
 
-## When AI-Generated Tests Need Manual Review
+When AI-Generated Tests Need Manual Review
 
 AI-generated context tests often miss these areas:
 
-- **Error handling** for edge cases (network failures, invalid responses)
+- Error handling for edge cases (network failures, invalid responses)
 
-- **Cleanup** in useEffect hooks
+- Cleanup in useEffect hooks
 
-- **Concurrent updates** that might cause race conditions
+- Concurrent updates that might cause race conditions
 
-- **Provider re-render optimization** (memoization verification)
+- Provider re-render optimization (memoization verification)
 
 Always review generated tests against your actual provider implementation and add coverage for scenarios the AI might have missed.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does React offer a free tier?**
+Does React offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check React's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Best AI for Creating Jest Tests That Verify Correct Suspense](/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 - [Best AI Assistant for Creating Jest Tests That Verify Error](/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
@@ -297,5 +297,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best AI for Creating Jest Tests That Cover Race Conditions](/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
 - [Best AI Tool for Generating Jest Test Cases from React](/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

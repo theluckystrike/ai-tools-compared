@@ -15,18 +15,18 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-Apache httpd configuration is notoriously verbose and error-prone. Getting VirtualHost configs, mod_rewrite rules, SSL settings, and security headers right requires memorizing obscure directives. AI tools dramatically reduce the lookup time — but accuracy varies. This guide tests Claude, GPT-4, and Copilot on real Apache configuration tasks.
+Apache httpd configuration is notoriously verbose and error-prone. Getting VirtualHost configs, mod_rewrite rules, SSL settings, and security headers right requires memorizing obscure directives. AI tools dramatically reduce the lookup time. but accuracy varies. This guide tests Claude, GPT-4, and Copilot on real Apache configuration tasks.
 
-## Task 1: HTTPS VirtualHost with HTTP Redirect
+Task 1: HTTPS VirtualHost with HTTP Redirect
 
-**Prompt:** "Write an Apache httpd config for example.com that redirects HTTP to HTTPS, serves from /var/www/example.com, enables PHP-FPM via proxy, and sets modern TLS settings."
+Prompt: "Write an Apache httpd config for example.com that redirects HTTP to HTTPS, serves from /var/www/example.com, enables PHP-FPM via proxy, and sets modern TLS settings."
 
-**Claude's output:**
+Claude's output:
 
 ```apache
-# /etc/apache2/sites-available/example.com.conf
+/etc/apache2/sites-available/example.com.conf
 
-# HTTP → HTTPS redirect
+HTTP → HTTPS redirect
 <VirtualHost *:80>
     ServerName example.com
     ServerAlias www.example.com
@@ -36,7 +36,7 @@ Apache httpd configuration is notoriously verbose and error-prone. Getting Virtu
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 </VirtualHost>
 
-# HTTPS VirtualHost
+HTTPS VirtualHost
 <VirtualHost *:443>
     ServerName example.com
     ServerAlias www.example.com
@@ -47,7 +47,7 @@ Apache httpd configuration is notoriously verbose and error-prone. Getting Virtu
     SSLCertificateFile      /etc/letsencrypt/live/example.com/fullchain.pem
     SSLCertificateKeyFile   /etc/letsencrypt/live/example.com/privkey.pem
 
-    # Modern TLS — TLS 1.2+ only, strong ciphers
+    # Modern TLS. TLS 1.2+ only, strong ciphers
     SSLProtocol             -all +TLSv1.2 +TLSv1.3
     SSLCipherSuite          ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:\
                             ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:\
@@ -87,46 +87,46 @@ Apache httpd configuration is notoriously verbose and error-prone. Getting Virtu
 
 Claude includes PHP-FPM via Unix socket (faster than TCP), correct HSTS with preload, disables directory listing, and uses the `SSLHonorCipherOrder Off` setting required for TLS 1.3 forward secrecy. GPT-4 produces similar output but sometimes uses `ProxyPassMatch` instead of the `SetHandler` approach, which is less efficient.
 
-## Task 2: mod_rewrite for SPA Routing
+Task 2: mod_rewrite for SPA Routing
 
 Single-page applications need all routes to serve `index.html`:
 
-**Prompt:** "Write Apache mod_rewrite rules for a React SPA at /var/www/app. Serve index.html for all routes except actual files and API calls under /api/."
+Prompt: "Write Apache mod_rewrite rules for a React SPA at /var/www/app. Serve index.html for all routes except actual files and API calls under /api/."
 
-**Claude's .htaccess:**
+Claude's .htaccess:
 
 ```apache
-# /var/www/app/public/.htaccess
+/var/www/app/public/.htaccess
 Options -MultiViews
 RewriteEngine On
 RewriteBase /
 
-# Don't rewrite actual files or directories
+Don't rewrite actual files or directories
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Don't rewrite API calls
+Don't rewrite API calls
 RewriteCond %{REQUEST_URI} ^/api/ [NC]
 RewriteRule ^ - [L]
 
-# Serve index.html for everything else (SPA routing)
+Serve index.html for everything else (SPA routing)
 RewriteRule ^ index.html [L]
 ```
 
-**GPT-4's version** often includes `RewriteRule ^ /index.html [L]` with the leading slash, which causes an infinite redirect loop in some Apache configurations. Claude correctly omits the leading slash in the target.
+GPT-4's version often includes `RewriteRule ^ /index.html [L]` with the leading slash, which causes an infinite redirect loop in some Apache configurations. Claude correctly omits the leading slash in the target.
 
-## Task 3: Reverse Proxy with Load Balancing
+Task 3: Reverse Proxy with Load Balancing
 
-**Prompt:** "Configure Apache as a reverse proxy load balancer for 3 Node.js backend servers (ports 3001, 3002, 3003). Use leastconn balancing, health checks, and sticky sessions."
+Prompt: "Configure Apache as a reverse proxy load balancer for 3 Node.js backend servers (ports 3001, 3002, 3003). Use leastconn balancing, health checks, and sticky sessions."
 
-**Claude:**
+Claude:
 
 ```apache
-# /etc/apache2/sites-available/loadbalancer.conf
+/etc/apache2/sites-available/loadbalancer.conf
 
-# Load balancing modules required:
-# a2enmod proxy proxy_http proxy_balancer lbmethod_byleastconn headers
+Load balancing modules required:
+a2enmod proxy proxy_http proxy_balancer lbmethod_byleastconn headers
 
 <VirtualHost *:443>
     ServerName api.example.com
@@ -167,21 +167,21 @@ RewriteRule ^ index.html [L]
 </VirtualHost>
 ```
 
-## Task 4: Security Headers and CSP
+Task 4: Security Headers and CSP
 
-**Prompt:** "Generate Apache security headers for a banking application. Include strict CSP, HSTS, and disable all unsafe methods."
+Prompt: "Generate Apache security headers for a banking application. Include strict CSP, HSTS, and disable all unsafe methods."
 
-**Claude:**
+Claude:
 
 ```apache
-# Security headers module — requires: a2enmod headers
+Security headers module. requires: a2enmod headers
 
 <IfModule mod_headers.c>
     # Strict Transport Security (2 years + preload)
     Header always set Strict-Transport-Security \
         "max-age=63072000; includeSubDomains; preload"
 
-    # Content Security Policy — strict mode for financial app
+    # Content Security Policy. strict mode for financial app
     Header always set Content-Security-Policy \
         "default-src 'none'; \
          script-src 'self' 'nonce-{NONCE}'; \
@@ -208,7 +208,7 @@ RewriteRule ^ index.html [L]
     ServerSignature Off
 </IfModule>
 
-# Disable unsafe HTTP methods
+Disable unsafe HTTP methods
 <LimitExcept GET POST PUT PATCH DELETE OPTIONS HEAD>
     Require all denied
 </LimitExcept>
@@ -216,16 +216,16 @@ RewriteRule ^ index.html [L]
 
 Claude notes that the CSP nonce requires server-side generation and suggests a PHP snippet or Apache module for dynamic nonce injection.
 
-## Task 5: Rate Limiting and IP-Based Access Control
+Task 5: Rate Limiting and IP-Based Access Control
 
 A common need for APIs and admin panels: rate limiting by IP using `mod_ratelimit` and `mod_evasive`, plus granular IP-based access control.
 
-**Prompt:** "Configure Apache to rate limit the /api/ endpoint to 100 req/s per IP, block known bad IPs, and allow the /admin/ path only from a specific subnet."
+Prompt: "Configure Apache to rate limit the /api/ endpoint to 100 req/s per IP, block known bad IPs, and allow the /admin/ path only from a specific subnet."
 
-**Claude:**
+Claude:
 
 ```apache
-# Rate limiting — requires: a2enmod ratelimit
+Rate limiting. requires: a2enmod ratelimit
 
 <Location /api/>
     # Limit response rate to 100KB/s per connection (mod_ratelimit)
@@ -241,14 +241,14 @@ A common need for APIs and admin panels: rate limiting by IP using `mod_ratelimi
     DOSBlockingPeriod   60
 </Location>
 
-# IP allowlist for admin panel — only internal subnet + VPN
+IP allowlist for admin panel. only internal subnet + VPN
 <Location /admin/>
     Require ip 10.0.0.0/8
     Require ip 192.168.1.0/24
     Require ip 203.0.113.42    # ops workstation static IP
 </Location>
 
-# Blocklist specific IPs (load from file for large lists)
+Blocklist specific IPs (load from file for large lists)
 <RequireAll>
     Require all granted
     Require not ip 198.51.100.1
@@ -260,90 +260,90 @@ For large blocklists (thousands of IPs), Claude recommends using `mod_authz_host
 
 GPT-4 produces similar rate limiting config but sometimes uses the deprecated `mod_bandwidth` or forgets to mention the `a2enmod` commands needed to activate modules.
 
-## Task 6: .htaccess for WordPress Multisite
+Task 6: .htaccess for WordPress Multisite
 
 WordPress Multisite has specific rewrite requirements that differ from single-site WordPress. This is a common source of AI config errors.
 
-**Prompt:** "Write .htaccess rules for WordPress Multisite in subdirectory mode."
+Prompt: "Write .htaccess rules for WordPress Multisite in subdirectory mode."
 
-**Claude's output:**
+Claude's output:
 
 ```apache
-# WordPress Multisite — subdirectory mode
-# /var/www/wordpress/.htaccess
+WordPress Multisite. subdirectory mode
+/var/www/wordpress/.htaccess
 
-# Protect wp-config.php
+Protect wp-config.php
 <Files wp-config.php>
     Require all denied
 </Files>
 
-# Protect .htaccess itself
+Protect .htaccess itself
 <Files .htaccess>
     Require all denied
 </Files>
 
 Options -Indexes
 
-# BEGIN WordPress Multisite
+BEGIN WordPress Multisite
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 
-# Uploaded files — must come before the main WP rules
+Uploaded files. must come before the main WP rules
 RewriteRule ^([_0-9a-zA-Z-]+/)?files/(.+) wp-includes/ms-files.php?file=$2 [L]
 
-# Add trailing slash to /wp-admin
+Add trailing slash to /wp-admin
 RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
 
-# Don't rewrite real files or directories
+Don't rewrite real files or directories
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Rewrite network subsites
+Rewrite network subsites
 RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) $2 [L]
 RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
 
-# Route everything else through index.php
+Route everything else through index.php
 RewriteRule . index.php [L]
-# END WordPress Multisite
+END WordPress Multisite
 ```
 
 GPT-4 often generates the single-site WordPress rules and misses the `ms-files.php` upload handling rule, which breaks media uploads on subsites.
 
-## Tool Comparison
+Tool Comparison
 
 | Task | Claude | GPT-4 | Copilot |
 |---|---|---|---|
-| VirtualHost SSL config | Excellent — correct TLS settings | Good | Weak |
+| VirtualHost SSL config | Excellent. correct TLS settings | Good | Weak |
 | mod_rewrite for SPA | Correct (no leading slash bug) | Sometimes buggy | No |
-| Load balancer config | Excellent — leastconn, health checks | Good | No |
-| Security headers | Excellent — COEP/COOP included | Good | No |
-| Rate limiting config | Strong — recommends fail2ban for scale | Good | No |
+| Load balancer config | Excellent. leastconn, health checks | Good | No |
+| Security headers | Excellent. COEP/COOP included | Good | No |
+| Rate limiting config | Strong. recommends fail2ban for scale | Good | No |
 | WordPress Multisite | Includes ms-files.php rule | Misses multisite rules | No |
 | .htaccess password protection | Strong | Strong | Moderate |
 | mod_wsgi for Python | Strong | Strong | No |
 
-## Module Activation Cheat Sheet
+Module Activation Cheat Sheet
 
 One consistently useful pattern: Claude always includes the `a2enmod` commands needed to activate referenced modules. Both GPT-4 and Copilot sometimes skip this, leaving you with configs that silently do nothing because the module isn't loaded.
 
 ```bash
-# Enable all modules referenced in this guide
+Enable all modules referenced in this guide
 sudo a2enmod rewrite ssl headers proxy proxy_http proxy_balancer \
              lbmethod_byleastconn ratelimit
 
-# Verify modules are loaded
+Verify modules are loaded
 apache2ctl -M | sort
 
-# Test config before reloading
+Test config before reloading
 apache2ctl configtest
 
-# Reload without dropping connections
+Reload without dropping connections
 sudo systemctl reload apache2
 ```
 
-## Related Reading
+Related Reading
 
 - [Best AI Tools for Writing Vagrant Configs](/ai-tools-for-writing-vagrant-configs/)
 - [Best AI Tools for Writing Caddy Configs](/ai-tools-for-writing-caddy-configs/)
@@ -352,6 +352,6 @@ sudo systemctl reload apache2
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

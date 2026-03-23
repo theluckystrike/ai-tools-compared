@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Writing Tools — Content Generation and Editing"
+title: "AI Writing Tools. Content Generation and Editing"
 description: "Comparisons of AI writing tools: ChatGPT, Claude, Grammarly, Jasper, and more for content creation and editing."
 permalink: /topics/writing-tools/
 ---
