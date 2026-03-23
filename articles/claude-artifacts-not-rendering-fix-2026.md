@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /claude-artifacts-not-rendering-fix-2026/
 categories: [guides]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, troubleshooting, claude-ai]
