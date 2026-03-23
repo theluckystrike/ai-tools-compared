@@ -11,11 +11,30 @@ AI tools ship faster than anyone can evaluate them. I test them head-to-head so 
 
 ## Start Here
 
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [AI Autocomplete Accuracy: Copilot vs Codeium vs Tabnine](/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
-- [AI Code Completion Latency: Copilot vs Cursor vs Cody 2026](/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
-- [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/aider-vs-claude-code-terminal-ai-comparison/)
-- [AI Debugging Assistants Compared 2026](/ai-debugging-assistants-compared-2026/)
+<div class="card">
+  <a href="/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/">AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026</a>
+  <p>Deep comparison of AI coding assistants for pair programming including editor integration and code quality</p>
+</div>
+
+<div class="card">
+  <a href="/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/">AI Autocomplete Accuracy: Copilot vs Codeium vs Tabnine</a>
+  <p>Side-by-side accuracy benchmarks across multiple languages and IDE environments</p>
+</div>
+
+<div class="card">
+  <a href="/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/">AI Code Completion Latency: Copilot vs Cursor vs Cody</a>
+  <p>Real latency benchmarks comparing response times, speed factors, and optimization tips</p>
+</div>
+
+<div class="card">
+  <a href="/aider-vs-claude-code-terminal-ai-comparison/">Aider vs Claude Code: Terminal AI Coding Assistants</a>
+  <p>Terminal-first AI coding tools compared on git integration, multi-file refactoring, and model flexibility</p>
+</div>
+
+<div class="card">
+  <a href="/ai-debugging-assistants-compared-2026/">AI Debugging Assistants Compared 2026</a>
+  <p>Claude Code, Cursor, Copilot Chat, and Pieces tested on real error scenarios and stack trace analysis</p>
+</div>
 
 ## Recently Updated
 
