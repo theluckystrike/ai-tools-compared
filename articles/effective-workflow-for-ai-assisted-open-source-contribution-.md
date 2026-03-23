@@ -9,7 +9,7 @@ permalink: /effective-workflow-for-ai-assisted-open-source-contribution-/
 categories: [guides]
 tags: [ai-tools-compared, tools, workflow, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
