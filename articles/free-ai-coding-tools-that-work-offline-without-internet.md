@@ -7,7 +7,7 @@ last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /free-ai-coding-tools-that-work-offline-without-internet/
 reviewed: true
-score: 9
+score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
