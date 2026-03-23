@@ -9,7 +9,7 @@ permalink: /ai-tools-for-support-quality-assurance/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
