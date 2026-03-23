@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /ai-tools-for-automated-migration-testing-2026/
 categories: [guides]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
