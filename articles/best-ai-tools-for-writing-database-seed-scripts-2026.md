@@ -18,7 +18,7 @@ intent-checked: true
 
 Copilot completes seed scripts as you type in VS Code or JetBrains. Fast feedback loop but requires you to define structure.
 
-Cost: $10-20/month.
+Cost - $10-20/month.
 
 Django Example:
 
@@ -85,7 +85,7 @@ Requires skeleton structure, generic suggestions, less context-aware than Claude
 
 Full API control for custom seed generation with schema validation.
 
-Cost: $0.03 per 1K input tokens, $0.06 per 1K output tokens.
+Cost - $0.03 per 1K input tokens, $0.06 per 1K output tokens.
 
 Rails Example:
 
@@ -152,7 +152,7 @@ API dependency, latency (2-3s), cost per generation.
 
 AI-native editor with Claude built-in. You can chat with your schema and generate seeds.
 
-Cost: $20/month Pro.
+Cost - $20/month Pro.
 
 Workflow:
 
@@ -215,7 +215,7 @@ db/seeds.rb
 Use Claude to generate factory definitions from schema:
 
 ```
-Prompt: "Generate a FactoryBot factory for this Rails model..."
+Prompt - "Generate a FactoryBot factory for this Rails model..."
 ```
 
 Reusable, DRY, works with tests.
@@ -238,7 +238,7 @@ Tool Comparison Table
 
 Practical Patterns
 
-Pattern 1: Schema-Aware Generation (Prisma)
+Pattern 1 - Schema-Aware Generation (Prisma)
 
 ```bash
 #!/bin/bash
@@ -258,7 +258,7 @@ curl https://api.anthropic.com/v1/messages \
   }" | jq -r '.content[0].text' > prisma/seed.ts
 ```
 
-Pattern 2: Incremental Seeding (Django)
+Pattern 2 - Incremental Seeding (Django)
 
 ```python
 management/commands/seed.py
@@ -280,7 +280,7 @@ class Command(BaseCommand):
         self.stdout.write(f"Seeded {User.objects.count()} users")
 ```
 
-Pattern 3: Linked Data Generation (Rails)
+Pattern 3 - Linked Data Generation (Rails)
 
 ```ruby
 Use Claude to generate seed that respects foreign keys
@@ -311,9 +311,9 @@ end
 
 Edge Cases & Solutions
 
-Edge Case: Circular References
+Edge Case - Circular References
 
-Problem: User has profile, profile references user.
+Problem - User has profile, profile references user.
 
 Claude Solution:
 ```typescript
@@ -333,9 +333,9 @@ const profiles = await Promise.all(
 );
 ```
 
-Edge Case: Unique Constraints
+Edge Case - Unique Constraints
 
-Problem: Email must be unique; random data may collide.
+Problem - Email must be unique; random data may collide.
 
 ```typescript
 // Use counters or UUIDs
@@ -351,9 +351,9 @@ const users = await Promise.all(
 );
 ```
 
-Edge Case: Soft Deletes
+Edge Case - Soft Deletes
 
-Problem: Need deleted users in seed to test filters.
+Problem - Need deleted users in seed to test filters.
 
 ```typescript
 // Include both active and deleted
@@ -395,7 +395,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -407,7 +407,7 @@ AI tools generate queries well for common patterns, but always test generated qu
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

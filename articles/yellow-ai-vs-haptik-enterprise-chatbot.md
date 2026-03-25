@@ -23,7 +23,7 @@ Yellow AI and Haptik represent two distinct approaches to conversational AI in t
 - The platform offers pre-trained: models for common use cases (e-commerce, banking, support) but custom model training requires enterprise plans.
 - The free tier includes: basic bot building with limited API calls.
 - Which platform handles multilingual: conversations better? Yellow AI supports a broader language set out of the box, with automatic language detection and multilingual flow management.
-- Yellow AI and Haptik: represent two distinct approaches to conversational AI in the enterprise space, differing most in their API philosophy, NLU customization depth, and deployment model.
+- Yellow AI and Haptik - represent two distinct approaches to conversational AI in the enterprise space, differing most in their API philosophy, NLU customization depth, and deployment model.
 - The choice depends on your team's expertise: customization requirements, and integration complexity.
 - Pay attention to API rate limits: webhook reliability, and the responsiveness of each platform's developer support.
 
@@ -217,7 +217,7 @@ Channel Support and Omnichannel Deployment
 
 Enterprise chatbots rarely live on a single channel. Yellow AI supports WhatsApp Business, Facebook Messenger, Slack, Microsoft Teams, and custom web deployments through an unified API surface. Its channel abstraction layer lets you define conversation logic once and deploy across channels without rewriting flows.
 
-Haptik focuses heavily on WhatsApp and in-app deployment, with strong integration into Jio's platform ecosystem in India. For global enterprise deployments requiring deep Microsoft Teams or Slack integration, Yellow AI's pre-built connectors reduce development effort considerably.
+Haptik focuses heavily on WhatsApp and in-app deployment, with strong integration into Jio's platform environment in India. For global enterprise deployments requiring deep Microsoft Teams or Slack integration, Yellow AI's pre-built connectors reduce development effort considerably.
 
 When evaluating channel support, test message formatting edge cases. Rich cards, carousels, and quick-reply buttons render differently across channels, and both platforms handle these variances with different levels of automation.
 

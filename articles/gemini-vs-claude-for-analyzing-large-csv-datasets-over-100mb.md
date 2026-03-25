@@ -48,9 +48,9 @@ Both Gemini and Claude can interact with your data through code generation, but 
 
 A 100MB CSV with 10 columns of mixed types is a fundamentally different problem than a 100MB CSV that is a single text column with long entries. The AI assistant that helps you most depends on what questions you're asking and what structure your data has.
 
-Gemini: Speed and Google Ecosystem Integration
+Gemini - Speed and Google environment Integration
 
-Google Gemini excels at rapid code generation and works well within the Google Cloud ecosystem. When you need to process large CSVs quickly, Gemini's strength lies in generating efficient pandas or PySpark code that uses chunked reading strategies.
+Google Gemini excels at rapid code generation and works well within the Google Cloud environment. When you need to process large CSVs quickly, Gemini's strength lies in generating efficient pandas or PySpark code that uses chunked reading strategies.
 
 Practical Gemini Approach
 
@@ -112,7 +112,7 @@ Gemini Limitations
 
 - Analysis explanations can be terse compared to Claude
 
-Claude: Deep Analysis and Pattern Recognition
+Claude - Deep Analysis and Pattern Recognition
 
 Anthropic Claude takes a more thorough analytical approach. While it may generate slightly more verbose code, it excels at understanding data patterns, identifying anomalies, and providing detailed explanations of what the data reveals.
 
@@ -200,14 +200,14 @@ Head-to-Head Comparison
 | Pattern recognition | Good | Excellent |
 | Memory efficiency suggestions | Strong | Good |
 | Explanation quality | Adequate | Detailed |
-| Ecosystem integration | Google Cloud | Versatile |
+| environment integration | Google Cloud | Versatile |
 | Polars / DuckDB suggestions | Occasional | Frequent |
 | Data quality detection | Requires prompting | Proactive |
 | Context window | 1M tokens (Gemini 1.5+) | 200K tokens |
 
 Real-World Scenarios
 
-Scenario 1: Quick Summary of 150MB Sales Data
+Scenario 1 - Quick Summary of 150MB Sales Data
 
 For a quick overview where you need basic statistics and summary counts, Gemini's speed advantage shows. You can get functional code in seconds.
 
@@ -221,7 +221,7 @@ print(df.groupby('region')['revenue'].sum().sort_values(ascending=False))
 
 Claude would take an extra moment but might catch that the `revenue` column contains currency symbols that need cleaning first, a common real-world issue that breaks groupby aggregations silently.
 
-Scenario 2: Finding Data Quality Issues in 500MB Log File
+Scenario 2 - Finding Data Quality Issues in 500MB Log File
 
 When hunting for anomalies or data quality problems, Claude's thorough approach pays off. It catches inconsistencies that faster approaches miss.
 
@@ -243,7 +243,7 @@ print(f"Missing user IDs: {len(missing_user_ids)}")
 print(f"Duplicate sessions: {len(duplicate_entries)}")
 ```
 
-Scenario 3: Using DuckDB for SQL-Style Queries on Large Files
+Scenario 3 - Using DuckDB for SQL-Style Queries on Large Files
 
 For analysts more comfortable with SQL than Python, both tools can suggest DuckDB, which lets you run SQL directly against CSV files without loading them into memory:
 

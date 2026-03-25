@@ -332,7 +332,7 @@ Choose Crisp if:
 
 Framework-Specific Integration Notes
 
-React: Both widgets integrate cleanly with React apps. Load the widget script in your root `index.html` rather than in a component. this prevents re-initialization on route changes.
+React - Both widgets integrate cleanly with React apps. Load the widget script in your root `index.html` rather than in a component. this prevents re-initialization on route changes.
 
 ```jsx
 // In App.jsx or a dedicated ChatWidget component
@@ -353,7 +353,7 @@ useEffect(() => {
 }, [user]);
 ```
 
-Next.js: Use `next/script` with `strategy="afterInteractive"` to load both widgets without affecting Lighthouse scores:
+Next.js - Use `next/script` with `strategy="afterInteractive"` to load both widgets without affecting Lighthouse scores:
 
 ```jsx
 // In _app.tsx or layout.tsx
@@ -366,7 +366,7 @@ Next.js: Use `next/script` with `strategy="afterInteractive"` to load both widge
 />
 ```
 
-Vue/Nuxt: Both tools work as Nuxt plugins. Install via the widget script in `nuxt.config.ts` under `app.head.script` for SSR-safe loading.
+Vue/Nuxt - Both tools work as Nuxt plugins. Install via the widget script in `nuxt.config.ts` under `app.head.script` for SSR-safe loading.
 
 Migrating Between Tools
 

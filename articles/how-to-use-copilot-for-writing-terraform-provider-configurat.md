@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Set Up Copilot for Terraform
+Step 1 - Set Up Copilot for Terraform
 
 Before looking at specific techniques, ensure Copilot is configured in your environment. In VS Code, install the GitHub Copilot extension and enable it for HCL files. Copilot works best when it has context about your project, so open your existing Terraform files alongside new configurations.
 
@@ -58,7 +58,7 @@ Both AI coding tools assist with Terraform, but they approach it differently:
 
 For Terraform specifically, Cursor's multi-file context is a meaningful advantage when you need to generate a resource block that references variables defined in a separate `variables.tf`. Copilot works best when relevant files are open in the same editor session.
 
-Step 2: Writing Your First Provider Block with Copilot
+Step 2 - Writing Your First Provider Block with Copilot
 
 When you start typing a provider block, Copilot suggests completions based on the provider type. Begin typing `provider "aws"` and watch Copilot predict the standard structure:
 
@@ -82,7 +82,7 @@ provider "aws" {
 
 Accept the suggestion by pressing Tab, then customize the values. This pattern works across providers. Type `provider "azurerm"` and Copilot suggests the Azure provider structure with subscription ID, tenant ID, and feature blocks.
 
-Step 3: Use Context Variables for Provider Aliases
+Step 3 - Use Context Variables for Provider Aliases
 
 Infrastructure projects often require multiple provider instances. Copilot helps you create aliased providers when you provide context about your requirements.
 
@@ -181,7 +181,7 @@ provider "google-beta" {
 
 Copilot typically suggests the `google-beta` block when you have beta resources referenced elsewhere in your project, saving you the lookup of whether a resource requires the beta provider.
 
-Step 4: Handling Provider Version Constraints
+Step 4 - Handling Provider Version Constraints
 
 Specifying provider versions prevents unexpected changes during `terraform init`. Copilot assists with version constraint syntax:
 
@@ -209,7 +209,7 @@ Locking Versions After Copilot Generates Them
 
 Copilot often suggests slightly older stable versions. After accepting a suggestion, check the registry for the current stable release and pin to that. Use `terraform providers lock` after confirming your versions to generate a `.terraform.lock.hcl` file that the whole team shares through source control.
 
-Step 5: Module-Level Provider Configuration
+Step 5 - Module-Level Provider Configuration
 
 Modules often need to pass providers from the root configuration. Copilot helps generate the boilerplate for provider passthrough:
 

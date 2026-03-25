@@ -72,10 +72,10 @@ client = anthropic.Anthropic(api_key="sk-ant-api03-...")
 def analyze_subscription_inquiry(message, customer_data):
     prompt = f"""Analyze this subscription support inquiry:
 
-Customer message: {message}
+Customer message - {message}
 
 Customer profile:
-- Plan: {customer_data.get('plan', 'unknown')}
+- Plan - {customer_data.get('plan', 'unknown')}
 - Billing cycle: {customer_data.get('billing_cycle', 'monthly')}
 - Days since last login: {customer_data.get('days_since_login', 0)}
 - Open support tickets: {customer_data.get('open_tickets', 0)}
@@ -295,7 +295,7 @@ def generate_retention_outreach(customer_data):
         return None
 
     prompt = f"""Write a short, genuine outreach email to a {customer_data['plan']} subscriber.
-Signals: {', '.join(churn_signals)}.
+Signals - {', '.join(churn_signals)}.
 Offer help, not a discount. Keep it under 100 words."""
 
     response = client.messages.create(
@@ -312,13 +312,13 @@ Evaluating AI Tools for Your Use Case
 
 When selecting AI tools for subscription management support, evaluate based on these criteria:
 
-Integration Complexity: How easily does the tool connect to your existing subscription billing system? Stripe, Chargebee, and Recurly have well-documented APIs that most AI tools can integrate with.
+Integration Complexity - How easily does the tool connect to your existing subscription billing system? Stripe, Chargebee, and Recurly have well-documented APIs that most AI tools can integrate with.
 
-Handling Edge Cases: Subscription issues often involve exceptions. partial refunds, prorated charges, trial conversions. Test how well each tool handles these scenarios.
+Handling Edge Cases - Subscription issues often involve exceptions. partial refunds, prorated charges, trial conversions. Test how well each tool handles these scenarios.
 
-Data Privacy: Support conversations contain sensitive billing information. Ensure your chosen tool meets your compliance requirements, particularly around PCI-DSS for payment-related data.
+Data Privacy - Support conversations contain sensitive billing information. Ensure your chosen tool meets your compliance requirements, particularly around PCI-DSS for payment-related data.
 
-Cost at Scale: AI pricing varies significantly. Calculate costs based on your expected support volume, including both handled inquiries and agent assist interactions.
+Cost at Scale - AI pricing varies significantly. Calculate costs based on your expected support volume, including both handled inquiries and agent assist interactions.
 
 For most SaaS subscription businesses, the right starting point is Claude or GPT-4 as an agent-assist backend combined with your existing ticketing platform (Zendesk, Intercom, Freshdesk). This keeps implementation complexity low while immediately reducing handle time. As confidence in AI-generated responses grows, you can gradually shift more inquiry types to fully automated resolution.
 

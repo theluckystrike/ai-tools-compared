@@ -114,7 +114,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Test Complex Navigation Patterns
+Step 1 - Test Complex Navigation Patterns
 
 Dropdown Menus
 
@@ -163,7 +163,7 @@ test('Form fields keyboard navigation', async ({ page }) => {
 });
 ```
 
-Step 2: Improving AI Test Quality
+Step 2 - Improving AI Test Quality
 
 Provide Sufficient Context
 
@@ -198,7 +198,7 @@ Generate Playwright keyboard tests for a React auto-complete component
 using react-keyboard-event-handler patterns.
 ```
 
-Step 3: Automate Test Generation Workflow
+Step 3 - Automate Test Generation Workflow
 
 Create a script to generate tests from component documentation:
 
@@ -224,7 +224,7 @@ Run the generator:
 node generate-keyboard-tests.js --component modal --output tests/
 ```
 
-Step 4: Common Pitfalls to Avoid
+Step 4 - Common Pitfalls to Avoid
 
 - Missing focus verification. Always assert focus state explicitly
 
@@ -234,7 +234,7 @@ Step 4: Common Pitfalls to Avoid
 
 - Skipping screen reader compatibility. Combine with ARIA testing
 
-Step 5: Measuring Test Coverage
+Step 5 - Measuring Test Coverage
 
 Track keyboard navigation coverage:
 
@@ -253,7 +253,7 @@ test('keyboard navigation coverage report', async ({ page }) => {
 });
 ```
 
-Step 6: Test ARIA Roles and Focus Management Together
+Step 6 - Test ARIA Roles and Focus Management Together
 
 Keyboard navigation tests become significantly more valuable when combined with ARIA role verification. A component that moves focus correctly but uses wrong ARIA roles still fails accessibility audits.
 
@@ -282,7 +282,7 @@ test('Dialog has correct ARIA roles and keyboard focus', async ({ page }) => {
 
 Ask the AI to generate combined ARIA and keyboard tests by providing your component's ARIA specification alongside the HTML structure. This produces tests that verify both the mechanical keyboard behavior and the semantic meaning. a much higher confidence bar than either test type alone.
 
-Step 7: Test Focus Trapping in Modals
+Step 7 - Test Focus Trapping in Modals
 
 Focus trapping. where Tab cycles through elements inside a modal rather than leaving it. is one of the most commonly implemented and most commonly broken accessibility patterns. Playwright makes it straightforward to test:
 
@@ -316,7 +316,7 @@ test('Modal traps focus within container', async ({ page }) => {
 
 When prompting AI to generate focus trap tests, specify the exact number and type of focusable elements in your modal. AI-generated tests that assume a fixed element count break when the component changes. Better to have the test dynamically count focusable elements as shown above.
 
-Step 8: Integrate Keyboard Tests into Your CI Pipeline
+Step 8 - Integrate Keyboard Tests into Your CI Pipeline
 
 Keyboard navigation tests slow down fast unit test suites because they require a real browser. Structure your test configuration to run keyboard tests in parallel and separate from your unit tests:
 

@@ -37,7 +37,7 @@ To fix the ChatGPT API 429 "Too Many Requests" error, implement exponential back
 - Higher tiers provide increased: rate limits and dedicated infrastructure that better supports high-volume applications.
 - Does ChatGPT offer a: free tier? Most major tools offer some form of free tier or trial period.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
-- Second: insufficient implementation of retry logic causes clients to repeatedly fail against already-exhausted limits.
+- Second - insufficient implementation of retry logic causes clients to repeatedly fail against already-exhausted limits.
 - If you consistently hit: rate limits despite implementing best practices, consider upgrading your OpenAI plan.
 
 What Causes the 429 Error
@@ -219,7 +219,7 @@ Real-world 429 error response breakdown:
 
 ```
 HTTP/1.1 429 Too Many Requests
-Content-Type: application/json
+Content-Type - application/json
 x-ratelimit-limit-requests: 3500
 x-ratelimit-limit-tokens: 90000
 x-ratelimit-remaining-requests: 0

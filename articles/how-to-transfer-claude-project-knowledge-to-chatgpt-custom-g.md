@@ -29,7 +29,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Platform Differences
+Step 1 - Understand the Platform Differences
 
 
 Claude Projects store knowledge as files, instructions, and context that the AI can reference during conversations. You typically populate these with project documentation, coding standards, API references, and custom instructions that shape how Claude responds to your queries.
@@ -41,7 +41,7 @@ ChatGPT Custom GPTs work differently. You configure them through a combination o
 The key challenge involves converting your Claude Project's accumulated knowledge into a format that works effectively in the Custom GPT environment.
 
 
-Step 2: Exporting Your Claude Project Knowledge
+Step 2 - Exporting Your Claude Project Knowledge
 
 
 Before you can transfer knowledge, you need to export it from Claude Projects. The process involves several components:
@@ -89,7 +89,7 @@ project/
 Gather all these files. You will upload them to your Custom GPT's knowledge base.
 
 
-Step 3: Configure Your Custom GPT
+Step 3 - Configure Your Custom GPT
 
 
 Now that you have exported your knowledge, set up the Custom GPT to use it effectively.
@@ -152,7 +152,7 @@ knowledge/
 ```
 
 
-Step 4: Preserving Context Through Conversation Design
+Step 4 - Preserving Context Through Conversation Design
 
 
 Custom GPTs do not maintain persistent context between sessions like Claude Projects do. You compensate for this through careful conversation design.
@@ -215,22 +215,22 @@ Custom GPT instruction:
 
 ```
 When reviewing code, always check these five areas and provide specific feedback:
-1. Type Hints: Are all function parameters and return types annotated?
-2. Error Handling: Are exceptions caught and handled appropriately?
-3. Resources: Are files, connections, and handles properly cleaned up?
-4. Logging: Is there appropriate logging for debugging and monitoring?
-5. Security: Are inputs validated, credentials handled securely, and SQL queries parameterized?
+1. Type Hints - Are all function parameters and return types annotated?
+2. Error Handling - Are exceptions caught and handled appropriately?
+3. Resources - Are files, connections, and handles properly cleaned up?
+4. Logging - Is there appropriate logging for debugging and monitoring?
+5. Security - Are inputs validated, credentials handled securely, and SQL queries parameterized?
 ```
 
 
-Step 5: Transferring Prompt Engineering Knowledge
+Step 5 - Transferring Prompt Engineering Knowledge
 
 
 If you have refined prompts in Claude Projects, adapt them for the Custom GPT format:
 
 
 ```python
-Claude Project prompt file: generate_tests.py
+Claude Project prompt file - generate_tests.py
 """
 Generate pytest tests for the given Python code.
 
@@ -256,7 +256,7 @@ When generating tests:
 ```
 
 
-Step 6: Automate the Transfer Process
+Step 6 - Automate the Transfer Process
 
 
 For ongoing synchronization between Claude Projects and Custom GPTs, consider a simple script:
@@ -299,7 +299,7 @@ if __name__ == "__main__":
 Run this script periodically to keep your Custom GPT knowledge current with your Claude Project.
 
 
-Step 7: Validating Your Transfer
+Step 7 - Validating Your Transfer
 
 
 After configuring your Custom GPT, test it thoroughly:
@@ -317,7 +317,7 @@ After configuring your Custom GPT, test it thoroughly:
 Iterate on your instructions based on test results. Custom GPTs often need instruction refinement to match Claude's behavior precisely.
 
 
-Step 8: When Custom GPTs Work Well
+Step 8 - When Custom GPTs Work Well
 
 
 Custom GPTs excel at providing consistent responses based on uploaded documentation. They work particularly well for:

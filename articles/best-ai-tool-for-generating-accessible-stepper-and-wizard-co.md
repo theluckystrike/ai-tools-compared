@@ -27,7 +27,7 @@ Accessible stepper and wizard components guide users through multi-step processe
 Table of Contents
 
 - [Understanding Stepper and Wizard Accessibility Requirements](#understanding-stepper-and-wizard-accessibility-requirements)
-- [Code Example: Accessible Stepper Structure](#code-example-accessible-stepper-structure)
+- [Code Example - Accessible Stepper Structure](#code-example-accessible-stepper-structure)
 - [How AI Tools Generate Accessible Steppers](#how-ai-tools-generate-accessible-steppers)
 - [Evaluating AI Output for Accessibility](#evaluating-ai-output-for-accessibility)
 - [State Management in Multi-Step Forms](#state-management-in-multi-step-forms)
@@ -51,7 +51,7 @@ Third, keyboard navigation must allow movement between steps. Users should be ab
 
 Fourth, completion status requires clear communication. Steps that are completed, current, or upcoming need distinct visual and programmatic indicators.
 
-Code Example: Accessible Stepper Structure
+Code Example - Accessible Stepper Structure
 
 A properly structured accessible stepper in React might look like this:
 
@@ -348,7 +348,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -360,7 +360,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

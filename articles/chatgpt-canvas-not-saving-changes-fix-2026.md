@@ -61,7 +61,7 @@ If these quick checks reveal nothing unusual, proceed with the detailed troubles
 
 Step-by-Step Fixes
 
-Fix 1: Clear Browser Cache and Cookies
+Fix 1 - Clear Browser Cache and Cookies
 
 Browser cache corruption frequently causes Canvas save failures. This affects Chrome, Firefox, Safari, and Edge equally.
 
@@ -77,7 +77,7 @@ Browser cache corruption frequently causes Canvas save failures. This affects Ch
 
 After clearing, log back into ChatGPT and test Canvas functionality.
 
-Fix 2: Disable Browser Extensions
+Fix 2 - Disable Browser Extensions
 
 Extensions that modify page content or intercept network requests can interfere with Canvas's save mechanism.
 
@@ -99,7 +99,7 @@ Extensions that modify page content or intercept network requests can interfere 
 
 This diagnostic approach isolates extension-related conflicts without permanently disabling your tools.
 
-Fix 3: Switch Network Connection
+Fix 3 - Switch Network Connection
 
 Network issues manifest differently depending on your connection type.
 
@@ -111,7 +111,7 @@ Network issues manifest differently depending on your connection type.
 
 ChatGPT Canvas requires stable WebSocket connections for real-time save operations. Intermittent connectivity causes save requests to fail silently.
 
-Fix 4: Update Your Browser
+Fix 4 - Update Your Browser
 
 Outdated browsers may lack support for newer Canvas features or security protocols.
 
@@ -123,7 +123,7 @@ Outdated browsers may lack support for newer Canvas features or security protoco
 
 Canvas works best with Chrome 120+, Firefox 122+, Safari 17+, and Edge 120+.
 
-Fix 5: Check OpenAI Service Status
+Fix 5 - Check OpenAI Service Status
 
 Sometimes the issue originates from OpenAI's servers rather than your local environment.
 
@@ -135,7 +135,7 @@ Sometimes the issue originates from OpenAI's servers rather than your local envi
 
 Service disruptions affect all users equally, and no local troubleshooting will resolve server-side outages.
 
-Fix 6: Reinstall the Desktop App (If Applicable)
+Fix 6 - Reinstall the Desktop App (If Applicable)
 
 Desktop application users should reinstall to resolve potential installation issues:
 
@@ -149,7 +149,7 @@ Desktop application users should reinstall to resolve potential installation iss
 
 Desktop apps sometimes carry over corrupted settings from previous versions.
 
-Fix 7: Check Account Permissions and Subscription Status
+Fix 7 - Check Account Permissions and Subscription Status
 
 In rare cases, account-level restrictions prevent save functionality:
 

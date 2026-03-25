@@ -30,17 +30,17 @@ Istio Traffic Management
 Prompt to Claude:
 ```text
 Generate Istio configuration for a canary deployment.
-Service: "orders-svc" in namespace "production".
+Service - "orders-svc" in namespace "production".
 v1 deployment label: version=v1 (90% traffic)
 v2 deployment label: version=v2 (10% traffic)
-Add: 3 retries on 5xx with 2s timeout, circuit breaker (100 pending requests limit),
+Add - 3 retries on 5xx with 2s timeout, circuit breaker (100 pending requests limit),
 and a 500ms timeout on all requests.
 ```
 
 Claude output:
 
 ```yaml
-DestinationRule: defines subsets and circuit breaker
+DestinationRule - defines subsets and circuit breaker
 apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
 metadata:
@@ -71,7 +71,7 @@ spec:
         version: v2
 
 ---
-VirtualService: traffic routing rules
+VirtualService - traffic routing rules
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
@@ -246,7 +246,7 @@ spec:
     mode: STRICT
 
 ---
-Exception: legacy-svc allows plaintext
+Exception - legacy-svc allows plaintext
 apiVersion: security.istio.io/v1beta1
 kind: PeerAuthentication
 metadata:
@@ -408,7 +408,7 @@ Claude is strongest for complex multi-resource configurations where the resource
 
 ChatGPT is adequate for single-resource generation but misses cross-resource consistency checks. It uses older API versions (`v1alpha3`) by default and omits important nuances like `perTryTimeout` in retry configs.
 
-For both tools: always validate with `istioctl analyze` before applying to a cluster, and test traffic splitting with controlled load before moving a canary from 10% to higher percentages.
+For both tools - always validate with `istioctl analyze` before applying to a cluster, and test traffic splitting with controlled load before moving a canary from 10% to higher percentages.
 
 Related Reading
 

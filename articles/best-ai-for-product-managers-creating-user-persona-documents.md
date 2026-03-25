@@ -154,13 +154,13 @@ Measuring Persona Quality
 
 Good personas share several characteristics:
 
-- Specificity: Avoid generic descriptions. "Experienced developer who values performance" is better than "technical user."
+- Specificity - Avoid generic descriptions. "Experienced developer who values performance" is better than "technical user."
 
-- Actionability: Include details that inform product decisions. A problem should connect to a feature gap.
+- Actionability - Include details that inform product decisions. A problem should connect to a feature gap.
 
-- Accuracy: Verify demographic and behavioral data matches your actual user base.
+- Accuracy - Verify demographic and behavioral data matches your actual user base.
 
-- Accessibility: Personas should be memorable. Include a name, photo placeholder, and quotable statements.
+- Accessibility - Personas should be memorable. Include a name, photo placeholder, and quotable statements.
 
 Run your generated personas through these criteria. Revise prompts or input data until outputs meet the threshold.
 
@@ -178,7 +178,7 @@ Another mistake is treating personas as static documents. Update them quarterly 
 
 Getting Started Today
 
-Start simple: export your existing survey data, run basic clustering, and feed the results into a language model with a well-crafted prompt. Iterate from there. As you develop confidence in the workflow, add more sophisticated analysis.
+Start simple - export your existing survey data, run basic clustering, and feed the results into a language model with a well-crafted prompt. Iterate from there. As you develop confidence in the workflow, add more sophisticated analysis.
 
 The goal isn't to eliminate human judgment from persona creation. It's to handle the repetitive parts faster so your team focuses on validation and application. With the right prompts and validation steps, AI becomes a productivity multiplier for this essential product management task.
 
@@ -336,10 +336,10 @@ Persona Delivery and Adoption
 
 How you present personas affects team adoption:
 
-Executive summary: 1-page visual with key metrics and top 3 problems
-Team playbook: 5-page detailed persona with use cases, objections, and product recommendations
-Sales enablement: Short cards for sales team with talking points
-Product brief: Full data appendix with cluster analysis and methodology
+Executive summary - 1-page visual with key metrics and top 3 problems
+Team playbook - 5-page detailed persona with use cases, objections, and product recommendations
+Sales enablement - Short cards for sales team with talking points
+Product brief - Full data appendix with cluster analysis and methodology
 
 Different audiences need different formats. Executive summaries drive adoption; detailed documentation enables action.
 

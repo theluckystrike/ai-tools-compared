@@ -21,8 +21,8 @@ Table of Contents
 
 - [The Challenge of Testing Legacy Code](#the-challenge-of-testing-legacy-code)
 - [AI Tools Compared for Test Generation](#ai-tools-compared-for-test-generation)
-- [Comparison Table: AI Test Generation Tools](#comparison-table-ai-test-generation-tools)
-- [Workflow: Testing Legacy Code End-to-End](#workflow-testing-legacy-code-end-to-end)
+- [Comparison Table - AI Test Generation Tools](#comparison-table-ai-test-generation-tools)
+- [Workflow - Testing Legacy Code End-to-End](#workflow-testing-legacy-code-end-to-end)
 - [Footer](#footer)
 
 The Challenge of Testing Legacy Code
@@ -119,7 +119,7 @@ class TestCalculateShipping:
         assert calculate_shipping(weight, 50000) == pytest.approx(expected)
 ```
 
-Claude's strength: Identifying edge cases like zero/negative inputs, return value semantics (when is -1 returned?), and implicit assumptions in the code flow.
+Claude's strength - Identifying edge cases like zero/negative inputs, return value semantics (when is -1 returned?), and implicit assumptions in the code flow.
 
 GitHub Copilot for Test Generation
 
@@ -169,7 +169,7 @@ describe('parseUserCSV', () => {
 });
 ```
 
-Copilot's strength: Speed and IDE integration. Weakness: May miss edge cases like malformed CSV or empty input.
+Copilot's strength - Speed and IDE integration. Weakness - May miss edge cases like malformed CSV or empty input.
 
 Tabnine with Custom Analysis
 
@@ -238,7 +238,7 @@ public class PaymentProcessorTest {
 }
 ```
 
-Comparison Table: AI Test Generation Tools
+Comparison Table - AI Test Generation Tools
 
 | Capability | Claude | Copilot | Tabnine | Codeium |
 |-----------|--------|---------|---------|---------|
@@ -252,17 +252,17 @@ Comparison Table: AI Test Generation Tools
 | Cost | API-based | Free/Pro | Free/Pro | Free/Pro |
 | Test coverage metrics | Good | Good | Excellent | Good |
 
-Workflow: Testing Legacy Code End-to-End
+Workflow - Testing Legacy Code End-to-End
 
-Step 1: Select function to test. Choose small, focused functions first (< 100 lines). Easier to understand and test.
+Step 1 - Select function to test. Choose small, focused functions first (< 100 lines). Easier to understand and test.
 
-Step 2: Extract legacy function into isolated test file. This prevents breaking existing code during the process.
+Step 2 - Extract legacy function into isolated test file. This prevents breaking existing code during the process.
 
-Step 3: Generate test suite using AI. Provide the tool with the function signature and implementation.
+Step 3 - Generate test suite using AI. Provide the tool with the function signature and implementation.
 
-Step 4: Review and augment tests. Run generated tests to ensure they pass (they should, since they document current behavior). Add tests for desired behavior improvements.
+Step 4 - Review and augment tests. Run generated tests to ensure they pass (they should, since they document current behavior). Add tests for desired behavior improvements.
 
-Step 5: Refactor with test safety net. With tests in place, refactor confidently.
+Step 5 - Refactor with test safety net. With tests in place, refactor confidently.
 
 Footer
 
@@ -276,7 +276,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -288,7 +288,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

@@ -33,7 +33,7 @@ Rust's ownership model, borrow checker, and type system create unique challenges
 
 
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.
-- Most models understand Rust: syntax but struggle with lifetime annotations, async/await with Send + Sync bounds, and error handling patterns.
+- Most models understand Rust - syntax but struggle with lifetime annotations, async/await with Send + Sync bounds, and error handling patterns.
 - Copilot in Cursor gave: Fix 2 only without explanation.
 - A week-long trial with: actual work gives better signal than feature comparison charts.
 - Do these tools work: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
@@ -52,7 +52,7 @@ Borrow Checker Assistance
 
 The most valuable AI capability in Rust is explaining and fixing borrow checker errors.
 
-Test: Paste a borrow checker error and ask for explanation + fix.
+Test - Paste a borrow checker error and ask for explanation + fix.
 
 ```rust
 // Code that produces: error[E0502]: cannot borrow `v` as mutable because it is also borrowed as immutable
@@ -103,7 +103,7 @@ Claude gave three semantically correct options with reasoning. Copilot in Cursor
 
 Async/Await Pattern Generation
 
-Async Rust is notoriously complex. Test: "Write a function that fetches multiple URLs concurrently, with a timeout on each request and a maximum of 10 concurrent requests."
+Async Rust is notoriously complex. Test - "Write a function that fetches multiple URLs concurrently, with a timeout on each request and a maximum of 10 concurrent requests."
 
 Copilot's output:
 
@@ -176,7 +176,7 @@ Macro Generation
 
 Rust macros (both `macro_rules!` and proc macros) are notoriously hard. AI tools vary significantly here.
 
-Test: "Create a macro that generates builder patterns for structs."
+Test - "Create a macro that generates builder patterns for structs."
 
 ```rust
 // Claude generated this derive macro (proc macro)
@@ -279,7 +279,7 @@ Use Claude for:
 - Complex lifetime annotations
 
 ```bash
-Useful: pipe rustc errors to Claude
+Useful - pipe rustc errors to Claude
 cargo build 2>&1 | pbcopy  # Copy errors, then paste to Claude
 Or use claude-code CLI:
 cargo build 2>&1 | claude "explain these Rust errors and provide fixes"
@@ -301,7 +301,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -313,6 +313,6 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 {% endraw %}

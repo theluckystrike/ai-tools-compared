@@ -29,7 +29,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Core Differences
+Step 1 - Understand the Core Differences
 
 
 Notion AI operates within the constraints of a block-based document system. Your workflows likely involve database properties, page templates, and Notion's AI block that generates content within those constraints. Claude Projects, by contrast, gives you a working directory, the ability to run actual code, and a context-aware AI that understands your entire project structure.
@@ -40,7 +40,7 @@ The fundamental shift involves moving from a visual, database-driven approach to
 This shift requires some upfront investment but pays dividends quickly. Notion AI workflows are constrained by what Notion's interface exposes. you cannot loop over a database, call an external API mid-workflow, or conditionally branch based on the result of an AI call. In Claude Projects, all of those patterns become straightforward Python or shell scripts. The migration is less about recreating what Notion did and more about unlocking what was previously impossible.
 
 
-Step 2: Mapping Notion Concepts to Claude Projects
+Step 2 - Mapping Notion Concepts to Claude Projects
 
 
 From Database Properties to Data Structures
@@ -92,7 +92,7 @@ From Notion Relations to File References
 Notion's relational database properties let you link records across databases. In Claude Projects, you represent these relationships as foreign key references in JSON, or as symlinks and relative paths in a directory structure. A task that relates to a project becomes `"project_id": "proj-042"`, resolved by looking up `projects.json`.
 
 
-Step 3: Build Equivalent Workflows
+Step 3 - Build Equivalent Workflows
 
 
 Automated Content Generation
@@ -165,10 +165,10 @@ Migrating Your Prompts
 Notion AI prompts are implicit in how you configure the AI blocks. In Claude Projects, you make them explicit:
 
 
-Notion (implicit): You configure an AI block with "Summarize this page" and select the output property.
+Notion (implicit) - You configure an AI block with "Summarize this page" and select the output property.
 
 
-Claude Projects (explicit): You create prompt files:
+Claude Projects (explicit) - You create prompt files:
 
 
 ```
@@ -193,7 +193,7 @@ def summarize_content(content):
 Making prompts explicit in files has a significant benefit: you can version-control them with git, track how output quality changes when you refine wording, and A/B test different prompt versions against the same input data. Notion AI prompts are buried in block configuration and cannot be easily compared or audited.
 
 
-Step 4: Preserving Data During Migration
+Step 4 - Preserving Data During Migration
 
 
 Moving from Notion to Claude Projects requires exporting your existing data. Notion provides export options for CSV or Markdown. For a database containing AI-generated content:
@@ -243,7 +243,7 @@ if __name__ == "__main__":
 When migrating AI-generated content (summaries, tags, extracted entities), you have a choice: migrate the existing AI output and use it as-is, or set those fields to `null` and regenerate them with Claude. Regeneration is usually worth the cost. Notion AI outputs tend to be shorter and less precise than what Claude Projects can produce with a well-crafted prompt.
 
 
-Step 5: When Claude Projects Shines
+Step 5 - When Claude Projects Shines
 
 
 Claude Projects offer advantages that Notion cannot match for AI workflows:
@@ -260,7 +260,7 @@ Programmatic control enables complex conditional logic. Your workflows can make 
 Audit trails are straightforward with git. Every change to your data files, prompts, and scripts is tracked. When an AI-generated summary is wrong, you can trace back exactly which prompt version and model produced it. Notion has no equivalent audit mechanism for AI-generated content.
 
 
-Step 6: Practical Migration Strategy
+Step 6 - Practical Migration Strategy
 
 
 Start by identifying your most critical Notion AI workflows. For each workflow:
@@ -280,16 +280,16 @@ Most teams find that after migration, they build additional automation they coul
 A reasonable migration timeline for a team with 10-20 active Notion AI workflows is two to four weeks: one week for export and data transformation, one week for prompt migration and script development, and one to two weeks for testing and parallel running before fully decommissioning the Notion workflows.
 
 
-Step 7: Handling Edge Cases in Migration
+Step 7 - Handling Edge Cases in Migration
 
 
 A few Notion AI features require special handling during migration:
 
 Notion AI summaries on linked databases: If your AI blocks pulled content from linked databases rather than the current page, your migration script needs to resolve those links before generating summaries. Export both databases, join them by ID in Python, then pass the combined content to Claude.
 
-Recurring AI workflows: Notion's "Update AI block" button is manual. If you had team members clicking it on a schedule, replace this with a cron job: `0 9 * * 1-5 python /path/to/generate_content.py` runs your content generation every weekday at 9am without human intervention.
+Recurring AI workflows - Notion's "Update AI block" button is manual. If you had team members clicking it on a schedule, replace this with a cron job: `0 9 * * 1-5 python /path/to/generate_content.py` runs your content generation every weekday at 9am without human intervention.
 
-AI filters on database views: Notion lets you filter database views by AI-generated property values. In Claude Projects, implement this as a query against your JSON data: `[t for t in tasks if 'urgent' in t.get('ai_tags', [])]`. The logic is more explicit and easier to debug than Notion's filter UI.
+AI filters on database views - Notion lets you filter database views by AI-generated property values. In Claude Projects, implement this as a query against your JSON data: `[t for t in tasks if 'urgent' in t.get('ai_tags', [])]`. The logic is more explicit and easier to debug than Notion's filter UI.
 
 ---
 

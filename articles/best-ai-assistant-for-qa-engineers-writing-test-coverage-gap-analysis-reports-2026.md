@@ -25,7 +25,7 @@ Table of Contents
 - [Understanding Test Coverage Gap Analysis](#understanding-test-coverage-gap-analysis)
 - [How AI Assistants Help](#how-ai-assistants-help)
 - [Top AI Assistants for Gap Analysis Reports](#top-ai-assistants-for-gap-analysis-reports)
-- [Practical Example: Generating a Gap Analysis Report](#practical-example-generating-a-gap-analysis-report)
+- [Practical Example - Generating a Gap Analysis Report](#practical-example-generating-a-gap-analysis-report)
 - [Best Practices for AI-Assisted Gap Analysis](#best-practices-for-ai-assisted-gap-analysis)
 - [Choosing the Right Tool](#choosing-the-right-tool)
 
@@ -121,11 +121,11 @@ Strengths for QA engineers:
 - Context awareness across your entire codebase using embeddings
 - Can generate test files that match your project's existing patterns and conventions
 
-Practical Example: Generating a Gap Analysis Report
+Practical Example - Generating a Gap Analysis Report
 
 Here's a workflow using Claude to generate a test coverage gap analysis report:
 
-Step 1: Export coverage data
+Step 1 - Export coverage data
 
 ```bash
 Python with Coverage.py
@@ -135,7 +135,7 @@ JavaScript with Jest
 npx jest --coverage --coverageReporters=json
 ```
 
-Step 2: Ask AI to analyze
+Step 2 - Ask AI to analyze
 
 ```
 Using this coverage.json file, identify:
@@ -148,7 +148,7 @@ Format the output as a markdown report with severity levels (Critical/High/Mediu
 Group findings by engineering team ownership if the file paths suggest team boundaries.
 ```
 
-Step 3: Generate test recommendations
+Step 3 - Generate test recommendations
 
 For a function like this:
 

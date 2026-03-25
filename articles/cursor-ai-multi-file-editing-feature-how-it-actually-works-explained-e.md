@@ -45,13 +45,13 @@ How Cursor Processes Multi-File Edit Requests
 
 When you initiate a multi-file edit through Cursor's chat interface or inline commands, the system performs several steps:
 
-1. Intent Detection: Cursor interprets your request to determine which files require modification. Ambiguous requests may lead to incomplete or incorrect edits, so specificity matters.
+1. Intent Detection - Cursor interprets your request to determine which files require modification. Ambiguous requests may lead to incomplete or incorrect edits, so specificity matters.
 
-2. Dependency Analysis: The editor scans imported files, function calls, and shared data structures to understand how changes in one file affect others.
+2. Dependency Analysis - The editor scans imported files, function calls, and shared data structures to understand how changes in one file affect others.
 
-3. Edit Planning: Cursor generates a sequence of modifications, prioritizing changes that other edits depend on (such as updating a function signature before modifying its callers).
+3. Edit Planning - Cursor generates a sequence of modifications, prioritizing changes that other edits depend on (such as updating a function signature before modifying its callers).
 
-4. Application: Changes are applied sequentially, with validation checks between operations when possible.
+4. Application - Changes are applied sequentially, with validation checks between operations when possible.
 
 Here's a practical example. Suppose you have a JavaScript project with these files:
 
@@ -140,11 +140,11 @@ Common Limitations and How to Work Around Them
 
 Despite its capabilities, Cursor's multi-file editing has constraints that developers should understand.
 
-Context Window Limits: Very large refactoring tasks across many files may exceed what Cursor can track accurately. For massive changes, consider splitting the work into smaller batches.
+Context Window Limits - Very large refactoring tasks across many files may exceed what Cursor can track accurately. For massive changes, consider splitting the work into smaller batches.
 
-Stale Information: If files have changed since Cursor last analyzed them, edits may become inconsistent. Save your work and allow Cursor to refresh its context before making large changes.
+Stale Information - If files have changed since Cursor last analyzed them, edits may become inconsistent. Save your work and allow Cursor to refresh its context before making large changes.
 
-Implicit Dependencies: Some code relationships are implicit and harder for AI to detect. For example, configuration files that affect runtime behavior or database schemas shared across files may not be automatically updated. Always verify these manually.
+Implicit Dependencies - Some code relationships are implicit and harder for AI to detect. For example, configuration files that affect runtime behavior or database schemas shared across files may not be automatically updated. Always verify these manually.
 
 Here's an example of providing explicit context for better results:
 
@@ -163,11 +163,11 @@ Advanced Strategies for Power Users
 
 For developers working with large codebases, several advanced techniques improve multi-file editing outcomes.
 
-Use Cursor Rules: Define project-specific guidelines in `.cursorrules` to help Cursor understand your codebase's conventions. This improves consistency across multi-file edits.
+Use Cursor Rules - Define project-specific guidelines in `.cursorrules` to help Cursor understand your codebase's conventions. This improves consistency across multi-file edits.
 
-Use Workspace Context: Cursor analyzes your entire workspace, but you can focus its attention by opening relevant files before making requests. This ensures the most current content is in context.
+Use Workspace Context - Cursor analyzes your entire workspace, but you can focus its attention by opening relevant files before making requests. This ensures the most current content is in context.
 
-Combine with Traditional Refactoring: Use Cursor for the bulk of changes but make manual adjustments for critical sections. The hybrid approach uses AI efficiency while maintaining precise control.
+Combine with Traditional Refactoring - Use Cursor for the bulk of changes but make manual adjustments for critical sections. The hybrid approach uses AI efficiency while maintaining precise control.
 
 ```javascript
 // Example: Cursor can handle the bulk of this refactor
@@ -194,19 +194,19 @@ Debugging Multi-File Edit Failures
 
 When multi-file edits go wrong, understanding common failure modes helps you recover:
 
-Import Path Errors: Cursor generates correct import syntax but may use relative paths that don't match your project structure. If you see "Cannot find module" errors, review the import statements and adjust file organization.
+Import Path Errors - Cursor generates correct import syntax but may use relative paths that don't match your project structure. If you see "Cannot find module" errors, review the import statements and adjust file organization.
 
-Partial Updates: Sometimes Cursor modifies some but not all files in scope. This happens when context limits are exceeded. Solution: Break large refactors into smaller batches or explicitly tell Cursor which files to modify.
+Partial Updates - Sometimes Cursor modifies some but not all files in scope. This happens when context limits are exceeded. Solution - Break large refactors into smaller batches or explicitly tell Cursor which files to modify.
 
-Type Mismatches: In typed languages, Cursor might update function signatures but forget to update all call sites with new parameter types. Always run type checking after multi-file edits.
+Type Mismatches - In typed languages, Cursor might update function signatures but forget to update all call sites with new parameter types. Always run type checking after multi-file edits.
 
-Configuration File Misses: Cursor occasionally forgets to update configuration files (webpack.config.js, tsconfig.json, etc.) that reference changed code. Manually verify configuration after refactoring.
+Configuration File Misses - Cursor occasionally forgets to update configuration files (webpack.config.js, tsconfig.json, etc.) that reference changed code. Manually verify configuration after refactoring.
 
 Performance Optimization for Large Codebases
 
 For teams managing large repositories:
 
-Focus Cursor's Attention: Before multi-file operations, open only the relevant files in your editor. This reduces context noise and improves accuracy. A 100,000-line codebase becomes much more manageable if Cursor only sees the 20 most relevant files.
+Focus Cursor's Attention - Before multi-file operations, open only the relevant files in your editor. This reduces context noise and improves accuracy. A 100,000-line codebase becomes much more manageable if Cursor only sees the 20 most relevant files.
 
 Use .cursorrules Effectively:
 ```
@@ -219,7 +219,7 @@ Use .cursorrules Effectively:
 - Order imports: third-party, then local modules
 ```
 
-Split Large Refactors: Instead of "refactor this entire authentication system," break it into smaller chunks: "move auth types to new file," then "extract auth service," then "update imports." Sequential operations often succeed better than monolithic changes.
+Split Large Refactors - Instead of "refactor this entire authentication system," break it into smaller chunks: "move auth types to new file," then "extract auth service," then "update imports." Sequential operations often succeed better than monolithic changes.
 
 Comparison with Manual Refactoring
 
@@ -233,7 +233,7 @@ Manual refactoring of extracting a service module:
 
 Cursor refactoring of same task:
 - Time: 3-5 minutes
-- Steps: Select code, "Extract to utils/service.js," verify diffs, accept
+- Steps - Select code, "Extract to utils/service.js," verify diffs, accept
 - Mental overhead: Writing precise instructions
 - Risk: Minor, handled by Cursor's analysis
 
@@ -241,9 +241,9 @@ The 4-6x time saving compounds over a large refactoring project. A week-long arc
 
 Real-World Refactoring Examples
 
-Example 1: Extract API Client Service
+Example 1 - Extract API Client Service
 ```
-Cursor prompt: "Extract the fetch-based API calls from
+Cursor prompt - "Extract the fetch-based API calls from
 pages/dashboard.jsx, pages/analytics.jsx, and
 pages/reports.jsx into a new utils/api-client.js file.
 Update all three files to import and use the new service."
@@ -251,12 +251,12 @@ Update all three files to import and use the new service."
 - Creates utils/api-client.js with extracted methods
 - Updates all three files with correct imports
 - Preserves existing error handling
-Time: 2 minutes
+Time - 2 minutes
 ```
 
-Example 2: Rename Database Column Globally
+Example 2 - Rename Database Column Globally
 ```
-Cursor prompt: "In the database schema, rename the 'user_id'
+Cursor prompt - "In the database schema, rename the 'user_id'
 column to 'customer_id'. Update all ORM models, migrations,
 and queries that reference this column."
 
@@ -265,12 +265,12 @@ and queries that reference this column."
 - Updates migration files
 - Updates all queries/queries/ files with new column reference
 - Updates related model associations
-Time: 3 minutes
+Time - 3 minutes
 ```
 
-Example 3: Convert Class Component to Hooks
+Example 3 - Convert Class Component to Hooks
 ```
-Cursor prompt: "Convert the UserProfile component from
+Cursor prompt - "Convert the UserProfile component from
 class-based to functional with hooks. Extract lifecycle
 methods to useEffect, replace state with useState, and
 create a custom useUserProfile hook if beneficial."
@@ -280,7 +280,7 @@ create a custom useUserProfile hook if beneficial."
 - Replaces this.state with useState hooks
 - Creates custom hook for reusable logic
 - Updates any files importing this component
-Time: 4 minutes
+Time - 4 minutes
 ```
 
 Context Window Management

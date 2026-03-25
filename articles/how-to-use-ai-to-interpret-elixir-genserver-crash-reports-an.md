@@ -22,12 +22,12 @@ This guide shows how to use AI assistance effectively when debugging GenServer c
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Practical Example: Debugging a State Machine GenServer](#practical-example-debugging-a-state-machine-genserver)
+- [Practical Example - Debugging a State Machine GenServer](#practical-example-debugging-a-state-machine-genserver)
 - [Best Practices for AI-Assisted Debugging](#best-practices-for-ai-assisted-debugging)
 - [Troubleshooting](#troubleshooting)
 - [Common GenServer Error Patterns Reference](#common-genserver-error-patterns-reference)
 - [Production Monitoring for GenServer Health](#production-monitoring-for-genserver-health)
-- [Advanced: Root Cause Analysis Using AI](#advanced-root-cause-analysis-using-ai)
+- [Advanced - Root Cause Analysis Using AI](#advanced-root-cause-analysis-using-ai)
 
 Prerequisites
 
@@ -39,7 +39,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand GenServer Crash Reports
+Step 1 - Understand GenServer Crash Reports
 
 When a GenServer process terminates unexpectedly, the BEAM generates an error report containing the exit reason, the last known state, and the stack trace. The exit reason can be a simple atom like `:normal`, `:shutdown`, or `{:shutdown, reason}`, or it can be a tuple containing error details like `{:bad_return_value, val}` or `{:EXIT, from, reason}`.
 
@@ -52,7 +52,7 @@ A typical GenServer crash report might look like this:
 
 When you paste this into an AI tool, ask it to explain the exit reason in the context of GenServer lifecycle. A good prompt would be: "Explain this GenServer crash report and identify what went wrong based on the exit reason and stack trace." The AI will break down the error tuple, explain what `bad_return_value` means in the GenServer context, and point to the specific line in your code where the issue occurred.
 
-Step 2: Common GenServer Exit Reasons
+Step 2 - Common GenServer Exit Reasons
 
 Several exit reasons appear frequently in GenServer crash reports. Understanding each helps you provide better context to AI tools.
 
@@ -66,7 +66,7 @@ noproc means a process you tried to communicate with doesn't exist, often becaus
 
 When sharing crash reports with AI, include the full error tuple, the stack trace, and relevant portions of your GenServer code. This gives the AI enough context to provide accurate diagnoses.
 
-Step 3: Analyzing Supervisor Restart Reports
+Step 3 - Analyzing Supervisor Restart Reports
 
 Supervisors manage process lifecycles and define restart strategies. When a supervised process crashes repeatedly, the supervisor may give up and terminate itself. The resulting log contains information about restart attempts and the final shutdown decision.
 
@@ -80,9 +80,9 @@ A supervisor restart report typically includes the restart frequency, the child 
 18:30:15.346 [error] Supervisor MyApp.Endpoint terminated
 ```
 
-AI tools can help interpret these restart patterns. Ask: "What does this supervisor restart sequence indicate? Is it a configuration issue, a resource problem, or a code bug?" The AI can distinguish between one-time failures that might succeed on retry versus persistent failures that indicate a code-level problem.
+AI tools can help interpret these restart patterns. Ask - "What does this supervisor restart sequence indicate? Is it a configuration issue, a resource problem, or a code bug?" The AI can distinguish between one-time failures that might succeed on retry versus persistent failures that indicate a code-level problem.
 
-Step 4: Use AI for Root Cause Analysis
+Step 4 - Use AI for Root Cause Analysis
 
 When debugging GenServer crashes, providing the right context to AI dramatically improves the quality of assistance. Include the crash report, relevant code snippets, and any recent changes to your application.
 
@@ -98,7 +98,7 @@ A structured approach works well:
 
 The AI can then trace through the code, identify the likely cause, and suggest specific fixes. For example, if the error is `bad_return_value` from a `handle_call` callback, the AI might identify that you're returning `state` instead of the expected `{:reply, response, state}` tuple.
 
-Practical Example: Debugging a State Machine GenServer
+Practical Example - Debugging a State Machine GenServer
 
 Consider a GenServer implementing a simple state machine that crashed with this error:
 
@@ -123,7 +123,7 @@ The AI identifies that the first clause uses `=%{state::pending}` in the pattern
 
 This type of subtle pattern matching error is common in GenServer callbacks and AI tools excel at spotting them quickly.
 
-Step 5: Optimizing Supervisor Restart Strategies
+Step 5 - Optimizing Supervisor Restart Strategies
 
 AI can also help you choose appropriate supervisor restart strategies for different process types. Temporary workers that should never restart differ from permanent workers that must always restart. One-For-One strategies suit independent workers while One-For-All suits processes that depend on each other.
 
@@ -136,12 +136,12 @@ Provide complete context rather than just the error message. Include the relevan
 Effective crash report documentation:
 
 ```
-Step 6: GenServer Crash: UserManager
+Step 6 - GenServer Crash: UserManager
 
-Application: myapp
-Version: 1.2.3
-Timestamp: 2026-03-20 14:32:15 UTC
-Supervisor: MyApp.UserSupervisor
+Application - myapp
+Version - 1.2.3
+Timestamp - 2026-03-20 14:32:15 UTC
+Supervisor - MyApp.UserSupervisor
 
 Error Message:
  (EXIT) #PID<0.123.0> exited with reason: {:bad_match, {:ok, user_data}}
@@ -261,27 +261,27 @@ Common GenServer Error Patterns Reference
 
 Keep this reference handy when interpreting AI explanations:
 
-Exit Reason: {:bad_return_value, val}
+Exit Reason - {:bad_return_value, val}
 - Cause: GenServer callback returned unexpected type
 - Common fix: Ensure handle_call returns `{:reply, response, state}`
 - AI prompt: "Explain bad_return_value error in GenServer"
 
-Exit Reason: :badarg
+Exit Reason - :badarg
 - Cause: Wrong argument type passed to function or pattern match failed
 - Common fix: Check argument types and pattern match specificity
 - AI prompt: "Debug badarg error in this GenServer code"
 
-Exit Reason: :function_clause
+Exit Reason - :function_clause
 - Cause: No matching function clause for arguments provided
 - Common fix: Add catch-all clause or expand pattern matching
 - AI prompt: "Why does this function_clause error occur?"
 
-Exit Reason: {:EXIT, pid, reason}
+Exit Reason - {:EXIT, pid, reason}
 - Cause: Linked process exited with given reason
 - Common fix: Use supervisor to manage process dependencies
 - AI prompt: "Explain this process link exit and how to handle it"
 
-Exit Reason: :noproc
+Exit Reason - :noproc
 - Cause: Process you tried to communicate with doesn't exist
 - Common fix: Check that GenServer was started before calling it
 - AI prompt: "Debug noproc error when calling GenServer"
@@ -309,11 +309,11 @@ end
 
 Track crash frequency by GenServer type. If one type crashes repeatedly, escalate for investigation using AI debugging.
 
-Advanced: Root Cause Analysis Using AI
+Advanced - Root Cause Analysis Using AI
 
 When individual crashes aren't enough, AI can help identify systemic issues:
 
-Pattern: UserManager crashes every 6 hours
+Pattern - UserManager crashes every 6 hours
 ```
 "The UserManager GenServer crashes every 6 hours with badarg errors.
 Crash log shows the error occurs in handle_cast when processing user updates.
@@ -323,7 +323,7 @@ What's the root cause and how do I fix it?"
 
 AI can identify that the pattern match on the old user data structure is failing with the new structure, leading to systematic crashes.
 
-Pattern: SessionStore restarts 10+ times per day
+Pattern - SessionStore restarts 10+ times per day
 ```
 "SessionStore GenServer keeps restarting (supervisor is catching crashes).
 All crashes show timeout during initialization.

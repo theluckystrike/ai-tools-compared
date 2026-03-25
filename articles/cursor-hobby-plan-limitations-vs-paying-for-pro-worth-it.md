@@ -21,7 +21,7 @@ Table of Contents
 
 - [What the Cursor Hobby Plan Actually Includes](#what-the-cursor-hobby-plan-actually-includes)
 - [What You Get with Cursor Pro](#what-you-get-with-cursor-pro)
-- [Practical Impact: A Developer's Workflow](#practical-impact-a-developers-workflow)
+- [Practical Impact - A Developer's Workflow](#practical-impact-a-developers-workflow)
 - [When the Hobby Plan Works Fine](#when-the-hobby-plan-works-fine)
 - [When Pro Becomes Worth It](#when-pro-becomes-worth-it)
 - [Comparing the Value Proposition](#comparing-the-value-proposition)
@@ -30,7 +30,7 @@ Table of Contents
 - [Detailed Usage Estimates](#detailed-usage-estimates)
 - [Cost-Benefit Analysis by Role](#cost-benefit-analysis-by-role)
 - [Upgrade Decision Framework](#upgrade-decision-framework)
-- [Real Usage Patterns: Case Studies](#real-usage-patterns-case-studies)
+- [Real Usage Patterns - Case Studies](#real-usage-patterns-case-studies)
 - [Comparing to Other Tools](#comparing-to-other-tools)
 - [Hidden Costs of Hobby Plan](#hidden-costs-of-hobby-plan)
 - [Companies Reimbursing Developer Tools](#companies-reimbursing-developer-tools)
@@ -66,7 +66,7 @@ The Pro plan removes these barriers and adds premium features:
 
 The Pro plan costs around $20/month (pricing may vary by region and subscription terms). For developers who rely on AI assistance throughout their coding sessions, the unlimited access transforms how you work.
 
-Practical Impact: A Developer's Workflow
+Practical Impact - A Developer's Workflow
 
 Let's look at how these limits affect real usage. Consider a typical debugging session where you're tracking down a tricky issue:
 
@@ -87,7 +87,7 @@ The Hobby plan forces you to be intentional about each AI interaction. You might
 With Pro, the AI becomes a constant companion rather than a limited resource. You can:
 
 ```bash
-Pro workflow example: iterative problem solving
+Pro workflow example - iterative problem solving
 1. Ask AI to explain an error
 2. Request a fix
 3. Ask for test cases
@@ -192,7 +192,7 @@ Marginal value for:
 Cost-Benefit Analysis by Role
 
 Full-Stack Web Developer
-- Salary: $120K/year = $57.69/hour
+- Salary - $120K/year = $57.69/hour
 - Time saved with Pro vs Hobby: 3-5 hours/week
 - Monthly value saved: 12-20 hours × $57.69 = $692-1154
 - Monthly cost: $20
@@ -246,47 +246,47 @@ Are you using Cursor daily for professional work?
                NO → Evaluate ROI against your hourly rate
 ```
 
-Real Usage Patterns: Case Studies
+Real Usage Patterns - Case Studies
 
-Case 1: Junior Developer at Startup
+Case 1 - Junior Developer at Startup
 
 Hobby usage:
 ```
-Day 1: Use 30 Ctrl+K to implement new component
-Day 2: Use 15 Ctrl+K to debug issue
-Day 3: Hit limit, wait until reset
-Day 4: Use 5 Ctrl+K, being conservative
-Day 5: Stuck on problem, but out of quota
+Day 1 - Use 30 Ctrl+K to implement new component
+Day 2 - Use 15 Ctrl+K to debug issue
+Day 3 - Hit limit, wait until reset
+Day 4 - Use 5 Ctrl+K, being conservative
+Day 5 - Stuck on problem, but out of quota
 
 Frustrated, learning slowed, moved to ChatGPT for free
 Pro ($20/month saves 2+ hours/week in productivity)
 ```
 
-Case 2: Senior DevOps Engineer
+Case 2 - Senior DevOps Engineer
 
 Pro usage:
 ```
-Monday: Write K8s manifests (20 requests), debug networking (15 requests)
-Tuesday: Infrastructure-as-code refactor (30 requests), shell scripts (10 requests)
-Wednesday: Troubleshoot production issue (25 requests)
-Thursday: Documentation and optimization (12 requests)
-Friday: Code review on automation (8 requests)
+Monday - Write K8s manifests (20 requests), debug networking (15 requests)
+Tuesday - Infrastructure-as-code refactor (30 requests), shell scripts (10 requests)
+Wednesday - Troubleshoot production issue (25 requests)
+Thursday - Documentation and optimization (12 requests)
+Friday - Code review on automation (8 requests)
 
-Total: ~120 requests/week
+Total - ~120 requests/week
 Hobby would hit limit by Wednesday afternoon
 
 Continuous productivity, zero friction
 Pro is mandatory ($20/month is trivial for a $150K+ salary)
 ```
 
-Case 3: Hobbyist Weekend Developer
+Case 3 - Hobbyist Weekend Developer
 
 Hobby usage:
 ```
-Saturday: Build feature (8 Ctrl+K requests)
-Sunday: Bug fixes and testing (6 Ctrl+K requests)
+Saturday - Build feature (8 Ctrl+K requests)
+Sunday - Bug fixes and testing (6 Ctrl+K requests)
 
-Monthly: 28-32 requests
+Monthly - 28-32 requests
 Never hits limit, never feels constrained
 
 Hobby is perfect
@@ -345,7 +345,7 @@ Annual developer tool budget:
 - AI assistant: $20-240/year (Copilot/Cursor $240)
 - Other tools: $500-2000 (monitoring, testing, etc.)
 
-Total: $500-3000/year per developer is standard
+Total - $500-3000/year per developer is standard
 
 A company paying a developer $120K/year should easily reimburse
 $240/year for Cursor Pro. ROI: 50-100x in productivity.

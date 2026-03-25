@@ -19,7 +19,7 @@ ChatGPT Plus ($20/month) limits DALL-E image generation to approximately 50 imag
 
 Table of Contents
 
-- [ChatGPT Plus: Current Feature Set](#chatgpt-plus-current-feature-set)
+- [ChatGPT Plus - Current Feature Set](#chatgpt-plus-current-feature-set)
 - [Understanding Three-Hour Usage Windows](#understanding-three-hour-usage-windows)
 - [DALL-E Usage Limits](#dall-e-usage-limits)
 - [Web Browsing Limits](#web-browsing-limits)
@@ -27,7 +27,7 @@ Table of Contents
 - [Alternative Approaches When Limits Are Reached](#alternative-approaches-when-limits-are-reached)
 - [Planning Your ChatGPT Plus Usage](#planning-your-chatgpt-plus-usage)
 
-ChatGPT Plus: Current Feature Set
+ChatGPT Plus - Current Feature Set
 
 ChatGPT Plus ($20/month) provides several advantages over the free tier:
 
@@ -63,7 +63,7 @@ ChatGPT Plus subscribers receive a monthly allocation of DALL-E image generation
 
 OpenAI does not publish hard numbers publicly and adjusts limits based on system load. Users commonly report seeing between 40 and 60 images available per three-hour period under normal conditions. During high-demand periods, product launches, major news events that drive image generation spikes, effective limits can tighten further without warning.
 
-DALL-E Limit Comparison: Plus vs Pro vs API
+DALL-E Limit Comparison - Plus vs Pro vs API
 
 | Tier | Approx. Images / 3h | Cost | Best For |
 |---|---|---|---|
@@ -197,7 +197,7 @@ For developers who rely heavily on these features, consider implementing these p
 3. Combine browsing with coding: Use browsing to retrieve documentation, then immediately apply it in your code without switching contexts extensively.
 
 ```python
-Example workflow: Research then implement
+Example workflow - Research then implement
 def research_and_code(task):
     # Browse for relevant documentation
     docs = browse_docs(task)
@@ -270,6 +270,6 @@ Related Articles
 - [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs](/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
 - [Claude Free vs ChatGPT Free Which Gives More Per](/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
 - [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
-- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
+- [ChatGPT Plus Cancel Mid Month - Do You Keep Access Until End?](/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
 - [DALL-E Image Generation Failed: How](/dalle-image-generation-failed-how-to-retry/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

@@ -39,7 +39,7 @@ The best AI tools for data governance are Amundsen and DataHub for open-source c
 - The tools below serve both needs: but some are better suited to one than the other.
 - Amundsen (Open Source)
 
-Amundsen: developed by Lyft, provides data discovery and cataloging with metadata ingestion from multiple sources.
+Amundsen - developed by Lyft, provides data discovery and cataloging with metadata ingestion from multiple sources.
 - Teams at large companies: use it to solve the "I know we have a table for this, but I can't find it" problem.
 - The ML-based table and: column recommendations surface related assets that users may not have considered, reducing the time spent searching for data.
 
@@ -87,7 +87,7 @@ The tool automatically generates popularity rankings based on query frequency, h
 
 Amundsen's search is powered by Elasticsearch, making it fast and relevance-ranked for data discovery. Teams at large companies use it to solve the "I know we have a table for this, but I can't find it" problem. The ML-based table and column recommendations surface related assets that users may not have considered, reducing the time spent searching for data.
 
-Best fit: Organizations with many data sources that need a central discovery layer. Works well when you have a dedicated data platform team to manage the deployment and keep metadata fresh.
+Best fit - Organizations with many data sources that need a central discovery layer. Works well when you have a dedicated data platform team to manage the deployment and keep metadata fresh.
 
 2. DataHub (Open Source)
 
@@ -144,7 +144,7 @@ client.metadata.upsert(
 
 DataHub's real-time event streaming (via Kafka) means metadata changes propagate immediately rather than waiting for batch ingestion cycles. This matters when a schema change happens in production, downstream consumers see the updated metadata within seconds.
 
-Best fit: Organizations that need real-time metadata propagation and have Kafka infrastructure already in place. Stronger choice than Amundsen for teams with complex, rapidly-evolving data schemas.
+Best fit - Organizations that need real-time metadata propagation and have Kafka infrastructure already in place. Stronger choice than Amundsen for teams with complex, rapidly-evolving data schemas.
 
 3. Monte Carlo (Commercial)
 
@@ -192,7 +192,7 @@ mc.register_alert_handler(handle_alert)
 
 What separates Monte Carlo from rule-based monitoring tools is its ML training period. During the first two weeks of deployment, the system observes your tables and establishes baselines for row counts, null rates, distribution shapes, and update freshness. After training, it alerts only when metrics deviate meaningfully from historical norms, not just when they cross a static threshold. This dramatically reduces alert fatigue compared to hand-coded monitors.
 
-Best fit: Data teams that have outgrown manual monitoring and need automated anomaly detection without writing every quality rule from scratch. Especially valuable for organizations with dozens of critical tables and no dedicated data quality engineer.
+Best fit - Data teams that have outgrown manual monitoring and need automated anomaly detection without writing every quality rule from scratch. Especially valuable for organizations with dozens of critical tables and no dedicated data quality engineer.
 
 4. Atlan (Commercial)
 
@@ -228,7 +228,7 @@ Atlan's "active metadata" concept means it doesn't just catalog data, it acts on
 
 The tool also supports lineage-aware impact analysis. Before a schema change, you can ask Atlan which downstream dashboards and reports will be affected. This is particularly useful before deprecating a column or renaming a table.
 
-Best fit: Organizations that need governance workflows beyond simple cataloging, access requests, data product certification, change impact analysis. Works best when data stewards are non-technical and need an UI-driven governance experience.
+Best fit - Organizations that need governance workflows beyond simple cataloging, access requests, data product certification, change impact analysis. Works best when data stewards are non-technical and need an UI-driven governance experience.
 
 5. Great Expectations (Open Source)
 
@@ -287,7 +287,7 @@ checkpoints:
 
 Great Expectations' "data docs" feature auto-generates human-readable HTML documentation from your expectation suites, useful for sharing data contracts with non-technical stakeholders without extra documentation overhead.
 
-Best fit: Data engineering teams that treat data quality as code. Works especially well in dbt-based stacks where tests already live in version control. The developer-first model means low adoption barrier for engineers already comfortable with Python and CI/CD pipelines.
+Best fit - Data engineering teams that treat data quality as code. Works especially well in dbt-based stacks where tests already live in version control. The developer-first model means low adoption barrier for engineers already comfortable with Python and CI/CD pipelines.
 
 Choosing the Right Tool
 
@@ -303,7 +303,7 @@ For data contract testing in CI/CD, Great Expectations fits naturally into devel
 
 Implementation Approach
 
-When deploying these tools, start with metadata discovery before implementing strict controls. Catalog existing data assets, understand usage patterns, then layer governance policies on top. Teams that try to enforce policy before they have a clear picture of their data landscape typically encounter resistance and create exceptions that undermine governance goals.
+When deploying these tools, start with metadata discovery before implementing strict controls. Catalog existing data assets, understand usage patterns, then layer governance policies on top. Teams that try to enforce policy before they have a clear picture of their data field typically encounter resistance and create exceptions that undermine governance goals.
 
 A practical rollout sequence:
 1. Deploy Amundsen or DataHub to catalog existing assets and establish data ownership
@@ -331,7 +331,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -343,6 +343,6 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 {% endraw %}

@@ -37,9 +37,9 @@ Self-service support portals have evolved beyond static FAQ pages. Modern implem
 - Modern implementations use AI: to provide instant answers, automate ticket routing, and personalize user experiences.
 - These systems handle user: queries through chat interfaces, providing instant responses while escalating complex issues to human agents.
 - Answer the user's question: based on the provided documentation.
-- Context: {context}
+- Context - {context}
 
-Question: {user_query}
+Question - {user_query}
 
 Provide a clear, concise answer.
 - A hybrid retrieval pipeline: gives you the best of both approaches: keyword search narrows the candidate set quickly, then a re-ranker model scores results by semantic relevance.
@@ -75,7 +75,7 @@ Answer the user's question based on the provided documentation.
 Context:
 {context}
 
-Question: {user_query}
+Question - {user_query}
 
 Provide a clear, concise answer. If the information is not in the context,
 say so honestly."""

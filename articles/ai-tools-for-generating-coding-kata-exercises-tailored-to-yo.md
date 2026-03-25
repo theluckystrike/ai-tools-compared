@@ -76,9 +76,9 @@ provide starter code with failing tests.
 AI Output:
 
 ```python
-Kata: Filter Transaction Records
-Difficulty: Intermediate
-Concepts: List comprehensions, conditional logic
+Kata - Filter Transaction Records
+Difficulty - Intermediate
+Concepts - List comprehensions, conditional logic
 
 Given a list of transaction dictionaries, use list comprehension
 to extract all transactions over $100 from users in the "premium" tier
@@ -91,7 +91,7 @@ transactions = [
     {"user_id": 5, "amount": 300, "tier": "premium"},
 ]
 
-Your task: Create filtered_transactions using list comprehension
+Your task - Create filtered_transactions using list comprehension
 It should contain only transactions where:
 - amount > 100 AND tier == "premium"
 
@@ -99,7 +99,7 @@ def filter_premium_large(transactions):
     # Write your list comprehension here
     pass
 
-Expected result: [
+Expected result - [
     {"user_id": 1, "amount": 150, "tier": "premium"},
     {"user_id": 3, "amount": 200, "tier": "premium"},
     {"user_id": 5, "amount": 300, "tier": "premium"}
@@ -183,9 +183,9 @@ Getting the most from AI-generated katas requires understanding how to specify w
 
 Specify Your Exact Pain Points
 
-Instead of: "Generate a JavaScript kata"
+Instead of - "Generate a JavaScript kata"
 
-Try: "Generate a JavaScript kata on async/await error handling, specifically for handling multiple concurrent requests where some fail"
+Try - "Generate a JavaScript kata on async/await error handling, specifically for handling multiple concurrent requests where some fail"
 
 The more specific you are about what challenges you, the more targeted the practice becomes.
 
@@ -195,9 +195,9 @@ Ask for a series of katas that build on each other:
 
 ```
 Generate a 3-part kata series on Python decorators:
-Part 1: Simple timing decorator (beginner)
-Part 2: Decorator with arguments (intermediate)
-Part 3: Stacked decorators preserving metadata (advanced)
+Part 1 - Simple timing decorator (beginner)
+Part 2 - Decorator with arguments (intermediate)
+Part 3 - Stacked decorators preserving metadata (advanced)
 ```
 
 Include Real-World Constraints
@@ -223,7 +223,7 @@ AI-generated katas work best when paired with deliberate practice tracking. Afte
 
 Some tools automatically track this data. With others, maintain a simple spreadsheet. The goal is identifying patterns in your knowledge gaps so you can request more targeted exercises.
 
-Practical Example: Building a Personal Kata Pipeline
+Practical Example - Building a Personal Kata Pipeline
 
 Many developers create a personal system for continuous practice. Here's how to build one using AI:
 

@@ -47,9 +47,9 @@ The key distinction lies in how each tool handles file discovery. Cascade active
 
 Multi-File Editing in Practice
 
-Scenario: Updating API Response Types
+Scenario - Updating API Response Types
 
-Consider a common scenario: you need to add a new field to your API response and update type definitions, serialization logic, and frontend components. Here's how each tool handles this workflow.
+Consider a common scenario - you need to add a new field to your API response and update type definitions, serialization logic, and frontend components. Here's how each tool handles this workflow.
 
 With Cursor Composer:
 
@@ -151,9 +151,9 @@ Imagine adding authentication with OAuth to your application. This requires chan
 
 - Environment variable definitions
 
-Cursor workflow: You open Composer, manually add each relevant file to context, then describe the feature. You review each diff carefully before accepting.
+Cursor workflow - You open Composer, manually add each relevant file to context, then describe the feature. You review each diff carefully before accepting.
 
-Cascade workflow: You describe the feature to Cascade, which automatically finds related files and generates edits. You review the combined diff and can roll back entire sessions if needed.
+Cascade workflow - You describe the feature to Cascade, which automatically finds related files and generates edits. You review the combined diff and can roll back entire sessions if needed.
 
 For developers who prefer explicit control over which files get modified, Composer offers clarity. For developers who want the AI to handle discovery and execution autonomously, Cascade provides convenience.
 
@@ -254,7 +254,7 @@ Real Performance Data
 
 Testing both tools on a medium TypeScript project (42 files, ~8,000 lines):
 
-Task: Add logging to all API handlers
+Task - Add logging to all API handlers
 
 Cursor Composer:
 - Manual file selection: 3 minutes
@@ -271,7 +271,7 @@ Windsurf Cascade:
 
 Cascade wins on overall time. However, when Cascade suggested logging in unrelated utility functions, additional review was needed to remove unnecessary changes.
 
-Task: Rename a core database model affecting 23 files
+Task - Rename a core database model affecting 23 files
 
 Cursor Composer:
 - Manual file selection: 8 minutes (catching all references is tedious)

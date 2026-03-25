@@ -52,7 +52,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand CrashLoopBackOff
+Step 1 - Understand CrashLoopBackOff
 
 CrashLoopBackOff occurs when a container starts, exits unexpectedly, and Kubernetes automatically restarts it. After repeated failures, Kubernetes backs off the restart interval, resulting in the CrashLoopBackOff status. Common triggers include:
 
@@ -70,7 +70,7 @@ CrashLoopBackOff occurs when a container starts, exits unexpectedly, and Kuberne
 
 AI tools can accelerate the debugging process by analyzing log patterns, correlating errors, and suggesting likely causes based on accumulated knowledge.
 
-Step 2: Collecting Container Logs
+Step 2 - Collecting Container Logs
 
 Before AI can help, you need access to the container logs. Use kubectl to retrieve logs from the problematic pod:
 
@@ -101,7 +101,7 @@ kubectl logs deployment/app_name --previous > all_crash_logs.txt
 kubectl describe pod pod_name >> all_crash_logs.txt
 ```
 
-Step 3: Use AI to Analyze Logs
+Step 3 - Use AI to Analyze Logs
 
 Pass the collected logs to an AI assistant with a targeted prompt. The key is providing sufficient context while asking specific questions.
 
@@ -175,7 +175,7 @@ $ kubectl logs myapp-7d9f8b6c4-x2kz9 --previous
 
 internal/modules/cjs/loader/1145:932
 throw err;
-Error: Cannot find module 'express'
+Error - Cannot find module 'express'
 at Function.Module._resolveInContext (module.js:980:15)
 ```
 
@@ -189,7 +189,7 @@ The AI immediately identifies that `express` is missing. It might ask:
 
 This accelerates debugging from potentially hours of guesswork to minutes of targeted fixes.
 
-Step 4: Automate Log Analysis
+Step 4 - Automate Log Analysis
 
 For teams running multiple clusters, consider integrating AI analysis into your debugging workflow using scripts:
 
@@ -210,7 +210,7 @@ echo "Analyze the attached logs to identify the root cause of CrashLoopBackOff."
 
 Use this script to gather context, then paste the output to your AI assistant for analysis.
 
-Step 5: Preventing Future Crashes
+Step 5 - Preventing Future Crashes
 
 AI analysis should inform your preventive measures:
 
@@ -236,7 +236,7 @@ Validate suggestions against your specific environment. AI recommendations are b
 
 Document solutions. Build an internal knowledge base of CrashLoopBackOff resolutions to accelerate future debugging.
 
-Step 6: Comparing AI Tools for Kubernetes Debugging
+Step 6 - Comparing AI Tools for Kubernetes Debugging
 
 | Tool | Context Window | K8s Knowledge | Cost per Analysis |
 |------|---------------|---------------|-------------------|
@@ -247,7 +247,7 @@ Step 6: Comparing AI Tools for Kubernetes Debugging
 
 For large log files, Gemini or Claude offer the largest context windows. For quick analysis, Claude Haiku provides the best cost-to-quality ratio.
 
-Step 7: Build a Kubectl Plugin for AI Analysis
+Step 7 - Build a Kubectl Plugin for AI Analysis
 
 Create a kubectl plugin that pipes pod diagnostics directly to an AI:
 
@@ -279,7 +279,7 @@ echo "Diagnostics copied to clipboard. Paste into your AI assistant."
 echo "Total size: $(echo "$DIAGNOSTICS" | wc -c) bytes"
 ```
 
-Usage: `kubectl ai-debug my-failing-pod production`
+Usage - `kubectl ai-debug my-failing-pod production`
 
 Troubleshooting
 

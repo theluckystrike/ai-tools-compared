@@ -168,7 +168,7 @@ test.describe('WCAG Compliance - Automated Checks', () => {
         console.log(`Found ${violations.length} accessibility violations:`);
         violations.forEach(violation => {
           console.log(`- ${violation.id}: ${violation.description}`);
-          console.log(`  Impact: ${violation.impact}`);
+          console.log(`  Impact - ${violation.impact}`);
           console.log(`  Elements affected: ${violation.nodes.length}`);
         });
       }
@@ -257,13 +257,13 @@ Best Practices for AI-Generated Accessibility Tests
 
 When using AI tools to generate accessibility tests, follow these practices to ensure quality results.
 
-Provide Clear Context: Include the specific WCAG success criteria you want to test. AI tools generate better tests when you specify criteria by number (e.g., "WCAG 2.4.3 Focus Order") rather than general descriptions.
+Provide Clear Context - Include the specific WCAG success criteria you want to test. AI tools generate better tests when you specify criteria by number (e.g., "WCAG 2.4.3 Focus Order") rather than general descriptions.
 
-Review Generated Tests: Always verify that AI-generated tests actually check what they claim to check. Examine the assertions and ensure they align with the WCAG requirements.
+Review Generated Tests - Always verify that AI-generated tests actually check what they claim to check. Examine the assertions and ensure they align with the WCAG requirements.
 
-Combine Scanning and Behavioral Testing: Automated tools like axe-core catch many issues but cannot verify everything. Use AI to generate both automated scanning tests and behavioral tests that require human judgment.
+Combine Scanning and Behavioral Testing - Automated tools like axe-core catch many issues but cannot verify everything. Use AI to generate both automated scanning tests and behavioral tests that require human judgment.
 
-Maintain Test Suites: Accessibility standards evolve. Use AI to help update existing tests when new WCAG guidelines are released or when your application changes.
+Maintain Test Suites - Accessibility standards evolve. Use AI to help update existing tests when new WCAG guidelines are released or when your application changes.
 
 Frequently Asked Questions
 

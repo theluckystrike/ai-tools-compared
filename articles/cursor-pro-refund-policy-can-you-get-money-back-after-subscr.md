@@ -28,7 +28,7 @@ Table of Contents
 - [Alternatives to Requesting a Refund](#alternatives-to-requesting-a-refund)
 - [Understanding Cursor's Billing Through Stripe](#understanding-cursors-billing-through-stripe)
 - [Detailed Refund Timelines](#detailed-refund-timelines)
-- [Comparing Refund Policies: Cursor vs Competitors](#comparing-refund-policies-cursor-vs-competitors)
+- [Comparing Refund Policies - Cursor vs Competitors](#comparing-refund-policies-cursor-vs-competitors)
 - [Real Refund Request Examples](#real-refund-request-examples)
 - [Maximizing Your Chances of Approval](#maximizing-your-chances-of-approval)
 - [What Happens if Your Refund Is Denied](#what-happens-if-your-refund-is-denied)
@@ -71,7 +71,7 @@ How to Request a Refund from Cursor Pro
 
 Here's a step-by-step process to request your money back:
 
-Step 1: Gather Your Information
+Step 1 - Gather Your Information
 
 Before reaching out, collect the following:
 
@@ -85,14 +85,14 @@ Before reaching out, collect the following:
 
 - Any screenshots documenting bugs or issues that prompted the request
 
-Step 2: Contact Cursor Support
+Step 2 - Contact Cursor Support
 
 You can request a refund through Cursor's official support channels:
 
 ```bash
 Visit the Cursor help center or use their support email
 Typical contact methods:
-- Email: support@cursor.sh
+- Email - support@cursor.sh
 - In-app support chat
 - Help center at cursor.sh/help
 ```
@@ -100,7 +100,7 @@ Typical contact methods:
 When contacting support, use a clear and concise message:
 
 ```
-Subject: Refund Request for Cursor Pro Subscription
+Subject - Refund Request for Cursor Pro Subscription
 
 Hi Cursor Support,
 
@@ -115,11 +115,11 @@ Thanks,
 [Your Name]
 ```
 
-Step 3: Wait for Confirmation
+Step 3 - Wait for Confirmation
 
 After submitting your request, the support team typically responds within 2-5 business days. They may ask for additional information to verify your account.
 
-Step 4: Receive Your Refund
+Step 4 - Receive Your Refund
 
 If approved, the refund is usually processed within 5-10 business days, depending on your payment method. The money will be returned to the original payment method used during purchase.
 
@@ -245,25 +245,25 @@ Detailed Refund Timelines
 Timeline from Refund Request to Payout
 
 ```
-Day 0: Submit refund request via support@cursor.sh
+Day 0 - Submit refund request via support@cursor.sh
        ↓
-Day 1-2: Support team receives and queues request
+Day 1-2 - Support team receives and queues request
          ↓
-Day 2-3: Support verifies account details and refund eligibility
+Day 2-3 - Support verifies account details and refund eligibility
          ↓
-Day 3-5: Support approves refund (or requests additional info)
+Day 3-5 - Support approves refund (or requests additional info)
          ↓
-Day 5-10: Stripe processes refund and sends to payment processor
+Day 5-10 - Stripe processes refund and sends to payment processor
           ↓
-Day 10-15: Credit card issuer adds funds back to your account
+Day 10-15 - Credit card issuer adds funds back to your account
            (Varies by bank; some process in 1-2 days, others 5-7)
 
-Total: 10-15 business days from request to visible refund
+Total - 10-15 business days from request to visible refund
 ```
 
 For wire transfers or international payments, add 5-10 additional days.
 
-Comparing Refund Policies: Cursor vs Competitors
+Comparing Refund Policies - Cursor vs Competitors
 
 | Tool | Refund Window | Process | Approval Rate |
 |------|--------------|---------|---------------|
@@ -277,18 +277,18 @@ Cursor's 30-day window and high approval rate make it competitive. GitHub Copilo
 
 Real Refund Request Examples
 
-Example 1: Feature Mismatch (Likely Approved)
+Example 1 - Feature Mismatch (Likely Approved)
 
 ```
-Subject: Refund Request for Cursor Pro Subscription
+Subject - Refund Request for Cursor Pro Subscription
 
 Hi Cursor Support,
 
 I'm requesting a refund for my Cursor Pro subscription purchased on March 10, 2026.
 
-Account email: dev@example.com
-Order confirmation: #CUR-2026-03-10-12345
-Reason: I evaluated the Pro features for one week and found that context-aware completions don't work reliably in my monorepo. The indexing takes too long for my 500MB codebase, and the feature doesn't offer the improvement I expected over the free tier.
+Account email - dev@example.com
+Order confirmation - #CUR-2026-03-10-12345
+Reason - I evaluated the Pro features for one week and found that context-aware completions don't work reliably in my monorepo. The indexing takes too long for my 500MB codebase, and the feature doesn't offer the improvement I expected over the free tier.
 
 I'd like to request a refund for the remaining 3 weeks of my monthly subscription.
 
@@ -296,12 +296,12 @@ Thanks,
 John Developer
 ```
 
-Expected outcome: Approved. This is a legitimate feature evaluation concern.
+Expected outcome - Approved. This is a legitimate feature evaluation concern.
 
-Example 2: Technical Issue (Likely Approved)
+Example 2 - Technical Issue (Likely Approved)
 
 ```
-Subject: Refund Request - Cursor Pro Performance Issues
+Subject - Refund Request - Cursor Pro Performance Issues
 
 Hi Cursor Support,
 
@@ -313,27 +313,27 @@ I purchased Cursor Pro on March 5, 2026, but experience consistent freezing when
 
 The issues persist. Since Pro doesn't seem to work in my environment, I'd like a refund.
 
-Account email: dev@example.com
-Order: #CUR-2026-03-05-67890
+Account email - dev@example.com
+Order - #CUR-2026-03-05-67890
 
 Thanks,
 Jane Engineer
 ```
 
-Expected outcome: Approved. Includes troubleshooting steps, shows good faith effort.
+Expected outcome - Approved. Includes troubleshooting steps, shows good faith effort.
 
-Example 3: Accidental Purchase (Likely Approved)
+Example 3 - Accidental Purchase (Likely Approved)
 
 ```
-Subject: Accidental Cursor Pro Purchase - Refund Request
+Subject - Accidental Cursor Pro Purchase - Refund Request
 
 Hi Cursor Support,
 
 I accidentally clicked "Upgrade to Pro" while editing settings yesterday. I didn't intend to subscribe and would like a refund.
 
-Account: dev@example.com
-Purchase date: March 21, 2026
-Order: #CUR-2026-03-21-11111
+Account - dev@example.com
+Purchase date - March 21, 2026
+Order - #CUR-2026-03-21-11111
 
 I'm happy to provide proof if needed.
 
@@ -341,20 +341,20 @@ Thanks,
 Mike
 ```
 
-Expected outcome: Approved. Accidental purchases within 24 hours are nearly always refunded.
+Expected outcome - Approved. Accidental purchases within 24 hours are nearly always refunded.
 
-Example 4: Budget Constraint (May Be Approved)
+Example 4 - Budget Constraint (May Be Approved)
 
 ```
-Subject: Refund Request for Cursor Pro
+Subject - Refund Request for Cursor Pro
 
 Hi Cursor Support,
 
 I subscribed to Cursor Pro but realized it doesn't fit my current budget. I was hoping to make it work but need to cut expenses this month.
 
-Account: dev@example.com
-Purchase: March 15, 2026
-Order: #CUR-2026-03-15-99999
+Account - dev@example.com
+Purchase - March 15, 2026
+Order - #CUR-2026-03-15-99999
 
 Could I get a refund?
 
@@ -362,7 +362,7 @@ Thanks,
 Alex
 ```
 
-Expected outcome: 50/50. Cursor typically approves if within the 30-day window, but may deny if you've used the service extensively. If denied, ask about downgrading instead.
+Expected outcome - 50/50. Cursor typically approves if within the 30-day window, but may deny if you've used the service extensively. If denied, ask about downgrading instead.
 
 Maximizing Your Chances of Approval
 
@@ -384,7 +384,7 @@ What Happens if Your Refund Is Denied
 
 If Cursor denies your refund, you have options:
 
-Option 1: Appeal the Decision
+Option 1 - Appeal the Decision
 Reply to the denial email with additional context or evidence. Sometimes an appeal succeeds.
 
 ```
@@ -401,17 +401,17 @@ Thanks,
 [Your name]
 ```
 
-Option 2: Request Chargeback (Last Resort)
+Option 2 - Request Chargeback (Last Resort)
 Contact your credit card company and request a chargeback. Downsides:
 - Cursor account may be permanently terminated
 - Can harm your relationship with the company
 - Banks may decline if you've used the service extensively
 - Only do this if Cursor refuses legitimate refund
 
-Option 3: Switch Tools Instead
+Option 3 - Switch Tools Instead
 Accept the cost and use the remaining subscription time, but switch tools next month. This is often the practical choice.
 
-Option 4: Downgrade Instead of Refund
+Option 4 - Downgrade Instead of Refund
 Ask if Cursor offers downgrade options. Paying $0/month for the Hobby tier means you lose nothing compared to a refund.
 
 Strategies to Avoid Needing a Refund

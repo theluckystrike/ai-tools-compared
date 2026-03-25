@@ -52,7 +52,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Input: Product Requirement Documents
+Step 1 - Understand the Input: Product Requirement Documents
 
 Product requirement documents (PRDs) come in various formats, Google Docs, Confluence pages, Notion files, or plain text. Most contain a mix of user stories, feature descriptions, business rules, and technical constraints. The challenge is extracting unambiguous, testable conditions from these documents.
 
@@ -69,7 +69,7 @@ User Authentication Feature
 
 From this brief description, you need to generate specific acceptance criteria that QA can test and developers can implement.
 
-Step 2: Prompting AI to Extract Acceptance Criteria
+Step 2 - Prompting AI to Extract Acceptance Criteria
 
 The key to getting useful output is providing clear context. Here's a structured approach:
 
@@ -119,7 +119,7 @@ AI-generated acceptance criteria:
 
 | AC-9 | Account inactive until verified | Attempt login before verification |
 
-Step 3: Automate with CLI Tools
+Step 3 - Automate with CLI Tools
 
 For teams processing multiple requirements, you can build a simple CLI tool using the OpenAI API or Claude API:
 
@@ -165,7 +165,7 @@ Run it with:
 python ac_generator.py "Your PRD text here" "your-api-key"
 ```
 
-Step 4: Handling Complex Business Rules
+Step 4 - Handling Complex Business Rules
 
 Real-world requirements often contain nested logic. Here's how to handle them:
 
@@ -182,7 +182,7 @@ A good prompt for this scenario:
 
 ```
 Break down the following business rules into individual test cases.
-For each test case, include: input, expected output, and edge case notes.
+For each test case, include - input, expected output, and edge case notes.
 
 Rules:
 [Your business rules]
@@ -204,7 +204,7 @@ This produces testable scenarios like:
 
 | $100 order, member | 15% discount | 10%+5%, capped |
 
-Step 5: Integration with Test Management
+Step 5 - Integration with Test Management
 
 For automated test generation, output criteria in a format your framework understands:
 
@@ -257,7 +257,7 @@ Iterate on prompts. If output quality is poor, adjust your prompt with more spec
 
 Maintain a criteria library. Store successful AI-generated criteria as reference material. This improves future outputs and creates documentation.
 
-Step 6: Common Pitfalls to Avoid
+Step 6 - Common Pitfalls to Avoid
 
 Generated criteria sometimes miss implicit requirements. Always verify:
 

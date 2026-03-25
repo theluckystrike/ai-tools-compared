@@ -21,10 +21,10 @@ Use Claude Code or Cursor if you need test autocomplete that understands expecte
 Table of Contents
 
 - [What Makes Test Autocomplete Different](#what-makes-test-autocomplete-different)
-- [GitHub Copilot: The Baseline](#github-copilot-the-baseline)
-- [Cursor: Context-Aware Completions](#cursor-context-aware-completions)
-- [Claude Code: Detailed and Precise](#claude-code-detailed-and-precise)
-- [Codeium: Fast but Variable Quality](#codeium-fast-but-variable-quality)
+- [GitHub Copilot - The Baseline](#github-copilot-the-baseline)
+- [Cursor - Context-Aware Completions](#cursor-context-aware-completions)
+- [Claude Code - Detailed and Precise](#claude-code-detailed-and-precise)
+- [Codeium - Fast but Variable Quality](#codeium-fast-but-variable-quality)
 - [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
 - [Practical Recommendations](#practical-recommendations)
 - [Performance Considerations](#performance-considerations)
@@ -38,7 +38,7 @@ The best AI tools analyze context beyond just the function signature, they exami
 
 A critical distinction separates tools that suggest structurally valid tests from those that suggest semantically meaningful ones. A structurally valid test compiles and runs without error but asserts trivially true facts (`assert result is not None`) rather than the actual contract of the function. Meaningful test suggestions match the real behavior described in code documentation and implement assertions that would actually catch regressions.
 
-GitHub Copilot: The Baseline
+GitHub Copilot - The Baseline
 
 GitHub Copilot provides a useful baseline for test autocomplete. It works reasonably well for simple functions and standard testing patterns.
 
@@ -74,7 +74,7 @@ These suggestions work for happy-path scenarios but often miss edge cases. Copil
 
 Where Copilot consistently falls short is the boundary between valid and invalid inputs. For a function that accepts `discount_percent` from 0 to 100, a thorough test suite should test values at exactly 0, 100, 101, and -1. Copilot typically suggests mid-range values (10, 20, 50) without reaching for the boundaries unless you start typing the test name explicitly, such as `def test_calculate_discount_invalid_`.
 
-Cursor: Context-Aware Completions
+Cursor - Context-Aware Completions
 
 Cursor demonstrates stronger contextual understanding for test generation. Its ability to read and analyze entire files means it often suggests more tests without extensive prompting.
 
@@ -101,7 +101,7 @@ The key difference is that Cursor often recognizes the need for multiple test ca
 
 Cursor's advantage is its whole-file context model. When you open a test file alongside the implementation, Cursor uses the visible implementation code to infer which branches need coverage. This is distinct from Copilot's token-window approach, which does well with local patterns but loses track of implementations in adjacent files unless you explicitly navigate to them.
 
-Claude Code: Detailed and Precise
+Claude Code - Detailed and Precise
 
 Claude Code (via Claude Dev) provides particularly thorough test suggestions. It excels at understanding complex functions and generating meaningful assertions.
 
@@ -169,7 +169,7 @@ This level of detail includes proper mocking, assertion of side effects, and cov
 
 Claude Code is especially strong when you ask it to generate tests via a chat prompt like "write a full test suite for `AuthService.authenticate` with 100% branch coverage." It returns organized test classes with clear docstrings, proper fixtures, and parameterized test cases where appropriate, things that Copilot and Cursor typically require multiple back-and-forth exchanges to produce.
 
-Codeium: Fast but Variable Quality
+Codeium - Fast but Variable Quality
 
 Codeium offers quick suggestions but with more variable quality. It handles standard testing patterns well but can produce inconsistent results for less common scenarios.
 

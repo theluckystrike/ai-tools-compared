@@ -23,7 +23,7 @@ Table of Contents
 - [Security Requirements](#security-requirements)
 - [Performance Guidelines](#performance-guidelines)
 - [Troubleshooting Project Memory](#troubleshooting-project-memory)
-- [Advanced: Dynamic Project Memory](#advanced-dynamic-project-memory)
+- [Advanced - Dynamic Project Memory](#advanced-dynamic-project-memory)
 
 Prerequisites
 
@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Claude Code Project Memory
+Step 1 - Understand Claude Code Project Memory
 
 Claude Code project memory works through several mechanisms that persist context between sessions. The primary tool is the `CLAUDE.md` file, a markdown document in your project root that Claude Code automatically reads and references. Unlike chat history that disappears after each session, project memory files remain available across all future interactions.
 
@@ -43,7 +43,7 @@ Project memory serves three main purposes. First, it stores coding conventions y
 
 Claude Code also supports a global `~/.claude/CLAUDE.md` file for preferences that apply across every project. things like your preferred code style, default language, or personal shortcuts you always want available. Project-level `CLAUDE.md` files take precedence over the global one when both exist.
 
-Step 2: Create Your CLAUDE.md File
+Step 2 - Create Your CLAUDE.md File
 
 The `CLAUDE.md` file resides in your project root directory. Claude Code checks for this file automatically when starting a session in any subdirectory of your project. The file uses markdown syntax and can include any information helpful for understanding your codebase.
 
@@ -55,8 +55,8 @@ Project Context
 This is a React TypeScript application using Next.js 14.
 The project follows our team's coding standards documented below.
 
-Step 3: Tech Stack
-- Frontend: React 18, TypeScript 5, Next.js 14
+Step 3 - Tech Stack
+- Frontend - React 18, TypeScript 5, Next.js 14
 - State: Redux Toolkit with RTK Query
 - Testing: Jest, React Testing Library
 - Styling: Tailwind CSS with custom design tokens
@@ -65,7 +65,7 @@ Step 3: Tech Stack
 Add coding conventions that should persist across all sessions:
 
 ```markdown
-Step 4: Coding Conventions
+Step 4 - Coding Conventions
 
 Naming
 - Components: PascalCase (UserProfile, OrderList)
@@ -85,7 +85,7 @@ Testing Requirements
 - Minimum 80% coverage for business logic
 ```
 
-Step 5: What to Include for Maximum Usefulness
+Step 5 - What to Include for Maximum Usefulness
 
 The most effective CLAUDE.md files go beyond naming conventions. Include context that Claude Code cannot infer from the code alone:
 
@@ -96,7 +96,7 @@ The most effective CLAUDE.md files go beyond naming conventions. Include context
 
 This type of contextual information prevents Claude Code from making technically correct but project-inappropriate suggestions.
 
-Step 6: Configure Multiple Memory Files
+Step 6 - Configure Multiple Memory Files
 
 For larger projects, create specialized memory files that Claude Code can reference explicitly. Use the `@filename` syntax in your prompts to load specific documentation:
 
@@ -124,7 +124,7 @@ Reference these files in your prompts:
 @docs/api-standards.md Create a new API endpoint for user preferences following our standards
 ```
 
-Step 7: Use Project Memory with Git Integration
+Step 7 - Use Project Memory with Git Integration
 
 Combine project memory with Git hooks to enforce conventions automatically. Create a pre-commit hook that validates code against your standards:
 
@@ -145,7 +145,7 @@ node scripts/check-naming-conventions.js
 Reference these checks in your CLAUDE.md:
 
 ```markdown
-Step 8: Git Workflow
+Step 8 - Git Workflow
 
 - All commits must pass pre-commit hooks
 - Use conventional commit messages: feat:, fix:, docs:, refactor:
@@ -154,7 +154,7 @@ Step 8: Git Workflow
 
 When Claude Code generates commit messages, it will follow this format because it is documented in project memory. This creates consistency between AI-assisted and human-written commits without extra prompting.
 
-Step 9: Team-Wide Project Memory
+Step 9 - Team-Wide Project Memory
 
 For organizations with multiple projects, create a shared memory template that teams customize. Store this in a central repository and include in each project:
 
@@ -179,17 +179,17 @@ Performance Guidelines
 Include this in each project with a relative path:
 
 ```markdown
-Step 10: Organization Standards
+Step 10 - Organization Standards
 
 See /../org-standards/company-standards.md for universal requirements
 ```
 
-Step 11: Test Memory Configuration
+Step 11 - Test Memory Configuration
 
 Ensure your testing conventions persist by documenting them explicitly:
 
 ```markdown
-Step 12: Test Conventions
+Step 12 - Test Conventions
 
 Unit Tests
 - Test file location: same directory as source, filename.test.ts
@@ -210,7 +210,7 @@ When creating new features, reference these conventions:
 Create a new service for handling notifications following our testing conventions
 ```
 
-Step 13: Keeping CLAUDE.md Maintainable Over Time
+Step 13 - Keeping CLAUDE.md Maintainable Over Time
 
 A CLAUDE.md file that grows without structure becomes harder for Claude Code to use effectively. Follow these practices to keep it useful:
 
@@ -231,19 +231,19 @@ Using the conventions in CLAUDE.md, create a new component
 
 You can also ask Claude Code directly: "What does CLAUDE.md say about our naming conventions?" This confirms whether the file is being read correctly before you invest time debugging a phantom issue.
 
-Advanced: Dynamic Project Memory
+Advanced - Dynamic Project Memory
 
 For projects with multiple environments or configurations, create conditional memory sections:
 
 ```markdown
 Development vs Production Conventions
 
-Step 14: Development
+Step 14 - Development
 - Use mock data from /mocks directory
 - Enable verbose logging
 - Point to localhost API
 
-Step 15: Production
+Step 15 - Production
 - Use real API endpoints
 - Minimal logging
 - Error boundaries required

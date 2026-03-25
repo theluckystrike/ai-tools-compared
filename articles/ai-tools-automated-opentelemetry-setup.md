@@ -39,7 +39,7 @@ Prompt:
 Generate an OpenTelemetry Collector config that:
 - Receives traces via OTLP gRPC (port 4317) and HTTP (port 4318)
 - Receives Prometheus metrics via scrape
-- Processes: batch traces, add resource attributes (service.version from env)
+- Processes - batch traces, add resource attributes (service.version from env)
 - Exports traces to Jaeger (localhost:14250) and Grafana Cloud OTLP endpoint
 - Exports metrics to Prometheus remote write
 - Uses tail sampling: keep 100% of error traces, 10% of successful traces

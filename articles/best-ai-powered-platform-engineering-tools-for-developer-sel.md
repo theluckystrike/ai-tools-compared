@@ -88,7 +88,7 @@ Practical Example - Requesting a production database:
 
 
 ```yaml
-User request: "Create a production PostgreSQL database with
+User request - "Create a production PostgreSQL database with
 20GB storage, auto-backups, and high availability"
 
 apiVersion: v1
@@ -210,12 +210,12 @@ Frequently Asked Questions
 
 Table of Contents
 
-- [Hands-On Example: AI Provisioning Workflow](#hands-on-example-ai-provisioning-workflow)
+- [Hands-On Example - AI Provisioning Workflow](#hands-on-example-ai-provisioning-workflow)
 - [Detailed Tool Feature Matrix](#detailed-tool-feature-matrix)
 - [Building Custom AI Platform Tools](#building-custom-ai-platform-tools)
 - [Cost Reduction Case Study](#cost-reduction-case-study)
 - [Real-World Integration Challenges](#real-world-integration-challenges)
-- [Migration Playbook: From Manual to AI-Powered](#migration-playbook-from-manual-to-ai-powered)
+- [Migration Playbook - From Manual to AI-Powered](#migration-playbook-from-manual-to-ai-powered)
 - [Selection Criteria by Organization Size](#selection-criteria-by-organization-size)
 
 Are free AI tools good enough for ai-powered platform engineering tools for developer?
@@ -224,7 +224,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -236,7 +236,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 
@@ -245,12 +245,12 @@ Related Articles
 - [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-for-converting-code-comments-into-developer-facing-/)
 - [AI Tools for Video Compression: A Developer Guide](/ai-tools-for-video-compression/)
 - [Best AI Tools for Automated Compliance Reporting for Cloud](/best-ai-tools-for-automated-compliance-reporting-for-cloud-i/)
-Hands-On Example: AI Provisioning Workflow
+Hands-On Example - AI Provisioning Workflow
 
 Imagine a developer needs a staging environment for a feature branch. Without AI:
 
 ```bash
-Manual approach: Copy existing terraform, modify, apply
+Manual approach - Copy existing terraform, modify, apply
 cp terraform/prod.tf terraform/feature-branch.tf
 Edit 47 different variables
 Hope you didn't break anything
@@ -265,14 +265,14 @@ With AI-powered platform tools:
 ```bash
 AI approach
 @platform-bot provision staging environment for feature-xyz
-Bot interprets: Need a staging replica with feature flag enabled
-Generates terraform: 2 minutes
-Validates against policy: immediate feedback
-Applies: 5 minutes total
-Reports back: "Staging ready at staging-xyz.internal, expires in 24h"
+Bot interprets - Need a staging replica with feature flag enabled
+Generates terraform - 2 minutes
+Validates against policy - immediate feedback
+Applies - 5 minutes total
+Reports back - "Staging ready at staging-xyz.internal, expires in 24h"
 ```
 
-Time saved: 40 minutes per request × 20 requests/month = 13 hours/month.
+Time saved - 40 minutes per request × 20 requests/month = 13 hours/month.
 
 Detailed Tool Feature Matrix
 
@@ -355,7 +355,7 @@ With AI-powered platform:
 
 Real-World Integration Challenges
 
-Challenge 1: Multiple policy frameworks
+Challenge 1 - Multiple policy frameworks
 
 Your organization might use both OPA and Sentinel. Ensure your chosen AI tool integrates with both:
 
@@ -375,12 +375,12 @@ def validate_terraform(tf_code: str) -> ValidationResult:
     }
 ```
 
-Challenge 2: Secrets management
+Challenge 2 - Secrets management
 
 AI tools cannot see secrets when generating code. Work around this:
 
 ```hcl
-Good: AI generates code that reads secrets from external store
+Good - AI generates code that reads secrets from external store
 resource "aws_db_instance" "main" {
   username             = data.aws_secretsmanager_secret.db_creds.username
   password             = data.aws_secretsmanager_secret.db_creds.password
@@ -388,7 +388,7 @@ resource "aws_db_instance" "main" {
 }
 ```
 
-Challenge 3: Audit and compliance
+Challenge 3 - Audit and compliance
 
 Capture the full conversation trail:
 
@@ -407,29 +407,29 @@ Capture the full conversation trail:
 
 This log satisfies compliance audits and serves as training data for improving AI recommendations.
 
-Migration Playbook: From Manual to AI-Powered
+Migration Playbook - From Manual to AI-Powered
 
-Week 1: Evaluation
+Week 1 - Evaluation
 - Choose 2-3 tools from options above
 - Test on non-production infrastructure
 - Measure baseline (time per request, error rate)
 
-Week 2-3: Pilot with one team
+Week 2-3 - Pilot with one team
 - Select 1 team (preferably internal platform team)
 - Shadow them provisioning resources
 - Iterate on AI prompting based on feedback
 
-Week 4-6: Gradual rollout
+Week 4-6 - Gradual rollout
 - Expand to 3 more teams
 - Monitor for policy violations, cost overruns
 - Refine policies and approval workflows
 
-Week 7-8: Measure impact
+Week 7-8 - Measure impact
 - Calculate time saved
 - Review cost changes
 - Gather team feedback
 
-Month 3+: Optimize and scale
+Month 3+ - Optimize and scale
 - Integrate with incident response (ChatOps)
 - Add cost governance features
 - Expand to multi-cloud environments

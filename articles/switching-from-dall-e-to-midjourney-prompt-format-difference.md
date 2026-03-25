@@ -131,7 +131,7 @@ a portrait of a woman, oil painting style, visible brushstrokes, classical art m
 The model interprets these adjectives and applies appropriate stylization. You can reference specific artists, but results vary:
 
 ```text
-a landscape in the style of bob ross, peaceful mountains, painterly
+a field in the style of bob ross, peaceful mountains, painterly
 ```
 
 Midjourney Approach
@@ -171,9 +171,9 @@ When moving from DALL-E to Midjourney, follow these steps:
 
 1. Break your description into keywords
 
-DALL-E: "A beautiful sunset over the ocean with palm trees silhouettes"
+DALL-E - "A beautiful sunset over the ocean with palm trees silhouettes"
 
-Midjourney: "beautiful sunset, ocean, palm tree silhouettes, golden hour --ar 16:9 --v 6"
+Midjourney - "beautiful sunset, ocean, palm tree silhouettes, golden hour --ar 16:9 --v 6"
 
 2. Add explicit aspect ratio
 
@@ -219,7 +219,7 @@ mj_prompt = formatter.to_midjourney(
     "a cozy coffee shop interior, warm lighting, wooden furniture, rainy outside"
 )
 print(mj_prompt)
-Output: a cozy coffee shop interior, warm lighting, wooden furniture, rainy outside --ar 1:1 --v 6
+Output - a cozy coffee shop interior, warm lighting, wooden furniture, rainy outside --ar 1:1 --v 6
 ```
 
 Advanced Midjourney Parameters for Production Workflows
@@ -321,7 +321,7 @@ Integration Patterns for Production Systems
 
 When integrating image generation into production applications, consider these patterns:
 
-Asynchronous Generation: Both platforms support asynchronous workflows where you queue generation requests and poll for completion:
+Asynchronous Generation - Both platforms support asynchronous workflows where you queue generation requests and poll for completion:
 
 ```javascript
 class ImageQueue {
@@ -349,7 +349,7 @@ class ImageQueue {
 }
 ```
 
-Caching and Deduplication: Many applications receive similar prompts repeatedly. Implement content-addressable caching to avoid redundant generations:
+Caching and Deduplication - Many applications receive similar prompts repeatedly. Implement content-addressable caching to avoid redundant generations:
 
 ```javascript
 class GenerationCache {

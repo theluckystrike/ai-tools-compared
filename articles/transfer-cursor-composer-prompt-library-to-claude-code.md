@@ -23,7 +23,7 @@ Why Migrate from Cursor Composer to Claude Code
 Cursor Composer offers a powerful prompt interface, but many developers are making the switch to Claude Code for several compelling reasons. Claude Code provides more consistent context retention across long conversations, which is crucial when working with large codebases. Its tool-use capabilities allow for more sophisticated automation workflows, and many developers find that Claude Code produces cleaner, more maintainable code with fewer hallucinations.
 
 
-Beyond technical advantages, having your prompt library in Claude Code gives you flexibility. You can use Claude Code's CLI capabilities to integrate prompts into CI/CD pipelines, use them with custom scripts, and take advantage of a more open ecosystem.
+Beyond technical advantages, having your prompt library in Claude Code gives you flexibility. You can use Claude Code's CLI capabilities to integrate prompts into CI/CD pipelines, use them with custom scripts, and take advantage of a more open environment.
 
 
 Exporting Your Cursor Composer Prompts
@@ -32,7 +32,7 @@ Exporting Your Cursor Composer Prompts
 Before you can transfer your prompts to Claude Code, you need to export them from Cursor. There are two main approaches depending on how you have organized your prompts.
 
 
-Method 1: Manual Export Through Cursor Settings
+Method 1 - Manual Export Through Cursor Settings
 
 
 Open Cursor and navigate to the Composer settings. Look for an option to export your custom prompts. If you have been using Cursor's built-in prompt management, you should find an export function that saves your prompts as a JSON file.
@@ -50,7 +50,7 @@ Open Cursor and navigate to the Composer settings. Look for an option to export 
 This method works well if you have been using Cursor's native prompt system and want a quick one-time export.
 
 
-Method 2: Extracting Prompts from Project Files
+Method 2 - Extracting Prompts from Project Files
 
 
 If you have been storing prompts as separate files in your project, you can locate them directly in your project structure. Look for folders named `prompts`, `.cursor/rules`, or similar locations where you may have stored prompt files.
@@ -156,7 +156,7 @@ Importing Prompts into Claude Code
 
 With your prompts converted, you can now import them into Claude Code. There are several ways to do this depending on your workflow.
 
-Method 1: Using.claude Directory
+Method 1 - Using.claude Directory
 
 Claude Code recognizes prompts stored in a `.claude` directory at the project root. Create a structure like this:
 
@@ -167,7 +167,7 @@ cp converted-prompts/*.md .claude/prompts/
 
 You can then reference these prompts in your conversations using `/prompt` or by including them directly.
 
-Method 2: Creating Custom Commands
+Method 2 - Creating Custom Commands
 
 For frequently used prompts, create custom commands in Claude Code. Edit your `CLAUDE.md` file in the project root:
 
@@ -194,7 +194,7 @@ Explain the following code in simple terms. Include:
 3. Any potential issues or concerns
 ```
 
-Method 3: Using Include Directive
+Method 3 - Using Include Directive
 
 For complex prompts, store them as separate files and include them when needed:
 

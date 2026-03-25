@@ -22,10 +22,10 @@ Table of Contents
 
 - [How These Tools Work](#how-these-tools-work)
 - [Testing Methodology](#testing-methodology)
-- [Results: Boilerplate Code](#results-boilerplate-code)
-- [Results: Standard Library Usage](#results-standard-library-usage)
-- [Results: Domain-Specific Logic](#results-domain-specific-logic)
-- [Results: Unfamiliar Frameworks](#results-unfamiliar-frameworks)
+- [Results - Boilerplate Code](#results-boilerplate-code)
+- [Results - Standard Library Usage](#results-standard-library-usage)
+- [Results - Domain-Specific Logic](#results-domain-specific-logic)
+- [Results - Unfamiliar Frameworks](#results-unfamiliar-frameworks)
 - [Latency Comparison](#latency-comparison)
 - [Context Window Effects](#context-window-effects)
 - [Practical Recommendations](#practical-recommendations)
@@ -34,7 +34,7 @@ Table of Contents
 - [CLI Tools for Evaluating Autocomplete](#cli-tools-for-evaluating-autocomplete)
 - [Configuring Tools for Maximum Accuracy](#configuring-tools-for-maximum-accuracy)
 - [Decision Matrix for Tool Selection](#decision-matrix-for-tool-selection)
-- [Hybrid Approach: Using Multiple Tools](#hybrid-approach-using-multiple-tools)
+- [Hybrid Approach - Using Multiple Tools](#hybrid-approach-using-multiple-tools)
 
 How These Tools Work
 
@@ -48,7 +48,7 @@ Testing Methodology
 
 I evaluated all three tools across JavaScript, Python, TypeScript, Go, and Rust. Each tool was tested on identical coding tasks to measure suggestion accuracy, the percentage of suggestions that required zero modification before acceptance. The tests covered four categories: boilerplate code, standard library usage, domain-specific logic, and unfamiliar frameworks.
 
-Results: Boilerplate Code
+Results - Boilerplate Code
 
 All three tools perform exceptionally well on repetitive boilerplate code. When writing standard React components, TypeScript interfaces, or Python class definitions, accuracy exceeded 85% across all platforms.
 
@@ -71,7 +71,7 @@ function UserCard({ user }) {
 
 Copilot, Codeium, and Tabnine all predicted this correctly with minimal context, just the function signature and JSX opening tag. The tools recognize these patterns because they've seen millions of similar implementations.
 
-Results: Standard Library Usage
+Results - Standard Library Usage
 
 When working with standard library functions and common APIs, Copilot shows a slight edge. It better predicts Python's `pandas` DataFrame operations, JavaScript array methods, and Go's standard library patterns.
 
@@ -89,7 +89,7 @@ Codeium suggested a similar approach but required one correction on the aggregat
 
 This pattern held across 70% of standard library tests. Copilot's training data appears to include more high-quality examples of common library usage.
 
-Results: Domain-Specific Logic
+Results - Domain-Specific Logic
 
 Domain-specific code presents the biggest challenge for all three tools. When writing business logic specific to your organization or niche frameworks, accuracy drops significantly.
 
@@ -126,7 +126,7 @@ async def process_subscription_payment(
 
 Here, accuracy dropped to 40-55% across all tools. None of them could fully understand the business rules without additional context. Adding docstrings and comments significantly improved results, describing the payment flow helped all tools generate more accurate suggestions.
 
-Results: Unfamiliar Frameworks
+Results - Unfamiliar Frameworks
 
 When working with newer or less-popular frameworks, accuracy varies considerably. Testing with the fresh Deno framework and Bun runtime:
 
@@ -176,7 +176,7 @@ Choose Codeium if speed is critical and you want a generous free tier. The accur
 
 Choose Copilot if you work with popular frameworks and want the best accuracy on standard library code. The deeper integration with GitHub provides context advantages for open-source projects.
 
-Choose Tabnine if data privacy is paramount or you need offline capability. The local model runs entirely on your machine, and the adaptation features improve accuracy over time as the tool learns your codebase.
+Choose Tabnine if data privacy is essential or you need offline capability. The local model runs entirely on your machine, and the adaptation features improve accuracy over time as the tool learns your codebase.
 
 Optimizing Accuracy Regardless of Tool
 
@@ -332,7 +332,7 @@ Create a weighted decision framework based on your team's actual priorities:
 
 Your specific weights depend on what matters most. A startup using limited budget might weight "free tier quality" at 40%, while an enterprise might weight "IDE integration" at 25%.
 
-Hybrid Approach: Using Multiple Tools
+Hybrid Approach - Using Multiple Tools
 
 Consider using different tools for different scenarios:
 

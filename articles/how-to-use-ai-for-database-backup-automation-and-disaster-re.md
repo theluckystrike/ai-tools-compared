@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Generate Backup Scripts with AI
+Step 1 - Generate Backup Scripts with AI
 
 AI assistants excel at generating database backup scripts because they understand the nuances of different database systems. Whether you use PostgreSQL, MySQL, MongoDB, or SQL Server, an AI can produce production-ready scripts tailored to your specific requirements.
 
@@ -65,7 +65,7 @@ fi
 
 This script handles compression using PostgreSQL's custom format (`-Fc`), which allows for parallel restores and selective table recovery. The retention policy automatically removes backups older than 30 days.
 
-Step 2: AI-Powered Disaster Recovery Planning
+Step 2 - AI-Powered Disaster Recovery Planning
 
 Beyond generating individual scripts, AI can help you design disaster recovery strategies. The key is providing detailed context about your Recovery Time Objective (RTO) and Recovery Point Objective (RPO) requirements.
 
@@ -171,7 +171,7 @@ if __name__ == '__main__':
 
 This monitoring script continuously checks primary health and replication lag, automatically promoting the replica if the primary becomes unavailable.
 
-Step 3: Automate Backup Verification
+Step 3 - Automate Backup Verification
 
 A common oversight in backup automation is verifying that backups can actually be restored. AI can help you build verification scripts that test restore capabilities without disrupting production.
 
@@ -216,7 +216,7 @@ else
 fi
 ```
 
-Step 4: Integrate with Existing Infrastructure
+Step 4 - Integrate with Existing Infrastructure
 
 AI-generated scripts work well with existing infrastructure tools. You can integrate backup verification into your CI/CD pipeline, schedule automated restores using cron, or trigger health checks from your monitoring system.
 
@@ -246,7 +246,7 @@ spec:
           restartPolicy: OnFailure
 ```
 
-Step 5: Choose the Right AI Tool for Backup Automation
+Step 5 - Choose the Right AI Tool for Backup Automation
 
 Different AI tools bring different strengths to backup and DR script generation:
 
@@ -259,7 +259,7 @@ Different AI tools bring different strengths to backup and DR script generation:
 
 For PostgreSQL and MySQL, Claude and ChatGPT produce the most accurate scripts. For RDS and Aurora-specific patterns. including multi-AZ failover and automated snapshots. Amazon Q Developer generates idiomatic AWS patterns that the general-purpose LLMs sometimes miss.
 
-Step 6: Cloud-Specific Backup Patterns
+Step 6 - Cloud-Specific Backup Patterns
 
 AI tools excel at cloud-native backup patterns. Provide your cloud provider and service name for best results.
 

@@ -159,7 +159,7 @@ async function organizeTabs() {
 For AI-enhanced classification, you can call a local model using Chrome's experimental `window.ai` API (available in Chrome 127+ with the appropriate flag) or an external API endpoint:
 
 ```javascript
-// Optional: AI-enhanced classification using window.ai (experimental)
+// Optional - AI-enhanced classification using window.ai (experimental)
 async function classifyWithAI(title, url) {
   if (!window.ai?.languageModel) {
     return classifyTab(url, title); // fallback to regex
@@ -184,7 +184,7 @@ Research and Documentation
 
 When exploring new technologies, open many documentation tabs. AI organizers can group these by technology stack, automatically labeling groups like "React Hooks," "GraphQL Best Practices," or "PostgreSQL Configuration."
 
-A practical research workflow: open 15-20 tabs across MDN, GitHub repos, npm pages, and blog posts, then trigger the AI organizer. Within seconds, tabs cluster into logical groups. useful when evaluating competing libraries like Redux, Zustand, and Jotai, where related tabs end up in one group rather than scattered.
+A practical research workflow - open 15-20 tabs across MDN, GitHub repos, npm pages, and blog posts, then trigger the AI organizer. Within seconds, tabs cluster into logical groups. useful when evaluating competing libraries like Redux, Zustand, and Jotai, where related tabs end up in one group rather than scattered.
 
 Debugging Sessions
 

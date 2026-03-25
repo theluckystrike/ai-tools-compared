@@ -22,7 +22,7 @@ Writing Ansible playbooks requires understanding infrastructure-as-code patterns
 - It's integrated directly into: most major IDEs, making setup trivial for existing GitHub users.
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - The evaluation focused on: syntax correctness, idempotency, security best practices, and the ability to follow existing project conventions.
-- You can ask "Why: did you choose the template module instead of copy?" and receive explanations that teach you better Ansible practices.
+- You can ask "Why - did you choose the template module instead of copy?" and receive explanations that teach you better Ansible practices.
 - Claude Code maintains this: consistency better because it understands your entire project structure when given context.
 
 Testing Methodology
@@ -144,7 +144,7 @@ For teams using both tools, consider using Copilot for initial scaffold generati
 
 The best choice depends on your specific workflow, but both tools have earned their place in the Ansible developer's toolkit. The key is understanding what each does well and applying them accordingly.
 
-Performance Comparison: Real-World Metrics
+Performance Comparison - Real-World Metrics
 
 Testing both tools on identical infrastructure scenarios reveals measurable differences in output quality. When generating a 15-task playbook for deploying a Python application with database migrations, Claude Code required zero follow-up corrections, while Copilot suggested corrections in 3 out of 5 test runs, primarily around variable scoping and conditional logic.
 
@@ -152,7 +152,7 @@ For playbooks involving Jinja2 loops over inventory groups, Claude Code generate
 
 Regarding response time, Copilot provides instant inline suggestions, typically under 500ms. Claude Code requires 2-5 seconds to generate full playbook suggestions through CLI interaction, but the extra time investment produces more strong results that require fewer edits.
 
-Tool Integration: Workflow Differences
+Tool Integration - Workflow Differences
 
 GitHub Copilot's IDE integration means you stay in your editor. You type the structure and Copilot completes it, creating a rapid feedback loop. This works well for developers who already know what they want and need speed. The downside is that you're limited to whatever Copilot suggests at that moment, if the suggestion is wrong, you see it clearly but fixing it requires manual editing.
 
@@ -164,7 +164,7 @@ Handling Role-Based Configurations
 
 Role-based Ansible projects introduce additional complexity that separates the tools clearly. When writing a role with handlers, defaults, vars, templates, and tasks, you need consistency across multiple files. Claude Code maintains this consistency better because it understands your entire project structure when given context.
 
-A typical scenario: you're writing a role that configures a system service with custom templates, handlers for service restart, and conditional tasks based on OS type. Claude Code might generate something like:
+A typical scenario - you're writing a role that configures a system service with custom templates, handlers for service restart, and conditional tasks based on OS type. Claude Code might generate something like:
 
 ```yaml
 tasks/main.yml

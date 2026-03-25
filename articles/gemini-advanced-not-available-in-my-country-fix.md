@@ -74,7 +74,7 @@ Step-by-step diagnostics:
 6. Open a new incognito window and retry Gemini Advanced access
 7. Document exact error message shown (take screenshot)
 
-Method 1: Adjust Your Google Account Country
+Method 1 - Adjust Your Google Account Country
 
 Your Google account's linked country determines service eligibility. If you have moved to a new country or maintain an account registered to an unsupported region, changing your account's country setting may resolve the issue.
 
@@ -100,13 +100,13 @@ Important Notes:
 
 Note that Google only allows you to change your account country once per year. This limitation exists to prevent abuse of regional pricing and availability differences, so ensure you select a supported country where Gemini Advanced is actively offered.
 
-Method 2: Use a Google Workspace Account
+Method 2 - Use a Google Workspace Account
 
 Google Workspace Business and Education accounts sometimes provide access paths that individual accounts do not. Organizations with Google Workspace subscriptions may have Gemini Advanced enabled through their admin console regardless of the organization's geographic location.
 
 If you have access to a Google Workspace account through your employer or educational institution, check with your administrator whether Gemini Advanced is enabled. Workspace admins can enable AI features through the admin console, and this access path may bypass individual geographic restrictions that apply to personal Google accounts.
 
-Method 3: Access Through Google AI Studio
+Method 3 - Access Through Google AI Studio
 
 Google AI Studio (formerly MakerSuite) provides an alternative access point for Gemini Pro and Gemini Ultra capabilities. While this is not the same as the full Gemini Advanced subscription, developers can access powerful AI capabilities through this developer-focused interface.
 
@@ -130,13 +130,13 @@ print(response.text)
 
 Pricing is approximately $3.50 per million input tokens and $10.50 per million output tokens (as of early 2026). Light usage costs far less than the $19.99/month Gemini Advanced subscription. Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
 
-Method 4: VPN-Based Access Considerations
+Method 4 - VPN-Based Access Considerations
 
 Using a VPN to access Gemini Advanced from an unsupported region violates Google's Terms of Service and may result in account restrictions. However, some users in border regions or travelers have reported success accessing their existing Gemini Advanced subscription when temporarily connecting through a VPN exit point in a supported country.
 
 If you choose this approach, understand the risks involved. Google may detect VPN usage and suspend access to paid features. Additionally, VPN reliability varies, and you may experience service disruptions. This method works best for maintaining access to an existing subscription rather than establishing new access.
 
-Method 5: API Access Through Google Cloud
+Method 5 - API Access Through Google Cloud
 
 For developers requiring reliable programmatic access to Gemini models, Google Cloud Platform provides another pathway. Create a Google Cloud project, enable the Gemini API, and use your billing account to access Gemini Ultra through API calls.
 
@@ -227,14 +227,14 @@ Testing Gemini Access Across Methods
 Before deciding on alternatives, systematically test available access paths:
 
 ```python
-Test 1: Check web access
+Test 1 - Check web access
 import requests
 
 url = "https://gemini.google.com"
 response = requests.get(url)
 print(f"Web access status: {response.status_code}")
 
-Test 2: Check API access through Google Cloud
+Test 2 - Check API access through Google Cloud
 import google.generativeai as genai
 
 try:
@@ -245,7 +245,7 @@ try:
 except Exception as e:
     print(f"API access failed: {e}")
 
-Test 3: Check Google Workspace access
+Test 3 - Check Google Workspace access
 Requires organization account - check with administrator
 ```
 

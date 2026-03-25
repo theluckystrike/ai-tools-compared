@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Platform Differences
+Step 1 - Understand the Platform Differences
 
 Midjourney and Ideogram take fundamentally different approaches to image generation. Midjourney uses a Discord-based command system with parameters like `--ar` for aspect ratio, `--stylize` for artistic strength, and `--v` for model version. Prompts are space-separated with double-dash parameters appended at the end.
 
@@ -38,7 +38,7 @@ The most significant difference lies in text rendering. If your Midjourney promp
 
 Additionally, Ideogram supports a `magic_prompt` API parameter that automatically enhances your prompts with additional detail. Setting `magic_prompt: "ON"` acts similarly to Midjourney's higher `--stylize` values. it gives the model creative latitude to interpret your prompt rather than producing a literal rendering.
 
-Step 2: Converting Midjourney Parameters to Ideogram Format
+Step 2 - Converting Midjourney Parameters to Ideogram Format
 
 Aspect Ratio Conversion
 
@@ -101,7 +101,7 @@ def strip_mj_version_params(prompt):
     return cleaned.strip()
 ```
 
-Step 3: Build a Complete Prompt Converter
+Step 3 - Build a Complete Prompt Converter
 
 Here's a Python script that converts Midjourney prompts to Ideogram format:
 
@@ -196,7 +196,7 @@ This produces:
 }
 ```
 
-Step 4: Handling Complex Prompt Patterns
+Step 4 - Handling Complex Prompt Patterns
 
 Multi-Prompt Segments
 
@@ -246,7 +246,7 @@ def strip_non_transferable_params(prompt):
     return prompt.strip()
 ```
 
-Step 5: Batch Processing Your Prompt Library
+Step 5 - Batch Processing Your Prompt Library
 
 For large prompt collections, process them in batches:
 
@@ -283,7 +283,7 @@ count = batch_convert_library('midjourney_prompts.csv', 'ideogram_prompts.csv')
 print(f"Converted {count} prompts")
 ```
 
-Step 6: Use the Ideogram API After Conversion
+Step 6 - Use the Ideogram API After Conversion
 
 Once your prompts are converted, you can submit them programmatically using Ideogram's REST API:
 
@@ -326,7 +326,7 @@ print(result["data"][0]["url"])
 
 Ideogram V_2_TURBO is the recommended model for batch processing due to its speed. Use V_2 for highest quality when processing curated prompts. API keys are available from ideogram.ai. pricing starts at $0.04 per image for Turbo and $0.08 for standard quality.
 
-Step 7: Style Type Mapping Reference
+Step 7 - Style Type Mapping Reference
 
 Ideogram's `style_type` parameter has no direct Midjourney equivalent, but this mapping works well in practice:
 
@@ -338,7 +338,7 @@ Ideogram's `style_type` parameter has no direct Midjourney equivalent, but this 
 | Anime/manga | `--niji 6` | ANIME |
 | 3D render | `--v 6 --style raw` | GENERAL + descriptive |
 
-Step 8: Limitations and Manual Review
+Step 8 - Limitations and Manual Review
 
 Automated conversion handles approximately 80% of prompts effectively. However, certain Midjourney features require manual intervention:
 

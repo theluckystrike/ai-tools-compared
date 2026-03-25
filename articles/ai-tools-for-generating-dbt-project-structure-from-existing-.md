@@ -23,7 +23,7 @@ Many data teams accumulate years of SQL queries across their analytics workflows
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - Mastering advanced features takes: 1-2 weeks of regular use.
 - Focus on the 20%: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- Next: provide context to your AI tool about your data warehouse environment.
+- Next - provide context to your AI tool about your data warehouse environment.
 
 Understanding the Migration Challenge
 
@@ -236,7 +236,7 @@ Cost Comparison for Migration Tools
 | dbt Cloud IDE | Free - $5000+/month | Native dbt support, lineage visualization | Integrated but vendor-locked |
 | Custom Python script | Free | Batch migration of similar queries | Very fast but less intelligent |
 
-Real Migration Example: From Raw Queries to dbt
+Real Migration Example - From Raw Queries to dbt
 
 Original legacy query:
 ```sql
@@ -342,16 +342,16 @@ AI-generated models may not include optimal indexing or partitioning. Review and
 
 Common Issues After Migration
 
-Issue: Models reference wrong source tables
-- Solution: Review `sources.yml` file before running, ensure table names match warehouse exactly
+Issue - Models reference wrong source tables
+- Solution - Review `sources.yml` file before running, ensure table names match warehouse exactly
 
-Issue: Tests fail on generated models
+Issue - Tests fail on generated models
 - Solution: Run `dbt test` immediately after generation, fix failing tests before production use
 
-Issue: dbt parse errors in generated YAML
+Issue - dbt parse errors in generated YAML
 - Solution: Validate YAML syntax with `dbt parse` command
 
-Issue: Generated models produce different results than legacy queries
+Issue - Generated models produce different results than legacy queries
 - Solution: Compare row counts and sample data between old query and new model until they match
 
 ---

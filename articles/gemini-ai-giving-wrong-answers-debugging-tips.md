@@ -107,7 +107,7 @@ Lowering temperature to 0.1, 0.3 produces more deterministic, factual responses.
 
 Common Scenarios and Fixes
 
-Scenario: Gemini Provides Incorrect Code
+Scenario - Gemini Provides Incorrect Code
 
 When Gemini generates code that does not work or contains bugs, apply these debugging steps:
 
@@ -115,25 +115,25 @@ Request the code with explicit error handling: Ask Gemini to "Write a Python fun
 
 Verify against current documentation: Gemini's training data has a cutoff date. For newer libraries or framework versions, explicitly state the version in your prompt: "Using Python 3.11 and pandas 2.2, write code to..."
 
-Test in isolation: Copy the generated code into a minimal test environment. Often, errors stem from interactions with your existing codebase rather than the code itself.
+Test in isolation - Copy the generated code into a minimal test environment. Often, errors stem from interactions with your existing codebase rather than the code itself.
 
-Scenario: Gemini Misinterprets Context
+Scenario - Gemini Misinterprets Context
 
 In multi-turn conversations, Gemini may lose track of earlier context. Combat this with:
 
-Conversation reset: Start a new conversation and paste relevant context at the beginning. This eliminates accumulated confusion from the previous session.
+Conversation reset - Start a new conversation and paste relevant context at the beginning. This eliminates accumulated confusion from the previous session.
 
-Explicit context refresh: Periodically remind Gemini of key facts: "Remember, we are working with a React frontend and Node.js backend."
+Explicit context refresh - Periodically remind Gemini of key facts: "Remember, we are working with a React frontend and Node.js backend."
 
-Chunking long inputs: Break complex requests into smaller, sequential steps rather than dumping entire documents into a single prompt.
+Chunking long inputs - Break complex requests into smaller, sequential steps rather than dumping entire documents into a single prompt.
 
-Scenario: Gemini Produces Hallucinated Facts
+Scenario - Gemini Produces Hallucinated Facts
 
 When Gemini invents information, apply these countermeasures:
 
-Request citations: Ask Gemini to "List the sources for this information" or "Provide verifiable references." The act of citing forces more careful reasoning.
+Request citations - Ask Gemini to "List the sources for this information" or "Provide verifiable references." The act of citing forces more careful reasoning.
 
-Use the 5-whys technique: When Gemini gives a suspect answer, probe deeper by asking "Why?" repeatedly. This often reveals the logical flaw in the model's reasoning.
+Use the 5-whys technique - When Gemini gives a suspect answer, probe deeper by asking "Why?" repeatedly. This often reveals the logical flaw in the model's reasoning.
 
 Cross-verify with reliable sources: Treat Gemini as a starting point, not a definitive source. Check factual claims against official documentation, academic papers, or trusted references.
 
@@ -164,10 +164,10 @@ Solve this step by step. Show your work at each stage.
 Few-shot examples provide reference patterns:
 
 ```
-Example input: 2 + 2 = ?
-Example output: 4
+Example input - 2 + 2 = ?
+Example output - 4
 
-Now solve: 15 + 27 = ?
+Now solve - 15 + 27 = ?
 ```
 
 These patterns give Gemini clearer guidance on expected behavior.
@@ -214,13 +214,13 @@ Specific Debugging Patterns for Common Domains
 
 Different use cases require different debugging approaches. Code generation has different error patterns than factual summaries or creative writing.
 
-For code generation: Test generated code in isolation before integrating. Use a Python REPL for snippets, or create a minimal test environment. Supply Gemini with your actual project structure and framework versions. If it generates code that doesn't work, show it the error message and ask it to fix it. This feedback loop accelerates convergence toward working code.
+For code generation - Test generated code in isolation before integrating. Use a Python REPL for snippets, or create a minimal test environment. Supply Gemini with your actual project structure and framework versions. If it generates code that doesn't work, show it the error message and ask it to fix it. This feedback loop accelerates convergence toward working code.
 
-For factual content: Cross-check claims systematically. If Gemini claims a library has a specific API, check the official docs. If it cites statistics, verify the source. Over time, you'll learn which domains Gemini handles confidently (general knowledge, common technologies) and which require extra verification (emerging technologies, specific domains).
+For factual content - Cross-check claims systematically. If Gemini claims a library has a specific API, check the official docs. If it cites statistics, verify the source. Over time, you'll learn which domains Gemini handles confidently (general knowledge, common technologies) and which require extra verification (emerging technologies, specific domains).
 
-For summarization: Accuracy here depends heavily on input quality. Provide full context rather than snippets. If summarizing a document, include the entire text rather than excerpts. Gemini's summarization accuracy drops significantly when context is fragmented.
+For summarization - Accuracy here depends heavily on input quality. Provide full context rather than snippets. If summarizing a document, include the entire text rather than excerpts. Gemini's summarization accuracy drops significantly when context is fragmented.
 
-For creative work: Accuracy is less relevant, you care about quality and originality. The debugging here focuses on ensuring the output matches your stylistic requirements. Provide examples of your preferred style early in the conversation.
+For creative work - Accuracy is less relevant, you care about quality and originality. The debugging here focuses on ensuring the output matches your stylistic requirements. Provide examples of your preferred style early in the conversation.
 
 Long-Form Interaction Patterns
 
@@ -234,17 +234,17 @@ Practical Debugging Workflow
 
 When Gemini gives you wrong answers, follow this systematic workflow:
 
-Step 1: Isolate the problem. Run the suggested code, execute the query, or verify the claim independently. Confirm that it actually fails before investing time in debugging. Sometimes what feels wrong is just different from what you expected.
+Step 1 - Isolate the problem. Run the suggested code, execute the query, or verify the claim independently. Confirm that it actually fails before investing time in debugging. Sometimes what feels wrong is just different from what you expected.
 
-Step 2: Restate your requirement. Clear your current conversation thread and start fresh. Rewrite your original prompt with more explicit context. "Write Python code that connects to a PostgreSQL database and handles connection timeout errors" is clearer than "How do I use PostgreSQL in Python?"
+Step 2 - Restate your requirement. Clear your current conversation thread and start fresh. Rewrite your original prompt with more explicit context. "Write Python code that connects to a PostgreSQL database and handles connection timeout errors" is clearer than "How do I use PostgreSQL in Python?"
 
-Step 3: Provide examples. If Gemini's output doesn't match your needs, show it an example of what correct output looks like. "Add constraints. Specify version numbers, frameworks, and any unusual requirements upfront. "Using Django 5.0, PostgreSQL 16, and Python 3.11..." prevents suggestions based on outdated versions.
+Step 3 - Provide examples. If Gemini's output doesn't match your needs, show it an example of what correct output looks like. "Add constraints. Specify version numbers, frameworks, and any unusual requirements upfront. "Using Django 5.0, PostgreSQL 16, and Python 3.11..." prevents suggestions based on outdated versions.
 
-Step 5: Request explanation. Ask Gemini to explain its reasoning or show work. "Explain your approach step by step" forces more careful thinking and reveals logical flaws you can correct.
+Step 5 - Request explanation. Ask Gemini to explain its reasoning or show work. "Explain your approach step by step" forces more careful thinking and reveals logical flaws you can correct.
 
-Step 6: Iterate in that conversation. Keep feedback within a single conversation thread so Gemini retains context of earlier attempts and corrections.
+Step 6 - Iterate in that conversation. Keep feedback within a single conversation thread so Gemini retains context of earlier attempts and corrections.
 
-Step 7: Verify the final output. Test it in your actual environment before accepting it as correct. This is non-negotiable for production code.
+Step 7 - Verify the final output. Test it in your actual environment before accepting it as correct. This is non-negotiable for production code.
 
 Frequently Asked Questions
 

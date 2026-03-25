@@ -34,7 +34,7 @@ Java 14 introduced record classes as a preview feature, and Java 17 made them a 
 
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- Completeness: The best tools generate not just syntactically correct code but semantically useful code, including appropriate method implementations and proper encapsulation.
+- Completeness - The best tools generate not just syntactically correct code but semantically useful code, including appropriate method implementations and proper encapsulation.
 - The tools that excel: in 2026 will likely continue improving their support for these features, making now an excellent time to establish which tools best fit your development workflow.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
@@ -125,13 +125,13 @@ Evaluating AI Tools for Modern Java
 
 When assessing AI code completion tools for use with record classes and sealed interfaces in 2026, developers should focus on several key capabilities:
 
-Syntax Recognition: The tool must recognize Java 17+ syntax including records, sealed classes, and pattern matching constructs. Testing with simple declarations reveals whether the tool supports these features at all.
+Syntax Recognition - The tool must recognize Java 17+ syntax including records, sealed classes, and pattern matching constructs. Testing with simple declarations reveals whether the tool supports these features at all.
 
-Context Awareness: Effective completion understands the relationship between sealed types and their implementations. It should suggest implementations that satisfy the sealed type's requirements.
+Context Awareness - Effective completion understands the relationship between sealed types and their implementations. It should suggest implementations that satisfy the sealed type's requirements.
 
-Error Prevention: Quality tools detect when generated code would violate sealed type constraints, such as attempting to extend a sealed class without proper modifiers.
+Error Prevention - Quality tools detect when generated code would violate sealed type constraints, such as attempting to extend a sealed class without proper modifiers.
 
-Completeness: The best tools generate not just syntactically correct code but semantically useful code, including appropriate method implementations and proper encapsulation.
+Completeness - The best tools generate not just syntactically correct code but semantically useful code, including appropriate method implementations and proper encapsulation.
 
 Practical Recommendations
 

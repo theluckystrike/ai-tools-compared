@@ -74,7 +74,7 @@ The overhead is minimal. a `.cursorrules` file is a small JSON document. The ben
 
 Recommended Git Workflow for CursorRules
 
-Option 1: Commit Directly to Feature Branches
+Option 1 - Commit Directly to Feature Branches
 
 The simplest approach involves committing `.cursorrules` changes alongside your regular code:
 
@@ -95,7 +95,7 @@ git push -u origin feature/add-cursor-rules
 
 This method works well for small teams where everyone understands the rules file's purpose. Each change gets reviewed through your normal pull request process, ensuring no harmful modifications slip through.
 
-Option 2: Dedicated CursorRules Repository
+Option 2 - Dedicated CursorRules Repository
 
 For larger organizations, consider maintaining a centralized rules repository:
 
@@ -127,7 +127,7 @@ Team members can then include these shared rules in their project-specific `.cur
 
 This modular approach promotes reuse and simplifies updates across multiple projects.
 
-Option 3: Git Submodule for Shared Rules
+Option 3 - Git Submodule for Shared Rules
 
 For monorepo environments or tightly coupled projects, a submodule gives you pinned versions of shared rules per repository:
 
@@ -307,6 +307,6 @@ Related Articles
 - [Best Practices for AI Tool Customization Files When Onboardi](/best-practices-for-ai-tool-customization-files-when-onboardi/)
 - [Best Way to Structure CursorRules for Microservices Project](/best-way-to-structure-cursorrules-for-microservices-project-/)
 - [Create CursorRules That Teach Cursor Your Team's State](/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
-- [Hybrid Team Social Events: Best Practices (2026)](https://welikeremotestack.com/best-practice-for-hybrid-team-social-events-including-both-r/)
+- [Hybrid Team Social Events - Best Practices (2026)](https://welikeremotestack.com/best-practice-for-hybrid-team-social-events-including-both-r/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

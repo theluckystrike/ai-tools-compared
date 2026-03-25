@@ -35,7 +35,7 @@ Android Gradle sync failures rank among the most frustrating obstacles developer
 
 - It provides actionable recommendations: like upgrading certain dependencies or adjusting JVM arguments for better build performance.
 - If you prefer working: from a terminal or need to analyze build logs extensively, a standalone LLM might serve better.
-- Use IDE-integrated AI (Copilot: JetBrains AI) for real-time feedback during coding.
+- Use IDE-integrated AI (Copilot - JetBrains AI) for real-time feedback during coding.
 - If you spend most: time in Android Studio, the built-in AI integration provides the smoothest experience.
 - Android Gradle sync failures: rank among the most frustrating obstacles developers face when working with large-scale Android projects.
 - When your project spans: dozens of subprojects with circular dependencies or version mismatches, identifying the root cause manually becomes time-consuming.
@@ -89,7 +89,7 @@ Platform-specific AI tools like Android Studio's built-in Gemini integration and
 
 GradleDoctor, for example, analyzes your dependency graph and flags potential conflicts before they cause sync failures. It provides actionable recommendations like upgrading certain dependencies or adjusting JVM arguments for better build performance.
 
-Practical Example: Resolving a Complex Dependency Conflict
+Practical Example - Resolving a Complex Dependency Conflict
 
 Consider a scenario where your large Android project fails sync with an error mentioning "kotlin-stdlib" version conflicts. This commonly occurs when different libraries depend on incompatible Kotlin versions.
 
@@ -150,7 +150,7 @@ The specific tool that works best depends on your workflow. If you spend most ti
 
 AI tools have fundamentally changed how developers approach Gradle troubleshooting. Rather than spending hours manually tracing dependency chains, you can now identify and resolve issues in minutes. The key remains providing sufficient context and understanding that AI assists rather than replaces developer expertise.
 
-API Cost Comparison: GPT-4 vs Alternatives
+API Cost Comparison - GPT-4 vs Alternatives
 
 Token costs differ significantly across providers and significantly impact production workloads.
 
@@ -232,7 +232,7 @@ OpenAI's `response_format` with `json_schema` guarantees schema-valid output. An
 
 Real Gradle Sync Error Examples and Fixes
 
-Error: Kotlin Version Mismatch
+Error - Kotlin Version Mismatch
 
 Error Output:
 ```
@@ -265,11 +265,11 @@ dependencies {
 }
 ```
 
-Error: AGP (Android Gradle Plugin) Incompatibility
+Error - AGP (Android Gradle Plugin) Incompatibility
 
 Error:
 ```
-Caused by: org.gradle.api.GradleException:
+Caused by - org.gradle.api.GradleException:
   Android Gradle Plugin 8.2.0 requires Gradle 8.2+
   You are using Gradle 8.0.2
 ```
@@ -333,7 +333,7 @@ dependencies {
 }
 ```
 
-CLI Workflow: Complete Gradle Sync Resolution
+CLI Workflow - Complete Gradle Sync Resolution
 
 ```bash
 #!/bin/bash
@@ -355,11 +355,11 @@ echo "Step 4: Attempt sync with verbose output"
 echo "Step 5: Extract error for AI analysis"
 if [ $? -ne 0 ]; then
     echo "Build failed. Error log saved to build-output.log"
-    echo "Run: claude 'Analyze this Android Gradle error:' < build-output.log"
+    echo "Run - claude 'Analyze this Android Gradle error:' < build-output.log"
 fi
 ```
 
-Pricing: Manual vs. AI-Assisted Troubleshooting
+Pricing - Manual vs. AI-Assisted Troubleshooting
 
 | Scenario | Manual Debug Time | AI-Assisted Time | Cost Savings |
 |----------|---|---|---|
@@ -423,7 +423,7 @@ subprojects {
 }
 ```
 
-Troubleshooting: When AI Suggestions Don't Work
+Troubleshooting - When AI Suggestions Don't Work
 
 If AI suggests a fix that doesn't work:
 

@@ -22,7 +22,7 @@ Table of Contents
 - [Why API Versioning is Hard](#why-api-versioning-is-hard)
 - [Breaking Change Detection](#breaking-change-detection)
 - [Migration Guide Generator](#migration-guide-generator)
-- [Migration Guide: API v2 to v3](#migration-guide-api-v2-to-v3)
+- [Migration Guide - API v2 to v3](#migration-guide-api-v2-to-v3)
 - [Versioning Strategy Advisor](#versioning-strategy-advisor)
 - [Automated Version Bump Detection in CI](#automated-version-bump-detection-in-ci)
 - [Consumer Impact Analysis](#consumer-impact-analysis)
@@ -98,8 +98,8 @@ def analyze_breaking_changes(old_spec_path: str, new_spec_path: str) -> dict:
             "role": "user",
             "content": f"""Analyze these API changes and classify each as breaking or non-breaking.
 
-Removed paths (always breaking): {diff_summary['removed_paths']}
-Added paths (never breaking): {diff_summary['added_paths']}
+Removed paths (always breaking) - {diff_summary['removed_paths']}
+Added paths (never breaking) - {diff_summary['added_paths']}
 
 Modified endpoints - before:
 {json.dumps(changed_old, indent=2)[:3000]}
@@ -109,15 +109,15 @@ Modified endpoints - after:
 
 For each change, output:
 ENDPOINT: [method] [path]
-CHANGE: [description of what changed]
-BREAKING: [YES/NO]
-REASON: [Why this breaks or doesn't break consumers]
-MIGRATION: [What consumers need to do, if breaking]
+CHANGE - [description of what changed]
+BREAKING - [YES/NO]
+REASON - [Why this breaks or doesn't break consumers]
+MIGRATION - [What consumers need to do, if breaking]
 
-Breaking changes include: removed fields, changed field types, renamed required fields,
+Breaking changes include - removed fields, changed field types, renamed required fields,
 changed response codes, removed enum values, stricter validation.
 
-Non-breaking: added optional fields, new enum values, new optional parameters."""
+Non-breaking - added optional fields, new enum values, new optional parameters."""
         }]
     )
 
@@ -164,7 +164,7 @@ Keep it practical. assume the reader is an engineer with 15 minutes."""
 
 Example output (for a users endpoint field rename):
 EXAMPLE_MIGRATION_GUIDE = """
-Migration Guide: API v2 to v3
+Migration Guide - API v2 to v3
 
 Overview
 The User object has been updated to use ISO 8601 timestamps and
@@ -173,7 +173,7 @@ industry standards.
 
 Breaking Changes
 
-#### 1. Timestamp format changed from Unix epoch to ISO 8601
+1. Timestamp format changed from Unix epoch to ISO 8601
 
 Before (v2):
 ```json
@@ -193,20 +193,20 @@ After (v3):
 }
 ```
 
-Migration: Replace `new Date(user.created_at * 1000)` with `new Date(user.created_at)`.
+Migration - Replace `new Date(user.created_at * 1000)` with `new Date(user.created_at)`.
 
-#### 2. `address_line1` and `address_line2` merged into `address.street`
+2. `address_line1` and `address_line2` merged into `address.street`
 
 Before (v2):
 ```bash
 curl /v2/users/usr_123
-Returns: { "address_line1": "123 Main St", "address_line2": "Apt 4" }
+Returns - { "address_line1": "123 Main St", "address_line2": "Apt 4" }
 ```
 
 After (v3):
 ```bash
 curl /v3/users/usr_123
-Returns: { "address": { "street": "123 Main St, Apt 4", "city": "...", "country": "..." } }
+Returns - { "address": { "street": "123 Main St, Apt 4", "city": "...", "country": "..." } }
 ```
 
 Migration Steps
@@ -241,7 +241,7 @@ API characteristics:
 
 Compare these strategies and recommend one:
 1. URL versioning (/v1/, /v2/)
-2. Header versioning (Accept: application/vnd.myapi.v2+json)
+2. Header versioning (Accept - application/vnd.myapi.v2+json)
 3. Query parameter versioning (?version=2)
 4. Date-based versioning (api-version: 2026-01-01)
 
@@ -343,10 +343,10 @@ Known consumers and their usage patterns:
 
 For each consumer, output:
 CONSUMER: [name]
-AFFECTED: [YES/NO/MAYBE]
-IMPACTED_FEATURES: [what breaks for them]
-MIGRATION_EFFORT: [Low/Medium/High]
-CONTACT_PRIORITY: [Immediate/Soon/Low]"""
+AFFECTED - [YES/NO/MAYBE]
+IMPACTED_FEATURES - [what breaks for them]
+MIGRATION_EFFORT - [Low/Medium/High]
+CONTACT_PRIORITY - [Immediate/Soon/Low]"""
         }]
     )
     return response.content[0].text

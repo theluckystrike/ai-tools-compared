@@ -42,8 +42,8 @@ Intermittent failures remain among the most frustrating issues developers face. 
 - Narrow focusing: "Given that our errors correlate with database connection pool exhaustion, what specific query patterns in our codebase might cause connection leaks?"
 
 3.
-- Use AI to analyze test output: ```bash
-Prompt: Analyze these 50 test run logs from the past week.
+- Use AI to analyze test output - ```bash
+Prompt - Analyze these 50 test run logs from the past week.
 - Iterate with hypothesis testing: Use AI to generate and validate hypotheses systematically
 
 5.
@@ -62,7 +62,7 @@ Conventional debugging relies on reproducing the exact conditions that trigger a
 
 AI tools change this equation by analyzing historical failure data, identifying subtle patterns across thousands of log entries, and suggesting specific conditions worth investigating. Rather than guessing which factors matter, developers can use AI to prioritize investigation paths based on statistical likelihood.
 
-Strategy 1: Pattern Recognition Across Distributed Logs
+Strategy 1 - Pattern Recognition Across Distributed Logs
 
 Modern applications generate logs across multiple services, making it difficult to correlate events that occur milliseconds apart. AI excels at processing vast quantities of log data to find recurring patterns that human eyes miss.
 
@@ -77,7 +77,7 @@ what conditions might trigger this failure.
 
 The AI can identify that all three service instances experienced garbage collection pauses within the same 200ms window, revealing a resource contention issue that would take hours to discover manually.
 
-Strategy 2: Generating Targeted Test Cases
+Strategy 2 - Generating Targeted Test Cases
 
 Once AI helps identify potential causes, the next step involves creating tests that reproduce the conditions. Rather than writing generic tests, use AI to generate tests specifically designed to expose the suspected intermittent condition.
 
@@ -113,7 +113,7 @@ async def test_concurrent_cache_get_set_race():
 
 AI can suggest specific timing parameters, concurrency levels, and assertion conditions based on the failure characteristics it analyzed.
 
-Strategy 3: Systematic Hypothesis Testing with AI
+Strategy 3 - Systematic Hypothesis Testing with AI
 
 AI serves as an excellent thinking partner for generating and prioritizing hypotheses. When faced with an intermittent failure, structure your AI interactions to test hypotheses systematically rather than randomly.
 
@@ -127,7 +127,7 @@ Start with broad questions and narrow down:
 
 This systematic approach prevents the common mistake of chasing unlikely causes while missing obvious ones.
 
-Strategy 4: Instrumentation and Observability Enhancement
+Strategy 4 - Instrumentation and Observability Enhancement
 
 AI can recommend specific instrumentation points that would capture the data needed to diagnose intermittent failures. Rather than adding logging everywhere, use AI to identify the minimal set of observability improvements that would provide maximum diagnostic value.
 
@@ -169,14 +169,14 @@ pool.query = function(sql, params) {
 
 This targeted instrumentation captures exactly the data needed to correlate failures with specific queries, something that would be impossible without knowing where to look.
 
-Strategy 5: Automated Flaky Test Detection
+Strategy 5 - Automated Flaky Test Detection
 
 Many intermittent failures manifest as flaky tests. AI can analyze test histories to identify which tests are most likely to fail and why. Modern AI tools integrate with CI/CD systems to flag tests requiring attention before they block deployments.
 
 Use AI to analyze test output:
 
 ```bash
-Prompt: Analyze these 50 test run logs from the past week.
+Prompt - Analyze these 50 test run logs from the past week.
 Identify which tests failed most frequently, look for common error
 patterns, and determine whether failures correlate with specific
 code changes, times of day, or build configurations.
@@ -251,7 +251,7 @@ scenarios = [
     ("memory_pressure", chaos.run_with_memory_pressure),
 ]
 
-Prompt AI: "Run payment_service.process_payment() under these 10 chaos
+Prompt AI - "Run payment_service.process_payment() under these 10 chaos
 scenarios 100 times each. Report which scenarios cause failures and the
 failure mode (timeout, exception type, data corruption, etc.)"
 ```
@@ -316,16 +316,16 @@ Intermittent failures often result from resource exhaustion. Use AI to analyze u
 
 ```bash
 Collect heap dumps during failures
-Prompt to AI: "Analyze these two heap dumps taken 5 minutes apart.
+Prompt to AI - "Analyze these two heap dumps taken 5 minutes apart.
 Which objects increased in count? What's creating them?
 Is this a memory leak?"
 
 Collect GC logs
-Prompt: "These GC logs show increasing pause times over 24 hours.
+Prompt - "These GC logs show increasing pause times over 24 hours.
 The pause times go from 50ms to 500ms. What's likely filling the heap?"
 
 Monitor file descriptor usage
-Prompt: "Our application opens connections but doesn't close them in
+Prompt - "Our application opens connections but doesn't close them in
 one code path. Given these logs showing open file descriptor count
 growing from 100 to 4000 over 8 hours, which service is leaking connections?"
 ```
@@ -453,7 +453,7 @@ if __name__ == "__main__":
     debug_intermittent_failure("payment-service")
 ```
 
-Prevention: Better Observability from the Start
+Prevention - Better Observability from the Start
 
 Rather than debugging after failures occur, instrument code strategically:
 

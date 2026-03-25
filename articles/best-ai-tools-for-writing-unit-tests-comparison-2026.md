@@ -48,9 +48,9 @@ Weaknesses:
 - Misses error handling paths
 - Limited context awareness (only current file)
 
-Pricing: $10/month or included in GitHub Business plan
+Pricing - $10/month or included in GitHub Business plan
 
-Best For: Junior developers, quick test scaffolding, simple CRUD tests
+Best For - Junior developers, quick test scaffolding, simple CRUD tests
 
 ---
 
@@ -98,9 +98,9 @@ Weaknesses:
 - No auto-execution; requires manual test run
 - Priced per API token
 
-Pricing: $15/month Claude API + usage, or $20/month Claude Pro
+Pricing - $15/month Claude API + usage, or $20/month Claude Pro
 
-Best For: Enterprise codebases, high-coverage requirements, teams using Claude for pair programming
+Best For - Enterprise codebases, high-coverage requirements, teams using Claude for pair programming
 
 ---
 
@@ -132,9 +132,9 @@ Weaknesses:
 - Requires uploading code to Diffblue cloud
 - Limited customization of test structure
 
-Pricing: Free tier (basic coverage), $99/month (team), $399+/month (enterprise)
+Pricing - Free tier (basic coverage), $99/month (team), $399+/month (enterprise)
 
-Best For: Java teams requiring verified test suites, mutation testing advocates, compliance-heavy projects
+Best For - Java teams requiring verified test suites, mutation testing advocates, compliance-heavy projects
 
 ---
 
@@ -166,9 +166,9 @@ Weaknesses:
 - Local models are slow (cloud models are faster but require key)
 - Pricing unclear for enterprise
 
-Pricing: Free tier, $29/month (Pro), $99+/month (Team)
+Pricing - Free tier, $29/month (Pro), $99+/month (Team)
 
-Best For: Python/JavaScript shops, teams wanting IDE-native test suggestions, early adopters
+Best For - Python/JavaScript shops, teams wanting IDE-native test suggestions, early adopters
 
 ---
 
@@ -198,9 +198,9 @@ Weaknesses:
 - Better at completing tests than generating full suites
 - Requires established test patterns in codebase
 
-Pricing: Free tier (local models), $12/month (cloud models), $240/year
+Pricing - Free tier (local models), $12/month (cloud models), $240/year
 
-Best For: Cost-conscious teams, offline-required environments, autocomplete-first workflows
+Best For - Cost-conscious teams, offline-required environments, autocomplete-first workflows
 
 ---
 
@@ -374,13 +374,13 @@ Security/Compliance Product:
 
 Bottom Line
 
-For coverage percentage: Claude wins (85% average), but Diffblue's verified tests may be worth the premium for critical systems.
+For coverage percentage - Claude wins (85% average), but Diffblue's verified tests may be worth the premium for critical systems.
 
-For speed and ease: Copilot ($10/month) handles 70% of typical unit test needs.
+For speed and ease - Copilot ($10/month) handles 70% of typical unit test needs.
 
-For suite generation: Claude or Diffblue, depending on your language stack and budget.
+For suite generation - Claude or Diffblue, depending on your language stack and budget.
 
-For IDE integration: CodiumAI (sidebar suggestions) or Copilot (inline autocomplete).
+For IDE integration - CodiumAI (sidebar suggestions) or Copilot (inline autocomplete).
 
 Test generation is no longer optional, the question is which tool fits your coverage requirements, language mix, and verification standards.
 

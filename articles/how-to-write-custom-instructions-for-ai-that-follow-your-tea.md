@@ -25,7 +25,7 @@ Table of Contents
 - [Code Review Requirements](#code-review-requirements)
 - [Practical Examples for Common Standards](#practical-examples-for-common-standards)
 - [Testing Requirements](#testing-requirements)
-- [Advanced: Context-Aware Instructions](#advanced-context-aware-instructions)
+- [Advanced - Context-Aware Instructions](#advanced-context-aware-instructions)
 - [Testing Requirements](#testing-requirements)
 - [Troubleshooting](#troubleshooting)
 
@@ -39,13 +39,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Custom Instructions
+Step 1 - Understand Custom Instructions
 
 Custom instructions are system-level prompts that shape how an AI assistant behaves across all your interactions. Most AI coding tools support some form of custom instructions, whether through Claude's `CLAUDE.md`, Cursor's `.cursorrules`, or GitHub Copilot's custom instructions file.
 
 The key insight is that these instructions work best when they are specific, enforceable, and aligned with your actual code review checklist. Generic advice like "write clean code" rarely produces the results you want. Instead, you need precise rules that the AI can follow without ambiguity.
 
-Step 2: Structuring Your Custom Instructions
+Step 2 - Structuring Your Custom Instructions
 
 Effective custom instructions follow a structured approach. Start with your team's code review problems, what gets flagged most often in pull requests? Common offenders include missing error handling, inadequate test coverage, inconsistent naming, and lack of documentation.
 
@@ -54,7 +54,7 @@ Here's a template for structuring custom instructions that actually work:
 ```markdown
 Project Code Standards
 
-Step 3: Language and Framework Conventions
+Step 3 - Language and Framework Conventions
 - Use TypeScript strict mode for all new TypeScript files
 - Prefer functional components in React; use hooks over class components
 - Follow Airbnb JavaScript Style Guide with exceptions listed below
@@ -75,7 +75,7 @@ Enforcing Naming Conventions
 If your team requires specific naming patterns, make them explicit. Instead of vague preferences, provide concrete rules:
 
 ```markdown
-Step 4: Naming Conventions
+Step 4 - Naming Conventions
 - Variables and functions: camelCase
 - React components: PascalCase
 - Constants: UPPER_SNAKE_CASE
@@ -91,7 +91,7 @@ Error Handling Standards
 Code review often flags inconsistent error handling. Address this directly:
 
 ```markdown
-Step 5: Error Handling
+Step 5 - Error Handling
 - Never leave console.log in production code; use a proper logger
 - Always handle Promise rejections with try/catch or .catch()
 - Wrap async operations in proper error boundaries in React
@@ -116,7 +116,7 @@ Testing Requirements
 
 The AI will then write tests alongside code rather than treating testing as a separate step.
 
-Step 6: Making Instructions Actionable
+Step 6 - Making Instructions Actionable
 
 The difference between custom instructions that work and those that get ignored comes down to actionability. Vague instructions like "write secure code" are meaningless to an AI. Specific, actionable instructions produce consistent results.
 
@@ -130,13 +130,13 @@ Versus this actionable version:
 
 The second version gives the AI concrete behaviors to avoid or adopt.
 
-Step 7: Iterating on Your Instructions
+Step 7 - Iterating on Your Instructions
 
 Custom instructions are not a one-time setup. Start with your top five code review concerns, implement instructions for those, and observe the results. Track what gets approved on first review versus what still needs fixes.
 
 Most teams find that their instructions evolve over time. You might discover that a particular rule is too strict or not strict enough. The key is treating your custom instructions as a living document that improves through feedback from your actual code review process.
 
-Advanced: Context-Aware Instructions
+Advanced - Context-Aware Instructions
 
 For larger projects, consider creating instruction tiers that apply based on context. Some AI tools support conditional instructions that activate based on file type, directory, or project area:
 
@@ -156,23 +156,23 @@ Frontend Component Standards
 
 This targeted approach keeps instructions relevant to the task at hand rather than overwhelming the AI with rules that don't apply.
 
-Step 8: Real-World Custom Instructions Examples
+Step 8 - Real-World Custom Instructions Examples
 
 Here are complete, production-tested custom instruction sets for different teams:
 
 Startup SaaS Team (.cursorrules)
 
 ```
-Cursor Rules: Startup SaaS Development
+Cursor Rules - Startup SaaS Development
 
-Step 9: Tech Stack
+Step 9 - Tech Stack
 - React 18 with TypeScript
 - Next.js 14 (App Router)
 - Supabase for authentication and database
 - Tailwind CSS for styling
 - Vercel for deployment
 
-Step 10: Code Standards
+Step 10 - Code Standards
 
 React Components
 - Use functional components only
@@ -220,14 +220,14 @@ Common Code Review Issues
 - Hardcoded values instead of env variables
 - No loading states on async operations
 
-Step 11: What NOT to do
+Step 11 - What NOT to do
 - No console.log in production code (use winston logger)
 - No raw SQL queries (use ORM/parameterized)
 - No mixing component logic with styling
 - No default exports for components
 - No modifying props directly in components
 
-Step 12: Security Checklist
+Step 12 - Security Checklist
 - Sanitize all user input before display
 - CSRF tokens on all state-changing requests
 - Rate limit API endpoints
@@ -238,29 +238,29 @@ Step 12: Security Checklist
 Enterprise Backend Team (.cursorrules)
 
 ```
-Cursor Rules: Enterprise Backend (Python/FastAPI)
+Cursor Rules - Enterprise Backend (Python/FastAPI)
 
-Step 13: Architecture
+Step 13 - Architecture
 - Python 3.11+
 - FastAPI with async/await
 - PostgreSQL with SQLAlchemy ORM
 - Redis for caching
 - OpenTelemetry for observability
 
-Step 14: Code Style
+Step 14 - Code Style
 - Black formatter (line length: 100)
 - isort for imports
 - mypy for type checking (strict mode)
 - pylint with score threshold 8.0
 
-Step 15: API Standards
+Step 15 - API Standards
 - RESTful design with resource versioning (/v1/, /v2/)
 - OpenAPI documentation via FastAPI
 - Structured error responses with error codes
 - Request/response logging to CloudWatch
 - All endpoints require authentication
 
-Step 16: Database Patterns
+Step 16 - Database Patterns
 - Alembic for migrations (never manually alter schema)
 - ORM entities in /models/
 - Queries in repository classes
@@ -274,14 +274,14 @@ Testing Requirements
 - Load tests for critical paths (> 1000 req/sec)
 - Fixtures for test data
 
-Step 17: Required Code Review Checks
+Step 17 - Required Code Review Checks
 - No hardcoded credentials (use environment variables)
 - All external API calls have timeout and retry logic
 - Database queries use connection pooling
 - Sensitive data logged as [REDACTED]
 - Proper logging at info/warning/error levels
 
-Step 18: Deploy ment
+Step 18 - Deploy ment
 - Docker containers with minimal base images
 - Kubernetes manifests in /k8s/
 - Helm charts for configuration
@@ -292,30 +292,30 @@ Step 18: Deploy ment
 Data Team/Jupyter Notebooks (custom instructions)
 
 ```
-Custom Instructions: Data Analysis Notebooks
+Custom Instructions - Data Analysis Notebooks
 
-Step 19: Notebook Structure
+Step 19 - Notebook Structure
 - Clear markdown cells explaining each section
 - Descriptive cell comments for complex analysis
 - Results always include confidence intervals
 - Visualizations with titles, axes labels, legends
 - Summary cell at top with key findings
 
-Step 20: Code Quality
+Step 20 - Code Quality
 - Use pandas, numpy, scikit-learn from official docs
 - Always check for data quality issues first (nulls, duplicates, outliers)
 - Validate assumptions before modeling
 - Seeds for reproducibility (random_state=42)
 - All plots should be publication-quality (matplotlib.style.use('seaborn-v0_8-darkgrid'))
 
-Step 21: Analysis Standards
+Step 21 - Analysis Standards
 - Sample size and statistical significance always noted
 - P-values reported, not just p < 0.05
 - Effect sizes included, not just p-values
 - Explain why chosen that statistical test
 - Limitations of analysis clearly stated
 
-Step 22: Visualization Rules
+Step 22 - Visualization Rules
 - Color-blind friendly palettes (use colorblind=True in seaborn)
 - No pie charts (use bar charts instead)
 - Proper axis labels and units
@@ -323,26 +323,26 @@ Step 22: Visualization Rules
 - Show 95% confidence intervals on estimates
 ```
 
-Step 23: Test Your Custom Instructions
+Step 23 - Test Your Custom Instructions
 
 Create a validation checklist to verify instructions actually work:
 
 ```markdown
-Step 24: Custom Instructions Validation Checklist
+Step 24 - Custom Instructions Validation Checklist
 
-Test 1: Basic Compliance
+Test 1 - Basic Compliance
 - [ ] AI generates code following naming conventions
 - [ ] AI uses specified frameworks/libraries
 - [ ] Generated code matches error handling style
 - [ ] Comments/docstrings follow template
 
-Test 2: Code Review Standards
+Test 2 - Code Review Standards
 - [ ] Generated tests meet coverage requirement
 - [ ] Error handling present without asking
 - [ ] Logging implemented correctly
 - [ ] Security best practices included
 
-Test 3: Edge Cases
+Test 3 - Edge Cases
 - [ ] AI handles constraints mentioned (e.g., no console.log)
 - [ ] AI avoids anti-patterns listed
 - [ ] AI includes required patterns automatically
@@ -354,7 +354,7 @@ Test Feature
 - [ ] If any deviation: Update instructions to be clearer/more specific
 ```
 
-Step 25: Measuring Instruction Effectiveness
+Step 25 - Measuring Instruction Effectiveness
 
 Track the impact of your custom instructions:
 
@@ -385,14 +385,14 @@ pull_request_data = {
 
 When AI-generated code passes review comments drop by 60%+, your instructions are working.
 
-Step 26: Integrate Instructions Across Tools
+Step 26 - Integrate Instructions Across Tools
 
 Most modern AI tools support instructions, but syntax varies:
 
-Cursor: `.cursorrules` file in project root
-VS Code + Copilot: `.github/copilot-instructions.md`
-Claude: `claude_system_prompt.md` or via Project settings
-GitHub Copilot: Settings in repository or organization
+Cursor - `.cursorrules` file in project root
+VS Code + Copilot - `.github/copilot-instructions.md`
+Claude - `claude_system_prompt.md` or via Project settings
+GitHub Copilot - Settings in repository or organization
 
 For consistency across tools, maintain a single source:
 
@@ -408,21 +408,21 @@ git add .cursorrules .github/copilot-instructions.md claude_system_prompt.md
 git commit -m "Update custom instructions across all AI tools"
 ```
 
-Step 27: Common Mistakes and How to Fix Them
+Step 27 - Common Mistakes and How to Fix Them
 
-Mistake 1: Too Generic
+Mistake 1 - Too Generic
  "Write clean code and follow best practices"
  "Use early returns to reduce nesting. Max function length 30 lines. Avoid else blocks."
 
-Mistake 2: Too Long
+Mistake 2 - Too Long
  500-line instruction document that no one reads
  One-page summary with links to detailed guidelines
 
-Mistake 3: Not Enforceable
+Mistake 3 - Not Enforceable
  "Be mindful of performance"
  "Use .includes() instead of .find() for existence checks. Batch database queries when selecting >10 items."
 
-Mistake 4: Out of Date
+Mistake 4 - Out of Date
  Instructions reference old tech stack
  Review instructions quarterly as tools/standards evolve
 

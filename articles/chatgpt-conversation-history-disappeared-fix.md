@@ -51,7 +51,7 @@ Before attempting fixes, understanding potential causes helps diagnose your spec
 Step-by-Step Fixes
 
 
-Fix 1: Refresh and Check Sidebar
+Fix 1 - Refresh and Check Sidebar
 
 
 Sometimes conversations disappear temporarily due to a rendering issue. Try these steps:
@@ -69,7 +69,7 @@ Sometimes conversations disappear temporarily due to a rendering issue. Try thes
 If conversations return after refresh, the issue was likely a temporary rendering problem.
 
 
-Fix 2: Clear Browser Cache and Cookies
+Fix 2 - Clear Browser Cache and Cookies
 
 
 Clearing cached data resolves many persistence issues:
@@ -117,7 +117,7 @@ For Safari:
 This fix addresses corrupted cache entries that interfere with conversation loading.
 
 
-Fix 3: Verify You're Logged Into the Correct Account
+Fix 3 - Verify You're Logged Into the Correct Account
 
 
 Multiple ChatGPT accounts can cause confusion:
@@ -135,7 +135,7 @@ Multiple ChatGPT accounts can cause confusion:
 Sometimes users accidentally create conversations under a different account or browser profile.
 
 
-Fix 4: Disable Browser Extensions Temporarily
+Fix 4 - Disable Browser Extensions Temporarily
 
 
 Extensions can interfere with ChatGPT's functionality:
@@ -161,7 +161,7 @@ Extensions can interfere with ChatGPT's functionality:
 Some extensions block scripts necessary for conversation loading or modify how data persists.
 
 
-Fix 5: Check Network and VPN Settings
+Fix 5 - Check Network and VPN Settings
 
 
 Network issues can prevent proper data synchronization:
@@ -179,7 +179,7 @@ Network issues can prevent proper data synchronization:
 ChatGPT requires consistent connectivity to sync conversations across sessions. Network interruptions during conversation creation can result in unsaved data.
 
 
-Fix 6: Verify ChatGPT Server Status
+Fix 6 - Verify ChatGPT Server Status
 
 
 The issue might be on OpenAI's end:
@@ -197,7 +197,7 @@ The issue might be on OpenAI's end:
 Server-side issues can cause temporary synchronization problems that appear as missing conversations.
 
 
-Fix 7: Export and Backup Conversations
+Fix 7 - Export and Backup Conversations
 
 
 For Plus users, use ChatGPT's built-in export feature:

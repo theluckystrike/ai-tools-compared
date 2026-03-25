@@ -66,7 +66,7 @@ GitHub Copilot in Xcode
 Copilot integrates directly into Xcode through extensions, allowing you to describe constraint issues in natural language. When facing a conflict, you can paste the error message and request analysis:
 
 ```
-User: "This constraint conflict keeps appearing: Unable to simultaneously satisfy constraints.
+User - "This constraint conflict keeps appearing: Unable to simultaneously satisfy constraints.
     NSLayoutConstraint:0x7f8a3c0 UIView:0x7f8a2d0.height == 50
     NSLayoutConstraint:0x7f8a3e0 UIView:0x7f8a2d0.height >= 100"
 ```
@@ -104,7 +104,7 @@ Cursor's agent mode can directly edit files and suggest constraint fixes. Descri
 
 Practical Examples of AI-Assisted Resolution
 
-Example 1: Resolving Equal-Width Conflicts
+Example 1 - Resolving Equal-Width Conflicts
 
 A frequent scenario involves buttons that should share equal width but also have individual minimum widths:
 
@@ -128,7 +128,7 @@ NSLayoutConstraint.activate([
 ])
 ```
 
-Example 2: Safe Area and Edge Constraints
+Example 2 - Safe Area and Edge Constraints
 
 Conflicting constraints between safe area guides and superview edges cause runtime crashes:
 
@@ -140,7 +140,7 @@ view.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor) // Choose ONE
 
 AI tools recognize this pattern immediately and recommend choosing either the safe area or the superview edge, not both for the same edge.
 
-Example 3: Intrinsic Content Size Conflicts
+Example 3 - Intrinsic Content Size Conflicts
 
 Views with conflicting intrinsic content size constraints require careful handling:
 
@@ -185,8 +185,8 @@ When working with storyboards, describe the view hierarchy in text form if you c
 
 Example of poor vs. good AI prompts:
 
-Poor: "My constraints are broken, fix it"
-Good: "This storyboard shows: [hierarchy]. Current constraints: [list]. Expected: [button below text view]. Error: [copy-paste error message]"
+Poor - "My constraints are broken, fix it"
+Good - "This storyboard shows: [hierarchy]. Current constraints: [list]. Expected - [button below text view]. Error: [copy-paste error message]"
 
 Validation checklist after AI suggestions:
 
@@ -196,7 +196,7 @@ Always verify AI suggestions before implementing them. AI assistants can occasio
 - [ ] Layout renders correctly on iPhone 15, iPhone 12, iPad Pro
 - [ ] All text fields accept input without clipping
 - [ ] Dynamic type scaling (accessibility) works
-- [ ] Landscape and portrait orientations both work
+- [ ] field and portrait orientations both work
 - [ ] No orange/yellow warning lines in Interface Builder
 - [ ] Runtime launching shows no constraint violations in console
 - [ ] Safe area insets respected on all devices

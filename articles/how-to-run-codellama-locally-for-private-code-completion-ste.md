@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install Ollama
+Step 1 - Install Ollama
 
 Ollama is the easiest way to run CodeLlama locally. It handles model downloading, inference, and provides a simple API.
 
@@ -68,7 +68,7 @@ Verify the installation:
 ollama --version
 ```
 
-Step 2: Downloading the CodeLlama Model
+Step 2 - Downloading the CodeLlama Model
 
 Pull the model that matches your hardware capabilities:
 
@@ -85,7 +85,7 @@ ollama pull codellama:34b
 
 The 7B model downloads approximately 4GB, while the 13B model requires around 8GB. Initial download time depends on your internet connection.
 
-Step 3: Test CodeLlama in the Terminal
+Step 3 - Test CodeLlama in the Terminal
 
 Once installed, test the model directly:
 
@@ -101,18 +101,18 @@ Type a code-related query to verify functionality:
 
 The model should respond with a working implementation. Press Ctrl+D or type `/exit` to quit.
 
-Step 4: Integrate with Your Code Editor
+Step 4 - Integrate with Your Code Editor
 
 For real-time code completion in your IDE, you have several integration options.
 
-Option 1: VS Code with Ollama Extension
+Option 1 - VS Code with Ollama Extension
 
 1. Install the [Ollama extension](https://marketplace.visualstudio.com/items?itemName=ollama.ollama) for VS Code
 2. Restart VS Code
 3. The extension automatically connects to your local Ollama instance
 4. Start typing code, the extension provides inline completions
 
-Option 2: Continue Extension
+Option 2 - Continue Extension
 
 Continue is a VS Code extension specifically designed for local code completion:
 
@@ -120,7 +120,7 @@ Continue is a VS Code extension specifically designed for local code completion:
 2. Configure it to use your local Ollama endpoint
 3. Adjust the model in settings to `codellama:13b` or your preferred size
 
-Option 3: LM Studio
+Option 3 - LM Studio
 
 LM Studio provides a GUI alternative:
 
@@ -129,7 +129,7 @@ LM Studio provides a GUI alternative:
 3. Select the Chat tab to use it as a coding assistant
 4. The app also provides an OpenAI-compatible local server
 
-Step 5: Configure Code Completion Settings
+Step 5 - Configure Code Completion Settings
 
 Fine-tune your setup for optimal results.
 
@@ -239,7 +239,7 @@ pkill ollama
 ollama serve
 ```
 
-Step 6: Security Benefits
+Step 6 - Security Benefits
 
 Running locally provides security advantages cloud services cannot match. Your code never traverses networks, eliminating interception risks. There are no third-party data retention policies to review. Compliance becomes simpler since data processing stays within your infrastructure.
 

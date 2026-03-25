@@ -45,7 +45,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Risk in Concrete Terms
+Step 1 - The Risk in Concrete Terms
 
 
 Before exploring configuration, it helps to understand exactly what exposure looks like. AI coding tools typically index your workspace in one of three ways:
@@ -57,7 +57,7 @@ Before exploring configuration, it helps to understand exactly what exposure loo
 The most common real-world incident is a developer asking an AI assistant to "help me debug this API call" while the `.env` file is open, resulting in the API key appearing verbatim in a code suggestion that then gets committed to version control.
 
 
-Step 2: Configure GitHub Copilot
+Step 2 - Configure GitHub Copilot
 
 
 GitHub Copilot respects your repository's `.gitignore` file by default, but additional configuration provides stronger guarantees.
@@ -116,7 +116,7 @@ Organization-Level Policies
 GitHub Enterprise customers can enforce Copilot exclusions at the organization level through the GitHub admin console. Navigate to Organization Settings > Copilot > Content exclusion and add patterns that apply to all repositories under the organization. This approach enforces baseline security across all developer machines without relying on per-repository configuration.
 
 
-Step 3: Configure Cursor AI
+Step 3 - Configure Cursor AI
 
 
 Cursor, built on VS Code, offers workspace-specific settings that control which files the AI can access.
@@ -173,7 +173,7 @@ Disabling Cursor's Codebase Indexing for Sensitive Directories
 
 Cursor's codebase indexing feature scans your entire project to enable semantic search. To exclude directories from the index, open Cursor Settings > Features > Codebase Indexing and add ignore patterns. Any directory matching these patterns will not be indexed, providing an additional layer of protection independent of the rules file.
 
-Step 4: Configure Claude Code (Anthropic)
+Step 4 - Configure Claude Code (Anthropic)
 
 Claude Code provides explicit controls for file access through its configuration system.
 
@@ -184,7 +184,7 @@ Create a `CLAUDE.md` file in your project root to instruct Claude about file exc
 ```markdown
 Project Guidelines
 
-Step 5: Excluded Files
+Step 5 - Excluded Files
 Do not read or analyze the following files:
 - .env* files
 - /secrets/ directory
@@ -192,7 +192,7 @@ Do not read or analyze the following files:
 - *.pem, *.key files
 - config/secrets.*
 
-Step 6: Context Rules
+Step 6 - Context Rules
 - Never include environment variables in code suggestions
 - Avoid suggesting patterns that require hardcoded secrets
 - Recommend environment variable patterns instead of hardcoded values
@@ -209,7 +209,7 @@ claude config set --global excludePatterns "[\"/.env*\", \"/secrets/\", \"/*.pem
 
 This ensures all projects using Claude Code automatically exclude sensitive patterns.
 
-Step 7: Configure Windsurf and Codeium
+Step 7 - Configure Windsurf and Codeium
 
 Windsurf (formerly Codeium) offers workspace-level context controls through its settings panel. Open Windsurf Settings > AI Context and configure the ignore list:
 
@@ -271,7 +271,7 @@ api_key = get_secret("production-api-key")
 
 Tools like AWS Secrets Manager, HashiCorp Vault, or Doppler provide APIs that your code uses at runtime, eliminating the need for env files in your codebase entirely.
 
-Step 8: Pre-Commit Hooks as a Safety Net
+Step 8 - Pre-Commit Hooks as a Safety Net
 
 Even with AI tools properly configured, a pre-commit hook provides a final line of defense before secrets reach version control. Tools like `git-secrets` and `detect-secrets` can catch accidental commits:
 
@@ -299,7 +299,7 @@ Commit the baseline, then add to pre-commit hooks
 
 These tools run before every commit and reject pushes that contain strings matching secret patterns. They complement AI tool exclusions rather than replacing them. the AI configuration prevents inadvertent context exposure, while the pre-commit hooks catch any residual secrets that end up in code.
 
-Step 9: Verification and Testing
+Step 9 - Verification and Testing
 
 After configuring your AI tools, verify the exclusions work correctly.
 

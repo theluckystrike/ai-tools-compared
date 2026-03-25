@@ -46,7 +46,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Tabnine Model Storage
+Step 1 - Understand Tabnine Model Storage
 
 Tabnine stores its AI models and configuration data in specific directories on your system. The exact location depends on your operating system and editor configuration.
 
@@ -86,7 +86,7 @@ du -sh ~/.tabnine/models/
 
 This helps you understand the total size of model files before you decide whether to archive or discard them.
 
-Step 2: Exporting Your Tabnine Configuration
+Step 2 - Exporting Your Tabnine Configuration
 
 Before uninstalling Tabnine, export your configuration to preserve your settings. This ensures you can recreate similar preferences in Supermaven.
 
@@ -116,7 +116,7 @@ cp -r ~/.tabnine/models ~/tabnine-backup/
 
 Once you have a backup, open `user.config.json` in a text editor and note the key values. Write these down in a simple reference file, because you will translate them manually into Supermaven's configuration format.
 
-Step 3: Can Supermaven Import Tabnine Models?
+Step 3 - Can Supermaven Import Tabnine Models?
 
 Supermaven does not natively import Tabnine model files directly. The two platforms use different model architectures and training approaches, making direct model transfer impossible. However, this does not mean your Tabnine experience is wasted.
 
@@ -124,7 +124,7 @@ Supermaven uses its own proprietary models that are pre-trained on extensive cod
 
 If you were using Tabnine's custom model training feature, available in Tabnine Enterprise, to train on your private codebase, Supermaven does not have a direct equivalent. In that case, evaluate whether Supermaven's base model quality meets your needs before committing to the switch. Running both tools in different editors for a week is a low-risk way to compare output quality on your actual codebase.
 
-Step 4: Set Up Supermaven After Tabnine
+Step 4 - Set Up Supermaven After Tabnine
 
 After uninstalling Tabnine, install Supermaven through your preferred editor's extension marketplace or package manager. VS Code users can install it from the Marketplace, while Neovim users can use their plugin manager.
 
@@ -157,7 +157,7 @@ These settings control suggestion length, single-line completion behavior, fuzzy
 
 Editor-Specific Setup
 
-VS Code: After installing the Supermaven extension, open the Command Palette (Cmd+Shift+P) and run "Supermaven: Sign In" to authenticate. The extension activates automatically for supported file types.
+VS Code - After installing the Supermaven extension, open the Command Palette (Cmd+Shift+P) and run "Supermaven - Sign In" to authenticate. The extension activates automatically for supported file types.
 
 Neovim with lazy.nvim:
 
@@ -176,9 +176,9 @@ Neovim with lazy.nvim:
 }
 ```
 
-JetBrains IDEs: Install the Supermaven plugin from the JetBrains Marketplace. Configuration is handled through the plugin settings panel rather than a standalone config file.
+JetBrains IDEs - Install the Supermaven plugin from the JetBrains Marketplace. Configuration is handled through the plugin settings panel rather than a standalone config file.
 
-Step 5: Preserving Your Coding Context
+Step 5 - Preserving Your Coding Context
 
 While model files cannot transfer, you can preserve your coding context through other means:
 

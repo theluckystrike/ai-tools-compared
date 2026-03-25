@@ -43,7 +43,7 @@ npm install -g @modelcontextprotocol/server-sqlite
 
 These packages expose your database schema to connected AI assistants, allowing them to inspect tables, understand data types, and retrieve metadata without executing potentially destructive queries.
 
-Step 1: Configure MCP for PostgreSQL
+Step 1 - Configure MCP for PostgreSQL
 
 PostgreSQL remains a common choice for applications requiring relational database capabilities. Setting up MCP with PostgreSQL involves configuring the server with your connection parameters.
 
@@ -67,7 +67,7 @@ The environment variable format follows standard PostgreSQL connection string sy
 
 After configuration, restart your AI assistant. The system automatically detects the new database connection and populates its context with available tables, their columns, data types, and foreign key relationships.
 
-Step 2: Connecting MySQL Databases
+Step 2 - Connecting MySQL Databases
 
 MySQL configurations follow a similar pattern but require slightly different connection handling. The MCP server for MySQL supports both traditional password authentication and newer authentication methods.
 
@@ -93,7 +93,7 @@ Configure your MySQL connection in `~/.mcp/servers/mysql.json`:
 
 The MCP server connects to your MySQL instance and retrieves schema metadata on startup. This includes table structures, index information, and stored procedure definitions. Your AI assistant can then reference these details when generating queries.
 
-Step 3: Work with SQLite Databases
+Step 3 - Work with SQLite Databases
 
 SQLite provides a lightweight option for local development and smaller applications. Since SQLite stores databases as files, the MCP configuration points directly to the database file path.
 
@@ -115,7 +115,7 @@ Configure SQLite in `~/.mcp/servers/sqlite.json`:
 
 SQLite works particularly well for development environments where you want AI assistance without running a separate database server. The schema information includes table definitions, indexes, and any triggers defined in your database.
 
-Step 4: Query Generation Examples
+Step 4 - Query Generation Examples
 
 With MCP configured and your database schema available to the AI, you can now use schema-aware query generation. Consider a database with the following simplified structure:
 
@@ -172,7 +172,7 @@ For production environments, consider using environment variables for credential
 
 This approach keeps sensitive credentials outside your configuration files and allows for rotation without code changes.
 
-Step 5: Verify Your Configuration
+Step 5 - Verify Your Configuration
 
 After setting up MCP, verify the connection works correctly. Most AI assistants provide feedback when they successfully connect to configured MCP servers. You can also explicitly test by asking the assistant to describe your database schema:
 
@@ -226,7 +226,7 @@ For organizations with complex database fields, MCP supports multiple simultaneo
 
 This setup allows you to query multiple databases in a single conversation. Ask the AI to "compare the user count between production and staging" and it can reference both databases simultaneously.
 
-Step 6: Real-World Schema Examples
+Step 6 - Real-World Schema Examples
 
 E-commerce Database:
 ```sql
@@ -287,18 +287,18 @@ Authentication Failures:
 - For MySQL with newer auth plugins, ensure MCP supports the plugin version
 - Try resetting password: `ALTER USER 'username'@'localhost' IDENTIFIED BY 'newpassword';`
 
-Step 7: Practical Query Examples with MCP
+Step 7 - Practical Query Examples with MCP
 
 Before MCP (Manual Query Writing):
 ```
-Developer: "How do I write a query to find customers who spent
+Developer - "How do I write a query to find customers who spent
 more than $1,000 in the last 90 days?"
 Developer must know table names, joins, date functions
 ```
 
 With MCP (Schema-Aware):
 ```
-Developer to AI: "Find customers who spent more than $1,000
+Developer to AI - "Find customers who spent more than $1,000
 in the last 90 days"
 
 AI generates:
@@ -313,7 +313,7 @@ ORDER BY total_spent DESC;
 
 The AI knew the exact table names, column names, and relationship structure without you specifying them.
 
-Step 8: MCP with Data Migration Tools
+Step 8 - MCP with Data Migration Tools
 
 MCP integrates effectively with data pipeline tools like dbt:
 
@@ -349,12 +349,12 @@ Performance Optimization with MCP
 MCP helps identify query bottlenecks:
 
 ```
-Developer to AI: "This query takes 15 seconds on our production
+Developer to AI - "This query takes 15 seconds on our production
 database. The query is [paste query]. The table sizes are
 customers (500K rows), orders (5M rows), order_items (20M rows).
 What's the performance issue?"
 
-AI (with schema context): "The issue is a missing index on
+AI (with schema context) - "The issue is a missing index on
 orders.customer_id. You're joining 5M order rows to 500K customer
 rows without an index on the join column. Create this index:
 CREATE INDEX idx_orders_customer ON orders(customer_id);"

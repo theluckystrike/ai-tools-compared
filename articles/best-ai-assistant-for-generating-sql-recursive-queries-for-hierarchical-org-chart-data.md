@@ -32,7 +32,7 @@ Table of Contents
 
 - [The Hierarchical Query Problem](#the-hierarchical-query-problem)
 - [What Makes an AI Assistant Effective for Recursive Queries](#what-makes-an-ai-assistant-effective-for-recursive-queries)
-- [Practical Examples: AI-Generated Recursive Queries](#practical-examples-ai-generated-recursive-queries)
+- [Practical Examples - AI-Generated Recursive Queries](#practical-examples-ai-generated-recursive-queries)
 - [Common Pitfalls AI Assistants Should Avoid](#common-pitfalls-ai-assistants-should-avoid)
 - [Evaluating AI Assistant Performance](#evaluating-ai-assistant-performance)
 - [Performance Optimization for Large Hierarchies](#performance-optimization-for-large-hierarchies)
@@ -61,7 +61,7 @@ A capable AI assistant for this task must understand several interconnected conc
 
 The best AI assistants also recognize when recursive queries are unnecessary, for instance, when only a single level of reporting needs to be retrieved.
 
-Practical Examples: AI-Generated Recursive Queries
+Practical Examples - AI-Generated Recursive Queries
 
 "Write a recursive SQL query to find all employees who report to manager_id 5, including their direct and indirect reports, with their level in the hierarchy."
 
@@ -93,11 +93,11 @@ SELECT * FROM reporting_chain
 ORDER BY level, name;
 ```
 
-The AI should explain each part: the anchor query selects direct reports, the recursive member joins the employees table to already-found records, and the query naturally terminates when no more descendants exist.
+The AI should explain each part - the anchor query selects direct reports, the recursive member joins the employees table to already-found records, and the query naturally terminates when no more descendants exist.
 
 Building Full Path Chains
 
-Prompt: "Write a query that returns the complete reporting path from each employee up to the CEO, showing the chain as a concatenated string."
+Prompt - "Write a query that returns the complete reporting path from each employee up to the CEO, showing the chain as a concatenated string."
 
 This requires accumulating the path during recursion:
 
@@ -139,7 +139,7 @@ The key technique here is path accumulation using string concatenation in the re
 
 Identifying Root Nodes and Tree Depth
 
-Prompt: "Write a query that calculates how many levels deep each employee's reporting chain goes, and identify the top-level manager for each employee."
+Prompt - "Write a query that calculates how many levels deep each employee's reporting chain goes, and identify the top-level manager for each employee."
 
 ```sql
 WITH RECURSIVE hierarchy AS (
@@ -273,7 +273,7 @@ INSERT INTO employees (id, name, manager_id) VALUES
 (6, 'Sales Rep', 3);
 
 -- AI-generated tests
-SELECT 'Test: CEO has 5 direct+indirect reports' AS test_name,
+SELECT 'Test - CEO has 5 direct+indirect reports' AS test_name,
        COUNT(*) AS count,
        CASE WHEN COUNT(*) = 5 THEN 'PASS' ELSE 'FAIL' END AS result
 FROM reporting_chain WHERE id IN (

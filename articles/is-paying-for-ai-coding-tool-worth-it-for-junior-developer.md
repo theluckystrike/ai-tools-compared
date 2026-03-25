@@ -21,15 +21,15 @@ As a junior developer, every dollar counts. When you see monthly subscriptions r
 Table of Contents
 
 - [What Junior Developers Actually Get From AI Tools](#what-junior-developers-actually-get-from-ai-tools)
-- [Free Tools vs Paid: The Real Differences](#free-tools-vs-paid-the-real-differences)
+- [Free Tools vs Paid - The Real Differences](#free-tools-vs-paid-the-real-differences)
 - [Cost-Benefit Analysis for Bootcamp Graduates](#cost-benefit-analysis-for-bootcamp-graduates)
 - [When Free Tools Are Actually Enough](#when-free-tools-are-actually-enough)
-- [Practical Example: Debugging With and Without AI](#practical-example-debugging-with-and-without-ai)
+- [Practical Example - Debugging With and Without AI](#practical-example-debugging-with-and-without-ai)
 - [The Learning Curve Consideration](#the-learning-curve-consideration)
 - [When to Make the Switch](#when-to-make-the-switch)
 - [Making the Most of Whatever Tier You Choose](#making-the-most-of-whatever-tier-you-choose)
 - [Final Recommendation](#final-recommendation)
-- [Real Pricing Comparison: What You Actually Pay](#real-pricing-comparison-what-you-actually-pay)
+- [Real Pricing Comparison - What You Actually Pay](#real-pricing-comparison-what-you-actually-pay)
 - [The Hidden Value Beyond Speed](#the-hidden-value-beyond-speed)
 - [Measuring Your Actual Usage](#measuring-your-actual-usage)
 - [The Mentorship Angle](#the-mentorship-angle)
@@ -40,7 +40,7 @@ What Junior Developers Actually Get From AI Tools
 
 The primary value proposition for junior developers isn't just code completion, it's learning. When you're building your first REST API or working with a new framework, having an AI that explains what code does in context accelerates understanding in ways documentation sometimes cannot.
 
-Consider this scenario: you're working on a JavaScript function that processes user data. A paid AI tool doesn't just suggest the code, it understands the surrounding context:
+Consider this scenario - you're working on a JavaScript function that processes user data. A paid AI tool doesn't just suggest the code, it understands the surrounding context:
 
 ```javascript
 // You write this:
@@ -57,7 +57,7 @@ function processUser(userData) {
 
 The suggestion includes error handling patterns, proper mapping, and conditional logic, all things a junior developer might otherwise spend hours researching or get wrong on the first try.
 
-Free Tools vs Paid: The Real Differences
+Free Tools vs Paid - The Real Differences
 
 Free AI coding tools have improved dramatically. GitHub Copilot's free tier, Cursor's hobby plan, and other options provide solid code completion. The key differences between free and paid tiers typically include:
 
@@ -93,7 +93,7 @@ Starting with free tools makes sense if you're in one of these situations:
 
 Many junior developers successfully transition to junior roles using only free tools. The paid subscription becomes valuable when you're ready to work more independently.
 
-Practical Example: Debugging With and Without AI
+Practical Example - Debugging With and Without AI
 
 Here's a real workflow difference:
 
@@ -173,7 +173,7 @@ The best choice depends on your specific situation: your budget, your learning s
 
 The investment in your productivity as a developer almost always pays off, and AI tools, whether free or paid, represent one of the highest-ROI investments you can make early in your career.
 
-Real Pricing Comparison: What You Actually Pay
+Real Pricing Comparison - What You Actually Pay
 
 Let's break down the actual monthly costs of popular paid AI coding tools to help you make an informed decision:
 
@@ -185,7 +185,7 @@ Let's break down the actual monthly costs of popular paid AI coding tools to hel
 
 For a junior developer earning $50,000/year, the highest-tier subscription ($20/month = $240/year) represents about 0.48% of gross income. This is a tiny margin to overcome with time savings. If the tool saves you just one hour per week on debugging and research, you've already paid for it.
 
-Real scenario: A junior developer typically spends 2-3 hours daily dealing with:
+Real scenario - A junior developer typically spends 2-3 hours daily dealing with:
 - Googling error messages (15-20 minutes per session)
 - Reading documentation (10-15 minutes)
 - Testing variations of code (20-30 minutes)
@@ -197,13 +197,13 @@ The Hidden Value Beyond Speed
 
 Junior developers often focus only on speed metrics when evaluating AI tools, but paid tiers unlock other valuable capabilities:
 
-Follow-up questions: Most free tiers limit conversation interactions. With a paid plan, you can ask "why does this work?" after seeing a suggestion, turning passive completion into active learning. A junior developer asking clarifying questions about async/await patterns learns faster than one blindly accepting suggestions.
+Follow-up questions - Most free tiers limit conversation interactions. With a paid plan, you can ask "why does this work?" after seeing a suggestion, turning passive completion into active learning. A junior developer asking clarifying questions about async/await patterns learns faster than one blindly accepting suggestions.
 
-Multi-file context: Paid tools typically handle larger context windows, meaning they understand your entire project structure, not just the current file. This prevents mistakes like using deprecated imports or inconsistent patterns across your codebase.
+Multi-file context - Paid tools typically handle larger context windows, meaning they understand your entire project structure, not just the current file. This prevents mistakes like using deprecated imports or inconsistent patterns across your codebase.
 
-Refactoring assistance: When you need to rename a variable across 50 files or update an API call everywhere it's used, paid tools with multi-file editing can handle this in seconds. The free tier forces you to do it manually, or work around it with search-and-replace.
+Refactoring assistance - When you need to rename a variable across 50 files or update an API call everywhere it's used, paid tools with multi-file editing can handle this in seconds. The free tier forces you to do it manually, or work around it with search-and-replace.
 
-Code explanation: Free tools often provide suggestions without explanation. Paid tools like Claude Code and Copilot Pro explain what code does in natural language, which genuinely accelerates skill development.
+Code explanation - Free tools often provide suggestions without explanation. Paid tools like Claude Code and Copilot Pro explain what code does in natural language, which genuinely accelerates skill development.
 
 Measuring Your Actual Usage
 
@@ -237,11 +237,11 @@ When to Delay Purchasing
 
 There are legitimate situations where waiting makes sense:
 
-First 3 months of any job: Focus on learning your codebase and company practices first. Free tools suffice for basic completion during onboarding.
+First 3 months of any job - Focus on learning your codebase and company practices first. Free tools suffice for basic completion during onboarding.
 
-While learning fundamentals: If you're still working through algorithms or basic data structures, autocomplete provides minimal value. Most beginners benefit more from typing code manually to build muscle memory.
+While learning fundamentals - If you're still working through algorithms or basic data structures, autocomplete provides minimal value. Most beginners benefit more from typing code manually to build muscle memory.
 
-During a coding bootcamp: Bootcamps often provide Copilot licenses. If yours does, take advantage first before paying separately.
+During a coding bootcamp - Bootcamps often provide Copilot licenses. If yours does, take advantage first before paying separately.
 
 While using an IDE with built-in AI: Some development environments (JetBrains IDEs, Visual Studio, VS Code) have integrated AI features with free tiers. Maximize these before upgrading.
 

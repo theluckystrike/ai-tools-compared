@@ -34,7 +34,7 @@ tags: [ai-tools-compared]
 Retrieval-Augmented Generation (RAG) lets you ground LLM responses in your own documents. LangChain remains the most widely adopted framework for wiring together the components. loaders, splitters, embeddings, vector stores, and retrievers. This guide walks through building a production-quality RAG pipeline from scratch with real code, covering the decisions that actually affect answer quality.
 
 
-- Retrieval: Given a user query, embed it and find the most semantically similar chunks.
+- Retrieval - Given a user query, embed it and find the most semantically similar chunks.
 - For better recall: use MMR (Maximum Marginal Relevance) to trade off relevance against diversity.
 - In testing across hundreds of datasets: hybrid search typically improves recall by 15, 25% over vector-only retrieval.
 - Often a hybrid: semantic boundaries with a 512-token size limit, performs best.
@@ -60,7 +60,7 @@ pip install langchain langchain-openai langchain-community \
 
 For a local embedding model instead of OpenAI, use `sentence-transformers`. For production vector storage, swap Chroma for Pinecone, Weaviate, or pgvector.
 
-Step 1: Load and Split Documents
+Step 1 - Load and Split Documents
 
 Chunking strategy is the highest-use decision in RAG. Chunks too large dilute signal; chunks too small lose context.
 
@@ -89,7 +89,7 @@ Chunk size guidance:
 - 512, 1024 tokens: better for narrative text, legal documents
 - Parent-child chunking (small retrieval chunk, large context chunk) often beats both
 
-Step 2: Embed and Store
+Step 2 - Embed and Store
 
 ```python
 from langchain_openai import OpenAIEmbeddings
@@ -119,7 +119,7 @@ vectorstore = Chroma(
 )
 ```
 
-Step 3: Build the Retriever
+Step 3 - Build the Retriever
 
 The default retriever returns the top-k chunks by cosine similarity. For better recall, use MMR (Maximum Marginal Relevance) to trade off relevance against diversity.
 
@@ -139,7 +139,7 @@ retriever_mmr = vectorstore.as_retriever(
 
 `fetch_k` controls how many candidates are fetched before MMR reranks them. `lambda_mult` ranges from 0 (max diversity) to 1 (max relevance).
 
-Step 4: Wire the Chain
+Step 4 - Wire the Chain
 
 ```python
 from langchain_openai import ChatOpenAI
@@ -154,7 +154,7 @@ If the answer is not in the context, say "I don't have enough information to ans
 Context:
 {context}
 
-Question: {question}
+Question - {question}
 
 Answer:"""
 
@@ -177,7 +177,7 @@ for doc in result["source_documents"]:
     print(f"  Source: {doc.metadata.get('source')} page {doc.metadata.get('page')}")
 ```
 
-Step 5: Add a Reranker for Better Precision
+Step 5 - Add a Reranker for Better Precision
 
 Embedding-based retrieval has high recall but mediocre precision. A cross-encoder reranker scores (query, chunk) pairs directly and dramatically improves the top results.
 
@@ -231,7 +231,7 @@ Run this on 50, 100 question/answer pairs before deploying. A faithfulness score
 
 Common Production Issues
 
-Chunks lack enough context. The answer spans multiple chunks that never get retrieved together. Fix: increase chunk overlap or use parent-document retrieval.
+Chunks lack enough context. The answer spans multiple chunks that never get retrieved together. Fix - increase chunk overlap or use parent-document retrieval.
 
 Wrong chunks returned for ambiguous queries. Add a query rewriting step that expands or clarifies the user's question before embedding.
 
@@ -239,7 +239,7 @@ Costs blow up at scale. Cache embedding results by content hash. Use `text-embed
 
 Stale index. Add a metadata `last_modified` field and re-index only changed documents using a document hash comparison loop before each indexing run.
 
-Advanced: Hybrid Search for Better Recall
+Advanced - Hybrid Search for Better Recall
 
 Dense vector search excels at semantic matching but sometimes misses keyword-exact matches. A hybrid approach combines vector similarity with BM25 keyword search:
 
@@ -317,7 +317,7 @@ Each context section includes its source document.
 Context sections:
 {context}
 
-Question: {question}
+Question - {question}
 
 Answer (with source citations):"""
 
@@ -328,7 +328,7 @@ PROMPT = PromptTemplate(
 )
 ```
 
-The key improvements: explicit instruction to refuse when uncertain, requirement to cite sources, and emphasis on factuality. Studies show this reduces hallucination by 30, 40% compared to generic prompts.
+The key improvements - explicit instruction to refuse when uncertain, requirement to cite sources, and emphasis on factuality. Studies show this reduces hallucination by 30, 40% compared to generic prompts.
 
 Performance Optimization Techniques
 
@@ -372,11 +372,11 @@ Scaling RAG to Production
 
 When moving RAG from prototype to production, consider:
 
-Vector database choice: Chroma works for development (< 100K documents). For scale, migrate to Pinecone, Weaviate, or Qdrant. These handle millions of documents and provide multi-tenancy, backups, and uptime SLAs.
+Vector database choice - Chroma works for development (< 100K documents). For scale, migrate to Pinecone, Weaviate, or Qdrant. These handle millions of documents and provide multi-tenancy, backups, and uptime SLAs.
 
-Embedding model selection: `text-embedding-3-small` (62M dimensions) costs $0.02 per million tokens. `text-embedding-3-large` (3072 dimensions) costs $0.13 per million tokens. Test on your data, small often matches large performance on domain-specific content.
+Embedding model selection - `text-embedding-3-small` (62M dimensions) costs $0.02 per million tokens. `text-embedding-3-large` (3072 dimensions) costs $0.13 per million tokens. Test on your data, small often matches large performance on domain-specific content.
 
-Index refresh strategy: For live documents, implement incremental indexing:
+Index refresh strategy - For live documents, implement incremental indexing:
 
 ```python
 async def refresh_index(source_dir: str):

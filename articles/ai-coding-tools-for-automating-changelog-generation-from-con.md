@@ -23,7 +23,7 @@ Table of Contents
 - [The Conventional Commit Workflow](#the-conventional-commit-workflow)
 - [AI-Powered Solutions for Commit Message Generation](#ai-powered-solutions-for-commit-message-generation)
 - [Automating Changelog Generation](#automating-changelog-generation)
-- [Tool Comparison: AI Commit and Changelog Tools](#tool-comparison-ai-commit-and-changelog-tools)
+- [Tool Comparison - AI Commit and Changelog Tools](#tool-comparison-ai-commit-and-changelog-tools)
 - [Integrating git-cliff for Rule-Based Changelog Generation](#integrating-git-cliff-for-rule-based-changelog-generation)
 - [{{ group | upper_first }}\n](#group-upperfirst-n)
 - [Best Practices for AI-Assisted Changelog Workflow](#best-practices-for-ai-assisted-changelog-workflow)
@@ -86,13 +86,13 @@ ollama pull codellama
 Create a commit helper script
 ```
 
-Script: `git-ai-commit`
+Script - `git-ai-commit`
 ```bash
 #!/bin/bash
 DIFF=$(git diff --cached)
 RESPONSE=$(curl -s http://localhost:11434/api/generate -d "{
   model: 'codellama',
-  prompt: 'Analyze this git diff and write a conventional commit message. Types: feat, fix, docs, style, refactor, test, chore. Include scope if relevant. Diff:\n$DIFF',
+  prompt: 'Analyze this git diff and write a conventional commit message. Types - feat, fix, docs, style, refactor, test, chore. Include scope if relevant. Diff:\n$DIFF',
   stream: false
 }")
 MESSAGE=$(echo $RESPONSE | jq -r '.response')
@@ -204,7 +204,7 @@ npx changeset version 2>&1 | \
   -d '{"model": "codellama", "prompt": "Format this as a clean changelog:", "stream": false}'
 ```
 
-Tool Comparison: AI Commit and Changelog Tools
+Tool Comparison - AI Commit and Changelog Tools
 
 | Tool | Commit Message Gen | Changelog Output | Privacy | Cost |
 |------|-------------------|-----------------|---------|------|

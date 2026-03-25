@@ -23,9 +23,9 @@ Table of Contents
 
 - [Why Pipeline Testing Is Underinvested](#why-pipeline-testing-is-underinvested)
 - [Setting Up the Stack](#setting-up-the-stack)
-- [Approach 1: AI-Generated dbt Tests](#approach-1-ai-generated-dbt-tests)
-- [Approach 2: Great Expectations Suite Generation](#approach-2-great-expectations-suite-generation)
-- [Approach 3: LLM-Based Output Anomaly Detection](#approach-3-llm-based-output-anomaly-detection)
+- [Approach 1 - AI-Generated dbt Tests](#approach-1-ai-generated-dbt-tests)
+- [Approach 2 - Great Expectations Suite Generation](#approach-2-great-expectations-suite-generation)
+- [Approach 3 - LLM-Based Output Anomaly Detection](#approach-3-llm-based-output-anomaly-detection)
 - [Integrating Anomaly Detection into Airflow](#integrating-anomaly-detection-into-airflow)
 - [CI Integration for dbt](#ci-integration-for-dbt)
 - [Tool Comparison](#tool-comparison)
@@ -61,7 +61,7 @@ great_expectations init
 Creates great_expectations/ directory with context
 ```
 
-Approach 1: AI-Generated dbt Tests
+Approach 1 - AI-Generated dbt Tests
 
 dbt's built-in tests (`not_null`, `unique`, `accepted_values`) cover basics. The hard part is writing custom SQL tests for business rules. Claude handles this well.
 
@@ -82,10 +82,10 @@ def generate_dbt_tests(model_sql: str, model_name: str, sample_data: list[dict])
         max_tokens=2000,
         messages=[{
             "role": "user",
-            "content": f"""Generate comprehensive dbt tests for this model.
+            "content": f"""Generate complete dbt tests for this model.
 
-Model name: {model_name}
-Sample data (10 rows): {sample_json}
+Model name - {model_name}
+Sample data (10 rows) - {sample_json}
 
 Model SQL:
 {model_sql}
@@ -194,7 +194,7 @@ models:
 
 The two custom SQL tests at the bottom are the valuable ones. `not_null` and `unique` are boilerplate. the business rule tests are what actually catch data quality problems in production.
 
-Approach 2: Great Expectations Suite Generation
+Approach 2 - Great Expectations Suite Generation
 
 Great Expectations needs a test suite for each dataset. Generating one manually takes hours. AI can generate it from a sample DataFrame:
 
@@ -244,8 +244,8 @@ def generate_ge_expectations(df: pd.DataFrame, dataset_name: str) -> list[dict]:
  "role": "user",
  "content": f"""Generate Great Expectations expectations for this dataset.
 
-Dataset: {dataset_name}
-Row count: {row_count}
+Dataset - {dataset_name}
+Row count - {row_count}
 Column profiles:
 {json.dumps(profile, indent=2, default=str)}
 
@@ -283,7 +283,7 @@ def save_ge_suite(expectations: list[dict], suite_name: str, output_dir: str = "
 
 The key advantage of using the statistical profile rather than raw data is that it's safe to send to an external API. You're not sending actual orders or user records. you're sending distributions, null rates, and sample cardinalities. For regulated data environments this distinction matters.
 
-Approach 3: LLM-Based Output Anomaly Detection
+Approach 3 - LLM-Based Output Anomaly Detection
 
 For pipelines where the data structure changes between runs, use Claude to analyze output distributions:
 
@@ -319,7 +319,7 @@ def compare_pipeline_runs(
             "role": "user",
             "content": f"""Compare these two pipeline run outputs and identify anomalies.
 
-Pipeline: {pipeline_name}
+Pipeline - {pipeline_name}
 
 Baseline run:
 {json.dumps(baseline_summary, indent=2)}

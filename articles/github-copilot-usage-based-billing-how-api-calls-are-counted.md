@@ -41,7 +41,7 @@ Prompt tokens include your current file content, surrounding code, and any addit
 When you trigger an inline completion, GitHub counts the tokens processed rather than the number of suggestions presented. If Copilot suggests three different code options, the tokens for all suggestions count toward your usage. The same principle applies to Copilot Chat conversations, each message exchange processes tokens on both the input and output sides.
 
 
-Practical Example: Token Consumption in Action
+Practical Example - Token Consumption in Action
 
 
 Consider a typical coding session where you are working on a JavaScript function:
@@ -61,9 +61,9 @@ For Copilot Chat, a more complex interaction might look like this:
 
 
 ```
-User: Explain how to implement a binary search in Python
+User - Explain how to implement a binary search in Python
 
-Copilot: [Generates a detailed explanation with code example]
+Copilot - [Generates a detailed explanation with code example]
 ```
 
 
@@ -136,17 +136,17 @@ Real Usage Patterns and Costs
 
 Daily Developer Using Inline Completions
 
-Typical usage: 30-40 code completions daily across 8-hour workday.
+Typical usage - 30-40 code completions daily across 8-hour workday.
 
 ```
-Completions per day: 35
-Average tokens per completion: 250 (100 prompt + 150 completion)
-Daily tokens: 35 × 250 = 8,750 tokens
+Completions per day - 35
+Average tokens per completion - 250 (100 prompt + 150 completion)
+Daily tokens - 35 × 250 = 8,750 tokens
 
 Monthly tokens (21 working days): 8,750 × 21 = 183,750 tokens
 
 At $0.40 per 1M tokens (standard rate):
-Monthly cost: 183,750 / 1,000,000 × $0.40 = $0.07
+Monthly cost - 183,750 / 1,000,000 × $0.40 = $0.07
 
 Comparison:
 - Usage-based billing: ~$2-3/month
@@ -157,34 +157,34 @@ Subscription model wins for daily users.
 
 Occasional Developer or Project-Based Usage
 
-Typical usage: 5-10 completions daily, only 3-4 days per week.
+Typical usage - 5-10 completions daily, only 3-4 days per week.
 
 ```
-Active days per month: 16
-Completions per active day: 8
-Average tokens per completion: 200
-Monthly tokens: 16 × 8 × 200 = 25,600 tokens
+Active days per month - 16
+Completions per active day - 8
+Average tokens per completion - 200
+Monthly tokens - 16 × 8 × 200 = 25,600 tokens
 
 At $0.40 per 1M tokens:
 Monthly cost: 25,600 / 1,000,000 × $0.40 = $0.01
 
-Annual cost: ~$0.12
+Annual cost - ~$0.12
 ```
 
 Usage-based billing is dramatically cheaper. Subscription ($240/year) would be wasteful.
 
 Heavy Copilot Chat Usage
 
-Typical usage: Extensive chat-based pair programming sessions.
+Typical usage - Extensive chat-based pair programming sessions.
 
 ```
-Chat conversations per day: 8
-Messages per conversation: 5 (8 total exchanges)
-Tokens per exchange: 600 average
-Daily tokens: 8 × 5 × 600 = 24,000 tokens
+Chat conversations per day - 8
+Messages per conversation - 5 (8 total exchanges)
+Tokens per exchange - 600 average
+Daily tokens - 8 × 5 × 600 = 24,000 tokens
 
-Working days: 21/month
-Monthly tokens: 24,000 × 21 = 504,000 tokens
+Working days - 21/month
+Monthly tokens - 24,000 × 21 = 504,000 tokens
 
 At $0.40 per 1M tokens:
 Monthly cost: 504,000 / 1,000,000 × $0.40 = $0.20
@@ -199,7 +199,7 @@ Even heavy usage stays under subscription cost. Usage-based billing offers value
 
 Optimization Strategies with Real Examples
 
-Strategy 1: Minimize Context Size
+Strategy 1 - Minimize Context Size
 
 Poor prompt efficiency:
 
@@ -225,7 +225,7 @@ def calculate_discount(price: float, discount_percent: float) -> float:
     # 4X reduction in token usage
 ```
 
-Strategy 2: Batch Operations
+Strategy 2 - Batch Operations
 
 Instead of asking Copilot to generate tests one at a time (5 requests = 2,000 tokens):
 
@@ -244,13 +244,13 @@ But generates all tests at once vs. 5 separate requests
 More efficient per test generated
 ```
 
-Strategy 3: Use Inline Completions Before Chat
+Strategy 3 - Use Inline Completions Before Chat
 
 Inline completions (Tab acceptance) typically cost less than opening chat for simple suggestions.
 
 ```
-Inline completion: 50-200 tokens
-Chat startup: 400+ tokens minimum
+Inline completion - 50-200 tokens
+Chat startup - 400+ tokens minimum
 ```
 
 For 80% of cases (simple variable names, method completions), use Tab. Save chat for complex architectural questions.
@@ -266,7 +266,7 @@ GitHub provides billing dashboards in your account settings. Access `github.com/
 
 Setting alerts prevents bill shock. Configure notifications at 50%, 75%, and 90% of expected monthly spend.
 
-Comparison: Usage-Based vs Subscription
+Comparison - Usage-Based vs Subscription
 
 | Scenario | Usage-Based Cost | Subscription Cost | Winner |
 |----------|-----------------|------------------|--------|

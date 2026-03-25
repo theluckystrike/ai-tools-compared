@@ -117,7 +117,7 @@ def classify_intent(incoming_message):
 
 result = classify_intent("My credit card isn't being accepted")
 print(result)
-Output: {'intent': 'billing question', 'confidence': {'billing question': 0.82, ...}}
+Output - {'intent': 'billing question', 'confidence': {'billing question': 0.82, ...}}
 ```
 
 
@@ -145,9 +145,9 @@ def evaluate_response_quality(agent_response, kb_articles, customer_question):
 
     prompt = f"""Evaluate this support response for accuracy and completeness.
 
-Customer Question: {customer_question}
+Customer Question - {customer_question}
 
-Agent Response: {agent_response}
+Agent Response - {agent_response}
 
 Knowledge Base Reference:
 {context}

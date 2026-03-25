@@ -20,7 +20,7 @@ tags: [ai-tools-compared, troubleshooting, chatgpt]
 Three changes reduce ChatGPT hallucinations immediately: set temperature to 0.0-0.2 for factual queries, add "If you are uncertain about any detail, state that rather than guessing" to your prompt, and break complex questions into smaller focused requests. For production applications, implement retrieval-augmented generation (RAG) to ground responses in verified documents. These techniques and more are detailed below.
 
 
-- Instead of: ```
+- Instead of - ```
 Explain machine learning from scratch
 ```
 
@@ -33,7 +33,7 @@ Use:
 - GPT-4 shows roughly 40%: fewer hallucinations on benchmarks like TruthfulQA compared to GPT-3.5 Turbo.
 - Use retrieval-augmented generation (RAG): - Ground responses in verified documents 4.
 - ChatGPT predicts the most: probable next token based on its training data, not by accessing a verified knowledge base.
-- Instead of: ```
+- Instead of - ```
 Tell me about React hooks
 ```
 
@@ -71,7 +71,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Hallucination Risk by Query Type
+Step 1 - Hallucination Risk by Query Type
 
 
 Not all requests carry the same hallucination risk. Understanding where errors cluster helps you apply verification effort where it matters most:
@@ -89,7 +89,7 @@ Not all requests carry the same hallucination risk. Understanding where errors c
 Use this table to prioritize your verification workflow. A conceptual explanation of how TCP handshakes work needs only a light review; a specific drug dosage or regulatory citation needs independent confirmation from an authoritative source.
 
 
-Step 2: Step-by-Step Fixes and Diagnostic Tips
+Step 2 - Step-by-Step Fixes and Diagnostic Tips
 
 
 1. Structure Your Prompts for Accuracy
@@ -168,8 +168,8 @@ For critical outputs, establish a verification workflow:
 Example workflow:
 
 ```
-First response: "The HTTP status code 201 means Created."
-Verification prompt: "Verify that 201 means Created. What does RFC 7231 specify?"
+First response - "The HTTP status code 201 means Created."
+Verification prompt - "Verify that 201 means Created. What does RFC 7231 specify?"
 ```
 
 
@@ -234,7 +234,7 @@ If unsure, explicitly state the limitation.
 System prompts provide persistent instructions that improve accuracy across the entire conversation.
 
 
-Step 3: Implementing RAG to Ground Responses in Verified Data
+Step 3 - Implementing RAG to Ground Responses in Verified Data
 
 
 Retrieval-augmented generation is the most reliable production-grade technique for eliminating hallucinations in domain-specific applications. Instead of relying on the model's parametric memory, RAG retrieves relevant documents at query time and provides them as context.
@@ -281,7 +281,7 @@ def rag_query(user_question: str, knowledge_base: list) -> str:
 The key constraint is the system prompt instruction to use only the provided context. When the model is told explicitly that inventing information outside the context is prohibited, and that admitting ignorance is acceptable, hallucination rates drop dramatically. The quality of your retrieval step determines the quality of your answers.
 
 
-Step 4: Diagnostic Checklist for Critical Outputs
+Step 4 - Diagnostic Checklist for Critical Outputs
 
 
 Before relying on AI-generated information for important decisions, run through this verification checklist:
@@ -301,7 +301,7 @@ Before relying on AI-generated information for important decisions, run through 
 If you answer "no" to multiple items, treat the output as unverified and seek additional confirmation.
 
 
-Step 5: When Hallucinations Persist
+Step 5 - When Hallucinations Persist
 
 
 Some topics have higher hallucination rates regardless of prompt engineering:
@@ -348,7 +348,7 @@ What is the best way to detect hallucinations programmatically?
 Run the model's output through a second verification pass with a prompt like: "Review the following claims and identify any that you cannot confirm with high confidence. Flag each uncertain claim." For higher-stakes pipelines, cross-reference key claims against a search API or your RAG knowledge base using embedding similarity.
 
 
-Step 6: Build Reliable AI Workflows
+Step 6 - Build Reliable AI Workflows
 
 
 Reducing hallucinations requires combining prompt engineering with verification systems. For production applications:

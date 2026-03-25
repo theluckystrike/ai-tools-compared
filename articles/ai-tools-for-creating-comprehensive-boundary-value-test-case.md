@@ -22,7 +22,7 @@ Table of Contents
 
 - [Understanding Boundary Value Analysis](#understanding-boundary-value-analysis)
 - [How AI Tools Generate Test Cases](#how-ai-tools-generate-test-cases)
-- [Practical Example: User Registration API](#practical-example-user-registration-api)
+- [Practical Example - User Registration API](#practical-example-user-registration-api)
 - [Tools and Approaches](#tools-and-approaches)
 - [Best Practices for AI-Generated Boundary Tests](#best-practices-for-ai-generated-boundary-tests)
 - [Advanced Boundary Test Generation Techniques](#advanced-boundary-test-generation-techniques)
@@ -54,7 +54,7 @@ The process typically works like this: you provide an input specification (funct
 
 - Length boundaries for string fields
 
-Practical Example: User Registration API
+Practical Example - User Registration API
 
 Consider a user registration endpoint with these input specifications:
 

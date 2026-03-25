@@ -417,14 +417,14 @@ Tool Comparison Matrix
 Common SQLAlchemy Mistakes
 
 ```python
-MISTAKE: Using session outside its scope
+MISTAKE - Using session outside its scope
 def process_user(user_id):
     session = Session()
     user = session.query(User).get(user_id)
     session.close()
     # Accessing user.relationships here fails, session closed!
 
-CORRECT: Keep session open or use detached objects
+CORRECT - Keep session open or use detached objects
 def process_user(user_id):
     with Session() as session:
         user = session.query(User).options(
@@ -432,12 +432,12 @@ def process_user(user_id):
         ).get(user_id)
     # user.profile still accessible, was eagerly loaded
 
-MISTAKE: Mutable default arguments
+MISTAKE - Mutable default arguments
 class Post(Base):
     __tablename__ = 'posts'
     tags = Column(JSON, default=[])  # WRONG: shared list!
 
-CORRECT: Use callable for mutable defaults
+CORRECT - Use callable for mutable defaults
 class Post(Base):
     __tablename__ = 'posts'
     tags = Column(JSON, default=list)  # Callable
@@ -451,7 +451,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -463,7 +463,7 @@ AI tools generate queries well for common patterns, but always test generated qu
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

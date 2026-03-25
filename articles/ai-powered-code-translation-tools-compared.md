@@ -49,7 +49,7 @@ AI code translation isn't just syntax substitution. The hard parts are:
 
 Tools that do syntax translation produce code that compiles but reads like the source language. Good translation produces idiomatic target language code.
 
-Tool 1: Claude for Full-File Translation
+Tool 1 - Claude for Full-File Translation
 
 Claude handles the most complex translations because it understands idioms, not just syntax.
 
@@ -147,7 +147,7 @@ Key translation decisions Claude made correctly:
 - Python dict → `OrderSummary` struct (typed, not `map[string]any`)
 - Added JSON struct tags automatically
 
-Tool 2: GPT-4o for JavaScript to TypeScript
+Tool 2 - GPT-4o for JavaScript to TypeScript
 
 TypeScript migration is the most common translation need for web teams. GPT-4o excels here:
 
@@ -249,9 +249,9 @@ router.get('/users', async (req: Request<{}, {}, {}, PaginationParams>, res: Res
 export default router;
 ```
 
-GPT-4o added: proper TypeScript generics, parallel database calls with `Promise.all`, safer error message extraction, and a `totalPages` field it inferred was useful. This is better than the original JavaScript.
+GPT-4o added - proper TypeScript generics, parallel database calls with `Promise.all`, safer error message extraction, and a `totalPages` field it inferred was useful. This is better than the original JavaScript.
 
-Tool 3: GitHub Copilot for In-Editor Translation
+Tool 3 - GitHub Copilot for In-Editor Translation
 
 Copilot's inline translate works well for smaller functions. Open the target file, add a comment:
 
@@ -273,10 +273,10 @@ Java to Kotlin Migration
 The most common JVM migration uses IntelliJ's built-in converter first, then AI to fix idioms:
 
 ```bash
-Step 1: Use IntelliJ's Java-to-Kotlin converter (Code > Convert Java File to Kotlin)
+Step 1 - Use IntelliJ's Java-to-Kotlin converter (Code > Convert Java File to Kotlin)
 It handles 80% of the conversion automatically
 
-Step 2: Use AI to fix non-idiomatic patterns
+Step 2 - Use AI to fix non-idiomatic patterns
 Common patterns that need AI cleanup:
 ```
 

@@ -20,10 +20,10 @@ Coverage reports tell you what's untested but not why or how to fix it. AI tools
 Table of Contents
 
 - [The Coverage Problem](#the-coverage-problem)
-- [Approach 1: Claude for Targeted Gap Analysis](#approach-1-claude-for-targeted-gap-analysis)
+- [Approach 1 - Claude for Targeted Gap Analysis](#approach-1-claude-for-targeted-gap-analysis)
 - [Example Output](#example-output)
-- [Approach 2: GitHub Copilot Chat for Coverage](#approach-2-github-copilot-chat-for-coverage)
-- [Approach 3: CodiumAI cover-agent (OSS)](#approach-3-codiumai-cover-agent-oss)
+- [Approach 2 - GitHub Copilot Chat for Coverage](#approach-2-github-copilot-chat-for-coverage)
+- [Approach 3 - CodiumAI cover-agent (OSS)](#approach-3-codiumai-cover-agent-oss)
 - [Coverage Impact Comparison](#coverage-impact-comparison)
 - [Integration in CI](#integration-in-ci)
 - [Validating AI-Generated Tests Before Committing](#validating-ai-generated-tests-before-committing)
@@ -40,7 +40,7 @@ Low coverage is rarely random. It clusters in three places:
 
 AI tools are particularly good at the first two. They can enumerate all branches in a function and generate a test for each one. something that takes a human 30 minutes per function.
 
-Approach 1: Claude for Targeted Gap Analysis
+Approach 1 - Claude for Targeted Gap Analysis
 
 Use `coverage.py` to generate a JSON report, then pipe uncovered lines to Claude:
 
@@ -119,7 +119,7 @@ def generate_tests_for_function(gap: dict) -> str:
     """Ask Claude to write tests for an uncovered function."""
     prompt = f"""Write pytest test cases for this Python function.
 The function currently has {int(gap['coverage'] * 100)}% coverage.
-Missing lines: {gap['missing_lines']}
+Missing lines - {gap['missing_lines']}
 
 Focus on:
 1. The uncovered branches (error cases, edge inputs, boundary values)
@@ -151,7 +151,7 @@ def main():
     for gap in gaps[:5]:  # Process top 5 worst-covered functions
         print(f"Generating tests for {gap['function']} in {gap['file']}")
         print(f"  Current coverage: {int(gap['coverage'] * 100)}%")
-        print(f"  Missing lines: {gap['missing_lines']}\n")
+        print(f"  Missing lines - {gap['missing_lines']}\n")
 
         test_code = generate_tests_for_function(gap)
 
@@ -253,7 +253,7 @@ class TestProcessRefund:
 
 Claude correctly identified all 7 branches and wrote a test for each one.
 
-Approach 2: GitHub Copilot Chat for Coverage
+Approach 2 - GitHub Copilot Chat for Coverage
 
 In VS Code with the coverage gutters extension showing red lines:
 
@@ -263,11 +263,11 @@ In VS Code with the coverage gutters extension showing red lines:
 
 Copilot reads the active file, uses coverage annotations from the editor, and generates inline tests. No CLI setup required.
 
-Copilot strengths: Faster for one-off coverage gaps. Integrates with the editor's coverage visualization.
+Copilot strengths - Faster for one-off coverage gaps. Integrates with the editor's coverage visualization.
 
-Copilot weaknesses: Can't batch-process an entire codebase. No programmatic output. you have to copy-paste.
+Copilot weaknesses - Can't batch-process an entire codebase. No programmatic output. you have to copy-paste.
 
-Approach 3: CodiumAI cover-agent (OSS)
+Approach 3 - CodiumAI cover-agent (OSS)
 
 ```bash
 pip install cover-agent

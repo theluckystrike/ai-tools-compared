@@ -74,7 +74,7 @@ Rasa
 Rasa takes a code-first approach built entirely around Python. There is no visual flow builder, conversational logic lives in declarative YAML files and Python code. Rasa provides its own NLU and dialogue management components, giving you complete control over the machine learning pipeline.
 
 ```yaml
-Rasa: Training data format (nlu.yml)
+Rasa - Training data format (nlu.yml)
 version: "3.1"
 
 nlu:
@@ -129,7 +129,7 @@ Rasa NLU
 Rasa offers multiple NLU pipeline options. The DIETClassifier handles both intent classification and entity extraction in a single model, which often produces better results than separated approaches. You can also use Transformers or fine-tuned models for more complex understanding.
 
 ```yaml
-Rasa: NLU pipeline configuration
+Rasa - NLU pipeline configuration
 language: en
 
 pipeline:
@@ -173,7 +173,7 @@ Rasa Stories
 Rasa uses "stories" to define conversation paths. Stories represent example dialogues that teach the dialogue management model how to respond to different situations.
 
 ```yaml
-Rasa: Story definition (stories.yml)
+Rasa - Story definition (stories.yml)
 version: "3.1"
 
 stories:
@@ -205,7 +205,7 @@ Rasa Deployment
 Rasa is entirely self-hosted. You run it on your infrastructure using Docker, Kubernetes, or serverless configurations. This gives you full data control and customization but requires DevOps expertise.
 
 ```bash
-Rasa: Running locally with Docker
+Rasa - Running locally with Docker
 docker run -it -p 5005:5005 rasa/rasa:latest-full \
   run --enable-api --cors "*"
 ```
@@ -238,14 +238,14 @@ Choose Rasa when:
 
 - Machine learning model customization is important for your use case
 
-Code Example: Basic Echo Bot
+Code Example - Basic Echo Bot
 
 Here is a minimal implementation in each framework to illustrate the development experience.
 
 Botpress
 
 ```javascript
-// Botpress: Simple echo bot (actions/echo.js)
+// Botpress - Simple echo bot (actions/echo.js)
 module.exports = async function echo(event, args) {
   const userMessage = event.preview
 
@@ -258,7 +258,7 @@ module.exports = async function echo(event, args) {
 Rasa
 
 ```python
-Rasa: Simple echo bot (actions/actions.py)
+Rasa - Simple echo bot (actions/actions.py)
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher

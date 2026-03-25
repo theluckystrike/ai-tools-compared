@@ -17,7 +17,7 @@ voice-checked: true
 
 Automated accessibility testing catches roughly 30-40% of WCAG violations. The rest require human or AI-augmented judgment: color contrast in context, keyboard navigation flows, screen reader announcement ordering. AI tools are closing that gap by interpreting violations, suggesting fixes, and testing interaction patterns that static analysis misses.
 
-The Baseline: axe-core in CI
+The Baseline - axe-core in CI
 
 Every accessibility pipeline starts with axe-core. It's the most accurate open-source rule engine and integrates with every major testing framework.
 
@@ -321,7 +321,7 @@ passes AA (4.5:1 normal text, 3:1 large text) and AAA (7:1 normal, 4.5:1 large).
 Color pairs:
 {json.dumps(color_pairs, indent=2)}
 
-Return a table with columns: Usage, Contrast Ratio, AA Normal, AA Large, AAA Normal.
+Return a table with columns - Usage, Contrast Ratio, AA Normal, AA Large, AAA Normal.
 Flag any failures.
 """
     }]

@@ -289,7 +289,7 @@ class APIDocGenerator:
 Endpoints extracted from code:
 {endpoint_text}
 
-Source file: {self.source_file}
+Source file - {self.source_file}
 
 Create a complete OpenAPI spec with:
 1. Server information
@@ -319,7 +319,7 @@ Return only valid OpenAPI 3.0.0 JSON."""
         """Generate markdown reference from endpoints."""
         endpoints = self.extract_endpoints()
 
-        prompt = f"""Generate comprehensive API reference documentation.
+        prompt = f"""Generate complete API reference documentation.
 
 Endpoints:
 {json.dumps(endpoints, indent=2)}

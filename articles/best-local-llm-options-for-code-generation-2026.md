@@ -61,7 +61,7 @@ Consumer GPU (gaming tier):
 - RTX 4090 (24GB VRAM): Up to 33B models comfortably
 - M2/M3 Mac with 16GB unified memory: 7B models smoothly, 13B slower
 
-CPU-only inference: 7B models at ~2-5 tokens/second. usable for batch tasks, frustrating for interactive use.
+CPU-only inference - 7B models at ~2-5 tokens/second. usable for batch tasks, frustrating for interactive use.
 
 Setting Up Ollama
 
@@ -164,16 +164,16 @@ Continue.dev is an open-source VS Code extension that works with any LLM:
 }
 ```
 
-With this configuration: Tab autocomplete using the 7B model (fast for interactive use), chat completions using the 14B model (better quality). No external API calls.
+With this configuration - Tab autocomplete using the 7B model (fast for interactive use), chat completions using the 14B model (better quality). No external API calls.
 
-Model Comparison: DeepSeek Coder V3 vs Qwen2.5-Coder
+Model Comparison - DeepSeek Coder V3 vs Qwen2.5-Coder
 
 DeepSeek Coder V3 (7B)
 
 DeepSeek is maintained by a Chinese team and is aggressively optimized for code generation. The 7B model often outperforms larger open models.
 
 ```python
-Prompt: Write a TypeScript function that debounces async functions
+Prompt - Write a TypeScript function that debounces async functions
 with cancellation support
 
 DeepSeek output:
@@ -246,7 +246,7 @@ The Q4_K_M quantization (4-bit) reduces model size by 75% with minimal quality l
 Check your GPU memory
 nvidia-smi
 
-M2/M3 Mac: unified memory is shared CPU/GPU
+M2/M3 Mac - unified memory is shared CPU/GPU
 14GB unified: run 7B models comfortably, 13B slowly
 
 Download and run a 14B model on 16GB total RAM:
@@ -281,7 +281,7 @@ prompts = [
 ]
 
 generated = generate_code_locally(prompts)
-Cost: $0. Time: ~5 minutes on RTX 4090
+Cost - $0. Time: ~5 minutes on RTX 4090
 ```
 
 Fine-Tuning Local Models

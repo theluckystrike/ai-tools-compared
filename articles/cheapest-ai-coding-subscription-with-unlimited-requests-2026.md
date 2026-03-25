@@ -109,22 +109,22 @@ The key is testing your specific workflow with any plan before committing. Most 
 
 Implementation Roadmap
 
-Week 1: Evaluation
+Week 1 - Evaluation
 - Sign up for free/trial versions of 3-4 options
 - Test with your actual workflow (not just toy problems)
 - Measure response times and reliability
 - Compare code quality across tools
 
-Week 2-3: Extended Testing
+Week 2-3 - Extended Testing
 - Run the tool on a real project for 2 weeks
 - Track actual usage patterns
 - Measure productivity impact
 - Note any rate limiting or slowdowns
 
-Week 4: Decision
+Week 4 - Decision
 - Calculate monthly cost vs. your productivity gain
 - Consider long-term stability of each vendor
-- Factor in community support and ecosystem
+- Factor in community support and environment
 - Commit to 3-month trial period
 
 Quick Setup Guide
@@ -134,7 +134,7 @@ Zed AI Setup
 Install Zed editor
 brew install zed
 
-In Zed settings: Enable AI assistant
+In Zed settings - Enable AI assistant
 Sign in with your account
 Subscribe to Zed AI ($20/month)
 Start using assistant with Cmd+K (inline) or Cmd+Shift+I (full editor)
@@ -144,7 +144,7 @@ Cursor Pro Setup
 ```bash
 Download Cursor from cursor.sh
 Open VS Code project
-Cmd+Shift+P → "Cursor: Subscribe"
+Cmd+Shift+P → "Cursor - Subscribe"
 Select Cursor Pro ($20/month)
 Use Cmd+K for quick fixes, Ctrl+L for longer tasks
 ```
@@ -169,7 +169,7 @@ Detailed Feature Comparison
 | Codebase Indexing | No | Yes | Basic | Yes | Yes |
 | Multi-file editing | No | Yes | Yes | Limited | Yes |
 | Free tier | Yes (limited) | Free with limits | Free 2-week trial | Yes (limited) | Free with limits |
-| Best for | Quick answers | Speed + context | Budget | Ecosystem players | Balanced features |
+| Best for | Quick answers | Speed + context | Budget | environment players | Balanced features |
 
 Token Usage Examples
 
@@ -225,13 +225,13 @@ The Real Cost Calculation
 
 Monthly cost isn't the only variable. Factor in:
 
-Tool Switching Cost: Learning a new editor or tool costs time. Cursor and Windsurf require VS Code knowledge. Zed requires learning a new editor entirely.
+Tool Switching Cost - Learning a new editor or tool costs time. Cursor and Windsurf require VS Code knowledge. Zed requires learning a new editor entirely.
 
-Integration Time: Setting up the tool in your workflow takes 1-4 hours. This is a one-time cost but real nonetheless.
+Integration Time - Setting up the tool in your workflow takes 1-4 hours. This is a one-time cost but real nonetheless.
 
-Productivity Gain: A tool that saves you 10 minutes per day is worth ~$200/month in time value (at $100/hour). Most AI tools return their cost within a week of regular use.
+Productivity Gain - A tool that saves you 10 minutes per day is worth ~$200/month in time value (at $100/hour). Most AI tools return their cost within a week of regular use.
 
-Context Window Quality: Some tools provide better project context, reducing manual prompt refinement needed.
+Context Window Quality - Some tools provide better project context, reducing manual prompt refinement needed.
 
 Free Tier Limitations and Workarounds
 
@@ -261,17 +261,17 @@ Transitioning From Free to Paid
 
 When you're ready to upgrade, here's a data-driven approach:
 
-Week 1: Evaluate
+Week 1 - Evaluate
 - Track your message count in the free tier
 - Note which features you hit first (chat, completions, context)
 - Identify your actual usage pattern
 
-Week 2-3: Calculate
+Week 2-3 - Calculate
 - Multiply weekly usage by 4 to estimate monthly needs
 - Compare against paid plan limits
 - Identify which tool handles your usage pattern
 
-Week 4: Commit
+Week 4 - Commit
 - Start 3-month paid trial
 - Re-evaluate at end of month 1
 - Be prepared to switch if your workflow changes
@@ -282,13 +282,13 @@ Specialized Scenarios
 
 Different usage patterns favor different tools:
 
-For ML/Data Science: Codeium Pro excels with jupyter notebooks and scientific computing libraries.
+For ML/Data Science - Codeium Pro excels with jupyter notebooks and scientific computing libraries.
 
-For Enterprise Java: Cursor Pro with JetBrains IDE integration handles large monoliths better.
+For Enterprise Java - Cursor Pro with JetBrains IDE integration handles large monoliths better.
 
-For Web Development: Windsurf or GitHub Copilot with their aggressive scaffolding speed up React/Vue development.
+For Web Development - Windsurf or GitHub Copilot with their aggressive scaffolding speed up React/Vue development.
 
-For System Programming: Claude via API or Claude Code provides deeper reasoning for complex Go/Rust patterns.
+For System Programming - Claude via API or Claude Code provides deeper reasoning for complex Go/Rust patterns.
 
 Choose the tool optimized for your primary development language and framework.
 

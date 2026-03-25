@@ -35,7 +35,7 @@ Perplexity provides two primary ways to access their AI-powered search capabilit
 Perplexity Pro Subscription ($20/month or $200/year): A fixed monthly subscription that gives you access to the Pro tier of models, unlimited fast searches, and the ability to use premium models like GPT-4 and Claude.
 
 
-Perplexity API: An usage-based pricing model where you pay per token for API calls. This is designed for developers building applications that need programmatic access to Perplexity's search and reasoning capabilities.
+Perplexity API - An usage-based pricing model where you pay per token for API calls. This is designed for developers building applications that need programmatic access to Perplexity's search and reasoning capabilities.
 
 
 API Pricing Breakdown
@@ -61,10 +61,10 @@ For embeddings, the rate is $0.10 per million tokens.
 The key factor to understand is that API pricing is based on the actual tokens processed, both what you send (input) and what the model generates (output). A typical search query with context might use anywhere from 500 to 5,000 tokens depending on the length of your prompt and the desired response length.
 
 
-Cost Comparison: Real-World Scenarios
+Cost Comparison - Real-World Scenarios
 
 
-Scenario 1: Light Usage (Under 100 Queries/Month)
+Scenario 1 - Light Usage (Under 100 Queries/Month)
 
 
 If you only need a few dozen searches per month, the API is almost certainly more expensive than the Pro subscription. Let's do the math:
@@ -75,10 +75,10 @@ If you only need a few dozen searches per month, the API is almost certainly mor
 - API: Even at 100 queries at 1,000 tokens each (input + output), you might spend $0.10 × 0.001 × 100 + $0.80 × 0.001 × 100 = $0.09 + $0.08 = $0.17 per 100 queries. However, with API overhead and more complex queries, you could easily spend $5-10/month.
 
 
-Winner: Pro subscription for casual users.
+Winner - Pro subscription for casual users.
 
 
-Scenario 2: Heavy Usage (500+ Queries/Month)
+Scenario 2 - Heavy Usage (500+ Queries/Month)
 
 
 For power users running hundreds of queries, the calculation becomes more interesting. At scale, the API can actually be more cost-effective if you optimize your usage:
@@ -92,7 +92,7 @@ For power users running hundreds of queries, the calculation becomes more intere
 The API becomes more attractive as your query volume increases, especially if you implement smart caching and token optimization.
 
 
-Scenario 3: Application Integration
+Scenario 3 - Application Integration
 
 
 If you are building an application that serves multiple users, the API is your only real option. In this case, cost optimization becomes critical. Here is a practical example using the Python SDK:
@@ -229,42 +229,42 @@ Table of Contents
 - [Detailed Token Cost Examples](#detailed-token-cost-examples)
 - [Advanced Caching Strategy for API Users](#advanced-caching-strategy-for-api-users)
 - [Batch Processing for Cost-Effective Scale](#batch-processing-for-cost-effective-scale)
-- [Cost Comparison: Real-World Scenarios](#cost-comparison-real-world-scenarios)
+- [Cost Comparison - Real-World Scenarios](#cost-comparison-real-world-scenarios)
 - [Token Estimation Tools and Commands](#token-estimation-tools-and-commands)
-- [Migration Path: From Subscription to API or Vice Versa](#migration-path-from-subscription-to-api-or-vice-versa)
+- [Migration Path - From Subscription to API or Vice Versa](#migration-path-from-subscription-to-api-or-vice-versa)
 
 Understanding token usage is crucial for API cost prediction. Here's how tokens map to real queries:
 
 ```python
-Example 1: Simple factual query
+Example 1 - Simple factual query
 query_1 = "What is the capital of France?"
-Input tokens: ~8
-Expected output tokens: ~15
-Cost: (8 × $0.10/1M) + (15 × $0.80/1M) = ~$0.00001
+Input tokens - ~8
+Expected output tokens - ~15
+Cost - (8 × $0.10/1M) + (15 × $0.80/1M) = ~$0.00001
 
-Example 2: Complex research query
+Example 2 - Complex research query
 query_2 = """
 Compare TypeScript vs Python for machine learning projects.
 Consider:
 - Type safety
-- Library ecosystem
+- Library environment
 - Performance characteristics
 - Learning curve for data scientists
 - Real-world production usage
 Provide a detailed analysis with code examples.
 """
-Input tokens: ~65
-Expected output tokens: ~500
-Cost: (65 × $0.10/1M) + (500 × $0.80/1M) = ~$0.0004
+Input tokens - ~65
+Expected output tokens - ~500
+Cost - (65 × $0.10/1M) + (500 × $0.80/1M) = ~$0.0004
 
-Example 3: Document analysis with context
+Example 3 - Document analysis with context
 query_3 = """
 [Large technical document pasted here - 8,000 tokens]
 Summarize the key security vulnerabilities and recommend fixes.
 """
-Input tokens: ~8,100
-Expected output tokens: ~300
-Cost: (8,100 × $0.10/1M) + (300 × $0.80/1M) = ~$0.001
+Input tokens - ~8,100
+Expected output tokens - ~300
+Cost - (8,100 × $0.10/1M) + (300 × $0.80/1M) = ~$0.001
 ```
 
 For the Pro subscription, all three queries are included in your unlimited monthly allotment.
@@ -398,14 +398,14 @@ queries = [
 results = asyncio.run(batch_search(queries))
 ```
 
-Cost Comparison: Real-World Scenarios
+Cost Comparison - Real-World Scenarios
 
-Scenario 1: Small Company Using API for Customer Support Bot
+Scenario 1 - Small Company Using API for Customer Support Bot
 
 ```
-Daily queries: 50
-Avg tokens per query: 1,500 (input: 300, output: 1,200)
-Model: Sonar (cheapest tier)
+Daily queries - 50
+Avg tokens per query - 1,500 (input: 300, output: 1,200)
+Model - Sonar (cheapest tier)
 
 Monthly calculation:
 - Queries: 50 × 30 = 1,500
@@ -415,27 +415,27 @@ Monthly calculation:
 - Output cost: (1,800,000 / 1,000,000) × $0.80 = $1.44
 - Monthly total: $1.49
 
-Pro Subscription: $20/month
+Pro Subscription - $20/month
 
-Winner: API by $18.51/month
+Winner - API by $18.51/month
 ```
 
-Scenario 2: Individual Researcher with Heavy Ad-Hoc Usage
+Scenario 2 - Individual Researcher with Heavy Ad-Hoc Usage
 
 ```
-Monthly queries: 80 (irregular, some very long)
-Avg tokens per query: 3,000 (includes document analysis)
-Avg output: 1,500 tokens
+Monthly queries - 80 (irregular, some very long)
+Avg tokens per query - 3,000 (includes document analysis)
+Avg output - 1,500 tokens
 
 Monthly calculation:
 - Queries: 80
 - Total input: 80 × 3,000 = 240,000
 - Total output: 80 × 1,500 = 120,000
-- Cost: (240K / 1M) × $0.10 + (120K / 1M) × $0.80 = $0.024 + $0.096 = $0.12
+- Cost - (240K / 1M) × $0.10 + (120K / 1M) × $0.80 = $0.024 + $0.096 = $0.12
 
-Pro Subscription: $20/month
+Pro Subscription - $20/month
 
-Winner: API by $19.88/month
+Winner - API by $19.88/month
 
 But Pro offers:
 - No token counting stress
@@ -444,12 +444,12 @@ But Pro offers:
 - Better UI/UX for interactive searching
 ```
 
-Scenario 3: Enterprise Running Automated Research Pipeline
+Scenario 3 - Enterprise Running Automated Research Pipeline
 
 ```
-Daily automated searches: 500
-Average tokens: 2,000 per query (with context)
-Processing: 4am-11pm (19 hours/day)
+Daily automated searches - 500
+Average tokens - 2,000 per query (with context)
+Processing - 4am-11pm (19 hours/day)
 
 Monthly calculation:
 - Queries: 500 × 30 = 15,000
@@ -459,10 +459,10 @@ Monthly calculation:
 - Output cost: (24,000,000 / 1,000,000) × $0.80 = $19.20
 - Monthly total: $19.80
 
-Pro Subscription: $20/month (only 1 user)
-For 10 users: $200/month
+Pro Subscription - $20/month (only 1 user)
+For 10 users - $200/month
 
-Winner at scale: API by substantial margin
+Winner at scale - API by substantial margin
 ```
 
 Token Estimation Tools and Commands
@@ -477,7 +477,7 @@ QUERY=$1
 MODEL=${2:-sonar}
 
 Use Perplexity's token counter (if available via API)
-Otherwise, estimate: roughly 0.75 tokens per word
+Otherwise, estimate - roughly 0.75 tokens per word
 
 WORD_COUNT=$(echo "$QUERY" | wc -w)
 ESTIMATED_INPUT_TOKENS=$((WORD_COUNT * 4 / 5))  # Conservative estimate
@@ -500,7 +500,7 @@ echo "Estimated output cost: \$$OUTPUT_COST"
 echo "Total: \$$TOTAL"
 ```
 
-Migration Path: From Subscription to API or Vice Versa
+Migration Path - From Subscription to API or Vice Versa
 
 Pro → API Migration Strategy:
 

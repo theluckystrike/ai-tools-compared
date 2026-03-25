@@ -22,11 +22,11 @@ Without AI assistance, language migration projects consume 200, 800 developer ho
 Table of Contents
 
 - [Why Language Migration Matters](#why-language-migration-matters)
-- [AI Tools for Code Migration: Capabilities Comparison](#ai-tools-for-code-migration-capabilities-comparison)
+- [AI Tools for Code Migration - Capabilities Comparison](#ai-tools-for-code-migration-capabilities-comparison)
 - [Detailed Migration Workflows by Language Pair](#detailed-migration-workflows-by-language-pair)
-- [Cost Comparison: Manual vs. AI-Assisted](#cost-comparison-manual-vs-ai-assisted)
-- [Decision Framework: Which AI Tool to Use](#decision-framework-which-ai-tool-to-use)
-- [Real-World Workflow: Python to Rust Financial Pipeline](#real-world-workflow-python-to-rust-financial-pipeline)
+- [Cost Comparison - Manual vs. AI-Assisted](#cost-comparison-manual-vs-ai-assisted)
+- [Decision Framework - Which AI Tool to Use](#decision-framework-which-ai-tool-to-use)
+- [Real-World Workflow - Python to Rust Financial Pipeline](#real-world-workflow-python-to-rust-financial-pipeline)
 - [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
 - [Integration into CI/CD](#integration-into-cicd)
 
@@ -36,17 +36,17 @@ Companies migrate code for:
 
 - Performance: Python → Rust, Java → Go (10, 100x speed improvements)
 - Type safety: JavaScript → TypeScript, Python → Java (fewer production bugs)
-- Ecosystem shift: Node.js → Python/Go (access to better libraries)
+- environment shift: Node.js → Python/Go (access to better libraries)
 - Mobile modernization: Java → Kotlin, Objective-C → Swift (modern language features)
 - Cost reduction: Ruby → Go/Rust (lower memory footprint, cheaper infrastructure)
 
-A typical commercial codebase: 50,000, 500,000 lines. Manual migration: $50,000, 500,000 in labor. AI-assisted: $1,000, 5,000 (primarily for review and testing).
+A typical commercial codebase - 50,000, 500,000 lines. Manual migration: $50,000, 500,000 in labor. AI-assisted: $1,000, 5,000 (primarily for review and testing).
 
-AI Tools for Code Migration: Capabilities Comparison
+AI Tools for Code Migration - Capabilities Comparison
 
 Claude 3.5 Sonnet
 
-Best for: Complex architectural migrations, preserving intent across language semantics
+Best for - Complex architectural migrations, preserving intent across language semantics
 
 Strengths:
 - Excellent at understanding business logic and replicating it idiomatically
@@ -55,21 +55,21 @@ Strengths:
 - Can reason about performance implications
 - Supports context windows up to 200K tokens (large codebases)
 
-Real-world result: Converting 15,000-line Python data processing pipeline to Rust. Claude:
+Real-world result - Converting 15,000-line Python data processing pipeline to Rust. Claude:
 1. Analyzed Python code and identified bottlenecks
 2. Generated Rust equivalents using idiomatic patterns (iterators, Result types)
 3. Identified where GIL contention was causing slowdowns
 4. Suggested Rayon for parallel processing
 5. Output: 12,000 lines of production-ready Rust (~80% compile-ready)
 
-Cost: $3, 12 per 1M input tokens via API; $20/month for Claude.ai subscriber
+Cost - $3, 12 per 1M input tokens via API; $20/month for Claude.ai subscriber
 
 Example workflow:
 
 ```
 Migrate this Python function to Rust:
 
-[paste 100–500 lines of Python code]
+[paste 100, 500 lines of Python code]
 
 Requirements:
 1. Preserve all functionality
@@ -82,12 +82,12 @@ Requirements:
 
 GPT-4
 
-Best for: Straightforward syntax translation, web-to-web migrations
+Best for - Straightforward syntax translation, web-to-web migrations
 
 Strengths:
 - Fast iteration cycles
 - Good at translating syntax accurately
-- Excellent with JavaScript/TypeScript ecosystem
+- Excellent with JavaScript/TypeScript environment
 - Handles REST API migration patterns well
 
 Limitations:
@@ -95,17 +95,17 @@ Limitations:
 - Sometimes produces overly verbose or non-idiomatic code
 - 128K context window (vs Claude's 200K)
 
-Real-world result: Converting 8,000-line Next.js project to SvelteKit. GPT-4:
+Real-world result - Converting 8,000-line Next.js project to SvelteKit. GPT-4:
 1. Mapped Next.js file structure to SvelteKit equivalents
 2. Converted React components to Svelte
 3. Migrated API routes correctly
 4. Output: 7,500 lines, ~75% compile-ready
 
-Cost: $0.03, 0.06 per 1K input tokens via API; $20/month for ChatGPT Plus
+Cost - $0.03, 0.06 per 1K input tokens via API; $20/month for ChatGPT Plus
 
 Google Gemini 2.0
 
-Best for: Machine learning code, TensorFlow/JAX translations
+Best for - Machine learning code, TensorFlow/JAX translations
 
 Strengths:
 - Excellent understanding of ML frameworks (TensorFlow, PyTorch, JAX)
@@ -117,11 +117,11 @@ Limitations:
 - Younger model, fewer production use cases documented
 - Less tuned for low-level systems programming (C++, Rust)
 
-Cost: $0.075 per 1M input tokens (cheaper than Claude)
+Cost - $0.075 per 1M input tokens (cheaper than Claude)
 
 GitHub Copilot + VS Code
 
-Best for: Real-time migration in your IDE, small-to-medium files
+Best for - Real-time migration in your IDE, small-to-medium files
 
 Strengths:
 - Integrated into your development environment
@@ -134,15 +134,15 @@ Limitations:
 - Limited reasoning capability for complex transformations
 - Requires manual iteration through large migrations
 
-Best use case: Migrating one module at a time with human guidance
+Best use case - Migrating one module at a time with human guidance
 
 Detailed Migration Workflows by Language Pair
 
 Python to Rust (Data Pipeline)
 
-Scope: 20,000-line data processing pipeline
+Scope - 20,000-line data processing pipeline
 
-Step 1: Analyze Python Codebase
+Step 1 - Analyze Python Codebase
 
 ```python
 Typical Python patterns to identify:
@@ -153,7 +153,7 @@ Typical Python patterns to identify:
 5. Type hints (if present) → Rust types
 ```
 
-Step 2: Segment by Functionality
+Step 2 - Segment by Functionality
 
 Rather than migrating entire project at once, split into modules:
 - Data ingestion (CSV/JSON parsing)
@@ -161,7 +161,7 @@ Rather than migrating entire project at once, split into modules:
 - Statistical analysis
 - Output generation
 
-Step 3: Prompt Claude for Each Module
+Step 3 - Prompt Claude for Each Module
 
 ```
 Convert this Python data processing module to Rust:
@@ -180,7 +180,7 @@ Add progress logging for files with >1M rows.
 Preserve function signatures as comments for reference.
 ```
 
-Step 4: Integration
+Step 4 - Integration
 
 Create Rust FFI bindings or replace Python module entirely. Test with same input data:
 
@@ -213,9 +213,9 @@ fn process_data(input_path: &str) -> Result<DataFrame> {
 
 Java to Kotlin (Android Migration)
 
-Scope: 25,000-line Android application
+Scope - 25,000-line Android application
 
-Step 1: Identify Kotlin Benefits
+Step 1 - Identify Kotlin Benefits
 
 ```java
 // Java patterns that improve dramatically in Kotlin:
@@ -226,13 +226,13 @@ Step 1: Identify Kotlin Benefits
 // 5. Fragment/Activity boilerplate → extension functions
 ```
 
-Step 2: Prioritize Migration Order
+Step 2 - Prioritize Migration Order
 
 - Start with data models (trivial conversion, high impact)
 - Move to utility functions (straightforward, testable)
 - Migrate Activities/Fragments last (complex, many dependencies)
 
-Step 3: Use Claude for Java → Kotlin
+Step 3 - Use Claude for Java → Kotlin
 
 ```
 Convert this Java class to idiomatic Kotlin:
@@ -298,9 +298,9 @@ data class User(
 
 JavaScript to TypeScript (Web App)
 
-Scope: 12,000-line React/Node.js application
+Scope - 12,000-line React/Node.js application
 
-Step 1: Prepare tsconfig.json
+Step 1 - Prepare tsconfig.json
 
 ```json
 {
@@ -317,11 +317,11 @@ Step 1: Prepare tsconfig.json
 }
 ```
 
-Step 2: Migrate File-by-File
+Step 2 - Migrate File-by-File
 
 Start with utility functions (lowest risk), move to React components, finish with backend services.
 
-Step 3: Prompt GPT-4 for Each File
+Step 3 - Prompt GPT-4 for Each File
 
 ```
 Convert this JavaScript file to TypeScript with strict mode:
@@ -376,7 +376,7 @@ export async function fetchUserData(userId: string): Promise<UserData> {
 
 100% type-safe, catches entire classes of bugs.
 
-Cost Comparison: Manual vs. AI-Assisted
+Cost Comparison - Manual vs. AI-Assisted
 
 | Scenario | Manual | AI-Assisted | Savings |
 |----------|--------|-------------|---------|
@@ -385,9 +385,9 @@ Cost Comparison: Manual vs. AI-Assisted
 | 12K JS → TS | 100 hours ($10K) | 15 hours ($2K) | $8K |
 | 100K Java → Go | 800 hours ($80K) | 90 hours ($9K) | $71K |
 
-Average savings: 75, 80% of refactoring labor
+Average savings - 75, 80% of refactoring labor
 
-Decision Framework: Which AI Tool to Use
+Decision Framework - Which AI Tool to Use
 
 | Migration | Best Tool | Reason | Time |
 |-----------|-----------|--------|------|
@@ -399,9 +399,9 @@ Decision Framework: Which AI Tool to Use
 | C# → Go | Claude | Goroutines, interface patterns | 35, 50h |
 | TensorFlow (Py) → JAX | Gemini | ML framework expertise | 30, 50h |
 
-Real-World Workflow: Python to Rust Financial Pipeline
+Real-World Workflow - Python to Rust Financial Pipeline
 
-Project: Migrate 35,000-line Python options pricing engine to Rust for 50x performance improvement
+Project - Migrate 35,000-line Python options pricing engine to Rust for 50x performance improvement
 
 Timeline:
 
@@ -410,24 +410,24 @@ Week 1: Analysis
 - Identify external dependencies (NumPy, SciPy, pandas)
 - Map to Rust equivalents (ndarray, polars, statrs)
 
-Week 2, 3: Prompt-Driven Conversion (Claude)
+Week 2, 3 - Prompt-Driven Conversion (Claude)
 - Module 1 (core math): 2,000 lines → 1,800 lines Rust (prompt: 30 min, review: 4h)
 - Module 2 (data loading): 1,500 lines → 1,200 lines Rust
 - Module 3, 10 (analysis): 18,000 lines → 15,000 lines Rust
 - Module 11, 15 (I/O): 12,000 lines → 8,000 lines Rust
 
-Week 4: Integration & Testing
+Week 4 - Integration & Testing
 - Compile all modules together
 - Test with reference data against original Python
 - Performance testing (target: <2 minutes vs. original 45 minutes)
 - Fix compilation errors (typically 2, 5% of code)
 
-Week 5: Optimization
+Week 5 - Optimization
 - Profile hot paths
 - Add SIMD optimizations
 - Benchmark against Python baseline
 
-Outcome: 35,000 Python lines → 26,000 Rust lines, 52x speedup, $25,000 in labor saved
+Outcome - 35,000 Python lines → 26,000 Rust lines, 52x speedup, $25,000 in labor saved
 
 Common Pitfalls to Avoid
 
@@ -510,7 +510,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -522,7 +522,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

@@ -30,7 +30,7 @@ tags: [ai-tools-compared]
 ---
 
 
-If you have developed a distinctive visual style in Midjourney and want to recreate it within Stable Diffusion, transferring those style references to LoRA training offers a powerful solution. This process allows you to preserve the aesthetic qualities you have cultivated, specific color grading, texture preferences, composition rules, and artistic influences, and apply them to generate new images using open-source models. This guide walks you through the technical steps for developers and power users who want to move their Midjourney expertise into the Stable Diffusion ecosystem.
+If you have developed a distinctive visual style in Midjourney and want to recreate it within Stable Diffusion, transferring those style references to LoRA training offers a powerful solution. This process allows you to preserve the aesthetic qualities you have cultivated, specific color grading, texture preferences, composition rules, and artistic influences, and apply them to generate new images using open-source models. This guide walks you through the technical steps for developers and power users who want to move their Midjourney expertise into the Stable Diffusion environment.
 
 
 - Use consistent prompting patterns: ```
@@ -41,7 +41,7 @@ Save these images in a dedicated folder.
 - If you cannot collect: at least 15 images that all clearly demonstrate the same style, your LoRA will likely produce inconsistent results.
 - Avoid using grid images: (the 2x2 output before upscaling) because the lower resolution hurts caption quality and training effectiveness.
 - Use a rare or: nonsense token like `sks` or `xyz123style` that does not appear in normal prompts.
-- This guide walks you: through the technical steps for developers and power users who want to move their Midjourney expertise into the Stable Diffusion ecosystem.
+- This guide walks you: through the technical steps for developers and power users who want to move their Midjourney expertise into the Stable Diffusion environment.
 - This choice matters because: your LoRA will be anchored to the model's existing style space.
 
 Understanding the Challenge
@@ -57,14 +57,14 @@ Before collecting training data, decide which Stable Diffusion base model to tra
 | Base Model | Best For | Notes |
 |---|---|---|
 | SDXL 1.0 | Photorealistic and artistic styles | Highest quality, requires more VRAM (12GB+) |
-| SD 1.5 | Stylized, anime, illustration | Most compatible, wide LoRA ecosystem |
+| SD 1.5 | Stylized, anime, illustration | Most compatible, wide LoRA environment |
 | Pony Diffusion V6 | Character art, stylized | Strong for character-focused styles |
 | Flux.1-dev | Photorealism, complex scenes | Newest architecture, LoRA support growing |
 | Realistic Vision v6 | Photographic realism | Fine-tuned SD 1.5, excellent for portraits |
 
 If your Midjourney style is cinematic and photorealistic, train against SDXL or Realistic Vision. For painterly or stylized aesthetics, SD 1.5 offers more community tooling and faster training.
 
-Step 1: Collect Reference Images
+Step 1 - Collect Reference Images
 
 The foundation of any LoRA training is a high-quality dataset. Start by generating a series of images in Midjourney that represent your target style. Aim for 20-50 images that demonstrate the consistency of your aesthetic across different subjects and compositions.
 
@@ -78,7 +78,7 @@ Save these images in a dedicated folder. For LoRA training, you need both the im
 
 For best results, vary your subjects while keeping the style constant. If your target style is "moody cinematic portrait photography with deep shadows and warm highlights," generate that style applied to different people, different environments, and different compositions. Style-consistent dataset diversity is the single most important factor in producing a generalizable LoRA.
 
-Step 2: Generate Captions for Training
+Step 2 - Generate Captions for Training
 
 LoRA training requires text captions that describe each image. Create a captioning file for each image using the same naming convention with a `.txt` extension. For example, if you have `style_reference_01.jpg`, create `style_reference_01.txt`.
 
@@ -134,7 +134,7 @@ def caption_detailed(image_path):
     return processor.batch_decode(generated_ids, skip_special_tokens=False)[0]
 ```
 
-Step 3: Configure the Training Pipeline
+Step 3 - Configure the Training Pipeline
 
 With your image-caption pairs ready, set up your LoRA training environment. The most common tools are Kohya's LoRA Trainer or the SD-Trainer. Install the required dependencies:
 
@@ -164,7 +164,7 @@ network_alpha = 64
 
 Adjust the parameters based on your GPU memory and dataset size. A network dimension of 128 works well for style transfer, though you can increase to 256 for more nuanced styles.
 
-Step 4: Prepare Dataset Structure
+Step 4 - Prepare Dataset Structure
 
 Organize your files in the structure expected by the training script:
 
@@ -184,10 +184,10 @@ The CSV file maps images to their captions:
 ```csv
 file_name,text
 style_reference_01.jpg,a photograph of a woman, soft natural lighting...
-style_reference_02.jpg,a landscape with mountains, golden hour...
+style_reference_02.jpg,a field with mountains, golden hour...
 ```
 
-Step 5: Execute Training
+Step 5 - Execute Training
 
 Run the training script with your configuration:
 
@@ -224,7 +224,7 @@ python sd-scripts/train_network.py \
 
 SDXL LoRAs typically use lower `network_dim` values (32-64) to avoid overfitting on smaller datasets.
 
-Step 6: Test Your LoRA
+Step 6 - Test Your LoRA
 
 After training completes, test the LoRA with a Stable Diffusion pipeline:
 
@@ -253,13 +253,13 @@ For ComfyUI users, load the LoRA via the `Load LoRA` node and connect it between
 
 Common Issues and Solutions
 
-Overfitting: If your LoRA produces images too similar to training data, reduce `network_dim` or increase dataset diversity. Signs of overfitting include the same facial features or backgrounds appearing regardless of the prompt.
+Overfitting - If your LoRA produces images too similar to training data, reduce `network_dim` or increase dataset diversity. Signs of overfitting include the same facial features or backgrounds appearing regardless of the prompt.
 
-Weak Style Transfer: If the style is not prominent enough, increase `network_dim` to 256 and extend training steps. Also check that your captions consistently describe the stylistic elements rather than just the subjects.
+Weak Style Transfer - If the style is not prominent enough, increase `network_dim` to 256 and extend training steps. Also check that your captions consistently describe the stylistic elements rather than just the subjects.
 
-Artifacting: This often indicates too-high learning rate. Reduce `learning_rate` to `5e-5` and restart training. Artifacts typically appear as warped textures or incoherent areas in generated images.
+Artifacting - This often indicates too-high learning rate. Reduce `learning_rate` to `5e-5` and restart training. Artifacts typically appear as warped textures or incoherent areas in generated images.
 
-Style Bleeding: If the LoRA applies your style even at low strength values and overrides the base model's capabilities, reduce `network_alpha`. The ratio of `network_dim` to `network_alpha` controls how strongly the LoRA modifies the base model's attention layers.
+Style Bleeding - If the LoRA applies your style even at low strength values and overrides the base model's capabilities, reduce `network_alpha`. The ratio of `network_dim` to `network_alpha` controls how strongly the LoRA modifies the base model's attention layers.
 
 Frequently Asked Questions
 

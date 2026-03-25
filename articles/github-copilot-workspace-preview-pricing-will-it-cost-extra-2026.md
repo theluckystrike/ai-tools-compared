@@ -30,7 +30,7 @@ Table of Contents
 - [Detailed Feature Comparison (2026)](#detailed-feature-comparison-2026)
 - [Pricing Strategy Analysis](#pricing-strategy-analysis)
 - [Competitive Pressure Analysis](#competitive-pressure-analysis)
-- [Decision Framework: Should You Switch?](#decision-framework-should-you-switch)
+- [Decision Framework - Should You Switch?](#decision-framework-should-you-switch)
 
 What is GitHub Copilot Workspace?
 
@@ -84,15 +84,15 @@ Will Copilot Workspace Cost Extra When It Launches?
 
 Based on Microsoft's and GitHub's pricing history, here are the most likely scenarios:
 
-Scenario 1: Bundled with Copilot (Most Likely)
+Scenario 1 - Bundled with Copilot (Most Likely)
 
 GitHub may include Workspace features within existing Copilot Business or Copilot Individual plans at no additional cost. This would make Copilot an "agentic" product rather than just an autocomplete tool, justifying potential price increases to individual plans.
 
-Scenario 2: Premium Tier
+Scenario 2 - Premium Tier
 
 GitHub could introduce a new "Copilot Pro+" or "Copilot Enterprise" tier that includes Workspace capabilities. This would likely cost $19-30/month for individual developers, with organization pricing at $20-39/user/month.
 
-Scenario 3: Usage-Based Pricing
+Scenario 3 - Usage-Based Pricing
 
 Given Workspace's higher computational costs (it processes entire files rather than single lines), GitHub might introduce usage-based pricing similar to API access, charging per "agent request" or compute minute.
 
@@ -157,39 +157,39 @@ Monthly Cost               $10          $10* ($20+) $20       $15
 
 Real-World Scenarios
 
-Scenario 1: Implementing a Medium Feature
+Scenario 1 - Implementing a Medium Feature
 
 Traditional Copilot approach:
 1. Ask Copilot to write a function (5 min)
 2. Manually write supporting functions (10 min)
 3. Update related imports (5 min)
 4. Write tests manually (15 min)
-Total: 35 minutes
+Total - 35 minutes
 
 Workspace approach:
 1. Describe feature in natural language (2 min)
 2. Workspace generates implementation across files (3 min)
 3. Review and adjust generated PR (5 min)
-Total: 10 minutes
+Total - 10 minutes
 
-Value: 25 min saved per feature = 3+ hours per week for active developer
+Value - 25 min saved per feature = 3+ hours per week for active developer
 
-Scenario 2: Refactoring Database Layer
+Scenario 2 - Refactoring Database Layer
 
 Traditional approach:
 1. Manually identify all affected files
 2. Copilot helps with individual functions
 3. Manual import updates
 4. Manual test updates
-Total: 2-3 hours
+Total - 2-3 hours
 
 Workspace approach:
 1. Describe refactoring goal (1 min)
 2. Workspace generates multi-file changes (5 min)
 3. Review and test (20 min)
-Total: 25 minutes
+Total - 25 minutes
 
-Scenario 3: Learning New Codebase
+Scenario 3 - Learning New Codebase
 
 Traditional Copilot:
 - Can help with single-file questions
@@ -241,7 +241,7 @@ Market Dynamics:
 - If Workspace = $20/mo separate: Cursor more competitive
 - If Workspace = $30/mo: Both Cursor and Windsurf are better value
 
-Decision Framework: Should You Switch?
+Decision Framework - Should You Switch?
 
 Stay with Copilot if:
 - You primarily use line completion

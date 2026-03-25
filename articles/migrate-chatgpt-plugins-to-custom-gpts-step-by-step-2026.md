@@ -21,15 +21,15 @@ Migrate a ChatGPT Plugin to a Custom GPT by exporting your existing OpenAPI spec
 Table of Contents
 
 - [Understanding the Architecture Differences](#understanding-the-architecture-differences)
-- [Step 1: Audit Your Current Plugin](#step-1-audit-your-current-plugin)
-- [Step 2: Export Your OpenAPI Specification](#step-2-export-your-openapi-specification)
-- [Step 3: Create Your Custom GPT](#step-3-create-your-custom-gpt)
-- [Step 4: Configure Authentication](#step-4-configure-authentication)
-- [Step 5: Test Your Migrated GPT](#step-5-test-your-migrated-gpt)
-- [Step 6: Deploy and Monitor](#step-6-deploy-and-monitor)
-- [Advanced: Programmatic GPT Creation](#advanced-programmatic-gpt-creation)
+- [Step 1 - Audit Your Current Plugin](#step-1-audit-your-current-plugin)
+- [Step 2 - Export Your OpenAPI Specification](#step-2-export-your-openapi-specification)
+- [Step 3 - Create Your Custom GPT](#step-3-create-your-custom-gpt)
+- [Step 4 - Configure Authentication](#step-4-configure-authentication)
+- [Step 5 - Test Your Migrated GPT](#step-5-test-your-migrated-gpt)
+- [Step 6 - Deploy and Monitor](#step-6-deploy-and-monitor)
+- [Advanced - Programmatic GPT Creation](#advanced-programmatic-gpt-creation)
 - [Writing Effective System Prompts for Migrated GPTs](#writing-effective-system-prompts-for-migrated-gpts)
-- [Migrating Multiple Plugins: Batch Automation Script](#migrating-multiple-plugins-batch-automation-script)
+- [Migrating Multiple Plugins - Batch Automation Script](#migrating-multiple-plugins-batch-automation-script)
 - [Plugin Migration Compatibility Reference](#plugin-migration-compatibility-reference)
 
 Understanding the Architecture Differences
@@ -38,7 +38,7 @@ ChatGPT Plugins and Custom GPTs serve similar purposes but operate differently u
 
 The key distinction is that plugins required external server hosting with a publicly accessible HTTPS endpoint. Custom GPTs with Actions can connect to APIs the same way, but also benefit from a more improved configuration process directly within ChatGPT.
 
-Step 1: Audit Your Current Plugin
+Step 1 - Audit Your Current Plugin
 
 Before migrating, document your plugin's current functionality. Create a checklist of:
 
@@ -67,7 +67,7 @@ For example, a typical plugin manifest looks like this:
 }
 ```
 
-Step 2: Export Your OpenAPI Specification
+Step 2 - Export Your OpenAPI Specification
 
 Your plugin's OpenAPI specification is the foundation for your Custom GPT Action. Locate your `openapi.yaml` or `openapi.json` file from the plugin repository. Review it for compatibility with the Custom GPT Actions format.
 
@@ -109,7 +109,7 @@ paths:
                     type: string
 ```
 
-Step 3: Create Your Custom GPT
+Step 3 - Create Your Custom GPT
 
 Navigate to ChatGPT and access the GPT Builder:
 
@@ -125,7 +125,7 @@ Navigate to ChatGPT and access the GPT Builder:
 
 In the Actions configuration panel, paste your refined OpenAPI specification. The GPT Builder will parse your endpoints and generate a configuration interface.
 
-Step 4: Configure Authentication
+Step 4 - Configure Authentication
 
 Custom GPT Actions support multiple authentication methods. Map your plugin's auth configuration to the appropriate Action auth type:
 
@@ -149,7 +149,7 @@ security:
 
 Configure the authentication credentials in the Action settings panel, providing your API key or OAuth client credentials.
 
-Step 5: Test Your Migrated GPT
+Step 5 - Test Your Migrated GPT
 
 The GPT Builder provides a testing panel where you can interact with your Custom GPT and verify the Actions work correctly. Run through each endpoint:
 
@@ -173,7 +173,7 @@ Common issues during testing include:
 
 Address each issue by adjusting your OpenAPI specification or updating the Action configuration.
 
-Step 6: Deploy and Monitor
+Step 6 - Deploy and Monitor
 
 Once testing passes, save your Custom GPT and decide on visibility:
 
@@ -185,7 +185,7 @@ Once testing passes, save your Custom GPT and decide on visibility:
 
 Monitor usage through the My GPTs dashboard. Track API call volumes and response times to ensure your backend can handle the load.
 
-Advanced: Programmatic GPT Creation
+Advanced - Programmatic GPT Creation
 
 For bulk migrating multiple plugins, use the Assistants API to create Custom GPTs programmatically:
 
@@ -254,7 +254,7 @@ the service is temporarily unavailable.
 
 The system prompt investment pays off in user experience. Take time to write instructions that match how your plugin originally behaved, then extend them with behaviors the constrained manifest format could not express.
 
-Migrating Multiple Plugins: Batch Automation Script
+Migrating Multiple Plugins - Batch Automation Script
 
 If you have more than two or three plugins to migrate, automate the process. This script reads plugin manifests from a directory and creates corresponding Assistants API configurations:
 

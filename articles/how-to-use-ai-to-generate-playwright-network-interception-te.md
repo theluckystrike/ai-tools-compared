@@ -22,7 +22,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Why Offline Testing Deserves Attention](#why-offline-testing-deserves-attention)
-- [Practical Example: E-Commerce Cart Offline Handling](#practical-example-e-commerce-cart-offline-handling)
+- [Practical Example - E-Commerce Cart Offline Handling](#practical-example-e-commerce-cart-offline-handling)
 - [Best Practices for AI-Generated Network Tests](#best-practices-for-ai-generated-network-tests)
 - [Troubleshooting](#troubleshooting)
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Network Interception in Playwright
+Step 1 - Understand Network Interception in Playwright
 
 Playwright provides powerful APIs to intercept, modify, and mock network requests. The `page.route()` method allows you to intercept requests before they reach the network, while `page.on('request')` and `page.on('response')` listeners enable monitoring of all HTTP traffic. For offline testing specifically, you can block specific domains, abort requests, or serve cached responses.
 
@@ -52,7 +52,7 @@ The economic cost of poor offline handling is concrete. A shopping cart that sil
 
 Without automated tests covering these scenarios, developers often discover issues only through manual testing or, worse, from user reports. Network interception tests automate this validation, ensuring consistent behavior across code changes.
 
-Step 2: Generate Tests with AI Assistance
+Step 2 - Generate Tests with AI Assistance
 
 AI coding assistants can accelerate network interception test creation by understanding your application's structure and generating appropriate test cases. The process involves providing context about your application's network dependencies and specifying the offline scenarios you want to test.
 
@@ -105,7 +105,7 @@ test('handles API failure gracefully', async ({ page }) => {
 
 This approach tests how your application handles specific API failures while maintaining normal functionality for other requests. Keeping unrelated requests live, analytics, CDN assets, third-party widgets, means your test environment stays closer to production and catches integration edge cases that full blocking would hide.
 
-Step 3: Handling Different Failure Types
+Step 3 - Handling Different Failure Types
 
 Network interception supports various failure scenarios beyond simple aborts. You can simulate timeouts, serve stale cached data, or return custom error responses. Each failure type exercises a different code path in your application, so covering all of them meaningfully expands your test surface.
 
@@ -169,7 +169,7 @@ test('shows progress indicator on slow connection', async ({ page, context }) =>
 
 This is an area where AI assistants add real value, most developers don't know the CDP API surface. Prompting Claude Code or Cursor with "simulate 3G-like conditions in Playwright" produces this pattern reliably.
 
-Practical Example: E-Commerce Cart Offline Handling
+Practical Example - E-Commerce Cart Offline Handling
 
 Consider an e-commerce application where users add items to their cart. Testing offline scenarios ensures purchases aren't lost when connectivity drops:
 
@@ -246,7 +246,7 @@ test('recovers gracefully when network returns', async ({ page }) => {
 
 Keep route handlers stateless where possible. If a test needs to allow the first request through and block subsequent ones, track the count with a closure variable rather than mutating shared state between tests, Playwright tests run in isolation but route handlers can leak if registered on the browser context rather than the page.
 
-Step 4: Common Pitfalls to Avoid
+Step 4 - Common Pitfalls to Avoid
 
 Overly broad interception can mask real issues. Rather than blocking all requests, target specific endpoints that your application actually depends on. This provides more realistic test coverage and avoids accidentally preventing the page from loading its own JavaScript bundles, which turns a network resilience test into a blank-page test.
 

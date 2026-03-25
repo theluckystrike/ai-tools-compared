@@ -26,7 +26,7 @@ The combination of AI and TDD addresses the two biggest complaints developers ha
 The Five-Step Workflow
 
 
-Step 1: Define the Behavior First
+Step 1 - Define the Behavior First
 
 
 Before involving AI, you must clearly articulate what you want the code to do. Write a brief description of the function or feature in plain English. Include input expectations, expected outputs, and any error conditions that should be handled. This description becomes the prompt you feed to the AI, and the quality of your description directly affects the quality of the tests generated.
@@ -35,7 +35,7 @@ Before involving AI, you must clearly articulate what you want the code to do. W
 For example, instead of asking an AI to "write tests for a user authentication function," specify: "Write unit tests for a login function that accepts email and password, returns a JWT token on success, returns an error for invalid credentials, and throttles failed attempts after five tries within one minute."
 
 
-Step 2: Generate Tests with AI Assistance
+Step 2 - Generate Tests with AI Assistance
 
 
 Now feed your description to your AI coding assistant. Request test generation using your preferred testing framework. The AI should produce tests that cover the happy path, edge cases, and error conditions you specified. Review the generated tests carefully, AI sometimes makes assumptions about implementation details that do not match your actual requirements.
@@ -71,19 +71,19 @@ class TestPasswordValidation:
 ```
 
 
-Step 3: Run Tests to Verify Failure
+Step 3 - Run Tests to Verify Failure
 
 
 The TDD principle is clear, tests must fail initially because the implementation does not exist yet. Run the test suite and confirm that every test fails with the expected error. If a test passes unexpectedly, either the implementation already exists or the test is not properly validating the behavior. This verification step ensures your tests are actually checking what you intend.
 
 
-Step 4: Implement the Feature
+Step 4 - Implement the Feature
 
 
 Now write the minimum code required to make the tests pass. Use the AI as a coding partner during this phase. You can ask it to suggest implementations based on the test expectations, but implement the solution yourself to maintain understanding of the code. The tests guide your implementation decisions, preventing over-engineering and ensuring you address each requirement systematically.
 
 
-Step 5: Refactor with Confidence
+Step 5 - Refactor with Confidence
 
 
 With tests passing, you have a safety net for refactoring. This is where AI-assisted TDD truly shines. Ask the AI to suggest improvements, better variable names, extraction of helper functions, reduction of duplication. After each AI suggestion, run the tests to confirm nothing broke. The tests protect you from introducing bugs while refactoring.
@@ -166,15 +166,15 @@ Tools and AI Assistants for AI-Assisted TDD
 
 Different AI assistants bring different strengths to test generation:
 
-Claude: Excels at understanding complex business logic and generating edge case tests. Strong at multi-scenario testing and explaining test coverage gaps. Best choice for domain-specific testing.
+Claude - Excels at understanding complex business logic and generating edge case tests. Strong at multi-scenario testing and explaining test coverage gaps. Best choice for domain-specific testing.
 
-ChatGPT: Fast at generating boilerplate tests. Good for simple CRUD operation testing. Less sophisticated at edge case identification compared to Claude.
+ChatGPT - Fast at generating boilerplate tests. Good for simple CRUD operation testing. Less sophisticated at edge case identification compared to Claude.
 
-GitHub Copilot: Integrates directly in your editor. Excellent for suggesting test names and structure based on existing code. Works best when you're writing the test outline yourself.
+GitHub Copilot - Integrates directly in your editor. Excellent for suggesting test names and structure based on existing code. Works best when you're writing the test outline yourself.
 
-Cursor: Multi-file test generation support. Can generate coordinated test suites across multiple services. Good for integration testing.
+Cursor - Multi-file test generation support. Can generate coordinated test suites across multiple services. Good for integration testing.
 
-Most effective approach: Use Claude for initial test suite architecture, then use Copilot for inline suggestions while writing tests locally.
+Most effective approach - Use Claude for initial test suite architecture, then use Copilot for inline suggestions while writing tests locally.
 
 Test Generation Comparison Table
 
@@ -204,27 +204,27 @@ Practical Metrics to Track
 
 Establish measurement for AI-assisted TDD success:
 
-Test coverage: Aim for 70-85% code coverage for critical paths. Higher coverage becomes diminishing returns. AI tends to over-test, so review for redundancy.
+Test coverage - Aim for 70-85% code coverage for critical paths. Higher coverage becomes diminishing returns. AI tends to over-test, so review for redundancy.
 
-Test execution time: Target full suite under 10 minutes locally, under 15 minutes in CI. Use AI to parallelize tests where appropriate.
+Test execution time - Target full suite under 10 minutes locally, under 15 minutes in CI. Use AI to parallelize tests where appropriate.
 
-Defect density: Track bugs per 1000 lines of production code. Healthy projects see 2-4 bugs per 1000 lines. AI-assisted TDD typically reduces this by 15-25%.
+Defect density - Track bugs per 1000 lines of production code. Healthy projects see 2-4 bugs per 1000 lines. AI-assisted TDD typically reduces this by 15-25%.
 
-Development velocity: Measure features shipped per sprint before and after implementing AI TDD. Most teams report 20-30% faster delivery after stabilizing the workflow (first 2-3 sprints are slower due to learning curve).
+Development velocity - Measure features shipped per sprint before and after implementing AI TDD. Most teams report 20-30% faster delivery after stabilizing the workflow (first 2-3 sprints are slower due to learning curve).
 
-Test maintenance burden: Count hours spent maintaining tests monthly. AI-assisted TDD should reduce this by automating test refactoring when implementations change.
+Test maintenance burden - Count hours spent maintaining tests monthly. AI-assisted TDD should reduce this by automating test refactoring when implementations change.
 
 Advanced Prompting Strategies
 
 As you mature with AI TDD, use advanced prompt techniques:
 
-Context stacking: Include failing test output in your prompt so AI understands what's broken, then ask it to suggest additional edge cases.
+Context stacking - Include failing test output in your prompt so AI understands what's broken, then ask it to suggest additional edge cases.
 
-Example-driven prompts: Show the AI one well-written test example from your project, then ask it to generate similar tests for a new function. Consistency improves dramatically.
+Example-driven prompts - Show the AI one well-written test example from your project, then ask it to generate similar tests for a new function. Consistency improves dramatically.
 
-Constraint specification: Tell the AI the exact number of tests you want, the maximum assertions per test, and any forbidden patterns (like tightly-coupled mocks). This reduces AI drift toward over-engineered tests.
+Constraint specification - Tell the AI the exact number of tests you want, the maximum assertions per test, and any forbidden patterns (like tightly-coupled mocks). This reduces AI drift toward over-engineered tests.
 
-Multi-turn refinement: Generate initial tests, then follow up with "These tests are too expensive to run. Suggest which assertions can use mocks instead." Let the AI improve its own output iteratively.
+Multi-turn refinement - Generate initial tests, then follow up with "These tests are too expensive to run. Suggest which assertions can use mocks instead." Let the AI improve its own output iteratively.
 ---
 
 
@@ -250,7 +250,7 @@ What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-Cost-Benefit Analysis: AI-Assisted TDD
+Cost-Benefit Analysis - AI-Assisted TDD
 
 Adopting AI-assisted TDD requires upfront time investment, but the ROI typically becomes positive within 2-3 sprints. Here's a realistic breakdown:
 
@@ -287,11 +287,11 @@ Real-World Implementation Example
 
 Consider a backend API team migrating to AI-assisted TDD:
 
-Week 1-2: Team learns Claude/ChatGPT prompting. They generate test suites for three existing services, discovering 12 edge cases that existing manual tests missed. Total time: 24 hours.
+Week 1-2 - Team learns Claude/ChatGPT prompting. They generate test suites for three existing services, discovering 12 edge cases that existing manual tests missed. Total time: 24 hours.
 
-Week 3-4: Team maintains discipline on new features. For a new payment module, they spend 2 hours writing requirements, 1 hour generating tests (AI assists), 2 hours reviewing tests, then 3 hours implementing. Total development time: 8 hours vs. estimated 10 hours (manual TDD). Tests catch 3 bugs that would have surfaced in QA. Time saved in QA: 3 hours.
+Week 3-4 - Team maintains discipline on new features. For a new payment module, they spend 2 hours writing requirements, 1 hour generating tests (AI assists), 2 hours reviewing tests, then 3 hours implementing. Total development time: 8 hours vs. estimated 10 hours (manual TDD). Tests catch 3 bugs that would have surfaced in QA. Time saved in QA: 3 hours.
 
-Week 5+: As confidence builds, the team discovers that AI suggestions for integration tests between services are particularly valuable. They save 5-7 hours weekly on cross-service debugging by having integration test coverage generated upfront.
+Week 5+ - As confidence builds, the team discovers that AI suggestions for integration tests between services are particularly valuable. They save 5-7 hours weekly on cross-service debugging by having integration test coverage generated upfront.
 
 3-month outcome:
 - 45 bugs caught by AI-generated tests that manual tests would have missed

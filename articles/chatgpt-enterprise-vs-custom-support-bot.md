@@ -25,8 +25,8 @@ Table of Contents
 - [Feature Comparison Table](#feature-comparison-table)
 - [When to Choose Each Option](#when-to-choose-each-option)
 - [Hybrid Approach](#hybrid-approach)
-- [Scaling Considerations: What Changes at 10k Requests/Day](#scaling-considerations-what-changes-at-10k-requestsday)
-- [Integration Patterns: Real-World Implementation](#integration-patterns-real-world-implementation)
+- [Scaling Considerations - What Changes at 10k Requests/Day](#scaling-considerations-what-changes-at-10k-requestsday)
+- [Integration Patterns - Real-World Implementation](#integration-patterns-real-world-implementation)
 - [Monitoring and Optimization](#monitoring-and-optimization)
 - [Data Privacy and Compliance Deep Dive](#data-privacy-and-compliance-deep detailed look)
 
@@ -214,7 +214,7 @@ This pattern lets you use ChatGPT Enterprise's general capabilities while mainta
 
 For many organizations, a hybrid approach, ChatGPT Enterprise for general inquiries, custom bots for domain-specific topics, provides the best balance of deployment speed and response accuracy.
 
-Scaling Considerations: What Changes at 10k Requests/Day
+Scaling Considerations - What Changes at 10k Requests/Day
 
 Both approaches hit scaling inflection points that deserve specific attention.
 
@@ -249,7 +249,7 @@ For the same 10k request/day scenario with a custom bot:
 
 The economics flip at higher volumes. A custom bot becomes cheaper around 50k requests/day if you self-host infrastructure.
 
-Integration Patterns: Real-World Implementation
+Integration Patterns - Real-World Implementation
 
 How you integrate each solution varies significantly based on your tech stack.
 
@@ -258,7 +258,7 @@ ChatGPT Enterprise Integration with Existing CRM
 Most support operations use Salesforce, Zendesk, or similar. ChatGPT Enterprise integrates through APIs:
 
 ```python
-Python: Slack bot that routes support tickets through ChatGPT Enterprise
+Python - Slack bot that routes support tickets through ChatGPT Enterprise
 import httpx
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
@@ -356,7 +356,7 @@ class SupportBotAPI:
 
         # Build prompt with retrieved context
         context = '\n\n'.join([
-            f"Document: {doc['title']}\n{doc['content'][:500]}..."
+            f"Document - {doc['title']}\n{doc['content'][:500]}..."
             for doc in docs
         ])
 
@@ -373,7 +373,7 @@ Keep responses concise and actionable.'''
                 'content': f'''Reference materials:
 {context}
 
-Customer question: {message.user_input}'''
+Customer question - {message.user_input}'''
             }
         ]
 
@@ -452,7 +452,7 @@ if cost_per_request > 0.05:  # Expensive responses
     analyze_token_usage()  # Find optimizations
 ```
 
-Key insight: ChatGPT Enterprise costs scale linearly with usage. Monitor token consumption carefully, verbose prompts and long conversation histories add up quickly.
+Key insight - ChatGPT Enterprise costs scale linearly with usage. Monitor token consumption carefully, verbose prompts and long conversation histories add up quickly.
 
 Custom Bot Monitoring
 
@@ -495,7 +495,7 @@ OpenAI offers:
 - Data retention policies: No data retention by default for Enterprise customers
 - Regional deployment: Not available for EU customers without special agreement
 
-Limitation: Your conversation data flows through OpenAI's infrastructure, even if not used for training. For highly sensitive data, this may not meet requirements.
+Limitation - Your conversation data flows through OpenAI's infrastructure, even if not used for training. For highly sensitive data, this may not meet requirements.
 
 Custom Bot Compliance
 
@@ -505,7 +505,7 @@ You control everything:
 - Implement audit logging for all support interactions
 - Meet data residency requirements (e.g., GDPR, data must stay in EU)
 
-Trade-off: You're responsible for securing, backing up, and monitoring the entire stack.
+Trade-off - You're responsible for securing, backing up, and monitoring the entire stack.
 
 Frequently Asked Questions
 
@@ -516,7 +516,7 @@ How long does it take to build a production-quality custom support bot?
 A minimal viable bot with RAG and basic escalation logic takes 3, 6 weeks for an experienced team. Adding fine-tuning, multi-channel deployment (web, mobile, Slack), and enterprise-grade monitoring extends the timeline to 3, 4 months. Factor in time for knowledge base curation, which is often underestimated.
 
 Does ChatGPT Enterprise support integration with Salesforce or Zendesk?
-ChatGPT Enterprise integrates with third-party platforms primarily through its API. OpenAI offers native connectors for some platforms, and the broader ecosystem of middleware tools (Zapier, Make, custom webhooks) covers most CRM and ticketing systems. A custom bot typically achieves tighter integration by calling service APIs directly within the response pipeline.
+ChatGPT Enterprise integrates with third-party platforms primarily through its API. OpenAI offers native connectors for some platforms, and the broader environment of middleware tools (Zapier, Make, custom webhooks) covers most CRM and ticketing systems. A custom bot typically achieves tighter integration by calling service APIs directly within the response pipeline.
 
 What happens to my data if I switch from custom bot to ChatGPT Enterprise later?
 Your conversation logs, knowledge base, and analytics remain under your control regardless of what you run on top. The switch primarily affects the model layer. Plan your data architecture to be model-agnostic from the start, store conversations in your own database, not just in the LLM provider's platform. Abstractions like LangChain's conversation memory or a simple Postgres events table make future migrations significantly less painful.

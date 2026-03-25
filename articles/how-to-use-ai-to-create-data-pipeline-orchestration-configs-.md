@@ -27,17 +27,17 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Prefect and Dagster Configuration Patterns
+Step 1 - Understand Prefect and Dagster Configuration Patterns
 
 Prefect and Dagster both use Python-based approaches to define pipelines, but they differ in their configuration philosophies. Prefect emphasizes flow-based definitions with explicit task dependencies, while Dagster uses a graph-based model with solid definitions for operations.
 
 When working with AI assistants, you need to describe your pipeline structure, dependencies, and resource requirements clearly. The more context you provide about data sources, transformations, and execution environment, the better the generated configuration will be.
 
-Step 2: Generate Prefect Flow Configurations
+Step 2 - Generate Prefect Flow Configurations
 
 Prefect flows are defined using the `@flow` and `@task` decorators. An AI assistant can generate boilerplate code when you describe your pipeline logic. Here's a practical example of what you might request:
 
-Prompt: "Generate a Prefect flow that reads customer data from PostgreSQL, applies transformation logic, and writes results to S3. Include error handling and retry logic."
+Prompt - "Generate a Prefect flow that reads customer data from PostgreSQL, applies transformation logic, and writes results to S3. Include error handling and retry logic."
 
 The AI can produce:
 
@@ -81,11 +81,11 @@ if __name__ == "__main__":
 
 This example shows how AI can generate a complete flow with appropriate decorators, task dependencies, and error handling. The key is specifying the exact operations, dependencies, and resource needs in your prompt.
 
-Step 3: Create Dagster Asset Definitions
+Step 3 - Create Dagster Asset Definitions
 
 Dagster uses a different model centered around assets and ops. When generating Dagster configurations, you describe your data assets and their dependencies:
 
-Prompt: "Create Dagster assets for a data pipeline that ingests API data, validates the schema, and stores partitioned Parquet files in S3. Include a sensor for periodic execution."
+Prompt - "Create Dagster assets for a data pipeline that ingests API data, validates the schema, and stores partitioned Parquet files in S3. Include a sensor for periodic execution."
 
 ```python
 from dagster import asset, AssetExecutionContext
@@ -130,11 +130,11 @@ def storage_data(partitioned_data: DataFrame):
 
 Dagster's asset-based approach works well when you want built-in lineage tracking and automatic materialization management.
 
-Step 4: Optimizing AI Outputs for Production
+Step 4 - Optimizing AI Outputs for Production
 
 Raw AI output requires refinement before production use. Here are key areas to focus on:
 
-Connection Management: Replace hardcoded credentials with environment variables or secrets management:
+Connection Management - Replace hardcoded credentials with environment variables or secrets management:
 
 ```python
 import os
@@ -148,7 +148,7 @@ def get_db_connection():
     )
 ```
 
-Resource Configuration: Add resource specifications based on your workload:
+Resource Configuration - Add resource specifications based on your workload:
 
 ```python
 from prefect import flow
@@ -167,7 +167,7 @@ def production_flow():
     pass
 ```
 
-Scheduling and Triggers: Configure appropriate execution triggers:
+Scheduling and Triggers - Configure appropriate execution triggers:
 
 ```python
 from prefect import flow
@@ -185,7 +185,7 @@ scheduled_etl.serve(
 )
 ```
 
-Step 5: Prefect vs Dagster: Which Config Style Works Better with AI
+Step 5 - Prefect vs Dagster: Which Config Style Works Better with AI
 
 When using AI to generate configs, the choice of framework affects how productive the generation step is.
 
@@ -200,7 +200,7 @@ When using AI to generate configs, the choice of framework affects how productiv
 
 For simple ETL pipelines, Prefect's decorator model produces more immediately usable AI output. For data-centric workflows where lineage and recomputation matter, Dagster's asset model pays off even with the slightly more complex prompt patterns required.
 
-Step 6: Iterating with AI on Pipeline Failures
+Step 6 - Iterating with AI on Pipeline Failures
 
 AI tools are also useful after the initial generation step. When a pipeline fails, paste the error traceback and the relevant task code into your AI assistant along with a description of the pipeline's expected behavior. The AI can diagnose common issues like:
 
@@ -221,12 +221,12 @@ Test incrementally. Start with small subsets of your pipeline, validate the conf
 
 Document your modifications. When AI generates initial configurations, add comments explaining custom logic, specific parameter choices, and integration points with your existing infrastructure. This context is valuable when the pipeline needs updating months later and neither you nor an AI assistant will have the original prompt that produced the code.
 
-Step 7: Error Handling and Retry Strategies in AI-Generated Configs
+Step 7 - Error Handling and Retry Strategies in AI-Generated Configs
 
 Both Prefect and Dagster require careful error handling strategies that AI doesn't always generate automatically. Here's how to ensure your AI-assisted configs handle failures gracefully:
 
 ```python
-Prefect with comprehensive error handling
+Prefect with complete error handling
 from prefect import flow, task
 from prefect.exceptions import PrefectException
 
@@ -260,9 +260,9 @@ def resilient_pipeline():
         send_alert(f"Pipeline error: {e}")
 ```
 
-Prompt your AI explicitly: "Generate error handling that distinguishes between retryable and permanent errors, includes exponential backoff, and sends alerts on failure."
+Prompt your AI explicitly - "Generate error handling that distinguishes between retryable and permanent errors, includes exponential backoff, and sends alerts on failure."
 
-Step 8: Test AI-Generated Orchestration Code
+Step 8 - Test AI-Generated Orchestration Code
 
 Before deploying, test generated configs locally with realistic data scenarios:
 
@@ -298,7 +298,7 @@ def test_etl_pipeline_locally():
     assert (memory_after - memory_before) < 500_000_000  # 500MB limit
 ```
 
-Step 9: Airflow DAG Generation from AI Prompts
+Step 9 - Airflow DAG Generation from AI Prompts
 
 While Prefect and Dagster are popular, many teams use Apache Airflow. AI generates Airflow DAGs well when given structured prompts:
 
@@ -344,7 +344,7 @@ load = BashOperator(
 extract >> transform >> load
 ```
 
-Prompt: "Generate an Airflow DAG that extracts from PostgreSQL, transforms with pandas, and loads to Google Cloud Storage. Include error handling and daily scheduling."
+Prompt - "Generate an Airflow DAG that extracts from PostgreSQL, transforms with pandas, and loads to Google Cloud Storage. Include error handling and daily scheduling."
 
 Troubleshooting
 
@@ -364,7 +364,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 Frequently Asked Questions
 
 Can AI generate Airflow DAGs as well as Prefect and Dagster configs?
-Yes. Airflow DAGs are Python files with a well-documented structure, making them straightforward for AI to generate. Provide your task dependencies, schedule interval, and operator types in the prompt. Airflow's operator ecosystem is large, so specify which operators you need (BashOperator, PythonOperator, PostgresOperator, etc.) to get usable output.
+Yes. Airflow DAGs are Python files with a well-documented structure, making them straightforward for AI to generate. Provide your task dependencies, schedule interval, and operator types in the prompt. Airflow's operator environment is large, so specify which operators you need (BashOperator, PythonOperator, PostgresOperator, etc.) to get usable output.
 
 How do I get the AI to generate correct dependency ordering?
 Describe your pipeline as a sequence of steps with explicit inputs and outputs. For example: "Step 1 reads from S3 and produces a DataFrame. Step 2 takes that DataFrame and filters rows where status is active. Step 3 takes the filtered DataFrame and writes it to BigQuery." This linear or branching description maps reliably to both Prefect task dependencies and Dagster asset chains.
@@ -373,10 +373,10 @@ What is the biggest mistake teams make when using AI for orchestration configs?
 Using generated configs in production without local testing. Both Prefect and Dagster support local execution with minimal setup. Always run a local test with a small data sample before deploying to your orchestration environment. AI-generated code is plausible-looking but often contains subtle issues. wrong column names, mismatched data types, or missing error branches. that only surface during execution.
 
 How do I handle secrets and credentials in AI-generated pipelines?
-Never ask AI to generate credentials in code. Instead, request that the tool use environment variables or secrets management patterns. Prompt: "Generate a task that reads database credentials from environment variables using os.getenv() rather than hardcoding them." Review all generated code to ensure no credentials appear in the output.
+Never ask AI to generate credentials in code. Instead, request that the tool use environment variables or secrets management patterns. Prompt - "Generate a task that reads database credentials from environment variables using os.getenv() rather than hardcoding them." Review all generated code to ensure no credentials appear in the output.
 
 What should I do if generated code runs but produces incorrect output?
-This is common, AI-generated code is syntactically correct but logically flawed. Compare the AI's data transformation logic against your actual requirements. Add explicit assertions for expected data shapes and value ranges. Example: "After transformation, the dataframe should have columns X, Y, Z and contain no null values in critical fields." Validate these expectations in tests before production deployment.
+This is common, AI-generated code is syntactically correct but logically flawed. Compare the AI's data transformation logic against your actual requirements. Add explicit assertions for expected data shapes and value ranges. Example - "After transformation, the dataframe should have columns X, Y, Z and contain no null values in critical fields." Validate these expectations in tests before production deployment.
 
 Related Articles
 

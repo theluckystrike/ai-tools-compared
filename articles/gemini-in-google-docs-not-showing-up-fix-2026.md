@@ -50,7 +50,7 @@ Gemini in Docs requires one of these Google subscriptions:
 Without an eligible subscription, Gemini features remain hidden regardless of other configuration efforts. This is the most common reason users see nothing, no error, no disabled button, just a missing sidebar icon.
 
 
-Primary Fix: Verify Your Subscription Status
+Primary Fix - Verify Your Subscription Status
 
 
 The most common reason Gemini disappears from Google Docs is an expired or lapsed subscription. Follow these diagnostic steps:
@@ -258,7 +258,7 @@ Common error codes include:
 Share these error codes with your administrator or Google Support for targeted assistance. You can also filter the Network tab in DevTools for requests containing "gemini" to see what API responses your browser is receiving when the feature fails to load.
 
 
-Final Resort: Account Recovery
+Final Resort - Account Recovery
 
 
 If all else fails, your account may have a corrupted AI preferences profile. Create a new Google account with an eligible subscription and test Gemini there. If it works, export your documents and migrate to the new account.

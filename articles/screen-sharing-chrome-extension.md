@@ -54,7 +54,7 @@ Key Features:
 
 - Automatic transcription and timestamps
 
-Pricing: Free tier available; Pro starts at $8/month
+Pricing - Free tier available; Pro starts at $8/month
 
 Loom excels at asynchronous communication. Instead of scheduling live meetings, you can record quick explanations, walkthroughs, or updates and share them instantly. The platform's AI-powered features include automatic summaries and chapter generation, making it easy to navigate longer recordings.
 
@@ -74,7 +74,7 @@ Key Features:
 
 - Edit recordings after capture
 
-Pricing: Completely free
+Pricing - Completely free
 
 Screenity stands out as one of the best free options available. The annotation feature is particularly useful for tutorials and educational content, allowing you to draw attention to specific areas during recording. The ability to edit recordings after capture adds flexibility that many other extensions lack.
 
@@ -94,7 +94,7 @@ Key Features:
 
 - No time limits on recordings
 
-Pricing: Free for small teams; Enterprise plans available
+Pricing - Free for small teams; Enterprise plans available
 
 Async addresses the challenge of coordinating across different time zones. Team members can record their screens with context and explanations, then share them with colleagues who can view and respond when convenient. This approach significantly reduces the number of synchronous meetings required.
 
@@ -114,7 +114,7 @@ Key Features:
 
 - Automated email follow-ups
 
-Pricing: Free personal use; Team plans from $15/month
+Pricing - Free personal use; Team plans from $15/month
 
 Vidyard excels in B2B contexts where tracking video engagement matters. Sales teams use it to send personalized video messages to prospects, with analytics showing who watched the video and for how long. This data informs follow-up strategies and helps prioritize leads.
 
@@ -134,7 +134,7 @@ Key Features:
 
 - Trim and edit recordings
 
-Pricing: Free tier available; Premium from $3/month
+Pricing - Free tier available; Premium from $3/month
 
 The Google Classroom integration makes Screencastify particularly valuable for educators. Teachers can assign video lessons, students can submit video assignments, and everything syncs with the learning management system. The quiz feature allows for interactive video content that checks understanding.
 
@@ -154,7 +154,7 @@ Key Features:
 
 - Team collaboration features
 
-Pricing: Free tier available; Pro from $9.99/month
+Pricing - Free tier available; Pro from $9.99/month
 
 The combination of multiple visual communication tools in one package makes CloudApp versatile. Users can switch between screenshots, recordings, and GIFs depending on what best communicates their message. The Dropzone feature provides an incredibly fast way to capture and share visual content.
 
@@ -194,15 +194,15 @@ Proper audio setup matters significantly for screen recordings. Most extensions 
 
 Use Case Recommendations
 
-For Remote Teams: Async or Loom excel at asynchronous communication, reducing meeting overload while maintaining clear visual communication.
+For Remote Teams - Async or Loom excel at asynchronous communication, reducing meeting overload while maintaining clear visual communication.
 
-For Educators: Screencastify offers the best integration with educational workflows and student engagement features.
+For Educators - Screencastify offers the best integration with educational workflows and student engagement features.
 
-For Sales and Marketing: Vidyard provides the analytics and CRM integrations needed for tracking prospect engagement.
+For Sales and Marketing - Vidyard provides the analytics and CRM integrations needed for tracking prospect engagement.
 
-For Technical Documentation: Screenity's annotation tools make it ideal for creating detailed tutorials and walkthroughs.
+For Technical Documentation - Screenity's annotation tools make it ideal for creating detailed tutorials and walkthroughs.
 
-For General Use: CloudApp's versatility handles most everyday screen sharing needs effectively.
+For General Use - CloudApp's versatility handles most everyday screen sharing needs effectively.
 
 Installation and Setup Tips
 

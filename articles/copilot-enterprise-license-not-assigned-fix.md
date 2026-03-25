@@ -49,7 +49,7 @@ Most administrators encounter this issue when migrating from Copilot Business to
 
 Step-by-Step Fixes
 
-Fix 1: Verify Organization-Level Subscription
+Fix 1 - Verify Organization-Level Subscription
 
 Confirm that your organization actually has a Copilot Enterprise subscription active.
 
@@ -63,7 +63,7 @@ Confirm that your organization actually has a Copilot Enterprise subscription ac
 
 If you see "Copilot Enterprise" listed with an active status, proceed to the next fix. If not, contact your GitHub sales representative or billing administrator to complete the purchase. Organizations sometimes purchase Copilot for teams but forget to upgrade to Enterprise tier.
 
-Fix 2: Confirm User Is in Correct Organization
+Fix 2 - Confirm User Is in Correct Organization
 
 Users must belong to the organization that holds the Copilot Enterprise license. This seems obvious but accounts are often forgotten during setup.
 
@@ -75,7 +75,7 @@ Users must belong to the organization that holds the Copilot Enterprise license.
 
 If the user exists in multiple organizations, ensure you are logged into the correct organization when accessing Copilot features. Switching between organizations in GitHub sometimes causes confusion about which license should apply.
 
-Fix 3: Assign License Through Admin Settings
+Fix 3 - Assign License Through Admin Settings
 
 The most common cause of this issue is simply that the license was never assigned to the user.
 
@@ -91,7 +91,7 @@ The most common cause of this issue is simply that the license was never assigne
 
 The assignment process may take 15-30 minutes to propagate across GitHub's systems. In rare cases, allow up to 24 hours for full synchronization.
 
-Fix 4: Check Enterprise-managed User Accounts
+Fix 4 - Check Enterprise-managed User Accounts
 
 If your organization uses Enterprise Managed Users (EMUs), license assignment works differently. EMUs are controlled at the enterprise level rather than the organization level.
 
@@ -105,7 +105,7 @@ If your organization uses Enterprise Managed Users (EMUs), license assignment wo
 
 For EMU accounts, organization-level administrators typically cannot assign Copilot licenses. You need enterprise-level admin permissions to make these changes.
 
-Fix 5: Review Copilot Access Policies
+Fix 5 - Review Copilot Access Policies
 
 GitHub Copilot Enterprise includes policy controls that can override license assignments. Even with a valid license, users may be blocked by organizational policy.
 
@@ -119,7 +119,7 @@ GitHub Copilot Enterprise includes policy controls that can override license ass
 
 Policies that restrict Copilot access to specific teams will exclude users not belonging to those teams, regardless of license assignment.
 
-Fix 6: Clear Browser Cache and Reauthenticate
+Fix 6 - Clear Browser Cache and Reauthenticate
 
 Sometimes the issue is client-side rather than server-side. Cached authentication tokens can become stale after license changes.
 
@@ -135,7 +135,7 @@ Sometimes the issue is client-side rather than server-side. Cached authenticatio
 
 For desktop users of Visual Studio Code or JetBrains IDEs, sign out of the GitHub Copilot extension and sign back in to refresh authentication tokens.
 
-Fix 7: Verify Billing Email and Seat Availability
+Fix 7 - Verify Billing Email and Seat Availability
 
 Organizations with limited seat counts may have exhausted their purchased licenses.
 
@@ -187,8 +187,8 @@ Use this PowerShell script to identify which users in your org have Copilot
 licenses assigned and flag accounts that are enabled but have not signed in:
 
 ```powershell
-Requires: Microsoft.Graph PowerShell module
-Install: Install-Module Microsoft.Graph -Scope CurrentUser
+Requires - Microsoft.Graph PowerShell module
+Install - Install-Module Microsoft.Graph -Scope CurrentUser
 
 Connect-MgGraph -Scopes "User.Read.All", "Directory.Read.All"
 
@@ -208,7 +208,7 @@ $licensedUsers | Select-Object DisplayName, UserPrincipalName,
 Write-Host "Total Copilot-licensed users: $($licensedUsers.Count)"
 ```
 
-Copilot Licensing Architecture: Understanding the Hierarchy
+Copilot Licensing Architecture - Understanding the Hierarchy
 
 GitHub uses a three-tier licensing structure that often confuses admins:
 
@@ -362,7 +362,7 @@ if __name__ == '__main__':
     print(f"  Utilization: {usage['utilization']}%")
 
     if usage['inactive'] > usage['total_assigned'] * 0.2:
-        print("\n  Warning: >20% inactive licenses. Consider recycling unused seats.")
+        print("\n  Warning - >20% inactive licenses. Consider recycling unused seats.")
 ```
 
 Run this monthly to identify licenses wasted on inactive users, freeing capacity for new team members.

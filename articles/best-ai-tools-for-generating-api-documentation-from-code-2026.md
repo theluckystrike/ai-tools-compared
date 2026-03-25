@@ -20,22 +20,22 @@ Manual API documentation is outdated the moment you ship code changes. AI-genera
 Table of Contents
 
 - [The API Documentation Problem](#the-api-documentation-problem)
-- [Mintlify: AI-Powered Documentation Platform](#mintlify-ai-powered-documentation-platform)
-- [Cursor: IDE-Based Documentation Generation](#cursor-ide-based-documentation-generation)
-- [GitHub Copilot: Lightweight Documentation Assistance](#github-copilot-lightweight-documentation-assistance)
+- [Mintlify - AI-Powered Documentation Platform](#mintlify-ai-powered-documentation-platform)
+- [Cursor - IDE-Based Documentation Generation](#cursor-ide-based-documentation-generation)
+- [GitHub Copilot - Lightweight Documentation Assistance](#github-copilot-lightweight-documentation-assistance)
 - [readme.com AI: Documentation Platform with AI](#readmecom-ai-documentation-platform-with-ai)
 - [Comparison Table](#comparison-table)
 - [Choosing the Right Tool](#choosing-the-right-tool)
 - [Best Practices for AI-Generated Documentation](#best-practices-for-ai-generated-documentation)
-- [Real-World Example: Building Complete API Docs](#real-world-example-building-complete-api-docs)
+- [Real-World Example - Building Complete API Docs](#real-world-example-building-complete-api-docs)
 
 The API Documentation Problem
 
 API documentation falls into two categories: reference documentation (what each endpoint does) and practical documentation (how to actually use it). AI tools excel at generating reference docs from code, extracting signatures, types, and generating descriptions. They struggle with practical docs, why you'd use this endpoint, real-world workflows, and error scenarios.
 
-The best approach: use AI for generating reference documentation structure and initial descriptions, then augment with human-written practical examples. This comparison focuses on reference generation quality, the most time-consuming and repetitive part of API documentation.
+The best approach - use AI for generating reference documentation structure and initial descriptions, then augment with human-written practical examples. This comparison focuses on reference generation quality, the most time-consuming and repetitive part of API documentation.
 
-Mintlify: AI-Powered Documentation Platform
+Mintlify - AI-Powered Documentation Platform
 
 Mintlify ($0 for self-hosted, $500/month for managed) is built specifically for API documentation with AI assistance built in. It scans your codebase, extracts API signatures, and generates descriptions using AI. Mintlify publishes to a branded documentation website.
 
@@ -64,7 +64,7 @@ AI documentation generation:
 Mintlify's AI analyzes your OpenAPI spec and generates parameter descriptions, return types, and example requests:
 
 ```yaml
-Input: Your OpenAPI spec
+Input - Your OpenAPI spec
 /users/{userId}:
   get:
     operationId: getUser
@@ -127,7 +127,7 @@ Create a new payment intent to charge a customer.
 
 Request body:
   amount: integer (required). The amount to charge in cents. Minimum: 100 (1.00 USD).
-  currency: string (required). ISO 4217 currency code (e.g., "usd", "eur"). Supported: usd, eur, gbp, cad.
+  currency: string (required). ISO 4217 currency code (e.g., "usd", "eur"). Supported - usd, eur, gbp, cad.
   customerId: string (required). The unique ID of the customer to charge.
   metadata: object (optional). Custom key-value pairs for tracking. Example: {"orderId": "ord_123"}
 
@@ -140,7 +140,7 @@ Response:
 
 This is accurate and usable, though generic. A human would add specifics like "Use clientSecret for Stripe.js integration" or "Failure codes: insufficient_funds, card_declined".
 
-Cursor: IDE-Based Documentation Generation
+Cursor - IDE-Based Documentation Generation
 
 Cursor ($20/month flat) uses AI to generate code and documentation inline. While not built specifically for docs, its code generation capabilities make it useful for creating example code and docstrings.
 
@@ -222,7 +222,7 @@ app.post('/api/subscriptions', async (req, res) => {
 
 This is good for code documentation. For published API docs, it's incomplete, you'd still need to hand-format it into Markdown or OpenAPI.
 
-GitHub Copilot: Lightweight Documentation Assistance
+GitHub Copilot - Lightweight Documentation Assistance
 
 Copilot ($10/month) isn't specifically built for documentation but handles docstring generation competently. It works anywhere you're coding, including documentation files.
 
@@ -400,7 +400,7 @@ Represents a refund issued to a customer.
 
 Properties:
 - id (string): Unique refund identifier. Example: "ref_1234567890"
-- amount (integer): Refund amount in cents. Example: 4999 for $49.99
+- amount (integer): Refund amount in cents. Example - 4999 for $49.99
 - reason (string): The reason for the refund. Must be one of:
  - customer_request: Customer initiated the refund
  - duplicate: Duplicate charge (accidental duplicate)
@@ -445,7 +445,7 @@ Best Practices for AI-Generated Documentation
 
 5. Update when API changes - Regenerate docs whenever you ship code changes. Most tools (Mintlify, readme.com) automate this with git integration.
 
-Real-World Example: Building Complete API Docs
+Real-World Example - Building Complete API Docs
 
 Here's a workflow combining AI generation with human review:
 
@@ -465,7 +465,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -477,7 +477,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

@@ -24,7 +24,7 @@ Table of Contents
 - [Practical Ways to Use Copilot as a Student Developer](#practical-ways-to-use-copilot-as-a-student-developer)
 - [Limitations to Understand](#limitations-to-understand)
 - [Maximizing Copilot as a Student](#maximizing-copilot-as-a-student)
-- [Comparison: Free Student Tools](#comparison-free-student-tools)
+- [Comparison - Free Student Tools](#comparison-free-student-tools)
 - [Setting Up Copilot Across Your IDEs](#setting-up-copilot-across-your-ides)
 - [Real Student Projects Where Copilot Excels](#real-student-projects-where-copilot-excels)
 - [Academic Integrity Guidelines](#academic-integrity-guidelines)
@@ -144,7 +144,7 @@ Limitations to Understand
 
 While Copilot is free for students, you should be aware of its constraints. The AI sometimes suggests code that compiles but contains bugs or security vulnerabilities. Always review suggestions before submitting assignments. Copilot learns from existing code, which means it may occasionally reproduce patterns from its training data that are not ideal for production use.
 
-Some specialized tools in the Copilot ecosystem require paid plans. GitHub Copilot Voice, which allows voice-based coding, and certain advanced security features may not be included with the free student access. These are minor limitations for most student workflows.
+Some specialized tools in the Copilot environment require paid plans. GitHub Copilot Voice, which allows voice-based coding, and certain advanced security features may not be included with the free student access. These are minor limitations for most student workflows.
 
 Maximizing Copilot as a Student
 
@@ -152,7 +152,7 @@ To get the most out of Copilot for student projects, write clear function and va
 
 Use Copilot as a learning tool by asking it to explain what it suggested. When Copilot writes a function, ask follow-up questions about why it chose that approach. This turns Copilot into a tutoring assistant alongside being a coding tool.
 
-Comparison: Free Student Tools
+Comparison - Free Student Tools
 
 | Tool | Cost | Code Completions | Chat | IDE Support | Best For |
 |------|------|---|---|---|---|
@@ -194,17 +194,17 @@ Press Tab to accept suggestions
 
 Real Student Projects Where Copilot Excels
 
-Computer Science Course: Data Structures
+Computer Science Course - Data Structures
 - Generating tree, heap, and graph implementations
 - Writing sorting algorithms with comments explaining complexity
 - Creating test cases for data structure operations
 
-Web Development Course: Full-Stack Project
+Web Development Course - Full-Stack Project
 - Scaffolding Express/Django API endpoints
 - Generating React component boilerplate
 - Creating database migration files
 
-Mobile Development: iOS/Android Projects
+Mobile Development - iOS/Android Projects
 - Swift/Kotlin boilerplate code
 - UI layout suggestions matching platform conventions
 - Test case generation for critical functions

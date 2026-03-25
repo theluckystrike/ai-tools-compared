@@ -160,7 +160,7 @@ Save and exit, then test your connection:
 ssh -T git@github.com
 ```
 
-You should see: "Hi [username]! You've successfully authenticated..."
+You should see - "Hi [username]! You've successfully authenticated..."
 
 Repository and Permission Issues
 
@@ -289,7 +289,7 @@ Reading Git Push Error Messages
 Git push errors are usually actionable if you read them carefully. Here are the most common messages and what they mean:
 
 `remote: Permission to user/repo.git denied to other-user.`
-Your SSH key or token is authenticated as a different GitHub account than the one with access to the repo. This happens frequently on machines used for multiple GitHub accounts. Fix: check `ssh -T git@github.com` to see which account is active, and update your SSH config to use an account-specific host alias:
+Your SSH key or token is authenticated as a different GitHub account than the one with access to the repo. This happens frequently on machines used for multiple GitHub accounts. Fix - check `ssh -T git@github.com` to see which account is active, and update your SSH config to use an account-specific host alias:
 
 ```
 ~/.ssh/config
@@ -304,7 +304,7 @@ Host github-personal
     IdentityFile ~/.ssh/id_ed25519_personal
 ```
 
-Then update your remote URL: `git remote set-url origin git@github-work:yourorg/repo.git`
+Then update your remote URL - `git remote set-url origin git@github-work:yourorg/repo.git`
 
 `error: failed to push some refs to 'origin'`
 The remote has commits your local branch doesn't have. Run `git pull --rebase origin main` to incorporate upstream changes, then retry the push.

@@ -56,7 +56,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Method 1: Manual Discord Export
+Step 1 - Method 1: Manual Discord Export
 
 The simplest approach uses Midjourney's built-in Discord functionality. Each generated image appears in your Discord channel with download options.
 
@@ -64,7 +64,7 @@ Navigate to your Midjourney server in Discord. Find the image you want to preser
 
 For bulk manual export, open your server settings, go to "Privacy Settings," and enable "Allow server members to download images." This lets you right-click and save multiple images quickly in Discord's desktop or web client.
 
-Step 2: Method 2: Discord Bot API for Automated Export
+Step 2 - Method 2: Discord Bot API for Automated Export
 
 Developers can automate image export using Discord's API. This approach requires more setup but scales to hundreds or thousands of images.
 
@@ -127,7 +127,7 @@ client.login('YOUR_BOT_TOKEN');
 
 This script listens for messages from the Midjourney bot (user ID 936929561302675456) and automatically downloads any attached images. Run this while you're actively generating images to capture everything in real-time.
 
-Step 3: Method 3: Midjourney Web Gallery Export
+Step 3 - Method 3: Midjourney Web Gallery Export
 
 Midjourney's web interface at midjourney.com provides an alternative export method. Log in to your account and navigate to "Midjourney Web" or "Gallery" (the exact name varies by current UI). This web interface displays your generation history in a browsable format.
 
@@ -135,7 +135,7 @@ The web gallery shows thumbnails of your previous generations. Click any image t
 
 The web interface has limitations, it's primarily designed for viewing rather than mass export. Large archives spanning months of generation may take considerable time to navigate and download manually.
 
-Step 4: Method 4: Browser Automation with Puppeteer or Playwright
+Step 4 - Method 4: Browser Automation with Puppeteer or Playwright
 
 For large archives, browser automation provides the most powerful solution. Use Puppeteer or Playwright to programmatically navigate your Midjourney web gallery and download images at scale.
 
@@ -185,7 +185,7 @@ exportMidjourneyGallery().catch(console.error);
 
 This approach gives you programmatic control over the export process. You can enhance it with rate limiting, retry logic, and progress tracking for large archives.
 
-Step 5: Method 5: Using Midjourney's API (If Available)
+Step 5 - Method 5: Using Midjourney's API (If Available)
 
 Midjourney has been gradually rolling out official API access to select partners and enterprise customers. If you have API access, you can query your generation history programmatically.
 
@@ -225,7 +225,7 @@ Third, test your export method before the downgrade. Run a small batch of downlo
 
 Fourth, consider redundant storage. Save exports to multiple locations, local drive, cloud storage (Google Drive, Dropbox, AWS S3), or external backup. This protects against local hardware failures.
 
-Step 6: Automated Batch Export with Python
+Step 6 - Automated Batch Export with Python
 
 For developers managing large Midjourney archives, Python automation provides efficient bulk export:
 
@@ -297,7 +297,7 @@ async def main():
 asyncio.run(main())
 ```
 
-Step 7: Metadata Management
+Step 7 - Metadata Management
 
 Preserve context alongside your images to make future retrieval easier:
 
@@ -337,7 +337,7 @@ metadata.add_image(
 metadata.save()
 ```
 
-Step 8: Organizing Exported Images
+Step 8 - Organizing Exported Images
 
 Create a structured directory layout for easy navigation:
 
@@ -397,7 +397,7 @@ organize_exports(
 )
 ```
 
-Step 9: Downgrade Timeline Checklist
+Step 9 - Downgrade Timeline Checklist
 
 Two Weeks Before Downgrade:
 - Review your generation history
@@ -424,7 +424,7 @@ After Downgrade:
 - Verify local and cloud backups are intact
 - Delete temporary export files from device if storage is tight
 
-Step 10: Storage Calculation
+Step 10 - Storage Calculation
 
 Before exporting, estimate storage needs:
 

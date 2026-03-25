@@ -26,7 +26,7 @@ Table of Contents
 - [Zed](#zed)
 - [Recommendations by Use Case](#recommendations-by-use-case)
 - [Benchmarking AI Suggestions Across Tools](#benchmarking-ai-suggestions-across-tools)
-- [Real Code Example: Multi-File Fresh Project](#real-code-example-multi-file-fresh-project)
+- [Real Code Example - Multi-File Fresh Project](#real-code-example-multi-file-fresh-project)
 - [Performance Metrics for Large Fresh Projects](#performance-metrics-for-large-fresh-projects)
 - [Comparison by Specific Fresh Features](#comparison-by-specific-fresh-features)
 - [Workflow Recommendations by Team Size](#workflow-recommendations-by-team-size)
@@ -102,7 +102,7 @@ For Fresh specifically, Copilot suggests sequential patterns that follow the fra
 
 Deno-specific support has improved. Copilot now generates URL-based imports more consistently than in previous versions. However, it sometimes suggests Node.js patterns that require manual conversion to Deno equivalents, such as using `require()` instead of ES module imports.
 
-Copilot works within GitHub's ecosystem, making it convenient if your project uses GitHub Actions for deployment. Fresh projects deploy well to Deno Deploy, and Copilot's integration with GitHub's CI/CD platform helps improve deployment workflows.
+Copilot works within GitHub's environment, making it convenient if your project uses GitHub Actions for deployment. Fresh projects deploy well to Deno Deploy, and Copilot's integration with GitHub's CI/CD platform helps improve deployment workflows.
 
 Zed
 
@@ -126,52 +126,52 @@ Benchmarking AI Suggestions Across Tools
 
  evaluation of Fresh code generation on identical tasks:
 
-Task 1: Generate Route Handler with Database Query
+Task 1 - Generate Route Handler with Database Query
 
-Input: "Create a Fresh route that fetches user data from a database and returns JSON"
+Input - "Create a Fresh route that fetches user data from a database and returns JSON"
 
-Cursor Output Quality: 9/10
+Cursor Output Quality - 9/10
 - Correct import statements
 - Proper error handling
 - Query parameter validation
 
-GitHub Copilot Output Quality: 7/10
+GitHub Copilot Output Quality - 7/10
 - Missing error handling
 - Suggests Node.js pattern instead of Deno
 
-Claude Code Output Quality: 9/10
+Claude Code Output Quality - 9/10
 - Excellent type safety
 - Includes logging
 - Demonstrates best practices
 
-Zed Output Quality: 6/10
+Zed Output Quality - 6/10
 - Basic structure correct
 - Minimal error handling
 - Sometimes suggests deprecated APIs
 
-Task 2: Create Island Component with State Management
+Task 2 - Create Island Component with State Management
 
-Input: "Build an interactive counter island that persists count in localStorage"
+Input - "Build an interactive counter island that persists count in localStorage"
 
-Cursor Output Quality: 8/10
+Cursor Output Quality - 8/10
 - Correct island pattern
 - Proper localStorage usage
 - Minor optimization opportunities
 
-GitHub Copilot Output Quality: 6/10
+GitHub Copilot Output Quality - 6/10
 - Functional but verbose
 - Doesn't optimize for Fresh patterns
 
-Claude Code Output Quality: 9/10
+Claude Code Output Quality - 9/10
 - Demonstrates reactive patterns
 - Excellent TypeScript types
 - Performance optimizations included
 
-Zed Output Quality: 5/10
+Zed Output Quality - 5/10
 - Works but not optimized
 - Missing TypeScript refinements
 
-Real Code Example: Multi-File Fresh Project
+Real Code Example - Multi-File Fresh Project
 
 Here's a complete example showing how different tools handle a full Fresh application:
 
@@ -275,27 +275,27 @@ Comparison by Specific Fresh Features
 
 Route Parameter Handling
 
-Best: Cursor and Claude Code (both correctly handle route parameter types)
-Acceptable: Zed (occasional type mismatches)
-Weak: GitHub Copilot (often suggests Node.js router syntax)
+Best - Cursor and Claude Code (both correctly handle route parameter types)
+Acceptable - Zed (occasional type mismatches)
+Weak - GitHub Copilot (often suggests Node.js router syntax)
 
 Async Request Handling
 
-Best: Claude Code (understands Deno async-first design)
-Acceptable: Cursor, Zed
-Weak: GitHub Copilot (suggests Promise.all instead of Deno's Promise patterns)
+Best - Claude Code (understands Deno async-first design)
+Acceptable - Cursor, Zed
+Weak - GitHub Copilot (suggests Promise.all instead of Deno's Promise patterns)
 
 Island Component Creation
 
-Best: Claude Code (excellent at Preact hook patterns)
-Acceptable: Cursor
-Weak: GitHub Copilot, Zed (often miss island boundary properly)
+Best - Claude Code (excellent at Preact hook patterns)
+Acceptable - Cursor
+Weak - GitHub Copilot, Zed (often miss island boundary properly)
 
 Data Validation in Routes
 
-Best: Claude Code (suggests Zod or similar validation)
-Acceptable: Cursor (basic validation patterns)
-Weak: GitHub Copilot, Zed (no validation patterns suggested)
+Best - Claude Code (suggests Zod or similar validation)
+Acceptable - Cursor (basic validation patterns)
+Weak - GitHub Copilot, Zed (no validation patterns suggested)
 
 Workflow Recommendations by Team Size
 

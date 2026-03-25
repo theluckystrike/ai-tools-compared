@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor AI Codebase Indexing: How It Works and Why It Matters"
-description: "Cursor AI Codebase Indexing: How It Works and Why It.. guide with practical tips, comparisons, and expert recommendations for developers"
+description: "Cursor AI Codebase Indexing - How It Works and Why It.. guide with practical tips, comparisons, and expert recommendations for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
@@ -179,37 +179,37 @@ Comparison with Competitors
 
 Practical Impact on Development Speed
 
-Scenario 1: Adding a New API Endpoint
+Scenario 1 - Adding a New API Endpoint
 
-Without good indexing: Developer searches codebase manually to find auth middleware, request types, response patterns. Time: 15-20 minutes
+Without good indexing - Developer searches codebase manually to find auth middleware, request types, response patterns. Time: 15-20 minutes
 
-With Cursor indexing: Type the endpoint handler, Cursor suggests:
+With Cursor indexing - Type the endpoint handler, Cursor suggests:
 - Correct middleware imports
 - Request/response type definitions from other endpoints
 - Error handling patterns used elsewhere
 - Database query patterns
-Time: 2-3 minutes
+Time - 2-3 minutes
 
-Scenario 2: Refactoring Database Layer
+Scenario 2 - Refactoring Database Layer
 
-Without indexing: Risk breaking unknown dependencies. Must search for all usage of old function/interface.
+Without indexing - Risk breaking unknown dependencies. Must search for all usage of old function/interface.
 
 With Cursor indexing:
 - AI immediately identifies all 47 places a function is used
 - Suggests refactoring pattern based on codebase conventions
 - Updates all related tests automatically
-Time: 30 minutes instead of 2+ hours
+Time - 30 minutes instead of 2+ hours
 
-Scenario 3: Debugging Production Issue
+Scenario 3 - Debugging Production Issue
 
-Without indexing: Follow stack trace manually, jump between files
+Without indexing - Follow stack trace manually, jump between files
 
 With Cursor indexing:
 - Trace execution path through codebase automatically
 - Identify all state mutations along the path
 - Suggest root cause based on code patterns
 - Propose fix with full context of side effects
-Time: 1-2 hours instead of 4-6 hours
+Time - 1-2 hours instead of 4-6 hours
 
 File Size and Performance Metrics
 

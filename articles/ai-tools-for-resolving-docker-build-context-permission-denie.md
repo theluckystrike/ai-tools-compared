@@ -59,7 +59,7 @@ Using AI Tools to Diagnose Permission Issues
 
 AI assistants excel at quickly identifying the root cause of permission errors. When you paste an error message and your Dockerfile, AI tools analyze the complete picture and suggest targeted fixes.
 
-Step 1: Gather Error Details
+Step 1 - Gather Error Details
 
 Start by capturing the full error output:
 
@@ -83,7 +83,7 @@ docker info | grep -i rootless
 
 The more context you provide, the more targeted the AI's suggestions will be. A vague error message alone often leads to generic advice; the full build log combined with permission output gives the AI enough signal to identify the specific cause.
 
-Step 2: Common AI-Generated Solutions
+Step 2 - Common AI-Generated Solutions
 
 AI tools typically suggest these approaches based on your specific error:
 
@@ -124,12 +124,12 @@ USER appuser
 
 Practical Examples
 
-Example 1: Fixing the "Permission Denied" on COPY
+Example 1 - Fixing the "Permission Denied" on COPY
 
 A developer encountered this error:
 
 ```
-COPY failed: file not found in build context: './config: permission denied'
+COPY failed - file not found in build context: './config: permission denied'
 ```
 
 AI analysis revealed the `./config` directory had 700 permissions. The solution:
@@ -139,7 +139,7 @@ chmod 755 config
 docker build -t myapp .
 ```
 
-Example 2: Docker Daemon Permission Issues
+Example 2 - Docker Daemon Permission Issues
 
 When the Docker daemon runs as root but the build context contains root-owned files:
 
@@ -151,7 +151,7 @@ Fix by changing ownership
 sudo chown -R $USER:$USER .
 ```
 
-Example 3: Multi-stage Build Permission Handling
+Example 3 - Multi-stage Build Permission Handling
 
 For complex builds with multiple stages:
 
@@ -171,7 +171,7 @@ USER node
 CMD ["node", "server.js"]
 ```
 
-Example 4: Rootless Docker Permission Issues
+Example 4 - Rootless Docker Permission Issues
 
 Rootless Docker is increasingly common since it runs the daemon as your non-root user. This changes the permission calculus. files owned by root on the host may be inaccessible even if you own them on the host in normal Docker mode.
 
@@ -183,7 +183,7 @@ Rootless Docker uses a separate namespace
 Files need to be readable by the mapped UID
 newuidmap $(docker-rootless-extras info | grep UID | awk '{print $2}') ...
 
-Simpler fix: ensure your build context is owned by your user
+Simpler fix - ensure your build context is owned by your user
 find . -not -user $USER -exec chown $USER:$USER {} \;
 ```
 
@@ -233,7 +233,7 @@ Always specify a digest or tag for reproducibility
 FROM node:20.11.1-slim
 
 Document which UID your container runs as
-Build with: docker build --build-arg USER_ID=$(id -u) .
+Build with - docker build --build-arg USER_ID=$(id -u) .
 ARG USER_ID=1001
 RUN useradd -u ${USER_ID} -m appuser
 ```

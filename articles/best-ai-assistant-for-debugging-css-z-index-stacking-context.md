@@ -363,7 +363,7 @@ Here's the DOM structure:
   </div>
 </div>
 
-The dropdown menu (z-index: 100) appears behind the sidebar (z-index: 5).
+The dropdown menu (z-index - 100) appears behind the sidebar (z-index: 5).
 
 Stacking context tree:
 page-wrapper (creates context via transform)
@@ -371,11 +371,11 @@ page-wrapper (creates context via transform)
    content
        dropdown (z: 100) - within page-wrapper context
 
-Problem: Both sidebar and dropdown are children of page-wrapper,
+Problem - Both sidebar and dropdown are children of page-wrapper,
 so their z-index values compare within that context.
 The sidebar was rendered first, so it appears on top.
 
-Solution: Either:
+Solution - Either:
 1. Remove transform from page-wrapper
 2. Move dropdown outside page-wrapper to root
 3. Increase sidebar z-index to 101

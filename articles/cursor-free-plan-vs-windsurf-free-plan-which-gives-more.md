@@ -35,8 +35,8 @@ When choosing between Cursor and Windsurf for AI-assisted coding, the free tier 
 
 - The key limitation is: that free users cannot access Cursor's most advanced features.
 - For those who prefer: predictable monthly budgets and work on fewer but more complex problems, Cursor's free plan provides better structure.
-- When choosing between Cursor: and Windsurf for AI-assisted coding, the free tier limitations matter significantly for developers on a budget.
-- Windsurf: also based on VS Code, offers a free tier with daily usage limits that encourage regular engagement.
+- When choosing between Cursor - and Windsurf for AI-assisted coding, the free tier limitations matter significantly for developers on a budget.
+- Windsurf - also based on VS Code, offers a free tier with daily usage limits that encourage regular engagement.
 - The "Edit" and "Generate": functions are rate-limited on the free tier, meaning you'll hit walls when attempting autonomous code modifications.
 - The daily reset means: you get roughly 15,000 AI actions monthly if you use the tool consistently.
 
@@ -183,18 +183,18 @@ Consider also that both tools evolve rapidly. Feature comparisons and limits cha
 
 For developers who code daily and rely on AI assistance, Windsurf's free tier offers more flexibility. For those who prefer predictable monthly budgets and work on fewer but more complex problems, Cursor's free plan provides better structure.
 
-Deep Dive: Exact Quota Mechanics
+Deep Dive - Exact Quota Mechanics
 
 Understanding how quotas work reveals nuances not obvious from surface comparison:
 
 Cursor's Monthly Reset:
 
 ```
-Month: March 2026
-Day 1: 2,500 Code Chat + 500 Quick Chat messages
-Day 5: 2,000 Code Chat + 450 Quick Chat remaining
-Day 20: Exhausted Code Chat messages, Quick Chat still available
-Day 31: All quotas reset at midnight UTC
+Month - March 2026
+Day 1 - 2,500 Code Chat + 500 Quick Chat messages
+Day 5 - 2,000 Code Chat + 450 Quick Chat remaining
+Day 20 - Exhausted Code Chat messages, Quick Chat still available
+Day 31 - All quotas reset at midnight UTC
 ```
 
 If you use 500 messages daily, you'll exhaust your Cursor quota by mid-month and go unpaid for two weeks.
@@ -213,25 +213,25 @@ Real-World Budget Analysis
 
 Based on actual usage patterns from different developer types:
 
-Scenario 1: Frontend Developer (React/TypeScript)
+Scenario 1 - Frontend Developer (React/TypeScript)
 
-Typical workflow: 30 AI interactions daily
+Typical workflow - 30 AI interactions daily
 - Cursor: 2,500 ÷ 30 = 83 days of usage per month (hits limit)
 - Windsurf: 500/day × 30 = 15,000 actions/month (headroom)
 
 Windsurf wins dramatically
 
-Scenario 2: Backend Developer (Database/API)
+Scenario 2 - Backend Developer (Database/API)
 
-Typical workflow: 50 AI interactions daily
+Typical workflow - 50 AI interactions daily
 - Cursor: 2,500 ÷ 50 = 50 days (exhausted mid-month)
 - Windsurf: 500/day × 30 = 15,000 actions (5x headroom)
 
 Windsurf wins for sustained development
 
-Scenario 3: Occasional Coder (Weekends/Hobby)
+Scenario 3 - Occasional Coder (Weekends/Hobby)
 
-Typical workflow: 5 AI interactions per session, 2 sessions weekly
+Typical workflow - 5 AI interactions per session, 2 sessions weekly
 - Cursor: 2,500 messages for ~250 interactions (6+ months)
 - Windsurf: 15,000 actions for ~1,500 interactions (12+ months)
 
@@ -267,7 +267,7 @@ Cursor Pro ($20/month):
 - Access to premium models
 - Priority support
 
-Cost increase: From 2,500 to unlimited represents 1,000%+ increase in usage
+Cost increase - From 2,500 to unlimited represents 1,000%+ increase in usage
 
 Windsurf Pro (pricing TBD in 2026):
 - Likely similar unlimited access

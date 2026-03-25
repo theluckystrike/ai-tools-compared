@@ -75,7 +75,7 @@ func main() {
 
 	r.GET("/users", func(c *gin.Context) {
 		users := []User{
-			{ID: "1", Name: "John Doe", Email: "john@example.com"},
+			{ID: "1", Name - "John Doe", Email: "john@example.com"},
 		}
 		c.JSON(http.StatusOK, gin.H{"users": users})
 	})
@@ -182,13 +182,13 @@ Quality Comparison
 
 When evaluating AI tools for Go API development, several factors matter most:
 
-Code Correctness: Claude Code and Cursor consistently generate syntactically correct code with proper error handling. Copilot occasionally suggests outdated patterns, while Zed may need more corrections.
+Code Correctness - Claude Code and Cursor consistently generate syntactically correct code with proper error handling. Copilot occasionally suggests outdated patterns, while Zed may need more corrections.
 
-Framework Understanding: All tools recognize basic Gin and Echo patterns, but Claude Code and Cursor demonstrate deeper understanding of middleware composition, context handling, and binding specifics.
+Framework Understanding - All tools recognize basic Gin and Echo patterns, but Claude Code and Cursor demonstrate deeper understanding of middleware composition, context handling, and binding specifics.
 
-Idiomatic Go: The best tools produce code that follows Go conventions, including proper error wrapping, context usage, and concurrent patterns when needed.
+Idiomatic Go - The best tools produce code that follows Go conventions, including proper error wrapping, context usage, and concurrent patterns when needed.
 
-Documentation Generation: Claude Code excels at adding comments and generating OpenAPI-style documentation for endpoints.
+Documentation Generation - Claude Code excels at adding comments and generating OpenAPI-style documentation for endpoints.
 
 Feature Matrix
 
@@ -252,7 +252,7 @@ For Go API development with Gin and Echo in 2026:
 
 - Cursor works best for those who prefer IDE integration with strong project-wide context awareness
 
-- GitHub Copilot remains a solid option for developers already in the GitHub ecosystem
+- GitHub Copilot remains a solid option for developers already in the GitHub environment
 
 - Zed suits developers who prioritize editor speed and are comfortable providing more explicit guidance
 

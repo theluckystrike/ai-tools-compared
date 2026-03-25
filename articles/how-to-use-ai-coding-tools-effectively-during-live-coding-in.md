@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Interview Context
+Step 1 - Understand the Interview Context
 
 
 Before examining strategies, recognize that live coding interviews assess your problem-solving abilities, code quality, and communication skills. AI tools should augment your capabilities, not replace your core competencies. Most companies now explicitly state their policies on AI tool usage during interviews, always clarify this with your interviewer at the start.
@@ -48,7 +48,7 @@ The primary benefits of using AI assistants during interviews include:
 - Handling edge cases and error scenarios
 
 
-Step 2: Set Up Your AI Toolkit
+Step 2 - Set Up Your AI Toolkit
 
 
 Preparation before the interview is crucial. Configure your preferred AI coding assistant to work with your development environment. Here's a practical setup for a typical interview scenario:
@@ -58,7 +58,7 @@ Preparation before the interview is crucial. Configure your preferred AI coding 
 Configuring an AI assistant for quick code generation
 Most tools support inline commands like /generate, /explain, /refactor
 
-Before interview: Ensure your AI tool has context about
+Before interview - Ensure your AI tool has context about
 common data structures and algorithms
 ai_context = {
     "focus_areas": ["arrays", "linked_lists", "trees", "graphs", "dp"],
@@ -71,7 +71,7 @@ ai_context = {
 Popular AI coding tools in 2026 include Claude Code, GitHub Copilot, and Cursor. Each offers unique advantages, Claude Code excels at explanation and iterative refinement, while Copilot provides inline suggestions that integrate smoothly with most code editors.
 
 
-Step 3: Strategic AI Usage During Interviews
+Step 3 - Strategic AI Usage During Interviews
 
 
 1. Code Generation for Boilerplate
@@ -112,8 +112,8 @@ AI tools excel at catching syntax errors and suggesting fixes immediately. When 
 
 
 ```python
-Common mistake: off-by-one error in loop
-AI suggestion: Consider using enumerate() for index tracking
+Common mistake - off-by-one error in loop
+AI suggestion - Consider using enumerate() for index tracking
 
 def binary_search(arr, target):
     left, right = 0, len(arr)  # Bug: should be len(arr) - 1
@@ -159,7 +159,7 @@ Certain interview moments require demonstrating your raw skills:
 - Optimization discussions: Demonstrate your knowledge of trade-offs
 
 
-The key principle: use AI for mechanical tasks, but demonstrate your problem-solving abilities yourself.
+The key principle - use AI for mechanical tasks, but demonstrate your problem-solving abilities yourself.
 
 
 Communication Best Practices
@@ -178,21 +178,21 @@ Always narrate your thought process while using AI tools. This demonstrates that
 This transparency shows interviewers that you remain in control of the solution.
 
 
-Practical Example: Full Interview Problem
+Practical Example - Full Interview Problem
 
 
 Here's how a typical 45-minute problem might flow:
 
 
 ```python
-Problem: Implement a LRU Cache
-Time budget: 45 minutes
+Problem - Implement a LRU Cache
+Time budget - 45 minutes
 
-Phase 1 (5 min): Clarify requirements with interviewer
+Phase 1 (5 min) - Clarify requirements with interviewer
 - O(1) get and put operations
 - Fixed capacity with eviction
 
-Phase 2 (15 min): Core implementation
+Phase 2 (15 min) - Core implementation
 Use AI for boilerplate, but design the logic yourself
 
 from collections import OrderedDict
@@ -215,17 +215,17 @@ class LRUCache:
         if len(self.cache) > self.capacity:
             self.cache.popitem(last=False)
 
-Phase 3 (10 min): AI helps generate test cases
-Test: cache = LRUCache(2); cache.put(1,1); cache.put(2,2); cache.get(1)
-Expected: 1
+Phase 3 (10 min) - AI helps generate test cases
+Test - cache = LRUCache(2); cache.put(1,1); cache.put(2,2); cache.get(1)
+Expected - 1
 
-Phase 4 (10 min): Edge cases and discussion
+Phase 4 (10 min) - Edge cases and discussion
 - Thread safety? AI can suggest but you explain trade-offs
 - Memory optimization? Your domain knowledge matters here
 ```
 
 
-Step 4: Final Tips for Interview Success
+Step 4 - Final Tips for Interview Success
 
 
 - Practice with AI tools beforehand: Familiarize yourself with commands and shortcuts

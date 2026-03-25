@@ -259,7 +259,7 @@ claude init  # Configure API key
 claude  # Start interactive session
 ```
 
-Slightly more involved due to tool selection and ecosystem integration.
+Slightly more involved due to tool selection and environment integration.
 
 Real-World Performance Comparison
 
@@ -329,9 +329,9 @@ Performance Under Load
 
 Testing both tools with large monorepos (500+ files):
 
-Aider: Context loading takes longer as repository size increases. Performance degrades noticeably with 1,000+ file repositories.
+Aider - Context loading takes longer as repository size increases. Performance degrades noticeably with 1,000+ file repositories.
 
-Claude Code: Handles large codebases more gracefully through explicit file selection rather than automatic directory loading.
+Claude Code - Handles large codebases more gracefully through explicit file selection rather than automatic directory loading.
 
 For teams with large monorepos, Claude Code's manual context selection often proves faster in practice.
 

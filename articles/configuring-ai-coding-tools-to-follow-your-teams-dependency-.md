@@ -283,7 +283,7 @@ After implementing your configuration, verify it works by:
 
 4. Testing edge cases like generic types and factory patterns
 
-Add a fifth test step: ask the AI to generate a complete feature end-to-end, from the service interface through the registration. A well-configured tool generates the interface, the implementation with constructor injection, and the registration in the correct file, all in one pass. If it misses the registration, your context file needs a stronger pointer to the registration documentation.
+Add a fifth test step - ask the AI to generate a complete feature end-to-end, from the service interface through the registration. A well-configured tool generates the interface, the implementation with constructor injection, and the registration in the correct file, all in one pass. If it misses the registration, your context file needs a stronger pointer to the registration documentation.
 
 Handling Framework-Specific DI Systems
 

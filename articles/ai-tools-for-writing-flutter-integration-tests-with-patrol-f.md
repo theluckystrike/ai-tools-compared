@@ -26,7 +26,7 @@ Table of Contents
 - [Best Practices for AI-Generated Patrol Tests](#best-practices-for-ai-generated-patrol-tests)
 - [AI-Assisted Test Structure Patterns](#ai-assisted-test-structure-patterns)
 - [Handling Async Operations in AI-Generated Tests](#handling-async-operations-in-ai-generated-tests)
-- [Advanced Scenario: Multi-Screen Flow Testing](#advanced-scenario-multi-screen-flow-testing)
+- [Advanced Scenario - Multi-Screen Flow Testing](#advanced-scenario-multi-screen-flow-testing)
 - [Debugging AI-Generated Test Failures](#debugging-ai-generated-test-failures)
 - [CI/CD Integration for AI-Generated Tests](#cicd-integration-for-ai-generated-tests)
 - [Best Practices for AI-Generated Patrol Tests](#best-practices-for-ai-generated-patrol-tests)
@@ -102,7 +102,7 @@ Practical Workflow for AI-Assisted Patrol Testing
 
 Integrating AI tools into your Patrol testing workflow involves several practical steps. This workflow maximizes the benefits of AI assistance while maintaining test reliability.
 
-Step 1: Audit Widget Accessibility
+Step 1 - Audit Widget Accessibility
 
 Before generating tests, ensure your Flutter widgets have proper identifiers. Add meaningful keys and semantic labels to interactive elements:
 
@@ -122,7 +122,7 @@ TextField(
 )
 ```
 
-Step 2: Describe Test Scenarios to AI
+Step 2 - Describe Test Scenarios to AI
 
 When prompting AI tools, provide structured descriptions of test scenarios. Include the screen name, user actions, expected outcomes, and any native interactions:
 
@@ -136,7 +136,7 @@ Generate a Patrol test for the profile settings screen:
 6. Verify name displays as 'New Name'
 ```
 
-Step 3: Review and Refine Generated Tests
+Step 3 - Review and Refine Generated Tests
 
 AI-generated tests require human review. Verify that selectors are specific enough, add appropriate waits for async operations, and ensure assertions match expected behavior. Common refinements include:
 
@@ -308,7 +308,7 @@ expect(find.byType(SearchResult), findsWidgets);
 
 When prompting AI tools, explicitly mention any async operations like API calls, animations, or database queries. Request that the tool add appropriate `pump()` calls with durations if needed.
 
-Advanced Scenario: Multi-Screen Flow Testing
+Advanced Scenario - Multi-Screen Flow Testing
 
 For complex user flows, AI tools work best when you break them into substeps:
 

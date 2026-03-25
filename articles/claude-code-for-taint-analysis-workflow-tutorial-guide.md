@@ -40,7 +40,7 @@ Taint Sources, Propagation, and Sinks
 The three core concepts in taint analysis are:
 
 - Sources: Entry points where untrusted data enters (HTTP request parameters, environment variables, file reads, socket input)
-- Propagation: How taint spreads through the codebase. string concatenation, function returns, object assignments
+- Propagation - How taint spreads through the codebase. string concatenation, function returns, object assignments
 - Sinks: Dangerous operations that should never receive unsanitized tainted data (SQL execution, shell commands, HTML output, file paths)
 
 Understanding this model helps you configure analysis tools effectively and interpret Claude Code's findings accurately.
@@ -116,7 +116,7 @@ Using Claude Code to Enhance Taint Analysis
 
 Once your basic configuration is in place, engage Claude Code to deepen your analysis. Here's a practical workflow:
 
-Step 1: Analyze Your Data Flow
+Step 1 - Analyze Your Data Flow
 
 Ask Claude Code to review your input handling:
 
@@ -126,7 +126,7 @@ Review the user input handling in this codebase. Identify all entry points where
 
 Claude Code will analyze your codebase and provide an overview of input sources and data propagation paths.
 
-Step 2: Identify Sensitive Sinks
+Step 2 - Identify Sensitive Sinks
 
 Request analysis of potential security-sensitive operations:
 
@@ -136,7 +136,7 @@ Which functions in this codebase execute system commands, query databases, or wr
 
 This helps identify where tainted data could cause vulnerabilities if not properly sanitized.
 
-Step 3: Generate Custom Taint Rules
+Step 3 - Generate Custom Taint Rules
 
 For specific security requirements, ask Claude Code to generate custom detection rules:
 
@@ -146,7 +146,7 @@ Create ESLint rules to detect potential SQL injection vulnerabilities in our Exp
 
 Claude Code can generate rule implementations that you can integrate into your linting configuration.
 
-Step 4: Trace Specific Vulnerabilities
+Step 4 - Trace Specific Vulnerabilities
 
 Once a potential issue is flagged, ask Claude Code to trace the full data flow path:
 

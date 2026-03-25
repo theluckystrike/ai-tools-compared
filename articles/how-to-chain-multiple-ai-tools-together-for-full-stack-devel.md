@@ -26,7 +26,7 @@ Table of Contents
 - [Building Your First AI Pipeline](#building-your-first-ai-pipeline)
 - [Advanced Chaining Strategies](#advanced-chaining-strategies)
 - [Tool Selection Criteria](#tool-selection-criteria)
-- [Practical Example: API Feature Pipeline](#practical-example-api-feature-pipeline)
+- [Practical Example - API Feature Pipeline](#practical-example-api-feature-pipeline)
 - [Avoiding Common Pipeline Failures](#avoiding-common-pipeline-failures)
 - [Integrating Pipelines with CI/CD](#integrating-pipelines-with-cicd)
 - [Maintenance Considerations](#maintenance-considerations)
@@ -47,7 +47,7 @@ Before building your first pipeline, understand which tools excel at which stage
 | File scaffolding | Cursor Composer | Multi-file awareness, project context |
 | Inline completion | GitHub Copilot | Low-latency, IDE-native suggestions |
 | Test generation | ai-testgen or Copilot Chat | Pattern recognition from source code |
-| Code review | Claude Code or Cursor | Holistic analysis across files |
+| Code review | Claude Code or Cursor | complete analysis across files |
 | Security scanning | CodeWhisperer | Trained on vulnerability patterns |
 | Documentation | Claude | Coherent prose from code context |
 
@@ -55,9 +55,9 @@ Resist the temptation to route everything through a single tool. Claude handles 
 
 Building Your First AI Pipeline
 
-Consider a practical scenario: implementing a new feature across a React frontend and Node.js backend. The pipeline begins with a specification, then generates code for both layers, validates the implementation, and creates tests.
+Consider a practical scenario - implementing a new feature across a React frontend and Node.js backend. The pipeline begins with a specification, then generates code for both layers, validates the implementation, and creates tests.
 
-Step 1: Define the Specification
+Step 1 - Define the Specification
 
 Start with a clear feature description in a structured format. A YAML or JSON specification works well because AI tools parse structured data consistently:
 
@@ -73,7 +73,7 @@ backend:
   database: postgresql
 ```
 
-Step 2: Generate Frontend Code
+Step 2 - Generate Frontend Code
 
 Pass the specification to an AI code generator focused on your frontend framework. Request component files, state management, and API integration:
 
@@ -83,7 +83,7 @@ ai-codegen --framework react --spec feature-spec.yaml --output ./src/features/da
 
 The generator produces component files, TypeScript types, and API hooks. Review the output and make necessary adjustments before proceeding.
 
-Step 3: Generate Backend Implementation
+Step 3 - Generate Backend Implementation
 
 Now switch to a backend-focused AI tool. Feed it the same specification along with your existing database schema and API patterns:
 
@@ -93,7 +93,7 @@ ai-codegen --backend node --spec feature-spec.yaml --output ./server/routes
 
 This generates route handlers, database queries, and validation middleware. The key is maintaining consistency between frontend expectations and backend responses.
 
-Step 4: Validate and Test
+Step 4 - Validate and Test
 
 Connect a testing AI that analyzes the generated code and creates appropriate test cases:
 
@@ -162,15 +162,15 @@ Tool Selection Criteria
 
 Not all AI tools work well in chains. Evaluate potential additions based on several factors.
 
-Input/Output Format Compatibility: Tools should accept structured inputs and produce parseable outputs. JSON, YAML, or clearly formatted text work best for pipeline integration.
+Input/Output Format Compatibility - Tools should accept structured inputs and produce parseable outputs. JSON, YAML, or clearly formatted text work best for pipeline integration.
 
-API Availability: Command-line interfaces or REST APIs enable programmatic access. GUI-only tools require manual intervention, breaking the chain.
+API Availability - Command-line interfaces or REST APIs enable programmatic access. GUI-only tools require manual intervention, breaking the chain.
 
-Idempotency: Running the same input through a tool multiple times should produce consistent results. Some AI systems introduce variability that complicates debugging.
+Idempotency - Running the same input through a tool multiple times should produce consistent results. Some AI systems introduce variability that complicates debugging.
 
-Error Handling: Well-designed tools report failures clearly, enabling downstream stages to handle errors appropriately.
+Error Handling - Well-designed tools report failures clearly, enabling downstream stages to handle errors appropriately.
 
-Practical Example: API Feature Pipeline
+Practical Example - API Feature Pipeline
 
 Here's a complete pipeline implementing a REST endpoint with database integration:
 
@@ -262,13 +262,13 @@ Maintenance Considerations
 
 AI chains require ongoing attention as tools evolve and projects grow.
 
-Version Pinning: Lock tool versions to prevent unexpected behavior changes. Update versions deliberately after testing.
+Version Pinning - Lock tool versions to prevent unexpected behavior changes. Update versions deliberately after testing.
 
-Output Validation: Always validate AI output before passing it downstream. Invalid data breaks pipelines and creates debugging challenges.
+Output Validation - Always validate AI output before passing it downstream. Invalid data breaks pipelines and creates debugging challenges.
 
-Caching: Cache intermediate results to avoid regenerating unchanged components. Hash inputs to determine when regeneration is necessary.
+Caching - Cache intermediate results to avoid regenerating unchanged components. Hash inputs to determine when regeneration is necessary.
 
-Monitoring: Track pipeline execution times and failure rates. Patterns reveal opportunities for optimization.
+Monitoring - Track pipeline execution times and failure rates. Patterns reveal opportunities for optimization.
 
 Frequently Asked Questions
 

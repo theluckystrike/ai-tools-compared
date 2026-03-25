@@ -25,17 +25,17 @@ Table of Contents
 
 - [Why Consider Switching to Copilot?](#why-consider-switching-to-copilot)
 - [Prerequisites](#prerequisites)
-- [Step 1: Disable or Uninstall JetBrains AI Plugin](#step-1-disable-or-uninstall-jetbrains-ai-plugin)
-- [Step 2: Install GitHub Copilot Plugin](#step-2-install-github-copilot-plugin)
-- [Step 3: Authenticate with GitHub](#step-3-authenticate-with-github)
-- [Step 4: Configure Copilot Settings](#step-4-configure-copilot-settings)
-- [Step 5: Import JetBrains AI Custom Instructions (Optional)](#step-5-import-jetbrains-ai-custom-instructions-optional)
+- [Step 1 - Disable or Uninstall JetBrains AI Plugin](#step-1-disable-or-uninstall-jetbrains-ai-plugin)
+- [Step 2 - Install GitHub Copilot Plugin](#step-2-install-github-copilot-plugin)
+- [Step 3 - Authenticate with GitHub](#step-3-authenticate-with-github)
+- [Step 4 - Configure Copilot Settings](#step-4-configure-copilot-settings)
+- [Step 5 - Import JetBrains AI Custom Instructions (Optional)](#step-5-import-jetbrains-ai-custom-instructions-optional)
 - [Code Style](#code-style)
 - [Testing](#testing)
 - [API Patterns](#api-patterns)
-- [Step 6: Migrate Your Snippets](#step-6-migrate-your-snippets)
-- [Step 7: Verify Functionality](#step-7-verify-functionality)
-- [Step 8: Compare Your Workflow](#step-8-compare-your-workflow)
+- [Step 6 - Migrate Your Snippets](#step-6-migrate-your-snippets)
+- [Step 7 - Verify Functionality](#step-7-verify-functionality)
+- [Step 8 - Compare Your Workflow](#step-8-compare-your-workflow)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Best Practices After Migration](#best-practices-after-migration)
 - [Cost Comparison](#cost-comparison)
@@ -46,11 +46,11 @@ GitHub Copilot offers several advantages that make it an attractive alternative:
 
 - Broad language support including Java, Python, JavaScript, TypeScript, and hundreds more
 - Tight GitHub integration for context-aware suggestions
-- Extensive plugin ecosystem in IntelliJ and other JetBrains IDEs
+- Extensive plugin environment in IntelliJ and other JetBrains IDEs
 - Flexible pricing with individual and business plans
 - Strong corporate backing from Microsoft/GitHub with regular updates
 
-JetBrains AI, while powerful, has its own ecosystem considerations. If your team has standardized on GitHub or you're looking for more flexible licensing, Copilot might be the right choice.
+JetBrains AI, while powerful, has its own environment considerations. If your team has standardized on GitHub or you're looking for more flexible licensing, Copilot might be the right choice.
 
 Prerequisites
 
@@ -61,7 +61,7 @@ Before starting the migration, ensure you have:
 - An active internet connection for Copilot authentication
 - Admin privileges to install plugins in your IDE
 
-Step 1: Disable or Uninstall JetBrains AI Plugin
+Step 1 - Disable or Uninstall JetBrains AI Plugin
 
 The first step is to remove JetBrains AI from your IntelliJ installation to avoid conflicts:
 
@@ -76,7 +76,7 @@ The first step is to remove JetBrains AI from your IntelliJ installation to avoi
 If you have multiple JetBrains IDEs, you'll need to repeat this process for each one.
 ```
 
-Step 2: Install GitHub Copilot Plugin
+Step 2 - Install GitHub Copilot Plugin
 
 Now let's install the Copilot plugin for IntelliJ:
 
@@ -88,7 +88,7 @@ Now let's install the Copilot plugin for IntelliJ:
 
 Once restarted, you'll see a new Copilot icon in the bottom status bar of IntelliJ.
 
-Step 3: Authenticate with GitHub
+Step 3 - Authenticate with GitHub
 
 After installation, you need to connect Copilot to your GitHub account:
 
@@ -101,7 +101,7 @@ After installation, you need to connect Copilot to your GitHub account:
 
 If you don't have a Copilot subscription yet, you'll be prompted to start a free trial or subscribe.
 
-Step 4: Configure Copilot Settings
+Step 4 - Configure Copilot Settings
 
 Now let's optimize Copilot for your Java development workflow:
 
@@ -138,7 +138,7 @@ For Java development, consider these additional configurations:
 2. Ensure Machine Learning completion is enabled
 3. Set Case-sensitive completion to "None" for better suggestions
 
-Step 5: Import JetBrains AI Custom Instructions (Optional)
+Step 5 - Import JetBrains AI Custom Instructions (Optional)
 
 If you created custom instructions in JetBrains AI, you can manually recreate them as comments in your code:
 
@@ -176,7 +176,7 @@ API Patterns
 - Include proper HTTP status codes
 ```
 
-Step 6: Migrate Your Snippets
+Step 6 - Migrate Your Snippets
 
 If you had custom snippets in JetBrains AI, create similar shortcuts in Copilot:
 
@@ -197,7 +197,7 @@ void should$NAME$() {
 }
 ```
 
-Step 7: Verify Functionality
+Step 7 - Verify Functionality
 
 Let's verify everything is working correctly:
 
@@ -222,7 +222,7 @@ Copilot in IntelliJ also supports chat:
 2. Ask a question like "How do I write a JUnit test for this service?"
 3. Review the AI-generated response
 
-Step 8: Compare Your Workflow
+Step 8 - Compare Your Workflow
 
 Take time to compare key aspects:
 

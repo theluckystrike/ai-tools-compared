@@ -54,10 +54,10 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Step-by-Step Fixes
+Step 1 - Step-by-Step Fixes
 
 
-Fix 1: Provide Better Context
+Fix 1 - Provide Better Context
 
 
 Copilot relies heavily on surrounding code to generate relevant suggestions. Improving your context dramatically improves suggestion quality:
@@ -85,7 +85,7 @@ function calculatePayment(principal, annualRate, months) {
 ```
 
 
-Fix 2: Use Inline Comments to Guide Suggestions
+Fix 2 - Use Inline Comments to Guide Suggestions
 
 
 Direct Copilot toward the right solution by specifying your intent in comments:
@@ -107,7 +107,7 @@ def fetch_user_data(user_id: int) -> Optional[dict]:
 ```
 
 
-Fix 3: Adjust Copilot Settings
+Fix 3 - Adjust Copilot Settings
 
 
 Fine-tune Copilot behavior through your IDE settings:
@@ -135,7 +135,7 @@ For JetBrains IDEs:
 4. Configure suggestion frequency
 
 
-Fix 4: Accept and Edit Suggestions
+Fix 4 - Accept and Edit Suggestions
 
 
 Sometimes the suggestion is partially correct. Learn to work with Copilot:
@@ -150,7 +150,7 @@ Sometimes the suggestion is partially correct. Learn to work with Copilot:
 4. Press Ctrl+Enter to open the GitHub Copilot panel for more options
 
 
-Fix 5: Clear and Reset Copilot Context
+Fix 5 - Clear and Reset Copilot Context
 
 
 When Copilot gets stuck on wrong patterns:
@@ -168,7 +168,7 @@ When Copilot gets stuck on wrong patterns:
 This forces Copilot to rebuild its understanding from scratch.
 
 
-Fix 6: Update Your IDE and Copilot Extension
+Fix 6 - Update Your IDE and Copilot Extension
 
 
 Outdated versions cause compatibility issues:
@@ -195,7 +195,7 @@ Extensions panel > GitHub Copilot > Check for Updates
 ```
 
 
-Fix 7: Configure Exclusions for Problematic Files
+Fix 7 - Configure Exclusions for Problematic Files
 
 
 Exclude files that confuse Copilot:
@@ -217,7 +217,7 @@ test/fixtures/
 ```
 
 
-Fix 8: Switch Between Suggestion Modes
+Fix 8 - Switch Between Suggestion Modes
 
 
 Copilot offers different modes for various use cases:
@@ -233,7 +233,7 @@ Copilot offers different modes for various use cases:
 Access these through the Copilot panel or keyboard shortcuts.
 
 
-Fix 9: Use Alternative AI Code Assistants
+Fix 9 - Use Alternative AI Code Assistants
 
 
 When Copilot consistently underperforms, consider alternatives:
@@ -251,7 +251,7 @@ When Copilot consistently underperforms, consider alternatives:
 Test these to find what works best for your specific use case.
 
 
-Step 2: Diagnostic Tips
+Step 2 - Diagnostic Tips
 
 
 Analyze Suggestion Patterns
@@ -339,7 +339,7 @@ def process_data(items: list[str]) -> dict[str, int]:
 ```
 
 
-Step 3: Prevention Strategies
+Step 3 - Prevention Strategies
 
 
 Maintain Clean Codebase

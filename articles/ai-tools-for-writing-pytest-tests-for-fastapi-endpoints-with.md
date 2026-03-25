@@ -250,19 +250,19 @@ When dependencies depend on other dependencies, you need to override the entire 
 
 
 ```python
-Layer 1: Database connection
+Layer 1 - Database connection
 def get_database():
     return RealDatabaseConnection()
 
-Layer 2: Repository depends on database
+Layer 2 - Repository depends on database
 def get_user_repository(db = Depends(get_database)):
     return UserRepository(db)
 
-Layer 3: Service depends on repository
+Layer 3 - Service depends on repository
 def get_user_service(repo = Depends(get_user_repository)):
     return UserService(repo)
 
-Test: override only the bottom layer
+Test - override only the bottom layer
 def test_with_deep_dependencies():
     mock_repo = MagicMock(spec=UserRepository)
     app.dependency_overrides[get_user_repository] = lambda: mock_repo

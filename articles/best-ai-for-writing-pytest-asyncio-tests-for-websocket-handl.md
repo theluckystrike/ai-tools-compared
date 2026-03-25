@@ -22,9 +22,9 @@ Table of Contents
 - [Understanding the Testing Requirements for WebSocket Handlers](#understanding-the-testing-requirements-for-websocket-handlers)
 - [Top AI Tools for WebSocket Handler Testing](#top-ai-tools-for-websocket-handler-testing)
 - [AI Tool Comparison for Async WebSocket Testing](#ai-tool-comparison-for-async-websocket-testing)
-- [Practical Example: Generating a WebSocket Handler Test](#practical-example-generating-a-websocket-handler-test)
-- [Advanced Patterns: FastAPI WebSocket Testing](#advanced-patterns-fastapi-websocket-testing)
-- [Step-by-Step: Getting the Best WebSocket Tests from AI](#step-by-step-getting-the-best-websocket-tests-from-ai)
+- [Practical Example - Generating a WebSocket Handler Test](#practical-example-generating-a-websocket-handler-test)
+- [Advanced Patterns - FastAPI WebSocket Testing](#advanced-patterns-fastapi-websocket-testing)
+- [Step-by-Step - Getting the Best WebSocket Tests from AI](#step-by-step-getting-the-best-websocket-tests-from-ai)
 - [Choosing the Right Tool for Your Needs](#choosing-the-right-tool-for-your-needs)
 - [Best Practices When Using AI for Test Generation](#best-practices-when-using-ai-for-test-generation)
 - [Related Reading](#related-reading)
@@ -63,7 +63,7 @@ Strengths:
 
 - Context-aware suggestions for WebSocket lifecycle management
 
-Pricing: Claude Code offers a free tier with generous limits, with paid plans starting at $20/month for heavier usage.
+Pricing - Claude Code offers a free tier with generous limits, with paid plans starting at $20/month for heavier usage.
 
 2. GitHub Copilot (Microsoft)
 
@@ -83,7 +83,7 @@ Limitations:
 
 - Sometimes misses proper fixture cleanup
 
-Pricing: Copilot costs $10/month for individuals, with Copilot Business at $19/user/month.
+Pricing - Copilot costs $10/month for individuals, with Copilot Business at $19/user/month.
 
 3. Cursor AI
 
@@ -97,7 +97,7 @@ Strengths:
 
 - Strong Python and async understanding
 
-Pricing: Free tier available, with Pro plans starting at $20/month.
+Pricing - Free tier available, with Pro plans starting at $20/month.
 
 4. Codeium
 
@@ -117,7 +117,7 @@ Limitations:
 
 - May require more manual refinement
 
-Pricing: Free for individual developers, Team plans at $12/user/month.
+Pricing - Free for individual developers, Team plans at $12/user/month.
 
 AI Tool Comparison for Async WebSocket Testing
 
@@ -128,7 +128,7 @@ AI Tool Comparison for Async WebSocket Testing
 | Cursor AI | Good | Good | Good | Yes (limited) | $20/month |
 | Codeium | Fair | Fair | Basic | Yes | $12/user/month |
 
-Practical Example: Generating a WebSocket Handler Test
+Practical Example - Generating a WebSocket Handler Test
 
 Here's an example of what a quality AI-generated pytest asyncio test for a WebSocket handler should look like:
 
@@ -182,7 +182,7 @@ async def test_handler_error_on_disconnect(handler):
 
 A good AI assistant should generate code similar to this, including proper async/await usage, appropriate fixtures, and meaningful test names.
 
-Advanced Patterns: FastAPI WebSocket Testing
+Advanced Patterns - FastAPI WebSocket Testing
 
 For teams using FastAPI, the testing setup involves the `TestClient` in async mode or httpx's `AsyncClient`. Here is a more complete example covering the full lifecycle:
 
@@ -245,7 +245,7 @@ async def test_websocket_disconnect_cleanup():
 
 When prompted with the FastAPI app structure and handler code, Claude Code generates tests at this quality level without requiring manual correction of async patterns.
 
-Step-by-Step: Getting the Best WebSocket Tests from AI
+Step-by-Step - Getting the Best WebSocket Tests from AI
 
 Step 1. Provide the handler code as context. Paste your WebSocket handler function and any dependencies into the chat or editor context before asking for tests. AI tools generate significantly more accurate tests when they can see the actual implementation.
 

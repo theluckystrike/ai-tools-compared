@@ -24,7 +24,7 @@ Table of Contents
 - [Why Automated Welcome Messages Matter](#why-automated-welcome-messages-matter)
 - [Prerequisites](#prerequisites)
 - [Best Practices for AI-Generated Bot Comments](#best-practices-for-ai-generated-bot-comments)
-- [Advanced: Personalizing Beyond the PR Itself](#advanced-personalizing-beyond-the-pr-itself)
+- [Advanced - Personalizing Beyond the PR Itself](#advanced-personalizing-beyond-the-pr-itself)
 - [Troubleshooting](#troubleshooting)
 
 Why Automated Welcome Messages Matter
@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Set Up the GitHub Actions Workflow
+Step 1 - Set Up the GitHub Actions Workflow
 
 Create a workflow file that runs on pull request events and identifies first-time contributors. Here's a practical implementation:
 
@@ -91,11 +91,11 @@ jobs:
         run: |
           # Call your AI API here to generate personalized message
           curl -X POST "https://api.anyscale.com/v1/chat/completions" \
-            -H "Authorization: Bearer ${{ secrets.AI_API_KEY }}" \
+            -H "Authorization - Bearer ${{ secrets.AI_API_KEY }}" \
             -H "Content-Type: application/json" \
             -d '{
               "model": "meta-llama/Llama-3-70b-Instruct",
-              "messages": [{"role": "user", "content": "Write a welcoming GitHub PR comment for a first-time contributor. Include: 1) Welcome to the project, 2) What to expect in review, 3) Links to contribution guidelines and code of conduct. Keep it friendly and concise."}],
+              "messages": [{"role": "user", "content": "Write a welcoming GitHub PR comment for a first-time contributor. Include - 1) Welcome to the project, 2) What to expect in review, 3) Links to contribution guidelines and code of conduct. Keep it friendly and concise."}],
               "temperature": 0.7
             }' > ai_response.json
 
@@ -117,7 +117,7 @@ jobs:
             });
 ```
 
-Step 2: Create Context-Aware Messages
+Step 2 - Create Context-Aware Messages
 
 The basic welcome message works well, but you can enhance it with AI that analyzes the pull request changes. This provides more specific guidance based on what the contributor actually submitted:
 
@@ -127,10 +127,10 @@ async function generateContextAwareMessage(prDetails, aiClient) {
   const prompt = `
     A first-time contributor has opened a pull request to an open-source project.
 
-    PR Title: ${prDetails.title}
-    Files Changed: ${prDetails.filesChanged.join(', ')}
-    Lines Added: ${prDetails.additions}
-    Lines Deleted: ${prDetails.deletions}
+    PR Title - ${prDetails.title}
+    Files Changed - ${prDetails.filesChanged.join(', ')}
+    Lines Added - ${prDetails.additions}
+    Lines Deleted - ${prDetails.deletions}
 
     Write a 3-4 sentence welcome message that:
     1. Thanks them for their contribution
@@ -145,7 +145,7 @@ async function generateContextAwareMessage(prDetails, aiClient) {
 }
 ```
 
-Step 3: Handling Different Contribution Types
+Step 3 - Handling Different Contribution Types
 
 AI helps you customize messages based on what the contributor submitted. A documentation fix deserves different guidance than a new feature implementation:
 
@@ -156,7 +156,7 @@ Different messages for different contribution types
   run: |
     # Use AI to classify the contribution
     RESPONSE=$(curl -s -X POST "https://api.openai.com/v1/chat/completions" \
-      -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+      -H "Authorization - Bearer ${{ secrets.OPENAI_API_KEY }}" \
       -H "Content-Type: application/json" \
       -d '{
         "model": "gpt-4o-mini",
@@ -198,7 +198,7 @@ Monitor feedback from contributors. If you notice confusion or negative response
 
 Handle rate limits gracefully. If your AI provider has rate limits, implement caching or queue systems to ensure every new contributor receives their welcome message.
 
-Advanced: Personalizing Beyond the PR Itself
+Advanced - Personalizing Beyond the PR Itself
 
 The examples above generate messages based on PR metadata available at the time the workflow runs. You can go further by incorporating repository context that helps AI generate more specific and useful guidance.
 
@@ -206,23 +206,23 @@ Pull the repository's CONTRIBUTING.md or contribution guidelines and include a s
 
 You can also check whether the contributor has already opened issues or commented on discussions. A first-time PR author who has been active in the community deserves a different tone than someone contributing without prior engagement. AI handles these nuances well when given the relevant context as part of the prompt.
 
-Step 4: Practical Step-by-Step Setup Guide
+Step 4 - Practical Step-by-Step Setup Guide
 
 Getting AI-generated bot comments working from scratch takes about 30 minutes. Here is the complete sequence.
 
-Step 1: Create the workflow file. Add `.github/workflows/welcome-contributor.yml` using the structure shown above. Start with the basic version that uses a static AI prompt before adding dynamic context.
+Step 1 - Create the workflow file. Add `.github/workflows/welcome-contributor.yml` using the structure shown above. Start with the basic version that uses a static AI prompt before adding dynamic context.
 
-Step 2: Add your API key as a GitHub secret. Go to your repository's Settings, then Secrets and Variables, then Actions. Add your AI provider API key as a secret named `AI_API_KEY` or `OPENAI_API_KEY` depending on your provider. Never hardcode API keys in workflow files.
+Step 2 - Add your API key as a GitHub secret. Go to your repository's Settings, then Secrets and Variables, then Actions. Add your AI provider API key as a secret named `AI_API_KEY` or `OPENAI_API_KEY` depending on your provider. Never hardcode API keys in workflow files.
 
-Step 3: Test with a draft PR. Open a draft pull request from an account that has no prior contributions to the repository. This triggers the workflow without affecting actual contributors. Review the generated message for tone, accuracy, and completeness.
+Step 3 - Test with a draft PR. Open a draft pull request from an account that has no prior contributions to the repository. This triggers the workflow without affecting actual contributors. Review the generated message for tone, accuracy, and completeness.
 
-Step 4: Iterate on the prompt. The first version will rarely be perfect. Adjust the prompt to match your project's voice. If your project has a formal tone, tell the AI explicitly. If your community is casual and uses first names, include that instruction.
+Step 4 - Iterate on the prompt. The first version will rarely be perfect. Adjust the prompt to match your project's voice. If your project has a formal tone, tell the AI explicitly. If your community is casual and uses first names, include that instruction.
 
-Step 5: Add the guidelines link. Every welcome message should link to your CONTRIBUTING.md, code of conduct, and any issue templates. Add these as fixed parts of your prompt so the AI always includes them regardless of what else it generates.
+Step 5 - Add the guidelines link. Every welcome message should link to your CONTRIBUTING.md, code of conduct, and any issue templates. Add these as fixed parts of your prompt so the AI always includes them regardless of what else it generates.
 
-Step 6: Monitor real interactions. Once the workflow is active on real PRs, read the first ten generated comments. Look for patterns where the message is confusing, too long, or mentions things contributors have already done. Each pattern is a prompt improvement opportunity.
+Step 6 - Monitor real interactions. Once the workflow is active on real PRs, read the first ten generated comments. Look for patterns where the message is confusing, too long, or mentions things contributors have already done. Each pattern is a prompt improvement opportunity.
 
-Step 5: Common Pitfalls to Avoid
+Step 5 - Common Pitfalls to Avoid
 
 Using the same message for every contributor. A static AI-generated template provides no advantage over a manually written template. The value comes from adapting the message to each PR's actual content. At minimum, vary the message based on contribution type.
 

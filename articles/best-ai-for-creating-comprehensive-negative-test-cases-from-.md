@@ -35,7 +35,7 @@ Testing API endpoints thoroughly requires more than happy-path scenarios. Negati
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Use this prompt template: for best results: ``` You are a senior QA engineer.
-- OpenAPI spec: [PASTE SPEC HERE]
+- OpenAPI spec - [PASTE SPEC HERE]
 ```
 
 Schemathesis
@@ -174,7 +174,7 @@ negative test cases in pytest format. For each endpoint, cover:
 5. Enum fields set to a value not in the enum list
 6. Malformed format values (email without @, UUID without hyphens)
 
-For each test include: HTTP method, path, payload, expected status code (400 or 422),
+For each test include - HTTP method, path, payload, expected status code (400 or 422),
 and a one-line description.
 
 OpenAPI spec:
@@ -279,7 +279,7 @@ When evaluating AI tools for this purpose, prioritize:
 
 3. Coverage reporting: Does it show which schema fields lack negative test coverage?
 
-4. Maintainability: Are generated tests readable and easy to update when schemas change?
+4. Maintainability - Are generated tests readable and easy to update when schemas change?
 
 5. False positive handling: Does the tool distinguish between tests that should fail (API bug) versus tests with incorrect expectations?
 

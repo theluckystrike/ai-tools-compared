@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?"
+title: "ChatGPT Plus Cancel Mid Month - Do You Keep Access Until End?"
 description: "A practical guide explaining what happens when you cancel ChatGPT Plus mid-billing cycle, including access timelines, feature changes, and practical"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -27,7 +27,7 @@ Table of Contents
 - [Practical Tips for Developers](#practical-tips-for-developers)
 - [ChatGPT Plus Pricing and Billing Dates](#chatgpt-plus-pricing-and-billing-dates)
 - [Tracking Subscription Status Programmatically](#tracking-subscription-status-programmatically)
-- [API Rate Limits: Plus vs Free Tier](#api-rate-limits-plus-vs-free-tier)
+- [API Rate Limits - Plus vs Free Tier](#api-rate-limits-plus-vs-free-tier)
 - [Refund Policy for Mid-Month Cancellations](#refund-policy-for-mid-month-cancellations)
 - [Managing Multiple ChatGPT Plus Accounts](#managing-multiple-chatgpt-plus-accounts)
 - [Custom GPTs and Plus Dependency](#custom-gpts-and-plus-dependency)
@@ -58,15 +58,15 @@ Access Timeline in Practice
 
 Consider these practical scenarios:
 
-Scenario 1: Planning a temporary pause
+Scenario 1 - Planning a temporary pause
 
 You are between projects and want to save the $20 monthly cost. You cancel on March 15th, but your billing date is the 1st. You keep Plus access until April 1st, roughly two more weeks. During this period, you can continue using GPT-4 for any pending work or export important conversation histories.
 
-Scenario 2: Unexpected charges
+Scenario 2 - Unexpected charges
 
 You notice an unexpected subscription charge and cancel immediately upon seeing it. Your billing date was three days ago. You still have the full month of access, and the charge covers that entire period. Requesting a refund within the refund window (typically 30 days for digital subscriptions) is separate from the access policy.
 
-Scenario 3: API integration dependencies
+Scenario 3 - API integration dependencies
 
 Your application uses the ChatGPT API with a Plus subscription benefit (reduced API pricing or priority access). When your Plus access ends, API rate limits revert to free-tier levels. Your application code should handle this gracefully.
 
@@ -124,7 +124,7 @@ Once your billing period completes and you revert to the free tier, several chan
 
 2. Rate limits: The free tier imposes stricter usage limits. During high-traffic periods, free users may experience slower response times or temporary unavailability.
 
-3. Storage: Some Plus features like custom GPTs or extended memory may become unavailable or limited.
+3. Storage - Some Plus features like custom GPTs or extended memory may become unavailable or limited.
 
 4. API pricing: If you used the API with Plus subscription benefits, standard free-tier pricing applies.
 
@@ -218,7 +218,7 @@ print(f"Days remaining: {tracker.days_until_expiry()}")
 print(f"Can use GPT-4: {tracker.can_use_gpt4()}")
 ```
 
-API Rate Limits: Plus vs Free Tier
+API Rate Limits - Plus vs Free Tier
 
 Understanding rate limit differences is critical for applications:
 
@@ -289,7 +289,7 @@ Required information:
 3. Reason for refund request
 4. Screenshots of unexpected charges
 
-Contact: support@openai.com with subject line
+Contact - support@openai.com with subject line
 "Refund Request - Unexpected ChatGPT Plus Charge - [Your Email]"
 ```
 
@@ -355,7 +355,7 @@ After Plus Expires:
 -  Cannot update or modify existing Custom GPTs
 - → Data not lost, but requires Plus resubscription to access
 
-Action: Before cancellation, either:
+Action - Before cancellation, either:
 1. Export Custom GPT definitions as JSON
 2. Document the instructions and knowledge base
 3. Plan to recreate after resubscription

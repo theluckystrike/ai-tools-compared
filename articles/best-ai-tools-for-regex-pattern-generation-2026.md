@@ -21,14 +21,14 @@ Claude produces the most accurate regex patterns with correct handling of lookah
 Table of Contents
 
 - [Why Regex Generation Matters](#why-regex-generation-matters)
-- [Test Case 1: Email Validation](#test-case-1-email-validation)
-- [Test Case 2: URL Extraction](#test-case-2-url-extraction)
-- [Test Case 3: Password Complexity](#test-case-3-password-complexity)
-- [Test Case 4: Domain-Specific Pattern - Semantic Versioning](#test-case-4-domain-specific-pattern-semantic-versioning)
+- [Test Case 1 - Email Validation](#test-case-1-email-validation)
+- [Test Case 2 - URL Extraction](#test-case-2-url-extraction)
+- [Test Case 3 - Password Complexity](#test-case-3-password-complexity)
+- [Test Case 4 - Domain-Specific Pattern - Semantic Versioning](#test-case-4-domain-specific-pattern-semantic-versioning)
 - [Accuracy Scorecard](#accuracy-scorecard)
-- [Catastrophic Backtracking: The Hidden Performance Risk](#catastrophic-backtracking-the-hidden-performance-risk)
-- [Language-Specific Regex Engines: What AI Gets Wrong](#language-specific-regex-engines-what-ai-gets-wrong)
-- [Iterative Refinement: How Each Tool Handles Follow-Up](#iterative-refinement-how-each-tool-handles-follow-up)
+- [Catastrophic Backtracking - The Hidden Performance Risk](#catastrophic-backtracking-the-hidden-performance-risk)
+- [Language-Specific Regex Engines - What AI Gets Wrong](#language-specific-regex-engines-what-ai-gets-wrong)
+- [Iterative Refinement - How Each Tool Handles Follow-Up](#iterative-refinement-how-each-tool-handles-follow-up)
 - [Practical Recommendations](#practical-recommendations)
 - [Testing Your Generated Patterns](#testing-your-generated-patterns)
 
@@ -45,9 +45,9 @@ Test categories:
 - Domain-specific (credit card formats, phone numbers with extensions, semantic versioning)
 - Edge cases (empty strings, boundary conditions, Unicode characters)
 
-Test Case 1: Email Validation
+Test Case 1 - Email Validation
 
-Requirements: Match standard email addresses and Gmail + addressing, reject invalid formats. Examples of valid: `user@example.com`, `user+tag@example.co.uk`, `user.name@example.com`. Invalid: `user@.com`, `@example.com`, `user@example`, `user name@example.com`.
+Requirements - Match standard email addresses and Gmail + addressing, reject invalid formats. Examples of valid: `user@example.com`, `user+tag@example.co.uk`, `user.name@example.com`. Invalid: `user@.com`, `@example.com`, `user@example`, `user name@example.com`.
 
 Claude
 
@@ -57,7 +57,7 @@ Claude generated a balanced pattern with documentation:
 ^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
 ```
 
-Explanation provided: "This pattern matches local part (before @) with alphanumerics, dots, underscores, plus, and hyphens. The domain part allows alphanumerics, dots, and hyphens. The TLD must be at least two characters."
+Explanation provided - "This pattern matches local part (before @) with alphanumerics, dots, underscores, plus, and hyphens. The domain part allows alphanumerics, dots, and hyphens. The TLD must be at least two characters."
 
 Testing results:
 -  `user@example.com` - match
@@ -66,7 +66,7 @@ Testing results:
 -  `user@.com` - rejected (correct)
 -  `user..name@example.com` - rejected (correct, prevents consecutive dots in local part)
 
-Edge case handling: Claude noted that RFC 5321 allows quoted strings and comments in email addresses, but suggested this pattern covers 99% of real-world use cases while remaining readable.
+Edge case handling - Claude noted that RFC 5321 allows quoted strings and comments in email addresses, but suggested this pattern covers 99% of real-world use cases while remaining readable.
 
 ChatGPT
 
@@ -104,9 +104,9 @@ Cursor generated a middle-ground pattern:
 
 Identical to Claude's output. Cursor's performance was strong for this common pattern, likely because it appears frequently in training data.
 
-Test Case 2: URL Extraction
+Test Case 2 - URL Extraction
 
-Requirements: Extract URLs from text, supporting http, https, ports, paths, query parameters, and fragments. Valid examples: `https://example.com`, `http://localhost:3000/api`, `https://api.example.com/v1/users?page=1#top`.
+Requirements - Extract URLs from text, supporting http, https, ports, paths, query parameters, and fragments. Valid examples: `https://example.com`, `http://localhost:3000/api`, `https://api.example.com/v1/users?page=1#top`.
 
 Claude
 
@@ -157,9 +157,9 @@ Cursor generated the same pattern as ChatGPT:
 
 Making the protocol optional is a critical error that Cursor didn't catch.
 
-Test Case 3: Password Complexity
+Test Case 3 - Password Complexity
 
-Requirements: Enforce 8+ characters, at least one uppercase, one lowercase, one number, one special character. Reject common patterns like sequential numbers.
+Requirements - Enforce 8+ characters, at least one uppercase, one lowercase, one number, one special character. Reject common patterns like sequential numbers.
 
 Claude
 
@@ -205,9 +205,9 @@ Cursor generated the same pattern as ChatGPT:
 ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[a-zA-Z0-9@$!%*?&]{8,}$
 ```
 
-Test Case 4: Domain-Specific Pattern - Semantic Versioning
+Test Case 4 - Domain-Specific Pattern - Semantic Versioning
 
-Requirements: Match semantic versioning format (MAJOR.MINOR.PATCH with optional prerelease and metadata). Valid examples: `1.0.0`, `2.1.3-alpha`, `1.2.3-beta.1+build.123`.
+Requirements - Match semantic versioning format (MAJOR.MINOR.PATCH with optional prerelease and metadata). Valid examples: `1.0.0`, `2.1.3-alpha`, `1.2.3-beta.1+build.123`.
 
 Claude
 
@@ -258,11 +258,11 @@ Accuracy Scorecard
 | Password complexity |  Includes anti-pattern checks |  Basic only |  Basic only |  Basic only |
 | SemVer compliance |  Full spec |  Simplified |  Simplified |  Simplified |
 
-Catastrophic Backtracking: The Hidden Performance Risk
+Catastrophic Backtracking - The Hidden Performance Risk
 
 Beyond correctness, regex performance is a production concern. Certain patterns cause exponential backtracking. the regex engine explores every possible combination of matches before concluding a string doesn't match. This turns millisecond validation into multi-second CPU spikes.
 
-A classic example: `^(a+)+$` tested against `aaaaaaaaaaaaaaab`. The nested quantifiers force the engine to try 2^n combinations before rejecting the input. In web applications, an attacker can craft inputs that cause ReDoS (Regular Expression Denial of Service) by sending strings that trigger catastrophic backtracking.
+A classic example - `^(a+)+$` tested against `aaaaaaaaaaaaaaab`. The nested quantifiers force the engine to try 2^n combinations before rejecting the input. In web applications, an attacker can craft inputs that cause ReDoS (Regular Expression Denial of Service) by sending strings that trigger catastrophic backtracking.
 
 Claude correctly flags this risk and generates alternative atomic grouping patterns. When I asked Claude to validate a pattern containing nested quantifiers, it warned:
 
@@ -291,19 +291,19 @@ Before deploying AI-generated regex, audit for these patterns:
 
 Use regex101.com's debugger tab to count "steps" for a given input. Anything over 10,000 steps for a realistic input is a risk.
 
-Language-Specific Regex Engines: What AI Gets Wrong
+Language-Specific Regex Engines - What AI Gets Wrong
 
 Regex syntax differs across language engines, and AI tools vary in their awareness of these differences.
 
-Python's `re` vs `regex` module: The standard `re` module lacks possessive quantifiers and atomic groups. Claude correctly identifies when a pattern requires the third-party `regex` module. ChatGPT sometimes generates patterns that only work in PCRE but presents them as valid Python without noting the dependency.
+Python's `re` vs `regex` module - The standard `re` module lacks possessive quantifiers and atomic groups. Claude correctly identifies when a pattern requires the third-party `regex` module. ChatGPT sometimes generates patterns that only work in PCRE but presents them as valid Python without noting the dependency.
 
 JavaScript's lack of lookbehind in older engines: Lookbehind assertions (`(?<=...)`) require Node.js 10+ or Chrome 62+. For patterns targeting legacy browsers, Claude proactively rewrites them using alternative approaches. Copilot sometimes generates lookbehind patterns without noting compatibility.
 
-Go's RE2 engine: Go uses RE2, which guarantees linear time matching but prohibits backreferences and lookaheads entirely. When asked for a complex validation pattern, Claude immediately noted: "Go's RE2 engine doesn't support lookaheads. Here's an equivalent approach using multiple simpler patterns combined in code." Cursor generated a lookahead pattern for Go without flagging the incompatibility.
+Go's RE2 engine - Go uses RE2, which guarantees linear time matching but prohibits backreferences and lookaheads entirely. When asked for a complex validation pattern, Claude immediately noted: "Go's RE2 engine doesn't support lookaheads. Here's an equivalent approach using multiple simpler patterns combined in code." Cursor generated a lookahead pattern for Go without flagging the incompatibility.
 
-Java's Pattern class: Java supports full PCRE features but has performance characteristics different from Perl. Claude recommends precompiling patterns with `Pattern.compile()` and caching the result, a practical performance note that ChatGPT omits.
+Java's Pattern class - Java supports full PCRE features but has performance characteristics different from Perl. Claude recommends precompiling patterns with `Pattern.compile()` and caching the result, a practical performance note that ChatGPT omits.
 
-Iterative Refinement: How Each Tool Handles Follow-Up
+Iterative Refinement - How Each Tool Handles Follow-Up
 
 The initial pattern is often just the starting point. Production regex typically goes through several rounds of refinement as edge cases emerge from real data.
 
@@ -346,7 +346,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -358,7 +358,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

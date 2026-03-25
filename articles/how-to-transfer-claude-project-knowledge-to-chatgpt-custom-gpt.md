@@ -33,7 +33,7 @@ tags: [ai-tools-compared, claude-ai, chatgpt]
 Transferring your Claude project knowledge to ChatGPT Custom GPTs requires understanding the different architectures of both platforms. While Claude uses project instructions and knowledge files, ChatGPT employs Custom GPTs with specific configuration options. This guide walks you through the complete migration process.
 
 
-- List all Claude projects: curl -H "Authorization: Bearer $CLAUDE_API_KEY" \ https://api.anthropic.com/v1/projects # 2.
+- List all Claude projects: curl -H "Authorization - Bearer $CLAUDE_API_KEY" \ https://api.anthropic.com/v1/projects # 2.
 - Use the following structure: 1.
 - Name: Use a descriptive name based on your project
 
@@ -74,11 +74,11 @@ Project instructions translate well to Custom GPT instructions. Your knowledge f
 
 Step-by-Step Migration Process
 
-Step 1: Export Your Claude Project Instructions
+Step 1 - Export Your Claude Project Instructions
 
 Start by gathering all your project instructions from Claude. Open each project and copy the instructions into a text file. Organize them by category, general behavior, code style, output format, and project-specific guidelines. This manual export ensures you have all your settings before moving forward.
 
-Step 2: Reorganize Instructions for Custom GPTs
+Step 2 - Reorganize Instructions for Custom GPTs
 
 Custom GPT instructions work best when structured differently than Claude project instructions. Rewrite your Claude instructions as a cohesive set of guidelines that define your GPT's purpose, knowledge boundaries, and behavioral rules. Use clear sections that ChatGPT can parse effectively.
 
@@ -101,11 +101,11 @@ Special Instructions
 [Project-specific rules and workflows]
 ```
 
-Step 3: Export and Prepare Knowledge Files
+Step 3 - Export and Prepare Knowledge Files
 
 Download all knowledge files from your Claude project. Review each file to ensure it makes sense without conversational context. Add brief introductions or headers to files that might need additional context. Rename files to be self-descriptive for easy navigation within ChatGPT.
 
-Step 4: Create Your Custom GPT
+Step 4 - Create Your Custom GPT
 
 Navigate to ChatGPT and start creating a new Custom GPT. Use the following structure:
 
@@ -119,13 +119,13 @@ Navigate to ChatGPT and start creating a new Custom GPT. Use the following struc
 
 5. Capabilities: Enable web browsing, DALL-E, or code interpreter as needed
 
-Step 5: Test and Iterate
+Step 5 - Test and Iterate
 
 After creating your Custom GPT, test it with typical tasks from your Claude workflow. Compare outputs to ensure the new GPT maintains your expected quality and style. Adjust instructions based on test results until performance matches your original setup.
 
 Practical Examples
 
-Example 1: Developer Workflow GPT
+Example 1 - Developer Workflow GPT
 
 If you use Claude for coding assistance, your Custom GPT can maintain similar capabilities:
 
@@ -142,7 +142,7 @@ You are an expert software developer assistant. When helping with code:
 - Consider security implications in all suggestions
 ```
 
-Example 2: Content Creation GPT
+Example 2 - Content Creation GPT
 
 For writing projects, configure your GPT with specific guidelines:
 
@@ -163,7 +163,7 @@ Limitations and Workarounds
 
 Conversation Context
 
-Claude maintains context within projects across conversations. ChatGPT Custom GPTs start fresh each session unless you provide context in the current conversation. Workaround: Create template prompts that summarize ongoing project context for each new conversation.
+Claude maintains context within projects across conversations. ChatGPT Custom GPTs start fresh each session unless you provide context in the current conversation. Workaround - Create template prompts that summarize ongoing project context for each new conversation.
 
 Claude Code Integration
 
@@ -194,15 +194,15 @@ Original Claude Project Instructions:
 ```markdown
 Project Context
 You are helping build an e-commerce API.
-Tech stack: Node.js, Express, PostgreSQL, Redis
-Coding style: ESLint rules in .eslintrc.json
-Key guidelines: Prefer async/await, use prepared statements, cache database queries
+Tech stack - Node.js, Express, PostgreSQL, Redis
+Coding style - ESLint rules in .eslintrc.json
+Key guidelines - Prefer async/await, use prepared statements, cache database queries
 ```
 
 Converted for Custom GPT:
 
 ```markdown
-Custom GPT: E-commerce API Assistant
+Custom GPT - E-commerce API Assistant
 
 Your Role
 You are an expert Node.js backend engineer specializing in e-commerce platforms. You help maintain and extend an Express-based REST API.
@@ -212,7 +212,7 @@ Technical Requirements
 - Framework: Express.js 4.18+
 - Database: PostgreSQL with node-postgres driver
 - Cache: Redis for session and query caching
-- Code Quality: ESLint configured per .eslintrc.json in the project
+- Code Quality - ESLint configured per .eslintrc.json in the project
 
 Code Style Preferences
 1. Async/await over Promises or callbacks
@@ -319,14 +319,14 @@ Knowledge Base Structure (for Custom GPT):
      data-types.md
 ```
 
-Upload strategy: ChatGPT Custom GPTs accept up to 20 files (at time of writing). For larger knowledge bases:
+Upload strategy - ChatGPT Custom GPTs accept up to 20 files (at time of writing). For larger knowledge bases:
 
 1. Combine related documents into single files
 2. Prioritize high-value documents (architecture, API reference)
 3. Keep testing and development docs in code repo instead of GPT
 4. Update GPT knowledge files quarterly
 
-Cost Analysis: Claude Projects vs Custom GPTs
+Cost Analysis - Claude Projects vs Custom GPTs
 
 | Factor | Claude Project | Custom GPT |
 |--------|---------------|-----------|
@@ -338,8 +338,8 @@ Cost Analysis: Claude Projects vs Custom GPTs
 | Sharing capabilities | Private to your account | Shareable via public link or teams |
 | Conversation memory | Project-wide memory | Per-conversation only |
 
-For solo developers: Claude projects are often better (larger context window).
-For teams: Custom GPTs enable sharing but require more maintenance.
+For solo developers - Claude projects are often better (larger context window).
+For teams - Custom GPTs enable sharing but require more maintenance.
 
 Maintaining Parity After Migration
 

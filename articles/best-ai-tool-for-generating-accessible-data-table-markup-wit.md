@@ -31,7 +31,7 @@ Accessible data tables require proper semantic structure to function correctly w
 
 - This makes it less: suitable for users who want automatic best-practice output without detailed prompting.
 - Version 4 performs better: than 3.5 for this task.
-- Mistake 3: Missing `<caption>`
+- Mistake 3 - Missing `<caption>`
 Tables without captions force users to infer the table's purpose from context.
 - The markup you generate: today serves users 2-3 years from now.
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.
@@ -117,7 +117,7 @@ Generate an accessible HTML table with:
 
 Local models give you control over data but demand more careful prompt engineering.
 
-Practical Example: Converting CSV to Accessible Table
+Practical Example - Converting CSV to Accessible Table
 
 Consider a dataset representing server performance metrics:
 
@@ -190,13 +190,13 @@ Verification and Testing
 
 AI-generated markup requires verification. Use these methods to confirm accessibility:
 
-Automated Testing: Tools like axe-core, WAVE, or Lighthouse detect missing captions, missing header associations, and other accessibility issues. Integrate these into your development workflow.
+Automated Testing - Tools like axe-core, WAVE, or Lighthouse detect missing captions, missing header associations, and other accessibility issues. Integrate these into your development workflow.
 
-Screen Reader Testing: Manually navigate tables using VoiceOver (macOS), NVDA (Windows), or Orca (Linux). Confirm that header cells announce correctly and navigation feels logical.
+Screen Reader Testing - Manually navigate tables using VoiceOver (macOS), NVDA (Windows), or Orca (Linux). Confirm that header cells announce correctly and navigation feels logical.
 
-HTML Validation: The HTML specification requires `scope` on `<th>` elements in valid documents. Validation tools catch missing attributes.
+HTML Validation - The HTML specification requires `scope` on `<th>` elements in valid documents. Validation tools catch missing attributes.
 
-Advanced Table Accessibility: Complex Scenarios
+Advanced Table Accessibility - Complex Scenarios
 
 Simple tables with straightforward headers are easy. Real-world data often requires more complex markup.
 
@@ -340,16 +340,16 @@ Common Accessibility Mistakes AI Tools Make
 
 Even good AI tools can produce flawed markup:
 
-Mistake 1: Forgetting `<thead>` and `<tbody>`
+Mistake 1 - Forgetting `<thead>` and `<tbody>`
 Some AI models generate valid but unstructured tables. Always have `<thead>` and `<tbody>` sections, they help assistive technology understand the table structure.
 
-Mistake 2: Inconsistent `scope` Attributes
+Mistake 2 - Inconsistent `scope` Attributes
 A table with `scope="col"` on some headers but not others creates confusion. AI should apply it consistently or use `headers` attributes throughout.
 
-Mistake 3: Missing `<caption>`
+Mistake 3 - Missing `<caption>`
 Tables without captions force users to infer the table's purpose from context. Always include `<caption>` (visually hidden with CSS if design doesn't accommodate it).
 
-Mistake 4: Complex Tables Without `headers`
+Mistake 4 - Complex Tables Without `headers`
 For tables with multiple row and column headers, `scope` alone isn't enough. The `headers` attribute provides explicit associations that work for any table structure.
 
 Recommendations
@@ -370,7 +370,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -382,7 +382,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

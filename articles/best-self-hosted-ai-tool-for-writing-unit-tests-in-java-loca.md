@@ -51,7 +51,7 @@ Beyond privacy, local solutions offer several practical advantages. You avoid AP
 
 Top Self-Hosted Options for Java Test Generation
 
-Ollama: The Accessible Choice
+Ollama - The Accessible Choice
 
 Ollama has emerged as the most user-friendly option for running large language models locally. It supports various models that work well with Java code, including Llama 3 and Mistral variants. Setting up Ollama takes minutes, and integration with popular IDEs is straightforward.
 
@@ -64,7 +64,7 @@ ollama run codellama "Generate JUnit 5 tests for this Java class"
 
 For Java developers, the key advantage is that you can feed entire classes or methods directly into the prompt. The model understands Java syntax, common frameworks like Spring and Jakarta EE, and testing patterns. You get tests that follow standard conventions without configuration overhead.
 
-LM Studio: Model Flexibility
+LM Studio - Model Flexibility
 
 LM Studio provides another solid option for local AI-assisted test generation. It offers a graphical interface for managing different models and supports the GGUF format used by many quantized models. This flexibility lets you choose models optimized for code generation.
 
@@ -345,7 +345,7 @@ Use AI to identify which test cases provide maximum value. Ask it to analyze cov
 
 Building Your Testing Pipeline
 
-Establish a workflow: generate tests locally, review for correctness, commit to version control, run in CI, and collect coverage metrics. Local AI tools enable this workflow without external API dependencies or privacy concerns.
+Establish a workflow - generate tests locally, review for correctness, commit to version control, run in CI, and collect coverage metrics. Local AI tools enable this workflow without external API dependencies or privacy concerns.
 
 Start small, generate tests for one class, validate the approach works for your context, then scale to larger portions of your codebase. This measured approach builds confidence and lets you refine your prompt patterns as you learn what works best.
 
@@ -359,7 +359,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -371,7 +371,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

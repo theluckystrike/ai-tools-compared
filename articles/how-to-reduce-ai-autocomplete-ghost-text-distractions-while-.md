@@ -31,13 +31,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Ghost Text Behavior
+Step 1 - Understand Ghost Text Behavior
 
 Ghost text appears as semi-transparent code suggestions that overlay your cursor position. When you keep typing, the suggestion remains until you either accept it with Tab or continue typing until it disappears. The problem arises when suggestions appear too frequently, suggest incorrect code, or distract from the logic you're actively constructing.
 
 Different tools handle ghost text differently. Some show suggestions after a few characters, others wait for longer context. Understanding your tool's behavior is the first step toward managing it effectively.
 
-Step 2: Adjusting Inline Suggestion Settings
+Step 2 - Adjusting Inline Suggestion Settings
 
 Most AI coding assistants provide configuration options to control when and how suggestions appear. In VS Code with Copilot enabled, you can modify these settings directly:
 
@@ -61,15 +61,15 @@ For those who want suggestions but less frequently, adjusting the trigger delay 
 
 The trade-off involves finding your personal threshold, enough delay to think without missing useful suggestions.
 
-Step 3: Use Keyboard Shortcuts Strategically
+Step 3 - Use Keyboard Shortcuts Strategically
 
 Rather than fighting automatic suggestions, master the keyboard shortcuts that control them. Most tools follow similar patterns:
 
-Accept suggestion: `Tab` or `Ctrl + Right Arrow`
+Accept suggestion - `Tab` or `Ctrl + Right Arrow`
 
-Dismiss suggestion: `Escape` or keep typing
+Dismiss suggestion - `Escape` or keep typing
 
-Manually trigger suggestions: `Ctrl + Space` (VS Code default)
+Manually trigger suggestions - `Ctrl + Space` (VS Code default)
 
 The key insight involves treating suggestions as optional prompts rather than interruptions. When ghost text appears, acknowledge it exists but continue your intended code. Pressing Escape immediately after a suggestion appears trains your muscle memory to dismiss without thinking.
 
@@ -89,7 +89,7 @@ Consider remapping keys for faster dismissal:
 
 This makes Escape explicitly clear suggestions when visible.
 
-Step 4: Context-Aware Filtering
+Step 4 - Context-Aware Filtering
 
 Modern AI tools learn from your codebase, but they don't always understand context. You can reduce unhelpful suggestions by providing clearer context signals.
 
@@ -105,7 +105,7 @@ The AI receives the comment as context, producing more relevant suggestions. Sim
 
 For multi-file projects, keep related logic in files the AI can analyze. If you're working on a utility function that spans multiple modules, having clear imports and type hints improves suggestion quality significantly.
 
-Step 5: Dedicated Editor Modes
+Step 5 - Dedicated Editor Modes
 
 Some developers benefit from dedicated modes where AI assistance pauses entirely. IntelliJ IDEA and similar IDEs offer "distraction-free" or "zen" modes that disable many assistant features:
 
@@ -116,7 +116,7 @@ Some developers benefit from dedicated modes where AI assistance pauses entirely
 
 Alternatively, create project-specific configurations that disable autocomplete for file types where you don't need assistance. Configuration files, SQL scripts, and shell scripts often generate poor suggestions compared to general-purpose code.
 
-Step 6: Workflow Adjustments
+Step 6 - Workflow Adjustments
 
 Beyond configuration, changing how you approach coding reduces distraction impact:
 
@@ -133,25 +133,25 @@ Use chat interfaces instead of inline suggestions. Many tools offer a sidebar ch
 
 Batch AI interactions. Rather than accepting suggestions as they appear, set specific intervals, perhaps every 30 minutes, to review and accept accumulated suggestions. This converts passive interruptions into deliberate review sessions.
 
-Step 7: Tool-Specific Controls
+Step 7 - Tool-Specific Controls
 
 Each AI coding assistant offers unique configuration options:
 
-Cursor: Settings > Editor > Inline Autocomplete provides granular control over suggestion length and delay. The "Ghost Text Visibility" slider adjusts transparency if you want suggestions less prominent.
+Cursor - Settings > Editor > Inline Autocomplete provides granular control over suggestion length and delay. The "Ghost Text Visibility" slider adjusts transparency if you want suggestions less prominent.
 
-Tabnine: Offers local and cloud modes. Local processing produces fewer suggestions but with lower latency. Adjust the prediction length in preferences.
+Tabnine - Offers local and cloud modes. Local processing produces fewer suggestions but with lower latency. Adjust the prediction length in preferences.
 
-Codeium: Configure trigger characters and suggestion count. The "Minimal Mode" reduces visual elements while preserving functionality.
+Codeium - Configure trigger characters and suggestion count. The "Minimal Mode" reduces visual elements while preserving functionality.
 
 Experiment with these settings during a low-pressure coding session to discover what combination works for your workflow.
 
-Step 8: Measuring Your Progress
+Step 8 - Measuring Your Progress
 
 Track how often you accept versus dismiss suggestions. In Cursor, the dashboard shows acceptance rate. In Copilot, you can review telemetry through settings.
 
 A low acceptance rate (below 20%) suggests suggestions don't match your needs, consider reducing trigger frequency or switching to on-demand mode. A high rate indicates the tool understands your patterns well, but evaluate whether you're accepting quality code or just speeding through suggestions without review.
 
-Step 9: Finding Your Balance
+Step 9 - Finding Your Balance
 
 The goal isn't eliminating AI assistance but finding the right integration level for your work. Some developers thrive with aggressive autocomplete that handles boilerplate while they focus on architecture. Others need near-silence during problem-solving sessions.
 
@@ -159,7 +159,7 @@ Start with conservative settings and gradually increase assistance until you ide
 
 With proper configuration, AI autocomplete becomes a helpful colleague who knows when to speak and when to stay quiet, rather than a constant interruption demanding your attention.
 
-Step 10: The Neuroscience of Distraction in Code Completion
+Step 10 - The Neuroscience of Distraction in Code Completion
 
 Understanding why ghost text distracts helps you configure effectively. Your brain processes ghost text as:
 
@@ -171,11 +171,11 @@ This happens milliseconds, but multiply by 50-100 suggestions per coding session
 
 Research on autocomplete shows that developers who see suggestions spend 15-20% longer on tasks, not from acceptance but from the evaluation time. The solution isn't always more suggestions, it's better-timed suggestions that require less evaluation.
 
-Practical implication: If ghost text appears immediately after you type 2 characters, your brain hasn't formed complete intent yet. You're more likely to critically evaluate the suggestion because you're still thinking. If it appears after 10+ characters, you're further along in thought and more likely to accept or dismiss quickly.
+Practical implication - If ghost text appears immediately after you type 2 characters, your brain hasn't formed complete intent yet. You're more likely to critically evaluate the suggestion because you're still thinking. If it appears after 10+ characters, you're further along in thought and more likely to accept or dismiss quickly.
 
 This is why increasing suggestion delay (to 200-300ms) often improves perceived productivity even though the actual time to acceptance increases slightly. Your brain has less frequent decision-making interruptions.
 
-Step 11: Distraction Profiling: Know Your Specific Issues
+Step 11 - Distraction Profiling: Know Your Specific Issues
 
 Everyone experiences autocomplete distraction differently. Profile yours:
 
@@ -220,9 +220,9 @@ False positive distraction profile:
 
 The more specific your distraction source, the more targeted your fix.
 
-Step 12: Context Quality for Better Suggestions
+Step 12 - Context Quality for Better Suggestions
 
-The paradox: sometimes better suggestions reduce distraction. If suggestions are 90% relevant, you accept them quickly without evaluation. If they're 30% relevant, you spend time rejecting.
+The paradox - sometimes better suggestions reduce distraction. If suggestions are 90% relevant, you accept them quickly without evaluation. If they're 30% relevant, you spend time rejecting.
 
 Improve context so suggestions are higher quality:
 
@@ -256,7 +256,7 @@ const discountedPrice = originalPrice * DISCOUNT_RATE;
 
 Higher-quality suggestions mean you can afford more frequent triggers without distraction.
 
-Step 13: Language-Specific Distraction Patterns
+Step 13 - Language-Specific Distraction Patterns
 
 Different languages and file types show different distraction levels:
 
@@ -304,7 +304,7 @@ Configuration files (YAML, TOML, INI):
 }
 ```
 
-Step 14: The "Focus Mode" Methodology
+Step 14 - The "Focus Mode" Methodology
 
 For deep work where distraction is unacceptable, use a structured approach:
 
@@ -330,7 +330,7 @@ After focus (5 minutes):
 
 This is more extreme than most developers need, but for architectural work, algorithm design, or debugging complex issues, this structure prevents decision fatigue.
 
-Step 15: The Role of AI Models in Distraction
+Step 15 - The Role of AI Models in Distraction
 
 Different AI models have different distraction profiles:
 
@@ -351,26 +351,26 @@ Copilot vs Codeium vs Claude Code:
 
 If distraction is your main issue, consider tools that are inherently less aggressive. Switching from Copilot to Codeium sometimes solves distraction complaints without any configuration.
 
-Step 16: Measuring Distraction Reduction
+Step 16 - Measuring Distraction Reduction
 
 Track whether your changes actually reduced distraction:
 
-Metric 1: Time to task completion
+Metric 1 - Time to task completion
 - Track 5 similar coding tasks before and after configuration changes
 - Did time decrease? You probably reduced distraction
 - Did time stay the same? Configuration didn't help (try other changes)
 
-Metric 2: Code quality review feedback
+Metric 2 - Code quality review feedback
 - More distraction often correlates with lower code quality (you accepted wrong suggestions)
 - Track reviewer comments about code quality before and after
 - Improvement suggests distraction reduction
 
-Metric 3: Subjective focus score
+Metric 3 - Subjective focus score
 - Daily, rate your coding focus 1-10
 - Average the week before and after configuration changes
 - 2+ point improvement is significant
 
-Metric 4: Suggestion acceptance rate
+Metric 4 - Suggestion acceptance rate
 - If you're dismissing 80% of suggestions, your configuration is probably wrong
 - If you're accepting 60%, it's balanced
 - Optimal is 50-70% acceptance (good suggestions you're actively using)

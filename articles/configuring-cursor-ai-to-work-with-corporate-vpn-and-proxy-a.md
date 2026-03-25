@@ -29,7 +29,7 @@ Table of Contents
 - [Alternative Approaches](#alternative-approaches)
 - [Automating Configuration Across Teams](#automating-configuration-across-teams)
 - [Debugging Network Issues with Cursor](#debugging-network-issues-with-cursor)
-- [Comparison: Cursor vs. Alternatives in Restricted Networks](#comparison-cursor-vs-alternatives-in-restricted-networks)
+- [Comparison - Cursor vs. Alternatives in Restricted Networks](#comparison-cursor-vs-alternatives-in-restricted-networks)
 - [Production Readiness Checklist](#production-readiness-checklist)
 - [Pre-Deployment Verification](#pre-deployment-verification)
 
@@ -223,7 +223,7 @@ cat /tmp/cursor_traffic.log | grep -i "proxy\|auth\|connection"
 
 These commands reveal whether the issue is proxy authentication, certificate validation, DNS, or Cursor-specific configuration.
 
-Comparison: Cursor vs. Alternatives in Restricted Networks
+Comparison - Cursor vs. Alternatives in Restricted Networks
 
 | Tool | Proxy Support | NTLM Auth | Local Mode | Setup Complexity |
 |------|---|---|---|---|

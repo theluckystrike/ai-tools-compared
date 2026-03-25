@@ -26,7 +26,7 @@ Table of Contents
 - [Cost Calculation Example](#cost-calculation-example)
 - [Extended Cost Scenarios](#extended-cost-scenarios)
 - [Quality Differences in Practice](#quality-differences-in-practice)
-- [Hybrid Strategy: The Smart Approach](#hybrid-strategy-the-smart-approach)
+- [Hybrid Strategy - The Smart Approach](#hybrid-strategy-the-smart-approach)
 - [Decision Framework](#decision-framework)
 
 Current API Pricing (2026)
@@ -166,7 +166,7 @@ Cost Calculation Example
 
 Here are real costs for a realistic workload:
 
-Scenario: 10,000 daily user queries, average 500 input tokens, 800 output tokens
+Scenario - 10,000 daily user queries, average 500 input tokens, 800 output tokens
 
 Sonnet Costs:
 
@@ -184,7 +184,7 @@ Opus Costs:
 
 - Total: $675/day
 
-Difference: $540/day ($16,200/year)
+Difference - $540/day ($16,200/year)
 
 For this workload, Opus only makes sense if the improved quality reduces development time or increases user retention meaningfully.
 
@@ -218,9 +218,9 @@ Tasks where Sonnet matches Opus quality:
 - Structured data extraction from well-formatted text
 - Translation between common programming languages
 
-A practical way to decide: run your 20 hardest representative prompts through both models and count how often Sonnet's output requires manual correction. If the correction rate is under 15%, Sonnet is sufficient for that task category.
+A practical way to decide - run your 20 hardest representative prompts through both models and count how often Sonnet's output requires manual correction. If the correction rate is under 15%, Sonnet is sufficient for that task category.
 
-Hybrid Strategy: The Smart Approach
+Hybrid Strategy - The Smart Approach
 
 Most production systems benefit from model routing:
 

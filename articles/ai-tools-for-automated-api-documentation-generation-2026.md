@@ -30,7 +30,7 @@ tags: [ai-tools-compared, artificial-intelligence, api]
 - $25/month for teams with: private docs and custom domains.
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Focus on the 20%: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- Pricing: Free tier with limited features.
+- Pricing - Free tier with limited features.
 - It's free: widely adopted, and gives you full control, but requires manual CI/CD setup.
 - Mastering advanced features takes: 1-2 weeks of regular use.
 
@@ -48,7 +48,7 @@ Quick Comparison Table
 | Stoplight | 8/10 | Very High | Native | Good | Native | Free/$99/mo |
 | Postman | 8/10 | High | Excellent | Good | Native | Free/$12/mo |
 
-Mintlify: Speed and Modern Design
+Mintlify - Speed and Modern Design
 
 Mintlify generates beautiful documentation from OpenAPI specs in minutes. It's the fastest path from spec to production docs.
 
@@ -226,9 +226,9 @@ Your OpenAPI spec (e.g., `openapi.json`):
 
 Mintlify auto-generates interactive docs with request/response examples, code samples in JavaScript/Python/Go/Ruby, and parameter descriptions.
 
-Pricing: Free for single projects. $25/month for teams with private docs and custom domains.
+Pricing - Free for single projects. $25/month for teams with private docs and custom domains.
 
-ReadMe: Enterprise-Grade with Workflows
+ReadMe - Enterprise-Grade with Workflows
 
 ReadMe is the heavyweight for teams selling APIs or needing complex customization. It includes API registry, versioning, SDKs, and workflow automation.
 
@@ -322,9 +322,9 @@ ReadMe Config (readme.json):
 
 ReadMe auto-generates code samples in matched SDKs, generates changelog diffs between API versions, and provides metrics on which endpoints users actually use.
 
-Pricing: Free tier with limited features. $75/month for teams. Enterprise pricing for large organizations.
+Pricing - Free tier with limited features. $75/month for teams. Enterprise pricing for large organizations.
 
-Swagger UI: The Standard, Manual Setup
+Swagger UI - The Standard, Manual Setup
 
 Swagger UI is the de facto standard for OpenAPI documentation. It's free, widely adopted, and gives you full control, but requires manual CI/CD setup.
 
@@ -386,9 +386,9 @@ jobs:
 
 Swagger UI is ideal for APIs without complex workflows or version management needs.
 
-Pricing: Free and open-source.
+Pricing - Free and open-source.
 
-Stoplight: API-First Design and Governance
+Stoplight - API-First Design and Governance
 
 Stoplight combines API design, documentation, mocking, and governance in one platform. It's best for teams building APIs collaboratively.
 
@@ -431,9 +431,9 @@ jobs:
             --project "my-api"
 ```
 
-Pricing: Free for public projects. $99/month for teams. Enterprise pricing available.
+Pricing - Free for public projects. $99/month for teams. Enterprise pricing available.
 
-Postman: Developer-Friendly with Automation
+Postman - Developer-Friendly with Automation
 
 Postman is widely used for API testing but also generates documentation automatically from collections.
 
@@ -522,12 +522,12 @@ jobs:
       - name: Update Postman Collection
         run: |
           curl -X PUT https://api.getpostman.com/collections/{{collection_id}} \
-            -H "X-API-Key: ${{ secrets.POSTMAN_API_KEY }}" \
+            -H "X-API-Key - ${{ secrets.POSTMAN_API_KEY }}" \
             -H "Content-Type: application/json" \
             -d @postman-collection.json
 ```
 
-Pricing: Free tier limited. $12/month for teams.
+Pricing - Free tier limited. $12/month for teams.
 
 CI/CD Integration Patterns
 
@@ -642,7 +642,7 @@ Choose Postman if:
 - You're doing test-driven API development
 - Budget is tight ($12/month)
 
-Sample Workflow: Spec → Docs → SDK
+Sample Workflow - Spec → Docs → SDK
 
 A complete example for auto-generating docs and TypeScript SDK:
 

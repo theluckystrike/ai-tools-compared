@@ -39,7 +39,7 @@ AI coding tools have transformed how developers write software, offering intelli
 - Use AI for Exploration: Not Execution
 
 Instead of having AI write code for you, use it to explore APIs and libraries.
-- Review Generated Code Thoroughly: When you do use AI to generate code, treat it as a first draft requiring careful review.
+- Review Generated Code Thoroughly - When you do use AI to generate code, treat it as a first draft requiring careful review.
 - If mostly "no": ask the author to review and re-explain.
 
 Prerequisites
@@ -52,20 +52,20 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Autocomplete Dependency Trap
+Step 1 - The Autocomplete Dependency Trap
 
 When you accept AI suggestions without understanding them, you skip the mental process of solving a problem. This creates a dangerous cycle: the less you practice fundamental skills, the more you need AI assistance, and the weaker your independent problem-solving becomes.
 
 Signs of autocomplete dependency include struggling to write code without AI active, difficulty explaining why certain code works, and anxiety when AI suggestions are unavailable. These symptoms indicate you've shifted from using AI as a tool to relying on it as a crutch.
 
-Step 2: Strategic AI Tool Usage
+Step 2 - Strategic AI Tool Usage
 
 1. Write First, Accept Second
 
 Before accepting any AI suggestion, write your own implementation first. Even if you delete it afterward, the act of thinking through the problem maintains your coding muscles. Here's an effective workflow:
 
 ```python
-Step 1: Attempt the problem yourself
+Step 1 - Attempt the problem yourself
 def calculate_fibonacci(n):
     if n <= 1:
         return n
@@ -74,7 +74,7 @@ def calculate_fibonacci(n):
         a, b = b, a + b
     return b
 
-Step 2: Compare with AI suggestion
+Step 2 - Compare with AI suggestion
 AI might suggest recursion or memoization
 Evaluate which is better for your use case
 ```
@@ -146,7 +146,7 @@ public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
 
 This review process transforms AI output from a shortcut into a learning opportunity.
 
-Step 3: Build Sustainable Skills Alongside AI
+Step 3 - Build Sustainable Skills Alongside AI
 
 Maintain Coding Practice Without AI
 
@@ -161,16 +161,16 @@ Build a Personal Knowledge Base
 When AI solves a problem for you, add the underlying concept to your personal documentation. This creates a growing reference that reduces future AI dependency while reinforcing learning:
 
 ```
-Step 4: Promise.all() Error Handling
+Step 4 - Promise.all() Error Handling
 
-Key insight: Promise.all() fails fast - one rejection rejects all
-Solution: Use Promise.allSettled() when you need all results
+Key insight - Promise.all() fails fast - one rejection rejects all
+Solution - Use Promise.allSettled() when you need all results
 
-Learn more: MDN Promise documentation
-Date added: 2026-03-16
+Learn more - MDN Promise documentation
+Date added - 2026-03-16
 ```
 
-Step 5: Practical Integration Framework
+Step 5 - Practical Integration Framework
 
 Develop a personal framework for when to use AI versus when to work independently:
 
@@ -190,7 +190,7 @@ Develop a personal framework for when to use AI versus when to work independentl
 
 | Production code | Always review and understand |
 
-Step 6: Measuring Your Independence
+Step 6 - Measuring Your Independence
 
 Track your AI dependency over time with simple metrics:
 
@@ -204,7 +204,7 @@ Track your AI dependency over time with simple metrics:
 
 Regular assessment helps you maintain balance and identify when dependency is increasing.
 
-Step 7: Practical Coding Exercises to Build Independence
+Step 7 - Practical Coding Exercises to Build Independence
 
 Design deliberate practice sessions without AI to reinforce skills:
 
@@ -220,7 +220,7 @@ Monthly deeper dives (2-3 hours):
 
 Pick a topic you use AI for frequently (async/await, database queries, state management) and implement 3-5 projects in that area without assistance. The goal is building muscle memory that survives AI unavailability.
 
-Step 8: Test Your Actual Comprehension
+Step 8 - Test Your Actual Comprehension
 
 Before accepting AI-generated code, verify you genuinely understand it:
 
@@ -244,7 +244,7 @@ If you can't answer these, don't accept the code yet.
 Ask AI to explain until you understand.
 ```
 
-Step 9: Measuring Dependency Over Time
+Step 9 - Measuring Dependency Over Time
 
 Create concrete metrics to track your independence:
 
@@ -267,9 +267,9 @@ session_log = {
 
 After 4 weeks:
 Week 1 avg: 45% independent, confidence 5
-Week 2 avg: 58% independent, confidence 6
-Week 3 avg: 72% independent, confidence 7.5
-Week 4 avg: 81% independent, confidence 8
+Week 2 avg - 58% independent, confidence 6
+Week 3 avg - 72% independent, confidence 7.5
+Week 4 avg - 81% independent, confidence 8
 ```
 
 If metrics are trending down, you're becoming more dependent. Adjust by:
@@ -277,19 +277,19 @@ If metrics are trending down, you're becoming more dependent. Adjust by:
 - Solving problems without AI before checking your work
 - Skipping AI on problems you've solved before
 
-Step 10: Build a Personal Code Reference Library
+Step 10 - Build a Personal Code Reference Library
 
 Transform AI-assisted learning into reusable knowledge:
 
 ```markdown
 Personal Code Reference
 
-Step 11: Database Connection Pooling (Python + SQLAlchemy)
+Step 11 - Database Connection Pooling (Python + SQLAlchemy)
 
-Problem: Database connections are expensive; I need to reuse them.
-Solution: Use SQLAlchemy's QueuePool
+Problem - Database connections are expensive; I need to reuse them.
+Solution - Use SQLAlchemy's QueuePool
 
-Key insight: Pool size should be (CPU_count * 2) + reserve
+Key insight - Pool size should be (CPU_count * 2) + reserve
 - PostgreSQL default connections: 100
 - Typical pool size for web app: 10-20 (rarely need more)
 
@@ -310,13 +310,13 @@ Why this works:
 - max_overflow: Extra connections during traffic spikes
 - pool_recycle: Recycle connections hourly (database timeout)
 
-Date added: 2026-03-16
-Source: AI-assisted, verified in production
+Date added - 2026-03-16
+Source - AI-assisted, verified in production
 ```
 
 Having a reference of patterns you've internalized prevents reflexive AI dependency.
 
-Step 12: Team Strategies for Maintaining Balance
+Step 12 - Team Strategies for Maintaining Balance
 
 If you manage a team, establish norms around AI tool usage:
 
@@ -341,7 +341,7 @@ Knowledge sharing sessions:
 
 Have team members present how they solved complex problems without AI. This reinforces that AI acceleration doesn't mean AI dependency.
 
-Step 13: Red Flags: When You're Too Dependent
+Step 13 - Red Flags: When You're Too Dependent
 
 Watch for these patterns indicating unhealthy AI reliance:
 
@@ -355,7 +355,7 @@ Watch for these patterns indicating unhealthy AI reliance:
 
 If you identify 3+ of these, implement a 2-week AI restriction on routine tasks.
 
-Step 14: Long-Term Career Resilience
+Step 14 - Long-Term Career Resilience
 
 Developers who maintain independent skills remain valuable even as AI improves:
 

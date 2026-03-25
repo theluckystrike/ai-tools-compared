@@ -81,7 +81,7 @@ An AI assistant might transform this into a professional release announcement:
 | Cursor | Reads full repo for context | Git log integration | Project-aware language | $20/month (Pro) |
 | Codeium | Basic text suggestions | Limited changelog support | Template-based output | Free tier available |
 
-Release v2.1.0: Python 3.13 Support and Performance Improvements
+Release v2.1.0 - Python 3.13 Support and Performance Improvements
 
 We're excited to announce version 2.1.0 of our library, bringing Python 3.13 compatibility, significant performance improvements, and important deprecation notices.
 
@@ -141,7 +141,7 @@ Claude excels at understanding context and nuance. When given commit messages an
 
 - Providing thoughtful breaking change explanations with migration paths
 
-Example strength: Claude's announcements often include helpful "Why this matters" sections that explain the real-world impact of changes to users who may not understand technical details.
+Example strength - Claude's announcements often include helpful "Why this matters" sections that explain the real-world impact of changes to users who may not understand technical details.
 
 ChatGPT (OpenAI)
 
@@ -153,7 +153,7 @@ ChatGPT is strong at producing consistent, formulaic announcements quickly. It's
 
 - Producing verbose, announcements when requested
 
-Example strength: ChatGPT excels when you need high-volume output following a strict template, it can generate dozens of announcement variations with consistent structure.
+Example strength - ChatGPT excels when you need high-volume output following a strict template, it can generate dozens of announcement variations with consistent structure.
 
 Cursor
 
@@ -165,11 +165,11 @@ Cursor's advantage is its tight integration with code. It can:
 
 - Generate announcements that reference specific code examples
 
-Example strength: Cursor can embed actual code snippets in migration guides because it has access to your project files.
+Example strength - Cursor can embed actual code snippets in migration guides because it has access to your project files.
 
 GitHub Copilot
 
-Copilot works well within GitHub's ecosystem:
+Copilot works well within GitHub's environment:
 
 - Integration with GitHub Releases
 
@@ -177,7 +177,7 @@ Copilot works well within GitHub's ecosystem:
 
 - Context from Issues and PRs
 
-Example strength: Best for projects already deeply integrated into GitHub's ecosystem.
+Example strength - Best for projects already deeply integrated into GitHub's environment.
 
 Best Practices for AI-Generated Release Announcements
 
@@ -289,7 +289,7 @@ the top 2-3 features. Include relevant hashtags if appropriate."""
                 "content": f"""{context}
 
 Create an email announcement suitable for mailing list subscribers.
-Structure: subject line, 2-3 paragraph intro, key features,
+Structure - subject line, 2-3 paragraph intro, key features,
 upgrade guidance, and link to detailed release notes."""
             }]
         )
@@ -320,7 +320,7 @@ print(announcements["email"])
 
 Tool-Specific Prompting Strategies
 
-For Claude: Request Multiple Perspectives
+For Claude - Request Multiple Perspectives
 
 ```
 Generate three versions of the release announcement:
@@ -334,7 +334,7 @@ Then create a master announcement that synthesizes the best from each.
 
 Claude's strength is maintaining coherent voice across multiple versions while tailoring technical depth appropriately.
 
-For ChatGPT: Provide Detailed Templates
+For ChatGPT - Provide Detailed Templates
 
 ```
 Use this structure for the release announcement:
@@ -356,7 +356,7 @@ Our style guidelines:
 
 ChatGPT excels when given clear structural requirements and style guidance.
 
-For Cursor: Use Codebase Context
+For Cursor - Use Codebase Context
 
 ```
 I'm releasing version X.X.X of this project.
@@ -423,10 +423,10 @@ Any speed/memory improvements
 
 Real-World Release Announcement Examples
 
-Example 1: Python Library (Breaking Change)
+Example 1 - Python Library (Breaking Change)
 
 ```markdown
-Version 3.0.0: Async-First, Type-Safe, and Faster
+Version 3.0.0 - Async-First, Type-Safe, and Faster
 
 We're excited to announce version 3.0.0, a major evolution of our library
 built on async/await first principles and full type annotations.
@@ -440,10 +440,10 @@ Key Improvements
 Breaking Changes
 
 1. Async-Only API
-Old: `result = client.fetch_data()`
-New: `result = await client.fetch_data()`
+Old - `result = client.fetch_data()`
+New - `result = await client.fetch_data()`
 
-Migration: We provide a compatibility wrapper:
+Migration - We provide a compatibility wrapper:
 ```python
 from mylib import Client, sync_wrapper
 

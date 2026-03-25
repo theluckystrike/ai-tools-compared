@@ -33,7 +33,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Access Copilot Chat
+Step 1 - Access Copilot Chat
 
 
 Copilot Chat is available in VS Code, Visual Studio, and JetBrains IDEs through the GitHub Copilot extension. In VS Code, you access it via the chat icon in the sidebar or by pressing `Cmd+I` on Mac or `Ctrl+I` on Windows. The chat interface provides a conversation where you can explain what you want to build, ask questions about code, or request specific implementations.
@@ -42,7 +42,7 @@ Copilot Chat is available in VS Code, Visual Studio, and JetBrains IDEs through 
 Before generating code, ensure you have the latest version of the Copilot extension installed and that you are signed in with an account that has access to Copilot Chat features.
 
 
-Step 2: Basic Code Generation
+Step 2 - Basic Code Generation
 
 
 The simplest way to generate code is by describing what you want in natural language. Your description should include relevant context such as the programming language, the desired functionality, and any specific requirements or constraints.
@@ -75,7 +75,7 @@ function factorial(n: number): number {
 This response gives you a working implementation you can copy directly into your codebase.
 
 
-Step 3: Providing Context for Better Results
+Step 3 - Providing Context for Better Results
 
 
 The quality of generated code improves significantly when you provide adequate context. Instead of a minimal prompt, include information about your existing code structure, coding conventions, and the specific requirements of your implementation.
@@ -152,7 +152,7 @@ export class UserService {
 ```
 
 
-Step 4: Generate Code for Different Scenarios
+Step 4 - Generate Code for Different Scenarios
 
 
 Copilot Chat handles various coding scenarios effectively when you frame your requests appropriately.
@@ -195,7 +195,7 @@ Include tests for valid cards, invalid cards, and edge cases like empty strings.
 ```
 
 
-Step 5: Refining Generated Code
+Step 5 - Refining Generated Code
 
 
 After receiving initial code, you can refine it through follow-up messages. This iterative approach helps you shape the output to match your exact needs.
@@ -219,7 +219,7 @@ Start with a basic request and then add requirements:
 This approach produces more focused code than attempting to specify everything in a single prompt.
 
 
-Step 6: Work with File Context
+Step 6 - Work with File Context
 
 
 Copilot Chat can read files in your workspace, allowing you to generate code that integrates with existing code. Reference files by name or use the @mention feature:
@@ -254,7 +254,7 @@ Structure your prompts to include what you need clearly:
 Avoid ambiguous prompts. Instead of "make a function that processes data," specify exactly what processing means in your context.
 
 
-Step 7: Common Use Cases
+Step 7 - Common Use Cases
 
 
 Copilot Chat excels at generating boilerplate code, handling repetitive patterns, and implementing well-defined algorithms. Common effective use cases include:
@@ -273,7 +273,7 @@ Copilot Chat excels at generating boilerplate code, handling repetitive patterns
 - Writing test cases and mock data
 
 
-Step 8: Limitations and Workarounds
+Step 8 - Limitations and Workarounds
 
 
 Copilot Chat works best with well-defined tasks. Complex requirements benefit from breaking them into smaller, sequential requests. For intricate logic, provide examples or reference implementations in your prompt. Always review generated code before integrating it into production systems.

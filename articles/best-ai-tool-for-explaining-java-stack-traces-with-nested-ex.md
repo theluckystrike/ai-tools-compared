@@ -30,9 +30,9 @@ Table of Contents
 
 - [Why Nested Exception Chains Are Hard to Debug](#why-nested-exception-chains-are-hard-to-debug)
 - [What Makes an AI Tool Effective for Stack Trace Analysis](#what-makes-an-ai-tool-effective-for-stack-trace-analysis)
-- [Claude Code: Best for Deep Exception Analysis](#claude-code-best-for-deep-exception-analysis)
-- [ChatGPT: Solid for Common Exception Patterns](#chatgpt-solid-for-common-exception-patterns)
-- [GitHub Copilot: Limited for Debugging](#github-copilot-limited-for-debugging)
+- [Claude Code - Best for Deep Exception Analysis](#claude-code-best-for-deep-exception-analysis)
+- [ChatGPT - Solid for Common Exception Patterns](#chatgpt-solid-for-common-exception-patterns)
+- [GitHub Copilot - Limited for Debugging](#github-copilot-limited-for-debugging)
 - [Practical Workflow for Stack Trace Analysis](#practical-workflow-for-stack-trace-analysis)
 - [Configuration for Better Exception Handling](#configuration-for-better-exception-handling)
 - [Advanced Stack Trace Scenarios](#advanced-stack-trace-scenarios)
@@ -68,17 +68,17 @@ public void processOrder(Long orderId) {
 When this fails in production, you might see:
 
 ```
-OrderProcessingException: Failed to process order
+OrderProcessingException - Failed to process order
     at com.example.OrderService.processOrder(OrderService.java:42)
     at com.example.OrderController.submitOrder(OrderController.java:28)
     ... 15 more
-Caused by: PaymentProcessingException: Payment declined
+Caused by - PaymentProcessingException: Payment declined
     at com.example.PaymentService.processPayment(PaymentService.java:85)
     ... 3 more
-Caused by: SQLException: Connection refused
+Caused by - SQLException: Connection refused
     at com.example.DatabaseUtil.getConnection(DatabaseUtil.java:34)
     ... 2 more
-Caused by: SocketTimeoutException: Connect timed out
+Caused by - SocketTimeoutException: Connect timed out
     ... 1 more
 ```
 
@@ -98,7 +98,7 @@ Effective stack trace analysis requires the AI to:
 
 Tools that simply reprint the stack trace without analysis provide minimal value. You need an assistant that can connect the dots between `SocketTimeoutException` and the configuration that controls connection timeouts.
 
-Claude Code: Best for Deep Exception Analysis
+Claude Code - Best for Deep Exception Analysis
 
 Claude Code from Anthropic consistently outperforms other AI assistants at analyzing nested Java exception chains. It demonstrates a strong ability to:
 
@@ -128,7 +128,7 @@ The chain shows:
 3. SQLException (framework exception)
 4. SocketTimeoutException (root cause)
 
-The actual issue: Your database connection pool is exhausted or the database server is unresponsive.
+The actual issue - Your database connection pool is exhausted or the database server is unresponsive.
 
 Recommendations:
 1. Check database server health
@@ -138,7 +138,7 @@ Recommendations:
 */
 ```
 
-ChatGPT: Solid for Common Exception Patterns
+ChatGPT - Solid for Common Exception Patterns
 
 ChatGPT handles well-documented exception scenarios effectively. For standard Java exceptions like `NullPointerException`, `ArrayIndexOutOfBoundsException`, or common Spring framework exceptions, ChatGPT provides accurate explanations and standard remediation approaches.
 
@@ -152,7 +152,7 @@ The limitation appears when dealing with:
 
 ChatGPT works best when you can identify the exception type and search for solutions. For novel or complex nested chains, Claude Code demonstrates stronger analytical capabilities.
 
-GitHub Copilot: Limited for Debugging
+GitHub Copilot - Limited for Debugging
 
 GitHub Copilot excels at code generation but provides minimal assistance for debugging existing code. Its primary value in exception scenarios comes from suggesting try-catch blocks or declaring thrown exceptions during code generation, not from analyzing runtime failures.
 
@@ -211,32 +211,32 @@ Advanced Stack Trace Scenarios
 
 Spring Boot + Database Connection Pool Exhaustion:
 ```
-Caused by: HikariPool-1 - Connection is not available, request timed out after 30000ms.
+Caused by - HikariPool-1 - Connection is not available, request timed out after 30000ms.
     at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:514)
     at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:489)
     ...
-Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 -
+Caused by - java.sql.SQLTransientConnectionException: HikariPool-1 -
     Connection is not available, request timed out after 30000ms.
     at com.zaxxer.hikari.pool.HikariPool.createPoolInitializationException(HikariPool.java:560)
 ```
 
-Claude Code analysis: "The database connection pool (HikariPool) is exhausted. This indicates either:
+Claude Code analysis - "The database connection pool (HikariPool) is exhausted. This indicates either:
 1. Database server is slow/unreachable (queries hold connections too long)
 2. Connection pool is misconfigured (too few connections for load)
 3. Connections have a leak (not being returned)
 
-Solutions: Increase `maximumPoolSize`, reduce query timeout, or investigate connection leaks with stack traces on connection.getConnection() calls."
+Solutions - Increase `maximumPoolSize`, reduce query timeout, or investigate connection leaks with stack traces on connection.getConnection() calls."
 
 Hibernate LazyInitializationException with Detached Entity:
 ```
-LazyInitializationException: could not initialize proxy - no Session
+LazyInitializationException - could not initialize proxy - no Session
     at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:169)
     at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:309)
-Caused by: org.hibernate.SessionException: Session is closed!
+Caused by - org.hibernate.SessionException: Session is closed!
     at org.hibernate.internal.SessionImpl.checkOpen(SessionImpl.java:3728)
 ```
 
-Claude Code: "You're accessing a lazy-loaded Hibernate relationship after the Session closed. The entity was detached from the session. Fix by:
+Claude Code - "You're accessing a lazy-loaded Hibernate relationship after the Session closed. The entity was detached from the session. Fix by:
 1. Eagerly loading: `@OneToMany(fetch = FetchType.EAGER)`
 2. Fetch in query: `Query.setHint('org.hibernate.fetchMode.field', FetchMode.JOIN)`
 3. Use @Transactional on caller: `@Transactional` ensures Session stays open during processing."
@@ -245,17 +245,17 @@ Stack Trace Pattern Recognition
 
 AI tools recognize recurring patterns in stack traces:
 
-Pattern 1: N+1 Query Problem
+Pattern 1 - N+1 Query Problem
 - Symptom: Hibernate or JPA generating hundreds of select queries in a loop
 - Stack trace shows repeated calls to `Query.executeUpdate()` or `Query.getResultList()`
 - AI recommendation: Use JOIN FETCH or @EntityGraph to eager-load relationships
 
-Pattern 2: Deadlock in Concurrent Access
+Pattern 2 - Deadlock in Concurrent Access
 - Symptom: SQLException with "Deadlock detected" message
 - Stack shows multiple threads accessing same resources in different order
 - AI recommendation: Ensure threads acquire locks in consistent order or use optimistic locking
 
-Pattern 3: Memory Leak in Long-Running Process
+Pattern 3 - Memory Leak in Long-Running Process
 - Symptom: OutOfMemoryError with millions of cached objects
 - Stack shows Thread sleeping/waiting, accumulated objects never released
 - AI recommendation: Implement cache eviction, use WeakReferences, or add explicit cleanup
@@ -307,10 +307,10 @@ Good prompt format:
 My Java application is throwing this exception in production:
 [FULL STACK TRACE]
 
-The application: [1-2 sentence description of what it does]
-Framework: Spring Boot 3.x
-Java version: 21
-Database: PostgreSQL
+The application - [1-2 sentence description of what it does]
+Framework - Spring Boot 3.x
+Java version - 21
+Database - PostgreSQL
 
 What's the root cause and how do I fix it?
 ```
@@ -364,7 +364,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -376,7 +376,7 @@ AI tools generate queries well for common patterns, but always test generated qu
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

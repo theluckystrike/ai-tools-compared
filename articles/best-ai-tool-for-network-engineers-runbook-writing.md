@@ -35,8 +35,8 @@ The best AI tools for network engineers writing runbooks reduce documentation ti
 
 
 - Can I use these: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
-- Local/Open-Source Options: Network-focused open-source LLMs or locally-run models eliminate cloud data transmission.
-- Strategy 2: Use Examples
+- Local/Open-Source Options - Network-focused open-source LLMs or locally-run models eliminate cloud data transmission.
+- Strategy 2 - Use Examples
 Provide an example of a well-written runbook you've created: "Use this existing failover runbook as a template for style and structure" improves consistency.
 - Use AI iteratively: 1.
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.
@@ -96,19 +96,19 @@ The best outcome occurs when AI handles the mechanical aspects of documentation,
 
 Specific Tools and Recommendations for Network Teams
 
-Claude and ChatGPT: Both work well for runbook generation when given network context. Prompt example: "Generate a runbook for BGP failover between primary and secondary routers. Primary: Cisco ASR1000 (AS65001), Secondary: Cisco ASR1000 (AS65002). Failover trigger: primary interface down or BGP session loss. Include prerequisites, step-by-step configuration verification, exact IOS commands, monitoring steps, and rollback procedures. Format with clear sections and exact command syntax."
+Claude and ChatGPT - Both work well for runbook generation when given network context. Prompt example: "Generate a runbook for BGP failover between primary and secondary routers. Primary - Cisco ASR1000 (AS65001), Secondary: Cisco ASR1000 (AS65002). Failover trigger: primary interface down or BGP session loss. Include prerequisites, step-by-step configuration verification, exact IOS commands, monitoring steps, and rollback procedures. Format with clear sections and exact command syntax."
 
 Both models understand Cisco IOS, Junos, and other vendor syntax sufficiently to produce usable first drafts. Claude tends to produce more detailed explanations; ChatGPT generates more concise outputs.
 
-Specialized Network Documentation Tools: Some vendors (like Cisco's embedded AI features and network management platforms) include AI-powered documentation assistance. These tools have built-in knowledge of specific vendor syntax. Advantage: high accuracy for specific platforms. Disadvantage: vendor lock-in and cost.
+Specialized Network Documentation Tools - Some vendors (like Cisco's embedded AI features and network management platforms) include AI-powered documentation assistance. These tools have built-in knowledge of specific vendor syntax. Advantage - high accuracy for specific platforms. Disadvantage - vendor lock-in and cost.
 
-Local/Open-Source Options: Network-focused open-source LLMs or locally-run models eliminate cloud data transmission. This appeals to security-sensitive organizations. Setup requires more technical overhead.
+Local/Open-Source Options - Network-focused open-source LLMs or locally-run models eliminate cloud data transmission. This appeals to security-sensitive organizations. Setup requires more technical overhead.
 
 Real-World Network Documentation Workflow
 
 Here's a practical workflow for creating runbooks with AI assistance:
 
-Step 1: Gather Procedure Details
+Step 1 - Gather Procedure Details
 Before using AI, collect the information you will provide to it:
 - Device types and models involved
 - Configuration details (IP addressing, routing protocols, interfaces)
@@ -124,17 +124,17 @@ Example details for a VPN failover procedure:
 - Failover criteria: Primary tunnel loss for 30 seconds
 - Recovery: Automatic failback when primary recovers
 
-Step 2: AI-Generated Draft
+Step 2 - AI-Generated Draft
 Prompt the AI with these details in a structured format:
 
 ```
 Create a full runbook for the following network procedure:
 
-PROCEDURE: VPN Failover from Primary to Secondary IPSec Tunnel
+PROCEDURE - VPN Failover from Primary to Secondary IPSec Tunnel
 
 ENVIRONMENT:
-- Primary IPSec Gateway: Cisco ASR1006 at 10.0.1.1
-- Secondary IPSec Gateway: Cisco ASR1006 at 10.0.2.1
+- Primary IPSec Gateway - Cisco ASR1006 at 10.0.1.1
+- Secondary IPSec Gateway - Cisco ASR1006 at 10.0.2.1
 - Protected network: 192.168.0.0/16
 - Remote site network: 10.20.0.0/16
 - BGP AS: 65001
@@ -169,7 +169,7 @@ Use exact Cisco IOS syntax for all commands.
 
 The AI generates a structured runbook covering all required elements, including specific commands and verification steps.
 
-Step 3: Technical Verification
+Step 3 - Technical Verification
 Review the AI-generated runbook for accuracy:
 - Are commands syntactically correct for your IOS version?
 - Do the IP addresses and interfaces match your environment?
@@ -179,7 +179,7 @@ Review the AI-generated runbook for accuracy:
 
 This verification step is critical. While AI generally produces accurate network commands, there can be version-specific syntax variations or environment mismatches that require correction.
 
-Step 4: Test the Runbook
+Step 4 - Test the Runbook
 In a lab environment or controlled test:
 - Execute commands from the runbook step-by-step
 - Verify that expected outcomes occur
@@ -187,7 +187,7 @@ In a lab environment or controlled test:
 - Note any missing steps or ambiguities
 - Test rollback procedures
 
-Step 5: Refinement
+Step 5 - Refinement
 Make edits based on your testing:
 - Correct any command syntax errors
 - Add timing information ("This step typically takes 2-3 minutes")
@@ -195,7 +195,7 @@ Make edits based on your testing:
 - Add warnings for potentially disruptive steps
 - Clarify any ambiguous sections
 
-Step 6: Knowledge Base Integration
+Step 6 - Knowledge Base Integration
 Store finalized runbooks in your documentation system (Confluence, GitHub, or internal wiki) with version control so you can track updates when network topology changes.
 
 Complete BGP Route Failover Runbook
@@ -203,10 +203,10 @@ Complete BGP Route Failover Runbook
 Here's what an AI-generated runbook (after verification) might look like:
 
 ```
-RUNBOOK: BGP Route Failover Between Primary and Secondary Paths
-Purpose: Redirect traffic from primary to secondary BGP path
-Time to Complete: 15-30 minutes
-Risk Level: Medium (affects traffic flows)
+RUNBOOK - BGP Route Failover Between Primary and Secondary Paths
+Purpose - Redirect traffic from primary to secondary BGP path
+Time to Complete - 15-30 minutes
+Risk Level - Medium (affects traffic flows)
 
 PREREQUISITES:
 - Administrative access to both routers
@@ -300,20 +300,20 @@ Typical time savings when using AI-assisted runbook creation:
 
 Prompting Strategies for Better Runbooks
 
-Strategy 1: Vendor-Specific Context
+Strategy 1 - Vendor-Specific Context
 Include version and model details: "Create runbook for Cisco IOS-XE 16.12 on ASR1006 routers" produces better output than generic prompts.
 
-Strategy 2: Use Examples
+Strategy 2 - Use Examples
 Provide an example of a well-written runbook you've created: "Use this existing failover runbook as a template for style and structure" improves consistency.
 
-Strategy 3: Iterative Refinement
+Strategy 3 - Iterative Refinement
 Don't expect perfect output. Use AI iteratively:
 1. Generate initial draft
 2. Ask AI to "expand the troubleshooting section"
 3. Request AI to "add specific command examples for verification"
 4. Ask for "rollback procedures if this step fails"
 
-Strategy 4: Team Library
+Strategy 4 - Team Library
 Save successful prompts and share them with your team. Over time, your team develops a library of prompts that work well for different runbook types.
 
 Measuring Runbook Quality and Impact
@@ -346,7 +346,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -358,7 +358,7 @@ Most modern tools support asynchronous workflows that work well across time zone
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

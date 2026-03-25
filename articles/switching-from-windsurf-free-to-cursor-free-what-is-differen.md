@@ -218,39 +218,39 @@ Cursor requires GitHub authentication for full features. Windsurf also supports 
 
 Real-World Usage Scenarios
 
-Scenario 1: Building a React component with form validation
+Scenario 1 - Building a React component with form validation
 
-Windsurf Free: Generates component skeleton quickly, but struggles with complex form state management. You often write the validation logic yourself.
+Windsurf Free - Generates component skeleton quickly, but struggles with complex form state management. You often write the validation logic yourself.
 
-Cursor Free: Understands validation patterns better and generates more complete implementations that work on first try.
+Cursor Free - Understands validation patterns better and generates more complete implementations that work on first try.
 
-Winner: Cursor Free (fewer iterations needed)
+Winner - Cursor Free (fewer iterations needed)
 
-Scenario 2: Debugging a type error in a large TypeScript codebase
+Scenario 2 - Debugging a type error in a large TypeScript codebase
 
-Windsurf Free: Can suggest fixes but doesn't understand your project structure well. Requires you to provide significant context.
+Windsurf Free - Can suggest fixes but doesn't understand your project structure well. Requires you to provide significant context.
 
-Cursor Free: Automatically indexes your codebase and understands the type relationships. Suggests context-aware fixes immediately.
+Cursor Free - Automatically indexes your codebase and understands the type relationships. Suggests context-aware fixes immediately.
 
-Winner: Cursor Free (faster diagnosis)
+Winner - Cursor Free (faster diagnosis)
 
-Scenario 3: Writing boilerplate code (CRUD endpoints)
+Scenario 3 - Writing boilerplate code (CRUD endpoints)
 
-Windsurf Free: Excellent, fast suggestions, recognizes patterns quickly.
+Windsurf Free - Excellent, fast suggestions, recognizes patterns quickly.
 
-Cursor Free: Also good but slightly slower since it overthinks simple tasks.
+Cursor Free - Also good but slightly slower since it overthinks simple tasks.
 
-Winner: Windsurf Free (speed advantage matters for repetitive tasks)
+Winner - Windsurf Free (speed advantage matters for repetitive tasks)
 
 Cost-Benefit Analysis
 
 Calculate your actual cost per tool. If you hit rate limits regularly:
 
-Windsurf Free: 500 commands/day × 30 days = 15,000 actions/month
+Windsurf Free - 500 commands/day × 30 days = 15,000 actions/month
 - Cost: $0
 - Upgrade to Windsurf Pro: $15/month (for unlimited)
 
-Cursor Free: 2,000 completions/month
+Cursor Free - 2,000 completions/month
 - Cost: $0
 - Upgrade to Cursor Pro: $20/month (unlimited, includes Pro features)
 

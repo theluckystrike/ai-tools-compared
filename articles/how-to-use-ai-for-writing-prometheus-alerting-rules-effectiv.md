@@ -25,7 +25,7 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Practical Examples for Common Use Cases](#practical-examples-for-common-use-cases)
 - [Best Practices for AI-Assisted Prometheus Rule Writing](#best-practices-for-ai-assisted-prometheus-rule-writing)
-- [Advanced Use Cases: AI for Alert Optimization](#advanced-use-cases-ai-for-alert-optimization)
+- [Advanced Use Cases - AI for Alert Optimization](#advanced-use-cases-ai-for-alert-optimization)
 - [Recording Rules and Performance Optimization](#recording-rules-and-performance-optimization)
 - [Troubleshooting](#troubleshooting)
 
@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Techniques for Effective AI-Assisted Rule Writing
+Step 1 - Techniques for Effective AI-Assisted Rule Writing
 
 1. Provide Clear Metric Context
 
@@ -140,7 +140,7 @@ Disk Space Monitoring
     severity: warning
   annotations:
     summary: "Low disk space on {{ $labels.instance }}"
-    description: "Disk space below 10%. Current: {{ $value | printf \"%.1f\" }}%"
+    description: "Disk space below 10%. Current - {{ $value | printf \"%.1f\" }}%"
 ```
 
 Best Practices for AI-Assisted Prometheus Rule Writing
@@ -157,7 +157,7 @@ promtool rules check rules.yaml
 
 This catches syntax errors before they reach production.
 
-Step 2: Common Pitfalls to Avoid
+Step 2 - Common Pitfalls to Avoid
 
 AI sometimes generates overly complex expressions when simpler ones would work. Watch for:
 
@@ -169,7 +169,7 @@ AI sometimes generates overly complex expressions when simpler ones would work. 
 
 Always review the generated `for` duration, the time a condition must be true before the alert fires. Too short causes noise; too long delays detection.
 
-Advanced Use Cases: AI for Alert Optimization
+Advanced Use Cases - AI for Alert Optimization
 
 Once you've established basic alerts, AI can help optimize your alerting strategy. Use AI to review your entire alerting configuration and suggest improvements:
 
@@ -184,22 +184,22 @@ Once you've established basic alerts, AI can help optimize your alerting strateg
     description: "High fragmentation may indicate memory management issues"
 ```
 
-Ask AI: "Review this alert. Is the fragmentation threshold appropriate? Should we alert earlier? What would be early warning signs?" The AI can suggest progressive alert thresholds (e.g., warning at 1.3, critical at 1.5) that let you address issues before they reach critical severity.
+Ask AI - "Review this alert. Is the fragmentation threshold appropriate? Should we alert earlier? What would be early warning signs?" The AI can suggest progressive alert thresholds (e.g., warning at 1.3, critical at 1.5) that let you address issues before they reach critical severity.
 
-Step 3: AI-Generated Alert Runbooks
+Step 3 - AI-Generated Alert Runbooks
 
 For every alert you create, pair it with a runbook describing the remediation steps. AI accelerates runbook creation:
 
 ```bash
 Generate a runbook template
 claude "Create a runbook for the RedisMemoryFragmentation alert.
-Include: symptoms, diagnostic commands, remediation steps,
+Include - symptoms, diagnostic commands, remediation steps,
 and prevention measures. Make it actionable for an on-call engineer."
 ```
 
 The AI produces a structured runbook that guides your team through diagnosis and resolution without requiring manual documentation effort.
 
-Step 4: Test AI-Generated Rules
+Step 4 - Test AI-Generated Rules
 
 Before deploying AI-generated rules to production, validate them thoroughly. Create a test harness using historical metrics data:
 
@@ -213,7 +213,7 @@ promtool check config prometheus.yml
 
 Run your rules against a full week of production metrics data to verify alert behavior before activation. This prevents alert fatigue from poorly-tuned thresholds.
 
-Step 5: Scaling Alerting Across Multiple Services
+Step 5 - Scaling Alerting Across Multiple Services
 
 As your infrastructure grows, maintaining consistent alerting becomes challenging. AI helps scale your alerting approach by generating variations of core alerts for different services:
 
@@ -252,19 +252,19 @@ AI can help design recording rules that improve Prometheus performance. Recordin
 
 Ask AI to suggest recording rules for your most common queries. This improves alert evaluation speed and dashboard responsiveness.
 
-Step 6: Documentation and Team Communication
+Step 6 - Documentation and Team Communication
 
 Generate documentation for your alerts automatically. AI creates operator guides that explain your alerting strategy:
 
 ```
 Generate documentation for our Prometheus alerting strategy.
-Include: alert tiers (warning/critical), expected alert volume,
+Include - alert tiers (warning/critical), expected alert volume,
 common false positive causes, and resolution workflows.
 ```
 
 This documentation helps onboard new team members and ensures everyone understands why specific alerts exist.
 
-Step 7: Integration with Incident Management
+Step 7 - Integration with Incident Management
 
 Connect your Prometheus alerts to incident management systems. AI can help design alert payloads that automatically create incidents:
 

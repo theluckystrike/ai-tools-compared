@@ -26,12 +26,12 @@ Table of Contents
 - [Common Questions About Cursor Indexing](#common-questions-about-cursor-indexing)
 - [Performance Tips for Large Projects](#performance-tips-for-large-projects)
 - [Real-World Indexing Scenarios](#real-world-indexing-scenarios)
-- [Comparison: Cursor vs Competing Tools on Large Projects](#comparison-cursor-vs-competing-tools-on-large-projects)
+- [Comparison - Cursor vs Competing Tools on Large Projects](#comparison-cursor-vs-competing-tools-on-large-projects)
 - [Indexing Strategy by Project Type](#indexing-strategy-by-project-type)
 - [When Indexing Performance Matters](#when-indexing-performance-matters)
-- [Code Examples: Optimized .cursorignore Patterns](#code-examples-optimized-cursorignore-patterns)
+- [Code Examples - Optimized .cursorignore Patterns](#code-examples-optimized-cursorignore-patterns)
 - [Practical Limits You Might Hit](#practical-limits-you-might-hit)
-- [FAQ: Cursor Indexing](#faq-cursor-indexing)
+- [FAQ - Cursor Indexing](#faq-cursor-indexing)
 
 Understanding Cursor's Indexing System
 
@@ -244,9 +244,9 @@ Related Articles
 
 Real-World Indexing Scenarios
 
-Scenario 1: Medium Monorepo (250MB codebase)
+Scenario 1 - Medium Monorepo (250MB codebase)
 
-Structure: React frontend + Node backend + shared utilities
+Structure - React frontend + Node backend + shared utilities
 
 ```
 apps/
@@ -265,9 +265,9 @@ Cursor's indexing performance:
 - Context retrieval (chat): <500ms
 - No additional charges
 
-Scenario 2: Large Monorepo (2.5GB codebase, intelligently managed)
+Scenario 2 - Large Monorepo (2.5GB codebase, intelligently managed)
 
-Structure: Enterprise monorepo with 50+ packages
+Structure - Enterprise monorepo with 50+ packages
 
 Strategies to stay efficient:
 ```json
@@ -287,12 +287,12 @@ Strategies to stay efficient:
 }
 ```
 
-After exclusions: 300MB actual source code
+After exclusions - 300MB actual source code
 - Initial index build: 120 seconds (first time only)
 - Subsequent: <5 seconds per change
 - Cost: $20/month Pro (no additional charges)
 
-Comparison: Cursor vs Competing Tools on Large Projects
+Comparison - Cursor vs Competing Tools on Large Projects
 
 | Tool | Pro Price | Free Limit | Indexing Cost | Best For |
 |------|-----------|-----------|---|---|
@@ -317,7 +317,7 @@ packages/
 
 .cursorignore strategy: Exclude node_modules, build outputs only
 Cursor handles this easily, <1 minute index time
-Cost: $20/month for Pro, no additional charges
+Cost - $20/month for Pro, no additional charges
 ```
 
 Multiple Independent Projects
@@ -329,7 +329,7 @@ projects/
   project-c/
 ```
 
-Strategy: Open one project at a time in different Cursor windows
+Strategy - Open one project at a time in different Cursor windows
 - Pro subscription covers multiple projects (they don't share index)
 - Each project indexed independently
 - Cost: Still $20/month, no per-project fee
@@ -360,15 +360,15 @@ Only actual source indexed, faster responses, no extra cost.
 
 When Indexing Performance Matters
 
-Scenario A: You're working fine (Don't optimize)
+Scenario A - You're working fine (Don't optimize)
 
 - Fast completions even with large codebase
 - Chat responses are immediate
 - Refactoring works smoothly
 
-Action: Leave indexing as-is. No need to troubleshoot what's working.
+Action - Leave indexing as-is. No need to troubleshoot what's working.
 
-Scenario B: Indexing seems stuck
+Scenario B - Indexing seems stuck
 
 - Initial indexing takes >5 minutes
 - Incremental indexing slow (>10 seconds per change)
@@ -377,19 +377,19 @@ Scenario B: Indexing seems stuck
 Action:
 ```bash
 Force reindex
-Cmd+Shift+P → "Cursor: Reindex Project"
+Cmd+Shift+P → "Cursor - Reindex Project"
 
 Or clear cache and restart
 rm -rf ~/Library/Application\ Support/Cursor/User/Cache
 Then restart Cursor
 ```
 
-Scenario C: Very large codebase (>5GB)
+Scenario C - Very large codebase (>5GB)
 
 - Cursor indexing too slow
 - Want better performance
 
-Action: Use `.cursorignore` aggressively
+Action - Use `.cursorignore` aggressively
 
 ```
 Be explicit about what to index
@@ -410,7 +410,7 @@ Exclude large data files
 /data/dumps/
 ```
 
-Code Examples: Optimized .cursorignore Patterns
+Code Examples - Optimized .cursorignore Patterns
 
 For React/Next.js:
 
@@ -498,7 +498,7 @@ Tests (unless you want them indexed)
 
 Practical Limits You Might Hit
 
-Limit 1: Context Window Size
+Limit 1 - Context Window Size
 
 Even with full codebase indexed, Cursor can only fit ~8,000 tokens in context for a single chat.
 
@@ -511,7 +511,7 @@ Workaround:
 "Explain how login flow works across these files"
 ```
 
-Limit 2: Indexing Coverage
+Limit 2 - Indexing Coverage
 
 Cursor Pro indexes up to a practical limit (usually 500MB-1GB of actual source).
 
@@ -520,13 +520,13 @@ If you exceed this:
 2. Split into multiple workspaces, or
 3. Upgrade to Cursor Business tier (higher limits)
 
-Limit 3: Real-Time Index Update Lag
+Limit 3 - Real-Time Index Update Lag
 
 After you save a file, indexing updates within 2-5 seconds. During that window, old context is used.
 
 Not a problem in practice, just be aware if you're editing rapidly.
 
-FAQ: Cursor Indexing
+FAQ - Cursor Indexing
 
 Does Cursor index node_modules?
 

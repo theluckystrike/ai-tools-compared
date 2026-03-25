@@ -27,7 +27,7 @@ Table of Contents
 - [Example: From Scattered Comments to Complete Docs](#example-from-scattered-comments-to-complete-docs)
 - [Output Formats and Integration](#output-formats-and-integration)
 - [Automation Scripts for Documentation Generation](#automation-scripts-for-documentation-generation)
-- [Comparison: AI Tools for Documentation](#comparison-ai-tools-for-documentation)
+- [Comparison - AI Tools for Documentation](#comparison-ai-tools-for-documentation)
 - [Best Practices for Comment Quality](#best-practices-for-comment-quality)
 - [Handling Legacy Code with Minimal Comments](#handling-legacy-code-with-minimal-comments)
 - [Generating Multiple Documentation Formats](#generating-multiple-documentation-formats)
@@ -227,7 +227,7 @@ Include:
 - Example usage for each function
 - Any warnings or gotchas mentioned in comments
 
-Source file: {file_path}
+Source file - {file_path}
 
 {source_code}
 
@@ -282,7 +282,7 @@ jobs:
           git push
 ```
 
-Comparison: AI Tools for Documentation
+Comparison - AI Tools for Documentation
 
 | Tool | Input Format | Output Quality | Cost | Integration |
 |------|-------------|----------------|------|-----------|
@@ -331,23 +331,23 @@ Handling Legacy Code with Minimal Comments
 For existing code with sparse documentation:
 
 ```python
-Strategy 1: Have AI write complete comments first
+Strategy 1 - Have AI write complete comments first
 def legacy_function(a, b, c):
     result = a + (b * c)
     if result > 100:
         result = 100
     return result
 
-Ask Claude: "Write detailed comments for this function"
+Ask Claude - "Write detailed comments for this function"
 Claude generates:
 def legacy_function(a: int, b: int, c: int) -> int:
     """
     Calculate a weighted sum with upper bound capping.
 
-    Computes: a + (b × c), then caps result at 100.
+    Computes - a + (b × c), then caps result at 100.
 
     Used in: Score normalization for user ratings
-    See: metrics/rating.py for context
+    See - metrics/rating.py for context
 
     Args:
         a: Base score (0-100)
@@ -362,7 +362,7 @@ def legacy_function(a: int, b: int, c: int) -> int:
         result = 100
     return result
 
-Strategy 2: Then generate documentation from enhanced comments
+Strategy 2 - Then generate documentation from enhanced comments
 ```
 
 Generating Multiple Documentation Formats
@@ -406,7 +406,7 @@ Add pre-commit hook to remind about docs
 
 if git diff --cached --name-only | grep -q "src/"; then
     echo "  You modified source code."
-    echo "   Run: python scripts/generate_docs.py"
+    echo "   Run - python scripts/generate_docs.py"
     echo "   Then: git add docs/"
 fi
 ```

@@ -55,9 +55,9 @@ Claude handles MySQL-to-PostgreSQL conversion with the strongest understanding o
 
 This explanatory quality is particularly valuable when migrating stored procedures and triggers, which involve control flow on top of SQL syntax. Claude can identify when a MySQL stored procedure relies on implicit type coercion and flag the places where PostgreSQL will reject the equivalent code.
 
-Best for: Complex stored procedures, triggers, functions, and any query pattern that differs behaviorally. not just syntactically.
+Best for - Complex stored procedures, triggers, functions, and any query pattern that differs behaviorally. not just syntactically.
 
-How to use it: Paste your MySQL query and prompt: "Convert this to PostgreSQL. Explain any behavioral differences I should test."
+How to use it - Paste your MySQL query and prompt: "Convert this to PostgreSQL. Explain any behavioral differences I should test."
 
 2. AI SQL Translators (Specialized Services)
 
@@ -114,7 +114,7 @@ Practical Conversion Examples
 
 Here are real examples of how AI tools handle common MySQL to PostgreSQL conversions:
 
-Example 1: String Concatenation
+Example 1 - String Concatenation
 
 MySQL:
 
@@ -134,7 +134,7 @@ WHERE active = TRUE;
 
 The AI recognizes `CONCAT()` as a string concatenation function and converts it to PostgreSQL's `||` operator. It also converts the boolean comparison `active = 1` to `active = TRUE`.
 
-Example 2: Auto-Increment and Table Creation
+Example 2 - Auto-Increment and Table Creation
 
 MySQL:
 
@@ -160,7 +160,7 @@ CREATE TABLE orders (
 
 The AI converts `INT AUTO_INCREMENT PRIMARY KEY` to PostgreSQL's `SERIAL` type, which automatically creates the sequence and sets up auto-increment behavior. In PostgreSQL 10+, the preferred modern form is `GENERATED ALWAYS AS IDENTITY`, which is SQL standard and avoids some edge cases with sequence ownership. A high-quality AI conversion will note this option even when defaulting to `SERIAL` for backward compatibility.
 
-Example 3: Date Functions
+Example 3 - Date Functions
 
 MySQL:
 
@@ -178,7 +178,7 @@ SELECT EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400 AS days_since;
 
 Date manipulation differs significantly between systems. AI tools recognize these patterns and generate equivalent PostgreSQL expressions.
 
-Example 4: LIMIT and OFFSET
+Example 4 - LIMIT and OFFSET
 
 MySQL:
 
@@ -198,7 +198,7 @@ LIMIT 10 OFFSET 20;
 
 This syntax works the same in both systems, but some AI tools still normalize it for consistency. Note that MySQL's alternative `LIMIT 20, 10` (offset first, count second) does NOT work in PostgreSQL. only the `LIMIT count OFFSET offset` form is valid. AI tools that have seen both MySQL syntaxes will convert the comma form correctly; simpler tools may not.
 
-Example 5: GROUP BY Strictness
+Example 5 - GROUP BY Strictness
 
 This is one of the most common runtime failures during migrations. MySQL's default `sql_mode` allows selecting non-aggregate columns not listed in `GROUP BY`. PostgreSQL always enforces standard SQL behavior.
 
@@ -220,7 +220,7 @@ GROUP BY user_id, email;
 
 Claude and DataGrip both flag this pattern reliably. Generic SQL translators frequently miss it because the MySQL query is syntactically valid. the error only appears when PostgreSQL's query planner rejects it.
 
-Example 6: Backtick Identifiers
+Example 6 - Backtick Identifiers
 
 MySQL developers habitually use backticks to quote table and column names. PostgreSQL uses double quotes.
 
@@ -256,13 +256,13 @@ Choosing the Right Tool for Your Needs
 
 Consider these factors when selecting an AI conversion tool:
 
-Volume of Queries: For occasional single-query conversions, online translators work fine. For migrating an entire application, look at IDE plugins or CLI tools that support batch processing.
+Volume of Queries - For occasional single-query conversions, online translators work fine. For migrating an entire application, look at IDE plugins or CLI tools that support batch processing.
 
-Accuracy Requirements: Not all AI tools are equal. Test your specific query patterns with a few samples before committing to a tool. Complex stored procedures, triggers, and functions require more sophisticated AI models.
+Accuracy Requirements - Not all AI tools are equal. Test your specific query patterns with a few samples before committing to a tool. Complex stored procedures, triggers, and functions require more sophisticated AI models.
 
-Integration: Tools that integrate into your IDE or CI/CD pipeline reduce context switching and enable automated testing of converted queries.
+Integration - Tools that integrate into your IDE or CI/CD pipeline reduce context switching and enable automated testing of converted queries.
 
-Cost: Many AI translators offer free tiers for limited use. For enterprise migration projects, pricing varies widely, compare based on query volume and support availability.
+Cost - Many AI translators offer free tiers for limited use. For enterprise migration projects, pricing varies widely, compare based on query volume and support availability.
 
 A Recommended Approach
 
@@ -290,7 +290,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -302,7 +302,7 @@ Most modern tools support asynchronous workflows that work well across time zone
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

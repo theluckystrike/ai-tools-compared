@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Method 1: Export via Grammarly Desktop Application
+Step 1 - Method 1: Export via Grammarly Desktop Application
 
 The Grammarly desktop application for Windows and macOS stores your personal dictionary locally. Here is how to find and export it.
 
@@ -114,7 +114,7 @@ db_path = os.path.expanduser(
 )
 ```
 
-Step 2: Method 2: Browser Extension Dictionary Export
+Step 2 - Method 2: Browser Extension Dictionary Export
 
 If you primarily use the Grammarly browser extension, your dictionary syncs to Grammarly's servers. You can access it through the web application or by inspecting browser storage.
 
@@ -147,12 +147,12 @@ dictionaryKeys.forEach(key => {
     const data = JSON.parse(localStorage.getItem(key));
     console.log(`Key: ${key}`, data);
   } catch(e) {
-    console.log(`Key: ${key}`, localStorage.getItem(key));
+    console.log(`Key - ${key}`, localStorage.getItem(key));
   }
 });
 ```
 
-Step 3: Method 3: Manual Word List Recovery
+Step 3 - Method 3: Manual Word List Recovery
 
 If other methods fail, you can rebuild your dictionary systematically. This takes more time but works reliably.
 
@@ -193,7 +193,7 @@ for word, count in word_counts.most_common(50):
 
 This gives you a list of frequently used words, making it easier to remember which ones you added to Grammarly.
 
-Step 4: Importing Words Into Claude and Other Tools
+Step 4 - Importing Words Into Claude and Other Tools
 
 Once you have your exported word list, you can import it into your new AI assistant or text editor.
 
@@ -260,7 +260,7 @@ CI/CD
 PostgreSQL
 ```
 
-Step 5: What the Grammarly Dictionary Actually Stores
+Step 5 - What the Grammarly Dictionary Actually Stores
 
 Before exporting, it helps to know exactly what Grammarly saves. The personal dictionary typically contains two categories of entries:
 
@@ -270,7 +270,7 @@ Ignored patterns. some versions of Grammarly also store patterns or phrases you 
 
 The most common table names are `user_dictionary`, `personal_words`, and `dictionary_entries`. Run `SELECT name FROM sqlite_master WHERE type='table';` before querying to see what your installation contains.
 
-Step 6: Cross-Platform Word List Consolidation
+Step 6 - Cross-Platform Word List Consolidation
 
 If you use Grammarly on both Windows and macOS (or on a work machine and a personal machine), you likely have two separate local databases with overlapping but different word sets. Merge them before importing into your new tool:
 
@@ -317,7 +317,7 @@ print(f"Merged {len(all_words)} unique words")
 
 This produces a single `merged-dictionary.txt` that you can import into any target tool.
 
-Step 7: Importing Into LanguageTool (Self-Hosted)
+Step 7 - Importing Into LanguageTool (Self-Hosted)
 
 LanguageTool is a popular Grammarly alternative that can run self-hosted. Its personal dictionary is a plain text file with one word per line, stored at `~/.languagetool/personalDictionary.txt` on Linux and macOS.
 
@@ -337,7 +337,7 @@ If you use the LanguageTool VS Code extension, the custom words list is configur
 
 For large dictionaries, use the import script above to generate the JSON array automatically and paste the output into `settings.json` under `languageToolLint.dictionary`.
 
-Step 8: Validating the Export
+Step 8 - Validating the Export
 
 After exporting and importing, validate that your most critical terms are present. Create a quick test file with the technical words that matter most to your workflow, then run your new spell checker against it. Any flagged terms that should have been imported need to be added manually.
 
@@ -348,7 +348,7 @@ wc -l merged-dictionary.txt
 
 A complete export typically contains between 50 and 500 words for an active developer. If your export shows fewer than 20 words and you have used Grammarly for years, the database path may be wrong or the account may have used cloud sync rather than local storage.
 
-Step 9: Automate the Export Process
+Step 9 - Automate the Export Process
 
 For ongoing use, consider a script that backs up your dictionary regularly:
 

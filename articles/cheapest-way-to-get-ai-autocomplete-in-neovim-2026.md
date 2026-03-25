@@ -66,7 +66,7 @@ require('copa').setup({
 
 Copa provides inline autocomplete suggestions that appear as you type. The plugin handles authentication with your AWS account, free to set up, and the free tier has no monthly usage limits for individual developers.
 
-The trade-off: CodeWhisperer excels at common patterns and AWS-related code but falls short for complex, context-heavy completions. It's best suited for straightforward autocomplete tasks.
+The trade-off - CodeWhisperer excels at common patterns and AWS-related code but falls short for complex, context-heavy completions. It's best suited for straightforward autocomplete tasks.
 
 2. Tabnine Free Tier
 
@@ -91,7 +91,7 @@ require('tabnine').setup({
 
 The free version provides local completion based on patterns it learns from your code. It's not true AI in the generative sense, it's pattern-based completion, but it works surprisingly well for common code structures.
 
-Limitations: The free tier limits cloud-enhanced suggestions. For full AI completions, you'd need their paid plans starting at $12/month.
+Limitations - The free tier limits cloud-enhanced suggestions. For full AI completions, you'd need their paid plans starting at $12/month.
 
 3. Ollama with nvim-cmp Sources
 
@@ -135,7 +135,7 @@ cmp.setup({
 
 You need a cmp source plugin for Ollama, several exist, including `David-Kunz/cmp-nvim-ollama`.
 
-Performance considerations: Local models require decent hardware. A 7B parameter model needs at least 8GB RAM and works best with a SSD. Response times range from 200ms to 2 seconds depending on your hardware.
+Performance considerations - Local models require decent hardware. A 7B parameter model needs at least 8GB RAM and works best with a SSD. Response times range from 200ms to 2 seconds depending on your hardware.
 
 4. Continue Dev (Free)
 

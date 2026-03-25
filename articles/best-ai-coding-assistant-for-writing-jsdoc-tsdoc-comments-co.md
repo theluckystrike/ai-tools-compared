@@ -187,7 +187,7 @@ AI tools often struggle with complex generics. Help them by using explicit type 
 // Poor type hints. Copilot generates vague docs
 function transform(data, processor) { }
 
-// Explicit types. Copilot generates comprehensive docs
+// Explicit types. Copilot generates complete docs
 /
  * Transforms input data using a stateful processor function.
  * @template T - The input data type

@@ -110,7 +110,7 @@ For compliance-aware teams, Claude also handles safe harbor disclaimer language 
 
 Gemini for Transcript Analysis
 
-Gemini offers strong performance with aggressive pricing, particularly when processing large volumes. Its Gemini 2.5 Pro model provides generous context windows, and the Google Cloud integration simplifies deployment for teams already in the Google ecosystem.
+Gemini offers strong performance with aggressive pricing, particularly when processing large volumes. Its Gemini 2.5 Pro model provides generous context windows, and the Google Cloud integration simplifies deployment for teams already in the Google environment.
 
 API Implementation
 

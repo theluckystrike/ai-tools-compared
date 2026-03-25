@@ -30,14 +30,14 @@ Table of Contents
 - [Real-World Legacy Code Scenarios](#real-world-legacy-code-scenarios)
 - [Real CLI Commands for Legacy Work](#real-cli-commands-for-legacy-work)
 - [Using Git History with AI IDE Features](#using-git-history-with-ai-ide-features)
-- [Advanced: Creating Custom AI Rules for Legacy Codebases](#advanced-creating-custom-ai-rules-for-legacy-codebases)
+- [Advanced - Creating Custom AI Rules for Legacy Codebases](#advanced-creating-custom-ai-rules-for-legacy-codebases)
 - [Understanding the Codebase](#understanding-the-codebase)
 - [Key Patterns to Recognize](#key-patterns-to-recognize)
 - [Safety First](#safety-first)
 - [Legacy Anti-Patterns to Avoid](#legacy-anti-patterns-to-avoid)
 - [Troubleshooting Legacy Code Issues with AI](#troubleshooting-legacy-code-issues-with-ai)
 - [Performance Tips for Legacy Code Analysis](#performance-tips-for-legacy-code-analysis)
-- [Measuring Success: Before/After Legacy Work](#measuring-success-beforeafter-legacy-work)
+- [Measuring Success - Before/After Legacy Work](#measuring-success-beforeafter-legacy-work)
 - [Tool Recommendations by Legacy Code Type](#tool-recommendations-by-legacy-code-type)
 
 Context-Aware Code Navigation
@@ -168,7 +168,7 @@ For legacy codebases, JetBrains IDEs provide the safest refactoring. Cursor prov
 
 Real-World Legacy Code Scenarios
 
-Scenario 1: Understanding a 10-Year-Old Module
+Scenario 1 - Understanding a 10-Year-Old Module
 
 ```python
 Legacy Django app, no documentation, 2000+ lines
@@ -186,7 +186,7 @@ Using IDE AI features:
 
 AI-enhanced navigation takes you from "what does this do?" to understanding the entire module's role in the system in 10 minutes.
 
-Scenario 2: Safe Refactoring of Legacy Code
+Scenario 2 - Safe Refactoring of Legacy Code
 
 ```java
 // Old code: Using deprecated API
@@ -208,13 +208,13 @@ The IDE's AI understands your codebase structure deeply, not just text matching.
 Real CLI Commands for Legacy Work
 
 ```bash
-VS Code: Launch with AI analysis
+VS Code - Launch with AI analysis
 code --open-folder /path/to/legacy/project
 
-Cursor: Open with specific project context
+Cursor - Open with specific project context
 cursor /path/to/legacy/project
 
-JetBrains: Open with project inspection
+JetBrains - Open with project inspection
 idea /path/to/legacy/project --inspect
 
 Generate code documentation from legacy code
@@ -241,7 +241,7 @@ AI analysis:   "This pattern may not handle nulls. Should check if user exists."
 
 The AI can now reason about why code exists (from commit history) not just what it does.
 
-Advanced: Creating Custom AI Rules for Legacy Codebases
+Advanced - Creating Custom AI Rules for Legacy Codebases
 
 In Cursor (`.cursorrules`):
 
@@ -277,7 +277,7 @@ Legacy Anti-Patterns to Avoid
 
 Troubleshooting Legacy Code Issues with AI
 
-Issue: "Everything's interconnected, can't extract anything"
+Issue - "Everything's interconnected, can't extract anything"
 
 ```
 IDE AI approach:
@@ -290,7 +290,7 @@ IDE AI approach:
 Extract smaller, safer pieces incrementally
 ```
 
-Issue: "Tests don't exist and code is untested"
+Issue - "Tests don't exist and code is untested"
 
 ```
 IDE AI approach:
@@ -301,7 +301,7 @@ IDE AI approach:
 5. Refactor with confidence, tests validate behavior is preserved
 ```
 
-Issue: "I don't understand the business logic"
+Issue - "I don't understand the business logic"
 
 ```
 IDE AI approach:
@@ -318,7 +318,7 @@ Large legacy codebases (>1M lines) can slow IDEs:
 
 ```bash
 Exclude unnecessary directories from indexing
-In IDE settings: Project Structure → Excluded Folders
+In IDE settings - Project Structure → Excluded Folders
 Common excludes:
 - /node_modules
 - /dist
@@ -330,7 +330,7 @@ Common excludes:
 These speed up indexing 3-5x for large projects
 ```
 
-Measuring Success: Before/After Legacy Work
+Measuring Success - Before/After Legacy Work
 
 Track improvements from using AI IDE features:
 
@@ -347,7 +347,7 @@ After implementing AI IDE features:
 - Writing tests for legacy code: Done immediately (automated)
 - Confidence in changes: 85%
 
-ROI: 3-4 hours saved per day × 20 developers = 60-80 hours/day company-wide
+ROI - 3-4 hours saved per day × 20 developers = 60-80 hours/day company-wide
 ```
 
 Tool Recommendations by Legacy Code Type

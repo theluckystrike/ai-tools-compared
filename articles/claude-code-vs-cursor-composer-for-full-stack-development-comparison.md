@@ -29,19 +29,19 @@ Table of Contents
 
 - [Architecture & Workflow Differences](#architecture-workflow-differences)
 - [Feature Comparison Table](#feature-comparison-table)
-- [Context Handling: The Core Difference](#context-handling-the-core-difference)
-- [Multi-File Editing: Visual vs Terminal](#multi-file-editing-visual-vs-terminal)
+- [Context Handling - The Core Difference](#context-handling-the-core-difference)
+- [Multi-File Editing - Visual vs Terminal](#multi-file-editing-visual-vs-terminal)
 - [Pricing & Cost Analysis](#pricing-cost-analysis)
 - [Strengths & Weaknesses](#strengths-weaknesses)
 - [Practical Workflow Examples](#practical-workflow-examples)
 - [When to Choose Each](#when-to-choose-each)
-- [Setup: Getting Started](#setup-getting-started)
+- [Setup - Getting Started](#setup-getting-started)
 - [Real-World Cost Comparison](#real-world-cost-comparison)
 - [Integration with Existing Tools](#integration-with-existing-tools)
 
 Architecture & Workflow Differences
 
-Claude Code: CLI-First, Context-Rich
+Claude Code - CLI-First, Context-Rich
 Claude Code operates as a command-line interface that interfaces with Claude Opus 4.6, giving you access to the model's 200,000-token context window. You run it in your terminal, pointing at your project directory, and it understands your full codebase structure.
 
 Setup:
@@ -80,7 +80,7 @@ Claude Code returns:
 - All aware of your actual project setup
 ```
 
-Cursor Composer: Editor-Native, Real-Time
+Cursor Composer - Editor-Native, Real-Time
 
 Cursor is VSCode-based, with Composer handling multi-file edits in the UI. You don't leave your editor; changes appear as you approve them.
 
@@ -116,7 +116,7 @@ Feature Comparison Table
 | Team collaboration | Via shared repo | Via Cursor Teams ($30/mo) |
 | Git integration | Manual (you control) | Built-in diff tracking |
 
-Context Handling: The Core Difference
+Context Handling - The Core Difference
 
 Claude Code excels at maintaining consistent context across entire projects. When building a full-stack app, it holds:
 - Your package.json dependencies
@@ -193,11 +193,11 @@ Cursor Composer context limitation:
 // - Your auth patterns (if in a different middleware folder)
 ```
 
-Multi-File Editing: Visual vs Terminal
+Multi-File Editing - Visual vs Terminal
 
 When you need to edit 8 files simultaneously (API route, tests, types, migrations, frontend component, hooks, etc.), the two tools differ dramatically.
 
-Claude Code: Terminal-Based, Unified
+Claude Code - Terminal-Based, Unified
 
 Claude Code shows you all proposed files in terminal output. You review them together, understanding the complete change set:
 
@@ -216,7 +216,7 @@ Files to create/modify:
 
 You see the full impact at once. But you must accept or reject as a batch.
 
-Cursor Composer: Visual Diff, Granular Control
+Cursor Composer - Visual Diff, Granular Control
 
 Cursor Composer shows a split-view editor. On the left: your existing code. On the right: proposed changes. You approve file-by-file or even line-by-line:
 
@@ -265,7 +265,7 @@ Strengths & Weaknesses
 Claude Code Strengths
 1. Codebase mastery: Understands your entire project in context
 2. Cheaper per-session: Pay only for what you use
-3. Flexibility: Works with any editor (VSCode, Vim, Sublime, etc.)
+3. Flexibility - Works with any editor (VSCode, Vim, Sublime, etc.)
 4. Detailed explanations: Claude provides reasoning along with code
 5. Version control aware: Understands git history for context
 
@@ -290,7 +290,7 @@ Cursor Composer Weaknesses
 
 Practical Workflow Examples
 
-Full-Stack Project: Building a Payment System
+Full-Stack Project - Building a Payment System
 
 Claude Code approach:
 ```bash
@@ -312,21 +312,21 @@ Review all changes in terminal, then apply
 
 Cursor Composer approach:
 1. Open Composer (Cmd+K)
-2. Type: "Build a Stripe integration..."
+2. Type - "Build a Stripe integration..."
 3. Composer generates in split view
 4. Approve each file (API route, types, component, migration, tests)
 5. Continue iterating with fixes
 
 Claude Code is faster for the initial complete build. Cursor Composer is better for iterative refinement.
 
-Bug Fixing: Production Issue
+Bug Fixing - Production Issue
 
 Claude Code approach:
 ```bash
 Context includes last 50 commits, stack traces, logs
 claude-code chat
 
-> "Error: Cannot read property 'email' of undefined in checkout.
+> "Error - Cannot read property 'email' of undefined in checkout.
 > Check the existing payment flow and fix."
 
 Claude Code looks at:
@@ -367,7 +367,7 @@ Use both if:
 - Mix of greenfield and maintenance projects
 - Budget allows $40+/month for tools
 
-Setup: Getting Started
+Setup - Getting Started
 
 Claude Code Quick Start
 ```bash
@@ -396,7 +396,7 @@ Cursor Composer Quick Start
 
 Real-World Cost Comparison
 
-Scenario: Building a 3-month full-stack project
+Scenario - Building a 3-month full-stack project
 
 Claude Code:
 - 60 development sessions
@@ -423,7 +423,7 @@ Claude Code integrates with:
 - CI/CD pipelines
 
 Cursor Composer integrates with:
-- VSCode ecosystem (extensions work)
+- VSCode environment (extensions work)
 - Git (built-in diff tracking)
 - GitHub Copilot (can layer both)
 - npm/yarn

@@ -64,7 +64,7 @@ Limitations:
 
 - May suggest commands not installed on your system
 
-Pricing: Free for open source contributors, $10/month for individuals, $19/user/month for business.
+Pricing - Free for open source contributors, $10/month for individuals, $19/user/month for business.
 
 Cursor
 
@@ -88,7 +88,7 @@ Limitations:
 
 - Shell-specific features still improving
 
-Pricing: Free tier available, Pro at $20/month, Business at $40/user/month.
+Pricing - Free tier available, Pro at $20/month, Business at $40/user/month.
 
 Codeium
 
@@ -112,7 +112,7 @@ Limitations:
 
 - Chat features less developed than competitors
 
-Pricing: Free for individuals, $12/user/month for teams.
+Pricing - Free for individuals, $12/user/month for teams.
 
 Tabnine
 
@@ -136,11 +136,11 @@ Limitations:
 
 - Requires training period for best accuracy
 
-Pricing: Free tier, Pro at $12/month, Enterprise at $20/user/month.
+Pricing - Free tier, Pro at $12/month, Enterprise at $20/user/month.
 
 Practical Examples
 
-Consider this scenario: you need a script that finds all modified JSON files in the past 24 hours and counts the lines in each.
+Consider this scenario - you need a script that finds all modified JSON files in the past 24 hours and counts the lines in each.
 
 Without AI autocomplete, you would research and manually type:
 
@@ -171,7 +171,7 @@ find . -name "*.json" -mtime -1 -type f -exec wc -l {} + | \
     awk '{total += $1; print $2 ": " $1 " lines"} END {print "Total: " total " lines"}'
 ```
 
-Another Example: Processing Log Files
+Another Example - Processing Log Files
 
 When you need to extract error information from logs, AI autocomplete speeds up the process significantly:
 
@@ -233,7 +233,7 @@ Complex multi-step workflows benefit from structured AI prompting:
 AI-generated deployment script
 
 Comment structure that AI understands clearly
-Task: Backup production database, compress old logs, restart app with zero downtime
+Task - Backup production database, compress old logs, restart app with zero downtime
 
 This comment-first approach yields better suggestions from AI
 1. Create backup of postgresql database to /backups with timestamp

@@ -38,7 +38,7 @@ When building Java Spring Boot applications in 2026, developers need AI assistan
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - Use AI-generated tests as: a starting point, then add cases that cover your unique requirements and failure modes.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- GitHub Copilot and Claude: each approach Spring Boot code generation differently, and understanding these differences helps you choose the right tool for your workflow.
+- GitHub Copilot and Claude - each approach Spring Boot code generation differently, and understanding these differences helps you choose the right tool for your workflow.
 - The controller should expose: CRUD endpoints for an User entity.
 
 Understanding the Generation Approaches

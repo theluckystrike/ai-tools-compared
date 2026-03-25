@@ -17,7 +17,7 @@ intent-checked: true
 
 Load testing catches performance regressions before production. Traditional tools require hand-written scripts, manual threshold tuning, and complex result interpretation. AI-assisted load testing tools auto-generate test scripts from API specs, suggest realistic load profiles, and interpret results in plain English.
 
-This guide compares five tools: k6 with AI plugins, Locust with code generation, Gatling, Artillery, and Grafana k6 Cloud. We cover pricing, script generation quality, test interpretation capabilities, and real-world workflows.
+This guide compares five tools - k6 with AI plugins, Locust with code generation, Gatling, Artillery, and Grafana k6 Cloud. We cover pricing, script generation quality, test interpretation capabilities, and real-world workflows.
 
 k6 + AI Plugins
 
@@ -35,7 +35,7 @@ brew install k6
 
 Generate test from OpenAPI spec with AI
 Convert OpenAPI to k6 script (manual via ChatGPT or Claude)
-Prompt: "Generate a k6 load test from this OpenAPI spec with 100 VUs ramping to 500"
+Prompt - "Generate a k6 load test from this OpenAPI spec with 100 VUs ramping to 500"
 
 Save generated script
 cat > test-api.js <<'EOF'
@@ -108,8 +108,8 @@ Results Interpretation:
 
 Grafana k6 Cloud adds AI-powered insights: "P95 response time increased 15% vs baseline; API server CPU at 85% during peak load."
 
-Strengths: Developer-friendly JavaScript, real-time results, low overhead (single Go binary), excellent Grafana integration, affordable cloud option
-Weaknesses: AI integration is manual (external tools); script generation requires prompt engineering; limited anomaly detection without cloud tier
+Strengths - Developer-friendly JavaScript, real-time results, low overhead (single Go binary), excellent Grafana integration, affordable cloud option
+Weaknesses - AI integration is manual (external tools); script generation requires prompt engineering; limited anomaly detection without cloud tier
 ---
 
 Locust + AI Code Generation
@@ -121,7 +121,7 @@ Table of Contents
 - [Artillery](#artillery)
 - [Grafana k6 Cloud](#grafana-k6-cloud)
 - [Feature Comparison Table](#feature-comparison-table)
-- [Real Example: E-commerce API Load Test](#real-example-e-commerce-api-load-test)
+- [Real Example - E-commerce API Load Test](#real-example-e-commerce-api-load-test)
 - [Recommendation by Use Case](#recommendation-by-use-case)
 
 Locust is Python-based load testing with distributed execution. AI tools (ChatGPT, Copilot) can auto-generate Locust test classes from API documentation.
@@ -136,7 +136,7 @@ Install
 pip install locust
 
 Generate test with AI
-Prompt: "Generate a Locust test for a REST API with GET /users/{id} and POST /users"
+Prompt - "Generate a Locust test for a REST API with GET /users/{id} and POST /users"
 
 Save generated script
 cat > locustfile.py <<'EOF'
@@ -185,8 +185,8 @@ POST     /api/users       4000     80   |     450      80    5100     380 |  66.
 
 Locust Cloud adds interpretation: "P95 latency spike at 14:30 UTC correlates with 50% error rate increase on POST /api/users. Likely database contention."
 
-Strengths: Pure Python (easy to customize), excellent for complex workflows, distributed load generation, low cost for cloud execution
-Weaknesses: Requires Python knowledge; slower than Go-based tools; AI integration limited to code generation; no cloud-native AI insights
+Strengths - Pure Python (easy to customize), excellent for complex workflows, distributed load generation, low cost for cloud execution
+Weaknesses - Requires Python knowledge; slower than Go-based tools; AI integration limited to code generation; no cloud-native AI insights
 
 ---
 
@@ -240,8 +240,8 @@ Gatling's Scala DSL is expressive but unfamiliar to most developers. AI can gene
 Results Interpretation:
 Gatling provides detailed HTML reports with graphs (response time distribution, error rates, throughput). Enterprise tier adds trend analysis and anomaly detection via AI.
 
-Strengths: JVM-based (integrates with Java stacks), powerful DSL, excellent reporting, enterprise-grade
-Weaknesses: Steep learning curve; slow AI script generation; expensive for teams; overkill for simple APIs
+Strengths - JVM-based (integrates with Java stacks), powerful DSL, excellent reporting, enterprise-grade
+Weaknesses - Steep learning curve; slow AI script generation; expensive for teams; overkill for simple APIs
 
 ---
 
@@ -333,8 +333,8 @@ Summary Report @ 11:35:55(-0500)
 
 Artillery Cloud adds AI interpretation: "Error rate 0.3% (30 errors in 10K requests) on POST /api/users. Recommend scaling database connections or implementing circuit breaker."
 
-Strengths: YAML-based (easy to generate with AI), Node.js ecosystem, CI/CD integration, affordable cloud option
-Weaknesses: Limited to Node.js environment; YAML limitations for complex scenarios; no built-in response validation beyond basic checks
+Strengths - YAML-based (easy to generate with AI), Node.js environment, CI/CD integration, affordable cloud option
+Weaknesses - Limited to Node.js environment; YAML limitations for complex scenarios; no built-in response validation beyond basic checks
 
 ---
 
@@ -349,8 +349,8 @@ Pricing:
 Workflow:
 k6 scripts run on Grafana's cloud infrastructure. Results stream to Grafana dashboards in real-time. AI generates alerts: "P95 latency increased 40% vs last run; investigate database queries."
 
-Strengths: Managed execution (no infrastructure), real-time dashboards, AI-powered insights, Prometheus/Grafana integration
-Weaknesses: Expensive for small teams; lock-in to Grafana ecosystem; less control over execution environment
+Strengths - Managed execution (no infrastructure), real-time dashboards, AI-powered insights, Prometheus/Grafana integration
+Weaknesses - Expensive for small teams; lock-in to Grafana environment; less control over execution environment
 
 ---
 
@@ -366,9 +366,9 @@ Feature Comparison Table
 
 ---
 
-Real Example: E-commerce API Load Test
+Real Example - E-commerce API Load Test
 
-Scenario: Test checkout API (GET /cart, POST /checkout) with 100 concurrent users ramping to 500 over 2 minutes.
+Scenario - Test checkout API (GET /cart, POST /checkout) with 100 concurrent users ramping to 500 over 2 minutes.
 
 k6 Script (AI-generated, 85% quality):
 ```javascript
@@ -439,19 +439,19 @@ scenarios:
 
 Results Interpretation (Manual vs AI):
 
-Manual: "P95 response time is 420ms. 0.2% error rate. 164 req/s throughput."
+Manual - "P95 response time is 420ms. 0.2% error rate. 164 req/s throughput."
 
-AI-powered (Grafana k6 Cloud): "P95 checkout latency 420ms (+12% vs baseline). Error rate 0.2% (all 500s on POST /checkout). Recommend load-balancing checkout service across 3 additional pods. Database connection pool at 85% capacity during peak load."
+AI-powered (Grafana k6 Cloud) - "P95 checkout latency 420ms (+12% vs baseline). Error rate 0.2% (all 500s on POST /checkout). Recommend load-balancing checkout service across 3 additional pods. Database connection pool at 85% capacity during peak load."
 
 ---
 
 Recommendation by Use Case
 
-API-first startups: Artillery for simplicity and YAML generation; k6 for real-time dashboards
-Enterprise Java teams: Gatling for JVM integration; enterprise analytics
-DevOps/CI-CD: Artillery or k6 for automation; cloud execution for managed infrastructure
-Large-scale SaaS: Grafana k6 Cloud for AI insights and trend analysis
-Python ecosystem: Locust for distributed testing; good integration with ML pipelines
+API-first startups - Artillery for simplicity and YAML generation; k6 for real-time dashboards
+Enterprise Java teams - Gatling for JVM integration; enterprise analytics
+DevOps/CI-CD - Artillery or k6 for automation; cloud execution for managed infrastructure
+Large-scale SaaS - Grafana k6 Cloud for AI insights and trend analysis
+Python environment - Locust for distributed testing; good integration with ML pipelines
 
 ---
 

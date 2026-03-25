@@ -74,13 +74,13 @@ sequenceDiagram
     User->>App: Clicks "Login"
     App->>App: Generate code_verifier (random string)
     App->>App: Generate code_challenge (SHA256 of code_verifier)
-    App->>Auth: GET /authorize?response_type=code&client_id=...&code_challenge=...
+    App->>Auth - GET /authorize?response_type=code&client_id=...&code_challenge=...
     Auth->>User: Redirect to login page
     User->>Auth: Enter credentials
     Auth->>User: Show consent screen
     User->>Auth: Approve scopes
     Auth->>App: Redirect with authorization_code
-    App->>Auth: POST /token grant_type=authorization_code&code=...&code_verifier=...
+    App->>Auth - POST /token grant_type=authorization_code&code=...&code_verifier=...
     Auth->>App: Return access_token, refresh_token, id_token
     App->>API: GET /api/resource Authorization: Bearer access_token
     API->>App: Return protected data
@@ -217,7 +217,7 @@ OIDC builds on OAuth2 with identity-specific features. Learn these additions:
 
 - UserInfo Endpoint: API for retrieving additional user claims
 
-- Discovery Document: Standardized metadata endpoint at `/.well-known/openid-configuration`
+- Discovery Document - Standardized metadata endpoint at `/.well-known/openid-configuration`
 
 - Claims: Standard claims like sub, name, email, and custom claims
 
@@ -242,19 +242,19 @@ Common Learning Pitfalls to Avoid
 
 When learning OAuth2 and OIDC with AI assistance, watch for these mistakes:
 
-Using deprecated flows: The implicit flow is no longer recommended for new applications. Always use authorization code with PKCE for client-side applications.
+Using deprecated flows - The implicit flow is no longer recommended for new applications. Always use authorization code with PKCE for client-side applications.
 
-Ignoring token storage: AI might not emphasize that storing tokens securely depends on your application type, spa applications should use memory storage, while server-side apps can use httpOnly cookies.
+Ignoring token storage - AI might not emphasize that storing tokens securely depends on your application type, spa applications should use memory storage, while server-side apps can use httpOnly cookies.
 
-Skipping validation: Always validate tokens server-side. AI code examples sometimes skip important validation steps for brevity.
+Skipping validation - Always validate tokens server-side. AI code examples sometimes skip important validation steps for brevity.
 
-Mixing OAuth2 and OIDC: Remember that OAuth2 is for authorization (permissions), while OIDC adds authentication (identity). Use OIDC when you need to know who the user is.
+Mixing OAuth2 and OIDC - Remember that OAuth2 is for authorization (permissions), while OIDC adds authentication (identity). Use OIDC when you need to know who the user is.
 
 Building Your Learning Project
 
 Create a practical project to solidify understanding:
 
-1. Simple OAuth2 Client: Build a Node.js application that implements authorization code flow with PKCE
+1. Simple OAuth2 Client - Build a Node.js application that implements authorization code flow with PKCE
 
 2. Token Validator: Create an API endpoint that validates JWTs using JWKS from the authorization server
 

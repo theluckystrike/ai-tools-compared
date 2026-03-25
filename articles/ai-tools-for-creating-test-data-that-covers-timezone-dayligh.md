@@ -26,7 +26,7 @@ Table of Contents
 - [Practical Strategies for AI-Assisted Test Generation](#practical-strategies-for-ai-assisted-test-generation)
 - [Automating Test Data Generation](#automating-test-data-generation)
 - [Common Pitfalls to Watch For](#common-pitfalls-to-watch-for)
-- [Real-World DST Failures: Learning from Production Incidents](#real-world-dst-failures-learning-from-production-incidents)
+- [Real-World DST Failures - Learning from Production Incidents](#real-world-dst-failures-learning-from-production-incidents)
 - [Automating DST Test Data Generation](#automating-dst-test-data-generation)
 - [Integrating Timezone Tests into CI/CD](#integrating-timezone-tests-into-cicd)
 
@@ -34,9 +34,9 @@ Understanding DST Edge Cases in Test Data
 
 Daylight saving time creates several categories of problematic scenarios that your test data must cover:
 
-- Spring Forward: When clocks skip ahead, certain times do not exist (e.g., 2:00 AM to 3:00 AM in US timezones)
+- Spring Forward - When clocks skip ahead, certain times do not exist (e.g., 2:00 AM to 3:00 AM in US timezones)
 
-- Fall Back: When clocks fall back, certain times occur twice (e.g., 1:00 AM to 2:00 AM occurs twice)
+- Fall Back - When clocks fall back, certain times occur twice (e.g., 1:00 AM to 2:00 AM occurs twice)
 
 - Historical Changes: Countries have changed timezone rules multiple times throughout history
 
@@ -235,23 +235,23 @@ What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-Real-World DST Failures: Learning from Production Incidents
+Real-World DST Failures - Learning from Production Incidents
 
 Understanding common production failures helps you write better test cases:
 
-Incident: Meeting scheduling app crashed on DST transition day
+Incident - Meeting scheduling app crashed on DST transition day
 - Issue: Application attempted to create datetime for 2:30 AM on spring forward day
 - Root cause: No handling for nonexistent times
 - Test case needed: Validate behavior when user attempts to schedule during nonexistent hour
 - AI prompt: "Generate test case for handling meeting scheduled during spring forward nonexistent hour"
 
-Incident: Recurring appointments duplicated during fall back
+Incident - Recurring appointments duplicated during fall back
 - Issue: Daily meeting scheduled at 1:30 AM ran twice during fall back
 - Root cause: Ambiguous time not disambiguated (EDT vs EST)
 - Test case needed: Verify recurring meetings handle duplicated hours correctly
 - AI prompt: "Generate test for recurring daily 1:30 AM meeting during fall back transition"
 
-Incident: UTC conversion showed wrong date for overnight meetings
+Incident - UTC conversion showed wrong date for overnight meetings
 - Issue: Meeting at 11 PM UTC-8 showed next day in UTC
 - Root cause: Timezone offset calculation error
 - Test case needed: Validate date doesn't shift unexpectedly across timezones
@@ -269,7 +269,7 @@ class DSTPythonAutoGenerator:
 
     def generate_tests_for_year(self, year: int, timezone: str):
         """
-        AI-generated function that produces comprehensive DST tests
+        AI-generated function that produces complete DST tests
         for a specific year and timezone without manual data entry.
         """
         # Find DST transitions using zoneinfo

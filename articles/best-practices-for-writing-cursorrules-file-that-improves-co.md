@@ -67,9 +67,9 @@ Structuring Your Cursorrules File
 A well-organized `.cursorrules` file should follow a logical structure that makes it easy for the AI to parse and apply your preferences. Start with a brief project overview that describes your application type, tech stack, and primary use cases. This foundation helps the AI understand the general context before looking at specific conventions.
 
 ```markdown
-Project: E-commerce Platform Backend
-Tech Stack: Node.js, Express, PostgreSQL, TypeScript
-Architecture: REST API with microservices patterns
+Project - E-commerce Platform Backend
+Tech Stack - Node.js, Express, PostgreSQL, TypeScript
+Architecture - REST API with microservices patterns
 ```
 
 After the overview, define your coding style guidelines. Be specific about preferences rather than vague. Instead of saying "use good naming conventions," specify your actual conventions, whether you prefer camelCase, PascalCase, or snake_case for different contexts. The AI performs best when given explicit rules rather than subjective guidance.
@@ -250,7 +250,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -262,7 +262,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

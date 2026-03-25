@@ -188,12 +188,12 @@ Prompt:
 
 ```
 Create a Terraform module directory structure for an ECS Fargate service.
-Include: main.tf, variables.tf, outputs.tf, versions.tf.
+Include - main.tf, variables.tf, outputs.tf, versions.tf.
 The service should support custom environment variables via a map,
 configurable CPU/memory, and attach to an existing ALB target group.
 ```
 
-Cursor generates all four files simultaneously. The main gaps versus Claude: it doesn't always pin provider versions tightly and sometimes generates resources in a single flat file instead of splitting logically.
+Cursor generates all four files simultaneously. The main gaps versus Claude - it doesn't always pin provider versions tightly and sometimes generates resources in a single flat file instead of splitting logically.
 
 Cursor's variables.tf pattern:
 
@@ -372,7 +372,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -384,5 +384,5 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 {% endraw %}

@@ -25,7 +25,7 @@ What Separates Good First Issues From Bad Ones
 Before evaluating AI options, it helps to know what makes an issue description work. A first issue that attracts contributors includes several key elements:
 
 
-- Context: Why does this issue exist? What user problem does it solve?
+- Context - Why does this issue exist? What user problem does it solve?
 
 - Acceptance criteria: What does "done" look like? How will the fix be verified?
 
@@ -57,10 +57,10 @@ A practical approach works well with either tool:
 ```
 Write a first-time contributor issue for this GitHub issue:
 
-Project: [project name]
-Type: Bug fix / Feature / Documentation
-Issue summary: [your brief notes]
-Difficulty: beginner / intermediate
+Project - [project name]
+Type - Bug fix / Feature / Documentation
+Issue summary - [your brief notes]
+Difficulty - beginner / intermediate
 
 Context from our CONTRIBUTING.md:
 [paste relevant section]

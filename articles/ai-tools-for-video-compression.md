@@ -24,10 +24,10 @@ Three categories of AI tools exist in this space: end-to-end neural codecs, AI-e
 
 Table of Contents
 
-- [Tool Comparison: AI Video Compression Options](#tool-comparison-ai-video-compression-options)
+- [Tool Comparison - AI Video Compression Options](#tool-comparison-ai-video-compression-options)
 - [FFmpeg with AI-Enhanced Filters](#ffmpeg-with-ai-enhanced-filters)
 - [HandBrake with Neural Presets](#handbrake-with-neural-presets)
-- [SVT-AV1: AI-Optimized AV1 Encoding](#svt-av1-ai-optimized-av1-encoding)
+- [SVT-AV1 - AI-Optimized AV1 Encoding](#svt-av1-ai-optimized-av1-encoding)
 - [Video Compression APIs for Cloud Integration](#video-compression-apis-for-cloud-integration)
 - [Building a Compression Pipeline](#building-a-compression-pipeline)
 - [Measuring Compression Effectiveness](#measuring-compression-effectiveness)
@@ -36,7 +36,7 @@ Table of Contents
 - [Practical Recommendations](#practical-recommendations)
 - [Related Reading](#related-reading)
 
-Tool Comparison: AI Video Compression Options
+Tool Comparison - AI Video Compression Options
 
 Choosing the right tool depends on your delivery targets, available compute, and decoder support requirements:
 
@@ -108,7 +108,7 @@ For automated workflows, create a preset file:
 }
 ```
 
-SVT-AV1: AI-Optimized AV1 Encoding
+SVT-AV1 - AI-Optimized AV1 Encoding
 
 The AV1 codec offers 30-50% better compression than H.264, but encoding speed has been a barrier. SVT-AV1 (Scalable Video Technology) uses AI-accelerated encoding through parallel processing:
 
@@ -268,7 +268,7 @@ Video-on-demand with long shelf life: AV1 via SVT-AV1 at preset 5-6. The extra e
 
 Mobile-first delivery with adaptive bitrate: H.265 in a HLS ladder with four to six quality tiers. iOS hardware decodes H.265 efficiently, and file sizes are 25-35% smaller than equivalent H.264 streams.
 
-Archive and archival quality: Lossless H.264 (`-crf 0`) or FFV1. These are not compression wins for delivery but preserve pixel-perfect quality for post-production workflows.
+Archive and archival quality - Lossless H.264 (`-crf 0`) or FFV1. These are not compression wins for delivery but preserve pixel-perfect quality for post-production workflows.
 
 Pro Tips for AI Compression Pipelines
 

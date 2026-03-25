@@ -21,7 +21,7 @@ AI assistants vary dramatically in CDK capability. Some understand construct lib
 
 Claude Opus 4.6 (Best CDK Depth)
 
-Pricing: $3/MTok input, $15/MTok output via API; Claude.ai subscriptions $20/month.
+Pricing - $3/MTok input, $15/MTok output via API; Claude.ai subscriptions $20/month.
 
 Strengths:
 - Understands CDK versioning and breaking changes. Generates TypeScript using current CDK v2 patterns (not deprecated v1).
@@ -82,9 +82,9 @@ Weaknesses:
 - Sometimes generates code that synths correctly but misses cost optimizations (e.g., suggests t3 when t4g ARM-based would be cheaper).
 - Rarely suggests CDK assertions or testing patterns; test coverage is user-provided.
 
-Best For: Production infrastructure, enterprise stacks, multi-account deployments, security-critical configurations.
+Best For - Production infrastructure, enterprise stacks, multi-account deployments, security-critical configurations.
 
-Cost/Article Ratio: ~$0.40, $0.60 per complex stack article (VPC + RDS + Lambda + monitoring). Higher upfront cost, lower revision cycles.
+Cost/Article Ratio - ~$0.40, $0.60 per complex stack article (VPC + RDS + Lambda + monitoring). Higher upfront cost, lower revision cycles.
 ---
 
 ChatGPT 4o (Reliable Basics; Gaps on Advanced Patterns)
@@ -97,13 +97,13 @@ Table of Contents
 - [Codeium (Fast Completions; Weak CDK Knowledge)](#codeium-fast-completions-weak-cdk-knowledge)
 - [TabbyML (Open Source; Minimal CDK Support)](#tabbyml-open-source-minimal-cdk-support)
 - [Comparison Table](#comparison-table)
-- [Practical Workflow: Multi-Stack VPC + RDS + Lambda Application](#practical-workflow-multi-stack-vpc-rds-lambda-application)
-- [Security Best Practices: Least-Privilege IAM](#security-best-practices-least-privilege-iam)
+- [Practical Workflow - Multi-Stack VPC + RDS + Lambda Application](#practical-workflow-multi-stack-vpc-rds-lambda-application)
+- [Security Best Practices - Least-Privilege IAM](#security-best-practices-least-privilege-iam)
 - [When NOT to Use AI for CDK](#when-not-to-use-ai-for-cdk)
 - [Final Recommendations](#final-recommendations)
-- [Cost Analysis: 12-Month Content Strategy](#cost-analysis-12-month-content-strategy)
+- [Cost Analysis - 12-Month Content Strategy](#cost-analysis-12-month-content-strategy)
 
-Pricing: $20/month Pro, or API $0.003/$0.006 per 1K tokens.
+Pricing - $20/month Pro, or API $0.003/$0.006 per 1K tokens.
 
 Strengths:
 - Solid on basic constructs: EC2, S3, DynamoDB, SQS. Generates working boilerplate quickly.
@@ -141,20 +141,20 @@ export class StaticSiteStack extends cdk.Stack {
 ```
 
 Weaknesses:
-- Frequently generates default configurations without noting security implications. Example: suggests S3 bucket without versioning or MFA delete for non-production stacks (unclear boundaries).
+- Frequently generates default configurations without noting security implications. Example - suggests S3 bucket without versioning or MFA delete for non-production stacks (unclear boundaries).
 - Weak on cross-stack references and stack composition. Often suggests environment variables instead of proper CloudFormation exports.
 - Misses Lambda execution role setup. Generates Lambda without explicitly creating IAM role or explaining role attachment.
 - Doesn't address CDK drift or state management for multi-developer teams.
 
-Best For: Tutorial content, getting-started guides, educational articles targeting beginners.
+Best For - Tutorial content, getting-started guides, educational articles targeting beginners.
 
-Cost/Article Ratio: ~$0.15, $0.25 per article. Fast output, but requires more editorial review on security and advanced topics.
+Cost/Article Ratio - ~$0.15, $0.25 per article. Fast output, but requires more editorial review on security and advanced topics.
 
 ---
 
 GitHub Copilot (Context-Dependent; IDE-Bound)
 
-Pricing: $10/month, $21/user/month enterprise.
+Pricing - $10/month, $21/user/month enterprise.
 
 Strengths:
 - Excellent for rapid prototyping within VS Code. Understands recent CDK patterns if you've typed similar code nearby.
@@ -179,15 +179,15 @@ Weaknesses:
 - Misses version-specific changes. Suggests v1 CDK patterns for v2 projects.
 - No understanding of CDK synth output or CloudFormation templates. Generates code that may not synthesize correctly.
 
-Best For: Snippets and boilerplate within existing projects; not recommended for generating new stacks from scratch.
+Best For - Snippets and boilerplate within existing projects; not recommended for generating new stacks from scratch.
 
-Cost/Article Ratio: Not recommended for CDK article generation. Better suited to supporting developers writing their own code.
+Cost/Article Ratio - Not recommended for CDK article generation. Better suited to supporting developers writing their own code.
 
 ---
 
 Cursor (Claude Backbone; Strong but Limited Scope)
 
-Pricing: $20/month Pro, free tier available.
+Pricing - $20/month Pro, free tier available.
 
 Strengths:
 - Uses Claude Opus 4.6 backbone, so inherits strong CDK knowledge.
@@ -197,17 +197,17 @@ Strengths:
 Weaknesses:
 - Limited by editor context window. Struggles with large multi-stack projects (100+ files).
 - Autocomplete mode is less thoughtful than full chat. Misses nuances in advanced patterns.
-- Pricing: $20/month for individual use; prohibitive for large teams.
+- Pricing - $20/month for individual use; prohibitive for large teams.
 
-Best For: Individual developers writing CDK; not cost-effective for content generation at scale.
+Best For - Individual developers writing CDK; not cost-effective for content generation at scale.
 
-Cost/Article Ratio: ~$0.30, $0.50 per article. Slower than Claude API for batch generation.
+Cost/Article Ratio - ~$0.30, $0.50 per article. Slower than Claude API for batch generation.
 
 ---
 
 Codeium (Fast Completions; Weak CDK Knowledge)
 
-Pricing: Free, $12/month Pro.
+Pricing - Free, $12/month Pro.
 
 Strengths:
 - Lightning-fast autocomplete (<100ms). Useful for flow-state coding.
@@ -219,15 +219,15 @@ Weaknesses:
 - Frequently generates code with missing imports or incorrect namespacing.
 - No reasoning about IAM roles, security groups, or deployment-critical properties.
 
-Best For: Syntax completion only; not for generating functional CDK code.
+Best For - Syntax completion only; not for generating functional CDK code.
 
-Cost/Article Ratio: Not recommended. Saves minimal time; increases error correction overhead.
+Cost/Article Ratio - Not recommended. Saves minimal time; increases error correction overhead.
 
 ---
 
 TabbyML (Open Source; Minimal CDK Support)
 
-Pricing: Free (self-hosted), enterprise licensing.
+Pricing - Free (self-hosted), enterprise licensing.
 
 Strengths:
 - Privacy-friendly. No external API calls; proprietary infrastructure stays internal.
@@ -237,7 +237,7 @@ Weaknesses:
 - Suggests outdated patterns; doesn't track AWS service updates or CDK versioning.
 - No understanding of security best practices (e.g., suggests public S3 buckets, missing IAM policies).
 
-Best For: Documentation scaffolding only; unsuitable for production CDK generation.
+Best For - Documentation scaffolding only; unsuitable for production CDK generation.
 
 ---
 
@@ -254,9 +254,9 @@ Comparison Table
 
 ---
 
-Practical Workflow: Multi-Stack VPC + RDS + Lambda Application
+Practical Workflow - Multi-Stack VPC + RDS + Lambda Application
 
-Scenario: Build a production-ready application with networking, database, and compute layers.
+Scenario - Build a production-ready application with networking, database, and compute layers.
 
 Prompt 1 (VPC Stack):
 "Write a CDK TypeScript stack that creates a VPC with public and private subnets across 3 AZs. Use VPC CIDR 10.0.0.0/16. Public subnets use /24, private subnets use /24. Include NAT Gateway for private subnet egress."
@@ -423,15 +423,15 @@ cdk synth
 cdk deploy NetworkStack DatabaseStack ComputeStack
 ```
 
-Total Time: ~2 minutes (3 prompts + deployment). Cost: ~$0.50 in API calls.
+Total Time - ~2 minutes (3 prompts + deployment). Cost: ~$0.50 in API calls.
 
 ---
 
-Security Best Practices: Least-Privilege IAM
+Security Best Practices - Least-Privilege IAM
 
 Claude Opus 4.6 excels at generating minimal IAM policies. Example:
 
-Prompt: "Generate an IAM policy for a Lambda that reads from a specific S3 bucket (arn:aws:s3:::my-bucket/*) and writes logs to CloudWatch."
+Prompt - "Generate an IAM policy for a Lambda that reads from a specific S3 bucket (arn:aws:s3:::my-bucket/*) and writes logs to CloudWatch."
 
 Output:
 ```typescript
@@ -450,7 +450,7 @@ const policy = new iam.PolicyStatement({
 });
 ```
 
-This is correct: no s3:* wildcard, specific bucket ARN, limited log operations.
+This is correct - no s3:* wildcard, specific bucket ARN, limited log operations.
 
 ChatGPT 4o frequently suggests:
 ```typescript
@@ -472,18 +472,18 @@ Final Recommendations
 - Production stacks: Claude Opus 4.6. Cost is negligible ($0.50 per stack); quality and security are unmatched.
 - Educational content: ChatGPT 4o for clarity; Claude for depth.
 - Developer experience: Copilot or Cursor for IDE integration; not for content generation.
-- Enterprise: Claude API with code review pipeline. Generates 95%+ of stack correctly on first attempt.
+- Enterprise - Claude API with code review pipeline. Generates 95%+ of stack correctly on first attempt.
 
 ---
 
-Cost Analysis: 12-Month Content Strategy
+Cost Analysis - 12-Month Content Strategy
 
 Generate 30 CDK stack articles (5 simple, 15 intermediate, 10 advanced):
 - Claude API cost: ~$18 (30 stacks × $0.60 average)
 - ChatGPT 4o equivalent: ~$15 (cheaper but lower quality, more revisions)
 - Time saved vs. manual CDK learning: ~150 hours (worth $7,500, $15,000 at contractor rates)
 
-Conclusion: Claude Opus 4.6 is the clear winner for CDK infrastructure content. Reliable, production-safe, and cost-efficient. Use ChatGPT 4o for secondary sources or educational framing. Avoid Copilot and Codeium for stack generation.
+Conclusion - Claude Opus 4.6 is the clear winner for CDK infrastructure content. Reliable, production-safe, and cost-efficient. Use ChatGPT 4o for secondary sources or educational framing. Avoid Copilot and Codeium for stack generation.
 
 Frequently Asked Questions
 

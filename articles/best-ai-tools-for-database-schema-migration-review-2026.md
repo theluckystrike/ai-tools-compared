@@ -20,13 +20,13 @@ Table of Contents
 
 - [Why AI-Assisted Migration Review Matters](#why-ai-assisted-migration-review-matters)
 - [The Three Contenders](#the-three-contenders)
-- [Claude 3.5 Sonnet: Deep Structural Analysis](#claude-35-sonnet-deep-structural-analysis)
-- [GPT-4 Turbo: Fast Pattern Recognition](#gpt-4-turbo-fast-pattern-recognition)
-- [GitHub Copilot: IDE Integration for Speed](#github-copilot-ide-integration-for-speed)
-- [Real-World Comparison: Three Migration Scenarios](#real-world-comparison-three-migration-scenarios)
-- [Practical Implementation: Setting Up AI-Assisted Review](#practical-implementation-setting-up-ai-assisted-review)
+- [Claude 3.5 Sonnet - Deep Structural Analysis](#claude-35-sonnet-deep-structural-analysis)
+- [GPT-4 Turbo - Fast Pattern Recognition](#gpt-4-turbo-fast-pattern-recognition)
+- [GitHub Copilot - IDE Integration for Speed](#github-copilot-ide-integration-for-speed)
+- [Real-World Comparison - Three Migration Scenarios](#real-world-comparison-three-migration-scenarios)
+- [Practical Implementation - Setting Up AI-Assisted Review](#practical-implementation-setting-up-ai-assisted-review)
 - [Best Practices by Migration Type](#best-practices-by-migration-type)
-- [Cost Analysis: 12-Month Projection](#cost-analysis-12-month-projection)
+- [Cost Analysis - 12-Month Projection](#cost-analysis-12-month-projection)
 - [Real Tool Names & Pricing (2026)](#real-tool-names-pricing-2026)
 - [Limitations of All Tools](#limitations-of-all-tools)
 
@@ -49,7 +49,7 @@ The Three Contenders
 | GPT-4 Turbo | $10-30/M (API) | 128K tokens | Strong | Fast | 92% |
 | GitHub Copilot | $10/M (IDE) | 8K tokens | Good | Instant | 85% |
 
-Claude 3.5 Sonnet: Deep Structural Analysis
+Claude 3.5 Sonnet - Deep Structural Analysis
 
 Claude excels at multi-step migration analysis. It understands context across multiple changesets and can reason about transaction isolation levels.
 
@@ -77,7 +77,7 @@ COMMIT;
 
 Claude's analysis:
 ```
-RISK: MEDIUM-HIGH
+RISK - MEDIUM-HIGH
 
 Breaking Changes Detected:
 1. VARCHAR(100) truncation: Current prod has 512-char emails from legacy OAuth flows.
@@ -85,7 +85,7 @@ Breaking Changes Detected:
    Mutation will fail.
 
 2. NOT NULL without backfill: Assumes all users have email set. Check constraints first.
-   Risk: Runtime constraint violation during online migration.
+   Risk - Runtime constraint violation during online migration.
 
 Safe Approach:
 - Step 1: ADD CONSTRAINT email_not_null CHECK (email IS NOT NULL) NOT ENFORCED (MySQL 8.0.16+)
@@ -94,10 +94,10 @@ Safe Approach:
 - Step 3: Enforce constraint
 - Step 4: Index creation (safe, can be concurrent with ALGORITHM=INPLACE)
 
-Data Loss Risk: DELETE in same transaction. Safe if within 90-day window, but verify
+Data Loss Risk - DELETE in same transaction. Safe if within 90-day window, but verify
 user_audit is not accessed by active queries. Consider adding LIMIT clause if table is large.
 
-Estimated Runtime: 45-120s depending on users table size (million row assumption).
+Estimated Runtime - 45-120s depending on users table size (million row assumption).
 ```
 
 When to Use Claude
@@ -110,7 +110,7 @@ Pricing
 - Per-request API: $3-15/month at typical migration review volume
 - Enterprise: Custom pricing with dedicated support
 
-GPT-4 Turbo: Fast Pattern Recognition
+GPT-4 Turbo - Fast Pattern Recognition
 
 GPT-4 is fastest for standard migrations and catches common anti-patterns quickly.
 
@@ -129,7 +129,7 @@ RED FLAGS:
 - Missing pre-migration validation
 - DELETE without WHERE predicate safety check
 
-PASS with conditions: Requires pre-flight checks
+PASS with conditions - Requires pre-flight checks
 ```
 
 GPT-4 is more concise but less exploratory. It hits the critical issues but doesn't deep detailed look into data types across database vendors.
@@ -144,7 +144,7 @@ Pricing
 - GPT-4 API: $10-30/month at scale
 - ChatGPT+ with code interpreter: $20/month (manual review only)
 
-GitHub Copilot: IDE Integration for Speed
+GitHub Copilot - IDE Integration for Speed
 
 Copilot in VS Code or JetBrains is fastest to access but least .
 
@@ -178,9 +178,9 @@ Limitations
 - Can't reason about production data volumes
 - No database-specific optimization knowledge
 
-Real-World Comparison: Three Migration Scenarios
+Real-World Comparison - Three Migration Scenarios
 
-Scenario 1: Adding a New Column with Default
+Scenario 1 - Adding a New Column with Default
 
 Migration:
 ```sql
@@ -194,9 +194,9 @@ ALTER TABLE users ADD COLUMN status VARCHAR(20) DEFAULT 'active';
 | GPT-4 | Safe | 1s | Brief confirmation |
 | Copilot | Safe | Instant | No explanation |
 
-Winner: Claude (most learning value), GPT-4 (fastest safe response)
+Winner - Claude (most learning value), GPT-4 (fastest safe response)
 
-Scenario 2: Dropping a Column with Foreign Keys
+Scenario 2 - Dropping a Column with Foreign Keys
 
 Migration:
 ```sql
@@ -206,13 +206,13 @@ ALTER TABLE orders DROP COLUMN legacy_vendor_id;
 
 | Tool | Risk Assessment | Speed | Explanation |
 |------|-----------------|-------|-------------|
-| Claude | Warns: Check FK deps first. Suggests SELECT to find references. | 4s | FK analysis |
+| Claude | Warns - Check FK deps first. Suggests SELECT to find references. | 4s | FK analysis |
 | GPT-4 | Warns: FK risk | 1s | Brief warning |
 | Copilot | No warning | Instant | Misses issue |
 
-Winner: Claude (catches hidden dependencies)
+Winner - Claude (catches hidden dependencies)
 
-Scenario 3: Changing Column Type
+Scenario 3 - Changing Column Type
 
 Migration:
 ```sql
@@ -226,16 +226,16 @@ ALTER TABLE events MODIFY COLUMN created_at TIMESTAMP WITH TIME ZONE;
 | GPT-4 | Warns: Type conversion risk | 2s | Generic warning |
 | Copilot | Suggests safe conversion approach | 0.5s | Quick suggestion (basic) |
 
-Winner: Claude (database-specific, )
+Winner - Claude (database-specific, )
 
-Practical Implementation: Setting Up AI-Assisted Review
+Practical Implementation - Setting Up AI-Assisted Review
 
 Claude API + Custom Script
 
 ```bash
 #!/bin/bash
 review-migration.sh
-Usage: ./review-migration.sh V2.15__alter_users.sql
+Usage - ./review-migration.sh V2.15__alter_users.sql
 
 MIGRATION_FILE="$1"
 CLAUDE_API_KEY="sk-ant-..."
@@ -267,8 +267,8 @@ GPT-4 + VS Code
 Install Thunder Client or REST Client extension:
 ```http
 POST https://api.openai.com/v1/chat/completions
-Authorization: Bearer sk-...
-Content-Type: application/json
+Authorization - Bearer sk-...
+Content-Type - application/json
 
 {
   "model": "gpt-4-turbo",
@@ -282,25 +282,25 @@ Content-Type: application/json
 Best Practices by Migration Type
 
 Data Type Changes
-Best tool: Claude (understands coercion semantics)
+Best tool - Claude (understands coercion semantics)
 Process:
 1. Generate with Claude
 2. Review in Copilot for syntax
 3. Validate with GPT-4 for foreign key impact
 
 Large Table Alterations
-Best tool: Claude (understands locking, online DDL)
-Key question: "Will this lock table? Impact on 100M row table?"
+Best tool - Claude (understands locking, online DDL)
+Key question - "Will this lock table? Impact on 100M row table?"
 
 Liquibase YAML Migrations
-Best tool: GPT-4 (fastest for XML/YAML syntax)
-Copilot: Works but slower context switching
+Best tool - GPT-4 (fastest for XML/YAML syntax)
+Copilot - Works but slower context switching
 
 Multi-step Refactoring
-Best tool: Claude (can see across multiple changesets)
-Process: Ask Claude to review entire migration sequence at once
+Best tool - Claude (can see across multiple changesets)
+Process - Ask Claude to review entire migration sequence at once
 
-Cost Analysis: 12-Month Projection
+Cost Analysis - 12-Month Projection
 
 Assuming 40 migrations/month (typical startup):
 

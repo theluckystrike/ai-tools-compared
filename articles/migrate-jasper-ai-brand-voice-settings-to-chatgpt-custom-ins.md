@@ -55,7 +55,7 @@ Jasper AI Brand Voice works by analyzing your uploaded content samples to extrac
 
 ChatGPT Custom Instructions accomplish the same goal through two fields: "How would you like ChatGPT to respond?" and "What would you like ChatGPT to know about you?" The first field controls behavior, while the second provides context.
 
-Step 1: Extract Your Jasper Brand Voice Configuration
+Step 1 - Extract Your Jasper Brand Voice Configuration
 
 Before migrating, document your current Jasper Brand Voice settings. If you have access to your Jasper dashboard, note the following:
 
@@ -63,13 +63,13 @@ Before migrating, document your current Jasper Brand Voice settings. If you have
 
 2. Sample Content: Gather 3-5 representative documents you uploaded
 
-3. Writing Rules: Note any specific rules you configured (avoid certain words, prefer active voice, etc.)
+3. Writing Rules - Note any specific rules you configured (avoid certain words, prefer active voice, etc.)
 
 If you no longer have access to Jasper, review your previously generated content to reverse-engineer the patterns. Look for recurring phrases, sentence lengths, and structural choices.
 
 A useful approach when you still have Jasper access: paste one of your best-performing brand voice outputs into ChatGPT with the prompt "Analyze this text and describe its tone, vocabulary preferences, sentence structure, and formatting conventions in a concise style guide." The resulting description becomes the foundation of your ChatGPT Custom Instructions.
 
-Step 2: Convert Jasper Settings to ChatGPT Custom Instructions
+Step 2 - Convert Jasper Settings to ChatGPT Custom Instructions
 
 Here is how to map Jasper Brand Voice settings to ChatGPT Custom Instructions:
 
@@ -93,7 +93,7 @@ For vocabulary preferences, use the second Custom Instructions field:
 ```
 In the "What would you like ChatGPT to know about you?" field:
 
-Our brand uses these terms: "optimize" (not "optimise"), "use"
+Our brand uses these terms - "optimize" (not "optimise"), "use"
 (only as a verb), "simple" (for integration topics). Avoid: "cutting
 edge" (overused), "notable" (too hyperbolic). Preferred phrases:
 "our platform enables," "customers achieve," "built for."

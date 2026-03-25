@@ -37,7 +37,7 @@ Understanding what data Claude Code transmits to Anthropic's servers is crucial 
 
 2.
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- However: for most use cases, understanding and using the available privacy controls provides a reasonable balance between functionality and data privacy.
+- However - for most use cases, understanding and using the available privacy controls provides a reasonable balance between functionality and data privacy.
 - Does Claude offer a: free tier? Most major tools offer some form of free tier or trial period.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - Use local tools first: Run local linting, testing, and analysis before involving Claude Code
@@ -288,7 +288,7 @@ else:
     print("No obvious sensitive data found")
 ```
 
-Comparison: Claude Code vs. Other AI Tools
+Comparison - Claude Code vs. Other AI Tools
 
 | Tool | Data Transmission | Retention | Encryption | Enterprise Controls |
 |------|------------------|-----------|-----------|---------------------|

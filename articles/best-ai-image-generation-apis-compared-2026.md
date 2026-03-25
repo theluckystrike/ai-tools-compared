@@ -35,7 +35,7 @@ Picking an image generation API involves tradeoffs between quality, speed, cost,
 
 
 - Their infrastructure is optimized for low latency: under 5 seconds for most FLUX models.
-- Weakness: Cold starts can add 10-30 seconds.
+- Weakness - Cold starts can add 10-30 seconds.
 - DALL-E would cost $2: to generate equivalent quality.
 - Pay only for what you use: no subscription.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
@@ -90,9 +90,9 @@ with open("architecture_diagram.png", "wb") as f:
 print(f"Revised prompt: {response.data[0].revised_prompt}")
 ```
 
-Strength: Follows detailed prompts reliably. "Show 5 blue circles arranged in a pentagon" actually produces that. other models often miscount.
+Strength - Follows detailed prompts reliably. "Show 5 blue circles arranged in a pentagon" actually produces that. other models often miscount.
 
-Weakness: No image-to-image, no inpainting, no fine-tuning. OpenAI automatically revises prompts, which can subtly change the output.
+Weakness - No image-to-image, no inpainting, no fine-tuning. OpenAI automatically revises prompts, which can subtly change the output.
 
 Stability AI
 
@@ -133,9 +133,9 @@ generate_image_stability(
 )
 ```
 
-Strength: Negative prompts suppress unwanted elements. Image-to-image and inpainting available. SDXL is very cheap at scale.
+Strength - Negative prompts suppress unwanted elements. Image-to-image and inpainting available. SDXL is very cheap at scale.
 
-Weakness: Prompt adherence for complex or text-heavy prompts is weaker than DALL-E 3.
+Weakness - Prompt adherence for complex or text-heavy prompts is weaker than DALL-E 3.
 
 Replicate
 
@@ -159,9 +159,9 @@ for i, url in enumerate(output):
     print(f"Image {i}: {url}")
 ```
 
-Strength: Access to thousands of fine-tuned models. Pay only for what you use. no subscription. Best for batch processing.
+Strength - Access to thousands of fine-tuned models. Pay only for what you use. no subscription. Best for batch processing.
 
-Weakness: Cold starts can add 10-30 seconds. Costs are variable and harder to predict.
+Weakness - Cold starts can add 10-30 seconds. Costs are variable and harder to predict.
 
 FAL (fal.ai)
 
@@ -186,9 +186,9 @@ print(result["images"][0]["url"])
 print(f"Generation time: {result['timings']['inference']:.2f}s")
 ```
 
-Strength: FLUX models at sub-5-second latency. Good for interactive apps. Predictable per-image pricing.
+Strength - FLUX models at sub-5-second latency. Good for interactive apps. Predictable per-image pricing.
 
-Weakness: Smaller model selection than Replicate.
+Weakness - Smaller model selection than Replicate.
 
 Quality Benchmark
 
@@ -217,9 +217,9 @@ curl -X POST https://api.stability.ai/v2beta/image/to/image \
   -F "strength=0.75" \
   -F "output_format=png" > output.png
 
-Cost: ~$0.065 per image
-Time: ~8 seconds per image (batch job)
-Total for 1000: $65, 2+ hours
+Cost - ~$0.065 per image
+Time - ~8 seconds per image (batch job)
+Total for 1000 - $65, 2+ hours
 ```
 
 Replicate batch (async webhooks):
@@ -230,7 +230,7 @@ import json
 Submit 100 jobs, get webhook notifications when done
 batch_prompts = [
     "Coffee shop interior, warm lighting, professional photo",
-    "Mountain landscape at sunset, dramatic sky",
+    "Mountain field at sunset, dramatic sky",
     # ... 98 more
 ]
 
@@ -244,9 +244,9 @@ for prompt in batch_prompts:
     )
     results.append(result)
 
-Cost: ~$0.0023 per image
-Time: 3-8 seconds per image (async)
-Total for 100: $0.23, 10-15 minutes
+Cost - ~$0.0023 per image
+Time - 3-8 seconds per image (async)
+Total for 100 - $0.23, 10-15 minutes
 ```
 
 FAL batch (parallel processing):
@@ -267,14 +267,14 @@ async def generate_batch(prompts):
     results = await asyncio.gather(*tasks)
     return results
 
-Cost: ~$0.025 per image
-Time: 5-8 seconds for entire batch (parallel)
-Total for 100: $2.50, 10 seconds
+Cost - ~$0.025 per image
+Time - 5-8 seconds for entire batch (parallel)
+Total for 100 - $2.50, 10 seconds
 ```
 
-For batch processing: FAL is fastest, Replicate is cheapest, DALL-E requires sequential calls.
+For batch processing - FAL is fastest, Replicate is cheapest, DALL-E requires sequential calls.
 
-Real-World Integration: Product Photography Pipeline
+Real-World Integration - Product Photography Pipeline
 
 Building a batch image upscaler for e-commerce:
 
@@ -309,7 +309,7 @@ Usage
 upscale_product_images("./product_photos", "./product_photos_4x")
 ```
 
-This approach: 50 product photos, $0.12 cost, ~3 minutes runtime. DALL-E would cost $2 to generate equivalent quality.
+This approach - 50 product photos, $0.12 cost, ~3 minutes runtime. DALL-E would cost $2 to generate equivalent quality.
 
 API Availability & Uptime (March 2026)
 

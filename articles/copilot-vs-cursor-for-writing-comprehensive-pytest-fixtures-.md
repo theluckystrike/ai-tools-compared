@@ -329,7 +329,7 @@ def database():
     yield db
     teardown_database()  # 1 second
 
-Every test: 3 second overhead
+Every test - 3 second overhead
 100 tests: 300 seconds total fixture time
 ```
 
@@ -348,7 +348,7 @@ def database_transaction(database):
     yield database
     transaction.rollback()  # Fast cleanup, no data pollution
 
-Every test: 10ms overhead
+Every test - 10ms overhead
 100 tests: 1 second total fixture time (299 second savings)
 ```
 

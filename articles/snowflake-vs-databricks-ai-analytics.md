@@ -45,13 +45,13 @@ Platform Foundations
 
 Snowflake started as a cloud-native data warehouse. Its architecture separates storage from compute, allowing independent scaling. The platform speaks SQL natively and has built its reputation on handling analytical workloads with minimal administration.
 
-Databricks emerged from the Apache Spark ecosystem. Its lakehouse architecture combines flexible data lake storage with warehouse-like management features. The platform emphasizes code-first workflows, particularly in Python and Scala, with native support for distributed machine learning.
+Databricks emerged from the Apache Spark environment. Its lakehouse architecture combines flexible data lake storage with warehouse-like management features. The platform emphasizes code-first workflows, particularly in Python and Scala, with native support for distributed machine learning.
 
 The fundamental difference shapes everything else: Snowflake optimizes for structured data and SQL workflows, while Databricks optimizes for diverse data types and programmatic ML pipelines.
 
 Query Language and Developer Experience
 
-Snowflake: SQL-First Approach
+Snowflake - SQL-First Approach
 
 Snowflake's strength is SQL familiarity. If your team writes analytical queries, the transition is nearly.
 
@@ -78,12 +78,12 @@ SELECT * FROM SNOWFLAKE.ML.FORECAST(
 
 Snowflake's ML functions (currently in preview/public preview) cover forecasting, anomaly detection, and classification. The syntax integrates with standard SQL, which reduces learning curve for analysts.
 
-Databricks: Code-First Flexibility
+Databricks - Code-First Flexibility
 
 Databricks supports SQL but shines when you need programmatic control. Python is a first-class citizen, and you can mix SQL cells with Python in notebooks.
 
 ```python
-Databricks: Feature engineering with PySpark
+Databricks - Feature engineering with PySpark
 from pyspark.sql import functions as F
 
 Load raw data
@@ -127,7 +127,7 @@ Databricks ML Workspace
 Databricks provides an unified workspace for the full ML lifecycle: feature engineering, training, hyperparameter tuning, and deployment.
 
 ```python
-Databricks: Distributed model training with MLflow
+Databricks - Distributed model training with MLflow
 import mlflow
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
@@ -172,7 +172,7 @@ Performance characteristics differ based on workload type.
 
 For ad-hoc SQL analytics, Snowflake typically feels faster out of the box. For batch processing at terabyte scale, Databricks often processes faster per dollar when properly tuned.
 
-Real-world note: both platforms auto-scale, but Snowflake's auto-clustering and multi-cluster warehouses abstract away more operational decisions. Databricks gives you more control, which means more tuning responsibility.
+Real-world note - both platforms auto-scale, but Snowflake's auto-clustering and multi-cluster warehouses abstract away more operational decisions. Databricks gives you more control, which means more tuning responsibility.
 
 Cost Structure Differences
 

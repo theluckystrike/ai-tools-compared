@@ -32,7 +32,7 @@ Table of Contents
 - [Development](#development)
 - [Architecture](#architecture)
 - [Tabnine. Best for Privacy-Conscious Teams](#tabnine-best-for-privacy-conscious-teams)
-- [Docstring Quality: What to Look For](#docstring-quality-what-to-look-for)
+- [Docstring Quality - What to Look For](#docstring-quality-what-to-look-for)
 - [Batch Documentation Generation Workflow](#batch-documentation-generation-workflow)
 - [Keeping Docs in Sync with Code Changes](#keeping-docs-in-sync-with-code-changes)
 - [Quality Metrics](#quality-metrics)
@@ -48,7 +48,7 @@ Claude (Opus 4.6). Best for Context-Aware Documentation
 
 Claude generates documentation by understanding entire functions, classes, and module architecture.
 
-Pricing: Claude API at $15/1M input tokens, $75/1M output tokens.
+Pricing - Claude API at $15/1M input tokens, $75/1M output tokens.
 
 Strengths:
 - Analyzes function behavior and generates multi-line JSDoc with @param, @returns, @throws tags
@@ -56,7 +56,7 @@ Strengths:
 - Handles edge cases and generates accurate error documentation
 - Explains complex algorithms in clear language
 
-Real Example: TypeScript Function
+Real Example - TypeScript Function
 
 Input function:
 ```typescript
@@ -99,13 +99,13 @@ async function fetchUserWithRetry(userId: string, maxRetries: number = 3): Promi
 }
 ```
 
-Best For: Teams needing publication-ready documentation, complex algorithms requiring explanation.
+Best For - Teams needing publication-ready documentation, complex algorithms requiring explanation.
 
 GitHub Copilot. Best for Real-Time IDE Integration
 
 Copilot provides inline documentation suggestions as you type, integrated directly into your editor.
 
-Pricing: $10/month or $100/year per user.
+Pricing - $10/month or $100/year per user.
 
 Strengths:
 - Real-time JSDoc/docstring suggestions as you complete function signatures
@@ -113,7 +113,7 @@ Strengths:
 - Fast generation without leaving the editor
 - Works across JavaScript, Python, Java, Go, Rust
 
-Real Example: Python Function
+Real Example - Python Function
 
 Input function:
 ```python
@@ -142,13 +142,13 @@ def calculate_compound_interest(principal, rate, time, compounds_per_year=12):
   return principal * (1 + rate / (100 * compounds_per_year))  (compounds_per_year * time)
 ```
 
-Best For: Individual developers, teams prioritizing real-time workflow integration.
+Best For - Individual developers, teams prioritizing real-time workflow integration.
 
 Mintlify. Best for API Documentation
 
 Mintlify specializes in generating beautiful, interactive API documentation from code and comments.
 
-Pricing: Free tier with core features; Pro at $50/month.
+Pricing - Free tier with core features; Pro at $50/month.
 
 Strengths:
 - Generates OpenAPI/Swagger specs from Python/TypeScript code
@@ -156,7 +156,7 @@ Strengths:
 - Supports multiple languages and frameworks
 - Auto-generates endpoint documentation from route handlers
 
-Real Example: Express.js API Route
+Real Example - Express.js API Route
 
 Input route:
 ```javascript
@@ -207,7 +207,7 @@ POST /api/transactions
       description: Unauthorized - authentication required
 ```
 
-Best For: API teams, projects requiring OpenAPI documentation.
+Best For - API teams, projects requiring OpenAPI documentation.
 
 Language-Specific Performance Comparison
 
@@ -296,7 +296,7 @@ Tabnine. Best for Privacy-Conscious Teams
 
 Tabnine offers on-premise AI documentation generation for teams that cannot send code to external APIs.
 
-Pricing: Pro at $12/user/month; Enterprise with self-hosted models at custom pricing.
+Pricing - Pro at $12/user/month; Enterprise with self-hosted models at custom pricing.
 
 Strengths:
 - On-premise deployment for air-gapped environments
@@ -304,9 +304,9 @@ Strengths:
 - Generates consistent docstrings matching your existing style
 - Supports Java, Kotlin, Scala, and C++ better than most competitors
 
-Best For: Financial services, healthcare, defense contractors with data residency requirements.
+Best For - Financial services, healthcare, defense contractors with data residency requirements.
 
-Docstring Quality: What to Look For
+Docstring Quality - What to Look For
 
 Not all AI-generated documentation is equally useful. Evaluate tool output against these criteria:
 

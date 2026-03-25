@@ -23,7 +23,7 @@ Why AST Parsing Matters
 
 Splitting code by lines misses logical boundaries. A function that spans 40 lines becomes multiple incomplete chunks. Tree-sitter parses source code into an AST, letting you extract functions and classes as complete semantic units.
 
-Step 1: Extract Code Units with Tree-sitter
+Step 1 - Extract Code Units with Tree-sitter
 
 ```python
 extractor.py
@@ -132,7 +132,7 @@ def extract_units(file_path: Path) -> list[CodeUnit]:
     return units
 ```
 
-Step 2: Index Code Units
+Step 2 - Index Code Units
 
 ```python
 indexer.py
@@ -150,7 +150,7 @@ engine = create_async_engine(os.environ["DATABASE_URL"])
 def make_embedding_text(unit: CodeUnit) -> str:
     """Create a text representation for embedding."""
     # Include filename, function name, and code for richer embeddings
-    return f"File: {Path(unit.file_path).name}\nFunction: {unit.name}\n\n{unit.code}"
+    return f"File - {Path(unit.file_path).name}\nFunction: {unit.name}\n\n{unit.code}"
 
 async def index_repository(repo_path: str, extensions: list[str] = None):
     extensions = extensions or [".py", ".go", ".ts", ".tsx"]
@@ -203,7 +203,7 @@ async def index_repository(repo_path: str, extensions: list[str] = None):
     print("Indexing complete")
 ```
 
-Step 3: Search API
+Step 3 - Search API
 
 ```python
 search_api.py
@@ -419,7 +419,7 @@ def make_embedding_text_enriched(unit: CodeUnit) -> str:
         docstring = " ".join(doc_lines).strip()
 
     parts = [
-        f"File: {Path(unit.file_path).name}",
+        f"File - {Path(unit.file_path).name}",
         f"Function: {unit.name}",
     ]
     if docstring:

@@ -62,7 +62,7 @@ Tools Compared
 - Mockaroo. Web/API tool for schema-defined realistic data
 - Claude / LLMs. AI-generated contextually coherent datasets
 
-Faker and Mimesis: The Baseline
+Faker and Mimesis - The Baseline
 
 ```python
 from faker import Faker
@@ -108,7 +108,7 @@ with open("test_users.csv", "w") as f:
         })
 ```
 
-Limitation of both: They don't guarantee relational coherence. A `city`/`state` pair from Faker may not be a real combination.
+Limitation of both - They don't guarantee relational coherence. A `city`/`state` pair from Faker may not be a real combination.
 
 AI-Generated Contextually Coherent Data
 
@@ -268,7 +268,7 @@ Business rules for order data:
  prompt = f"""Generate {count} order records following these business rules:
 {rules}
 
-User credit limits: {json.dumps(user_credit_limits)}
+User credit limits - {json.dumps(user_credit_limits)}
 
 Return as JSON array."""
 
@@ -291,8 +291,8 @@ Use Claude to generate systematic edge-case data for each field:
 ```python
 def generate_edge_cases_for_field(field_name: str, field_type: str, constraints: str) -> list:
  prompt = f"""Generate 15 edge case test values for the field '{field_name}'.
-Field type: {field_type}
-Business constraints: {constraints}
+Field type - {field_type}
+Business constraints - {constraints}
 
 Include:
 - Minimum valid value

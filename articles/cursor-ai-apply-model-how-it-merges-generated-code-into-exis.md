@@ -25,14 +25,14 @@ Table of Contents
 - [How the Merge Process Works](#how-the-merge-process-works)
 - [Practical Applications](#practical-applications)
 - [Best Practices for Working with Apply](#best-practices-for-working-with-apply)
-- [Advanced Workflow: Multi-File Refactoring with Apply](#advanced-workflow-multi-file-refactoring-with-apply)
+- [Advanced Workflow - Multi-File Refactoring with Apply](#advanced-workflow-multi-file-refactoring-with-apply)
 - [Handling Merge Conflicts and Rollback](#handling-merge-conflicts-and-rollback)
 - [Performance and Token Costs](#performance-and-token-costs)
 - [Version Control Integration with Apply](#version-control-integration-with-apply)
 - [Limitations and Considerations](#limitations-and-considerations)
 - [Real-World Apply Patterns and Gotchas](#real-world-apply-patterns-and-gotchas)
 - [Token Accounting for Apply Operations](#token-accounting-for-apply-operations)
-- [Advanced: Chaining Apply Requests](#advanced-chaining-apply-requests)
+- [Advanced - Chaining Apply Requests](#advanced-chaining-apply-requests)
 - [When to Avoid Apply Entirely](#when-to-avoid-apply-entirely)
 - [Integrating Apply with Your Development Workflow](#integrating-apply-with-your-development-workflow)
 
@@ -149,28 +149,28 @@ Best Practices for Working with Apply
 
 To get the best results from Cursor's Apply model, consider these practices:
 
-Provide clear context: Include relevant surrounding code in your prompts so the model understands where changes should go.
+Provide clear context - Include relevant surrounding code in your prompts so the model understands where changes should go.
 
-Review diffs carefully: Always examine the proposed changes before accepting them. The diff view shows exactly what will be modified.
+Review diffs carefully - Always examine the proposed changes before accepting them. The diff view shows exactly what will be modified.
 
-Use incremental changes: Instead of asking for massive refactoring, break larger changes into smaller, manageable Apply requests.
+Use incremental changes - Instead of asking for massive refactoring, break larger changes into smaller, manageable Apply requests.
 
-Test after each Apply: Run your tests after applying changes to ensure everything works as expected.
+Test after each Apply - Run your tests after applying changes to ensure everything works as expected.
 
-Advanced Workflow: Multi-File Refactoring with Apply
+Advanced Workflow - Multi-File Refactoring with Apply
 
 For larger refactoring tasks, using multiple Apply operations strategically yields better results than attempting one massive change. Here's a practical workflow:
 
 ```bash
-Step 1: Apply model understands context from first change
+Step 1 - Apply model understands context from first change
 cursor-prompt: "Add TypeScript type definitions to the User interface in types/index.ts"
 Apply generates and applies changes
 
-Step 2: Then ask for dependent changes
+Step 2 - Then ask for dependent changes
 cursor-prompt: "Now update all functions in services/user.ts to use the new types"
 Apply tracks the first change and generates compatible updates
 
-Step 3: Finally update tests
+Step 3 - Finally update tests
 cursor-prompt: "Update the test file for user service with the new types"
 Apply knows about both previous changes
 ```
@@ -181,11 +181,11 @@ Handling Merge Conflicts and Rollback
 
 When an Apply generates unwanted changes, you have several options:
 
-Quick revert in diff view: The diff interface shows exactly what changed. You can deselect individual changes before applying, accepting only the parts you want.
+Quick revert in diff view - The diff interface shows exactly what changed. You can deselect individual changes before applying, accepting only the parts you want.
 
-Undo stack: After applying changes, you can undo individual Applies to return to previous states. This gives you non-destructive experimentation.
+Undo stack - After applying changes, you can undo individual Applies to return to previous states. This gives you non-destructive experimentation.
 
-Comparing multiple approaches: Some developers keep separate branches or files to test different Apply suggestions side-by-side before committing to changes.
+Comparing multiple approaches - Some developers keep separate branches or files to test different Apply suggestions side-by-side before committing to changes.
 
 Performance and Token Costs
 
@@ -253,14 +253,14 @@ The Apply model works best when you understand its quirks. Here are patterns tha
 
 When Apply Works Well
 
-Pattern: Consistent indentation. If your file uses 2-space indentation throughout, the Apply model will respect that. Mixed indentation causes failures. Before asking Apply to touch a file, normalize its whitespace.
+Pattern - Consistent indentation. If your file uses 2-space indentation throughout, the Apply model will respect that. Mixed indentation causes failures. Before asking Apply to touch a file, normalize its whitespace.
 
-Pattern: Clear function boundaries. Apply struggles when asked to modify code that spans multiple interrelated functions. Instead, ask Apply to refactor one function completely, then verify it still integrates with callers.
+Pattern - Clear function boundaries. Apply struggles when asked to modify code that spans multiple interrelated functions. Instead, ask Apply to refactor one function completely, then verify it still integrates with callers.
 
-Pattern: Commented regions for context. Adding a comment above the section you want modified dramatically improves Apply accuracy:
+Pattern - Commented regions for context. Adding a comment above the section you want modified dramatically improves Apply accuracy:
 
 ```python
-TODO: Refactor to use async/await pattern
+TODO - Refactor to use async/await pattern
 def fetch_data(query):
     response = requests.get(f'/api/search?q={query}')
     return response.json()
@@ -270,13 +270,13 @@ This comment signals to the model exactly what transformation you want, reducing
 
 When Apply Often Fails
 
-Failure: Modifying code that depends on later definitions. If you ask Apply to modify function A but function A calls function B defined later in the file, Apply might generate code that references B before it exists.
+Failure - Modifying code that depends on later definitions. If you ask Apply to modify function A but function A calls function B defined later in the file, Apply might generate code that references B before it exists.
 
-Failure: Adding complex conditional logic to existing structure. When existing code uses if/else chains and you ask Apply to add another branch, it often places the new logic in the wrong branch or duplicates conditions.
+Failure - Adding complex conditional logic to existing structure. When existing code uses if/else chains and you ask Apply to add another branch, it often places the new logic in the wrong branch or duplicates conditions.
 
-Failure: Changing variable names across multiple functions. Apply can't rename variables consistently across files. It will rename them in the file you point at but miss references elsewhere.
+Failure - Changing variable names across multiple functions. Apply can't rename variables consistently across files. It will rename them in the file you point at but miss references elsewhere.
 
-Pattern to use instead: Ask Apply to extract the first function to a new module, then update all references in the original file.
+Pattern to use instead - Ask Apply to extract the first function to a new module, then update all references in the original file.
 
 Token Accounting for Apply Operations
 
@@ -295,22 +295,22 @@ Total = context + generation
 Compare this to a full-file rewrite approach which regenerates all 500 lines:
 
 ```
-Full rewrite tokens: 500 lines × 1.5 × 2 (for input + output) = 1,500 tokens
-Diff-based approach: 230 tokens
-Savings: ~85% reduction
+Full rewrite tokens - 500 lines × 1.5 × 2 (for input + output) = 1,500 tokens
+Diff-based approach - 230 tokens
+Savings - ~85% reduction
 ```
 
 For developers tracking monthly costs, Apply operations typically cost 10-20x less than equivalent chat-based refactoring. This makes it economical to use Apply for small changes that would otherwise require manual editing.
 
-Advanced: Chaining Apply Requests
+Advanced - Chaining Apply Requests
 
 For large refactoring projects, strategically chaining Apply requests yields exponentially better results than monolithic changes:
 
 ```
-Approach 1: "Refactor 400 lines of legacy code to use async/await"
+Approach 1 - "Refactor 400 lines of legacy code to use async/await"
 ~60% of Apply suggestion is correct, requires heavy manual cleanup
 
-Approach 2: Apply in sequence
+Approach 2 - Apply in sequence
 1. "Extract helper functions from this async block"
 2. "Update the main function signature to async"
 3. "Replace callback chains with await syntax"
@@ -336,7 +336,7 @@ Integrating Apply with Your Development Workflow
 Most productive developers treat Apply like a code generation tool in a build pipeline. They set up workflows where Apply generates candidates that then go through review:
 
 ```bash
-Workflow: Generate candidates, review together
+Workflow - Generate candidates, review together
 git checkout -b apply-candidate
 cursor apply "Add error handling to all API calls"
 git diff

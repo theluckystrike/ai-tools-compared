@@ -207,22 +207,22 @@ Subscription Costs and GPU Minute Allocation
 | Pro | $60 | 500 | Unlimited | 5 |
 | Pro Max | $120 | 1000 | Unlimited | 10 |
 
-Key insight for 2026: The gap between Standard and Pro pricing ($30/month difference) becomes worthwhile when you generate more than 200 images per month. At that volume, Pro's unlimited Relax generations save you money versus buying additional GPU minutes for Fast mode.
+Key insight for 2026 - The gap between Standard and Pro pricing ($30/month difference) becomes worthwhile when you generate more than 200 images per month. At that volume, Pro's unlimited Relax generations save you money versus buying additional GPU minutes for Fast mode.
 
 Calculating True Cost per Image
 
 For Relax mode users:
-- Basic: $10 ÷ 200 images = $0.05 per image
-- Standard: $30 ÷ 600 images = $0.05 per image
+- Basic - $10 ÷ 200 images = $0.05 per image
+- Standard - $30 ÷ 600 images = $0.05 per image
 - Pro: Unlimited = effectively $0 per Relax image
 
 For Fast mode users (calculating GPU minute cost):
 - Average image costs 1 GPU minute
-- Basic: $10 ÷ 100 = $0.10 per image
-- Standard: $30 ÷ 200 = $0.15 per image
-- Pro: $60 ÷ 500 = $0.12 per image
+- Basic - $10 ÷ 100 = $0.10 per image
+- Standard - $30 ÷ 200 = $0.15 per image
+- Pro - $60 ÷ 500 = $0.12 per image
 
-Practical takeaway: Relax mode is 2-3x cheaper per image than Fast mode at equivalent subscription tiers.
+Practical takeaway - Relax mode is 2-3x cheaper per image than Fast mode at equivalent subscription tiers.
 
 Advanced Queue Timing Strategies
 
@@ -254,13 +254,13 @@ Computing Your Breakeven Point
 
 When Fast mode beats Relax mode financially:
 
-Scenario: You need 10 images urgently
+Scenario - You need 10 images urgently
 
-Option 1: Relax mode (assuming 120-second average wait)
+Option 1 - Relax mode (assuming 120-second average wait)
 - Total time: 1,200 seconds + generation time (300 seconds per image) = ~5,300 seconds (88 minutes)
 - Cost: Covered by monthly plan
 
-Option 2: Fast mode (assuming instant generation)
+Option 2 - Fast mode (assuming instant generation)
 - Total time: 3,000 seconds (50 minutes)
 - Cost: 10 GPU minutes
  - Pro user: $0.12 per image = $1.20 total
@@ -334,7 +334,7 @@ for strategy in strategies:
           f"~{strategy['total_wait_minutes']:.1f} min total")
 ```
 
-Key insight: Pro tier users with 5 concurrent slots can generate 100 images in roughly 20 batches = ~40 minutes of queue time. Standard tier (3 concurrent) needs 34 batches = ~68 minutes. The concurrency advantage compounds with larger batches.
+Key insight - Pro tier users with 5 concurrent slots can generate 100 images in roughly 20 batches = ~40 minutes of queue time. Standard tier (3 concurrent) needs 34 batches = ~68 minutes. The concurrency advantage compounds with larger batches.
 
 Quality and Consistency Factors
 
@@ -353,7 +353,7 @@ Server Load Correlation with Quality
 
 During off-peak hours, not only are queue times shorter, image quality consistency improves. Fewer concurrent requests mean Midjourney allocates more computational resources per generation. This is especially noticeable with complex, detailed prompts.
 
-Data: Off-peak Relax mode generations show:
+Data - Off-peak Relax mode generations show:
 - 12% higher consistency scores in A/B testing
 - Fewer "weird hands/faces" issues
 - Better prompt adherence for intricate compositions

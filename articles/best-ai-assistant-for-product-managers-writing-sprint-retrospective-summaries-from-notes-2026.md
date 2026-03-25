@@ -73,7 +73,7 @@ For each category, provide:
 Notes:
 {notes_text}
 
-Output format: Markdown"""
+Output format - Markdown"""
 
     response = openai.ChatCompletion.create(
         model="gpt-4",
@@ -99,11 +99,11 @@ When evaluating these tools, consider:
 
 - Template quality: Does the output match your team's retrospective format?
 
-- Customization: Can you adjust the tone, length, and structure?
+- Customization - Can you adjust the tone, length, and structure?
 
 - Data privacy: Where does your data go? Does it train the model?
 
-- Integration: Does it connect with your existing tools (Jira, Confluence, Slack)?
+- Integration - Does it connect with your existing tools (Jira, Confluence, Slack)?
 
 
 3. Build Your Own Retrospective Pipeline
@@ -143,7 +143,7 @@ class RetroSummarizer:
     def _extract_themes(self, notes: list[str]) -> list[dict]:
         """Identify recurring themes across notes."""
         prompt = f"""Group these notes into recurring themes.
-Return a JSON array with: theme_name, frequency, representative_notes."""
+Return a JSON array with - theme_name, frequency, representative_notes."""
         return self.llm.extract_json(prompt, notes)
 ```
 
@@ -273,9 +273,9 @@ Start-Stop-Continue Format
 
 Raw notes format:
 ```
-START: Better code reviews, more documentation
-STOP: Late meetings, unclear priorities
-CONTINUE: Weekly demos, pair programming sessions
+START - Better code reviews, more documentation
+STOP - Late meetings, unclear priorities
+CONTINUE - Weekly demos, pair programming sessions
 ```
 
 AI prompt:
@@ -289,10 +289,10 @@ each matters. Include specific implementation steps."
 
 Raw notes:
 ```
-LIKED: Team collaboration, quick problem-solving
-LEARNED: New frontend framework capabilities
-LACKED: Clear testing guidelines, documentation
-LONGED FOR: Fewer interruptions, better tooling
+LIKED - Team collaboration, quick problem-solving
+LEARNED - New frontend framework capabilities
+LACKED - Clear testing guidelines, documentation
+LONGED FOR - Fewer interruptions, better tooling
 ```
 
 AI prompt:
@@ -305,9 +305,9 @@ Rose-Thorn-Bud Format
 
 Raw notes:
 ```
-ROSE (positive): Great collaboration on the payment feature
-THORN (challenge): Database migration took 3 days longer than planned
-BUD (potential): New design system components could accelerate future work
+ROSE (positive) - Great collaboration on the payment feature
+THORN (challenge) - Database migration took 3 days longer than planned
+BUD (potential) - New design system components could accelerate future work
 ```
 
 AI prompt:
@@ -346,7 +346,7 @@ def generate_summary(notes: str) -> dict:
 
 {notes}
 
-Respond with JSON: {{"themes": ["theme1", "theme2", ...]}}"""
+Respond with JSON - {{"themes": ["theme1", "theme2", ...]}}"""
         }]
     )
 
@@ -476,7 +476,7 @@ Common Pitfalls and Solutions
 |---------|----------|
 | AI summarization loses nuance | Have team review draft before finalizing |
 | Action items lack specificity | Use follow-up prompt: "For each action, add: (1) specific task description, (2) who's responsible, (3) target completion date" |
-| Overly positive tone masks real issues | Instruct: "Maintain objective tone. Include severity levels (low/medium/high) for challenges" |
+| Overly positive tone masks real issues | Instruct - "Maintain objective tone. Include severity levels (low/medium/high) for challenges" |
 | Missing minority viewpoints | Include instruction: "Ensure dissenting opinions are represented, even if stated by one person" |
 | Action items don't get done | Add owner notification: Post the summary in Slack with @mentions |
 
@@ -484,10 +484,10 @@ Iterative Refinement
 
 After your first summary, improve your approach:
 
-Iteration 1: Use a basic prompt, see what's missing
-Iteration 2: Add specific formatting, improve structure
-Iteration 3: Include few-shot examples of good summaries
-Iteration 4: Automate and integrate with your tools
+Iteration 1 - Use a basic prompt, see what's missing
+Iteration 2 - Add specific formatting, improve structure
+Iteration 3 - Include few-shot examples of good summaries
+Iteration 4 - Automate and integrate with your tools
 
 Each iteration should cut your summarization time in half.
 

@@ -102,7 +102,7 @@ For middleware chains specifically, Copilot suggests sequential arrangements. Wh
 
 TypeScript support has improved significantly. Copilot now generates properly typed middleware more consistently than in previous versions. However, it sometimes suggests older callback-style patterns rather than async/await, requiring manual updates.
 
-Copilot works within GitHub's ecosystem, making it convenient if your project uses GitHub Actions for CI/CD or GitHub Packages for distribution. The integration with GitHub's security scanning also flags potential vulnerabilities in suggested middleware code.
+Copilot works within GitHub's environment, making it convenient if your project uses GitHub Actions for CI/CD or GitHub Packages for distribution. The integration with GitHub's security scanning also flags potential vulnerabilities in suggested middleware code.
 
 Zed
 

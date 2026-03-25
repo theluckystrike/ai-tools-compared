@@ -23,11 +23,11 @@ Table of Contents
 
 - [Why gRPC Service Definition Requires Special Attention](#why-grpc-service-definition-requires-special-attention)
 - [Comparing AI Tools for Protobuf and gRPC](#comparing-ai-tools-for-protobuf-and-grpc)
-- [Advanced Protobuf Patterns: Tool Comparison](#advanced-protobuf-patterns-tool-comparison)
+- [Advanced Protobuf Patterns - Tool Comparison](#advanced-protobuf-patterns-tool-comparison)
 - [Real-World gRPC Service Patterns](#real-world-grpc-service-patterns)
 - [Common Protobuf Mistakes AI Tools Should Catch](#common-protobuf-mistakes-ai-tools-should-catch)
 - [Protobuf Code Generation Pipeline](#protobuf-code-generation-pipeline)
-- [Best Workflow: Using Claude Code + Cursor Together](#best-workflow-using-claude-code-cursor-together)
+- [Best Workflow - Using Claude Code + Cursor Together](#best-workflow-using-claude-code-cursor-together)
 - [Practical Recommendations](#practical-recommendations)
 - [Integration with Development Workflows](#integration-with-development-workflows)
 - [Proto File Performance Considerations](#proto-file-performance-considerations)
@@ -106,11 +106,11 @@ Zed provides integrated AI assistance specifically designed for code editing. Fo
 
 The tool works well for incremental improvements to proto files, adding new fields, creating additional RPC methods, or modifying existing service definitions. Zed's keyboard-driven approach appeals to developers who prefer efficient text editing without switching between mouse and keyboard frequently.
 
-Advanced Protobuf Patterns: Tool Comparison
+Advanced Protobuf Patterns - Tool Comparison
 
 Let's evaluate how each tool handles more complex scenarios:
 
-Scenario: Bidirectional Streaming with Error Handling
+Scenario - Bidirectional Streaming with Error Handling
 
 ```protobuf
 // Complex pattern: bidirectional streaming message processing
@@ -167,7 +167,7 @@ Real-World gRPC Service Patterns
 
 Most production gRPC services require patterns beyond basic unary RPCs. Here's how different tools handle realistic complexity:
 
-Pattern 1: Pagination in List Operations
+Pattern 1 - Pagination in List Operations
 
 A common pattern is paginating large result sets in gRPC services. Tools should understand cursor-based pagination rather than offset-based approaches, which scale poorly for large datasets:
 
@@ -202,7 +202,7 @@ message StorageObject {
 
 Claude Code excels here, it explains why cursor-based pagination is preferable and suggests appropriate token encoding strategies. Cursor understands the relationship between request/response messages but may miss pagination best practices specific to gRPC. Copilot and Zed typically suggest basic offset pagination, which doesn't scale well.
 
-Pattern 2: Async Job Processing with Status Polling
+Pattern 2 - Async Job Processing with Status Polling
 
 Many services need to handle long-running operations. The proper gRPC pattern uses separate status-checking RPCs:
 
@@ -244,7 +244,7 @@ message JobStatus {
 
 Claude Code and Cursor both handle this pattern well. Cursor's multi-file awareness helps when implementing corresponding service logic in your codebase. Claude Code provides better documentation of why this pattern avoids blocking the client.
 
-Pattern 3: Protocol Negotiation for Backwards Compatibility
+Pattern 3 - Protocol Negotiation for Backwards Compatibility
 
 As services evolve, you need to support multiple protocol versions. Good tools understand versioning strategies:
 
@@ -291,13 +291,13 @@ Working with AI-Generated Proto Files:
 
 ```bash
 1. Get proto definition from Claude Code
-File: user_service.proto
+File - user_service.proto
 
 2. Generate Go code
 protoc --go_out=. --go-grpc_out=. user_service.proto
 
 3. Have Claude verify the generated service interface
-Ask: "Review this generated interface and suggest implementations"
+Ask - "Review this generated interface and suggest implementations"
 
 4. Generate client stubs
 protoc --go-grpc_out=. --go_out=. --grpc-gateway_out=. user_service.proto
@@ -305,7 +305,7 @@ protoc --go-grpc_out=. --go_out=. --grpc-gateway_out=. user_service.proto
 5. Cursor helps implement the service methods
 ```
 
-Best Workflow: Using Claude Code + Cursor Together
+Best Workflow - Using Claude Code + Cursor Together
 
 Phase 1 - Design (Claude Code):
 1. Describe your service requirements in natural language

@@ -21,10 +21,10 @@ Table of Contents
 
 - [Why Fine-tune Instead of Using Commercial Models?](#why-fine-tune-instead-of-using-commercial-models)
 - [Choosing Your Base Model](#choosing-your-base-model)
-- [Step 1: Prepare Your Training Dataset](#step-1-prepare-your-training-dataset)
-- [Step 2: Fine-tune Using QLoRA (Memory-Efficient)](#step-2-fine-tune-using-qlora-memory-efficient)
-- [Step 3: Deploy Your Fine-tuned Model](#step-3-deploy-your-fine-tuned-model)
-- [Step 4: Continuous Improvement](#step-4-continuous-improvement)
+- [Step 1 - Prepare Your Training Dataset](#step-1-prepare-your-training-dataset)
+- [Step 2 - Fine-tune Using QLoRA (Memory-Efficient)](#step-2-fine-tune-using-qlora-memory-efficient)
+- [Step 3 - Deploy Your Fine-tuned Model](#step-3-deploy-your-fine-tuned-model)
+- [Step 4 - Continuous Improvement](#step-4-continuous-improvement)
 - [Infrastructure and Cost](#infrastructure-and-cost)
 - [Building a Data Quality Pipeline](#building-a-data-quality-pipeline)
 - [Choosing Your Fine-tuning Approach: LoRA vs Full Fine-tuning vs RLHF](#choosing-your-fine-tuning-approach-lora-vs-full-fine-tuning-vs-rlhf)
@@ -41,7 +41,7 @@ Commercial AI coding tools (GitHub Copilot, Claude Code) learn from billions of 
 - Provides predictable pricing (one-time compute cost)
 - Enables deployment on your own infrastructure
 
-The trade-off: you invest engineering time upfront but gain a tool that evolves with your codebase over time.
+The trade-off - you invest engineering time upfront but gain a tool that evolves with your codebase over time.
 
 Choosing Your Base Model
 
@@ -55,15 +55,15 @@ Three open source models dominate code fine-tuning in 2026:
 
 Start with Code Llama 13B. It's proven on code tasks, fine-tunes efficiently on consumer hardware, and supports 8K context windows.
 
-Step 1: Prepare Your Training Dataset
+Step 1 - Prepare Your Training Dataset
 
 Fine-tuning requires 500-2000 high-quality code examples. This is the critical step, garbage in, garbage out.
 
 ```bash
 Extract your codebase functions and their tests
-Target: create pairs of (code context, code completion)
+Target - create pairs of (code context, code completion)
 
-Python example: grab function definitions + their docstrings/tests
+Python example - grab function definitions + their docstrings/tests
 find ./src -name "*.py" -type f | while read file; do
   # Extract functions with their docstrings
   python -c "
@@ -93,7 +93,7 @@ Quality tips:
 - Remove test fixtures and mock data
 - Include both successful patterns and documented failure cases
 
-Step 2: Fine-tune Using QLoRA (Memory-Efficient)
+Step 2 - Fine-tune Using QLoRA (Memory-Efficient)
 
 QLoRA lets you fine-tune 33B models on a 24GB GPU by quantizing weights to 4-bit. Install requirements:
 
@@ -169,7 +169,7 @@ model.save_pretrained("./my-code-model-lora")
 
 This typically trains in 2-4 hours on a single 24GB GPU for 1000 examples.
 
-Step 3: Deploy Your Fine-tuned Model
+Step 3 - Deploy Your Fine-tuned Model
 
 Merge LoRA weights back into the base model:
 
@@ -206,7 +206,7 @@ Integration with your IDE (VSCode + Continue extension):
 }
 ```
 
-Step 4: Continuous Improvement
+Step 4 - Continuous Improvement
 
 Fine-tune quarterly as your codebase evolves:
 
@@ -237,19 +237,19 @@ def evaluate_model(model, test_prompts):
 baseline_loss = evaluate_model(original_model, test_set)
 finetuned_loss = evaluate_model(finetuned_model, test_set)
 
-print(f"Improvement: {((baseline_loss - finetuned_loss) / baseline_loss) * 100:.1f}%")
+print(f"Improvement - {((baseline_loss - finetuned_loss) / baseline_loss) * 100:.1f}%")
 ```
 
 Infrastructure and Cost
 
-Minimum setup: Single 24GB GPU (RTX 4090 or equivalent)
+Minimum setup - Single 24GB GPU (RTX 4090 or equivalent)
 - Google Colab: $15-30/month for persistent storage + compute
 - Lambda Labs: ~$0.44/hour for A6000 (48GB VRAM)
 - Self-hosted: $2000 upfront for RTX 4090
 
-Development cost: 40-60 hours of engineering work for setup, validation, and deployment
+Development cost - 40-60 hours of engineering work for setup, validation, and deployment
 
-ROI: Break-even when fine-tuned model reduces code review cycles by 5-10% across a 10+ person team.
+ROI - Break-even when fine-tuned model reduces code review cycles by 5-10% across a 10+ person team.
 
 Building a Data Quality Pipeline
 

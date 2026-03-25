@@ -25,7 +25,7 @@ Table of Contents
 - [What Makes AI-Generated Tests High Quality](#what-makes-ai-generated-tests-high-quality)
 - [Testing Hooks with Timers and Debounce](#testing-hooks-with-timers-and-debounce)
 - [Testing Hooks that Manage AbortControllers](#testing-hooks-that-manage-abortcontrollers)
-- [Step-by-Step Workflow: Getting the Best AI Output](#step-by-step-workflow-getting-the-best-ai-output)
+- [Step-by-Step Workflow - Getting the Best AI Output](#step-by-step-workflow-getting-the-best-ai-output)
 - [Pro Tips for Prompt Engineering](#pro-tips-for-prompt-engineering)
 - [Practical Recommendations](#practical-recommendations)
 
@@ -283,7 +283,7 @@ it('aborts request on unmount', async () => {
 
 Claude generates this pattern reliably when you paste in the hook implementation. ChatGPT generates the test but often omits `abortSpy.mockRestore()`, which causes test pollution in subsequent specs.
 
-Step-by-Step Workflow: Getting the Best AI Output
+Step-by-Step Workflow - Getting the Best AI Output
 
 Follow this process to maximize test quality from any AI tool:
 

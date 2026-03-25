@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Core Principles for System Prompts
+Step 1 - Core Principles for System Prompts
 
 Effective system prompts for accessible HTML follow three principles: specificity, constraint specification, and example inclusion.
 
@@ -80,11 +80,11 @@ Include Negative Constraints
 
 Positive rules tell the model what to do. Negative constraints tell it what to avoid. Both matter. AI models trained on large codebases have encountered countless examples of inaccessible patterns, placeholder-as-label, onclick on divs, decorative images without empty alt text. Explicitly banning these patterns reduces their occurrence in output.
 
-Step 2: Practical System Prompt Examples
+Step 2 - Practical System Prompt Examples
 
 Here are three system prompts you can adapt for different use cases.
 
-Example 1: Form Components
+Example 1 - Form Components
 
 ```
 You generate HTML form components. Follow these accessibility requirements:
@@ -99,7 +99,7 @@ You generate HTML form components. Follow these accessibility requirements:
 Return only the HTML markup with inline comments explaining accessibility decisions.
 ```
 
-Example 2: Data Tables
+Example 2 - Data Tables
 
 ```
 Generate HTML tables with proper accessibility structure:
@@ -114,7 +114,7 @@ Generate HTML tables with proper accessibility structure:
 Output semantic markup only, no CSS classes.
 ```
 
-Example 3: Modal Dialogs
+Example 3 - Modal Dialogs
 
 ```
 Generate accessible modal dialog HTML:
@@ -130,7 +130,7 @@ Generate accessible modal dialog HTML:
 Return clean, semantic HTML5 markup.
 ```
 
-Step 3: Writing Prompts for Specific AI Tools
+Step 3 - Writing Prompts for Specific AI Tools
 
 System prompt behavior varies across tools. Understanding these differences helps you write prompts that work reliably.
 
@@ -138,9 +138,9 @@ Claude (via API or Claude.ai Projects): Claude responds well to structured rules
 
 ChatGPT (via Custom GPTs or API): OpenAI's system prompt field in the API behaves consistently. Custom GPTs allow you to embed instructions in the configuration interface. For HTML generation tasks, including a brief example of desired output in the system prompt significantly improves consistency.
 
-GitHub Copilot Chat: Copilot Chat does not have a traditional system prompt mechanism, but you can prepend a rules block to your chat messages. Saving a snippet with your accessibility rules makes this repeatable.
+GitHub Copilot Chat - Copilot Chat does not have a traditional system prompt mechanism, but you can prepend a rules block to your chat messages. Saving a snippet with your accessibility rules makes this repeatable.
 
-Cursor AI: Use the `.cursorrules` file to define persistent instructions. For HTML generation, add a dedicated section specifying semantic requirements. Cursor applies these rules to every generation in the project.
+Cursor AI - Use the `.cursorrules` file to define persistent instructions. For HTML generation, add a dedicated section specifying semantic requirements. Cursor applies these rules to every generation in the project.
 
 The underlying principle is the same across tools: persistent, explicit, structured rules outperform ad hoc prompting.
 
@@ -181,7 +181,7 @@ function validateAccessibleHTML(html) {
 
 For production workflows, replace this manual check with an established library. `axe-core` can run in Node.js and validate HTML strings programmatically. `html-validate` offers a ruleset specifically aligned with WCAG. Running either after AI generation catches issues before they reach your codebase.
 
-Step 4: Test Generated Output
+Step 4 - Test Generated Output
 
 After implementing your system prompt, verify the output with accessibility tools:
 
@@ -195,7 +195,7 @@ After implementing your system prompt, verify the output with accessibility tool
 
 5. Run Lighthouse in Chrome DevTools and aim for an Accessibility score above 90
 
-Step 5: Common Pitfalls to Avoid
+Step 5 - Common Pitfalls to Avoid
 
 Several patterns consistently produce inaccessible HTML:
 
@@ -223,7 +223,7 @@ Never do the following:
 - Skip heading levels (e.g., jump from h1 to h3)
 ```
 
-Step 6: Putting It All Together
+Step 6 - Putting It All Together
 
 A complete system prompt for accessible HTML might look like:
 
@@ -290,7 +290,7 @@ Advanced Prompt Techniques for Production Systems
 
 Once you're comfortable with basic system prompts, these advanced patterns help you control AI output at scale.
 
-Technique 1: Constraint Ladder
+Technique 1 - Constraint Ladder
 
 Rather than listing all constraints at once, organize them by priority:
 
@@ -313,7 +313,7 @@ NICE TO HAVE (follow if reasonable):
 
 This prevents over-specification that makes AI conservative, while ensuring critical requirements are always met.
 
-Technique 2: Example-Driven Prompts
+Technique 2 - Example-Driven Prompts
 
 Instead of describing rules, show examples:
 
@@ -339,12 +339,12 @@ EXAMPLE 3 - Modal:
   <button>Confirm</button>
 </dialog>
 
-Generate similar HTML for: [USER REQUEST]
+Generate similar HTML for - [USER REQUEST]
 ```
 
 AI consistency improves dramatically when it can pattern-match against examples.
 
-Technique 3: Constraint Chains
+Technique 3 - Constraint Chains
 
 For complex output requirements, create conditional logic:
 
@@ -366,7 +366,7 @@ IF the component is decorative only:
 
 This logic prevents conflicting requirements (e.g., "add aria-label to everything" leading to redundant labels on labeled inputs).
 
-Step 7: Test System Prompts for Effectiveness
+Step 7 - Test System Prompts for Effectiveness
 
 Don't assume a system prompt works, validate it:
 
@@ -405,7 +405,7 @@ async function validatePrompt(systemPrompt, testCases) {
 
 Run this validation test against your system prompt before deployment. Iterate on the prompt if pass rate is below 85%.
 
-Step 8: Prompt Versioning and A/B Testing
+Step 8 - Prompt Versioning and A/B Testing
 
 For production systems, version your prompts and track effectiveness:
 
@@ -431,13 +431,13 @@ Metrics tracking:
 
 Deploy v3 or v4 based on your accuracy requirements and latency tolerances.
 
-Step 9: Integration with Design Systems
+Step 9 - Integration with Design Systems
 
 Link your system prompts to your design system to ensure consistency:
 
 ```
 You generate HTML components that implement our design system.
-Reference: https://design.company.com/
+Reference - https://design.company.com/
 
 Component library standards:
 - Use only colors from our palette
@@ -451,7 +451,7 @@ When generating UI, reference existing patterns from https://github.com/company/
 
 This prevents drift between AI-generated components and your actual design system.
 
-Step 10: Monitor System Prompt Effectiveness Over Time
+Step 10 - Monitor System Prompt Effectiveness Over Time
 
 Track how well your system prompt performs:
 

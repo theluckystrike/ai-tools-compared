@@ -31,9 +31,9 @@ Raw Logs → Parser → Normalizer → Embedder
                                                Score > Threshold → Claude Analysis
 ```
 
-Two phases: an offline baseline phase that learns normal patterns, and an online detection phase that scores new logs against that baseline.
+Two phases - an offline baseline phase that learns normal patterns, and an online detection phase that scores new logs against that baseline.
 
-Step 1: Log Parsing and Normalization
+Step 1 - Log Parsing and Normalization
 
 Raw logs are noisy. Normalize before embedding to improve cluster quality:
 
@@ -92,7 +92,7 @@ def parse_log_line(line: str) -> ParsedLog:
     )
 ```
 
-Step 2: Build a Baseline with Embeddings
+Step 2 - Build a Baseline with Embeddings
 
 Embed a sample of normal logs and build a cluster centroid database:
 
@@ -152,7 +152,7 @@ def save_baseline(baseline: dict, path: str = "log_baseline.json"):
     print(f"Baseline saved to {path}")
 ```
 
-Step 3: Online Anomaly Detection
+Step 3 - Online Anomaly Detection
 
 ```python
 detector.py
@@ -265,7 +265,7 @@ Provide:
                     print(f"\n{analysis}\n{'='*60}")
 ```
 
-Step 4: Wiring It Together
+Step 4 - Wiring It Together
 
 ```python
 run_detector.py
@@ -370,10 +370,10 @@ print(f"\nBest threshold: {best_threshold:.2f} (F1={best_f1:.2f})")
 Cost Estimate
 
 For 10,000 log lines/minute filtered to ~500 ERROR/WARN lines:
-- Embeddings: 500 * 100 tokens avg = 50k tokens/min = ~$0.01/min = ~$14/day
+- Embeddings - 500 * 100 tokens avg = 50k tokens/min = ~$0.01/min = ~$14/day
 - Claude analysis: triggered ~5-10 times/day on true anomalies = $0.01/day
 
-Total: under $15/day for production anomaly detection with root cause analysis.
+Total - under $15/day for production anomaly detection with root cause analysis.
 
 Related Articles
 

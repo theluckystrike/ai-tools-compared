@@ -36,9 +36,9 @@ Table of Contents
 - [Real-World Examples](#real-world-examples)
 - [React Component Tests](#react-component-tests)
 - [API Endpoint Tests](#api-endpoint-tests)
-- [Advanced Patterns: Coverage and Reporting](#advanced-patterns-coverage-and-reporting)
-- [Practical Examples: Teaching AI Your Project Idioms](#practical-examples-teaching-ai-your-project-idioms)
-- [Step-by-Step: Building Your First CLAUDE.md Testing Section](#step-by-step-building-your-first-claudemd-testing-section)
+- [Advanced Patterns - Coverage and Reporting](#advanced-patterns-coverage-and-reporting)
+- [Practical Examples - Teaching AI Your Project Idioms](#practical-examples-teaching-ai-your-project-idioms)
+- [Step-by-Step - Building Your First CLAUDE.md Testing Section](#step-by-step-building-your-first-claudemd-testing-section)
 - [Common Pitfalls When Writing Testing Conventions for AI](#common-pitfalls-when-writing-testing-conventions-for-ai)
 - [Maintaining Your CLAUDE.md](#maintaining-your-claudemd)
 
@@ -191,7 +191,7 @@ API Endpoint Tests
 - Mock database layer, test actual handlers
 ```
 
-Advanced Patterns: Coverage and Reporting
+Advanced Patterns - Coverage and Reporting
 
 Teams with strong quality cultures go beyond basic naming and setup conventions. Document your coverage expectations explicitly so AI-generated tests meet the bar from the start, not after review feedback.
 
@@ -199,7 +199,7 @@ Document your minimum thresholds and the commands used to enforce them. Include 
 
 Also document your reporting format expectations. Some teams generate HTML reports for code review context, others pipe coverage JSON to internal dashboards. AI needs to know which reporters to include in commands it generates.
 
-Practical Examples: Teaching AI Your Project Idioms
+Practical Examples - Teaching AI Your Project Idioms
 
 Beyond naming and setup, your project likely has idioms. patterns that are not official conventions but are understood team-wide. Document these directly so AI generates code that fits without friction.
 
@@ -207,19 +207,19 @@ If you have in-house test utilities, describe them with their location and when 
 
 For error boundary and edge case testing, spell out your team's minimum expectations. Specify that optional props should always be tested with null and undefined values, that loading states need explicit test coverage, and that empty states. empty arrays, empty strings, zero counts. require separate tests from populated states.
 
-Step-by-Step: Building Your First CLAUDE.md Testing Section
+Step-by-Step - Building Your First CLAUDE.md Testing Section
 
 If you are starting from scratch, here is a practical sequence that takes about 30 minutes and produces a useful file immediately.
 
-Step 1: Audit your test files. Open five recent test files and note what they have in common: how describe blocks are named, how mocks are set up, where test utilities come from, and what assertion style is used. These patterns belong in CLAUDE.md whether or not they are official policy.
+Step 1 - Audit your test files. Open five recent test files and note what they have in common: how describe blocks are named, how mocks are set up, where test utilities come from, and what assertion style is used. These patterns belong in CLAUDE.md whether or not they are official policy.
 
-Step 2: Note where AI previously went wrong. Look at past pull request comments that corrected AI-generated tests. Each recurring correction is a missing CLAUDE.md rule. If reviewers wrote "use waitFor, not await act" three times this month, that belongs in your file.
+Step 2 - Note where AI previously went wrong. Look at past pull request comments that corrected AI-generated tests. Each recurring correction is a missing CLAUDE.md rule. If reviewers wrote "use waitFor, not await act" three times this month, that belongs in your file.
 
-Step 3: Write rules as commands, not suggestions. Use phrases like "always," "never," "use X instead of Y." Hedging with "prefer" or "consider" gives AI room to revert to defaults.
+Step 3 - Write rules as commands, not suggestions. Use phrases like "always," "never," "use X instead of Y." Hedging with "prefer" or "consider" gives AI room to revert to defaults.
 
-Step 4: Validate with a real prompt. Write a new test using Claude Code after adding your CLAUDE.md. Check whether the output respects the conventions. If it misses something, add a more specific rule. Iteration is normal. most CLAUDE.md files reach a stable state after two or three revision cycles.
+Step 4 - Validate with a real prompt. Write a new test using Claude Code after adding your CLAUDE.md. Check whether the output respects the conventions. If it misses something, add a more specific rule. Iteration is normal. most CLAUDE.md files reach a stable state after two or three revision cycles.
 
-Step 5: Commit and share. Check CLAUDE.md into version control alongside your codebase. When onboarding new developers, point them to CLAUDE.md as the source of truth for AI-assisted coding conventions, not just human ones.
+Step 5 - Commit and share. Check CLAUDE.md into version control alongside your codebase. When onboarding new developers, point them to CLAUDE.md as the source of truth for AI-assisted coding conventions, not just human ones.
 
 Common Pitfalls When Writing Testing Conventions for AI
 

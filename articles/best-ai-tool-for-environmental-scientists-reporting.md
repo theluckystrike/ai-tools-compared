@@ -96,7 +96,7 @@ For most environmental consultants, Claude provides the best balance of accuracy
 
 Sample AI-Generated Environmental Report Section
 
-Task: Generate methodology section for water quality assessment
+Task - Generate methodology section for water quality assessment
 
 AI Prompt:
 ```
@@ -136,8 +136,8 @@ specifications on each sampling day.
 Water samples for laboratory analysis were collected in sterilized
 containers and transported to [Laboratory Name] within 24 hours on ice.
 Samples were analyzed following EPA-approved methods:
-- Nitrates: EPA Method 353.2 (automated colorimetry)
-- Phosphates: EPA Method 365.1 (colorimetry)
+- Nitrates - EPA Method 353.2 (automated colorimetry)
+- Phosphates - EPA Method 365.1 (colorimetry)
 - Additional parameters: [methods as appropriate]
 
 Quality Assurance
@@ -149,7 +149,7 @@ analyses per ISO 17025 standards.
 
 Real-World Environmental Reporting Scenarios
 
-Scenario 1: Permit Application with Tight Timeline
+Scenario 1 - Permit Application with Tight Timeline
 A consulting firm has 5 days to submit a water discharge permit application requiring environmental assessment, baseline data analysis, and impact prediction.
 
 Using AI approach:
@@ -159,11 +159,11 @@ Using AI approach:
 - Day 4: Format and regulatory citation verification
 - Day 5: Final review and submission
 
-Time savings: 40-50% reduction vs. writing from scratch (roughly 30 hours → 15 hours)
+Time savings - 40-50% reduction vs. writing from scratch (roughly 30 hours → 15 hours)
 
-Quality: No measurable difference in accuracy when consultant provides appropriate oversight
+Quality - No measurable difference in accuracy when consultant provides appropriate oversight
 
-Scenario 2: Long-Term Monitoring Report
+Scenario 2 - Long-Term Monitoring Report
 An environmental consulting firm publishes annual reports on groundwater quality across 8 monitoring sites, 15+ years of data.
 
 Using AI approach:
@@ -173,10 +173,10 @@ Using AI approach:
 - Consultant verifies interpretations against statistical analysis
 - Regenerate sections as needed through year
 
-Time savings: Annual report generation drops from 40 hours to 20 hours
-Consistency: AI maintains consistent format and terminology across years
+Time savings - Annual report generation drops from 40 hours to 20 hours
+Consistency - AI maintains consistent format and terminology across years
 
-Scenario 3: Compliance Reporting
+Scenario 3 - Compliance Reporting
 A facility manager must generate monthly discharge monitoring reports per permit requirements.
 
 Using AI approach:
@@ -185,20 +185,20 @@ Using AI approach:
 - AI populates standardized report
 - Manager reviews for accuracy (typically 20 minutes/month)
 
-Efficiency: What typically took 2-3 hours/month now takes 30 minutes
-Compliance: Standardized format ensures consistent permit compliance
+Efficiency - What typically took 2-3 hours/month now takes 30 minutes
+Compliance - Standardized format ensures consistent permit compliance
 
 Choosing the Right Tool
 
 Several factors should influence your selection:
 
-Scientific Content Expertise: Tools trained on scientific and environmental content generally produce more accurate output for your field than general-purpose AI systems. Look for evidence of scientific writing experience in the tool's training data and test with actual environmental terminology.
+Scientific Content Expertise - Tools trained on scientific and environmental content generally produce more accurate output for your field than general-purpose AI systems. Look for evidence of scientific writing experience in the tool's training data and test with actual environmental terminology.
 
-Data Privacy & Sensitivity: Environmental reports often contain sensitive information about contamination sites, proprietary operations, or protected species locations. Ensure any tool you use meets your organization's data handling requirements. For sensitive work, choose tools offering on-premises deployment or explicit data handling guarantees.
+Data Privacy & Sensitivity - Environmental reports often contain sensitive information about contamination sites, proprietary operations, or protected species locations. Ensure any tool you use meets your organization's data handling requirements. For sensitive work, choose tools offering on-premises deployment or explicit data handling guarantees.
 
-Customization Capabilities: Your reporting needs likely differ from other environmental professionals. Tools that allow customization, adjusting output format, incorporating organization-specific terminology, or integrating with existing templates, provide more practical value than rigid systems. Test whether a tool can learn your organization's voice and standards.
+Customization Capabilities - Your reporting needs likely differ from other environmental professionals. Tools that allow customization, adjusting output format, incorporating organization-specific terminology, or integrating with existing templates, provide more practical value than rigid systems. Test whether a tool can learn your organization's voice and standards.
 
-Explanation & Transparency: Understanding how an AI tool reaches its conclusions matters for scientific work. Look for systems that explain their reasoning rather than providing opaque outputs. This becomes especially important when you need to defend your AI-assisted conclusions to regulators or in litigation.
+Explanation & Transparency - Understanding how an AI tool reaches its conclusions matters for scientific work. Look for systems that explain their reasoning rather than providing opaque outputs. This becomes especially important when you need to defend your AI-assisted conclusions to regulators or in litigation.
 
 Practical Prompt Templates
 
@@ -207,7 +207,7 @@ Discharge Monitoring Report Narrative:
 ```
 Write a DMR narrative for an NPDES permit holder.
 
-Facility: [name], Permit: [number], Period: [month/year], Outfall: [number]
+Facility - [name], Permit: [number], Period: [month/year], Outfall: [number]
 
 Results vs. permit limits:
 - pH: [range] measured vs. [limit] permit
@@ -215,9 +215,9 @@ Results vs. permit limits:
 - BOD5: [X] mg/L avg vs. [Y] mg/L permit limit
 - Flow: [min/max/avg MGD]
 
-Exceedances: [none / list parameters and values]
+Exceedances - [none / list parameters and values]
 
-Write: (1) Compliance status summary, (2) Exceedance narrative with
+Write - (1) Compliance status summary, (2) Exceedance narrative with
 probable cause and corrective actions taken (if applicable),
 (3) Data quality notes. Use EPA DMR language conventions.
 ```
@@ -227,13 +227,13 @@ Environmental Impact Assessment Methodology Section:
 ```
 Write the Methodology section for an Environmental Impact Assessment.
 
-Project: [type, e.g., wetland delineation for commercial development]
-Regulations: [e.g., Section 404 CWA, state wetland rules]
-Survey methods: [field methods, sampling protocols, equipment used]
-Survey dates: [dates and conditions]
-Data sources: [databases and historical records consulted]
+Project - [type, e.g., wetland delineation for commercial development]
+Regulations - [e.g., Section 404 CWA, state wetland rules]
+Survey methods - [field methods, sampling protocols, equipment used]
+Survey dates - [dates and conditions]
+Data sources - [databases and historical records consulted]
 
-Format: 400-600 words. Include: Study Area Description, Methods,
+Format - 400-600 words. Include: Study Area Description, Methods,
 Data Limitations. Use passive voice and past tense per scientific
 reporting standards.
 ```
@@ -262,7 +262,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -274,7 +274,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

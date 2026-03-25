@@ -343,7 +343,7 @@ For internal services or wildcard certificates, the DNS-01 challenge is required
 ```bash
 #!/bin/bash
 Obtain wildcard cert using DNS-01 challenge with Route53
-Requires: certbot, python3-certbot-dns-route53, AWS credentials
+Requires - certbot, python3-certbot-dns-route53, AWS credentials
 
 DOMAIN="example.com"
 EMAIL="admin@example.com"
@@ -360,7 +360,7 @@ certbot certonly \
 
 ```bash
 /usr/local/bin/post-renew-wildcard.sh
-Deploy hook: copies renewed cert to services that need it
+Deploy hook - copies renewed cert to services that need it
 
 set -euo pipefail
 

@@ -29,10 +29,10 @@ Table of Contents
 - [When to Choose GPT-4o](#when-to-choose-gpt-4o)
 - [When to Choose Claude Sonnet](#when-to-choose-claude-sonnet)
 - [Making the Switch](#making-the-switch)
-- [Deep Dive: Security-Focused Code Review](#deep detailed look-security-focused-code-review)
+- [Deep Dive - Security-Focused Code Review](#deep detailed look-security-focused-code-review)
 - [Performance Review Capabilities](#performance-review-capabilities)
 - [Testing Requirement Analysis](#testing-requirement-analysis)
-- [Practical Integration: Tools and Workflows](#practical-integration-tools-and-workflows)
+- [Practical Integration - Tools and Workflows](#practical-integration-tools-and-workflows)
 - [Cost Comparison for Code Review](#cost-comparison-for-code-review)
 - [Transitioning Your Team](#transitioning-your-team)
 
@@ -111,7 +111,7 @@ To help you decide, here is how both models compare on key criteria:
 
 Practical Examples
 
-Example 1: Python Error Handling
+Example 1 - Python Error Handling
 
 Consider this Python function:
 
@@ -134,7 +134,7 @@ Claude Sonnet would likely add:
 - Suggestion to use database transactions
 - Note about potential floating-point precision issues with Stripe's integer cents
 
-Example 2: React Component Review
+Example 2 - React Component Review
 
 ```jsx
 function UserProfile({ userId }) {
@@ -191,7 +191,7 @@ If you decide to switch from GPT-4o to Claude Sonnet for code review, here is a 
 
 4. Adjust prompts: Claude Sonnet responds well to structured prompts. Instead of "review this code," try "review this function for security issues, performance problems, and adherence to our React patterns."
 
-Deep Dive: Security-Focused Code Review
+Deep Dive - Security-Focused Code Review
 
 Both models catch common security issues, but their approaches differ in valuable ways.
 
@@ -199,7 +199,7 @@ SQL Injection and Injection Attack Detection
 
 Both models reliably catch SQL injection vulnerabilities, but Claude Sonnet often identifies subtle injection vectors that GPT-4o misses on first pass.
 
-Example scenario: A Node.js API endpoint that constructs queries from user input.
+Example scenario - A Node.js API endpoint that constructs queries from user input.
 
 ```javascript
 app.post('/search', (req, res) => {
@@ -237,7 +237,7 @@ app.use(session({
 }));
 ```
 
-GPT-4o might suggest: "Use secure: true flag for HTTPS"
+GPT-4o might suggest - "Use secure: true flag for HTTPS"
 
 Claude Sonnet would additionally note: "Missing sameSite: 'Strict' to prevent CSRF, consider shorter maxAge for sensitive operations, and verify session store is properly configured for production scaling"
 
@@ -257,8 +257,8 @@ def find_duplicates(items):
             if i != j and item1 == item2:
                 return True
 
-GPT-4o: "This is O(n²) complexity. Consider using a set for O(n)."
-Claude Sonnet: "O(n²) nested loop with redundant comparisons
+GPT-4o - "This is O(n²) complexity. Consider using a set for O(n)."
+Claude Sonnet - "O(n²) nested loop with redundant comparisons
 (comparing both i→j and j→i). Use set-based approach for O(n),
 or if you need to detect first duplicate, exit early to optimize
 best-case scenario."
@@ -280,11 +280,11 @@ Testing Requirement Analysis
 
 Both models suggest adding tests, but Claude Sonnet provides more actionable test suggestions.
 
-GPT-4o might say: "Add tests for edge cases"
+GPT-4o might say - "Add tests for edge cases"
 
-Claude Sonnet typically says: "This function lacks tests for: null input, empty array input, single-item array, negative numbers (if applicable), and duplicate items. Here's a test structure covering these cases..."
+Claude Sonnet typically says - "This function lacks tests for: null input, empty array input, single-item array, negative numbers (if applicable), and duplicate items. Here's a test structure covering these cases..."
 
-Practical Integration: Tools and Workflows
+Practical Integration - Tools and Workflows
 
 Setting Up Multiple Models in Your Workflow
 

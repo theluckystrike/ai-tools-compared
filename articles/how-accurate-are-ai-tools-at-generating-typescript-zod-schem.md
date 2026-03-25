@@ -62,7 +62,7 @@ Cursor produced an identical schema with one minor difference, it used `z.string
 
 GitHub Copilot generated a schema that matched Claude Code's output but omitted the `.email()` validation, treating the email field as a plain string. This is a common limitation with Copilot's inline suggestions, it tends toward safer, less restrictive schemas unless explicitly guided.
 
-Test Case 2: Nested Object with Arrays
+Test Case 2 - Nested Object with Arrays
 
 The second test added complexity with nested data:
 
@@ -108,7 +108,7 @@ The tool correctly identified that `createdAt` should be a datetime string and a
 
 Cursor matched this quality but added optional chaining in unexpected places, creating minor syntax errors that required manual correction. GitHub Copilot struggled with the nested structure, generating flat schemas that ignored the object hierarchy.
 
-Test Case 3: Optional Fields and Defaults
+Test Case 3 - Optional Fields and Defaults
 
 Real-world schemas often include optional fields and default values:
 
@@ -140,7 +140,7 @@ This schema correctly marks `bio` and `theme` as optional while enforcing the un
 
 Cursor showed inconsistency here, it sometimes used the `?:` syntax from TypeScript instead of Zod's `.optional()`, which does not work in runtime validation. GitHub Copilot consistently missed optional field handling, generating schemas where optional fields were required.
 
-Test Case 4: Discriminated Unions
+Test Case 4 - Discriminated Unions
 
 The most challenging test involved a discriminated union type, which is common in event-driven systems and API responses:
 
@@ -245,7 +245,7 @@ AI-generated schemas are reliable for standard CRUD entity validation (users, pr
 
 Manual schema writing is still necessary for custom business rules that require domain knowledge (checking that a discount percentage does not exceed a product's margin), multi-field cross-validation using `.superRefine()`, schemas that interact with external API quirks or legacy formats, and async validation that calls a database or external service.
 
-A practical workflow: use AI to generate the base schema structure, then manually add refinements for business logic, then write a test suite covering valid and invalid inputs before shipping to production.
+A practical workflow - use AI to generate the base schema structure, then manually add refinements for business logic, then write a test suite covering valid and invalid inputs before shipping to production.
 
 Frequently Asked Questions
 

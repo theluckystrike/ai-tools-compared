@@ -48,7 +48,7 @@ The core challenge involves helping AI tools understand cross-language dependenc
 
 A context window filled with unrelated Python modules when you're editing a TypeScript service is worse than no context at all, it biases the AI toward the wrong language's idioms and increases the probability of type mismatches at integration boundaries.
 
-Strategy 1: Language-Specific Context Files
+Strategy 1 - Language-Specific Context Files
 
 Create dedicated context files that summarize each language component in your project. These files act as high-level maps that help AI tools navigate complex polyglot architectures.
 
@@ -65,16 +65,16 @@ For a project combining Python ML components with a TypeScript dashboard, mainta
 ```python
 context/dashboard-api.py
 TypeScript frontend integration
-Endpoints: /api/predict, /api/models
-Response types: PredictionResponse, ModelInfo
-Calls: External ML service at ml-service:8501
+Endpoints - /api/predict, /api/models
+Response types - PredictionResponse, ModelInfo
+Calls - External ML service at ml-service:8501
 ```
 
 This approach lets AI tools reference relevant context without loading entire codebases. When working on the TypeScript side, referencing `context/ml-components.ts` provides necessary Python context.
 
 Keep these files concise, aim for 30-50 lines per component. Their purpose is orientation, not exhaustive documentation. AI tools should be able to ingest the full set of context files alongside the actual code you're editing.
 
-Strategy 2: Interface Definition Priority
+Strategy 2 - Interface Definition Priority
 
 When polyglot components communicate through APIs or message queues, prioritize interface definitions in your context loading. Protocol buffers, OpenAPI specifications, and TypeScript interfaces define the contract between languages.
 
@@ -102,7 +102,7 @@ With the interface definition loaded, AI tools can generate compatible implement
 
 For REST APIs, OpenAPI specs serve the same role as protobufs. Load the relevant path definitions and their request/response schemas alongside the implementation file. The AI can then generate server-side handlers in Go or Python that correctly match the TypeScript client's expectations.
 
-Strategy 3: Dependency Graph Context
+Strategy 3 - Dependency Graph Context
 
 Modern polyglot projects often use monorepos with clear dependency relationships. Loading a dependency graph summary helps AI tools understand what code depends on what, preventing generation of circular imports or incompatible type definitions.
 
@@ -110,7 +110,7 @@ Consider this summary approach:
 
 ```
 context/dependency-graph.md
-Root: /src (TypeScript)
+Root - /src (TypeScript)
   -> /services/auth (Go) [gRPC]
   -> /workers (Python) [message queue]
   -> /core (Rust) [native modules]
@@ -125,7 +125,7 @@ This lightweight reference enables AI tools to make informed decisions about cro
 
 Update this file whenever you add a new service or change an integration boundary. Stale dependency graphs are worse than none, they cause AI tools to generate code targeting the wrong communication pattern.
 
-Strategy 4: Token Budget Allocation
+Strategy 4 - Token Budget Allocation
 
 Effective context management requires thinking about token economics. Assign token budgets based on active development areas:
 
@@ -148,10 +148,10 @@ For tools like Cursor or GitHub Copilot that automatically include files from yo
 /frontend/
 /workers/
 /docs/
-Keep: /services/auth, /api/protobuf, /context
+Keep - /services/auth, /api/protobuf, /context
 ```
 
-Strategy 5: Selective File Inclusion
+Strategy 5 - Selective File Inclusion
 
 Most AI tools support file-specific context loading. Use this capability strategically by selecting files that share dependencies or interfaces with your current task.
 
@@ -162,30 +162,30 @@ Loading specific relevant files for context
 Include the TypeScript service file you're editing
 Include the Python service interface definition
 Include shared type definitions
-Exclude: unrelated Python modules, other TypeScript components
+Exclude - unrelated Python modules, other TypeScript components
 ```
 
 The key principle involves including files that influence your current code rather than files that happen to exist in the same repository.
 
-A useful mental model: if you deleted these context files, would the AI's output for your current task change? If not, they're consuming token budget without contributing signal.
+A useful mental model - if you deleted these context files, would the AI's output for your current task change? If not, they're consuming token budget without contributing signal.
 
-Strategy 6: Environment and Configuration Context
+Strategy 6 - Environment and Configuration Context
 
 Polyglot projects require shared configuration that crosses language boundaries. Database connection strings, feature flags, and environment variables often need consistency across components. Include relevant configuration in your context:
 
 ```yaml
 context/shared-config.yaml
-Database: postgresql://app:5432/main
-Redis: redis://cache:6379
+Database - postgresql://app:5432/main
+Redis - redis://cache:6379
 Feature flags:
   - ML_INFERENCE_ENABLED: true
   - RUST_ACCELERATION: production_only
-Environment: production
+Environment - production
 ```
 
 AI tools that understand configuration constraints generate more deployable code. Without this context, AI might suggest configurations that work in development but fail in production environments.
 
-Strategy 7: Cross-Language Error Pattern Reference
+Strategy 7 - Cross-Language Error Pattern Reference
 
 Polyglot projects often have consistent error handling conventions that span languages. Documenting these conventions in a short reference file lets AI tools generate consistent error handling regardless of the language being targeted:
 
@@ -194,9 +194,9 @@ context/error-patterns.md
 
 Error Propagation Conventions
 
-Go services: return (result, error) pairs; wrap with fmt.Errorf
-Python workers: raise specific exception subclasses; log at service boundary
-TypeScript frontend: catch and surface to ErrorBoundary; never swallow
+Go services - return (result, error) pairs; wrap with fmt.Errorf
+Python workers - raise specific exception subclasses; log at service boundary
+TypeScript frontend - catch and surface to ErrorBoundary; never swallow
 gRPC: use status codes (NOT_FOUND, INVALID_ARGUMENT, INTERNAL)
 
 Retry Policy
@@ -210,13 +210,13 @@ Tool-Specific Implementation Notes
 
 Different AI coding assistants handle polyglot context with varying effectiveness:
 
-Claude (via Claude Code or API): Excels at holding long context and reasoning about cross-language relationships. When given both the interface definition and the target implementation file, it reliably maintains type consistency across boundaries. Feed it the dependency graph and shared config alongside the task.
+Claude (via Claude Code or API) - Excels at holding long context and reasoning about cross-language relationships. When given both the interface definition and the target implementation file, it reliably maintains type consistency across boundaries. Feed it the dependency graph and shared config alongside the task.
 
-Cursor: Its `@codebase` command indexes your entire repository for semantic search. In polyglot projects, use `@file` references directly rather than relying on automatic retrieval, this gives you precise control over what crosses language boundaries.
+Cursor - Its `@codebase` command indexes your entire repository for semantic search. In polyglot projects, use `@file` references directly rather than relying on automatic retrieval, this gives you precise control over what crosses language boundaries.
 
-GitHub Copilot: Relies primarily on the open editor tabs. Keep only the relevant files open when working in a specific language. Having Go, Python, and TypeScript files simultaneously open dilutes suggestions.
+GitHub Copilot - Relies primarily on the open editor tabs. Keep only the relevant files open when working in a specific language. Having Go, Python, and TypeScript files simultaneously open dilutes suggestions.
 
-ChatGPT (API): Allows explicit system prompts describing cross-language constraints. Useful for batch generation tasks where you're producing implementations in multiple languages from a single interface specification.
+ChatGPT (API) - Allows explicit system prompts describing cross-language constraints. Useful for batch generation tasks where you're producing implementations in multiple languages from a single interface specification.
 
 Measuring Context Strategy Effectiveness
 

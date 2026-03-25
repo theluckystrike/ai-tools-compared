@@ -20,7 +20,7 @@ Finding a capable AI coding assistant on a tight budget is entirely possible. Se
 Table of Contents
 
 - [Why Pay for AI Coding Assistants?](#why-pay-for-ai-coding-assistants)
-- [Top Picks: AI Coding Tools Under $5/Month](#top-picks-ai-coding-tools-under-5month)
+- [Top Picks - AI Coding Tools Under $5/Month](#top-picks-ai-coding-tools-under-5month)
 - [Comparative Summary](#comparative-summary)
 - [Making the Right Choice](#making-the-right-choice)
 
@@ -28,7 +28,7 @@ Why Pay for AI Coding Assistants?
 
 Free tools have limitations, usage caps, restricted features, or basic functionality. A paid plan under $5 unlocks more requests, better context understanding, and advanced features like multi-file editing or enhanced debugging. For developers who code daily, the time saved outweighs the small cost.
 
-Top Picks: AI Coding Tools Under $5/Month
+Top Picks - AI Coding Tools Under $5/Month
 
 1. Amazon CodeWhisperer (Free)
 
@@ -177,7 +177,7 @@ def process_large_file(filepath):
             data.append(line)  # Keeps entire file in memory
     return data
 
-Cursor explains: The function loads entire file into memory
+Cursor explains - The function loads entire file into memory
 instead of streaming. For large files, this causes OOM errors.
 ```
 

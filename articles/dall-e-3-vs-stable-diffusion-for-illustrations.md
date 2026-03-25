@@ -177,7 +177,7 @@ Running Stable Diffusion locally involves:
 
 - GPU hardware: $500-1500 for a capable card (RTX 4070+)
 
-- Electricity: approximately $0.10-0.30 per hour depending on hardware
+- Electricity - approximately $0.10-0.30 per hour depending on hardware
 
 - Time: 5-20 seconds per image depending on settings and hardware
 

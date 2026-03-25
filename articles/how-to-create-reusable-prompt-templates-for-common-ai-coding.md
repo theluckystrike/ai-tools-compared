@@ -41,30 +41,30 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Template Structure Fundamentals
+Step 1 - Template Structure Fundamentals
 
 A well-designed prompt template consists of four components: context, task definition, constraints, and output format. Context provides background information the AI needs, existing code, project conventions, or relevant documentation. Task definition clearly states what you want accomplished. Constraints specify boundaries like performance requirements, style guidelines, or prohibited patterns. Output format tells the AI exactly how to structure its response.
 
 ```
-Step 2: Context
+Step 2 - Context
 - Project: {{project_name}}
 - Framework: {{framework}}
 - Code style: {{coding_style}}
 
-Step 3: Task
+Step 3 - Task
 {{task_description}}
 
-Step 4: Constraints
+Step 4 - Constraints
 - {{constraint_1}}
 - {{constraint_2}}
 
-Step 5: Output Format
+Step 5 - Output Format
 {{output_format_specification}}
 ```
 
 This structure works across languages and frameworks. The variables enclosed in double braces become placeholders you replace when invoking the template.
 
-Step 6: Practical Template Examples
+Step 6 - Practical Template Examples
 
 Unit Test Generation Template
 
@@ -94,8 +94,8 @@ Clear documentation improves maintainability. This template generates OpenAPI-co
 ```
 Generate API documentation for the following endpoint:
 
-Endpoint: {{http_method}} {{path}}
-Description: {{endpoint_purpose}}
+Endpoint - {{http_method}} {{path}}
+Description - {{endpoint_purpose}}
 Request parameters:
 {{parameter_list}}
 Request body (if applicable):
@@ -163,7 +163,7 @@ Format each error as:
 - Suggested resolution:
 ```
 
-Step 7: Build Your Template Library
+Step 7 - Build Your Template Library
 
 Start with your most frequent tasks. Identify coding activities you perform repeatedly, generating CRUD endpoints, writing data validation, creating Docker configurations, and build templates for each. Store templates in a centralized location, perhaps in a `prompts/` directory within your project or as a dedicated repository for team-wide access.
 
@@ -179,36 +179,36 @@ Implement template variables with sensible defaults. When you frequently use a s
 
 Some developers embed template logic directly in their IDEs using custom snippets or scripts. A simple shell alias or VS Code snippet can expand a short trigger into your full template, complete with placeholder navigation. This integration makes template usage feel natural within your existing workflow.
 
-Step 8: Measuring Template Effectiveness
+Step 8 - Measuring Template Effectiveness
 
-Track metrics that matter: time saved per task, consistency of AI outputs, and iteration count needed to reach acceptable results. Templates that require fewer refinements deliver more value than those producing inconsistent results despite time savings.
+Track metrics that matter - time saved per task, consistency of AI outputs, and iteration count needed to reach acceptable results. Templates that require fewer refinements deliver more value than those producing inconsistent results despite time savings.
 
 Gather feedback from team members using shared templates. What works well might need adjustment for different project contexts. Treat your template library as a living system that improves through use and observation.
 
 Building a prompt template library takes initial investment but pays dividends through consistency, speed, and reduced cognitive load. As AI coding tools continue advancing, developers with well-structured templates will use these capabilities more effectively than those relying on ad-hoc interactions.
 
-Step 9: Template Storage and Organization
+Step 9 - Template Storage and Organization
 
 Where and how you store templates affects usability:
 
-Option 1: Git Repository with Version Control
+Option 1 - Git Repository with Version Control
 
 ```bash
 mkdir prompts
 cat > prompts/test_generation.md << 'EOF'
 Unit Test Generation Template
 
-Step 10: Context
+Step 10 - Context
 - Language: {{language}}
 - Framework: {{test_framework}}
 - Project: {{project_name}}
 
-Step 11: Task
+Step 11 - Task
 Generate complete unit tests for the following function:
 
 {{function_code}}
 
-Step 12: Output
+Step 12 - Output
 Complete test file with setup, teardown, and edge cases.
 EOF
 
@@ -216,7 +216,7 @@ git add prompts/
 git commit -m "Add test generation template"
 ```
 
-Option 2: IDE Snippets
+Option 2 - IDE Snippets
 
 VS Code snippets integrate templates directly into your editor:
 
@@ -242,7 +242,7 @@ VS Code snippets integrate templates directly into your editor:
 }
 ```
 
-Option 3: Dedicated Template Management
+Option 3 - Dedicated Template Management
 
 For teams, tools like Promptly or Langchain Hub provide centralized template management:
 
@@ -254,7 +254,7 @@ Save template to hub
 langsmith push-template test_generation
 ```
 
-Step 13: Template Variations for Different Contexts
+Step 13 - Template Variations for Different Contexts
 
 Create template variants for specific frameworks or languages:
 
@@ -282,7 +282,7 @@ Include:
 
 Maintaining variants prevents "one template fits all" situations where generic advice produces suboptimal code.
 
-Step 14: Template Effectiveness Metrics
+Step 14 - Template Effectiveness Metrics
 
 Track which templates save the most time:
 
@@ -326,37 +326,37 @@ Three-step workflow:
 3. Document the result
 
 ```
-Step 1: Scaffold Generation
+Step 1 - Scaffold Generation
 Generate basic {{framework}} service for:
 {{business_requirement}}
 
-Step 2: Test Generation (triggered on Step 1 output)
+Step 2 - Test Generation (triggered on Step 1 output)
 Generate detailed tests for the above code
 
-Step 3: Documentation (triggered on Step 2 output)
+Step 3 - Documentation (triggered on Step 2 output)
 Generate API documentation for the above code
 ```
 
 This composition ensures each step builds on previous output, creating a complete solution pipeline.
 
-Step 15: Template Versioning and Iteration
+Step 15 - Template Versioning and Iteration
 
 As your projects evolve, templates must adapt:
 
 ```markdown
 Unit Test Template v2.1
-Last updated: 2026-03-20
+Last updated - 2026-03-20
 Changelog:
 - v2.1: Added mock service pattern for v2
 - v2.0: Initial template
 - v1.5: Removed deprecated assertions
 
-Deprecated: Use v2.1+ for all new tests
+Deprecated - Use v2.1+ for all new tests
 ```
 
 Versioning templates prevents confusion when teams use different versions. Clearly mark deprecated templates and communicate migration paths.
 
-Step 16: Team Template Standards
+Step 16 - Team Template Standards
 
 For distributed teams, establish template standards:
 
@@ -369,7 +369,7 @@ Template Review Checklist:
 
 Require code review for new templates before adding to your library. This prevents low-quality templates from proliferating.
 
-Step 17: Integration with CI/CD
+Step 17 - Integration with CI/CD
 
 Automate template-based code generation in your build pipeline:
 
@@ -399,34 +399,34 @@ jobs:
 
 Automated template application ensures consistency and catches gaps automatically.
 
-Step 18: Real-World Template Examples from Production
+Step 18 - Real-World Template Examples from Production
 
 Here's a template used by successful development teams:
 
 Production Bug Analysis Template:
 
 ```
-Step 19: Context
+Step 19 - Context
 - Bug ID: {{issue_id}}
 - Severity: {{severity}}
 - Affected components: {{components}}
 
-Step 20: Symptom
+Step 20 - Symptom
 {{user_reported_symptom}}
 
-Step 21: Environment
+Step 21 - Environment
 - OS: {{os}}
 - Version: {{version}}
 - Steps to reproduce: {{reproduction_steps}}
 
-Step 22: Task
+Step 22 - Task
 Analyze this bug and provide:
 1. Root cause analysis
 2. Code location where fix applies
 3. Implementation approach
 4. Test cases to verify fix
 
-Step 23: Constraints
+Step 23 - Constraints
 - Maintain backward compatibility
 - No breaking API changes
 - Performance impact < 5%
@@ -434,15 +434,15 @@ Step 23: Constraints
 
 This template structures bug analysis work, ensuring root causes are identified before coding solutions.
 
-Step 24: Common Pitfalls to Avoid
+Step 24 - Common Pitfalls to Avoid
 
-Over-parameterization: Too many variables create complex templates that feel more work than manual prompting.
+Over-parameterization - Too many variables create complex templates that feel more work than manual prompting.
 
-Generic output: Templates that produce boilerplate without context lead to code that works but lacks personality and optimization.
+Generic output - Templates that produce boilerplate without context lead to code that works but lacks personality and optimization.
 
-Stale content: Templates reflecting old patterns generate outdated code. Regular updates are essential.
+Stale content - Templates reflecting old patterns generate outdated code. Regular updates are essential.
 
-No feedback loop: Not measuring effectiveness means you keep using templates that don't work well.
+No feedback loop - Not measuring effectiveness means you keep using templates that don't work well.
 
 Successful template libraries balance specificity with simplicity, measurable improvement, and regular maintenance.
 

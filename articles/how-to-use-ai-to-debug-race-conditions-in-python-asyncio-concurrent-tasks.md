@@ -138,13 +138,13 @@ class SafeCounter:
 
 Practical AI Debugging Workflow
 
-Step 1: Describe the Problem
+Step 1 - Describe the Problem
 
 When working with an AI coding assistant, be specific about your symptoms:
 
 > "I have an asyncio application where multiple coroutines update a shared dictionary. Sometimes entries disappear or get overwritten. The issue only appears under high load."
 
-Step 2: Provide Context
+Step 2 - Provide Context
 
 Share relevant code sections and your execution environment:
 
@@ -156,7 +156,7 @@ Share relevant code sections and your execution environment:
 
 - Python and asyncio library versions
 
-Step 3: Iterate on Solutions
+Step 3 - Iterate on Solutions
 
 AI tools can propose multiple approaches. For our counter example, you might receive suggestions for:
 
@@ -191,13 +191,13 @@ Improper Lock Usage
 AI can catch subtle locking mistakes:
 
 ```python
-Bug: Lock released between check and update
+Bug - Lock released between check and update
 async def process_if_empty(queue):
     if queue.empty():  # Check
         await asyncio.sleep(0)  # Another task could add item here!
         await queue.put(item)   # Update - race condition!
 
-Fix: Lock protects the entire check-and-update sequence
+Fix - Lock protects the entire check-and-update sequence
 async def process_if_empty(queue):
     async with queue_lock:
         if queue.empty():
@@ -309,7 +309,7 @@ Debugging Real-World Asyncio Patterns
 
 Beyond the counter example, AI tools prove effective at diagnosing several common real-world asyncio patterns that frequently develop race conditions.
 
-Shared cache with TTL expiry: Multiple coroutines check if a cache entry is expired, then race to refresh it. The correct pattern uses a per-key lock:
+Shared cache with TTL expiry - Multiple coroutines check if a cache entry is expired, then race to refresh it. The correct pattern uses a per-key lock:
 
 ```python
 import asyncio
@@ -338,9 +338,9 @@ class AsyncCache:
 
 AI tools immediately recognize this double-checked locking pattern and generate it when you describe the thundering herd problem. Without AI assistance, most developers either skip the inner check (making the lock ineffective) or use a global lock (creating a bottleneck).
 
-Connection pool exhaustion: When multiple coroutines compete for database connections, improper semaphore usage leads to deadlocks. AI tools reliably identify when a `Semaphore` is acquired but never released on error paths, and generate the corrected `async with` version.
+Connection pool exhaustion - When multiple coroutines compete for database connections, improper semaphore usage leads to deadlocks. AI tools reliably identify when a `Semaphore` is acquired but never released on error paths, and generate the corrected `async with` version.
 
-Task cancellation cleanup: Cancelled tasks that hold locks cause deadlocks in downstream coroutines. AI tools recognize when `asyncio.shield()` is appropriate versus when you should handle `asyncio.CancelledError` explicitly in your `finally` blocks.
+Task cancellation cleanup - Cancelled tasks that hold locks cause deadlocks in downstream coroutines. AI tools recognize when `asyncio.shield()` is appropriate versus when you should handle `asyncio.CancelledError` explicitly in your `finally` blocks.
 
 Using asyncio Debug Mode with AI Analysis
 

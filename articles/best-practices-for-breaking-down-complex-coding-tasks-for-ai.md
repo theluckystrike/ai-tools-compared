@@ -92,53 +92,53 @@ Use Input-Output Framing
 
 Structure your requests around clear inputs and expected outputs. Rather than describing what you want vaguely, specify what goes in and what should come out.
 
-Less effective: "Help me refactor this authentication code to be more secure."
+Less effective - "Help me refactor this authentication code to be more secure."
 
-More effective: "Refactor the login function to add rate limiting that accepts a max_attempts parameter and returns a RateLimitExceeded exception after 5 failed attempts within 15 minutes. Use our existing Redis client from redis_service.py."
+More effective - "Refactor the login function to add rate limiting that accepts a max_attempts parameter and returns a RateLimitExceeded exception after 5 failed attempts within 15 minutes. Use our existing Redis client from redis_service.py."
 
 The second version tells the AI exactly what behavior to implement, what parameters matter, and where to find supporting code.
 
 Practical Examples
 
-Example 1: Building a Data Pipeline
+Example 1 - Building a Data Pipeline
 
 Rather than asking an AI to "build an ETL pipeline," decompose it into stages:
 
-Step 1: "Create a data extractor class that reads from our PostgreSQL source using asyncpg, following the connection pattern in db/connection.py. Include methods for incremental extraction using last_updated timestamps."
+Step 1 - "Create a data extractor class that reads from our PostgreSQL source using asyncpg, following the connection pattern in db/connection.py. Include methods for incremental extraction using last_updated timestamps."
 
-Step 2: "Add a transformer class that normalizes the extracted data: converts camelCase keys to snake_case, parses ISO date strings to datetime objects, and handles null values by returning defaults from our ValidationConfig."
+Step 2 - "Add a transformer class that normalizes the extracted data: converts camelCase keys to snake_case, parses ISO date strings to datetime objects, and handles null values by returning defaults from our ValidationConfig."
 
-Step 3: "Implement a loader that writes transformed records to our S3 data lake in Parquet format, using our existing S3Client wrapper and maintaining partitioned directory structure by date."
+Step 3 - "Implement a loader that writes transformed records to our S3 data lake in Parquet format, using our existing S3Client wrapper and maintaining partitioned directory structure by date."
 
-Step 4: "Orchestrate the three components with error handling, logging each stage's row counts, and retry logic for transient failures."
+Step 4 - "Orchestrate the three components with error handling, logging each stage's row counts, and retry logic for transient failures."
 
 Each step produces verifiable code you can test before moving forward.
 
-Example 2: Frontend Component with State
+Example 2 - Frontend Component with State
 
 Complex UI components benefit from layered decomposition:
 
-Step 1: "Create a TypeScript interface for the component props: title (string), items (array of {id, label, selected}), onSelectionChange (callback function)."
+Step 1 - "Create a TypeScript interface for the component props: title (string), items (array of {id, label, selected}), onSelectionChange (callback function)."
 
-Step 2: "Build the base component with the title display and item rendering. Use our existing Button and Checkbox components from the ui-kit package."
+Step 2 - "Build the base component with the title display and item rendering. Use our existing Button and Checkbox components from the ui-kit package."
 
-Step 3: "Add state management for selection: track selected item IDs in local state, implement toggle functionality, call onSelectionChange with the full selected items array on each change."
+Step 3 - "Add state management for selection: track selected item IDs in local state, implement toggle functionality, call onSelectionChange with the full selected items array on each change."
 
-Step 4: "Add keyboard navigation: arrow keys to move focus, Enter to toggle selection, ensure accessibility with proper ARIA attributes."
+Step 4 - "Add keyboard navigation: arrow keys to move focus, Enter to toggle selection, ensure accessibility with proper ARIA attributes."
 
-Step 5: "Write unit tests covering: initial render, selection toggling, keyboard navigation, and callback invocation with correct data."
+Step 5 - "Write unit tests covering: initial render, selection toggling, keyboard navigation, and callback invocation with correct data."
 
-Example 3: Database Migration
+Example 3 - Database Migration
 
 Database changes require careful sequencing:
 
-Step 1: "Generate a migration script that adds a new column `last_synced_at` to the `products` table with a default value of NULL and an index for queries filtering by this column."
+Step 1 - "Generate a migration script that adds a new column `last_synced_at` to the `products` table with a default value of NULL and an index for queries filtering by this column."
 
-Step 2: "Create a backfill script that populates last_synced_at from the existing `updated_at` column, batching in chunks of 1000 to avoid locking."
+Step 2 - "Create a backfill script that populates last_synced_at from the existing `updated_at` column, batching in chunks of 1000 to avoid locking."
 
-Step 3: "Write a service method that updates last_synced_at when the sync job completes successfully, using our existing transaction pattern."
+Step 3 - "Write a service method that updates last_synced_at when the sync job completes successfully, using our existing transaction pattern."
 
-Step 4: "Add a database trigger that automatically updates last_synced_at when the row is modified, making it a true audit timestamp."
+Step 4 - "Add a database trigger that automatically updates last_synced_at when the row is modified, making it a true audit timestamp."
 
 Handling Edge Cases
 
@@ -152,13 +152,13 @@ Managing Context Across Steps
 
 For longer sequences, maintain a running context document or use your AI assistant's project memory features. Keep track of what you've built, what dependencies exist, and what constraints you've established. Periodically summarize progress:
 
-"So far we've created: User model, authentication middleware, and login endpoint. Next we need: registration flow and password reset. Constraints: use bcrypt with cost factor 12, store refresh tokens in encrypted cookies."
+"So far we've created: User model, authentication middleware, and login endpoint. Next we need: registration flow and password reset. Constraints - use bcrypt with cost factor 12, store refresh tokens in encrypted cookies."
 
 When to Combine vs. Separate
 
-Task decomposition works best when pieces have clear boundaries. However, if you're building tightly coupled components where the interface between pieces isn't well-defined, you may get better results from a more holistic request that lets the AI design the interaction points.
+Task decomposition works best when pieces have clear boundaries. However, if you're building tightly coupled components where the interface between pieces isn't well-defined, you may get better results from a more complete request that lets the AI design the interaction points.
 
-Use your judgment: if you can clearly articulate the interface between two components, decompose them. If you're unsure how pieces should interact, provide a higher-level request and refine based on the AI's suggested architecture.
+Use your judgment - if you can clearly articulate the interface between two components, decompose them. If you're unsure how pieces should interact, provide a higher-level request and refine based on the AI's suggested architecture.
 
 Benchmark Methodology for AI Tool Comparisons
 
@@ -254,8 +254,8 @@ def call_anthropic(client, messages, model="claude-haiku-3-5"):
 
 Rate limit tiers (approximate, verify in provider docs):
 OpenAI Tier 1:  500 RPM, 10K TPM (gpt-4o)
-Anthropic Tier 1: 50 RPM, 40K TPM (claude-3-5-sonnet)
-After Tier 1: increase by spending $50+ and 7+ days since first charge
+Anthropic Tier 1 - 50 RPM, 40K TPM (claude-3-5-sonnet)
+After Tier 1 - increase by spending $50+ and 7+ days since first charge
 ```
 
 Implement a token bucket or leaky bucket in your application layer to avoid hitting rate limits in the first place, rather than relying solely on retry logic.
@@ -268,7 +268,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -280,7 +280,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

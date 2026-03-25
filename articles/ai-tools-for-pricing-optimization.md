@@ -43,7 +43,7 @@ Open-Source Libraries for Pricing Optimization
 
 Python-Based Tools
 
-Python dominates the pricing optimization space due to its rich ecosystem for data science. Here are the most practical open-source options:
+Python dominates the pricing optimization space due to its rich environment for data science. Here are the most practical open-source options:
 
 PyPricing provides basic price elasticity calculations:
 
@@ -51,7 +51,7 @@ PyPricing provides basic price elasticity calculations:
 import numpy as np
 from pypricing import ElasticityModel
 
-Sample data: prices and corresponding quantities sold
+Sample data - prices and corresponding quantities sold
 prices = np.array([10, 15, 20, 25, 30, 35])
 quantities = np.array([200, 150, 120, 80, 60, 45])
 
@@ -93,7 +93,7 @@ from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
 import pandas as pd
 
-Features: day_of_week, competitor_price, seasonality, inventory_level
+Features - day_of_week, competitor_price, seasonality, inventory_level
 X = df[['dow', 'comp_price', 'seasonality', 'inventory']]
 y = df['units_sold']
 
@@ -197,7 +197,7 @@ For teams building in-house, a logistic regression on historical plan conversion
 from sklearn.linear_model import LogisticRegression
 import numpy as np
 
-Features: price_shown, plan_tier, customer_segment, trial_days
+Features - price_shown, plan_tier, customer_segment, trial_days
 X = df[['price', 'tier', 'segment', 'trial']]
 y = df['converted']
 

@@ -37,7 +37,7 @@ Choose Claude Code if you want AI that understands your entire project, modifies
 - ChatGPT Code Interpreter requires: a ChatGPT Plus ($20/month) or Pro subscription.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- Choose ChatGPT Code Interpreter: if you need quick, isolated code exploration or data analysis in a sandboxed environment without setup.
+- Choose ChatGPT Code Interpreter - if you need quick, isolated code exploration or data analysis in a sandboxed environment without setup.
 - After initial setup with: a `CLAUDE.md` file or by pointing it at your codebase, it understands your coding conventions, testing preferences, and project architecture.
 - The Code Interpreter feature: is included but tied to your subscription rather than pay-per-use.
 
@@ -95,27 +95,27 @@ Consider a scenario where you need to add error handling to an API endpoint:
 Claude Code approach:
 
 ```
-You: Add error handling to the user API endpoints
-Claude: I'll check your existing endpoints and add consistent error handling based on your current patterns.
+You - Add error handling to the user API endpoints
+Claude - I'll check your existing endpoints and add consistent error handling based on your current patterns.
 [Modifies files directly]
 ```
 
 ChatGPT Code Interpreter approach:
 
 ```
-You: Add error handling to this API endpoint code [paste code]
-ChatGPT: Here's the code with error handling [shows code]
-You: Copy and paste into your project
+You - Add error handling to this API endpoint code [paste code]
+ChatGPT - Here's the code with error handling [shows code]
+You - Copy and paste into your project
 ```
 
-CLAUDE.md: The Project Context File
+CLAUDE.md - The Project Context File
 
 One of Claude Code's most underappreciated features is the `CLAUDE.md` file. Placing this file at your project root gives Claude persistent, structured context about your project that carries across every session without re-explaining conventions.
 
 A well-crafted `CLAUDE.md` dramatically reduces hallucinated API calls and incorrect pattern suggestions:
 
 ```markdown
-Project: TaskAPI
+Project - TaskAPI
 
 Tech Stack
 - Node.js 20 + TypeScript 5.4
@@ -169,7 +169,7 @@ Code Interpreter also shines for:
 - Cross-platform reproducibility. the sandbox is a known environment, so output is reproducible regardless of the user's local setup
 - Scientific computing. libraries like numpy, pandas, scipy, and matplotlib are pre-installed; no `pip install` needed
 
-The honest comparison: if your primary workflow is data science notebooks or quick scripting experiments, Code Interpreter's frictionless setup wins. If your primary workflow is maintaining a production codebase, Claude Code's local execution model wins.
+The honest comparison - if your primary workflow is data science notebooks or quick scripting experiments, Code Interpreter's frictionless setup wins. If your primary workflow is maintaining a production codebase, Claude Code's local execution model wins.
 
 Cost Structure
 
@@ -222,15 +222,15 @@ Choose ChatGPT Code Interpreter when you need:
 
 - Sandboxed execution with no local environment risk
 
-Practical Example: Building a REST API
+Practical Example - Building a REST API
 
 Here's how each tool approaches the same task differently.
 
 Claude Code:
 
 ```
-You: Create a REST API for a todo list with Express
-Claude: I'll create a complete Express API with CRUD operations
+You - Create a REST API for a todo list with Express
+Claude - I'll create a complete Express API with CRUD operations
 [Creates routes, controllers, models, and tests]
 [Sets up the project structure]
 ```
@@ -238,18 +238,18 @@ Claude: I'll create a complete Express API with CRUD operations
 ChatGPT Code Interpreter:
 
 ```
-You: Create a REST API for a todo list with Express
-ChatGPT: Here's the code [provides file contents]
-You: Need to set up the project structure manually
+You - Create a REST API for a todo list with Express
+ChatGPT - Here's the code [provides file contents]
+You - Need to set up the project structure manually
 ```
 
 Claude Code produces working, complete solutions ready to run. ChatGPT Code Interpreter provides guidance and code snippets requiring manual assembly.
 
-Debugging Workflows: A Realistic Comparison
+Debugging Workflows - A Realistic Comparison
 
 The difference in debugging workflows is where Claude Code's local model pays dividends most clearly. A realistic production debugging scenario:
 
-Scenario: A Node.js service is throwing intermittent `ECONNRESET` errors in production. You have a stack trace and a suspect connection pool configuration.
+Scenario - A Node.js service is throwing intermittent `ECONNRESET` errors in production. You have a stack trace and a suspect connection pool configuration.
 
 With Claude Code, you paste the stack trace and ask it to investigate. Claude Code reads your `src/database/pool.ts`, your `src/config/index.ts`, checks your `package.json` for the pg version, and cross-references the error with its knowledge of known pg connection pool edge cases. It proposes a specific `idleTimeoutMillis` and `connectionTimeoutMillis` configuration change, edits the file, and suggests a load test command to verify the fix.
 

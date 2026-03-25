@@ -21,7 +21,7 @@ Table of Contents
 
 - [The Provider Version Conflict Problem](#the-provider-version-conflict-problem)
 - [How AI Tools Help Parse Terraform Errors](#how-ai-tools-help-parse-terraform-errors)
-- [Practical Example: Resolving an AWS Provider Conflict](#practical-example-resolving-an-aws-provider-conflict)
+- [Practical Example - Resolving an AWS Provider Conflict](#practical-example-resolving-an-aws-provider-conflict)
 - [AI Tools for Different Workflows](#ai-tools-for-different-workflows)
 - [Best Practices When Using AI for Terraform Issues](#best-practices-when-using-ai-for-terraform-issues)
 - [Automating Provider Version Management](#automating-provider-version-management)
@@ -30,7 +30,7 @@ Table of Contents
 - [CLI Workflow for Version Conflict Resolution](#cli-workflow-for-version-conflict-resolution)
 - [Pricing Impact of Version Management](#pricing-impact-of-version-management)
 - [Common Provider Version Patterns](#common-provider-version-patterns)
-- [Troubleshooting with AI: Common Questions](#troubleshooting-with-ai-common-questions)
+- [Troubleshooting with AI - Common Questions](#troubleshooting-with-ai-common-questions)
 
 The Provider Version Conflict Problem
 
@@ -83,14 +83,14 @@ terraform {
 }
 ```
 
-Practical Example: Resolving an AWS Provider Conflict
+Practical Example - Resolving an AWS Provider Conflict
 
 Consider this common error when running `terraform plan`:
 
 ```
-Error: Failed to instantiate provider "registry.terraform.io/hashicorp/aws"
+Error - Failed to instantiate provider "registry.terraform.io/hashicorp/aws"
 to obtain plan: Incompatible API version with plugin.
-Plugin version: 5.0, Client version: 4.0
+Plugin version - 5.0, Client version: 4.0
 ```
 
 An AI assistant can help by first explaining that the Terraform CLI version on your machine doesn't match what your configuration requires. It then provides actionable steps:
@@ -159,11 +159,11 @@ Implementing version constraints prevents unexpected upgrades from breaking your
 
 Real-World Error Resolution Examples
 
-Example 1: AWS Provider Version Mismatch
+Example 1 - AWS Provider Version Mismatch
 
 Error Message:
 ```
-Error: Incompatible provider version
+Error - Incompatible provider version
 On main.tf line 10:
   provider "aws":
     version = "~> 4.67"
@@ -173,15 +173,15 @@ The currently-installed provider has version 4.0.0, which does not match the giv
 
 AI-Generated Fix:
 ```bash
-Step 1: Check what's required
+Step 1 - Check what's required
 terraform version
 terraform providers
 
-Step 2: Understand the constraint
+Step 2 - Understand the constraint
 ~> 4.67 means >= 4.67.0, < 5.0.0
-Currently installed: 4.0.0 (too old)
+Currently installed - 4.0.0 (too old)
 
-Step 3: Fix it
+Step 3 - Fix it
 terraform init -upgrade
 
 Or explicitly set version in main.tf
@@ -194,15 +194,15 @@ terraform {
   }
 }
 
-Step 4: Re-initialize
+Step 4 - Re-initialize
 terraform init
 ```
 
-Example 2: Kubernetes Provider with Helm Integration
+Example 2 - Kubernetes Provider with Helm Integration
 
 Error:
 ```
-Error: Kubernetes provider error
+Error - Kubernetes provider error
 kubernetes = {
   source  = "hashicorp/kubernetes"
   version = "~> 2.20"
@@ -217,7 +217,7 @@ These providers require Kubernetes 1.24+ but your cluster is 1.23
 
 AI-Generated Resolution Path:
 ```hcl
-Option 1: Accept older provider versions (compatible with your K8s)
+Option 1 - Accept older provider versions (compatible with your K8s)
 terraform {
   required_providers {
     kubernetes = {
@@ -231,7 +231,7 @@ terraform {
   }
 }
 
-Option 2: Upgrade Kubernetes cluster (better long-term)
+Option 2 - Upgrade Kubernetes cluster (better long-term)
 Create upgrade_cluster.tf:
 resource "aws_eks_cluster" "main" {
   version = "1.27"  # Upgrade from 1.23
@@ -271,31 +271,31 @@ AI can generate this file from your existing code:
 ```bash
 claude "Analyze my Terraform configuration and extract all provider
 version requirements into a .terraform-versions.yaml file.
-Include: provider name, current version, and reason for constraint.
+Include - provider name, current version, and reason for constraint.
 Also list any version conflicts you find."
 ```
 
 CLI Workflow for Version Conflict Resolution
 
 ```bash
-Step 1: Run plan to identify errors
+Step 1 - Run plan to identify errors
 terraform plan 2>&1 | tee plan-error.log
 
-Step 2: Extract the error with AI
+Step 2 - Extract the error with AI
 claude "I got this Terraform plan error:
 $(cat plan-error.log)
 
 Explain what's wrong and provide the fix."
 
-Step 3: Review the fix
+Step 3 - Review the fix
 AI will suggest terraform init -upgrade or version changes
 
-Step 4: Test in development environment
+Step 4 - Test in development environment
 terraform workspace select dev
 terraform init -upgrade
 terraform plan
 
-Step 5: If successful, migrate to production
+Step 5 - If successful, migrate to production
 terraform workspace select prod
 terraform init -upgrade
 terraform plan
@@ -305,7 +305,7 @@ Pricing Impact of Version Management
 
 Manual provider version debugging: 2, 4 hours per incident = $250, 500
 
-AI-assisted diagnosis: 10, 15 minutes = $0, 5 in API costs
+AI-assisted diagnosis - 10, 15 minutes = $0, 5 in API costs
 
 For teams with 5+ infrastructure environments, AI assistance saves thousands annually.
 
@@ -335,16 +335,16 @@ terraform {
 }
 ```
 
-Troubleshooting with AI: Common Questions
+Troubleshooting with AI - Common Questions
 
 Q: "Should I upgrade all providers together or separately?"
-AI Response: "For safety, upgrade and test one provider at a time. This isolates which upgrade caused any issues. Run `terraform init -upgrade` for one provider, test in staging, then commit before moving to the next."
+AI Response - "For safety, upgrade and test one provider at a time. This isolates which upgrade caused any issues. Run `terraform init -upgrade` for one provider, test in staging, then commit before moving to the next."
 
 Q: "How do I know if a provider version is safe?"
-AI Response: "Check the provider's GitHub releases for breaking changes. Ask me to review the changelog for your specific upgrade path. Also enable Terraform Cloud/Enterprise policy checks to catch issues before apply."
+AI Response - "Check the provider's GitHub releases for breaking changes. Ask me to review the changelog for your specific upgrade path. Also enable Terraform Cloud/Enterprise policy checks to catch issues before apply."
 
 Q: "Provider version conflict but tests pass. Is it safe to deploy?"
-AI Response: "No. Version conflicts may cause runtime issues that don't show in planning. Always resolve to a compatible constraint before deploying to production."
+AI Response - "No. Version conflicts may cause runtime issues that don't show in planning. Always resolve to a compatible constraint before deploying to production."
 
 Frequently Asked Questions
 

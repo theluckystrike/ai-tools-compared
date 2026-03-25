@@ -216,7 +216,7 @@ claude --update
 ```
 
 
-Root Cause Analysis: Why Loops Form
+Root Cause Analysis - Why Loops Form
 
 
 Understanding the underlying mechanism helps you prevent loops before they start. Claude Code evaluates tool results against the goal state on each iteration. A loop forms when one of three conditions persists:

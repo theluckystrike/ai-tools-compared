@@ -110,7 +110,7 @@ Practical Workflow for Complex Stacks
 
 Using AI effectively requires understanding what information to provide and how to refine the output.
 
-Step 1: Define Your Architecture
+Step 1 - Define Your Architecture
 
 Start by documenting your service inventory. For each microservice, note its language, framework, dependencies (databases, caches, message queues), required environment variables, and port assignments. This inventory becomes the input for AI generation.
 
@@ -128,7 +128,7 @@ A well-structured architecture description might include:
 
 - Monitoring: Prometheus, Grafana
 
-Step 2: Generate Initial Configuration
+Step 2 - Generate Initial Configuration
 
 Provide this architecture description to an AI assistant with a prompt like:
 
@@ -145,7 +145,7 @@ Generate a Docker Compose file for a microservice stack with these services:
 Include appropriate networking, health checks, and volume mounts for persistence.
 ```
 
-Step 3: Review and Customize
+Step 3 - Review and Customize
 
 AI-generated configurations require human review. Verify environment variable names match your application expectations, confirm version compatibility, and add secrets management. The AI provides a solid foundation, but production deployments need additional considerations:
 
@@ -166,7 +166,7 @@ services:
           memory: 512M
 ```
 
-Step 4: Iterate and Refine
+Step 4 - Iterate and Refine
 
 For complex stacks, generate configurations incrementally. Start with core services, verify they initialize correctly, then add additional services. This approach makes debugging easier and ensures each service functions before introducing dependencies.
 
@@ -267,9 +267,9 @@ Effective prompts include:
 
 For example, compare these two prompts:
 
-Weak prompt: "Create a Docker Compose file for a web app with a database."
+Weak prompt - "Create a Docker Compose file for a web app with a database."
 
-Strong prompt: "Create a Docker Compose file for a Node.js Express API (port 3000) with PostgreSQL 15 and Redis 7. The API needs DATABASE_URL and REDIS_URL environment variables. Include health checks for all services. Use named volumes for PostgreSQL data. Separate frontend and backend networks so only the API can reach the database."
+Strong prompt - "Create a Docker Compose file for a Node.js Express API (port 3000) with PostgreSQL 15 and Redis 7. The API needs DATABASE_URL and REDIS_URL environment variables. Include health checks for all services. Use named volumes for PostgreSQL data. Separate frontend and backend networks so only the API can reach the database."
 
 The strong prompt consistently produces configurations that require less manual correction.
 

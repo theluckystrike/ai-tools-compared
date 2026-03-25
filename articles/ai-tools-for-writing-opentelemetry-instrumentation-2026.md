@@ -20,9 +20,9 @@ Use Claude 3.5 Sonnet for designing instrumentation strategies that span multipl
 Table of Contents
 
 - [OpenTelemetry's Instrumentation Challenge](#opentelemetrys-instrumentation-challenge)
-- [Claude 3.5 Sonnet: Designing Observable Services](#claude-35-sonnet-designing-observable-services)
-- [GitHub Copilot: Routine Instrumentation While Coding](#github-copilot-routine-instrumentation-while-coding)
-- [ChatGPT 4o: Debugging Broken Traces](#chatgpt-4o-debugging-broken-traces)
+- [Claude 3.5 Sonnet - Designing Observable Services](#claude-35-sonnet-designing-observable-services)
+- [GitHub Copilot - Routine Instrumentation While Coding](#github-copilot-routine-instrumentation-while-coding)
+- [ChatGPT 4o - Debugging Broken Traces](#chatgpt-4o-debugging-broken-traces)
 - [Tool Comparison Table](#tool-comparison-table)
 - [Instrumentation Patterns by Tool](#instrumentation-patterns-by-tool)
 - [Sampling Strategies](#sampling-strategies)
@@ -39,7 +39,7 @@ Effective observability requires consistent span naming, proper trace context pr
 
 AI assistants can generate correct instrumentation patterns, but they need context about your system topology and observability goals. Claude excels at this design phase. Copilot works well for routine span additions. ChatGPT helps debug context propagation issues.
 
-Claude 3.5 Sonnet: Designing Observable Services
+Claude 3.5 Sonnet - Designing Observable Services
 
 Claude understands that instrumentation is an architectural decision. Provide your service topology and Claude generates a consistent naming scheme and context propagation strategy.
 
@@ -137,9 +137,9 @@ Limitations:
 - Requires detailed system topology description to be accurate
 - May not know about team-specific attribute conventions
 
-Best for: Initial observability architecture, migrating from old instrumentation, onboarding new team members to tracing best practices.
+Best for - Initial observability architecture, migrating from old instrumentation, onboarding new team members to tracing best practices.
 
-GitHub Copilot: Routine Instrumentation While Coding
+GitHub Copilot - Routine Instrumentation While Coding
 
 Copilot excels at generating repetitive instrumentation code. When you start typing span creation, Copilot completes the pattern.
 
@@ -172,16 +172,16 @@ Weaknesses:
 - May suggest redundant attributes
 - Cannot design end-to-end tracing strategies
 
-Best for: Adding instrumentation to existing code, completing repetitive span attributes, generating metric counters and histograms.
+Best for - Adding instrumentation to existing code, completing repetitive span attributes, generating metric counters and histograms.
 
-ChatGPT 4o: Debugging Broken Traces
+ChatGPT 4o - Debugging Broken Traces
 
 When traces are missing context or don't correlate between services, ChatGPT helps diagnose the issue. It's particularly good at explaining context propagation problems.
 
 Example interaction:
 
 ```
-User: "My traces show the Express service and Python worker as
+User - "My traces show the Express service and Python worker as
 separate traces. They should be connected. The job ID is in the
 message but not in the trace context."
 
@@ -205,7 +205,7 @@ Weaknesses:
 - May suggest outdated OpenTelemetry APIs
 - Lacks deep understanding of different propagators
 
-Best for: Troubleshooting broken traces, explaining why spans aren't correlating, understanding context propagation concepts.
+Best for - Troubleshooting broken traces, explaining why spans aren't correlating, understanding context propagation concepts.
 
 Tool Comparison Table
 
@@ -222,7 +222,7 @@ Tool Comparison Table
 
 Instrumentation Patterns by Tool
 
-Pattern 1: HTTP Server Instrumentation (Claude)
+Pattern 1 - HTTP Server Instrumentation (Claude)
 
 Claude generates the complete middleware with proper error handling:
 
@@ -251,7 +251,7 @@ func tracingMiddleware(next http.Handler) http.Handler {
 }
 ```
 
-Pattern 2: Database Query Instrumentation (Copilot)
+Pattern 2 - Database Query Instrumentation (Copilot)
 
 Copilot quickly completes db query spans:
 
@@ -271,7 +271,7 @@ def execute_query(query, params):
         return result
 ```
 
-Pattern 3: Message Queue Instrumentation (Claude)
+Pattern 3 - Message Queue Instrumentation (Claude)
 
 Claude ensures context propagation across the queue:
 

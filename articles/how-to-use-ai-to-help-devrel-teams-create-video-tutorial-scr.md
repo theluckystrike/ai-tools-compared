@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Planning and Scripting with AI
+Step 1 - Planning and Scripting with AI
 
 The foundation of any great tutorial is a well-structured script. AI writing assistants can help DevRel teams brainstorm topics, outline content, and draft scripts that resonate with their target audience. When starting a new tutorial, provide the AI with context about your audience's skill level, the key concepts you want to cover, and the desired video length.
 
@@ -51,14 +51,14 @@ authenticate with OAuth2 using our API. Structure:
 - Step 3 (60s): exchange the code for an access token
 - 30-second outro: next steps (refresh tokens, scopes)
 
-Tone: conversational, not lecture-style. Assume the viewer has VS Code open.
+Tone - conversational, not lecture-style. Assume the viewer has VS Code open.
 ```
 
 This produces a draft with approximate timing per section, which you then customize with your product's actual endpoints and error messages.
 
 AI can also help with creating tutorial titles and descriptions optimized for discoverability. By analyzing trending keywords in your developer community, AI tools can suggest titles that are both descriptive and likely to perform well in search.
 
-Step 2: AI-Powered Screen Recording
+Step 2 - AI-Powered Screen Recording
 
 Modern screen recording tools increasingly incorporate AI features that enhance the final product. Look for recording tools that offer AI noise cancellation, which removes background noise from typing, mouse clicks, and ambient sounds. This is particularly valuable when recording in less-than-ideal environments.
 
@@ -66,7 +66,7 @@ Some AI-enhanced recording tools can automatically detect and highlight cursor m
 
 For teams recording demonstrations of code, AI-powered tools can enhance syntax highlighting in real-time, ensuring the code is readable and visually appealing. Some tools even offer automatic code formatting suggestions during recording, helping maintain consistency across tutorials.
 
-Step 3: Automated Editing and Enhancement
+Step 3 - Automated Editing and Enhancement
 
 Once you've captured your screen recording, AI video editing tools can significantly speed up the post-production process. AI-powered editing software can automatically remove dead air, trim filler words like "um" and "uh," and suggest pacing improvements.
 
@@ -74,19 +74,19 @@ Auto-captioning is another valuable AI feature for tutorial creation. Most platf
 
 AI can also assist with video stabilization, color correction, and audio leveling. These finishing touches, which previously required manual adjustment in complex editing software, can now be applied automatically with a single click.
 
-Step 4: Generate Chapters and Summaries
+Step 4 - Generate Chapters and Summaries
 
 AI tools can analyze your video content to automatically generate chapter markers and video summaries. This improves viewer experience by allowing quick navigation to relevant sections. For technical tutorials especially, accurate chapters help developers find exactly the information they need without watching the entire video.
 
 Some AI platforms can create timestamped outlines based on the audio track, identifying natural break points where topics change. This makes organizing longer tutorials much easier and ensures logical flow throughout the content.
 
-Step 5: Voice and Narration Enhancement
+Step 5 - Voice and Narration Enhancement
 
 For tutorials requiring voiceover, AI voice cloning and enhancement tools can help maintain consistency across a series. If a team member is unavailable, AI-generated narration can maintain the brand's voice while you work around scheduling constraints.
 
 AI audio enhancement tools can also clean up recorded narration, removing background hum, plosives, and sibilance. This results in clearer, more professional-sounding audio without requiring expensive recording equipment or acoustic treatment of your recording space.
 
-Step 6: Multilingual Localization
+Step 6 - Multilingual Localization
 
 DevRel teams often need to reach global audiences. AI translation tools can help adapt tutorials for different language markets by translating scripts and generating subtitles. While human review remains important for technical accuracy, AI translation significantly accelerates the localization process.
 
@@ -111,25 +111,25 @@ While AI tools offer tremendous value, maintaining authenticity and technical ac
 Balance efficiency with quality by using AI for time-consuming tasks like transcription, captioning, and basic editing, while keeping human oversight for strategic decisions about content structure and technical accuracy.
 
 Finally, gather feedback from your audience on which tutorials they find most helpful. This data can inform future AI-assisted productions and help refine your workflow over time.
-Step 7: Specific Tools and Their DevRel Applications
+Step 7 - Specific Tools and Their DevRel Applications
 
-For Script Generation: ChatGPT, Claude, and Copilot work well when given clear context about target audience, technical level, and desired outcomes. A typical prompt: "Create a 5-minute video script for beginner-to-intermediate developers learning to integrate OAuth2 using our REST API. Include an intro hook, step-by-step implementation with code snippets, common mistakes to avoid, and a conclusion with next steps." These tools produce well-structured scripts that require light editing rather than complete rewriting.
+For Script Generation - ChatGPT, Claude, and Copilot work well when given clear context about target audience, technical level, and desired outcomes. A typical prompt: "Create a 5-minute video script for beginner-to-intermediate developers learning to integrate OAuth2 using our REST API. Include an intro hook, step-by-step implementation with code snippets, common mistakes to avoid, and a conclusion with next steps." These tools produce well-structured scripts that require light editing rather than complete rewriting.
 
-For Video Editing: Tools like Descript and Riverside.fm combine recording, transcription, and AI-powered editing in single platforms. Descript excels at removing filler words, generating captions, and creating chapter markers from transcripts. Riverside.fm specifically targets remote recording scenarios with multiple speakers, offering studio-quality audio despite internet limitations.
+For Video Editing - Tools like Descript and Riverside.fm combine recording, transcription, and AI-powered editing in single platforms. Descript excels at removing filler words, generating captions, and creating chapter markers from transcripts. Riverside.fm specifically targets remote recording scenarios with multiple speakers, offering studio-quality audio despite internet limitations.
 
-For Thumbnail and Title Optimization: Tools like TubeBuddy and VidIQ analyze YouTube trends and suggest titles, thumbnails, and keywords optimized for discoverability. These tools integrate directly into YouTube's interface and can significantly improve video performance with minimal additional effort.
+For Thumbnail and Title Optimization - Tools like TubeBuddy and VidIQ analyze YouTube trends and suggest titles, thumbnails, and keywords optimized for discoverability. These tools integrate directly into YouTube's interface and can significantly improve video performance with minimal additional effort.
 
-For Automated Editing and Transitions: Opus Clip and Runway ML offer template-based automatic editing with AI-powered style detection. These tools analyze raw footage and automatically apply cuts, transitions, color grading, and effects matching detected scene changes and pacing.
+For Automated Editing and Transitions - Opus Clip and Runway ML offer template-based automatic editing with AI-powered style detection. These tools analyze raw footage and automatically apply cuts, transitions, color grading, and effects matching detected scene changes and pacing.
 
-For Voiceover and Narration: ElevenLabs and Synthesys create natural-sounding AI narration from scripts. For tutorials in multiple languages, these tools support over 30 languages while preserving reasonable intonation and pacing.
+For Voiceover and Narration - ElevenLabs and Synthesys create natural-sounding AI narration from scripts. For tutorials in multiple languages, these tools support over 30 languages while preserving reasonable intonation and pacing.
 
-Step 8: Complete DevRel Video Production Workflow
+Step 8 - Complete DevRel Video Production Workflow
 
 Here's a realistic end-to-end workflow using AI tools effectively:
 
 Phase 1 - Planning and Scripting (2-3 hours)
 1. Identify the topic based on audience questions, support tickets, or feature launches
-2. Use ChatGPT or Claude to generate a script outline: "Create a script for a 7-minute tutorial on implementing rate limiting in [API]. Include: welcome, problem statement, three implementation approaches, code walkthrough, testing, and conclusion."
+2. Use ChatGPT or Claude to generate a script outline: "Create a script for a 7-minute tutorial on implementing rate limiting in [API]. Include - welcome, problem statement, three implementation approaches, code walkthrough, testing, and conclusion."
 3. Review and refine the AI-generated script for technical accuracy and your brand voice
 4. Extract code examples and test them before recording
 5. Finalize the script and create slide deck if needed
@@ -159,19 +159,19 @@ Phase 5 - Optimization (20 minutes)
 3. Create SEO-friendly tags based on tool recommendations
 4. Select or generate thumbnail variations to test
 
-Total Production Time: 4.5-5.5 hours from concept to publishing
+Total Production Time - 4.5-5.5 hours from concept to publishing
 
 Without AI assistance, this workflow typically requires 12-16 hours of specialist time across scripting, recording, editing, and optimization.
 
-Step 9: Real-World DevRel Metrics and Examples
+Step 9 - Real-World DevRel Metrics and Examples
 
-Example 1: API Authentication Series
+Example 1 - API Authentication Series
 A DevRel team planned a 5-part video series on authentication patterns. Using AI:
 - Script generation: reduced from 6 hours to 1.5 hours (Claude generates outlines, team refines)
 - Recording and editing: reduced from 8 hours to 2.5 hours per video (Descript auto-edits, removes 40% of dead time)
 - Series total: 32 hours down to 14 hours (56% time savings)
 
-Example 2: Product Launch Tutorials
+Example 2 - Product Launch Tutorials
 When launching a new API endpoint, one DevRel team generated tutorial scripts for three different use cases in parallel:
 - Used ChatGPT to generate base scripts for OAuth, basic integration, and advanced usage
 - Human review and code verification took 45 minutes total
@@ -196,7 +196,7 @@ While AI tools offer tremendous value, maintaining authenticity and technical ac
 
 7. Version control your scripts: Store AI-assisted scripts in version control with your team's edits. This creates a library of effective prompts and refinements that improve future production quality.
 
-Step 10: Measuring Content Performance and Iterating
+Step 10 - Measuring Content Performance and Iterating
 
 Track metrics that indicate whether AI-assisted production improves your DevRel content strategy:
 - Time per video: Measure actual production time and compare to historical baselines
@@ -216,7 +216,7 @@ Use these proven prompts with Claude or ChatGPT to generate high-quality tutoria
 ```
 Write a 7-minute technical tutorial script for intermediate developers.
 
-Topic: Implementing OAuth2 with our REST API
+Topic - Implementing OAuth2 with our REST API
 
 Structure:
 - Hook (15 seconds): "In this video, you'll learn..."
@@ -235,8 +235,8 @@ Technical specs:
 - Mention rate limits and best practices
 - Reference our documentation pages
 
-Tone: Conversational but professional. Assume viewer has VS Code open.
-Avoid: "In conclusion", "As we've discussed". Use: "Next up", "Automated SRT Generation and Translation
+Tone - Conversational but professional. Assume viewer has VS Code open.
+Avoid - "In conclusion", "As we've discussed". Use: "Next up", "Automated SRT Generation and Translation
 
 For global reach, automate caption generation and translation:
 
@@ -247,16 +247,16 @@ script: generate-translated-subs.sh
 VIDEO_FILE=$1
 TARGET_LANGS=("es" "fr" "de" "ja")
 
-Step 1: Extract audio from video
+Step 1 - Extract audio from video
 ffmpeg -i "$VIDEO_FILE" audio.wav
 
-Step 2: Transcribe to SRT using Descript API or similar
+Step 2 - Transcribe to SRT using Descript API or similar
 descript_api transcribe audio.wav > transcript.srt
 
-Step 3: Generate English subtitles first
+Step 3 - Generate English subtitles first
 whisper audio.wav --output_format srt --language en
 
-Step 4: Translate to target languages
+Step 4 - Translate to target languages
 for lang in "${TARGET_LANGS[@]}"; do
     echo "Translating to $lang..."
     python translate_srt.py \
@@ -266,13 +266,13 @@ for lang in "${TARGET_LANGS[@]}"; do
       --preserve-timings
 done
 
-Step 5: Upload to video platform
+Step 5 - Upload to video platform
 for srt_file in transcript_*.srt; do
     youtube-dl upload-captions "$VIDEO_FILE" --captions "$srt_file"
 done
 ```
 
-Step 12: Build a DevRel Video Publishing Pipeline
+Step 12 - Build a DevRel Video Publishing Pipeline
 
 End-to-end workflow with cost breakdown:
 
@@ -399,7 +399,7 @@ tracker.record_video({
 })
 ```
 
-Step 13: Real-World Budget Allocation for DevRel Video Production
+Step 13 - Real-World Budget Allocation for DevRel Video Production
 
 Startup (0-5 videos/month):
 - Monthly spend: $30-50
@@ -419,17 +419,17 @@ Scale (15+ videos/month):
 - Production model: 2-3 person DevRel team, dedicated editor
 - Workflow: Multiple scripts in parallel → team recording → batch editing → social media automation
 
-Step 14: Measuring AI Impact on DevRel Efficiency
+Step 14 - Measuring AI Impact on DevRel Efficiency
 
-Baseline (traditional process): 16 hours/video
+Baseline (traditional process) - 16 hours/video
 - Scripting (6h) → Recording (3h) → Editing (5h) → Publishing (2h)
 
 With AI tools (optimized):
 - Scripting (1.5h with Claude) → Recording (3h) → Editing (1h with Descript) → Publishing (0.5h with automation)
-- Total: 6 hours (-62.5% time)
+- Total - 6 hours (-62.5% time)
 - Cost savings: $400-600 per video (at $100/hour developer rate)
 
-At 10 videos/month: 400 hours annually → 150 hours annually (-250 hours)
+At 10 videos/month - 400 hours annually → 150 hours annually (-250 hours)
 
 Troubleshooting
 

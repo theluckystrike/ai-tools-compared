@@ -27,7 +27,7 @@ The three automation levels:
 2. Script-based extraction. parse routes/models programmatically, send to AI for spec generation
 3. CI drift detection. AI compares spec to current code on each PR
 
-Level 1: One-Shot from Express Routes
+Level 1 - One-Shot from Express Routes
 
 Prompt to Claude:
 
@@ -205,7 +205,7 @@ components:
                 type: string
 ```
 
-Level 2: Automated Pipeline Script
+Level 2 - Automated Pipeline Script
 
 Script that extracts all routes and sends them to Claude in bulk:
 
@@ -293,7 +293,7 @@ if __name__ == "__main__":
         sys.exit(1)
 ```
 
-FastAPI: Augmenting Auto-Generated Docs
+FastAPI - Augmenting Auto-Generated Docs
 
 FastAPI auto-generates OpenAPI from type hints, but the descriptions are empty. Use Claude to enrich them:
 
@@ -339,7 +339,7 @@ async def enrich_docs():
     app.openapi_schema = enriched
 ```
 
-Spring Boot: Extracting from Controllers
+Spring Boot - Extracting from Controllers
 
 Spring Boot's `@RestController` annotations contain more structured information than Express route handlers. Claude can parse the Java code and produce accurate specs:
 
@@ -401,11 +401,11 @@ Comparing Claude vs GPT-4 for Spec Generation
 
 Both tools produce valid OpenAPI YAML, but they differ in two ways:
 
-Schema completeness: Claude tends to infer more response schemas from variable names and comments. If a route returns `{ id, email, createdAt }`, Claude creates a named schema `UserResponse` in `components/schemas`. GPT-4 sometimes inlines the schema directly in the path, which works but reduces reusability.
+Schema completeness - Claude tends to infer more response schemas from variable names and comments. If a route returns `{ id, email, createdAt }`, Claude creates a named schema `UserResponse` in `components/schemas`. GPT-4 sometimes inlines the schema directly in the path, which works but reduces reusability.
 
-Error response handling: Claude consistently generates 401, 403, 404, and 500 responses based on middleware patterns it sees in the code (`authenticate`, `authorize`, etc.). GPT-4 often only generates the happy-path 200/201 unless you explicitly ask for error responses in the prompt.
+Error response handling - Claude consistently generates 401, 403, 404, and 500 responses based on middleware patterns it sees in the code (`authenticate`, `authorize`, etc.). GPT-4 often only generates the happy-path 200/201 unless you explicitly ask for error responses in the prompt.
 
-Prompt tip: Add "Include all error response schemas (400, 401, 403, 404, 422, 500) and use $ref for reusable error schemas" to get GPT-4 closer to Claude's default output quality.
+Prompt tip - Add "Include all error response schemas (400, 401, 403, 404, 422, 500) and use $ref for reusable error schemas" to get GPT-4 closer to Claude's default output quality.
 
 CI Drift Detection
 

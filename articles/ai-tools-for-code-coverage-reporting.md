@@ -105,7 +105,7 @@ def classify_uncovered_lines(
             "role": "user",
             "content": f"""Classify these uncovered code lines by risk category.
 
-File: {filepath}
+File - {filepath}
 
 Uncovered lines (marked with >>>):
 {chr(10).join(uncovered_snippets[:5])}
@@ -117,7 +117,7 @@ For each uncovered section, classify as:
 - LOW: Logging, debug code, UI formatting
 - DEAD_CODE: Code that can never execute (always-false conditions, etc.)
 
-Format: LINE: [number] | CATEGORY: [category] | REASON: [1 sentence why]"""
+Format - LINE: [number] | CATEGORY: [category] | REASON: [1 sentence why]"""
         }]
     )
     return {"analysis": response.content[0].text}
@@ -151,8 +151,8 @@ def generate_coverage_pr_comment(coverage_data: dict) -> str:
             "role": "user",
             "content": f"""Write a concise PR coverage comment for a code review.
 
-Overall coverage: {covered_pct:.1f}%
-Missing statements: {missing_lines} of {num_statements}
+Overall coverage - {covered_pct:.1f}%
+Missing statements - {missing_lines} of {num_statements}
 
 Files below 70% coverage:
 {json.dumps(low_coverage_files[:5], indent=2)}
@@ -196,7 +196,7 @@ def generate_coverage_report(output_format: str = "markdown") -> str:
             "role": "user",
             "content": f"""Write a coverage analysis report for the engineering team.
 
-Overall: {total.get('percent_covered', 0):.1f}% coverage
+Overall - {total.get('percent_covered', 0):.1f}% coverage
 ({total.get('num_statements', 0)} statements, {total.get('missing_lines', 0)} uncovered)
 
 File analyses:
@@ -367,21 +367,21 @@ Not all AI tools handle coverage analysis equally well. Here is how the major op
 
 Claude (via Anthropic API)
 
-Best for: classifying uncovered code by risk, writing narrative explanations, generating targeted test suggestions. Claude is strong at reading code context and explaining what a block of uncovered code actually does. error handling, security guard, dead code. which is the core value add for coverage analysis.
+Best for - classifying uncovered code by risk, writing narrative explanations, generating targeted test suggestions. Claude is strong at reading code context and explaining what a block of uncovered code actually does. error handling, security guard, dead code. which is the core value add for coverage analysis.
 
-Weakness: you need to build the integration yourself and manage API costs. At scale (large monorepos with thousands of files), analyzing every uncovered line on every PR gets expensive.
+Weakness - you need to build the integration yourself and manage API costs. At scale (large monorepos with thousands of files), analyzing every uncovered line on every PR gets expensive.
 
 GitHub Copilot
 
-Best for: inline test suggestions while writing code. Copilot's chat mode can suggest tests for the function you are editing right now, which is useful during development but not helpful for a bulk coverage analysis.
+Best for - inline test suggestions while writing code. Copilot's chat mode can suggest tests for the function you are editing right now, which is useful during development but not helpful for a bulk coverage analysis.
 
-Weakness: no programmatic API for batch analysis. You cannot pipe a coverage JSON report into Copilot and get a structured risk assessment out.
+Weakness - no programmatic API for batch analysis. You cannot pipe a coverage JSON report into Copilot and get a structured risk assessment out.
 
 OpenAI GPT-4
 
-Best for: teams already in the OpenAI ecosystem who want to avoid adding another vendor. GPT-4 produces similar quality output to Claude for this use case.
+Best for - teams already in the OpenAI environment who want to avoid adding another vendor. GPT-4 produces similar quality output to Claude for this use case.
 
-Weakness: slightly more prone to hallucinating test names and function signatures compared to Claude, particularly for non-Python languages.
+Weakness - slightly more prone to hallucinating test names and function signatures compared to Claude, particularly for non-Python languages.
 
 Practical Recommendation
 
@@ -415,9 +415,9 @@ def estimate_coverage_debt(coverage_data: dict, target_pct: float = 90.0) -> str
             "role": "user",
             "content": f"""Estimate coverage debt for a software team.
 
-Current coverage: {current_pct:.1f}% ({missing_lines} uncovered statements)
-Target: {target_pct}%
-Lines that need tests: ~{lines_needed}
+Current coverage - {current_pct:.1f}% ({missing_lines} uncovered statements)
+Target - {target_pct}%
+Lines that need tests - ~{lines_needed}
 
 Assume:
 - Simple unit tests: 15-20 min each, covers 3-8 lines

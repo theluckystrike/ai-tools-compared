@@ -16,17 +16,17 @@ intent-checked: true
 Table of Contents
 
 - [Why Self-Hosted OpenAPI Generation Matters](#why-self-hosted-openapi-generation-matters)
-- [The Self-Hosted ecosystem in 2026](#the-self-hosted-ecosystem-in-2026)
+- [The Self-Hosted environment in 2026](#the-self-hosted-environment-in-2026)
 - [Setting Up Ollama for OpenAPI Generation](#setting-up-ollama-for-openapi-generation)
-- [Practical Example: Python FastAPI to OpenAPI](#practical-example-python-fastapi-to-openapi)
-- [Alternative: Using LocalAI with Custom Endpoints](#alternative-using-localai-with-custom-endpoints)
+- [Practical Example - Python FastAPI to OpenAPI](#practical-example-python-fastapi-to-openapi)
+- [Alternative - Using LocalAI with Custom Endpoints](#alternative-using-localai-with-custom-endpoints)
 - [Comparing Self-Hosted Performance](#comparing-self-hosted-performance)
 - [Best Practices for Accurate Spec Generation](#best-practices-for-accurate-spec-generation)
 - [When Self-Hosted Makes Sense](#when-self-hosted-makes-sense)
 - [Implementation Checklist](#implementation-checklist)
-- [Advanced: Running GPU-Accelerated Inference](#advanced-running-gpu-accelerated-inference)
+- [Advanced - Running GPU-Accelerated Inference](#advanced-running-gpu-accelerated-inference)
 - [Workflow Integration with LLM Tools](#workflow-integration-with-llm-tools)
-- [Comparison: Self-Hosted vs Cloud for OpenAPI Generation](#comparison-self-hosted-vs-cloud-for-openapi-generation)
+- [Comparison - Self-Hosted vs Cloud for OpenAPI Generation](#comparison-self-hosted-vs-cloud-for-openapi-generation)
 - [Validating Generated Specs](#validating-generated-specs)
 - [Multi-Model Strategy](#multi-model-strategy)
 
@@ -36,7 +36,7 @@ When you're building APIs in regulated industries, handling proprietary code, or
 
 Self-hosted AI tools for generating OpenAPI specs solve this problem by running inference locally or on your own infrastructure. You get the productivity benefits of AI-assisted spec generation without the data exposure risk.
 
-The Self-Hosted ecosystem in 2026
+The Self-Hosted environment in 2026
 
 Running capable language models locally has become surprisingly accessible. The key options for self-hosted OpenAPI spec generation fall into three categories.
 
@@ -85,7 +85,7 @@ curl -X POST http://localhost:11434/api/generate -d '{
 
 The key to good results is crafting precise prompts that specify the output format you need. Include examples of the code patterns you want analyzed and explicitly request YAML output.
 
-Practical Example: Python FastAPI to OpenAPI
+Practical Example - Python FastAPI to OpenAPI
 
 FastAPI actually generates OpenAPI specs natively, but let's show how a self-hosted LLM can enhance this or work with frameworks that lack this capability.
 
@@ -147,7 +147,7 @@ async def update_user(user_id: str, update: UserUpdate):
 
 A self-hosted LLM can analyze this code and generate enhanced documentation, add description fields, suggest example values, or generate specs for frameworks that don't support automatic generation like FastAPI does.
 
-Alternative: Using LocalAI with Custom Endpoints
+Alternative - Using LocalAI with Custom Endpoints
 
 LocalAI offers a more feature-rich alternative with an OpenAI-compatible API:
 
@@ -250,7 +250,7 @@ What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-Advanced: Running GPU-Accelerated Inference
+Advanced - Running GPU-Accelerated Inference
 
 For teams generating OpenAPI specs regularly, GPU acceleration dramatically improves performance. Here's how to run LocalAI on a cloud GPU instance:
 
@@ -302,7 +302,7 @@ Add this to your pre-commit hook to catch spec errors before they reach CI:
 git add src/specs/
 ```
 
-Comparison: Self-Hosted vs Cloud for OpenAPI Generation
+Comparison - Self-Hosted vs Cloud for OpenAPI Generation
 
 | Dimension | Self-Hosted | Cloud (OpenAI) | Hybrid |
 |-----------|------------|--------|--------|

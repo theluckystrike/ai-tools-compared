@@ -32,7 +32,7 @@ tags: [ai-tools-compared, comparison]
 ---
 
 
-- Choose Gemini Imagen if: you prioritize photorealistic detail in complex scenes, human portrait generation, and integration with the Google Cloud ecosystem.
+- Choose Gemini Imagen if: you prioritize photorealistic detail in complex scenes, human portrait generation, and integration with the Google Cloud environment.
 - DALL-E 3 wins on: ease of use and stylistic control, while Imagen produces superior photorealistic output with more accurate lighting and shadow physics.
 - The supported ratios include 1:1: 9:16, 16:9, 4:3, and 3:4, making it easier to generate images for specific layout requirements without post-processing crops that reduce effective resolution.
 - DALL-E 3 typically produces: standard quality images in 5-10 seconds, while HD quality extends to 15-25 seconds.
@@ -41,7 +41,7 @@ tags: [ai-tools-compared, comparison]
 
 Introduction
 
-Choose DALL-E 3 if you need reliable text rendering in images, artistic style accuracy, and predictable per-image pricing starting at $0.04. Choose Gemini Imagen if you prioritize photorealistic detail in complex scenes, human portrait generation, and integration with the Google Cloud ecosystem. DALL-E 3 wins on ease of use and stylistic control, while Imagen produces superior photorealistic output with more accurate lighting and shadow physics.
+Choose DALL-E 3 if you need reliable text rendering in images, artistic style accuracy, and predictable per-image pricing starting at $0.04. Choose Gemini Imagen if you prioritize photorealistic detail in complex scenes, human portrait generation, and integration with the Google Cloud environment. DALL-E 3 wins on ease of use and stylistic control, while Imagen produces superior photorealistic output with more accurate lighting and shadow physics.
 
 Understanding the Models
 
@@ -139,7 +139,7 @@ for generated_image in response.generated_images:
     print(generated_image.image.image_bytes)
 ```
 
-Imagen's integration with the broader Gemini ecosystem provides advantages if you're already using Gemini for text or multimodal tasks. Unified billing and authentication simplify management for Google Cloud users.
+Imagen's integration with the broader Gemini environment provides advantages if you're already using Gemini for text or multimodal tasks. Unified billing and authentication simplify management for Google Cloud users.
 
 Imagen's `aspect_ratio` parameter gives it a practical edge for applications that need non-square outputs. The supported ratios include 1:1, 9:16, 16:9, 4:3, and 3:4, making it easier to generate images for specific layout requirements without post-processing crops that reduce effective resolution.
 
@@ -219,7 +219,7 @@ Choose Gemini Imagen when:
 
 - Complex scene composition is needed
 
-- You're already invested in the Google Cloud ecosystem
+- You're already invested in the Google Cloud environment
 
 - Human portrait generation is necessary
 
@@ -244,7 +244,7 @@ Gemini Imagen strengths:
 Example prompt that shows the difference:
 
 ```
-Prompt: "A cozy coffee shop in the style of Studio Ghibli"
+Prompt - "A cozy coffee shop in the style of Studio Ghibli"
 
 DALL-E 3 output:
 - Interprets artistic style broadly, creates whimsical atmosphere
@@ -353,7 +353,7 @@ def generate_product_images(product_data):
 
     for product in product_data:
         prompt = f"Product photography of {product['name']}. " \
-                f"Style: {product['style']}. " \
+                f"Style - {product['style']}. " \
                 f"Background: {product['background']}"
 
         response = client.images.generate(

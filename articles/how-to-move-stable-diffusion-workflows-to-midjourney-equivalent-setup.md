@@ -29,20 +29,20 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Platform Differences
+Step 1 - Understand the Platform Differences
 
 Stable Diffusion gives you complete control over the generation process. You can modify models, embed custom embeddings, and fine-tune every parameter through APIs like Automatic1111 or ComfyUI. Midjourney abstracts much of this complexity, focusing on producing high-quality results through its curated model versions and Discord-based interface.
 
 The key challenge lies in translating your existing Stable Diffusion prompts, Loras, and workflow patterns into Midjourney's equivalent functionality. This involves understanding how prompt weighting, style modifiers, and generation parameters map between the two systems.
 
-Step 2: Converting Stable Diffusion Prompts to Midjourney Syntax
+Step 2 - Converting Stable Diffusion Prompts to Midjourney Syntax
 
 One of the first hurdles you'll face is converting your existing Stable Diffusion prompts. Midjourney uses a different syntax for specifying weights and parameters. Here's a Python tool that helps automate this conversion:
 
 ```python
 #!/usr/bin/env python3
 """
-Prompt converter: Stable Diffusion to Midjourney syntax
+Prompt converter - Stable Diffusion to Midjourney syntax
 Converts SD-style prompts to Midjourney-compatible format.
 """
 
@@ -109,7 +109,7 @@ def convert_lora_reference(lora_string: str) -> str:
 
 if __name__ == "__main__":
     # Example usage
-    sd_example = "a beautiful landscape with mountains, (sunset:1.2), [ugly, deformed]"
+    sd_example = "a beautiful field with mountains, (sunset:1.2), [ugly, deformed]"
 
     mj_prompt = convert_sd_to_mj_prompt(sd_example)
     print(f"SD Prompt: {sd_example}")
@@ -123,7 +123,7 @@ chmod +x prompt_converter.py
 python3 prompt_converter.py
 ```
 
-Step 3: Create Equivalent Workflow Configurations
+Step 3 - Create Equivalent Workflow Configurations
 
 Your Stable Diffusion workflows likely use config files to manage model paths, VAE settings, and sampling parameters. Here's how to create equivalent configurations for Midjourney through Discord bot commands:
 
@@ -164,7 +164,7 @@ style_presets:
   photographic: "--photo"
 ```
 
-Step 4: Build a Batch Migration Pipeline
+Step 4 - Build a Batch Migration Pipeline
 
 When migrating large prompt libraries, you'll want a batch processing solution. This Bash script processes directories of prompts and converts them systematically:
 
@@ -198,7 +198,7 @@ for prompt_file in "$INPUT_DIR"/*.txt; do
             fi
         done < "$prompt_file"
 
-        echo "Converted: $filename -> ${filename%.txt}_mj.txt" >> "$LOG_FILE"
+        echo "Converted - $filename -> ${filename%.txt}_mj.txt" >> "$LOG_FILE"
     fi
 done
 
@@ -213,14 +213,14 @@ chmod +x batch_convert.sh
 ./batch_convert.sh
 ```
 
-Step 5: Set Up Equivalent Image Processing
+Step 5 - Set Up Equivalent Image Processing
 
 Stable Diffusion often uses img2img for variations and inpainting. Midjourney handles these through different parameters and the Discord interface. Here's how to map these workflows:
 
 ```python
 #!/usr/bin/env python3
 """
-Image processing equivalents: SD img2img -> Midjourney
+Image processing equivalents - SD img2img -> Midjourney
 Maps Stable Diffusion image-to-image workflows to Midjourney pan/zoom/vary.
 """
 
@@ -301,7 +301,7 @@ if __name__ == "__main__":
     print(f"MJ: {mj_result}")
 ```
 
-Step 6: Manage Workflow State and History
+Step 6 - Manage Workflow State and History
 
 Unlike Stable Diffusion's local file-based workflow storage, Midjourney stores job history in Discord. Here's a Python class for tracking your migrated workflows:
 
@@ -384,18 +384,18 @@ if __name__ == "__main__":
 
     # Add a migrated job
     tracker.add_job(
-        prompt="a mountain landscape at sunset::1.2 --ar 16:9 --v 6",
+        prompt="a mountain field at sunset::1.2 --ar 16:9 --v 6",
         job_id="123456789012345678",
         seed=42,
-        sd_source="a beautiful mountain landscape, sunset, highly detailed"
+        sd_source="a beautiful mountain field, sunset, highly detailed"
     )
 
     # Find similar prompts
-    similar = tracker.find_similar("mountain landscape")
+    similar = tracker.find_similar("mountain field")
     print(f"Found {len(similar)} similar prompts")
 ```
 
-Step 7: Practical Migration Checklist
+Step 7 - Practical Migration Checklist
 
 Use this checklist when moving your workflows:
 

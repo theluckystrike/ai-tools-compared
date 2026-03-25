@@ -188,11 +188,11 @@ When describing SSL errors to AI tools, include these details:
 Example prompt structure:
 
 ```
-Node.js version: 20.11.0
-Operating System: Ubuntu 22.04
-Error: UNABLE_TO_VERIFY_LEAF_SIGNATURE
-Target URL: https://api.example.com:443
-Context: Working yesterday, broke after server update
+Node.js version - 20.11.0
+Operating System - Ubuntu 22.04
+Error - UNABLE_TO_VERIFY_LEAF_SIGNATURE
+Target URL - https://api.example.com:443
+Context - Working yesterday, broke after server update
 
 I've tried:
 - Updating Node.js
@@ -345,12 +345,12 @@ AI tools accelerate SSL debugging because they can correlate error codes with en
 When prompting AI tools, always include:
 
 ```
-Error: UNABLE_TO_VERIFY_LEAF_SIGNATURE
-Node.js version: node -v output
+Error - UNABLE_TO_VERIFY_LEAF_SIGNATURE
+Node.js version - node -v output
 OS: uname -a output
-Is Docker involved: yes/no
-Is there a corporate proxy/VPN: yes/no
-When did it start failing: after what change
+Is Docker involved - yes/no
+Is there a corporate proxy/VPN - yes/no
+When did it start failing - after what change
 ```
 
 The more environmental context you provide, the more specific the AI's diagnosis. A prompt that says "SSL error in Node.js" generates generic documentation. A prompt with full context generates targeted commands for your exact environment.
@@ -363,14 +363,14 @@ Docker containers are a common SSL debugging context. Node.js Docker images base
 node:alpine: minimal CA bundle. often missing enterprise or newer CAs
 FROM node:20-alpine
 
-Fix 1: Update the CA bundle
+Fix 1 - Update the CA bundle
 RUN apk add --no-cache ca-certificates && update-ca-certificates
 
-Fix 2: Add a specific internal CA certificate
+Fix 2 - Add a specific internal CA certificate
 COPY certs/internal-root-ca.crt /usr/local/share/ca-certificates/internal-root-ca.crt
 RUN update-ca-certificates
 
-Fix 3: Point Node.js to the system CA bundle
+Fix 3 - Point Node.js to the system CA bundle
 ENV NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
 
 WORKDIR /app

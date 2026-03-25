@@ -31,7 +31,7 @@ Tasks tested:
 
 ---
 
-Test 1: Coroutines. Idiomatic vs Technically Correct
+Test 1 - Coroutines. Idiomatic vs Technically Correct
 
 Prompt:
 ```
@@ -107,12 +107,12 @@ For production Kotlin code, Claude's output is significantly safer.
 
 ---
 
-Test 2: Sealed Class Domain Modeling
+Test 2 - Sealed Class Domain Modeling
 
 Prompt:
 ```
 Model a payment processing domain with sealed classes.
-States: Pending, Processing, Succeeded, Failed, Refunded.
+States - Pending, Processing, Succeeded, Failed, Refunded.
 Include transition functions that return the next valid state or an error.
 ```
 
@@ -207,7 +207,7 @@ GPT-4 generated a similar structure but used an `enum class` for state names ins
 
 ---
 
-Test 3: Spring Boot Suspend Controller
+Test 3 - Spring Boot Suspend Controller
 
 Prompt:
 ```

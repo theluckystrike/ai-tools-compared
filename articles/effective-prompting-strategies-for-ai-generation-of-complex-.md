@@ -96,15 +96,15 @@ Chain Complex Queries into Steps
 
 For multi-step analysis, break your request into sequential prompts rather than asking for everything at once.
 
-Step 1: Get the base aggregation
+Step 1 - Get the base aggregation
 
 > "First, write a query that joins orders to customers and calculates monthly revenue by customer segment"
 
-Step 2: Add the comparison logic
+Step 2 - Add the comparison logic
 
 > "Now modify that query to show each segment's percentage of total revenue"
 
-Step 3: Add time-based ranking
+Step 3 - Add time-based ranking
 
 > "Add a rank column ordering segments by revenue within each month"
 

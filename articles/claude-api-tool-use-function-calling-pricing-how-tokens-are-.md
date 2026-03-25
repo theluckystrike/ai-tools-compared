@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Tool Use Works in Claude API
+Step 1 - How Tool Use Works in Claude API
 
 Tool use (also called function calling) allows Claude to request that your application execute specific functions and return the results back to the model. This creates a powerful loop where the AI can gather real-time information, perform calculations, or manipulate external data.
 
@@ -83,7 +83,7 @@ for block in message.content:
         print(f"Input: {tool_input}")
 ```
 
-Step 2: Token Counting for Tool Use
+Step 2 - Token Counting for Tool Use
 
 Token counting with tool use follows the same principles as standard API calls, but there are specific considerations for each phase of the interaction. Understanding these details helps you estimate costs accurately.
 
@@ -121,7 +121,7 @@ def get_weather(location):
     }
 ```
 
-Step 3: Pricing Structure
+Step 3 - Pricing Structure
 
 Anthropic's API pricing follows a per-token model. As of 2026, the pricing tiers differ by model:
 
@@ -155,7 +155,7 @@ To estimate costs for a typical tool-using conversation, consider this scenario:
 
 7. Final response: 60 output tokens
 
-Total: 700 input tokens + 235 output tokens at Sonnet pricing = approximately $0.0077 per conversation.
+Total - 700 input tokens + 235 output tokens at Sonnet pricing = approximately $0.0077 per conversation.
 
 Best Practices for Cost Management
 
@@ -169,7 +169,7 @@ Cache tool definitions when possible. If you're using the same tools across many
 
 Truncate tool results strategically. After executing a tool, you can truncate or summarize the results before returning them to the model if you don't need every detail. This reduces input tokens for subsequent requests.
 
-Step 4: Common Implementation Patterns
+Step 4 - Common Implementation Patterns
 
 For developers building production systems, certain patterns emerge as most effective:
 
@@ -192,11 +192,11 @@ def execute_tool(tool_name, tool_input):
         return {"error": str(e)}
 ```
 
-Step 5: Real-World Cost Calculations
+Step 5 - Real-World Cost Calculations
 
-Scenario 1: Weather Assistant (Simple Tool Use)
+Scenario 1 - Weather Assistant (Simple Tool Use)
 
-User asks: "What's the weather in New York and San Francisco?"
+User asks - "What's the weather in New York and San Francisco?"
 
 Token flow:
 ```
@@ -207,15 +207,15 @@ Token flow:
 5. Tool 2 returns: {"temp": 65, "condition": "cloudy"} = 20 tokens (input)
 6. Final response = 60 tokens (output)
 
-Total: 160 input + 105 output tokens
-Cost on Sonnet: (160 × $0.003) + (105 × $0.015) = $0.48 + $1.575 = $2.055
+Total - 160 input + 105 output tokens
+Cost on Sonnet - (160 × $0.003) + (105 × $0.015) = $0.48 + $1.575 = $2.055
 
-Monthly (1000 such queries): ~$2,055
+Monthly (1000 such queries) - ~$2,055
 ```
 
-Scenario 2: Database Query Tool (Complex Tool Use)
+Scenario 2 - Database Query Tool (Complex Tool Use)
 
-User asks: "Show me customers who spent over $1000 in the last month"
+User asks - "Show me customers who spent over $1000 in the last month"
 
 Token flow:
 ```
@@ -226,15 +226,15 @@ Token flow:
 5. Tool returns result set (10 customers with details): 150 tokens (input)
 6. Claude formats response: 100 tokens (output)
 
-Total: 680 input + 180 output tokens
-Cost on Sonnet: (680 × $0.003) + (180 × $0.015) = $2.04 + $2.70 = $4.74
+Total - 680 input + 180 output tokens
+Cost on Sonnet - (680 × $0.003) + (180 × $0.015) = $2.04 + $2.70 = $4.74
 
-Monthly (500 such queries): ~$2,370
+Monthly (500 such queries) - ~$2,370
 ```
 
-Scenario 3: Multi-Step Data Analysis (Extended Tool Use)
+Scenario 3 - Multi-Step Data Analysis (Extended Tool Use)
 
-User: "Which product categories have declining revenue this quarter? Analyze trends."
+User - "Which product categories have declining revenue this quarter? Analyze trends."
 
 Token flow:
 ```
@@ -247,35 +247,35 @@ Round 2 - Process data:
 Round 3 - Generate insights:
   Input: 200 (more tool results) | Output: 150 (final analysis)
 
-Total: 950 input + 360 output tokens
-Cost on Sonnet: (950 × $0.003) + (360 × $0.015) = $2.85 + $5.40 = $8.25
+Total - 950 input + 360 output tokens
+Cost on Sonnet - (950 × $0.003) + (360 × $0.015) = $2.85 + $5.40 = $8.25
 
-Monthly (200 such queries): ~$1,650
+Monthly (200 such queries) - ~$1,650
 ```
 
-Step 6: Comparing Tool Use to Direct API Calls
+Step 6 - Comparing Tool Use to Direct API Calls
 
-Option 1: Tool Use Approach (with Claude)
+Option 1 - Tool Use Approach (with Claude)
 - Claude decides which tools to use
 - You pay for all tool definitions as input tokens
 - Results included in conversation
 - More flexible, handles unpredictable workflows
 
-Cost per complex query: $0.008 - $0.015
+Cost per complex query - $0.008 - $0.015
 
-Option 2: Direct API Approach (without tool use)
+Option 2 - Direct API Approach (without tool use)
 - Your application handles all logic, no tool definitions
 - Claude provides text responses only
 - Lighter token overhead
 - Less flexible, harder to integrate with external systems
 
-Cost per query: $0.003 - $0.006
+Cost per query - $0.003 - $0.006
 
 Tool use becomes cost-effective when you need Claude to make intelligent decisions about which APIs to call. If you always call the same APIs in the same order, direct API calls are cheaper.
 
-Step 7: Optimization Strategies for Tool Use
+Step 7 - Optimization Strategies for Tool Use
 
-Strategy 1: Cache Tool Definitions
+Strategy 1 - Cache Tool Definitions
 Tool definitions can be cached using Claude's prompt caching feature, reducing repeated input costs:
 
 ```python
@@ -311,10 +311,10 @@ response = client.messages.create(
 )
 
 Subsequent calls with same tools pay only 10% of definition tokens
-Savings: 70% reduction on repeated tool definition costs
+Savings - 70% reduction on repeated tool definition costs
 ```
 
-Strategy 2: Return Minimal Tool Results
+Strategy 2 - Return Minimal Tool Results
 After each tool execution, return only essential data:
 
 ```python
@@ -336,7 +336,7 @@ def get_customer(customer_id):
     # Returns 35 tokens (7x reduction)
 ```
 
-Strategy 3: Use Smaller Models for Simple Tools
+Strategy 3 - Use Smaller Models for Simple Tools
 For straightforward tool use (fetch data, return result), use Haiku instead of Opus:
 
 ```python
@@ -355,7 +355,7 @@ response = client.messages.create(
 )
 ```
 
-Step 8: Monitor Tool Use Costs
+Step 8 - Monitor Tool Use Costs
 
 Track your actual tool use spending:
 
@@ -376,7 +376,7 @@ def track_tool_use_cost(response, model):
     cost = (input_tokens * prices["input"] / 1_000_000) + \
            (output_tokens * prices["output"] / 1_000_000)
 
-    print(f"Tokens: {input_tokens} input + {output_tokens} output = ${cost:.6f}")
+    print(f"Tokens - {input_tokens} input + {output_tokens} output = ${cost:.6f}")
     return cost
 
 Usage
@@ -384,22 +384,22 @@ response = client.messages.create(...)
 cost = track_tool_use_cost(response, "claude-sonnet-4-20250514")
 ```
 
-Step 9: Common Pitfalls That Increase Costs
+Step 9 - Common Pitfalls That Increase Costs
 
-Pitfall 1: Oversized Tool Results
+Pitfall 1 - Oversized Tool Results
 ```python
-BAD: Returns entire table
+BAD - Returns entire table
 def get_products():
     return database.query("SELECT * FROM products")
     # Returns 5000 products × 50 fields = 25,000 tokens
 
-GOOD: Returns filtered set
+GOOD - Returns filtered set
 def get_products(category):
     return database.query(f"SELECT id, name, price FROM products WHERE category = ?", (category,))
     # Returns 100 products × 3 fields = 1,500 tokens
 ```
 
-Pitfall 2: Redundant Tool Calls
+Pitfall 2 - Redundant Tool Calls
 Sometimes Claude calls the same tool twice with slightly different parameters. Implement result caching:
 
 ```python
@@ -414,15 +414,15 @@ def intelligent_tool_call(tool_name, params):
     return result
 ```
 
-Pitfall 3: Excessive Tool Definitions
+Pitfall 3 - Excessive Tool Definitions
 Including 20 tools when only 5 will ever be used wastes tokens on every request.
 
 ```python
-BAD: Define every possible tool upfront
+BAD - Define every possible tool upfront
 tools = [get_user, get_order, get_product, get_inventory,
          get_shipping, get_payment, get_refund, ...]  # 15+ tools
 
-GOOD: Define only tools needed for this request
+GOOD - Define only tools needed for this request
 if request_type == "order_lookup":
     tools = [get_order, get_user]
 elif request_type == "inventory_check":

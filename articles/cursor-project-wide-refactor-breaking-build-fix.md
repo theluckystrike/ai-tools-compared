@@ -67,7 +67,7 @@ Error messages you might see:
 
 - `Cannot find module '@/components/Header'`
 
-- `Module not found: Error: Can't resolve './utils/helpers'`
+- `Module not found: Error - Can't resolve './utils/helpers'`
 
 - `ESM module error: The requested module does not provide an export`
 
@@ -103,7 +103,7 @@ This typically happens when Cursor rewrites package import paths during a rename
 
 Step-by-Step Fix Guide
 
-Step 1: Identify the Scope of Damage
+Step 1 - Identify the Scope of Damage
 
 Before making changes, understand the extent of the refactor damage:
 
@@ -133,7 +133,7 @@ pnpm build 2>&1 | tee build-errors.log
 
 Parse the error log to group errors by type before starting fixes. Fixing all TypeScript errors first, then module errors, prevents you from chasing cascading failures.
 
-Step 2: Fix Import Statements
+Step 2 - Fix Import Statements
 
 Import issues are usually the quickest to resolve. Cursor often misses updating imports when files move or rename.
 
@@ -162,7 +162,7 @@ For TypeScript projects, verify your `tsconfig.json` paths configuration:
 
 If Cursor renamed a directory (for example, `components/ui` to `components/design-system`), you need to update path aliases in `tsconfig.json`, `vite.config.ts`, and `jest.config.js` simultaneously. Missing one of these files is the most common reason a fix seems to work in the editor but still fails at build time.
 
-Step 3: Restore Type Consistency
+Step 3 - Restore Type Consistency
 
 TypeScript errors after refactoring typically stem from:
 
@@ -191,7 +191,7 @@ For complex type hierarchies, run the TypeScript compiler directly rather than t
 npx tsc --noEmit 2>&1 | head -60
 ```
 
-Step 4: Clean and Rebuild
+Step 4 - Clean and Rebuild
 
 Cached files often cause false positives after refactoring:
 
@@ -212,7 +212,7 @@ rm -rf build  # Create React App
 
 After clearing caches, rebuild incrementally when possible. For Vite projects, run `vite build --watch` temporarily to see errors as they occur file by file. For Next.js, `next build` with `--debug` flag shows which pages are failing and why.
 
-Step 5: Fix Configuration Files
+Step 5 - Fix Configuration Files
 
 Build configurations often reference old names. Check these common files:
 

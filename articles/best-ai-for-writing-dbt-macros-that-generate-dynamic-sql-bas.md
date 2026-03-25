@@ -108,7 +108,7 @@ Limitations:
 
 Practical Examples
 
-Example 1: Dynamic Column Selection Macro
+Example 1 - Dynamic Column Selection Macro
 
 A common dbt use case involves generating SQL that selects columns dynamically based on configuration:
 
@@ -129,7 +129,7 @@ A common dbt use case involves generating SQL that selects columns dynamically b
 
 Claude Code consistently generates cleaner Jinja loops and conditionals for this type of macro. It also suggests adding type handling and null checks that Copilot often misses.
 
-Example 2: Configuration-Driven Table Creation
+Example 2 - Configuration-Driven Table Creation
 
 When creating tables based on configuration YAML:
 
@@ -157,7 +157,7 @@ When creating tables based on configuration YAML:
 
 For this pattern, Claude Code's suggestions for handling the comma placement between columns and managing the loop logic are particularly accurate. Cursor AI also performs well but may require more manual adjustments to the generated code.
 
-Example 3: Incremental Model with Dynamic Partitions
+Example 3 - Incremental Model with Dynamic Partitions
 
 Configuration-driven incremental logic:
 
@@ -192,7 +192,7 @@ For data engineers working extensively with dbt, Claude Code provides the best b
 
 Cursor AI is an excellent choice if you prefer working within a dedicated IDE with strong project indexing. Its multi-file editing capabilities shine when you need to create interconnected macro sets.
 
-GitHub Copilot remains suitable for simpler macro tasks and teams already invested in the GitHub ecosystem. For straightforward, pattern-based macro generation, it provides acceptable results with minimal setup.
+GitHub Copilot remains suitable for simpler macro tasks and teams already invested in the GitHub environment. For straightforward, pattern-based macro generation, it provides acceptable results with minimal setup.
 
 Advanced dbt Patterns
 
@@ -353,9 +353,9 @@ Team Productivity with dbt Macros
 
 Measuring productivity improvements from using Claude Code for dbt:
 
-Manual macro writing: 45-60 minutes per macro (including testing and optimization)
-With GitHub Copilot: 20-30 minutes (often requires optimization fixes)
-With Claude Code: 10-15 minutes (usually requires minor tweaks only)
+Manual macro writing - 45-60 minutes per macro (including testing and optimization)
+With GitHub Copilot - 20-30 minutes (often requires optimization fixes)
+With Claude Code - 10-15 minutes (usually requires minor tweaks only)
 
 For data teams writing 20+ macros per sprint, the productivity gain is substantial.
 

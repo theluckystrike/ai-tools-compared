@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Diagnosing Bloat Before AI Assistance
+Step 1 - Diagnosing Bloat Before AI Assistance
 
 Before asking AI to optimize a Dockerfile, gather the data it needs:
 
@@ -38,14 +38,14 @@ docker history --human --format "{{.Size}}\t{{.CreatedBy}}" my-app:latest | sort
 Show total image size
 docker images my-app:latest
 
-Dive: interactive layer explorer
+Dive - interactive layer explorer
 brew install dive
 dive my-app:latest
 ```
 
 Feed the `docker history` output to Claude with the Dockerfile. This gives the model concrete evidence of where size is coming from, not just the instructions.
 
-Step 2: Prompt Pattern for Dockerfile Optimization
+Step 2 - Prompt Pattern for Dockerfile Optimization
 
 ```
 Here is my Dockerfile and the layer sizes from `docker history`.
@@ -59,7 +59,7 @@ Optimize it for:
 [paste docker history output]
 ```
 
-Step 3: Node.js: Before and After
+Step 3 - Node.js: Before and After
 
 Before (1.2GB image):
 
@@ -73,7 +73,7 @@ EXPOSE 3000
 CMD ["node", "dist/index.js"]
 ```
 
-Problems: copies all source before installing deps (breaks cache on every file change), uses full Node image (includes build tools), no .dockerignore.
+Problems - copies all source before installing deps (breaks cache on every file change), uses full Node image (includes build tools), no .dockerignore.
 
 After (Claude's rewrite, 187MB):
 
@@ -122,9 +122,9 @@ coverage
 .nyc_output
 ```
 
-Size reduction: 1.2GB → 187MB. Cache hit rate improves because `package.json` changes far less often than source files.
+Size reduction - 1.2GB → 187MB. Cache hit rate improves because `package.json` changes far less often than source files.
 
-Step 4: Python: Multi-Stage with uv
+Step 4 - Python: Multi-Stage with uv
 
 Before (890MB):
 
@@ -140,7 +140,7 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0"]
 After (Claude suggests using uv and slim base, 95MB):
 
 ```dockerfile
-Build stage: install deps with uv (much faster than pip)
+Build stage - install deps with uv (much faster than pip)
 FROM python:3.12-slim AS builder
 RUN pip install uv
 
@@ -151,7 +151,7 @@ RUN uv sync --frozen --no-dev --no-editable
 Runtime stage
 FROM python:3.12-slim AS runtime
 
-Security: non-root user
+Security - non-root user
 RUN groupadd --gid 1001 appgroup && \
     useradd --uid 1001 --gid appgroup --shell /bin/bash --create-home appuser
 
@@ -170,12 +170,12 @@ CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 The `uv sync --frozen` guarantees reproducibility. The separate build/runtime stages eliminate uv itself from the final image.
 
-Step 5: Go: Static Binary
+Step 5 - Go: Static Binary
 
 Go produces statically compiled binaries, enabling the smallest possible images:
 
 ```dockerfile
-Build stage: full Go toolchain
+Build stage - full Go toolchain
 FROM golang:1.23-alpine AS builder
 
 WORKDIR /app
@@ -185,7 +185,7 @@ RUN go mod download
 COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o server ./cmd/server
 
-Runtime: scratch image (no OS at all)
+Runtime - scratch image (no OS at all)
 FROM scratch AS runtime
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /app/server /server
@@ -205,12 +205,12 @@ Size comparison:
 | gcr.io/distroless/static | 5MB + binary |
 | scratch | 0MB + binary |
 
-Step 6: Use Claude to Audit Existing Dockerfiles
+Step 6 - Use Claude to Audit Existing Dockerfiles
 
 Ask Claude to audit without rewriting. useful when you need to understand tradeoffs before committing to changes:
 
 ```
-Audit this Dockerfile for: security issues, layer caching problems,
+Audit this Dockerfile for - security issues, layer caching problems,
 unnecessary size, and any deprecated practices. List findings as
 a numbered list with severity (High/Medium/Low) and the specific
 line number. Do not rewrite the file.
@@ -233,7 +233,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 ```
 
-Step 7: Layer Cache Analysis Workflow
+Step 7 - Layer Cache Analysis Workflow
 
 ```bash
 Build with BuildKit and capture provenance
@@ -245,7 +245,7 @@ Paste build.log content and ask:
  How should I reorder the Dockerfile to maximize cache hits?"
 ```
 
-Step 8: Scanning for Vulnerabilities
+Step 8 - Scanning for Vulnerabilities
 
 After optimizing, scan the final image:
 
@@ -267,7 +267,7 @@ vulnerabilities in my base image. Suggest specific base image
 versions that eliminate the HIGH/CRITICAL findings.
 ```
 
-Step 9: Automate Optimization Checks in CI
+Step 9 - Automate Optimization Checks in CI
 
 ```yaml
 .github/workflows/docker-check.yml

@@ -26,12 +26,12 @@ Table of Contents
 - [Selecting Your Tool](#selecting-your-tool)
 - [Real CLI Commands for Deployment](#real-cli-commands-for-deployment)
 - [Practical Decision Framework](#practical-decision-framework)
-- [Cost Analysis: Build vs. No-Code vs. SaaS](#cost-analysis-build-vs-no-code-vs-saas)
+- [Cost Analysis - Build vs. No-Code vs. SaaS](#cost-analysis-build-vs-no-code-vs-saas)
 - [Advanced SLA Configuration Example](#advanced-sla-configuration-example)
 - [Troubleshooting Common Implementation Issues](#troubleshooting-common-implementation-issues)
 - [Testing Your Helpdesk System](#testing-your-helpdesk-system)
 - [Monitoring and Metrics](#monitoring-and-metrics)
-- [Migration Path: From Manual to Automated](#migration-path-from-manual-to-automated)
+- [Migration Path - From Manual to Automated](#migration-path-from-manual-to-automated)
 
 Understanding No-Code Helpdesk Requirements
 
@@ -112,7 +112,7 @@ Bubble remains powerful for complex helpdesk systems. AI plugins assist with gen
 
 Strengths:
 - Maximum customization flexibility
-- Extensive plugin ecosystem
+- Extensive plugin environment
 - Complex workflow automation
 - Enterprise-grade security options
 
@@ -267,7 +267,7 @@ Choose Bubble if:
 - You need deep API integrations
 - Budget: $100, 500+/month
 
-Cost Analysis: Build vs. No-Code vs. SaaS
+Cost Analysis - Build vs. No-Code vs. SaaS
 
 | Solution | Setup Cost | Monthly Cost | Time to Deploy | Maintenance |
 |----------|-----------|---|------|---|
@@ -275,7 +275,7 @@ Cost Analysis: Build vs. No-Code vs. SaaS
 | No-code (Softr/Glide) | $0, 5k | $30, 150 | 2, 4 weeks | Low |
 | SaaS (Zendesk/Jira) | $0 | $100, 1000 | Days | None |
 
-For fast validation: No-code. For long-term scalability: Mix no-code for MVP, then consider SaaS if feature requirements exceed platform limits.
+For fast validation - No-code. For long-term scalability: Mix no-code for MVP, then consider SaaS if feature requirements exceed platform limits.
 
 Advanced SLA Configuration Example
 
@@ -316,9 +316,9 @@ exports.calculateSLAStatus = async (ticket) => {
 
 Troubleshooting Common Implementation Issues
 
-Issue: SLA calculations are off by timezone
+Issue - SLA calculations are off by timezone
 
-Solution: Store all timestamps in UTC, convert to user's timezone only in display layer.
+Solution - Store all timestamps in UTC, convert to user's timezone only in display layer.
 
 ```python
 Always store in UTC
@@ -329,9 +329,9 @@ user_tz = pytz.timezone(user.timezone)
 display_time = ticket.created_at.astimezone(user_tz)
 ```
 
-Issue: Notifications are too aggressive (alert fatigue)
+Issue - Notifications are too aggressive (alert fatigue)
 
-Solution: Implement escalation levels, only notify when SLA is truly at risk.
+Solution - Implement escalation levels, only notify when SLA is truly at risk.
 
 ```javascript
 // Only escalate when critical
@@ -344,9 +344,9 @@ if (hoursRemaining < 1) {
 }
 ```
 
-Issue: Duplicate ticket creation from simultaneous form submissions
+Issue - Duplicate ticket creation from simultaneous form submissions
 
-Solution: Implement idempotency keys in API calls.
+Solution - Implement idempotency keys in API calls.
 
 ```bash
 Use unique request ID to prevent duplicates
@@ -384,17 +384,17 @@ avg by (priority) (resolution_time_hours)
   and created_at > now - 30d
 ```
 
-Migration Path: From Manual to Automated
+Migration Path - From Manual to Automated
 
-Week 1, 2: Implement basic ticketing in your chosen platform
+Week 1, 2 - Implement basic ticketing in your chosen platform
 
-Week 3, 4: Add SLA automation and notifications
+Week 3, 4 - Add SLA automation and notifications
 
-Week 5, 6: Integrate with Slack/Teams for team adoption
+Week 5, 6 - Integrate with Slack/Teams for team adoption
 
-Week 7, 8: Monitor, refine, iterate based on team feedback
+Week 7, 8 - Monitor, refine, iterate based on team feedback
 
-Month 3+: Consider adding knowledge base, automations for common issues
+Month 3+ - Consider adding knowledge base, automations for common issues
 
 Frequently Asked Questions
 

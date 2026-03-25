@@ -141,7 +141,7 @@ spec:
           query: /analyze?deployment={{args.deployment-id}}&metric=conversion_rate
 ```
 
-In this configuration, the custom AI analysis service evaluates business metrics beyond simple Prometheus queries, providing a more holistic health assessment.
+In this configuration, the custom AI analysis service evaluates business metrics beyond simple Prometheus queries, providing a more complete health assessment.
 
 Full AI Decision Engines
 
@@ -220,7 +220,7 @@ jobs:
         id: ai-analysis
         run: |
           RESULT=$(curl -s -X POST \
-            -H "Authorization: Bearer ${{ secrets.AI_API_KEY }}" \
+            -H "Authorization - Bearer ${{ secrets.AI_API_KEY }}" \
             -d '{"deployment_id": "${{ github.sha }}"}' \
             https://ai-rollback-service.example.com/analyze)
           echo "decision=$RESULT" >> $GITHUB_OUTPUT
@@ -247,13 +247,13 @@ Key Considerations Before Implementation
 
 Before deploying AI rollback decision making, consider several practical factors.
 
-Model Training Requirements: AI models require historical data to learn effective patterns. You'll need sufficient deployment history with labeled outcomes, knowing which deployments succeeded and which required rollback. New systems without historical data may need rule-based fallback mechanisms initially.
+Model Training Requirements - AI models require historical data to learn effective patterns. You'll need sufficient deployment history with labeled outcomes, knowing which deployments succeeded and which required rollback. New systems without historical data may need rule-based fallback mechanisms initially.
 
-False Positive Tolerance: AI systems, like all automated systems, produce false positives. Your team must determine acceptable tolerance levels and establish clear escalation paths when AI recommendations seem incorrect.
+False Positive Tolerance - AI systems, like all automated systems, produce false positives. Your team must determine acceptable tolerance levels and establish clear escalation paths when AI recommendations seem incorrect.
 
-Monitoring Model Performance: Deployments change your system over time. What constitutes "normal" shifts as you add features, scale infrastructure, or change user behavior. Regular model retraining ensures continued accuracy.
+Monitoring Model Performance - Deployments change your system over time. What constitutes "normal" shifts as you add features, scale infrastructure, or change user behavior. Regular model retraining ensures continued accuracy.
 
-Transparency and Logging: Every AI decision should log the underlying data and reasoning. This information proves invaluable for debugging, improving the model, and building organizational confidence in automated decisions.
+Transparency and Logging - Every AI decision should log the underlying data and reasoning. This information proves invaluable for debugging, improving the model, and building organizational confidence in automated decisions.
 
 Frequently Asked Questions
 

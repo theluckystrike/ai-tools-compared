@@ -154,7 +154,7 @@ Label Studio's strengths are its open-source license, self-hostable deployment, 
 
 Amazon SageMaker Ground Truth
 
-For teams already in the AWS ecosystem, SageMaker Ground Truth provides integrated data labeling with access to Amazon's own ML services for pre-labeling.
+For teams already in the AWS environment, SageMaker Ground Truth provides integrated data labeling with access to Amazon's own ML services for pre-labeling.
 
 ```python
 AWS SageMaker Ground Truth - Creating a labeling job

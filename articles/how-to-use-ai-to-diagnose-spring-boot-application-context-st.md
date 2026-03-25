@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Application Context Failures
+Step 1 - Understand Application Context Failures
 
 When a Spring Boot application fails to start, it typically happens during the initialization phase. The Spring container attempts to create and wire all beans defined in your application. If any bean fails to initialize, whether due to missing dependencies, circular references, or configuration problems, the entire context fails to start.
 
 Common failure types include bean creation exceptions, property binding errors, circular dependency issues, and component scanning problems. Each requires a different debugging approach, and AI tools excel at analyzing the specific error patterns to identify the root cause quickly.
 
-Step 2: Capturing the Right Error Information
+Step 2 - Capturing the Right Error Information
 
 Before using AI for diagnosis, gather the complete error output. Run your application and capture the full stack trace. Include any relevant configuration files that might relate to the failure, your application.yml, properties files, or any custom bean configurations.
 
@@ -60,7 +60,7 @@ BindingException: Binding validation errors on spring.datasource
 	Field error in object 'spring.datasource' on field 'password': rejected value [null]
 ```
 
-Step 3: Prompting AI for Effective Diagnosis
+Step 3 - Prompting AI for Effective Diagnosis
 
 The quality of your AI diagnosis depends heavily on how you present the problem. Structure your prompts to include the complete error message, your current Spring Boot version, relevant configuration snippets, and what you've already attempted.
 
@@ -81,7 +81,7 @@ spring:
 What could cause this binding validation error and how do I fix it?
 ```
 
-Step 4: Common Error Patterns and AI Solutions
+Step 4 - Common Error Patterns and AI Solutions
 
 Bean Creation Failures
 
@@ -137,7 +137,7 @@ These errors occur when Spring cannot convert configuration values to the expect
 A typical error looks like:
 
 ```
-BindingException: Failed to bind properties under 'spring.datasource.hikari.maximum-pool-size' to int
+BindingException - Failed to bind properties under 'spring.datasource.hikari.maximum-pool-size' to int
 ```
 
 AI identifies that the value might be a string in your configuration file or that there might be a type mismatch. It will check your configuration:
@@ -151,7 +151,7 @@ spring:
 
 The solution is straightforward, remove the quotes to make it an integer, or ensure proper YAML formatting.
 
-Step 5: Use AI for Configuration Validation
+Step 5 - Use AI for Configuration Validation
 
 AI tools can proactively validate your configuration before you run the application. Paste your application.yml or application.properties content along with your dependencies, and AI will identify potential conflicts.
 
@@ -169,15 +169,15 @@ spring:
 
 AI suggests adding the missing properties or switching to a more appropriate configuration approach.
 
-Step 6: Automate Debugging Workflows
+Step 6 - Automate Debugging Workflows
 
 You can improve your debugging workflow by creating reusable AI prompts for common scenarios. Store prompts that work well for different error types, component scanning failures, transaction management issues, security configuration problems.
 
 When you encounter a new error, adapt the relevant template:
 
 ```
-Spring Boot version: 3.2.1
-Error: [paste error here]
+Spring Boot version - 3.2.1
+Error - [paste error here]
 
 Dependencies:
 - spring-boot-starter-web
@@ -190,7 +190,7 @@ Relevant configuration:
 What's the root cause and how do I fix this?
 ```
 
-Step 7: Preventing Future Context Failures
+Step 7 - Preventing Future Context Failures
 
 AI helps not just with fixing current errors but also with preventing future ones. After resolving an issue, ask AI to review your configuration and suggest improvements that prevent similar problems.
 
@@ -255,7 +255,7 @@ spring:
     url: jdbc:h2:mem:testdb
 
 When running with profile 'dev', which properties win?
-AI clarifies the precedence: profile-specific values override base values
+AI clarifies the precedence - profile-specific values override base values
 ```
 
 The AI identifies property conflicts and explains which takes precedence. It can suggest refactoring to make profiles non-conflicting, moving environment-specific properties into external configuration files rather than bundling them with your application.
@@ -308,7 +308,7 @@ Check startup timing in logs
 
 AI recognizes bottlenecks. For example, if database initialization takes 1.7 seconds, the AI might suggest lazy initialization or async bean creation. If Spring is spending 3.5 seconds loading beans, it might recommend reviewing your component scanning configuration.
 
-Step 8: Test Context Startup in CI
+Step 8 - Test Context Startup in CI
 
 Create a dedicated test that verifies your application context starts without errors:
 

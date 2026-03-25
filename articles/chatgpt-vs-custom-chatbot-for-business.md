@@ -199,7 +199,7 @@ For ChatGPT integration, focus on:
 
 The choice isn't permanent, most organizations start with ChatGPT to learn their actual requirements, then build custom solutions when data privacy, domain specificity, or query volume justifies the engineering investment.
 
-Complete Cost Analysis: ChatGPT vs Custom
+Complete Cost Analysis - ChatGPT vs Custom
 
 Real-world pricing comparison at scale:
 
@@ -214,7 +214,7 @@ Custom Chatbot Model (Llama 2 7B):
 - Fine-tuning (one-time): $2,000-5,000
 - Maintenance: 20 hours/month @ $100/hr = $2,000
 
-Break-even point: ~700,000 queries/month
+Break-even point - ~700,000 queries/month
 ```
 
 For businesses exceeding this threshold, custom solutions become cost-effective.

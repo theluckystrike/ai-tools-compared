@@ -33,7 +33,7 @@ Table of Contents
 - [Why Type Narrowing Errors Intensify in Strict Mode](#why-type-narrowing-errors-intensify-in-strict-mode)
 - [What Makes an AI Assistant Effective for Type Narrowing](#what-makes-an-ai-assistant-effective-for-type-narrowing)
 - [Comparing AI Assistants on Type Narrowing Tasks](#comparing-ai-assistants-on-type-narrowing-tasks)
-- [Practical Example: Fixing Complex Type Narrowing](#practical-example-fixing-complex-type-narrowing)
+- [Practical Example - Fixing Complex Type Narrowing](#practical-example-fixing-complex-type-narrowing)
 - [Recommendations by Use Case](#recommendations-by-use-case)
 - [Advanced Type Narrowing Patterns](#advanced-type-narrowing-patterns)
 - [Measuring Type Safety Improvements](#measuring-type-safety-improvements)
@@ -138,7 +138,7 @@ Codeium focuses on speed and inline suggestions. Its strength is suggesting fixe
 
 However, Codeium's explanations tend to be less detailed than Claude's. It's ideal for developers who prefer suggestions over tutorials.
 
-Practical Example: Fixing Complex Type Narrowing
+Practical Example - Fixing Complex Type Narrowing
 
 Let's examine a scenario that challenges many AI assistants, a function with multiple union types and conditional logic:
 
@@ -172,13 +172,13 @@ All the major assistants recognize this as a discriminated union pattern and sug
 
 Recommendations by Use Case
 
-For learning TypeScript deeply: Claude provides the best explanations and helps you understand the underlying type system.
+For learning TypeScript deeply - Claude provides the best explanations and helps you understand the underlying type system.
 
-For rapid prototyping and speed: Codeium and Copilot offer faster inline suggestions that keep you moving.
+For rapid prototyping and speed - Codeium and Copilot offer faster inline suggestions that keep you moving.
 
-For large refactoring projects: Cursor's project-wide context proves valuable when type narrowing issues span multiple files.
+For large refactoring projects - Cursor's project-wide context proves valuable when type narrowing issues span multiple files.
 
-For team environments: Copilot's integration with GitHub and enterprise features makes it a natural choice for organizations already in the Microsoft ecosystem.
+For team environments - Copilot's integration with GitHub and enterprise features makes it a natural choice for organizations already in the Microsoft environment.
 
 Advanced Type Narrowing Patterns
 

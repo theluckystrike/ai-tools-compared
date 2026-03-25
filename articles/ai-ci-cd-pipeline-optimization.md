@@ -289,19 +289,19 @@ Effective caching strategy for npm
 
 The `hashFiles` key ensures the cache busts only when `package-lock.json` changes, not on every commit. Add a similar cache for your Docker layers, pip packages, or Maven dependencies depending on your stack.
 
-A reasonable target: dependency fetch time under 15 seconds for most commits. If you routinely see 90+ seconds on dependency steps, caching alone will give you a bigger improvement than any AI optimization.
+A reasonable target - dependency fetch time under 15 seconds for most commits. If you routinely see 90+ seconds on dependency steps, caching alone will give you a bigger improvement than any AI optimization.
 
 Measuring the Right Metrics After Optimization
 
 Teams implementing AI pipeline optimization often track the wrong success metrics. Pipeline duration is obvious but incomplete. Track these four instead:
 
-Mean time to feedback (MTTF): How long from push to first test signal? This is what developers actually feel. A 10-minute pipeline where tests start reporting at 2 minutes feels much faster than one that waits 8 minutes before showing any output.
+Mean time to feedback (MTTF) - How long from push to first test signal? This is what developers actually feel. A 10-minute pipeline where tests start reporting at 2 minutes feels much faster than one that waits 8 minutes before showing any output.
 
-Defect escape rate: What percentage of bugs reached production that your test suite should have caught? If AI test selection reduces execution time by 40% but your escape rate doubles, you have made the wrong trade-off.
+Defect escape rate - What percentage of bugs reached production that your test suite should have caught? If AI test selection reduces execution time by 40% but your escape rate doubles, you have made the wrong trade-off.
 
-Pipeline cost per merge: Most CI platforms charge by compute-minute. Track this as an actual dollar figure. A well-optimized pipeline on a large team can save thousands of dollars monthly.
+Pipeline cost per merge - Most CI platforms charge by compute-minute. Track this as an actual dollar figure. A well-optimized pipeline on a large team can save thousands of dollars monthly.
 
-Cache hit rate: A cache hit rate below 70% suggests your cache key strategy needs work. Aim for 85%+ on dependency caches.
+Cache hit rate - A cache hit rate below 70% suggests your cache key strategy needs work. Aim for 85%+ on dependency caches.
 
 Report these four metrics in a weekly digest to your team. Visible numbers create accountability and make the value of optimization work concrete.
 

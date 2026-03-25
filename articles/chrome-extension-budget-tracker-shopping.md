@@ -36,7 +36,7 @@ Shopping smartly in 2026 requires more than just finding good deals, it requires
 
 - Trying to cut 40%: immediately causes the extensions to feel restrictive rather than helpful.
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- Calculate: Do I earn back the membership cost? If it's $99/year but you only cashback $60/year, it's not worth it.
+- Calculate - Do I earn back the membership cost? If it's $99/year but you only cashback $60/year, it's not worth it.
 - These extensions work best: for users who want explicit control over their tracking data and prefer not to rely on automatic detection.
 - Many users find that a combination approach: coupon extension plus spending tracker, provides the most complete picture of their shopping habits.
 - Seeing "$450 saved this: month through coupons and cashback" provides motivation to continue.
@@ -113,13 +113,13 @@ Real-World Usage Scenarios
 
 Consider these practical situations where different extensions excel:
 
-Online Grocery Shopping: Capital One Shopping works particularly well for groceries because it tracks prices across multiple grocery websites and alerts you to sales. You can set category budgets and receive notifications when you're approaching your spending limit for the week.
+Online Grocery Shopping - Capital One Shopping works particularly well for groceries because it tracks prices across multiple grocery websites and alerts you to sales. You can set category budgets and receive notifications when you're approaching your spending limit for the week.
 
-Electronics Purchases: Rakuten's cashback shines for larger electronics purchases where even small percentage returns add up significantly. Combined with price tracking features, you can time your purchases for maximum savings.
+Electronics Purchases - Rakuten's cashback shines for larger electronics purchases where even small percentage returns add up significantly. Combined with price tracking features, you can time your purchases for maximum savings.
 
-Subscription Management: Privacy.com virtual cards provide excellent control over recurring charges. Create cards with specific spending limits for each subscription service to prevent unexpected renewals from impacting your budget.
+Subscription Management - Privacy.com virtual cards provide excellent control over recurring charges. Create cards with specific spending limits for each subscription service to prevent unexpected renewals from impacting your budget.
 
-Daily Deals Hunting: Honey's automatic coupon application requires minimal effort, making it ideal for casual shoppers who want savings without actively hunting for deals.
+Daily Deals Hunting - Honey's automatic coupon application requires minimal effort, making it ideal for casual shoppers who want savings without actively hunting for deals.
 
 Getting Started with Budget Tracking Extensions
 
@@ -266,7 +266,7 @@ With optimized stack (all extensions + strategy):
 - Time spent: 15-20 minutes weekly
 - Net monthly savings: ~$400-500
 
-The pattern: More extensions + more engagement = more savings, but with diminishing returns. Most people's optimal point is 2-3 tools configured thoughtfully rather than installing everything.
+The pattern - More extensions + more engagement = more savings, but with diminishing returns. Most people's optimal point is 2-3 tools configured thoughtfully rather than installing everything.
 
 Browser Extension Privacy Manifest V3 Implications
 
@@ -289,7 +289,7 @@ What this means for budget trackers:
 
 When choosing extensions, prefer those officially updated for Manifest V3. They've already solved compatibility issues and tend to be more privacy-conscious.
 
-Automation: Let Extensions Save You Without Effort
+Automation - Let Extensions Save You Without Effort
 
 The best budget tracking uses automation so you don't have to think:
 
@@ -315,34 +315,34 @@ Export your data monthly. Seeing "$450 saved this month through coupons and cash
 
 Common Mistakes That Cost You Money
 
-Mistake 1: Installing too many extensions
+Mistake 1 - Installing too many extensions
 Having 5+ budget tools causes decision paralysis. You check three apps, can't decide which has better deals, and buy anyway. Stick with 2-3 tools maximum.
 
-Mistake 2: Ignoring expiration dates on cashback
+Mistake 2 - Ignoring expiration dates on cashback
 Rakuten cashback can expire. Set phone reminders to transfer to your account monthly.
 
-Mistake 3: Buying things that are "on sale" you wouldn't normally buy
+Mistake 3 - Buying things that are "on sale" you wouldn't normally buy
 Extensions often promote sales aggressively. A 50% discount on something you don't need isn't a saving. Use extensions to find deals on things you already planned to buy.
 
-Mistake 4: Not accounting for membership costs
-Some cashback programs require paid memberships. Calculate: Do I earn back the membership cost? If it's $99/year but you only cashback $60/year, it's not worth it.
+Mistake 4 - Not accounting for membership costs
+Some cashback programs require paid memberships. Calculate - Do I earn back the membership cost? If it's $99/year but you only cashback $60/year, it's not worth it.
 
-Mistake 5: Setting budgets too aggressively
+Mistake 5 - Setting budgets too aggressively
 Extensions work best with realistic budgets. Set your budget based on actual spending (track 2 months first), then adjust 5-10% down. Trying to cut 40% immediately causes the extensions to feel restrictive rather than helpful.
 
 Integrating Budget Tracking Into Your Financial System
 
 Extensions work best as one part of a larger system:
 
-Month 1: Install one extension (Capital One Shopping), use only for coupons. No budget tracking yet.
+Month 1 - Install one extension (Capital One Shopping), use only for coupons. No budget tracking yet.
 
-Month 2: Add budget limits. Start small, set your budget equal to last month's spending, see if the extension helps you notice categories.
+Month 2 - Add budget limits. Start small, set your budget equal to last month's spending, see if the extension helps you notice categories.
 
-Month 3: Add Rakuten or similar for cashback. Now you have coupon + cashback working together.
+Month 3 - Add Rakuten or similar for cashback. Now you have coupon + cashback working together.
 
-Month 4: Add Privacy.com virtual cards for subscription management. Use separate cards for each subscription service.
+Month 4 - Add Privacy.com virtual cards for subscription management. Use separate cards for each subscription service.
 
-Month 5+: Optimize based on data. If you're saving $300/month, great, maintain. If savings are lower than expected, audit which extensions you actually use.
+Month 5+ - Optimize based on data. If you're saving $300/month, great, maintain. If savings are lower than expected, audit which extensions you actually use.
 
 This gradual approach prevents extension overload and lets you develop real habits rather than relying on tool novelty.
 

@@ -258,33 +258,33 @@ Measuring CursorRules Effectiveness
 
 Track these metrics to evaluate your rules:
 
-Rule relevance: Monitor how often Cursor suggests code that violates your rules. If violations happen frequently, the rule isn't clear enough. Refine the language or add examples.
+Rule relevance - Monitor how often Cursor suggests code that violates your rules. If violations happen frequently, the rule isn't clear enough. Refine the language or add examples.
 
-Time to acceptance: Measure how often you accept AI suggestions unchanged vs. modify them. High modification rates indicate rules aren't translating to generated code.
+Time to acceptance - Measure how often you accept AI suggestions unchanged vs. modify them. High modification rates indicate rules aren't translating to generated code.
 
-Consistency across team: If multiple developers use the same `.cursorrules`, track whether generated code is consistent. Inconsistency suggests rules aren't specific enough.
+Consistency across team - If multiple developers use the same `.cursorrules`, track whether generated code is consistent. Inconsistency suggests rules aren't specific enough.
 
-Code review friction: Track how many AI-generated code segments get feedback in code review. Declining feedback over time indicates improving rule clarity.
+Code review friction - Track how many AI-generated code segments get feedback in code review. Declining feedback over time indicates improving rule clarity.
 
 Common CursorRules Mistakes to Avoid
 
-Too vague: "Use best practices" doesn't guide AI. "Use snake_case for database columns, enforce via lowercase() in migrations" does.
+Too vague - "Use best practices" doesn't guide AI. "Use snake_case for database columns, enforce via lowercase() in migrations" does.
 
-Too long: Rules over 500 lines get ignored. Focus on high-impact patterns your team struggles with.
+Too long - Rules over 500 lines get ignored. Focus on high-impact patterns your team struggles with.
 
-Too prescriptive: Don't dictate every variable name. "Name state variables clearly" is weak. "State for feature flags should start with 'is': isMobileMenuOpen, isLoading" is actionable.
+Too prescriptive - Don't dictate every variable name. "Name state variables clearly" is weak. "State for feature flags should start with 'is': isMobileMenuOpen, isLoading" is actionable.
 
-Never updated: Stale rules mislead the AI. Review quarterly and update for new libraries, patterns, or architectural decisions.
+Never updated - Stale rules mislead the AI. Review quarterly and update for new libraries, patterns, or architectural decisions.
 
-Lack of examples: Abstract rules produce abstract code. Include 2-3 inline code examples for every major guideline.
+Lack of examples - Abstract rules produce abstract code. Include 2-3 inline code examples for every major guideline.
 
 Integration with Team Workflow
 
 Make CursorRules a team asset:
 
 1. Version control: Commit `.cursorrules` to git. Review changes like any code.
-2. Documentation: Link to detailed explanation in your wiki for each rule section.
-3. Onboarding: Include CursorRules review in developer onboarding.
+2. Documentation - Link to detailed explanation in your wiki for each rule section.
+3. Onboarding - Include CursorRules review in developer onboarding.
 4. Feedback loop: When code review identifies repeated issues, add a rule addressing that pattern.
 
 This transforms CursorRules from a personal customization into a shared tool for consistent code generation.

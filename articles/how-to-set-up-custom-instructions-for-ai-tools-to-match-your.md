@@ -36,7 +36,7 @@ When AI coding assistants generate code that violates your team's linting rules,
 - Most teams see it: improve from 50, 60% (AI output passing lint without changes) to 85, 95% after one round of instruction refinement based on the patterns that keep failing.
 - The difference between "follow: our coding standards" and listing the actual rule names is the difference between a 40% reduction in lint violations and a 95% reduction.
 - Consider a team that: uses ESLint with the Airbnb configuration and a custom rule requiring specific import ordering.
-- Create a test prompt: ```
+- Create a test prompt - ```
 Generate a React TypeScript component that fetches user data from /api/users/:id and displays the name and email.
 - What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
@@ -56,7 +56,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What to Include in Your Custom Instructions
+Step 1 - What to Include in Your Custom Instructions
 
 Effective AI instructions for coding style are specific, not abstract. The difference between "follow our coding standards" and listing the actual rule names is the difference between a 40% reduction in lint violations and a 95% reduction.
 
@@ -71,7 +71,7 @@ The most impactful categories to document are:
 
 Document these as concrete rules with examples, not general principles. AI assistants respond much better to "use named exports; never use default exports except for page components" than to "follow our export conventions."
 
-Step 2: Set Up Custom Instructions in Popular AI Tools
+Step 2 - Set Up Custom Instructions in Popular AI Tools
 
 Claude Code (and Claude Desktop)
 
@@ -80,26 +80,26 @@ Claude Code respects instructions stored in `CLAUDE.md` files within your projec
 ```
 Project Linting Rules
 
-Step 3: ESLint Configuration
+Step 3 - ESLint Configuration
 This project uses ESLint with the following rules enforced in CI:
 - No unused variables (no-unused-vars: error)
 - Prefer const over let (no-var: error)
 - Enforce import order: built-in → external → relative
 - Maximum line length: 100 characters
 
-Step 4: Prettier Configuration
+Step 4 - Prettier Configuration
 - Use single quotes for strings
 - Trailing commas: es5
 - Print width: 100
 - Tab width: 2 spaces
 
-Step 5: Import Patterns
+Step 5 - Import Patterns
 All imports must use named exports where available. Import ordering:
 1. Node.js built-in (path, fs, etc.)
 2. External packages (React, lodash, etc.)
 3. Relative imports (./, ../)
 
-Step 6: TypeScript Specific
+Step 6 - TypeScript Specific
 - Strict mode enabled
 - No any types allowed
 - Interface over type for public APIs
@@ -176,21 +176,21 @@ ln -s .cursorrules .windsurfrules
 
 This keeps a single source of truth for AI instructions across both editors.
 
-Step 7: Connecting AI Instructions to Your Actual Configuration
+Step 7 - Connecting AI Instructions to Your Actual Configuration
 
 The most effective approach ties AI instructions directly to your actual linting files. Reference specific rules and show concrete examples from your configuration.
 
 For ESLint, extract and include the actual rule names:
 
 ```
-Step 8: ESLint Rules to Enforce
+Step 8 - ESLint Rules to Enforce
 - no-console: error (use logger.info/warn/error instead)
 - no-unused-vars: error
 - import/order: error (groups: [builtin, external, internal])
 - @typescript-eslint/no-explicit-any: error
 - prettier/prettier: error
 
-Step 9: Example Valid Import Block
+Step 9 - Example Valid Import Block
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { apiClient } from '@/lib/api';
@@ -200,7 +200,7 @@ import { User } from '@/types';
 For Prettier, specify exact settings:
 
 ```
-Step 10: Prettier Settings (from .prettierrc)
+Step 10 - Prettier Settings (from .prettierrc)
 {
   "semi": true,
   "singleQuote": true,
@@ -211,9 +211,9 @@ Step 10: Prettier Settings (from .prettierrc)
 }
 ```
 
-You can automate this: write a script that reads your actual `.eslintrc.json` and `.prettierrc` and generates the AI instruction text. Run it as part of your CI pipeline whenever linting config changes, then commit the updated instruction file. This keeps AI instructions in sync with the actual enforced rules without manual maintenance.
+You can automate this - write a script that reads your actual `.eslintrc.json` and `.prettierrc` and generates the AI instruction text. Run it as part of your CI pipeline whenever linting config changes, then commit the updated instruction file. This keeps AI instructions in sync with the actual enforced rules without manual maintenance.
 
-Step 11: Test Your AI Configuration
+Step 11 - Test Your AI Configuration
 
 After setting up custom instructions, verify they work by asking the AI to generate a small code snippet. Check the output against your linting rules.
 
@@ -231,9 +231,9 @@ npm run lint -- --fix src/test-component.tsx
 
 If fixes are applied automatically, your instructions need refinement. The goal is zero output changes when running lint with the `--fix` flag.
 
-Track your lint pass rate over two weeks. Most teams see it improve from 50–60% (AI output passing lint without changes) to 85–95% after one round of instruction refinement based on the patterns that keep failing.
+Track your lint pass rate over two weeks. Most teams see it improve from 50, 60% (AI output passing lint without changes) to 85, 95% after one round of instruction refinement based on the patterns that keep failing.
 
-Step 12: Centralizing Team Rules
+Step 12 - Centralizing Team Rules
 
 For teams with multiple projects sharing similar standards, consider creating a shared configuration package. This package contains your linting rules, and both your AI instructions and project configs reference it.
 
@@ -254,7 +254,7 @@ This project extends @yourteam/eslint-config. See
 detailed rules and examples.
 ```
 
-Step 13: Maintaining Consistency
+Step 13 - Maintaining Consistency
 
 Review and update your AI instructions when you update your linting configuration. Treat AI instructions as version-controlled documentation that evolves with your project standards.
 

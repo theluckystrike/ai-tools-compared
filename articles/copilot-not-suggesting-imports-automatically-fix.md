@@ -56,7 +56,7 @@ If you are behind a corporate proxy, confirm that `api.github.com` and `copilot-
 Step-by-Step Fixes
 
 
-Fix 1: Verify Copilot is Enabled
+Fix 1 - Verify Copilot is Enabled
 
 
 First, ensure Copilot is turned on in your editor:
@@ -74,7 +74,7 @@ First, ensure Copilot is turned on in your editor:
 If Copilot is disabled, toggle it on and restart your editor.
 
 
-Fix 2: Check Language-Specific Settings
+Fix 2 - Check Language-Specific Settings
 
 
 Copilot behavior can vary by programming language. Verify that the relevant language is enabled:
@@ -90,7 +90,7 @@ Copilot behavior can vary by programming language. Verify that the relevant lang
 The Copilot `settings.json` section uses language identifiers that must match exactly. Python is `python`, not `Python` or `py`. TypeScript React files use `typescriptreact`. If you see import suggestions working in `.ts` files but not `.tsx` files, this is almost always the cause.
 
 
-Fix 3: Update Copilot and Your Editor
+Fix 3 - Update Copilot and Your Editor
 
 
 Outdated versions often cause unexpected behavior. Update both:
@@ -103,7 +103,7 @@ Outdated versions often cause unexpected behavior. Update both:
 - Restart your editor after updating
 
 
-Fix 4: Clear Copilot Cache
+Fix 4 - Clear Copilot Cache
 
 
 Cached data can become corrupted and interfere with suggestions:
@@ -124,7 +124,7 @@ Cached data can become corrupted and interfere with suggestions:
 4. Reopen your editor and sign in to Copilot again
 
 
-Fix 5: Adjust Editor Settings
+Fix 5 - Adjust Editor Settings
 
 
 Certain editor settings can conflict with Copilot functionality:
@@ -156,7 +156,7 @@ Certain editor settings can conflict with Copilot functionality:
 If `editor.inlineSuggest.enabled` is false, Copilot will generate suggestions internally but will never render them in the editor. This is the single most common cause of "invisible" Copilot suggestions, the AI is working, but the rendering layer is suppressed.
 
 
-Fix 6: Check Your Internet Connection
+Fix 6 - Check Your Internet Connection
 
 
 Copilot requires an active internet connection to function properly. Verify your connection by:
@@ -172,7 +172,7 @@ Copilot requires an active internet connection to function properly. Verify your
 For corporate environments, you may need to configure a proxy. Set the `http.proxy` setting in VS Code to your proxy URL and ensure your network administrator has whitelisted the Copilot endpoint domains.
 
 
-Fix 7: Re-authenticate Copilot
+Fix 7 - Re-authenticate Copilot
 
 
 Authentication issues can prevent Copilot from functioning correctly:
@@ -190,7 +190,7 @@ Authentication issues can prevent Copilot from functioning correctly:
 GitHub tokens expire after a set period, and stale tokens cause silent failures. Re-authenticating generates a fresh token and clears the stale credential from the system keychain.
 
 
-Fix 8: Review File Context
+Fix 8 - Review File Context
 
 
 Copilot needs sufficient context to make accurate suggestions:
@@ -206,7 +206,7 @@ Copilot needs sufficient context to make accurate suggestions:
 Copilot also performs better when your file already has some content. A completely empty file gives the model very little to work with. Type a comment describing what the file does, or add the first few function signatures, and import suggestions will appear more reliably.
 
 
-Fix 9: Check Workspace Exclusions
+Fix 9 - Check Workspace Exclusions
 
 
 Your workspace or user settings might be excluding certain files:
@@ -222,7 +222,7 @@ Your workspace or user settings might be excluding certain files:
 A common mistake is adding `/node_modules/` to exclusions (which is correct) but accidentally using a broader pattern like `/*.js` that blocks Copilot from your source files too.
 
 
-Fix 10: Disable Competing Extensions
+Fix 10 - Disable Competing Extensions
 
 
 Other extensions can interfere with Copilot:
@@ -241,7 +241,7 @@ Extensions most likely to conflict include other AI completion tools (Tabnine, C
 Comparing Import Suggestion Behavior Across Languages
 
 
-The quality of Copilot's import suggestions varies by ecosystem:
+The quality of Copilot's import suggestions varies by environment:
 
 
 | Language | Import Suggestion Quality | Common Issues |

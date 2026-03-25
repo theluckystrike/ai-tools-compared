@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Essential Techniques for Codebase Exploration
+Step 1 - Essential Techniques for Codebase Exploration
 
 Starting with Project Structure
 
@@ -97,11 +97,11 @@ def calculate_order_total(items, tax_rate, discount_code=None):
     }
 ```
 
-The AI would explain each step: calculating line item totals, applying discount logic if provided, computing tax on the discounted subtotal, and returning a breakdown of all components.
+The AI would explain each step - calculating line item totals, applying discount logic if provided, computing tax on the discounted subtotal, and returning a breakdown of all components.
 
-Step 2: Practical Onboarding Workflow
+Step 2 - Practical Onboarding Workflow
 
-Day 1: Get the Big Picture
+Day 1 - Get the Big Picture
 
 Start with broad questions that establish context:
 
@@ -113,7 +113,7 @@ Start with broad questions that establish context:
 
 This establishes baseline understanding before looking at specifics.
 
-Week 1: Focus on Your First Task
+Week 1 - Focus on Your First Task
 
 Identify a starter task and use AI to understand the relevant code:
 
@@ -127,7 +127,7 @@ Identify a starter task and use AI to understand the relevant code:
 I need to add a new API endpoint for user notifications. Show me similar endpoint implementations so I can follow the same pattern.
 ```
 
-Ongoing: Use AI as a Running Partner
+Ongoing - Use AI as a Running Partner
 
 Keep an AI assistant open while working. When you encounter confusing code, ask immediate questions:
 
@@ -139,18 +139,18 @@ Keep an AI assistant open while working. When you encounter confusing code, ask 
 
 This real-time clarification prevents misunderstanding from compounding.
 
-Step 3: Code Examples: Asking the Right Questions
+Step 3 - Code Examples: Asking the Right Questions
 
 The quality of answers depends on question specificity. Here are effective question patterns:
 
-Pattern 1: Context + Specific Question
+Pattern 1 - Context + Specific Question
 
 ```
 In the user service, there's a method called validate_permissions.
 What does it check and how does it interact with the role-based access system?
 ```
 
-Pattern 2: Goal-Oriented Questions
+Pattern 2 - Goal-Oriented Questions
 
 ```
 I need to understand how error handling works so I can add proper
@@ -158,14 +158,14 @@ validation to my new endpoint. Can you show me the error handling
 patterns used in the existing API routes?
 ```
 
-Pattern 3: Comparative Questions
+Pattern 3 - Comparative Questions
 
 ```
 What's the difference between how caching is implemented in the
 product service versus the user service? Which approach is better?
 ```
 
-Step 4: Handling Large Codebases
+Step 4 - Handling Large Codebases
 
 When working with large codebases, context windows become critical. Modern AI assistants like Claude, GPT-4, and others offer large context windows that can handle substantial code portions. For extremely large projects:
 
@@ -180,7 +180,7 @@ Give me a summary of the payment processing module. What are the
 main classes, their responsibilities, and how they interact?
 ```
 
-Step 5: Verify AI Understanding
+Step 5 - Verify AI Understanding
 
 AI assistants can occasionally misunderstand code or provide incorrect explanations. Always verify critical information:
 
@@ -194,7 +194,7 @@ AI assistants can occasionally misunderstand code or provide incorrect explanati
 Can you show me the test file that verifies this behavior so I can confirm your explanation?
 ```
 
-Step 6: Integrate AI into Team Onboarding
+Step 6 - Integrate AI into Team Onboarding
 
 Consider these approaches for team adoption:
 
@@ -204,7 +204,7 @@ Consider these approaches for team adoption:
 
 3. Document AI-assisted discoveries - Have new developers document insights for future team members
 
-Step 7: Common Pitfalls to Avoid
+Step 7 - Common Pitfalls to Avoid
 
 - Over-reliance on AI explanations - Always verify critical code paths yourself
 

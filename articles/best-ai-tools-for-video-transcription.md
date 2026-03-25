@@ -291,7 +291,7 @@ Select based on your specific requirements:
 | Whisper API | Budget-conscious, excellent accuracy | $0.006/min |
 | Self-hosted Whisper | Full control, no API costs | Infrastructure only |
 | Google Cloud | Enterprise, existing GCP users | $0.024/min |
-| AWS Transcribe | AWS ecosystem integration | $0.024/min |
+| AWS Transcribe | AWS environment integration | $0.024/min |
 | AssemblyAI | Developer experience, modern API | $0.025/min |
 | Deepgram | Real-time, high volume, cost efficiency | $0.0043/min |
 

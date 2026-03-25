@@ -22,11 +22,11 @@ Table of Contents
 - [The Annotation Quality Spectrum](#the-annotation-quality-spectrum)
 - [Why Type Annotations Pay Off](#why-type-annotations-pay-off)
 - [Setting Up Your Annotation Workflow](#setting-up-your-annotation-workflow)
-- [Task 1: Generic Functions](#task-1-generic-functions)
-- [Task 2: Decorator Type Safety with ParamSpec](#task-2-decorator-type-safety-with-paramspec)
-- [Task 3: Protocol for Structural Typing](#task-3-protocol-for-structural-typing)
-- [Task 4: TypedDict and Overload](#task-4-typeddict-and-overload)
-- [Task 5: TypeGuard for Narrowing Functions](#task-5-typeguard-for-narrowing-functions)
+- [Task 1 - Generic Functions](#task-1-generic-functions)
+- [Task 2 - Decorator Type Safety with ParamSpec](#task-2-decorator-type-safety-with-paramspec)
+- [Task 3 - Protocol for Structural Typing](#task-3-protocol-for-structural-typing)
+- [Task 4 - TypedDict and Overload](#task-4-typeddict-and-overload)
+- [Task 5 - TypeGuard for Narrowing Functions](#task-5-typeguard-for-narrowing-functions)
 - [Automated Annotation with MonkeyType + AI Review](#automated-annotation-with-monkeytype-ai-review)
 - [Choosing the Right Tool by Team Size](#choosing-the-right-tool-by-team-size)
 - [Tool Comparison](#tool-comparison)
@@ -61,12 +61,12 @@ Before comparing tools, a quick setup note. For interactive use, `pyright` gives
 
 ```bash
 pip install pyright mypy monkeytype
-VS Code: install the Pylance extension (uses pyright internally)
+VS Code - install the Pylance extension (uses pyright internally)
 
 Check a file for annotation errors
 pyright your_module.py
 
-Strict mode: catch everything
+Strict mode - catch everything
 pyright --strict your_module.py
 ```
 
@@ -78,9 +78,9 @@ For CI, add mypy to your pipeline:
   run: mypy --strict src/ --ignore-missing-imports
 ```
 
-Task 1: Generic Functions
+Task 1 - Generic Functions
 
-Prompt: "Add type annotations to this function that maps dict values."
+Prompt - "Add type annotations to this function that maps dict values."
 
 ```python
 Before
@@ -121,9 +121,9 @@ discounted: dict[str, float] = map_values(prices, lambda p: p * 0.9)  # Correct!
 
 Claude's version allows type checkers to infer the output type based on the callable's return type. This means `map_values(user_ids, fetch_user)` correctly infers `dict[str, User | None]` without any additional annotation.
 
-Task 2: Decorator Type Safety with ParamSpec
+Task 2 - Decorator Type Safety with ParamSpec
 
-Prompt: "Add type annotations to this retry decorator that preserves the wrapped function's signature."
+Prompt - "Add type annotations to this retry decorator that preserves the wrapped function's signature."
 
 ```python
 Before
@@ -197,9 +197,9 @@ fetch_data(123)  # mypy error: Argument 1 has incompatible type "int"; expected 
 
 `ParamSpec` is the key. it preserves the parameter types of the wrapped function. This was introduced in Python 3.10 and backported via `typing_extensions` for earlier versions.
 
-Task 3: Protocol for Structural Typing
+Task 3 - Protocol for Structural Typing
 
-Prompt: "Write a function that accepts any object with a `.save()` method. Use structural typing."
+Prompt - "Write a function that accepts any object with a `.save()` method. Use structural typing."
 
 Copilot's output:
 
@@ -252,7 +252,7 @@ assert isinstance(UserModel(), Saveable)  # True at runtime
 
 The practical advantage of `Protocol` over `ABC` is that existing classes satisfy it without modification. If you're consuming third-party objects that happen to have a `save()` method, `Protocol` lets you type-check against them without monkey-patching.
 
-Task 4: TypedDict and Overload
+Task 4 - TypedDict and Overload
 
 ```python
 Before
@@ -300,7 +300,7 @@ batch_result.job_id is valid. type checker knows it's BatchResult
 
 `@overload` lets you express that a function's return type depends on its input type. Without it, the return type would be `BatchResult | StreamResult` and you'd need a type narrowing assertion every time you use the result.
 
-Task 5: TypeGuard for Narrowing Functions
+Task 5 - TypeGuard for Narrowing Functions
 
 One pattern where tool quality diverges sharply is `TypeGuard`. functions that narrow a union type inside conditionals.
 
@@ -381,7 +381,7 @@ For solo projects or small teams (1, 5 engineers): Use Claude Code interactively
 
 For medium teams (5, 20 engineers): Add mypy to CI with `--strict` on new code only (`--exclude` existing modules). Use MonkeyType to collect runtime types for existing modules, then AI-review the generated stubs before committing.
 
-For large codebases: Run pyright in watch mode for developers and mypy in CI. Use a staged rollout. annotate utilities and shared libraries first, then work outward. Copilot handles the mechanical volume; Claude handles the complex patterns like ParamSpec and Protocol.
+For large codebases - Run pyright in watch mode for developers and mypy in CI. Use a staged rollout. annotate utilities and shared libraries first, then work outward. Copilot handles the mechanical volume; Claude handles the complex patterns like ParamSpec and Protocol.
 
 Tool Comparison
 

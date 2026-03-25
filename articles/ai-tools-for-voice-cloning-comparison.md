@@ -285,28 +285,28 @@ Voice Quality Assessment Framework
 
 When evaluating voice cloning tools, test these specific scenarios:
 
-Test 1: Clarity on Numbers
+Test 1 - Clarity on Numbers
 ```
-Sample text: "The order total is $1,234.56 with tax."
-Evaluate: Does the AI pronounce numbers naturally?
-```
-
-Test 2: Emotional Range
-```
-Sample text: "I can't believe it! That's amazing news!"
-Evaluate: Does the voice capture excitement?
+Sample text - "The order total is $1,234.56 with tax."
+Evaluate - Does the AI pronounce numbers naturally?
 ```
 
-Test 3: Pronunciation of Proper Nouns
+Test 2 - Emotional Range
 ```
-Sample text: "Check the README for details about Kubernetes."
-Evaluate: Does it pronounce technical terms correctly?
+Sample text - "I can't believe it! That's amazing news!"
+Evaluate - Does the voice capture excitement?
 ```
 
-Test 4: Speed Variation
+Test 3 - Pronunciation of Proper Nouns
 ```
-Sample text: "Wait. WAIT! The server is on fire!"
-Evaluate: Can you control speaking speed and emphasis?
+Sample text - "Check the README for details about Kubernetes."
+Evaluate - Does it pronounce technical terms correctly?
+```
+
+Test 4 - Speed Variation
+```
+Sample text - "Wait. WAIT! The server is on fire!"
+Evaluate - Can you control speaking speed and emphasis?
 ```
 
 Cost Comparison Over Time
@@ -316,7 +316,7 @@ Cost Comparison Over Time
 Podcast with weekly 1-hour episodes:
 - ElevenLabs: 52 hours × $0.30 = $15.60/year
 - Coqui: $0 (self-hosted)
-- Respeecher: 52 hours × $1.00 = $52/year
+- Respeecher - 52 hours × $1.00 = $52/year
 
 Commercial audiobook (50 hours):
 - ElevenLabs: 50 × $0.30 = $15

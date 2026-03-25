@@ -23,7 +23,7 @@ Table of Contents
 - [Setting Up Your Project Structure](#setting-up-your-project-structure)
 - [Running Claude Code for Backend Development](#running-claude-code-for-backend-development)
 - [Using Cursor for Frontend Work](#using-cursor-for-frontend-work)
-- [Practical Workflow: Building a Feature End-to-End](#practical-workflow-building-a-feature-end-to-end)
+- [Practical Workflow - Building a Feature End-to-End](#practical-workflow-building-a-feature-end-to-end)
 - [Managing Shared Types](#managing-shared-types)
 - [Tips for Smooth Dual-Tool Workflow](#tips-for-smooth-dual-tool-workflow)
 - [When This Approach Works Best](#when-this-approach-works-best)
@@ -108,7 +108,7 @@ For state management, ask Cursor to set up your context or hooks:
   useAuth hook
 ```
 
-Practical Workflow: Building a Feature End-to-End
+Practical Workflow - Building a Feature End-to-End
 
 Imagine you need to add a dashboard showing user statistics. Here's how the split workflow works:
 

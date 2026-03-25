@@ -23,11 +23,11 @@ This guide walks you through building a MCP server that serves your documentatio
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Step 1: Initialize Your MCP Server Project](#step-1-initialize-your-mcp-server-project)
-- [Step 2: Structure Your Documentation](#step-2-structure-your-documentation)
-- [Step 3: Build the MCP Server](#step-3-build-the-mcp-server)
-- [Step 4: Configure Your AI Tool](#step-4-configure-your-ai-tool)
-- [Step 5: Test Your Implementation](#step-5-test-your-implementation)
+- [Step 1 - Initialize Your MCP Server Project](#step-1-initialize-your-mcp-server-project)
+- [Step 2 - Structure Your Documentation](#step-2-structure-your-documentation)
+- [Step 3 - Build the MCP Server](#step-3-build-the-mcp-server)
+- [Step 4 - Configure Your AI Tool](#step-4-configure-your-ai-tool)
+- [Step 5 - Test Your Implementation](#step-5-test-your-implementation)
 - [Using Your Documentation Server](#using-your-documentation-server)
 - [Best Practices](#best-practices)
 - [Troubleshooting](#troubleshooting)
@@ -44,7 +44,7 @@ Before you begin, ensure you have:
 
 - Basic familiarity with TypeScript or JavaScript
 
-Step 1: Initialize Your MCP Server Project
+Step 1 - Initialize Your MCP Server Project
 
 Create a new directory for your MCP server and initialize it with the necessary dependencies:
 
@@ -71,7 +71,7 @@ Create a TypeScript configuration file:
 }
 ```
 
-Step 2: Structure Your Documentation
+Step 2 - Structure Your Documentation
 
 Organize your project documentation in a way that MCP can easily parse. A clean structure helps your server deliver relevant information to AI tools:
 
@@ -90,7 +90,7 @@ myproject/
 
 Each document should have clear headings and practical content that an AI assistant can reference when generating code or answering questions.
 
-Step 3: Build the MCP Server
+Step 3 - Build the MCP Server
 
 Create your server implementation in `src/index.ts`. This server will read your documentation files and expose them through MCP tools:
 
@@ -288,7 +288,7 @@ async function main() {
 main().catch(console.error);
 ```
 
-Step 4: Configure Your AI Tool
+Step 4 - Configure Your AI Tool
 
 Each AI tool has its own method for adding MCP servers. For Claude Desktop, create or edit `~/Library/Application Support/Claude/claude_desktop_config.json`:
 
@@ -319,7 +319,7 @@ For Cursor, add the server configuration in Settings → MCP Servers:
 }
 ```
 
-Step 5: Test Your Implementation
+Step 5 - Test Your Implementation
 
 Build and test your server:
 

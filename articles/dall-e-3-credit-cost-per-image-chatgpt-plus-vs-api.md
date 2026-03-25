@@ -20,8 +20,8 @@ DALL-E 3 powers image generation through two primary access points: the ChatGPT 
 
 Table of Contents
 
-- [ChatGPT Plus: The Subscription Model](#chatgpt-plus-the-subscription-model)
-- [DALL-E 3 API: Pay-Per-Image Model](#dall-e-3-api-pay-per-image-model)
+- [ChatGPT Plus - The Subscription Model](#chatgpt-plus-the-subscription-model)
+- [DALL-E 3 API - Pay-Per-Image Model](#dall-e-3-api-pay-per-image-model)
 - [API Integration Code Examples](#api-integration-code-examples)
 - [Cost Comparison at Scale](#cost-comparison-at-scale)
 - [When to Choose Each Option](#when-to-choose-each-option)
@@ -33,7 +33,7 @@ Table of Contents
 - [Hidden Costs to Track](#hidden-costs-to-track)
 - [Building Budget-Conscious Image Generation](#building-budget-conscious-image-generation)
 
-ChatGPT Plus: The Subscription Model
+ChatGPT Plus - The Subscription Model
 
 ChatGPT Plus costs $20 monthly and includes access to DALL-E 3 within the chat interface. The subscription approach bundles image generation with conversational AI access, making it attractive for users who already pay for Plus.
 
@@ -43,14 +43,14 @@ For a user who maximizes the 80-image limit across a typical month, the effectiv
 
 ```
 Monthly images (assuming max usage): 80 images × ~30 days = 2,400 images
-Cost per image: $20 ÷ 2,400 = $0.0083 per image
+Cost per image - $20 ÷ 2,400 = $0.0083 per image
 ```
 
 However, most users do not hit the limit consistently. If you generate 200 images monthly, your effective cost becomes $0.10 per image. This variability makes ChatGPT Plus economical for light to moderate usage but potentially wasteful for heavy generation workloads.
 
 The interface also limits programmatic access. You cannot directly integrate ChatGPT Plus DALL-E generation into automated pipelines without manual intervention, which restricts its utility for developers building image generation into applications.
 
-DALL-E 3 API: Pay-Per-Image Model
+DALL-E 3 API - Pay-Per-Image Model
 
 The OpenAI API provides direct access to DALL-E 3 with transparent pricing based on image resolution:
 
@@ -65,15 +65,15 @@ Calculating API Costs
 For a development project generating 1,000 standard square images monthly:
 
 ```
-Monthly cost: 1,000 × $0.04 = $40
-Cost per image: $0.04
+Monthly cost - 1,000 × $0.04 = $40
+Cost per image - $0.04
 ```
 
 Comparing this to ChatGPT Plus at the same generation volume:
 
 ```
-ChatGPT Plus effective cost: $20 ÷ 1,000 = $0.02 per image
-API cost: $0.04 per image
+ChatGPT Plus effective cost - $20 ÷ 1,000 = $0.02 per image
+API cost - $0.04 per image
 ```
 
 At this volume, ChatGPT Plus appears cheaper. However, the API offers programmatic control that Plus cannot match.
@@ -164,9 +164,9 @@ Hidden Cost Considerations
 
 Beyond the base price, factor in these additional costs:
 
-API Data Transfer: Hosting generated images on your servers incurs bandwidth and storage costs. The API returns URLs that expire after a hour, so you must download and store images immediately.
+API Data Transfer - Hosting generated images on your servers incurs bandwidth and storage costs. The API returns URLs that expire after a hour, so you must download and store images immediately.
 
-Retry Logic: Failed generations still count against your quota. Implement proper error handling to avoid wasted credits:
+Retry Logic - Failed generations still count against your quota. Implement proper error handling to avoid wasted credits:
 
 ```python
 import time
@@ -188,7 +188,7 @@ def generate_with_retry(client, prompt, max_retries=3):
     return None
 ```
 
-Prompt Engineering Time: Crafting effective DALL-E 3 prompts requires iteration. Each failed or unsatisfactory attempt costs money, so factor in the time investment for prompt refinement.
+Prompt Engineering Time - Crafting effective DALL-E 3 prompts requires iteration. Each failed or unsatisfactory attempt costs money, so factor in the time investment for prompt refinement.
 
 Decision Framework
 
@@ -236,60 +236,60 @@ Related Articles
 
 - [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
 - [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
-- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
+- [ChatGPT Plus Cancel Mid Month - Do You Keep Access Until End?](/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
 - [DALL-E Image Generation Failed: How](/dalle-image-generation-failed-how-to-retry/)
 - [Claude Free vs ChatGPT Free Which Gives More Per](/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
 Real-World Cost Scenarios
 
-Scenario 1: Content Creator Generating Social Media Images
+Scenario 1 - Content Creator Generating Social Media Images
 
 One creator needs 10 social posts/week with 3 variations each = 30 images/week = 120/month.
 
 ChatGPT Plus approach:
 ```
-Monthly cost: $20
-Images: 120
-Cost per image: $0.17
-Hours spent: 4 hours (composing prompts, reviewing outputs)
+Monthly cost - $20
+Images - 120
+Cost per image - $0.17
+Hours spent - 4 hours (composing prompts, reviewing outputs)
 ```
 
 API approach:
 ```
-Monthly cost: 120 × $0.04 = $4.80
-Images: 120
-Cost per image: $0.04
-Hours spent: 1 hour (batch script handles generation)
-Hours saved: 3 × $50/hour = $150 value
-Net: $4.80 - $150 savings = $145.20 savings
+Monthly cost - 120 × $0.04 = $4.80
+Images - 120
+Cost per image - $0.04
+Hours spent - 1 hour (batch script handles generation)
+Hours saved - 3 × $50/hour = $150 value
+Net - $4.80 - $150 savings = $145.20 savings
 ```
 
-Winner: API approach saves $150+ in labor costs despite lower per-image cost.
+Winner - API approach saves $150+ in labor costs despite lower per-image cost.
 
-Scenario 2: Design Freelancer Testing Client Concepts
+Scenario 2 - Design Freelancer Testing Client Concepts
 
 Freelancer explores variations for client pitch: 200 images/month across 5 clients.
 
 ChatGPT Plus approach:
 ```
-Monthly cost: $20
-Images: 200
-Cost per image: $0.10
-Manual review time: 6 hours
+Monthly cost - $20
+Images - 200
+Cost per image - $0.10
+Manual review time - 6 hours
 ```
 
 API approach:
 ```
-Monthly cost: 200 × $0.04 = $8
-Images: 200
-Cost per image: $0.04
-Manual review time: 6 hours (same)
-Cost saved: $12/month
+Monthly cost - 200 × $0.04 = $8
+Images - 200
+Cost per image - $0.04
+Manual review time - 6 hours (same)
+Cost saved - $12/month
 ```
 
-Winner: API slightly cheaper, but Plus is simpler for exploration.
+Winner - API slightly cheaper, but Plus is simpler for exploration.
 Plus for exploration, API for production.
 
-Scenario 3: E-commerce Product Photography
+Scenario 3 - E-commerce Product Photography
 
 E-commerce site generates product images: 500 images/month (new products, variations).
 
@@ -297,23 +297,23 @@ ChatGPT Plus approach:
 ```
 Multiple Plus accounts needed (rate limits)
 3 accounts × $20 = $60/month
-Coordination overhead: 2 hours/month
-Cost per image: $0.12
+Coordination overhead - 2 hours/month
+Cost per image - $0.12
 ```
 
 API approach:
 ```
-Cost: 500 × $0.04 = $20/month
-Batch processing: 30 minutes setup, then automated
-Cost per image: $0.04
-Overhead: minimal
+Cost - 500 × $0.04 = $20/month
+Batch processing - 30 minutes setup, then automated
+Cost per image - $0.04
+Overhead - minimal
 ```
 
-Winner: API by far. ChatGPT Plus scaling is impractical.
+Winner - API by far. ChatGPT Plus scaling is impractical.
 
 Advanced Cost Optimization
 
-Technique 1: Batch Processing During Off-Peak Hours
+Technique 1 - Batch Processing During Off-Peak Hours
 
 Using API with batch pricing (if available):
 
@@ -349,14 +349,14 @@ def batch_generate_with_delays(prompts: list, delay_seconds=1):
 
     return results
 
-Usage: Generate 50 product images with 2-second delay
+Usage - Generate 50 product images with 2-second delay
 prompts = [f"Professional product photo of {item}" for item in product_list]
 images = batch_generate_with_delays(prompts, delay_seconds=2)
 ```
 
-Cost: 50 × $0.04 = $2.00. Time: 100 seconds.
+Cost - 50 × $0.04 = $2.00. Time - 100 seconds.
 
-Technique 2: Caching Successful Prompts
+Technique 2 - Caching Successful Prompts
 
 Once you find a prompt that works, reuse it:
 
@@ -375,10 +375,10 @@ for product_id in products:
     image = generate_image(prompt)
     hero_images.append(image)
 
-Cost: Only pay for variations that add value
+Cost - Only pay for variations that add value
 ```
 
-Technique 3: Image Resolution Downsizing Where Acceptable
+Technique 3 - Image Resolution Downsizing Where Acceptable
 
 ```python
 Use smaller resolution for thumbnails, save 50%
@@ -417,9 +417,9 @@ Comparison with Competitors
 | Stable Diffusion API | $0.01-0.03 | Higher limits | Excellent | Good |
 | Microsoft Designer | $0 (limited) | 25/month free | Fair | Good |
 
-DALL-E 3 vs Stable Diffusion: DALL-E 3 costs more but better quality. Stable Diffusion good for cost-sensitive projects where quality is secondary.
+DALL-E 3 vs Stable Diffusion - DALL-E 3 costs more but better quality. Stable Diffusion good for cost-sensitive projects where quality is secondary.
 
-DALL-E 3 vs Midjourney: Midjourney better for artistic control and human-friendly interface. DALL-E 3 better for API integration and batch automation.
+DALL-E 3 vs Midjourney - Midjourney better for artistic control and human-friendly interface. DALL-E 3 better for API integration and batch automation.
 
 Hidden Costs to Track
 
@@ -449,10 +449,10 @@ Time Cost of Prompt Iteration:
 ```
 Cost comparison:
 Generating 10 iterations of a prompt: 10 × $0.04 = $0.40
-Developer time spent: 30 minutes = $25 (at $50/hour)
-Total: $25.40
+Developer time spent - 30 minutes = $25 (at $50/hour)
+Total - $25.40
 
-Lesson: Spend time on perfect prompts first, then generate.
+Lesson - Spend time on perfect prompts first, then generate.
 ```
 
 Frequently Asked Questions
@@ -510,7 +510,7 @@ class BudgetImageGenerator:
 Usage
 generator = BudgetImageGenerator(monthly_budget_dollars=100)
 image = generator.generate("A beautiful sunset")
-print(f"Remaining: ${generator.remaining_budget():.2f}")
+print(f"Remaining - ${generator.remaining_budget():.2f}")
 ```
 
 Related Articles

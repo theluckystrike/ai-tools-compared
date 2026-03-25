@@ -83,7 +83,7 @@ If you have developed muscle memory for Copilot shortcuts, you can reconfigure C
 
 Launch the Command Palette with `Ctrl + Shift + P` (Windows/Linux) or `Cmd + Shift + P` (macOS), then type "Open Keyboard Shortcuts" and press Enter.
 
-Step 2: Configure the Keybindings
+Step 2 - Configure the Keybindings
 
 Add the following JSON to your Cursor keybindings file. On macOS, navigate to `Cursor > Settings > Keybindings`. On Windows/Linux, go to `File > Preferences > Keybindings`.
 
@@ -115,15 +115,15 @@ Practical Workflow Examples
 
 Here are real-world scenarios showing how to use the mapped keybindings.
 
-Example 1: Generate a Function
+Example 1 - Generate a Function
 
 In Copilot, you would press `Cmd + I`, type "create a function that calculates fibonacci numbers", and Copilot generates the code. In Cursor with mapped shortcuts, press `Cmd + K` (or your mapped `Cmd + I`), type the same prompt, and Cursor generates the function directly in your file.
 
-Example 2: Explain Selected Code
+Example 2 - Explain Selected Code
 
 Select a block of code. In Copilot, you might use the chat panel to ask for an explanation. In Cursor, select the code and press your mapped shortcut, then type "explain this code". Cursor's inline edit will show the explanation inline or provide a quick fix.
 
-Example 3: Refactor Code
+Example 3 - Refactor Code
 
 Select a function you want to refactor. Press your mapped shortcut, type "convert to arrow function syntax", and Cursor rewrites the selection in place.
 
@@ -162,7 +162,7 @@ If your keybindings are not working as expected, verify these settings:
 
 - Verify context conditions: The `when` clause determines when a keybinding is active. Make sure the conditions match your intended use case.
 
-- Restart Cursor: Some keybinding changes require a restart to take effect.
+- Restart Cursor - Some keybinding changes require a restart to take effect.
 
 Advanced Keybinding Patterns
 

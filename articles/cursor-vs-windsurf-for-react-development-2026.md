@@ -35,19 +35,19 @@ Cursor and Windsurf both offer AI-powered coding in a VS Code fork, but their be
 
 
 - Modified each component to: use useQuery 5.
-- - Windsurf: Updated all 9 functions correctly, better at tracking optional vs required fields.
+- - Windsurf - Updated all 9 functions correctly, better at tracking optional vs required fields.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - Use AI-generated tests as: a starting point, then add cases that cover your unique requirements and failure modes.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- Cursor setup: Install Cursor, create `.cursorrules` in project root, use `Cmd+K` for inline edits, `Cmd+L` for chat.
+- Cursor setup - Install Cursor, create `.cursorrules` in project root, use `Cmd+K` for inline edits, `Cmd+L` for chat.
 
 Editor Setup
 
 Both editors require minimal configuration for a React/TypeScript project.
 
-Cursor setup: Install Cursor, create `.cursorrules` in project root, use `Cmd+K` for inline edits, `Cmd+L` for chat.
+Cursor setup - Install Cursor, create `.cursorrules` in project root, use `Cmd+K` for inline edits, `Cmd+L` for chat.
 
-Windsurf setup: Install Windsurf, uses "Cascade" for multi-step AI flows, `Cmd+I` for inline, `Cmd+L` for chat panel.
+Windsurf setup - Install Windsurf, uses "Cascade" for multi-step AI flows, `Cmd+I` for inline, `Cmd+L` for chat panel.
 
 ```
 .cursorrules (Cursor)
@@ -60,7 +60,7 @@ You are working in a React 19 + TypeScript 5 + Vite project.
 
 Component Generation
 
-Test prompt: "Create a DataTable component that accepts typed columns and row data, supports sorting, and shows a loading skeleton"
+Test prompt - "Create a DataTable component that accepts typed columns and row data, supports sorting, and shows a loading skeleton"
 
 Cursor output (Cmd+K inline):
 
@@ -104,11 +104,11 @@ function DataTable<T extends object>({
 
 Cursor's first-pass output required zero follow-up prompts.
 
-Windsurf output: Similar component but did not automatically add the render prop to Column (required a follow-up) and used a hardcoded number of rows for the loading skeleton instead of inferring from data length. One follow-up prompt needed.
+Windsurf output - Similar component but did not automatically add the render prop to Column (required a follow-up) and used a hardcoded number of rows for the loading skeleton instead of inferring from data length. One follow-up prompt needed.
 
 Custom Hook Generation
 
-Test prompt: "Write an useIntersectionObserver hook that accepts a callback and options, cleans up on unmount, and handles SSR"
+Test prompt - "Write an useIntersectionObserver hook that accepts a callback and options, cleans up on unmount, and handles SSR"
 
 ```tsx
 // Cursor output. all concerns addressed in one pass
@@ -144,9 +144,9 @@ function useIntersectionObserver(
 
 Cursor included the `callbackRef` pattern (avoids stale closure), SSR guard, and proper cleanup. Windsurf's hook used `useEffect` directly on a ref, which requires the component to pass an existing element ref rather than returning a callback ref. valid but less flexible.
 
-Multi-File Refactoring: Adding React Query
+Multi-File Refactoring - Adding React Query
 
-Task: "Migrate these 3 components from manual fetch/useState to React Query. Keep the existing API calls."
+Task - "Migrate these 3 components from manual fetch/useState to React Query. Keep the existing API calls."
 
 This is where Cascade (Windsurf) shows its advantage.
 
@@ -245,20 +245,20 @@ Cmd+Shift+E  Codebase search
 
 Testing on Real React Tasks
 
-Task 1: State Management Migration
+Task 1 - State Management Migration
 Migrated a 5-component local useState tree to Zustand.
-- Cursor: Generated correct Zustand store, updated all 5 components correctly. One prompt.
-- Windsurf: Generated correct store but missed updating two nested component imports. Required manual fix.
+- Cursor - Generated correct Zustand store, updated all 5 components correctly. One prompt.
+- Windsurf - Generated correct store but missed updating two nested component imports. Required manual fix.
 
-Task 2: Adding React Query to Existing Fetch Code
+Task 2 - Adding React Query to Existing Fetch Code
 Converted 3 fetch-based API calls to React Query with 20 lines of existing hooks.
-- Cursor: Composer mode handled all 3 files, but didn't add the QueryClientProvider to App.tsx (required a second prompt).
-- Windsurf: Cascade mode included the provider, suggested better key structure, more complete on first pass.
+- Cursor - Composer mode handled all 3 files, but didn't add the QueryClientProvider to App.tsx (required a second prompt).
+- Windsurf - Cascade mode included the provider, suggested better key structure, more complete on first pass.
 
-Task 3: TypeScript Type Refactor
+Task 3 - TypeScript Type Refactor
 Widened a union type (4 variants) and updated consuming code.
-- Cursor: Changed the type correctly, auto-updated 8 of 9 consuming functions. Missed one optional property.
-- Windsurf: Updated all 9 functions correctly, better at tracking optional vs required fields.
+- Cursor - Changed the type correctly, auto-updated 8 of 9 consuming functions. Missed one optional property.
+- Windsurf - Updated all 9 functions correctly, better at tracking optional vs required fields.
 
 CLI Installation
 

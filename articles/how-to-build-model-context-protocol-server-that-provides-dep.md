@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand MCP Server Architecture
+Step 1 - Understand MCP Server Architecture
 
 An MCP server operates as a bridge between AI models and external systems. It exposes resources, tools, and prompts that AI clients can discover and invoke. For deployment environment context, you'll want to expose information about your infrastructure, environment variables, container configurations, and deployment status.
 
 The server communicates with clients using JSON-RPC 2.0 messages over stdio or HTTP transport. Your implementation needs to handle three core request types: `initialize` for handshake, `tools/list` for discovering available tools, and `tools/call` for executing specific operations.
 
-Step 2: Set Up Your Project
+Step 2 - Set Up Your Project
 
 Create a new Node.js project for your MCP server:
 
@@ -47,7 +47,7 @@ npm install @modelcontextprotocol/sdk zod
 
 The SDK provides the foundation for building compliant MCP servers. Zod handles runtime type validation for configuration and environment data.
 
-Step 3: Implementing the MCP Server
+Step 3 - Implementing the MCP Server
 
 Create a server entry point that handles deployment environment discovery:
 
@@ -212,7 +212,7 @@ const server = new DeploymentContextServer();
 server.start().catch(console.error);
 ```
 
-Step 4: Connecting to Container Orchestrators
+Step 4 - Connecting to Container Orchestrators
 
 For production use, replace the mock data with actual orchestrator queries. The Kubernetes implementation connects to your cluster:
 
@@ -240,7 +240,7 @@ class KubernetesIntegration {
 
 This integration enables the MCP server to query real-time deployment status from your Kubernetes clusters.
 
-Step 5: Adding Resource Endpoints for Configuration Files
+Step 5 - Adding Resource Endpoints for Configuration Files
 
 Beyond tools, MCP servers can expose resources. static or dynamic content that AI clients read directly. Configuration files are a natural fit for resources because the AI can reference them without invoking a tool call.
 
@@ -282,7 +282,7 @@ this.server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
 
 Resources differ from tools in that they represent data that can be read, while tools represent operations that can be invoked. Exposing environment configs as resources allows the AI to proactively load them into context without the user needing to ask.
 
-Step 6: Registering the Server with Your AI Client
+Step 6 - Registering the Server with Your AI Client
 
 After implementing your server, register it with your MCP-compatible AI client. Configuration typically lives in your client's configuration file:
 
@@ -302,7 +302,7 @@ After implementing your server, register it with your MCP-compatible AI client. 
 
 For Claude Desktop, this configuration goes in `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS. For other MCP clients, consult their documentation for the equivalent configuration location.
 
-Step 7: Adding Error Handling and Structured Responses
+Step 7 - Adding Error Handling and Structured Responses
 
 Production MCP servers need strong error handling. When an orchestrator query fails, return a structured error response rather than throwing an unhandled exception:
 
@@ -330,9 +330,9 @@ async getContainerStatus(serviceName) {
 }
 ```
 
-Setting `isError: true` in the response signals to the AI client that the operation failed. Well-formed AI assistants use this flag to adjust their response. explaining that the lookup failed rather than fabricating status information.
+Setting `isError - true` in the response signals to the AI client that the operation failed. Well-formed AI assistants use this flag to adjust their response. explaining that the lookup failed rather than fabricating status information.
 
-Step 8: Practical Use Cases
+Step 8 - Practical Use Cases
 
 Once registered, your AI assistant can query deployment context during conversations. When debugging production issues, you can ask your AI assistant to check environment configuration without manually SSH-ing into servers or navigating cloud consoles. The AI gains access to consistent, structured information about your deployment state.
 
@@ -340,15 +340,15 @@ For infrastructure-as-code generation, the AI can reference actual environment n
 
 When onboarding new engineers, a MCP server exposing your deployment topology means the AI assistant can answer questions like "which regions does staging run in?" or "what are the feature flags enabled in production?" without the new hire needing to locate that documentation themselves.
 
-Step 9: MCP Tool Design Principles
+Step 9 - MCP Tool Design Principles
 
 When designing the tools your server exposes, follow these principles to get the most value from AI integration.
 
-Narrow scope per tool: Each tool should do one thing clearly. A `get_deployment_environment` tool that returns region, cluster, and feature flags is more composable than a single `get_everything` tool. AI clients chain narrow tools together naturally.
+Narrow scope per tool - Each tool should do one thing clearly. A `get_deployment_environment` tool that returns region, cluster, and feature flags is more composable than a single `get_everything` tool. AI clients chain narrow tools together naturally.
 
 Include descriptions that guide the AI: The `description` field in each tool's schema is read by the AI to decide when to invoke the tool. Write descriptions in terms of what problem the AI is solving, not what the tool technically does. "Retrieve production configuration to generate accurate Terraform variables" is more useful guidance than "Returns a JSON object."
 
-Expose safe defaults: Tools that accept optional parameters should work correctly when called with minimal arguments. AI assistants may call your tools without specifying every optional field.
+Expose safe defaults - Tools that accept optional parameters should work correctly when called with minimal arguments. AI assistants may call your tools without specifying every optional field.
 
 Security Considerations
 

@@ -252,9 +252,9 @@ Common Vue 3 Patterns to Verify
 
 Regardless of which AI tool you use, verify these patterns in generated code:
 
-Reactive primitives: Ensure the tool uses `ref` for primitive values and `reactive` for objects. Mixing these incorrectly leads to reactivity issues.
+Reactive primitives - Ensure the tool uses `ref` for primitive values and `reactive` for objects. Mixing these incorrectly leads to reactivity issues.
 
-Props typing: TypeScript users should confirm proper generic syntax:
+Props typing - TypeScript users should confirm proper generic syntax:
 
 ```typescript
 const props = defineProps<{
@@ -273,7 +273,7 @@ const emit = defineEmits<{
 }>()
 ```
 
-Composable returns: Composables should return reactive references, not raw values:
+Composable returns - Composables should return reactive references, not raw values:
 
 ```typescript
 // Correct

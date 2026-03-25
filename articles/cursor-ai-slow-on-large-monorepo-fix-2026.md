@@ -213,11 +213,11 @@ Enterprise-Scale Monorepo Considerations
 
 For teams with 50+ independent packages or 500K+ lines of code, consider organizational changes alongside configuration:
 
-Repository splitting: Evaluate whether logical sub-projects should become separate repositories. This eliminates massive monorepo penalties while maintaining monorepo benefits for shared utilities.
+Repository splitting - Evaluate whether logical sub-projects should become separate repositories. This eliminates massive monorepo penalties while maintaining monorepo benefits for shared utilities.
 
-Workspace organization: Structure your monorepo so developers only need to work with relevant subsets. In Cursor settings, "open as workspace" only your active package directories.
+Workspace organization - Structure your monorepo so developers only need to work with relevant subsets. In Cursor settings, "open as workspace" only your active package directories.
 
-Index sharing in teams: For large teams with identical hardware, share index snapshots via network storage. This eliminates individual reindexing work for new developers.
+Index sharing in teams - For large teams with identical hardware, share index snapshots via network storage. This eliminates individual reindexing work for new developers.
 
 Large monorepos push AI tools to their limits, but with proper configuration, Cursor AI remains usable even on substantial codebases. The fixes above address the most common performance issues developers encounter. Start with the ignore patterns and context chunking adjustments, as these provide the biggest improvements with minimal effort. Most developers restore usable performance within 10-15 minutes of configuration changes.
 
@@ -255,29 +255,29 @@ Windows equivalent using Task Manager programmatically
 wmic process where name="cursor.exe" get PercentProcessorTime,WorkingSetSize
 ```
 
-Set up baseline alerts: If Cursor's CPU usage exceeds 60% during idle time or memory consumption climbs above 3GB, investigate your `.cursorignore` configuration again. Repeated performance degradation often signals that new build artifacts or dependencies have accumulated without being added to ignore patterns.
+Set up baseline alerts - If Cursor's CPU usage exceeds 60% during idle time or memory consumption climbs above 3GB, investigate your `.cursorignore` configuration again. Repeated performance degradation often signals that new build artifacts or dependencies have accumulated without being added to ignore patterns.
 
 Testing Your Configuration Changes
 
-Before considering the optimization complete, run a comprehensive test across different scenarios:
+Before considering the optimization complete, run a complete test across different scenarios:
 
-Test 1: Simple autocomplete - Open a small file and trigger completions. Time should be under 200ms.
+Test 1 - Simple autocomplete - Open a small file and trigger completions. Time should be under 200ms.
 
-Test 2: Complex chat query - Ask Cursor about the main entry point of your project. Response should arrive within 2 seconds.
+Test 2 - Complex chat query - Ask Cursor about the main entry point of your project. Response should arrive within 2 seconds.
 
-Test 3: Multi-file refactoring - Try applying changes across 3-5 files. Operations should complete in under 10 seconds per file.
+Test 3 - Multi-file refactoring - Try applying changes across 3-5 files. Operations should complete in under 10 seconds per file.
 
-Test 4: Index rebuild - Run a fresh index rebuild and measure total time. This reveals whether your patterns are working at scale.
+Test 4 - Index rebuild - Run a fresh index rebuild and measure total time. This reveals whether your patterns are working at scale.
 
 Scaling Beyond Monorepo Optimization
 
 If optimization alone doesn't restore usable performance, consider architectural changes:
 
-Repository splitting: Evaluate moving 50+ independent packages into separate repositories. Maintain a root monorepo containing only shared utilities, with dependent repositories pulling them as NPM packages or git dependencies.
+Repository splitting - Evaluate moving 50+ independent packages into separate repositories. Maintain a root monorepo containing only shared utilities, with dependent repositories pulling them as NPM packages or git dependencies.
 
-Workspace federation: For teams with distinct domains (backend, frontend, infrastructure), create separate Cursor workspaces and train team members to work within their domain's workspace instead of the full monorepo.
+Workspace federation - For teams with distinct domains (backend, frontend, infrastructure), create separate Cursor workspaces and train team members to work within their domain's workspace instead of the full monorepo.
 
-Tiered indexing: Index only the 20% of your codebase that accounts for 80% of your active development. Archive older code into separate "reference" repositories that don't get indexed.
+Tiered indexing - Index only the 20% of your codebase that accounts for 80% of your active development. Archive older code into separate "reference" repositories that don't get indexed.
 
 These structural changes take more effort than configuration, but they provide the largest long-term performance gains for truly massive codebases.
 

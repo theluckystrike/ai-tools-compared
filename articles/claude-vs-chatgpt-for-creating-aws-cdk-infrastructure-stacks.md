@@ -158,7 +158,7 @@ Documentation References
 Both tools cite AWS documentation, but Claude more frequently links to specific CDK Python API pages relevant to your code. ChatGPT sometimes suggests using older CDK v1 patterns when v2 is the current standard.
 
 
-Real-World CDK Scenario: VPC with Private Subnets
+Real-World CDK Scenario - VPC with Private Subnets
 
 
 Consider a more complex requirement: creating a VPC with private subnets and a NAT gateway. Here is how each tool approaches this common infrastructure pattern.
@@ -216,7 +216,7 @@ Side-by-Side Feature Comparison
 | Multiple code options per response | Occasionally | Frequently |
 
 
-Advanced Scenario: Lambda with SQS Trigger and DLQ
+Advanced Scenario - Lambda with SQS Trigger and DLQ
 
 For teams building event-driven architectures, a common CDK pattern involves wiring a Lambda function to an SQS queue with a dead-letter queue. This tests how thoroughly each AI handles dependent resource relationships.
 
@@ -274,7 +274,7 @@ Debugging Deployment Errors with Each Tool
 
 Real CDK projects encounter deployment failures. The quality of AI assistance during debugging matters as much as code generation.
 
-Scenario: Your CDK deploy fails with `CREATE_FAILED: Resource handler returned message: "Policy contains a statement with one or more invalid principal."`
+Scenario - Your CDK deploy fails with `CREATE_FAILED: Resource handler returned message: "Policy contains a statement with one or more invalid principal."`
 
 Claude, given the error message and the relevant stack code, correctly identifies that an IAM principal is referencing a resource that does not yet exist during stack synthesis. It suggests using `aws_iam.ServicePrincipal` correctly and checks whether cross-stack dependencies are resolved.
 

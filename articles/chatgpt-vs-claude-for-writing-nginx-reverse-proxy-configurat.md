@@ -201,7 +201,7 @@ For complex or evolving infrastructure where you need to understand each compone
 Both tools require verification against your specific environment, paths, SSL certificates, and network settings must match your actual infrastructure. Use their suggestions as a strong starting point, then test thoroughly before deploying to production.
 
 
-Consider your workflow: if you prefer getting things done with complete examples, ChatGPT serves well. If you want to understand and refine each component while building, Claude's approach aligns better with learning-oriented workflows.
+Consider your workflow - if you prefer getting things done with complete examples, ChatGPT serves well. If you want to understand and refine each component while building, Claude's approach aligns better with learning-oriented workflows.
 
 Practical Scenario Comparison
 
@@ -259,7 +259,7 @@ Check configuration loads
 sudo systemctl reload nginx
 
 Test reverse proxy routing
-curl -i -H "Host: yourdomain.com" http://localhost
+curl -i -H "Host - yourdomain.com" http://localhost
 
 Verify headers are forwarded
 curl -i http://localhost/api/test | grep "X-Forwarded"

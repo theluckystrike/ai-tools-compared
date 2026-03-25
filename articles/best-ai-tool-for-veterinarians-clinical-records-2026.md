@@ -100,7 +100,7 @@ Pricing Comparison & Break-Even Analysis
 | VAN (per-transcription) | $0.75/min | Variable | 3,180 min (53 hrs) | Threshold-based |
 | PetDx | Quote only | $25K+ | 25,000 visits | TBD |
 
-Calculation basis: Average value is $1/patient visit saved (documentation + efficiency). VetRocket saves approximately $1/patient in documentation time, requiring 2,388 annual visits (6-7 per day for 350-day practice) to break even.
+Calculation basis - Average value is $1/patient visit saved (documentation + efficiency). VetRocket saves approximately $1/patient in documentation time, requiring 2,388 annual visits (6-7 per day for 350-day practice) to break even.
 
 Consider these factors before committing:
 
@@ -112,7 +112,7 @@ Consider these factors before committing:
 
 - Support expectations: Evaluate vendor response times and availability during your operating hours. VetRocket: 24-hour support with 2-hour response time; ClienSee: 8-5 business day support; VAN: Ticketed support (24-48 hour response).
 
-Real-World ROI Example: 8-Veterinarian Mixed Practice
+Real-World ROI Example - 8-Veterinarian Mixed Practice
 
 Baseline metrics:
 - Daily patients: 120 (15 per veterinarian)
@@ -156,7 +156,7 @@ Implementation Timeline Comparison
 | VAN | API assessment | Custom dev | Testing & debugging | 14-20 weeks |
 | PetDx | Consultation | Custom config | Pilot specialty dept | 12-16 weeks |
 
-Mixed Practice Example: Large Animal + Small Animal
+Mixed Practice Example - Large Animal + Small Animal
 
 A practice with both equine and canine services faces unique challenges: large animal procedures often happen in field conditions (mobile documentation), while small animal uses clinic workstations.
 
@@ -169,7 +169,7 @@ VetRocket with mobile-first approach
 - Value: 48 hours × $85/hour = $4,080/week = $212,160/year
 - Payback: $796/month cost breaks even in less than 3 hours of saved documentation
 
-Decision Framework: Final Checklist
+Decision Framework - Final Checklist
 
 Before selecting your vendor, confirm these:
 
@@ -189,23 +189,23 @@ Before selecting your vendor, confirm these:
 
 If any answer is "unclear" or "no," probe further before signing a contract. Most failed implementations stem from misalignment on these fundamentals, not poor technology.
 
-Long-Term ROI: 3-Year Projection
+Long-Term ROI - 3-Year Projection
 
-Year 1: Implementation phase
+Year 1 - Implementation phase
 - Tool cost: $2,388-$2,970
 - Implementation cost: $1,500-$3,000
 - Training cost: $800-$1,500
 - Productivity gain: 30% (staff learning curve reduces efficiency initially)
 - Net ROI: Negative ($2,500-$5,000 in first 12 months)
 
-Year 2: Optimization phase
+Year 2 - Optimization phase
 - Tool cost: $2,388-$2,970
 - Productivity gain: 50% (staff confident with system)
 - Documentation time reduction value: $80,000-$120,000
 - Improved accuracy reduces errors: $5,000-$10,000
 - Net ROI: Positive ($77,000-$115,000 after tool cost)
 
-Year 3: Mature operations
+Year 3 - Mature operations
 - Tool cost: $2,388-$2,970
 - Productivity gain: 60-65% (optimized workflows)
 - Documentation time reduction value: $96,000-$144,000
@@ -261,7 +261,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -273,7 +273,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 {% endraw %}
 

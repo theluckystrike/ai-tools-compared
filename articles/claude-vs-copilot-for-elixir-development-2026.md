@@ -19,7 +19,7 @@ Claude vs Copilot for Elixir Development 2026
 
 Elixir is a minority language in AI training data, which shows in the quality gaps between tools. This comparison covers practical development workflows across GenServer, Phoenix, Ecto, and OTP supervision trees.
 
-Test 1: GenServer Implementation
+Test 1 - GenServer Implementation
 
 Prompt:
 ```text
@@ -117,7 +117,7 @@ Copilot generates a working GenServer but:
 
 Claude. more idiomatic OTP patterns.
 
-Test 2: Phoenix LiveView Component
+Test 2 - Phoenix LiveView Component
 
 Prompt:
 ```text
@@ -226,7 +226,7 @@ end
 
 Claude's Catalog context escapes `%` in the search term (SQL injection mitigation) and uses `ilike` for case-insensitive matching. Copilot often uses `like` (case-sensitive) and misses the `%` escaping.
 
-Test 3: OTP Supervision Tree
+Test 3 - OTP Supervision Tree
 
 Prompt:
 ```text
@@ -284,9 +284,9 @@ end
 
 Claude correctly explains when `rest_for_one` is appropriate vs `one_for_one` vs `one_for_all`, and structures the children in dependency order. Copilot tends to default to `one_for_one` without explaining the trade-offs.
 
-Test 4: Ecto Multi and Transaction Handling
+Test 4 - Ecto Multi and Transaction Handling
 
-A common real-world task: running multiple database operations atomically, with rollback on failure.
+A common real-world task - running multiple database operations atomically, with rollback on failure.
 
 Prompt:
 ```text
@@ -356,7 +356,7 @@ a child_spec for supervision. Use @impl true annotations and typespecs.
 
 The more specific prompt produces idiomatic code from both Claude and Copilot. The difference is that Claude handles vague prompts better. it makes sensible architectural choices (monotonic time, struct state, proper supervision) without needing every decision spelled out.
 
-Test 5: ExUnit Tests for GenServer
+Test 5 - ExUnit Tests for GenServer
 
 Getting AI to write ExUnit tests is a good proxy for how well it understands Elixir's testing idioms, especially around process lifecycle and asynchronous behavior.
 
@@ -414,7 +414,7 @@ defmodule MyApp.RateLimiterTest do
 end
 ```
 
-Claude adds `async: false` because the test uses a named GenServer process, and explains the limitation around testing time-dependent cleanup without mocking. Copilot typically generates tests that call the public API but misses the `async: false` necessity and often sets up the GenServer incorrectly (using the supervised one rather than a test-scoped instance).
+Claude adds `async - false` because the test uses a named GenServer process, and explains the limitation around testing time-dependent cleanup without mocking. Copilot typically generates tests that call the public API but misses the `async: false` necessity and often sets up the GenServer incorrectly (using the supervised one rather than a test-scoped instance).
 
 Related Reading
 

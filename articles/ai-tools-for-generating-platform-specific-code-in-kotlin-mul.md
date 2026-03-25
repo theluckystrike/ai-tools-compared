@@ -34,7 +34,7 @@ Kotlin Multiplatform has become a standard approach for sharing code across Andr
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - Mastering advanced features takes: 1-2 weeks of regular use.
 - Focus on the 20%: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- However: generating platform-specific implementations remains one of the most time-consuming aspects of KMP development.
+- However - generating platform-specific implementations remains one of the most time-consuming aspects of KMP development.
 
 The Platform-Specific Code Challenge in KMP
 
@@ -48,7 +48,7 @@ Effective AI assistance for platform-specific KMP code requires several capabili
 
 Context awareness is critical. An AI tool that recognizes which source set it is editing can prevent platform-specific code from appearing in common modules, which would cause compilation failures on other platforms.
 
-Tool Comparison: AI Assistants for Platform-Specific KMP Code
+Tool Comparison - AI Assistants for Platform-Specific KMP Code
 
 || Tool | Expect/Actual Generation | Platform API Knowledge | Native Integration | Context Awareness | Overall Score |
 ||---|---|---|---|---|---|
@@ -62,7 +62,7 @@ Claude 3.7 Sonnet consistently generates correct expect/actual pairs with matchi
 
 Practical Examples
 
-Example 1: File System Operations
+Example 1 - File System Operations
 
 Consider a common module that needs platform-specific file system access:
 
@@ -129,7 +129,7 @@ actual class FileManager {
 }
 ```
 
-Example 2: Secure Random Number Generation
+Example 2 - Secure Random Number Generation
 
 Platform-specific cryptographic functions require careful implementation:
 
@@ -194,7 +194,7 @@ Cursor provides strong multi-file editing capabilities, allowing developers to g
 
 Advanced Platform-Specific Patterns
 
-Example 3: Datetime Formatting with Platform Constraints
+Example 3 - Datetime Formatting with Platform Constraints
 
 Different platforms handle datetime differently. Here's how a strong AI tool handles cross-platform datetime:
 
@@ -245,7 +245,7 @@ actual object PlatformDateFormatter {
 
 When prompting AI tools for this pattern, specify that timestamps should be in milliseconds (standard Java convention), and that platform APIs may have different conventions.
 
-Example 4: HTTP Client with Platform Networking
+Example 4 - HTTP Client with Platform Networking
 
 Network operations vary significantly by platform. A strong AI assistant generates appropriate implementations:
 
@@ -301,7 +301,7 @@ actual class PlatformHttpClient {
 }
 ```
 
-AI Tool Comparison Matrix: Real-World Metrics
+AI Tool Comparison Matrix - Real-World Metrics
 
 When evaluating AI tools for platform-specific code, this detailed matrix helps identify strengths and weaknesses:
 

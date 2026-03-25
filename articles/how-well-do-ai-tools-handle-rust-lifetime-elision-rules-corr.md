@@ -21,27 +21,27 @@ Table of Contents
 
 - [Understanding Lifetime Elision Rules](#understanding-lifetime-elision-rules)
 - [Testing Methodology](#testing-methodology)
-- [Test Case One: Simple Elision](#test-case-one-simple-elision)
-- [Test Case Two: Multiple References](#test-case-two-multiple-references)
-- [Test Case Three: Method Syntax](#test-case-three-method-syntax)
-- [Test Case Four: The Elusive Third Lifetime](#test-case-four-the-elusive-third-lifetime)
-- [Test Case Five: Generic Lifetimes](#test-case-five-generic-lifetimes)
+- [Test Case One - Simple Elision](#test-case-one-simple-elision)
+- [Test Case Two - Multiple References](#test-case-two-multiple-references)
+- [Test Case Three - Method Syntax](#test-case-three-method-syntax)
+- [Test Case Four - The Elusive Third Lifetime](#test-case-four-the-elusive-third-lifetime)
+- [Test Case Five - Generic Lifetimes](#test-case-five-generic-lifetimes)
 - [Practical Implications](#practical-implications)
 - [Recommendations for Developers](#recommendations-for-developers)
 - [Common Lifetime Patterns AI Struggles With](#common-lifetime-patterns-ai-struggles-with)
 - [Testing Strategy for Your Project](#testing-strategy-for-your-project)
-- [Comparison Table: AI Tool Reliability by Scenario](#comparison-table-ai-tool-reliability-by-scenario)
+- [Comparison Table - AI Tool Reliability by Scenario](#comparison-table-ai-tool-reliability-by-scenario)
 - [Building Your Lifetime Intuition](#building-your-lifetime-intuition)
 
 Understanding Lifetime Elision Rules
 
 Before testing AI tools, let's establish what lifetime elision covers. Rust applies three rules to infer lifetimes:
 
-Rule One: Each reference parameter gets its own lifetime parameter. A function with `&str` and `&str` parameters receives two distinct lifetime parameters.
+Rule One - Each reference parameter gets its own lifetime parameter. A function with `&str` and `&str` parameters receives two distinct lifetime parameters.
 
-Rule Two: If there is exactly one input lifetime, it is assigned to all output lifetimes. A function returning `&str` with one input `&str` automatically applies the same lifetime to the output.
+Rule Two - If there is exactly one input lifetime, it is assigned to all output lifetimes. A function returning `&str` with one input `&str` automatically applies the same lifetime to the output.
 
-Rule Three: If there is a `&self` or `&mut self` parameter, its lifetime is assigned to all output lifetimes. This enables method syntax to work naturally.
+Rule Three - If there is a `&self` or `&mut self` parameter, its lifetime is assigned to all output lifetimes. This enables method syntax to work naturally.
 
 These rules cover most everyday Rust code, but they don't handle every scenario. When multiple input lifetimes exist and the function returns a reference, explicit annotations become necessary.
 
@@ -49,7 +49,7 @@ Testing Methodology
 
 I tested four leading AI coding assistants: Claude Code, GitHub Copilot, Cursor, and Zed AI. For each tool, I provided code snippets that either rely on lifetime elision or require explicit annotations. I evaluated whether the AI correctly identified when elision applies, when it fails, and how it explains the difference.
 
-Test Case One: Simple Elision
+Test Case One - Simple Elision
 
 The most basic test involves a function taking one reference and returning a reference:
 
@@ -61,7 +61,7 @@ fn first_word(s: &str) -> &str {
 
 This function relies on Rule Two. The AI tools should recognize that the output lifetime matches the input lifetime. All tested tools correctly generated this pattern without explicit annotations. Claude Code and Cursor provided helpful context explaining that the compiler infers the lifetime automatically.
 
-Test Case Two: Multiple References
+Test Case Two - Multiple References
 
 Adding a second reference parameter changes the behavior:
 
@@ -75,7 +75,7 @@ This function breaks the elision rules. With two input lifetimes and one output 
 
 Claude Code correctly identified this as an error and provided the fix with explicit lifetime parameters. Cursor showed similar accuracy. GitHub Copilot initially suggested the elided version but corrected itself when prompted about the error. Zed AI handled this correctly on the first attempt in most tests.
 
-Test Case Three: Method Syntax
+Test Case Three - Method Syntax
 
 Methods with `&self` provide an interesting test case because Rule Three applies:
 
@@ -93,7 +93,7 @@ impl Excerpt {
 
 Here, the output lifetime automatically becomes tied to `&self`. No explicit annotation is needed. All AI tools generated this correctly. Claude Code and Zed AI added helpful comments noting that the lifetime is inferred from `self`.
 
-Test Case Four: The Elusive Third Lifetime
+Test Case Four - The Elusive Third Lifetime
 
 This edge case trips up many developers and some AI tools:
 
@@ -117,7 +117,7 @@ fn process<'a>(ctx: &'a Context, input: &str) -> &'a str {
 
 Claude Code nailed this case, explaining that the returned reference must be tied to `ctx`'s lifetime, not `input`. Cursor and Zed AI also provided correct solutions. GitHub Copilot struggled here, it sometimes suggested removing the parameter entirely or adding an unrelated lifetime.
 
-Test Case Five: Generic Lifetimes
+Test Case Five - Generic Lifetimes
 
 Combining generics with lifetimes creates additional complexity:
 
@@ -163,7 +163,7 @@ Common Lifetime Patterns AI Struggles With
 
 Understanding where AI tools fail helps you provide better context:
 
-Struct with references: When a struct contains references, AI sometimes forgets to add lifetime parameters to the struct definition:
+Struct with references - When a struct contains references, AI sometimes forgets to add lifetime parameters to the struct definition:
 
 ```rust
 // WRONG - AI often generates this
@@ -179,7 +179,7 @@ struct User<'a> {
 }
 ```
 
-Trait with associated types: Combining traits with lifetimes creates confusion:
+Trait with associated types - Combining traits with lifetimes creates confusion:
 
 ```rust
 trait Parser<'a> {
@@ -190,7 +190,7 @@ trait Parser<'a> {
 
 AI tools sometimes forget that the input lifetime doesn't automatically apply to the output.
 
-Self-referential attempts: AI often tries to create self-referential structs incorrectly. These are genuinely hard in Rust, and AI fails because the pattern is fundamentally unsupported:
+Self-referential attempts - AI often tries to create self-referential structs incorrectly. These are genuinely hard in Rust, and AI fails because the pattern is fundamentally unsupported:
 
 ```rust
 // This is impossible in Rust - AI might suggest it anyway
@@ -219,7 +219,7 @@ cargo check --all-features
 
 Before accepting AI-generated code, verify it passes these checks. If the compiler catches lifetime errors, that's valuable feedback to give back to the AI.
 
-Comparison Table: AI Tool Reliability by Scenario
+Comparison Table - AI Tool Reliability by Scenario
 
 | Scenario | Claude | GitHub Copilot | Cursor | Success Rate |
 |----------|--------|---|---|---|

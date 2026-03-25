@@ -142,7 +142,7 @@ If you need something faster and don't mind less customization, specialized tool
 
 The best tool ultimately depends on your specific requirements, volume, personalization depth, integration needs, and how much time you're willing to invest in setup. Start with whichever approach matches your current needs and build from there.
 
-Deep Dive: Building a Custom Cold Email System
+Deep Dive - Building a Custom Cold Email System
 
 For developers serious about personalized outreach at scale, building a custom system using Claude or GPT-4 APIs provides maximum flexibility. Here's a production-ready example:
 
@@ -193,12 +193,12 @@ class ColdEmailGenerator:
         prompt = f"""Generate a cold outreach email with these parameters:
 
 RECIPIENT INFORMATION:
-- Name: {recipient.name}
-- Role: {recipient.role}
-- Company: {recipient.company}
-{f'- Recent Achievement: {recipient.recent_achievement}' if recipient.recent_achievement else ''}
-{f'- Mutual Connection: {recipient.mutual_connection}' if recipient.mutual_connection else ''}
-{f'- Known Pain Point: {recipient.company_pain_point}' if recipient.company_pain_point else ''}
+- Name - {recipient.name}
+- Role - {recipient.role}
+- Company - {recipient.company}
+{f'- Recent Achievement - {recipient.recent_achievement}' if recipient.recent_achievement else ''}
+{f'- Mutual Connection - {recipient.mutual_connection}' if recipient.mutual_connection else ''}
+{f'- Known Pain Point - {recipient.company_pain_point}' if recipient.company_pain_point else ''}
 
 YOUR VALUE PROPOSITION:
 {value_prop}
@@ -335,30 +335,30 @@ Industry-Specific Email Approaches
 
 SaaS B2B Outreach:
 ```
-Hook: Specific metric they should care about
-Value: Direct ROI or efficiency gain
-CTA: 15-minute exploratory call
+Hook - Specific metric they should care about
+Value - Direct ROI or efficiency gain
+CTA - 15-minute exploratory call
 ```
 
 Executive Outreach:
 ```
-Hook: Industry/company-specific insight
-Value: Strategic advantage or cost avoidance
-CTA: Coffee meeting or brief call
+Hook - Industry/company-specific insight
+Value - Strategic advantage or cost avoidance
+CTA - Coffee meeting or brief call
 ```
 
 Investor/Partnership Outreach:
 ```
-Hook: Market opportunity or traction metric
-Value: Mutual benefit or growth catalyst
-CTA: Specific meeting time (not "let's chat")
+Hook - Market opportunity or traction metric
+Value - Mutual benefit or growth catalyst
+CTA - Specific meeting time (not "let's chat")
 ```
 
 Recruitment Outreach:
 ```
-Hook: Specific accomplishment or role match
-Value: Career opportunity or mission alignment
-CTA: Phone screen or interview offer
+Hook - Specific accomplishment or role match
+Value - Career opportunity or mission alignment
+CTA - Phone screen or interview offer
 ```
 
 Testing and Optimization Framework
@@ -446,7 +446,7 @@ For a typical B2B campaign:
 - Replies: 2 (6.7%)
 - Conversions: 0.2-0.3
 
-Cost per qualified conversation: $3-5
+Cost per qualified conversation - $3-5
 This beats most other prospecting channels significantly.
 
 Frequently Asked Questions
@@ -457,7 +457,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -469,7 +469,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

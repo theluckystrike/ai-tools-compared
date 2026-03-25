@@ -336,13 +336,13 @@ Claude handles this pattern well when given the component structure as context. 
 
 Recommendations by Use Case
 
-For test suites: Use Claude with explicit instructions about React Testing Library and async handling.
+For test suites - Use Claude with explicit instructions about React Testing Library and async handling.
 
-For quick inline tests: GitHub Copilot works well for straightforward Suspense scenarios where you already have test patterns in the file.
+For quick inline tests - GitHub Copilot works well for straightforward Suspense scenarios where you already have test patterns in the file.
 
-For refactoring existing tests: Cursor's agent mode provides useful improvements when the existing codebase provides enough context.
+For refactoring existing tests - Cursor's agent mode provides useful improvements when the existing codebase provides enough context.
 
-For CI/CD integration: Aider generates tests efficiently in terminal workflows when given sufficiently detailed prompts.
+For CI/CD integration - Aider generates tests efficiently in terminal workflows when given sufficiently detailed prompts.
 
 When correctness on first generation matters. such as when adding tests to CI pipelines that must pass before merging. Claude's consistent output makes it the practical choice. The cost of a debugging a subtly wrong async test often exceeds the cost of an AI tool subscription.
 

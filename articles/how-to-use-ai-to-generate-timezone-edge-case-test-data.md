@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Use AI to Generate Targeted Test Data
+Step 1 - Use AI to Generate Targeted Test Data
 
 AI coding assistants excel at generating test data when you provide clear specifications about your requirements. The key lies in asking for exactly what you need, including the specific timezones, date ranges, and edge cases your application must handle.
 
@@ -152,7 +152,7 @@ testTimestamps.forEach(({ utc, expected }) => {
 });
 ```
 
-Step 2: Strategies for Coverage
+Step 2 - Strategies for Coverage
 
 Beyond generating basic test data, use AI to create edge case scenarios that are easy to miss:
 
@@ -164,7 +164,7 @@ Extremely old and future dates. Timezone rules only extend back so far in most l
 
 Timezone abbreviations versus identifiers. Request test data that uses ambiguous abbreviations like "CST" (which could mean China Standard Time, Central Standard Time, or Cuba Standard Time) to ensure your application uses proper timezone identifiers instead.
 
-Step 3: Validating Generated Test Data
+Step 3 - Validating Generated Test Data
 
 AI-generated test data requires validation before use. Verify that the generated data correctly identifies transition moments by checking against known DST dates. Run the test data against your application to ensure it handles the scenarios as expected. Look for gaps in coverage where edge cases might slip through.
 
@@ -172,7 +172,7 @@ Review the specific timezone rules the AI references. Library documentation and 
 
 Building timezone test data with AI takes initial effort but pays dividends in production reliability. Your application handles global users correctly, reports stay accurate across DST transitions, and customers in different regions see the right times.
 
-Step 4: Automation and Regression Prevention
+Step 4 - Automation and Regression Prevention
 
 Once you have timezone test data, commit it to your test suite and automate validation:
 
@@ -215,12 +215,12 @@ def test_all_timezone_cases(timezone_test_cases):
 
 This ensures timezone bugs never resurface after being fixed once.
 
-Step 5: Region-Specific Test Data Generation
+Step 5 - Region-Specific Test Data Generation
 
 Different regions have vastly different timezone behavior:
 
 ```
-AI prompt: "Generate test data for regions with unique DST rules:
+AI prompt - "Generate test data for regions with unique DST rules:
 1. India (no DST, UTC+5:30 offset)
 2. Venezuela (no DST, UTC-4)
 3. Australia/Lord_Howe (half-hour offset, unique DST dates)
@@ -237,7 +237,7 @@ The AI generates edge cases like:
 
 These test cases prevent timezone assumptions that work in the US but fail globally.
 
-Step 6: Timezone Library Testing
+Step 6 - Timezone Library Testing
 
 Your application's timezone library matters. Generate test data specific to your library:
 
@@ -278,15 +278,15 @@ assert.Equal(t, "EDT", zone)  // Should be EDT post-DST
 
 Generate test data that exercises each library's specific behavior.
 
-Step 7: Documentation and Maintenance
+Step 7 - Documentation and Maintenance
 
 Document why specific test data matters:
 
 ```markdown
-Step 8: Critical Timezone Test Cases
+Step 8 - Critical Timezone Test Cases
 
 Spring Forward (2025-03-09 US/Eastern)
-Why it matters: Applications that calculate time differences across this transition often get it wrong.
+Why it matters - Applications that calculate time differences across this transition often get it wrong.
 
 Broken behavior:
 - 1:00 AM + 61 minutes = 1:00 AM (instead of 3:01 AM)

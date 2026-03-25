@@ -22,7 +22,7 @@ Table of Contents
 - [Common Reasons Tailwind Classes Fail in Production](#common-reasons-tailwind-classes-fail-in-production)
 - [Using AI to Diagnose Tailwind Issues](#using-ai-to-diagnose-tailwind-issues)
 - [Prevention Strategies](#prevention-strategies)
-- [Advanced Debugging: CSS Generation Analysis](#advanced-debugging-css-generation-analysis)
+- [Advanced Debugging - CSS Generation Analysis](#advanced-debugging-css-generation-analysis)
 - [Using Browser DevTools with AI](#using-browser-devtools-with-ai)
 - [Performance Testing for Tailwind in Production](#performance-testing-for-tailwind-in-production)
 - [Real-World Troubleshooting Workflow](#real-world-troubleshooting-workflow)
@@ -41,7 +41,7 @@ Using AI to Diagnose Tailwind Issues
 
 AI tools can accelerate debugging by analyzing your configuration, build output, and code patterns. Here's a practical workflow.
 
-Step 1: Provide Your Configuration Files
+Step 1 - Provide Your Configuration Files
 
 Share your `tailwind.config.js` or `tailwind.config.ts` with the AI. Include any custom configurations for content paths, theme extensions, or plugins. A typical configuration looks like this:
 
@@ -65,13 +65,13 @@ module.exports = {
 
 The AI can immediately spot issues like overly restrictive content patterns or missing file extensions. For instance, if you use `.vue` files but only include `{js,jsx,ts,tsx}` in your content array, classes in Vue components get purged.
 
-Step 2: Analyze Your Build Output
+Step 2 - Analyze Your Build Output
 
 Run your production build and examine the output. In most build tools, you can inspect the compiled CSS. Share the relevant portion with AI if you cannot locate the missing class definitions.
 
 For Vite users, build command output typically indicates how many CSS files were generated and their sizes. For Next.js, check the `.next/static/css` directory. If your expected class does not appear in the compiled output, the content scanning likely failed to include the file containing it.
 
-Step 3: Check Class Usage Patterns
+Step 3 - Check Class Usage Patterns
 
 AI excels at pattern recognition across large codebases. Provide the AI with the specific class name that is not working and ask it to search your codebase for all usages. You might discover that the class exists only in a file type not covered by your content configuration.
 
@@ -107,7 +107,7 @@ export function Button({ children, variant = 'primary' }) {
 
 AI can suggest these refactoring approaches when you explain the problem clearly.
 
-Step 4: Verify CSS Specificity and Overrides
+Step 4 - Verify CSS Specificity and Overrides
 
 Sometimes classes exist in the compiled CSS but get overridden by other rules. Provide the AI with the relevant CSS snippet and ask it to identify conflicting selectors. Browser DevTools show which styles apply and which get crossed out due to specificity conflicts.
 
@@ -127,7 +127,7 @@ And your HTML uses:
 
 The custom CSS rule likely has higher specificity or appears later in the cascade, overriding the Tailwind utility. The fix is to either remove the custom CSS, use Tailwind's `!` prefix for important annotations, or refactor to use only Tailwind classes.
 
-Step 5: Test Incremental Fixes
+Step 5 - Test Incremental Fixes
 
 After receiving suggestions from AI, implement changes incrementally. Start with the configuration file fixes, rebuild, and verify. This systematic approach isolates which change resolved the issue.
 
@@ -162,7 +162,7 @@ module.exports = {
 
 Regularly audit your Tailwind configuration as your project grows. New directories, file types, or component libraries may require updates to your content patterns.
 
-Advanced Debugging: CSS Generation Analysis
+Advanced Debugging - CSS Generation Analysis
 
 When basic debugging doesn't reveal the issue, AI can help analyze the generated CSS:
 
@@ -204,7 +204,7 @@ AI can generate performance checks to ensure Tailwind is properly tree-shaken in
 ```bash
 Check CSS file size
 ls -lh dist/styles.css
-Expected: < 50KB for typical projects, < 200KB for large apps
+Expected - < 50KB for typical projects, < 200KB for large apps
 
 Verify unused classes are removed
 npm run build -- --analyze

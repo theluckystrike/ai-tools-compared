@@ -22,13 +22,13 @@ Serde remains the de facto standard for serialization in Rust, yet writing manua
 Table of Contents
 
 - [The Test Methodology](#the-test-methodology)
-- [Test Case 1: Basic Struct with Common Derives](#test-case-1-basic-struct-with-common-derives)
-- [Test Case 2: Nested Structs with Renamed Fields](#test-case-2-nested-structs-with-renamed-fields)
-- [Test Case 3: Custom Serialization Logic](#test-case-3-custom-serialization-logic)
-- [Test Case 4: Enum with Data](#test-case-4-enum-with-data)
-- [Test Case 5: Real-World API Integration](#test-case-5-real-world-api-integration)
-- [Test Case 6: Deserialization with Default Values](#test-case-6-deserialization-with-default-values)
-- [Test Case 7: Handling Unknown Fields](#test-case-7-handling-unknown-fields)
+- [Test Case 1 - Basic Struct with Common Derives](#test-case-1-basic-struct-with-common-derives)
+- [Test Case 2 - Nested Structs with Renamed Fields](#test-case-2-nested-structs-with-renamed-fields)
+- [Test Case 3 - Custom Serialization Logic](#test-case-3-custom-serialization-logic)
+- [Test Case 4 - Enum with Data](#test-case-4-enum-with-data)
+- [Test Case 5 - Real-World API Integration](#test-case-5-real-world-api-integration)
+- [Test Case 6 - Deserialization with Default Values](#test-case-6-deserialization-with-default-values)
+- [Test Case 7 - Handling Unknown Fields](#test-case-7-handling-unknown-fields)
 - [Accuracy Summary Table](#accuracy-summary-table)
 - [Cargo.toml Requirements](#cargotoml-requirements)
 - [Practical Recommendations](#practical-recommendations)
@@ -39,7 +39,7 @@ I evaluated three leading AI coding assistants, Claude Code, GitHub Copilot, and
 
 The test cases covered basic struct serialization, nested data structures, custom serialization logic, and handling of common edge cases like optional fields and enums.
 
-Test Case 1: Basic Struct with Common Derives
+Test Case 1 - Basic Struct with Common Derives
 
 The first test asked for a simple struct with common serde attributes:
 
@@ -80,7 +80,7 @@ pub struct UserProfile {
 
 This fails to compile because `DateTime<Utc>` requires the chrono serialization crate to be explicitly listed as a dependency, and the type needs explicit serialization formatting. Copilot omitted both. Accuracy: 70% (correct structure, missing critical configuration)
 
-Test Case 2: Nested Structs with Renamed Fields
+Test Case 2 - Nested Structs with Renamed Fields
 
 The second test introduced complexity with renamed fields and nested structures:
 
@@ -121,7 +121,7 @@ This compiles and correctly applies rename attributes. One minor improvement wou
 
 Cursor produced similar output but added `skip_serializing_if = "Option::is_none"` on optional fields, which is unnecessary here. The core functionality remains correct. Accuracy: 90%
 
-Test Case 3: Custom Serialization Logic
+Test Case 3 - Custom Serialization Logic
 
 This test pushed beyond derive macros into custom serialization:
 
@@ -165,7 +165,7 @@ This demonstrates understanding of the serialization trait bounds. However, the 
 
 GitHub Copilot completely skipped custom serialization and simply used `#[serde(skip)]`, missing the entire point of the request. Accuracy: 20%
 
-Test Case 4: Enum with Data
+Test Case 4 - Enum with Data
 
 Handling Rust enums with associated data is where AI tools often struggle:
 
@@ -192,7 +192,7 @@ This correctly uses the `#[serde(tag)]` attribute to serialize the enum discrimi
 
 Cursor generated nearly identical code with proper attribute handling. Accuracy: 100%
 
-Test Case 5: Real-World API Integration
+Test Case 5 - Real-World API Integration
 
 The final test combined multiple patterns typical of real applications:
 
@@ -215,13 +215,13 @@ pub struct WebhookEvent {
 }
 ```
 
-Accuracy: 100%, this is production-ready code.
+Accuracy - 100%, this is production-ready code.
 
-Test Case 6: Deserialization with Default Values
+Test Case 6 - Deserialization with Default Values
 
 A common real-world pattern is deserializing JSON where some fields may be absent and should fall back to defaults. This is where AI tools make subtle but compilation-breaking errors.
 
-> "Write a Rust config struct that deserializes from JSON. Fields: host (String, default to 'localhost'), port (u16, default to 8080), max_connections (usize, default to 100), debug (bool, default to false)."
+> "Write a Rust config struct that deserializes from JSON. Fields - host (String, default to 'localhost'), port (u16, default to 8080), max_connections (usize, default to 100), debug (bool, default to false)."
 
 Claude Code output:
 
@@ -269,7 +269,7 @@ pub host: String,
 
 This is a common mistake, serde's `default` attribute only accepts function paths, not closures. Accuracy: 30%
 
-Test Case 7: Handling Unknown Fields
+Test Case 7 - Handling Unknown Fields
 
 A production resilience pattern is deserializing structs that should accept but discard fields they don't recognize. The `#[serde(deny_unknown_fields)]` and `#[serde(flatten)]` combination is frequently misunderstood by AI tools.
 

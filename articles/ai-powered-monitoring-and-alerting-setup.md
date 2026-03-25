@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Architecture Overview
+Step 1 - Architecture Overview
 
 ```
 [Services] → [Prometheus] → [AlertManager] → [Alert Webhook]
@@ -41,7 +41,7 @@ Step 1: Architecture Overview
 
 The triage service intercepts AlertManager webhooks, fetches relevant metrics from Prometheus, and sends an enriched context bundle to Claude for analysis before paging the on-call engineer.
 
-Step 2: Prometheus Setup with Key Recording Rules
+Step 2 - Prometheus Setup with Key Recording Rules
 
 ```yaml
 prometheus/recording-rules.yml
@@ -90,7 +90,7 @@ groups:
           description: "p95 latency is {{ $value | humanizeDuration }}"
 ```
 
-Step 3: AlertManager Webhook Configuration
+Step 3 - AlertManager Webhook Configuration
 
 ```yaml
 alertmanager/config.yml
@@ -110,7 +110,7 @@ receivers:
           bearer_token: '${TRIAGE_SERVICE_TOKEN}'
 ```
 
-Step 4: The AI Triage Service
+Step 4 - The AI Triage Service
 
 ```python
 triage_service.py
@@ -180,17 +180,17 @@ async def gather_context(alert: dict) -> dict:
 def format_context_for_claude(alert: dict, context: dict) -> str:
     """Convert raw Prometheus data into a readable context bundle."""
     return f"""
-ALERT FIRED: {alert.get('annotations', {}).get('summary', 'Unknown alert')}
-Severity: {alert.get('labels', {}).get('severity', 'unknown')}
-Service: {alert.get('labels', {}).get('job', 'unknown')}
-Alert description: {alert.get('annotations', {}).get('description', 'N/A')}
+ALERT FIRED - {alert.get('annotations', {}).get('summary', 'Unknown alert')}
+Severity - {alert.get('labels', {}).get('severity', 'unknown')}
+Service - {alert.get('labels', {}).get('job', 'unknown')}
+Alert description - {alert.get('annotations', {}).get('description', 'N/A')}
 
 METRIC CONTEXT (last 30 minutes):
-Error rate trend: {json.dumps(context.get('error_rate_trend', {}).get('data', {}), indent=2)[:500]}
+Error rate trend - {json.dumps(context.get('error_rate_trend', {}).get('data', {}), indent=2)[:500]}
 p95 Latency trend: {json.dumps(context.get('latency_p95_trend', {}).get('data', {}), indent=2)[:500]}
-Request rate: {json.dumps(context.get('request_rate', {}).get('data', {}), indent=2)[:300]}
-Error breakdown by status: {json.dumps(context.get('error_breakdown', {}).get('data', {}), indent=2)[:300]}
-Other degraded services: {json.dumps(context.get('upstream_errors', {}).get('data', {}), indent=2)[:300]}
+Request rate - {json.dumps(context.get('request_rate', {}).get('data', {}), indent=2)[:300]}
+Error breakdown by status - {json.dumps(context.get('error_breakdown', {}).get('data', {}), indent=2)[:300]}
+Other degraded services - {json.dumps(context.get('upstream_errors', {}).get('data', {}), indent=2)[:300]}
 """
 
 async def triage_with_claude(alert: dict, context: dict) -> str:
@@ -256,7 +256,7 @@ async def notify_slack(alert: dict, analysis: str):
         await http.post(slack_webhook, json=message)
 ```
 
-Step 5: Automated Runbook Generation
+Step 5 - Automated Runbook Generation
 
 Use Claude to generate runbooks from historical incidents:
 
@@ -291,12 +291,12 @@ Based on these historical incidents:
 
 Format the runbook as:
 Overview
-Step 6: When This Fires
-Step 7: Diagnostic Steps (numbered, with specific commands)
-Step 8: Common Root Causes
-Step 9: Resolution Steps by Root Cause
-Step 10: Escalation Path
-Step 11: Prevention
+Step 6 - When This Fires
+Step 7 - Diagnostic Steps (numbered, with specific commands)
+Step 8 - Common Root Causes
+Step 9 - Resolution Steps by Root Cause
+Step 10 - Escalation Path
+Step 11 - Prevention
 """
         }]
     )
@@ -324,7 +324,7 @@ runbook = generate_runbook("HighErrorRate", incidents)
 print(runbook)
 ```
 
-Step 12: Grafana Dashboard with AI Annotations
+Step 12 - Grafana Dashboard with AI Annotations
 
 ```python
 scripts/annotate-dashboard.py
@@ -356,7 +356,7 @@ Analyze this time series for {service} error rate (timestamp, value pairs):
 {metric_data[:50]}  # sample first 50 points
 
 Identify up to 3 anomaly points (sudden spikes, sustained elevation, or drops).
-For each, return JSON: {{"timestamp": "ISO8601", "explanation": "brief cause hypothesis"}}
+For each, return JSON - {{"timestamp": "ISO8601", "explanation": "brief cause hypothesis"}}
 Return only the JSON array, no other text.
 """
         }]
@@ -385,7 +385,7 @@ async def post_grafana_annotation(timestamp: str, text: str, dashboard_id: int):
         )
 ```
 
-Step 13: Deploy ment
+Step 13 - Deploy ment
 
 ```bash
 docker-compose.yml excerpt

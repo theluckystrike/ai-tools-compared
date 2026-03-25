@@ -212,9 +212,9 @@ Prompt Patterns That Work Well
 
 Structured prompts yield consistently better output than open-ended requests. Use a template like:
 
-- Context: "I'm using Project Reactor 3.x with Spring WebFlux and R2DBC for PostgreSQL."
-- Input/Output: "Given a `Flux<OrderEvent>`, I need to group events by `orderId` and emit a summary once the order is complete."
-- Constraints: "The stream may be unbounded. Each order has at most 50 events. Emit the summary within 5 seconds of the first event per order."
+- Context - "I'm using Project Reactor 3.x with Spring WebFlux and R2DBC for PostgreSQL."
+- Input/Output - "Given a `Flux<OrderEvent>`, I need to group events by `orderId` and emit a summary once the order is complete."
+- Constraints - "The stream may be unbounded. Each order has at most 50 events. Emit the summary within 5 seconds of the first event per order."
 
 This level of specificity prevents AI tools from generating code that works in isolation but fails under real load.
 

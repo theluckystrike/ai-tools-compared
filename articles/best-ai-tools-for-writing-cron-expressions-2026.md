@@ -70,7 +70,7 @@ Write Quartz cron expressions for:
 Claude output:
 
 ```
-Quartz format: seconds minutes hours day-of-month month day-of-week [year]
+Quartz format - seconds minutes hours day-of-month month day-of-week [year]
 
 1. 0 30 14 ? * 6#2
    Second Friday (6=Friday, #2=second occurrence) of every month at 14:30:00
@@ -90,7 +90,7 @@ Kubernetes CronJob Format
 Prompt:
 ```text
 Write a Kubernetes CronJob manifest that runs a cleanup job daily at 2 AM UTC.
-Image: myapp/cleanup:latest. The job should not run more than once concurrently.
+Image - myapp/cleanup:latest. The job should not run more than once concurrently.
 Keep 3 successful and 1 failed job history. Timeout after 10 minutes.
 ```
 
@@ -137,7 +137,7 @@ spec:
                       key: database-url
 ```
 
-Claude adds `timeZone: "Etc/UTC"` (Kubernetes 1.25+ feature), `startingDeadlineSeconds` (prevents missed runs from accumulating), and `backoffLimit: 2` to avoid infinite retry loops. ChatGPT often omits `concurrencyPolicy` and `startingDeadlineSeconds`.
+Claude adds `timeZone - "Etc/UTC"` (Kubernetes 1.25+ feature), `startingDeadlineSeconds` (prevents missed runs from accumulating), and `backoffLimit: 2` to avoid infinite retry loops. ChatGPT often omits `concurrencyPolicy` and `startingDeadlineSeconds`.
 
 AWS EventBridge Schedule Expressions
 
@@ -170,7 +170,7 @@ EventBridge cron uses UTC and has 6 fields (no seconds): minutes hours day month
 
 Claude flags the EST vs EDT distinction. a common mistake that causes schedules to shift by a hour twice a year. It recommends EventBridge Scheduler for timezone-aware scheduling.
 
-Python: Validating and Describing Cron Expressions
+Python - Validating and Describing Cron Expressions
 
 ```python
 from croniter import croniter
@@ -215,7 +215,7 @@ Write cron expressions for:
 2. Every weekday at 9 AM, account for DST transitions
 3. Monthly report at 1st day, 8 AM EST (winter) / EDT (summer)
 
-Address: what happens when DST shifts the clock?
+Address - what happens when DST shifts the clock?
 ```
 
 Claude response:
@@ -262,12 +262,12 @@ DST Transition Examples:
 - Spring forward (2 AM → 3 AM): A 2 AM job doesn't run that day in spring
 - Fall back (2 AM occurs twice): A 2 AM job runs twice in fall
 
-Best Practice: Use UTC cron expressions and convert user-facing times to UTC.
+Best Practice - Use UTC cron expressions and convert user-facing times to UTC.
 ```
 
 Claude correctly identifies the DST trap. a cron job scheduled for 2 AM during spring-forward night might not run (the time doesn't exist). Using UTC avoids this.
 
-Advanced Scheduling: Non-Repeating Patterns
+Advanced Scheduling - Non-Repeating Patterns
 
 Prompt:
 ```text
@@ -322,8 +322,8 @@ Cron Expression Debugging CLI Tool
 Prompt:
 ```text
 Write a Python CLI tool that validates cron expressions and shows next N executions.
-Input: a cron expression
-Output: valid/invalid, next 10 execution times
+Input - a cron expression
+Output - valid/invalid, next 10 execution times
 ```
 
 Claude generates:
@@ -366,8 +366,8 @@ def validate_and_show_next_runs(
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: cron-validate.py '<cron-expression>' [count]")
-        print("Example: cron-validate.py '*/15 9-17 * * 1-5' 20")
+        print("Usage - cron-validate.py '<cron-expression>' [count]")
+        print("Example - cron-validate.py '*/15 9-17 * * 1-5' 20")
         sys.exit(1)
 
     expr = sys.argv[1]

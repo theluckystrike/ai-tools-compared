@@ -27,11 +27,11 @@ Table of Contents
 - [Future Outlook](#future-outlook)
 - [Real-World Performance Comparison: Virtual Threads vs Thread Pools](#real-world-performance-comparison-virtual-threads-vs-thread-pools)
 - [Pinning and Blocking Detection](#pinning-and-blocking-detection)
-- [Structured Concurrency: Nursery Pattern](#structured-concurrency-nursery-pattern)
+- [Structured Concurrency - Nursery Pattern](#structured-concurrency-nursery-pattern)
 - [Scoped Values in Depth](#scoped-values-in-depth)
 - [Virtual Thread Pool Sizing](#virtual-thread-pool-sizing)
 - [Testing Virtual Thread Code](#testing-virtual-thread-code)
-- [Migration Path: From Thread Pools to Virtual Threads](#migration-path-from-thread-pools-to-virtual-threads)
+- [Migration Path - From Thread Pools to Virtual Threads](#migration-path-from-thread-pools-to-virtual-threads)
 - [Production Deployment Considerations](#production-deployment-considerations)
 - [Tool Recommendations by Use Case](#tool-recommendations-by-use-case)
 
@@ -180,7 +180,7 @@ public ResponseEntity<User> getUser(@PathVariable String id) {
 }
 ```
 
-The difference: with Virtual Threads, you can spawn millions of tasks because each thread consumes minimal OS resources. A single machine can handle 100,000+ concurrent requests where traditional threads would handle only 200.
+The difference - with Virtual Threads, you can spawn millions of tasks because each thread consumes minimal OS resources. A single machine can handle 100,000+ concurrent requests where traditional threads would handle only 200.
 
 Memory overhead comparison:
 - Traditional thread: 1-2 MB per thread
@@ -224,7 +224,7 @@ performLockFreeWork();
 
 Claude Code, when asked about Virtual Thread best practices, proactively flags synchronized blocks and suggests alternatives. GitHub Copilot might generate synchronized code without warning, requiring developers to catch the issue during review.
 
-Structured Concurrency: Nursery Pattern
+Structured Concurrency - Nursery Pattern
 
 Project Loom introduces `StructuredTaskScope`, which ensures all spawned tasks complete before continuing. This pattern prevents resource leaks and improves error handling:
 
@@ -261,7 +261,7 @@ executor.shutdown();
 executor.awaitTermination(5, TimeUnit.SECONDS);
 ```
 
-The difference: StructuredTaskScope guarantees all tasks complete together and handles cancellation automatically. The older approach requires manual shutdown and doesn't ensure proper cancellation.
+The difference - StructuredTaskScope guarantees all tasks complete together and handles cancellation automatically. The older approach requires manual shutdown and doesn't ensure proper cancellation.
 
 Scoped Values in Depth
 
@@ -362,7 +362,7 @@ void testVirtualThreadConcurrency() throws Exception {
 
 The test submits 10,000 tasks, something impossible with traditional thread pools. Claude Code generates this pattern correctly. Copilot's suggestions might use traditional fixed pools, limiting test concurrency.
 
-Migration Path: From Thread Pools to Virtual Threads
+Migration Path - From Thread Pools to Virtual Threads
 
 Migrating existing applications to Virtual Threads requires systematic refactoring. AI tools help identify where changes are needed.
 
@@ -418,11 +418,11 @@ AI tools should suggest these monitoring patterns proactively for production sys
 
 Tool Recommendations by Use Case
 
-GitHub Copilot: Best for developers already familiar with Virtual Threads looking for quick suggestions. Good for syntax and boilerplate generation.
+GitHub Copilot - Best for developers already familiar with Virtual Threads looking for quick suggestions. Good for syntax and boilerplate generation.
 
-Claude Code: Best for refactoring and learning about Virtual Thread patterns. Excellent for explaining why certain patterns work better with Virtual Threads.
+Claude Code - Best for refactoring and learning about Virtual Thread patterns. Excellent for explaining why certain patterns work better with Virtual Threads.
 
-Cursor: Good middle ground offering both inline suggestions and conversational refinement.
+Cursor - Good middle ground offering both inline suggestions and conversational refinement.
 
 For teams migrating large codebases to Virtual Threads, Claude Code's understanding provides the most value despite higher per-interaction costs.
 

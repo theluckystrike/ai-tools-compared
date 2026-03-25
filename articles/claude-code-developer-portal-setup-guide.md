@@ -41,8 +41,8 @@ Generate a tutorial for implementing authentication using OAuth 2.0
 with our API.
 - Will this work with: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
 - Instead of manually writing: documentation or wrestling with static site generators, you can use Claude Code's AI capabilities to generate, organize, and keep your portal current.
-- When you use Claude: Code for portal setup, you gain several advantages.
-- First: documentation stays synchronized with your actual code because Claude Code reads your implementation directly.
+- When you use Claude - Code for portal setup, you gain several advantages.
+- First - documentation stays synchronized with your actual code because Claude Code reads your implementation directly.
 
 Why Use Claude Code for Developer Portals
 
@@ -62,7 +62,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Structuring Your Developer Portal
+Step 1 - Structuring Your Developer Portal
 
 A well-organized developer portal needs clear hierarchy and logical grouping. Start with a directory structure that separates different types of content:
 
@@ -100,7 +100,7 @@ claude-code analyze ./src/api \
   --output ./docs/api-reference
 ```
 
-Step 2: Integrate Interactive Documentation
+Step 2 - Integrate Interactive Documentation
 
 Static documentation serves readers well, but interactive elements help developers test APIs directly from the portal. Consider adding an API playground that connects to your actual endpoints during development:
 
@@ -121,7 +121,7 @@ async function testEndpoint(endpoint, params) {
 
 Claude Code helps you embed such interactive elements into your documentation pages. Simply describe what you want the component to do, and Claude Code generates the implementation.
 
-Step 3: Automate Documentation Updates
+Step 3 - Automate Documentation Updates
 
 The real power of using Claude Code for developer portals emerges when you automate documentation updates. Set up a CI pipeline that triggers documentation regeneration on every code change:
 
@@ -152,7 +152,7 @@ jobs:
 
 This workflow ensures your developer portal always reflects the current state of your codebase. Developers making API changes see their modifications documented automatically.
 
-Step 4: Build Tutorial Content
+Step 4 - Build Tutorial Content
 
 Beyond API references, developer portals need tutorials that guide users through common integration scenarios. Claude Code excels at generating these step-by-step guides because it understands your specific implementation details.
 
@@ -169,7 +169,7 @@ with our API. The tutorial should cover:
 
 Claude Code produces a detailed guide tailored to your actual API structure, including working code examples that developers can copy and adapt.
 
-Step 5: Maintaining Portal Quality
+Step 5 - Maintaining Portal Quality
 
 As your developer portal grows, maintaining consistency becomes challenging. Claude Code helps enforce standards across all documentation:
 
@@ -181,7 +181,7 @@ As your developer portal grows, maintaining consistency becomes challenging. Cla
 
 Run these quality checks as part of your CI pipeline to catch issues before they reach users.
 
-Step 6: Deploy ment Options
+Step 6 - Deploy ment Options
 
 Your Claude Code-generated portal can deploy to various platforms:
 
@@ -245,7 +245,7 @@ netlify.toml
 
 Netlify's split testing feature allows you to A/B test different documentation layouts or explore variations of API explanations without affecting production traffic.
 
-Step 7: Measuring Portal Effectiveness
+Step 7 - Measuring Portal Effectiveness
 
 Developer portal analytics reveal which docs users find helpful and where they struggle. Track these metrics to continuously improve:
 
@@ -316,7 +316,7 @@ claude-code analyze-docs \
 
 This creates a continuous improvement cycle where user feedback directly informs documentation updates.
 
-Step 8: Pricing and Cost Optimization
+Step 8 - Pricing and Cost Optimization
 
 Claude Code itself offers flexible pricing for documentation generation:
 
@@ -333,10 +333,10 @@ Calculate your actual costs by tracking API usage:
 ```bash
 Monitor Claude Code API usage
 claude-code analytics --period last_month
-Output shows: 45,230 API calls, $22.61 cost
+Output shows - 45,230 API calls, $22.61 cost
 ```
 
-Step 9: Dynamic Content Generation at Scale
+Step 9 - Dynamic Content Generation at Scale
 
 For portals serving many products or APIs, consider dynamic generation strategies:
 

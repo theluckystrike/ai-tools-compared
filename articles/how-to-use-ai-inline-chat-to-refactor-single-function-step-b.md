@@ -62,15 +62,15 @@ This function calculates a total by iterating through items and adding their pri
 
 Step-by-Step Refactoring Process
 
-Step 1: Open Inline Chat
+Step 1 - Open Inline Chat
 
 In VS Code, activate AI inline chat by pressing `Cmd+I` on Mac or `Ctrl+I` on Windows. A chat interface appears at the top of your editor with an input field. You can also access it through the Command Palette by searching for "Inline Chat."
 
-Step 2: Select Your Target Code
+Step 2 - Select Your Target Code
 
 Highlight the function you want to refactor. Selection ensures the AI understands exactly which code to transform. Without selection, inline chat uses the surrounding context, which may produce less precise results.
 
-Step 3: Describe Your Refactoring Goal
+Step 3 - Describe Your Refactoring Goal
 
 Type a specific instruction in the chat input. For our example, you might say:
 
@@ -80,7 +80,7 @@ Refactor this function to use reduce and modern JavaScript syntax
 
 The more specific your instruction, the better the results. Avoid vague requests like "improve this code" and instead specify what improvement you want.
 
-Step 4: Review AI Suggestions
+Step 4 - Review AI Suggestions
 
 The AI generates a modified version of your function. For our example, you might receive:
 
@@ -97,7 +97,7 @@ function calculateTotal(items) {
 
 The inline chat displays the proposed changes directly in your editor, allowing you to see exactly what will change.
 
-Step 5: Apply or Modify the Changes
+Step 5 - Apply or Modify the Changes
 
 Accept the suggestion by pressing `Tab` or clicking the accept button. If the result isn't quite right, you can modify your prompt and regenerate, or manually adjust the suggested code before accepting.
 
@@ -105,15 +105,15 @@ Common Refactoring Scenarios
 
 AI inline chat handles various refactoring tasks effectively:
 
-Converting to Arrow Functions: Ask the AI to "convert this function to an arrow function" for more concise syntax.
+Converting to Arrow Functions - Ask the AI to "convert this function to an arrow function" for more concise syntax.
 
-Adding Type Safety: Request "add TypeScript types to this function" to introduce static typing.
+Adding Type Safety - Request "add TypeScript types to this function" to introduce static typing.
 
-Extracting Logic: Say "extract the validation logic into a separate function" to break apart complex functions.
+Extracting Logic - Say "extract the validation logic into a separate function" to break apart complex functions.
 
-Improving Readability: Describe "simplify this nested condition" to flatten complex logic.
+Improving Readability - Describe "simplify this nested condition" to flatten complex logic.
 
-Adding Error Handling: Prompt "add try-catch error handling" to make functions more strong.
+Adding Error Handling - Prompt "add try-catch error handling" to make functions more strong.
 
 Tips for Effective Refactoring
 

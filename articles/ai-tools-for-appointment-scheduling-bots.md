@@ -221,7 +221,7 @@ def create_calendar_event(credentials, event_details):
 
 Key considerations for calendar integration include handling time zone conversions, managing double-booking conflicts, implementing buffer times between appointments, and respecting working hours constraints.
 
-Tool Comparison: Pricing and Capabilities
+Tool Comparison - Pricing and Capabilities
 
 Choosing the right tool depends on your budget, team expertise, and long-term maintenance capacity. This comparison covers the four most popular platforms for scheduling bot development in 2026.
 
@@ -232,7 +232,7 @@ Choosing the right tool depends on your budget, team expertise, and long-term ma
 | Botpress | Free self-hosted; Cloud from $495/month | Self-hosted or cloud | Teams wanting open-source control |
 | Rasa | Free open-source; Rasa Pro enterprise pricing | Self-hosted | Maximum NLP customization; offline deployments |
 
-For most small-to-mid-size deployments, Dialogflow CX and Botpress offer the strongest balance of capability and cost. Enterprise teams embedded in the Microsoft ecosystem should evaluate the Bot Framework first given the native Outlook and Teams integrations.
+For most small-to-mid-size deployments, Dialogflow CX and Botpress offer the strongest balance of capability and cost. Enterprise teams embedded in the Microsoft environment should evaluate the Bot Framework first given the native Outlook and Teams integrations.
 
 Building for Production
 
@@ -242,7 +242,7 @@ Time zone handling remains one of the most challenging aspects of scheduling bot
 
 Testing should cover edge cases like booking appointments across time zones, handling same-day bookings, managing calendar conflicts, and processing cancellation requests. Automated tests verify that your bot correctly handles these scenarios.
 
-Handling Edge Cases: Conflicts, Cancellations, and No-Shows
+Handling Edge Cases - Conflicts, Cancellations, and No-Shows
 
 Real-world scheduling bots encounter three categories of edge cases that require explicit design decisions.
 

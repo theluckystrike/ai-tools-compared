@@ -32,9 +32,9 @@ AI tools can generate production-grade templates in seconds. But quality varies 
 
 Claude (claude-opus-4-6)
 
-Pricing: $15/month Claude Pro
-Speed: Fast
-Elasticsearch Knowledge: Expert
+Pricing - $15/month Claude Pro
+Speed - Fast
+Elasticsearch Knowledge - Expert
 
 Claude is the strongest tool for Elasticsearch templates. It understands field analyzers, tokenizers, ngram strategies, and the full ILM lifecycle.
 
@@ -90,17 +90,17 @@ Example Output:
 }
 ```
 
-Claude explains: number_of_shards=3 balances query parallelism and overhead; codec=best_compression matters for log storage; timestamp should be epoch_millis for performance.
+Claude explains - number_of_shards=3 balances query parallelism and overhead; codec=best_compression matters for log storage; timestamp should be epoch_millis for performance.
 
-Best For: Teams building search/logging platforms, production deployments, compliance-sensitive systems.
+Best For - Teams building search/logging platforms, production deployments, compliance-sensitive systems.
 
 ---
 
 GitHub Copilot
 
-Pricing: $10/month individual
-Speed: Very Fast
-Elasticsearch Knowledge: Intermediate
+Pricing - $10/month individual
+Speed - Very Fast
+Elasticsearch Knowledge - Intermediate
 
 Copilot excels at incremental template refinement. If you have existing templates in your repo, it learns your patterns and generates matching additions.
 
@@ -119,24 +119,24 @@ Weaknesses:
 
 Typical Workflow:
 ```
-You type: "properties": {
+You type - "properties": {
            "user_id": {
 
-Copilot suggests: "type": "keyword",
+Copilot suggests - "type": "keyword",
                   "ignore_above": 256
 ```
 
 Useful for consistency but lacks strategic thinking about whether keyword or long is right.
 
-Best For: Incremental development, teams with established template patterns, rapid prototyping.
+Best For - Incremental development, teams with established template patterns, rapid prototyping.
 
 ---
 
 ChatGPT (GPT-4)
 
-Pricing: $20/month ChatGPT Plus
-Speed: Moderate
-Elasticsearch Knowledge: Intermediate-Good
+Pricing - $20/month ChatGPT Plus
+Speed - Moderate
+Elasticsearch Knowledge - Intermediate-Good
 
 GPT-4 handles Elasticsearch templates reasonably well. It understands mappings and analyzers but sometimes misses newer features (data streams, component templates).
 
@@ -155,15 +155,15 @@ Weaknesses:
 Example Weakness:
 GPT-4 might suggest `"dynamic": true` for log templates without questioning cardinality explosion. Claude proactively warns: "This risks unmapped fields exploding your index size."
 
-Best For: Learning Elasticsearch, multi-language client code, conceptual questions.
+Best For - Learning Elasticsearch, multi-language client code, conceptual questions.
 
 ---
 
 Perplexity (Free/Pro $20/month)
 
-Pricing: Free + Pro $20/month
-Speed: Moderate
-Elasticsearch Knowledge: Good
+Pricing - Free + Pro $20/month
+Speed - Moderate
+Elasticsearch Knowledge - Good
 
 Perplexity retrieves current Elasticsearch documentation and grounds configs in official sources.
 
@@ -179,15 +179,15 @@ Weaknesses:
 - Verbose output (includes doc excerpts)
 - Can't learn organizational patterns
 
-Best For: Version migrations, compliance documentation, teams needing cited sources.
+Best For - Version migrations, compliance documentation, teams needing cited sources.
 
 ---
 
 Gemini (Google)
 
-Pricing: Free + Premium $20/month
-Speed: Fast
-Elasticsearch Knowledge: Intermediate
+Pricing - Free + Premium $20/month
+Speed - Fast
+Elasticsearch Knowledge - Intermediate
 
 Gemini understands Elasticsearch but trails Claude and GPT-4 in template expertise.
 
@@ -203,7 +203,7 @@ Weaknesses:
 - Weaker on ILM policy design
 - Training data lighter on Elasticsearch-specific edge cases
 
-Best For: GCP-native deployments, Infrastructure-as-Code, cost-optimized templates.
+Best For - GCP-native deployments, Infrastructure-as-Code, cost-optimized templates.
 
 ---
 
@@ -293,7 +293,7 @@ E-commerce Search Index (Claude-Generated)
 }
 ```
 
-Why Claude's approach: ngram tokenizer enables "typ" matching "typescript keyboard"; price as scaled_float saves 40% storage vs. double; category as keyword (no analysis) keeps filters fast; product_name has both text (search) and keyword (aggregation) fields.
+Why Claude's approach - ngram tokenizer enables "typ" matching "typescript keyboard"; price as scaled_float saves 40% storage vs. double; category as keyword (no analysis) keeps filters fast; product_name has both text (search) and keyword (aggregation) fields.
 
 Application Logs Index with ILM (Full Lifecycle)
 
@@ -384,7 +384,7 @@ Application Logs Index with ILM (Full Lifecycle)
 }
 ```
 
-Claude's reasoning: hot phase rolls over at 50GB (manage storage); warm phase shrinks to 1 shard (reduce overhead); cold phase keeps data (searchable but low priority); delete phase removes after 90 days (GDPR/compliance).
+Claude's reasoning - hot phase rolls over at 50GB (manage storage); warm phase shrinks to 1 shard (reduce overhead); cold phase keeps data (searchable but low priority); delete phase removes after 90 days (GDPR/compliance).
 
 Analytics Index (Time-Series Optimized)
 
@@ -428,7 +428,7 @@ Analytics Index (Time-Series Optimized)
 }
 ```
 
-For analytics: replicas=0 (cost savings, rebuild from retention), sort.field on timestamp (faster range queries), flattened tags (supports high-cardinality label queries without explosion).
+For analytics - replicas=0 (cost savings, rebuild from retention), sort.field on timestamp (faster range queries), flattened tags (supports high-cardinality label queries without explosion).
 
 ---
 
@@ -442,16 +442,16 @@ PUT /_index_template/my-template
   ...
 }
 ```
-Then create a test index: `POST /my-test-001` and verify field mappings are correct.
+Then create a test index - `POST /my-test-001` and verify field mappings are correct.
 
 2. Request Performance Metrics Alongside
-Ask: "Generate a template AND recommend Grafana dashboards to monitor query latency, indexing rate, and shard size distribution." Claude will deliver both.
+Ask - "Generate a template AND recommend Grafana dashboards to monitor query latency, indexing rate, and shard size distribution." Claude will deliver both.
 
 3. Specify Data Characteristics
-Tell Claude: "I have 500 unique values for 'country' field, 10M unique values for 'session_id'." This guides fielddata decisions and cardinality handling.
+Tell Claude - "I have 500 unique values for 'country' field, 10M unique values for 'session_id'." This guides fielddata decisions and cardinality handling.
 
 4. Cross-Check ILM Policies
-AI templates sometimes suggest policies that don't match your retention/compliance needs. Review: rollover thresholds (GB or days?), shard counts in warm/cold phases, deletion schedules.
+AI templates sometimes suggest policies that don't match your retention/compliance needs. Review - rollover thresholds (GB or days?), shard counts in warm/cold phases, deletion schedules.
 
 5. Test Analyzer Output
 ```bash
@@ -486,7 +486,7 @@ Q: What about vector search (semantic) indexes?
 A: Claude now handles dense_vector field types and ELSER models. Copilot is newer here. GPT-4 works but needs explicit guidance.
 
 Q: How do I optimize a template for cost?
-A: Ask Claude: "Optimize this template for cost while keeping queries under 2s." It will suggest compression codecs, replication reductions, shard count trade-offs.
+A: Ask Claude - "Optimize this template for cost while keeping queries under 2s." It will suggest compression codecs, replication reductions, shard count trade-offs.
 
 Q: Can these tools troubleshoot slow Elasticsearch queries?
 A: Yes, but they need the slow query log and index stats. Claude can analyze slow logs and recommend mapping changes. Copilot can spot inefficiencies in your existing templates.

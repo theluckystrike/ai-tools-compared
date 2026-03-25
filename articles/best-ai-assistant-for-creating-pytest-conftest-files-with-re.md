@@ -23,11 +23,11 @@ Table of Contents
 - [Why pytest conftest Files Matter for Test Architecture](#why-pytest-conftest-files-matter-for-test-architecture)
 - [Comparing AI Tools for pytest conftest Generation](#comparing-ai-tools-for-pytest-conftest-generation)
 - [Effective Prompting Strategies for conftest Generation](#effective-prompting-strategies-for-conftest-generation)
-- [Practical Example: Database Fixtures with AI Assistance](#practical-example-database-fixtures-with-ai-assistance)
+- [Practical Example - Database Fixtures with AI Assistance](#practical-example-database-fixtures-with-ai-assistance)
 - [Advanced Patterns AI Tools Handle Well](#advanced-patterns-ai-tools-handle-well)
 - [Common Patterns AI Tools Handle Well](#common-patterns-ai-tools-handle-well)
 - [Tips for Getting Better Results](#tips-for-getting-better-results)
-- [Step-by-Step Workflow: Generating a Full conftest with Claude Code](#step-by-step-workflow-generating-a-full-conftest-with-claude-code)
+- [Step-by-Step Workflow - Generating a Full conftest with Claude Code](#step-by-step-workflow-generating-a-full-conftest-with-claude-code)
 - [Related Reading](#related-reading)
 
 Why pytest conftest Files Matter for Test Architecture
@@ -130,7 +130,7 @@ Specify Fixture Scope Explicitly
 Clearly indicate when fixtures should use function, class, module, or session scope:
 
 ```python
-Example prompt: "Create session-scoped database fixture"
+Example prompt - "Create session-scoped database fixture"
 @pytest.fixture(scope="session")
 def test_db_engine():
     """Create a database engine shared across all tests."""
@@ -144,7 +144,7 @@ Request Cleanup and Teardown
 Explicitly ask for proper cleanup patterns:
 
 ```python
-Ask AI to include: "Add proper teardown that closes connections"
+Ask AI to include - "Add proper teardown that closes connections"
 @pytest.fixture
 def db_connection():
     connection = get_db_connection()
@@ -192,7 +192,7 @@ def make_user(db_session):
     db_session.commit()
 ```
 
-Practical Example: Database Fixtures with AI Assistance
+Practical Example - Database Fixtures with AI Assistance
 
 Here's a well-structured conftest.py that AI tools can help generate:
 
@@ -297,33 +297,33 @@ Test the generated fixtures in isolation before integrating them into your full 
 
 When fixtures fail silently, use `pytest -s` to see fixture setup and teardown output. AI-generated fixtures sometimes omit error logging in cleanup phases, which makes debugging test infrastructure failures harder than it needs to be.
 
-Step-by-Step Workflow: Generating a Full conftest with Claude Code
+Step-by-Step Workflow - Generating a Full conftest with Claude Code
 
 Here is a repeatable workflow for getting a production-quality conftest file from an AI assistant:
 
-Step 1: Describe your stack completely.
+Step 1 - Describe your stack completely.
 
 Start with a project description. Do not assume the AI knows your ORM, async framework, or database engine. Paste in your `requirements.txt` or `pyproject.toml` dependencies if the context window allows.
 
-Step 2: Share your current test directory structure.
+Step 2 - Share your current test directory structure.
 
 Paste the output of `find tests/ -name "*.py" | head -30` so the AI can understand where fixtures are needed and whether sub-package conftest files are appropriate.
 
-Step 3: List the fixtures you know you need.
+Step 3 - List the fixtures you know you need.
 
 Enumerate specific fixtures by name if you already know them: `db_session`, `async_client`, `auth_headers`, `mock_email_service`. Giving names reduces ambiguity dramatically.
 
-Step 4: Request one fixture category at a time.
+Step 4 - Request one fixture category at a time.
 
 Rather than asking for a complete conftest in one shot, ask for database fixtures first, then HTTP client fixtures, then mock fixtures. Stitch them together afterward. This produces cleaner, more focused output.
 
-Step 5: Validate scope choices.
+Step 5 - Validate scope choices.
 
 After receiving the generated code, explicitly ask: "Is each fixture's scope correct for how it will be used? Would any of these benefit from session scope?" This follow-up catches scope mismatches that cause slow test suites.
 
-Step 6: Ask for a teardown audit.
+Step 6 - Ask for a teardown audit.
 
-Request: "Review every fixture and confirm it cleans up all resources after yield." AI tools sometimes omit cleanup when setup is straightforward, and this review step catches the gaps.
+Request - "Review every fixture and confirm it cleans up all resources after yield." AI tools sometimes omit cleanup when setup is straightforward, and this review step catches the gaps.
 
 Related Articles
 

@@ -257,7 +257,7 @@ spec:
 Table of Contents
 
 - [Vulnerability Prioritization Scoring](#vulnerability-prioritization-scoring)
-- [Integration Patterns: Build vs. Runtime vs. Registry](#integration-patterns-build-vs-runtime-vs-registry)
+- [Integration Patterns - Build vs. Runtime vs. Registry](#integration-patterns-build-vs-runtime-vs-registry)
 - [Scan Result Analysis and Action](#scan-result-analysis-and-action)
 - [False Positive Management](#false-positive-management)
 - [Measuring Scanning Program Effectiveness](#measuring-scanning-program-effectiveness)
@@ -301,10 +301,10 @@ AI container scanners use multi-factor scoring beyond simple severity ratings:
 
 Sample Vulnerability Scoring Calculation
 
-CVE-2026-12345: OpenSSL remote code execution
+CVE-2026-12345 - OpenSSL remote code execution
 
 ```
-Base Severity (CVSS): 9.8/10 (CRITICAL)
+Base Severity (CVSS) - 9.8/10 (CRITICAL)
 
 Context Factors:
 + Package is explicitly used: +1.0
@@ -314,15 +314,15 @@ Context Factors:
 - Pod security context restrictive: -0.3
 - Service is internal-only: -0.5
 
-AI Risk Score: 9.8 + 1.0 + 0.5 + 0.3 + 0.2 - 0.3 - 0.5 = 10.0
+AI Risk Score - 9.8 + 1.0 + 0.5 + 0.3 + 0.2 - 0.3 - 0.5 = 10.0
 
 IMMEDIATE PATCH (within 24 hours)
 ```
 
-CVE-2026-67890: Low-risk logging library bug
+CVE-2026-67890 - Low-risk logging library bug
 
 ```
-Base Severity (CVSS): 4.2/10 (MEDIUM)
+Base Severity (CVSS) - 4.2/10 (MEDIUM)
 
 Context Factors:
 + Package is transitive dependency: 0.0
@@ -330,14 +330,14 @@ Context Factors:
 - Limited security impact path: -0.3
 - Service is read-only operational: -0.2
 
-AI Risk Score: 4.2 + 0.0 - 0.5 - 0.3 - 0.2 = 3.2
+AI Risk Score - 4.2 + 0.0 - 0.5 - 0.3 - 0.2 = 3.2
 
 MONITOR, NO PATCH REQUIRED (unless updating for other reasons)
 ```
 
-Integration Patterns: Build vs. Runtime vs. Registry
+Integration Patterns - Build vs. Runtime vs. Registry
 
-Pattern 1: Build-Time Scanning (Shift Left)
+Pattern 1 - Build-Time Scanning (Shift Left)
 
 ```dockerfile
 FROM alpine:3.18 AS scan
@@ -359,7 +359,7 @@ CMD ["node", "index.js"]
 Catches vulnerabilities before image reaches registry
 Slows down build process
 
-Pattern 2: Registry Scanning
+Pattern 2 - Registry Scanning
 
 ```python
 Push hook that triggers scanning
@@ -387,7 +387,7 @@ def scan_on_push(image_name):
 Doesn't impact local development
 Vulnerabilities detected after build
 
-Pattern 3: Runtime Monitoring
+Pattern 3 - Runtime Monitoring
 
 ```yaml
 apiVersion: v1

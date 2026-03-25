@@ -29,7 +29,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How MCP Works
+Step 1 - How MCP Works
 
 Claude communicates with MCP servers over stdio or HTTP. The server advertises its capabilities (tools, resources, prompts) and Claude decides when to call them based on context.
 
@@ -43,7 +43,7 @@ Three primitive types:
 - Resources: Read-only data Claude can access (files, DB records, API responses)
 - Prompts: Reusable prompt templates with arguments
 
-Step 2: Set Up
+Step 2 - Set Up
 
 ```bash
 Python SDK
@@ -69,7 +69,7 @@ Configure Claude Desktop to load your server in `~/Library/Application Support/C
 }
 ```
 
-Step 3: Server 1: Database Query Tool (Python)
+Step 3 - Server 1: Database Query Tool (Python)
 
 ```python
 db_server.py
@@ -213,7 +213,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-Step 4: Server 2: REST API Wrapper (Node.js)
+Step 4 - Server 2: REST API Wrapper (Node.js)
 
 ```typescript
 // api_server.ts
@@ -320,7 +320,7 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-Step 5: Server 3: File Watcher Resource
+Step 5 - Server 3: File Watcher Resource
 
 Resources expose live data Claude can read. This one exposes log files:
 
@@ -373,7 +373,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-Step 6: Registering Multiple Servers
+Step 6 - Registering Multiple Servers
 
 ```json
 {
@@ -402,7 +402,7 @@ Step 6: Registering Multiple Servers
 
 Once registered, Claude can use all three servers in a single conversation: query the database, call the internal API, and read log files as needed.
 
-Step 7: Security Checklist
+Step 7 - Security Checklist
 
 - Restrict SQL to SELECT only; use a read-only DB user
 - Validate all file paths against an allowed base directory

@@ -17,7 +17,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Code documentation has two failure modes: missing entirely, or present but wrong. AI tools solve the first problem well and are getting better at the second. This guide covers practical workflows for generating docstrings, API references, and architecture documentation at scale.
 
-Approach 1: Batch Docstring Generation
+Approach 1 - Batch Docstring Generation
 
 The highest-ROI use case is adding docstrings to existing functions that have none. This script processes an entire module:
 
@@ -165,7 +165,7 @@ def document_module(module_path: str, style: str = "google"):
             print(f"Added {result['added']} docstrings to {py_file.name}")
 ```
 
-Approach 2: Architecture Documentation from Code
+Approach 2 - Architecture Documentation from Code
 
 ```python
 def generate_architecture_doc(repo_path: str) -> str:
@@ -200,7 +200,7 @@ File structure with classes and functions:
 {json.dumps(structure, indent=2)[:5000]}
 
 Write documentation covering:
-1. Overview: What does this codebase do? (infer from names)
+1. Overview - What does this codebase do? (infer from names)
 2. Module Structure: Purpose of each module/package
 3. Key Components: Most important classes and their responsibilities
 4. Data Flow: How data moves through the system (infer from module names)
@@ -217,7 +217,7 @@ Path("docs/architecture.md").write_text(
 )
 ```
 
-Approach 3: API Reference Generation with MkDocs
+Approach 3 - API Reference Generation with MkDocs
 
 ```python
 generate_api_docs.py
@@ -233,7 +233,7 @@ def generate_mkdocs_page(module_path: str) -> str:
             "role": "user",
             "content": f"""Generate MkDocs-compatible API documentation for this Python module.
 
-Module: {module_name}
+Module - {module_name}
 
 Format:
 - Module-level description
@@ -291,7 +291,7 @@ jobs:
           publish_dir: ./site
 ```
 
-Approach 4: Inline Comment Quality Review
+Approach 4 - Inline Comment Quality Review
 
 AI can also review existing documentation for accuracy:
 
@@ -313,9 +313,9 @@ Look for:
 
 For each issue found:
 FILE_LINE: approximate line number
-ISSUE_TYPE: [wrong_params / outdated_behavior / missing_docs / todo_comment]
-DESCRIPTION: What's wrong
-SUGGESTION: How to fix
+ISSUE_TYPE - [wrong_params / outdated_behavior / missing_docs / todo_comment]
+DESCRIPTION - What's wrong
+SUGGESTION - How to fix
 
 Source:
 {source_code[:6000]}"""
@@ -326,7 +326,7 @@ Source:
 Run on every PR as a documentation quality gate
 ```
 
-Approach 5: Changelog and Release Notes Generation
+Approach 5 - Changelog and Release Notes Generation
 
 One underused application is generating changelogs directly from git commits and diffs. This eliminates the friction of writing release notes manually:
 

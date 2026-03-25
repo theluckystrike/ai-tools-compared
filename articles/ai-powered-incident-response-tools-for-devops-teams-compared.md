@@ -27,7 +27,7 @@ Table of Contents
 - [Recommendation](#recommendation)
 - [Detailed Tool Comparison Matrix](#detailed-tool-comparison-matrix)
 - [Implementation Strategies by Team Size](#implementation-strategies-by-team-size)
-- [Measuring Success: Key Metrics](#measuring-success-key-metrics)
+- [Measuring Success - Key Metrics](#measuring-success-key-metrics)
 - [AI-Assisted Runbook Development](#ai-assisted-runbook-development)
 - [Cost Optimization](#cost-optimization)
 - [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
@@ -114,7 +114,7 @@ PagerDuty Event Orchestration with AI routing
 
 4.opsgenie. Atlassian's Incident Management
 
-opsgenie integrates AI-driven alert enrichment within the Atlassian ecosystem. The tool excels at reducing alert fatigue through intelligent grouping and prioritization. Its machine learning models analyze alert patterns to predict which incidents likely require immediate escalation.
+opsgenie integrates AI-driven alert enrichment within the Atlassian environment. The tool excels at reducing alert fatigue through intelligent grouping and prioritization. Its machine learning models analyze alert patterns to predict which incidents likely require immediate escalation.
 
 Teams using Jira benefit from bidirectional incident-ticket synchronization. The AI suggests relevant runbooks based on alert characteristics and can automatically create tickets with pre-populated context.
 
@@ -134,7 +134,7 @@ When selecting an AI-powered incident response tool, evaluate these factors:
 
 - Learning curve: Will your team adopt the tool quickly, or does it require extensive training?
 
-- Customization: Can you tailor AI models to your specific infrastructure and patterns?
+- Customization - Can you tailor AI models to your specific infrastructure and patterns?
 
 - Cost structure: Some tools charge per alert, others per host or user. Calculate your expected volume.
 
@@ -159,7 +159,7 @@ jobs:
     steps:
       - name: Fetch alert context
         run: |
-          curl -H "Authorization: Token ${{ secrets.PD_TOKEN }}" \
+          curl -H "Authorization - Token ${{ secrets.PD_TOKEN }}" \
             "https://api.pagerduty.com/alerts/${{ github.event.inputs.alert_id }}"
 
       - name: Query Datadog for metrics
@@ -197,7 +197,7 @@ Implementation Strategies by Team Size
 
 Small Teams (5-10 on-call engineers)
 
-Recommended setup: PagerDuty + Datadog
+Recommended setup - PagerDuty + Datadog
 
 Why this combination:
 - PagerDuty handles on-call rotation and escalation
@@ -229,7 +229,7 @@ Expected outcomes:
 
 Medium Teams (10-30 on-call engineers)
 
-Recommended setup: Splunk AI + PagerDuty + Custom scripts
+Recommended setup - Splunk AI + PagerDuty + Custom scripts
 
 Why this configuration:
 - Splunk ingests all logs and metrics from multiple sources
@@ -266,7 +266,7 @@ Expected outcomes:
 
 Large Teams (30+ on-call engineers, multiple regions)
 
-Recommended setup: BigPanda + Splunk + Datadog + PagerDuty
+Recommended setup - BigPanda + Splunk + Datadog + PagerDuty
 
 Why platform:
 - BigPanda sits between monitoring tools and incident response
@@ -296,13 +296,13 @@ Expected outcomes:
 - 95% alert noise reduction
 - Estimated annual savings: $500K-1M in engineering time freed up
 
-Measuring Success: Key Metrics
+Measuring Success - Key Metrics
 
 Track these metrics to validate incident response improvement:
 
 ```bash
 Calculate MTTR (mean time to resolution)
-For each incident: (resolution_time - alert_time)
+For each incident - (resolution_time - alert_time)
 Average across all incidents in month
 
 Calculate MTTD (mean time to detection)
@@ -311,15 +311,15 @@ Shorter is better; <5 min is excellent
 
 False positive rate
 (Alerts that don't require action) / (total alerts)
-Target: <10%
+Target - <10%
 
 Incident volume trend
 Should decrease 20-30% in first 6 months after deployment
 Indicates better correlation and less redundant alerting
 
 Team satisfaction
-Survey on-call engineers: "How well do AI suggestions help?"
-Target: >8/10
+Survey on-call engineers - "How well do AI suggestions help?"
+Target - >8/10
 ```
 
 Monitor these continuously:
@@ -342,7 +342,7 @@ AI-Assisted Runbook Development
 Rather than pre-writing runbooks, let AI generate them from incidents:
 
 ```bash
-Process: Learn from incident, generate runbook
+Process - Learn from incident, generate runbook
 
 1. After incident resolves, export logs + resolution steps
 2. Feed to Claude or ChatGPT with prompt:

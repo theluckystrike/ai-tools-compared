@@ -164,11 +164,11 @@ Handling Different Content Types
 
 Your editing approach should vary based on content type. Here are specific recommendations:
 
-Code comments and documentation: Request ChatGPT to preserve technical accuracy while improving readability. Include relevant context about the programming language or framework in your prompt.
+Code comments and documentation - Request ChatGPT to preserve technical accuracy while improving readability. Include relevant context about the programming language or framework in your prompt.
 
-Emails and messages: Ask for tone adjustments explicitly. A prompt like "Make this email more polite but direct" produces different results than a general grammar check.
+Emails and messages - Ask for tone adjustments explicitly. A prompt like "Make this email more polite but direct" produces different results than a general grammar check.
 
-Technical tutorials: Specify your target audience. A prompt mentioning "intermediate Python developers" will produce different terminology choices than one aimed at beginners.
+Technical tutorials - Specify your target audience. A prompt mentioning "intermediate Python developers" will produce different terminology choices than one aimed at beginners.
 
 Best Practices for Migration
 
@@ -203,7 +203,7 @@ When evaluating long-term investment:
 
 For heavy users (20+ documents/month), ChatGPT Plus or Claude Pro pays for itself through time savings. For lighter use, Grammarly Premium alone may suffice.
 
-Advanced: Automating Editorial Workflows
+Advanced - Automating Editorial Workflows
 
 Developers can create sophisticated editing pipelines. Here's a Node.js example using ChatGPT API for batch processing:
 
@@ -263,17 +263,17 @@ async function batchEdit(directory) {
 batchEdit('./content');
 ```
 
-This script automates editing for entire documentation sites, applying consistent voice across hundreds of pages. The key advantage over Grammarly: you can target specific writing styles and industries.
+This script automates editing for entire documentation sites, applying consistent voice across hundreds of pages. The key advantage over Grammarly - you can target specific writing styles and industries.
 
 Handling Edge Cases
 
 Some content types trip up AI editors. Here are solutions:
 
-Code-heavy documentation: Wrap code blocks in markers before sending to ChatGPT to protect them.
+Code-heavy documentation - Wrap code blocks in markers before sending to ChatGPT to protect them.
 
-Legal or compliance text: Don't use ChatGPT for editing legal contracts or privacy policies. Use Grammarly with a human lawyer review instead.
+Legal or compliance text - Don't use ChatGPT for editing legal contracts or privacy policies. Use Grammarly with a human lawyer review instead.
 
-Highly technical terminology: Provide a glossary in your prompt to maintain consistency across documents and preserve specialized language.
+Highly technical terminology - Provide a glossary in your prompt to maintain consistency across documents and preserve specialized language.
 
 Measuring Editing Quality
 

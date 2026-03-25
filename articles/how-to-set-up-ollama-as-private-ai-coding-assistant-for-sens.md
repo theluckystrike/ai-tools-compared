@@ -25,7 +25,7 @@ Table of Contents
 - [Model Comparison for Sensitive Codebases](#model-comparison-for-sensitive-codebases)
 - [Security Considerations for Sensitive Codebases](#security-considerations-for-sensitive-codebases)
 - [Performance Optimization](#performance-optimization)
-- [Practical Example: Code Review Workflow](#practical-example-code-review-workflow)
+- [Practical Example - Code Review Workflow](#practical-example-code-review-workflow)
 - [Troubleshooting](#troubleshooting)
 
 Prerequisites
@@ -38,7 +38,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install Ollama
+Step 1 - Install Ollama
 
 Ollama supports macOS, Linux, and Windows. The installation process is straightforward across all platforms.
 
@@ -60,7 +60,7 @@ Windows
 
 Windows users can install Ollama through the Microsoft Store or by downloading the installer from the official website. After installation, restart your terminal to ensure the `ollama` command is available.
 
-Step 2: Select and Downloading Models
+Step 2 - Select and Downloading Models
 
 Ollama supports various models optimized for different tasks. For coding assistance, several models perform well:
 
@@ -99,7 +99,7 @@ Choosing the right model matters for both quality and performance. Here is how t
 
 For most sensitive-codebase scenarios, Qwen2.5-Coder 7B delivers the best quality-to-resource ratio. Its 32K token context window lets you paste entire files without truncation, which is critical when you cannot send code to a cloud API and need the model to see the full picture.
 
-Step 3: Run Ollama as a Local Server
+Step 3 - Run Ollama as a Local Server
 
 By default, Ollama runs as a local server on port 11434. Start the server:
 
@@ -115,7 +115,7 @@ ollama serve &
 
 The server listens on `http://localhost:11434`. All API calls remain local, no external network requests occur during model inference.
 
-Step 4: Integrate with Code Editors
+Step 4 - Integrate with Code Editors
 
 Several editors support integration with local LLMs through Ollama.
 
@@ -157,7 +157,7 @@ Zed includes native Ollama support. Open settings and enable the Ollama integrat
 }
 ```
 
-Step 5: Use Ollama via Command Line
+Step 5 - Use Ollama via Command Line
 
 Beyond editor integration, you can interact with Ollama directly through the command line for quick queries:
 
@@ -237,11 +237,11 @@ curl http://localhost:11434/api/generate -d '{
 }'
 ```
 
-Step 6: Full Setup Walkthrough: Secure Team Environment
+Step 6 - Full Setup Walkthrough: Secure Team Environment
 
 This workflow covers setting up Ollama for a small engineering team where all code must stay on-premises, common in fintech, defense contracting, and healthcare software shops.
 
-Step 1: Install on a dedicated inference server. Instead of each developer running their own model, provision a shared Linux server with a GPU. Install Ollama and expose it on an internal network address:
+Step 1 - Install on a dedicated inference server. Instead of each developer running their own model, provision a shared Linux server with a GPU. Install Ollama and expose it on an internal network address:
 
 ```bash
 OLLAMA_HOST=0.0.0.0:11434 ollama serve
@@ -249,7 +249,7 @@ OLLAMA_HOST=0.0.0.0:11434 ollama serve
 
 Restrict access with your corporate firewall to the VPN subnet only. This way, engineers with lower-spec laptops get GPU-accelerated inference without each maintaining their own model cache.
 
-Step 2: Pull the model once, share via NFS. Ollama stores models in `~/.ollama/models`. Mount this directory from a NAS share on each machine so model downloads happen once across the team:
+Step 2 - Pull the model once, share via NFS. Ollama stores models in `~/.ollama/models`. Mount this directory from a NAS share on each machine so model downloads happen once across the team:
 
 ```bash
 On each developer workstation
@@ -257,7 +257,7 @@ sudo mount -t nfs nas.internal:/ollama-models /home/user/.ollama/models
 ollama pull qwen2.5-coder:7b  # downloads to NAS, shared by all
 ```
 
-Step 3: Configure Continue.dev in VS Code for each developer. The Continue extension is the most flexible client for team setups. Create a shared `~/.continue/config.json` that engineers copy:
+Step 3 - Configure Continue.dev in VS Code for each developer. The Continue extension is the most flexible client for team setups. Create a shared `~/.continue/config.json` that engineers copy:
 
 ```json
 {
@@ -278,7 +278,7 @@ Step 3: Configure Continue.dev in VS Code for each developer. The Continue exten
 }
 ```
 
-Step 4: Add a Modelfile for your codebase conventions. Ollama supports custom system prompts via Modelfiles. Create `/etc/ollama/Modelfile.internal`:
+Step 4 - Add a Modelfile for your codebase conventions. Ollama supports custom system prompts via Modelfiles. Create `/etc/ollama/Modelfile.internal`:
 
 ```
 FROM qwen2.5-coder:7b
@@ -291,9 +291,9 @@ explanatory prose unless explicitly requested.
 """
 ```
 
-Build and register the model: `ollama create internal-coder -f /etc/ollama/Modelfile.internal`
+Build and register the model - `ollama create internal-coder -f /etc/ollama/Modelfile.internal`
 
-Step 5: Audit inference logs for compliance. Ollama logs prompts and responses to stdout by default. Redirect to a secured log file and rotate daily:
+Step 5 - Audit inference logs for compliance. Ollama logs prompts and responses to stdout by default. Redirect to a secured log file and rotate daily:
 
 ```bash
 OLLAMA_HOST=0.0.0.0:11434 ollama serve >> /var/log/ollama/inference.log 2>&1
@@ -301,7 +301,7 @@ OLLAMA_HOST=0.0.0.0:11434 ollama serve >> /var/log/ollama/inference.log 2>&1
 
 For regulated environments, store these logs for the retention period required by your compliance framework (SOC 2, HIPAA, etc.).
 
-Practical Example: Code Review Workflow
+Practical Example - Code Review Workflow
 
 Here's how a typical code review session works with local Ollama:
 

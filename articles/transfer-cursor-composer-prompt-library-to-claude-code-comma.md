@@ -56,7 +56,7 @@ Claude Code skills live in a `~/.claude/skills/` directory or within your projec
 Here is how to structure a migrated prompt as a Claude Code skill:
 
 ```markdown
-Skill: react-component-generator
+Skill - react-component-generator
 
 Description
 Generates React functional components with TypeScript, following our team's component patterns.
@@ -69,8 +69,8 @@ Instructions
 - Include CSS Modules for styling
 
 Examples
-User: Create a Button component
-Claude: Generates a TypeScript React component with props, CSS Module, and JSDoc
+User - Create a Button component
+Claude - Generates a TypeScript React component with props, CSS Module, and JSDoc
 ```
 
 This structure replaces the conversational prompt you might have used in Cursor's Composer.
@@ -192,7 +192,7 @@ Handling Complex Context Dependencies
 Cursor prompts often depend on conversation history and implicit context. Claude Code requires explicit context. When migrating such prompts, structure your skill to accept context parameters:
 
 ```markdown
-Skill: code-review-with-standards
+Skill - code-review-with-standards
 
 Description
 Reviews code against team coding standards with deep context awareness.
@@ -222,13 +222,13 @@ Converting Cursor's Multi-Turn Conversations
 Cursor Composer often involves iterative refinement across multiple messages. For complex workflows, create a series of related skills that work together:
 
 ```bash
-Step 1: Generate base code
+Step 1 - Generate base code
 claude -p @skills/generate-component.txt
 
-Step 2: Refine based on requirements
+Step 2 - Refine based on requirements
 claude -p "Update the component to handle loading states"
 
-Step 3: Add tests
+Step 3 - Add tests
 claude -p @skills/generate-tests.txt
 ```
 
@@ -267,7 +267,7 @@ Execution Environment Variables
 Claude Code skills can access environment variables for dynamic behavior:
 
 ```markdown
-Skill: deploy-service
+Skill - deploy-service
 
 Description
 Deploys a service with environment-specific configuration.

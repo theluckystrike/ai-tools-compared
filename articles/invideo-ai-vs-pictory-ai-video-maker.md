@@ -263,7 +263,7 @@ def create_branded_video(api_key, script, brand_kit_id):
     return requests.post(url, json=payload, headers=headers).json()
 ```
 
-Setting `allow_overrides: False` is a useful safeguard for teams where multiple contributors call the API. Without it, individual API consumers can override brand colors on a per-request basis, leading to inconsistent output that then requires manual review.
+Setting `allow_overrides - False` is a useful safeguard for teams where multiple contributors call the API. Without it, individual API consumers can override brand colors on a per-request basis, leading to inconsistent output that then requires manual review.
 
 Pictory's brand controls are less rigid. You can set a brand kit, but the content-extraction workflow, where Pictory is pulling clips from existing video, means the output quality depends heavily on the source material's visual style. If the original webinar recording uses inconsistent slides or varied lighting, Pictory's output reflects that variance.
 

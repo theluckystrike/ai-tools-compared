@@ -49,7 +49,7 @@ Session and Environment Issues
 
 One of the most frequent causes of Code Interpreter not running Python involves session state. When the environment becomes unstable or the session times out, the execution sandbox may fail to initialize properly.
 
-Fix 1: Start a New Conversation
+Fix 1 - Start a New Conversation
 
 The simplest solution often works. Close the current conversation and initiate a fresh session. This resets the Python execution environment and clears any corrupted session state.
 
@@ -61,7 +61,7 @@ The simplest solution often works. Close the current conversation and initiate a
 
 4. Try running your Python code again
 
-Fix 2: Check Your Internet Connection
+Fix 2 - Check Your Internet Connection
 
 Code Interpreter requires an active connection to OpenAI's servers. If your connection drops or becomes unstable during code execution, the process fails.
 
@@ -75,7 +75,7 @@ Code Execution Errors
 
 Sometimes the issue isn't with Code Interpreter itself but with the Python code you're attempting to run. Syntax errors, infinite loops, and memory-intensive operations cause immediate termination.
 
-Fix 3: Validate Your Python Code
+Fix 3 - Validate Your Python Code
 
 Before assuming the environment is broken, test your code locally or with a syntax checker:
 
@@ -96,7 +96,7 @@ def validate_python(code):
 Run this in Code Interpreter to validate your code
 ```
 
-Fix 4: Handle Infinite Loops and Long-Running Code
+Fix 4 - Handle Infinite Loops and Long-Running Code
 
 Code Interpreter has execution time limits. If your code enters an infinite loop or takes too long to execute, the environment terminates it.
 
@@ -114,7 +114,7 @@ signal.signal(signal.SIGALRM, timeout_handler)
 signal.alarm(30)  # Set 30-second timeout
 ```
 
-Fix 5: Manage Memory and Resource Usage
+Fix 5 - Manage Memory and Resource Usage
 
 Large data structures or inefficient code can exhaust available memory. Code Interpreter has memory constraints that vary based on your subscription level.
 
@@ -130,7 +130,7 @@ Account and Subscription Status
 
 Your ChatGPT subscription status affects Code Interpreter availability and resource limits.
 
-Fix 6: Verify Your Subscription
+Fix 6 - Verify Your Subscription
 
 1. Check that you have an active ChatGPT Plus subscription (required for Code Interpreter)
 
@@ -144,7 +144,7 @@ Browser and Cache Problems
 
 Browser issues occasionally prevent Code Interpreter from functioning correctly.
 
-Fix 7: Clear Browser Cache and Cookies
+Fix 7 - Clear Browser Cache and Cookies
 
 1. Open your browser settings
 
@@ -154,7 +154,7 @@ Fix 7: Clear Browser Cache and Cookies
 
 4. Try an incognito/private window
 
-Fix 8: Try a Different Browser
+Fix 8 - Try a Different Browser
 
 Some users report success switching browsers:
 
@@ -248,7 +248,7 @@ Can I install pip packages in Code Interpreter?
 No. The sandbox does not have pip access or outbound internet connectivity. You are limited to pre-installed packages. Ask in your conversation which packages are available, or check using `pkg_resources.working_set` as shown above. Common alternatives exist for most missing packages -- for example, `polars` is often available when you need faster DataFrame operations than Pandas provides.
 
 Why does my code run fine locally but fail in Code Interpreter?
-The most common reasons are: your code makes an HTTP request (blocked in sandbox), you are using a library not pre-installed in the environment, or your dataset is too large for the sandbox memory limits. Check each of these systematically before concluding there is a bug in your code.
+The most common reasons are - your code makes an HTTP request (blocked in sandbox), you are using a library not pre-installed in the environment, or your dataset is too large for the sandbox memory limits. Check each of these systematically before concluding there is a bug in your code.
 
 How long can a single code execution run before timing out?
 OpenAI does not publish the exact timeout, but user reports suggest executions that take longer than about two minutes are likely to be terminated. For long-running operations, break them into stages and save intermediate results to files between each stage.

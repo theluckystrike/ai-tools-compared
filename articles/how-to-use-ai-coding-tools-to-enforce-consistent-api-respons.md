@@ -53,7 +53,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Defining Your Response Format Standard
+Step 1 - Defining Your Response Format Standard
 
 Before AI tools can help enforce consistency, your team needs a clear specification. Define your standard response structure in a shared location, typically a schema file or documentation that your AI tools can reference.
 
@@ -91,7 +91,7 @@ interface PaginatedResponse<T> extends ApiResponse<T> {
 
 Store this file in a central location where your AI assistant can easily reference it. Place it in a `types/` or `shared/` directory that gets included in the AI context window during coding sessions.
 
-Step 2: Use AI for Response Format Enforcement
+Step 2 - Use AI for Response Format Enforcement
 
 Modern AI coding tools can actively help maintain response format consistency through several approaches. The most effective strategy combines prompt engineering with pattern-based generation.
 
@@ -127,7 +127,7 @@ Every API endpoint must return ApiResponse<T> or PaginatedResponse<T> as defined
 
 This instruction prevents accidental deviations from your standard format during normal coding.
 
-Step 3: Practical Implementation Workflow
+Step 3 - Practical Implementation Workflow
 
 Implementing AI-driven format enforcement works best with a structured workflow. Here's how to integrate it effectively:
 
@@ -233,7 +233,7 @@ app.get('/products', async (req, res) => {
   }
 });
 ```
-Step 4: Automate Format Validation
+Step 4 - Automate Format Validation
 
 Beyond generation, AI tools can help validate existing codebases for consistency violations. Use code analysis prompts to scan your project:
 
@@ -272,7 +272,7 @@ describe('API Response Format', () => {
 
 Running these tests in your CI pipeline catches format regressions before they reach production.
 
-Step 5: Maintaining Standards Over Time
+Step 5 - Maintaining Standards Over Time
 
 As your API evolves, new response types and edge cases will emerge. Keep your standards documentation and type definitions current. When adding new fields or response patterns, update your shared types and communicate changes to your team.
 

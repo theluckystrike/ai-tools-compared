@@ -38,13 +38,13 @@ Limited Context Windows
 When an AI has a small context window, it can only see a small portion of your code. This creates several challenges:
 
 
-Lost imports and dependencies: The AI might suggest code that uses functions or libraries you haven't imported yet, forcing you to add imports manually.
+Lost imports and dependencies - The AI might suggest code that uses functions or libraries you haven't imported yet, forcing you to add imports manually.
 
 
-Inconsistent suggestions: Switching between files can cause the AI to lose track of your project's structure, resulting in suggestions that don't align with your existing code patterns.
+Inconsistent suggestions - Switching between files can cause the AI to lose track of your project's structure, resulting in suggestions that don't align with your existing code patterns.
 
 
-Repetitive suggestions: Without enough context, the AI defaults to generic patterns rather than using your specific codebase conventions.
+Repetitive suggestions - Without enough context, the AI defaults to generic patterns rather than using your specific codebase conventions.
 
 
 Consider this scenario in a React component:
@@ -82,13 +82,13 @@ Large Context Windows
 Expanding the context window transforms AI suggestions in meaningful ways:
 
 
-Project-wide awareness: The AI sees your entire file structure, existing utility functions, and component patterns. It suggests code that matches your project's style and uses your established abstractions.
+Project-wide awareness - The AI sees your entire file structure, existing utility functions, and component patterns. It suggests code that matches your project's style and uses your established abstractions.
 
 
-Better refactoring assistance: When modifying a function used across multiple files, a larger context lets the AI understand all usage patterns and suggest appropriate changes.
+Better refactoring assistance - When modifying a function used across multiple files, a larger context lets the AI understand all usage patterns and suggest appropriate changes.
 
 
-Reduced iteration cycles: You spend less time correcting AI-generated code because it understands your intent from seeing more of your codebase.
+Reduced iteration cycles - You spend less time correcting AI-generated code because it understands your intent from seeing more of your codebase.
 
 
 Context Window Comparison Across Popular IDEs
@@ -173,16 +173,16 @@ Optimizing Your Setup
 Regardless of your IDE, you can improve AI suggestion quality through practices that maximize available context:
 
 
-Keep related code accessible: Open relevant files in split panes so the AI can reference them more easily.
+Keep related code accessible - Open relevant files in split panes so the AI can reference them more easily.
 
 
-Use project-aware tools: Choose AI assistants that index your codebase, not just the current file.
+Use project-aware tools - Choose AI assistants that index your codebase, not just the current file.
 
 
-Provide explicit context: Use AI chat features to reference specific files or functions when you need context beyond what the auto-complete sees.
+Provide explicit context - Use AI chat features to reference specific files or functions when you need context beyond what the auto-complete sees.
 
 
-Organize imports strategically: Place critical imports and utilities where they're more likely to be included in the AI's context window.
+Organize imports strategically - Place critical imports and utilities where they're more likely to be included in the AI's context window.
 
 
 Choosing the Right Combination
@@ -197,12 +197,12 @@ The difference between a 4K token window and a 128K token window isn't just nume
 
 {% raw %}
 
-GitHub Copilot vs Cursor: Real-World Benchmark
+GitHub Copilot vs Cursor - Real-World Benchmark
 
 Comparing AI coding assistants on real tasks reveals meaningful differences in suggestion quality and workflow integration.
 
 ```python
-Test task: implement a binary search tree with deletion
+Test task - implement a binary search tree with deletion
 Both tools were given the same prompt:
 "Implement a BST with insert, search, and delete operations in Python"
 
@@ -271,7 +271,7 @@ Disable telemetry in VS Code settings.json:
     "github.copilot.telemetry.enable": false
 }
 
-For organizations: disable Copilot training on org repos
+For organizations - disable Copilot training on org repos
 GitHub Org Settings -> Copilot -> Policies
 "Allow GitHub to use my code snippets for product improvements" -> Disabled
 

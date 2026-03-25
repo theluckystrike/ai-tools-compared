@@ -203,7 +203,7 @@ Subtitle Formats Explained
 
 Understanding subtitle formats is essential for proper implementation. The three most common formats serve different purposes:
 
-SRT (SubRip Text): The most widely supported format. Each subtitle block includes a sequential number, timestamp range, and text. Simple to parse and edit manually.
+SRT (SubRip Text) - The most widely supported format. Each subtitle block includes a sequential number, timestamp range, and text. Simple to parse and edit manually.
 
 ```srt
 1
@@ -215,7 +215,7 @@ Welcome to this tutorial on AI subtitles.
 We'll cover three major providers in this guide.
 ```
 
-VTT (WebVTT): Designed for web playback with built-in styling support. Includes a header and allows CSS-like styling within the file. Supported by all modern browsers.
+VTT (WebVTT) - Designed for web playback with built-in styling support. Includes a header and allows CSS-like styling within the file. Supported by all modern browsers.
 
 ```vtt
 WEBVTT
@@ -227,19 +227,19 @@ WEBVTT
 We'll cover three major providers.
 ```
 
-TTML/DFXP: More complex XML-based format used primarily for broadcast and professional applications. Supports precise timing and styling but requires more processing to generate.
+TTML/DFXP - More complex XML-based format used primarily for broadcast and professional applications. Supports precise timing and styling but requires more processing to generate.
 
 Post-Processing Considerations
 
 AI-generated subtitles rarely meet production quality without post-processing. Consider implementing these improvements:
 
-Punctuation and formatting: Speech-to-text models often omit punctuation or produce grammatically incorrect output. A post-processing layer using a language model can clean up these issues. This is particularly important for long-form content where missing punctuation significantly impacts readability.
+Punctuation and formatting - Speech-to-text models often omit punctuation or produce grammatically incorrect output. A post-processing layer using a language model can clean up these issues. This is particularly important for long-form content where missing punctuation significantly impacts readability.
 
-Custom vocabulary: Industry-specific terminology often gets misinterpreted. Most APIs allow custom vocabulary injection to improve accuracy for domain-specific terms. For technical content, creating a vocabulary list of relevant terms improves accuracy substantially.
+Custom vocabulary - Industry-specific terminology often gets misinterpreted. Most APIs allow custom vocabulary injection to improve accuracy for domain-specific terms. For technical content, creating a vocabulary list of relevant terms improves accuracy substantially.
 
-Profanity filtering: Depending on your platform, you may want to implement automated profanity detection and handling. Many services offer built-in content filtering options.
+Profanity filtering - Depending on your platform, you may want to implement automated profanity detection and handling. Many services offer built-in content filtering options.
 
-Timestamp adjustment: AI-generated timestamps sometimes drift, especially in longer recordings. A correction pass that aligns timestamps with actual speech patterns improves synchronization.
+Timestamp adjustment - AI-generated timestamps sometimes drift, especially in longer recordings. A correction pass that aligns timestamps with actual speech patterns improves synchronization.
 
 LLM Post-Processing for Caption Quality
 
@@ -269,7 +269,7 @@ Integration Patterns for Developers
 
 When building subtitle generation into your applications, consider these architectural patterns:
 
-Synchronous processing: Suitable for short audio files under 10 minutes. The request waits for completion before returning. Simpler to implement but not scalable for large files.
+Synchronous processing - Suitable for short audio files under 10 minutes. The request waits for completion before returning. Simpler to implement but not scalable for large files.
 
 ```python
 Synchronous approach for short files
@@ -281,9 +281,9 @@ result = openai.audio.transcriptions.create(
 )
 ```
 
-Asynchronous processing: Required for long-form content. Upload the file, start a transcription job, and poll for completion. More complex but handles videos of any length.
+Asynchronous processing - Required for long-form content. Upload the file, start a transcription job, and poll for completion. More complex but handles videos of any length.
 
-Batch processing: For large content libraries, implement queue-based batch processing. Store files in cloud storage, process through a queue system, and write results back to storage. This approach scales horizontally and handles thousands of files efficiently.
+Batch processing - For large content libraries, implement queue-based batch processing. Store files in cloud storage, process through a queue system, and write results back to storage. This approach scales horizontally and handles thousands of files efficiently.
 
 Choosing the Right Tool
 

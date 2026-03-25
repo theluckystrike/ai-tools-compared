@@ -49,16 +49,16 @@ Configuration:
 - Paid tier: capacity=200 tokens, refill=10000/hour (166.7/min or ~2.78/sec)
 - Auth endpoints: capacity=5 tokens, refill=10/hour (very strict)
 
-Storage: Redis with sorted sets for distributed rate limiting (works across
+Storage - Redis with sorted sets for distributed rate limiting (works across
 multiple API server instances)
 
-Key strategy: user_id for authenticated endpoints, IP + fingerprint for auth
+Key strategy - user_id for authenticated endpoints, IP + fingerprint for auth
 endpoints (to prevent enumeration attacks)
 ```
 
 Nginx Rate Limiting Config
 
-Prompt: "Generate Nginx rate limiting config for an API gateway. Limit: 60 req/min for general endpoints, 10 req/min for login/signup, with a burst allowance of 20 requests. Use IP-based limiting with X-Forwarded-For support."
+Prompt - "Generate Nginx rate limiting config for an API gateway. Limit - 60 req/min for general endpoints, 10 req/min for login/signup, with a burst allowance of 20 requests. Use IP-based limiting with X-Forwarded-For support."
 
 Claude's Nginx config:
 
@@ -72,13 +72,13 @@ geo $realip_remote_addr $real_client_ip {
 }
 
 Define rate limit zones
-Zone 1: General API endpoints. 60 req/min per IP
+Zone 1 - General API endpoints. 60 req/min per IP
 limit_req_zone $real_client_ip zone=api_general:10m rate=1r/s;
 
-Zone 2: Auth endpoints. 10 req/min per IP (stricter)
+Zone 2 - Auth endpoints. 10 req/min per IP (stricter)
 limit_req_zone $real_client_ip zone=api_auth:10m rate=10r/m;
 
-Zone 3: Per-user (requires auth. use $http_authorization or custom variable)
+Zone 3 - Per-user (requires auth. use $http_authorization or custom variable)
 lua_shared_dict rate_limit 10m;  # Requires OpenResty/lua-nginx-module for advanced per-user
 
 server {

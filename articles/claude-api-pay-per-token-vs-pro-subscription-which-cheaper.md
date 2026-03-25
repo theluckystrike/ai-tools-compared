@@ -21,12 +21,12 @@ Table of Contents
 
 - [Understanding Claude API Pricing](#understanding-claude-api-pricing)
 - [Understanding Claude Pro Subscription](#understanding-claude-pro-subscription)
-- [Cost Comparison: Real-World Scenarios](#cost-comparison-real-world-scenarios)
+- [Cost Comparison - Real-World Scenarios](#cost-comparison-real-world-scenarios)
 - [Calculating Your Break-Even Point](#calculating-your-break-even-point)
 - [When to Choose Each Option](#when-to-choose-each-option)
-- [Practical Code Example: Token Cost Calculator](#practical-code-example-token-cost-calculator)
+- [Practical Code Example - Token Cost Calculator](#practical-code-example-token-cost-calculator)
 - [Side-by-Side Summary Table](#side-by-side-summary-table)
-- [Real-World Cost Scenarios: Which Option Actually Wins?](#real-world-cost-scenarios-which-option-actually-wins)
+- [Real-World Cost Scenarios - Which Option Actually Wins?](#real-world-cost-scenarios-which-option-actually-wins)
 - [Detailed Pricing Comparison Matrix](#detailed-pricing-comparison-matrix)
 - [Advanced Cost Optimization Strategies](#advanced-cost-optimization-strategies)
 - [Making the Decision](#making-the-decision)
@@ -43,7 +43,7 @@ The Claude API uses a token-based pricing model. You're charged for both input t
 
 These prices apply to the Anthropic API directly. If you're using Claude through platforms like AWS Bedrock or Google Vertex AI, pricing differs and often includes additional markup.
 
-A rough mental model: one million tokens is approximately 750,000 words, or about 1,500 typical pages of text. A typical developer interaction, a question with 500 words of context and a 300-word reply, uses roughly 1,100 tokens total. At Sonnet pricing, that costs about $0.019 per exchange.
+A rough mental model - one million tokens is approximately 750,000 words, or about 1,500 typical pages of text. A typical developer interaction, a question with 500 words of context and a 300-word reply, uses roughly 1,100 tokens total. At Sonnet pricing, that costs about $0.019 per exchange.
 
 Anthropic also offers batch API pricing at 50% off standard rates for non-time-sensitive workloads. If you are processing documents overnight or running evaluations, the batch API can cut your effective per-token costs in half, making the API even more competitive against Pro for moderate usage levels.
 
@@ -67,45 +67,45 @@ This distinction is worth emphasizing. If your goal is to embed Claude into an a
 
 Claude Pro also includes Projects, which allow you to maintain persistent context and instructions across conversations. For power users who return to the same workflows daily, Projects eliminate repetitive setup and effectively extend the value of each session beyond raw token count.
 
-Cost Comparison: Real-World Scenarios
+Cost Comparison - Real-World Scenarios
 
 Let's examine three common usage scenarios to determine which option makes more financial sense.
 
-Scenario 1: Light Daily Usage
+Scenario 1 - Light Daily Usage
 
 If you use Claude for quick code reviews or occasional debugging queries, you might send around 50 messages per day with an average of 2,000 tokens per message (1,000 input, 1,000 output).
 
-Monthly API cost: 50 messages × 30 days × 2,000 tokens × $0.003/1,000 tokens = $9/month
+Monthly API cost - 50 messages × 30 days × 2,000 tokens × $0.003/1,000 tokens = $9/month
 
-Pro subscription: $20/month
+Pro subscription - $20/month
 
-Winner: API is cheaper at $9/month versus $20 for Pro.
+Winner - API is cheaper at $9/month versus $20 for Pro.
 
-Scenario 2: Moderate Development Work
+Scenario 2 - Moderate Development Work
 
 For developers who use Claude throughout the workday, code generation, documentation writing, and testing, you might process 150 messages daily with 4,000 tokens per message.
 
-Monthly API cost: 150 × 30 × 4,000 × $0.003 = $54/month
+Monthly API cost - 150 × 30 × 4,000 × $0.003 = $54/month
 
-Pro subscription: $20/month
+Pro subscription - $20/month
 
-Winner: Pro subscription saves $34 per month in this scenario.
+Winner - Pro subscription saves $34 per month in this scenario.
 
-Scenario 3: Heavy API Integration
+Scenario 3 - Heavy API Integration
 
 If you're building applications that make thousands of API calls or processing large documents, your usage could reach 10 million tokens per month.
 
-Monthly API cost: 10,000,000 × $0.003 = $30,000/month (for Sonnet at 50/50 input/output split)
+Monthly API cost - 10,000,000 × $0.003 = $30,000/month (for Sonnet at 50/50 input/output split)
 
-Pro subscription: Still $20/month (but you'll hit usage limits)
+Pro subscription - Still $20/month (but you'll hit usage limits)
 
 Actually, Pro has usage caps, typically around 100-200 messages per day. So for heavy usage, the API is your only realistic option regardless of cost.
 
-Scenario 4: Long-Context Document Work
+Scenario 4 - Long-Context Document Work
 
 Many professionals use Claude to analyze lengthy documents, legal contracts, technical specifications, research papers. A single session processing a 50-page document might consume 40,000 input tokens plus 2,000 output tokens.
 
-At Sonnet rates: (40,000 × $3 / 1,000,000) + (2,000 × $15 / 1,000,000) = $0.12 + $0.03 = $0.15 per document
+At Sonnet rates - (40,000 × $3 / 1,000,000) + (2,000 × $15 / 1,000,000) = $0.12 + $0.03 = $0.15 per document
 
 If you process 5 such documents per day: $0.15 × 5 × 30 = $22.50/month via API, versus $20 for Pro. at parity, but Pro gives you the comfortable chat interface, Projects support, and no per-use anxiety about costs.
 
@@ -161,7 +161,7 @@ Choose Pro When:
 
 - You prefer simple monthly billing over metered costs
 
-Practical Code Example: Token Cost Calculator
+Practical Code Example - Token Cost Calculator
 
 Here's a simple Python function to estimate your monthly API costs:
 
@@ -206,40 +206,40 @@ Side-by-Side Summary Table
 | Break-even (Sonnet) | ~37 msgs/day | Under 37 msgs/day |
 | Best for | Developers, builders | Knowledge workers |
 
-Real-World Cost Scenarios: Which Option Actually Wins?
+Real-World Cost Scenarios - Which Option Actually Wins?
 
 Let's work through concrete scenarios that match different professional workflows to determine which option provides better value:
 
-Scenario 5: Legal Document Analysis Workflow
+Scenario 5 - Legal Document Analysis Workflow
 
 A legal professional using Claude for contract review: 10 documents per week, 30,000 tokens per document (mostly input).
 
-Monthly tokens: 10 × 4 × 30,000 = 1.2M input tokens
-Monthly cost via API: 1.2M × $3 / 1,000,000 = $3.60
+Monthly tokens - 10 × 4 × 30,000 = 1.2M input tokens
+Monthly cost via API - 1.2M × $3 / 1,000,000 = $3.60
 
-Pro subscription: $20/month
+Pro subscription - $20/month
 
-Winner: API by a massive margin. However, Pro's Projects feature creates persistent context across document review sessions, eliminating repetitive explanations. If the convenience and persistent context are worth $16.40/month, Pro may still be preferable despite higher cost.
+Winner - API by a massive margin. However, Pro's Projects feature creates persistent context across document review sessions, eliminating repetitive explanations. If the convenience and persistent context are worth $16.40/month, Pro may still be preferable despite higher cost.
 
-Scenario 6: Startup Building AI-Powered Product
+Scenario 6 - Startup Building AI-Powered Product
 
 A startup embeds Claude into their SaaS product, generating 5M input tokens + 2M output tokens monthly.
 
-Monthly API cost: (5M × $3 / 1M) + (2M × $15 / 1M) = $15 + $30 = $45/month
+Monthly API cost - (5M × $3 / 1M) + (2M × $15 / 1M) = $15 + $30 = $45/month
 
-Pro subscription: Not applicable, SaaS needs API access regardless of cost
+Pro subscription - Not applicable, SaaS needs API access regardless of cost
 
 This is the one scenario where Pro is completely irrelevant. You're locked into API for programmatic access. The question becomes: which model optimizes for your cost structure? Haiku might be appropriate for preprocessing and classification, with Sonnet reserved for final output.
 
-Scenario 7: Data Science Research Phase
+Scenario 7 - Data Science Research Phase
 
 A researcher prototyping a novel approach: 200 messages daily during peak research month (30 days), then 10 messages daily during writing phase (30 days).
 
-Peak month: 200 × 30 × 2,500 tokens × $0.0045/1,000 tokens = $67.50
-Writing month: 10 × 30 × 2,500 tokens × $0.0045/1,000 tokens = $3.38
-Quarterly cost: $70.88
+Peak month - 200 × 30 × 2,500 tokens × $0.0045/1,000 tokens = $67.50
+Writing month - 10 × 30 × 2,500 tokens × $0.0045/1,000 tokens = $3.38
+Quarterly cost - $70.88
 
-Pro subscription: $20/month × 3 = $60
+Pro subscription - $20/month × 3 = $60
 
 For researchers with variable usage patterns, Pro costs $10 more per quarter but provides predictable budgeting and unlimited exploration without token anxiety.
 
@@ -301,15 +301,15 @@ Batch API for Non-Urgent Processing
 For workloads that don't require immediate responses, overnight processing, report generation, historical data analysis, the batch API cuts costs in half:
 
 ```bash
-Standard API: $100 for 10M tokens
-Batch API: $50 for 10M tokens
+Standard API - $100 for 10M tokens
+Batch API - $50 for 10M tokens
 
 Batch requests process with 24-hour latency
-Ideal for: nightly report generation, bulk document processing
-Not ideal for: real-time chat, interactive development
+Ideal for - nightly report generation, bulk document processing
+Not ideal for - real-time chat, interactive development
 ```
 
-Hybrid: Pro + API for Different Workloads
+Hybrid - Pro + API for Different Workloads
 
 The optimal strategy for many organizations:
 - Personal use and quick exploration: Claude Pro ($20/month)

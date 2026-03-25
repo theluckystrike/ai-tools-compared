@@ -19,10 +19,10 @@ Claude 3 Opus excels at generating complete Swagger/OpenAPI specs from code comm
 Table of Contents
 
 - [Understanding Swagger/OpenAPI Generation Challenges](#understanding-swaggeropenapi-generation-challenges)
-- [Claude 3 Opus: Spec Generation](#claude-3-opus--spec-generation)
-- [GPT-4 Turbo: High-Quality Descriptions](#gpt-4-turbo-high-quality-descriptions)
-- [GitHub Copilot: IDE-Native Autocomplete](#github-copilot-ide-native-autocomplete)
-- [Real-World Implementation: Building a Complete API Spec](#real-world-implementation-building-a-complete-api-spec)
+- [Claude 3 Opus - Spec Generation](#claude-3-opus--spec-generation)
+- [GPT-4 Turbo - High-Quality Descriptions](#gpt-4-turbo-high-quality-descriptions)
+- [GitHub Copilot - IDE-Native Autocomplete](#github-copilot-ide-native-autocomplete)
+- [Real-World Implementation - Building a Complete API Spec](#real-world-implementation-building-a-complete-api-spec)
 - [Tool Selection Matrix](#tool-selection-matrix)
 - [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
 - [Automation Patterns](#automation-patterns)
@@ -36,11 +36,11 @@ AI tools can accelerate this process dramatically. Rather than manually typing o
 
 Three major AI platforms target this use case: Claude's powerful context model, OpenAI's GPT-4 with broad API knowledge, and GitHub's Copilot with IDE integration.
 
-Claude 3 Opus: Spec Generation
+Claude 3 Opus - Spec Generation
 
 Claude excels at understanding complex API architectures and translating them into well-structured Swagger specs. The 200K context window means you can feed multiple source files, existing documentation, and detailed requirements simultaneously.
 
-Strength: Nested Schema Handling
+Strength - Nested Schema Handling
 
 Claude handles complex nested objects better than alternatives. When you have deeply nested request/response structures, Claude generates proper `$ref` references automatically:
 
@@ -199,18 +199,18 @@ components:
 Pricing and Tokens
 
 Claude usage for API documentation:
-- Claude 3.5 Sonnet (via API): $3 per 1M input tokens, $15 per 1M output tokens. A typical 50-endpoint API spec uses 25K-40K input tokens and generates 30K-50K output tokens. Cost: roughly $0.10-$0.15 per full API spec.
+- Claude 3.5 Sonnet (via API): $3 per 1M input tokens, $15 per 1M output tokens. A typical 50-endpoint API spec uses 25K-40K input tokens and generates 30K-50K output tokens. Cost - roughly $0.10-$0.15 per full API spec.
 - Claude.ai subscription ($20/month): Unlimited usage for web interface. Better for batch documentation projects.
 
 Real Project Performance
 
 A team with a 120-endpoint REST API fed all endpoint code with descriptions to Claude. Claude generated 95% production-ready specs. Remaining 5% needed manual adjustments to authentication schemes and deprecated endpoint removal.
 
-GPT-4 Turbo: High-Quality Descriptions
+GPT-4 Turbo - High-Quality Descriptions
 
 GPT-4 shines when description quality matters most. The descriptions are naturally articulate and handle edge cases well. However, it requires more iteration to achieve production readiness.
 
-Strength: Response Description Quality
+Strength - Response Description Quality
 
 GPT-4 writes better human-readable descriptions for complex behaviors:
 
@@ -236,13 +236,13 @@ Pricing Model
 - GPT-4 Turbo via API: $0.01 per 1K input tokens, $0.03 per 1K output tokens
 - ChatGPT Plus ($20/month): Limited API access but unlimited for web interface
 
-For a 50-endpoint API: roughly $0.12-$0.20 per spec with revision rounds.
+For a 50-endpoint API - roughly $0.12-$0.20 per spec with revision rounds.
 
-GitHub Copilot: IDE-Native Autocomplete
+GitHub Copilot - IDE-Native Autocomplete
 
 Copilot integrates directly into VS Code and handles quick, straightforward endpoint specs. Open a new YAML file and start typing a Swagger spec, Copilot completes it intelligently.
 
-Strength: Integration and Speed
+Strength - Integration and Speed
 
 No context switching. You write the first 2-3 endpoints and Copilot autocompletes the rest with consistent patterns:
 
@@ -278,11 +278,11 @@ Real Performance Comparison
 | Cost per spec | $0.12 | $0.15 | Included in $10/mo |
 | Time to validate + fix | 5 minutes | 20 minutes | 45 minutes |
 
-Real-World Implementation: Building a Complete API Spec
+Real-World Implementation - Building a Complete API Spec
 
-Scenario: Converting a Node.js Express API to Swagger/OpenAPI 3.0.
+Scenario - Converting a Node.js Express API to Swagger/OpenAPI 3.0.
 
-Step 1: Gather Source Material
+Step 1 - Gather Source Material
 
 ```javascript
 // Express route file provided to Claude
@@ -306,11 +306,11 @@ app.patch('/products/:id', authenticate, authorize(['admin']), (req, res) => {
 });
 ```
 
-Step 2: Claude Prompt
+Step 2 - Claude Prompt
 
 "Convert these Express route handlers into OpenAPI 3.0.1 specification. Include proper security schemes for bearer token auth. Add realistic example payloads showing JSON structure."
 
-Step 3: Claude Output
+Step 3 - Claude Output
 
 ```yaml
 openapi: 3.0.1
@@ -441,7 +441,7 @@ paths:
           description: Invalid input or SKU already exists
 ```
 
-Step 4: Validation and Cleanup
+Step 4 - Validation and Cleanup
 
 Run against swagger-cli validator:
 ```bash
@@ -464,33 +464,33 @@ Tool Selection Matrix
 
 Common Pitfalls and How to Avoid Them
 
-Problem: Inconsistent Parameter Types Across Endpoints
+Problem - Inconsistent Parameter Types Across Endpoints
 
 AI tools sometimes define the same logical parameter differently in different endpoints. An `id` field might be integer in one response, string in another.
 
-Solution: Provide explicit type definitions upfront. "All ID fields are integers. All timestamps are ISO 8601 strings. All monetary values are floats with 2 decimal precision."
+Solution - Provide explicit type definitions upfront. "All ID fields are integers. All timestamps are ISO 8601 strings. All monetary values are floats with 2 decimal precision."
 
-Problem: Missing Security Definitions
+Problem - Missing Security Definitions
 
 Generated specs lack authentication/authorization schemes, causing integration issues.
 
-Solution: Explicitly specify auth requirements in your prompt: "This API uses bearer token JWT authentication. All endpoints except /login require authorization. Admin endpoints require admin role claim."
+Solution - Explicitly specify auth requirements in your prompt: "This API uses bearer token JWT authentication. All endpoints except /login require authorization. Admin endpoints require admin role claim."
 
-Problem: Incorrect Response Examples
+Problem - Incorrect Response Examples
 
 Generated example payloads don't match actual API responses, confusing developers.
 
-Solution: Provide real API response samples or ask AI to generate realistic examples with specific constraints. "Generate sample responses showing complete nested object structures with plausible values."
+Solution - Provide real API response samples or ask AI to generate realistic examples with specific constraints. "Generate sample responses showing complete nested object structures with plausible values."
 
-Problem: Schema Drift Over Time
+Problem - Schema Drift Over Time
 
 Generated specs become outdated quickly as APIs evolve.
 
-Solution: Use AI to generate specs, but maintain specs in version control and regenerate quarterly. Create CI/CD validation comparing actual response structures to Swagger definitions.
+Solution - Use AI to generate specs, but maintain specs in version control and regenerate quarterly. Create CI/CD validation comparing actual response structures to Swagger definitions.
 
 Automation Patterns
 
-Pattern 1: Automated Spec Generation from Code
+Pattern 1 - Automated Spec Generation from Code
 
 ```bash
 Extract JSDoc comments from Express routes
@@ -499,7 +499,7 @@ Validate output with swagger-cli
 Commit to repository
 ```
 
-Pattern 2: Batch Documentation for Multiple APIs
+Pattern 2 - Batch Documentation for Multiple APIs
 
 ```javascript
 const Anthropic = require('@anthropic-ai/sdk');
@@ -522,7 +522,7 @@ async function generateSwaggerSpec(apiName, sourceCode) {
 }
 ```
 
-Pattern 3: Continuous Spec Validation
+Pattern 3 - Continuous Spec Validation
 
 Run generated specs through linters before committing:
 

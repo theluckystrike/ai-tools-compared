@@ -26,7 +26,7 @@ Table of Contents
 - [Practical Decision Framework](#practical-decision-framework)
 - [Additional Cost Considerations](#additional-cost-considerations)
 - [Hidden Costs Beyond Licensing](#hidden-costs-beyond-licensing)
-- [ROI Calculator: Time Savings vs Cost](#roi-calculator-time-savings-vs-cost)
+- [ROI Calculator - Time Savings vs Cost](#roi-calculator-time-savings-vs-cost)
 - [Comparing Against Alternatives](#comparing-against-alternatives)
 - [Contract Negotiation for Enterprise Teams](#contract-negotiation-for-enterprise-teams)
 
@@ -48,11 +48,11 @@ Hidden Factors That Affect Your Total Cost
 
 Beyond the base price, consider these variables when calculating your true investment:
 
-Team size multiplier: Most teams don't purchase single seats. A 10-person team paying annually spends $1,200 versus $1,800 monthly, a $600 difference. A 50-person team saves $3,000 annually.
+Team size multiplier - Most teams don't purchase single seats. A 10-person team paying annually spends $1,200 versus $1,800 monthly, a $600 difference. A 50-person team saves $3,000 annually.
 
-Billing currency: International teams may face currency conversion fees or bank charges. Factor these into your budget if you're outside the United States.
+Billing currency - International teams may face currency conversion fees or bank charges. Factor these into your budget if you're outside the United States.
 
-Multi-year discounts: Codeium occasionally offers additional discounts for 2+ year commitments. If you're certain about long-term adoption, negotiating a multi-year contract can yield further savings.
+Multi-year discounts - Codeium occasionally offers additional discounts for 2+ year commitments. If you're certain about long-term adoption, negotiating a multi-year contract can yield further savings.
 
 Calculating Your Actual Savings
 
@@ -135,7 +135,7 @@ if __name__ == "__main__":
 Running this calculator reveals the impact of team size on your bottom line:
 
 ```
-Solo developer: $60.00 saved annually
+Solo developer - $60.00 saved annually
 5-person team: $300.00 saved annually
 25-person team: $1,500.00 saved annually
 ```
@@ -144,25 +144,25 @@ When Monthly Billing Makes Sense
 
 Despite the clear savings from annual billing, monthly plans serve valid use cases:
 
-Evaluating adoption: If you're piloting Windsurf Pro with a small group before committing organization-wide, monthly billing lets you test without upfront commitment.
+Evaluating adoption - If you're piloting Windsurf Pro with a small group before committing organization-wide, monthly billing lets you test without upfront commitment.
 
-Budget constraints: Startups and projects with uncertain funding may not have $120 per seat available upfront, even though they'll pay more over time.
+Budget constraints - Startups and projects with uncertain funding may not have $120 per seat available upfront, even though they'll pay more over time.
 
-Flexible team composition: Teams with high turnover or fluctuating headcount benefit from month-to-month flexibility. Paying annually for someone who leaves after three months creates wasted spend.
+Flexible team composition - Teams with high turnover or fluctuating headcount benefit from month-to-month flexibility. Paying annually for someone who leaves after three months creates wasted spend.
 
-Short-term projects: Contract developers or time-limited engagements may not justify annual commitment.
+Short-term projects - Contract developers or time-limited engagements may not justify annual commitment.
 
 When Annual Billing Delivers Maximum Value
 
 Annual subscriptions shine in these scenarios:
 
-Stable teams: Engineering teams with low turnover maximize annual savings. The $60 per seat discount applies fully without churn-related waste.
+Stable teams - Engineering teams with low turnover maximize annual savings. The $60 per seat discount applies fully without churn-related waste.
 
-Budget cycles: Many companies have annual software budgets. Locking in annual pricing before fiscal year-end ensures you capture the savings rather than gambling on future rate changes.
+Budget cycles - Many companies have annual software budgets. Locking in annual pricing before fiscal year-end ensures you capture the savings rather than gambling on future rate changes.
 
 Commitment to AI-assisted development: If your team has decided to adopt AI coding tools long-term, annual billing removes the decision friction from recurring purchasing.
 
-Enterprise negotiations: Larger organizations can often negotiate below-list annual rates, compounding the base savings.
+Enterprise negotiations - Larger organizations can often negotiate below-list annual rates, compounding the base savings.
 
 Practical Decision Framework
 
@@ -182,11 +182,11 @@ Additional Cost Considerations
 
 Beyond the subscription fee, factor these elements into your total cost of ownership:
 
-Onboarding time: Windsurf Pro's AI features require team training. Budget for onboarding hours when calculating true investment.
+Onboarding time - Windsurf Pro's AI features require team training. Budget for onboarding hours when calculating true investment.
 
-Integration costs: If you're migrating from another tool, account for configuration time and potential data migration expenses.
+Integration costs - If you're migrating from another tool, account for configuration time and potential data migration expenses.
 
-Support tiers: Enterprise support may carry additional costs. Evaluate whether basic support meets your needs or if premium support justifies higher tiers.
+Support tiers - Enterprise support may carry additional costs. Evaluate whether basic support meets your needs or if premium support justifies higher tiers.
 
 Hidden Costs Beyond Licensing
 
@@ -212,7 +212,7 @@ Total cost of ownership for 5-person team (annual):
 
 This reframing shows that the $60 annual savings per license is trivial compared to labor investment. The real question becomes: Does Windsurf Pro save developers enough time to justify the maintenance overhead?
 
-ROI Calculator: Time Savings vs Cost
+ROI Calculator - Time Savings vs Cost
 
 Build the case for annual vs monthly based on actual productivity gains:
 

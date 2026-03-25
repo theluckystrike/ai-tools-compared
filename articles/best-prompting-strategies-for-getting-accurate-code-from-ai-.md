@@ -70,7 +70,7 @@ AI assistants work best when you define clear input and output contracts. This r
 
 ```python
 Instead of vague requests, be specific:
-Bad: "Create a data processing function"
+Bad - "Create a data processing function"
 Good:
 
 def process_transaction_data(
@@ -132,7 +132,7 @@ function calculateDiscount(items, discountCode) {
 }
 ```
 
-State explicitly: "Include error handling for null/undefined inputs, empty collections, invalid references, and boundary conditions."
+State explicitly - "Include error handling for null/undefined inputs, empty collections, invalid references, and boundary conditions."
 
 Use Role-Based Prompting
 
@@ -153,7 +153,7 @@ Asking for tests alongside implementation code serves two purposes: it validates
 
 ```
 Write a Python function that parses CSV files with type inference for columns.
-Include unit tests covering: valid CSV, empty file, missing columns, type
+Include unit tests covering - valid CSV, empty file, missing columns, type
 mismatch errors, and special characters in data.
 ```
 
@@ -182,7 +182,7 @@ Showing the AI what you expect dramatically improves accuracy. Include sample in
 
 ```
 Convert this JSON structure to CSV:
-Input: [{"name": "Alice", "age": 30}, {"name": "Bob", "age": 25}]
+Input - [{"name": "Alice", "age": 30}, {"name": "Bob", "age": 25}]
 Expected output format:
 name,age
 Alice,30
@@ -191,7 +191,7 @@ Bob,25
 Write a Python function to perform this conversion, handling missing keys gracefully.
 ```
 
-AI Tool Comparison: Prompt Responsiveness
+AI Tool Comparison - Prompt Responsiveness
 
 Different AI coding tools respond differently to the same prompt strategies. Here's how major tools compare:
 
@@ -206,7 +206,7 @@ Different AI coding tools respond differently to the same prompt strategies. Her
 
 Claude and GPT-4 both respond well to structured, context-rich prompts. Copilot's inline suggestion model means it lacks the conversational back-and-forth that makes these strategies most effective, it works better for completion than for instruction-following.
 
-Advanced Technique: Chain-of-Thought Prompting
+Advanced Technique - Chain-of-Thought Prompting
 
 For algorithmic problems or complex logic, asking the AI to reason step by step before writing code produces better results:
 

@@ -33,7 +33,7 @@ tags: [ai-tools-compared]
 GitHub Copilot's Next Edit Suggestion (NES) feature represents a significant advancement in AI-assisted coding. Unlike traditional autocomplete that predicts the next few characters or words, NES anticipates your next code modification across multiple locations in your file. This capability transforms how developers interact with their codebases, reducing repetitive editing tasks and maintaining consistency across large codebases.
 
 
-- Repeat steps 1-4 Most: developers complete bulk refactoring 2-3x faster with this workflow.
+- Repeat steps 1-4 Most - developers complete bulk refactoring 2-3x faster with this workflow.
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - Does Copilot offer a: free tier? Most major tools offer some form of free tier or trial period.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
@@ -86,7 +86,7 @@ def process_user(user_id, name, email):
     # Original function
 
 Copilot recognizes all calls that need the new parameter:
-process_user(123)  # Suggests: process_user(123, "John", "john@example.com")
+process_user(123)  # Suggests - process_user(123, "John", "john@example.com")
 ```
 
 Contextual Similarity
@@ -252,11 +252,11 @@ Most developers complete bulk refactoring 2-3x faster with this workflow.
 
 Limitations and When NES Doesn't Help
 
-Unique edits: If each change is different, NES can't predict
-Inconsistent code: NES struggles with code lacking clear patterns
-First-time patterns: NES needs at least one example before predicting others
-Single-file operations: Works only within current file (not cross-file yet)
-Complex semantic changes: Renaming requires context NES may miss
+Unique edits - If each change is different, NES can't predict
+Inconsistent code - NES struggles with code lacking clear patterns
+First-time patterns - NES needs at least one example before predicting others
+Single-file operations - Works only within current file (not cross-file yet)
+Complex semantic changes - Renaming requires context NES may miss
 
 For these cases, use traditional refactoring tools or manual editing.
 

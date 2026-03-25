@@ -197,7 +197,7 @@ Rejecting contributions is emotionally difficult and risks discouraging future c
 
 
 ```
-Prompt: "Write a PR rejection message for a contribution that adds a feature we won't maintain long-term.
+Prompt - "Write a PR rejection message for a contribution that adds a feature we won't maintain long-term.
 The contributor worked hard. Be grateful, explain the scope decision, and encourage them to maintain
 a fork if they need this feature."
 ```
@@ -286,15 +286,15 @@ Clear communication about response times prevents burnout:
 ```markdown
 Response Time Guidelines
 
-Issue Response Triage: 48 hours
+Issue Response Triage - 48 hours
 - All issues receive initial acknowledgment
 - Bugs and features are labeled and prioritized
 
-Pull Request Review: 7 days
+Pull Request Review - 7 days
 - We aim to review within one week
 - Large changes may take longer
 
-Security Issues: 24 hours
+Security Issues - 24 hours
 - Email security@project.dev for urgent matters
 
 This is a volunteer project. Response times may vary during holidays or personal commitments.

@@ -18,7 +18,7 @@ Why GraphQL Documentation Matters
 
 GraphQL schemas are self-documenting in theory but inadequate in practice. A well-documented schema prevents integration errors, reduces support tickets, and enables frontend teams to build faster. AI tools can automatically generate field descriptions, argument explanations, and resolver documentation from code, saving hours of manual work per schema.
 
-Tool Comparison: GraphQL Documentation
+Tool Comparison - GraphQL Documentation
 
 | Tool | Schema Parsing | Description Generation | Interactive Docs | Price | Best For |
 |------|---------------|----------------------|------------------|-------|----------|
@@ -28,7 +28,7 @@ Tool Comparison: GraphQL Documentation
 | Apollo GraphQL Tools | Built-in | Template-based | Yes, native | Free/Paid | Apollo stack |
 | Cursor IDE | Excellent | Real-time generation | Via extension | $20/mo | IDE workflow |
 
-Claude 3.5 Sonnet: Best Overall Documentation
+Claude 3.5 Sonnet - Best Overall Documentation
 
 Claude excels at understanding GraphQL semantics. Paste a schema and request documentation, it generates field descriptions, resolver logic explanations, and usage examples.
 
@@ -123,9 +123,9 @@ Why This Works:
 - Explains field relationships clearly
 - Identifies edge cases (permission checks, rate limits)
 
-Claude's Cost: ~$0.05 for a medium schema (15K tokens).
+Claude's Cost - ~$0.05 for a medium schema (15K tokens).
 
-ChatGPT-4: Quick Schema Explanations
+ChatGPT-4 - Quick Schema Explanations
 
 Use ChatGPT-4 to understand what a schema does conceptually. Paste unfamiliar schemas and ask "explain this GraphQL schema for a junior developer."
 
@@ -142,11 +142,11 @@ Expected Response:
 - Potential N+1 problem areas
 - Authentication/permission considerations
 
-When to Use: Learning new APIs, reviewing third-party schemas, training documentation.
+When to Use - Learning new APIs, reviewing third-party schemas, training documentation.
 
-ChatGPT-4 Cost: $20/month (ChatGPT Plus).
+ChatGPT-4 Cost - $20/month (ChatGPT Plus).
 
-GitHub Copilot: Inline Documentation as You Type
+GitHub Copilot - Inline Documentation as You Type
 
 Copilot generates GraphQL schema comments in real-time as you define types and fields.
 
@@ -178,15 +178,15 @@ Human-readable product name. Must be unique within the catalog.
 name: String!
 ```
 
-Limitation: Basic descriptions. Doesn't explain resolver complexity or edge cases.
+Limitation - Basic descriptions. Doesn't explain resolver complexity or edge cases.
 
-Copilot Cost: $10/month (includes Copilot Chat).
+Copilot Cost - $10/month (includes Copilot Chat).
 
 ---
 
 Real-World Documentation Patterns
 
-Pattern 1: Documenting Paginated Types
+Pattern 1 - Documenting Paginated Types
 ```graphql
 """
 Connection pattern for cursor-based pagination. Allows efficient
@@ -237,7 +237,7 @@ type PageInfo {
 }
 ```
 
-Pattern 2: Documenting Complex Arguments
+Pattern 2 - Documenting Complex Arguments
 ```graphql
 """
 Filters for advanced product search. All filters are combined with AND logic.
@@ -265,7 +265,7 @@ input ProductFilter {
 
   """
   Search across product name and description (fuzzy match).
-  Minimum 3 characters. Performance: ~50ms for large catalogs.
+  Minimum 3 characters. Performance - ~50ms for large catalogs.
   """
   query: String
 }
@@ -279,7 +279,7 @@ type Query {
     sortBy: Sort by PRICE_ASC, PRICE_DESC, CREATED_AT_DESC (default)
     first: Max results (default: 20, max: 100)
 
-  Performance: Indexed on category and status. Query time: <200ms typical.
+  Performance - Indexed on category and status. Query time: <200ms typical.
 
   Errors:
     - INVALID_FILTER: malformed filter object
@@ -304,7 +304,7 @@ type Query {
 }
 ```
 
-Pattern 3: Documenting Mutations with Error States
+Pattern 3 - Documenting Mutations with Error States
 ```graphql
 """
 Result of a user account creation attempt.
@@ -368,26 +368,26 @@ type Mutation {
 
 AI-Powered Documentation Workflow
 
-Step 1: Extract Schema
+Step 1 - Extract Schema
 ```bash
 Using Apollo CLI
 apollo schema:download schema.graphql --endpoint https://api.example.com/graphql
 ```
 
-Step 2: Document with Claude
+Step 2 - Document with Claude
 ```
-Prompt: "Read this GraphQL schema and generate comprehensive JSDoc-style
+Prompt - "Read this GraphQL schema and generate complete JSDoc-style
 descriptions for every type, field, and argument. Include realistic examples
 for 3 common query patterns."
 ```
 
-Step 3: Integrate Documentation
+Step 3 - Integrate Documentation
 ```graphql
 Claude generates descriptions with proper formatting
 Paste back into schema.graphql
 ```
 
-Step 4: Generate Interactive Docs
+Step 4 - Generate Interactive Docs
 ```bash
 Use tools like Apollo Studio or Hasura Console
 They automatically parse GraphQL descriptions and render them

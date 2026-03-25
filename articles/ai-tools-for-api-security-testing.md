@@ -49,7 +49,7 @@ Traditional tools like OWASP ZAP and Burp Suite scan known vulnerability pattern
 
 AI tools add value by reading your API specification or code and generating test cases for your specific logic.
 
-Approach 1: OpenAPI Spec Analysis
+Approach 1 - OpenAPI Spec Analysis
 
 Feed your OpenAPI spec to an LLM for security review:
 
@@ -98,7 +98,7 @@ For each finding, provide:
 4. Test case to verify the vulnerability exists
 5. Recommended fix
 
-Focus on: broken object-level auth, missing rate limits, excessive data exposure,
+Focus on - broken object-level auth, missing rate limits, excessive data exposure,
 broken function-level auth, and mass assignment vulnerabilities."""
         }]
     )
@@ -112,7 +112,7 @@ print(findings)
 
 For a typical REST API, this analysis surfaces 3-8 security concerns that warrant manual testing, focusing specifically on the patterns in your API design.
 
-Approach 2: Generating Security Test Cases
+Approach 2 - Generating Security Test Cases
 
 Use AI to generate pytest security tests for your endpoints:
 
@@ -127,10 +127,10 @@ def generate_security_tests(endpoint: dict, framework: str = 'pytest') -> str:
             'role': 'user',
             'content': f"""Generate {framework} security test cases for this API endpoint.
 
-Endpoint: {endpoint['method']} {endpoint['path']}
-Description: {endpoint.get('description', 'No description')}
-Parameters: {endpoint.get('parameters', [])}
-Auth required: {bool(endpoint.get('security'))}
+Endpoint - {endpoint['method']} {endpoint['path']}
+Description - {endpoint.get('description', 'No description')}
+Parameters - {endpoint.get('parameters', [])}
+Auth required - {bool(endpoint.get('security'))}
 
 Generate tests for:
 1. Authentication bypass attempts
@@ -224,7 +224,7 @@ class TestUserProfileSecurity:
 
 These tests are specific to the endpoint, not generic. The IDOR test (cross-user access) is the most valuable. it catches a class of vulnerability that tools like ZAP miss because they don't understand your data model.
 
-Approach 3: Automated Fuzzing with AI
+Approach 3 - Automated Fuzzing with AI
 
 Combine traditional API fuzzing with AI-generated interesting inputs:
 
@@ -250,7 +250,7 @@ def ai_fuzz_endpoint(
         messages=[{
             'role': 'user',
             'content': f"""Generate {num_cases} interesting test payloads for fuzzing this API endpoint.
-Focus on: boundary values, type confusion, unexpected types, XSS payloads, SQL injection.
+Focus on - boundary values, type confusion, unexpected types, XSS payloads, SQL injection.
 
 Schema:
 {json.dumps(schema, indent=2)}

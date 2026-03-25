@@ -96,7 +96,7 @@ Cursor and GitHub Copilot
 
 These IDE-integrated AI tools excel at writing Hypothesis tests because they understand your codebase context. Copilot can suggest Hypothesis strategies based on your function's type annotations, when it sees `def foo(x: int, y: str) -> bool`, it will automatically constrain strategies to integers and strings rather than using `st.one_of(st.integers(), st.text())`. Cursor can generate entire test files from a natural language description of the function's behavior, making it fast for bootstrapping a test suite from scratch.
 
-Practical tip for Copilot: Open your source file and the corresponding test file side-by-side. Copilot reads both files as context and will generate strategies that match your type annotations and existing example-based tests.
+Practical tip for Copilot - Open your source file and the corresponding test file side-by-side. Copilot reads both files as context and will generate strategies that match your type annotations and existing example-based tests.
 
 AI Tools for Fast-Check (JavaScript/TypeScript)
 
@@ -173,7 +173,7 @@ describe('mergeObjects', () => {
 
 Practical Workflow for AI-Assisted Property Testing
 
-Step 1: Define Your Function's Contract
+Step 1 - Define Your Function's Contract
 
 Before involving AI, document what your function should do. Include:
 
@@ -185,7 +185,7 @@ Before involving AI, document what your function should do. Include:
 
 The more precise your contract, the better properties the AI will generate. "This function sorts a list" is too vague. "This function sorts a list of integers in ascending order, preserving duplicates, and returning a new list without modifying the input" gives the AI enough to generate five distinct properties.
 
-Step 2: Prompt the AI Effectively
+Step 2 - Prompt the AI Effectively
 
 A strong prompt includes:
 
@@ -199,7 +199,7 @@ Example prompt for Claude:
 
 > "Generate Hypothesis property-based tests for this Python function that validates email addresses. The function returns True for valid emails, False for invalid ones, and never raises an exception. Generate properties covering: 1) the return type is always bool, 2) empty string returns False, 3) strings without an @ symbol return False, 4) adding a valid domain to a local part should return True if the combined string is valid. Use `st.emails()` for the valid email strategy and `st.text()` for invalid inputs."
 
-Step 3: Review and Refine Generated Tests
+Step 3 - Review and Refine Generated Tests
 
 AI-generated tests are starting points, not final products. Before running them, verify:
 
@@ -210,7 +210,7 @@ AI-generated tests are starting points, not final products. Before running them,
 
 This last check is critical. Mutate your source function intentionally, introduce an off-by-one error, break a boundary condition, and confirm the property test catches it. A property that never fails is not testing anything useful.
 
-Step 4: Add Custom Strategies for Domain Types
+Step 4 - Add Custom Strategies for Domain Types
 
 For domain-specific types, you may need to define custom strategies and share them with the AI for context. For instance, if your function accepts a `User` object:
 

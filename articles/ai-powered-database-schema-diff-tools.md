@@ -82,7 +82,7 @@ Atlas Cloud AI explanation (for paid tier):
 
 ```
 This migration adds an email_verified_at column to the users table.
-Risk: LOW. Adding a nullable column in PostgreSQL takes an exclusive lock
+Risk - LOW. Adding a nullable column in PostgreSQL takes an exclusive lock
 briefly but does not rewrite the table. Safe for online deployment.
 
 If your users table has > 10M rows, consider monitoring lock wait time.

@@ -25,7 +25,7 @@ Table of Contents
 - [Analyzing Load Test Results](#analyzing-load-test-results)
 - [Integrating AI Load Testing into CI/CD Pipelines](#integrating-ai-load-testing-into-cicd-pipelines)
 - [Selecting the Right AI Load Testing Tool](#selecting-the-right-ai-load-testing-tool)
-- [Comparison Table: AI-Powered Load Testing Tools](#comparison-table-ai-powered-load-testing-tools)
+- [Comparison Table - AI-Powered Load Testing Tools](#comparison-table-ai-powered-load-testing-tools)
 - [Advanced Performance Analysis Strategies](#advanced-performance-analysis-strategies)
 - [Real-World Deployment Patterns](#real-world-deployment-patterns)
 - [Integrating with Observability Stacks](#integrating-with-observability-stacks)
@@ -196,15 +196,15 @@ Selecting the Right AI Load Testing Tool
 
 When evaluating AI tools for automated load testing script generation and analysis, consider these factors:
 
-Integration capabilities: Ensure the tool supports your existing tech stack, including your API specification format, CI/CD platform, and monitoring solutions.
+Integration capabilities - Ensure the tool supports your existing tech stack, including your API specification format, CI/CD platform, and monitoring solutions.
 
-Script output quality: Review generated scripts for readability and whether they match your application's actual behavior patterns.
+Script output quality - Review generated scripts for readability and whether they match your application's actual behavior patterns.
 
-Analysis depth: Look for tools that provide actionable recommendations rather than just displaying metrics.
+Analysis depth - Look for tools that provide actionable recommendations rather than just displaying metrics.
 
-Scalability: Verify the tool can generate sufficient load for your testing requirements, whether running tests locally or in distributed configurations.
+Scalability - Verify the tool can generate sufficient load for your testing requirements, whether running tests locally or in distributed configurations.
 
-Comparison Table: AI-Powered Load Testing Tools
+Comparison Table - AI-Powered Load Testing Tools
 
 | Tool | Script Generation | Data Gen | Result Analysis | CI/CD Integration | Cost |
 |------|---|---|---|---|---|

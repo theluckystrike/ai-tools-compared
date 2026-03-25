@@ -21,7 +21,7 @@ Table of Contents
 
 - [The Problem with Fragmented Onboarding Documentation](#the-problem-with-fragmented-onboarding-documentation)
 - [How AI Tools Parse and Structure Wiki Content](#how-ai-tools-parse-and-structure-wiki-content)
-- [Practical Workflow: From Wiki to Checklist](#practical-workflow-from-wiki-to-checklist)
+- [Practical Workflow - From Wiki to Checklist](#practical-workflow-from-wiki-to-checklist)
 - [Example: Generating a Local Development Checklist](#example-generating-a-local-development-checklist)
 - [Local Development Setup Checklist](#local-development-setup-checklist)
 - [Tools and Approaches](#tools-and-approaches)
@@ -31,7 +31,7 @@ Table of Contents
 - [Measuring Onboarding Effectiveness](#measuring-onboarding-effectiveness)
 - [Integrating with Documentation Platforms](#integrating-with-documentation-platforms)
 - [Creating Video Walkthroughs from Checklists](#creating-video-walkthroughs-from-checklists)
-- [Checklist Item 1: Install Node.js via nvm](#checklist-item-1-install-nodejs-via-nvm)
+- [Checklist Item 1 - Install Node.js via nvm](#checklist-item-1-install-nodejs-via-nvm)
 - [Handling Special Cases and Edge Cases](#handling-special-cases-and-edge-cases)
 - [Building Institutional Knowledge](#building-institutional-knowledge)
 
@@ -84,11 +84,11 @@ The AI processes this and returns structured output like:
 
 This transformation from passive documentation into an active checklist significantly reduces the cognitive load on new developers.
 
-Practical Workflow: From Wiki to Checklist
+Practical Workflow - From Wiki to Checklist
 
 A typical workflow for DevRel teams using AI to generate onboarding checklists involves three phases: collection, processing, and refinement.
 
-Phase 1: Collection
+Phase 1 - Collection
 
 Gather all relevant documentation sources. This might include:
 
@@ -104,7 +104,7 @@ Gather all relevant documentation sources. This might include:
 
 Export these to a unified format, markdown works well, using tools like `pandoc` for Confluence exports or direct API access for Notion pages.
 
-Phase 2: Processing
+Phase 2 - Processing
 
 Feed the collected content to an AI assistant with instructions to extract onboarding-relevant steps. Be explicit about your team's conventions. For example:
 
@@ -115,7 +115,7 @@ Include specific file paths, commands, and URLs. Exclude content
 related to architecture discussions or historical context.
 ```
 
-Phase 3: Refinement
+Phase 3 - Refinement
 
 Review the generated checklist with existing team members. AI output provides an excellent starting point, but human validation ensures accuracy. Add or modify steps based on recent changes that haven't yet appeared in wiki documentation.
 
@@ -229,7 +229,7 @@ DevOps engineer checklist:
 - Deployment tooling
 - Monitoring dashboard access
 
-Prompt your AI: "Generate onboarding checklists specific to each role on our team. Each should include steps relevant to that person's responsibilities." The result is a checklist that new hires can follow without skipping irrelevant steps.
+Prompt your AI - "Generate onboarding checklists specific to each role on our team. Each should include steps relevant to that person's responsibilities." The result is a checklist that new hires can follow without skipping irrelevant steps.
 
 Measuring Onboarding Effectiveness
 
@@ -280,8 +280,8 @@ Creating Video Walkthroughs from Checklists
 Use your AI-generated checklist as a script for creating onboarding videos. The checklist provides the structure; you add visual demonstrations:
 
 ```markdown
-Checklist Item 1: Install Node.js via nvm
-- Narration: "We use nvm to manage Node versions..."
+Checklist Item 1 - Install Node.js via nvm
+- Narration - "We use nvm to manage Node versions..."
 - Demo: Show terminal commands
 - Duration: 2 minutes
 ```

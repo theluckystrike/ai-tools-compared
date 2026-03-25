@@ -34,7 +34,7 @@ Choose Trino if you have Kubernetes expertise, need zero licensing costs, and wa
 
 
 - Starburst enterprise pricing starts: around $0.40 per query per hour, plus annual support contract costs.
-- A typical production Trino: cluster with 1 coordinator and 8 workers on AWS costs roughly $3,000-$8,000 per month in EC2 costs depending on instance types, plus engineering time to operate it.
+- A typical production Trino - cluster with 1 coordinator and 8 workers on AWS costs roughly $3,000-$8,000 per month in EC2 costs depending on instance types, plus engineering time to operate it.
 - Choose Starburst if you: need enterprise support, out-of-box query optimization, and integrated security with audit logging for production AI systems.
 - For complex joins across: embedding tables and metadata stores, this can reduce query time by 30-50% compared to default planning.
 - For AI applications processing: user data or proprietary information, Starburst's integrated security reduces your implementation burden significantly.
@@ -103,7 +103,7 @@ cursor.execute("""
 
 Connector Support for AI Data Sources
 
-Both engines support standard connectors, but Starburst ships additional connectors for enterprise data sources (Salesforce, SAP, ServiceNow) that matter if your AI system needs to enrich queries with CRM or ERP data. Trino's community connector ecosystem is extensive but requires you to compile and manage custom connectors yourself.
+Both engines support standard connectors, but Starburst ships additional connectors for enterprise data sources (Salesforce, SAP, ServiceNow) that matter if your AI system needs to enrich queries with CRM or ERP data. Trino's community connector environment is extensive but requires you to compile and manage custom connectors yourself.
 
 For vector-heavy AI workloads, neither engine natively supports approximate nearest-neighbor (ANN) search, you will still need a dedicated vector database (Pinecone, Weaviate, pgvector) for embedding retrieval. Both Trino and Starburst work best for the structured metadata filtering that precedes or follows vector similarity search in a hybrid retrieval pipeline.
 
@@ -168,7 +168,7 @@ Starburst enterprise pricing starts around $0.40 per query per hour, plus annual
 
 For startups and projects with tight budgets, Trino's zero licensing cost makes it the practical starting point. You can migrate to Starburst later, SQL syntax and connector configurations are compatible.
 
-Trino in Practice: Real-World Setup
+Trino in Practice - Real-World Setup
 
 A minimal production Trino deployment on Kubernetes uses the community Helm chart:
 
@@ -224,7 +224,7 @@ The choice between Starburst and Trino for AI query engines ultimately depends o
 
 Both platforms can power effective AI query engines. Start with Trino if you have the technical capacity to manage it. Choose Starburst if you need enterprise features and have the budget to reduce operational overhead.
 
-The good news: your application code remains largely the same regardless of choice. The `trino` Python client works with both, so you can evaluate each option with a small proof-of-concept before committing to a long-term infrastructure decision.
+The good news - your application code remains largely the same regardless of choice. The `trino` Python client works with both, so you can evaluate each option with a small proof-of-concept before committing to a long-term infrastructure decision.
 
 Frequently Asked Questions
 
@@ -266,7 +266,7 @@ Starburst implementation (enterprise with managed preference):
 
 For teams wanting to launch an AI query engine quickly, Starburst's managed option wins significantly.
 
-Performance Benchmarks: Real-World Queries
+Performance Benchmarks - Real-World Queries
 
 Query performance depends heavily on data distribution and complexity. Here's a typical comparison:
 

@@ -19,7 +19,7 @@ AI tools have transformed how developers create educational content around algor
 
 Table of Contents
 
-- [The Workflow: From Code to Visualization](#the-workflow-from-code-to-visualization)
+- [The Workflow - From Code to Visualization](#the-workflow-from-code-to-visualization)
 - [Tools That Generate Visualizations from Code](#tools-that-generate-visualizations-from-code)
 - [Creating Interactive Step-by-Step Guides](#creating-interactive-step-by-step-guides)
 - [Practical Implementation Approaches](#practical-implementation-approaches)
@@ -31,10 +31,10 @@ Table of Contents
 - [Tool Comparison for Visualization Generation](#tool-comparison-for-visualization-generation)
 - [Building a Reusable Visualization Framework](#building-a-reusable-visualization-framework)
 - [Optimization Tips for Visualization Generation](#optimization-tips-for-visualization-generation)
-- [Performance Benchmarks: Visualization Tools](#performance-benchmarks-visualization-tools)
+- [Performance Benchmarks - Visualization Tools](#performance-benchmarks-visualization-tools)
 - [Real-World Usage Metrics](#real-world-usage-metrics)
 
-The Workflow: From Code to Visualization
+The Workflow - From Code to Visualization
 
 The core workflow involves feeding a code snippet into an AI tool that understands both the programming language and how to represent algorithm execution visually. The AI analyzes the code structure, identifies key operations, and generates a step-by-step visualization that shows how data flows through the algorithm.
 
@@ -124,7 +124,7 @@ The ability to generate visualizations from code snippets democratizes algorithm
 
 End-to-End Implementation Example
 
-Step 1: Code to Visualization Pipeline
+Step 1 - Code to Visualization Pipeline
 
 Input Algorithm:
 ```python
@@ -167,7 +167,7 @@ For input [38, 27, 43, 3, 9, 82, 10]:
 5. Output as single HTML file
 ```
 
-Step 2: Generated Visualization Output
+Step 2 - Generated Visualization Output
 
 ```html
 <!DOCTYPE html>
@@ -234,9 +234,9 @@ Step 2: Generated Visualization Output
 
 Advanced Visualization Techniques
 
-Technique 1: Tree Visualization for Recursive Algorithms
+Technique 1 - Tree Visualization for Recursive Algorithms
 
-Use Case: Visualizing recursive function calls (binary search, quicksort pivot selection)
+Use Case - Visualizing recursive function calls (binary search, quicksort pivot selection)
 
 ```python
 Prompt to AI tool:
@@ -244,15 +244,15 @@ Prompt to AI tool:
  Include pivot selection, recursive calls, and final sorted result"
 ```
 
-Output Format: SVG tree with:
+Output Format - SVG tree with:
 - Nodes showing array state at each call
 - Edges showing parent-child relationships
 - Color coding for different call depths
 - Animation showing call sequence
 
-Technique 2: State Transition Diagrams
+Technique 2 - State Transition Diagrams
 
-Use Case: Visualizing finite state machines or graph traversal algorithms
+Use Case - Visualizing finite state machines or graph traversal algorithms
 
 ```mermaid
 graph LR
@@ -265,9 +265,9 @@ graph LR
     style D fill:#FFB6C1
 ```
 
-Technique 3: Timeline Visualization
+Technique 3 - Timeline Visualization
 
-Use Case: Showing algorithm execution over time (scheduling algorithms, caching)
+Use Case - Showing algorithm execution over time (scheduling algorithms, caching)
 
 Key Features:
 - Horizontal timeline showing time progression
@@ -288,9 +288,9 @@ Weaknesses:
 - No direct export to visualization platforms
 - Requires manual integration into learning platforms
 
-Best For: Creating custom educational content, complex algorithm visualization
+Best For - Creating custom educational content, complex algorithm visualization
 
-Example Output: Full-featured interactive visualization with explanation
+Example Output - Full-featured interactive visualization with explanation
 
 ChatGPT
 
@@ -302,7 +302,7 @@ Weaknesses:
 - Generated code sometimes requires debugging
 - Simpler output quality compared to Claude
 
-Best For: Quick prototypes, learning purposes
+Best For - Quick prototypes, learning purposes
 
 Specialized Tools (Visualgo, Algorithm Visualizer)
 
@@ -315,7 +315,7 @@ Weaknesses:
 - Limited to pre-implemented algorithms
 - Can't customize for your specific needs
 
-Best For: Learning standard algorithms, not content creation
+Best For - Learning standard algorithms, not content creation
 
 Building a Reusable Visualization Framework
 
@@ -363,9 +363,9 @@ Optimization Tips for Visualization Generation
 3. Include Annotations: Ask for step-by-step descriptions alongside visualization
 4. Request Interactivity: Specify pause/resume/step-back functionality
 5. Set Color Scheme: Specify colors for better branding
-6. Define Diagram Style: Request specific visualization type (bars, tree, graph, etc.)
+6. Define Diagram Style - Request specific visualization type (bars, tree, graph, etc.)
 
-Performance Benchmarks: Visualization Tools
+Performance Benchmarks - Visualization Tools
 
 | Tool | Generation Time | Output Quality | Interactivity | Customization |
 |------|-----------------|----------------|---------------|--------------|
@@ -381,7 +381,7 @@ Measuring effectiveness of AI-generated visualizations in educational contexts:
 - Engagement: 40% more students complete algorithm tutorials with visualizations
 - Understanding: 60% higher correctness on algorithm implementation exercises
 - Time Savings: 10-15 hours saved per tutorial compared to manual creation
-- Maintenance: AI regeneration takes 10 minutes vs. hours for manual updates
+- Maintenance - AI regeneration takes 10 minutes vs. hours for manual updates
 
 Frequently Asked Questions
 

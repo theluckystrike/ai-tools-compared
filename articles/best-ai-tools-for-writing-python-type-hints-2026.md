@@ -48,7 +48,7 @@ AI tools excel at type hint generation because the task is deterministic, given 
 
 The challenge lies in handling advanced Python typing constructs: generic types with multiple parameters, protocol classes for structural subtyping, TypedDict for keyword argument validation, and runtime type checking compatibility. Different AI tools handle these differently.
 
-GitHub Copilot: Real-Time IDE Integration
+GitHub Copilot - Real-Time IDE Integration
 
 GitHub Copilot remains the most accessible tool for type hint generation because it operates directly in your IDE. When you start typing a function signature, Copilot suggests type hints based on the function body and how it's called elsewhere in your codebase.
 
@@ -146,7 +146,7 @@ class TreeNode:
 
 Copilot handles basic recursion but struggles with more complex patterns.
 
-Cursor AI: Module-Level Type Annotation
+Cursor AI - Module-Level Type Annotation
 
 Cursor AI (built on Claude) takes a different approach, select an entire function or module, request type annotation, and it refactors the entire block with type hints.
 
@@ -202,7 +202,7 @@ Protocol-Aware Suggestions
 When you have duck-typed interfaces, Cursor can extract them into protocols:
 
 ```python
-Request: Extract duck-typed behavior into protocols
+Request - Extract duck-typed behavior into protocols
 class FileHandler:
     def read(self): return self.file.read()
     def write(self, data): self.file.write(data)
@@ -245,7 +245,7 @@ If Cursor suggests a type incompatible with pyright's strict mode, you can ask i
 /edit: Make this compatible with pyright in strict mode
 ```
 
-Claude (Web/API): Refactoring Large Codebases
+Claude (Web/API) - Refactoring Large Codebases
 
 Claude handles the most complex type annotation scenarios, especially when refactoring legacy code or dealing with edge cases.
 
@@ -276,7 +276,7 @@ Managing Complex Union and Optional Types
 Claude handles nuanced typing scenarios:
 
 ```python
-Scenario: Function returning different types based on conditions
+Scenario - Function returning different types based on conditions
 def get_config(key: str, default: Optional[str] = None) -> Union[str, int, bool]:
     # Implementation
     pass
@@ -387,7 +387,7 @@ repos:
         additional_dependencies: ['types-requests', 'types-PyYAML']
 ```
 
-Comparison: Workflow and Speed
+Comparison - Workflow and Speed
 
 | Aspect | Copilot | Cursor | Claude |
 |--------|---------|--------|--------|
@@ -421,14 +421,14 @@ echo "Type hints validated successfully"
 
 Common Pitfalls to Avoid
 
-Avoid overly broad Any types: Don't let AI suggest `Any` when a more specific type is possible.
+Avoid overly broad Any types - Don't let AI suggest `Any` when a more specific type is possible.
 
 ```python
-Bad: AI suggests this
+Bad - AI suggests this
 def process(data: Any) -> Any:
     pass
 
-Better: Require AI to be specific
+Better - Require AI to be specific
 def process(data: Dict[str, Union[int, str]]) -> List[Dict[str, Any]]:
     pass
 ```
@@ -436,7 +436,7 @@ def process(data: Dict[str, Union[int, str]]) -> List[Dict[str, Any]]:
 Avoid mixing TypedDict and dataclass: Pick one approach for structured data.
 
 ```python
-Inconsistent: mixing approaches
+Inconsistent - mixing approaches
 class Config(TypedDict):
     host: str
 
@@ -448,7 +448,7 @@ class Settings:
 Avoid circular imports with forward references: Use string quotes judiciously.
 
 ```python
-Works: circular reference via string quote
+Works - circular reference via string quote
 class TreeNode:
     def add_child(self, child: 'TreeNode') -> None:
         pass
@@ -480,7 +480,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -492,7 +492,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

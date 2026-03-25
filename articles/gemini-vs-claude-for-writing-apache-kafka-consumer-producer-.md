@@ -312,7 +312,7 @@ private void sendToDeadLetterQueue(ConsumerRecord<String, String> record, Except
 
 Gemini generates a similar pattern when prompted for DLQ handling, but Claude includes the header propagation (original topic, error message, error class) without being asked. details that make DLQ investigation tractable in production.
 
-Configuration Comparison: Default Settings Quality
+Configuration Comparison - Default Settings Quality
 
 The most significant production-readiness difference is in default configuration values. Here's a side-by-side of what each tool generates without explicit configuration requirements:
 

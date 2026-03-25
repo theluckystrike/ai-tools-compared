@@ -27,7 +27,7 @@ Table of Contents
 - [GPT-4 (OpenAI)](#gpt-4-openai)
 - [Gemini (Google)](#gemini-google)
 - [CodeLLama (Meta)](#codellama-meta)
-- [Practical Workflow: Integrating AI into Your Red Team Process](#practical-workflow-integrating-ai-into-your-red-team-process)
+- [Practical Workflow - Integrating AI into Your Red Team Process](#practical-workflow-integrating-ai-into-your-red-team-process)
 - [Tool Selection Guide](#tool-selection-guide)
 - [Limitations and Considerations](#limitations-and-considerations)
 - [Real-World Implementation Example: Complete Workflow](#real-world-implementation-example-complete-workflow)
@@ -35,7 +35,7 @@ Table of Contents
 - [Prompt Engineering for High-Quality Plans](#prompt-engineering-for-high-quality-plans)
 - [Validating AI-Generated Plans Against Industry Standards](#validating-ai-generated-plans-against-industry-standards)
 - [Common Red Team Plan Gaps](#common-red-team-plan-gaps)
-- [Automation: Continuous Red Team Planning](#automation-continuous-red-team-planning)
+- [Automation - Continuous Red Team Planning](#automation-continuous-red-team-planning)
 - [Pricing Reality Check](#pricing-reality-check)
 
 What Makes These Tools Effective
@@ -51,7 +51,7 @@ Claude (Anthropic)
 
 Claude excels at analyzing architecture documentation and generating detailed engagement plans through its advanced reasoning capabilities. Provide it with your OpenAPI spec or architecture markdown, and it produces red team plans.
 
-Input support: OpenAPI specs, Swagger docs, architecture markdown, Mermaid diagrams, and code snippets
+Input support - OpenAPI specs, Swagger docs, architecture markdown, Mermaid diagrams, and code snippets
 
 Strengths:
 - Excellent at chaining multiple vulnerabilities into realistic attack scenarios
@@ -77,7 +77,7 @@ GPT-4 (OpenAI)
 
 GPT-4 offers strong performance on red team planning through its broad training and instruction-following capabilities. Its function calling and structured output support enables integration into automated workflows.
 
-Input support: JSON, YAML, markdown, code, and architectural descriptions
+Input support - JSON, YAML, markdown, code, and architectural descriptions
 
 Strengths:
 - Fast response times suitable for iterative planning
@@ -85,7 +85,7 @@ Strengths:
 - Strong API integration for automation
 - Consistent formatting across generations
 
-Practical example: Generating a structured engagement plan:
+Practical example - Generating a structured engagement plan:
 
 ```python
 import openai
@@ -107,7 +107,7 @@ Gemini (Google)
 
 Gemini 1.5 Pro handles large architecture documents effectively due to its massive context window. You can feed entire codebases or extensive documentation sets without truncation.
 
-Input support: Up to 1M tokens context. supports full architecture docs, multiple files, and related specifications
+Input support - Up to 1M tokens context. supports full architecture docs, multiple files, and related specifications
 
 Strengths:
 - Processes extensive documentation in a single pass
@@ -115,26 +115,26 @@ Strengths:
 - Good at identifying inter-service communication patterns
 - Cost-effective for large document processing
 
-Best use case: Analyzing microservices architectures with extensive inter-service documentation where other tools hit context limits.
+Best use case - Analyzing microservices architectures with extensive inter-service documentation where other tools hit context limits.
 
 CodeLLama (Meta)
 
 For teams preferring open-source solutions, CodeLLama provides capable red team planning without API costs. The 70B parameter model offers reasonable planning capabilities.
 
-Input support: Code files, documentation, and architectural descriptions
+Input support - Code files, documentation, and architectural descriptions
 
 Strengths:
 - No external API dependencies
 - Deployable on-premises for sensitive architectures
 - Good code comprehension for understanding implementation details
 
-Consideration: Requires more prompt engineering to achieve quality comparable to proprietary models.
+Consideration - Requires more prompt engineering to achieve quality comparable to proprietary models.
 
-Practical Workflow: Integrating AI into Your Red Team Process
+Practical Workflow - Integrating AI into Your Red Team Process
 
 Here's a practical approach for incorporating these tools into your engagement planning:
 
-Step 1: Document Aggregation
+Step 1 - Document Aggregation
 
 Gather your architecture documentation into a unified format. Consolidate:
 - API specifications (OpenAPI/Swagger)
@@ -142,18 +142,18 @@ Gather your architecture documentation into a unified format. Consolidate:
 - Network diagrams and data flow documents
 - Authentication and authorization design docs
 
-Step 2: AI-Assisted Analysis
+Step 2 - AI-Assisted Analysis
 
 Pass consolidated documentation to your chosen AI tool:
 
 ```bash
 Using Claude CLI for plan generation
 claude -p "Analyze this architecture and generate a red team engagement plan.
-Include: attack objectives, chain progression, priority targets.
-Architecture: [paste your architecture documentation]"
+Include - attack objectives, chain progression, priority targets.
+Architecture - [paste your architecture documentation]"
 ```
 
-Step 3: Human Refinement
+Step 3 - Human Refinement
 
 AI-generated plans require security expert review. Validate:
 - Attack feasibility within your environment
@@ -161,7 +161,7 @@ AI-generated plans require security expert review. Validate:
 - Resource and time estimates
 - Legal and compliance considerations
 
-Step 4: Execution Planning
+Step 4 - Execution Planning
 
 Convert refined plans into actionable tasks:
 
@@ -173,13 +173,13 @@ Convert refined plans into actionable tasks:
 
 Tool Selection Guide
 
-For maximum analysis quality: Claude 3.5 Sonnet. best reasoning and attack chain construction
+For maximum analysis quality - Claude 3.5 Sonnet. best reasoning and attack chain construction
 
-For automation integration: GPT-4. strongest API and workflow integration
+For automation integration - GPT-4. strongest API and workflow integration
 
-For large architectures: Gemini 1.5 Pro. handles extensive documentation sets
+For large architectures - Gemini 1.5 Pro. handles extensive documentation sets
 
-For on-premises requirements: CodeLLama 70B. deployable without external APIs
+For on-premises requirements - CodeLLama 70B. deployable without external APIs
 
 Limitations and Considerations
 
@@ -191,7 +191,7 @@ Real-World Implementation Example: Complete Workflow
 
 Here's how a typical red team plan generation session flows:
 
-Setup: Architecture Documentation
+Setup - Architecture Documentation
 
 Gather your materials in a single prompt:
 
@@ -215,7 +215,7 @@ Known Constraints:
 Generate the red team plan with clear phases, timeline, and resource allocation.
 ```
 
-Expected output: Structured plan with recon, initial access, escalation phases, 4, 6 hours generation value.
+Expected output - Structured plan with recon, initial access, escalation phases, 4, 6 hours generation value.
 
 Pricing Comparison for Plan Generation
 
@@ -234,12 +234,12 @@ Prompt Engineering for High-Quality Plans
 Good Prompt Structure
 
 ```
-Context: [Company name, industry, approximate tech stack]
-Architecture: [Paste OpenAPI spec or architecture doc]
-Team Info: [Team size, experience level, tools available]
-Scope: [What's in scope, what's explicitly out of scope]
-Timeline: [Days available, work hours per day]
-Previous Findings: [From prior assessments, if any]
+Context - [Company name, industry, approximate tech stack]
+Architecture - [Paste OpenAPI spec or architecture doc]
+Team Info - [Team size, experience level, tools available]
+Scope - [What's in scope, what's explicitly out of scope]
+Timeline - [Days available, work hours per day]
+Previous Findings - [From prior assessments, if any]
 
 Generate a red team engagement plan covering:
 1. Reconnaissance objectives and methods
@@ -256,11 +256,11 @@ Validating AI-Generated Plans Against Industry Standards
 
 AI plans should align with:
 
-NIST Attack Framework: Plans identify reconnaissance, weaponization, delivery, exploitation, installation, command & control, and actions on objectives, the seven-phase model.
+NIST Attack Framework - Plans identify reconnaissance, weaponization, delivery, exploitation, installation, command & control, and actions on objectives, the seven-phase model.
 
-MITRE ATT&CK Framework: Good plans reference specific tactics and techniques from MITRE's taxonomy, showing sophisticated understanding of attacker methodologies.
+MITRE ATT&CK Framework - Good plans reference specific tactics and techniques from MITRE's taxonomy, showing sophisticated understanding of attacker methodologies.
 
-Industry Standards: For regulated industries, ensure plans consider compliance boundaries (HIPAA, PCI-DSS, SOC 2).
+Industry Standards - For regulated industries, ensure plans consider compliance boundaries (HIPAA, PCI-DSS, SOC 2).
 
 Use this checklist to validate AI output:
 
@@ -278,13 +278,13 @@ AI tools sometimes miss:
 
 Insider threat scenarios: Plans focus on external attacks; supplement with insider threat playbooks requiring human expertise.
 
-Supply chain attacks: Harder for AI to reason about; provide additional context if supply chain is in scope.
+Supply chain attacks - Harder for AI to reason about; provide additional context if supply chain is in scope.
 
-Physical security interaction: Plans are typically logical-layer focused; add physical penetration guidance separately.
+Physical security interaction - Plans are typically logical-layer focused; add physical penetration guidance separately.
 
 Regulatory compliance specificity: For healthcare or financial institutions, validate that plans respect industry-specific constraints.
 
-Automation: Continuous Red Team Planning
+Automation - Continuous Red Team Planning
 
 Organizations running recurring red teams can automate planning:
 
@@ -319,7 +319,7 @@ AI-assisted planning:
 - Plan review/refinement: 2, 3 hours
 - Total: 3, 4 hours + $20 = ~$1,200
 
-AI value: Reduces planning effort by 85, 90%, freeing senior security staff for execution and validation rather than documentation.
+AI value - Reduces planning effort by 85, 90%, freeing senior security staff for execution and validation rather than documentation.
 
 Frequently Asked Questions
 
@@ -329,7 +329,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -341,7 +341,7 @@ Most modern tools support asynchronous workflows that work well across time zone
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

@@ -21,12 +21,12 @@ Table of Contents
 
 - [Why Generate OpenAPI from Code?](#why-generate-openapi-from-code)
 - [Tool Comparison for OpenAPI Generation](#tool-comparison-for-openapi-generation)
-- [Step 1: Extract Your API Code](#step-1-extract-your-api-code)
-- [Step 2: Generate with Claude](#step-2-generate-with-claude)
-- [Step 3: Generate Client SDKs](#step-3-generate-client-sdks)
-- [Step 4: Advanced OpenAPI Features](#step-4-advanced-openapi-features)
-- [Step 5: Keep OpenAPI In Sync](#step-5-keep-openapi-in-sync)
-- [Real-World Example: Convert Legacy REST API](#real-world-example-convert-legacy-rest-api)
+- [Step 1 - Extract Your API Code](#step-1-extract-your-api-code)
+- [Step 2 - Generate with Claude](#step-2-generate-with-claude)
+- [Step 3 - Generate Client SDKs](#step-3-generate-client-sdks)
+- [Step 4 - Advanced OpenAPI Features](#step-4-advanced-openapi-features)
+- [Step 5 - Keep OpenAPI In Sync](#step-5-keep-openapi-in-sync)
+- [Real-World Example - Convert Legacy REST API](#real-world-example-convert-legacy-rest-api)
 - [Validation Checklist](#validation-checklist)
 
 Why Generate OpenAPI from Code?
@@ -38,7 +38,7 @@ OpenAPI specs enable:
 - API gateway configuration and mock servers
 - Team onboarding (developers see all endpoints immediately)
 
-The challenge: documenting your actual behavior requires inspecting hundreds of lines of controller code. AI tools automate this extraction.
+The challenge - documenting your actual behavior requires inspecting hundreds of lines of controller code. AI tools automate this extraction.
 
 Tool Comparison for OpenAPI Generation
 
@@ -52,7 +52,7 @@ Tool Comparison for OpenAPI Generation
 
 Use Claude 3.5 Sonnet for initial generation (paste entire codebase), then use ChatGPT-4 for quick updates to individual endpoints.
 
-Step 1: Extract Your API Code
+Step 1 - Extract Your API Code
 
 Gather all controller/route code in one file for AI analysis.
 
@@ -91,7 +91,7 @@ Extract all controller methods
 find ./src -name "*Controller.java" | xargs grep -A 5 "@GetMapping\|@PostMapping\|@RequestMapping" > controller_methods.txt
 ```
 
-Step 2: Generate with Claude
+Step 2 - Generate with Claude
 
 Paste your code to Claude with this prompt:
 
@@ -194,7 +194,7 @@ components:
           format: date-time
 ```
 
-Step 3: Generate Client SDKs
+Step 3 - Generate Client SDKs
 
 Once you have an OpenAPI spec, generate SDKs automatically:
 
@@ -234,7 +234,7 @@ customer = customer_api.get_customer(id="123e4567-e89b-12d3-a456-426614174000")
 print(customer.email)
 ```
 
-Step 4: Advanced OpenAPI Features
+Step 4 - Advanced OpenAPI Features
 
 Ask Claude to enhance your spec with advanced features:
 
@@ -306,7 +306,7 @@ responses:
         description: Unix timestamp when limit resets
 ```
 
-Step 5: Keep OpenAPI In Sync
+Step 5 - Keep OpenAPI In Sync
 
 Set up automation to update your spec as code changes:
 
@@ -373,7 +373,7 @@ urlpatterns = [
 ]
 ```
 
-Real-World Example: Convert Legacy REST API
+Real-World Example - Convert Legacy REST API
 
 Original undocumented endpoints:
 ```python
@@ -400,7 +400,7 @@ def create_product():
     return jsonify(product.to_dict()), 201
 ```
 
-Ask Claude: "Convert this Flask API to OpenAPI 3.0 spec with proper schemas"
+Ask Claude - "Convert this Flask API to OpenAPI 3.0 spec with proper schemas"
 
 Claude generates:
 

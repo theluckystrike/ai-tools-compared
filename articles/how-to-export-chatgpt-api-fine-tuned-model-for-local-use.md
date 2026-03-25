@@ -20,7 +20,7 @@ Export fine-tuned ChatGPT models by calling the OpenAI API with your fine-tuned 
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Cost Comparison: OpenAI API vs Self-Hosted](#cost-comparison-openai-api-vs-self-hosted)
+- [Cost Comparison - OpenAI API vs Self-Hosted](#cost-comparison-openai-api-vs-self-hosted)
 - [Troubleshooting](#troubleshooting)
 - [Related Reading](#related-reading)
 
@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand What You Actually Have
+Step 1 - Understand What You Actually Have
 
 Before attempting an export, you need to understand the technical reality: OpenAI does not provide a direct download mechanism for fine-tuned model weights. Their fine-tuning service creates a model that lives on their infrastructure, and you access it exclusively through their API. This is fundamentally different from open-source fine-tuning where you have full access to the model files.
 
@@ -48,7 +48,7 @@ However, several legitimate approaches exist to achieve local fine-tuned inferen
 
 The most practical path for most developers involves recreating the fine-tuning on an open-source base model.
 
-Step 2: What OpenAI's Fine-Tuning API Actually Gives You
+Step 2 - What OpenAI's Fine-Tuning API Actually Gives You
 
 OpenAI's fine-tuning API currently supports base models including `gpt-4o-mini`, `gpt-3.5-turbo`, and several others. When you submit a fine-tuning job, OpenAI:
 
@@ -59,7 +59,7 @@ OpenAI's fine-tuning API currently supports base models including `gpt-4o-mini`,
 
 You own the training data and the fine-tuning job metadata. You do not own the resulting weights. This distinction matters enormously for portability and cost planning.
 
-Step 3: Exporting Your Training Data
+Step 3 - Exporting Your Training Data
 
 The first step is extracting the training data you used for fine-tuning. If you still have your training files, you're in luck. If not, you can retrieve your fine-tuning job details and training examples through the OpenAI API.
 
@@ -100,7 +100,7 @@ print("Training data saved to training_data.jsonl")
 
 This training data becomes your seed for recreating the model locally.
 
-Step 4: Converting OpenAI JSONL Format for Open-Source Training
+Step 4 - Converting OpenAI JSONL Format for Open-Source Training
 
 OpenAI's fine-tuning format uses a chat messages structure. Most open-source training frameworks expect a slightly different format, so you will need a conversion step:
 
@@ -136,7 +136,7 @@ def convert_openai_to_alpaca(input_path: str, output_path: str) -> None:
 convert_openai_to_alpaca("training_data.jsonl", "training_alpaca.jsonl")
 ```
 
-Step 5: Recreating the Fine-Tuned Model Locally
+Step 5 - Recreating the Fine-Tuned Model Locally
 
 With your training data extracted, you can now fine-tune an open-source model. The goal is to replicate the behavior of your OpenAI fine-tuned model as closely as possible using local infrastructure.
 
@@ -228,7 +228,7 @@ This demonstrates the concept
 print("Ready to fine-tune locally")
 ```
 
-Step 6: Run Inference Locally
+Step 6 - Run Inference Locally
 
 After fine-tuning completes, you can run inference without any external API calls:
 
@@ -268,7 +268,7 @@ response = generate("Your prompt here")
 print(response)
 ```
 
-Step 7: Serving the Model as a Local API
+Step 7 - Serving the Model as a Local API
 
 Once you have a working local model, you often want to expose it with an OpenAI-compatible API so that existing code that calls `openai.chat.completions.create` works without modification. The `vllm` library makes this straightforward:
 
@@ -284,7 +284,7 @@ python -m vllm.entrypoints.openai.api_server \
 
 Your application can then point to `http://localhost:8000` instead of the OpenAI API, with zero code changes beyond the base URL.
 
-Step 8: Optimizing for Production
+Step 8 - Optimizing for Production
 
 For production deployment, consider these optimizations:
 
@@ -311,7 +311,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 ```
 
-Step 9: Limitations and Tradeoffs
+Step 9 - Limitations and Tradeoffs
 
 You should know that recreating your fine-tuned model locally will not produce identical results. Differences include:
 
@@ -325,7 +325,7 @@ You should know that recreating your fine-tuned model locally will not produce i
 
 Test thoroughly to ensure the local model meets your quality requirements before migrating production workloads. A practical evaluation strategy: run 50-100 representative prompts through both the OpenAI fine-tuned model and your local reproduction, then score the outputs on your specific quality criteria. Expect 80-90% behavioral parity as a realistic target; achieving exact parity is not possible without access to OpenAI's internal training pipeline.
 
-Cost Comparison: OpenAI API vs Self-Hosted
+Cost Comparison - OpenAI API vs Self-Hosted
 
 One of the primary motivations for local deployment is cost reduction at scale. Here is how the economics typically compare:
 
@@ -340,7 +340,7 @@ One of the primary motivations for local deployment is cost reduction at scale. 
 
 At volumes above roughly 25M tokens per month, self-hosting becomes economically favorable. Below that threshold, the simplicity and reliability of OpenAI's API usually wins. The latency advantage of local inference is significant for user-facing applications regardless of cost.
 
-Step 10: Common Pitfalls to Avoid
+Step 10 - Common Pitfalls to Avoid
 
 Forgetting to merge LoRA adapters before serving. LoRA adapters are stored separately from base model weights. For production serving with vLLM, merge them first:
 

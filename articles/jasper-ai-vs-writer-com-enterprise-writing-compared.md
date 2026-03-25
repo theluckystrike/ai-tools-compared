@@ -257,7 +257,7 @@ const writerConfig = {
 ```
 
 
-Integration Ecosystem
+Integration environment
 
 
 Jasper integrates with popular marketing tools including HubSpot, WordPress, and Zapier. These integrations focus on content distribution rather than developer workflows.

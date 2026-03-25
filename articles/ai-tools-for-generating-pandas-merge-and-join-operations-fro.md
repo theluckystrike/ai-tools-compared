@@ -30,7 +30,7 @@ Table of Contents
 - [Getting the Best Results from AI Merge Code Generation](#getting-the-best-results-from-ai-merge-code-generation)
 - [Performance Optimization for Large Merges](#performance-optimization-for-large-merges)
 - [Decision Tree for Merge Type Selection](#decision-tree-for-merge-type-selection)
-- [Real-World Example: Multi-Step Merge Workflow](#real-world-example-multi-step-merge-workflow)
+- [Real-World Example - Multi-Step Merge Workflow](#real-world-example-multi-step-merge-workflow)
 
 Understanding Table Relationships for Pandas Operations
 
@@ -195,12 +195,12 @@ def optimized_merge(left_df, right_df, on_column, how='left'):
 
     return result
 
-Benchmark: merge vs optimized join
+Benchmark - merge vs optimized join
 %timeit pd.merge(customers, orders, on='customer_id', how='left')
-Time: 1.2 seconds for 1M rows
+Time - 1.2 seconds for 1M rows
 
 %timeit optimized_merge(customers, orders, 'customer_id', how='left')
-Time: 340 ms for 1M rows
+Time - 340 ms for 1M rows
 ```
 
 The optimized approach uses pandas' native `.join()` method with pre-indexed DataFrames, typically delivering 3, 4x speedup for large datasets.
@@ -231,10 +231,10 @@ recommendation = recommend_merge_strategy(
     keep_unmatched_left=True,
     keep_unmatched_right=False
 )
-Returns: "left join. keeps all left records, matches right where possible"
+Returns - "left join. keeps all left records, matches right where possible"
 ```
 
-Real-World Example: Multi-Step Merge Workflow
+Real-World Example - Multi-Step Merge Workflow
 
 Here's a complete workflow combining multiple concepts that AI tools commonly generate:
 
@@ -245,11 +245,11 @@ orders = pd.read_csv('orders.csv')
 products = pd.read_csv('products.csv')
 inventory = pd.read_csv('inventory.csv')
 
-Step 1: Clean and prepare
+Step 1 - Clean and prepare
 customers = customers.drop_duplicates(subset=['customer_id'])
 orders = orders[orders['status'] != 'cancelled']
 
-Step 2: Merge orders with customer details
+Step 2 - Merge orders with customer details
 orders_with_customers = pd.merge(
     orders,
     customers[['customer_id', 'country', 'segment']],
@@ -257,7 +257,7 @@ orders_with_customers = pd.merge(
     how='left'
 )
 
-Step 3: Merge with product details
+Step 3 - Merge with product details
 order_details = pd.merge(
     orders_with_customers,
     products[['product_id', 'category', 'margin']],
@@ -265,13 +265,13 @@ order_details = pd.merge(
     how='left'
 )
 
-Step 4: Aggregate inventory by product
+Step 4 - Aggregate inventory by product
 inventory_by_product = inventory.groupby('product_id').agg({
     'quantity': 'sum',
     'warehouse': 'nunique'
 }).reset_index()
 
-Step 5: Final merge with inventory
+Step 5 - Final merge with inventory
 final_data = pd.merge(
     order_details,
     inventory_by_product,
@@ -279,7 +279,7 @@ final_data = pd.merge(
     how='left'
 )
 
-Step 6: Validation
+Step 6 - Validation
 assert final_data.shape[0] >= orders.shape[0], "Row count decreased unexpectedly"
 assert not final_data['customer_id'].isna().any(), "Missing customer IDs after merge"
 

@@ -49,7 +49,7 @@ HumanEval measures whether a model can implement simple algorithmic functions fr
 
 Run your own evaluations. They take 2-4 hours to set up and give you directly actionable data.
 
-Step 1: Build Your Evaluation Task Set
+Step 1 - Build Your Evaluation Task Set
 
 Create 20-30 tasks representative of your actual work. Categorize them:
 
@@ -98,7 +98,7 @@ TASKS = [
 ]
 ```
 
-Step 2: Automated Evaluation Runner
+Step 2 - Automated Evaluation Runner
 
 ```python
 evaluation/runner.py
@@ -190,7 +190,7 @@ def run_tests(task, generated_code):
  Path(target_file).write_text(original)
 ```
 
-Step 3: Metrics That Matter
+Step 3 - Metrics That Matter
 
 Don't just track pass/fail. Track:
 
@@ -237,7 +237,7 @@ Key metrics to compare:
 | Context usage | Did it use the reference files? |
 | Code style conformance | Does it match your patterns? |
 
-Step 4: Blind Comparison
+Step 4 - Blind Comparison
 
 For style and readability evaluation, use blind comparison. Present generated code samples to reviewers without identifying the model:
 
@@ -274,7 +274,7 @@ Based on running this framework on a Python/Django codebase:
 
 "Hard" tasks were refactoring requests with multiple interacting files. No model approaches 90% on those. iterative use is still necessary.
 
-Step 5: Measuring Context Window Utilization
+Step 5 - Measuring Context Window Utilization
 
 A model's raw pass rate is only part of the picture. How well it uses the context you provide determines whether it can handle real codebase tasks, not just isolated function generation.
 
@@ -313,7 +313,7 @@ def measure_context_utilization(task, generated_code):
 
 Models that score above 30% usage on hard tasks are genuinely integrating with your codebase context. Models that score below 10% are essentially ignoring the reference files and generating from training data alone, which explains poor performance on domain-specific tasks.
 
-Step 6: Cost-Adjusted Accuracy
+Step 6 - Cost-Adjusted Accuracy
 
 For teams evaluating models at scale, raw accuracy without cost context can mislead purchasing decisions. A model with 85% accuracy at $15 per million tokens costs more per correct output than one with 78% accuracy at $3 per million tokens.
 

@@ -132,13 +132,13 @@ Plugin authentication often required managing API keys through headers or OAuth 
 from mcp.server import Server
 from mcp.server.auth import AuthHandler
 
-Option 1: API Key authentication
+Option 1 - API Key authentication
 auth_handler = AuthHandler(
     required_auth_header="X-API-Key",
     validate_api_key=lambda key: key in valid_api_keys
 )
 
-Option 2: OAuth flow
+Option 2 - OAuth flow
 oauth_handler = AuthHandler(
     oauth_config={
         "client_id": "your-client-id",
@@ -196,7 +196,7 @@ Common Migration Pitfalls
 
 Several issues commonly arise during migration:
 
-- Statelessness: MCP maintains connection state that plugins didn't have. Account for this in your server design.
+- Statelessness - MCP maintains connection state that plugins didn't have. Account for this in your server design.
 - Response parsing: Plugin responses were HTTP payloads. MCP tool responses are structured data, adjust your parsing logic.
 - Error handling: MCP has standard error response formats. Map your plugin's error codes to MCP-compliant responses.
 
@@ -225,7 +225,7 @@ User asks Claude:
 "Run tests, if they pass, lint the code, build a Docker image,
  push it to ECR, then trigger staging deployment"
 
-Claude automatically chains: run_tests -> run_lint -> build -> push -> deploy
+Claude automatically chains - run_tests -> run_lint -> build -> push -> deploy
 ```
 
 With plugins, you'd need to manually invoke each step. With MCP, Claude handles the orchestration based on your natural language request.

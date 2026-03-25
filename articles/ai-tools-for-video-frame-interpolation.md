@@ -217,18 +217,18 @@ Choosing the right interpolation tool depends on your content type, hardware, an
 
 For developers building pipelines on a budget, RIFE with RIFE-NCNN as a fallback for non-NVIDIA hardware covers most use cases. Topaz Video AI is the right choice when quality is the only metric that matters and processing time is not a constraint.
 
-Step-by-Step Workflow: Doubling Frame Rate on Existing Footage
+Step-by-Step Workflow - Doubling Frame Rate on Existing Footage
 
 This workflow converts a 24fps video to 48fps using RIFE on a CUDA-capable machine.
 
-Step 1: Extract frames from the source video.
+Step 1 - Extract frames from the source video.
 
 ```bash
 mkdir -p frames/input
 ffmpeg -i source_video.mp4 -qscale:v 1 frames/input/%06d.png
 ```
 
-Step 2: Run RIFE interpolation on consecutive frame pairs.
+Step 2 - Run RIFE interpolation on consecutive frame pairs.
 
 ```python
 import os
@@ -255,7 +255,7 @@ Write final frame
 save_frame(load_frame(frame_files[-1]), output_dir / f"{(len(frame_files)-1)*2:06d}.png")
 ```
 
-Step 3: Reassemble into a video.
+Step 3 - Reassemble into a video.
 
 ```bash
 ffmpeg -framerate 48 -i frames/output/%06d.png \
@@ -263,7 +263,7 @@ ffmpeg -framerate 48 -i frames/output/%06d.png \
   output_48fps.mp4
 ```
 
-Step 4: Verify timing and quality. Play the output at 48fps and check for ghosting around fast-moving objects. If artifacts appear at specific timestamps, those correspond to scene changes where the interpolator crossed a hard cut. Run scene detection and re-process those segments without interpolation.
+Step 4 - Verify timing and quality. Play the output at 48fps and check for ghosting around fast-moving objects. If artifacts appear at specific timestamps, those correspond to scene changes where the interpolator crossed a hard cut. Run scene detection and re-process those segments without interpolation.
 
 Pro Tips for Better Results
 

@@ -125,7 +125,7 @@ Integration and Workflow
 
 IDE Foundation
 
-Cursor is built on VS Code, meaning it supports the full VS Code extension ecosystem. If you rely on specific VS Code extensions, Cursor maintains compatibility out of the box.
+Cursor is built on VS Code, meaning it supports the full VS Code extension environment. If you rely on specific VS Code extensions, Cursor maintains compatibility out of the box.
 
 WindSurf is built on a modified version of VS Code as well, but its extension support varies. Some VS Code extensions work without modification, while others require updates from the WindSurf team.
 
@@ -206,7 +206,7 @@ Real-World Performance Benchmarks
 Measured on actual development tasks:
 
 ```
-Task: Refactor 10-file JavaScript module
+Task - Refactor 10-file JavaScript module
 
 Cursor Pro Performance:
 - Time required: 25-30 minutes
@@ -237,7 +237,7 @@ Cursor Pro Workflow
 6. Navigate to next file
 7. Repeat for each file (context resets)
 
-Time per file: 2-5 minutes
+Time per file - 2-5 minutes
 ```
 
 WindSurf Pro Workflow
@@ -249,10 +249,10 @@ WindSurf Pro Workflow
 5. Review all changes at once
 6. Accept as batch
 
-Time total: 8-12 minutes for 10 files
+Time total - 8-12 minutes for 10 files
 ```
 
-Extension Ecosystem Impact
+Extension environment Impact
 
 This affects long-term productivity significantly:
 
@@ -285,14 +285,14 @@ Timeline to productivity:
 ```
 Cursor Pro:
 Week 1: Learning Tab completion patterns
-Week 2: Comfortable with Cmd+K for edits
-Week 3: Muscle memory for common patterns
+Week 2 - Comfortable with Cmd+K for edits
+Week 3 - Muscle memory for common patterns
 15-20% productivity increase
 
 WindSurf Pro:
 Week 1: Learning Cascade concept
-Week 2: Understanding multi-file operations
-Week 3: Effective multi-file workflows
+Week 2 - Understanding multi-file operations
+Week 3 - Effective multi-file workflows
 25-35% productivity increase (if doing refactoring)
 
 WindSurf's higher increase is conditional on multi-file work
@@ -346,13 +346,13 @@ Migration Path Between Tools
 If you want to try switching:
 
 ```
-Step 1: Clone project in new tool
-Step 2: Test common workflows for 1 week
-Step 3: Measure productivity differences
-Step 4: Make decision based on actual usage
+Step 1 - Clone project in new tool
+Step 2 - Test common workflows for 1 week
+Step 3 - Measure productivity differences
+Step 4 - Make decision based on actual usage
 
-Switching cost: ~1 week to build muscle memory
-Switching benefit: Potentially 15-35% productivity gain
+Switching cost - ~1 week to build muscle memory
+Switching benefit - Potentially 15-35% productivity gain
 ```
 
 The low switching cost makes it worthwhile to experiment if multi-file refactoring is a significant part of your work.

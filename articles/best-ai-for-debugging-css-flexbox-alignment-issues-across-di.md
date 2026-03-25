@@ -124,7 +124,7 @@ Practical Debugging Workflow
 
 Effective Flexbox debugging with AI follows a consistent pattern. First, identify the symptoms, items misaligned, unexpected spacing, or browser-specific failures. Second, isolate the problematic code in a minimal reproducible example. Third, feed the code to your AI tool with specific questions about the behavior.
 
-Consider this common scenario: a flex container with three items, where the middle item should be centered but appears slightly off-center in Safari.
+Consider this common scenario - a flex container with three items, where the middle item should be centered but appears slightly off-center in Safari.
 
 ```css
 /* Problematic code */
@@ -159,7 +159,7 @@ For teams, consider integrating multiple tools. Use Copilot for rapid during-cod
 
 Recommendations
 
-Choose GitHub Copilot if you want inline suggestions while writing Flexbox code and already use GitHub's ecosystem. Choose Claude if you need detailed explanations of cross-browser differences and want to understand why alignment issues occur. Choose Cursor if you work on larger projects where consistency matters and want AI that remembers your coding patterns. Choose Codeium if budget is a primary concern but you still want reliable Flexbox assistance.
+Choose GitHub Copilot if you want inline suggestions while writing Flexbox code and already use GitHub's environment. Choose Claude if you need detailed explanations of cross-browser differences and want to understand why alignment issues occur. Choose Cursor if you work on larger projects where consistency matters and want AI that remembers your coding patterns. Choose Codeium if budget is a primary concern but you still want reliable Flexbox assistance.
 
 All four tools have improved significantly for CSS debugging. The best choice depends on your specific workflow, editor preferences, and whether you prioritize speed, explanation depth, or project consistency.
 
@@ -201,7 +201,7 @@ Claude recognizes this pattern and suggests the fix:
 }
 ```
 
-Without `min-width: 0`, flex items default to `min-width: auto`, preventing shrinking below content size. Copilot sometimes misses this subtlety.
+Without `min-width - 0`, flex items default to `min-width: auto`, preventing shrinking below content size. Copilot sometimes misses this subtlety.
 
 The Alignment Cascade Problem
 
@@ -334,7 +334,7 @@ When you encounter a Flexbox issue, the most productive AI workflow follows this
  - "This works in Chrome but not Safari"
 
 4. Ask AI to identify the root cause
- - Claude: "Why is this alignment not working?"
+ - Claude - "Why is this alignment not working?"
  - Cursor: "Help me fix this flexbox centering issue"
 
 5. Review the suggested fix and understand it

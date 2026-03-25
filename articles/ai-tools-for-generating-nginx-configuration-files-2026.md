@@ -24,9 +24,9 @@ Table of Contents
 - [ChatGPT 4o (OpenAI)](#chatgpt-4o-openai)
 - [Codeium (Exafunction)](#codeium-exafunction)
 - [Comparison Table](#comparison-table)
-- [Real-World Workflow: Building a Production Nginx Config](#real-world-workflow-building-a-production-nginx-config)
+- [Real-World Workflow - Building a Production Nginx Config](#real-world-workflow-building-a-production-nginx-config)
 - [Production-Grade Nginx Best Practices](#production-grade-nginx-best-practices)
-- [Decision Framework: Which Tool to Use?](#decision-framework-which-tool-to-use)
+- [Decision Framework - Which Tool to Use?](#decision-framework-which-tool-to-use)
 
 Nginx configuration is deceptively complex. A single syntax error, missing semicolon, wrong directive scope, malformed regex, silences your server with zero helpful error messages. Developers waste hours debugging `upstream` blocks, variable scoping in `if` statements, and TLS cipher settings.
 
@@ -36,8 +36,8 @@ This guide compares AI tools for Nginx configuration, focusing on practical scen
 
 Claude 3.5 Sonnet (Anthropic)
 
-Cost: $3/M input, $15/M output via API; free tier on Claude.ai
-Best for: Complex proxy logic, TLS debugging, variable scoping, conditional blocks
+Cost - $3/M input, $15/M output via API; free tier on Claude.ai
+Best for - Complex proxy logic, TLS debugging, variable scoping, conditional blocks
 
 Claude excels at understanding Nginx semantics because it can process long contexts and explain why directives work. When you describe a routing problem, Claude maps requirements to Nginx directives with clear logic.
 
@@ -150,12 +150,12 @@ Weaknesses:
 - Sometimes over-configures for simple use cases
 - Doesn't test syntax (requires manual `nginx -t`)
 
-Pricing model: Per-token. Nginx config generation (2, 5K tokens) costs ~$0.01, $0.03 per config.
+Pricing model - Per-token. Nginx config generation (2, 5K tokens) costs ~$0.01, $0.03 per config.
 
 GitHub Copilot (GitHub/OpenAI)
 
-Cost: $10/month individual, $21/month business
-Best for: Real-time editor completions, existing config modifications, pattern matching
+Cost - $10/month individual, $21/month business
+Best for - Real-time editor completions, existing config modifications, pattern matching
 
 Copilot is integrated into VS Code. Type a proxy location block and Copilot auto-completes the standard headers and timeouts. This is smooth for iterating existing configs.
 
@@ -192,18 +192,18 @@ Weaknesses:
 - Can't validate regex in location blocks
 - Less effective for TLS/certificate chain issues
 
-Pricing model: Flat monthly fee.
+Pricing model - Flat monthly fee.
 
 ChatGPT 4o (OpenAI)
 
-Cost: $20/month (ChatGPT Plus)
-Best for: Iterative debugging, explaining existing configs, TLS certificate chains
+Cost - $20/month (ChatGPT Plus)
+Best for - Iterative debugging, explaining existing configs, TLS certificate chains
 
 ChatGPT is web-based and conversational. Paste a broken Nginx config and ask ChatGPT to debug it step-by-step. This is helpful for understanding error messages that Nginx itself won't clarify.
 
 Real example:
 ```
-Nginx throws: "502 Bad Gateway"
+Nginx throws - "502 Bad Gateway"
 My upstream backend is:
 upstream api {
     server localhost:3000;
@@ -237,12 +237,12 @@ Weaknesses:
 - Limited to 20 API calls per minute on free tier
 - Can't validate configs against your Nginx version
 
-Pricing model: $20/month for ChatGPT Plus, or pay-as-you-go API access.
+Pricing model - $20/month for ChatGPT Plus, or pay-as-you-go API access.
 
 Codeium (Exafunction)
 
-Cost: Free tier, $12/month pro
-Best for: Lightweight IDE autocomplete, budget-conscious users
+Cost - Free tier, $12/month pro
+Best for - Lightweight IDE autocomplete, budget-conscious users
 
 Codeium is a simpler IDE autocomplete tool. It's faster than Copilot for basic Nginx completions but less context-aware.
 
@@ -258,7 +258,7 @@ Weaknesses:
 - Limited context window
 - Poor at complex proxy scenarios
 
-Use case: Quick boilerplate:
+Use case - Quick boilerplate:
 ```nginx
 Type:
 server {
@@ -269,7 +269,7 @@ Codeium completes with standard redirect to HTTPS
     # ...
 ```
 
-Pricing model: Free with limits; $12/month for pro.
+Pricing model - Free with limits; $12/month for pro.
 
 Comparison Table
 
@@ -280,9 +280,9 @@ Comparison Table
 | ChatGPT 4o | 7/10 | Good | Good | Web only | $20/month | Iterative debugging |
 | Codeium | 5/10 | Poor | Poor | Good (multi-IDE) | Free, $12/month | Quick boilerplate |
 
-Real-World Workflow: Building a Production Nginx Config
+Real-World Workflow - Building a Production Nginx Config
 
-Step 1: Define Requirements
+Step 1 - Define Requirements
 - Django backend (localhost:8000)
 - React frontend (localhost:3000)
 - Media uploads via S3
@@ -291,7 +291,7 @@ Step 1: Define Requirements
 - Gzip compression for text/JSON
 - Custom logging for security analysis
 
-Step 2: Use Claude to Generate Core Config
+Step 2 - Use Claude to Generate Core Config
 Prompt:
 ```
 Generate a production Nginx config for:
@@ -455,13 +455,13 @@ http {
 }
 ```
 
-Step 3: Use Copilot to Tweak Specific Blocks
+Step 3 - Use Copilot to Tweak Specific Blocks
 Paste this config into VS Code. Use Copilot to:
 - Add rate limiting for `/login` endpoint differently than `/api`
 - Configure caching headers for static assets
 - Add IP whitelist for admin endpoints
 
-Step 4: Validate and Test
+Step 4 - Validate and Test
 ```bash
 Test syntax
 sudo nginx -t
@@ -477,7 +477,7 @@ Test from command line
 curl -v https://example.com/api/health
 ```
 
-Step 5: Use Claude to Debug Issues
+Step 5 - Use Claude to Debug Issues
 If you get 502 or 504 errors:
 ```
 My upstream backend is:
@@ -486,7 +486,7 @@ upstream django {
 }
 
 I get 502 errors for /api requests but can curl localhost:8000 directly.
-Nginx error log shows: "upstream timed out (110: Connection timed out)"
+Nginx error log shows - "upstream timed out (110: Connection timed out)"
 What's wrong?
 ```
 
@@ -553,7 +553,7 @@ log_format main '$remote_addr - $remote_user [$time_local] '
 access_log /var/log/nginx/access.log main;
 ```
 
-Decision Framework: Which Tool to Use?
+Decision Framework - Which Tool to Use?
 
 Use Claude Sonnet if:
 - You're building a config from scratch

@@ -53,13 +53,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Test Environment Checklist Challenge
+Step 1 - Understand the Test Environment Checklist Challenge
 
 QA engineers often spend hours documenting every dependency, configuration value, and setup step required for a functional test environment. When teams scale or when environment requirements change, these checklists become stale quickly. The manual effort required to keep them current leads to environment setup failures, delayed test execution, and frustrated team members.
 
 The core challenge involves capturing implicit knowledge about environment setup that exists in team's heads but never gets documented. AI assistance bridges this gap by helping structure this information into actionable, checklists.
 
-Step 2: Generate Initial Checklist Structures
+Step 2 - Generate Initial Checklist Structures
 
 AI tools excel at bootstrapping checklist creation. Provide context about your application architecture, testing requirements, and infrastructure stack, then request a structured output. The more specific your input, the more useful the output.
 
@@ -77,12 +77,12 @@ def generate_environment_checklist(app_type, dependencies, infrastructure):
     Tech stack components:
     - Backend: {dependencies['backend']}
     - Database: {dependencies['database']}
-    - Caching: {dependencies.get('cache', 'none')}
-    - Message Queue: {dependencies.get('queue', 'none')}
+    - Caching - {dependencies.get('cache', 'none')}
+    - Message Queue - {dependencies.get('queue', 'none')}
 
     Infrastructure:
     - Container runtime: {infrastructure['containers']}
-    - Orchestration: {infrastructure.get('orchestration', 'none')}
+    - Orchestration - {infrastructure.get('orchestration', 'none')}
     - Cloud provider: {infrastructure.get('cloud', 'local')}
 
     Include these sections:
@@ -104,7 +104,7 @@ def generate_environment_checklist(app_type, dependencies, infrastructure):
 
 This prompt structure gives the AI enough context to generate relevant items. Replace the placeholder values with your actual technology choices.
 
-Step 3: Choose the Right AI Tool for Checklist Generation
+Step 3 - Choose the Right AI Tool for Checklist Generation
 
 Not all AI tools handle technical environment documentation equally well. Different tools have different strengths depending on the complexity of the task.
 
@@ -170,7 +170,7 @@ psql -h localhost -U test_user -d test_db -c "SELECT COUNT(*) FROM users;"  # Ve
 
 A common gap in manually created checklists is the distinction between schema migration and data seeding order. AI-generated checklists consistently surface this because the model has seen many examples of migration-related failures and knows to flag the dependency explicitly. Prompt the AI with "what order should these steps run and why?" to get explanations alongside the checklist items.
 
-Step 4: Handling Environment Variable and Configuration Complexity
+Step 4 - Handling Environment Variable and Configuration Complexity
 
 Modern applications rely heavily on environment-specific configuration. AI assists in cataloging required variables, their expected values, and their purposes:
 
@@ -196,7 +196,7 @@ environment_variables = [
 
 Feed this structure into your AI prompt and ask it to flag any variables that are likely to differ between staging and test environments. This surfaces the configuration drift that causes "works in staging, fails in QA" incidents before they happen.
 
-Step 5: Build Verification and Health Check Procedures
+Step 5 - Build Verification and Health Check Procedures
 
 A checklist without verification steps provides false confidence. AI helps generate health check procedures that confirm successful provisioning:
 
@@ -223,7 +223,7 @@ echo "=== All Health Checks Passed ==="
 
 Ask AI to generate not just the commands but the expected outputs. Knowing that `redis-cli PING` should return `PONG` sounds obvious, but including the expected result in the checklist eliminates ambiguity for engineers who run the script manually and need to interpret the output.
 
-Step 6: Prompting Strategies That Produce Better Checklists
+Step 6 - Prompting Strategies That Produce Better Checklists
 
 The quality of AI-generated checklists depends heavily on how you frame the prompt. Generic prompts produce generic checklists. Specific prompts produce actionable ones.
 
@@ -237,7 +237,7 @@ Effective prompting patterns for environment checklists:
 
 These additions transform a flat checklist into a runbook that can guide an engineer through both successful setup and failure recovery. which is ultimately what QA teams need most.
 
-Step 7: Maintaining Checklists Over Time
+Step 7 - Maintaining Checklists Over Time
 
 Environment requirements evolve. AI assists with checklist maintenance by suggesting additions based on new dependencies or infrastructure changes. When adding a new service, prompt the AI to review existing checklists and identify gaps.
 
@@ -255,7 +255,7 @@ A practical workflow involves:
 
 Store your checklist source in a format that AI can easily parse and extend. YAML works well because it is human-readable, version-controllable, and can be consumed directly by Ansible or other configuration management tools. When you paste a YAML checklist into an AI chat and ask "what is missing for a RabbitMQ dependency?", the structured format makes it easy for the model to return a precise diff rather than a vague suggestion.
 
-Step 8: Automate Checklist Execution Where Possible
+Step 8 - Automate Checklist Execution Where Possible
 
 The ultimate goal reduces manual checklist execution. AI-generated checklists serve as specifications for automation scripts. Use them to build Terraform configurations, Ansible playbooks, or shell scripts that reproduce environment setup consistently.
 

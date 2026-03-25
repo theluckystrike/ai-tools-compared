@@ -49,12 +49,12 @@ Table of Contents
 
 - [What Are Composite Actions?](#what-are-composite-actions)
 - [The Three Contenders](#the-three-contenders)
-- [Claude 3.5 Sonnet: Multi-Step Action Orchestration](#claude-35-sonnet-multi-step-action-orchestration)
-- [GPT-4 Turbo: Quick Action Generation](#gpt-4-turbo-quick-action-generation)
-- [GitHub Copilot: Fastest IDE Integration](#github-copilot-fastest-ide-integration)
+- [Claude 3.5 Sonnet - Multi-Step Action Orchestration](#claude-35-sonnet-multi-step-action-orchestration)
+- [GPT-4 Turbo - Quick Action Generation](#gpt-4-turbo-quick-action-generation)
+- [GitHub Copilot - Fastest IDE Integration](#github-copilot-fastest-ide-integration)
 - [Real Composite Actions Published to Marketplace](#real-composite-actions-published-to-marketplace)
 - [Marketplace Publishing Checklist](#marketplace-publishing-checklist)
-- [Implementation Workflow: AI-Assisted Development](#implementation-workflow-ai-assisted-development)
+- [Implementation Workflow - AI-Assisted Development](#implementation-workflow-ai-assisted-development)
 - [Pricing & Annual Cost (40 Actions/Year)](#pricing-annual-cost-40-actionsyear)
 - [Common Mistakes Caught by AI](#common-mistakes-caught-by-ai)
 
@@ -95,7 +95,7 @@ runs:
  shell: bash
 ```
 
-The challenge: wiring inputs to outputs, handling errors, escaping strings, and publishing to the Actions Marketplace correctly. AI tools shine here.
+The challenge - wiring inputs to outputs, handling errors, escaping strings, and publishing to the Actions Marketplace correctly. AI tools shine here.
 
 The Three Contenders
 
@@ -105,7 +105,7 @@ The Three Contenders
 | GPT-4 Turbo | $10-30/M (API) | Very Good | Good | Good | Medium |
 | GitHub Copilot | $10/M (IDE) | Good | Adequate | Fair | Minimal |
 
-Claude 3.5 Sonnet: Multi-Step Action Orchestration
+Claude 3.5 Sonnet - Multi-Step Action Orchestration
 
 Claude excels at complex composite actions with multiple input/output flows and conditional logic.
 
@@ -121,8 +121,8 @@ Claude Generating a Multi-Step Database Migration Action
 Your prompt:
 ```
 Create a composite action for running database migrations safely.
-Inputs: database-url, migration-path, dry-run (boolean), timeout-seconds
-Outputs: migration-status, rows-affected, rollback-available
+Inputs - database-url, migration-path, dry-run (boolean), timeout-seconds
+Outputs - migration-status, rows-affected, rollback-available
 Must support PostgreSQL and MySQL.
 Must report failures clearly to GitHub UI.
 Include pre-flight checks.
@@ -345,7 +345,7 @@ When to Use Claude
 - Want error messages for debugging
 - Publishing to Marketplace (needs quality)
 
-GPT-4 Turbo: Quick Action Generation
+GPT-4 Turbo - Quick Action Generation
 
 GPT-4 generates working composite actions fast, though less detailed than Claude.
 
@@ -357,7 +357,7 @@ Strengths
 
 GPT-4 on Simple Deploy Action
 
-Prompt: "Create a composite action to deploy Node.js to AWS Lambda using SAM CLI. Inputs: function-name, aws-region, dry-run. Outputs: function-arn, deployment-status."
+Prompt - "Create a composite action to deploy Node.js to AWS Lambda using SAM CLI. Inputs - function-name, aws-region, dry-run. Outputs - function-arn, deployment-status."
 
 GPT-4 response (20 seconds):
 
@@ -408,7 +408,7 @@ When to Use GPT-4
 - Standard deployment patterns
 - Quick syntax validation
 
-GitHub Copilot: Fastest IDE Integration
+GitHub Copilot - Fastest IDE Integration
 
 Type `.github/actions/my-action/action.yml` and Copilot auto-completes the entire action.
 
@@ -450,7 +450,7 @@ runs:
  shell: bash
 ```
 
-Why it works: Handles edge cases (registry URL format), provides clear outputs.
+Why it works - Handles edge cases (registry URL format), provides clear outputs.
 
 2. aws-actions/configure-aws-credentials
 Input validation before AWS calls prevents silent credential errors.
@@ -488,7 +488,7 @@ Marketplace requirements:
 - All inputs must have descriptions
 - All outputs must be documented
 
-Implementation Workflow: AI-Assisted Development
+Implementation Workflow - AI-Assisted Development
 
 Using Claude for Marketplace Action
 
@@ -505,7 +505,7 @@ act -j deploy-staging -s GITHUB_TOKEN=$GITHUB_TOKEN
 Using GPT-4 for Rapid Iteration
 
 1. Generate: GPT-4 writes first draft (30 seconds)
-2. Refine: Ask for specific improvements (e.g., "Add timeout handling")
+2. Refine - Ask for specific improvements (e.g., "Add timeout handling")
 3. Validate: Run through `yamllint` and `action-validator`
 
 ```bash

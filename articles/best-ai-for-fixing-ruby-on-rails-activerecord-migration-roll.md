@@ -69,7 +69,7 @@ AI assistants excel at translating technical error messages into actionable solu
 
 Common Scenarios and AI Solutions
 
-Scenario 1: Foreign Key Constraint Errors
+Scenario 1 - Foreign Key Constraint Errors
 
 When dropping a table that has dependent records, you'll see an error like:
 
@@ -92,7 +92,7 @@ class DropUsersTable < ActiveRecord::Migration[7.1]
 end
 ```
 
-Scenario 2: Data Type Mismatch on Rollback
+Scenario 2 - Data Type Mismatch on Rollback
 
 If your up migration changed a column type but the down migration uses an incompatible type, you need explicit casting:
 
@@ -109,7 +109,7 @@ class ChangeUserAgeToInteger < ActiveRecord::Migration[7.1]
 end
 ```
 
-Scenario 3: Missing Rollback Logic
+Scenario 3 - Missing Rollback Logic
 
 Sometimes developers write migrations that can't reverse. AI helps identify these and suggests proper reversible migration patterns:
 
@@ -307,9 +307,9 @@ class AddEncryptedPasswordToUsers < ActiveRecord::Migration[7.1]
   end
 end
 
-Phase 2: Deploy code that reads from encrypted_password
-Phase 3: Stop writing to old password column
-Phase 4: Remove old password column
+Phase 2 - Deploy code that reads from encrypted_password
+Phase 3 - Stop writing to old password column
+Phase 4 - Remove old password column
 ```
 
 Monitoring and Alerting During Migration Execution
@@ -406,7 +406,7 @@ Create clear procedures for emergency rollback scenarios:
 #!/bin/bash
 script/db/emergency-rollback.sh
 
-Usage: ./emergency-rollback.sh <migration_version> <environment>
+Usage - ./emergency-rollback.sh <migration_version> <environment>
 
 MIGRATION_VERSION=$1
 ENVIRONMENT=${2:-production}

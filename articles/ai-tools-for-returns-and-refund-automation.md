@@ -326,7 +326,7 @@ Practical Implementation Considerations
 
 When implementing AI tools for returns and refund automation, several factors affect success. Start with high-confidence use cases, clear policy violations and obvious fraud patterns, before attempting complex edge cases. Maintain human oversight for ambiguous situations, using AI recommendations rather than fully automated decisions during initial deployment.
 
-Monitor key metrics: approval accuracy, processing time reduction, customer satisfaction scores, and fraud detection rates. Regular model retraining with new data improves accuracy as your return patterns evolve.
+Monitor key metrics - approval accuracy, processing time reduction, customer satisfaction scores, and fraud detection rates. Regular model retraining with new data improves accuracy as your return patterns evolve.
 
 API integration matters significantly. Most enterprise return management platforms provide REST APIs that connect with your existing e-commerce infrastructure. Webhook implementations enable real-time updates between systems.
 

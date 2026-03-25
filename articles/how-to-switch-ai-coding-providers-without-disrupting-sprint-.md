@@ -31,7 +31,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Phase 1: Preparation Before the Switch
+Step 1 - Phase 1: Preparation Before the Switch
 
 Audit Your Current Configuration
 
@@ -64,23 +64,23 @@ Create a project-specific `CLAUDE.md` or `.cursorrules` file that documents thes
 ```markdown
 Project Context
 
-Step 2: API Client Patterns
+Step 2 - API Client Patterns
 - All HTTP clients use axios with custom interceptors
 - Error responses follow RFC 7807 Problem Details format
 - Retry logic: 3 attempts with exponential backoff
 
-Step 3: Test Conventions
+Step 3 - Test Conventions
 - Use Vitest for unit tests
 - Mock external APIs with MSW (Mock Service Worker)
 - Test files colocated with source: `src/utils.ts` -> `src/utils.test.ts`
 
-Step 4: TypeScript Guidelines
+Step 4 - TypeScript Guidelines
 - Strict mode enabled
 - No `any` types, use `unknown` with type guards instead
 - Prefer interfaces over types for object shapes
 ```
 
-Step 5: Phase 2: Parallel Running Period
+Step 5 - Phase 2: Parallel Running Period
 
 The Two-Week Overlap Strategy
 
@@ -125,7 +125,7 @@ Configure both tools with consistent rules to reduce cognitive load:
 
 Disable the new tool's features you're not ready to adopt yet. Gradual enablement reduces overwhelm.
 
-Step 6: Phase 3: Configuration Migration
+Step 6 - Phase 3: Configuration Migration
 
 Translating Custom Instructions
 
@@ -153,7 +153,7 @@ typescript:
   asyncPatterns: prefer-async-await
 
 Translates to CLAUDE.md
-Step 7: Async Patterns
+Step 7 - Async Patterns
 Use async/await exclusively for asynchronous operations. Avoid callback patterns.
 ```
 
@@ -181,7 +181,7 @@ const copilotSnippets = [
 // Place in ~/.cursor/snippets/typescript.json
 ```
 
-Step 8: Phase 4: Maintaining Velocity During Transition
+Step 8 - Phase 4: Maintaining Velocity During Transition
 
 The First Week Checklist
 
@@ -232,7 +232,7 @@ def track_sprint_velocity():
     }
 ```
 
-Step 9: Common Transition Pitfalls
+Step 9 - Common Transition Pitfalls
 
 Trying to Match Feature-for-Feature
 
@@ -259,17 +259,17 @@ As you learn the new tool, document findings immediately:
 ```markdown
 New Tool Setup Guide
 
-Step 10: Install ation
+Step 10 - Install ation
 1. Download from official site
 2. Sign in with team account
 3. Sync settings from backup
 
-Step 11: Configuration
+Step 11 - Configuration
 - Extension settings location
 - Keybindings to update
 - Environment variables needed
 
-Step 12: Known Issues
+Step 12 - Known Issues
 - Local debugging configuration
 - Proxy/network requirements
 ```

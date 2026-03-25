@@ -21,11 +21,11 @@ Fine-tuning a language model means training it on your specific data to adapt it
 Table of Contents
 
 - [The Fine-Tuning vs Prompt Engineering Decision](#the-fine-tuning-vs-prompt-engineering-decision)
-- [OpenAI Fine-Tuning: Industry Standard](#openai-fine-tuning-industry-standard)
-- [Together AI: Best for Open-Source Model Fine-Tuning](#together-ai-best-for-open-source-model-fine-tuning)
-- [Anyscale: Best for High-Throughput Fine-Tuning](#anyscale-best-for-high-throughput-fine-tuning)
-- [Modal: Best for Custom Fine-Tuning Workflows](#modal-best-for-custom-fine-tuning-workflows)
-- [Replicate: Best for Simplicity and Community Models](#replicate-best-for-simplicity-and-community-models)
+- [OpenAI Fine-Tuning - Industry Standard](#openai-fine-tuning-industry-standard)
+- [Together AI - Best for Open-Source Model Fine-Tuning](#together-ai-best-for-open-source-model-fine-tuning)
+- [Anyscale - Best for High-Throughput Fine-Tuning](#anyscale-best-for-high-throughput-fine-tuning)
+- [Modal - Best for Custom Fine-Tuning Workflows](#modal-best-for-custom-fine-tuning-workflows)
+- [Replicate - Best for Simplicity and Community Models](#replicate-best-for-simplicity-and-community-models)
 - [Cost Comparison Table](#cost-comparison-table)
 - [Decision Framework](#decision-framework)
 - [When Fine-Tuning ROI is Positive](#when-fine-tuning-roi-is-positive)
@@ -62,7 +62,7 @@ Prompt Engineering Suffices When:
 - Manual review of outputs is acceptable
 - You're under 1,000 inferences/month
 
-OpenAI Fine-Tuning: Industry Standard
+OpenAI Fine-Tuning - Industry Standard
 
 OpenAI's fine-tuning platform is the most mature and widely used. It offers models from GPT-3.5 to GPT-4, though GPT-4 fine-tuning is in limited beta.
 
@@ -83,7 +83,7 @@ Install OpenAI CLI
 pip install --upgrade openai
 
 Prepare your training data (JSONL format)
-Each line: {"messages": [{"role": "system", "content": "..."}, {"role": "user", "content": "..."}, {"role": "assistant", "content": "..."}]}
+Each line - {"messages": [{"role": "system", "content": "..."}, {"role": "user", "content": "..."}, {"role": "assistant", "content": "..."}]}
 
 Validate your data
 openai tools fine_tunes.prepare_data -f training_data.jsonl
@@ -106,7 +106,7 @@ openai api chat.completions.create \
   -m "user": "Your prompt here"
 ```
 
-Real Example: Customer Support Classifier
+Real Example - Customer Support Classifier
 
 Training data (50 examples):
 
@@ -123,7 +123,7 @@ Accuracy Benchmark:
 - Summarization: +8-12% improvement
 - Cost per token: 5x more expensive than API calls, but 20% fewer tokens needed
 
-Together AI: Best for Open-Source Model Fine-Tuning
+Together AI - Best for Open-Source Model Fine-Tuning
 
 Together AI specializes in fine-tuning open-source models (Llama 2, Falcon, MPT). Useful if you want model ownership or need to self-host after fine-tuning.
 
@@ -179,9 +179,9 @@ Accuracy Benchmark (on open-source models):
 - Generation quality: Comparable to OpenAI on domain-specific tasks
 - Inference latency: 50-100ms (vs 200-300ms for OpenAI API)
 
-Best For: Teams wanting model portability, on-premises deployment, or avoiding vendor lock-in.
+Best For - Teams wanting model portability, on-premises deployment, or avoiding vendor lock-in.
 
-Anyscale: Best for High-Throughput Fine-Tuning
+Anyscale - Best for High-Throughput Fine-Tuning
 
 Anyscale (built on Ray) excels at distributed fine-tuning for large datasets and scaling to production inference. Useful for teams fine-tuning multiple models in parallel.
 
@@ -252,7 +252,7 @@ Accuracy & Performance:
 - Linear scaling: 4 GPUs = ~3.5x faster training
 - Final accuracy: 1-2% better than single-GPU training due to larger effective batch size
 
-Modal: Best for Custom Fine-Tuning Workflows
+Modal - Best for Custom Fine-Tuning Workflows
 
 Modal provides serverless GPU computing, ideal if you have a custom fine-tuning pipeline or want to integrate fine-tuning into a larger ML workflow.
 
@@ -334,9 +334,9 @@ if __name__ == "__main__":
     fine_tune_model.call("/path/to/training_data.jsonl", "/tmp/output")
 ```
 
-Best For: Teams with non-standard fine-tuning requirements or custom training loops.
+Best For - Teams with non-standard fine-tuning requirements or custom training loops.
 
-Replicate: Best for Simplicity and Community Models
+Replicate - Best for Simplicity and Community Models
 
 Replicate offers fine-tuning for popular open-source models through a simple web interface or API.
 
@@ -382,13 +382,13 @@ Cost Comparison Table
 
 Decision Framework
 
-Choose OpenAI if: You need production-grade reliability, fastest setup, and are comfortable with vendor lock-in.
+Choose OpenAI if - You need production-grade reliability, fastest setup, and are comfortable with vendor lock-in.
 
 Choose Together AI or Anyscale if: You want open-source models, plan to self-host, or have large datasets benefiting from distributed training.
 
-Choose Modal if: You have a custom training pipeline or want serverless simplicity with flexibility.
+Choose Modal if - You have a custom training pipeline or want serverless simplicity with flexibility.
 
-Choose Replicate if: You're prototyping and want the absolute fastest setup with community support.
+Choose Replicate if - You're prototyping and want the absolute fastest setup with community support.
 
 When Fine-Tuning ROI is Positive
 
@@ -405,7 +405,7 @@ With Fine-Tuning:
 - 100K inferences × $0.0002 per inference (fine-tuned model) = $20/month
 - Monthly total: $20
 
-Payoff: Month 1 ($100 > $23), Break-even month 1, ongoing savings $80/month
+Payoff - Month 1 ($100 > $23), Break-even month 1, ongoing savings $80/month
 ```
 
 Fine-tuning becomes cost-effective when you hit 10,000+ monthly inferences on a specific task.

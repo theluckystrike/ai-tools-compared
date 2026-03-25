@@ -121,7 +121,7 @@ console.log(`Generated ${matrix.length} test cases`);
 
 Practical Implementation Strategies
 
-Step 1: Identify and Categorize Inputs
+Step 1 - Identify and Categorize Inputs
 
 Begin by cataloging all input parameters your system accepts. Group them by type:
 
@@ -199,7 +199,7 @@ Using Claude for Ad-Hoc Test Matrix Generation
 For teams that don't need a dedicated tool, AI chat assistants generate useful test matrices from natural language:
 
 ```
-Prompt: "Generate a pairwise test matrix for a checkout form with:
+Prompt - "Generate a pairwise test matrix for a checkout form with:
 - Payment method: credit card, PayPal, Apple Pay, bank transfer
 - Currency: USD, EUR, GBP
 - Shipping: standard, express, overnight

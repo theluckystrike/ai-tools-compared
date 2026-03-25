@@ -229,7 +229,7 @@ type Product {
 
 ChatGPT also accepts OpenAPI input but tends to process it more literally, sometimes generating a type per endpoint response object rather than deduplicating shared schemas. For APIs with 10-20 endpoints this is manageable; for large APIs with 80+ endpoints the duplicate type problem compounds quickly and requires a cleanup pass.
 
-A practical workflow: paste your OpenAPI spec into Claude first to get the initial schema. Then use ChatGPT to convert any remaining one-off endpoints that didn't fit neatly into Claude's first pass.
+A practical workflow - paste your OpenAPI spec into Claude first to get the initial schema. Then use ChatGPT to convert any remaining one-off endpoints that didn't fit neatly into Claude's first pass.
 
 Dealing with Polymorphic Responses
 
@@ -300,7 +300,7 @@ Choose ChatGPT for:
 
 - When speed is more critical than perfection
 
-Use both in your workflow: start with ChatGPT for bulk conversion, then pass the output to Claude for refinement and best practice compliance.
+Use both in your workflow - start with ChatGPT for bulk conversion, then pass the output to Claude for refinement and best practice compliance.
 
 Effective Prompting Strategies
 

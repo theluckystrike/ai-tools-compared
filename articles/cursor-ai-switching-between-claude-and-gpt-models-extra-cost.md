@@ -20,7 +20,7 @@ Switching between Claude and GPT models in Cursor AI does not incur any extra fe
 Table of Contents
 
 - [How Model Switching Works in Cursor](#how-model-switching-works-in-cursor)
-- [Cost Implications: What You Need to Know](#cost-implications-what-you-need-to-know)
+- [Cost Implications - What You Need to Know](#cost-implications-what-you-need-to-know)
 - [Practical Switching Strategies](#practical-switching-strategies)
 - [Managing Costs Effectively](#managing-costs-effectively)
 - [Bring Your Own API Key (BYOK)](#bring-your-own-api-key-byok)
@@ -58,7 +58,7 @@ To change your model in Cursor:
 
 You can also switch models inline during a chat session by clicking the model name shown at the top of the Composer or Chat panel. This allows rapid switching without navigating to settings, useful when you realize mid-conversation that a different model would handle the next step better.
 
-Cost Implications: What You Need to Know
+Cost Implications - What You Need to Know
 
 Cursor AI's pricing model treats different AI providers differently. The cost structure depends on your subscription plan and the specific models you access.
 

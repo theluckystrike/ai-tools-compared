@@ -34,17 +34,17 @@ Runway inpainting and Adobe Firefly Generative Fill both use generative AI to mo
 
 
 - Adobe Firefly requires a: Creative Cloud subscription, with Photoshop plans starting around $23/month.
-- The Generative Fill feature: works within existing Photoshop selection workflows, making it familiar to users already comfortable with Adobe's ecosystem.
+- The Generative Fill feature: works within existing Photoshop selection workflows, making it familiar to users already comfortable with Adobe's environment.
 - Use the inpainting brush: to mask the unwanted person 3.
 - Open the image and: select the Remove Tool or use any selection method 2.
 - Choose "Generative Fill" from: the context menu 3.
-- Additionally: the free tier's watermarked outputs and credit limits can impede production workflows.
+- Additionally - the free tier's watermarked outputs and credit limits can impede production workflows.
 
 Core Technology and Approach
 
 Runway inpainting operates through its Gen-2 and Gen-3 models, offering an unified platform for video and image manipulation. The inpainting feature allows you to select specific regions of an image and replace them with AI-generated content that matches the surrounding context. Runway uses a diffusion-based approach that excels at maintaining visual consistency between edited and original areas.
 
-Adobe Firefly Generative Fill, integrated into Photoshop and Adobe Express, takes a more traditional editing-tool approach. It uses Adobe's Firefly AI model specifically trained on licensed Adobe Stock content, which addresses some copyright concerns that affect other generative AI tools. The Generative Fill feature works within existing Photoshop selection workflows, making it familiar to users already comfortable with Adobe's ecosystem.
+Adobe Firefly Generative Fill, integrated into Photoshop and Adobe Express, takes a more traditional editing-tool approach. It uses Adobe's Firefly AI model specifically trained on licensed Adobe Stock content, which addresses some copyright concerns that affect other generative AI tools. The Generative Fill feature works within existing Photoshop selection workflows, making it familiar to users already comfortable with Adobe's environment.
 
 API Access and Integration
 
@@ -118,7 +118,7 @@ Choose Adobe Firefly Generative Fill when you need:
 
 - Copyright-conscious content creation (due to Adobe's training data licensing)
 
-Practical Example: Object Removal Workflow
+Practical Example - Object Removal Workflow
 
 Consider removing a photobomber from a group photo. With Runway, you would:
 
@@ -158,7 +158,7 @@ Adobe Firefly occasionally struggles with abstract or highly stylized content. W
 
 Recommendations by Workflow
 
-For developers building content generation pipelines, Runway's API provides more straightforward integration without the overhead of Adobe's ecosystem. The RESTful interface simplifies automation:
+For developers building content generation pipelines, Runway's API provides more straightforward integration without the overhead of Adobe's environment. The RESTful interface simplifies automation:
 
 ```python
 Batch processing example with Runway

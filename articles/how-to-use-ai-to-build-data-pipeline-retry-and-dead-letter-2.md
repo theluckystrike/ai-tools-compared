@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Retry and Dead Letter Fundamentals
+Step 1 - Understand Retry and Dead Letter Fundamentals
 
 Every production data pipeline encounters failures. Network timeouts, service unavailability, validation errors, and rate limiting are common challenges. A well-designed pipeline handles these gracefully through retry logic and dead letter queues (DLQs).
 
@@ -44,7 +44,7 @@ Traditional retry approaches use fixed backoff strategies, waiting a predetermin
 
 Dead letter queues capture messages that cannot be processed after exhausting retry attempts. Without proper DLQ management, you either lose data or create manual cleanup nightmares. In high-throughput systems like Apache Kafka, AWS SQS, or Azure Service Bus, unmanaged DLQs can grow into massive backlogs that take days to diagnose and replay.
 
-Step 2: How AI Improves Retry Logic
+Step 2 - How AI Improves Retry Logic
 
 AI transforms retry mechanisms by learning from historical failure patterns. Instead of generic backoff schedules, AI models predict optimal retry timing based on multiple factors:
 
@@ -91,7 +91,7 @@ class AIPoweredRetry:
 
 This example demonstrates the core concept. The model learns from historical data which retry delays work best for different failure scenarios. You can expand this with more sophisticated features like error message embeddings or service health metrics.
 
-Step 3: Implementing Smart Dead Letter Queues
+Step 3 - Implementing Smart Dead Letter Queues
 
 Dead letter queues benefit equally from AI augmentation. Instead of treating all failed messages equally, AI can:
 
@@ -130,7 +130,7 @@ class IntelligentDeadLetterQueue:
             self.notify_operations(failure_class)
 ```
 
-Step 4: Build the AI Classification Model
+Step 4 - Build the AI Classification Model
 
 Training an effective failure classifier requires collecting the right data. Track these metrics for each failed message:
 
@@ -192,7 +192,7 @@ class FailureClassifier:
         )
 ```
 
-Step 5: Integrate with Kafka and SQS
+Step 5 - Integrate with Kafka and SQS
 
 Different message brokers expose retry and DLQ behavior differently. Here is how to wire the AI classifier into two common systems.
 
@@ -256,15 +256,15 @@ Best Practices for AI-Enhanced Pipelines
 
 When implementing AI for retry and DLQ handling, keep these considerations in mind:
 
-Start simple and iterate: Begin with basic retry logic and add AI incrementally as you gather more failure data. Over-engineering initial implementations often creates more problems than it solves.
+Start simple and iterate - Begin with basic retry logic and add AI incrementally as you gather more failure data. Over-engineering initial implementations often creates more problems than it solves.
 
-Monitor model performance: AI models degrade over time as system patterns change. Implement monitoring to track classification accuracy and retry success rates. Retrain models regularly with fresh data.
+Monitor model performance - AI models degrade over time as system patterns change. Implement monitoring to track classification accuracy and retry success rates. Retrain models regularly with fresh data.
 
-Maintain fallback mechanisms: AI systems can fail or produce unexpected results. Always have manual override capabilities and deterministic fallback paths for critical pipelines.
+Maintain fallback mechanisms - AI systems can fail or produce unexpected results. Always have manual override capabilities and deterministic fallback paths for critical pipelines.
 
-Consider latency implications: AI inference adds processing time. For extremely latency-sensitive pipelines, consider pre-computing recommendations or using lightweight models that can make decisions quickly.
+Consider latency implications - AI inference adds processing time. For extremely latency-sensitive pipelines, consider pre-computing recommendations or using lightweight models that can make decisions quickly.
 
-Document failure patterns: Create a knowledge base of common failures and how the AI handles them. This helps with debugging and ensures continuity when team members change.
+Document failure patterns - Create a knowledge base of common failures and how the AI handles them. This helps with debugging and ensures continuity when team members change.
 
 Production Considerations
 
@@ -274,7 +274,7 @@ Deploying AI-enhanced retry and DLQ handling requires proper infrastructure:
 
 - Feature stores: Maintain consistent feature engineering across training and inference. Feast and Tecton prevent training-serving skew.
 
-- Observability: Track predictions, outcomes, and model confidence levels. Emit metrics to Datadog or Prometheus so you can alert when classification accuracy drops below a threshold.
+- Observability - Track predictions, outcomes, and model confidence levels. Emit metrics to Datadog or Prometheus so you can alert when classification accuracy drops below a threshold.
 
 - A/B testing: Validate AI improvements against baseline approaches before full rollout. Shadow-mode testing, where AI runs alongside the existing logic but does not influence behavior yet, is the safest way to build confidence before cutover.
 

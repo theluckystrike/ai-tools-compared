@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Key Questions to Ask About Training Data
+Step 1 - Key Questions to Ask About Training Data
 
 What Public Code Repositories Were Included?
 
@@ -65,7 +65,7 @@ Enterprise users should specifically ask whether their code, or code from privat
 
 Review the privacy policy and terms of service for explicit language about training data usage. Look for options to opt out of training data inclusion.
 
-Step 2: Practical Evaluation Methods
+Step 2 - Practical Evaluation Methods
 
 Review Public Documentation
 
@@ -156,7 +156,7 @@ if detect_license_headers(generated_code):
 
 The presence of these elements suggests the model reproduced copyrighted or licensed code rather than generating original implementations.
 
-Step 3: Red Flags and Warning Signs
+Step 3 - Red Flags and Warning Signs
 
 Certain indicators suggest elevated legal risk. Be particularly cautious when:
 
@@ -180,7 +180,7 @@ On the other hand, providers that offer:
 
 ...demonstrate more mature approaches to managing these risks.
 
-Step 4: Risk Mitigation Strategies
+Step 4 - Risk Mitigation Strategies
 
 Even when using tools with uncertain training data provenance, you can reduce legal exposure through practical measures.
 
@@ -196,47 +196,47 @@ Real-World Provider Transparency Comparison
 
 Understanding how major AI providers approach training data disclosure helps contextualize your evaluation efforts:
 
-Anthropic (Claude): Publishes detailed Constitutional AI documentation describing training methodology, including reinforcement learning from human feedback (RLHF) processes. Their technical papers address training data filtering and bias mitigation strategies.
+Anthropic (Claude) - Publishes detailed Constitutional AI documentation describing training methodology, including reinforcement learning from human feedback (RLHF) processes. Their technical papers address training data filtering and bias mitigation strategies.
 
-OpenAI (ChatGPT): Discloses training on large internet text corpora through GPT reports but offers less granular detail about specific codebases included. API agreements address training data usage policies for business customers.
+OpenAI (ChatGPT) - Discloses training on large internet text corpora through GPT reports but offers less granular detail about specific codebases included. API agreements address training data usage policies for business customers.
 
-GitHub Copilot: Explicitly trained on public GitHub repositories. GitHub's public documentation addresses licensing concerns and provides opt-out mechanisms for repository owners.
+GitHub Copilot - Explicitly trained on public GitHub repositories. GitHub's public documentation addresses licensing concerns and provides opt-out mechanisms for repository owners.
 
-Google (Gemini): Training approach emphasizes multi-modal learning on diverse text, code, and image data. Documentation addresses responsible AI and addresses copyright concerns in product materials.
+Google (Gemini) - Training approach emphasizes multi-modal learning on diverse text, code, and image data. Documentation addresses responsible AI and addresses copyright concerns in product materials.
 
-Meta (Llama): Open-source models with published training data sources. Community discussions reveal limitations and potential licensing implications.
+Meta (Llama) - Open-source models with published training data sources. Community discussions reveal limitations and potential licensing implications.
 
 This comparison shows variation in transparency levels. More transparent providers often demonstrate stronger compliance frameworks, though transparency alone doesn't eliminate risk.
 
-Step 5: Build Your Organization's Evaluation Framework
+Step 5 - Build Your Organization's Evaluation Framework
 
 Rather than trusting any single tool's claims, develop a systematic framework for evaluating AI coding tools within your organization:
 
-Phase 1: Data Source Audit (2-3 hours)
+Phase 1 - Data Source Audit (2-3 hours)
 - Request formal training data documentation from the vendor
 - Review any published research papers or model cards
 - Identify licensing obligations mentioned in documentation
 - Check whether customer code can be used for model training
 
-Phase 2: Legal Risk Assessment (4-5 hours)
+Phase 2 - Legal Risk Assessment (4-5 hours)
 - Consult with your legal team or external counsel about specific concerns
 - Review any existing AI usage policies in your organization
 - Identify your organization's tolerance for different risk types
 - Document decision rationale for future reference
 
-Phase 3: Testing and Validation (8-10 hours)
+Phase 3 - Testing and Validation (8-10 hours)
 - Generate code for common functions in your domain
 - Compare outputs against known open-source implementations
 - Run similarity detection tools on generated code
 - Document any suspicious matches or patterns
 
-Phase 4: Decision and Documentation (2-3 hours)
+Phase 4 - Decision and Documentation (2-3 hours)
 - Select tools matching your risk profile
 - Document your reasoning for stakeholders
 - Create usage guidelines for your development team
 - Schedule quarterly reviews to reassess as tools evolve
 
-Step 6: Training Data Composition Analysis
+Step 6 - Training Data Composition Analysis
 
 When evaluating a tool's training data, ask about proportional composition:
 
@@ -256,7 +256,7 @@ Tools with significant proprietary data show stronger risk management
 
 Higher-quality tools increasingly filter training data by license type, removing GPL-licensed code and other restrictive licenses. Understanding the filtering methodology matters more than the simple fact that filtering occurred.
 
-Step 7: Making Informed Tool Selection
+Step 7 - Making Informed Tool Selection
 
 Evaluating training data provenance requires balancing practical concerns against legal risk tolerance. Individual developers and small teams may accept different risk levels than enterprises with strict compliance requirements.
 
@@ -268,13 +268,13 @@ Advanced Risk Assessment Techniques
 
 For organizations requiring deeper analysis, advanced techniques provide additional confidence:
 
-Prompt Injection Testing: Craft specific prompts designed to elicit training data patterns. For instance, asking the tool to "complete this famous open source project code" may reveal whether exact training data was memorized.
+Prompt Injection Testing - Craft specific prompts designed to elicit training data patterns. For instance, asking the tool to "complete this famous open source project code" may reveal whether exact training data was memorized.
 
-Benchmark Dataset Comparison: Maintain a library of well-known open-source implementations. Regularly test AI tools against these benchmarks and track similarity scores over time. Tools improving on this metric demonstrate stronger deduplication and generalization.
+Benchmark Dataset Comparison - Maintain a library of well-known open-source implementations. Regularly test AI tools against these benchmarks and track similarity scores over time. Tools improving on this metric demonstrate stronger deduplication and generalization.
 
-Licensing Audit Trail: When AI generates code for your organization, maintain records of the generation source, selected tool, and code lineage. This documentation proves due diligence if any licensing questions arise later.
+Licensing Audit Trail - When AI generates code for your organization, maintain records of the generation source, selected tool, and code lineage. This documentation proves due diligence if any licensing questions arise later.
 
-Third-Party Compliance Verification: Some organizations benefit from hiring specialized firms that conduct AI training data audits, generating formal compliance reports suitable for legal review.
+Third-Party Compliance Verification - Some organizations benefit from hiring specialized firms that conduct AI training data audits, generating formal compliance reports suitable for legal review.
 
 Troubleshooting
 

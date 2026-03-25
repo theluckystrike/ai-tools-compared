@@ -22,11 +22,11 @@ Table of Contents
 
 - [Why Audit Trails Matter for AI Systems](#why-audit-trails-matter-for-ai-systems)
 - [Leading Tools for AI Audit Trail and Evidence Collection](#leading-tools-for-ai-audit-trail-and-evidence-collection)
-- [Implementation Example: Python Audit Logger](#implementation-example-python-audit-logger)
+- [Implementation Example - Python Audit Logger](#implementation-example-python-audit-logger)
 - [Integration with LangChain](#integration-with-langchain)
 - [Key Considerations When Choosing a Tool](#key-considerations-when-choosing-a-tool)
 - [Audit Tool Comparison Matrix](#audit-tool-comparison-matrix)
-- [Real-World Implementation: Custom Audit Logger with Retention](#real-world-implementation-custom-audit-logger-with-retention)
+- [Real-World Implementation - Custom Audit Logger with Retention](#real-world-implementation-custom-audit-logger-with-retention)
 - [Integration with LangChain and OpenTelemetry](#integration-with-langchain-and-opentelemetry)
 - [Compliance Framework Mapping](#compliance-framework-mapping)
 - [Migration Strategies](#migration-strategies)
@@ -55,7 +55,7 @@ Strengths:
 - Real-time policy enforcement
 - API for custom integrations
 
-Best for: Enterprise organizations needing SOC 2 and EU AI Act compliance.
+Best for - Enterprise organizations needing SOC 2 and EU AI Act compliance.
 
 2. Ironclad AI Governance
 
@@ -66,7 +66,7 @@ Strengths:
 - Customizable retention policies
 - Strong audit report generation
 
-Best for: Legal and compliance teams working alongside engineering.
+Best for - Legal and compliance teams working alongside engineering.
 
 3. DataRobot MLOps
 
@@ -77,7 +77,7 @@ Strengths:
 - Statistical drift detection
 - Model performance analytics
 
-Best for: Teams deploying custom models in production.
+Best for - Teams deploying custom models in production.
 
 4. Weights & Biases W&B Tables
 
@@ -88,7 +88,7 @@ Strengths:
 - Version control for datasets and prompts
 - Collaboration features
 
-Best for: Research teams tracking AI experiments.
+Best for - Research teams tracking AI experiments.
 
 5. openEvidently
 
@@ -99,9 +99,9 @@ Strengths:
 - Lightweight integration with ML pipelines
 - Custom metric definitions
 
-Best for: Organizations requiring full control over their audit data.
+Best for - Organizations requiring full control over their audit data.
 
-Implementation Example: Python Audit Logger
+Implementation Example - Python Audit Logger
 
 Here's a practical implementation using a custom audit logger that captures AI interactions:
 
@@ -215,13 +215,13 @@ Key Considerations When Choosing a Tool
 
 When evaluating audit trail solutions, consider these factors:
 
-Data Retention Requirements: Different regulations mandate different retention periods. Ensure your chosen tool supports your specific compliance needs. Some tools offer automatic data expiration, while others require manual cleanup.
+Data Retention Requirements - Different regulations mandate different retention periods. Ensure your chosen tool supports your specific compliance needs. Some tools offer automatic data expiration, while others require manual cleanup.
 
-API and Integration Capabilities: Your audit system should integrate smoothly with your existing infrastructure. Look for REST APIs, webhooks, and SDKs for your primary programming languages.
+API and Integration Capabilities - Your audit system should integrate smoothly with your existing infrastructure. Look for REST APIs, webhooks, and SDKs for your primary programming languages.
 
-Query and Reporting Features: A good audit tool makes it easy to search and generate reports. Test the search functionality with realistic queries before committing to a platform.
+Query and Reporting Features - A good audit tool makes it easy to search and generate reports. Test the search functionality with realistic queries before committing to a platform.
 
-Cost at Scale: Many platforms charge per-user or per-event. Calculate costs at your expected volume, especially if you're logging high-frequency AI interactions.
+Cost at Scale - Many platforms charge per-user or per-event. Calculate costs at your expected volume, especially if you're logging high-frequency AI interactions.
 
 Audit Tool Comparison Matrix
 
@@ -233,7 +233,7 @@ Audit Tool Comparison Matrix
 | W&B Tables | $10-100/mo | Yes | REST + SDK | Research teams | 1 week |
 | openEvidently | Free | Yes | Python SDK | Budget-conscious teams | 2-3 days |
 
-Real-World Implementation: Custom Audit Logger with Retention
+Real-World Implementation - Custom Audit Logger with Retention
 
 For teams building custom solutions, a more complete implementation handles data retention policies and export formats:
 
@@ -390,13 +390,13 @@ Compliance Framework Mapping
 
 Different regulations require different audit trail components:
 
-GDPR: Requires consent tracking, data subject identification, and processing purposes. Include user consent timestamps and data processing justification in metadata.
+GDPR - Requires consent tracking, data subject identification, and processing purposes. Include user consent timestamps and data processing justification in metadata.
 
-SOC 2 Type II: Requires change logs, access logs, and evidence of authorization. Include approval workflows and authorized user IDs.
+SOC 2 Type II - Requires change logs, access logs, and evidence of authorization. Include approval workflows and authorized user IDs.
 
-EU AI Act: Requires decision logging for high-risk AI systems. Include model version, decision rationale, and human review checkpoints.
+EU AI Act - Requires decision logging for high-risk AI systems. Include model version, decision rationale, and human review checkpoints.
 
-HIPAA: Requires encryption, access controls, and audit logs. Include patient identifiers (encrypted) and healthcare professional IDs.
+HIPAA - Requires encryption, access controls, and audit logs. Include patient identifiers (encrypted) and healthcare professional IDs.
 
 Migration Strategies
 

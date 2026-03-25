@@ -31,9 +31,9 @@ We captured heap snapshots, CPU profiles, and GC logs. Tool prompt: "Analyze thi
 
 Node.js Memory Leak Debugging
 
-Scenario: Event Listener Accumulation
+Scenario - Event Listener Accumulation
 
-Production service: Express middleware binds error handlers on every request.
+Production service - Express middleware binds error handlers on every request.
 
 ```javascript
 app.use((req, res, next) => {
@@ -46,7 +46,7 @@ app.use((req, res, next) => {
 
 After 8 hours, 1,000 listeners attached. Heap grew from 120MB to 850MB.
 
-Tool input: We took a Chrome DevTools heap snapshot (7MB JSON), truncated to the most relevant section (object growth), and pasted it into each tool.
+Tool input - We took a Chrome DevTools heap snapshot (7MB JSON), truncated to the most relevant section (object growth), and pasted it into each tool.
 
 Claude 3.5 Sonnet response:
 
@@ -81,9 +81,9 @@ app.use((req, res, next) => {
 });
 ```
 
-Claude explained: "Use `removeAllListeners` on response finish. This is Node's built-in cleanup mechanism."
+Claude explained - "Use `removeAllListeners` on response finish. This is Node's built-in cleanup mechanism."
 
-Testing: We applied the fix. Heap stabilized at 140MB. Confirmed in 8-hour load test.
+Testing - We applied the fix. Heap stabilized at 140MB. Confirmed in 8-hour load test.
 
 Copilot response:
 
@@ -95,9 +95,9 @@ Cursor response:
 
 Cursor (Claude backend) matched Claude's answer on second try. First pass suggested the same Promise refactor as Copilot.
 
-Winner for Node.js: Claude. Direct diagnosis, specific fix, low iteration count.
+Winner for Node.js - Claude. Direct diagnosis, specific fix, low iteration count.
 
-Depth Analysis: Memory Growth Pattern Recognition
+Depth Analysis - Memory Growth Pattern Recognition
 
 We gave Claude 3.5 Sonnet a CSV of heap size over time:
 
@@ -116,13 +116,13 @@ Claude identified:
 2. External memory stable: Not a C++ binding leak (Buffer-related).
 3. GC frequency drops: Sign of GC pause cost increasing (more to scan).
 
-Claude then said: "This is classic heap fragmentation from accumulated event listeners. Each listener is a closure capturing scope; once you have 1,000, GC can't compact aggressively."
+Claude then said - "This is classic heap fragmentation from accumulated event listeners. Each listener is a closure capturing scope; once you have 1,000, GC can't compact aggressively."
 
-Copilot provided generic advice: "Use heap profilers. Check for circular references." True but not actionable.
+Copilot provided generic advice - "Use heap profilers. Check for circular references." True but not actionable.
 
 Python Memory Leak Debugging
 
-Scenario: Circular Reference in Asyncio Service
+Scenario - Circular Reference in Asyncio Service
 
 ```python
 class DataCache:
@@ -145,7 +145,7 @@ asyncio.run(on_update({}))
 
 After 100,000 requests, memory grows 2% per batch (Python's GC can't break the cycle in cyclic reference mode).
 
-Tool input: Memory usage graph + code snippet + garbage collection stats from `gc.get_stats()`.
+Tool input - Memory usage graph + code snippet + garbage collection stats from `gc.get_stats()`.
 
 Claude response:
 
@@ -176,7 +176,7 @@ async def cache_context(func):
         cache.callback_ref = None
 ```
 
-Claude also noted: "Call `gc.collect()` explicitly after high-load phases if you can't eliminate the cycle. It's expensive but guaranteed to break cycles."
+Claude also noted - "Call `gc.collect()` explicitly after high-load phases if you can't eliminate the cycle. It's expensive but guaranteed to break cycles."
 
 We tested the weakref fix. Memory plateaued.
 
@@ -188,11 +188,11 @@ Cursor response:
 
 Cursor's first response (Claude backend) was identical to Claude. On feedback, Cursor asked: "How many objects in the cycle?" (good clarification) but didn't accelerate the fix.
 
-Winner for Python: Claude. Weak references + cycle-breaking strategies. Copilot's `__del__` suggestion was actively harmful.
+Winner for Python - Claude. Weak references + cycle-breaking strategies. Copilot's `__del__` suggestion was actively harmful.
 
 Java Memory Leak Debugging
 
-Scenario: ClassLoader Leak in Spring Boot
+Scenario - ClassLoader Leak in Spring Boot
 
 Spring Boot microservice dynamically loads custom JARs. Old classloaders aren't garbage collected when JARs are swapped.
 
@@ -213,9 +213,9 @@ public class CustomClassLoaderManager {
 }
 ```
 
-Every hot-reload: +30MB heap (old classloader still referenced in static list).
+Every hot-reload - +30MB heap (old classloader still referenced in static list).
 
-Tool input: JVM heap dump (.hprof) converted to text + source code + heap growth graph.
+Tool input - JVM heap dump (.hprof) converted to text + source code + heap growth graph.
 
 Claude response:
 
@@ -247,9 +247,9 @@ public class CustomClassLoaderManager {
 }
 ```
 
-Or, better yet: "Don't hold static references to classloaders at all. Keep a map of weak references keyed by JAR path, or use a cleanup queue."
+Or, better yet - "Don't hold static references to classloaders at all. Keep a map of weak references keyed by JAR path, or use a cleanup queue."
 
-Claude also warned: "URLClassLoader.close() in Java 11+ helps, but you need to actually call it."
+Claude also warned - "URLClassLoader.close() in Java 11+ helps, but you need to actually call it."
 
 We applied the WeakReference fix + explicit close(). Heap plateaued at 200MB.
 
@@ -261,7 +261,7 @@ Cursor response:
 
 Cursor asked good clarifying questions ("Do you need to reload JARs or just classes?") but didn't accelerate to the fix.
 
-Winner for Java: Claude. Weak references + classloader lifecycle management. Copilot's `System.gc()` suggestion was a red herring.
+Winner for Java - Claude. Weak references + classloader lifecycle management. Copilot's `System.gc()` suggestion was a red herring.
 
 Tool Performance Summary
 
@@ -275,14 +275,14 @@ How to Get the Best Results
 
 1. Feed the Right Input
 
-Bad: "My app is leaking memory, help."
+Bad - "My app is leaking memory, help."
 
-Good: Copy the actual heap snapshot, profiler output, or GC log:
+Good - Copy the actual heap snapshot, profiler output, or GC log:
 
 ```
 From Node.js:
 node --inspect app.js
-Then: DevTools > Memory > Take heap snapshot > Right-click > Save
+Then - DevTools > Memory > Take heap snapshot > Right-click > Save
 Paste JSON excerpt into Claude
 
 From Python:
@@ -298,7 +298,7 @@ Paste key objects and references
 
 2. Ask for Patterns, Not Just Fixes
 
-Ask: "What patterns cause memory leaks in Node.js event loops?"
+Ask - "What patterns cause memory leaks in Node.js event loops?"
 
 Claude will list:
 - Event listener accumulation
@@ -330,7 +330,7 @@ Python:
 
 Java:
 - Always mention JVM version (Java 8 vs 11+ have different GC behavior)
-- Ask: "Is this a classloader leak, a static reference leak, or a collection leak?"
+- Ask - "Is this a classloader leak, a static reference leak, or a collection leak?"
 - Specify heap size limit (tool will suggest tuning differently for 256MB vs 4GB)
 
 Limitations All Tools Share
@@ -345,15 +345,15 @@ Limitations All Tools Share
 
 Recommended Workflow
 
-1. Detect: Monitor heap over time. When growth is linear or exponential (not sawtooth GC), you have a leak.
+1. Detect - Monitor heap over time. When growth is linear or exponential (not sawtooth GC), you have a leak.
 
-2. Capture: Take a heap snapshot at 2 hours (baseline) and 8 hours (high load). Compare both.
+2. Capture - Take a heap snapshot at 2 hours (baseline) and 8 hours (high load). Compare both.
 
-3. Ask Claude: Paste snapshots + growth graph. Ask: "What's growing between snapshot 1 and 2?"
+3. Ask Claude - Paste snapshots + growth graph. Ask - "What's growing between snapshot 1 and 2?"
 
-4. Validate: Apply fix, re-run load test, confirm heap plateaus.
+4. Validate - Apply fix, re-run load test, confirm heap plateaus.
 
-5. Document: Add test case to your CI that detects this leak in future (e.g., heap shouldn't grow >10% over 1 hour of sustained traffic).
+5. Document - Add test case to your CI that detects this leak in future (e.g., heap shouldn't grow >10% over 1 hour of sustained traffic).
 
 Claude is the best tool here for actual diagnosis and fix quality. Copilot and Cursor are faster for code generation but weaker at root cause analysis. Invest in Claude for memory debugging.
 ---
@@ -367,7 +367,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -379,7 +379,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

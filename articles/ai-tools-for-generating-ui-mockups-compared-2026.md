@@ -74,13 +74,13 @@ featuring a highlighted 'pro' plan with hover effects"
 
 The output includes JSX components with Tailwind classes. Developers receive code that's immediately usable in Next.js projects. v0 offers API access for integration into CI/CD pipelines, making it suitable for automated design workflows.
 
-Strengths: Clean React code, Tailwind integration, API access
+Strengths - Clean React code, Tailwind integration, API access
 
-Limitations: Primarily React-focused, limited design system controls
+Limitations - Primarily React-focused, limited design system controls
 
 Bolt.new
 
-Bolt.new takes a holistic approach, generating complete application prototypes including multiple pages and interactive states from a single prompt.
+Bolt.new takes a complete approach, generating complete application prototypes including multiple pages and interactive states from a single prompt.
 
 ```javascript
 // Example interaction pattern with Bolt.new
@@ -95,9 +95,9 @@ const prompt = `
 
 Bolt.new produces working code with state management and routing. The tool supports multiple frameworks including React, Vue, and Svelte, giving developers flexibility in their tech stack choice.
 
-Strengths: Full-stack prototype generation, multi-framework support
+Strengths - Full-stack prototype generation, multi-framework support
 
-Output quality: Varies; requires developer refinement
+Output quality - Varies; requires developer refinement
 
 Figma AI
 
@@ -113,9 +113,9 @@ Workflow:
 
 For teams already using Figma, this integration reduces context switching. The generated designs remain editable within Figma, preserving collaboration workflows.
 
-Strengths: Native design tool integration, team collaboration features
+Strengths - Native design tool integration, team collaboration features
 
-Limitations: Requires Figma subscription, code export needs additional tools
+Limitations - Requires Figma subscription, code export needs additional tools
 
 Locofy
 
@@ -144,9 +144,9 @@ export const Button: React.FC<ButtonProps> = ({
 
 Locofy excels when you have existing design files that need to become functional code. It's less about generating from scratch and more about accelerating the design-to-code handoff.
 
-Strengths: Figma-to-code workflow, component optimization
+Strengths - Figma-to-code workflow, component optimization
 
-Best for: Teams with existing Figma designs
+Best for - Teams with existing Figma designs
 
 Uizard
 
@@ -154,9 +154,9 @@ Uizard targets non-designers and developers who need rapid prototyping. Its AI i
 
 The platform offers an unique "screenshot to design" feature that transforms existing interfaces into editable Uizard projects. This proves valuable for redesigning legacy systems where only screenshots exist.
 
-Strengths: Sketch-to-design, screenshot conversion
+Strengths - Sketch-to-design, screenshot conversion
 
-Code output: Limited compared to other tools
+Code output - Limited compared to other tools
 
 Integration Considerations
 
@@ -315,7 +315,7 @@ Use React with Tailwind CSS"
 // - Fully functional immediately
 ```
 
-Bolt's advantage: You get a working app in seconds, not just a component.
+Bolt's advantage - You get a working app in seconds, not just a component.
 
 Using Locofy for Figma-to-Code Pipeline
 
@@ -338,7 +338,7 @@ This cuts design-to-code time from days to hours.
 Decision Flowchart
 
 ```
-Start: "I need to generate UI"
+Start - "I need to generate UI"
   ↓
 "Do I have a Figma design already?"
    YES → "Do I just need code from it?"
@@ -383,7 +383,7 @@ For cost-conscious teams, Bolt.new wins. For design-system consistency, Figma AI
 
 Evaluating Output Quality
 
-Real-world test: Generate a "dashboard with charts" in each tool.
+Real-world test - Generate a "dashboard with charts" in each tool.
 
 v0 output:
 - Clean React component with Recharts integration
@@ -413,7 +413,7 @@ Locofy output (from Figma):
 
 Common Pitfalls and How to Avoid Them
 
-Pitfall 1: Over-relying on AI for accessibility
+Pitfall 1 - Over-relying on AI for accessibility
 Generated UI often lacks ARIA labels and semantic HTML. Always:
 ```jsx
 // Don't trust AI alone for this
@@ -425,13 +425,13 @@ Generated UI often lacks ARIA labels and semantic HTML. Always:
 </button>
 ```
 
-Pitfall 2: Ignoring responsive design in output
+Pitfall 2 - Ignoring responsive design in output
 AI tools sometimes generate components that look good at one breakpoint. Verify across:
 - Mobile: 375px
 - Tablet: 768px
 - Desktop: 1024px+
 
-Pitfall 3: Expecting perfect design system alignment
+Pitfall 3 - Expecting perfect design system alignment
 AI doesn't automatically know your company's design tokens. Either:
 - Provide design tokens in the prompt, or
 - Review and normalize colors/spacing post-generation
@@ -455,7 +455,7 @@ Development:
  Locofy: Convert to components (10 min)
  Engineer: Review, tweak, deploy (60 min)
 
-Total: ~2 hours for design → development pipeline
+Total - ~2 hours for design → development pipeline
 ```
 
 This beats traditional hand-coding UI by 4-6 hours.

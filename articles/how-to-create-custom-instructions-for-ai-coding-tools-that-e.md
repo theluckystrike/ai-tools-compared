@@ -45,19 +45,19 @@ Creating Effective Custom Instructions
 
 The most effective custom instructions are specific, actionable, and cover the full scope of your naming requirements. Here is a practical framework for building them.
 
-Step 1: Document Your Naming Conventions
+Step 1 - Document Your Naming Conventions
 
 Before writing instructions, formalize your conventions. For a Python project using snake_case, your rules might include:
 
 - Variables and functions: snake_case (e.g., `user_name`, `calculate_total`)
 
-- Classes: PascalCase (e.g., `UserAccount`, `PaymentProcessor`)
+- Classes - PascalCase (e.g., `UserAccount`, `PaymentProcessor`)
 
-- Constants: SCREAMING_SNAKE_CASE (e.g., `MAX_RETRY_COUNT`)
+- Constants - SCREAMING_SNAKE_CASE (e.g., `MAX_RETRY_COUNT`)
 
-- Files: snake_case with descriptive names (e.g., `user_authentication.py`)
+- Files - snake_case with descriptive names (e.g., `user_authentication.py`)
 
-Step 2: Write Clear, Direct Instructions
+Step 2 - Write Clear, Direct Instructions
 
 AI models respond well to explicit rules formatted as requirements. Here is an example instruction set for enforcing naming conventions:
 
@@ -69,7 +69,7 @@ File names must be lowercase with underscores.
 Prefix boolean variables with 'is_', 'has_', or 'should_'.
 ```
 
-Step 3: Add Contextual Rules
+Step 3 - Add Contextual Rules
 
 Beyond basic patterns, include domain-specific rules that matter for your project:
 
@@ -171,7 +171,7 @@ Building a Test Suite
 Create a structured test suite that exercises all aspects of your naming rules. This gives you confidence that the AI will follow conventions across different scenarios:
 
 ```python
-Test file: test_naming_conventions.py
+Test file - test_naming_conventions.py
 AI should generate code following your custom instructions
 
 class UserAuthenticationService:

@@ -21,7 +21,7 @@ Table of Contents
 
 - [Why AI-Generated Commit Messages Matter](#why-ai-generated-commit-messages-matter)
 - [Prerequisites](#prerequisites)
-- [Comparison: AI Commit Message Tools](#comparison-ai-commit-message-tools)
+- [Comparison - AI Commit Message Tools](#comparison-ai-commit-message-tools)
 - [Best Practices for AI-Generated Commits](#best-practices-for-ai-generated-commits)
 - [Troubleshooting](#troubleshooting)
 
@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: AI Tools for Commit Message Generation
+Step 1 - AI Tools for Commit Message Generation
 
 Copilot CLI with Git Integration
 
@@ -84,7 +84,7 @@ COMMIT_MSG=$(curl -s https://api.anthropic.com/v1/messages \
   -d "{
     \"model\": \"claude-opus-4-6\",
     \"max_tokens\": 300,
-    \"system\": \"Generate a concise git commit message (50 char title, detailed body). Format: [type(scope): title]\\n\\nBody with context and changes.\",
+    \"system\": \"Generate a concise git commit message (50 char title, detailed body). Format - [type(scope): title]\\n\\nBody with context and changes.\",
     \"messages\": [{
       \"role\": \"user\",
       \"content\": \"Generate commit message for this diff:\\n\\n\$DIFF\"
@@ -136,7 +136,7 @@ feat(pricing): add tax and currency support with rounding
 - Breaking change: price calculation now returns rounded float instead of raw sum
 ```
 
-Comparison: AI Commit Message Tools
+Comparison - AI Commit Message Tools
 
 | Feature | Copilot CLI | Claude Hook | Codeium | Git-AI |
 |---------|------------|-------------|---------|---------|
@@ -148,7 +148,7 @@ Comparison: AI Commit Message Tools
 | Setup complexity | Low | Medium | Low | Medium |
 | Multi-language support | Excellent | Excellent | Good | Good |
 
-Step 2: Build a Custom Solution
+Step 2 - Build a Custom Solution
 
 For teams with specific commit message requirements, building a simple Python script provides maximum control:
 
@@ -204,7 +204,7 @@ if __name__ == '__main__':
     print(message)
 ```
 
-Usage: `python commit-ai.py MYCO`
+Usage - `python commit-ai.py MYCO`
 
 Best Practices for AI-Generated Commits
 
@@ -212,7 +212,7 @@ Always review generated messages. AI can misinterpret the intention of a change,
 
 Maintain consistent scope definitions. If your team uses `feat(auth)`, `fix(database)`, and `docs(api)`, train the AI on these patterns by providing examples in your hook system. Consistency across commits enables tools that parse commit history for changelog generation and automated versioning.
 
-Use git trailers for metadata. AI tools should generate standard trailers like `Closes: #123` or `Reviewed-by: jane@example.com`:
+Use git trailers for metadata. AI tools should generate standard trailers like `Closes - #123` or `Reviewed-by: jane@example.com`:
 
 ```
 feat(payment): handle declined cards with retry queue
@@ -222,9 +222,9 @@ feat(payment): handle declined cards with retry queue
 - Update payment state machine to handle new retry status
 - Tests: 15 cases for retry scenarios and timeout conditions
 
-Closes: #4521
-Reviewed-by: finance-team@example.com
-Co-Authored-By: payment-lib-team
+Closes - #4521
+Reviewed-by - finance-team@example.com
+Co-Authored-By - payment-lib-team
 ```
 
 These trailers are parsed by GitHub, GitLab, and other platforms to link commits to issues, track authorship, and trigger CI workflows.
@@ -233,21 +233,21 @@ Disable AI suggestions for trivial changes. Minor formatting fixes or version bu
 
 Configure AI system prompts for your code style. Every team's conventions differ. Invest time in crafting system prompts that reflect your organization's commit message philosophy, whether that's detailed technical descriptions or concise action items.
 
-Step 3: Integration with Development Workflows
+Step 3 - Integration with Development Workflows
 
 AI commit messages integrate into modern git workflows:
 
-Pre-commit hooks: Trigger message generation before committing, catching empty or vague messages before they reach history. This prevents commits like "wip" or "fix" from polluting your history.
+Pre-commit hooks - Trigger message generation before committing, catching empty or vague messages before they reach history. This prevents commits like "wip" or "fix" from polluting your history.
 
-GitHub Actions: Analyze PR commits using AI and suggest improvements or enforce consistency. A workflow can post comments on PRs with commit message quality suggestions.
+GitHub Actions - Analyze PR commits using AI and suggest improvements or enforce consistency. A workflow can post comments on PRs with commit message quality suggestions.
 
-Changelog generation: Tools like Conventional Changelog parse AI-generated commit messages to automatically build release notes. If every commit follows conventional format, your changelog generates automatically from commit history.
+Changelog generation - Tools like Conventional Changelog parse AI-generated commit messages to automatically build release notes. If every commit follows conventional format, your changelog generates automatically from commit history.
 
-Semantic versioning: Extract breaking changes and new features from commit messages to automatically determine version bumps (major.minor.patch). A commit with `BREAKING CHANGE:` trailer automatically triggers a major version bump.
+Semantic versioning - Extract breaking changes and new features from commit messages to automatically determine version bumps (major.minor.patch). A commit with `BREAKING CHANGE:` trailer automatically triggers a major version bump.
 
 A team using Conventional Commits with AI generation can fully automate their release process from commit to deployment.
 
-Step 4: Real-World Example: Refactoring Scenario
+Step 4 - Real-World Example: Refactoring Scenario
 
 Imagine refactoring authentication logic. Without AI:
 
@@ -266,8 +266,8 @@ refactor(auth): extract password validation into service class
 - Performance: No change (validation logic identical, just reorganized)
 - Breaking change: LoginController.validatePassword() method removed
 
-Closes: #2341
-Fixes: password-validation-test
+Closes - #2341
+Fixes - password-validation-test
 ```
 
 This message immediately tells reviewers:
@@ -280,7 +280,7 @@ This message immediately tells reviewers:
 
 Future developers debugging authentication issues can read this message and understand exactly where password logic lives and why it was restructured.
 
-Step 5: Footer
+Step 5 - Footer
 
 AI commit message generation works best as part of a broader development workflow that emphasizes code quality and team communication. Pair this with pre-commit linters and code review processes for maximum effectiveness. Consider your team's naming conventions and commit history before deploying automation, the goal is to amplify good practices, not enforce arbitrary standards.
 

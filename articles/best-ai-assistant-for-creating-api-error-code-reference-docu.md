@@ -45,12 +45,12 @@ AI tools can analyze your API code and extract error handling patterns to genera
 
 Most AI assistants work with common API frameworks including Express.js, FastAPI, Spring Boot, Django, Rails, and Go-based APIs.
 
-Practical Example: FastAPI Error Documentation
+Practical Example - FastAPI Error Documentation
 
 Consider a FastAPI application with multiple error types. You can prompt an AI assistant to generate error documentation:
 
 ```
-Analyze our FastAPI application and generate comprehensive
+Analyze our FastAPI application and generate complete
 error code reference documentation. Our error handling is
 in exceptions.py and handlers.py. Include all custom
 exceptions, their HTTP status codes, and recommended
@@ -131,13 +131,13 @@ Comparing AI Tools for Error Documentation
 
 Different AI assistants have distinct strengths for this task:
 
-Claude 3.5 Sonnet: Excellent at understanding error hierarchies and relationships between different error types. Produces well-organized documentation with logical groupings. Best for complex APIs with many interdependent error codes. Cost: approximately $3-15 per million input tokens.
+Claude 3.5 Sonnet - Excellent at understanding error hierarchies and relationships between different error types. Produces well-organized documentation with logical groupings. Best for complex APIs with many interdependent error codes. Cost - approximately $3-15 per million input tokens.
 
-GPT-4: Strong at following structured templates and producing consistent output. Fast generation for straightforward error documentation. Less nuanced understanding of error relationships. Cost: $0.03-0.06 per thousand input tokens.
+GPT-4 - Strong at following structured templates and producing consistent output. Fast generation for straightforward error documentation. Less nuanced understanding of error relationships. Cost: $0.03-0.06 per thousand input tokens.
 
-GitHub Copilot: Integrated into your IDE, useful for documenting errors as you write code. Limited for generating reference documentation. Works best as a supplement to dedicated documentation tools. Cost: $10-20 per month.
+GitHub Copilot - Integrated into your IDE, useful for documenting errors as you write code. Limited for generating reference documentation. Works best as a supplement to dedicated documentation tools. Cost - $10-20 per month.
 
-Cursor: Combines code editing with documentation generation. Good for updating error documentation alongside code changes. Requires active development session. Cost: $20 per month.
+Cursor - Combines code editing with documentation generation. Good for updating error documentation alongside code changes. Requires active development session. Cost - $20 per month.
 
 Generating an OpenAPI-Aligned Error Schema
 
@@ -313,7 +313,7 @@ Always validate AI output against actual API behavior through testing.
 
 Cost Comparison
 
-Manual error documentation: 20-40 hours for a medium API = $2,000-8,000 in developer time.
+Manual error documentation - 20-40 hours for a medium API = $2,000-8,000 in developer time.
 
 AI-assisted approach:
 - Claude API: 1-2 hours of interaction = $3-15 in costs
@@ -349,7 +349,7 @@ paths:
 Prompt Claude:
 ```
 Extract all error codes from this OpenAPI spec and generate
-comprehensive error documentation. For each error code, include:
+complete error documentation. For each error code, include:
 HTTP status, description, common causes, and resolution steps.
 ```
 

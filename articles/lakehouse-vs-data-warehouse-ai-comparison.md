@@ -35,7 +35,7 @@ Choose a lakehouse if your AI workloads involve unstructured or semi-structured 
 
 
 - A concrete cost comparison: storing 10TB of Parquet files in S3 costs roughly $230/month.
-- Equivalent storage in Snowflake: runs $400-600/month depending on compression.
+- Equivalent storage in Snowflake - runs $400-600/month depending on compression.
 - If your AI pipeline: consumes clean tabular data and your team prefers SQL, a modern cloud warehouse handles most workloads efficiently.
 - Choose a data warehouse: if your data is already clean and structured, your team is SQL-focused, and you need low-latency interactive queries with tight BI tool integration.
 - The fundamental difference affects: AI workflows: warehouses expect clean input, while lakehouses let you work with raw data and handle schema evolution.
@@ -191,7 +191,7 @@ For AI workloads with bursty compute needs (training cycles), lakehouses often c
 
 However, warehouses reduce operational complexity. If your team lacks Spark expertise, a warehouse's managed SQL interface may be more practical despite higher per-query costs.
 
-A concrete cost comparison: storing 10TB of Parquet files in S3 costs roughly $230/month. Equivalent storage in Snowflake runs $400-600/month depending on compression. The compute picture is more variable. a 6-hour Databricks job on a 20-node cluster might cost $80, while the same query in Snowflake's medium warehouse might cost $40 but complete in 20 minutes, making the total cost similar.
+A concrete cost comparison - storing 10TB of Parquet files in S3 costs roughly $230/month. Equivalent storage in Snowflake runs $400-600/month depending on compression. The compute picture is more variable. a 6-hour Databricks job on a 20-node cluster might cost $80, while the same query in Snowflake's medium warehouse might cost $40 but complete in 20 minutes, making the total cost similar.
 
 When to Choose Each Approach
 

@@ -23,13 +23,13 @@ Table of Contents
 - [Which Plan Tier Includes Projects?](#which-plan-tier-includes-projects)
 - [How Projects Differ from Standard Conversations](#how-projects-differ-from-standard-conversations)
 - [Practical Examples for Developers](#practical-examples-for-developers)
-- [Setting Up Your First Project: Step-by-Step](#setting-up-your-first-project-step-by-step)
-- [Projects vs Claude API: Which to Use for Development?](#projects-vs-claude-api-which-to-use-for-development)
-- [Decision Framework: Is Pro Worth It for Projects?](#decision-framework-is-pro-worth-it-for-projects)
-- [Advanced Projects Workflow: Multi-File Development](#advanced-projects-workflow-multi-file-development)
-- [Real-World Cost Analysis: Free vs Pro vs Team](#real-world-cost-analysis-free-vs-pro-vs-team)
-- [Competitor Comparison: Claude Projects vs Alternatives](#competitor-comparison-claude-projects-vs-alternatives)
-- [Scaling Strategies: From Solo Dev to Enterprise](#scaling-strategies-from-solo-dev-to-enterprise)
+- [Setting Up Your First Project - Step-by-Step](#setting-up-your-first-project-step-by-step)
+- [Projects vs Claude API - Which to Use for Development?](#projects-vs-claude-api-which-to-use-for-development)
+- [Decision Framework - Is Pro Worth It for Projects?](#decision-framework-is-pro-worth-it-for-projects)
+- [Advanced Projects Workflow - Multi-File Development](#advanced-projects-workflow-multi-file-development)
+- [Real-World Cost Analysis - Free vs Pro vs Team](#real-world-cost-analysis-free-vs-pro-vs-team)
+- [Competitor Comparison - Claude Projects vs Alternatives](#competitor-comparison-claude-projects-vs-alternatives)
+- [Scaling Strategies - From Solo Dev to Enterprise](#scaling-strategies-from-solo-dev-to-enterprise)
 
 What Is Claude Projects?
 
@@ -86,12 +86,12 @@ Practical Examples for Developers
 
 Here is how you might use Projects in your daily workflow:
 
-Example 1: Multi-File Codebase Analysis
+Example 1 - Multi-File Codebase Analysis
 
 Imagine you need to understand a legacy codebase before making modifications. You can create a Project and attach multiple source files:
 
 ```
-Project: legacy-api-refactor
+Project - legacy-api-refactor
  src/auth/middleware.js
  src/auth/validators.js
  src/routes/api/v1/users.js
@@ -101,12 +101,12 @@ Project: legacy-api-refactor
 
 Claude maintains context across all these files, enabling you to ask questions that span multiple files without repeatedly pasting code. Ask "what authentication pattern does this codebase use and where are its weak points?" and Claude can answer by referencing specific lines across all uploaded files simultaneously.
 
-Example 2: Documentation Generation
+Example 2 - Documentation Generation
 
 When building a new feature, create a Project to maintain your documentation workflow:
 
 ```
-Project: feature-api-documentation
+Project - feature-api-documentation
  openapi.yaml
  requirements.md
  existing-docs/
@@ -114,12 +114,12 @@ Project: feature-api-documentation
 
 You can iteratively refine your documentation by referencing the spec and asking Claude to generate sections based on your API definitions. The model remembers what it generated in session three when you come back in session seven to ask for consistency fixes.
 
-Example 3: Debugging Sessions
+Example 3 - Debugging Sessions
 
 For complex debugging scenarios, Projects keep your context intact:
 
 ```
-Project: payment-bug-investigation
+Project - payment-bug-investigation
  logs/production-errors.json
  src/payment/processor.py
  tests/test_payment.py
@@ -128,15 +128,15 @@ Project: payment-bug-investigation
 
 This approach allows you to trace issues across the full stack without losing context between questions. You can ask Claude to cross-reference error patterns in the logs against the processor code across multiple conversations spread over days.
 
-Setting Up Your First Project: Step-by-Step
+Setting Up Your First Project - Step-by-Step
 
 Getting started with Projects requires an active Pro subscription or higher. Here is the detailed workflow:
 
-Step 1: Create the Project
+Step 1 - Create the Project
 
 In the Claude web interface, click "New Project" in the left sidebar. Give it a descriptive name that reflects the scope, such as `payments-service-v2` or `q2-marketing-copy`. Avoid generic names like "project1" that will be confusing later.
 
-Step 2: Write Custom Instructions
+Step 2 - Write Custom Instructions
 
 Before uploading files, write your project instructions. These tell Claude how to behave in every conversation. For a developer project this might look like:
 
@@ -149,15 +149,15 @@ You are assisting with a Django REST Framework API project.
 - The test suite uses pytest with the pytest-django plugin
 ```
 
-Step 3: Upload Reference Files
+Step 3 - Upload Reference Files
 
 Drag and drop your key reference documents. Good candidates for upload include your `README.md`, schema files, environment variable documentation, and any architecture decision records (ADRs). Avoid uploading build artifacts, `node_modules`, or generated files.
 
-Step 4: Organize by Scope
+Step 4 - Organize by Scope
 
 Create separate projects for separate concerns. A monorepo might have a project per service. An agency might have a project per client. This prevents context contamination where details from client A bleed into work for client B.
 
-Step 5: Verify Context Loading
+Step 5 - Verify Context Loading
 
 Start your first conversation with "summarize the key files in this project" to confirm Claude has loaded your uploads correctly before exploring complex work.
 
@@ -171,7 +171,7 @@ cp ~/repos/my-api/openapi.yaml .
 Then drag these into the Claude Projects interface
 ```
 
-Projects vs Claude API: Which to Use for Development?
+Projects vs Claude API - Which to Use for Development?
 
 Teams often wonder whether to use Projects through the web UI or build against the Claude API directly. The answer depends on your use case:
 
@@ -211,7 +211,7 @@ What happens to my Projects if I downgrade my plan?
 
 If you downgrade from Pro to free, your Projects become inaccessible but are not immediately deleted. Anthropic typically provides a grace period to export your data before deletion. Check the current terms of service for the specific retention policy.
 
-Decision Framework: Is Pro Worth It for Projects?
+Decision Framework - Is Pro Worth It for Projects?
 
 If you find yourself frequently:
 
@@ -225,20 +225,20 @@ If you find yourself frequently:
 
 Then the Pro plan's Projects feature likely provides significant value. The time saved from not re-explaining context repeatedly can quickly justify the subscription cost for active developers.
 
-A rough calculation: if you spend 15 minutes per day re-establishing context across multiple Claude conversations, that is over 90 hours per year. At even a modest hourly rate, the annual Pro cost pays for itself within days of recouped time.
+A rough calculation - if you spend 15 minutes per day re-establishing context across multiple Claude conversations, that is over 90 hours per year. At even a modest hourly rate, the annual Pro cost pays for itself within days of recouped time.
 
 For teams, the Team plan adds collaborative features that make Projects even more powerful, enabling shared context and coordinated work on complex problems. When multiple engineers are working against the same service, shared project context means everyone gets answers grounded in the same reference material.
 
-Advanced Projects Workflow: Multi-File Development
+Advanced Projects Workflow - Multi-File Development
 
 Once you're comfortable with basic Projects setup, you can use advanced patterns that professional teams use:
 
-Pattern 1: Context Stacking for Large Refactors
+Pattern 1 - Context Stacking for Large Refactors
 
 For multi-day refactoring work, maintain your context across sessions:
 
 ```
-Project: payment-system-refactor
+Project - payment-system-refactor
  architecture/old-design.md
  architecture/new-design.md
  src/payment/legacy-code.py
@@ -249,12 +249,12 @@ Project: payment-system-refactor
 
 Start each session by updating the `refactoring-status.md` file with your progress, then ask Claude to review both design docs and code to understand what's been done and what remains. This context preservation is far superior to starting fresh each time.
 
-Pattern 2: Distributed Team Documentation
+Pattern 2 - Distributed Team Documentation
 
 For teams spread across timezones, a well-managed Project becomes your shared knowledge base. Upload your architecture decisions, API specs, and design docs once, then reference them across the team:
 
 ```
-Project: team-shared-api-context
+Project - team-shared-api-context
  api/openapi.yaml (single source of truth)
  docs/architecture.md
  docs/deployment-runbook.md
@@ -264,12 +264,12 @@ Project: team-shared-api-context
 
 When a junior developer joins, onboard them by creating a new Project conversation where they can ask questions about the codebase and design, Claude has full context from day one.
 
-Pattern 3: Bug Triage and Root Cause Analysis
+Pattern 3 - Bug Triage and Root Cause Analysis
 
 Create a dedicated Project for investigating production issues:
 
 ```
-Project: incident-2026-03-22-payment-timeout
+Project - incident-2026-03-22-payment-timeout
  logs/error-stacktrace.txt
  src/payment/processor.py
  config/production.yaml
@@ -279,7 +279,7 @@ Project: incident-2026-03-22-payment-timeout
 
 Upload logs, code, and configuration, then have Claude help trace the root cause by correlating information across files. This beats scattered conversations in chat history.
 
-Real-World Cost Analysis: Free vs Pro vs Team
+Real-World Cost Analysis - Free vs Pro vs Team
 
 Understanding the true cost of Projects requires looking beyond subscription price:
 
@@ -305,7 +305,7 @@ Team Plan (Shared Projects, 5 developers):
 - Productivity multiplier from shared knowledge: 3x (team learns from others' projects)
 - Net annual value per developer: Saves ~$2,000/year
 
-Competitor Comparison: Claude Projects vs Alternatives
+Competitor Comparison - Claude Projects vs Alternatives
 
 | Feature | Claude Projects | ChatGPT Custom GPTs | GitHub Copilot Workspace |
 |---------|-----------------|-------------------|------------------------|
@@ -319,7 +319,7 @@ Competitor Comparison: Claude Projects vs Alternatives
 
 For developers doing deep technical analysis and documentation work, Claude Projects is the clear winner. For teams doing active coding with version control, GitHub Copilot Workspace edges ahead. For prototyping and exploration, ChatGPT Custom GPTs is a cheaper starting point (free for basic usage).
 
-Scaling Strategies: From Solo Dev to Enterprise
+Scaling Strategies - From Solo Dev to Enterprise
 
 Solo Developer (No Team Plan Needed):
 Use Pro plan. Create separate Projects for:
@@ -327,7 +327,7 @@ Use Pro plan. Create separate Projects for:
 - Each major service or app
 - Learning/R&D experiments
 
-Estimated annual value: $1,500-$3,000 in saved context-switching time.
+Estimated annual value - $1,500-$3,000 in saved context-switching time.
 
 Small Team (3-5 devs):
 Upgrade to Team plan immediately. Share Projects for:
@@ -335,7 +335,7 @@ Upgrade to Team plan immediately. Share Projects for:
 - Common debugging playbooks
 - Cross-team code reviews
 
-Estimated ROI: $8,000-$12,000 annually for the team (productivity gains outweigh subscription cost 10x).
+Estimated ROI - $8,000-$12,000 annually for the team (productivity gains outweigh subscription cost 10x).
 
 Larger Team (10+ devs):
 Consider Enterprise plan with dedicated account management. Implement governance:
@@ -344,7 +344,7 @@ Consider Enterprise plan with dedicated account management. Implement governance
 - Org-wide knowledge base Projects
 - Integration with your issue tracking system
 
-Expected organizational ROI: $50,000-$150,000+ annually depending on team size and coding intensity.
+Expected organizational ROI - $50,000-$150,000+ annually depending on team size and coding intensity.
 
 Related Articles
 

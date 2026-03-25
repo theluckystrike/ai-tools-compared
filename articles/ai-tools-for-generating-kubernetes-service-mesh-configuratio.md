@@ -26,7 +26,7 @@ Table of Contents
 - [Tool Categories for Configuration Generation](#tool-categories-for-configuration-generation)
 - [Practical Examples with Istio](#practical-examples-with-istio)
 - [Envoy Configuration Generation](#envoy-configuration-generation)
-- [Step-by-Step Workflow: AI-Assisted Canary Deployment](#step-by-step-workflow-ai-assisted-canary-deployment)
+- [Step-by-Step Workflow - AI-Assisted Canary Deployment](#step-by-step-workflow-ai-assisted-canary-deployment)
 - [Integration Patterns](#integration-patterns)
 - [Choosing the Right Approach](#choosing-the-right-approach)
 - [Related Reading](#related-reading)
@@ -243,7 +243,7 @@ static_resources:
 
 For Envoy's xDS API configurations, which involve gRPC-based dynamic configuration from a control plane, AI tools generate the listener and route discovery service (RDS) configurations that are especially verbose and error-prone by hand.
 
-Step-by-Step Workflow: AI-Assisted Canary Deployment
+Step-by-Step Workflow - AI-Assisted Canary Deployment
 
 This workflow generates a complete Istio canary deployment using AI assistance:
 

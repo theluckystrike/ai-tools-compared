@@ -23,7 +23,7 @@ Table of Contents
 - [How Copilot and Cursor Approach Code Review Differently](#how-copilot-and-cursor-approach-code-review-differently)
 - [Exporting Your Copilot Code Review Settings](#exporting-your-copilot-code-review-settings)
 - [Translating Settings to Cursor AI](#translating-settings-to-cursor-ai)
-- [Setting Comparison: Copilot vs Cursor](#setting-comparison-copilot-vs-cursor)
+- [Setting Comparison - Copilot vs Cursor](#setting-comparison-copilot-vs-cursor)
 - [Step-by-Step Migration Process](#step-by-step-migration-process)
 - [Handling GitHub Integration](#handling-github-integration)
 - [Recreating PR-Level Code Review Workflows](#recreating-pr-level-code-review-workflows)
@@ -108,11 +108,11 @@ Copilot's review suggestions follow GitHub's default patterns. Cursor's Rules fo
 Cursor Rules for code review
 - Review for: security vulnerabilities, performance issues, code smells
 - Prefer: modern JavaScript/TypeScript patterns
-- Avoid: deprecated APIs, console.log debugging
+- Avoid - deprecated APIs, console.log debugging
 - Include: JSDoc comments for functions over 10 lines
 ```
 
-Setting Comparison: Copilot vs Cursor
+Setting Comparison - Copilot vs Cursor
 
 This table maps the most common Copilot settings to their Cursor equivalents. Use it as a reference during migration rather than trying to replicate everything at once. start with the settings you actively rely on.
 
@@ -127,7 +127,7 @@ This table maps the most common Copilot settings to their Cursor equivalents. Us
 
 Step-by-Step Migration Process
 
-Step 1: Export Current VS Code Settings
+Step 1 - Export Current VS Code Settings
 
 Open your VS Code settings.json and extract the `github.copilot.*` entries:
 
@@ -137,7 +137,7 @@ code --list-extensions > extensions.txt
 grep -A5 '"github.copilot"' ~/Library/Application\ Support/Code/User/settings.json > copilot-settings.txt
 ```
 
-Step 2: Identify Cursor Equivalents
+Step 2 - Identify Cursor Equivalents
 
 Create a mapping between Copilot and Cursor settings:
 
@@ -147,7 +147,7 @@ Create a mapping between Copilot and Cursor settings:
 | `github.copilot.advanced.inlineSuggestEnable` | Cursor: Inline completions |
 | `github.copilot.advanced.autocompleteMode` | Cursor: Suggestion mode |
 
-Step 3: Configure Cursor
+Step 3 - Configure Cursor
 
 Open Cursor settings and apply equivalent configurations:
 
@@ -159,7 +159,7 @@ Open Cursor settings and apply equivalent configurations:
 }
 ```
 
-Step 4: Create Project Rules
+Step 4 - Create Project Rules
 
 For project-specific code review behavior, create `.cursorrules` files:
 
@@ -171,7 +171,7 @@ Project-specific .cursorrules
 - Require: error handling in async functions
 ```
 
-Step 5: Commit Rules to Version Control
+Step 5 - Commit Rules to Version Control
 
 Unlike Copilot settings (which live in your GitHub account), `.cursorrules` files should be committed to your repository so the whole team benefits:
 
@@ -198,9 +198,9 @@ Recreating PR-Level Code Review Workflows
 
 One area where Copilot's GitHub integration has no direct Cursor equivalent is automated PR review comments. If you relied on Copilot to flag issues in pull requests directly on GitHub, you have two options in Cursor:
 
-Option 1: Manual review with Cursor chat. Paste the git diff into a Cursor chat window with your review rules as context. This is less automated but gives you more nuanced control over what gets flagged.
+Option 1 - Manual review with Cursor chat. Paste the git diff into a Cursor chat window with your review rules as context. This is less automated but gives you more nuanced control over what gets flagged.
 
-Option 2: Use a GitHub Action with the Claude API. For teams that want automated PR review, the Claude API can be wired into a GitHub Actions workflow to comment on PRs. This separates the review automation from the IDE entirely. See [Best AI Coding Assistants Compared](/) for more context on when this makes sense.
+Option 2 - Use a GitHub Action with the Claude API. For teams that want automated PR review, the Claude API can be wired into a GitHub Actions workflow to comment on PRs. This separates the review automation from the IDE entirely. See [Best AI Coding Assistants Compared](/) for more context on when this makes sense.
 
 Verifying Your Migration
 
@@ -223,21 +223,21 @@ Cursor should now provide contextually appropriate suggestions matching your pre
 
 Common Migration Issues
 
-Issue: Cursor suggestions feel different from Copilot
+Issue - Cursor suggestions feel different from Copilot
 
-Solution: Adjust `cursor.suggestDelay` and `cursor.quickSuggestions` in settings. Also consider that Cursor's default model may differ from what Copilot uses. switching Cursor to GPT-4 often produces the most Copilot-like results during the transition period.
+Solution - Adjust `cursor.suggestDelay` and `cursor.quickSuggestions` in settings. Also consider that Cursor's default model may differ from what Copilot uses. switching Cursor to GPT-4 often produces the most Copilot-like results during the transition period.
 
-Issue: Project rules not loading
+Issue - Project rules not loading
 
-Solution: Ensure `.cursorrules` is in the project root with proper formatting. Cursor requires the file at the project root level, not a subdirectory. Restart Cursor after creating or editing the file.
+Solution - Ensure `.cursorrules` is in the project root with proper formatting. Cursor requires the file at the project root level, not a subdirectory. Restart Cursor after creating or editing the file.
 
-Issue: GitHub integration not syncing
+Issue - GitHub integration not syncing
 
-Solution: Re-authenticate via Cursor's GitHub settings panel. Cursor and Copilot use separate OAuth tokens even if both connect to GitHub.
+Solution - Re-authenticate via Cursor's GitHub settings panel. Cursor and Copilot use separate OAuth tokens even if both connect to GitHub.
 
-Issue: Team members getting different suggestions
+Issue - Team members getting different suggestions
 
-Solution: This usually means some teammates have personal `.cursorrules` files that override project rules. Establish a convention: project rules go in the repo, personal overrides go in `~/.cursor/rules`.
+Solution - This usually means some teammates have personal `.cursorrules` files that override project rules. Establish a convention: project rules go in the repo, personal overrides go in `~/.cursor/rules`.
 
 Frequently Asked Questions
 
@@ -382,7 +382,7 @@ Define rules at the organization level:
 
 ```bash
 shared .cursorrules committed to org-wide dotfiles repo
-Distributed via: `ln -s ~/dotfiles/.cursorrules ~/.cursor/rules/team-standards.cursorrules`
+Distributed via - `ln -s ~/dotfiles/.cursorrules ~/.cursor/rules/team-standards.cursorrules`
 
 Team Coding Standards
 - Use Prettier for formatting (non-negotiable)

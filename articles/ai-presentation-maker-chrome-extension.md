@@ -336,8 +336,8 @@ Style:
 - Include 3-4 code snippets showing simple ML patterns
 - Each slide should tell part of a coherent story
 
-Color scheme: Modern tech (dark blue, accent colors)
-Target audience: Technical professionals new to ML
+Color scheme - Modern tech (dark blue, accent colors)
+Target audience - Technical professionals new to ML
 ```
 
 This detailed prompt typically produces more coherent and targeted presentations than simple topic prompts.
@@ -461,8 +461,8 @@ def generate_training_material(topic, audience, duration_hours):
     prompt = f"""
 Create a {duration_hours}-hour training course on "{topic}"
 
-Audience: {audience}
-Format: Presentation with speaker notes
+Audience - {audience}
+Format - Presentation with speaker notes
 
 Requirements:
 - Break content into digestible sections (15-20 min each)
@@ -502,9 +502,9 @@ CONFERENCE="$3"
 PROMPT=$(cat << EOF
 Generate a conference talk presentation based on this paper:
 
-Title: $PAPER_TITLE
-Conference: $CONFERENCE
-Abstract: $(cat $ABSTRACT_FILE)
+Title - $PAPER_TITLE
+Conference - $CONFERENCE
+Abstract - $(cat $ABSTRACT_FILE)
 
 Structure (20-minute talk):
 1. Title slide with speaker name
@@ -627,7 +627,7 @@ class PresentationAutomation {
     // Call presentation API
     const response = await fetch('https://api.gamma.app/generate', {
       method: 'POST',
-      headers: { Authorization: `Bearer ${this.apiKey}` },
+      headers: { Authorization - `Bearer ${this.apiKey}` },
       body: JSON.stringify({
         prompt: job.topic,
         outputFormat: job.format

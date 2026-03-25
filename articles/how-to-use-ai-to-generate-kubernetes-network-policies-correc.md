@@ -24,7 +24,7 @@ This guide shows you how to use AI tools effectively to generate Kubernetes netw
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Practical Example: Microservices Application](#practical-example-microservices-application)
+- [Practical Example - Microservices Application](#practical-example-microservices-application)
 - [Advanced Considerations](#advanced-considerations)
 - [Troubleshooting](#troubleshooting)
 
@@ -38,7 +38,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Network Policy Basics
+Step 1 - Understand Network Policy Basics
 
 Before asking AI for help, you need a clear mental model of your application's communication patterns. Network policies in Kubernetes operate at the pod level using label selectors. The three main components are:
 
@@ -46,7 +46,7 @@ Before asking AI for help, you need a clear mental model of your application's c
 - `policyTypes`: Specifies ingress, egress, or both
 - `ingress`/`egress` rules: Define allowed traffic sources and destinations
 
-One critical prerequisite: network policies only work if your CNI (Container Network Interface) plugin supports them. Flannel does not enforce network policies by default. Calico, Cilium, and Weave Net do. A NetworkPolicy applied to a Flannel cluster is silently ignored. Check your CNI with `kubectl get pods -n kube-system` before generating policies.
+One critical prerequisite - network policies only work if your CNI (Container Network Interface) plugin supports them. Flannel does not enforce network policies by default. Calico, Cilium, and Weave Net do. A NetworkPolicy applied to a Flannel cluster is silently ignored. Check your CNI with `kubectl get pods -n kube-system` before generating policies.
 
 A simple policy that restricts incoming traffic to pods with label `app: frontend` looks like this:
 
@@ -72,7 +72,7 @@ spec:
           port: 8080
 ```
 
-Step 2: How to Prompt AI for Network Policies
+Step 2 - How to Prompt AI for Network Policies
 
 The quality of AI-generated network policies depends heavily on how you describe your requirements. Vague prompts produce incomplete or insecure policies.
 
@@ -143,7 +143,7 @@ spec:
           port: 53
 ```
 
-Step 3: Common Mistakes and How to Avoid Them
+Step 3 - Common Mistakes and How to Avoid Them
 
 AI-generated policies often have issues that require manual correction.
 
@@ -201,7 +201,7 @@ spec:
 
 Then add allow policies for specific traffic flows.
 
-Practical Example: Microservices Application
+Practical Example - Microservices Application
 
 Consider a typical microservices setup with an ingress controller, API gateway, multiple backend services, and a database. Here's how to structure your AI prompt:
 
@@ -226,11 +226,11 @@ Requirements:
 
 The AI will generate a complete policy set that you can review and adjust based on actual traffic patterns.
 
-Step 4: Validating AI-Generated Policies
+Step 4 - Validating AI-Generated Policies
 
 Always validate policies before deploying to production. A policy that passes syntax checks can still block critical traffic or leave security gaps that only emerge under specific conditions.
 
-Step 1: Syntax and schema validation
+Step 1 - Syntax and schema validation
 
 ```bash
 Dry-run validation. catches YAML errors and Kubernetes schema issues
@@ -243,7 +243,7 @@ View existing policies in the namespace
 kubectl get networkpolicy -n production -o wide
 ```
 
-Step 2: Connectivity testing with a debug pod
+Step 2 - Connectivity testing with a debug pod
 
 ```bash
 Deploy a test pod to verify traffic is allowed/denied as expected
@@ -254,7 +254,7 @@ If the command times out, the policy is blocking the connection
 If it returns output, the policy allows the connection
 ```
 
-Step 3: Use Hubble (Cilium) for flow-based policy generation
+Step 3 - Use Hubble (Cilium) for flow-based policy generation
 
 If your cluster runs Cilium, Hubble observes actual traffic and can generate policy suggestions from real behavior rather than from your architectural assumptions:
 
@@ -263,7 +263,7 @@ cilium hubble enable
 hubble observe --namespace production --output json | cilium policy generate
 ```
 
-Step 4: Staged rollout
+Step 4 - Staged rollout
 
 Apply policies in audit mode first if your CNI supports it (Calico's GlobalNetworkPolicy supports the `audit` action). This logs policy matches without enforcing denials, letting you verify correctness before enabling enforcement.
 
@@ -272,7 +272,7 @@ View existing policies
 kubectl get networkpolicy -n production
 ```
 
-Step 5: Which AI Tools Generate the Best Network Policies
+Step 5 - Which AI Tools Generate the Best Network Policies
 
 Not all AI coding assistants produce equally reliable network policy YAML. Based on testing in 2026, here is how the common options compare:
 

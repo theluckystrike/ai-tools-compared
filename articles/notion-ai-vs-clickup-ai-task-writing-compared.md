@@ -39,7 +39,7 @@ Choose Notion AI if your team writes tasks alongside documentation, wikis, and p
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - Choose ClickUp AI if: you need a purpose-built task manager where AI creates fully structured task objects with assignees, priorities, subtasks, and dependencies out of the box.
-- The Prompt: ```
+- The Prompt - ```
 Create a task for implementing user authentication.
 
 How Each Platform Handles Task Writing
@@ -50,7 +50,7 @@ ClickUp AI is embedded within a purpose-built task management system. The AI und
 
 This fundamental architectural difference shapes everything about how each platform approaches task writing.
 
-Prompt Comparison: Creating the Same Task
+Prompt Comparison - Creating the Same Task
 
 I tested both platforms with identical prompts to see how each handles task creation.
 
@@ -64,7 +64,7 @@ Create a task for implementing user authentication. Include:
 - assign to the backend team
 ```
 
-Notion AI response: Notion AI generated a structured page with:
+Notion AI response - Notion AI generated a structured page with:
 
 - A heading for "User Authentication Implementation"
 
@@ -76,7 +76,7 @@ Notion AI response: Notion AI generated a structured page with:
 
 You must manually convert this output into Notion's database properties. The AI doesn't interact with Notion's native task properties, it only generates text content.
 
-ClickUp AI response: ClickUp AI created an actual task with:
+ClickUp AI response - ClickUp AI created an actual task with:
 
 - Title: "Implement User Authentication"
 
@@ -88,7 +88,7 @@ ClickUp AI response: ClickUp AI created an actual task with:
 
 - Assignee field set to Backend Team
 
-The key difference: ClickUp AI produces actionable task objects, Notion AI produces text you must manually convert.
+The key difference - ClickUp AI produces actionable task objects, Notion AI produces text you must manually convert.
 
 Context Awareness and Workspace Knowledge
 
@@ -288,7 +288,7 @@ def apply_automation_rules(task_id: str, context: dict):
         add_label("critical-path")
 ```
 
-Performance Comparison: Speed and Reliability
+Performance Comparison - Speed and Reliability
 
 In practical testing, ClickUp AI generates task objects with fully populated fields in 3-5 seconds. Notion AI produces text content in similar timeframes but requires manual field mapping afterward. For teams processing dozens of AI-generated tasks daily, this workflow difference compounds.
 
@@ -300,7 +300,7 @@ In practical testing, ClickUp AI generates task objects with fully populated fie
 | Field accuracy on first generation | 60-70% | 85-90% |
 | Subtask creation speed | Manual (2+ min each) | Automatic (included) |
 
-Hybrid Workflow: Combining Both Tools
+Hybrid Workflow - Combining Both Tools
 
 Some teams use Notion AI for documentation and planning, then migrate structured tasks to ClickUp for execution:
 
@@ -325,23 +325,23 @@ Workflow Example
 
 Cost-Benefit Analysis by Team Size
 
-Small Teams (1-5 members): Notion AI $10/month addition to base workspace is usually sufficient. The manual task conversion overhead is minimal at this scale.
+Small Teams (1-5 members) - Notion AI $10/month addition to base workspace is usually sufficient. The manual task conversion overhead is minimal at this scale.
 
-Growing Teams (5-20 members): ClickUp AI becomes cost-effective. At 10+ team members, the time saved per task justifies the cost. One developer saving 30 minutes daily on task creation pays for the entire ClickUp Business plan.
+Growing Teams (5-20 members) - ClickUp AI becomes cost-effective. At 10+ team members, the time saved per task justifies the cost. One developer saving 30 minutes daily on task creation pays for the entire ClickUp Business plan.
 
-Enterprise (20+ members): ClickUp AI is essential for scaling. The automation capabilities and custom field integration are non-negotiable for teams managing complex workflows.
+Enterprise (20+ members) - ClickUp AI is essential for scaling. The automation capabilities and custom field integration are non-negotiable for teams managing complex workflows.
 
 Real-World Implementation Examples
 
-Example 1: SaaS Customer Support Team (10 people)
+Example 1 - SaaS Customer Support Team (10 people)
 
-Notion AI alone: Generate 50 tickets/week → 3 hours setup → 2 hours ongoing
-ClickUp AI: Generate 50 tickets/week → 30 minutes setup → 15 minutes ongoing
-Weekly time savings: 4.25 hours → $170/week for dev time
-Cost of ClickUp Business: $85/month
-ROI: Positive in first month
+Notion AI alone - Generate 50 tickets/week → 3 hours setup → 2 hours ongoing
+ClickUp AI - Generate 50 tickets/week → 30 minutes setup → 15 minutes ongoing
+Weekly time savings - 4.25 hours → $170/week for dev time
+Cost of ClickUp Business - $85/month
+ROI - Positive in first month
 
-Example 2: Content Marketing Team (5 people)
+Example 2 - Content Marketing Team (5 people)
 
 Uses Notion for content calendars (Notion AI generates outlines), then manually creates task stubs in ClickUp because they prefer ClickUp's timeline view. Hybrid solution works but introduces context-switching.
 
@@ -353,16 +353,16 @@ Rules of Thumb for Choosing
 
 - Use both if: You have a hybrid workflow where Notion is knowledge base + planning, and ClickUp is execution + project management.
 
-Migration Path: From Notion to ClickUp
+Migration Path - From Notion to ClickUp
 
 If you start with Notion AI and need to scale:
 
 ```bash
-Step 1: Export Notion pages as markdown
-Step 2: Parse markdown to extract task structures
+Step 1 - Export Notion pages as markdown
+Step 2 - Parse markdown to extract task structures
 python parse_notion_tasks.py export.md > tasks.json
 
-Step 3: Import to ClickUp via API
+Step 3 - Import to ClickUp via API
 curl -X POST https://api.clickup.com/api/v2/list/{list_id}/task \
   -H "Authorization: YOUR_API_KEY" \
   -d @tasks.json

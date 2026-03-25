@@ -184,19 +184,19 @@ Limitations to Consider
 
 AI tools for Ansible development have specific limitations:
 
-1. Context Window Constraints: Very complex infrastructure descriptions may exceed what can be communicated effectively in a single prompt.
+1. Context Window Constraints - Very complex infrastructure descriptions may exceed what can be communicated effectively in a single prompt.
 
 For especially large infrastructure deployments (50+ hosts, complex networking), break your playbook request into smaller focused units. Ask for individual roles first, then composition playbooks that tie them together.
 
-2. Module Knowledge Cutoff: Tools trained on data up to a certain date may not know about recently added Ansible modules or module parameter changes.
+2. Module Knowledge Cutoff - Tools trained on data up to a certain date may not know about recently added Ansible modules or module parameter changes.
 
 Always verify generated tasks against the official Ansible documentation for your version. The community module collection expands constantly, what was best practice in 2024 may have a better implementation in 2026.
 
-3. Environment-Specific Logic: Custom infrastructure patterns or proprietary systems may require manual intervention even when AI assists with general structure.
+3. Environment-Specific Logic - Custom infrastructure patterns or proprietary systems may require manual intervention even when AI assists with general structure.
 
 Proprietary systems, custom orchestration frameworks, or internal APIs require your domain expertise. Use AI for the standard parts (package management, service configuration, user management), then add custom logic for proprietary systems.
 
-4. Security Sensitivity: Always audit generated code for security vulnerabilities, especially when handling sensitive data or system access.
+4. Security Sensitivity - Always audit generated code for security vulnerabilities, especially when handling sensitive data or system access.
 
 Common vulnerabilities in AI-generated playbooks: hardcoded secrets in variables, insufficient permission scoping with `become: yes`, unencrypted data in templates, and missing validation of user input in dynamic tasks.
 
@@ -339,17 +339,17 @@ AI-generated playbooks improve through iteration:
 Example feedback loop:
 
 ```
-Initial Request: "Create a role for deploying a Python web application"
+Initial Request - "Create a role for deploying a Python web application"
 
-AI Output: [generates basic role]
+AI Output - [generates basic role]
 
-Your Review: "The template task needs to validate JSON syntax before applying configuration"
+Your Review - "The template task needs to validate JSON syntax before applying configuration"
 
-Refined Request: "Update the configuration template task to validate JSON schema before applying. Include error handling for invalid configurations."
+Refined Request - "Update the configuration template task to validate JSON schema before applying. Include error handling for invalid configurations."
 
-AI Output: [improved version with validation]
+AI Output - [improved version with validation]
 
-Your Verification: Test in staging, approve for production
+Your Verification - Test in staging, approve for production
 ```
 
 Integration with Existing Infrastructure
@@ -381,7 +381,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -393,7 +393,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

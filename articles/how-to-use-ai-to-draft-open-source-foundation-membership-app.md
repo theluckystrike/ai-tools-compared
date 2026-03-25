@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Set Up Your AI Workflow
+Step 1 - Set Up Your AI Workflow
 
 Before drafting, gather your contribution data. Most foundations want concrete examples rather than general statements. Prepare a list including:
 
@@ -61,7 +61,7 @@ Before drafting, gather your contribution data. Most foundations want concrete e
 
 With this information ready, you can prompt AI tools effectively. The quality of AI-generated content depends significantly on the context you provide.
 
-Step 2: Drafting the Personal Statement
+Step 2 - Drafting the Personal Statement
 
 The personal statement introduces you and explains your interest in the foundation. AI excels at transforming rough ideas into coherent paragraphs.
 
@@ -78,14 +78,14 @@ and mentor new contributors.
 
 The AI generates a draft that you then refine with your specific details and voice. This approach saves time while ensuring your authentic story comes through.
 
-Step 3: Documenting Contributions Systematically
+Step 3 - Documenting Contributions Systematically
 
 Foundations want quantifiable evidence of your contributions. AI helps structure this information into professional documentation.
 
 Template for contribution section:
 
 ```markdown
-Step 4: Technical Contributions
+Step 4 - Technical Contributions
 
 Apache Kafka Contributions
 - Pull Requests Submitted: 15
@@ -103,7 +103,7 @@ Community Participation
 
 AI can generate this structure from your raw contribution data, formatting it according to foundation expectations. You supply the numbers; AI handles the presentation.
 
-Step 5: Addressing Governance and Commitment Questions
+Step 5 - Addressing Governance and Commitment Questions
 
 Most foundations ask about your intended involvement and understanding of project governance. These questions require thoughtful responses that demonstrate genuine interest in community health beyond code contributions.
 
@@ -123,7 +123,7 @@ Regarding conflict resolution, I believe in:
 In my Kafka contributions, I have demonstrated this approach by...
 ```
 
-Step 6: Review and Refinement
+Step 6 - Review and Refinement
 
 AI generates first drafts, but your review is essential. Verify all technical details, ensure accuracy of contribution numbers, and add specific examples that only you possess. Foundations have review committees who evaluate applications for authenticity, your voice and specific experiences must come through clearly.
 
@@ -137,9 +137,9 @@ Common refinements include:
 
 - Ensuring consistent tone throughout the document
 
-Step 7: Automate Repetitive Sections
+Step 7 - Automate Repetitive Sections
 
-If you apply to multiple foundations, AI helps adapt core content for each organization's specific requirements. The Apache Software Foundation emphasizes individual merit and community involvement. The Linux Foundation focuses on corporate sponsorship and project contribution. OpenJS Foundation values JavaScript ecosystem engagement.
+If you apply to multiple foundations, AI helps adapt core content for each organization's specific requirements. The Apache Software Foundation emphasizes individual merit and community involvement. The Linux Foundation focuses on corporate sponsorship and project contribution. OpenJS Foundation values JavaScript environment engagement.
 
 Create a master document with your complete history, then use AI to adapt sections for each foundation's emphasis:
 
@@ -150,7 +150,7 @@ and cross-project collaboration:
 [insert your contribution summary]
 ```
 
-Step 8: Practical Tips for Better Results
+Step 8 - Practical Tips for Better Results
 
 Provide AI with specific context rather than generic requests. Instead of "Write about my Kafka contributions," specify the exact repositories, contribution types, and impact areas you want to highlight.
 
@@ -158,7 +158,7 @@ Iterate on drafts. AI-generated content improves with feedback. Request revision
 
 Maintain accuracy throughout. AI sometimes generates plausible-sounding but incorrect information. Verify all dates, numbers, and technical claims independently.
 
-Step 9: Real-World Application Examples
+Step 9 - Real-World Application Examples
 
 Apache Software Foundation Application
 
@@ -209,7 +209,7 @@ Write for Linux Foundation membership application. Focus on:
 - Enterprise adoption experience with open source
 - Cross-project collaboration
 - Corporate sponsorship understanding
-Include: 5 years Linux kernel work, 15 enterprise deployments managed,
+Include - 5 years Linux kernel work, 15 enterprise deployments managed,
 partnership work between 3 projects
 ```
 
@@ -217,12 +217,12 @@ OpenJS Foundation Application
 
 ```
 Prompt to AI:
-Write for OpenJS Foundation application emphasizing JavaScript ecosystem
+Write for OpenJS Foundation application emphasizing JavaScript environment
 impact. I've contributed to Node.js core, created 12 popular npm packages
-(10M monthly downloads), and maintain ecosystem health through standards work.
+(10M monthly downloads), and maintain environment health through standards work.
 ```
 
-Step 10: Multi-Foundation Application Template
+Step 10 - Multi-Foundation Application Template
 
 For applying to multiple foundations, create a master document then adapt:
 
@@ -235,25 +235,25 @@ Core Contribution Summary
 - Pull requests merged: 47
 - Issues resolved: 23
 
-Step 11: Foundation-Specific Adaptations
+Step 11 - Foundation-Specific Adaptations
 
 For Apache Software Foundation
-Emphasis: Community contribution, individual merit, collaborative spirit
+Emphasis - Community contribution, individual merit, collaborative spirit
 - Adapt: Highlight mentoring, community discussions, code review participation
 - Tone: Community-focused, collaborative
 
 For Linux Foundation
-Emphasis: Enterprise impact, sustainability, cross-project work
+Emphasis - Enterprise impact, sustainability, cross-project work
 - Adapt: Highlight production deployments, corporate partnerships, maintenance
 - Tone: Professional, business-aware
 
 For OpenJS Foundation
-Emphasis: JavaScript ecosystem health, npm package quality, developer experience
-- Adapt: Highlight package ecosystem work, tooling improvements, developer education
-- Tone: Technical, ecosystem-focused
+Emphasis - JavaScript environment health, npm package quality, developer experience
+- Adapt: Highlight package environment work, tooling improvements, developer education
+- Tone: Technical, environment-focused
 ```
 
-Step 12: Converting Git Data to Application Content
+Step 12 - Converting Git Data to Application Content
 
 Extract and format your actual contribution data:
 
@@ -350,9 +350,9 @@ class ContributionAnalyzer:
 
  prompt = f"""Create a foundation membership application statement based on:
 
-Years Contributing: {stats['years_contributing']}
-Total Commits: {stats['total_commits']}
-Lines of Code: +{stats['lines_added']} -{stats['lines_deleted']}
+Years Contributing - {stats['years_contributing']}
+Total Commits - {stats['total_commits']}
+Lines of Code - +{stats['lines_added']} -{stats['lines_deleted']}
 
 Recent Work:
 {chr(10).join(recent_work[:5])}
@@ -386,10 +386,10 @@ Research exact requirements before drafting:
 |------------|-----------|-----------|----------|-------|
 | Apache | 500-750 | Statement + Resume | 4-6 weeks | Community, merit |
 | Linux | 1000-1500 | Statement + Background + Vision | 6-8 weeks | Enterprise, sustainability |
-| OpenJS | 750-1000 | Statement + Projects + Vision | 4-6 weeks | Ecosystem, tooling |
+| OpenJS | 750-1000 | Statement + Projects + Vision | 4-6 weeks | environment, tooling |
 | CNCF | 800-1200 | Statement + Technical Background | 6-8 weeks | Cloud native impact |
 
-Step 13: Application Checklist
+Step 13 - Application Checklist
 
 Before submitting AI-drafted applications:
 

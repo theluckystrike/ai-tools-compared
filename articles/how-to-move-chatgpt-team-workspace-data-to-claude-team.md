@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand ChatGPT Team Workspace Data
+Step 1 - Understand ChatGPT Team Workspace Data
 
 
 ChatGPT Team workspaces store several types of data that you'll want to preserve during migration. Conversation histories represent the bulk of your workspace content, thousands of interactions containing code snippets, architectural decisions, and problem-solving sessions. Custom GPTs are another critical asset if your team built specialized assistants with custom instructions. Workspace settings include team member access controls, usage preferences, and any integrated tools or APIs.
@@ -36,7 +36,7 @@ ChatGPT Team workspaces store several types of data that you'll want to preserve
 Claude Team organizes work around Projects, which serve as containers for conversation history, knowledge files, and custom instructions. Understanding this structural difference helps you plan an effective migration strategy.
 
 
-Step 2: Exporting ChatGPT Team Data
+Step 2 - Exporting ChatGPT Team Data
 
 
 OpenAI provides several export pathways for team administrators. The primary method involves accessing the admin panel at platform.openai.com and navigating to the workspace settings. From there, you can request a full data export that includes conversation history, custom GPT definitions, and workspace configuration.
@@ -89,7 +89,7 @@ with open("chatgpt-export.json", "w") as f:
 This script exports conversation data to a JSON file that you can later reference when recreating workflows in Claude.
 
 
-Step 3: Preserving Custom GPT Configurations
+Step 3 - Preserving Custom GPT Configurations
 
 
 If your team uses custom GPTs, you'll need to manually recreate them in Claude. While there's no automatic migration, you can export your GPT configurations by accessing each custom GPT's settings page and copying the instructions, knowledge files, and conversation starters.
@@ -104,13 +104,13 @@ Migrating to Claude Team Projects
 Claude Team uses a Projects-based structure that differs from ChatGPT's workspace model. Each project can contain multiple conversations, uploaded files for context, and custom instructions. Here's how to organize your migrated data:
 
 
-Step 1: Create Projects Based on Use Cases
+Step 1 - Create Projects Based on Use Cases
 
 
 Organize your exported conversations into logical groups, perhaps by project code, client, or topic area. Create corresponding projects in Claude Team for each group.
 
 
-Step 2: Import Key Conversations
+Step 2 - Import Key Conversations
 
 
 Copy important conversation threads into your new Claude Projects. While you cannot import the full JSON directly, you can paste relevant exchanges as reference material:
@@ -118,8 +118,8 @@ Copy important conversation threads into your new Claude Projects. While you can
 
 ```
 Previous ChatGPT Context:---
-User: Help me implement user authentication
-Assistant: Here's a JWT-based authentication flow...
+User - Help me implement user authentication
+Assistant - Here's a JWT-based authentication flow...
 ---
 ```
 
@@ -127,20 +127,20 @@ Table of Contents
 
 - [Best Practices for a Smooth Transition](#best-practices-for-a-smooth-transition)
 - [Detailed Export Script for Conversations](#detailed-export-script-for-conversations)
-- [Cost Comparison: ChatGPT Team vs Claude Team](#cost-comparison-chatgpt-team-vs-claude-team)
+- [Cost Comparison - ChatGPT Team vs Claude Team](#cost-comparison-chatgpt-team-vs-claude-team)
 - [Troubleshooting](#troubleshooting)
 
-Step 3: Set Custom Instructions
+Step 3 - Set Custom Instructions
 
 Recreate your custom GPT instructions as project-level system prompts in Claude. Navigate to each project's settings and add instructions that mirror your original GPT behavior.
 
-Step 4: Handling Shared Links and Collaborations
+Step 4 - Handling Shared Links and Collaborations
 
 ChatGPT Team workspaces often contain shared links to specific conversations. These links do not transfer to Claude. Create new shared links in Claude for conversations you want to collaborate on with team members.
 
 For real-time collaboration, Claude Team supports multi-user workspaces where team members can participate in the same conversation thread, similar to ChatGPT's collaborative features.
 
-Step 5: API Integration Considerations
+Step 5 - API Integration Considerations
 
 If your ChatGPT Team workspace uses the API for automated workflows, you'll need to update your integration code to use Claude's API. The SDK differences are minimal:
 
@@ -169,42 +169,42 @@ Test the migration with a small team subset before rolling out to everyone. This
 
 Document your migration process internally so future team members understand how the workspace was set up and what decisions shaped the migration.
 
-Step 6: Complete Migration Checklist
+Step 6 - Complete Migration Checklist
 
 Here's a practical checklist for teams migrating between platforms:
 
 ```markdown
-Step 7: ChatGPT Team to Claude Team Migration Checklist
+Step 7 - ChatGPT Team to Claude Team Migration Checklist
 
-Week 1: Inventory and Planning
+Week 1 - Inventory and Planning
 - [ ] Export all conversations (OpenAI API)
 - [ ] List all custom GPTs with descriptions
 - [ ] Document API integrations and endpoints
 - [ ] Identify critical conversations to preserve
 - [ ] Create team communication plan
 
-Week 2: Data Export
+Week 2 - Data Export
 - [ ] Run export scripts for all conversation history
 - [ ] Backup custom GPT configurations
 - [ ] Export workspace settings and member permissions
 - [ ] Test export file integrity
 - [ ] Create migration documentation
 
-Week 3: Claude Team Setup
+Week 3 - Claude Team Setup
 - [ ] Create Claude Team workspace
 - [ ] Set up team members and permissions
 - [ ] Create corresponding projects
 - [ ] Configure custom instructions
 - [ ] Test user access and permissions
 
-Week 4: Content Migration
+Week 4 - Content Migration
 - [ ] Import key conversations into projects
 - [ ] Recreate custom GPTs as Claude configurations
 - [ ] Migrate shared files and knowledge bases
 - [ ] Update internal documentation links
 - [ ] Run parallel testing
 
-Week 5: Cutover and Validation
+Week 5 - Cutover and Validation
 - [ ] Communicate cutover date to team
 - [ ] Monitor ChatGPT usage (should decline)
 - [ ] Verify Claude Team usage increases
@@ -333,7 +333,7 @@ num_gpts = exporter.export_custom_gpts()
 print(f"Exported {num_conversations} conversations and {num_gpts} custom GPTs")
 ```
 
-Cost Comparison: ChatGPT Team vs Claude Team
+Cost Comparison - ChatGPT Team vs Claude Team
 
 | Factor | ChatGPT Team | Claude Team |
 |--------|--------------|------------|
@@ -351,13 +351,13 @@ For a 5-person team:
 
 Claude Team saves $300/year for this size, plus better admin controls.
 
-Step 8: Migration Impact on Team Workflows
+Step 8 - Migration Impact on Team Workflows
 
 Plan for these workflow changes:
 
 Conversation structure:
-ChatGPT: Conversations exist in Team workspace
-Claude: Conversations organized by Projects
+ChatGPT - Conversations exist in Team workspace
+Claude - Conversations organized by Projects
 
 Migration requires:
 - Think about logical project groupings
@@ -366,14 +366,14 @@ Migration requires:
 
 API usage:
 ChatGPT: Single team API key
-Claude: Can create separate API keys per project
+Claude - Can create separate API keys per project
 
 Migration opportunity:
 - Separate billing by project
 - Better cost tracking
 - Improved access control
 
-Step 9: Validation After Migration
+Step 9 - Validation After Migration
 
 Verify the migration was successful:
 

@@ -26,7 +26,7 @@ Table of Contents
 - [Comparing AI Tools for CI/CD Configs](#comparing-ai-tools-for-cicd-configs)
 - [Practical Examples](#practical-examples)
 - [Parallelism and Test Splitting](#parallelism-and-test-splitting)
-- [Workflow: Prompting AI for Pipeline Generation](#workflow-prompting-ai-for-pipeline-generation)
+- [Workflow - Prompting AI for Pipeline Generation](#workflow-prompting-ai-for-pipeline-generation)
 - [Tips for Better AI Assistance](#tips-for-better-ai-assistance)
 
 Why AI Assistance Matters for CI/CD Configs
@@ -62,7 +62,7 @@ jobs:
           command: npm test
 ```
 
-When expanding this configuration to include build and deploy jobs, AI assistants vary significantly in their suggestions. Claude Code and Cursor generally recognize the orb ecosystem and suggest appropriate orbs for common tasks like Docker builds, Kubernetes deployments, or AWS operations. They understand that the `docker` orb provides convenience methods for building and pushing images.
+When expanding this configuration to include build and deploy jobs, AI assistants vary significantly in their suggestions. Claude Code and Cursor generally recognize the orb environment and suggest appropriate orbs for common tasks like Docker builds, Kubernetes deployments, or AWS operations. They understand that the `docker` orb provides convenience methods for building and pushing images.
 
 GitHub Copilot provides basic completion for CircleCI syntax but often suggests generic job structures without using orbs effectively. You might get:
 
@@ -139,7 +139,7 @@ Comparing AI Tools for CI/CD Configs
 | DAG pipeline support | Yes | Yes | No | Partial |
 | Environment variable awareness | Yes | Partial | No | Partial |
 
-Claude Code consistently provides the most relevant suggestions for CI/CD configurations. It understands the CircleCI orb ecosystem and knows which orbs are well-maintained. For GitLab CI, it recognizes patterns like using `extends` for job reuse and `rules` for conditional execution.
+Claude Code consistently provides the most relevant suggestions for CI/CD configurations. It understands the CircleCI orb environment and knows which orbs are well-maintained. For GitLab CI, it recognizes patterns like using `extends` for job reuse and `rules` for conditional execution.
 
 Cursor offers solid completion but sometimes suggests outdated orb versions or missing required parameters. GitHub Copilot works best as a general-purpose tool but lacks deep knowledge of CI/CD-specific patterns. ChatGPT performs well when given the full config file as context, its suggestions improve significantly when you paste your existing YAML and ask for targeted additions.
 
@@ -283,7 +283,7 @@ test:
 
 GitLab's `$CI_NODE_INDEX` and `$CI_NODE_TOTAL` environment variables enable the Jest sharding approach. Claude Code and Cursor both suggest this pattern. GitHub Copilot rarely suggests parallel sharding unprompted.
 
-Workflow: Prompting AI for Pipeline Generation
+Workflow - Prompting AI for Pipeline Generation
 
 Follow this systematic approach when using AI to generate CI/CD configs:
 

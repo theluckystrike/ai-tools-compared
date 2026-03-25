@@ -383,7 +383,7 @@ def get_vulnerability_summary(package, version):
 
     return response.json()
 
-Alternative: Use Snyk API
+Alternative - Use Snyk API
 def get_snyk_vulnerabilities(package, version):
     """Query Snyk for known vulnerabilities"""
     response = requests.get(

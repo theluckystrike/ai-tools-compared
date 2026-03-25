@@ -137,13 +137,13 @@ What Matters Most in AI-Generated Playwright Tests
 
 When evaluating AI tools for test generation, focus on these factors:
 
-Selector reliability: AI should prefer Playwright's locators (`getByRole`, `getByLabel`, `getByText`) over fragile CSS selectors. These are more stable and accessible.
+Selector reliability - AI should prefer Playwright's locators (`getByRole`, `getByLabel`, `getByText`) over fragile CSS selectors. These are more stable and accessible.
 
-Error handling: Good test code includes proper waiting and retry logic. AI-generated tests should handle network delays and dynamic content without manual intervention.
+Error handling - Good test code includes proper waiting and retry logic. AI-generated tests should handle network delays and dynamic content without manual intervention.
 
-Test structure: Look for proper use of `test.describe` for grouping, `beforeEach` for setup, and clean assertions. Well-structured tests are easier to maintain.
+Test structure - Look for proper use of `test.describe` for grouping, `beforeEach` for setup, and clean assertions. Well-structured tests are easier to maintain.
 
-Page Object Model support: Advanced AI tools understand the Page Object Model pattern and can generate tests that work with your existing POM infrastructure.
+Page Object Model support - Advanced AI tools understand the Page Object Model pattern and can generate tests that work with your existing POM infrastructure.
 
 Pricing and Tool Availability
 
@@ -169,10 +169,10 @@ Claude's consistent preference for accessible locators (getByRole, getByLabel) l
 
 Real-World Test Generation Example
 
-Application: E-commerce checkout flow
-Requirement: Test adding items to cart, proceeding to checkout, and verifying order confirmation
+Application - E-commerce checkout flow
+Requirement - Test adding items to cart, proceeding to checkout, and verifying order confirmation
 
-Prompt: "Write a Playwright test that: navigates to product page, adds item to cart, goes to checkout, fills shipping info, submits payment, and verifies order confirmation page shows order number."
+Prompt - "Write a Playwright test that: navigates to product page, adds item to cart, goes to checkout, fills shipping info, submits payment, and verifies order confirmation page shows order number."
 
 Claude's output (typical):
 ```javascript
@@ -251,11 +251,11 @@ Practical Recommendations
 
 For most developers in 2026, Claude and ChatGPT offer the best balance of code quality and ease of use for Playwright test generation. Claude slightly edges ahead with its consistent use of Playwright's modern locators and better understanding of async patterns.
 
-For enterprise teams: Copilot's IDE integration is valuable, but pair it with a stronger tool for critical test suites.
+For enterprise teams - Copilot's IDE integration is valuable, but pair it with a stronger tool for critical test suites.
 
-For startups/small teams: Claude at $20/month delivers the best test quality and ROI.
+For startups/small teams - Claude at $20/month delivers the best test quality and ROI.
 
-For high-volume test generation: Use Claude's API at scale, or ChatGPT Plus for interactive refinement.
+For high-volume test generation - Use Claude's API at scale, or ChatGPT Plus for interactive refinement.
 
 However, the best approach combines AI with your expertise:
 

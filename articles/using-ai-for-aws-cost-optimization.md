@@ -17,7 +17,7 @@ voice-checked: true
 
 AWS bills are notoriously hard to analyze. The line items are cryptic, the pricing models vary by service, and the optimization opportunities require understanding your workload patterns. AI tools are useful here not because they understand AWS better than a specialized tool like Spot.io or CloudHealth, but because they can contextualize cost data against your actual infrastructure code and suggest specific changes.
 
-Step 1: Export Your Cost Data
+Step 1 - Export Your Cost Data
 
 ```bash
 Export last 90 days of cost data via AWS CLI
@@ -43,7 +43,7 @@ aws ce get-cost-and-usage \
   --output json > ec2-cost-by-type.json
 ```
 
-Step 2: AI-Assisted Cost Analysis
+Step 2 - AI-Assisted Cost Analysis
 
 Feed the export to Claude with context about your workload:
 
@@ -65,7 +65,7 @@ For each recommendation, include: estimated monthly savings, implementation effo
             "content": f"""
 Analyze this AWS cost export and identify optimization opportunities.
 
-Workload context: {workload_description}
+Workload context - {workload_description}
 
 Cost data (last 90 days):
 {json.dumps(cost_export, indent=2)[:3000]}
@@ -122,7 +122,7 @@ COST ANALYSIS RESULTS
    for hot paths. Review security group rules and load balancer targets.
 ```
 
-Step 3: Generate Rightsizing Terraform Changes
+Step 3 - Generate Rightsizing Terraform Changes
 
 ```python
 def generate_terraform_changes(recommendation: str, current_tf: str) -> str:
@@ -177,7 +177,7 @@ resource "aws_instance" "web" {
 }
 ```
 
-Step 4: Instance Scheduler for Dev/Staging
+Step 4 - Instance Scheduler for Dev/Staging
 
 Claude-generated Lambda for stopping/starting environments on schedule:
 
@@ -225,7 +225,7 @@ resource "aws_cloudwatch_event_rule" "start_dev" {
 }
 ```
 
-Step 5: AWS Compute Optimizer Analysis
+Step 5 - AWS Compute Optimizer Analysis
 
 ```bash
 Enable Compute Optimizer (free)
@@ -247,7 +247,7 @@ Prioritize these AWS Compute Optimizer recommendations by:
 [paste recommendations JSON]
 ```
 
-Step 6: Identify Idle and Orphaned Resources
+Step 6 - Identify Idle and Orphaned Resources
 
 One of the most overlooked cost categories is orphaned resources. things that exist but serve no workload. Claude can help identify them when given the right CLI output.
 
@@ -275,15 +275,15 @@ Review these AWS resource exports and identify resources that are costing money
 but appear unused. Estimate monthly cost for each idle resource and suggest
 whether to delete or repurpose it.
 
-Unattached EBS volumes: [paste unattached-volumes.json]
-Idle Elastic IPs: [paste idle-eips.json]
-Load balancers: [paste albs.json]
-Target groups: [paste target-groups.json]
+Unattached EBS volumes - [paste unattached-volumes.json]
+Idle Elastic IPs - [paste idle-eips.json]
+Load balancers - [paste albs.json]
+Target groups - [paste target-groups.json]
 ```
 
 Idle EBS volumes cost $0.10/GB-month (gp3). A 500GB forgotten snapshot or volume adds $50/month for nothing. Elastic IPs cost $3.60/month each when unattached. Most accounts accumulate 10-30 of these over time.
 
-Step 7: NAT Gateway vs VPC Endpoints
+Step 7 - NAT Gateway vs VPC Endpoints
 
 NAT Gateway charges $0.045/GB for all outbound traffic from private subnets. If your Lambda functions or EC2 instances are calling AWS APIs (S3, DynamoDB, Secrets Manager, SSM) through a NAT Gateway, you're paying for traffic that could go through free VPC endpoints instead.
 

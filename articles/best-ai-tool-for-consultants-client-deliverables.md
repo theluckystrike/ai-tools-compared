@@ -117,15 +117,15 @@ Comparing Top AI Tools for Consultant Use
 
 Real-World Use Cases
 
-Case 1: Strategy Consulting Deliverable
+Case 1 - Strategy Consulting Deliverable
 
 A strategy consultant required a market analysis for a retail client's expansion initiative. Using AI research tools, they compiled initial industry data within two hours rather than a full day. AI helped summarize competitor positioning, market size estimates, and consumer trends. The consultant then applied strategic frameworks and client-specific insights to produce the final deliverable.
 
-Case 2: IT Consulting Proposal
+Case 2 - IT Consulting Proposal
 
 An IT consultant needed to create a cloud migration proposal for a mid-size client. Using AI presentation tools, they generated a structured deck outline with suggested visualizations. The AI-assisted approach reduced proposal development time by approximately 40%, allowing more time for technical architecture refinement.
 
-Case 3: Financial Advisory Report
+Case 3 - Financial Advisory Report
 
 A financial advisory consultant regularly creates quarterly performance reports for clients. AI data analysis tools helped process raw financial data, generate initial visualizations, and identify key trends. This automation reduced report preparation time while ensuring consistency across multiple client deliverables.
 
@@ -181,7 +181,7 @@ Strategy Document Generation Workflow
 
 2. Analysis Phase (Claude):
    Input: Market research from Perplexity
-   Prompt: "Analyze this market data. Identify gaps where our client can
+   Prompt - "Analyze this market data. Identify gaps where our client can
             compete. Suggest 3 strategic positioning options with pros/cons."
 
 3. Visual Summary (Beautiful.ai):
@@ -218,7 +218,7 @@ Proposal Generation Workflow
 
 Real-World Consultant ROI Examples
 
-Case Study: Management Consulting Firm
+Case Study - Management Consulting Firm
 - Deliverable volume: 15 client projects/year
 - Average project deliverables: 5 documents + presentations
 - Average time per deliverable: 6 hours (without AI)
@@ -232,11 +232,11 @@ Annual impact:
 - Total hours saved: 225 hours/year
 - At $150/hour billing: $33,750/year additional capacity
 
-AI tool cost: $600/year (Claude Pro)
-ROI: 5,625x return
+AI tool cost - $600/year (Claude Pro)
+ROI - 5,625x return
 ```
 
-Case Study: Technology Consultant
+Case Study - Technology Consultant
 - Frequent technical documentation requests
 - AI assists with: Initial code examples, architecture diagrams, comparison tables
 - Manual work: Validation, client-specific customization, technical accuracy
@@ -245,7 +245,7 @@ Case Study: Technology Consultant
 Per proposal time breakdown:
 - Research and content generation: 4 hours → 1.5 hours with AI (60% savings)
 - Customization and review: 2 hours (no reduction)
-- Total: 6 hours → 3.5 hours
+- Total - 6 hours → 3.5 hours
 
 Per year:
 - 20 proposals
@@ -256,43 +256,43 @@ Per year:
 
 Building Your Consultant AI Stack
 
-Phase 1: Immediate Tools (Month 1)
+Phase 1 - Immediate Tools (Month 1)
 - Claude Pro ($20/month). for all document writing
 - Beautiful.ai free tier. for basic presentations
 - Google Sheets free tier. for data organization
 
-Phase 2: Enhanced Capabilities (Month 2-3)
+Phase 2 - Enhanced Capabilities (Month 2-3)
 - Add Perplexity Pro ($20/month). for research-heavy projects
 - Upgrade to Canva Pro ($13/month). for professional visuals
 - Add ChatGPT Plus ($20/month). backup and specialized analysis
 
-Phase 3: Team Tools (Month 4+, if expanding)
+Phase 3 - Team Tools (Month 4+, if expanding)
 - Implement document templates shared across team
 - Set up branded presentation frameworks
 - Create reusable prompts for common deliverables
 
 Avoiding Common Consultant AI Pitfalls
 
-Pitfall 1: Over-relying on AI without client context
+Pitfall 1 - Over-relying on AI without client context
 - Problem: AI generates generic analysis without understanding client specifics
 - Solution: Always provide detailed client context in prompts
 ```
-Instead of: "Create a market analysis"
-Better: "Create a market analysis for a B2B SaaS company in the healthcare
+Instead of - "Create a market analysis"
+Better - "Create a market analysis for a B2B SaaS company in the healthcare
          space, with $5M revenue, 50% of customers in US, targeting EU expansion"
 ```
 
-Pitfall 2: Delivering obviously AI-generated content
+Pitfall 2 - Delivering obviously AI-generated content
 - Problem: Client recognizes generic structure and feels they got template work
 - Solution: Spend time customizing, adding unique insights, and refining voice
 - Rule: 70% AI generation, 30% human customization minimum
 
-Pitfall 3: Missing deadlines relying on AI
+Pitfall 3 - Missing deadlines relying on AI
 - Problem: Tool unavailability, API limits, or quality issues delay delivery
 - Solution: Always have offline backup workflow, start deliverables early
 - Buffer: Add 20% extra time estimate for AI-assisted projects
 
-Pitfall 4: Intellectual property concerns
+Pitfall 4 - Intellectual property concerns
 - Problem: Uploading confidential client data to AI services
 - Solution: Use self-hosted options or ensure vendor agreement covers IP
 - Tools that comply: Claude (Anthropic privacy), self-hosted Llama models

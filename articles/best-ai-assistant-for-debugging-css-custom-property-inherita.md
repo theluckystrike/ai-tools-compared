@@ -28,7 +28,7 @@ Table of Contents
 - [Debugging Workflow with AI Assistance](#debugging-workflow-with-ai-assistance)
 - [Testing Your Fixes](#testing-your-fixes)
 - [Browser Compatibility Considerations](#browser-compatibility-considerations)
-- [Advanced Pattern: Theming System](#advanced-pattern-theming-system)
+- [Advanced Pattern - Theming System](#advanced-pattern-theming-system)
 - [When AI Gets It Wrong](#when-ai-gets-it-wrong)
 - [Building Reusable Component Patterns](#building-reusable-component-patterns)
 
@@ -38,7 +38,7 @@ Shadow DOM creates an encapsulation boundary that fundamentally affects how CSS 
 
 The core issue stems from the shadow boundary acting as an encapsulation mechanism. When you define `--primary-color: blue;` on a host element, components inside its shadow tree cannot access this variable unless you explicitly expose it. This is by design, it prevents style leakage and gives components control over their styling contracts.
 
-Consider this scenario: you have a custom element that renders a button, and you want to theme it from the outside using CSS custom properties:
+Consider this scenario - you have a custom element that renders a button, and you want to theme it from the outside using CSS custom properties:
 
 ```javascript
 class ThemedButton extends HTMLElement {
@@ -111,11 +111,11 @@ Common Patterns AI Assistants Recognize
 
 Experienced AI tools recognize several recurring patterns in Shadow DOM custom property failures:
 
-The host selector oversight: Many developers forget that host styles require the `:host` selector inside the shadow DOM, or they try to style the host from inside the shadow tree. The correct approach depends on whether you're styling from outside (using the element selector) or inside (using `:host`).
+The host selector oversight - Many developers forget that host styles require the `:host` selector inside the shadow DOM, or they try to style the host from inside the shadow tree. The correct approach depends on whether you're styling from outside (using the element selector) or inside (using `:host`).
 
-Variable shadowing: When both the light DOM and shadow DOM define the same custom property name, the shadow DOM's definition takes precedence. AI assistants help you identify when you've unintentionally created this conflict.
+Variable shadowing - When both the light DOM and shadow DOM define the same custom property name, the shadow DOM's definition takes precedence. AI assistants help you identify when you've unintentionally created this conflict.
 
-The all-property shortcut: CSS properties passed through shadow boundaries must be individually listed unless you use a CSS-wide keyword. AI assistants suggest using `--inherit` specifically rather than trying to inherit "all" properties.
+The all-property shortcut - CSS properties passed through shadow boundaries must be individually listed unless you use a CSS-wide keyword. AI assistants suggest using `--inherit` specifically rather than trying to inherit "all" properties.
 
 Building a Themeable Card Component
 
@@ -187,13 +187,13 @@ Debugging Workflow with AI Assistance
 
 Here's an effective approach when debugging CSS custom property issues:
 
-Step 1: Isolate the problem
+Step 1 - Isolate the problem
 Describe to the AI exactly what you see: "My button component has a `--btn-color` variable set in light DOM via `my-button { --btn-color: red; }`, but the button appears gray inside the shadow DOM."
 
-Step 2: Show the structure
+Step 2 - Show the structure
 Include both the custom element and usage. The AI needs to see what's in the shadow tree and what's in the light tree.
 
-Step 3: Ask for specific diagnosis
+Step 3 - Ask for specific diagnosis
 Rather than "why doesn't this work?" ask "Does this shadow encapsulation boundary prevent custom property inheritance? What's the correct syntax to expose `--btn-color` to internal elements?"
 
 This specificity triggers AI tools to explain the encapsulation mechanism rather than just suggesting quick fixes.
@@ -233,7 +233,7 @@ Different browsers handle custom property inheritance in shadow DOM with subtle 
 
 Test in Safari and Firefox if your application targets those browsers. AI tools sometimes recommend patterns that work in Chrome but fail elsewhere.
 
-Advanced Pattern: Theming System
+Advanced Pattern - Theming System
 
 When AI helps you build a complete theming system for web components, include clear specifications:
 

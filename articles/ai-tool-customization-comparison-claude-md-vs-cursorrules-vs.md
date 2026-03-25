@@ -47,7 +47,7 @@ This approach integrates directly with your codebase, ensuring every team member
 
 Claude.md supports rich, hierarchical instructions. You can nest project-specific sub-instructions in subdirectories. a `src/api/CLAUDE.md` file that provides API-specific guidance, separate from general project conventions. Claude Code reads the most specific applicable file, with parent-directory files providing broader context.
 
-One practical advantage: because Claude.md uses natural language, non-engineers (technical writers, architects, product managers) can contribute to and review AI configuration without learning a configuration DSL. This matters in teams where institutional knowledge about conventions is spread across roles.
+One practical advantage - because Claude.md uses natural language, non-engineers (technical writers, architects, product managers) can contribute to and review AI configuration without learning a configuration DSL. This matters in teams where institutional knowledge about conventions is spread across roles.
 
 Quick Comparison
 
@@ -109,7 +109,7 @@ Claude.md works with Claude Code across any editor or terminal environment. Your
 
 CursorRules ties directly to Cursor IDE, offering deep integration but limiting flexibility if you switch development environments. Cursor's AI capabilities are tightly coupled to its editor, so CursorRules unlock the most value for teams committed to Cursor long-term.
 
-Copilot Instructions remain scoped to GitHub's ecosystem, functioning primarily within GitHub's web interface and supported editors. They work best as a lightweight layer on top of Copilot's general training rather than as a project configuration.
+Copilot Instructions remain scoped to GitHub's environment, functioning primarily within GitHub's web interface and supported editors. They work best as a lightweight layer on top of Copilot's general training rather than as a project configuration.
 
 Configuration Flexibility
 

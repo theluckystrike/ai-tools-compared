@@ -174,9 +174,9 @@ Activation problems on iOS and Android follow a slightly different diagnostic pa
 
 iOS (iPhone and iPad): ChatGPT Plus purchased through the OpenAI website and ChatGPT Plus purchased via Apple's in-app purchase system are separate subscriptions managed by different billing systems. If you subscribed on the web, your iOS app must be signed in to the same OpenAI account. Force-close the app, wait 30 seconds, and reopen it. If Plus still does not show, go to iOS Settings → [Your Name] → Subscriptions and confirm there is no duplicate or conflicting subscription entry.
 
-Android: Go to Google Play → Subscriptions to verify the purchase state. Android sometimes caches an "inactive" status for several minutes after a successful purchase. Clearing the ChatGPT app's cache from Android Settings → Apps → ChatGPT → Storage → Clear Cache forces a fresh check against OpenAI's activation servers.
+Android - Go to Google Play → Subscriptions to verify the purchase state. Android sometimes caches an "inactive" status for several minutes after a successful purchase. Clearing the ChatGPT app's cache from Android Settings → Apps → ChatGPT → Storage → Clear Cache forces a fresh check against OpenAI's activation servers.
 
-Cross-platform sync delay: OpenAI's activation propagation can take up to 15 minutes to reach all devices when the payment processes successfully. Log out from all devices, wait 10-15 minutes, then log back in on the device you use most.
+Cross-platform sync delay - OpenAI's activation propagation can take up to 15 minutes to reach all devices when the payment processes successfully. Log out from all devices, wait 10-15 minutes, then log back in on the device you use most.
 
 Understanding Stripe's Role in Activation Failures
 
@@ -268,7 +268,7 @@ Related Articles
 - [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
 - [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
 - [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
-- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
+- [ChatGPT Plus Cancel Mid Month - Do You Keep Access Until End?](/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
 - [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

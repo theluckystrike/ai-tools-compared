@@ -21,14 +21,14 @@ This guide tests Claude Code, Copilot, and Cursor on four real Go microservice t
 
 Table of Contents
 
-- [Task 1: gRPC Service with Interceptors](#task-1-grpc-service-with-interceptors)
-- [Task 2: HTTP Middleware Chain](#task-2-http-middleware-chain)
-- [Task 3: Error Wrapping and Handling](#task-3-error-wrapping-and-handling)
-- [Task 4: Table-Driven Tests](#task-4-table-driven-tests)
+- [Task 1 - gRPC Service with Interceptors](#task-1-grpc-service-with-interceptors)
+- [Task 2 - HTTP Middleware Chain](#task-2-http-middleware-chain)
+- [Task 3 - Error Wrapping and Handling](#task-3-error-wrapping-and-handling)
+- [Task 4 - Table-Driven Tests](#task-4-table-driven-tests)
 - [Summary](#summary)
 - [Related Reading](#related-reading)
 
-Task 1: gRPC Service with Interceptors
+Task 1 - gRPC Service with Interceptors
 
 ```protobuf
 // proto/user.proto
@@ -53,7 +53,7 @@ message User {
 }
 ```
 
-Prompt: "Implement the gRPC server with a logging interceptor and request validation."
+Prompt - "Implement the gRPC server with a logging interceptor and request validation."
 
 Copilot's server:
 
@@ -186,9 +186,9 @@ func main() {
 
 Claude used `grpc.ChainUnaryInterceptor`, proper gRPC status codes for each error type, and `log/slog` (the modern Go logger).
 
-Task 2: HTTP Middleware Chain
+Task 2 - HTTP Middleware Chain
 
-Prompt: "Write a middleware chain for an HTTP service with request ID injection, CORS, and rate limiting."
+Prompt - "Write a middleware chain for an HTTP service with request ID injection, CORS, and rate limiting."
 
 ```go
 // Claude's middleware (idiomatic Go)
@@ -293,7 +293,7 @@ func Chain(h http.Handler, middlewares ...func(http.Handler) http.Handler) http.
 
 Cursor and Copilot both produced middleware that worked but was less idiomatic: Cursor stored request IDs as strings in context (not typed keys), and Copilot's rate limiter stored limiters in a non-concurrent-safe map.
 
-Task 3: Error Wrapping and Handling
+Task 3 - Error Wrapping and Handling
 
 ```go
 // Prompt: "Show idiomatic Go error handling for a multi-layer
@@ -378,7 +378,7 @@ func (h *Handler) GetUserHandler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-Task 4: Table-Driven Tests
+Task 4 - Table-Driven Tests
 
 ```go
 // Claude's test pattern for the UserService

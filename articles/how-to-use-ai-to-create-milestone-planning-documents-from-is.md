@@ -55,7 +55,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Input Structure
+Step 1 - Understand the Input Structure
 
 Before generating milestone documents, you need to structure your issue backlog data. Most issue trackers export data in formats like JSON, CSV, or Markdown. Here's a sample input structure:
 
@@ -90,7 +90,7 @@ Before generating milestone documents, you need to structure your issue backlog 
 
 This structure includes priority levels, labels, story points, and dependency information, all crucial for intelligent milestone planning.
 
-Step 2: Crafting Effective AI Prompts
+Step 2 - Crafting Effective AI Prompts
 
 The quality of your milestone planning document depends significantly on how you prompt the AI. Instead of vague requests, provide clear context and specific requirements.
 
@@ -117,7 +117,7 @@ Backlog data:
 
 The second prompt produces structured, actionable output because it specifies format, constraints, and evaluation criteria.
 
-Step 3: Processing Issues with AI Code Assistants
+Step 3 - Processing Issues with AI Code Assistants
 
 Modern AI coding tools can directly process your backlog files and generate planning documents. Here's a practical workflow using Claude Code or similar tools:
 
@@ -143,7 +143,7 @@ Consider these constraints:
 Generate a markdown document with milestone breakdown.
 ```
 
-Step 4: Build Automated Pipeline Scripts
+Step 4 - Build Automated Pipeline Scripts
 
 For recurring milestone planning, create scripts that combine AI processing with your issue tracker. Here's a Python example:
 
@@ -187,7 +187,7 @@ def generate_milestone_document(backlog_file, config):
 
 This script can be integrated into your CI/CD pipeline or run as part of regular planning ceremonies.
 
-Step 5: Handling Complex Dependencies
+Step 5 - Handling Complex Dependencies
 
 Real-world backlogs often contain complex dependencies that AI must understand to create realistic milestones. When feeding data to AI, explicitly highlight dependency chains:
 
@@ -206,7 +206,7 @@ Priority ordering:
 
 AI tools can then logically arrange milestones, ensuring prerequisites are completed before dependent work begins.
 
-Step 6: Comparing AI Tools for Milestone Planning
+Step 6 - Comparing AI Tools for Milestone Planning
 
 Different AI tools handle milestone planning with varying levels of sophistication. Understanding each tool's strengths helps you choose the right one for your workflow.
 
@@ -219,14 +219,14 @@ Different AI tools handle milestone planning with varying levels of sophisticati
 
 For backlogs under 100 issues, any of these tools produces reliable milestone plans. For backlogs exceeding 300 issues, Gemini's larger context window is a practical advantage. Claude tends to produce more nuanced reasoning when dependency chains are tangled or business priorities conflict.
 
-Step 7: Structuring the Output Document
+Step 7 - Structuring the Output Document
 
 AI-generated milestone plans are most actionable when they follow a predictable structure. Request this template when prompting:
 
 ```
-Step 8: Milestone 1: Foundation (Weeks 1-2)
+Step 8 - Milestone 1: Foundation (Weeks 1-2)
 
-Goal: Establish core infrastructure and security
+Goal - Establish core infrastructure and security
 
 Success Criteria:
 - User authentication operational in staging
@@ -239,7 +239,7 @@ Issues:
 | PROJ-101 | Implement user authentication flow | 8 | Backend team |
 | PROJ-103 | Set up CI/CD pipeline | 3 | DevOps |
 
-Total Points: 11 / 15 capacity
+Total Points - 11 / 15 capacity
 
 Risks:
 - Auth integration with legacy SSO system may require additional investigation
@@ -248,7 +248,7 @@ Risks:
 
 This format gives team leads a ready-to-share document without requiring post-processing. The success criteria section is especially valuable: it forces the AI to think about measurable outcomes rather than just task completion.
 
-Step 9: Iterative Refinement Workflow
+Step 9 - Iterative Refinement Workflow
 
 AI-generated milestone plans rarely emerge perfect on the first attempt. Adopt an iterative refinement loop:
 
@@ -260,7 +260,7 @@ AI-generated milestone plans rarely emerge perfect on the first attempt. Adopt a
 
 This loop typically takes 2-3 iterations and produces plans that incorporate both AI's pattern recognition and human domain knowledge. Teams report saving 3-5 hours per planning cycle compared to fully manual approaches.
 
-Step 10: Validating AI-Generated Milestones
+Step 10 - Validating AI-Generated Milestones
 
 AI output requires validation before acting on it. Review these aspects:
 

@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Defining Your Component Composition Rules
+Step 1 - Defining Your Component Composition Rules
 
 Before writing Cursorules, document your team's composition patterns. Consider these questions:
 
@@ -57,16 +57,16 @@ Before writing Cursorules, document your team's composition patterns. Consider t
 
 Once you have clear answers, translate them into Cursorules that AI assistants can follow.
 
-A practical exercise: audit five recent components your team wrote and identify the patterns they share. If three out of five use compound components with Context for internal state, that is your preferred pattern. If naming conventions drift across those five, that inconsistency is exactly what Cursorules can lock down.
+A practical exercise - audit five recent components your team wrote and identify the patterns they share. If three out of five use compound components with Context for internal state, that is your preferred pattern. If naming conventions drift across those five, that inconsistency is exactly what Cursorules can lock down.
 
-Step 2: Create Effective Cursorules
+Step 2 - Create Effective Cursorules
 
 Here is an example of Cursorules designed to enforce compound component patterns:
 
 ```
 Cursorules for React Component Composition
 
-Step 3: Compound Component Patterns
+Step 3 - Compound Component Patterns
 
 When creating components that need to share state between parent and children, use compound component patterns:
 
@@ -79,14 +79,14 @@ Example structure:
 - ButtonGroup.Button (child component)
 - ButtonGroup.ButtonProps (optional, for TypeScript)
 
-Step 4: Prop Naming Conventions
+Step 4 - Prop Naming Conventions
 
 - Use 'children' for content slots, never 'content' or 'body'
 - Prefix callback props with 'on' (onClick, onChange)
 - Use 'is' or 'has' prefix for boolean props (isDisabled, hasError)
 - Prefix internal props with underscore (_internalState)
 
-Step 5: Component File Organization
+Step 5 - Component File Organization
 
 Each component should follow this structure:
 1. Type definitions (if TypeScript)
@@ -95,19 +95,19 @@ Each component should follow this structure:
 4. Parent component with composition
 5. Named exports
 
-Step 6: Forbidden Patterns
+Step 6 - Forbidden Patterns
 
 - Never use props.children for component logic
 - Avoid passing components as props (use compound components instead)
 - Don't create HOCs - prefer custom hooks
 ```
 
-Step 7: Enforcing Container-Presenter Pattern
+Step 7 - Enforcing Container-Presenter Pattern
 
 Many teams adopt the container-presenter pattern for separating logic from presentation. Here is how to encode this in Cursorules:
 
 ```
-Step 8: Container-Presenter Separation
+Step 8 - Container-Presenter Separation
 
 When building features, separate concerns using containers and presenters:
 
@@ -146,12 +146,12 @@ function UserListPresenter({ users }) {
 
 This pattern pairs well with testing strategies. Presenters are trivial to unit test because they are pure functions of their props. Containers can be tested separately using mocked data fetching. When Cursor generates code following this rule, your test coverage naturally improves alongside consistency.
 
-Step 9: Handling Component Composition in Custom Hooks
+Step 9 - Handling Component Composition in Custom Hooks
 
 Custom hooks have become the preferred way to share logic in React applications. Your Cursorules should specify how AI assistants should create and use hooks:
 
 ```
-Step 10: Custom Hooks Guidelines
+Step 10 - Custom Hooks Guidelines
 
 1. Always prefix hook names with 'use' (useAuth, useFetch)
 2. Return arrays for tuple-like data, objects for named properties
@@ -162,16 +162,16 @@ Example return pattern:
 const { data, loading, error, refetch } = useUserData(userId);
 ```
 
-An important nuance: hooks that manage a single value with a setter should return a tuple, like `useState` itself. Hooks that return multiple named properties should return an object. This distinction prevents destructuring confusion and makes call sites readable at a glance. Include this distinction explicitly in your Cursorules so the AI applies the right return shape automatically.
+An important nuance - hooks that manage a single value with a setter should return a tuple, like `useState` itself. Hooks that return multiple named properties should return an object. This distinction prevents destructuring confusion and makes call sites readable at a glance. Include this distinction explicitly in your Cursorules so the AI applies the right return shape automatically.
 
-Step 11: Structuring TypeScript Interfaces for Consistency
+Step 11 - Structuring TypeScript Interfaces for Consistency
 
 Teams using TypeScript benefit from encoding interface conventions in Cursorules. Without explicit guidance, AI assistants may generate redundant interfaces, misplace type definitions, or use inconsistent naming patterns across components.
 
 Add a section like this to your Cursorules:
 
 ```
-Step 12: TypeScript Interface Conventions
+Step 12 - TypeScript Interface Conventions
 
 - Define component prop interfaces immediately above the component they describe
 - Name prop interfaces as {ComponentName}Props (e.g., ButtonProps, ModalProps)
@@ -179,7 +179,7 @@ Step 12: TypeScript Interface Conventions
 - Prefer `interface` over `type` for object shapes
 - Use `type` for unions, intersections, and primitive aliases
 
-Step 13: Generic Component Patterns
+Step 13 - Generic Component Patterns
 
 When writing generic components, constrain type parameters:
 - Prefer <T extends object> over unconstrained <T>
@@ -188,7 +188,7 @@ When writing generic components, constrain type parameters:
 
 This prevents a common AI antipattern where Cursor generates a `type Props = {}` at the bottom of a file, inconsistent with where other interfaces live.
 
-Step 14: Test Your Cursorules
+Step 14 - Test Your Cursorules
 
 After writing your Cursorules, test them by generating sample components. Ask your AI assistant to create a component following your rules, then verify:
 
@@ -202,9 +202,9 @@ After writing your Cursorules, test them by generating sample components. Ask yo
 
 Iterate on your Cursorules based on what the AI generates versus what you expect.
 
-A systematic testing approach: create a checklist with one item per rule in your Cursorules file. After generating a test component, walk through the checklist item by item. Rules that the AI violates need either more specific wording or concrete examples. Rules the AI follows consistently can be marked stable. Treat Cursorules like code: they need testing and revision.
+A systematic testing approach - create a checklist with one item per rule in your Cursorules file. After generating a test component, walk through the checklist item by item. Rules that the AI violates need either more specific wording or concrete examples. Rules the AI follows consistently can be marked stable. Treat Cursorules like code: they need testing and revision.
 
-Step 15: Sharing Cursorules Across Your Team
+Step 15 - Sharing Cursorules Across Your Team
 
 Place your Cursorules file in your project root as `.cursorrules` or `.cursor/rules`. Ensure every team member uses the same file by:
 
@@ -218,7 +218,7 @@ Regular updates to your Cursorules should follow your standard code review proce
 
 Consider treating Cursorules changes the same way you treat changes to your ESLint configuration. Both define coding standards; both warrant a PR, a short discussion, and explicit team sign-off. When a new pattern emerges organically in your codebase, a Cursorules update formalizes it and propagates it to every subsequent AI-assisted session automatically.
 
-Step 16: Example: Complete Cursorules File
+Step 16 - Example: Complete Cursorules File
 
 ```
 Project React Composition Guidelines
@@ -228,7 +228,7 @@ Overview
 This file defines our team's React component composition patterns.
 All AI-generated code should follow these guidelines.
 
-Step 17: Component Types
+Step 17 - Component Types
 
 Presentational Components
 - Focus on UI only
@@ -246,7 +246,7 @@ Compound Components
 - Export child components as static properties
 - <Modal><Modal.Header /><Modal.Body /><Modal.Footer /></Modal>
 
-Step 18: Props Pattern
+Step 18 - Props Pattern
 
 ```tsx
 interface ButtonProps {
@@ -265,7 +265,7 @@ interface ButtonProps {
 
 ```
 
-Step 19: Import Order
+Step 19 - Import Order
 
 1. React imports
 2. External libraries
@@ -273,15 +273,15 @@ Step 19: Import Order
 4. Relative imports
 5. Type imports
 
-Step 20: File Naming
+Step 20 - File Naming
 
-- Components: PascalCase (UserProfile.tsx)
-- Hooks: camelCase with use prefix (useAuth.ts)
-- Utilities: camelCase (formatDate.ts)
-- Types: PascalCase (UserTypes.ts)
+- Components - PascalCase (UserProfile.tsx)
+- Hooks - camelCase with use prefix (useAuth.ts)
+- Utilities - camelCase (formatDate.ts)
+- Types - PascalCase (UserTypes.ts)
 ```
 
-Step 21: Keeping Cursorules Lean and Effective
+Step 21 - Keeping Cursorules Lean and Effective
 
 One pitfall is writing Cursorules that are too long. If your rules file exceeds 200 lines, the AI assistant may weight early rules more heavily than later ones, or fail to apply all rules simultaneously. Keep each rule concise and actionable.
 

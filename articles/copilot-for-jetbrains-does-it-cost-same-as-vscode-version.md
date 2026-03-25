@@ -19,7 +19,7 @@ GitHub Copilot works identically in JetBrains IDEs and Visual Studio Code, inclu
 
 Table of Contents
 
-- [The Short Answer: Yes, Pricing Is Identical](#the-short-answer-yes-pricing-is-identical)
+- [The Short Answer - Yes, Pricing Is Identical](#the-short-answer-yes-pricing-is-identical)
 - [GitHub Copilot Pricing Tiers Explained](#github-copilot-pricing-tiers-explained)
 - [Setting Up Copilot in JetBrains IDEs](#setting-up-copilot-in-jetbrains-ides)
 - [How Copilot Suggestions Appear in JetBrains](#how-copilot-suggestions-appear-in-jetbrains)
@@ -35,7 +35,7 @@ Table of Contents
 - [Setup and Configuration Best Practices](#setup-and-configuration-best-practices)
 - [Common Misconceptions](#common-misconceptions)
 
-The Short Answer: Yes, Pricing Is Identical
+The Short Answer - Yes, Pricing Is Identical
 
 GitHub Copilot uses a unified pricing model regardless of which editor you use. The subscription tiers remain consistent across all supported IDEs, including JetBrains family members and Visual Studio Code. You do not pay extra for choosing JetBrains over VS Code.
 
@@ -128,13 +128,13 @@ Common JetBrains Copilot Issues and Fixes
 
 Some users encounter issues with Copilot in JetBrains IDEs. Here are solutions for frequent problems:
 
-Copilot not showing suggestions: Check that the plugin is installed and enabled in Settings > Plugins. Verify you are signed in by clicking the Copilot icon in the status bar.
+Copilot not showing suggestions - Check that the plugin is installed and enabled in Settings > Plugins. Verify you are signed in by clicking the Copilot icon in the status bar.
 
 Suggestions appear but won't accept: Ensure your keymap allows the Tab key for completion. Go to Settings > Keymap and verify the "Tab" action is assigned to "Accept Completion."
 
-Plugin conflicts: Some third-party plugins interfere with Copilot. Try disabling other AI-related plugins to isolate the conflict.
+Plugin conflicts - Some third-party plugins interfere with Copilot. Try disabling other AI-related plugins to isolate the conflict.
 
-Slow performance: Large projects can slow Copilot response times. Exclude unnecessary folders from indexing in Settings > Build, Execution, Deployment > Indexing.
+Slow performance - Large projects can slow Copilot response times. Exclude unnecessary folders from indexing in Settings > Build, Execution, Deployment > Indexing.
 
 Detailed Pricing Breakdown
 
@@ -326,24 +326,24 @@ ROI Calculation for Teams
 ```
 Small team (5 developers):
 Setup: 2 hours per person = 10 hours
-Monthly subscription: 5 × $10 = $50/month
-First-month cost: $50 + (10 × $50/hour) = $550
-Monthly cost after: $50
+Monthly subscription - 5 × $10 = $50/month
+First-month cost - $50 + (10 × $50/hour) = $550
+Monthly cost after - $50
 
 Productivity gain needed to break even:
 At 1 hour saved per person per week = 5 hours/week
-ROI break-even: ~2 months
+ROI break-even - ~2 months
 
 Medium team (25 developers):
 Setup: 25 × 1 hour = 25 hours
-Monthly subscription: 25 × $10 = $250/month
-If Team tier (25 × $19): $475/month
+Monthly subscription - 25 × $10 = $250/month
+If Team tier (25 × $19) - $475/month
 
 Assume only 10% of developers use it seriously:
 2.5 developers × 3 hours saved/week = 7.5 hours/week saved
-Annual value at $50/hour: 7.5 × 52 × $50 = $19,500
-Annual cost (Team tier): $5,700
-ROI: 242%
+Annual value at $50/hour - 7.5 × 52 × $50 = $19,500
+Annual cost (Team tier) - $5,700
+ROI - 242%
 ```
 
 Setup and Configuration Best Practices
@@ -372,16 +372,16 @@ Setup and Configuration Best Practices
 
 Common Misconceptions
 
-Myth: "Copilot costs more in JetBrains than VS Code"
+Myth - "Copilot costs more in JetBrains than VS Code"
 False. Pricing is identical across all editors.
 
-Myth: "I need a Copilot subscription per IDE"
+Myth - "I need a Copilot subscription per IDE"
 False. One subscription works everywhere with the same GitHub account.
 
-Myth: "Copilot requires paid IDE for JetBrains"
+Myth - "Copilot requires paid IDE for JetBrains"
 False. Copilot works with free IDEs like Community Edition IntelliJ IDEA.
 
-Myth: "Copilot Business gives enterprise grade support"
+Myth - "Copilot Business gives enterprise grade support"
 Partially true. Business tier adds policies and visibility but not dedicated support (that's Copilot Enterprise).
 
 Frequently Asked Questions

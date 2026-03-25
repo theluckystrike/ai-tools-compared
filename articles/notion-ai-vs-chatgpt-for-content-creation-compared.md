@@ -35,7 +35,7 @@ Choose Notion AI if your team already works in Notion and you want inline AI ass
 
 - A team generating 50,000 tokens of content daily through the API pays roughly $0.75-$2.00 per day depending on model: comparable to or less than per-seat SaaS pricing at scale.
 - Use `/ai` to generate: an initial draft from bullet points 3.
-- Length: 600-800 words per section."""
+- Length - 600-800 words per section."""
 ```
 
 Notion AI uses simpler command-based interaction.
@@ -123,13 +123,13 @@ const response = await openai.chat.completions.create({
 
 Practical Examples for Developers
 
-Example 1: API Documentation
+Example 1 - API Documentation
 
-Notion AI approach: create a blank Notion page, list your API endpoints as bullets, then use `/ai expand into documentation`. Notion AI generates formatted docs with placeholders for response examples. You edit in-place.
+Notion AI approach - create a blank Notion page, list your API endpoints as bullets, then use `/ai expand into documentation`. Notion AI generates formatted docs with placeholders for response examples. You edit in-place.
 
-ChatGPT approach: describe your API specification, request specific formatting (OpenAPI style, markdown tables), and iterate until satisfied. Export the final output to your preferred documentation platform.
+ChatGPT approach - describe your API specification, request specific formatting (OpenAPI style, markdown tables), and iterate until satisfied. Export the final output to your preferred documentation platform.
 
-Example 2: Code Comment Generation
+Example 2 - Code Comment Generation
 
 Notion AI cannot analyze code files directly, you'd need to paste code into Notion first. ChatGPT with the right prompt produces superior results:
 
@@ -138,7 +138,7 @@ Analyze this function and add JSDoc comments explaining parameters,
 return value, and edge cases. Keep comments concise but complete.
 ```
 
-Example 3: Multi-Version Content
+Example 3 - Multi-Version Content
 
 When you need 5 variations of product copy for A/B testing, ChatGPT wins. You specify the variation requirements in one prompt and get multiple outputs. Notion AI would require repeated invocations with manual copy-pasting between attempts.
 
@@ -183,10 +183,10 @@ Effective use of ChatGPT requires prompt engineering investment. System prompts 
 
 ```python
 system_prompt = """You are a technical documentation writer.
-Output format: Markdown with H2 section headers.
-Tone: precise, developer-focused, no marketing language.
-Code examples: include for every concept explained.
-Length: 600-800 words per section."""
+Output format - Markdown with H2 section headers.
+Tone - precise, developer-focused, no marketing language.
+Code examples - include for every concept explained.
+Length - 600-800 words per section."""
 ```
 
 Notion AI uses simpler command-based interaction. There's no system prompt concept, you issue commands (`/ai improve writing`, `/ai make shorter`) and the model infers context from the page. This lowers the barrier to entry significantly. A writer unfamiliar with prompt engineering can achieve good results immediately, while a developer might find the lack of control limiting.
@@ -383,7 +383,7 @@ Feature Comparison Table
 
 Real-World Workflow Examples
 
-Example 1: API Documentation
+Example 1 - API Documentation
 
 With Notion AI:
 ```
@@ -395,7 +395,7 @@ With Notion AI:
 6. Export to Markdown for publishing
 ```
 
-Time: 30 minutes, minimal friction
+Time - 30 minutes, minimal friction
 
 With ChatGPT:
 ```
@@ -407,9 +407,9 @@ With ChatGPT:
 6. Export final version
 ```
 
-Time: 20 minutes generation + 15 minutes coordination
+Time - 20 minutes generation + 15 minutes coordination
 
-Example 2: Product Marketing Copy
+Example 2 - Product Marketing Copy
 
 With Notion AI:
 ```
@@ -420,7 +420,7 @@ Create product description in Notion
 → Finalize for marketing
 ```
 
-Notion wins: Integrated workflow, easy collaboration
+Notion wins - Integrated workflow, easy collaboration
 
 With ChatGPT:
 ```
@@ -431,7 +431,7 @@ Paste product brief
 → Return to Notion for team review
 ```
 
-ChatGPT wins: Multiple variations, faster iteration
+ChatGPT wins - Multiple variations, faster iteration
 
 Technical Considerations
 
@@ -459,25 +459,25 @@ When to Use Both:
 - Notion for final review and versioning
 - Cost: moderate, benefits: maximum
 
-Migration Path: Notion AI to ChatGPT
+Migration Path - Notion AI to ChatGPT
 
 If you outgrow Notion AI:
 
 ```python
-Step 1: Export Notion database
+Step 1 - Export Notion database
 exported_articles = notion.databases.query(database_id="your-db")
 
-Step 2: Migrate to ChatGPT for batch improvements
+Step 2 - Migrate to ChatGPT for batch improvements
 improvements = []
 for article in exported_articles:
     improved = enhance_with_chatgpt(article["title"])
     improvements.append(improved)
 
-Step 3: Store in Notion for team review
+Step 3 - Store in Notion for team review
 for improved in improvements:
     sync_content_to_notion(improved)
 
-Step 4: Track which articles came from ChatGPT
+Step 4 - Track which articles came from ChatGPT
 (for attribution and cost tracking)
 ```
 

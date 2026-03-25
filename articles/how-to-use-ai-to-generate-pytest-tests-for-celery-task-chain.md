@@ -81,7 +81,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Effective AI Prompting for Test Generation
+Step 1 - Effective AI Prompting for Test Generation
 
 The quality of AI-generated tests depends heavily on your prompt. Include task definitions, expected behaviors, edge cases, and your testing preferences.
 
@@ -96,7 +96,7 @@ Define expected success/failure scenarios
 
 A strong prompt includes your Celery app configuration, task signatures, and specific test scenarios you want covered.
 
-Step 2: Generate Unit Tests for Individual Tasks
+Step 2 - Generate Unit Tests for Individual Tasks
 
 Start by testing individual tasks in isolation. This approach uses mocks to control dependencies and verify task logic.
 
@@ -147,7 +147,7 @@ class TestProcessUserData:
         assert mock_db.call_count == 2
 ```
 
-Step 3: Test Task Chain Integration
+Step 3 - Test Task Chain Integration
 
 Testing the full chain requires the Celery test runner or synchronous execution mode:
 
@@ -220,7 +220,7 @@ class TestUserProcessingChain:
         assert final['enriched']['profile_complete'] is True
 ```
 
-Step 4: Mocking External Services
+Step 4 - Mocking External Services
 
 External dependencies like databases and APIs require thorough mocking:
 
@@ -254,7 +254,7 @@ def sample_user_data():
     }
 ```
 
-Step 5: Test Retry and Error Handling
+Step 5 - Test Retry and Error Handling
 
 Celery's retry mechanism is critical for production reliability. Test it explicitly:
 
@@ -328,7 +328,7 @@ Review generated tests carefully, AI may miss edge cases specific to your busine
 
 Consider adding integration tests with a real Redis/Rabbitmq broker for production-like testing, while keeping unit tests fast and isolated.
 
-Step 6: Test Task Timeouts and Rate-Limited Queues
+Step 6 - Test Task Timeouts and Rate-Limited Queues
 
 Production Celery deployments impose hard limits on task execution time and queue throughput. Testing these constraints prevents silent failures where a task appears to succeed but was silently killed.
 
@@ -359,7 +359,7 @@ class TestTaskTimeouts:
 
 When building the test suite with AI assistance, give the AI your Celery worker configuration including `CELERY_TASK_TIME_LIMIT` and `CELERY_TASK_SOFT_TIME_LIMIT` settings. This context lets the AI generate timeouts that match your actual production constraints rather than arbitrary values.
 
-Step 7: Debugging Chain Failures with Structured Test Output
+Step 7 - Debugging Chain Failures with Structured Test Output
 
 When a chain fails mid-execution, the error message often points to the wrong task. A debugging-friendly test structure helps you localize failures quickly:
 
@@ -395,7 +395,7 @@ class TestChainDebugging:
 
 This pattern captures exact execution state at the moment of failure. When an AI tool generates your chain tests, ask it to include execution state tracking so failed tests tell you precisely where the chain broke and what data each step received.
 
-Step 8: Organizing Your Celery Test Suite for Long-Term Maintainability
+Step 8 - Organizing Your Celery Test Suite for Long-Term Maintainability
 
 A well-organized test suite makes it easier to run targeted tests during development and full coverage in CI. Structure your tests to mirror your task hierarchy:
 
@@ -426,7 +426,7 @@ pytest -m "not slow" tests/
 
 Ask your AI tool to generate `conftest.py` after you have written a few tests. The AI infers the common patterns from your existing tests and produces a clean, reusable fixture file that eliminates duplication across your test modules. Provide it with your Celery app configuration, your fixture sample data, and the eager mode setup code so it has the full context needed to generate something you can use immediately.
 
-Step 9: Prompting AI Effectively for Celery Test Generation
+Step 9 - Prompting AI Effectively for Celery Test Generation
 
 The most common failure mode when using AI to generate Celery tests is providing insufficient context. AI tools need to understand your complete task topology. not just one task in isolation.
 

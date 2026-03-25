@@ -187,7 +187,7 @@ Different protocols require different parsing logic. AI assistants handle protoc
 - TLS inspection: Creating scripts that parse TLS handshakes to identify weak cipher suites or expired certificates using Scapy or native socket libraries
 - NetFlow/IPFIX: Parsing binary flow records from Cisco routers or open-source exporters like `fprobe`
 
-Tool Comparison: AI Assistants for Network Analysis Code
+Tool Comparison - AI Assistants for Network Analysis Code
 
 | Tool | Strength | Best For |
 |------|----------|----------|
@@ -250,13 +250,13 @@ When using AI coding assistants for network traffic analysis tasks, prioritize t
 
 Specific capabilities that separate high-quality assistants from mediocre ones include:
 
-Protocol awareness: The assistant should know that Scapy's `IP` layer sits above `Ether` and below `TCP`, and should not confuse `dport` with `sport` without explicit instruction.
+Protocol awareness - The assistant should know that Scapy's `IP` layer sits above `Ether` and below `TCP`, and should not confuse `dport` with `sport` without explicit instruction.
 
-BPF filter syntax: Berkeley Packet Filter expressions are notoriously finicky. Strong assistants generate correct, tested-looking filters like `tcp and host 192.168.1.0/24 and not port 22` rather than syntactically invalid approximations.
+BPF filter syntax - Berkeley Packet Filter expressions are notoriously finicky. Strong assistants generate correct, tested-looking filters like `tcp and host 192.168.1.0/24 and not port 22` rather than syntactically invalid approximations.
 
-Error handling in streams: Network capture code needs to handle malformed packets, incomplete headers, and packet loss gracefully. Quality AI assistants add try/except blocks around packet dissection code without being prompted.
+Error handling in streams - Network capture code needs to handle malformed packets, incomplete headers, and packet loss gracefully. Quality AI assistants add try/except blocks around packet dissection code without being prompted.
 
-Output format awareness: Security tools consume data in specific formats. An AI assistant that automatically suggests outputting to JSON, CSV, or Elasticsearch-compatible NDJSON saves significant integration time.
+Output format awareness - Security tools consume data in specific formats. An AI assistant that automatically suggests outputting to JSON, CSV, or Elasticsearch-compatible NDJSON saves significant integration time.
 
 Integrating AI-Generated Code Into Your Workflow
 
@@ -299,9 +299,9 @@ Real-World Integration Patterns
 
 Network traffic analysis rarely happens in isolation. AI assistants excel at connecting multiple components:
 
-Pattern 1: Real-time Alerting
+Pattern 1 - Real-time Alerting
 ```python
-AI helps structure the flow: capture -> parse -> analyze -> alert
+AI helps structure the flow - capture -> parse -> analyze -> alert
 def alert_on_anomalies(pcap_stream, threshold=100):
     for packet in pcap_stream:
         parsed = parse_packet(packet)  # AI writes this
@@ -310,10 +310,10 @@ def alert_on_anomalies(pcap_stream, threshold=100):
             send_alert(parsed)  # AI writes this too
 ```
 
-Pattern 2: Data Pipeline Integration
+Pattern 2 - Data Pipeline Integration
 AI connects packet analysis to data warehouses, message queues, or visualization tools. It understands how to structure data exports and format outputs for downstream systems.
 
-Pattern 3: Protocol-Specific Analysis
+Pattern 3 - Protocol-Specific Analysis
 For DNS, DHCP, or application-layer protocols, AI generates parsers that handle protocol-specific fields correctly. It knows which fields are optional, how to handle variable-length structures, and when to apply special decoding rules.
 
 Limitations and When to Use Domain Experts
@@ -390,26 +390,26 @@ Comparing Assistant Capabilities for Network Tasks
 
 Claude excels when you need to understand *why* your network analysis code is structured a certain way. ChatGPT-4 works well for standard patterns. Cursor shines when your codebase is context for generation. GitHub Copilot fits naturally into IDE workflows.
 
-Real-World Scenario: Building a Network Intrusion Detector
+Real-World Scenario - Building a Network Intrusion Detector
 
 Here's how an AI assistant helps you build something complex:
 
-Phase 1: Foundation (AI generates scaffolding)
+Phase 1 - Foundation (AI generates scaffolding)
 - Packet capture loop
 - Basic protocol parsing
 - Data storage structure
 
-Phase 2: Enhancement (AI fills in patterns)
+Phase 2 - Enhancement (AI fills in patterns)
 - Connection tracking (track TCP flows)
 - Protocol anomaly detection
 - Threshold-based alerting
 
-Phase 3: Optimization (AI suggests improvements)
+Phase 3 - Optimization (AI suggests improvements)
 - Memory-efficient circular buffer for packet storage
 - Connection state cleanup to prevent memory leaks
 - Efficient data structures for fast lookups
 
-Phase 4: Integration (AI ties it together)
+Phase 4 - Integration (AI ties it together)
 - Send alerts to Slack/email
 - Export findings to SIEM system
 - Visualization dashboard connections

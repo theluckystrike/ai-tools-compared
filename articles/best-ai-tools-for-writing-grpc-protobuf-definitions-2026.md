@@ -20,9 +20,9 @@ Use Claude 3.5 Sonnet if you need idiomatic proto3 syntax with correct message f
 Table of Contents
 
 - [Why AI Helps with gRPC and Protobuf](#why-ai-helps-with-grpc-and-protobuf)
-- [Claude 3.5 Sonnet: Semantic Understanding of Proto Contracts](#claude-35-sonnet-semantic-understanding-of-proto-contracts)
-- [GitHub Copilot: Fast Inline Suggestions During File Editing](#github-copilot-fast-inline-suggestions-during-file-editing)
-- [Codeium: Free Real-Time Completion with Language Support](#codeium-free-real-time-completion-with-language-support)
+- [Claude 3.5 Sonnet - Semantic Understanding of Proto Contracts](#claude-35-sonnet-semantic-understanding-of-proto-contracts)
+- [GitHub Copilot - Fast Inline Suggestions During File Editing](#github-copilot-fast-inline-suggestions-during-file-editing)
+- [Codeium - Free Real-Time Completion with Language Support](#codeium-free-real-time-completion-with-language-support)
 - [Comparative Tool Matrix](#comparative-tool-matrix)
 - [Practical Workflows by Tool](#practical-workflows-by-tool)
 - [Integration Patterns for Teams](#integration-patterns-for-teams)
@@ -40,14 +40,14 @@ The strongest AI tools for Protobuf work understand:
 - Message composition: Organizing nested messages, oneofs, and maps appropriately
 - Language-specific idioms: Generating Go receiver methods, Python dataclass patterns, and TypeScript interfaces that match community standards
 
-Claude 3.5 Sonnet: Semantic Understanding of Proto Contracts
+Claude 3.5 Sonnet - Semantic Understanding of Proto Contracts
 
 Claude excels at understanding the intent behind service definitions and producing clean, semantically correct proto files. When you describe a payment processing service in plain language, Claude asks clarifying questions about error states, idempotency requirements, and retry semantics before generating the proto definition.
 
 Typical workflow:
 
 ```
-User: "I need a gRPC service that processes orders.
+User - "I need a gRPC service that processes orders.
 Clients send order details, the server validates inventory,
 calculates taxes, and returns a confirmation or error.
 We need idempotent operations."
@@ -93,9 +93,9 @@ Limitations:
 - May not catch subtle bugs in streaming method signatures
 - Cannot verify the output against your actual codebase without manual integration
 
-Pricing: $20/month Claude Pro, or pay-per-API-call for bulk generation ($0.003 per 1K input tokens)
+Pricing - $20/month Claude Pro, or pay-per-API-call for bulk generation ($0.003 per 1K input tokens)
 
-GitHub Copilot: Fast Inline Suggestions During File Editing
+GitHub Copilot - Fast Inline Suggestions During File Editing
 
 Copilot shines when you're actively editing a .proto file. Start typing a message definition and Copilot suggests field completions based on your patterns. For teams already paying for Copilot seats ($10-19/month per developer), inline suggestions reduce context switching compared to prompting a separate tool.
 
@@ -129,9 +129,9 @@ Weaknesses:
 - May suggest proto2 patterns instead of modern proto3 idioms
 - Cannot generate full service definitions reliably; better for message body completion
 
-Best use case: Completing repetitive field definitions, adding timestamp fields, or scaffolding option messages.
+Best use case - Completing repetitive field definitions, adding timestamp fields, or scaffolding option messages.
 
-Codeium: Free Real-Time Completion with Language Support
+Codeium - Free Real-Time Completion with Language Support
 
 Codeium provides free tier access to real-time code completion, including gRPC files. It works in 40+ IDEs and integrates into VS Code, JetBrains, Neovim, and web-based editors. For developers without Copilot licenses, Codeium offers comparable completion quality at zero cost.
 
@@ -176,11 +176,11 @@ Comparative Tool Matrix
 
 Practical Workflows by Tool
 
-Claude: Full Service Design Phase
+Claude - Full Service Design Phase
 Use Claude when designing a new service from scratch or refactoring existing definitions.
 
 ```
-Prompt: "Our current order service has issues with field number conflicts
+Prompt - "Our current order service has issues with field number conflicts
 in version 2. Design a new OrderServiceV2 with these resources:
 Customer (id, email, tier), Order (id, customer_id, items, total,
 status), LineItem (sku, quantity, price). Include error messages."
@@ -188,7 +188,7 @@ status), LineItem (sku, quantity, price). Include error messages."
 
 Claude will generate properly versioned proto files with reserved field ranges and clear v1 vs v2 distinctions.
 
-Copilot: Active Development
+Copilot - Active Development
 Use Copilot while incrementally building proto files. Type the service interface, let Copilot complete message bodies.
 
 ```protobuf
@@ -200,7 +200,7 @@ service InventoryService {
 }
 ```
 
-Codeium: Quick Boilerplate
+Codeium - Quick Boilerplate
 Use Codeium for rapid prototyping when you know the message structure but need stub code.
 
 ```protobuf
@@ -461,7 +461,7 @@ func (s *PaymentServer) ProcessPayment(
     // Return typed response
     return &pb.PaymentResponse{
         TransactionId: txn.TransactionId,
-        Status:        txn.Status,
+        Status -        txn.Status,
     }, nil
 }
 
@@ -610,7 +610,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -622,7 +622,7 @@ Most modern tools support asynchronous workflows that work well across time zone
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

@@ -22,7 +22,7 @@ Table of Contents
 - [Understanding Go Deadlock Panic Messages](#understanding-go-deadlock-panic-messages)
 - [Which AI Tools Work Best for Goroutine Debugging](#which-ai-tools-work-best-for-goroutine-debugging)
 - [How AI Tools Help Decode Deadlock Scenarios](#how-ai-tools-help-decode-deadlock-scenarios)
-- [Practical Example: Fixing a Worker Pool Deadlock](#practical-example-fixing-a-worker-pool-deadlock)
+- [Practical Example - Fixing a Worker Pool Deadlock](#practical-example-fixing-a-worker-pool-deadlock)
 - [Mutex Deadlocks and Lock Ordering](#mutex-deadlocks-and-lock-ordering)
 - [Proactive Deadlock Prevention](#proactive-deadlock-prevention)
 - [Debugging Live Systems](#debugging-live-systems)
@@ -85,7 +85,7 @@ How AI Tools Help Decode Deadlock Scenarios
 
 AI assistants excel at pattern recognition across many deadlock scenarios. When you paste your code and panic message, AI can identify common deadlock patterns that might take you much longer to spot manually.
 
-Step 1: Provide Complete Context
+Step 1 - Provide Complete Context
 
 When asking AI for help with a deadlock, include:
 
@@ -101,7 +101,7 @@ Effective prompt:
 
 > "I'm seeing a deadlock panic in my Go service. The panic says 'all goroutines are asleep - deadlock!' Here's my code that handles a worker pool with 5 goroutines processing jobs from a channel. Go version is 1.21. Can you identify what's causing the blocking?"
 
-Step 2: Understanding Common Patterns
+Step 2 - Understanding Common Patterns
 
 AI can quickly identify these frequent deadlock causes:
 
@@ -146,7 +146,7 @@ for i := 0; i < 5; i++ {
 wg.Wait()
 ```
 
-Step 3: Using AI for Race Condition Detection
+Step 3 - Using AI for Race Condition Detection
 
 Deadlocks sometimes mask underlying race conditions. AI tools can suggest where to add race detector flags:
 
@@ -156,7 +156,7 @@ go run -race yourprogram.go
 
 AI can also help interpret race detector output, which often contains complex stack traces showing which goroutines accessed which variables and in what order.
 
-Practical Example: Fixing a Worker Pool Deadlock
+Practical Example - Fixing a Worker Pool Deadlock
 
 Consider this worker pool implementation that occasionally deadlocks:
 

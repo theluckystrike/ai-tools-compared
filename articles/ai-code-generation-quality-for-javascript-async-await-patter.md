@@ -56,7 +56,7 @@ Basic Async Function Generation
 
 When requesting a basic async function that fetches user data, most tools produce functional code. However, quality differences emerge in type annotations, parameter handling, and return type declarations.
 
-A typical request: "Write an async function that fetches user data from an API endpoint."
+A typical request - "Write an async function that fetches user data from an API endpoint."
 
 The strongest outputs include proper TypeScript generics, JSDoc comments, and explicit return types:
 

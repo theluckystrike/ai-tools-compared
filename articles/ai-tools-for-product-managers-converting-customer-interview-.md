@@ -163,10 +163,10 @@ class TranscriptProcessor:
 Usage example
 processor = TranscriptProcessor()
 raw_transcript = """
-Speaker 1: So tell me about your experience with our product.
-Speaker 2: Well, I really love the dashboard, but the reporting feature is frustrating.
-Speaker 1: What specifically is frustrating?
-Speaker 2: It takes forever to generate reports. Like, 10 minutes for something
+Speaker 1 - So tell me about your experience with our product.
+Speaker 2 - Well, I really love the dashboard, but the reporting feature is frustrating.
+Speaker 1 - What specifically is frustrating?
+Speaker 2 - It takes forever to generate reports. Like, 10 minutes for something
 that should take seconds. I've been thinking about switching to a competitor.
 """
 
@@ -319,13 +319,13 @@ Practical Considerations
 
 When implementing this pipeline, consider these operational factors:
 
-API costs: LLM calls accumulate quickly at scale. The keyword-based approach handles initial filtering, then only escalate complex cases to the LLM. This hybrid strategy cuts costs while maintaining quality.
+API costs - LLM calls accumulate quickly at scale. The keyword-based approach handles initial filtering, then only escalate complex cases to the LLM. This hybrid strategy cuts costs while maintaining quality.
 
-Transcript quality: Automated transcripts from tools like Zoom or Otter.ai contain errors. Build cleaning functions specific to your transcription tool's common mistakes.
+Transcript quality - Automated transcripts from tools like Zoom or Otter.ai contain errors. Build cleaning functions specific to your transcription tool's common mistakes.
 
-Categorization consistency: Human reviewers disagree on categorization. Define clear criteria and test against a gold-standard set of manually labeled transcripts before full deployment.
+Categorization consistency - Human reviewers disagree on categorization. Define clear criteria and test against a gold-standard set of manually labeled transcripts before full deployment.
 
-Privacy concerns: Customer interviews often contain sensitive information. Implement data handling policies and consider running analysis locally using open-source models for highly confidential conversations.
+Privacy concerns - Customer interviews often contain sensitive information. Implement data handling policies and consider running analysis locally using open-source models for highly confidential conversations.
 
 The automation doesn't eliminate human review, it accelerates the parts that machines handle well, freeing product managers to focus on interpretation and action planning.
 

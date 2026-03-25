@@ -298,15 +298,15 @@ Best Practices for AI-Assisted Implementation
 
 When using AI tools to generate secrets rotation code, keep these considerations in mind:
 
-Provide Complete Context: Include your vault version, programming language, authentication method, and specific rotation requirements in prompts. AI tools generate better code when they understand your full environment.
+Provide Complete Context - Include your vault version, programming language, authentication method, and specific rotation requirements in prompts. AI tools generate better code when they understand your full environment.
 
-Review Generated Code Carefully: AI-generated code should be reviewed by security-conscious developers. Verify that authentication methods follow your organization's security policies.
+Review Generated Code Carefully - AI-generated code should be reviewed by security-conscious developers. Verify that authentication methods follow your organization's security policies.
 
-Test Rotation Thoroughly: Implement integration tests that verify applications correctly consume rotated secrets. Mock the vault responses to test failure scenarios.
+Test Rotation Thoroughly - Implement integration tests that verify applications correctly consume rotated secrets. Mock the vault responses to test failure scenarios.
 
-Monitor Rotation Events: Log all rotation activities and set up alerts for failed rotations. This ensures you catch problems before they cause outages.
+Monitor Rotation Events - Log all rotation activities and set up alerts for failed rotations. This ensures you catch problems before they cause outages.
 
-Document Your Implementation: Maintain internal documentation that explains your vault architecture, rotation schedules, and recovery procedures. AI tools can help generate initial documentation from your code.
+Document Your Implementation - Maintain internal documentation that explains your vault architecture, rotation schedules, and recovery procedures. AI tools can help generate initial documentation from your code.
 
 Frequently Asked Questions
 

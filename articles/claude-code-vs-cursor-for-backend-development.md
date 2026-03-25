@@ -42,15 +42,15 @@ created_at (timestamp).
 - Adds the field to: UserResponse Pydantic schema 6.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 
-Fundamental Difference: Terminal vs IDE
+Fundamental Difference - Terminal vs IDE
 
 Claude Code runs in your terminal. It reads your entire project directory, understands file relationships, and applies changes directly to your codebase. You describe what you want in plain language or with slash commands.
 
 Cursor is a VS Code fork. Its AI is built into the editor. inline edits with `Cmd+K`, multi-file Composer, and the `@codebase` context option. You work the same way you work in VS Code, with AI augmenting that workflow.
 
-Scenario 1: Adding a New Database Table with Full Stack Changes
+Scenario 1 - Adding a New Database Table with Full Stack Changes
 
-Task: Add a `notifications` table to a FastAPI + SQLAlchemy app, including migration, model, CRUD, Pydantic schemas, API endpoints, and tests.
+Task - Add a `notifications` table to a FastAPI + SQLAlchemy app, including migration, model, CRUD, Pydantic schemas, API endpoints, and tests.
 
 Claude Code approach:
 
@@ -85,20 +85,20 @@ schemas, endpoints, tests). Follow the same patterns as the existing user module
 
 Cursor's Composer reads the `@codebase` context and generates the same files. Output quality is comparable. The difference: Cursor shows diffs in the editor before applying, which makes review faster for visual learners.
 
-Scenario 2: Debugging a Production Issue from Logs
+Scenario 2 - Debugging a Production Issue from Logs
 
 Error log:
 
 ```
 sqlalchemy.exc.IntegrityError:
-DETAIL: Key (product_id)=(1847) is not present in table "products"
+DETAIL - Key (product_id)=(1847) is not present in table "products"
 ```
 
-Claude Code: Reads the order creation endpoint, the Product model, background tasks that might delete products, and identifies the issue: a `soft_delete` on products that sets `active=False` but doesn't delete the row, but somewhere in the order flow the product is fetched with `active=True` filtering. meaning the FK validation passes but the product fetch returns None.
+Claude Code - Reads the order creation endpoint, the Product model, background tasks that might delete products, and identifies the issue: a `soft_delete` on products that sets `active=False` but doesn't delete the row, but somewhere in the order flow the product is fetched with `active=True` filtering. meaning the FK validation passes but the product fetch returns None.
 
 Claude Code found this because it read 5 files across the codebase to trace the full flow.
 
-Cursor: Handles this well when you `@mention` the right files:
+Cursor - Handles this well when you `@mention` the right files:
 
 ```
 @api/v1/orders.py @models/order.py @models/product.py @crud/product.py
@@ -108,9 +108,9 @@ What's the root cause?
 
 With files explicitly mentioned, Cursor's analysis is comparable. Without the `@mentions`, it may not read all relevant files. Claude Code doesn't require you to know which files to include. it explores the codebase itself.
 
-Scenario 3: Refactoring a Service Boundary
+Scenario 3 - Refactoring a Service Boundary
 
-Task: Split a monolithic `UserService` class (800 lines) into `AuthService`, `ProfileService`, and `NotificationPreferenceService`, updating all callers.
+Task - Split a monolithic `UserService` class (800 lines) into `AuthService`, `ProfileService`, and `NotificationPreferenceService`, updating all callers.
 
 Claude Code:
 
@@ -178,9 +178,9 @@ class PaginatedResponse(Generic[T]):
 
 Then applies it consistently across all endpoints it found in the codebase. without you having to specify which files to change.
 
-Scenario 4: Implementing Feature Flags in a Monolithic Service
+Scenario 4 - Implementing Feature Flags in a Monolithic Service
 
-Task: Add feature flag support throughout a Django app. Every feature behind a flag should be evaluable at request time, with zero database overhead for cache hits.
+Task - Add feature flag support throughout a Django app. Every feature behind a flag should be evaluable at request time, with zero database overhead for cache hits.
 
 Claude Code approach:
 
@@ -221,9 +221,9 @@ In Composer with explicit mentions:
 
 Cursor produces comparable output but requires you to specify which directories contain the patterns to follow. If you forget to mention `@middleware`, the generated code might miss request context patterns.
 
-Scenario 5: Database Migration with Schema Changes and Data Transform
+Scenario 5 - Database Migration with Schema Changes and Data Transform
 
-Task: Add a new `region` column to users, backfill from geolocation IP, create an index, and update all API responses.
+Task - Add a new `region` column to users, backfill from geolocation IP, create an index, and update all API responses.
 
 Claude Code:
 
@@ -251,9 +251,9 @@ Handles this well with clear instructions, but you need to specify file location
 
 Without the @mentions, Cursor might generate a migration without finding where region filtering is currently done with raw SQL.
 
-Scenario 6: Adding OAuth2 Integration
+Scenario 6 - Adding OAuth2 Integration
 
-Task: Add Google OAuth2 integration with token refresh, state validation, and user auto-creation.
+Task - Add Google OAuth2 integration with token refresh, state validation, and user auto-creation.
 
 Claude Code reads your existing auth module to understand how sessions are structured, finds your user creation logic, and generates:
 - OAuth2 routes with state validation
@@ -277,9 +277,9 @@ Context Window Comparison
 
 Claude Code can explore the codebase without you specifying which files are relevant. Cursor requires you to know the relevant files in advance.
 
-Refactoring Patterns: String Matching and Update
+Refactoring Patterns - String Matching and Update
 
-Scenario: Rename all references to `UserService.fetch_user()` to `UserService.get_user()` while preserving type hints.
+Scenario - Rename all references to `UserService.fetch_user()` to `UserService.get_user()` while preserving type hints.
 
 Claude Code:
 ```bash

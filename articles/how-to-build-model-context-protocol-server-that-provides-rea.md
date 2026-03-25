@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand MCP Server Architecture
+Step 1 - Understand MCP Server Architecture
 
 An MCP server exposes capabilities through well-defined tools and resources. For test result streaming, you need three core components: a test runner integration layer, an event emission system, and MCP protocol handlers. The server runs as a standalone process that AI clients connect to when they need test information.
 
 The MCP protocol uses JSON-RPC 2.0 for communication. Clients discover available tools through the `tools/list` method, then invoke specific tools with `tools/call`. For real-time updates, MCP supports server-side notifications that push data without client requests.
 
-Step 2: Set Up Your Project
+Step 2 - Set Up Your Project
 
 Create a new Python project with the required dependencies:
 
@@ -47,7 +47,7 @@ uv pip install mcp pytest pytest-asyncio aiofiles
 
 The MCP SDK provides the core server functionality. pytest runs your tests, and asyncio enables the non-blocking operations needed for real-time streaming.
 
-Step 3: Implementing the MCP Server
+Step 3 - Implementing the MCP Server
 
 Create `server.py` with the following structure:
 
@@ -164,9 +164,9 @@ if __name__ == "__main__":
     asyncio.run(server.run())
 ```
 
-This server exposes two tools: `run_tests` executes your test suite and returns structured results, while `get_test_status` provides visibility into the current execution state.
+This server exposes two tools - `run_tests` executes your test suite and returns structured results, while `get_test_status` provides visibility into the current execution state.
 
-Step 4: Adding Real-Time Streaming
+Step 4 - Adding Real-Time Streaming
 
 The implementation above returns results after completion. For true real-time streaming, modify the server to emit progress notifications:
 
@@ -197,7 +197,7 @@ async def run_tests_streaming(self, test_path: str, framework: str):
 
 Clients receive these notifications automatically without polling, enabling live test result dashboards.
 
-Step 5: Integrate with AI Assistants
+Step 5 - Integrate with AI Assistants
 
 Once your MCP server runs, connect it to your AI assistant. In Claude Desktop or another MCP-compatible client, add the server configuration:
 
@@ -228,7 +228,7 @@ RUN uv pip install --system -r requirements.txt
 CMD ["python", "server.py"]
 ```
 
-Step 6: Handling Multiple Test Frameworks
+Step 6 - Handling Multiple Test Frameworks
 
 Production codebases often use more than one test framework. a Python backend tested with pytest, a JavaScript frontend tested with Jest. Extend the command builder to route correctly:
 
@@ -246,7 +246,7 @@ def _build_command(self, framework: str, test_path: str) -> list[str]:
 
 Using `--json-report` for pytest (via `pytest-json-report`) and `--json` for Jest produces structured output that's far easier to parse than terminal text. The AI client receives clean JSON it can summarize, display as a table, or correlate with source code rather than raw console output.
 
-Step 7: Persisting Test History with SQLite
+Step 7 - Persisting Test History with SQLite
 
 Trend analysis. detecting when a test suite starts flaking, tracking coverage over time. requires storing results. SQLite is the right choice for a MCP server: zero configuration, embeddable, and queryable via SQL.
 
@@ -306,7 +306,7 @@ async def list_tools() -> list[Tool]:
     ]
 ```
 
-Step 8: Secure the MCP Server
+Step 8 - Secure the MCP Server
 
 An MCP server that can execute test commands on your system is a meaningful attack surface. Before exposing it outside localhost, add authentication.
 

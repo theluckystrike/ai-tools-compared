@@ -56,8 +56,8 @@ Grammarly shines when you need:
 Here's an example of what Grammarly catches:
 
 ```text
-Original: "She go to the market yesterday and buy some apples."
-Grammarly fixes: "She went to the market yesterday and bought some apples."
+Original - "She go to the market yesterday and buy some apples."
+Grammarly fixes - "She went to the market yesterday and bought some apples."
 ```
 
 Grammarly provides explanations for each correction, helping you learn patterns over time.
@@ -81,75 +81,75 @@ ChatGPT provides more assistance:
 Here's how you might use ChatGPT to improve a paragraph:
 
 ```text
-Prompt: "Improve this technical description for non-native speakers:
+Prompt - "Improve this technical description for non-native speakers:
 'The function iterates through the array and returns the sum of all elements.'"
 
-ChatGPT response: "This function loops through each item in the list,
+ChatGPT response - "This function loops through each item in the list,
 adds them together, and returns the total. In other words, it calculates
 the sum of all elements in the array."
 ```
 
 Direct Comparison for Specific Tasks
 
-Task 1: Fixing Technical Documentation
+Task 1 - Fixing Technical Documentation
 
 Grammarly catches this:
 
 ```text
-Original: "The API accepts json object and returns an array."
-Grammarly: "The API accepts JSON objects and returns an array."
+Original - "The API accepts json object and returns an array."
+Grammarly - "The API accepts JSON objects and returns an array."
 ```
 
 ChatGPT can do more:
 
 ```text
-Prompt: "Rewrite this for clarity: 'The API accepts json object and returns an array.'"
+Prompt - "Rewrite this for clarity: 'The API accepts json object and returns an array.'"
 
-ChatGPT: "This API endpoint takes a JSON file as input and sends back an
+ChatGPT - "This API endpoint takes a JSON file as input and sends back an
 array of data. For example, if you send user information, it might return
 their order history as a list."
 ```
 
-Task 2: Writing Professional Emails
+Task 2 - Writing Professional Emails
 
 Grammarly suggests:
 
 ```text
-Original: "Hey, I wanted to check if you got my message about the deadline?"
-Grammarly: "I wanted to check if you received my message regarding the deadline."
+Original - "Hey, I wanted to check if you got my message about the deadline?"
+Grammarly - "I wanted to check if you received my message regarding the deadline."
 ```
 
 ChatGPT offers multiple options:
 
 ```text
-Prompt: "Write a polite follow-up email about a deadline, professional tone"
+Prompt - "Write a polite follow-up email about a deadline, professional tone"
 
-ChatGPT Option 1: "Dear [Name], I wanted to follow up on our previous
+ChatGPT Option 1 - "Dear [Name], I wanted to follow up on our previous
 discussion regarding the upcoming deadline. Could you please confirm
 your timeline? Thank you for your attention to this matter."
 
-ChatGPT Option 2: "Hi [Name], Just checking in about the deadline we
+ChatGPT Option 2 - "Hi [Name], Just checking in about the deadline we
 discussed. Let me know if you need any clarification. Best regards"
 ```
 
-Task 3: Code Comments and Commit Messages
+Task 3 - Code Comments and Commit Messages
 
 For developers, writing clear commit messages matters:
 
 Grammarly catches:
 
 ```text
-Original: "fix bug where user login not working"
-Grammarly: "Fix bug where user login is not working"
+Original - "fix bug where user login not working"
+Grammarly - "Fix bug where user login is not working"
 ```
 
 ChatGPT helps generate conventional commits:
 
 ```text
-Prompt: "Generate a conventional commit message for: Fixed authentication
+Prompt - "Generate a conventional commit message for: Fixed authentication
 timeout issue that caused users to be logged out unexpectedly"
 
-ChatGPT: "fix(auth): resolve authentication timeout causing unexpected
+ChatGPT - "fix(auth): resolve authentication timeout causing unexpected
 user logout"
 ```
 
@@ -174,15 +174,15 @@ Common Writing Problems Non-Native Writers Face
 
 Non-native English writers typically struggle with a predictable set of issues. Understanding which tool addresses each one saves time.
 
-Article usage (a, an, the): Grammarly catches most article errors automatically. ChatGPT can explain the underlying rule when asked, which helps you internalize the pattern rather than just accepting a correction.
+Article usage (a, an, the) - Grammarly catches most article errors automatically. ChatGPT can explain the underlying rule when asked, which helps you internalize the pattern rather than just accepting a correction.
 
-Preposition choices: "Interested in" versus "interested about" is the kind of subtle error Grammarly often catches. ChatGPT goes further and can generate multiple correct alternatives, letting you pick the one that sounds most natural in context.
+Preposition choices - "Interested in" versus "interested about" is the kind of subtle error Grammarly often catches. ChatGPT goes further and can generate multiple correct alternatives, letting you pick the one that sounds most natural in context.
 
-Tense consistency: Both tools handle this well. Grammarly highlights tense shifts in real-time. ChatGPT can rewrite an entire paragraph to maintain consistent past or present tense throughout.
+Tense consistency - Both tools handle this well. Grammarly highlights tense shifts in real-time. ChatGPT can rewrite an entire paragraph to maintain consistent past or present tense throughout.
 
-Idiom and colloquial phrases: This is where ChatGPT clearly leads. Grammarly does not flag incorrect idiom use unless it results in a grammatical error. ChatGPT can flag unnatural phrasing and offer idiomatic alternatives even when the grammar is technically correct.
+Idiom and colloquial phrases - This is where ChatGPT clearly leads. Grammarly does not flag incorrect idiom use unless it results in a grammatical error. ChatGPT can flag unnatural phrasing and offer idiomatic alternatives even when the grammar is technically correct.
 
-Formal versus informal register: If you are writing a Slack message versus a client proposal, the register should differ. ChatGPT adapts register explicitly when prompted. Grammarly's tone checker offers some guidance but is less granular.
+Formal versus informal register - If you are writing a Slack message versus a client proposal, the register should differ. ChatGPT adapts register explicitly when prompted. Grammarly's tone checker offers some guidance but is less granular.
 
 Integrating Both Tools in Your Workflow
 
@@ -218,13 +218,13 @@ Practical ChatGPT Prompts for Non-Native Writers
 
 Having a set of reliable prompts speeds up your writing workflow considerably. These prompts work well across common professional writing scenarios.
 
-For technical documentation: "Rewrite this paragraph for clarity. Keep all technical terms but make the sentence structure simpler: [paste your text]"
+For technical documentation - "Rewrite this paragraph for clarity. Keep all technical terms but make the sentence structure simpler: [paste your text]"
 
-For email tone: "Make this email more professional and polite without being overly formal. The reader is a client I know moderately well: [paste your draft]"
+For email tone - "Make this email more professional and polite without being overly formal. The reader is a client I know moderately well: [paste your draft]"
 
-For natural phrasing: "This sentence sounds unnatural to me. Suggest three more natural ways to express the same idea: [paste your sentence]"
+For natural phrasing - "This sentence sounds unnatural to me. Suggest three more natural ways to express the same idea: [paste your sentence]"
 
-For learning: "Correct this paragraph and explain each change you made in simple terms. I want to understand the grammar rules behind the corrections: [paste your text]"
+For learning - "Correct this paragraph and explain each change you made in simple terms. I want to understand the grammar rules behind the corrections: [paste your text]"
 
 Using explicit, structured prompts like these produces more consistent results than vague requests like "make this better."
 

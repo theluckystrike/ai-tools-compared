@@ -106,14 +106,14 @@ Understanding credit consumption helps you budget effectively. Here's a practica
 Example credit consumption scenarios
 Based on typical Windsurf Premium usage patterns
 
-Scenario 1: Light Daily Use
+Scenario 1 - Light Daily Use
 light_usage = {
     "standard_model_requests": 50,
     "credits_per_request": 1,
     "total_daily_credits": 50
 }
 
-Scenario 2: Moderate Use with Some Premium
+Scenario 2 - Moderate Use with Some Premium
 moderate_usage = {
     "standard_model_requests": 40,
     "standard_credits": 40,
@@ -122,7 +122,7 @@ moderate_usage = {
     "total_daily_credits": 70
 }
 
-Scenario 3: Heavy Premium Use
+Scenario 3 - Heavy Premium Use
 heavy_usage = {
     "standard_model_requests": 20,
     "standard_credits": 20,
@@ -196,11 +196,11 @@ Making the Right Choice
 
 Choosing the right Windsurf Premium tier depends on your specific needs:
 
-- Individual Developers: The Pro tier typically provides sufficient credits for professional development work, with option to purchase additional packs during heavy project periods.
+- Individual Developers - The Pro tier typically provides sufficient credits for professional development work, with option to purchase additional packs during heavy project periods.
 
-- Small Teams: Team tier makes sense for groups of 3-5 developers who share coding assistance needs across projects.
+- Small Teams - Team tier makes sense for groups of 3-5 developers who share coding assistance needs across projects.
 
-- Large Organizations: Enterprise tier offers custom credit allocations and negotiated pricing.
+- Large Organizations - Enterprise tier offers custom credit allocations and negotiated pricing.
 
 Understanding which models cost extra credits helps you make informed decisions about your Windsurf Premium subscription. By strategically using standard models for routine tasks and premium models for complex challenges, you can optimize both your productivity and your budget.
 
@@ -232,15 +232,15 @@ Real-World Usage Scenarios and Credit Consumption
 
 Understanding how different workflows consume credits helps you predict monthly spending:
 
-Scenario A: Daily Coding With Light Premium Use
+Scenario A - Daily Coding With Light Premium Use
 - 30 inline completions per day (standard model): 30 credits/day
 - 5 refactoring sessions per week using Claude Extended (premium): 25 credits/week
 - 2 complex debugging sessions per month using GPT-4: 8 credits/month
 - Monthly total: (30 × 22 working days) + 100 + 8 = 766 credits
 
-Pro tier (1,500/month): 49% utilization, comfortable buffer for spikes
+Pro tier (1,500/month) - 49% utilization, comfortable buffer for spikes
 
-Scenario B: Heavy Development With Frequent Premium
+Scenario B - Heavy Development With Frequent Premium
 - 50 inline completions per day (standard): 50 credits/day
 - 10 refactoring sessions per week using Claude Extended: 50 credits/week
 - 4 architecture review sessions using GPT-4 Turbo: 16 credits/month
@@ -249,7 +249,7 @@ Scenario B: Heavy Development With Frequent Premium
 
 Team tier (3,000/month) at 57% utilization, or Pro tier with 216 credit pack ($43)
 
-Scenario C: Enterprise Research and Analysis
+Scenario C - Enterprise Research and Analysis
 - Deep codebase refactoring (10 Claude Extended sessions/week): 250 credits/week
 - Complex API design using GPT-4o: 40 credits/month
 - Machine learning model integration reviews: 80 credits/month
@@ -263,7 +263,7 @@ Advanced Cost Optimization Strategies
 
 Professional developers use these techniques to maximize value:
 
-Strategy 1: Model Routing Based on Task Complexity
+Strategy 1 - Model Routing Based on Task Complexity
 
 ```python
 def select_model_for_task(task_type, complexity):
@@ -284,29 +284,29 @@ def select_model_for_task(task_type, complexity):
 
 This routing strategy minimizes premium model usage while ensuring complex tasks get appropriate resources.
 
-Strategy 2: Batch Processing for Cost Efficiency
+Strategy 2 - Batch Processing for Cost Efficiency
 
 Instead of requesting individual refactorings, batch requests:
 
 ```
-INEFFICIENT: 5 separate requests
+INEFFICIENT - 5 separate requests
 - Refactor function A (costs 2 credits each = 10 credits total)
 - Refactor function B (2 credits)
 - Refactor function C (2 credits)
 - Refactor function D (2 credits)
 - Refactor function E (2 credits)
-Total: 10 credits, takes 25 minutes
+Total - 10 credits, takes 25 minutes
 
-EFFICIENT: Single batch request using context window
+EFFICIENT - Single batch request using context window
 "Review and refactor these 5 functions in our API layer.
 Maintain consistency with our established patterns.
-Functions: [A, B, C, D, E]"
-Total: 4 credits, takes 15 minutes
-Time saved: 10 minutes
-Credit saved: 6 credits/batch × 4 batches/month = 24 credits/month savings
+Functions - [A, B, C, D, E]"
+Total - 4 credits, takes 15 minutes
+Time saved - 10 minutes
+Credit saved - 6 credits/batch × 4 batches/month = 24 credits/month savings
 ```
 
-Strategy 3: Caching Expensive Context
+Strategy 3 - Caching Expensive Context
 
 For large projects, reuse expensive context:
 
@@ -335,7 +335,7 @@ Comparing Windsurf to Cursor and Copilot on Credits
 
 For users who need premium model access with clear credit tracking, Windsurf offers more transparency than Cursor (which bundles everything) at a lower cost than purchasing equivalent GPT-4 API calls separately.
 
-Migration Path: Switching From Cursor to Windsurf
+Migration Path - Switching From Cursor to Windsurf
 
 If considering a switch for better cost control:
 

@@ -52,15 +52,15 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Problem
+Step 1 - Understand the Problem
 
 When Cursor Composer gets stuck in a loop, you might notice it repeatedly suggesting the same changes, cycling through code generations, or failing to complete a task that should be straightforward. The issue typically stems from a few common causes: context window overflow, conflicting project configurations, corrupted cache files, or unexpected API responses.
 
 Before attempting any fixes, save your current work. Close any open files in Cursor that you have not saved, because some troubleshooting steps may require a complete restart of the application.
 
-Step 2: Step-by-Step Fixes
+Step 2 - Step-by-Step Fixes
 
-Fix 1: Clear Cursor Cache
+Fix 1 - Clear Cursor Cache
 
 The first and most effective solution is clearing the Cursor cache. Corrupted or stale cache files often cause Composer to malfunction.
 
@@ -88,7 +88,7 @@ Remove-Item -Recurse -Force "$env:APPDATA\Cursor\Cache"
 Remove-Item -Recurse -Force "$env:APPDATA\Cursor\CachedData"
 ```
 
-Fix 2: Reset the Context Window
+Fix 2 - Reset the Context Window
 
 Cursor Composer relies on context from your project to generate accurate suggestions. When this context becomes too large or fragmented, the tool may enter a loop.
 
@@ -102,7 +102,7 @@ Cursor Composer relies on context from your project to generate accurate suggest
 
 Starting a fresh context often breaks the loop because it removes any conflicting or corrupted context data that may have been causing the issue.
 
-Fix 3: Check for Conflicting Extensions
+Fix 3 - Check for Conflicting Extensions
 
 Other VS Code extensions can interfere with Cursor Composer functionality. This is particularly common when you have multiple AI coding assistants or linting tools installed.
 
@@ -116,7 +116,7 @@ Other VS Code extensions can interfere with Cursor Composer functionality. This 
 
 Common offenders include duplicate language servers, conflicting AI assistants, or outdated themes that modify editor behavior in unexpected ways.
 
-Fix 4: Update Cursor to the Latest Version
+Fix 4 - Update Cursor to the Latest Version
 
 Cursor regularly releases updates that address known bugs and performance issues. Using an outdated version may leave you vulnerable to loop-related problems.
 
@@ -126,7 +126,7 @@ Cursor regularly releases updates that address known bugs and performance issues
 
 3. If automatic updates are disabled, consider enabling them to stay current
 
-Fix 5: Reinstall Cursor
+Fix 5 - Reinstall Cursor
 
 If all other fixes fail, a clean reinstall may be necessary. This ensures all application files are fresh and uncorrupted.
 
@@ -140,7 +140,7 @@ If all other fixes fail, a clean reinstall may be necessary. This ensures all ap
 
 Before reinstalling, make sure to export your settings if you have custom configurations you want to preserve.
 
-Step 3: Diagnostic Tips
+Step 3 - Diagnostic Tips
 
 Beyond the fixes above, here are some diagnostic practices to help you identify the root cause of Composer issues.
 
@@ -160,7 +160,7 @@ Examine Console Logs
 
 For advanced users, Cursor console logs can provide valuable insight into what is happening when Composer gets stuck. Access logs through the Cursor developer tools and look for repeated error messages or API timeouts.
 
-Step 4: Prevention Strategies
+Step 4 - Prevention Strategies
 
 Once you have resolved the issue, adopt practices to minimize the likelihood of recurrence.
 
@@ -188,7 +188,7 @@ grep -i "error\|timeout\|crash" ~/Library/Logs/Cursor/default.log | tail -20
 
 Look for patterns like repeated API timeouts, out-of-memory errors, or specific file parsing failures. These logs reveal whether the issue is environmental (network, disk space) or Cursor-specific (bug in a particular feature).
 
-Step 5: Context Window Overflow Issues
+Step 5 - Context Window Overflow Issues
 
 Modern AI systems maintain conversation context in memory. When Composer processes very large codebases, the accumulated context can exceed available memory, causing the tool to enter loops trying to recover. This particularly affects:
 
@@ -207,7 +207,7 @@ Close any file over 5,000 lines before using Composer
 Reopen only what you need for the current task
 ```
 
-Step 6: Extension Conflict Resolution
+Step 6 - Extension Conflict Resolution
 
 When multiple extensions cause Composer conflicts, a systematic approach identifies the culprit. Rather than disabling all extensions at once, disable extensions in groups:
 
@@ -233,7 +233,7 @@ Common conflict sources:
 - Multiple AI coding assistants (Copilot + Codeium + others)
 - Outdated extensions from 2-3 versions ago
 
-Step 7: Memory and Resource Limits
+Step 7 - Memory and Resource Limits
 
 For developers with limited system resources, explicitly configure Cursor's resource constraints:
 
@@ -256,7 +256,7 @@ chmod +x ~/bin/cursor-limited.sh
 
 Limiting memory forces Cursor to be more conservative about caching, often preventing loops caused by unbounded memory growth.
 
-Step 8: Network and API Issues
+Step 8 - Network and API Issues
 
 Cursor Composer relies on API connectivity. Network issues cause incomplete responses that trigger retries, potentially creating loop-like behavior. Diagnose network problems:
 

@@ -22,8 +22,8 @@ Table of Contents
 
 - [Why AI Code Review Matters](#why-ai-code-review-matters)
 - [Key Differences in Approach](#key-differences-in-approach)
-- [Real Code Examples: What Each Model Catches](#real-code-examples-what-each-model-catches)
-- [Performance Metrics: Real Testing Results](#performance-metrics-real-testing-results)
+- [Real Code Examples - What Each Model Catches](#real-code-examples-what-each-model-catches)
+- [Performance Metrics - Real Testing Results](#performance-metrics-real-testing-results)
 - [Practical Comparison Table](#practical-comparison-table)
 - [Optimal Use Strategy](#optimal-use-strategy)
 - [Pricing Comparison](#pricing-comparison)
@@ -43,7 +43,7 @@ Claude Sonnet
 
 Claude approaches code review through deep reasoning about intent, data flow, and side effects. It reads code more like a developer trying to understand "what could go wrong here?" rather than matching against known vulnerability patterns.
 
-Reasoning style: Traces execution paths, identifies state changes, questions assumptions about input validation.
+Reasoning style - Traces execution paths, identifies state changes, questions assumptions about input validation.
 
 Strengths:
 - Detects logic errors that don't match known vulnerability patterns
@@ -62,7 +62,7 @@ GPT-4o
 
 GPT-4o excels at pattern recognition and has been trained extensively on vulnerability databases, security best practices, and common bugs.
 
-Reasoning style: Matches code patterns against known vulnerabilities, checks naming conventions, identifies typical mistakes.
+Reasoning style - Matches code patterns against known vulnerabilities, checks naming conventions, identifies typical mistakes.
 
 Strengths:
 - Rapid identification of security vulnerabilities (SQL injection, XSS, CSRF patterns)
@@ -77,9 +77,9 @@ Limitations:
 - Sometimes flags false positives on modern patterns it doesn't recognize
 - Less nuanced about trade-offs (speed vs. safety, complexity vs. readability)
 
-Real Code Examples: What Each Model Catches
+Real Code Examples - What Each Model Catches
 
-Example 1: Race Condition in Order Processing
+Example 1 - Race Condition in Order Processing
 
 ```python
 class OrderService:
@@ -140,17 +140,17 @@ ISSUE - Missing Error Handling:
   "processing" status indefinitely
 - audit_log.log() could fail silently
 
-ISSUE - Security: Audit Logging:
+ISSUE - Security - Audit Logging:
 - Logging large order amounts could leak financial information. Consider
   logging summary only (e.g., "Large order processed") without amount.
 
-RECOMMENDED: Add input validation, wrap payment call in try-catch,
+RECOMMENDED - Add input validation, wrap payment call in try-catch,
 sanitize audit logs for PII.
 ```
 
-Analysis: Claude caught the critical race condition (missing concurrency control), while GPT-4o caught practical security and error handling issues. In production, the race condition causes duplicate charges (revenue loss), while GPT-4o's issues cause operational problems and audit trail issues. Both are important; Claude found the showstopper.
+Analysis - Claude caught the critical race condition (missing concurrency control), while GPT-4o caught practical security and error handling issues. In production, the race condition causes duplicate charges (revenue loss), while GPT-4o's issues cause operational problems and audit trail issues. Both are important; Claude found the showstopper.
 
-Example 2: SQL Injection-Adjacent Code
+Example 2 - SQL Injection-Adjacent Code
 
 ```javascript
 class UserRepository {
@@ -183,11 +183,11 @@ CRITICAL - SQL Injection Vulnerability (searchUsers):
 The nameFilter parameter is directly interpolated without escaping. An attacker
 can inject SQL:
 
-Input: " OR '1'='1
-Resulting query: SELECT * FROM users WHERE name LIKE '% OR '1'='1%'
+Input - " OR '1'='1
+Resulting query - SELECT * FROM users WHERE name LIKE '% OR '1'='1%'
 This bypasses the filter, returning all users.
 
-More dangerous: " OR 1=1; DROP TABLE users; --
+More dangerous - " OR 1=1; DROP TABLE users; --
 Could execute arbitrary SQL.
 
 ISSUE (searchUsers and getUser):
@@ -224,9 +224,9 @@ Parameterized queries automatically escape values and are the only safe
 approach for untrusted input.
 ```
 
-Analysis: Both models caught the SQL injection issues. Claude provided slightly deeper analysis of attack vectors and explained why whitelist validation works for getUsersByRole but is fragile. GPT-4o was more direct and actionable. In this case, both provided excellent guidance.
+Analysis - Both models caught the SQL injection issues. Claude provided slightly deeper analysis of attack vectors and explained why whitelist validation works for getUsersByRole but is fragile. GPT-4o was more direct and actionable. In this case, both provided excellent guidance.
 
-Example 3: Architectural Issue in Service Dependencies
+Example 3 - Architectural Issue in Service Dependencies
 
 ```java
 public class InvoiceService {
@@ -298,7 +298,7 @@ What should happen if:
 2. Email sent 
 3. Payment fails 
 
-Current code: Invoice exists (saved), no email sent (should have been sent),
+Current code - Invoice exists (saved), no email sent (should have been sent),
 no payment made. Customer has invoice but no charge and no notification.
 
 OPTIONS:
@@ -308,7 +308,7 @@ OPTIONS:
 2. Use saga pattern: Invoice → Email → Payment, with compensation on failure
    (update invoice status to "pending_payment", retry payment).
 
-3. Redesign: Save invoice first, then async queue for email and payment.
+3. Redesign - Save invoice first, then async queue for email and payment.
    Status field tracks what's been done.
 
 Use async job queue. Save invoice, queue email job, queue
@@ -346,9 +346,9 @@ The catch (Exception e) pattern is too broad. Catch specific exception types
 to allow different handling.
 ```
 
-Analysis: Claude provided deep architectural critique identifying the core transaction boundary problem and suggesting architectural patterns (saga, async queue) to address it. GPT-4o identified the immediate practical issues (null check, broad exception catching) but didn't identify the underlying design problem. Claude's review is more strategic; GPT-4o's is more tactical. For architectural refactoring, Claude is stronger.
+Analysis - Claude provided deep architectural critique identifying the core transaction boundary problem and suggesting architectural patterns (saga, async queue) to address it. GPT-4o identified the immediate practical issues (null check, broad exception catching) but didn't identify the underlying design problem. Claude's review is more strategic; GPT-4o's is more tactical. For architectural refactoring, Claude is stronger.
 
-Performance Metrics: Real Testing Results
+Performance Metrics - Real Testing Results
 
 I tested both models on a dataset of 50 code samples (150-500 lines each) from real projects, with known issues pre-identified:
 
@@ -364,26 +364,26 @@ Bug Detection Accuracy
 | Architectural problems | 72% | 45% |
 | Style/convention violations | 65% | 91% |
 
-Key Finding: Claude is 53 percentage points better at race conditions (84% vs 31%). GPT-4o is 26 percentage points better at validation issues. They're complementary.
+Key Finding - Claude is 53 percentage points better at race conditions (84% vs 31%). GPT-4o is 26 percentage points better at validation issues. They're complementary.
 
 False Positive Rates
 
 Both models occasionally flag issues that aren't actually problems:
 
-Claude: ~8% false positive rate. False positives mostly occur when:
+Claude - ~8% false positive rate. False positives mostly occur when:
 - Flagging refactoring opportunities not actual bugs
 - Questioning valid patterns it doesn't recognize
 - Suggesting architectural changes when simple fixes suffice
 
-GPT-4o: ~12% false positive rate. False positives mostly occur when:
+GPT-4o - ~12% false positive rate. False positives mostly occur when:
 - Flagging security concerns for code that's in a protected context
 - Misidentifying safe patterns as vulnerabilities
 - Suggesting validation for already-validated inputs
 
 Response Time
 
-Claude Sonnet: Average 8-15 seconds for typical code review (250 lines)
-GPT-4o: Average 2-4 seconds for typical code review
+Claude Sonnet - Average 8-15 seconds for typical code review (250 lines)
+GPT-4o - Average 2-4 seconds for typical code review
 
 GPT-4o is 3-4x faster. For larger reviews (1,000+ lines), Claude can take 30+ seconds.
 
@@ -438,8 +438,8 @@ For team code review:
 5. Human code review (final decision-making)
 ```
 
-Cost per review: ~$0.03-0.05 (Claude + GPT-4o)
-Time per review: ~15-20 seconds (both models) vs. 5-10 minutes for human-only
+Cost per review - ~$0.03-0.05 (Claude + GPT-4o)
+Time per review - ~15-20 seconds (both models) vs. 5-10 minutes for human-only
 
 Pricing Comparison
 

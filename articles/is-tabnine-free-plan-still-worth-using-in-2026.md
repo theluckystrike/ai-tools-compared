@@ -48,7 +48,7 @@ You type:
 def calculate_discount(price, discount):
     return price * disc
 
-Tabnine suggests: ount (completing "discount")
+Tabnine suggests - ount (completing "discount")
 def calculate_discount(price, discount):
     return price * discount
 ```
@@ -63,13 +63,13 @@ What Has Changed Since 2025
 Tabnine has made several improvements to its free tier throughout 2025 and early 2026:
 
 
-Improved Language Models: The underlying AI models have been upgraded, providing better completion suggestions across supported languages. Response times have also improved, making the experience feel more responsive.
+Improved Language Models - The underlying AI models have been upgraded, providing better completion suggestions across supported languages. Response times have also improved, making the experience feel more responsive.
 
 
-Better IDE Integration: Tabnine now integrates more with popular IDEs including VS Code, JetBrains IDEs, Visual Studio, and Neovim. The installation process is smoother, and the extension works more reliably across updates.
+Better IDE Integration - Tabnine now integrates more with popular IDEs including VS Code, JetBrains IDEs, Visual Studio, and Neovim. The installation process is smoother, and the extension works more reliably across updates.
 
 
-Enhanced Context Understanding: Even on the free tier, Tabnine now considers more context from your current file, improving the relevance of suggestions for complex code structures.
+Enhanced Context Understanding - Even on the free tier, Tabnine now considers more context from your current file, improving the relevance of suggestions for complex code structures.
 
 
 However, these improvements are incremental. The fundamental limitations of the free tier remain: no cross-file context, limited context window, no chat functionality, and no custom model training.
@@ -128,17 +128,17 @@ Real-World Testing Results
 I tested Tabnine Free extensively across three projects over two weeks:
 
 
-Project 1: TypeScript React Application
+Project 1 - TypeScript React Application
 
 Tabnine Free performed adequately for routine React component development. It correctly suggested common hooks patterns, typical prop types, and standard JSX structures. However, it struggled with custom hooks and context-based completions that spanned multiple files.
 
 
-Project 2: Python Data Processing Script
+Project 2 - Python Data Processing Script
 
 For data processing tasks, Tabnine Free correctly predicted pandas method chains and common utility functions. The accuracy was highest when following standard Python conventions. More idiosyncratic or project-specific code required manual typing.
 
 
-Project 3: Go Backend Service
+Project 3 - Go Backend Service
 
 Go presented more challenges. Tabnine Free had difficulty with Go's specific patterns around error handling and goroutine management. Suggestions often required modification to compile correctly.
 
@@ -152,16 +152,16 @@ Who Should Still Use Tabnine Free in 2026
 Tabnine Free remains worthwhile for specific use cases:
 
 
-Privacy-Focused Developers: If you work with sensitive code that cannot be sent to external servers, Tabnine's local-only processing is valuable. No other major AI coding assistant offers this capability on their free tier.
+Privacy-Focused Developers - If you work with sensitive code that cannot be sent to external servers, Tabnine's local-only processing is valuable. No other major AI coding assistant offers this capability on their free tier.
 
 
-Beginner Developers: For those learning to code, Tabnine Free provides helpful suggestions that teach common patterns and best practices. The instant feedback helps reinforce good coding habits without requiring setup or configuration.
+Beginner Developers - For those learning to code, Tabnine Free provides helpful suggestions that teach common patterns and best practices. The instant feedback helps reinforce good coding habits without requiring setup or configuration.
 
 
-Simple Projects: Small scripts, utility functions, and straightforward applications benefit from Tabnine Free's capabilities. The autocomplete reduces minor friction without requiring additional investment.
+Simple Projects - Small scripts, utility functions, and straightforward applications benefit from Tabnine Free's capabilities. The autocomplete reduces minor friction without requiring additional investment.
 
 
-Offline Workers: Developers who frequently work without internet access appreciate Tabnine's offline functionality. Unlike cloud-based alternatives, it works reliably without connectivity.
+Offline Workers - Developers who frequently work without internet access appreciate Tabnine's offline functionality. Unlike cloud-based alternatives, it works reliably without connectivity.
 
 
 When You Should Consider Upgrading or Switching
@@ -170,16 +170,16 @@ When You Should Consider Upgrading or Switching
 Tabnine Free shows its limitations in these scenarios:
 
 
-Complex Codebases: Projects with multiple files and complex interdependencies need cross-file context that Tabnine Free cannot provide.
+Complex Codebases - Projects with multiple files and complex interdependencies need cross-file context that Tabnine Free cannot provide.
 
 
-Specialized Domains: If you're working in niche languages or frameworks with limited community code, Tabnine Free's model has less training data to draw from.
+Specialized Domains - If you're working in niche languages or frameworks with limited community code, Tabnine Free's model has less training data to draw from.
 
 
-Advanced AI Features: Modern development increasingly involves AI chat, code explanation, and refactoring assistance, features completely absent from Tabnine Free.
+Advanced AI Features - Modern development increasingly involves AI chat, code explanation, and refactoring assistance, features completely absent from Tabnine Free.
 
 
-Team Collaboration: Tabnine Pro offers team features including shared configurations and custom model training that matter for professional development environments.
+Team Collaboration - Tabnine Pro offers team features including shared configurations and custom model training that matter for professional development environments.
 
 
 The Verdict
@@ -233,7 +233,7 @@ if response.stop_reason == "tool_use":
     # Execute your function here, then send result back
 ```
 
-Claude returns `stop_reason: "tool_use"` when it wants to call a function. Feed results back in a subsequent message with `role: "user"` and `type: "tool_result"`.
+Claude returns `stop_reason - "tool_use"` when it wants to call a function. Feed results back in a subsequent message with `role: "user"` and `type: "tool_result"`.
 
 Context Window Management for Long Documents
 

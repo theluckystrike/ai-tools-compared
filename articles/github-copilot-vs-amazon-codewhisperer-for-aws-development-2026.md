@@ -32,9 +32,9 @@ AWS Lambda Function Generation
 
 Lambda is the most common AWS workload AI tools assist with. Both Copilot and CodeWhisperer have seen countless Lambda examples in training data.
 
-Test Case 1: S3 Event-Driven Lambda
+Test Case 1 - S3 Event-Driven Lambda
 
-Requirement: Lambda triggered by S3 PUT events, process image files, store metadata in DynamoDB.
+Requirement - Lambda triggered by S3 PUT events, process image files, store metadata in DynamoDB.
 
 GitHub Copilot output:
 ```python
@@ -86,7 +86,7 @@ def lambda_handler(event, context):
         }
 ```
 
-Issues identified: Missing `datetime` import, inefficient return value (Lambda doesn't need HTTP response for async processing), missing DynamoDB error handling.
+Issues identified - Missing `datetime` import, inefficient return value (Lambda doesn't need HTTP response for async processing), missing DynamoDB error handling.
 
 Amazon CodeWhisperer output:
 ```python
@@ -122,16 +122,16 @@ def lambda_handler(event, context):
 
 CodeWhisperer cleaner, fewer import issues. Copilot verbose but more defensive.
 
-Test Case 2: Async DynamoDB Stream Processing
+Test Case 2 - Async DynamoDB Stream Processing
 
 Lambda triggered by DynamoDB Streams to send notifications via SNS:
 
-GitHub Copilot accuracy: 94% (correctly batches SNS publishes, handles stream record parsing)
-Amazon CodeWhisperer accuracy: 89% (forgets to handle binary stream data, misses batch optimization)
+GitHub Copilot accuracy - 94% (correctly batches SNS publishes, handles stream record parsing)
+Amazon CodeWhisperer accuracy - 89% (forgets to handle binary stream data, misses batch optimization)
 
 Actual CodeWhisperer output showed `json.loads(event['body'])` on DynamoDB stream events (incorrect structure), requiring 5 minutes correction.
 
-Benchmark Results: 20 Lambda scenarios
+Benchmark Results - 20 Lambda scenarios
 
 | Scenario | Copilot Accuracy | CodeWhisperer Accuracy | First-Run Success |
 |---|---|---|---|
@@ -146,15 +146,15 @@ Benchmark Results: 20 Lambda scenarios
 | Secrets Manager retrieval | 94% | 96% | CodeWhisperer |
 | Step Functions callback | 82% | 78% | Copilot |
 
-Winner: GitHub Copilot (91% average accuracy)
+Winner - GitHub Copilot (91% average accuracy)
 
 AWS CDK Infrastructure Code
 
 CDK is AWS's Infrastructure as Code framework using TypeScript/Python. It requires understanding construct patterns and AWS resource dependencies.
 
-Test Case: VPC with Private Subnets, NAT Gateway, RDS
+Test Case - VPC with Private Subnets, NAT Gateway, RDS
 
-Requirement: Create a VPC with public/private subnets, NAT Gateway, and RDS MySQL database in private subnets.
+Requirement - Create a VPC with public/private subnets, NAT Gateway, and RDS MySQL database in private subnets.
 
 GitHub Copilot (TypeScript):
 ```typescript
@@ -218,7 +218,7 @@ export class NetworkStack extends cdk.Stack {
 }
 ```
 
-Issues: Deprecated MySQL version reference, missing backup retention, no monitoring.
+Issues - Deprecated MySQL version reference, missing backup retention, no monitoring.
 
 Amazon CodeWhisperer (TypeScript):
 ```typescript
@@ -253,11 +253,11 @@ export class NetworkStack extends cdk.Stack {
 }
 ```
 
-Issues: Uses correct MySQL version, includes backup retention and logging, simpler code, missing explicit security group configuration.
+Issues - Uses correct MySQL version, includes backup retention and logging, simpler code, missing explicit security group configuration.
 
 CodeWhisperer wins this round with fewer issues, though Copilot's explicit security group approach is more secure by default.
 
-CDK Benchmark: 15 infrastructure scenarios
+CDK Benchmark - 15 infrastructure scenarios
 
 | Infrastructure Pattern | Copilot | CodeWhisperer | Winner |
 |---|---|---|---|
@@ -272,15 +272,15 @@ CDK Benchmark: 15 infrastructure scenarios
 | IAM roles | 68% | 72% | CodeWhisperer |
 | Load balancer | 85% | 89% | CodeWhisperer |
 
-Winner: Amazon CodeWhisperer (87% average)
+Winner - Amazon CodeWhisperer (87% average)
 
 IAM Policy Generation
 
 This is where security matters most. An overly permissive policy is a massive vulnerability. An overly restrictive policy breaks functionality.
 
-Test Case: Lambda needing S3 read access to one bucket
+Test Case - Lambda needing S3 read access to one bucket
 
-Requirement: Lambda execution role with read-only access to `my-uploads-bucket` S3 bucket, nothing else.
+Requirement - Lambda execution role with read-only access to `my-uploads-bucket` S3 bucket, nothing else.
 
 GitHub Copilot:
 ```json
@@ -319,7 +319,7 @@ Amazon CodeWhisperer:
 
 Mostly correct, but ListBucket should have resource `arn:aws:s3:::my-uploads-bucket`, not with `/*`. This will fail at runtime.
 
-IAM Benchmark: 12 scenarios
+IAM Benchmark - 12 scenarios
 
 | Permission Requirement | Copilot Correctness | CodeWhisperer Correctness | Issues |
 |---|---|---|---|
@@ -336,24 +336,24 @@ IAM Benchmark: 12 scenarios
 | KMS decrypt key | 79% | 75% | Both incomplete |
 | Cross-service IAM | 68% | 64% | Both struggle |
 
-Winner: GitHub Copilot (89% correct policies)
+Winner - GitHub Copilot (89% correct policies)
 
-Critical insight: CodeWhisperer tends to include more permissions than necessary (security risk). Copilot tends toward minimal permissions but sometimes misses required permissions.
+Critical insight - CodeWhisperer tends to include more permissions than necessary (security risk). Copilot tends toward minimal permissions but sometimes misses required permissions.
 
 CloudFormation Template Generation
 
 CloudFormation YAML requires exact property names and AWS type references. Typos cause deployment failures with confusing error messages.
 
-Test Case: ALB with target group
+Test Case - ALB with target group
 
-GitHub Copilot accuracy: 92% (correct property names, minor formatting)
-Amazon CodeWhisperer accuracy: 94% (slightly cleaner YAML structure)
+GitHub Copilot accuracy - 92% (correct property names, minor formatting)
+Amazon CodeWhisperer accuracy - 94% (slightly cleaner YAML structure)
 
 However, when asking for advanced features (path-based routing, WAF integration), Copilot dropped to 78% while CodeWhisperer maintained 85%.
 
-Full Benchmark: 18 CloudFormation scenarios
+Full Benchmark - 18 CloudFormation scenarios
 
-Winner: Amazon CodeWhisperer (86% vs 81%)
+Winner - Amazon CodeWhisperer (86% vs 81%)
 
 Cost Comparison for AWS Development
 
@@ -389,7 +389,7 @@ Choose GitHub Copilot if:
 Choose Amazon CodeWhisperer if:
 - Heavy CDK/IaC development
 - CloudFormation template generation is frequent
-- You're already in AWS ecosystem (Console integration)
+- You're already in AWS environment (Console integration)
 - Your org has Enterprise Support (integrated billing)
 - Free tier meets your usage needs
 

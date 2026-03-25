@@ -57,8 +57,8 @@ Atlas detects column additions, deletions, type changes, constraint modification
 Rollback Strategy:
 Atlas generates reversible migrations by default. Rollback is atomic per migration file. For complex changes, it suggests a manual rollback SQL file. Transactional execution prevents partial failures.
 
-Strengths: Open source, multi-database support, schema diffing speed, reversible migrations
-Weaknesses: AI features locked behind Cloud tier; no automatic rollback optimization for large tables; limited team collaboration in free tier
+Strengths - Open source, multi-database support, schema diffing speed, reversible migrations
+Weaknesses - AI features locked behind Cloud tier; no automatic rollback optimization for large tables; limited team collaboration in free tier
 ---
 
 Flyway + AI Assistants
@@ -70,8 +70,8 @@ Table of Contents
 - [Hasura](#hasura)
 - [SchemaHero](#schemahero)
 - [Feature Comparison Table](#feature-comparison-table)
-- [Comparison: Rollback Strategy](#comparison-rollback-strategy)
-- [Comparison: Large Table Migrations](#comparison-large-table-migrations)
+- [Comparison - Rollback Strategy](#comparison-rollback-strategy)
+- [Comparison - Large Table Migrations](#comparison-large-table-migrations)
 - [Recommendation by Use Case](#recommendation-by-use-case)
 
 Flyway is the industry standard for database version control. Teams augment Flyway with Claude, ChatGPT, or Copilot to generate migrations from natural language descriptions.
@@ -91,8 +91,8 @@ Manual migration creation
 flyway migrate
 
 Generate migration with AI (manual step)
-Prompt: "Generate a safe PostgreSQL migration to add a users table with id, email, created_at columns"
-Output: Generate versioned file: V20260320_001__create_users_table.sql
+Prompt - "Generate a safe PostgreSQL migration to add a users table with id, email, created_at columns"
+Output - Generate versioned file: V20260320_001__create_users_table.sql
 
 Validate migration syntax
 flyway validate
@@ -110,8 +110,8 @@ Flyway doesn't auto-detect schema changes; you write or AI-generates migrations 
 Rollback Strategy:
 Flyway doesn't support automatic rollback. Requires manual undo migration file. Teams/Enterprise tiers enable `flyway undo` for simple changes. For complex migrations, you write explicit DOWN scripts.
 
-Strengths: Mature, widely trusted, language-agnostic migration files, strong audit trail
-Weaknesses: No auto schema detection; AI integration is external; no built-in rollback for Community tier; manual migration writing is slower
+Strengths - Mature, widely trusted, language-agnostic migration files, strong audit trail
+Weaknesses - No auto schema detection; AI integration is external; no built-in rollback for Community tier; manual migration writing is slower
 
 ---
 
@@ -136,7 +136,7 @@ Generate migration from schema changes
 npx prisma migrate dev --name add_email_to_user
 
 Review generated migration in prisma/migrations/
-File: 20260320101500_add_email_to_user/migration.sql
+File - 20260320101500_add_email_to_user/migration.sql
 
 Apply to production safely
 npx prisma migrate deploy --skip-generate
@@ -154,8 +154,8 @@ Prisma excels at detecting schema changes from Prisma schema files. It handles c
 Rollback Strategy:
 Prisma doesn't support rollback. To undo a migration, you must create a new migration that reverts changes. Prisma marks migrations as executed, so rollback requires a new forward migration.
 
-Strengths: Developer-friendly, language-integrated (JavaScript/TypeScript), fast iteration, conflict detection
-Weaknesses: Language-specific (TypeScript/Node.js only); no rollback support; expensive Data Platform; limited to Prisma schema
+Strengths - Developer-friendly, language-integrated (JavaScript/TypeScript), fast iteration, conflict detection
+Weaknesses - Language-specific (TypeScript/Node.js only); no rollback support; expensive Data Platform; limited to Prisma schema
 
 ---
 
@@ -198,8 +198,8 @@ Hasura auto-detects database schema changes and tracks them in metadata. It gene
 Rollback Strategy:
 Hasura uses version-based rollback. You apply specific migration versions via CLI. Metadata rollback requires manual intervention. Not atomic across schema and API changes.
 
-Strengths: GraphQL-native, web UI for schema management, auto API generation, real-time subscriptions
-Weaknesses: GraphQL-specific workflow; limited AI integration; complex metadata management; requires running Hasura engine; web UI needed for easy schema changes
+Strengths - GraphQL-native, web UI for schema management, auto API generation, real-time subscriptions
+Weaknesses - GraphQL-specific workflow; limited AI integration; complex metadata management; requires running Hasura engine; web UI needed for easy schema changes
 
 ---
 
@@ -253,8 +253,8 @@ SchemaHero compares YAML schema definitions against live database state. It dete
 Rollback Strategy:
 SchemaHero tracks migration history in Kubernetes. Rollback requires editing the YAML spec to previous version. Migrations are applied via kubectl, so Kubernetes rollback mechanisms work. Manual reverse migration may be needed for complex changes.
 
-Strengths: Kubernetes-native, declarative YAML, GitOps-friendly, drift detection, no external API calls
-Weaknesses: YAML learning curve; Kubernetes-required; no AI features; limited to Kubernetes clusters; manual rollback
+Strengths - Kubernetes-native, declarative YAML, GitOps-friendly, drift detection, no external API calls
+Weaknesses - YAML learning curve; Kubernetes-required; no AI features; limited to Kubernetes clusters; manual rollback
 
 ---
 
@@ -270,7 +270,7 @@ Feature Comparison Table
 
 ---
 
-Comparison: Rollback Strategy
+Comparison - Rollback Strategy
 
 Atlas Example:
 ```sql
@@ -304,12 +304,12 @@ npx prisma migrate dev --name remove_email
 
 ---
 
-Comparison: Large Table Migrations
+Comparison - Large Table Migrations
 
 Atlas provides online migration hints for large tables:
 ```bash
 atlas migrate lint --dir file://migrations
-Output: "ALTER TABLE users ADD COLUMN email VARCHAR(255) -- Uses online DDL in MySQL 8.0+"
+Output - "ALTER TABLE users ADD COLUMN email VARCHAR(255) -- Uses online DDL in MySQL 8.0+"
 ```
 
 Prisma relies on database-level online DDL support (PostgreSQL 11+, MySQL 8.0+).
@@ -322,9 +322,9 @@ Recommendation by Use Case
 
 High-frequency iteration (startups): Prisma Migrate for TypeScript teams; Atlas for polyglot teams
 Regulated environments (finance/healthcare): Flyway for mature audit trails; SchemaHero for GitOps compliance
-Real-time APIs: Hasura for GraphQL auto-generation; Atlas for schema-first workflows
-Kubernetes-native: SchemaHero; Prisma if TypeScript stack
-Cost-conscious: Atlas or Flyway Community (free open source)
+Real-time APIs - Hasura for GraphQL auto-generation; Atlas for schema-first workflows
+Kubernetes-native - SchemaHero; Prisma if TypeScript stack
+Cost-conscious - Atlas or Flyway Community (free open source)
 
 ---
 

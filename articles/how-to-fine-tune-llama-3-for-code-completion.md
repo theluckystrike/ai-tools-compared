@@ -50,7 +50,7 @@ General code models are trained on public code. They do not know your internal S
 - Generates code that passes your linters on the first attempt
 - Works offline with zero data leakage
 
-The trade-off: you need enough code examples (typically 500-10,000 samples) and a GPU for training (a single A100 for a few hours, or a consumer RTX 3090/4090 for QLoRA).
+The trade-off - you need enough code examples (typically 500-10,000 samples) and a GPU for training (a single A100 for a few hours, or a consumer RTX 3090/4090 for QLoRA).
 
 For teams where code privacy is a hard requirement. regulated industries, proprietary algorithms, internal tooling. this trade-off is non-negotiable. For everyone else, the question is whether the quality improvement justifies the setup cost. If your codebase has strong internal conventions that a general model consistently ignores, fine-tuning pays off quickly.
 
@@ -65,7 +65,7 @@ python -c "import torch; print(torch.cuda.get_device_name(0))"
 
 You'll need at least 24GB VRAM for Llama 3 8B with QLoRA. An RTX 3090, RTX 4090, or A100 all work. If you're on Apple Silicon, MPS training is supported but slower and more memory-constrained. stick to the 8B model.
 
-Step 1: Prepare the Training Dataset
+Step 1 - Prepare the Training Dataset
 
 The quality of your training data determines the quality of your fine-tuned model more than any hyperparameter choice. The goal is to extract instruction-output pairs where the instruction describes what a function should do and the output is the actual implementation.
 
@@ -102,7 +102,7 @@ def extract_functions_from_file(filepath: str) -> list[dict]:
 
         pairs.append({
             "instruction": f"Write a Python function with this signature and behavior:\n"
-                          f"Signature: {signature_line.strip()}\n"
+                          f"Signature - {signature_line.strip()}\n"
                           f"Description: {docstring}",
             "output": func_source,
         })
@@ -131,7 +131,7 @@ dataset.save_to_disk("./training_data")
 
 Aim for at least 500 examples. 2,000-5,000 typically produces noticeably better results. Before training, inspect a random sample of your extracted pairs. Functions without meaningful docstrings produce noise. the model learns to generate code that matches ambiguous descriptions, which isn't useful. Filter aggressively: require docstrings of at least 50 characters and exclude test functions, which often lack meaningful descriptions of intent.
 
-Step 2: Configure QLoRA Training
+Step 2 - Configure QLoRA Training
 
 QLoRA lets you fine-tune an 8B parameter model on a 24GB GPU by quantizing base model weights to 4-bit. Only the LoRA adapter weights (about 0.5% of total parameters) are trained at full precision.
 
@@ -177,7 +177,7 @@ trainable params: 41,943,040 || all params: 8,072,818,688 || trainable%: 0.52%
 
 The `r=16` rank is a good starting point. Higher rank (32, 64) learns more but risks overfitting on small datasets. For datasets under 1,000 examples, keep `r=8` and add more regularization (higher `lora_dropout`).
 
-Step 3: Train
+Step 3 - Train
 
 ```python
 from trl import SFTTrainer
@@ -220,7 +220,7 @@ trainer.save_model("./llama3-code-finetuned/final")
 
 Training 2,000 examples for 3 epochs on an RTX 4090 takes approximately 45-90 minutes. Watch the eval loss: if it starts increasing while train loss continues dropping, you're overfitting. Stop early and use the checkpoint with the lowest eval loss. `load_best_model_at_end=True` handles this automatically.
 
-Step 4: Merge and Export for Ollama
+Step 4 - Merge and Export for Ollama
 
 ```python
 from peft import PeftModel
@@ -312,9 +312,9 @@ Iterating After the First Fine-Tune
 
 The first fine-tune rarely produces a perfect model. Common issues and fixes:
 
-The model generates hallucinated class names. your dataset is too small or the docstrings don't mention class names explicitly. Fix: add examples that include type annotations with your actual class names in the signature line. The model learns from signature context, not just the docstring.
+The model generates hallucinated class names. your dataset is too small or the docstrings don't mention class names explicitly. Fix - add examples that include type annotations with your actual class names in the signature line. The model learns from signature context, not just the docstring.
 
-The model ignores your error handling conventions. you didn't include enough examples of error handling code. Fix: extract functions specifically from your exception-heavy modules (request handlers, database layers) and add them as a second training pass.
+The model ignores your error handling conventions. you didn't include enough examples of error handling code. Fix - extract functions specifically from your exception-heavy modules (request handlers, database layers) and add them as a second training pass.
 
 Completions are too verbose. lower the `temperature` parameter in your Modelfile from 0.2 to 0.05-0.1. For autocomplete, you want the model to be decisive about common patterns, not creative.
 

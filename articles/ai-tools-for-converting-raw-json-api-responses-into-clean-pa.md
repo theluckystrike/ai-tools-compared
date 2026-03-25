@@ -24,8 +24,8 @@ Table of Contents
 - [AI-Powered Solutions](#ai-powered-solutions)
 - [Practical Implementation Pattern](#practical-implementation-pattern)
 - [Tool Comparison for JSON Transformation](#tool-comparison-for-json-transformation)
-- [Real-World Example: Multi-Level Nesting](#real-world-example-multi-level-nesting)
-- [Advanced Patterns: Type Conversion](#advanced-patterns-type-conversion)
+- [Real-World Example - Multi-Level Nesting](#real-world-example-multi-level-nesting)
+- [Advanced Patterns - Type Conversion](#advanced-patterns-type-conversion)
 - [Error Handling in Production](#error-handling-in-production)
 - [Performance Optimization for Large Datasets](#performance-optimization-for-large-datasets)
 - [Testing Your Transformations](#testing-your-transformations)
@@ -171,7 +171,7 @@ Tool Comparison for JSON Transformation
 
 For teams handling multiple API sources, Claude's conversation interface enables iterative refinement, while ChatGPT works well for independent transformations.
 
-Real-World Example: Multi-Level Nesting
+Real-World Example - Multi-Level Nesting
 
 Raw API Response:
 ```json
@@ -243,7 +243,7 @@ df = flatten_user_response(response)
 
 This transformation that might take 30 minutes manually takes 5 minutes with AI assistance.
 
-Advanced Patterns: Type Conversion
+Advanced Patterns - Type Conversion
 
 Ask your AI to include type handling:
 

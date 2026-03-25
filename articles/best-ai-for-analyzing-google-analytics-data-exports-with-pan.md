@@ -184,8 +184,8 @@ Describe your goal clearly when asking AI for code:
 
 ```python
 Ask AI to generate cohort analysis code
-Prompt: "Write pandas code for weekly user retention cohorts from GA4 data"
-Include columns: user_first_visit_date, event_date, user_id
+Prompt - "Write pandas code for weekly user retention cohorts from GA4 data"
+Include columns - user_first_visit_date, event_date, user_id
 
 def create_cohort_analysis(df, acquisition_col, activity_col, user_col):
     """Generate weekly retention cohorts."""

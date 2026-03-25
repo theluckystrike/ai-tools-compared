@@ -140,9 +140,9 @@ Structuring Prompts for Better Alarm Configurations
 
 The quality of AI-generated Terraform depends heavily on how you frame the request. Vague prompts produce generic configurations that require significant reworking. Specific prompts produce deployment-ready code.
 
-A weak prompt: "Create a CloudWatch alarm for my database."
+A weak prompt - "Create a CloudWatch alarm for my database."
 
-A strong prompt: "Generate Terraform for an `aws_cloudwatch_composite_alarm` that triggers when BOTH `rds-prod-cpu-alarm` AND `rds-prod-connection-alarm` are in ALARM state. Include the underlying metric alarm resources for RDS instance `prod-db-01` in region `us-east-1`. Use SNS topic ARN `arn:aws:sns:us-east-1:123456789:ops-alerts` for notifications. Tag everything with `Environment=production` and `Team=platform`."
+A strong prompt - "Generate Terraform for an `aws_cloudwatch_composite_alarm` that triggers when BOTH `rds-prod-cpu-alarm` AND `rds-prod-connection-alarm` are in ALARM state. Include the underlying metric alarm resources for RDS instance `prod-db-01` in region `us-east-1`. Use SNS topic ARN `arn:aws:sns:us-east-1:123456789:ops-alerts` for notifications. Tag everything with `Environment=production` and `Team=platform`."
 
 The detailed prompt gives the AI everything it needs to produce a complete, correct module rather than a placeholder. Provide actual alarm names, resource identifiers, and ARNs where possible. The AI fills in the structural Terraform logic; you supply the AWS-specific values.
 

@@ -27,12 +27,12 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Test: Python FastAPI Application
+Step 1 - The Test: Python FastAPI Application
 
 All tools were given the same prompt:
 > "Write a production Dockerfile for a Python FastAPI application. Focus on security, image size, and build caching."
 
-Step 2: Claude's Multi-Stage Build
+Step 2 - Claude's Multi-Stage Build
 
 ```dockerfile
 Build stage. install deps and compile
@@ -95,7 +95,7 @@ Key features:
 - `HEALTHCHECK` with reasonable timeouts
 - `exec` form CMD (not shell form) for proper signal handling
 
-Step 3: Copilot's Output
+Step 3 - Copilot's Output
 
 ```dockerfile
 FROM python:3.12
@@ -118,12 +118,12 @@ This is a valid Dockerfile but:
 - No health check
 - Uses full `python:3.12` (~1GB) instead of `python:3.12-slim` (~130MB)
 
-Step 4: Node.js Application
+Step 4 - Node.js Application
 
 ```dockerfile
 Claude's Node.js multi-stage Dockerfile
 
-Stage 1: Install dependencies
+Stage 1 - Install dependencies
 FROM node:20-alpine AS deps
 WORKDIR /app
 
@@ -133,7 +133,7 @@ COPY package.json package-lock.json ./
 Install production dependencies only
 RUN npm ci --omit=dev --prefer-offline
 
-Stage 2: Build (for TypeScript or Next.js)
+Stage 2 - Build (for TypeScript or Next.js)
 FROM node:20-alpine AS builder
 WORKDIR /app
 
@@ -143,7 +143,7 @@ RUN npm ci --prefer-offline
 COPY . .
 RUN npm run build
 
-Stage 3: Production runtime
+Stage 3 - Production runtime
 FROM node:20-alpine AS runtime
 WORKDIR /app
 
@@ -169,7 +169,7 @@ HEALTHCHECK --interval=30s --timeout=3s \
 
 Claude's Node.js version uses `dumb-init` for proper PID 1 signal handling. a critical detail for graceful shutdown that almost no other AI tool includes.
 
-Step 5: Go Application: Scratch Image
+Step 5 - Go Application: Scratch Image
 
 ```dockerfile
 Claude's Go Dockerfile. minimal final image
@@ -216,7 +216,7 @@ ENTRYPOINT ["/server"]
 
 The `scratch` final image is under 10MB and has zero attack surface. no shell, no package manager, no OS utilities. Claude knows to copy CA certs (needed for HTTPS calls) and use a numeric UID since there's no `/etc/passwd` in scratch.
 
-Step 6: Security Scanning Integration
+Step 6 - Security Scanning Integration
 
 ```dockerfile
 .github/workflows/docker-security.yml
@@ -257,7 +257,7 @@ def interpret_trivy_report(trivy_json: dict) -> str:
 Vulnerabilities:
 {json.dumps(critical_vulns[:5], indent=2)}
 
-For each: affected package, severity, CVE, and specific fix (usually a package version update or base image change)."""
+For each - affected package, severity, CVE, and specific fix (usually a package version update or base image change)."""
         }]
     )
     return response.content[0].text

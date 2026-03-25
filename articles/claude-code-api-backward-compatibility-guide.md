@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code API Backward Compatibility Guide"
-description: "Maintain API backward compatibility with Claude Code: versioning strategies, contract testing, deprecation workflows, and breaking change detection."
+description: "Maintain API backward compatibility with Claude Code - versioning strategies, contract testing, deprecation workflows, and breaking change detection."
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: theluckystrike
@@ -37,7 +37,7 @@ Maintaining backward compatibility is crucial for API stability and user trust. 
 - Maintaining backward compatibility is: crucial for API stability and user trust.
 - If your API remains backward compatible: the existing app continues working while you release a new app version that uses new features.
 - URL versioning places the: version in the path, like `/api/v1/users` or `/api/v2/users`.
-- Header versioning uses an: HTTP header like `Accept: application/vnd.api.v2+json`.
+- Header versioning uses an: HTTP header like `Accept - application/vnd.api.v2+json`.
 - When you release an API update: you cannot force millions of app users to update immediately.
 - For most APIs: URL versioning provides better discoverability and debugging.
 
@@ -57,7 +57,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Semantic Versioning for APIs
+Step 1 - Semantic Versioning for APIs
 
 Semantic versioning provides a clear communication mechanism for API changes. The format follows MAJOR.MINOR.PATCH, where each component indicates the type of change.
 
@@ -67,13 +67,13 @@ When using Claude Code, you can prompt it to follow specific versioning constrai
 
 Version in URL vs Header
 
-There are two primary approaches to API versioning. URL versioning places the version in the path, like `/api/v1/users` or `/api/v2/users`. Header versioning uses an HTTP header like `Accept: application/vnd.api.v2+json`.
+There are two primary approaches to API versioning. URL versioning places the version in the path, like `/api/v1/users` or `/api/v2/users`. Header versioning uses an HTTP header like `Accept - application/vnd.api.v2+json`.
 
 URL versioning is more explicit and cache-friendly. Clients can easily see which version they are using. Header versioning keeps URLs cleaner but requires more configuration.
 
 For most APIs, URL versioning provides better discoverability and debugging. Clients can visually identify the version in logs and network inspectors.
 
-Step 2: Deprecation Strategies
+Step 2 - Deprecation Strategies
 
 When you must eventually remove functionality, a phased deprecation approach gives clients time to migrate.
 
@@ -98,7 +98,7 @@ When clients use deprecated endpoints, return appropriate status codes with help
 
 Claude Code can help generate deprecation notices and migration guides automatically based on your API changes.
 
-Step 3: Contract Testing for Compatibility
+Step 3 - Contract Testing for Compatibility
 
 Contract testing verifies that your API maintains expected behavior for existing clients. Unlike integration tests that verify end-to-end flow, contract tests focus on the interface between client and server.
 
@@ -133,7 +133,7 @@ Consumer-driven contracts let clients define their expectations. Clients publish
 
 This approach prevents the common problem where servers change APIs without understanding client usage. Clients communicate exactly what they need, and servers validate against these expectations.
 
-Step 4: Use Claude Code for Compatibility
+Step 4 - Use Claude Code for Compatibility
 
 Claude Code assists with backward compatibility through several mechanisms.
 
@@ -170,7 +170,7 @@ Ask Claude Code to generate test cases that verify backward compatibility:
 
 "Generate tests that verify the API response contains all previously required fields, even when optional fields are added."
 
-Step 5: Response Field Evolution
+Step 5 - Response Field Evolution
 
 Adding new fields to responses is generally safe. Clients ignore unknown fields in most implementations.
 
@@ -205,7 +205,7 @@ Mark fields as deprecated rather than removing them immediately. Include depreca
 }
 ```
 
-Step 6: Request Parameter Evolution
+Step 6 - Request Parameter Evolution
 
 Similar to response fields, request parameters require careful handling.
 

@@ -24,10 +24,10 @@ OpenTelemetry Collector Configuration
 Prompt to Claude:
 ```text
 Write an OpenTelemetry Collector config for a microservices environment.
-Receivers: OTLP (gRPC 4317, HTTP 4318), Prometheus scrape of localhost:8080/metrics.
-Processors: batch (10s, max 512 spans), memory limiter (80% limit, 25% spike),
+Receivers - OTLP (gRPC 4317, HTTP 4318), Prometheus scrape of localhost:8080/metrics.
+Processors - batch (10s, max 512 spans), memory limiter (80% limit, 25% spike),
 resource detection (add cloud provider, region).
-Exporters: Jaeger (http://jaeger:14268), Prometheus remote_write to http://prometheus:9090.
+Exporters - Jaeger (http://jaeger:14268), Prometheus remote_write to http://prometheus:9090.
 Add a service pipeline for traces and metrics separately.
 ```
 
@@ -224,7 +224,7 @@ Structured Logging Configuration
 Prompt:
 ```text
 Write a Python logging configuration using structlog for a FastAPI service.
-Requirements: JSON output in production, colored console in dev, include request_id,
+Requirements - JSON output in production, colored console in dev, include request_id,
 service name, and version in every log entry. Add a middleware to set request_id.
 ```
 
@@ -465,7 +465,7 @@ mute_time_intervals:
 
 Claude correctly uses `mute_time_intervals` (the modern Alertmanager approach) rather than the deprecated `time_intervals` with inhibition rules. Environment variable references for secrets avoid hardcoding credentials in the config file.
 
-One gap to watch: Claude's weekend-nights interval covers Saturday and Sunday 23:00-07:00, but this crosses midnight. Alertmanager time intervals within a single entry are evaluated as ranges within a calendar day. to mute from 23:00 Saturday to 07:00 Sunday, you need two separate entries: one for Saturday 23:00-24:00 and one for Sunday 00:00-07:00. Always test mute intervals with `amtool` before relying on them in production:
+One gap to watch - Claude's weekend-nights interval covers Saturday and Sunday 23:00-07:00, but this crosses midnight. Alertmanager time intervals within a single entry are evaluated as ranges within a calendar day. to mute from 23:00 Saturday to 07:00 Sunday, you need two separate entries: one for Saturday 23:00-24:00 and one for Sunday 00:00-07:00. Always test mute intervals with `amtool` before relying on them in production:
 
 ```bash
 Test if an alert would be muted at a specific time

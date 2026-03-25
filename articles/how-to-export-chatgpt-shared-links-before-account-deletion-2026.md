@@ -21,7 +21,7 @@ Table of Contents
 
 - [Why Export Your Shared Links First](#why-export-your-shared-links-first)
 - [Prerequisites](#prerequisites)
-- [Preserving Shared Links: Best Practices](#preserving-shared-links-best-practices)
+- [Preserving Shared Links - Best Practices](#preserving-shared-links-best-practices)
 - [Method Comparison](#method-comparison)
 - [Troubleshooting](#troubleshooting)
 
@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Method 1: Using the ChatGPT Web Interface
+Step 1 - Method 1: Using the ChatGPT Web Interface
 
 The simplest approach is manual but works well if you have only a few shared links:
 
@@ -55,7 +55,7 @@ The simplest approach is manual but works well if you have only a few shared lin
 
 This method works but becomes time-consuming if you have dozens of shared links. If you have many links, consider the programmatic approaches below.
 
-Step 2: Method 2: Using the ChatGPT Data Export Feature
+Step 2 - Method 2: Using the ChatGPT Data Export Feature
 
 OpenAI provides a data export feature that includes some shared link information:
 
@@ -69,7 +69,7 @@ OpenAI provides a data export feature that includes some shared link information
 
 The exported data includes metadata about your shared links but may not contain the full conversation content. You'll still need to visit each link to capture the complete conversation.
 
-Step 3: Method 3: Programmatic Export with Python
+Step 3 - Method 3: Programmatic Export with Python
 
 For a more complete solution, you can use Python to fetch and save your shared link content. This approach requires some technical setup but gives you the best results.
 
@@ -147,7 +147,7 @@ if __name__ == "__main__":
 
 This script fetches each shared link and converts the HTML content to Markdown format, which is easier to read and archive.
 
-Step 4: Method 4: Bulk Export Using ChatGPT API
+Step 4 - Method 4: Bulk Export Using ChatGPT API
 
 If you have API access, you can create a more sophisticated export solution. Note that this requires a paid API subscription and access to your conversation data through official channels.
 
@@ -181,7 +181,7 @@ def save_conversation_to_file(conversation_data, filename):
             f.write(f"{role.upper()}:\n{content}\n\n")
 ```
 
-Preserving Shared Links: Best Practices
+Preserving Shared Links - Best Practices
 
 When exporting your ChatGPT shared links, follow these best practices:
 
@@ -197,7 +197,7 @@ Convert to multiple formats - Save important conversations as both Markdown and 
 
 Document the export date - Include metadata about when you exported each link for future reference.
 
-Step 5: What Happens When You Delete Your ChatGPT Account
+Step 5 - What Happens When You Delete Your ChatGPT Account
 
 Once you delete your ChatGPT account:
 
@@ -211,7 +211,7 @@ Once you delete your ChatGPT account:
 
 The deletion process is irreversible, so completing your export beforehand is essential.
 
-Step 6: Method 5: Browser Automation with Playwright
+Step 6 - Method 5: Browser Automation with Playwright
 
 If you have many shared links and want to capture the rendered page (including images and formatted code blocks), Playwright gives you full browser automation with screenshot support:
 
@@ -267,7 +267,7 @@ Method Comparison
 
 For fewer than 10 links, use the manual method or data export. For 10-100 links, the Python + html2text approach is the sweet spot. For 100+ links or when you need pixel-perfect captures, Playwright is worth the setup time.
 
-Step 7: Before You Delete: Pre-Deletion Checklist
+Step 7 - Before You Delete: Pre-Deletion Checklist
 
 Run through this checklist before submitting the account deletion request:
 
@@ -281,7 +281,7 @@ Run through this checklist before submitting the account deletion request:
 
 After completing the export, wait 24-48 hours to confirm the download is complete before submitting the deletion request.
 
-Step 8: Alternatives to Account Deletion
+Step 8 - Alternatives to Account Deletion
 
 If you want to keep using AI tools but reduce your ChatGPT footprint:
 

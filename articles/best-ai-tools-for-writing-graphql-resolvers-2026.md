@@ -22,10 +22,10 @@ Table of Contents
 - [Why GraphQL Resolver Generation Differs From REST Endpoints](#why-graphql-resolver-generation-differs-from-rest-endpoints)
 - [Claude vs Copilot vs Cursor for GraphQL](#claude-vs-copilot-vs-cursor-for-graphql)
 - [Resolver Architecture Comparison](#resolver-architecture-comparison)
-- [Real Examples: Schema-First to Resolver Code](#real-examples-schema-first-to-resolver-code)
+- [Real Examples - Schema-First to Resolver Code](#real-examples-schema-first-to-resolver-code)
 - [Performance Comparison Table](#performance-comparison-table)
 - [CLI Tools for GraphQL Development](#cli-tools-for-graphql-development)
-- [Decision Framework: Which Tool to Use](#decision-framework-which-tool-to-use)
+- [Decision Framework - Which Tool to Use](#decision-framework-which-tool-to-use)
 - [Common Mistakes in AI-Generated Resolvers](#common-mistakes-in-ai-generated-resolvers)
 - [Real-World Performance Impact](#real-world-performance-impact)
 - [Testing Generated Resolvers](#testing-generated-resolvers)
@@ -35,17 +35,17 @@ Why GraphQL Resolver Generation Differs From REST Endpoints
 
 GraphQL resolvers are functions that fetch or compute field values in response to queries. A single GraphQL query can trigger dozens of resolver function calls. This creates two specific AI challenges:
 
-1. N+1 Query Prevention: Naive resolvers fetch data independently. AI must recognize patterns where batching with DataLoader prevents multiple database round-trips.
+1. N+1 Query Prevention - Naive resolvers fetch data independently. AI must recognize patterns where batching with DataLoader prevents multiple database round-trips.
 
-2. Schema-First Constraints: Your GraphQL schema defines the contract. AI must generate resolvers that match field types, arguments, and return values exactly. Schema errors are caught at compile time; runtime errors are caught in production.
+2. Schema-First Constraints - Your GraphQL schema defines the contract. AI must generate resolvers that match field types, arguments, and return values exactly. Schema errors are caught at compile time; runtime errors are caught in production.
 
-3. Type Safety: TypeScript-based GraphQL (using graphql-codegen) requires perfect alignment between resolver types and generated types.
+3. Type Safety - TypeScript-based GraphQL (using graphql-codegen) requires perfect alignment between resolver types and generated types.
 
 The best AI tools understand these constraints and generate resolvers that are not just functional but optimized.
 
 Claude vs Copilot vs Cursor for GraphQL
 
-Claude: Best for Complex Data Patterns
+Claude - Best for Complex Data Patterns
 
 Claude's strengths in GraphQL resolver generation come from extended context and reasoning about data relationships.
 
@@ -61,7 +61,7 @@ Weaknesses:
 - No real-time IDE integration
 - Slower for one-off, simple resolvers
 
-Real pricing: Claude Opus: $3/1M input tokens, $15/1M output tokens. For a 30KB GraphQL schema analysis: ~$0.10.
+Real pricing - Claude Opus - $3/1M input tokens, $15/1M output tokens. For a 30KB GraphQL schema analysis: ~$0.10.
 
 When to use Claude:
 - Your GraphQL schema has 20+ types with relationships
@@ -69,7 +69,7 @@ When to use Claude:
 - You need DataLoader optimization recommendations
 - Cost: $0.50-2.00 per session analyzing schema and generating batches of resolvers
 
-Copilot: Best for Velocity on Established Patterns
+Copilot - Best for Velocity on Established Patterns
 
 Copilot learns your existing resolver patterns and suggests completions immediately.
 
@@ -86,7 +86,7 @@ Weaknesses:
 - Doesn't reason about N+1 prevention unless you force it
 - Can't batch-generate multiple resolvers with coordinated logic
 
-Real pricing: $10-21/month for individual/business accounts.
+Real pricing - $10-21/month for individual/business accounts.
 
 When to use Copilot:
 - Writing resolver number 5 similar to resolver number 1
@@ -94,7 +94,7 @@ When to use Copilot:
 - You need fast completion while typing
 - Cost: Fixed monthly fee regardless of usage
 
-Cursor: Best for Schema-Aware Context
+Cursor - Best for Schema-Aware Context
 
 Cursor as an IDE can see your GraphQL schema file directly.
 
@@ -110,7 +110,7 @@ Weaknesses:
 - Subscription cost ($20/month) on top of model pricing
 - Learning curve for power users
 
-Real pricing: $20/month for Cursor Pro with Claude backend.
+Real pricing - $20/month for Cursor Pro with Claude backend.
 
 When to use Cursor:
 - You're already using Cursor for other work
@@ -121,7 +121,7 @@ Resolver Architecture Comparison
 
 Different AI tools generate different architectural patterns:
 
-Claude-Generated Pattern: DataLoader-First
+Claude-Generated Pattern - DataLoader-First
 
 Claude, when given proper context, generates resolvers with batching built in:
 
@@ -165,7 +165,7 @@ Characteristics:
 - N+1 prevention built in
 - Context passing assumed
 
-Copilot-Generated Pattern: Direct Database Access
+Copilot-Generated Pattern - Direct Database Access
 
 Copilot, learning from simpler existing resolvers, often generates:
 
@@ -190,9 +190,9 @@ Characteristics:
 - Simple to understand
 - N+1 performance risk if not reviewed
 
-Real Examples: Schema-First to Resolver Code
+Real Examples - Schema-First to Resolver Code
 
-Example 1: Blog Schema with Nested Relationships
+Example 1 - Blog Schema with Nested Relationships
 
 GraphQL Schema:
 ```graphql
@@ -348,7 +348,7 @@ Key optimizations Claude includes:
 - Proper return ordering in batch functions
 - No N+1 risk
 
-Example 2: E-commerce Resolvers with Variants
+Example 2 - E-commerce Resolvers with Variants
 
 Schema:
 ```graphql
@@ -383,7 +383,7 @@ Use existing pattern from Query resolvers.
 
 Copilot typically generates (N+1 risk):
 ```typescript
-Product: {
+Product - {
   variants: async (product) => {
     return db.variants.where({ productId: product.id });
   },
@@ -399,7 +399,7 @@ Product: {
 
 What Claude would suggest instead:
 ```typescript
-Product: {
+Product - {
   variants: (product, _, context) => {
     return context.loaders.variantsByProductLoader.load(product.id);
   },
@@ -441,7 +441,7 @@ Format schema
 npx prettier --write schema.graphql
 ```
 
-Decision Framework: Which Tool to Use
+Decision Framework - Which Tool to Use
 
 Use Claude when:
 - Your schema has 20+ types with complex relationships
@@ -572,7 +572,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -584,7 +584,7 @@ Most modern tools support asynchronous workflows that work well across time zone
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

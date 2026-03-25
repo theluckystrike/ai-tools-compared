@@ -34,7 +34,7 @@ This guide uses:
 - Server-Sent Events for streaming
 - Anthropic Claude as an alternative LLM
 
-Step 1: Database Setup
+Step 1 - Database Setup
 
 Before ingesting, you need the pgvector extension and a table for doc sections:
 
@@ -59,7 +59,7 @@ CREATE INDEX ON doc_sections USING hnsw (embedding vector_cosine_ops)
 
 The HNSW index gives sub-millisecond query times for collections up to a few hundred thousand sections. IVFFlat is better for millions of rows but requires tuning `lists` based on row count.
 
-Step 2: Ingest Documentation
+Step 2 - Ingest Documentation
 
 ```python
 ingest.py
@@ -146,7 +146,7 @@ async def ingest_docs(docs_dir: str):
         print("Ingestion complete")
 ```
 
-Step 3: Chat API with Streaming
+Step 3 - Chat API with Streaming
 
 ```python
 api/chat.py
@@ -248,7 +248,7 @@ async def chat(req: ChatRequest):
     )
 ```
 
-Step 4: Simple Frontend
+Step 4 - Simple Frontend
 
 ```javascript
 // chat.js
@@ -293,7 +293,7 @@ function renderSources(sources) {
 }
 ```
 
-Step 5: Conversation History Management
+Step 5 - Conversation History Management
 
 Multi-turn conversations need history pruning to avoid overflowing the context window. A practical approach:
 
@@ -325,7 +325,7 @@ def prune_history(history: list[dict], max_tokens: int = MAX_HISTORY_TOKENS) -> 
 
 Call `prune_history(req.history)` before passing history to the LLM. This prevents `400 context_length_exceeded` errors in long sessions while keeping the conversation coherent.
 
-Step 6: Caching Embeddings with Redis
+Step 6 - Caching Embeddings with Redis
 
 Re-embedding the same question repeatedly wastes money and adds latency. Cache embedding vectors:
 
@@ -355,7 +355,7 @@ async def get_or_create_embedding(text: str) -> list[float]:
 
 For a docs site with typical question patterns, this cache achieves 60-80% hit rates, dropping average response latency by 100-200ms.
 
-Step 7: Webhook-Based Re-ingestion
+Step 7 - Webhook-Based Re-ingestion
 
 Trigger re-ingestion automatically when docs change rather than on a fixed schedule. Here is a minimal FastAPI webhook endpoint that queues re-ingestion via a background task:
 

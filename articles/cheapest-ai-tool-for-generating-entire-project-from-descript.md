@@ -21,7 +21,7 @@ Table of Contents
 
 - [What Makes a Tool Suitable for Full Project Generation](#what-makes-a-tool-suitable-for-full-project-generation)
 - [Top Affordable Options](#top-affordable-options)
-- [Practical Example: Generating a Task API](#practical-example-generating-a-task-api)
+- [Practical Example - Generating a Task API](#practical-example-generating-a-task-api)
 - [Comparing Costs for Typical Development Scenarios](#comparing-costs-for-typical-development-scenarios)
 - [How to Write Prompts That Generate Complete Projects](#how-to-write-prompts-that-generate-complete-projects)
 - [Step-by-Step Workflow for Maximum Value](#step-by-step-workflow-for-maximum-value)
@@ -49,7 +49,7 @@ Bolt.new (Free Tier Available)
 
 Bolt.new stands out as one of the most accessible options for generating entire projects. The platform offers a generous free tier that lets you create and deploy projects without entering payment information.
 
-The workflow is straightforward: describe what you want to build, and Bolt.new generates the complete project structure. For a React application, you might describe "a task management app with drag-and-drop, local storage persistence, and a dark mode toggle," and the tool produces the full codebase.
+The workflow is straightforward - describe what you want to build, and Bolt.new generates the complete project structure. For a React application, you might describe "a task management app with drag-and-drop, local storage persistence, and a dark mode toggle," and the tool produces the full codebase.
 
 Cost structure:
 
@@ -115,7 +115,7 @@ Cost structure:
 
 The platform handles database setup, authentication, and API endpoints automatically based on your description.
 
-Practical Example: Generating a Task API
+Practical Example - Generating a Task API
 
 To demonstrate how these tools work in practice, here's what happens when you provide a project description to generate a REST API:
 
@@ -214,15 +214,15 @@ Step-by-Step Workflow for Maximum Value
 
 Treat generation as an iterative process rather than a one-shot operation. This approach works across all platforms and keeps cost low.
 
-Step 1: Generate the project skeleton. Use your chosen tool to create the directory structure, package configuration, and core entry points. Verify that the generated files install dependencies and start without errors before proceeding. Fix any blocking issues with a targeted follow-up prompt.
+Step 1 - Generate the project skeleton. Use your chosen tool to create the directory structure, package configuration, and core entry points. Verify that the generated files install dependencies and start without errors before proceeding. Fix any blocking issues with a targeted follow-up prompt.
 
-Step 2: Add features incrementally. Request one feature at a time rather than listing everything upfront. Describing the feature in the context of the existing codebase helps the generator integrate rather than replace what already exists.
+Step 2 - Add features incrementally. Request one feature at a time rather than listing everything upfront. Describing the feature in the context of the existing codebase helps the generator integrate rather than replace what already exists.
 
-Step 3: Review and fix integration issues. AI generators sometimes produce files that import from incorrect paths or use inconsistent function names. A targeted prompt like "fix the imports in routes/tasks.js to match the exported names in controllers/taskController.js" resolves these efficiently without regenerating large sections of code.
+Step 3 - Review and fix integration issues. AI generators sometimes produce files that import from incorrect paths or use inconsistent function names. A targeted prompt like "fix the imports in routes/tasks.js to match the exported names in controllers/taskController.js" resolves these efficiently without regenerating large sections of code.
 
-Step 4: Generate tests. Request test files after the implementation stabilizes. Specify the testing framework (Jest, Vitest, pytest, RSpec) and whether you want unit or integration tests. Generated tests frequently surface edge cases in the implementation as a useful side effect.
+Step 4 - Generate tests. Request test files after the implementation stabilizes. Specify the testing framework (Jest, Vitest, pytest, RSpec) and whether you want unit or integration tests. Generated tests frequently surface edge cases in the implementation as a useful side effect.
 
-Step 5: Generate documentation. Ask for a README with setup instructions, an API reference, and inline comments for complex functions. This costs nothing extra on most platforms and eliminates a task developers routinely defer indefinitely.
+Step 5 - Generate documentation. Ask for a README with setup instructions, an API reference, and inline comments for complex functions. This costs nothing extra on most platforms and eliminates a task developers routinely defer indefinitely.
 
 Pro Tips for Reducing Costs Further
 
@@ -240,11 +240,11 @@ Quick prototypes and side projects: Start with Bolt.new's free tier. You can gen
 
 Professional development with IDE requirements: Cursor's Pro plan at $20/month combines powerful AI generation with a full-featured development environment.
 
-UI-focused work: v0's free tier provides 60 generations monthly, sufficient for most UI prototyping needs.
+UI-focused work - v0's free tier provides 60 generations monthly, sufficient for most UI prototyping needs.
 
-Startup MVPs: Lovable's $29 plan includes database setup and authentication, which would cost significantly more to build manually.
+Startup MVPs - Lovable's $29 plan includes database setup and authentication, which would cost significantly more to build manually.
 
-Teams needing collaboration: Cursor Business at $40/seat or Lovable Team at $49/month include shared context and team management features that become important once more than one developer works in the same AI-generated codebase.
+Teams needing collaboration - Cursor Business at $40/seat or Lovable Team at $49/month include shared context and team management features that become important once more than one developer works in the same AI-generated codebase.
 
 Frequently Asked Questions
 

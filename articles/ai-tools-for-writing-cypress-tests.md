@@ -113,7 +113,7 @@ GPT-4 for Test Generation from User Stories
 
 GPT-4 handles natural language requirements well. Give it a user story and it maps it to test cases systematically.
 
-Prompt: "User story: As a user, I can add items to cart, update quantities, and checkout. Write Cypress tests covering the happy path and edge cases like max quantity limits."
+Prompt - "User story: As a user, I can add items to cart, update quantities, and checkout. Write Cypress tests covering the happy path and edge cases like max quantity limits."
 
 ```javascript
 // GPT-4 output. cypress/e2e/cart.cy.js
@@ -204,7 +204,7 @@ describe('Product Search', () => {
 
 Copilot is fastest for extending existing test files. It learns your naming conventions, your custom command patterns, and your fixture file structure from context. Weak for generating test files from scratch.
 
-Handling Complex Scenarios: File Upload Tests
+Handling Complex Scenarios - File Upload Tests
 
 All three tools can handle file upload testing, but the approaches differ:
 
@@ -274,7 +274,7 @@ Testing Accessibility with AI-Generated Cypress Tests
 
 Claude can extend Cypress tests with basic accessibility checks using the `cypress-axe` plugin:
 
-Prompt: "Add axe-core accessibility checks to the login test. Run on page load and after the error state appears."
+Prompt - "Add axe-core accessibility checks to the login test. Run on page load and after the error state appears."
 
 ```javascript
 // cypress/support/e2e.js. add once
@@ -319,7 +319,7 @@ Generating Fixtures with AI
 
 You can also use Claude to generate fixture files that match your API contract:
 
-Prompt: "Generate a Cypress fixture file for a list of 3 products. Each has id, name, price (number), category (string), and imageUrl (nullable string). Realistic values."
+Prompt - "Generate a Cypress fixture file for a list of 3 products. Each has id, name, price (number), category (string), and imageUrl (nullable string). Realistic values."
 
 ```json
 // cypress/fixtures/products.json
@@ -375,7 +375,7 @@ Tool Comparison
 | Session-based auth helpers | Correct | Correct | Basic |
 | Realistic fixture data | Good | Good | No |
 
-Task 4: Fixing Flaky Tests
+Task 4 - Fixing Flaky Tests
 
 When tests fail intermittently, AI helps diagnose race conditions:
 
@@ -430,9 +430,9 @@ cy.get('[data-testid="success-message"]').should('be.visible');
 
 Claude recognizes the async pattern and suggests the right fix. GPT-4 sometimes suggests flawed solutions like `cy.wait(2000)` (bad practice).
 
-Task 5: Custom Cypress Commands
+Task 5 - Custom Cypress Commands
 
-Prompt: "Generate a custom command for the login flow that handles MFA. Takes email, password, and optional MFA code. Returns authenticated state."
+Prompt - "Generate a custom command for the login flow that handles MFA. Takes email, password, and optional MFA code. Returns authenticated state."
 
 ```javascript
 // cypress/support/commands.js
@@ -486,11 +486,11 @@ it('logs in with MFA', () => {
 
 Claude generates well-structured custom commands with error handling and secret masking. Copilot struggles with the logic flow.
 
-E2E Testing Anti-Patterns: What Claude Catches
+E2E Testing Anti-Patterns - What Claude Catches
 
 Claude can audit your Cypress suite and flag problems:
 
-Prompt: "Review this Cypress test and identify anti-patterns:"
+Prompt - "Review this Cypress test and identify anti-patterns:"
 
 ```javascript
 it('creates a new project', () => {
@@ -560,7 +560,7 @@ element has css property: pointer-events set to none"
 The element exists in the DOM, but a loading overlay is blocking it.
 ```
 
-Claude identifies: you need to wait for the overlay to disappear before clicking.
+Claude identifies - you need to wait for the overlay to disappear before clicking.
 
 ```javascript
 // Fix: Wait for overlay to be gone

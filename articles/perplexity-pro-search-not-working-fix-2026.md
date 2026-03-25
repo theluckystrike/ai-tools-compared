@@ -19,7 +19,7 @@ To fix Perplexity Pro search not working, first verify your subscription is acti
 
 
 - The most common causes: are expired authentication tokens, rate limiting (HTTP 429 errors), and browser extension conflicts with ad blockers or privacy tools.
-- Authentication and Subscription Problems: The most frequent cause of search failures is authentication issues or subscription status problems.
+- Authentication and Subscription Problems - The most frequent cause of search failures is authentication issues or subscription status problems.
 - Corporate firewalls and VPN: configurations frequently cause connectivity problems for users behind restricted networks.
 - For Web Users:
 
@@ -60,7 +60,7 @@ Sometimes Perplexity's systems flag accounts for manual verification, which rest
 Step-by-Step Fixes
 
 
-Fix 1: Verify Subscription Status
+Fix 1 - Verify Subscription Status
 
 
 Before attempting technical fixes, confirm your Perplexity Pro subscription is active:
@@ -78,7 +78,7 @@ Before attempting technical fixes, confirm your Perplexity Pro subscription is a
 If you recently changed payment methods or billing information, wait 24 hours for the system to fully process the update.
 
 
-Fix 2: Clear Authentication Tokens
+Fix 2 - Clear Authentication Tokens
 
 
 Expired or corrupted authentication tokens frequently cause search failures. Here's how to refresh them:
@@ -110,7 +110,7 @@ If not, generate a new key from your dashboard
 ```
 
 
-Fix 3: Diagnose Network Connectivity
+Fix 3 - Diagnose Network Connectivity
 
 
 Network issues require systematic diagnosis. Run these checks:
@@ -168,7 +168,7 @@ def perplexity_search_with_retry(query, max_retries=3):
 ```
 
 
-Fix 4: Browser and Extension Troubleshooting
+Fix 4 - Browser and Extension Troubleshooting
 
 
 If you access Perplexity through a browser:
@@ -185,7 +185,7 @@ If you access Perplexity through a browser:
 5. Disable uBlock Origin, Privacy Badger, or similar tools for the Perplexity domain
 
 
-Fix 5: API Configuration Review
+Fix 5 - API Configuration Review
 
 
 For developers integrating Perplexity programmatically:
@@ -209,7 +209,7 @@ Common configuration mistakes include:
 - Copying whitespace characters with the key
 
 
-Fix 6: Check Account Status for Verification Holds
+Fix 6 - Check Account Status for Verification Holds
 
 
 If your account is flagged for verification:

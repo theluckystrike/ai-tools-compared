@@ -21,7 +21,7 @@ Bazel has a steep learning curve. the BUILD language is Starlark (a Python subse
 
 Why Bazel BUILD Files Are Hard to Write
 
-BUILD files look simple: a handful of rule invocations with `name`, `srcs`, `deps`, and `visibility`. In practice, the complexity comes from several directions:
+BUILD files look simple - a handful of rule invocations with `name`, `srcs`, `deps`, and `visibility`. In practice, the complexity comes from several directions:
 
 - Rule set differences: `rules_go`, `rules_python`, `rules_java`, and `rules_proto` each have different conventions for dependency resolution, test setup, and external packages
 - Gazelle conventions: External Go deps use `@com_github_...` naming; Python uses `requirement()` calls. these are easy to get wrong
@@ -77,7 +77,7 @@ Go Binary with Multiple Packages
 Prompt:
 ```text
 Write a BUILD file for a Go binary at //cmd/api-server.
-It imports: //services/orders/handler, //services/users/handler, //lib/config,
+It imports - //services/orders/handler, //services/users/handler, //lib/config,
 and external github.com/spf13/cobra.
 ```
 
@@ -113,8 +113,8 @@ Python BUILD Files
 Prompt:
 ```text
 Write a BUILD file for a Python FastAPI service.
-Source: main.py, routers/users.py, routers/orders.py.
-Dependencies: FastAPI, SQLAlchemy, pydantic (from a pip_install WORKSPACE setup).
+Source - main.py, routers/users.py, routers/orders.py.
+Dependencies - FastAPI, SQLAlchemy, pydantic (from a pip_install WORKSPACE setup).
 Include py_test for tests/test_users.py. Add a py_binary for running the service.
 ```
 
@@ -161,14 +161,14 @@ py_test(
 
 The `requirement()` function call is the Gazelle/pip_install pattern for third-party packages. Claude uses it correctly. ChatGPT sometimes puts package names as strings in `deps` directly, which doesn't work.
 
-One nuance: you need a `load` statement for `requirement` from your pip_install repository. Claude adds a comment noting you need to load it from your specific pip install name (e.g., `load("@pip//:requirements.bzl", "requirement")`).
+One nuance - you need a `load` statement for `requirement` from your pip_install repository. Claude adds a comment noting you need to load it from your specific pip install name (e.g., `load("@pip//:requirements.bzl", "requirement")`).
 
 Proto + gRPC BUILD Files
 
 Prompt:
 ```text
 Write a BUILD file for a proto file at //proto/orders.proto.
-Generate: Go bindings, Python bindings, and a gRPC service.
+Generate - Go bindings, Python bindings, and a gRPC service.
 Use rules_proto and rules_go. The proto package is "orders.v1".
 ```
 
@@ -222,8 +222,8 @@ Java BUILD Files
 Prompt:
 ```text
 Write a Bazel BUILD file for a Java service with Spring Boot.
-Sources: src/main/java/com/example/OrderService.java
-External deps: Spring Boot starter web, Spring Data JPA, Hibernate (from maven_install).
+Sources - src/main/java/com/example/OrderService.java
+External deps - Spring Boot starter web, Spring Data JPA, Hibernate (from maven_install).
 Include a java_test for OrderServiceTest.java.
 ```
 
@@ -268,8 +268,8 @@ Visibility Rules
 
 Prompt:
 ```text
-I have packages: //services/auth, //services/orders, //lib/db.
-Rules: lib/db is public. services/auth is visible to services/orders only.
+I have packages - //services/auth, //services/orders, //lib/db.
+Rules - lib/db is public. services/auth is visible to services/orders only.
 services/orders is public. Write the visibility declarations.
 ```
 
@@ -491,7 +491,7 @@ Conditional Rules and Selects
 
 Prompt:
 ```text
-I have platform-specific code: Windows uses one library, Linux another.
+I have platform-specific code - Windows uses one library, Linux another.
 Write a BUILD file using select() to choose the right dependency.
 ```
 

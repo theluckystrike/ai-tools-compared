@@ -61,7 +61,7 @@ Creating a Systematic Reduction Workflow
 
 Randomly fixing debt items leads to wasted effort. A systematic approach ensures you get maximum impact from the time invested.
 
-Step 1: Categorize and Score Debt
+Step 1 - Categorize and Score Debt
 
 Create a simple scoring system for debt items:
 
@@ -76,7 +76,7 @@ Where:
 
 High-impact, low-complexity items should be addressed first. Use your AI assistant to estimate effort_remaining and fix_complexity by analyzing the affected code.
 
-Step 2: Batch Similar Tasks
+Step 2 - Batch Similar Tasks
 
 Group similar debt fixes together. AI assistants work more efficiently when asked to address multiple instances of the same pattern. For example:
 
@@ -86,7 +86,7 @@ Group similar debt fixes together. AI assistants work more efficiently when aske
 
 - Updating deprecated API calls throughout the codebase
 
-Step 3: Automate Detection
+Step 3 - Automate Detection
 
 Set up your AI assistant to flag new debt as it appears. In your code review workflow:
 
@@ -100,12 +100,12 @@ Most AI coding assistants integrate with Git hooks or CI/CD pipelines to provide
 
 Practical Examples
 
-Example 1: Adding Type Hints to Legacy Python Code
+Example 1 - Adding Type Hints to Legacy Python Code
 
 Legacy Python code often lacks type annotations. AI assistants can add them systematically:
 
 ```python
-Before: Legacy function without type hints
+Before - Legacy function without type hints
 def process_user_data(user_data, config):
     results = []
     for item in user_data:
@@ -114,7 +114,7 @@ def process_user_data(user_data, config):
             results.append(processed)
     return results
 
-After: AI-assisted type hints
+After - AI-assisted type hints
 from typing import TypedDict, Any
 
 class UserItem(TypedDict):
@@ -139,7 +139,7 @@ def process_user_data(
 
 Ask your AI assistant to add types incrementally, one module at a time, rather than attempting a full codebase conversion in one pass.
 
-Example 2: Extracting Repeated Logic
+Example 2 - Extracting Repeated Logic
 
 Repeated code blocks are a prime target for AI-assisted refactoring:
 
@@ -189,18 +189,18 @@ function updateUser(id, data) {
 }
 ```
 
-Example 3: Modernizing Deprecated APIs
+Example 3 - Modernizing Deprecated APIs
 
 Dependencies evolve, and older code often uses deprecated APIs. AI can identify and update these:
 
 ```python
-Before: Deprecated requests usage
+Before - Deprecated requests usage
 import requests
 
 response = requests.get(url)
 data = response.json()
 
-After: Modern approach with proper error handling
+After - Modern approach with proper error handling
 import httpx
 
 try:

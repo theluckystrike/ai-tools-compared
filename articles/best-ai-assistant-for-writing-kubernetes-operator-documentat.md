@@ -31,7 +31,7 @@ How AI Assistants Process CRD Specifications
 
 Modern AI coding assistants understand Kubernetes resources and can interpret CRD syntax. When you provide a CRD specification, these tools can extract field information and produce structured documentation.
 
-Input Format: Your CRD YAML
+Input Format - Your CRD YAML
 
 Here's a typical CRD specification you might feed to an AI assistant:
 
@@ -280,7 +280,7 @@ Keeping Documentation in Sync
 
 The biggest maintenance problem with operator documentation is drift. the CRD evolves but the documentation does not. Two strategies prevent this:
 
-Hash-based staleness detection: Store a hash of the CRD file alongside the generated docs. In CI, recompute the hash and skip regeneration if nothing changed. Fail the pipeline if docs are missing for any CRD that has changed.
+Hash-based staleness detection - Store a hash of the CRD file alongside the generated docs. In CI, recompute the hash and skip regeneration if nothing changed. Fail the pipeline if docs are missing for any CRD that has changed.
 
 ```bash
 #!/bin/bash
@@ -301,7 +301,7 @@ done
 echo "All docs are fresh"
 ```
 
-Version-pinned generation: Include the CRD `metadata.resourceVersion` or a manual `docs-version` annotation in the generated file header. Reviewers can spot at a glance whether documentation reflects the current CRD version.
+Version-pinned generation - Include the CRD `metadata.resourceVersion` or a manual `docs-version` annotation in the generated file header. Reviewers can spot at a glance whether documentation reflects the current CRD version.
 
 Integration with Documentation Pipelines
 
@@ -353,10 +353,10 @@ def generate_operator_docs(crd_yaml: str) -> str:
     kind = crd['spec']['names']['kind']
     group = crd['spec']['group']
 
-    prompt = f"""Generate comprehensive API reference documentation for this Kubernetes operator CRD.
+    prompt = f"""Generate complete API reference documentation for this Kubernetes operator CRD.
 
-CRD Name: {kind}
-API Group: {group}
+CRD Name - {kind}
+API Group - {group}
 
 CRD Specification:
 {crd_yaml}
@@ -389,7 +389,7 @@ with open('docs/api-reference.md', 'w') as f:
     f.write(docs)
 ```
 
-Comparison: AI Tools for Operator Docs
+Comparison - AI Tools for Operator Docs
 
 | Tool | Speed | Accuracy | CRD Understanding | Integration | Cost |
 |---|---|---|---|---|---|

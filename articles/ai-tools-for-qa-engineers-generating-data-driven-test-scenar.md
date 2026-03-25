@@ -162,8 +162,8 @@ Automating Test Data Generation
 AI tools also help generate additional test data when your CSV samples lack sufficient coverage. By analyzing existing data patterns, AI can suggest realistic variations:
 
 ```
-Given CSV columns: [first_name, last_name, age, country, subscription_tier]
-Existing rows: 15
+Given CSV columns - [first_name, last_name, age, country, subscription_tier]
+Existing rows - 15
 AI suggestions for expanded coverage:
 - Add rows with ages: 0, 17, 18, 64, 65, 100 (boundary ages)
 - Add rows with all subscription_tier values
@@ -296,7 +296,7 @@ Beyond mapping CSV to tests, AI tools generate test data variations:
 
 ```bash
 Using Claude Code to expand limited CSV data
-claude "I have 10 test cases for user registration. Generate 30 additional edge case rows for these CSV columns: username, email, password, expected_result, error_message. Include: SQL injection attempts, XSS payloads, boundary usernames (1 char, 255 chars), invalid emails, weak passwords, duplicate scenarios."
+claude "I have 10 test cases for user registration. Generate 30 additional edge case rows for these CSV columns: username, email, password, expected_result, error_message. Include - SQL injection attempts, XSS payloads, boundary usernames (1 char, 255 chars), invalid emails, weak passwords, duplicate scenarios."
 ```
 
 AI recognizes common security and boundary test cases and expands your baseline data significantly.
@@ -306,7 +306,7 @@ Continuous Test Generation in CI
 Integrate CSV-based test generation into your pipeline:
 
 ```yaml
-GitHub Actions: Generate and run tests from CSV
+GitHub Actions - Generate and run tests from CSV
 name: Data-Driven Tests
 on: [push, pull_request]
 

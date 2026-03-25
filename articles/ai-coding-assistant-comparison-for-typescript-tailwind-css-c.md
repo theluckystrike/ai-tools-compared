@@ -48,7 +48,7 @@ Claude Code
 
 Claude Code demonstrates strong understanding of Tailwind's composition model. It generates classes that follow established patterns, including responsive prefixes, state modifiers, and dark mode variants. The assistant properly escapes special characters in class names and handles dynamic class construction using template literals.
 
-Example prompt: "Create a responsive card component with hover effects using Tailwind CSS in TypeScript"
+Example prompt - "Create a responsive card component with hover effects using Tailwind CSS in TypeScript"
 
 Claude Code produces:
 

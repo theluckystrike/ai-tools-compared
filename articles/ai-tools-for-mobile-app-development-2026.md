@@ -45,7 +45,7 @@ SwiftUI Component Generation
 
 SwiftUI's declarative syntax is well-suited for AI generation. The model needs to understand view modifiers, state management, and the binding system.
 
-Test prompt: "Create a SwiftUI view for a profile header with an avatar image (circular, tappable to change), display name, username, bio text (max 3 lines with expand toggle), follower/following counts, and an Edit Profile button."
+Test prompt - "Create a SwiftUI view for a profile header with an avatar image (circular, tappable to change), display name, username, bio text (max 3 lines with expand toggle), follower/following counts, and an Edit Profile button."
 
 Claude's SwiftUI output:
 
@@ -167,7 +167,7 @@ Jetpack Compose Generation
 
 Kotlin/Compose generation is where AI tools shine for Android. The declarative model is similar to SwiftUI.
 
-Copilot Chat prompt: "Create a Compose LazyColumn for a message list with: user avatar, sender name, message preview (2 lines max), timestamp, unread indicator. Support both sent and received message styles."
+Copilot Chat prompt - "Create a Compose LazyColumn for a message list with: user avatar, sender name, message preview (2 lines max), timestamp, unread indicator. Support both sent and received message styles."
 
 ```kotlin
 // Copilot output. clean, follows Material 3 guidelines
@@ -251,7 +251,7 @@ fun MessageListItem(
 }
 ```
 
-Cross-Platform: React Native
+Cross-Platform - React Native
 
 For React Native, Cursor with codebase context performs best because it understands your existing component library:
 
@@ -352,7 +352,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -364,6 +364,6 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 {% endraw %}

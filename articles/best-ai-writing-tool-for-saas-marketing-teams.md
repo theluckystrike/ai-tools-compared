@@ -54,7 +54,7 @@ The best AI writing tools for SaaS marketing teams share common characteristics:
 
 4. Format flexibility. Support for docs, blogs, emails, and social content from a single source
 
-Tool Comparison: Top AI Writing Platforms for SaaS Marketing
+Tool Comparison - Top AI Writing Platforms for SaaS Marketing
 
 Different tools excel at different aspects of SaaS content production. This comparison covers the platforms most relevant to technical marketing teams:
 
@@ -69,7 +69,7 @@ Different tools excel at different aspects of SaaS content production. This comp
 
 For teams building content pipelines programmatically, Claude and GPT-4o offer the most flexibility. Jasper and Writer are better fits for teams prioritizing brand consistency at scale without needing full API control. Copy.ai excels at generating high volumes of short-form copy quickly, but its limited API makes automation harder.
 
-Evaluating AI Writing Tools: Technical Criteria
+Evaluating AI Writing Tools - Technical Criteria
 
 When assessing tools for a SaaS marketing team, look beyond surface-level features. The real value lies in how well the tool fits your technical stack.
 
@@ -152,10 +152,10 @@ For SaaS products with APIs, generating documentation from specifications is a m
 def generate_endpoint_docs(openapi_spec, endpoint):
     prompt = f"""Generate documentation for this API endpoint:
 
-Method: {endpoint['method']}
-Path: {endpoint['path']}
-Parameters: {endpoint.get('parameters', [])}
-Response: {endpoint.get('responses', {})}
+Method - {endpoint['method']}
+Path - {endpoint['path']}
+Parameters - {endpoint.get('parameters', [])}
+Response - {endpoint.get('responses', {})}
 
 Write for developers. Include:
 - Brief description

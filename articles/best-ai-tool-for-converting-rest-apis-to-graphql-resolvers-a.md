@@ -24,14 +24,14 @@ AI tools are most useful for the schema translation step and the resolver boiler
 
 Using Claude to Convert a REST Endpoint to a GraphQL Resolver
 
-The most effective approach: give Claude your REST endpoint documentation or code plus your existing GraphQL schema context, and ask it to produce both the type definitions and the resolver.
+The most effective approach - give Claude your REST endpoint documentation or code plus your existing GraphQL schema context, and ask it to produce both the type definitions and the resolver.
 
 Example. converting a REST user endpoint:
 
 REST endpoint:
 ```
 GET /api/users/{id}
-Response: { id, email, name, role, created_at, settings: { theme, notifications } }
+Response - { id, email, name, role, created_at, settings: { theme, notifications } }
 ```
 
 Prompt:
@@ -75,7 +75,7 @@ const userLoader = new DataLoader(async (ids) => {
   const responses = await Promise.all(
     ids.map(id =>
       fetch(`https://api.example.com/users/${id}`, {
-        headers: { Authorization: `Bearer ${process.env.API_TOKEN}` }
+        headers: { Authorization - `Bearer ${process.env.API_TOKEN}` }
       }).then(r => r.json())
     )
   );
@@ -83,7 +83,7 @@ const userLoader = new DataLoader(async (ids) => {
 });
 
 const resolvers = {
-  Query: {
+  Query - {
     user: (_, { id }) => userLoader.load(id),
     users: (_, { ids }) => userLoader.loadMany(ids),
   },
@@ -125,7 +125,7 @@ type Query {
 
 ```javascript
 // Resolver that wraps a REST paginated endpoint
-Query: {
+Query - {
   users: async (_, { first = 10, after }) => {
     const offset = after ? parseInt(Buffer.from(after, 'base64').toString()) : 0;
     const response = await fetch(
@@ -158,7 +158,7 @@ REST uses HTTP status codes to signal errors; GraphQL always returns 200 with er
 
 ```javascript
 // Error-handling resolver pattern
-Query: {
+Query - {
   user: async (_, { id }) => {
     const response = await fetch(`https://api.example.com/users/${id}`);
 
@@ -193,7 +193,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -205,7 +205,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

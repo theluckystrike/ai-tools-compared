@@ -21,10 +21,10 @@ Writing a good first issue description is one of the most impactful things you c
 Table of Contents
 
 - [What Makes a Good First Issue Description](#what-makes-a-good-first-issue-description)
-- [Claude Code: Best Overall for Issue Writing](#claude-code-best-overall-for-issue-writing)
-- [ChatGPT: Strong for Quick Drafts](#chatgpt-strong-for-quick-drafts)
-- [Cursor: Good for IDE Integration](#cursor-good-for-ide-integration)
-- [Gemini: Worth Considering for Google Ecosystem Users](#gemini-worth-considering-for-google-ecosystem-users)
+- [Claude Code - Best Overall for Issue Writing](#claude-code-best-overall-for-issue-writing)
+- [ChatGPT - Strong for Quick Drafts](#chatgpt-strong-for-quick-drafts)
+- [Cursor - Good for IDE Integration](#cursor-good-for-ide-integration)
+- [Gemini - Worth Considering for Google environment Users](#gemini-worth-considering-for-google-environment-users)
 - [Tips for Getting Better Results](#tips-for-getting-better-results)
 - [Real-World Template Generation](#real-world-template-generation)
 - [About This Issue](#about-this-issue)
@@ -35,7 +35,7 @@ Table of Contents
 - [Getting Started](#getting-started)
 - [Questions?](#questions)
 - [Pricing and Tool Comparison](#pricing-and-tool-comparison)
-- [Practical Workflow: Issue Description in 5 Minutes](#practical-workflow-issue-description-in-5-minutes)
+- [Practical Workflow - Issue Description in 5 Minutes](#practical-workflow-issue-description-in-5-minutes)
 - [Community Feedback and Common Pitfalls](#community-feedback-and-common-pitfalls)
 - [Comparing the Options](#comparing-the-options)
 
@@ -55,7 +55,7 @@ Before evaluating AI tools, it helps to understand what separates a useful first
 
 The best AI tools understand these elements and can generate descriptions that hit all these points while matching your project's tone and conventions.
 
-Claude Code: Best Overall for Issue Writing
+Claude Code - Best Overall for Issue Writing
 
 Claude Code stands out as the top recommendation for writing first issue descriptions. Its strong reasoning capabilities allow it to understand project context and generate appropriately scoped descriptions.
 
@@ -75,7 +75,7 @@ claude "Write a good first issue for adding a dark mode toggle to our React comp
 
 Claude Code's strength lies in its ability to maintain context across a conversation. You can iteratively refine the issue description by asking follow-up questions like "make this more beginner-friendly" or "add more specific technical details about the implementation."
 
-ChatGPT: Strong for Quick Drafts
+ChatGPT - Strong for Quick Drafts
 
 ChatGPT remains a solid choice for quickly generating issue descriptions. The GPT-4 model understands developer workflows and can produce reasonable first issue descriptions with minimal prompting.
 
@@ -91,7 +91,7 @@ Our project needs a first-time contributor issue for fixing a typo in the docume
 
 The limitation is that ChatGPT sometimes generates generic descriptions that lack project-specific context. You'll often need to edit the output to add relevant links, coding conventions, or project-specific details.
 
-Cursor: Good for IDE Integration
+Cursor - Good for IDE Integration
 
 Cursor offers a unique approach by integrating AI assistance directly into your development environment. For issue writing, this means you can reference your actual codebase while generating descriptions.
 
@@ -111,9 +111,9 @@ Workflow example:
 
 Cursor works best when you have specific code to reference. For vaguer feature requests, you might get less useful output.
 
-Gemini: Worth Considering for Google Ecosystem Users
+Gemini - Worth Considering for Google environment Users
 
-Google's Gemini has improved significantly and offers a viable alternative, especially if you're already working within the Google/Cloud ecosystem. It understands infrastructure and DevOps contexts well.
+Google's Gemini has improved significantly and offers a viable alternative, especially if you're already working within the Google/Cloud environment. It understands infrastructure and DevOps contexts well.
 
 When Gemini Shines
 
@@ -129,7 +129,7 @@ Tips for Getting Better Results
 
 Regardless of which tool you choose, a few practices improve the quality of generated issue descriptions:
 
-Provide context upfront: The more background you give the AI, the better the output. Include information about your project's tech stack, contributor experience level, and any existing conventions.
+Provide context upfront - The more background you give the AI, the better the output. Include information about your project's tech stack, contributor experience level, and any existing conventions.
 
 Iterate rather than accept the first draft: AI-generated descriptions are starting points. Edit for clarity, add project-specific links, and ensure the tone matches your community.
 
@@ -147,7 +147,7 @@ AI tools excel at creating reusable templates for different issue types. Here's 
 
 ```bash
 Using Claude Code CLI
-claude "Create a GitHub issue template for 'good first issues' in our Python FastAPI project. Include: context, difficulty level, suggested approach, acceptance criteria, and helpful resources. Make it welcoming to new contributors."
+claude "Create a GitHub issue template for 'good first issues' in our Python FastAPI project. Include - context, difficulty level, suggested approach, acceptance criteria, and helpful resources. Make it welcoming to new contributors."
 ```
 
 Generated template output:
@@ -196,7 +196,7 @@ Pricing and Tool Comparison
 | Gemini | Free or $20/month | GCP/infrastructure | Moderate |
 | Claude API | $3 per 1M input tokens | Programmatic + web | Excellent |
 
-Practical Workflow: Issue Description in 5 Minutes
+Practical Workflow - Issue Description in 5 Minutes
 
 1. Identify problem (1 min): Understand what needs fixing
 2. Gather context (1 min): Find related files or issues
@@ -210,15 +210,15 @@ Community Feedback and Common Pitfalls
 
 When generating first issues with AI, avoid these common mistakes:
 
-Too vague: "Fix the bugs in the authentication system." → Better: "Add email validation error message when signup form receives malformed email addresses."
+Too vague - "Fix the bugs in the authentication system." → Better - "Add email validation error message when signup form receives malformed email addresses."
 
-Too complex: Avoid describing multiple loosely-related improvements in one first issue. Break them into separate tickets.
+Too complex - Avoid describing multiple loosely-related improvements in one first issue. Break them into separate tickets.
 
-Missing context: Don't assume contributors know your codebase. Link to relevant code files, explain the architecture, mention related documentation.
+Missing context - Don't assume contributors know your codebase. Link to relevant code files, explain the architecture, mention related documentation.
 
-No difficulty indication: Always be explicit about whether this is truly a "first issue" or if it requires some project knowledge.
+No difficulty indication - Always be explicit about whether this is truly a "first issue" or if it requires some project knowledge.
 
-Weak acceptance criteria: "Implement the feature" is too vague. "Function handles null input without crashing AND returns validation error message" is specific and testable.
+Weak acceptance criteria - "Implement the feature" is too vague. "Function handles null input without crashing AND returns validation error message" is specific and testable.
 
 Good first issues attract contributors. Bad ones waste everyone's time. AI tools help you avoid these pitfalls if you review generated content carefully.
 

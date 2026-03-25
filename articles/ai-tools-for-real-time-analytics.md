@@ -20,7 +20,7 @@ The best AI tools for real-time analytics are Apache Kafka for event streaming, 
 Table of Contents
 
 - [Understanding Real-Time Analytics Requirements](#understanding-real-time-analytics-requirements)
-- [Architecture Patterns: Choosing Your Stack](#architecture-patterns-choosing-your-stack)
+- [Architecture Patterns - Choosing Your Stack](#architecture-patterns-choosing-your-stack)
 - [Streaming Data Pipelines with Apache Kafka](#streaming-data-pipelines-with-apache-kafka)
 - [Apache Flink for Complex Event Processing](#apache-flink-for-complex-event-processing)
 - [ClickHouse for Real-Time OLAP](#clickhouse-for-real-time-olap)
@@ -43,7 +43,7 @@ Real-time analytics demands low-latency data processing. Your system must ingest
 
 AI tools enhance these capabilities by automatically detecting patterns, identifying anomalies, and generating predictions without manual rule-writing.
 
-Architecture Patterns: Choosing Your Stack
+Architecture Patterns - Choosing Your Stack
 
 Before selecting individual tools, it helps to understand the two dominant architectural patterns for real-time analytics with AI:
 
@@ -203,7 +203,7 @@ Triton Inference Server (NVIDIA) handles batching automatically. when traffic sp
 
 BentoML is a higher-level option that wraps model serving with REST and gRPC endpoints, built-in monitoring, and straightforward Kubernetes deployment. For teams without a dedicated MLOps function, BentoML reduces the operational burden significantly compared to running raw Triton.
 
-The general guidance: for throughput under 1,000 events/second, embedding inference in your consumer is fine. Above that threshold, a dedicated serving layer with batching prevents the inference step from becoming the pipeline bottleneck.
+The general guidance - for throughput under 1,000 events/second, embedding inference in your consumer is fine. Above that threshold, a dedicated serving layer with batching prevents the inference step from becoming the pipeline bottleneck.
 
 Materialize for Streaming SQL
 

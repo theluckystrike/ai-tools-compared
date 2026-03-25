@@ -29,7 +29,7 @@ Table of Contents
 - [Subscription Tier Comparison](#subscription-tier-comparison)
 - [Real-World Usage Limits](#real-world-usage-limits)
 - [Building a Fallback Voice Strategy](#building-a-fallback-voice-strategy)
-- [Cost Comparison: Web Interface vs API](#cost-comparison-web-interface-vs-api)
+- [Cost Comparison - Web Interface vs API](#cost-comparison-web-interface-vs-api)
 - [Usage Optimization Tips](#usage-optimization-tips)
 - [When to Switch to API-Only Approach](#when-to-switch-to-api-only-approach)
 
@@ -339,7 +339,7 @@ class VoiceApplicationHandler:
 
 This implementation ensures your application provides voice capabilities even when Advanced Voice Mode is unavailable.
 
-Cost Comparison: Web Interface vs API
+Cost Comparison - Web Interface vs API
 
 For building voice applications, compare the cost of subscription vs API:
 

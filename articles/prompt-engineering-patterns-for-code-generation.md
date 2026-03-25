@@ -41,16 +41,16 @@ The difference between a prompt that produces working code and one that produces
 - What data structure best: represents this problem and why 2.
 - Without "do not use regex for splitting:" every model defaults to `line.split(",")` which breaks on `"Smith, John",30,NYC`.
 
-Pattern 1: Role + Stack + Constraint Priming
+Pattern 1 - Role + Stack + Constraint Priming
 
-Most developers write: "Write a function that caches API responses."
+Most developers write - "Write a function that caches API responses."
 
 The AI produces generic code using whatever caching library it assumes you use. Better:
 
 ```
 You are a senior Python engineer working on a FastAPI service.
-Stack: Python 3.12, FastAPI, Redis via aioredis, Pydantic v2.
-Constraint: async only, no threading. Cache key format: "{endpoint}:{sorted_param_hash}".
+Stack - Python 3.12, FastAPI, Redis via aioredis, Pydantic v2.
+Constraint - async only, no threading. Cache key format: "{endpoint}:{sorted_param_hash}".
 TTL must be configurable per endpoint via a decorator argument.
 
 Write a cache decorator that wraps async FastAPI route handlers.
@@ -58,7 +58,7 @@ Write a cache decorator that wraps async FastAPI route handlers.
 
 This produces code that uses `aioredis` instead of `redis-py` (async-compatible), hashes parameters in a stable way, and accepts `@cache(ttl=300)` syntax. The role + stack + constraint triple removes the three most common sources of useless AI code: wrong library choice, wrong async approach, and missing configurability.
 
-Pattern 2: Show the Interface, Ask for the Implementation
+Pattern 2 - Show the Interface, Ask for the Implementation
 
 Don't describe what you want. show the exact signature and docstring, then ask for the body.
 
@@ -83,12 +83,12 @@ async def get_user_recommendations(
 
 When the AI sees a complete signature with a precise docstring, it cannot diverge on interface design. You get implementation-only output. This pattern eliminates 80% of follow-up prompts asking to "change the return type" or "add error handling."
 
-Pattern 3: Provide the Failing Test
+Pattern 3 - Provide the Failing Test
 
 Give the AI a failing test and ask it to write code that makes it pass.
 
 ```python
-Prompt: Make this test pass. Do not modify the test.
+Prompt - Make this test pass. Do not modify the test.
 
 def test_rate_limiter():
     limiter = RateLimiter(requests_per_second=2)
@@ -107,7 +107,7 @@ def test_rate_limiter():
 
 The test is the specification. The AI cannot misunderstand what `requests_per_second` means because the test shows exactly what it should do. This pattern also produces code that is trivially testable. because it was written to pass a test.
 
-Pattern 4: Chain-of-Thought for Algorithmic Code
+Pattern 4 - Chain-of-Thought for Algorithmic Code
 
 For anything involving algorithms or non-trivial logic, ask the AI to reason before it codes.
 
@@ -119,7 +119,7 @@ Before writing any code, explain in plain language:
 
 Then write the implementation.
 
-Problem: Given a list of intervals [start, end], merge all overlapping intervals.
+Problem - Given a list of intervals [start, end], merge all overlapping intervals.
 [[1,3],[2,6],[8,10],[15,18]] -> [[1,6],[8,10],[15,18]]
 ```
 
@@ -147,7 +147,7 @@ def merge_intervals(intervals: list[list[int]]) -> list[list[int]]:
     return merged
 ```
 
-Pattern 5: Negative Constraints
+Pattern 5 - Negative Constraints
 
 Tell the AI what NOT to do.
 
@@ -168,25 +168,25 @@ DO:
 
 Negative constraints force the model out of its default patterns. Without "do not use regex for splitting," every model defaults to `line.split(",")` which breaks on `"Smith, John",30,NYC`. The negative constraint eliminates this before a token is generated.
 
-Pattern 6: Incremental Build Pattern
+Pattern 6 - Incremental Build Pattern
 
 For complex features, build in stages:
 
 ```
-Stage 1: Write just the types and interfaces. No implementation.
+Stage 1 - Write just the types and interfaces. No implementation.
 [review + adjust types]
 
-Stage 2: Given these types, write just the database layer functions as stubs with docstrings.
+Stage 2 - Given these types, write just the database layer functions as stubs with docstrings.
 [review + adjust signatures]
 
-Stage 3: Implement the stubs. Use the exact signatures from Stage 2.
+Stage 3 - Implement the stubs. Use the exact signatures from Stage 2.
 
-Stage 4: Write tests for each function in Stage 3.
+Stage 4 - Write tests for each function in Stage 3.
 ```
 
 This prevents the AI from making architectural decisions you haven't reviewed. By the time implementation is written, the interface is locked and correct.
 
-Pattern 7: Self-Review Loop
+Pattern 7 - Self-Review Loop
 
 After generating code, prompt the AI to critique it.
 
@@ -206,7 +206,7 @@ Models are better at spotting bugs in code than writing bug-free code from scrat
 
 ```
 [CRITICAL] Line 12: SQL query uses string formatting. SQL injection risk.
-  Fix: Use parameterized queries via cursor.execute(query, (user_id,))
+  Fix - Use parameterized queries via cursor.execute(query, (user_id,))
 
 [MEDIUM] Line 18: No connection pooling. creates new connection per call.
 
@@ -233,7 +233,7 @@ func (h *UserHandler) UpdateProfile(w http.ResponseWriter, r *http.Request)
 Before coding, explain how you'll handle partial updates (name only, avatar only, both).
 
 [Negative constraints]
-Do NOT: use encoding/json directly (use h.encoder helper), return 500 for validation errors.
+Do NOT - use encoding/json directly (use h.encoder helper), return 500 for validation errors.
 ```
 
 This prompt reliably produces production-quality handler code on the first attempt.
@@ -242,7 +242,7 @@ Testing Prompt Quality
 
 The best metric is "tokens until production-ready". how much additional input (edits, clarifications) is needed before the code works.
 
-Test case: Implement a connection pool with backpressure
+Test case - Implement a connection pool with backpressure
 
 ```python
 Bad prompt (high token cost)
@@ -254,7 +254,7 @@ Medium prompt (moderate token cost)
 → Has backpressure, but no monitoring, 1 follow-up = 2,800 tokens
 
 Good prompt (low token cost)
-"You are a senior Python engineer. Stack: asyncio, psycopg3, prometheus.
+"You are a senior Python engineer. Stack - asyncio, psycopg3, prometheus.
 Implement AsyncConnectionPool that:
 1. Maintains pool size between min_size and max_size
 2. Blocks acquire() when pool exhausted (backpressure via Semaphore)
@@ -273,7 +273,7 @@ Implement the class."
 
 Bad prompts cost 4,200 tokens. Good prompts cost 1,200 tokens. Structured prompts save money and time.
 
-Real Workflow: Building an Event Router
+Real Workflow - Building an Event Router
 
 Demonstrating full pattern stacking on a real task:
 
@@ -348,7 +348,7 @@ Patterns work across languages, but some need tuning:
 | Rust | 88% | Lifetime constraints need explicit mention |
 | Java | 85% | Verbose; generics require extra clarity |
 
-Lower success with Java: Fewer examples in training data for newer patterns. Stick to simple role/stack/constraint for Java.
+Lower success with Java - Fewer examples in training data for newer patterns. Stick to simple role/stack/constraint for Java.
 
 Measuring Pattern Impact
 
@@ -394,7 +394,7 @@ We use RS256 keys stored in environment as base64.
 Attach the decoded token to req.user. Return 401 with message 'Invalid token' on failure."
 ```
 
-CLI Tool: Prompt Quality Linter
+CLI Tool - Prompt Quality Linter
 
 A simple script to score prompt quality:
 
@@ -439,7 +439,7 @@ Output:
  Negative constraints
  Interface shown
 ...
-Prompt Quality Score: 75 / 100
+Prompt Quality Score - 75 / 100
 ```
 
 Frequently Asked Questions

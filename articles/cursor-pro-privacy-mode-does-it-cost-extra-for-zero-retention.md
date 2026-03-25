@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor Pro Privacy Mode Does It Cost Extra"
-description: "Cursor Pro Privacy Mode: Does It Cost Extra for Zero.. guide with practical tips, comparisons, and expert recommendations for developers"
+description: "Cursor Pro Privacy Mode - Does It Cost Extra for Zero.. guide with practical tips, comparisons, and expert recommendations for developers"
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: theluckystrike
@@ -225,8 +225,8 @@ lsof -i TCP -n -P | grep -i cursor | awk '{print $9}' | sort -u
 Monitor new connections in real time (requires sudo)
 sudo lsof -r 2 -i TCP -n -P | grep -i cursor
 
-Privacy Mode should show: api.anthropic.com (inference), cursor.sh (auth)
-Red flag: connections to analytics.cursor.sh or segment.io while in Privacy Mode
+Privacy Mode should show - api.anthropic.com (inference), cursor.sh (auth)
+Red flag - connections to analytics.cursor.sh or segment.io while in Privacy Mode
 ```
 
 Frequently Asked Questions

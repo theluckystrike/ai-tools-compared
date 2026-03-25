@@ -52,7 +52,7 @@ Context loss is one of the most disruptive problems in AI-assisted development w
 
 Step-by-Step Fixes
 
-Fix 1: Verify Session Persistence Settings
+Fix 1 - Verify Session Persistence Settings
 
 Claude Code supports session resume functionality through specific flags and configuration options. Start by checking whether your installation supports automatic session restoration:
 
@@ -83,7 +83,7 @@ This command attempts to restore the previous session state. Some installations 
 
 Restart Claude Code after modifying configuration files to apply changes.
 
-Fix 2: Check History File Location and Permissions
+Fix 2 - Check History File Location and Permissions
 
 Claude Code stores conversation history in local files. Verify these files exist and contain data from previous sessions. Common locations include:
 
@@ -106,7 +106,7 @@ If files exist but appear empty or truncated, permission issues may prevent prop
 chmod -R u+rw ~/.claude/
 ```
 
-Fix 3: Use Explicit Project Context Loading
+Fix 3 - Use Explicit Project Context Loading
 
 When starting Claude Code in a project directory, provide explicit context files to restore awareness of your codebase and previous discussions. Create a context file that Claude Code can read on startup:
 
@@ -122,7 +122,7 @@ claude --context .claude/context.md
 
 For ongoing projects, maintain a running context document that you update after each session. Include key decisions, current work items, and architectural notes.
 
-Fix 4: Configure Shell Integration Properly
+Fix 4 - Configure Shell Integration Properly
 
 Poor shell integration causes context loss when terminal sessions terminate abnormally. Ensure your shell configuration properly handles Claude Code process termination. Add error handling to your shell profile:
 
@@ -137,7 +137,7 @@ Verify the trap fires correctly by testing:
 claude --save-session && echo "Session saved"
 ```
 
-Fix 5: Update Claude Code Installation
+Fix 5 - Update Claude Code Installation
 
 Context handling improvements appear in newer versions. Check your current version and compare with available releases:
 
@@ -157,7 +157,7 @@ curl -s https://api.github.com/repos/anthropics/claude-code/releases/latest | gr
 
 After updating, test session persistence with a fresh terminal window.
 
-Fix 6: Environment Variable Configuration
+Fix 6 - Environment Variable Configuration
 
 Set environment variables to force persistent session behavior:
 
@@ -228,7 +228,7 @@ Project Context
 
 What this is
 A FastAPI backend for a SaaS billing platform. Users are B2B finance teams.
-Stack: Python 3.11, FastAPI, PostgreSQL 15, SQLAlchemy 2.0, Alembic, Redis.
+Stack - Python 3.11, FastAPI, PostgreSQL 15, SQLAlchemy 2.0, Alembic, Redis.
 
 Architecture decisions
 - Async SQLAlchemy sessions throughout (no sync ORM calls)
@@ -243,7 +243,7 @@ Naming conventions
 
 Current WIP
 Implementing Stripe webhook handler in app/webhooks/stripe.py.
-Next: write tests for the invoice.paid event handler.
+Next - write tests for the invoice.paid event handler.
 
 Key commands
 - Run tests: pytest tests/ -x -q
@@ -263,7 +263,7 @@ Session Snapshot Workflow
 
 For teams or individuals running long multi-day projects, a snapshot workflow reduces the daily context-rebuilding overhead to near zero.
 
-At session end: Ask Claude Code to summarize the session before you close the terminal:
+At session end - Ask Claude Code to summarize the session before you close the terminal:
 
 ```
 Summarize what we accomplished this session, what decisions we made, and what the next steps are. Format it as a context file update I can paste into .claude/context.md.
@@ -271,7 +271,7 @@ Summarize what we accomplished this session, what decisions we made, and what th
 
 Paste the output into your context file, replacing the "Current WIP" section.
 
-At session start: Load the context file and confirm Claude Code understood it:
+At session start - Load the context file and confirm Claude Code understood it:
 
 ```bash
 claude --context .claude/context.md "Read the context file and confirm you understand what we were working on."
@@ -291,7 +291,7 @@ Implement a consistent workflow to minimize context disruption:
 
 4. Export regularly. periodically export session summaries using built-in export functions if available
 
-Comparison: Session Management Approaches
+Comparison - Session Management Approaches
 
 | Approach | Setup effort | Reliability | Best for |
 |---|---|---|---|

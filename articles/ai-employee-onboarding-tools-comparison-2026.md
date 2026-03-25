@@ -124,11 +124,11 @@ Compliance and Security Considerations
 
 Onboarding tools process sensitive personal information, making security posture critical. Evaluate these areas:
 
-Data handling: Does the platform process employee data on servers in your required jurisdiction? Can you configure data retention policies? Do they support GDPR, CCPA, and other regional regulations?
+Data handling - Does the platform process employee data on servers in your required jurisdiction? Can you configure data retention policies? Do they support GDPR, CCPA, and other regional regulations?
 
-Access controls: Look for role-based access control (RBAC), audit logging of administrative actions, and support for SSO integration with your identity provider.
+Access controls - Look for role-based access control (RBAC), audit logging of administrative actions, and support for SSO integration with your identity provider.
 
-API security: Ensure the platform supports API key rotation, IP allowlisting, and webhook signature verification:
+API security - Ensure the platform supports API key rotation, IP allowlisting, and webhook signature verification:
 
 ```javascript
 // Verifying webhook signature
@@ -167,7 +167,7 @@ Webhook Handling Pattern
 When setting up onboarding automation, ensure secure webhook processing:
 
 ```python
-Python example: Validating and processing onboarding webhooks
+Python example - Validating and processing onboarding webhooks
 import hmac
 import hashlib
 from datetime import datetime
@@ -273,19 +273,19 @@ async function assignOnboardingTasks(employeeId, config) {
 
 Implementation Challenges and Solutions
 
-Challenge: Legacy HRIS Integration
+Challenge - Legacy HRIS Integration
 Many organizations have existing HRIS systems that don't expose modern APIs. Solutions include:
 - Using ETL tools (Apache NiFi, Talend) to bridge systems
 - Building a lightweight integration layer that polls the legacy system
 - Migrating gradually to a modern platform with onboarding features
 
-Challenge: Training Content Management
+Challenge - Training Content Management
 AI can generate recommendations, but organizing training materials across systems is complex:
 - Implement a learning object repository (SCORM, xAPI compatible)
 - Use AI to tag and categorize existing content
 - Generate metadata automatically using Claude or GPT-4
 
-Challenge: Timing and Scheduling
+Challenge - Timing and Scheduling
 Onboarding happens on specific dates; async processing requires careful queuing:
 - Use job queues (Celery, Bull, RabbitMQ) to schedule time-sensitive tasks
 - Build in retry logic with exponential backoff for failed task assignments

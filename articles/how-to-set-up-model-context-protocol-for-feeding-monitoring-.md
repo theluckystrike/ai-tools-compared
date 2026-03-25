@@ -34,7 +34,7 @@ Second, access to your monitoring system. This guide uses Prometheus and Alertma
 Third, API credentials with appropriate read access to your monitoring data. Create service accounts with minimal permissions, your AI needs to read metrics and alerts, not modify them.
 
 
-Step 2: Configure MCP for Prometheus and Alertmanager
+Step 2 - Configure MCP for Prometheus and Alertmanager
 
 
 The most common setup involves connecting MCP to Prometheus Alertmanager. Here's how to configure this connection:
@@ -63,7 +63,7 @@ First, create a configuration file for your MCP server. The server acts as a bri
 Add this configuration to your AI client's MCP settings. The exact location varies by client, look for settings related to MCP servers or integrations.
 
 
-Step 3: Connecting to Multiple Monitoring Sources
+Step 3 - Connecting to Multiple Monitoring Sources
 
 
 Production environments typically have multiple monitoring systems. MCP supports multiple simultaneous connections, allowing your AI to correlate data across sources:
@@ -105,7 +105,7 @@ Production environments typically have multiple monitoring systems. MCP supports
 This configuration enables your AI to query Prometheus for metrics, fetch dashboards from Grafana, and pull CloudWatch logs, all within a single conversation.
 
 
-Step 4: Querying Alerts Through MCP
+Step 4 - Querying Alerts Through MCP
 
 
 Once configured, your AI can directly query alert status. Here's a practical example of how this works in practice:
@@ -115,12 +115,12 @@ When you ask your AI about active alerts, the MCP server translates natural lang
 
 
 ```
-You: Show me all active alerts with severity critical
+You - Show me all active alerts with severity critical
 
 [MCP translates this to Prometheus/Alertmanager API call]
 [Returns active critical alerts with labels, annotations, timestamps]
 
-AI Response: You have 3 critical alerts active:
+AI Response - You have 3 critical alerts active:
 
 1. HighMemoryUsage on host-prod-03
    - Memory usage at 94% for 5 minutes
@@ -137,7 +137,7 @@ AI Response: You have 3 critical alerts active:
 This immediate context helps you prioritize incident response without manually checking multiple dashboards.
 
 
-Step 5: Automate Alert Context Retrieval
+Step 5 - Automate Alert Context Retrieval
 
 
 Beyond ad-hoc queries, you can automate alert context retrieval for common scenarios. Create MCP tool definitions that trigger automatically:
@@ -176,7 +176,7 @@ With these tools defined, your AI can automatically fetch relevant metrics when 
 
 
 ```
-You: Something is wrong with the authentication service, help me investigate
+You - Something is wrong with the authentication service, help me investigate
 
 AI: Let me pull the relevant data...
 [Queries error rates, latency percentiles, recent deployments, related logs]

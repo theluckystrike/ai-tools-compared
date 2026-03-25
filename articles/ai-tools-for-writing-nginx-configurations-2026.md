@@ -19,11 +19,11 @@ Nginx configuration is notoriously opaque. Directives feel arbitrary, syntax is 
 
 We tested Claude 3.5 Sonnet, GitHub Copilot, and Cursor on five real-world nginx scenarios: reverse proxy with SSL, load balancing across backends, rate limiting with token buckets, gzip compression tuning, and graceful reload patterns.
 
-The Benchmark: Five Real Scenarios
+The Benchmark - Five Real Scenarios
 
-Scenario 1: Reverse Proxy with SSL Termination
+Scenario 1 - Reverse Proxy with SSL Termination
 
-Request: "Generate a nginx config for a reverse proxy that terminates SSL and forwards to an upstream backend on port 3000. Include HSTS, disable weak ciphers, and set reasonable timeouts."
+Request - "Generate a nginx config for a reverse proxy that terminates SSL and forwards to an upstream backend on port 3000. Include HSTS, disable weak ciphers, and set reasonable timeouts."
 
 Claude 3.5 Sonnet ($3/MTok input, $15/MTok output):
 
@@ -50,11 +50,11 @@ Cursor ($20/mo, or free tier):
 
 Cursor + Claude backend performed similarly to Copilot. Key advantage: inline edits. We prompted with "Change the upstream port to 8080 and add proxy_cache_path," and Cursor applied both edits in a single pass without regenerating the entire config.
 
-Winner for SSL proxy: Claude. Delivered complete config on first pass. Copilot requires iteration; Cursor is competitive but depends on Claude backend anyway.
+Winner for SSL proxy - Claude. Delivered complete config on first pass. Copilot requires iteration; Cursor is competitive but depends on Claude backend anyway.
 
-Scenario 2: Load Balancing with Health Checks
+Scenario 2 - Load Balancing with Health Checks
 
-Request: "Configure nginx to load balance across three backend servers on ports 3001, 3002, 3003. Use round-robin, add health check parameters, and log which backend each request hits."
+Request - "Configure nginx to load balance across three backend servers on ports 3001, 3002, 3003. Use round-robin, add health check parameters, and log which backend each request hits."
 
 Claude response (excerpt):
 
@@ -91,11 +91,11 @@ Claude chose `least_conn` over round-robin and explained why: "Round-robin ignor
 
 Copilot generated round-robin first; Cursor matched Claude after context.
 
-Real-world note: Nginx's open-source version lacks active health checks (that's Plus). Claude acknowledged this and suggested passive health checks via `max_fails` as a practical alternative.
+Real-world note - Nginx's open-source version lacks active health checks (that's Plus). Claude acknowledged this and suggested passive health checks via `max_fails` as a practical alternative.
 
-Scenario 3: Rate Limiting with Token Bucket
+Scenario 3 - Rate Limiting with Token Bucket
 
-Request: "Implement token bucket rate limiting: allow 100 requests per minute per IP, burst to 150. Return 429 when limit exceeded."
+Request - "Implement token bucket rate limiting: allow 100 requests per minute per IP, burst to 150. Return 429 when limit exceeded."
 
 Claude's approach:
 
@@ -113,15 +113,15 @@ server {
 }
 ```
 
-Key insight Claude provided: `burst=50` on a 100r/m limit allows 150 total requests over the first second (100 base + 50 burst), then enforces the rate strictly. This matches your token bucket semantics exactly.
+Key insight Claude provided - `burst=50` on a 100r/m limit allows 150 total requests over the first second (100 base + 50 burst), then enforces the rate strictly. This matches your token bucket semantics exactly.
 
 Copilot forgot the `limit_req_status` directive in first pass (important for returning 429 instead of 503).
 
 Cursor asked clarifying questions: "Do you want to rate limit per IP or per user? Should authenticated users have higher limits?" Good UX, but slower than Claude's direct answer.
 
-Scenario 4: Gzip Compression Tuning
+Scenario 4 - Gzip Compression Tuning
 
-Request: "Configure gzip compression for static assets and JSON responses. Exclude small files and image formats that don't compress. What compression level balances speed vs. ratio?"
+Request - "Configure gzip compression for static assets and JSON responses. Exclude small files and image formats that don't compress. What compression level balances speed vs. ratio?"
 
 Claude's answer:
 
@@ -136,15 +136,15 @@ gzip_proxied any;
 gzip_disable "msie6";
 ```
 
-Claude's reasoning: "Level 5 is the sweet spot: level 6+ gives ~5% better compression but costs 30% more CPU. At 100+ concurrent requests, this matters."
+Claude's reasoning - "Level 5 is the sweet spot: level 6+ gives ~5% better compression but costs 30% more CPU. At 100+ concurrent requests, this matters."
 
 Copilot suggested level 6 with no performance caveat. Cursor defaulted to level 9 (worst for throughput).
 
-We verified locally: level 5 on 4MB JSON payload: 85ms. Level 9: 320ms. Claude's pragmatism wins.
+We verified locally - level 5 on 4MB JSON payload: 85ms. Level 9: 320ms. Claude's pragmatism wins.
 
-Scenario 5: Graceful Reload and Config Testing
+Scenario 5 - Graceful Reload and Config Testing
 
-Request: "How do I test a nginx config before reloading? What's the safest reload procedure?"
+Request - "How do I test a nginx config before reloading? What's the safest reload procedure?"
 
 Claude provided:
 
@@ -153,7 +153,7 @@ Claude provided:
 3. Safe reload: `nginx -s reload` (graceful; existing connections finish)
 4. What it does: Starts new worker processes with new config, old workers drain then exit
 
-Claude also warned: "Do not use `kill -9` on nginx; use `kill -TERM` (graceful) or `nginx -s quit` (fast shutdown)."
+Claude also warned - "Do not use `kill -9` on nginx; use `kill -TERM` (graceful) or `nginx -s quit` (fast shutdown)."
 
 Copilot forgot the dry-run step entirely. Its reload procedure was "just run `nginx -s reload`", missing the testing safeguard.
 
@@ -220,7 +220,7 @@ Recommended Workflow
 
 The tooling space here is mature. Claude is fastest to production-ready config; Copilot saves money if you're patient with iteration. Cursor is the middle ground if you spend most of your time in an editor.
 
-Advanced Scenarios: AI-Assisted Tuning
+Advanced Scenarios - AI-Assisted Tuning
 
 Beyond basic configuration, AI excels at optimizing nginx for production constraints. When you have specific bottleneck data, memory usage hitting 80%, CPU spikes at 3 PM daily, database connection pool exhausting, feed these details to Claude with your current config.
 
@@ -241,7 +241,7 @@ Debugging Configuration Errors with AI
 Nginx error messages are cryptic. "connection refused while connecting to upstream" could mean a service is down, a port is wrong, or DNS resolution failed. Paste the error with relevant config sections into Claude:
 
 ```
-Error: [error] 12345#67890: *1 connect() failed (111: Connection refused)
+Error - [error] 12345#67890: *1 connect() failed (111: Connection refused)
 while connecting to upstream, client: 192.168.1.100, server: api.example.com,
 request: "GET /health HTTP/1.1", upstream: "http://backend:3000"
 
@@ -259,11 +259,11 @@ Claude's response will typically walk through:
 
 This systematic approach saves hours versus manual debugging.
 
-Real-World Example: API Gateway Migration
+Real-World Example - API Gateway Migration
 
 Moving from a monolithic reverse proxy to a multi-service architecture requires careful nginx orchestration. Here's how AI helps:
 
-Scenario: Your current config routes everything to one backend. Now you need to split:
+Scenario - Your current config routes everything to one backend. Now you need to split:
 - `/api/users/*` → users-service:8001
 - `/api/payments/*` → payments-service:8002
 - `/api/analytics/*` → analytics-service:8003

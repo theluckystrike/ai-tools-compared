@@ -153,7 +153,7 @@ Building an useEffect Dependency Checker
 
 Let's compare how each tool handles a more complex rule:
 
-Claude's approach might ask: "What should happen when dependencies are missing? Should it warn, error, or suggest auto-fixes? Do you use custom hooks that wrap useEffect?"
+Claude's approach might ask - "What should happen when dependencies are missing? Should it warn, error, or suggest auto-fixes? Do you use custom hooks that wrap useEffect?"
 
 ChatGPT's approach would typically generate a rule like:
 

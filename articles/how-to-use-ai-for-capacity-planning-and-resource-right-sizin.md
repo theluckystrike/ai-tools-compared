@@ -36,8 +36,8 @@ Capacity planning and resource right sizing represent critical challenges for en
 - For most infrastructure use cases: time series forecasting provides the most immediate value.
 - Services where p95 usage: is below 40% of the current limit are flagged as over-provisioned.
 - You need time-series metrics: collected at regular intervals, typically every 60 seconds or more frequently for volatile workloads.
-- Tuesday: model scoring. The Prophet or ARIMA models score the fresh data against their forecasts and produce updated limit recommendations.
-- Wednesday: review and approval. Engineers review the flagged recommendations in a 30-minute sync.
+- Tuesday - model scoring. The Prophet or ARIMA models score the fresh data against their forecasts and produce updated limit recommendations.
+- Wednesday - review and approval. Engineers review the flagged recommendations in a 30-minute sync.
 - Overprovisioning leads to wasted budget: while underprovisioning causes performance degradation and potential outages.
 
 Prerequisites
@@ -50,13 +50,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Basics
+Step 1 - Understand the Basics
 
 Traditional capacity planning relies on historical data analysis and manual forecasting. You might examine past CPU usage patterns, memory consumption, and request volumes to estimate future needs. This approach works reasonably well for stable workloads but struggles with seasonal variations, growth trends, and sudden traffic spikes.
 
 AI-based capacity planning applies machine learning models to identify patterns in your metrics that human analysis might miss. These models process multiple data streams simultaneously, CPU, memory, network I/O, disk throughput, application latency, and business metrics, then generate predictions with confidence intervals.
 
-Step 2: Collecting the Right Data
+Step 2 - Collecting the Right Data
 
 Before implementing AI-driven capacity planning, ensure you have adequate monitoring infrastructure. You need time-series metrics collected at regular intervals, typically every 60 seconds or more frequently for volatile workloads.
 
@@ -98,7 +98,7 @@ if __name__ == '__main__':
 
 Aim for at least 90 days of historical data before training forecasting models. Shorter windows miss weekly and monthly seasonality patterns that strongly influence infrastructure demand in most production systems.
 
-Step 3: Choose AI Approaches
+Step 3 - Choose AI Approaches
 
 Several AI methodologies apply to capacity planning, each with distinct strengths.
 
@@ -134,7 +134,7 @@ future = model.make_future_dataframe(periods=7*24*60)  # 7 days, minute-level
 forecast = model.predict(future)
 ```
 
-Step 4: Implementing Right Sizing Recommendations
+Step 4 - Implementing Right Sizing Recommendations
 
 Once you have predictions, translate them into actionable right-sizing recommendations. The goal is matching provisioned capacity to predicted demand with appropriate safety margins.
 
@@ -183,7 +183,7 @@ print(json.dumps(recommendations, indent=2))
 
 The 95th percentile with a 20% CPU buffer and 15% memory buffer is a sensible starting point for most web services. Adjust the percentile upward for latency-sensitive workloads where occasional CPU throttling is unacceptable, and downward for batch jobs that can tolerate slower processing.
 
-Step 5: Automate the Workflow
+Step 5 - Automate the Workflow
 
 Integrate AI capacity planning into your CI/CD pipeline to catch provisioning issues before deployment. This Helm chart value template generates resource recommendations during deployment:
 
@@ -213,7 +213,7 @@ helm upgrade --install api-gateway ./chart \
   --set aiRecommendations.memoryLimit=${MEMORY_LIMIT}
 ```
 
-Tool Comparison: AI-Powered Capacity Planning Platforms
+Tool Comparison - AI-Powered Capacity Planning Platforms
 
 Several commercial and open-source tools provide AI-driven capacity planning without requiring you to build models from scratch:
 
@@ -229,7 +229,7 @@ AWS Compute Optimizer and GCP Recommender are the easiest starting points if you
 
 Goldilocks is worth highlighting for Kubernetes teams: it runs the Vertical Pod Autoscaler in recommendation mode and surfaces per-namespace right-sizing suggestions through a simple web dashboard. It requires no ML expertise and integrates directly with your existing kubectl workflow.
 
-Step 6: Real-World Workflow: Weekly Right-Sizing Review
+Step 6 - Real-World Workflow: Weekly Right-Sizing Review
 
 A repeatable weekly process prevents resource drift from accumulating. Here is how a mature engineering team structures the cycle:
 
@@ -243,7 +243,7 @@ Thursday, Friday. deploy and monitor. Changes roll out through staging first, th
 
 This cadence keeps resource configurations close to actual demand without requiring individual engineers to continuously monitor dashboards. The AI models handle the signal extraction; humans handle the risk assessment and approval.
 
-Step 7: Common Pitfalls
+Step 7 - Common Pitfalls
 
 Ignoring memory spikes during garbage collection. JVM-based services exhibit memory patterns that look like leaks in time-series data but are actually GC cycles. Train your anomaly detection models to exclude these periodic spikes, or use GC-aware metrics that report heap usage after collection rather than peak allocations.
 
@@ -251,7 +251,7 @@ Right-sizing without considering pod disruption budgets. Reducing resource limit
 
 Training on stale data during business model shifts. Models trained on last year's traffic patterns may dramatically underestimate capacity needs after a product launch or user base expansion. Retrain forecasting models monthly at minimum, and trigger immediate retraining after known step-change events.
 
-Step 8: Measuring Success
+Step 8 - Measuring Success
 
 Track the effectiveness of your AI-driven capacity planning through key metrics. Monitor actual versus predicted resource usage, cost savings from right sizing, and the frequency of capacity-related incidents. Over time, refine your models based on observed accuracy and adjust safety margins based on your tolerance for throttling or OOM events.
 

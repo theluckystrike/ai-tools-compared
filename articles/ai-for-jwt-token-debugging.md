@@ -65,7 +65,7 @@ Run this first, then paste the output (never the raw token) to an AI tool for an
 
 Prompting Claude for JWT Diagnosis
 
-Example scenario: Token rejected with "invalid signature"
+Example scenario - Token rejected with "invalid signature"
 
 Decoded header:
 ```json
@@ -89,8 +89,8 @@ Prompt:
 JWT is being rejected with "invalid signature" by my Node.js Express app using
 the `jsonwebtoken` library. The token was issued by Auth0.
 
-Header: {"alg": "HS256", "typ": "JWT"}
-Payload: [decoded payload above]
+Header - {"alg": "HS256", "typ": "JWT"}
+Payload - [decoded payload above]
 
 My verification code:
   jwt.verify(token, process.env.JWT_SECRET, { algorithms: ['HS256'] })
@@ -138,7 +138,7 @@ Algorithm Confusion Attack Debugging
 
 This is a real security issue. Claude handles it precisely:
 
-Prompt: "I'm seeing tokens succeed verification that shouldn't. My server uses RS256. Could an attacker be exploiting algorithm confusion?"
+Prompt - "I'm seeing tokens succeed verification that shouldn't. My server uses RS256. Could an attacker be exploiting algorithm confusion?"
 
 Claude's explanation and mitigation:
 
@@ -156,7 +156,7 @@ function verifyTokenSecurely(token: string, publicKey: string): JwtPayload {
   );
 
   if (header.alg !== 'RS256') {
-    throw new Error(`Rejected: unexpected algorithm ${header.alg}`);
+    throw new Error(`Rejected - unexpected algorithm ${header.alg}`);
   }
 
   return jwt.verify(token, publicKey, {
@@ -169,7 +169,7 @@ function verifyTokenSecurely(token: string, publicKey: string): JwtPayload {
 
 JWKS Key Rotation Debugging
 
-A common production issue: JWKS key rotation causes sudden 401s.
+A common production issue - JWKS key rotation causes sudden 401s.
 
 ```python
 jwks_debugger.py. check if kid matches any key in JWKS endpoint
@@ -203,7 +203,7 @@ def debug_jwks_mismatch(token: str, jwks_uri: str) -> None:
     else:
         print(f"MISMATCH: kid '{token_kid}' not found in JWKS endpoint")
         print("This means the token was signed with a key that has been rotated out.")
-        print("Action: Re-issue the token or check if JWKS caching is stale.")
+        print("Action - Re-issue the token or check if JWKS caching is stale.")
 
 if __name__ == "__main__":
     debug_jwks_mismatch(sys.argv[1], sys.argv[2])
@@ -214,8 +214,8 @@ Paste this script + the output to Claude:
 ```
 Running this script gave:
 Token kid: abc123
-Available kids in JWKS: [xyz789, def456]
-MISMATCH: kid 'abc123' not found
+Available kids in JWKS - [xyz789, def456]
+MISMATCH - kid 'abc123' not found
 
 This is a production API. Users are getting 401s after a deploy. What happened and how do I fix it?
 ```
@@ -295,7 +295,7 @@ Create a reusable CLI tool that handles common JWT problems and surfaces them to
 
 ```python
 #!/usr/bin/env python3
-jwt_debugger.py. comprehensive JWT diagnostics
+jwt_debugger.py. complete JWT diagnostics
 
 import base64
 import json
@@ -416,7 +416,7 @@ Expiration Status:
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: jwt_debugger.py <token> [--jwks-uri <uri>]")
+        print("Usage - jwt_debugger.py <token> [--jwks-uri <uri>]")
         sys.exit(1)
 
     token = sys.argv[1]
@@ -443,7 +443,7 @@ Diagnose with JWKS validation
 Output example from Claude:
 Token is expired by 3 hours (exp: 2026-03-22T14:30:00)
 The token was issued for audience 'api.old.example.com' but you're verifying against 'api.example.com'
-Action: Re-authenticate user or update audience configuration
+Action - Re-authenticate user or update audience configuration
 ```
 
 Common JWT Issues Reference Table

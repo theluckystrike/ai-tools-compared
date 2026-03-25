@@ -24,9 +24,9 @@ Table of Contents
 - [How AI Analyzes Commit History](#how-ai-analyzes-commit-history)
 - [Practical Implementation Approaches](#practical-implementation-approaches)
 - [Integration with Release Workflows](#integration-with-release-workflows)
-- [Tool Comparison: semantic-release vs release-please vs AI-Enhanced Analysis](#tool-comparison-semantic-release-vs-release-please-vs-ai-enhanced-analysis)
-- [Advanced: Multi-Package Monorepo Versioning](#advanced-multi-package-monorepo-versioning)
-- [Step-by-Step: Setting Up AI Version Analysis in CI](#step-by-step-setting-up-ai-version-analysis-in-ci)
+- [Tool Comparison - semantic-release vs release-please vs AI-Enhanced Analysis](#tool-comparison-semantic-release-vs-release-please-vs-ai-enhanced-analysis)
+- [Advanced - Multi-Package Monorepo Versioning](#advanced-multi-package-monorepo-versioning)
+- [Step-by-Step - Setting Up AI Version Analysis in CI](#step-by-step-setting-up-ai-version-analysis-in-ci)
 - [Limitations and Considerations](#limitations-and-considerations)
 - [Choosing the Right Approach](#choosing-the-right-approach)
 
@@ -101,7 +101,7 @@ AI-Powered Analysis Tools
 
 Several approaches exist for adding AI intelligence to version bump analysis:
 
-Pattern Recognition Models: Machine learning models trained on thousands of version control histories can identify subtle indicators of breaking changes that regex-based tools miss.
+Pattern Recognition Models - Machine learning models trained on thousands of version control histories can identify subtle indicators of breaking changes that regex-based tools miss.
 
 Large Language Model Integration: LLMs can process commit diffs and provide nuanced recommendations based on semantic understanding of code changes:
 
@@ -181,7 +181,7 @@ jobs:
           release_name: Release v${{ env.RECOMMENDATION }}
 ```
 
-Tool Comparison: semantic-release vs release-please vs AI-Enhanced Analysis
+Tool Comparison - semantic-release vs release-please vs AI-Enhanced Analysis
 
 Not all automation tools approach version bumping the same way. Understanding where each fits helps you choose the right combination.
 
@@ -193,13 +193,13 @@ Not all automation tools approach version bumping the same way. Understanding wh
 | LLM + custom script | AI semantic analysis | Very High | High | Full control |
 | changesets | Developer-authored | Exact | Moderate | Monorepo-friendly |
 
-semantic-release remains the most widely adopted option. It parses Conventional Commits automatically, determines bump type, generates changelogs, and publishes to npm or GitHub Releases in one pipeline step. The plugin ecosystem covers most edge cases.
+semantic-release remains the most widely adopted option. It parses Conventional Commits automatically, determines bump type, generates changelogs, and publishes to npm or GitHub Releases in one pipeline step. The plugin environment covers most edge cases.
 
 release-please, Google's alternative, creates pull requests with proposed version bumps and changelog drafts. A human reviews and merges. This hybrid model works well for teams that want automation assistance without fully automated releases.
 
 LLM-enhanced analysis outperforms both when your team does not consistently follow commit conventions. An LLM can read "removed the legacy payment endpoint that was deprecated in v2" and correctly infer a major bump even without a "BREAKING CHANGE:" footer.
 
-Advanced: Multi-Package Monorepo Versioning
+Advanced - Multi-Package Monorepo Versioning
 
 Monorepos add complexity. When multiple packages share a repository, a single commit may warrant a patch bump in one package and a major bump in another. AI analysis helps here because it can associate specific files changed with specific packages.
 
@@ -242,17 +242,17 @@ def recommend_bumps(since_tag):
 
 This pattern is foundational to tools like `changesets`, which requires developers to explicitly declare the impact of their changes on each affected package. Combining changesets declarations with LLM validation catches cases where a developer underestimated the impact of their changes.
 
-Step-by-Step: Setting Up AI Version Analysis in CI
+Step-by-Step - Setting Up AI Version Analysis in CI
 
 Here is a complete workflow for integrating AI-powered version bump analysis into a GitHub Actions pipeline:
 
-Step 1: Install dependencies
+Step 1 - Install dependencies
 
 ```bash
 npm install --save-dev @semantic-release/changelog @semantic-release/git conventional-changelog-conventionalcommits
 ```
 
-Step 2: Create `.releaserc.json`
+Step 2 - Create `.releaserc.json`
 
 ```json
 {
@@ -267,11 +267,11 @@ Step 2: Create `.releaserc.json`
 }
 ```
 
-Step 3: Add AI validation step
+Step 3 - Add AI validation step
 
 Before the release runs, call your LLM analysis script to validate that the automated recommendation matches the AI's assessment. Mismatches are flagged for human review rather than automatically overridden.
 
-Step 4: Configure branch protection
+Step 4 - Configure branch protection
 
 Require passing CI checks (including the AI validation step) before merging. This ensures every release has been analyzed before code hits main.
 

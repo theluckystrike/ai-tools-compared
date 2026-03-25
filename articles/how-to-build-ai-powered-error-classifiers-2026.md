@@ -37,7 +37,7 @@ LLM classification with few-shot examples
 Store labeled result for future similarity hits
 ```
 
-Step 1: Error Normalization
+Step 1 - Error Normalization
 
 Raw errors contain noise that breaks similarity. unique IDs, timestamps, and memory addresses change per occurrence.
 
@@ -87,7 +87,7 @@ def normalize_error(error_text: str) -> NormalizedError:
     )
 ```
 
-Step 2: Embedding-Based Similarity Classifier
+Step 2 - Embedding-Based Similarity Classifier
 
 ```python
 classifier.py
@@ -156,7 +156,7 @@ async def classify_by_similarity(
     )
 ```
 
-Step 3: LLM Fallback Classifier
+Step 3 - LLM Fallback Classifier
 
 ```python
 llm_classifier.py
@@ -191,7 +191,7 @@ FEW_SHOT_EXAMPLES = [
 ]
 
 SYSTEM_PROMPT = """Classify application errors into categories.
-Return a JSON object with: category, severity, team, reasoning.
+Return a JSON object with - category, severity, team, reasoning.
 
 Categories:
 - database_timeout: DB connection or query timeout
@@ -203,12 +203,12 @@ Categories:
 - out_of_memory: OOM or heap exhaustion
 - unknown: Cannot determine
 
-Severity: critical (service down), high (degraded), medium (single user), low (minor)
-Team: platform (infra/DB), backend (app code), frontend (UI/auth)"""
+Severity - critical (service down), high (degraded), medium (single user), low (minor)
+Team - platform (infra/DB), backend (app code), frontend (UI/auth)"""
 
 async def classify_with_llm(error: NormalizedError) -> ErrorClassification:
     few_shot_context = "\n".join([
-        f"Error: {ex['error']}\nResult: {json.dumps({'category': ex['category'], 'severity': ex['severity'], 'team': ex['team']})}"
+        f"Error - {ex['error']}\nResult: {json.dumps({'category': ex['category'], 'severity': ex['severity'], 'team': ex['team']})}"
         for ex in FEW_SHOT_EXAMPLES
     ])
 
@@ -240,7 +240,7 @@ async def classify_with_llm(error: NormalizedError) -> ErrorClassification:
     )
 ```
 
-Step 4: Full Pipeline
+Step 4 - Full Pipeline
 
 ```python
 pipeline.py
@@ -283,7 +283,7 @@ async def classify_error(
     return classification
 ```
 
-Step 5: Database Schema
+Step 5 - Database Schema
 
 You need pgvector installed on PostgreSQL to store and query embeddings efficiently.
 
@@ -311,7 +311,7 @@ CREATE INDEX ON error_examples (category);
 
 Seed the table with a handful of hand-labeled examples before deploying. 5-10 per category is enough to bootstrap the similarity path.
 
-Step 6: Routing Alerts
+Step 6 - Routing Alerts
 
 Once you have a classification, route it to the right destination:
 
@@ -374,13 +374,13 @@ def evaluate_classifier(test_cases: list[dict]) -> None:
     print(classification_report(true_labels, pred_labels))
 ```
 
-Target accuracy: >90% on seen error types (similarity path), >75% on novel errors (LLM path). The similarity database grows over time, shifting more classifications to the fast path.
+Target accuracy - >90% on seen error types (similarity path), >75% on novel errors (LLM path). The similarity database grows over time, shifting more classifications to the fast path.
 
 Tuning the Similarity Threshold
 
 The `threshold=0.85` default is conservative. Lower it if you find the LLM is being invoked too often for errors that look similar to known ones. Raise it if you see the similarity path making incorrect matches for errors that only superficially resemble labeled examples.
 
-A good workflow: run a batch of 500 recent production errors through both paths independently, compare disagreements, and adjust the threshold to minimize disagreements on clearly similar pairs.
+A good workflow - run a batch of 500 recent production errors through both paths independently, compare disagreements, and adjust the threshold to minimize disagreements on clearly similar pairs.
 
 Cost Profile
 

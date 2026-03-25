@@ -27,12 +27,12 @@ Table of Contents
 - [IDE Compatibility Considerations](#ide-compatibility-considerations)
 - [Practical Strategies for Free Tier Users](#practical-strategies-for-free-tier-users)
 - [When to Consider Upgrading](#when-to-consider-upgrading)
-- [Detailed Limit Analysis: What Counts as a Completion](#detailed-limit-analysis-what-counts-as-a-completion)
-- [Strategic Consumption: Maximizing Monthly Budget](#strategic-consumption-maximizing-monthly-budget)
+- [Detailed Limit Analysis - What Counts as a Completion](#detailed-limit-analysis-what-counts-as-a-completion)
+- [Strategic Consumption - Maximizing Monthly Budget](#strategic-consumption-maximizing-monthly-budget)
 - [Chat Message Quota Management](#chat-message-quota-management)
 - [Enterprise Firewall Blocking and VPN Issues](#enterprise-firewall-blocking-and-vpn-issues)
 - [IDE Support Gaps in Free Tier](#ide-support-gaps-in-free-tier)
-- [Calculating True Cost: When to Upgrade](#calculating-true-cost-when-to-upgrade)
+- [Calculating True Cost - When to Upgrade](#calculating-true-cost-when-to-upgrade)
 - [Workarounds and Alternatives](#workarounds-and-alternatives)
 - [Future-Proofing Your Decision](#future-proofing-your-decision)
 
@@ -123,7 +123,7 @@ Signs you need a paid tier include: consistently running out of completions befo
 
 GitHub Copilot Individual costs around $10 monthly or $100 annually. For most professional developers, the increased limits and features justify the investment. The productivity gains from uninterrupted AI assistance typically outweigh the subscription cost.
 
-Detailed Limit Analysis: What Counts as a Completion
+Detailed Limit Analysis - What Counts as a Completion
 
 Understanding what counts toward the 2,000 monthly completion limit helps you manage quota strategically.
 
@@ -162,7 +162,7 @@ function handleUpdate(data) {  // Accept "function"
 
 This means accepting multiple partial suggestions actually depletes your quota faster than accepting full suggestions. A developer accepting 50+ word-level completions per coding session could exhaust monthly limits within 10-15 active coding days.
 
-Strategic Consumption: Maximizing Monthly Budget
+Strategic Consumption - Maximizing Monthly Budget
 
 Free tier users with predictable patterns can optimize consumption:
 
@@ -216,7 +216,7 @@ const user = {
 
 ```bash
 Toggle Copilot visibility in VS Code Command Palette
-Copilot: Toggle Inline Suggestions
+Copilot - Toggle Inline Suggestions
 ```
 
 4. Prioritize context-heavy tasks: Use Copilot where it adds most value, complex algorithms, error handling, integration logic. Skip it for straightforward code.
@@ -226,12 +226,12 @@ Chat Message Quota Management
 The 50 messages/month for chat presents its own constraints. A single debugging session might consume 5-10 messages:
 
 ```
-Message 1: Paste error message, ask explanation (1 message)
-Message 2: Ask for fix suggestion (1 message)
-Message 3: Clarify previous suggestion (1 message)
-Message 4: Ask about alternative approaches (1 message)
-Message 5: Request test examples (1 message)
-Total: 5 messages to resolve one issue
+Message 1 - Paste error message, ask explanation (1 message)
+Message 2 - Ask for fix suggestion (1 message)
+Message 3 - Clarify previous suggestion (1 message)
+Message 4 - Ask about alternative approaches (1 message)
+Message 5 - Request test examples (1 message)
+Total - 5 messages to resolve one issue
 ```
 
 With 50 monthly messages, you can have roughly 10 detailed debugging or code review conversations. This depletes quickly for teams.
@@ -257,21 +257,21 @@ IDE Support Gaps in Free Tier
 
 While Copilot works across major IDEs on free tier, some advanced features remain paid-only or have limited support:
 
-VS Code: Full feature support, including inline suggestions and chat
-Visual Studio: Chat available on free tier, but with slightly delayed responses
-JetBrains IDEs: Inline suggestions work, but chat features sometimes restricted
-Vim/Neovim: Basic support through vim-copilot plugin, limited chat
-Sublime Text: Third-party plugin with reduced features
+VS Code - Full feature support, including inline suggestions and chat
+Visual Studio - Chat available on free tier, but with slightly delayed responses
+JetBrains IDEs - Inline suggestions work, but chat features sometimes restricted
+Vim/Neovim - Basic support through vim-copilot plugin, limited chat
+Sublime Text - Third-party plugin with reduced features
 
 IDE support varies by version and update frequency. JetBrains IDEs particularly require frequent plugin updates to maintain compatibility, and free tier users sometimes get reduced priority for plugin bug fixes.
 
-Calculating True Cost: When to Upgrade
+Calculating True Cost - When to Upgrade
 
 To determine if upgrading makes economic sense:
 
-Free tier: 2,000 completions + 50 chat messages = $0/month
+Free tier - 2,000 completions + 50 chat messages = $0/month
 
-Copilot Individual (Pro): Unlimited completions + unlimited chat = $10/month or $100/year
+Copilot Individual (Pro) - Unlimited completions + unlimited chat = $10/month or $100/year
 
 Break-even analysis:
 - If you exceed 2,000 completions/month AND would benefit from chat, upgrade pays for itself

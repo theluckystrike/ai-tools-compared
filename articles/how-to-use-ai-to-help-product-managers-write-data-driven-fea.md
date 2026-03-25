@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Challenge with Traditional Feature Proposals
+Step 1 - The Challenge with Traditional Feature Proposals
 
 Product managers often struggle to translate data into actionable proposals. A typical scenario involves gathering analytics, user feedback, and business metrics, then spending hours structuring this information into a coherent pitch. The challenge compounds when you need to:
 
@@ -64,7 +64,7 @@ Not all AI tools perform equally well for proposal writing tasks. Here's how the
 
 For most PMs, a two-tool workflow works best: use Claude or GPT-4o for prose and narrative, then use Copilot or a code interpreter to build the underlying data models.
 
-Step 2: Practical Techniques for AI-Assisted Proposal Writing
+Step 2 - Practical Techniques for AI-Assisted Proposal Writing
 
 1. Generate Structured Outlines from Raw Data
 
@@ -121,7 +121,7 @@ def generate_stakeholder_narrative(data, audience="engineering"):
     - Support ticket correlation: {data['ticket_count']} related tickets
 
     Audience: {audience}
-    Focus: {audience_prompts.get(audience, '')}
+    Focus - {audience_prompts.get(audience, '')}
     """
 
     return openai.ChatCompletion.create(
@@ -221,7 +221,7 @@ def suggest_visualization(data_points, message):
     return recommendations
 ```
 
-Step 3: Step-by-Step Workflow: From Raw Data to Final Proposal
+Step 3 - Step-by-Step Workflow: From Raw Data to Final Proposal
 
 Here is a repeatable process for using AI across the entire proposal lifecycle:
 
@@ -276,7 +276,7 @@ Use AI only to generate the table structure and column headers. Fill in competit
 Q: Can I use AI for quarterly business review presentations?
 Yes. The same audience-segmentation prompts work well for QBR narratives. Focus the prompt on outcomes vs. outputs and ask AI to connect metrics back to business goals.
 
-Step 4: Measuring Proposal Success
+Step 4 - Measuring Proposal Success
 
 Track your AI-assisted proposals against traditional metrics:
 

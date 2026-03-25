@@ -48,7 +48,7 @@ Language models are trained on public Terraform registry data, AWS/Azure documen
 - Cloud-specific limits and quotas aren't in training data
 - Org-specific naming conventions and tagging requirements must be provided
 
-The result: AI generates syntactically correct HCL that uses deprecated attributes, misses required encryption settings, or creates resources with overly permissive policies.
+The result - AI generates syntactically correct HCL that uses deprecated attributes, misses required encryption settings, or creates resources with overly permissive policies.
 
 Testing Approach
 
@@ -62,7 +62,7 @@ Terraform Generation
 
 Claude Sonnet
 
-Prompt: "Create a Terraform module for an RDS PostgreSQL instance with: Multi-AZ, encryption at rest, automated backups (7 days), and the security group allowing access only from a specific CIDR."
+Prompt - "Create a Terraform module for an RDS PostgreSQL instance with: Multi-AZ, encryption at rest, automated backups (7 days), and the security group allowing access only from a specific CIDR."
 
 ```hcl
 Claude output. security-conscious defaults
@@ -147,7 +147,7 @@ Copilot's inline suggestions for Terraform are useful for attribute completion b
 
 Pulumi TypeScript
 
-Prompt: "Create a Pulumi program that deploys a Lambda function with a Dead Letter Queue (SQS), CloudWatch alarm for error rate, and least-privilege IAM role."
+Prompt - "Create a Pulumi program that deploys a Lambda function with a Dead Letter Queue (SQS), CloudWatch alarm for error rate, and least-privilege IAM role."
 
 ```typescript
 // Claude's Pulumi output
@@ -247,7 +247,7 @@ Good (what Claude generates):
   become: true
 ```
 
-Claude also adds `no_log: true` to tasks that handle passwords or tokens, which prevents secrets from appearing in Ansible output logs.
+Claude also adds `no_log - true` to tasks that handle passwords or tokens, which prevents secrets from appearing in Ansible output logs.
 
 Security Scanning Integration
 
@@ -296,7 +296,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -308,6 +308,6 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 {% endraw %}

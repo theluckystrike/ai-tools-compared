@@ -137,7 +137,7 @@ GPT-4o mini is cheaper for large-context tasks if quality holds up. For complex 
 
 Real Workload Cost Analysis
 
-Scenario 1: Code Review Bot (50 PRs/day)
+Scenario 1 - Code Review Bot (50 PRs/day)
 - Average PR: 3,000 tokens in, 800 tokens out
 
 | Model | Daily Cost | Monthly Cost |
@@ -147,7 +147,7 @@ Scenario 1: Code Review Bot (50 PRs/day)
 | Claude Sonnet 4.5 | $0.60 | $18.00 |
 | GPT-4o | $0.78 | $23.40 |
 
-Scenario 2: Customer Support Chatbot (500 conversations/day)
+Scenario 2 - Customer Support Chatbot (500 conversations/day)
 - Average conversation: 2,000 tokens in, 400 tokens out
 
 | Model | Daily Cost | Monthly Cost |
@@ -157,7 +157,7 @@ Scenario 2: Customer Support Chatbot (500 conversations/day)
 | Claude Sonnet 4.5 | $6.00 | $180.00 |
 | GPT-4o | $4.50 | $135.00 |
 
-Scenario 3: Document Intelligence (10K docs/month, 50K tokens each)
+Scenario 3 - Document Intelligence (10K docs/month, 50K tokens each)
 This is where Claude's 200K context becomes necessary.
 
 | Model | Batch Monthly Cost |
@@ -206,7 +206,7 @@ Choose Claude (Anthropic) when:
 
 Choose OpenAI when:
 - Cost is the primary constraint and GPT-4o mini quality is sufficient
-- You need the widest ecosystem (embeddings, fine-tuning, Whisper, DALL-E in one API)
+- You need the widest environment (embeddings, fine-tuning, Whisper, DALL-E in one API)
 - Existing integrations depend on the OpenAI SDK
 
 Detailed Cost Calculator
@@ -260,26 +260,26 @@ cost_openai = calculate_monthly_cost(
     batch_percentage=0.0
 )
 
-print(f"Claude Haiku: ${cost_claude:.2f}/month")
+print(f"Claude Haiku - ${cost_claude:.2f}/month")
 print(f"GPT-4o mini: ${cost_openai:.2f}/month")
 
 Output:
 Claude Haiku: $9.60/month
-GPT-4o mini: $1.62/month
+GPT-4o mini - $1.62/month
 ```
 
 For this workload, GPT-4o mini is cheaper by 6x. But if you need larger context or better reasoning, Claude Sonnet:
 
 ```python
 cost_sonnet = calculate_monthly_cost(100, 2000, 800, "claude-sonnet-4-5")
-Output: $36.00/month
+Output - $36.00/month
 
 Still higher than GPT-4o mini, but includes 200K context vs 128K
 ```
 
 Hidden Costs and Gotchas
 
-Cost Surprise 1: Context Window Pricing
+Cost Surprise 1 - Context Window Pricing
 
 If you use the full context window, you pay for all of it:
 
@@ -295,19 +295,19 @@ def full_context_cost(model: str) -> float:
 
 Cost of one API call using full context
 print(f"Full Claude Sonnet context: ${full_context_cost('claude-sonnet-4-5'):.4f}")
-Output: $0.0600 (6 cents for just the input!)
+Output - $0.0600 (6 cents for just the input!)
 
 Add 1000 output tokens
 output_cost = (1000 / 1_000_000) * 15.00
 print(f"Plus 1000 output tokens: ${output_cost:.6f}")
-Total: ~$0.061 per request
+Total - ~$0.061 per request
 
-At 10 requests/day: $18.30/month just for context
+At 10 requests/day - $18.30/month just for context
 ```
 
 Don't use full context unnecessarily. Summarize or chunk large documents.
 
-Cost Surprise 2: Retry Logic and Fallbacks
+Cost Surprise 2 - Retry Logic and Fallbacks
 
 Production systems retry failed requests. This multiplies costs:
 
@@ -334,7 +334,7 @@ Cost can triple
 
 Use exponential backoff and circuit breakers to avoid cascading retries.
 
-Cost Surprise 3: Token Counting Mismatches
+Cost Surprise 3 - Token Counting Mismatches
 
 Your estimated tokens and actual billed tokens may differ:
 
@@ -375,7 +375,7 @@ Differences:
 
 Always check `response.usage` to see actual costs, not estimates.
 
-ROI Analysis: When API Costs Pay for Themselves
+ROI Analysis - When API Costs Pay for Themselves
 
 For a typical team:
 
@@ -398,13 +398,13 @@ Using Claude Haiku at ~$10/month
 
 saved = cost_benefit(100, 5, 20)
 print(f"Monthly productivity gain: ${saved:.2f}")
-print(f"API cost: $10/month")
+print(f"API cost - $10/month")
 print(f"ROI: {saved / 10:.1f}x")
 
 Output:
 Monthly productivity gain: $1833.33
-API cost: $10/month
-ROI: 183.3x
+API cost - $10/month
+ROI - 183.3x
 ```
 
 Even expensive API calls (GPT-4o at $0.01/call) pay for themselves when they save 5+ minutes of engineering time.

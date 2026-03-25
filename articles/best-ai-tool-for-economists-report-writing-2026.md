@@ -74,7 +74,7 @@ For example, when drafting a section on inflation dynamics, you might paste your
 Prompt template for regression interpretation:
 
 "I ran a Phillips curve regression: π_t = α + β·u_t + γ·π_{t-1} + ε_t
-Results: α=2.1 (p<0.01), β=-0.38 (p<0.05), γ=0.72 (p<0.01), R²=0.64
+Results - α=2.1 (p<0.01), β=-0.38 (p<0.05), γ=0.72 (p<0.01), R²=0.64
 
 Write a 2-paragraph policy brief explanation of these results for a
 Federal Reserve audience. Emphasize the unemployment-inflation tradeoff
@@ -116,7 +116,7 @@ Limitations include occasional fabrications in citation details. Always verify a
 
 Gemini (Google)
 
-Gemini integrates well with Google's ecosystem, which many academic and research institutions use. If your workflow already relies on Google Docs, Gemini's embedded assistance feels natural.
+Gemini integrates well with Google's environment, which many academic and research institutions use. If your workflow already relies on Google Docs, Gemini's embedded assistance feels natural.
 
 For economists working with large datasets, Gemini's ability to process information across multiple formats proves valuable. You can share a data table alongside your draft and ask for analysis that considers both elements simultaneously.
 
@@ -172,13 +172,13 @@ Best use cases:
 - Literature review organization and synthesis
 - Multi-section report generation with consistent tone
 
-Pricing: $20/month for Claude Pro, or API usage at $3-20 per request depending on document size
+Pricing - $20/month for Claude Pro, or API usage at $3-20 per request depending on document size
 
 Example workflow:
 ```
-Input: Paste regression results + methodology section
-Request: "Explain these coefficient estimates in plain language for a policy maker who isn't an economist"
-Output: Plain English explanation that maintains accuracy while improving readability
+Input - Paste regression results + methodology section
+Request - "Explain these coefficient estimates in plain language for a policy maker who isn't an economist"
+Output - Plain English explanation that maintains accuracy while improving readability
 ```
 
 ChatGPT for Economic Writing
@@ -194,9 +194,9 @@ Weaknesses:
 - Less nuanced with highly specialized topics
 - Smaller context window limits ability to reference full documents
 
-Pricing: $20/month for ChatGPT Plus
+Pricing - $20/month for ChatGPT Plus
 
-Best for: Rapid first-draft generation, outline development, converting between document formats
+Best for - Rapid first-draft generation, outline development, converting between document formats
 
 Gemini for Economic Writing
 
@@ -210,7 +210,7 @@ Weaknesses:
 - Limited context window compared to Claude
 - Tends toward verbosity
 
-Pricing: Free with limitations, or Gemini Advanced at $20/month
+Pricing - Free with limitations, or Gemini Advanced at $20/month
 
 Practical Workflows for Different Report Types
 
@@ -222,7 +222,7 @@ Academic Paper Workflow
 4. Integration: Extract strongest passages, combine with your own revisions
 5. Iteration: 2-3 cycles typically gets publication-ready draft
 
-Estimated time: 4-6 hours per paper (down from 8-12 hours without AI)
+Estimated time - 4-6 hours per paper (down from 8-12 hours without AI)
 
 Policy Brief Workflow
 
@@ -232,7 +232,7 @@ Policy Brief Workflow
 4. Revise: Human editing for tone and emphasis
 5. Final review: Verify accuracy of all claims
 
-Estimated time: 2-3 hours per brief (down from 4-6 hours)
+Estimated time - 2-3 hours per brief (down from 4-6 hours)
 
 Client Report Workflow
 
@@ -242,7 +242,7 @@ Client Report Workflow
 4. Customize: Replace generic language with project-specific insights
 5. Review: Quality check against your standards
 
-Estimated time: 1-2 hours per report (down from 3-5 hours)
+Estimated time - 1-2 hours per report (down from 3-5 hours)
 
 Tool Comparison Table
 
@@ -272,7 +272,7 @@ CONTEXT:
 DATA SUMMARY:
 [Paste any tables, statistics, or key metrics]
 
-SECTION: [Section Title]
+SECTION - [Section Title]
 Requirements:
 - Word count: [X words]
 - Key points to cover: [bullet list]
@@ -357,7 +357,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -369,7 +369,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

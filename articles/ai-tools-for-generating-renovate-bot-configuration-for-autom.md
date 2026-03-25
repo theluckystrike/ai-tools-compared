@@ -179,7 +179,7 @@ For monorepos, AI tools help create complex grouping rules:
     },
     {
       "matchPackageNames": ["react", "react-dom"],
-      "groupName": "React ecosystem"
+      "groupName": "React environment"
     }
   ]
 }
@@ -223,7 +223,7 @@ Debugging Renovate Configurations with AI Assistance
 
 Renovate configurations that look correct can still produce unexpected behavior, PRs opening outside scheduled windows, packages grouped incorrectly, or automerge silently failing. AI tools shine as debugging partners when you paste your configuration alongside the observed behavior.
 
-The diagnostic prompt pattern: When a Renovate configuration misbehaves, provide the AI with three pieces of information: your full `renovate.json`, the Renovate log output (available in the Dependency Dashboard PR), and the expected versus actual behavior. This context enables LLMs to identify subtle issues like regex errors in `matchPackagePatterns`, conflicting `packageRules` where a later rule overrides an earlier one, or a `schedule` string that parses differently than intended.
+The diagnostic prompt pattern - When a Renovate configuration misbehaves, provide the AI with three pieces of information: your full `renovate.json`, the Renovate log output (available in the Dependency Dashboard PR), and the expected versus actual behavior. This context enables LLMs to identify subtle issues like regex errors in `matchPackagePatterns`, conflicting `packageRules` where a later rule overrides an earlier one, or a `schedule` string that parses differently than intended.
 
 Common configuration bugs that AI assistants catch reliably:
 
@@ -241,7 +241,7 @@ Common configuration bugs that AI assistants catch reliably:
 }
 ```
 
-Log analysis: Renovate produces verbose logs when run with `LOG_LEVEL=debug`. Paste a relevant excerpt to a LLM and ask it to identify why a specific package rule is not applying. Models trained on large open-source codebases have encountered thousands of Renovate configurations and can spot non-obvious issues quickly.
+Log analysis - Renovate produces verbose logs when run with `LOG_LEVEL=debug`. Paste a relevant excerpt to a LLM and ask it to identify why a specific package rule is not applying. Models trained on large open-source codebases have encountered thousands of Renovate configurations and can spot non-obvious issues quickly.
 
 Validating Renovate Configurations Before Committing
 
@@ -321,7 +321,7 @@ Individual repositories reference the preset with a single line:
 
 When your standards evolve, prompt an AI to update the shared preset and reason about backward compatibility. The AI can suggest a staged rollout where high-risk changes, like enabling automerge for major updates, are introduced with additional safeguards before applying organization-wide.
 
-Drift detection: Over time, individual repositories accumulate local overrides that diverge from the shared preset. A simple script can surface these differences for AI-assisted review:
+Drift detection - Over time, individual repositories accumulate local overrides that diverge from the shared preset. A simple script can surface these differences for AI-assisted review:
 
 ```bash
 List repositories with local Renovate overrides beyond the shared extend

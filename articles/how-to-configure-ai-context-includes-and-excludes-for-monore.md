@@ -44,7 +44,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Configure Cursor for Monorepo Context
+Step 1 - Configure Cursor for Monorepo Context
 
 Cursor, an AI-powered code editor based on VS Code, provides several ways to control context scope. The most direct method uses the `.cursorrules` file in your project root.
 
@@ -67,7 +67,7 @@ The `@` symbol tells Cursor to include these paths in context. The `!` prefix ex
 
 For more granular control, Cursor supports workspace-specific settings. Create a `.cursor` folder with context configuration files for different parts of your monorepo. Each file can specify which directories to include when working within that workspace context.
 
-Step 2: Configure Claude Code (Claude CLI) Context
+Step 2 - Configure Claude Code (Claude CLI) Context
 
 Claude Code, Anthropic's CLI tool for AI-assisted development, uses `.claude` directory for project settings. Create a `settings.local.yml` file to configure context behavior.
 
@@ -98,9 +98,9 @@ You can also use the `--context` flag when starting a Claude Code session to tem
 claude --context "packages/api/" "Review the auth middleware"
 ```
 
-Step 3: Configure GitHub Copilot Context
+Step 3 - Configure GitHub Copilot Context
 
-GitHub Copilot integrates directly into GitHub's ecosystem and offers context configuration through `.github/copilot-includes.md` and `.github/copilot-excludes.md` files in your repository root.
+GitHub Copilot integrates directly into GitHub's environment and offers context configuration through `.github/copilot-includes.md` and `.github/copilot-excludes.md` files in your repository root.
 
 Create `copilot-includes.md` to specify priority files:
 
@@ -127,12 +127,12 @@ Create `copilot-excludes.md` for files to ignore:
 
 Copilot processes files listed in the includes file first, then considers other relevant files while respecting the excludes list. This ranking system ensures your primary focus areas get priority in context building.
 
-Step 4: Configure Windshow's Windsurf
+Step 4 - Configure Windshow's Windsurf
 
 Windsurf, another AI code editor, uses a `.windsurfrules` file for context configuration. The syntax combines includes and excludes in a single file:
 
 ```
-Primary focus: React frontend
+Primary focus - React frontend
 @apps/web/src/
 @apps/web/components/
 
@@ -149,7 +149,7 @@ Exclude dependencies and builds
 
 Windsurf also supports workspace-specific rules. Create a `.windsurf` directory with separate rule files for different projects within your monorepo. This allows context switching based on which workspace you're currently editing.
 
-Step 5: Pattern Matching for Monorepo Structures
+Step 5 - Pattern Matching for Monorepo Structures
 
 Understanding glob patterns helps you create precise configurations. Here are practical patterns for common monorepo structures.
 
@@ -193,7 +193,7 @@ Exclude generated files
 !/*.pb.ts
 ```
 
-Step 6: Optimizing Context for Better Results
+Step 6 - Optimizing Context for Better Results
 
 After configuring includes and excludes, verify that your settings produce the desired behavior. Test by asking your AI assistant to explain or modify code in different parts of your monorepo. The responses should focus on the relevant directories without pulling in unrelated code.
 
@@ -258,9 +258,9 @@ Related Articles
 - [Best Way to Configure CursorRules for Python FastAPI Project](/best-way-to-configure-cursorrules-for-python-fastapi-project/)
 - [How to Configure AI Coding Tools to Exclude Secrets and](/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
 
-Step 7: Tool-Specific Configuration Deep Dives
+Step 7 - Tool-Specific Configuration Deep Dives
 
-Cursor: Complete Monorepo Configuration
+Cursor - Complete Monorepo Configuration
 
 For a Turborepo with apps/web, apps/api, packages/ui, packages/utils:
 
@@ -331,7 +331,7 @@ excludes:
   - "/__snapshots__/"
   - "/coverage/"
 
-Optional: token budget for context window
+Optional - token budget for context window
 tokenBudget: 8000
 ```
 
@@ -345,7 +345,7 @@ Or temporarily override
 claude --context "apps/api/" "Review API middleware"
 ```
 
-GitHub Copilot: Repository Configuration
+GitHub Copilot - Repository Configuration
 
 Copilot uses GitHub's symantic search. Configure priority files:
 
@@ -375,7 +375,7 @@ Files to ignore
 
 Copilot processes includes first, respects excludes absolutely.
 
-Windsurf: Workspace Rules
+Windsurf - Workspace Rules
 
 ```
 // .windsurfrules (root)
@@ -405,9 +405,9 @@ Create workspace-specific overrides:
 !apps/api/
 ```
 
-Step 8: Monorepo Architecture Patterns and Context Config
+Step 8 - Monorepo Architecture Patterns and Context Config
 
-Pattern 1: npm/pnpm Workspaces
+Pattern 1 - npm/pnpm Workspaces
 
 ```
 root/
@@ -431,7 +431,7 @@ Configuration:
 !/dist
 ```
 
-Pattern 2: Turborepo
+Pattern 2 - Turborepo
 
 ```
 root/
@@ -457,7 +457,7 @@ Configuration:
 !/.next
 ```
 
-Pattern 3: Nx Workspace
+Pattern 3 - Nx Workspace
 
 ```
 root/
@@ -481,7 +481,7 @@ Configuration:
 !/coverage
 ```
 
-Pattern 4: Yarn Workspaces
+Pattern 4 - Yarn Workspaces
 
 ```
 root/
@@ -501,9 +501,9 @@ Configuration:
 !/.yarn
 ```
 
-Step 9: Test Your Configuration
+Step 9 - Test Your Configuration
 
-Test 1: Verify includes work
+Test 1 - Verify includes work
 
 ```bash
 In Cursor, open a file from the include list
@@ -513,7 +513,7 @@ Ask Cursor to analyze it
 If Cursor understands it, includes are working
 ```
 
-Test 2: Verify excludes work
+Test 2 - Verify excludes work
 
 ```bash
 Ask about a file in the exclude list
@@ -522,7 +522,7 @@ Ask about a file in the exclude list
 If Cursor says "I don't have access to that", excludes are working
 ```
 
-Test 3: Check context token usage
+Test 3 - Check context token usage
 
 In Cursor, hover over the @ symbol in chat:
 
@@ -533,7 +533,7 @@ In Cursor, hover over the @ symbol in chat:
 
 Aim for total context <6,000 tokens to leave room for response.
 
-Test 4: Verify monorepo awareness
+Test 4 - Verify monorepo awareness
 
 ```
 Ask about cross-package dependencies
@@ -542,42 +542,42 @@ Ask about cross-package dependencies
 If it explains the import path correctly, it understands monorepo structure
 ```
 
-Step 10: Common Configuration Mistakes
+Step 10 - Common Configuration Mistakes
 
-Mistake 1: Too Broad Includes
+Mistake 1 - Too Broad Includes
 
 ```
-Wrong: Includes entire root
+Wrong - Includes entire root
 @
 
-Correct: Specific packages
+Correct - Specific packages
 @apps/web/
 @packages/ui/
 ```
 
 Broad includes waste tokens on irrelevant code.
 
-Mistake 2: Forgetting Package Boundaries
+Mistake 2 - Forgetting Package Boundaries
 
 ```
-Wrong: Imports between unrelated packages
+Wrong - Imports between unrelated packages
 @apps/web/
 @apps/api/
 Now AI might suggest using API routes in web, which breaks boundaries
 
-Correct: Each workspace separate
+Correct - Each workspace separate
 @apps/web/
 (api is separate in different editor window)
 ```
 
-Mistake 3: Excluding Test Files Entirely
+Mistake 3 - Excluding Test Files Entirely
 
 ```
-Tempting but wrong: Excludes all tests
+Tempting but wrong - Excludes all tests
 !/*.test.ts
 !/*.spec.ts
 
-Better: Exclude only large test suites
+Better - Exclude only large test suites
 !/e2e/
 !/cypress/
 But keep unit tests for understanding
@@ -585,13 +585,13 @@ But keep unit tests for understanding
 
 Tests show expected behavior and provide implementation clues.
 
-Mistake 4: Not Excluding Generated Files
+Mistake 4 - Not Excluding Generated Files
 
 ```
-Wrong: Includes generated code
+Wrong - Includes generated code
 @
 
-Correct: Explicitly exclude generated
+Correct - Explicitly exclude generated
 !/generated/
 !/*.generated.ts
 !/.next/
@@ -600,7 +600,7 @@ Correct: Explicitly exclude generated
 
 Generated files add noise without value.
 
-Mistake 5: Version-Specific Lock Files Not Excluded
+Mistake 5 - Version-Specific Lock Files Not Excluded
 
 ```
 Add to excludes
@@ -613,7 +613,7 @@ Add to excludes
 
 Lock files are huge and add no value to AI context.
 
-Step 11: Context Configuration Cheat Sheet
+Step 11 - Context Configuration Cheat Sheet
 
 Quick start for React + Node monorepo:
 
@@ -662,7 +662,7 @@ Exclude
 !coverage
 ```
 
-Step 12: Measuring Configuration Effectiveness
+Step 12 - Measuring Configuration Effectiveness
 
 Track these metrics:
 

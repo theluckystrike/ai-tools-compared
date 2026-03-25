@@ -25,10 +25,10 @@ Table of Contents
 - [Claude 3 Opus (Anthropic)](#claude-3-opus-anthropic)
 - [Codeium (Exafunction)](#codeium-exafunction)
 - [Comparison Table](#comparison-table)
-- [Real-World Workflow: Generating a Production Helm Chart](#real-world-workflow-generating-a-production-helm-chart)
+- [Real-World Workflow - Generating a Production Helm Chart](#real-world-workflow-generating-a-production-helm-chart)
 - [Production-Grade Helm Best Practices](#production-grade-helm-best-practices)
 - [Helm Testing with AI](#helm-testing-with-ai)
-- [Decision Framework: Which Tool to Use?](#decision-framework-which-tool-to-use)
+- [Decision Framework - Which Tool to Use?](#decision-framework-which-tool-to-use)
 
 Kubernetes Helm charts are notoriously tedious to write from scratch. You're managing YAML templates, values files, dependencies, conditional logic, and helper functions. A single misconfigured `.Values` reference breaks deployments. Variable scoping in `tpl` functions creates silent failures. Most developers spend hours debugging indentation and Go templating syntax.
 
@@ -38,8 +38,8 @@ This guide compares the best AI tools for Helm chart generation, covering templa
 
 Claude 3.5 Sonnet (Anthropic)
 
-Cost: $3/M input, $15/M output via Claude API; free tier up to 100K tokens/month on Claude.ai
-Best for: Complex template logic, multi-file coordination, security contexts
+Cost - $3/M input, $15/M output via Claude API; free tier up to 100K tokens/month on Claude.ai
+Best for - Complex template logic, multi-file coordination, security contexts
 
 Claude excels at understanding Helm's template syntax because it can process long, structured contexts. When you paste a full chart directory structure, Claude maintains awareness of how `values.yaml` maps to `templates/` files and correctly scopes variables across helpers.
 
@@ -72,12 +72,12 @@ Weaknesses:
 - Sometimes over-engineers for small use cases
 - Doesn't validate against your specific Kubernetes version
 
-Pricing model: Per-token. Helm chart generation (5, 10K tokens) costs ~$0.03, $0.05 per chart.
+Pricing model - Per-token. Helm chart generation (5, 10K tokens) costs ~$0.03, $0.05 per chart.
 
 GitHub Copilot (GitHub/OpenAI)
 
-Cost: $10/month individual, $21/month business
-Best for: Quick Helm scaffolding, template file generation within an editor
+Cost - $10/month individual, $21/month business
+Best for - Quick Helm scaffolding, template file generation within an editor
 
 Copilot is tightly integrated into your IDE. If you're already using VS Code, Copilot can autocomplete Helm syntax and generate new template files as you type. This is fast for known patterns.
 
@@ -112,12 +112,12 @@ Weaknesses:
 - Doesn't explain template scope or variable binding
 - Less effective for complex conditional logic
 
-Pricing model: Flat monthly fee. Scale for teams with GitHub Copilot Enterprise ($40/month/user).
+Pricing model - Flat monthly fee. Scale for teams with GitHub Copilot Enterprise ($40/month/user).
 
 Claude 3 Opus (Anthropic)
 
-Cost: $15/M input, $75/M output (deprecated in favor of Sonnet, but still available)
-Best for: Edge cases, debugging broken charts, template redesign
+Cost - $15/M input, $75/M output (deprecated in favor of Sonnet, but still available)
+Best for - Edge cases, debugging broken charts, template redesign
 
 Opus is Claude's most capable model. Use it for chart redesigns or debugging when Sonnet leaves gaps.
 
@@ -149,12 +149,12 @@ Weaknesses:
 - Slower response time
 - Overkill for standard chart generation
 
-Pricing model: Per-token, significantly higher than Sonnet.
+Pricing model - Per-token, significantly higher than Sonnet.
 
 Codeium (Exafunction)
 
-Cost: Free tier, $12/month pro
-Best for: Developers seeking lightweight alternative, budget-conscious teams
+Cost - Free tier, $12/month pro
+Best for - Developers seeking lightweight alternative, budget-conscious teams
 
 Codeium is a leaner IDE autocomplete tool. It's not as context-aware as Copilot but cheaper and open-friendly.
 
@@ -183,7 +183,7 @@ In templates/deployment.yaml, type:
 
 Codeium suggests the rest with reasonable defaults.
 
-Pricing model: Free with limited context; $12/month for pro.
+Pricing model - Free with limited context; $12/month for pro.
 
 Comparison Table
 
@@ -195,9 +195,9 @@ Comparison Table
 | Codeium | 6/10 | Poor | Good (multi-IDE) | Free, $12/month | Budget scaffolding |
 | ChatGPT 4o (OpenAI) | 7/10 | Fair | Web only | $20/month | Iteration, documentation |
 
-Real-World Workflow: Generating a Production Helm Chart
+Real-World Workflow - Generating a Production Helm Chart
 
-Step 1: Define Requirements
+Step 1 - Define Requirements
 You're deploying a Python FastAPI backend with:
 - PostgreSQL database (external, values.yaml reference)
 - Redis cache (Bitnami subchart)
@@ -205,7 +205,7 @@ You're deploying a Python FastAPI backend with:
 - TLS via cert-manager
 - Multiple environments (dev, staging, prod)
 
-Step 2: Use Claude to Generate Scaffold
+Step 2 - Use Claude to Generate Scaffold
 Prompt:
 ```
 Generate a Helm chart scaffold for a Python FastAPI app with:
@@ -310,7 +310,7 @@ spec:
           periodSeconds: 5
 ```
 
-Step 3: Use Copilot to Iterate Within IDE
+Step 3 - Use Copilot to Iterate Within IDE
 After Claude generates the scaffold, paste it into your IDE. Use Copilot to:
 - Complete the Ingress template (TLS configuration)
 - Generate ServiceMonitor for Prometheus
@@ -318,7 +318,7 @@ After Claude generates the scaffold, paste it into your IDE. Use Copilot to:
 
 Copilot's IDE integration makes this fast.
 
-Step 4: Use Opus to Validate Production Readiness
+Step 4 - Use Opus to Validate Production Readiness
 Before deploying:
 ```
 I have this Helm chart. Review for production readiness:
@@ -450,7 +450,7 @@ Claude catches:
 - Unset image pull policies
 - Missing PodDisruptionBudgets
 
-Decision Framework: Which Tool to Use?
+Decision Framework - Which Tool to Use?
 
 Use Claude Sonnet if:
 - You're building a production chart from scratch

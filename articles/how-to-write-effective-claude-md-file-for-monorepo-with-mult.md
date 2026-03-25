@@ -42,14 +42,14 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Structuring Your Monorepo CLAUDE.md
+Step 1 - Structuring Your Monorepo CLAUDE.md
 
 Define Your Directory Structure First
 
 Start by documenting the root-level organization of your monorepo. This gives AI an immediate mental map of where things live.
 
 ```markdown
-Step 2: Project Structure
+Step 2 - Project Structure
 
 ```
 /
@@ -83,7 +83,7 @@ Document Service Dependencies Explicitly
 Monorepos often have complex dependency graphs. AI needs to know which services depend on which packages and how services communicate.
 
 ```markdown
-Step 3: Service Dependencies
+Step 3 - Service Dependencies
 
 - api-gateway: Depends on user-service, payment-service; uses shared-utils, database, types
 
@@ -93,7 +93,7 @@ Step 3: Service Dependencies
 
 - notification-service: Consumes events from payment-service; uses types
 
-Step 4: Communication Patterns
+Step 4 - Communication Patterns
 
 - Services communicate via HTTP REST APIs
 
@@ -105,36 +105,36 @@ Step 4: Communication Patterns
 
 This explicit documentation prevents AI from importing packages across service boundaries or creating circular dependencies.
 
-Step 5: Defining Shared Code Boundaries
+Step 5 - Defining Shared Code Boundaries
 
 Shared packages in monorepos require special attention. Document what lives in shared packages and when to use them versus when to create service-specific code.
 
 ```markdown
-Step 6: Shared Packages Usage
+Step 6 - Shared Packages Usage
 
 shared-utils
 
-Use for: Logging helpers, date formatting, validation utilities
+Use for - Logging helpers, date formatting, validation utilities
 
-Do NOT use for: Business logic, database operations, service-specific concerns
+Do NOT use for - Business logic, database operations, service-specific concerns
 
 database
 
-Use for: All database connections, ORM setup, migration running
+Use for - All database connections, ORM setup, migration running
 
-Do NOT create: New database connections within services; always import from database package
+Do NOT create - New database connections within services; always import from database package
 
 types
 
-Use for: All TypeScript interfaces and types used across services
+Use for - All TypeScript interfaces and types used across services
 
-Do NOT duplicate: Types that already exist in packages/types
+Do NOT duplicate - Types that already exist in packages/types
 
 ```
 
 This prevents the common monorepo problem of duplicated utilities and inconsistent type definitions across services.
 
-Step 7: Coding Conventions for Monorepo Context
+Step 7 - Coding Conventions for Monorepo Context
 
 Import Path Conventions
 
@@ -160,7 +160,7 @@ Service-Specific Configuration
 Each service in your monorepo likely has specific configuration requirements. Document these patterns:
 
 ```markdown
-Step 8: Service Configuration
+Step 8 - Service Configuration
 
 Each service follows the same configuration pattern:
 
@@ -174,12 +174,12 @@ Each service follows the same configuration pattern:
 
 ```
 
-Step 9: Commands and Scripts
+Step 9 - Commands and Scripts
 
 Document the monorepo-specific commands developers use regularly:
 
 ```markdown
-Step 10: Available Commands
+Step 10 - Available Commands
 
 ```bash
 Build all services
@@ -198,12 +198,12 @@ Lint with service awareness
 npm run lint -- --scope=user-service
 ```
 
-Step 11: Handling Cross-Service Changes
+Step 11 - Handling Cross-Service Changes
 
 One of the hardest things for AI to get right in monorepos is understanding the scope of changes. Document your workflow:
 
 ```markdown
-Step 12: Change Guidelines
+Step 12 - Change Guidelines
 
 1. Single service changes: Can be made independently; ensure tests pass
 2. Shared package changes: Require updating version in all dependent services; run full test suite
@@ -213,7 +213,7 @@ Step 12: Change Guidelines
 
 This helps AI understand the ripple effects of its suggestions and avoid making changes that break other services.
 
-Step 13: Test Strategy Documentation
+Step 13 - Test Strategy Documentation
 
 Monorepos typically have complex testing requirements. Make sure your CLAUDE.md explains your testing philosophy:
 

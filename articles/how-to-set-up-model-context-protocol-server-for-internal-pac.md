@@ -40,7 +40,7 @@ Building internal tools that bridge AI assistants with your package registry doc
 - For a package registry: documentation server, you primarily use tools for search and retrieval and resources for exposing package metadata files directly.
 - Most internal registries using: Verdaccio, Nexus, or JFrog already provide the necessary endpoints.
 
-Step 1: Understand the Model Context Protocol
+Step 1 - Understand the Model Context Protocol
 
 The Model Context Protocol defines how AI assistants communicate with external tools and data sources. Rather than hardcoding integrations for each AI provider, MCP offers an unified interface that works across different AI platforms. Your internal package registry documentation becomes accessible through a consistent API that any MCP-compatible AI assistant can use.
 
@@ -91,7 +91,7 @@ Add build scripts to `package.json`:
 }
 ```
 
-Step 2: Create the MCP Server Implementation
+Step 2 - Create the MCP Server Implementation
 
 Create a file named `src/server.ts` with the following implementation:
 
@@ -198,7 +198,7 @@ await server.connect(transport);
 
 This server exposes two tools that AI assistants can call: `get_package_docs` retrieves documentation for a specific package, and `search_packages` allows searching across your registry.
 
-Step 3: Adding a Third Tool: List Available Packages
+Step 3 - Adding a Third Tool: List Available Packages
 
 Extend the server with a listing tool so developers can discover what packages exist without knowing exact names:
 
@@ -242,7 +242,7 @@ if (name === 'list_packages') {
 }
 ```
 
-Step 4: Configure Your AI Assistant
+Step 4 - Configure Your AI Assistant
 
 After implementing the server, you need to configure your AI assistant to use it. Most MCP-compatible assistants use a configuration file to specify available servers:
 
@@ -269,7 +269,7 @@ claude mcp add registry-docs node /path/to/mcp-registry-docs/dist/server.js \
   --env REGISTRY_URL=https://your-registry.internal
 ```
 
-Step 5: Connecting to Your Internal Registry
+Step 5 - Connecting to Your Internal Registry
 
 The implementation above uses a placeholder fetch call. For production use, replace the `fetchPackageDoc` function with actual calls to your registry's API. Most package registries expose endpoints like `/api/packages/{name}` or support npm registry compatibility at `/{packageName}`.
 
@@ -294,7 +294,7 @@ async function fetchPackageDoc(packageName: string): Promise<PackageDoc> {
 
 This flexibility allows your MCP server to aggregate documentation from multiple sources, creating an unified interface for AI assistants.
 
-Step 6: Test Your Implementation
+Step 6 - Test Your Implementation
 
 Test the server manually before connecting it to an AI assistant:
 
@@ -325,7 +325,7 @@ describe('fetchPackageDoc', () => {
 });
 ```
 
-Step 7: Deploy ment Considerations
+Step 7 - Deploy ment Considerations
 
 When deploying your MCP server to production, consider the following: run the server as a local process that the AI assistant starts on demand, use environment variables for sensitive configuration like registry authentication tokens, implement caching to reduce latency and registry load, and monitor usage to understand which packages developers query most frequently.
 

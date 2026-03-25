@@ -20,15 +20,15 @@ Understanding the actual message limits between Claude Max and Claude Pro is cru
 Table of Contents
 
 - [Understanding Claude's Pricing Tiers](#understanding-claudes-pricing-tiers)
-- [Daily Message Limits: The Actual Numbers](#daily-message-limits-the-actual-numbers)
+- [Daily Message Limits - The Actual Numbers](#daily-message-limits-the-actual-numbers)
 - [What Affects Your Message Count](#what-affects-your-message-count)
 - [Real-World Usage Scenarios](#real-world-usage-scenarios)
-- [Beyond Message Limits: Other Differences](#beyond-message-limits-other-differences)
+- [Beyond Message Limits - Other Differences](#beyond-message-limits-other-differences)
 - [Detailed Limits by Use Case](#detailed-limits-by-use-case)
 - [Real Usage Patterns That Trigger Limits](#real-usage-patterns-that-trigger-limits)
-- [Decision Matrix: Pro vs Max](#decision-matrix-pro-vs-max)
-- [Cost Analysis: Pro vs Max](#cost-analysis-pro-vs-max)
-- [Beyond Message Limits: Other Tier Differences](#beyond-message-limits-other-tier-differences)
+- [Decision Matrix - Pro vs Max](#decision-matrix-pro-vs-max)
+- [Cost Analysis - Pro vs Max](#cost-analysis-pro-vs-max)
+- [Beyond Message Limits - Other Tier Differences](#beyond-message-limits-other-tier-differences)
 - [Making the Right Choice](#making-the-right-choice)
 
 Understanding Claude's Pricing Tiers
@@ -39,7 +39,7 @@ Claude Pro provides access to Claude 3.5 Sonnet with significantly higher limits
 
 Claude Max is Anthropic's premium tier designed for heavy users who need substantially higher message allocations. It provides access to the most capable models including Claude 3 Opus and significantly increased message limits.
 
-Daily Message Limits: The Actual Numbers
+Daily Message Limits - The Actual Numbers
 
 The actual daily message limits differ substantially between these tiers:
 
@@ -59,11 +59,11 @@ What Affects Your Message Count
 
 Several factors determine how quickly you burn through your message allocation:
 
-Message Length: Longer conversations with extensive code or documents consume more of your message quota. A single long message might count as several "messages" toward your limit.
+Message Length - Longer conversations with extensive code or documents consume more of your message quota. A single long message might count as several "messages" toward your limit.
 
-Model Choice: Some higher-tier models within Claude Max may have different rate limits than others. Opus generally has stricter limits than Sonnet even within the Max tier.
+Model Choice - Some higher-tier models within Claude Max may have different rate limits than others. Opus generally has stricter limits than Sonnet even within the Max tier.
 
-Time Windows: Claude measures limits over rolling time windows (typically 24 hours) rather than strict calendar days. This means your allocation refreshes continuously rather than at midnight.
+Time Windows - Claude measures limits over rolling time windows (typically 24 hours) rather than strict calendar days. This means your allocation refreshes continuously rather than at midnight.
 
 Real-World Usage Scenarios
 
@@ -79,15 +79,15 @@ Heavy Users (500+ messages/day)
 
 Teams using Claude as a primary coding partner, conducting extensive refactoring sessions, or processing large documents should strongly consider Claude Max. The increased message allocation ensures uninterrupted workflow during intensive work sessions.
 
-Beyond Message Limits: Other Differences
+Beyond Message Limits - Other Differences
 
 Message limits aren't the only factor distinguishing these tiers:
 
-Priority Access: Claude Max subscribers typically receive priority access during high-demand periods, ensuring faster response times when servers are busy.
+Priority Access - Claude Max subscribers typically receive priority access during high-demand periods, ensuring faster response times when servers are busy.
 
-Model Selection: Max provides access to Claude 3 Opus, the most capable model for complex reasoning and large-scale codebases. Pro users primarily access Claude 3.5 Sonnet.
+Model Selection - Max provides access to Claude 3 Opus, the most capable model for complex reasoning and large-scale codebases. Pro users primarily access Claude 3.5 Sonnet.
 
-File Upload Limits: Max typically offers higher file upload limits and longer context windows for processing large documents or codebases.
+File Upload Limits - Max typically offers higher file upload limits and longer context windows for processing large documents or codebases.
 
 Detailed Limits by Use Case
 
@@ -108,54 +108,54 @@ Extended Conversations (10+ back-and-forth exchanges):
 
 Real Usage Patterns That Trigger Limits
 
-Scenario 1: Development Day for Pro User
+Scenario 1 - Development Day for Pro User
 ```
 Morning (9 AM - 12 PM):
 - Code review of 5 pull requests: 8 messages
 - Bug diagnosis in production: 6 messages
 - Architecture question: 4 messages
-Subtotal: 18 messages
+Subtotal - 18 messages
 
 Afternoon (1 PM - 5 PM):
 - Implement new feature: 12 messages
 - Write test suite: 10 messages
 - Documentation update: 5 messages
-Subtotal: 27 messages
+Subtotal - 27 messages
 
-Total daily: 45 messages (within Pro limits, but heavy)
+Total daily - 45 messages (within Pro limits, but heavy)
 ```
 
-Scenario 2: Research-Heavy Day for Pro User
+Scenario 2 - Research-Heavy Day for Pro User
 ```
 Morning:
 - Document analysis (10k words): 3 messages
 - Code refactoring discussion: 8 messages
 - API design consultation: 5 messages
-Subtotal: 16 messages
+Subtotal - 16 messages
 
 Afternoon:
 - Larger document analysis (50k words): 1 message
 - Follow-up questions: 12 messages
 - Implementation planning: 8 messages
-Subtotal: 21 messages
+Subtotal - 21 messages
 
-Total: 37 messages (sustainable) BUT...
+Total - 37 messages (sustainable) BUT...
 If document analysis costs 2-3x normal message weight,
 effectively 50+ message-equivalents
 May approach or hit limit
 ```
 
-Scenario 3: Max User - Intensive Development
+Scenario 3 - Max User - Intensive Development
 ```
 Full day of intense work:
 - Multiple large codebase analyses: 10 messages
 - Iterative feature development: 40 messages
 - Documentation and testing: 20 messages
 - Extended debugging session: 30 messages
-Total: 100 messages (well within Max allocation)
+Total - 100 messages (well within Max allocation)
 ```
 
-Decision Matrix: Pro vs Max
+Decision Matrix - Pro vs Max
 
 | Scenario | Recommendation | Why |
 |----------|---------------|-----|
@@ -166,7 +166,7 @@ Decision Matrix: Pro vs Max
 | Team using shared Claude account | Max | Multiple concurrent users exceed Pro quickly |
 | Large document processing (>100k tokens) | Max | Pro tier struggles with context-heavy work |
 
-Cost Analysis: Pro vs Max
+Cost Analysis - Pro vs Max
 
 Annual comparison for different usage levels:
 
@@ -189,7 +189,7 @@ Heavy user (300+ msgs/day):
 - At $75/hour: $1,500/month × 12 = $18,000/year lost productivity
 - Max is essential
 
-Beyond Message Limits: Other Tier Differences
+Beyond Message Limits - Other Tier Differences
 
 | Feature | Free | Pro | Max |
 |---------|------|-----|-----|

@@ -32,7 +32,7 @@ Table of Contents
 - [AI-Assisted Debugging in Remote Sessions](#ai-assisted-debugging-in-remote-sessions)
 - [Real-Time Code Review Integration](#real-time-code-review-integration)
 - [Async Pair Programming (Time Zone Distributed)](#async-pair-programming-time-zone-distributed)
-- [Pair Programming Session: [Task Name]](#pair-programming-session-task-name)
+- [Pair Programming Session - [Task Name]](#pair-programming-session-task-name)
 - [Team Onboarding with AI Pair Programming](#team-onboarding-with-ai-pair-programming)
 - [Performance Optimization in Remote Sessions](#performance-optimization-in-remote-sessions)
 
@@ -51,7 +51,7 @@ Install Visual Studio Code
 code --install-extension ms-vsliveshare.vsliveshare
 ```
 
-Once installed, initiate a Live Share session by clicking the "Live Share" icon in the status bar or pressing `Ctrl+Shift+P` and selecting "Live Share: Start Collaboration Session." Share the generated link with your remote partner.
+Once installed, initiate a Live Share session by clicking the "Live Share" icon in the status bar or pressing `Ctrl+Shift+P` and selecting "Live Share - Start Collaboration Session." Share the generated link with your remote partner.
 
 AI-Powered Position Awareness
 
@@ -257,7 +257,7 @@ Use tmux with automatic session recording
 tmux new-session -s pair-session -c ~/project
 tmux send-keys -t pair-session "script -a session-$(date +%s).log" Enter
 
-Later: playback at accelerated speed
+Later - playback at accelerated speed
 scriptreplay -t session-timing.log session-output.log
 ```
 
@@ -350,7 +350,7 @@ async function enrichReviewWithAI(comment: ReviewComment) {
     system: 'Explain this code review comment in 2-3 sentences',
     messages: [{
       role: 'user',
-      content: `Code: ${codeContext}\nComment: ${comment.comment}`
+      content: `Code - ${codeContext}\nComment: ${comment.comment}`
     }]
   });
 
@@ -364,10 +364,10 @@ When real-time pairing isn't possible, use structured async workflows:
 
 ```yaml
 async-pair-template.md
-Pair Programming Session: [Task Name]
-Date: [Date]
+Pair Programming Session - [Task Name]
+Date - [Date]
 
-Driver 1: [Name]
+Driver 1 - [Name]
 - Time Block: [Start] - [End] UTC
 - Objective: [What you'll implement]
 - Notes for Partner:
@@ -375,7 +375,7 @@ Driver 1: [Name]
   - Blockers encountered
   - Open questions for next session
 
-Driver 2: [Name]
+Driver 2 - [Name]
 - Time Block: [Start] - [End] UTC
 - Build on: [What driver 1 did]
 - Decisions: [Your contributions]

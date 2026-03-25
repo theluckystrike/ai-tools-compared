@@ -37,7 +37,7 @@ Parquet files have become the standard for columnar data storage in data enginee
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - When working with Parquet files: understanding the underlying schema becomes crucial because Parquet supports complex nested types, dictionary encoding, and run-length encoding.
 - It picks up on: the pattern from the first column definition and suggests completions for subsequent columns, which speeds up building wide summary tables across 20-30 metrics.
-- Above 5GB, use DuckDB or Spark: and ask your AI assistant specifically for patterns targeting that scale.
+- Above 5GB, use DuckDB or Spark - and ask your AI assistant specifically for patterns targeting that scale.
 - Mastering advanced features takes: 1-2 weeks of regular use.
 
 Why Parquet Files Require Specialized Analysis
@@ -134,7 +134,7 @@ def generate_summary(df):
 stats = generate_summary(df)
 ```
 
-ChatGPT is most useful when you're learning the Parquet ecosystem. It gives clear explanations alongside code. for example, explaining why dictionary encoding in Parquet makes certain groupby operations faster, or how row groups map to Spark partitions. For production code generation, Claude Code and Cursor typically produce more idiomatic, optimized output.
+ChatGPT is most useful when you're learning the Parquet environment. It gives clear explanations alongside code. for example, explaining why dictionary encoding in Parquet makes certain groupby operations faster, or how row groups map to Spark partitions. For production code generation, Claude Code and Cursor typically produce more idiomatic, optimized output.
 
 Gemini for Large Parquet Datasets
 

@@ -88,7 +88,7 @@ describe('UserRepository', () => {
 
   it('fetches user by ID', async () => {
     const mockResponse = {
-      Item: { id: '123', email: 'test@example.com', name: 'Test User' }
+      Item - { id: '123', email: 'test@example.com', name: 'Test User' }
     };
 
     mockClient.send.mockResolvedValue(mockResponse);
@@ -284,7 +284,7 @@ Effective Prompts for AI Mock Generation
 
 The quality of AI-generated mocks depends heavily on how you frame the request. These prompt patterns consistently produce accurate results:
 
-Pattern 1: Show the implementation, ask for the mock.
+Pattern 1 - Show the implementation, ask for the mock.
 ```
 Here is my service that uses the Stripe SDK:
 [paste your service code]
@@ -293,7 +293,7 @@ Generate a Jest mock for the Stripe methods this service calls.
 Include both success and error cases.
 ```
 
-Pattern 2: Specify the test scenarios explicitly.
+Pattern 2 - Specify the test scenarios explicitly.
 ```
 Generate a Jest mock for the AWS S3 SDK that covers:
 - Successful file upload (PutObjectCommand)
@@ -302,7 +302,7 @@ Generate a Jest mock for the AWS S3 SDK that covers:
 - Presigned URL generation (getSignedUrlPromise)
 ```
 
-Pattern 3: Ask for a reusable mock factory.
+Pattern 3 - Ask for a reusable mock factory.
 ```
 Create a Jest mock factory for the Firebase Firestore SDK
 that lets tests configure per-test return values without

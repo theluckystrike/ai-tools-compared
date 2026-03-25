@@ -121,7 +121,7 @@ Pricing typically follows per-minute processing models, making this suitable for
 
 Runway ML
 
-While Runway is primarily known for generative video, their APIs include lip sync capabilities. Their approach integrates with the broader video generation ecosystem, allowing you to combine lip sync with other effects.
+While Runway is primarily known for generative video, their APIs include lip sync capabilities. Their approach integrates with the broader video generation environment, allowing you to combine lip sync with other effects.
 
 HeyGen API
 

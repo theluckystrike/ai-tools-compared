@@ -27,11 +27,11 @@ Table of Contents
 - [Integer Overflow in Size Calculations](#integer-overflow-in-size-calculations)
 - [Limitations and Verification](#limitations-and-verification)
 - [Pricing for AI Code Review Tools](#pricing-for-ai-code-review-tools)
-- [Practical Workflow: Using AI for Embedded C Review](#practical-workflow-using-ai-for-embedded-c-review)
+- [Practical Workflow - Using AI for Embedded C Review](#practical-workflow-using-ai-for-embedded-c-review)
 - [Comparing AI Assistance with Traditional Methods](#comparing-ai-assistance-with-traditional-methods)
-- [Real-World Example: Complete Memory Safety Audit](#real-world-example-complete-memory-safety-audit)
+- [Real-World Example - Complete Memory Safety Audit](#real-world-example-complete-memory-safety-audit)
 - [Integration with Development Workflow](#integration-with-development-workflow)
-- [Advanced Topics: ISR and DMA Safety](#advanced-topics-isr-and-dma-safety)
+- [Advanced Topics - ISR and DMA Safety](#advanced-topics-isr-and-dma-safety)
 
 Understanding Memory Issues in Embedded C
 
@@ -145,9 +145,9 @@ Effective Prompt Strategy
 
 ```
 Review this embedded C code for memory safety issues.
-Context: STM32F4 microcontroller, ARM Cortex-M4, 64KB RAM
-Focus on: memory leaks, buffer overflows, use-after-free
-Specific concerns: interrupt handler safety, DMA buffer handling
+Context - STM32F4 microcontroller, ARM Cortex-M4, 64KB RAM
+Focus on - memory leaks, buffer overflows, use-after-free
+Specific concerns - interrupt handler safety, DMA buffer handling
 
 [Insert code here]
 ```
@@ -261,9 +261,9 @@ Pricing for AI Code Review Tools
 
 For teams doing frequent embedded C reviews, flat-rate tools (Copilot, Cursor) are more cost-effective. For occasional reviews, pay-per-query API tools are cheaper.
 
-Practical Workflow: Using AI for Embedded C Review
+Practical Workflow - Using AI for Embedded C Review
 
-Step 1: Prepare Your Code Context
+Step 1 - Prepare Your Code Context
 
 Provide the AI with:
 - Target microcontroller and architecture (ARM Cortex-M4, RISC-V, etc.)
@@ -271,14 +271,14 @@ Provide the AI with:
 - Memory constraints (RAM size, typical heap limits)
 - Real-time requirements (latency deadlines, ISR timing)
 
-Step 2: Request Focused Analysis
+Step 2 - Request Focused Analysis
 
 ```
 Review this embedded C code for memory safety issues.
 
-Target: STM32F4 microcontroller, 192KB RAM, FreeRTOS 10.2
-Focus: Memory leaks, buffer overflows, stack overflows
-Specific concerns: ISR safety, DMA buffer handling
+Target - STM32F4 microcontroller, 192KB RAM, FreeRTOS 10.2
+Focus - Memory leaks, buffer overflows, stack overflows
+Specific concerns - ISR safety, DMA buffer handling
 
 [Insert code here]
 
@@ -288,9 +288,9 @@ For each issue found:
 3. Provide a corrected code snippet
 ```
 
-Expected output: Detailed analysis with 3, 8 issues identified, fix recommendations for critical items.
+Expected output - Detailed analysis with 3, 8 issues identified, fix recommendations for critical items.
 
-Step 3: Validate Against Static Analysis Results
+Step 3 - Validate Against Static Analysis Results
 
 Cross-reference AI findings with Coverity, MISRA, or PC-lint results. AI often catches logic-level issues that static tools miss, while static tools find complex analysis issues AI might overlook.
 
@@ -304,9 +304,9 @@ Comparing AI Assistance with Traditional Methods
 | Common patterns | Excellent | Excellent | Good | Poor |
 | Context understanding | Excellent | Limited | Excellent | Limited |
 
-Optimal combination: AI (first pass) → Static analyzer → Code review → Runtime testing
+Optimal combination - AI (first pass) → Static analyzer → Code review → Runtime testing
 
-Real-World Example: Complete Memory Safety Audit
+Real-World Example - Complete Memory Safety Audit
 
 Here's a complete code review prompt that yields results:
 
@@ -375,7 +375,7 @@ for file in $(git diff --cached --name-only | grep "\\.c$"); do
 done
 ```
 
-Advanced Topics: ISR and DMA Safety
+Advanced Topics - ISR and DMA Safety
 
 AI review particularly helps with interrupt-safe code:
 
@@ -415,8 +415,8 @@ DMA transfers introduce additional hazards: the DMA controller writes directly t
 
 ```
 Review this DMA transfer code for memory safety.
-Architecture: STM32H7, Cortex-M7 with D-cache enabled
-Question: Are cache invalidation and clean operations placed correctly
+Architecture - STM32H7, Cortex-M7 with D-cache enabled
+Question - Are cache invalidation and clean operations placed correctly
 relative to DMA start and completion? Are DMA buffers aligned to
 cache line size (32 bytes on Cortex-M7)?
 ```
@@ -431,7 +431,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -443,7 +443,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

@@ -26,7 +26,7 @@ Table of Contents
 - [State Management Conventions](#state-management-conventions)
 - [Import Organization](#import-organization)
 - [Testing Considerations](#testing-considerations)
-- [Putting It All Together: A Complete CursorRules Template](#putting-it-all-together-a-complete-cursorrules-template)
+- [Putting It All Together - A Complete CursorRules Template](#putting-it-all-together-a-complete-cursorrules-template)
 - [TypeScript](#typescript)
 - [Components](#components)
 - [Hooks](#hooks)
@@ -66,7 +66,7 @@ Start with project-specific configuration details that affect every file:
 
 This establishes the foundation. Next, address component structure specifically.
 
-The `moduleResolution: "bundler"` setting matches the default for Vite and other modern bundlers. If your project uses `node16` or `nodenext` (common in Node.js libraries), update this value accordingly. Cursor will use these settings to infer path resolution behavior when generating imports.
+The `moduleResolution - "bundler"` setting matches the default for Vite and other modern bundlers. If your project uses `node16` or `nodenext` (common in Node.js libraries), update this value accordingly. Cursor will use these settings to infer path resolution behavior when generating imports.
 
 Component Pattern Rules
 
@@ -367,7 +367,7 @@ Use vi.fn() for mocks, not jest.fn(). Use screen queries, not container queries.
 Test user behavior, not implementation details. Do not test internal state directly.
 ```
 
-Putting It All Together: A Complete CursorRules Template
+Putting It All Together - A Complete CursorRules Template
 
 Here is a complete starting template for a React TypeScript project using Vite, Zustand, and React Query:
 

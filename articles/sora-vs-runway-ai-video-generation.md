@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-Choose Sora if you need physically coherent long-form video (60+ seconds) and integration with OpenAI's GPT ecosystem. Choose Runway if you need stylized artistic transformations, strong image-to-video capabilities, and a more mature generation pipeline. Both offer REST APIs and pay-per-generation pricing, but their strengths diverge on quality characteristics, prompt handling, and use case fit.
+Choose Sora if you need physically coherent long-form video (60+ seconds) and integration with OpenAI's GPT environment. Choose Runway if you need stylized artistic transformations, strong image-to-video capabilities, and a more mature generation pipeline. Both offer REST APIs and pay-per-generation pricing, but their strengths diverge on quality characteristics, prompt handling, and use case fit.
 
 Table of Contents
 
@@ -123,7 +123,7 @@ Feature Comparison at a Glance
 | Physics coherence | Excellent | Good |
 | Artistic style control | Moderate | Excellent |
 | API maturity | New | Established |
-| Ecosystem integration | OpenAI stack | Standalone |
+| environment integration | OpenAI stack | Standalone |
 | Inpainting/masking | No | Yes (Act-One) |
 
 This table captures the practical tradeoffs most developer teams encounter. Sora's longer clip support is significant for content pipelines that need continuous footage; Runway's image-to-video and video-to-video capabilities open up post-production workflows that Sora cannot match today.

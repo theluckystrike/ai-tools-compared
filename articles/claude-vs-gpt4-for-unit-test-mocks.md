@@ -17,9 +17,9 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 Mocking is where unit test generation gets hard. Simple mocks of external services are easy. both Claude and GPT-4 handle them. The difficult cases are: mocking complex dependency graphs, creating partial mocks without breaking unrelated methods, handling async/Promise mocks, and generating typed mocks in TypeScript without losing type safety. This guide compares both on these harder scenarios.
 
-Task 1: TypeScript. Mocking a Service with Type Safety
+Task 1 - TypeScript. Mocking a Service with Type Safety
 
-Prompt: "Write a Jest test for this TypeScript service. Mock the UserRepository and EmailService dependencies. The mock should maintain TypeScript type safety. no `any` casts."
+Prompt - "Write a Jest test for this TypeScript service. Mock the UserRepository and EmailService dependencies. The mock should maintain TypeScript type safety. no `any` casts."
 
 The service under test:
 
@@ -119,13 +119,13 @@ describe('UserService', () => {
 
 Claude uses `jest.Mocked<T>` to preserve full type safety without any `as any` casts. GPT-4 sometimes generates `const mockUserRepo = { findByEmail: jest.fn(), ... } as UserRepository`, which loses type checking on the mock setup calls.
 
-Winner: Claude. `jest.Mocked<T>` usage is idiomatic and type-safe.
+Winner - Claude. `jest.Mocked<T>` usage is idiomatic and type-safe.
 
-Task 2: Python. Partial Mocking with pytest-mock
+Task 2 - Python. Partial Mocking with pytest-mock
 
-Scenario: Mock only one method of a class, leaving others intact.
+Scenario - Mock only one method of a class, leaving others intact.
 
-Prompt: "Write a pytest test that partially mocks the `DatabaseService` class. only mock the `execute_raw_sql` method, leave all other methods running their real implementation."
+Prompt - "Write a pytest test that partially mocks the `DatabaseService` class. only mock the `execute_raw_sql` method, leave all other methods running their real implementation."
 
 GPT-4's approach:
 
@@ -188,9 +188,9 @@ def test_spy_on_method_without_blocking(real_db_service, mocker):
 
 Claude correctly distinguishes `mocker.patch.object` (replaces the method) from `mocker.spy` (records calls without blocking). GPT-4 conflates these patterns.
 
-Task 3: Java. Mockito with Argument Captors
+Task 3 - Java. Mockito with Argument Captors
 
-Prompt: "Write a JUnit 5 test using Mockito for an OrderService that calls PaymentGateway. Use ArgumentCaptor to verify the exact payment request object, including nested fields."
+Prompt - "Write a JUnit 5 test using Mockito for an OrderService that calls PaymentGateway. Use ArgumentCaptor to verify the exact payment request object, including nested fields."
 
 Claude:
 
@@ -276,11 +276,11 @@ class OrderServiceTest {
 
 Claude uses `@Captor` annotation (cleaner than `ArgumentCaptor.forClass()` inline), AssertJ fluent assertions, and `thenAnswer` for realistic repository mocking. GPT-4 sometimes uses JUnit 4 patterns (`@RunWith(MockitoJUnitRunner.class)`) in JUnit 5 tests.
 
-Task 4: Mocking Async Code. Node.js with Timers
+Task 4 - Mocking Async Code. Node.js with Timers
 
 Async code involving timers, queues, or retry logic is notoriously hard to mock. Claude handles this well; GPT-4 often produces tests that work only with `jest.useFakeTimers()` misconfigured.
 
-Prompt: "Write a Jest test for a retry function that retries a failing async operation up to 3 times with exponential backoff. Mock time so the test runs instantly."
+Prompt - "Write a Jest test for a retry function that retries a failing async operation up to 3 times with exponential backoff. Mock time so the test runs instantly."
 
 Claude:
 
@@ -359,9 +359,9 @@ describe('withRetry', () => {
 });
 ```
 
-The key: `jest.advanceTimersByTimeAsync()` (Jest 27+) is needed instead of `jest.advanceTimersByTime()` when the code under test uses `await` with timers. Claude knows this distinction; GPT-4 often uses the sync version, leaving tests that hang indefinitely.
+The key - `jest.advanceTimersByTimeAsync()` (Jest 27+) is needed instead of `jest.advanceTimersByTime()` when the code under test uses `await` with timers. Claude knows this distinction; GPT-4 often uses the sync version, leaving tests that hang indefinitely.
 
-Task 5: Mocking HTTP Clients. MSW vs jest.mock
+Task 5 - Mocking HTTP Clients. MSW vs jest.mock
 
 For testing code that makes HTTP requests, there are two schools: mock the HTTP layer with `jest.mock`, or intercept at the network level with MSW (Mock Service Worker). Claude explains both and recommends correctly.
 

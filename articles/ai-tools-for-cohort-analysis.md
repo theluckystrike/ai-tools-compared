@@ -34,7 +34,7 @@ Cohort analysis breaks down user behavior by grouping customers based on shared 
 
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- Identify trends and recommend: interventions:\n{summary}" }] ) return response.content[0].text # Result: "Recent cohorts show 15% lower week-1 retention compared to 3 months ago.
+- Identify trends and recommend: interventions:\n{summary}" }] ) return response.content[0].text # Result - "Recent cohorts show 15% lower week-1 retention compared to 3 months ago.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - Python with Pandas and: AI Integration The most flexible approach combines Pandas with AI language models.
@@ -307,7 +307,7 @@ models/
       behavioral_cohorts.sql   # Action-based segments
       retention_matrix.sql     # Cohort retention trends
 
-Workflow: Raw events → Transformed cohorts → BI dashboards
+Workflow - Raw events → Transformed cohorts → BI dashboards
 ```
 
 AI assistants help write the SQL to transform raw events into cohort tables that feed into Looker, Tableau, or Metabase.

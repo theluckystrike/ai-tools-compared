@@ -51,7 +51,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand AI Internal Mobility Systems
+Step 1 - Understand AI Internal Mobility Systems
 
 Internal mobility encompasses job transitions, promotions, lateral moves, and skill development pathways within an organization. AI enhances these processes by analyzing employee skills, matching them to opportunities, predicting flight risks, and recommending personalized development paths.
 
@@ -64,7 +64,7 @@ The core components typically include:
 
 Modern internal mobility platforms analyze thousands of data points, from project histories and certifications to peer endorsements and self-assessments, to create employee profiles that go far beyond traditional resumes.
 
-Step 2: Technical Architecture
+Step 2 - Technical Architecture
 
 Most modern systems follow a microservices architecture. Here's a representative setup:
 
@@ -121,13 +121,13 @@ class MobilityMatcher:
 
 The matching algorithm typically combines multiple signals: exact skill matches carry significant weight, while semantic similarity using embedding models catches related competencies. Experience requirements act as hard filters in many systems, though some platforms offer tiered matching for roles where demonstrated expertise matters more than tenure.
 
-Step 3: Data Integration Patterns
+Step 3 - Data Integration Patterns
 
 Successful implementations require aggregating data from multiple sources. Common patterns include:
 
-HRIS Integration: Connect to Workday, BambooHR, or SAP SuccessFactors for employee records, performance data, and job histories. Most HRIS platforms offer REST APIs that make this integration straightforward, though you may need to handle rate limiting and sync schedules carefully.
+HRIS Integration - Connect to Workday, BambooHR, or SAP SuccessFactors for employee records, performance data, and job histories. Most HRIS platforms offer REST APIs that make this integration straightforward, though you may need to handle rate limiting and sync schedules carefully.
 
-LLM-Powered Resume Parsing: Extract skills from internal documents, project descriptions, and self-assessments:
+LLM-Powered Resume Parsing - Extract skills from internal documents, project descriptions, and self-assessments:
 
 ```python
 Extracting skills from text using embeddings
@@ -147,9 +147,9 @@ async def extract_skills_from_text(
     return [SKILL_TAXONOMY[i] for i in matches.max(axis=0) > 0.75]
 ```
 
-Feedback Loop Systems: Capture promotion outcomes, role changes, and employee satisfaction to continuously improve matching accuracy. Building this feedback loop early helps the system learn from real outcomes rather than relying solely on predicted scores.
+Feedback Loop Systems - Capture promotion outcomes, role changes, and employee satisfaction to continuously improve matching accuracy. Building this feedback loop early helps the system learn from real outcomes rather than relying solely on predicted scores.
 
-Step 4: Build Skill Graphs
+Step 4 - Build Skill Graphs
 
 A skill graph maps relationships between skills, prerequisites, related competencies, and career progressions. This enables sophisticated queries like "what skills should I develop to transition from frontend to backend development?"
 
@@ -190,19 +190,19 @@ class SkillGraph:
 
 Skill graphs also power the "skills before role" approach, identifying which competencies are transferable and which are role-specific, helping employees make informed decisions about their career direction.
 
-Step 5: Vendor Space in 2026
+Step 5 - Vendor Space in 2026
 
 Several mature platforms now offer AI internal mobility as a managed service, reducing the burden of building from scratch:
 
-- Gloat: Strong on skills inference from work history; integrates with Workday and SAP SuccessFactors. Best for large enterprises (5,000+ employees).
+- Gloat - Strong on skills inference from work history; integrates with Workday and SAP SuccessFactors. Best for large enterprises (5,000+ employees).
 - Eightfold.ai: Uses a deep-learning talent graph; well-regarded for bias mitigation features and global language support.
-- Phenom: Combines internal mobility with talent acquisition in one platform; particularly good at surfacing gig or project-based opportunities inside the org.
+- Phenom - Combines internal mobility with talent acquisition in one platform; particularly good at surfacing gig or project-based opportunities inside the org.
 - Fuel50: Career pathing-first; integrates with LMS platforms like Cornerstone and Degreed for tightly coupled learning recommendations.
-- Workday Opportunity Marketplace: Native for Workday shops; lower integration cost if you're already on Workday HCM.
+- Workday Opportunity Marketplace - Native for Workday shops; lower integration cost if you're already on Workday HCM.
 
 Choosing between building in-house and buying depends primarily on two factors: the uniqueness of your skill taxonomy (niche technical organizations often need custom ontologies), and your data privacy posture (regulated industries frequently require on-premise or private-cloud deployments that most SaaS vendors can't accommodate out of the box).
 
-Step 6: Measuring Success
+Step 6 - Measuring Success
 
 Track these metrics after deployment to evaluate your internal mobility program's effectiveness:
 
@@ -216,7 +216,7 @@ Track these metrics after deployment to evaluate your internal mobility program'
 
 A low match acceptance rate is usually a data problem: profiles are stale, or the skill taxonomy doesn't reflect how employees actually describe their work. Prompt employees quarterly to update skills and weight recent activity more heavily than older records.
 
-Step 7: Privacy and Ethics Considerations
+Step 7 - Privacy and Ethics Considerations
 
 When building these systems, data privacy and algorithmic fairness are critical:
 
@@ -251,7 +251,7 @@ def detect_bias(
 
 Beyond technical safeguards, involve legal and HR teams early to ensure compliance with employment laws and internal policies. Document your decision-making process for algorithmic choices, this helps during audits and builds trust with employees.
 
-Step 8: Practical Implementation Tips
+Step 8 - Practical Implementation Tips
 
 Start with a narrow use case, internal gig matching or project team formation, before expanding to full career pathing. Validate recommendations with hiring managers and allow feedback to improve the system over time.
 
@@ -267,7 +267,7 @@ Production Implementation Challenges
 
 Real-world deployments face challenges that documentation glosses over. The matching algorithm works in theory, but at scale, with 10,000 employees and 500 open roles, several issues emerge:
 
-Cold Start Problem: New employees without project histories or certifications score poorly in the matching algorithm because they have minimal data. Address this with:
+Cold Start Problem - New employees without project histories or certifications score poorly in the matching algorithm because they have minimal data. Address this with:
 
 ```python
 Bootstrap new employee profiles
@@ -290,7 +290,7 @@ def bootstrap_new_hire(employee_id, department, level):
     return {profile.__dict__, 'is_new_hire': True}
 ```
 
-Stale Profile Data: Skill data becomes obsolete within 3-6 months. Engineers work on projects, learn new tools, acquire certifications, but HRIS systems rarely auto-update. Build continuous feedback loops:
+Stale Profile Data - Skill data becomes obsolete within 3-6 months. Engineers work on projects, learn new tools, acquire certifications, but HRIS systems rarely auto-update. Build continuous feedback loops:
 
 ```python
 class SkillProfileRefreshScheduler:
@@ -322,7 +322,7 @@ class SkillProfileRefreshScheduler:
         }
 ```
 
-Manager Override Fatigue: If the AI recommends a candidate but the hiring manager disagrees, the feedback gets logged but often ignored. Reduce this by building explainability:
+Manager Override Fatigue - If the AI recommends a candidate but the hiring manager disagrees, the feedback gets logged but often ignored. Reduce this by building explainability:
 
 ```python
 Show why a candidate was matched (explainable AI)
@@ -355,19 +355,19 @@ def explain_match(candidate_profile, role_requirement, match_score):
     return explanation
 ```
 
-Vendor Comparison: Building vs. Buying
+Vendor Comparison - Building vs. Buying
 
 Three major platforms dominate enterprise mobility:
 
-Fuel50 ($8-15/user/month): Skill graph is pre-built with 1,200+ competencies. Setup takes 4-6 weeks because taxonomy is rigid. Strong for large enterprises where standardization matters. API is REST-based and integrates with any HRIS. Career path visualizations are excellent for employee self-service. Best for: Organizations 2,000+ employees with standardized role frameworks.
+Fuel50 ($8-15/user/month) - Skill graph is pre-built with 1,200+ competencies. Setup takes 4-6 weeks because taxonomy is rigid. Strong for large enterprises where standardization matters. API is REST-based and integrates with any HRIS. Career path visualizations are excellent for employee self-service. Best for: Organizations 2,000+ employees with standardized role frameworks.
 
-Beamery ($12-20/user/month): Emphasizes recruitment alongside mobility. If you're already using it for hiring, adding mobility is straightforward. Less sophisticated skill matching than Fuel50 but better learning management integration. Best for: Organizations using Beamery for hiring looking to extend into internal mobility.
+Beamery ($12-20/user/month) - Emphasizes recruitment alongside mobility. If you're already using it for hiring, adding mobility is straightforward. Less sophisticated skill matching than Fuel50 but better learning management integration. Best for: Organizations using Beamery for hiring looking to extend into internal mobility.
 
-SAP SuccessFactors (bundled with HCM): If you're already on SAP, mobility is included. Zero additional cost but maximum setup complexity. Integrates deeply with compensation, performance management, and succession planning. Least user-friendly interface. Best for: Fortune 500 companies already committed to SAP ecosystem.
+SAP SuccessFactors (bundled with HCM): If you're already on SAP, mobility is included. Zero additional cost but maximum setup complexity. Integrates deeply with compensation, performance management, and succession planning. Least user-friendly interface. Best for: Fortune 500 companies already committed to SAP environment.
 
 Building in-house (3-6 month dev project, $50-200K): Full control over skill taxonomy, matching algorithms, and data privacy. You can tune the system specifically for your organization's career progression patterns. Requires ongoing maintenance and skill graph updates. Best for: Tech companies (where internal talent is available) and organizations with unique career models (academia, consulting, government).
 
-Step 9: Measuring Success and ROI
+Step 9 - Measuring Success and ROI
 
 Internal mobility initiatives succeed or fail based on outcomes, not features. Track these metrics:
 

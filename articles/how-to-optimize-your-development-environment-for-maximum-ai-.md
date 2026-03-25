@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Configure Your Editor for AI Context
+Step 1 - Configure Your Editor for AI Context
 
 
 AI code completion tools rely heavily on understanding your project structure. Before expecting accurate suggestions, ensure your development environment provides clear project context.
@@ -104,7 +104,7 @@ For JavaScript and TypeScript projects, a well-configured `tsconfig.json` or `js
 With path aliases configured, AI tools understand that `@components/Button` resolves to `src/components/Button`. This eliminates a common category of suggestion errors where the AI generates correct logic but wrong import paths.
 
 
-Step 2: Optimizing Context Windows and Token Limits
+Step 2 - Optimizing Context Windows and Token Limits
 
 
 Modern AI tools have context window limitations. Understanding how to work within these constraints improves both response quality and workflow efficiency.
@@ -171,7 +171,7 @@ Not all environment changes provide equal benefit. Here's a honest breakdown:
 The highest-use configurations are project structure, type annotations, and in-file comments. The AI reads what's in your open files and nearby modules. invest there first.
 
 
-Step 3: Use AI-Powered Search and Navigation
+Step 3 - Use AI-Powered Search and Navigation
 
 
 Traditional grep and find commands have limits when understanding code relationships. Modern AI tools excel at semantic search across your codebase.
@@ -222,7 +222,7 @@ Configure your AI tool to pull from external documentation sources. Cursor, for 
 This is especially valuable when working with internal libraries that pre-date the model's training cutoff.
 
 
-Step 4: Automate Repetitive Workflows
+Step 4 - Automate Repetitive Workflows
 
 
 AI tools excel at generating boilerplate and handling repetitive patterns. Set up your environment to use this capability.
@@ -289,7 +289,7 @@ A well-configured `.eslintrc.json` communicates your rules explicitly:
 After generating code with an AI tool, run `eslint --fix` to auto-correct style issues. Over time, you'll notice the AI learns your project's patterns from the surrounding code and reduces lint errors in subsequent suggestions.
 
 
-Step 5: Manage API Keys and Authentication
+Step 5 - Manage API Keys and Authentication
 
 
 Security matters when using cloud-based AI tools. Proper configuration protects your credentials while maintaining productivity.
@@ -339,7 +339,7 @@ Configure usage limits to prevent unexpected costs:
 Monitor your usage through your provider's dashboard. Set alerts for unusual consumption patterns.
 
 
-Step 6: Measuring and Iterating on Your Setup
+Step 6 - Measuring and Iterating on Your Setup
 
 
 Optimization is an ongoing process. Track your workflow metrics to identify bottlenecks.

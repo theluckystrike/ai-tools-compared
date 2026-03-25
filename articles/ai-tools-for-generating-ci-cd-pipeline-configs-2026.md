@@ -36,13 +36,13 @@ CI/CD pipeline configuration is one of the highest-value applications for AI cod
 Table of Contents
 
 - [Why AI Excels at Pipeline Generation](#why-ai-excels-at-pipeline-generation)
-- [The Challenge: CI/CD Syntax Across Platforms](#the-challenge-cicd-syntax-across-platforms)
-- [Claude: Superior Pipeline Structure](#claude-superior-pipeline-structure)
-- [GPT-4: Functional but Verbose](#gpt-4-functional-but-verbose)
-- [GitHub Copilot: Inline Autocomplete, Not Generation](#github-copilot-inline-autocomplete-not-generation)
-- [Jenkins Groovy: More Complex Than Cloud Platforms](#jenkins-groovy-more-complex-than-cloud-platforms)
+- [The Challenge - CI/CD Syntax Across Platforms](#the-challenge-cicd-syntax-across-platforms)
+- [Claude - Superior Pipeline Structure](#claude-superior-pipeline-structure)
+- [GPT-4 - Functional but Verbose](#gpt-4-functional-but-verbose)
+- [GitHub Copilot - Inline Autocomplete, Not Generation](#github-copilot-inline-autocomplete-not-generation)
+- [Jenkins Groovy - More Complex Than Cloud Platforms](#jenkins-groovy-more-complex-than-cloud-platforms)
 - [Feature Comparison](#feature-comparison)
-- [Real-World Use Case: Multi-Stage Python Deployment](#real-world-use-case-multi-stage-python-deployment)
+- [Real-World Use Case - Multi-Stage Python Deployment](#real-world-use-case-multi-stage-python-deployment)
 - [Best Practices for AI-Generated Pipelines](#best-practices-for-ai-generated-pipelines)
 - [Making Your Choice](#making-your-choice)
 - [Debugging Pipeline Failures with AI](#debugging-pipeline-failures-with-ai)
@@ -59,7 +59,7 @@ tags: [ai-tools-compared, ci-cd, devops, github-actions, gitlab-ci]
 
 Claude generates production-ready CI/CD pipelines with correct syntax, proper secret handling, and sensible caching strategies on first attempt. GPT-4 produces functional pipelines but adds unnecessary steps and sometimes misunderstands matrix build syntax. GitHub Copilot works best as an inline assistant within workflow files rather than for complete pipeline generation. For critical deployment pipelines, use AI-generated configs as templates only, always validate step syntax, secret references, and conditional logic before deploying to production.
 
-The Challenge: CI/CD Syntax Across Platforms
+The Challenge - CI/CD Syntax Across Platforms
 
 CI/CD pipeline configuration demands knowledge of platform-specific YAML syntax. GitHub Actions uses workflow triggers, jobs with steps containing uses directives. GitLab CI requires stages, needs blocks, and artifacts definitions. Jenkins demands Groovy scripting, declarative syntax, and credential binding. A tool that understands Docker syntax may fail at GitHub Actions workflow syntax, creating pipelines that appear valid but fail at runtime with cryptic error messages.
 
@@ -67,7 +67,7 @@ Most AI tools trained on general code repositories contain abundant GitHub Actio
 
 Pipeline generation requires understanding: when to use setup-node@v4 vs actions/checkout@v4, how matrix strategies expand into parallel jobs, why caching keys must be deterministic, when secrets should be injected as environment variables versus file-based, and how artifacts flow between stages. Domain knowledge separates tools that generate pipelines matching your intent from tools that generate plausible-looking but non-functional YAML.
 
-Claude: Superior Pipeline Structure
+Claude - Superior Pipeline Structure
 
 Claude excels at generating complete, production-ready GitHub Actions workflows that respect best practices for performance and security. Provide a requirement like "build a Node.js application, run tests, push Docker image to registry on main branch only" and Claude produces a workflow respecting GitHub's recommended patterns.
 
@@ -168,7 +168,7 @@ jobs:
       - name: Deploy to production
         run: |
           curl -X POST ${{ secrets.DEPLOY_WEBHOOK }} \
-            -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" \
+            -H "Authorization - Bearer ${{ secrets.DEPLOY_TOKEN }}" \
             -H "Content-Type: application/json" \
             -d '{"image": "${{ env.IMAGE_NAME }}:${{ github.sha }}"}'
 ```
@@ -177,7 +177,7 @@ Claude correctly uses GitHub's setup-node caching, implements matrix strategies 
 
 Claude also excels at GitLab CI generation. Ask for a pipeline deploying a Python application and it produces correct syntax for stages, artifacts, cache keys, and docker-in-docker runners.
 
-GPT-4: Functional but Verbose
+GPT-4 - Functional but Verbose
 
 GPT-4 generates working CI/CD pipelines but often includes redundant steps that extend execution time. It may create separate jobs for tasks that should run in parallel, misunderstand matrix build expansion, or add extra validation steps unnecessary for most projects.
 
@@ -221,13 +221,13 @@ This approach works but the validation job adds unnecessary workflow time. GPT-4
 
 GPT-4's cost structure ($20/month Plus, or $0.03/$0.06 per 1K tokens API) becomes expensive when generating multi-stage pipelines with extensive artifact definitions.
 
-GitHub Copilot: Inline Autocomplete, Not Generation
+GitHub Copilot - Inline Autocomplete, Not Generation
 
 GitHub Copilot shines as an inline code suggestion tool within workflow files but struggles with complete pipeline generation from requirements. If you've written the initial workflow structure, Copilot suggests appropriate step patterns quickly. But requesting a complete Jenkins Declarative Pipeline from scratch often produces incomplete groovy syntax and missing credential bindings.
 
 Copilot's $10/month individual cost makes sense for inline optimization of existing code. It's less suitable for generating novel CI/CD configurations where accuracy matters.
 
-Jenkins Groovy: More Complex Than Cloud Platforms
+Jenkins Groovy - More Complex Than Cloud Platforms
 
 Jenkins Declarative Pipeline syntax is more complex than GitHub Actions or GitLab CI. Groovy scripting enables powerful customization but introduces syntax errors more easily. Claude handles Jenkins Declarative Pipeline generation adequately but requires more specific requirements than GitHub Actions.
 
@@ -337,7 +337,7 @@ Feature Comparison
 | Artifact flow | Excellent | Good | Fair | Claude understands dependencies |
 | Cost efficiency | $20-50/mo | $20-50/mo | $10/mo | Copilot best for inline work |
 
-Real-World Use Case: Multi-Stage Python Deployment
+Real-World Use Case - Multi-Stage Python Deployment
 
 A team needs a GitHub Actions workflow for a Python FastAPI application: lint with flake8, run pytest with coverage, build a Docker image, push to ECR, deploy to staging on pull requests, and to production on main branch merges.
 
@@ -422,7 +422,7 @@ The AI will likely identify that the cache isn't configured correctly or that np
 Performance Tips for AI-Generated Pipelines
 
 1. Parallel jobs: Most AI tools generate sequential jobs. Request matrix builds or parallel stages to reduce overall runtime.
-2. Caching: Explicitly ask the AI to add dependency caching (npm, pip, cargo, etc.).
+2. Caching - Explicitly ask the AI to add dependency caching (npm, pip, cargo, etc.).
 3. Conditional steps: Have the AI generate steps that only run on specific branches or triggers.
 4. Artifact management: Specify which artifacts to store and for how long.
 5. Environment-specific vars: Ask for separate configurations for dev/staging/prod.

@@ -22,7 +22,7 @@ Table of Contents
 
 - [What Makes an AI Assistant Suitable for Plugin Documentation](#what-makes-an-ai-assistant-suitable-for-plugin-documentation)
 - [Top AI Assistants for Plugin Development Documentation](#top-ai-assistants-for-plugin-development-documentation)
-- [Practical Comparison: Generating a Plugin Guide](#practical-comparison-generating-a-plugin-guide)
+- [Practical Comparison - Generating a Plugin Guide](#practical-comparison-generating-a-plugin-guide)
 - [Evaluating Output Quality](#evaluating-output-quality)
 - [Recommendations by Use Case](#recommendations-by-use-case)
 - [Building Your Documentation Workflow](#building-your-documentation-workflow)
@@ -51,7 +51,7 @@ Example prompt and response:
 
 ```markdown
 Write a plugin development guide for a Python CLI tool.
-Include: plugin structure, registration method, configuration handling.
+Include - plugin structure, registration method, configuration handling.
 ```
 
 Claude generates a complete guide with a project structure, example plugin file, and registration code. The output includes clear explanations of each component and how pieces connect.
@@ -84,7 +84,7 @@ Amazon Q Developer targets enterprise environments and excels at documenting plu
 
 The tool integrates well with AWS services and can generate documentation that includes proper IAM role configurations, environment variable setups, and deployment instructions alongside code examples.
 
-Practical Comparison: Generating a Plugin Guide
+Practical Comparison - Generating a Plugin Guide
 
 Consider a scenario where you need documentation for a Node.js plugin system. Each assistant approaches the task differently.
 
@@ -186,12 +186,12 @@ class PluginDocGenerator:
             max_tokens=1500,
             system="""You are an expert plugin developer.
 Generate a complete, working example showing how to build a plugin.
-Include: initialization, configuration, hooks, error handling.
-Output: Clean, production-ready code with comments.""",
+Include - initialization, configuration, hooks, error handling.
+Output - Clean, production-ready code with comments.""",
             messages=[{
                 "role": "user",
                 "content": f"""Create a plugin example for {plugin_name}.
-Use case: {use_case}
+Use case - {use_case}
 Include:
 1. Plugin class definition
 2. Configuration schema
@@ -239,9 +239,9 @@ Include:
                 "content": f"""Write a section titled: {section_title}
 
 Plugin details:
-- Name: {plugin_info.get('name')}
-- Framework: {plugin_info.get('framework')}
-- Language: {plugin_info.get('language')}
+- Name - {plugin_info.get('name')}
+- Framework - {plugin_info.get('framework')}
+- Language - {plugin_info.get('language')}
 - Features: {', '.join(plugin_info.get('features', []))}
 
 Write clear, practical content with code examples where relevant."""

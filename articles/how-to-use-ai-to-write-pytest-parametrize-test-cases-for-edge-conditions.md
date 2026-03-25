@@ -51,7 +51,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How AI Helps Identify Edge Cases
+Step 1 - How AI Helps Identify Edge Cases
 
 
 AI tools analyze your function's logic and suggest boundary conditions you might overlook. The most common edge cases include:
@@ -73,7 +73,7 @@ AI tools analyze your function's logic and suggest boundary conditions you might
 When you ask an AI assistant to generate parametrize test cases, provide the function signature, its purpose, and any documented constraints. The AI then produces test parameters covering these scenarios.
 
 
-Practical Example: String Processing Function
+Practical Example - String Processing Function
 
 
 Consider a function that validates email addresses:
@@ -92,7 +92,7 @@ def validate_email(email: str) -> bool:
 Manually identifying all edge cases takes effort. Here's how to prompt an AI assistant effectively:
 
 
-> "Generate pytest parametrize test cases for this validate_email function. Cover: empty strings, None, valid emails, missing @ symbol, missing domain, missing local part, single-character local and domain, emails with dots in local part, and unicode characters."
+> "Generate pytest parametrize test cases for this validate_email function. Cover - empty strings, None, valid emails, missing @ symbol, missing domain, missing local part, single-character local and domain, emails with dots in local part, and unicode characters."
 
 
 The AI produces test parameters:
@@ -118,7 +118,7 @@ def test_validate_email(email, expected):
 This covers the obvious cases plus subtle boundaries like single-character inputs.
 
 
-Step 2: Test Numerical Functions
+Step 2 - Test Numerical Functions
 
 
 Numerical functions often have tricky edge cases around zero, negative values, and overflow. For a division function:
@@ -136,7 +136,7 @@ def divide(a: float, b: float) -> float:
 Prompt the AI to generate edge cases:
 
 
-> "Write pytest parametrize test cases for this divide function. Include: normal division, division by zero (expect ValueError), zero divided by number, negative numbers, very large numbers, floating-point precision cases."
+> "Write pytest parametrize test cases for this divide function. Include - normal division, division by zero (expect ValueError), zero divided by number, negative numbers, very large numbers, floating-point precision cases."
 
 
 The generated tests:
@@ -167,7 +167,7 @@ def test_divide(a, b, expected):
 ```
 
 
-Step 3: Test List and Collection Functions
+Step 3 - Test List and Collection Functions
 
 
 List processing functions need edge case testing for empty lists, single elements, and duplicates:
@@ -208,21 +208,21 @@ def test_find_unique(items, expected):
 Notice how the AI identifies None, zero, and empty string as distinct edge cases, all important for thorough testing.
 
 
-Step 4: Crafting Prompts That Get Better Results
+Step 4 - Crafting Prompts That Get Better Results
 
 
 The quality of AI-generated test cases depends heavily on how you phrase your prompt. Vague prompts produce generic tests; specific prompts produce thorough parametrize sets tailored to your function's logic.
 
-A weak prompt: "Write tests for my sort function."
+A weak prompt - "Write tests for my sort function."
 
-A stronger prompt: "Write pytest parametrize test cases for this sort function that accepts a list of integers. It should handle: an empty list, a single-element list, a list already in ascending order, a list in descending order, a list with duplicate values, a list with negative numbers mixed with positive, and a list containing the same value repeated. For each case, show the input list and the expected sorted output."
+A stronger prompt - "Write pytest parametrize test cases for this sort function that accepts a list of integers. It should handle: an empty list, a single-element list, a list already in ascending order, a list in descending order, a list with duplicate values, a list with negative numbers mixed with positive, and a list containing the same value repeated. For each case, show the input list and the expected sorted output."
 
 The stronger prompt specifies the function type, the domain of inputs, and the categories of edge cases. The AI can generate meaningful parameters rather than guessing what matters.
 
 When working on string functions, explicitly mention: encoding issues, leading/trailing whitespace, mixed case, and strings containing only whitespace. When working on date/time functions, mention: timezone boundaries, leap year handling, month-end dates, and Unix epoch zero. Domain knowledge embedded in your prompt directly improves coverage.
 
 
-Step 5: Use AI to Test Exception Handling
+Step 5 - Use AI to Test Exception Handling
 
 
 Many functions raise exceptions under certain conditions. AI assistants can generate parametrize tests that verify both the happy path and error conditions in the same test function using `pytest.raises` as a context manager.
@@ -238,7 +238,7 @@ def parse_age(value: str) -> int:
 ```
 
 
-Prompt the AI: "Write parametrize tests for parse_age. Cover: valid ages like 0, 1, 99, 150; invalid strings like 'abc', '', '-'; out-of-range integers like -1 and 151; edge values at the boundary."
+Prompt the AI - "Write parametrize tests for parse_age. Cover - valid ages like 0, 1, 99, 150; invalid strings like 'abc', '', '-'; out-of-range integers like -1 and 151; edge values at the boundary."
 
 AI-generated output:
 
@@ -269,7 +269,7 @@ def test_parse_age(value, expected_result, raises):
 This pattern, using a `raises` parameter to control whether the test expects an exception, is a clean way to test both success and failure paths without duplicating test logic.
 
 
-Step 6: Parametrize IDs for Readable Test Output
+Step 6 - Parametrize IDs for Readable Test Output
 
 
 When you run parametrize tests, pytest generates IDs like `test_validate_email[email0-expected0]` by default. AI assistants can add descriptive IDs that make test failures easier to diagnose.
@@ -300,19 +300,19 @@ AI assistants are helpful but review their output. Follow these practices:
 Provide complete function context: Include the full function signature, type hints, and docstring. This helps the AI understand the intended behavior and constraints.
 
 
-Specify the programming domain: Tell the AI whether you're testing numerical functions, string processing, API responses, or database operations. Different domains have different common edge cases.
+Specify the programming domain - Tell the AI whether you're testing numerical functions, string processing, API responses, or database operations. Different domains have different common edge cases.
 
 
-Review generated parameters: AI might miss domain-specific edge cases particular to your business logic. Add any missing cases manually.
+Review generated parameters - AI might miss domain-specific edge cases particular to your business logic. Add any missing cases manually.
 
 
 Test error conditions explicitly: Use `pytest.raises` for exception testing. Make this explicit in your prompt.
 
 
-Consider performance: Very large parametrize lists slow down test runs. Prioritize the most critical edge cases.
+Consider performance - Very large parametrize lists slow down test runs. Prioritize the most critical edge cases.
 
 
-Step 7: Automate Test Generation Workflow
+Step 7 - Automate Test Generation Workflow
 
 
 You can improve AI-assisted test generation with a consistent workflow:

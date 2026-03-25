@@ -65,7 +65,7 @@ Leading AI Tools for Interior Design Visualization
 
 Interior AI focuses on speed and ease of use. Users upload a room photo and select a style (modern, minimalist, industrial, Scandinavian), then receive generated visualizations within seconds. The tool excels at style transfers rather than photorealistic rendering.
 
-API Availability: Interior AI offers an API for batch processing, though rate limits apply on lower tiers.
+API Availability - Interior AI offers an API for batch processing, though rate limits apply on lower tiers.
 
 Strengths:
 
@@ -288,11 +288,11 @@ Implementation Recommendations
 
 For developers building interior design applications, consider these approaches:
 
-Low-Code Integration: If you need quick implementation with minimal maintenance, ReRoom or Interior AI's API provides the fastest path to functional visualization features.
+Low-Code Integration - If you need quick implementation with minimal maintenance, ReRoom or Interior AI's API provides the fastest path to functional visualization features.
 
-Custom Solutions: For full control over the visualization pipeline, Stable Diffusion with ControlNet offers the best flexibility, though it requires GPU infrastructure and ML expertise.
+Custom Solutions - For full control over the visualization pipeline, Stable Diffusion with ControlNet offers the best flexibility, though it requires GPU infrastructure and ML expertise.
 
-Hybrid Approach: Many production systems combine multiple tools, using DALL-E or Midjourney for initial concept exploration, then ReRoom or custom solutions for final visualization.
+Hybrid Approach - Many production systems combine multiple tools, using DALL-E or Midjourney for initial concept exploration, then ReRoom or custom solutions for final visualization.
 
 Performance Considerations
 

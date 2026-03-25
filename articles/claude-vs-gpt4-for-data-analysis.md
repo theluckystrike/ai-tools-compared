@@ -50,11 +50,11 @@ All comparisons use:
 - Same prompts, no follow-up corrections allowed
 - Python/pandas as the primary evaluation environment
 
-Evaluation criteria: code correctness, handling of edge cases, statistical appropriateness, and explanation quality.
+Evaluation criteria - code correctness, handling of edge cases, statistical appropriateness, and explanation quality.
 
 Pandas Data Cleaning
 
-Prompt: "I have a DataFrame with a 'date' column containing mixed formats: '2024-01-15', 'Jan 15 2024', '15/01/2024'. Write code to parse all formats into datetime."
+Prompt - "I have a DataFrame with a 'date' column containing mixed formats: '2024-01-15', 'Jan 15 2024', '15/01/2024'. Write code to parse all formats into datetime."
 
 Claude's Response
 
@@ -79,7 +79,7 @@ def parse_mixed_dates(df, column):
 
     failure_rate = failed_mask.sum() / len(df)
     if failure_rate > 0.05:
-        print(f"Warning: {failure_rate:.1%} of dates could not be parsed")
+        print(f"Warning - {failure_rate:.1%} of dates could not be parsed")
 
     return parsed
 
@@ -105,11 +105,11 @@ def parse_mixed_dates(series):
 df['date'] = parse_mixed_dates(df['date'])
 ```
 
-Assessment: Both are correct. Claude's version includes a warning for high failure rates and handles the `infer_datetime_format` optimization. GPT-4's is more concise but skips error handling. For production pipelines, Claude's version is safer.
+Assessment - Both are correct. Claude's version includes a warning for high failure rates and handles the `infer_datetime_format` optimization. GPT-4's is more concise but skips error handling. For production pipelines, Claude's version is safer.
 
 Statistical Analysis
 
-Prompt: "I have A/B test data with conversion rates: control 4.2% (n=12,000), treatment 4.8% (n=11,500). Is the result statistically significant?"
+Prompt - "I have A/B test data with conversion rates: control 4.2% (n=12,000), treatment 4.8% (n=11,500). Is the result statistically significant?"
 
 Claude's Analysis
 
@@ -147,17 +147,17 @@ print(f"Effect size (Cohen's h): {h:.3f}")
 print(f"Achieved power: {achieved_power:.2%}")
 ```
 
-Claude also notes: "If this was one of multiple tests running simultaneously, apply Bonferroni correction. A p-value of 0.0043 would survive correction for up to 4 simultaneous tests."
+Claude also notes - "If this was one of multiple tests running simultaneously, apply Bonferroni correction. A p-value of 0.0043 would survive correction for up to 4 simultaneous tests."
 
 GPT-4o's Analysis
 
 GPT-4o produces correct code but stops at the p-value. It doesn't mention power analysis or multiple comparisons. The code is correct but the analysis is incomplete.
 
-Assessment: Claude's statistical reasoning is noticeably stronger. It anticipates the follow-up questions without being asked.
+Assessment - Claude's statistical reasoning is noticeably stronger. It anticipates the follow-up questions without being asked.
 
 Visualization Code
 
-Prompt: "Create a visualization showing monthly revenue trends for 3 product lines over 2 years, highlighting when each crossed $1M."
+Prompt - "Create a visualization showing monthly revenue trends for 3 product lines over 2 years, highlighting when each crossed $1M."
 
 ```python
 Claude's output
@@ -214,7 +214,7 @@ Long-Form Data Analysis
 
 For projects requiring sustained analysis across multiple datasets:
 
-Prompt: "I have quarterly revenue data for 2023-2025 across 4 product lines. I need to: 1) Identify seasonal patterns, 2) Forecast Q2 2026 revenue, 3) Compare growth rates, 4) Flag anomalies."
+Prompt - "I have quarterly revenue data for 2023-2025 across 4 product lines. I need to: 1) Identify seasonal patterns, 2) Forecast Q2 2026 revenue, 3) Compare growth rates, 4) Flag anomalies."
 
 Claude's approach:
 - Requests the actual dataset structure
@@ -260,7 +260,7 @@ Schema:
 Sample rows:
 {csv_context}
 
-Total rows: {len(df)}
+Total rows - {len(df)}
 
 Analysis request:
 {analysis_request}"""
@@ -297,7 +297,7 @@ Handling Missing Data
 
 Both models generate code to handle missing data, but with different strategies:
 
-Prompt: "I have monthly sales data with 10% of months missing. How should I handle this?"
+Prompt - "I have monthly sales data with 10% of months missing. How should I handle this?"
 
 Claude:
 ```python
@@ -339,7 +339,7 @@ Database Query Generation
 
 Both models generate SQL, with different quality:
 
-Prompt: "Generate SQL to find users who made 3+ purchases in the last 30 days but haven't purchased in 7 days (at-risk customers)."
+Prompt - "Generate SQL to find users who made 3+ purchases in the last 30 days but haven't purchased in 7 days (at-risk customers)."
 
 Claude:
 ```sql
@@ -388,7 +388,7 @@ Claude's cost is 20-30% higher, but the time saved through better reasoning typi
 
 Handling Categorical Data
 
-Prompt: "I have product category data with 50 different values. How should I handle this for analysis?"
+Prompt - "I have product category data with 50 different values. How should I handle this for analysis?"
 
 Claude:
 - Suggests grouping strategies

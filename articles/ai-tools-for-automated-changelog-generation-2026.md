@@ -31,7 +31,7 @@ Manual changelogs accumulate technical debt. Developers forget to update them, m
 
 The challenge intensifies with monorepos where different packages release independently, or when commit histories are irregular (old projects without Conventional Commits). AI tools solve this by either enforcing strict commit conventions or interpreting loose, inconsistent commit messages intelligently.
 
-Conventional Changelog: The Gold Standard
+Conventional Changelog - The Gold Standard
 
 Conventional Changelog (used by Angular, React, and thousands of projects) generates changelogs from Conventional Commits, a structured commit message format specifying type (feat, fix, docs) and scope.
 
@@ -66,10 +66,10 @@ This change implements automatic token refresh using a background timer
 that triggers 30 seconds before expiration.
 
 Closes #456
-BREAKING CHANGE: The login endpoint now returns access_token instead of token
+BREAKING CHANGE - The login endpoint now returns access_token instead of token
 ```
 
-Types follow a standard: `feat` (features), `fix` (bug fixes), `docs` (documentation), `style` (formatting), `refactor` (code reorganization), `perf` (performance), `test` (test additions), `chore` (dependency updates).
+Types follow a standard - `feat` (features), `fix` (bug fixes), `docs` (documentation), `style` (formatting), `refactor` (code reorganization), `perf` (performance), `test` (test additions), `chore` (dependency updates).
 
 Automatic Semantic Versioning
 
@@ -209,7 +209,7 @@ module.exports = {
 ```
 
 
-Semantic Release: Fully Automated Release Pipeline
+Semantic Release - Fully Automated Release Pipeline
 
 Semantic Release goes beyond changelog generation, it fully automates releases, including version bumping, changelog creation, GitHub releases, and NPM publishing.
 
@@ -295,7 +295,7 @@ Handling Pre-releases and Hotfixes
 Commits to `alpha` branch generate `1.0.0-alpha.1`, `beta` generates `1.0.0-beta.1`, while hotfix branches release patch versions for current stable release.
 
 
-Cliff: System Software and Rust Projects
+Cliff - System Software and Rust Projects
 
 Cliff (Changelog Generator) excels with system software, Rust projects, and complex custom formats. It parses Git history, groups commits intelligently, and supports custom templates.
 
@@ -376,7 +376,7 @@ body = """
 {%- endif %}
 {%- if commit.breaking %}
 
-BREAKING CHANGE: {{ commit.breaking_description }}
+BREAKING CHANGE - {{ commit.breaking_description }}
 {%- endif %}
 {% endfor %}
 {% endfor %}
@@ -445,13 +445,13 @@ jobs:
 ```
 
 
-Claude: Legacy Codebases and Manual Interpretation
+Claude - Legacy Codebases and Manual Interpretation
 
 For projects without Conventional Commits, Claude interprets commit messages and suggests structured changelog entries.
 
 Workflow Example
 
-Request to Claude: "Analyze git log from the last 30 commits and generate a changelog following this format:
+Request to Claude - "Analyze git log from the last 30 commits and generate a changelog following this format:
 
 ```markdown
 [Unreleased]
@@ -586,7 +586,7 @@ Implementation Strategy
 1. New projects: Use Semantic Release with Conventional Commits enforced via commitlint.
 2. Rust/system software: Use Cliff with custom templates.
 3. Legacy projects: Use Claude for one-time migration, then enforce Conventional Commits going forward.
-4. Monorepos: Use Lerna + Conventional Changelog with independent versioning.
+4. Monorepos - Use Lerna + Conventional Changelog with independent versioning.
 
 Enforce commit conventions early:
 

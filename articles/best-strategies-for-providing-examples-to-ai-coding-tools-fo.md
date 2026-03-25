@@ -31,14 +31,14 @@ Provide 2-3 concrete working examples showing your preferred style and patterns;
 Table of Contents
 
 - [Why Examples Matter for AI Code Generation](#why-examples-matter-for-ai-code-generation)
-- [Strategy 1: Include Real Code from Your Project](#strategy-1-include-real-code-from-your-project)
-- [Strategy 2: Provide Input-Output Examples](#strategy-2-provide-input-output-examples)
-- [Strategy 3: Show Error Handling Patterns](#strategy-3-show-error-handling-patterns)
-- [Strategy 4: Specify Testing Requirements](#strategy-4-specify-testing-requirements)
-- [Strategy 5: Use File References and Context](#strategy-5-use-file-references-and-context)
-- [Strategy 6: Chain Examples for Complex Tasks](#strategy-6-chain-examples-for-complex-tasks)
+- [Strategy 1 - Include Real Code from Your Project](#strategy-1-include-real-code-from-your-project)
+- [Strategy 2 - Provide Input-Output Examples](#strategy-2-provide-input-output-examples)
+- [Strategy 3 - Show Error Handling Patterns](#strategy-3-show-error-handling-patterns)
+- [Strategy 4 - Specify Testing Requirements](#strategy-4-specify-testing-requirements)
+- [Strategy 5 - Use File References and Context](#strategy-5-use-file-references-and-context)
+- [Strategy 6 - Chain Examples for Complex Tasks](#strategy-6-chain-examples-for-complex-tasks)
 - [Common Mistakes to Avoid](#common-mistakes-to-avoid)
-- [Practical Example: Complete Prompt](#practical-example-complete-prompt)
+- [Practical Example - Complete Prompt](#practical-example-complete-prompt)
 
 Why Examples Matter for AI Code Generation
 
@@ -58,7 +58,7 @@ When you provide well-crafted examples, you establish a reference point that the
 
 The more relevant context you provide, the more accurate the generated code becomes on the first try.
 
-Strategy 1: Include Real Code from Your Project
+Strategy 1 - Include Real Code from Your Project
 
 One of the most effective approaches is including actual code from your existing codebase. This teaches the AI your specific patterns and conventions.
 
@@ -87,7 +87,7 @@ Write a similar validator for phone numbers that follows the same style and erro
 
 This approach works because the AI sees your actual implementation patterns, how you handle edge cases, what libraries you use, and what return types you prefer.
 
-Strategy 2: Provide Input-Output Examples
+Strategy 2 - Provide Input-Output Examples
 
 For tasks involving data transformation or API responses, showing concrete examples of expected input and output often produces better results than describing the transformation verbally.
 
@@ -143,7 +143,7 @@ Write a Python function that performs this transformation using dataclasses.
 
 The AI can see exactly how field names map, what data types to expect, and how to restructure nested objects. This reduces back-and-forth iterations significantly.
 
-Strategy 3: Show Error Handling Patterns
+Strategy 3 - Show Error Handling Patterns
 
 AI-generated code often lacks proper error handling because the AI doesn't know what exceptions your project handles or how you prefer to manage failures.
 
@@ -188,7 +188,7 @@ Apply this same pattern to fetch user preferences.
 
 This ensures the generated code fits your existing error handling infrastructure rather than using generic try-except blocks.
 
-Strategy 4: Specify Testing Requirements
+Strategy 4 - Specify Testing Requirements
 
 If you need tests alongside your generated code, show examples of your testing patterns:
 
@@ -223,7 +223,7 @@ class TestUser:
 
 This approach produces tests that match your existing test structure, naming conventions, and assertion styles.
 
-Strategy 5: Use File References and Context
+Strategy 5 - Use File References and Context
 
 Most AI coding tools can read files from your project. Use this capability to provide rich context:
 
@@ -237,11 +237,11 @@ Looking at our existing models in models/user.py, generate a new Order model tha
 
 The AI examines your existing code and generates consistent additions rather than starting from scratch with different conventions.
 
-Strategy 6: Chain Examples for Complex Tasks
+Strategy 6 - Chain Examples for Complex Tasks
 
 For complex requirements, build up context incrementally rather than providing everything at once:
 
-Step 1: Establish base patterns
+Step 1 - Establish base patterns
 
 ```
 Our project uses this base repository structure:
@@ -261,7 +261,7 @@ class BaseRepository:
 ```
 ```
 
-Step 2: Build on that foundation
+Step 2 - Build on that foundation
 
 ```
 Using the BaseRepository above, create a UserRepository that adds:
@@ -274,15 +274,15 @@ This incremental approach helps the AI maintain consistency across complex, mult
 
 Common Mistakes to Avoid
 
-Providing too few examples: A single line of code rarely provides enough context. Three to five relevant examples usually work better.
+Providing too few examples - A single line of code rarely provides enough context. Three to five relevant examples usually work better.
 
-Using outdated examples: Make sure your reference code reflects current library versions and best practices. AI tools may reproduce old patterns if that's what you show them.
+Using outdated examples - Make sure your reference code reflects current library versions and best practices. AI tools may reproduce old patterns if that's what you show them.
 
-Mixing different coding styles: If your examples come from different parts of your codebase with different conventions, the AI may produce inconsistent output. Stick to examples from the same module or files with consistent patterns.
+Mixing different coding styles - If your examples come from different parts of your codebase with different conventions, the AI may produce inconsistent output. Stick to examples from the same module or files with consistent patterns.
 
-Forgetting to specify the scope: Examples should clarify not just what to do, but what NOT to do. If you don't want certain features, mention that explicitly.
+Forgetting to specify the scope - Examples should clarify not just what to do, but what NOT to do. If you don't want certain features, mention that explicitly.
 
-Practical Example: Complete Prompt
+Practical Example - Complete Prompt
 
 Here's a complete example combining several strategies:
 
@@ -332,7 +332,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -344,7 +344,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

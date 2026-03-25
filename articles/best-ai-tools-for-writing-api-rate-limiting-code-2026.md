@@ -29,9 +29,9 @@ Claude 3.5 Sonnet produces production-grade rate limiting implementations with e
 Table of Contents
 
 - [Three Rate Limiting Algorithms Explained](#three-rate-limiting-algorithms-explained)
-- [Claude 3.5 Sonnet: Distributed Rate Limiting](#claude-35-sonnet-distributed-rate-limiting)
-- [ChatGPT-4: Excellent Algorithm Explanations](#chatgpt-4-excellent-algorithm-explanations)
-- [Copilot: IDE Integration Convenience](#copilot-ide-integration-convenience)
+- [Claude 3.5 Sonnet - Distributed Rate Limiting](#claude-35-sonnet-distributed-rate-limiting)
+- [ChatGPT-4 - Excellent Algorithm Explanations](#chatgpt-4-excellent-algorithm-explanations)
+- [Copilot - IDE Integration Convenience](#copilot-ide-integration-convenience)
 - [Real-World Implementation Considerations](#real-world-implementation-considerations)
 - [Choosing Your AI Tool](#choosing-your-ai-tool)
 
@@ -43,7 +43,7 @@ Sliding window tracks requests in a rolling time frame. Rather than fixed period
 
 Leaky bucket treats requests as water flowing into a bucket with a hole in the bottom. Requests arrive at variable rates but leak out at a constant rate. This smooths traffic spikes. If requests arrive faster than they leak, new requests overflow the bucket and are rejected. Leaky bucket is harder to implement efficiently but provides the smoothest traffic shaping.
 
-Claude 3.5 Sonnet: Distributed Rate Limiting
+Claude 3.5 Sonnet - Distributed Rate Limiting
 
 Claude excels at implementing rate limiting that works across multiple servers. When asked for "a rate limiter that handles concurrent requests across load-balanced servers," Claude generates:
 
@@ -235,7 +235,7 @@ def rate_limit_check():
 
 Claude also explains the tradeoff explicitly: token bucket handles burst traffic (good for user experience), sliding window provides accuracy (good for SLA enforcement), and leaky bucket smooths traffic (good for downstream stability).
 
-ChatGPT-4: Excellent Algorithm Explanations
+ChatGPT-4 - Excellent Algorithm Explanations
 
 ChatGPT-4 produces clear explanations of rate limiting concepts but generates code that doesn't consider distributed deployment:
 
@@ -263,7 +263,7 @@ This pattern works for single-server applications but fails under load-balancing
 
 ChatGPT-4 excels when asked specifically about algorithm differences: "Explain why sliding window is more accurate than token bucket." The explanation clearly contrasts the accuracy vs. memory tradeoff.
 
-Copilot: IDE Integration Convenience
+Copilot - IDE Integration Convenience
 
 GitHub Copilot provides fast suggestions within your IDE. When typing `def rate_limit(` in VS Code, Copilot suggests implementations immediately. The suggestions are typically correct for single-server scenarios but rarely include the distributed system considerations necessary for production APIs.
 
@@ -312,7 +312,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -324,7 +324,7 @@ Most modern tools support asynchronous workflows that work well across time zone
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

@@ -187,11 +187,11 @@ curl -H "Authorization: Bearer $GRAFANA_API_TOKEN" \
 
 Tool-Specific Approaches
 
-Claude Code: Excels at understanding natural language specifications for dashboards. You can describe "a dashboard showing API health with request rate, latency percentiles, and error rate" and receive properly structured JSON with appropriate thresholds.
+Claude Code - Excels at understanding natural language specifications for dashboards. You can describe "a dashboard showing API health with request rate, latency percentiles, and error rate" and receive properly structured JSON with appropriate thresholds.
 
-GitHub Copilot: Good for generating dashboard components incrementally. Works well when you start with a partial dashboard template and ask Copilot to fill in panels.
+GitHub Copilot - Good for generating dashboard components incrementally. Works well when you start with a partial dashboard template and ask Copilot to fill in panels.
 
-ChatGPT with Code Interpreter: Can generate dashboards and validate them immediately, showing you the structure before import.
+ChatGPT with Code Interpreter - Can generate dashboards and validate them immediately, showing you the structure before import.
 
 Common Dashboard Patterns
 
@@ -247,11 +247,11 @@ providers:
 
 Troubleshooting Common Issues
 
-Queries return no data: Verify metric names match your actual metrics. AI may suggest standard naming conventions (like `http_requests_total`) that don't match your environment.
+Queries return no data - Verify metric names match your actual metrics. AI may suggest standard naming conventions (like `http_requests_total`) that don't match your environment.
 
-Panels show "No data": Check data source is available to Grafana. Ensure Prometheus/InfluxDB/etc. have data in the time range.
+Panels show "No data" - Check data source is available to Grafana. Ensure Prometheus/InfluxDB/etc. have data in the time range.
 
-Threshold colors inverted: Some metrics increase when things are bad (error rate) while others decrease (uptime). Adjust thresholds accordingly in generated output.
+Threshold colors inverted - Some metrics increase when things are bad (error rate) while others decrease (uptime). Adjust thresholds accordingly in generated output.
 
 Frequently Asked Questions
 

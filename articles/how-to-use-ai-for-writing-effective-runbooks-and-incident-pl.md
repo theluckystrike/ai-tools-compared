@@ -52,18 +52,18 @@ AI excels at transforming raw incident data into structured runbook content. Whe
 Consider this example. You have an incident summary like:
 
 ```
-Incident: Database connection pool exhaustion
-Duration: 45 minutes
-Impact: 5000 requests failed
-Root cause: Slow query blocking connections
-Resolution: Killed slow query, increased pool size
+Incident - Database connection pool exhaustion
+Duration - 45 minutes
+Impact - 5000 requests failed
+Root cause - Slow query blocking connections
+Resolution - Killed slow query, increased pool size
 ```
 
 You can provide this to an AI with a prompt like:
 
 ```markdown
 Generate a runbook section for handling database connection pool exhaustion.
-Include: symptoms to watch for, diagnostic commands, immediate mitigation steps,
+Include - symptoms to watch for, diagnostic commands, immediate mitigation steps,
 and prevention measures. Format as numbered steps suitable for on-call engineers.
 ```
 
@@ -113,12 +113,12 @@ The resulting playbook provides clear conditional paths:
 ```
 Payment Service 5xx Alert Response
 
-Step 1: Verify Alert Validity
+Step 1 - Verify Alert Validity
 - Check if alert matches actual traffic ()
 - Confirm service is receiving production traffic
 
-Step 2: Identify Error Category
-Run: `curl -s https://api.example.com/health | jq`
+Step 2 - Identify Error Category
+Run - `curl -s https://api.example.com/health | jq`
 
 If response contains "database":
   → See "Database Issues" section
@@ -165,7 +165,7 @@ Runbooks often include shell commands, API calls, or scripts. AI can generate th
 
 ```markdown
 Generate diagnostic commands for a Kubernetes pod in CrashLoopBackOff state.
-Include: describe command, logs extraction, events checking, and common fixes.
+Include - describe command, logs extraction, events checking, and common fixes.
 Use kubectl syntax appropriate for our cluster version (1.28).
 ```
 

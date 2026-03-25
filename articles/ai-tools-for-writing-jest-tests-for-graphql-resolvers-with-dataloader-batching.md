@@ -89,7 +89,7 @@ Effective prompt for AI:
 
 > "Write Jest tests for a GraphQL resolver that uses DataLoader for batching. Test that: 1) Single user lookup works, 2) Multiple user lookups in a single query are batched into one database call, 3) Null results are handled correctly, 4) Errors in the batch loader are properly caught."
 
-Test Case: Single Resolution
+Test Case - Single Resolution
 
 ```typescript
 describe('UserResolver', () => {
@@ -117,7 +117,7 @@ describe('UserResolver', () => {
 });
 ```
 
-Test Case: Batched Resolution
+Test Case - Batched Resolution
 
 The critical test verifies that DataLoader actually batches requests:
 

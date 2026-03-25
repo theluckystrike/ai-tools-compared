@@ -56,7 +56,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Common Syntax Errors and How to Fix Them
+Step 1 - Common Syntax Errors and How to Fix Them
 
 Missing Semicolons and Statement Endings
 
@@ -82,7 +82,7 @@ fn get_value(x: i32) -> i32 {
 }
 ```
 
-The fix is simple: ensure expression blocks do not have trailing semicolons when you want them to return values. If you add a semicolon, Rust treats the block as a statement that returns `()`.
+The fix is simple - ensure expression blocks do not have trailing semicolons when you want them to return values. If you add a semicolon, Rust treats the block as a statement that returns `()`.
 
 Incorrect Closure Syntax
 
@@ -188,7 +188,7 @@ fn print_item<T: std::fmt::Display>(item: T) {
 
 When you need to use a type in specific ways, add trait bounds to your generic type parameter. The compiler error message will indicate which trait you need to bound.
 
-Step 2: Practical Debugging Workflow
+Step 2 - Practical Debugging Workflow
 
 When AI-generated code fails to compile, follow this systematic approach:
 
@@ -198,7 +198,7 @@ Second, identify the error category. Is it a missing semicolon, a type mismatch,
 
 Third, apply the fix incrementally. Change one thing at a time and rerun the compiler. This prevents accumulating multiple fixes that become hard to track.
 
-Step 3: Preventing AI Syntax Errors
+Step 3 - Preventing AI Syntax Errors
 
 You can reduce syntax errors in AI-generated Rust code by following these practices:
 
@@ -230,7 +230,7 @@ fn process<T: Into<String>>(data: T) -> Result<String, Box<dyn std::error::Error
 }
 ```
 
-The lesson: Ask AI to "use minimal trait bounds that satisfy the function body."
+The lesson - Ask AI to "use minimal trait bounds that satisfy the function body."
 
 Async/Await Patterns
 
@@ -273,7 +273,7 @@ fn raw_pointer_example(data: &mut Vec<i32>) -> &mut i32 {
 
 Request that AI avoid unsafe code unless you specifically ask for it.
 
-Step 4: Specialized Rust Patterns AI Struggles With
+Step 4 - Specialized Rust Patterns AI Struggles With
 
 Builder Pattern Implementation
 
@@ -363,7 +363,7 @@ impl From<std::io::Error> for MyError {
 
 Always ask for Display and Error trait implementations.
 
-Step 5: Test AI-Generated Rust Code
+Step 5 - Test AI-Generated Rust Code
 
 Create a validation script before using generated code:
 

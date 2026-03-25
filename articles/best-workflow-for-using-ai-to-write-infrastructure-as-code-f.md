@@ -21,14 +21,14 @@ Table of Contents
 
 - [Why Use AI for Diagram-to-Code Conversion](#why-use-ai-for-diagram-to-code-conversion)
 - [The Recommended Workflow](#the-recommended-workflow)
-- [Practical Example: VPC with Public and Private Subnets](#practical-example-vpc-with-public-and-private-subnets)
+- [Practical Example - VPC with Public and Private Subnets](#practical-example-vpc-with-public-and-private-subnets)
 - [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
 - [When AI Falls Short](#when-ai-falls-short)
 - [Final Recommendations](#final-recommendations)
-- [IaC Framework Comparison: Terraform vs CloudFormation vs Pulumi](#iac-framework-comparison-terraform-vs-cloudformation-vs-pulumi)
-- [Advanced Workflow: Multi-Cloud IaC Generation](#advanced-workflow-multi-cloud-iac-generation)
-- [Safety Checks: AI-Generated IaC Validation](#safety-checks-ai-generated-iac-validation)
-- [Practical Example: Converting Existing Architecture to IaC](#practical-example-converting-existing-architecture-to-iac)
+- [IaC Framework Comparison - Terraform vs CloudFormation vs Pulumi](#iac-framework-comparison-terraform-vs-cloudformation-vs-pulumi)
+- [Advanced Workflow - Multi-Cloud IaC Generation](#advanced-workflow-multi-cloud-iac-generation)
+- [Safety Checks - AI-Generated IaC Validation](#safety-checks-ai-generated-iac-validation)
+- [Practical Example - Converting Existing Architecture to IaC](#practical-example-converting-existing-architecture-to-iac)
 - [Working with AI on IaC Iterations](#working-with-ai-on-iac-iterations)
 
 Why Use AI for Diagram-to-Code Conversion
@@ -39,7 +39,7 @@ The key advantage lies in AI's ability to recognize common architectural pattern
 
 The Recommended Workflow
 
-Step 1: Prepare Your Diagram
+Step 1 - Prepare Your Diagram
 
 Before feeding anything to an AI tool, ensure your diagram contains sufficient detail. AI performs best when the diagram clearly shows:
 
@@ -55,7 +55,7 @@ Before feeding anything to an AI tool, ensure your diagram contains sufficient d
 
 If you're using a tool like draw.io, Lucidchart, or even a hand-drawn sketch photographed on your phone, the clarity of component labels matters significantly. Label your AWS resources as "AWS RDS PostgreSQL" rather than just "Database."
 
-Step 2: Choose Your AI Tool and Context Strategy
+Step 2 - Choose Your AI Tool and Context Strategy
 
 Different AI tools handle diagram-to-code conversion with varying strengths. The workflow differs slightly depending on whether you're using Claude, ChatGPT, or Cursor.
 
@@ -63,7 +63,7 @@ For Claude or ChatGPT, provide the diagram description in a structured prompt. I
 
 For Cursor, you can use its file context capabilities. Create a new Terraform file in your project, then use Cursor's chat to describe the diagram while referencing any existing infrastructure code in your workspace. This helps maintain consistency with your existing module patterns.
 
-Step 3: Generate Initial Code with Clear Prompts
+Step 3 - Generate Initial Code with Clear Prompts
 
 The prompt you use determines code quality. Here's a proven prompt structure:
 
@@ -71,17 +71,17 @@ The prompt you use determines code quality. Here's a proven prompt structure:
 
 This prompt provides specific CIDR ranges, component types, and explicitly requests variables and outputs. The result will be far more usable than a vague request.
 
-Step 4: Review and Refine Generated Code
+Step 4 - Review and Refine Generated Code
 
 AI-generated infrastructure code requires careful review before deployment. Check these critical areas:
 
-Resource naming and tags: Ensure resources follow your organization's naming conventions. Add appropriate tags for cost allocation and automation.
+Resource naming and tags - Ensure resources follow your organization's naming conventions. Add appropriate tags for cost allocation and automation.
 
-Security configuration: Verify security group rules follow least-privilege principles. Check that databases are not exposed to the public internet.
+Security configuration - Verify security group rules follow least-privilege principles. Check that databases are not exposed to the public internet.
 
-Dependencies: Confirm `depends_on` declarations exist where implicit dependencies aren't enough, particularly for databases that other resources must wait for.
+Dependencies - Confirm `depends_on` declarations exist where implicit dependencies aren't enough, particularly for databases that other resources must wait for.
 
-Variable validation: Add `validation` blocks to variables to catch misconfiguration early. For example, validate that VPC CIDR ranges don't overlap:
+Variable validation - Add `validation` blocks to variables to catch misconfiguration early. For example, validate that VPC CIDR ranges don't overlap:
 
 ```hcl
 variable "vpc_cidr" {
@@ -95,7 +95,7 @@ variable "vpc_cidr" {
 }
 ```
 
-Step 5: Iterate with Specific Fixes
+Step 5 - Iterate with Specific Fixes
 
 Rather than regenerating everything, ask AI to fix specific issues. This iterative approach produces better results:
 
@@ -107,11 +107,11 @@ Rather than regenerating everything, ask AI to fix specific issues. This iterati
 
 This targeted refinement helps the AI understand your exact requirements without starting over.
 
-Practical Example: VPC with Public and Private Subnets
+Practical Example - VPC with Public and Private Subnets
 
 Here's a real workflow example converting a simple network diagram into Terraform:
 
-Input description: "AWS VPC with 10.0.0.0/16 CIDR, one public subnet in each of three AZs (10.0.1.0/24, 10.0.2.0/24, 10.0.3.0/24), one private subnet in each AZ for compute (10.0.101.0/24, 10.0.102.0/24, 10.0.103.0/24), one private subnet in each AZ for RDS (10.0.201.0/24, 10.0.202.0/24, 10.0.203.0/24). Include an Internet Gateway and route tables."
+Input description - "AWS VPC with 10.0.0.0/16 CIDR, one public subnet in each of three AZs (10.0.1.0/24, 10.0.2.0/24, 10.0.3.0/24), one private subnet in each AZ for compute (10.0.101.0/24, 10.0.102.0/24, 10.0.103.0/24), one private subnet in each AZ for RDS (10.0.201.0/24, 10.0.202.0/24, 10.0.203.0/24). Include an Internet Gateway and route tables."
 
 Generated Terraform module (simplified excerpt):
 
@@ -181,13 +181,13 @@ You would then iterate to add the Internet Gateway, NAT Gateways, route tables, 
 
 Common Pitfalls to Avoid
 
-Under-specifying requirements: Vague prompts produce vague code. Always specify exact CIDR ranges, instance types, and provider-specific configurations.
+Under-specifying requirements - Vague prompts produce vague code. Always specify exact CIDR ranges, instance types, and provider-specific configurations.
 
-Ignoring state management: AI doesn't understand your existing Terraform state. When modifying existing infrastructure, carefully compare generated code against what's already deployed.
+Ignoring state management - AI doesn't understand your existing Terraform state. When modifying existing infrastructure, carefully compare generated code against what's already deployed.
 
-Skipping testing: Always run `terraform plan` before `terraform apply`. AI generates code that may not match your specific requirements, testing catches these mismatches.
+Skipping testing - Always run `terraform plan` before `terraform apply`. AI generates code that may not match your specific requirements, testing catches these mismatches.
 
-Not using version constraints: Pin provider versions in your configuration. AI may generate code for a newer provider version with breaking changes.
+Not using version constraints - Pin provider versions in your configuration. AI may generate code for a newer provider version with breaking changes.
 
 When AI Falls Short
 
@@ -201,7 +201,7 @@ Start with simple diagrams and work up to complex architectures. Each iteration 
 
 The combination of clear diagram preparation, detailed prompts, careful code review, and iterative refinement creates a powerful workflow for infrastructure automation. Practice this approach on non-production resources first, then apply it to your production infrastructure once comfortable with the results.
 
-IaC Framework Comparison: Terraform vs CloudFormation vs Pulumi
+IaC Framework Comparison - Terraform vs CloudFormation vs Pulumi
 
 Different IaC frameworks require different AI prompting strategies:
 
@@ -214,7 +214,7 @@ Different IaC frameworks require different AI prompting strategies:
 
 For diagram-to-code conversion, Terraform wins because its simpler syntax makes AI predictions more accurate. CloudFormation requires more manual refinement. Pulumi works well if you're comfortable with Python programming constructs.
 
-Advanced Workflow: Multi-Cloud IaC Generation
+Advanced Workflow - Multi-Cloud IaC Generation
 
 When your architecture spans multiple clouds, guide AI through structured context:
 
@@ -252,7 +252,7 @@ Instead of asking "generate Terraform," provide this structure and ask:
 
 This context dramatically improves AI output accuracy.
 
-Safety Checks: AI-Generated IaC Validation
+Safety Checks - AI-Generated IaC Validation
 
 Before applying AI-generated infrastructure code, implement these validation gates:
 
@@ -299,17 +299,17 @@ fi
 
 echo ""
 echo " All validations passed"
-echo "Next: Review graph.svg and costs before applying"
+echo "Next - Review graph.svg and costs before applying"
 ```
 
-Practical Example: Converting Existing Architecture to IaC
+Practical Example - Converting Existing Architecture to IaC
 
 When you have an existing cloud infrastructure but no IaC, AI can reverse-engineer it:
 
-Step 1: Export Current State
+Step 1 - Export Current State
 
 ```bash
-AWS: Export current infrastructure as JSON
+AWS - Export current infrastructure as JSON
 aws ec2 describe-instances > current-instances.json
 aws rds describe-db-instances > current-databases.json
 aws elb describe-load-balancers > current-elbs.json
@@ -318,15 +318,15 @@ Then provide to AI with this prompt:
 "Convert this AWS resource dump into a Terraform module..."
 ```
 
-Step 2: AI generates initial IaC (70-80% complete)
+Step 2 - AI generates initial IaC (70-80% complete)
 
-Step 3: Manual refinement
+Step 3 - Manual refinement
 - Add variables for customization
 - Implement proper secrets management
 - Structure into reusable modules
 - Add monitoring and alerting
 
-Step 4: Validation
+Step 4 - Validation
 ```bash
 Verify generated IaC matches current state
 terraform plan -out=drift.plan

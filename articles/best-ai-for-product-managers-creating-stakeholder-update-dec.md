@@ -97,7 +97,7 @@ def generate_sprint_summary(issues, sprint_name):
 Completed items ({len(completed)}):
 {chr(10).join(f"- {item}" for item in completed[:10])}
 
-Highlight: Key achievements, any blockers, and next priorities.
+Highlight - Key achievements, any blockers, and next priorities.
 Keep under 150 words. Use plain language accessible to executive stakeholders."""
 
     response = client.chat.completions.create(
@@ -121,8 +121,8 @@ def generate_analytical_summary(issues, previous_sprint_issues):
 3. Team health indicators
 4. Recommended focus areas for next sprint
 
-Current sprint: {current}
-Previous sprint: {previous}
+Current sprint - {current}
+Previous sprint - {previous}
 
 Provide a 200-word executive summary with specific recommendations.""".format(
         current=format_issues(issues),
@@ -182,7 +182,7 @@ Tool Recommendations by Use Case
 
 For teams using Jira with existing infrastructure, connecting the Jira API to GPT-4 or Claude via the patterns shown above gives the most control. This approach requires developer setup but delivers fully customized outputs.
 
-Linear teams benefit from Linear's native integration ecosystem. The Linear API pairs well with AI summarization, and several community-built tools already handle the basic pipeline.
+Linear teams benefit from Linear's native integration environment. The Linear API pairs well with AI summarization, and several community-built tools already handle the basic pipeline.
 
 Teams seeking low-code solutions can use Zapier or Make (formerly Integromat) to connect project trackers to AI summarization APIs without writing custom code. This works well for simple weekly updates but limits customization.
 
@@ -239,7 +239,7 @@ def generate_audience_specific_summary(issues, audience='exec'):
 
 {prompts[audience]}
 
-Sprint data: {format_issues(issues)}"""
+Sprint data - {format_issues(issues)}"""
 
     return client.chat.completions.create(
         model="gpt-4o",

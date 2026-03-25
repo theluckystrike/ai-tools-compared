@@ -198,13 +198,13 @@ Choosing the Right Approach
 
 Several factors determine which AI certificate management tool fits your needs:
 
-Scale matters: Small teams with fewer certificates benefit from basic automation with expiration alerts. Large enterprises require discovery, multi-cloud support, and sophisticated policy enforcement.
+Scale matters - Small teams with fewer certificates benefit from basic automation with expiration alerts. Large enterprises require discovery, multi-cloud support, and sophisticated policy enforcement.
 
-Compliance requirements: Regulated industries need audit trails, certificate transparency logging, and detailed reporting capabilities that some AI tools provide automatically.
+Compliance requirements - Regulated industries need audit trails, certificate transparency logging, and detailed reporting capabilities that some AI tools provide automatically.
 
-Existing infrastructure: Evaluate tools based on compatibility with your current stack, whether you run Kubernetes, use specific cloud providers, or manage on-premises servers.
+Existing infrastructure - Evaluate tools based on compatibility with your current stack, whether you run Kubernetes, use specific cloud providers, or manage on-premises servers.
 
-Automation depth: Some teams want full automation including issuance, renewal, and deployment. Others prefer AI-assisted workflows that recommend actions but require human approval.
+Automation depth - Some teams want full automation including issuance, renewal, and deployment. Others prefer AI-assisted workflows that recommend actions but require human approval.
 
 Implementing AI-Powered Renewal Automation
 
@@ -212,7 +212,7 @@ A practical approach to AI-assisted certificate renewal involves periodic audits
 
 ```bash
 #!/bin/bash
-Script: certificate-audit.sh
+Script - certificate-audit.sh
 Runs daily, uses AI to analyze certificate status
 
 EXPIRY_THRESHOLD=30  # Days before renewal
@@ -293,13 +293,13 @@ groups:
 
 Common Certificate Management Challenges
 
-Self-Signed Certificates in Development: Many teams use self-signed certs for dev environments, creating complexity when AI tools must distinguish between self-signed (acceptable for dev) and self-signed in production (security risk).
+Self-Signed Certificates in Development - Many teams use self-signed certs for dev environments, creating complexity when AI tools must distinguish between self-signed (acceptable for dev) and self-signed in production (security risk).
 
-Wildcard vs Single-Domain Certificates: AI tools should understand the cost-benefit tradeoff. A wildcard cert (`*.example.com`) costs slightly more but covers all subdomains, reducing renewal operations.
+Wildcard vs Single-Domain Certificates - AI tools should understand the cost-benefit tradeoff. A wildcard cert (`*.example.com`) costs slightly more but covers all subdomains, reducing renewal operations.
 
-Chain Completion Issues: Sometimes intermediate certificates are missing from the server configuration. The certificate validates locally but fails elsewhere. AI monitoring should flag incomplete chains before they cause outages.
+Chain Completion Issues - Sometimes intermediate certificates are missing from the server configuration. The certificate validates locally but fails elsewhere. AI monitoring should flag incomplete chains before they cause outages.
 
-Multi-Cloud Certificate Sprawl: Organizations using AWS (ACM), Azure (Key Vault), and GCP (Certificate Manager) must coordinate renewals across platforms. AI tools integrating with all three can centralize management.
+Multi-Cloud Certificate Sprawl - Organizations using AWS (ACM), Azure (Key Vault), and GCP (Certificate Manager) must coordinate renewals across platforms. AI tools integrating with all three can centralize management.
 
 Integration Patterns with CI/CD
 

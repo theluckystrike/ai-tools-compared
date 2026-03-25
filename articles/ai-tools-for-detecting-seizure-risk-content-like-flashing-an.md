@@ -65,9 +65,9 @@ print(f"Risk level: {result['risk_level']}")
 print(f"Problematic timestamps: {result['alerts']}")
 ```
 
-Strengths: High accuracy for standard flicker detection, detailed timestamp reporting, good API documentation.
+Strengths - High accuracy for standard flicker detection, detailed timestamp reporting, good API documentation.
 
-Limitations: Higher pricing for video analysis, limited support for user-generated content patterns.
+Limitations - Higher pricing for video analysis, limited support for user-generated content patterns.
 
 2. VisionAi Seizure Detector
 
@@ -91,9 +91,9 @@ async function analyzeImage(imageBuffer) {
 }
 ```
 
-Strengths: On-premise deployment option, open-source availability, customizable threshold settings.
+Strengths - On-premise deployment option, open-source availability, customizable threshold settings.
 
-Limitations: Requires ML infrastructure expertise to deploy, periodic model updates needed.
+Limitations - Requires ML infrastructure expertise to deploy, periodic model updates needed.
 
 3. ModerationHub Content Safety
 
@@ -117,17 +117,17 @@ def check_content_accessibility(image_url):
     }
 ```
 
-Strengths: Combined with other moderation checks, REST API with straightforward integration, batch processing available.
+Strengths - Combined with other moderation checks, REST API with straightforward integration, batch processing available.
 
-Limitations: Less specialized than dedicated seizure detection tools.
+Limitations - Less specialized than dedicated seizure detection tools.
 
 4. WebAIM Contrast Analyzer (Extended)
 
 While primarily focused on color contrast, WebAIM's extended analysis now includes animation safety checks. This tool works well for web developers who need quick checks during the design phase.
 
-Strengths: Free tier available, browser extensions for real-time checking, integrates with common design tools.
+Strengths - Free tier available, browser extensions for real-time checking, integrates with common design tools.
 
-Limitations: Limited to web-based content analysis, less for video.
+Limitations - Limited to web-based content analysis, less for video.
 
 Implementation Recommendations
 
@@ -267,7 +267,7 @@ This workflow handles typical volumes while keeping false positives manageable.
 
 Regulatory Compliance and Standards
 
-Understanding the legal landscape shapes tool selection:
+Understanding the legal field shapes tool selection:
 
 WCAG 2.1 Level A Compliance requires no more than 3 flashes per second in any 1-second window. Most tools measure against this 3-Hz threshold directly.
 
@@ -310,7 +310,7 @@ def validation_test(tool, test_video_set):
         ground_truth, predictions, average='binary'
     )
 
-    print(f"Precision: {precision:.2%}")  # Avoid false alarms
+    print(f"Precision - {precision:.2%}")  # Avoid false alarms
     print(f"Recall: {recall:.2%}")        # Catch real hazards
     print(f"F1 Score: {f1:.2%}")
 
@@ -444,7 +444,7 @@ Yes, when source video is re-rendered (compressed, resized, frame-rate altered).
 How often should detection models be retrained?
 For cloud tools, vendors handle updates automatically. For self-hosted models, retrain every 6-12 months using new clinical seizure trigger data as it becomes available.
 
-The accessibility ecosystem continues evolving, with the EU Accessibility Act enforcement driving increased adoption of automated content safety tools. Organizations that implement these solutions now will be better positioned for regulatory compliance and demonstrate commitment to inclusive design.
+The accessibility environment continues evolving, with the EU Accessibility Act enforcement driving increased adoption of automated content safety tools. Organizations that implement these solutions now will be better positioned for regulatory compliance and demonstrate commitment to inclusive design.
 
 Understanding WCAG Flash Thresholds and Why They Matter
 

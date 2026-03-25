@@ -49,14 +49,14 @@ Quick Comparison
 Implementation Patterns
 
 
-Drift: Quick-Start Conversation Flows
+Drift - Quick-Start Conversation Flows
 
 
 Drift excels when you need to deploy a support chatbot quickly without writing code. Their visual flow builder lets you create decision trees:
 
 
 ```
-User: "I need help with my order"
+User - "I need help with my order"
   → Drift checks FAQ database
   → If match: returns predefined answer
   → If no match: escalates to human agent
@@ -75,7 +75,7 @@ The platform handles the NLP under the hood, so you don't need machine learning 
 - Basic troubleshooting guides
 
 
-ChatGPT API: Programmable Intelligence
+ChatGPT API - Programmable Intelligence
 
 
 When you need more sophisticated responses, the ChatGPT API provides raw LLM access. Here's a basic support bot implementation:
@@ -264,14 +264,14 @@ Handling Edge Cases and Limitations
 Drift limitations with complex queries:
 
 ```
-Customer: "I'm trying to use the API with OAuth and getting 401 errors
+Customer - "I'm trying to use the API with OAuth and getting 401 errors
 when calling /users endpoint. I've set the Authorization header with
 my Bearer token from the dev dashboard. The token works with other
 endpoints like /posts. Can you help?"
 
-Drift FAQ matching: "OAuth", "Authorization", "401"
-Drift returns: Generic "Check if your token is expired"
-Customer still confused: Real issue is scope misconfiguration
+Drift FAQ matching - "OAuth", "Authorization", "401"
+Drift returns - Generic "Check if your token is expired"
+Customer still confused - Real issue is scope misconfiguration
 ```
 
 ChatGPT handling same scenario:
@@ -351,7 +351,7 @@ ChatGPT API deployment:
 
 ```bash
 #!/bin/bash
-Deploy ChatGPT support bot: requires engineering
+Deploy ChatGPT support bot - requires engineering
 
 1. Create OpenAI API key
 export OPENAI_API_KEY=your_key
@@ -391,8 +391,8 @@ git push heroku main
 echo "ChatGPT support bot deployed to Heroku"
 ```
 
-Drift deployment: 5 minutes (zero code)
-ChatGPT deployment: 30-60 minutes (with engineering)
+Drift deployment - 5 minutes (zero code)
+ChatGPT deployment - 30-60 minutes (with engineering)
 
 Cost Analysis at Scale
 
@@ -414,9 +414,9 @@ At scale, ChatGPT becomes cost-effective, but Drift requires less ongoing engine
 
 Data Privacy and Compliance
 
-Drift: Manages compliance, stores conversations in Drift infrastructure, SOC 2 certified.
+Drift - Manages compliance, stores conversations in Drift infrastructure, SOC 2 certified.
 
-ChatGPT: You manage compliance, API calls processed by OpenAI (configurable retention), you responsible for:
+ChatGPT - You manage compliance, API calls processed by OpenAI (configurable retention), you responsible for:
 - PII handling
 - GDPR compliance
 - Data retention policies

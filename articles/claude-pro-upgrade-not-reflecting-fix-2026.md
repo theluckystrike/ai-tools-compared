@@ -24,7 +24,7 @@ To fix Claude Pro not reflecting after upgrade, sign out and sign back in with `
 - API usage: If you access Claude through the API and see rate limits consistent with the Free tier, check that you are using the API key associated with your Pro account.
 - If you are still: seeing Free tier after 30 minutes, start with Fix 1 (sign out and back in).
 - Only escalate to support: if it has been more than 24 hours.
-- If you use Claude: Code in offline mode with local-only conversation history, back up that directory first.
+- If you use Claude - Code in offline mode with local-only conversation history, back up that directory first.
 - Can I be charged for Pro while still seeing Free-tier limits?
 Yes, this can happen during a sync delay: your payment succeeds but the tier hasn't propagated yet.
 
@@ -40,7 +40,7 @@ The application may be using cached authentication tokens from before your upgra
 Step-by-Step Fixes
 
 
-Fix 1: Sign Out and Sign Back In
+Fix 1 - Sign Out and Sign Back In
 
 
 The simplest fix often works. Claude caches your tier information locally, and a fresh authentication cycle pulls the correct Pro status.
@@ -77,7 +77,7 @@ claude auth status
 The output should display your current subscription level and any Pro-specific permissions.
 
 
-Fix 2: Clear Local Cache and Config
+Fix 2 - Clear Local Cache and Config
 
 
 If sign-out/sign-in doesn't work, clear the cached configuration. Claude stores tier information in local config files that may not update automatically.
@@ -109,10 +109,10 @@ claude auth login
 This resets your conversation history locally. If you need to preserve specific conversations, back up the `conversations` subdirectory before clearing.
 
 
-Fix 3: Check for Multiple Accounts
+Fix 3 - Check for Multiple Accounts
 
 
-One frequent cause of confusion: you have multiple Claude accounts (personal, work, organization), and you upgraded the wrong one.
+One frequent cause of confusion - you have multiple Claude accounts (personal, work, organization), and you upgraded the wrong one.
 
 
 Run this to see all authenticated sessions:
@@ -134,7 +134,7 @@ claude auth switch-to your-pro-email@example.com
 For the desktop app, check the account switcher in settings. Look for any "Other Accounts" section that might be active simultaneously.
 
 
-Fix 4: Verify Payment Confirmation
+Fix 4 - Verify Payment Confirmation
 
 
 Sometimes the payment processes on Claude's side but the account tier update fails silently. Check your payment status:
@@ -150,7 +150,7 @@ Sometimes the payment processes on Claude's side but the account tier update fai
 If the payment shows completed but tier still reads "Free," contact support with your payment receipt. The upgrade may have succeeded financially but failed to apply to your account tier.
 
 
-Fix 5: Force Token Refresh
+Fix 5 - Force Token Refresh
 
 
 If you're signed in correctly but the system still shows Free, your OAuth tokens may be expired or corrupted. Force a token refresh:
@@ -168,7 +168,7 @@ claude auth login
 This invalidates existing tokens across all devices and forces the system to fetch fresh authentication with your current tier.
 
 
-Fix 6: Check Organization Billing
+Fix 6 - Check Organization Billing
 
 
 If you're part of an organization using Claude through work, your personal Pro upgrade may be overridden by organizational billing. Organization admins control tier assignments.
@@ -224,16 +224,16 @@ Platform-Specific Quirks
 The fix sequence differs slightly depending on which Claude surface you use. Use an incognito/private browsing window to rule out browser extension conflicts. Extensions that modify cookies or block third-party requests (including some ad blockers and privacy tools) occasionally interfere with OAuth callbacks. If the incognito window shows Pro correctly, disable extensions one at a time to find the culprit.
 
 
-Claude iOS / Android app: Force-quit the app completely (swipe away from app switcher), then relaunch. Mobile apps cache authentication tokens differently from desktop apps. If force-quit does not help, go to Settings > Apps > Claude > Storage > Clear Cache on Android, or uninstall and reinstall on iOS.
+Claude iOS / Android app - Force-quit the app completely (swipe away from app switcher), then relaunch. Mobile apps cache authentication tokens differently from desktop apps. If force-quit does not help, go to Settings > Apps > Claude > Storage > Clear Cache on Android, or uninstall and reinstall on iOS.
 
 
-Claude Code CLI (npm package): Ensure you are running the latest version with `npm update -g @anthropic-ai/claude-code`. Older CLI versions sometimes fail to parse updated tier fields in the auth response, displaying the wrong tier even when the token is valid.
+Claude Code CLI (npm package) - Ensure you are running the latest version with `npm update -g @anthropic-ai/claude-code`. Older CLI versions sometimes fail to parse updated tier fields in the auth response, displaying the wrong tier even when the token is valid.
 
 
-API usage: If you access Claude through the API and see rate limits consistent with the Free tier, check that you are using the API key associated with your Pro account. Go to console.anthropic.com > API Keys, confirm the key you are using belongs to the correct account.
+API usage - If you access Claude through the API and see rate limits consistent with the Free tier, check that you are using the API key associated with your Pro account. Go to console.anthropic.com > API Keys, confirm the key you are using belongs to the correct account.
 
 
-Billing Edge Cases: What Support Needs to See
+Billing Edge Cases - What Support Needs to See
 
 
 If none of the above fixes work and you need to escalate to Anthropic support, gather these details before contacting them:

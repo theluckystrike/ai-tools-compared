@@ -21,10 +21,10 @@ Table of Contents
 
 - [The Three Alert Problems AI Solves](#the-three-alert-problems-ai-solves)
 - [Why Prometheus Alert Quality Degrades Over Time](#why-prometheus-alert-quality-degrades-over-time)
-- [Approach 1: AI-Assisted Alert Review](#approach-1-ai-assisted-alert-review)
-- [Approach 2: Generate Alerts from SLOs](#approach-2-generate-alerts-from-slos)
-- [Approach 3: Threshold Tuning from Historical Data](#approach-3-threshold-tuning-from-historical-data)
-- [Approach 4: Auto-Generate Runbooks](#approach-4-auto-generate-runbooks)
+- [Approach 1 - AI-Assisted Alert Review](#approach-1-ai-assisted-alert-review)
+- [Approach 2 - Generate Alerts from SLOs](#approach-2-generate-alerts-from-slos)
+- [Approach 3 - Threshold Tuning from Historical Data](#approach-3-threshold-tuning-from-historical-data)
+- [Approach 4 - Auto-Generate Runbooks](#approach-4-auto-generate-runbooks)
 - [[Alert Name]](#alert-name)
 - [Comparing AI Tools for PromQL Generation](#comparing-ai-tools-for-promql-generation)
 - [Alertmanager Inhibition Patterns AI Gets Right](#alertmanager-inhibition-patterns-ai-gets-right)
@@ -48,7 +48,7 @@ Alerts proliferate without inhibition. Every new service adds a set of alerts. N
 
 AI tools attack all three of these problems. They can audit hundreds of alert rules in minutes, suggest inhibition structures, and propose threshold changes backed by statistical reasoning. without requiring a SRE with deep Prometheus expertise to do all of that work manually.
 
-Approach 1: AI-Assisted Alert Review
+Approach 1 - AI-Assisted Alert Review
 
 Feed your existing alerting rules to Claude for a quality review:
 
@@ -73,10 +73,10 @@ def review_alerting_rules(rules_file: str) -> str:
 for quality issues.
 
 For each problematic alert, provide:
-ALERT: [alert name]
-ISSUE: [what's wrong]
-SEVERITY: [Critical/High/Medium/Low]
-FIX: [corrected PromQL expression or configuration]
+ALERT - [alert name]
+ISSUE - [what's wrong]
+SEVERITY - [Critical/High/Medium/Low]
+FIX - [corrected PromQL expression or configuration]
 
 Check for:
 1. Missing `for` clauses (fires on single spikes)
@@ -101,7 +101,7 @@ for rules_file in Path("alerts/").glob("*.yaml"):
     print(review)
 ```
 
-Approach 2: Generate Alerts from SLOs
+Approach 2 - Generate Alerts from SLOs
 
 The most reliable alerts come from SLOs. Claude can generate correct multi-window burn rate alerts:
 
@@ -128,7 +128,7 @@ Generate:
 3. Latency alert at the defined SLO threshold
 4. Inhibition rules to suppress ticket alerts when pager fires
 
-Use these labels: severity=page|ticket, team=[team from config]
+Use these labels - severity=page|ticket, team=[team from config]
 Include runbook_url in annotations.
 
 Return valid Prometheus YAML rules format."""
@@ -225,7 +225,7 @@ inhibit_rules:
     equal: [service, namespace]
 ```
 
-Approach 3: Threshold Tuning from Historical Data
+Approach 3 - Threshold Tuning from Historical Data
 
 ```python
 def recommend_thresholds(
@@ -244,7 +244,7 @@ def recommend_thresholds(
 Historical statistics (90 days):
 {yaml.dump(historical_stats, default_flow_style=False)}
 
-Target: false positive rate below {desired_false_positive_rate * 100}%
+Target - false positive rate below {desired_false_positive_rate * 100}%
 (i.e., alert should fire on real issues, not normal variation)
 
 Provide:
@@ -274,7 +274,7 @@ recommendation = recommend_thresholds("CPU utilization", cpu_stats)
 print(recommendation)
 ```
 
-Approach 4: Auto-Generate Runbooks
+Approach 4 - Auto-Generate Runbooks
 
 ```python
 def generate_runbook(alert_config: dict, service_info: dict) -> str:
@@ -286,13 +286,13 @@ def generate_runbook(alert_config: dict, service_info: dict) -> str:
             "role": "user",
             "content": f"""Write an on-call runbook for this Prometheus alert.
 
-Alert: {yaml.dump(alert_config, default_flow_style=False)}
-Service: {yaml.dump(service_info, default_flow_style=False)}
+Alert - {yaml.dump(alert_config, default_flow_style=False)}
+Service - {yaml.dump(service_info, default_flow_style=False)}
 
 Format:
 [Alert Name]
 
-Severity: [from alert]
+Severity - [from alert]
 [one line]
 
 What This Alert Means

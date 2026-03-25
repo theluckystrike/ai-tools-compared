@@ -30,7 +30,7 @@ Table of Contents
 
 - [Understanding Error Boundary Test Requirements](#understanding-error-boundary-test-requirements)
 - [How AI Assistants Generate Error Boundary Tests](#how-ai-assistants-generate-error-boundary-tests)
-- [Practical Example: Generating Error Boundary Tests](#practical-example-generating-error-boundary-tests)
+- [Practical Example - Generating Error Boundary Tests](#practical-example-generating-error-boundary-tests)
 - [Evaluating AI Assistant Performance](#evaluating-ai-assistant-performance)
 - [Common Pitfalls in Error Boundary Testing](#common-pitfalls-in-error-boundary-testing)
 - [Best Practices for Working with AI Assistants](#best-practices-for-working-with-ai-assistants)
@@ -53,7 +53,7 @@ Modern AI coding assistants can generate Jest tests for error boundaries when yo
 
 When prompted effectively, an AI assistant should generate tests that use `React.Component.prototype.componentDidCatch` or the static method `getDerivedStateFromError` for class-based boundaries, or the `useErrorBoundary` hook for functional components. The generated tests should properly wrap the error-throwing component and assert on the fallback content.
 
-Practical Example: Generating Error Boundary Tests
+Practical Example - Generating Error Boundary Tests
 
 Consider a typical error boundary component that displays a fallback when errors occur:
 
@@ -135,13 +135,13 @@ Evaluating AI Assistant Performance
 
 When assessing AI assistants for generating Jest tests for error boundary fallback rendering, consider these factors:
 
-Test Coverage Quality: Does the assistant generate tests that cover both the happy path and error scenarios? The best assistants include tests for initial render, error occurrence, fallback rendering, and error logging.
+Test Coverage Quality - Does the assistant generate tests that cover both the happy path and error scenarios? The best assistants include tests for initial render, error occurrence, fallback rendering, and error logging.
 
-Proper Test Isolation: Good AI-generated tests properly mock console.error to avoid noise from React's error boundary warnings. They also ensure tests don't leak state between test cases.
+Proper Test Isolation - Good AI-generated tests properly mock console.error to avoid noise from React's error boundary warnings. They also ensure tests don't leak state between test cases.
 
-Component Props Understanding: The assistant should understand how to pass the fallback prop to the error boundary and how to customize the fallback content for different scenarios.
+Component Props Understanding - The assistant should understand how to pass the fallback prop to the error boundary and how to customize the fallback content for different scenarios.
 
-Hook Support: For modern React applications using functional components with error boundary hooks, the assistant should generate tests that work with `useErrorBoundary` or similar patterns.
+Hook Support - For modern React applications using functional components with error boundary hooks, the assistant should generate tests that work with `useErrorBoundary` or similar patterns.
 
 Common Pitfalls in Error Boundary Testing
 
@@ -360,10 +360,10 @@ Performance Metrics for Test Generation
 
 When evaluating AI tools, measure:
 
-- Syntax Correctness: Does the generated test code run without fixes?
-- Test Coverage: How many distinct error scenarios does a single prompt generate?
-- Assertion Quality: Do tests verify the right behaviors or just check that code runs?
-- Edge Case Handling: Does the tool suggest tests for retry logic, max errors, cleanup?
+- Syntax Correctness - Does the generated test code run without fixes?
+- Test Coverage - How many distinct error scenarios does a single prompt generate?
+- Assertion Quality - Do tests verify the right behaviors or just check that code runs?
+- Edge Case Handling - Does the tool suggest tests for retry logic, max errors, cleanup?
 
 In testing 10 different error boundary scenarios across tools:
 - Copilot: 80% syntax-correct, covers 60% of scenarios
@@ -375,7 +375,7 @@ Best Practice for Generating Error Boundary Tests
 
 Provide AI tools with your actual component code, not just a description. Paste the ErrorBoundary component directly and ask for tests. The more context the AI has, the better it tailors tests to your specific implementation.
 
-Specify what you want tested: Does the component need to handle retry logic? Do you use custom hooks? Do you have special formatting for error messages? Each detail helps AI generate appropriate assertions.
+Specify what you want tested - Does the component need to handle retry logic? Do you use custom hooks? Do you have special formatting for error messages? Each detail helps AI generate appropriate assertions.
 
 After generation, immediately check that the tests actually fail when you break the component. Run the error boundary without proper error handling and verify tests catch the issue. This validates that assertions are real, not just syntactically correct placeholder checks.
 

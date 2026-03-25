@@ -42,9 +42,9 @@ Most major AI coding assistants now offer free tiers generous enough for persona
 
 GitHub Copilot remains one of the most popular AI coding assistants, and its free tier is surprisingly. Students and open-source maintainers get free access, while individual hobbyists can use the basic plan at no cost.
 
-What's free: The free tier includes AI-powered code completions, inline suggestions, and chat assistance within your IDE. It works with Visual Studio Code, JetBrains IDEs, and Neovim.
+What's free - The free tier includes AI-powered code completions, inline suggestions, and chat assistance within your IDE. It works with Visual Studio Code, JetBrains IDEs, and Neovim.
 
-Practical example: When working on a Python project, Copilot suggests entire functions based on context:
+Practical example - When working on a Python project, Copilot suggests entire functions based on context:
 
 ```python
 Type this comment and let Copilot generate the function
@@ -57,15 +57,15 @@ def fetch_user_data(user_id):
 
 Copilot excels at filling in boilerplate code, writing tests, and explaining unfamiliar APIs. The context-aware suggestions feel almost like pair programming.
 
-Limitations: The free tier restricts some advanced features like Copilot Workspace and doesn't include team collaboration tools. However, for solo hobbyists, it's more than sufficient.
+Limitations - The free tier restricts some advanced features like Copilot Workspace and doesn't include team collaboration tools. However, for solo hobbyists, it's more than sufficient.
 
 2. Cursor: AI-First IDE Built for Speed
 
 Cursor distinguishes itself as an AI-first code editor built on VS Code. Its free tier is particularly generous, making it an excellent choice for hobbyists who want deep AI integration without monthly fees.
 
-What's free: Up to 2,000 completions per month, unlimited chat interactions, and access to the latest AI models. The interface feels like VS Code but with AI deeply embedded in every interaction.
+What's free - Up to 2,000 completions per month, unlimited chat interactions, and access to the latest AI models. The interface feels like VS Code but with AI deeply embedded in every interaction.
 
-Practical example: Use Cursor's Cmd+K (Ctrl+K) to rewrite selected code instantly:
+Practical example - Use Cursor's Cmd+K (Ctrl+K) to rewrite selected code instantly:
 
 ```javascript
 // Original code
@@ -88,9 +88,9 @@ Cursor's strongest feature is its ability to understand your entire codebase, no
 
 Codeium offers one of the easiest onboarding experiences among AI coding tools. It requires no setup, just install the extension and start coding.
 
-What's free: Unlimited code completions and chat for individual developers, with support for over 70 languages. The personal plan never expires and requires no credit card.
+What's free - Unlimited code completions and chat for individual developers, with support for over 70 languages. The personal plan never expires and requires no credit card.
 
-Practical example: Codeium works particularly well with less common languages:
+Practical example - Codeium works particularly well with less common languages:
 
 ```rust
 // Writing Rust? Codeium suggests:
@@ -110,9 +110,9 @@ The tool learns from your coding patterns over time, making suggestions that ali
 
 Tabnine takes a different approach by offering local AI models that run entirely on your machine. This means your code never leaves your computer, a significant privacy benefit.
 
-What's free: The basic tier includes local completions with reduced AI capabilities. Upgrade to Pro for full AI features, but the free tier remains useful for privacy-conscious developers.
+What's free - The basic tier includes local completions with reduced AI capabilities. Upgrade to Pro for full AI features, but the free tier remains useful for privacy-conscious developers.
 
-Practical example: Tabnine integrates with almost any editor:
+Practical example - Tabnine integrates with almost any editor:
 
 ```java
 // In Java, Tabnine suggests complete methods:
@@ -134,9 +134,9 @@ The offline capability makes Tabnine unique among AI coding assistants, no inter
 
 Amazon's CodeWhisperer provides professional-grade AI assistance at no cost. It's particularly strong for AWS-related projects but works well across general development.
 
-What's free: Unlimited code suggestions, security scanning, and reference tracking. No quotas or time limits for individual developers.
+What's free - Unlimited code suggestions, security scanning, and reference tracking. No quotas or time limits for individual developers.
 
-Practical example: CodeWhisperer excels at infrastructure code:
+Practical example - CodeWhisperer excels at infrastructure code:
 
 ```typescript
 // AWS Lambda handler with type safety
@@ -246,7 +246,7 @@ Workflow Examples for Different Projects
 
 Web Development (React/Vue)
 
-Recommended setup: Cursor (excellent context, $20/month) or Codeium free (unlimited, lower sophistication)
+Recommended setup - Cursor (excellent context, $20/month) or Codeium free (unlimited, lower sophistication)
 
 Typical workflow:
 
@@ -263,11 +263,11 @@ export const UserProfile = ({ userId, onUpdate }) => {
 };
 ```
 
-Expected time savings: 4-6 hours per week for hobby projects.
+Expected time savings - 4-6 hours per week for hobby projects.
 
 Backend/API Development (Node.js, Python, Go)
 
-Recommended: GitHub Copilot (broad language support, $10/month) or Codeium free (all languages, unlimited)
+Recommended - GitHub Copilot (broad language support, $10/month) or Codeium free (all languages, unlimited)
 
 Strength areas:
 
@@ -284,25 +284,25 @@ def get_user(user_id):
 
 Data Science / Jupyter Notebooks
 
-Recommended: GitHub Copilot or ChatGPT Plus (not in IDE, but accessible)
+Recommended - GitHub Copilot or ChatGPT Plus (not in IDE, but accessible)
 
 Workflow:
 
 ```python
-Cell 1: Load data
+Cell 1 - Load data
 import pandas as pd
 df = pd.read_csv('data.csv')
 
-Cell 2: Data exploration (AI assists here)
+Cell 2 - Data exploration (AI assists here)
 Describe missing values, outliers, distributions
 
-Cell 3: Visualization (AI suggests matplotlib/seaborn patterns)
+Cell 3 - Visualization (AI suggests matplotlib/seaborn patterns)
 Create correlation heatmap, distribution plots
 ```
 
 Machine Learning Model Development
 
-Recommended: Codeium free (unlimited requests for experimentation) or Tabnine (local execution option)
+Recommended - Codeium free (unlimited requests for experimentation) or Tabnine (local execution option)
 
 Typical uses:
 
@@ -368,7 +368,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -380,7 +380,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

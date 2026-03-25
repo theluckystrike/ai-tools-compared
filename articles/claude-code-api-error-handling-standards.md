@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code API Error Handling Standards"
-description: "Implement API error handling with Claude Code: HTTP status codes, error response schemas, retry headers, and client-facing error message patterns."
+description: "Implement API error handling with Claude Code - HTTP status codes, error response schemas, retry headers, and client-facing error message patterns."
 date: 2026-03-17
 last_modified_at: 2026-03-17
 author: theluckystrike

@@ -45,13 +45,13 @@ Common Reasons Why Cursor Crashes
 
 Several factors can contribute to instability, ranging from extension conflicts to system resource limitations.
 
-Extension conflicts remain one of the most frequent causes of crashes. Cursor's extension ecosystem is extensive, and poorly optimized or outdated extensions can trigger fatal errors. Insufficient system resources also play a critical role, running Cursor alongside memory-intensive applications often leads to crashes when the system cannot allocate adequate resources.
+Extension conflicts remain one of the most frequent causes of crashes. Cursor's extension environment is extensive, and poorly optimized or outdated extensions can trigger fatal errors. Insufficient system resources also play a critical role, running Cursor alongside memory-intensive applications often leads to crashes when the system cannot allocate adequate resources.
 
 Corrupted configuration files represent another significant cause. When Cursor's internal settings become corrupted or conflict with each other, the application may fail to start or crash during operation. GPU driver issues can cause rendering problems that result in crashes, particularly on systems with older graphics drivers or hybrid graphics configurations.
 
 Step-by-Step Fixes for Cursor Crashes
 
-Fix 1: Clear Cursor Cache and Configuration
+Fix 1 - Clear Cursor Cache and Configuration
 
 Clear corrupted cache files first. Navigate to your user data directory and remove the cache folders:
 
@@ -63,7 +63,7 @@ Clear corrupted cache files first. Navigate to your user data directory and remo
 
 After clearing the cache, restart Cursor and verify stability. If crashes persist, consider resetting your Cursor settings completely by deleting the `User` folder while keeping your extensions folder backed up.
 
-Fix 2: Disable Problematic Extensions
+Fix 2 - Disable Problematic Extensions
 
 Start Cursor in safe mode by holding `Shift` while launching the application. This disables all extensions temporarily. If Cursor runs stably in safe mode, extension conflicts are likely the culprit.
 
@@ -77,7 +77,7 @@ To identify the problematic extension:
 
 Focus on keeping only essential extensions installed. Audit your extension list regularly and remove any that haven't been updated by their maintainers in several months.
 
-Fix 3: Update GPU Drivers
+Fix 3 - Update GPU Drivers
 
 Outdated or incompatible GPU drivers frequently cause rendering crashes in Cursor. Visit your graphics card manufacturer's website and download the latest drivers:
 
@@ -89,7 +89,7 @@ Outdated or incompatible GPU drivers frequently cause rendering crashes in Curso
 
 After updating drivers, restart your system and test Cursor. If you continue experiencing issues, try launching Cursor with hardware acceleration disabled by adding `--disable-gpu` to the application launch arguments.
 
-Fix 4: Increase Available Memory
+Fix 4 - Increase Available Memory
 
 Cursor requires substantial memory, especially when working with large codebases. Check your system monitor while Cursor is running to identify memory pressure.
 
@@ -105,7 +105,7 @@ If your system has limited RAM, consider these optimizations:
 
 For users with 8GB RAM or less, upgrading to 16GB provides a significant stability improvement when working with modern development environments.
 
-Fix 5: Reinstall Cursor Completely
+Fix 5 - Reinstall Cursor Completely
 
 When all else fails, a complete reinstallation often resolves persistent crashes. Before reinstalling, export your settings and keybindings:
 
@@ -228,7 +228,7 @@ ext_count=$(echo "$extensions" | wc -l)
 echo "Found $ext_count extensions"
 echo "$extensions" | nl
 
-Binary search: disable half
+Binary search - disable half
 mid=$((ext_count / 2))
 echo "Disabling first $mid extensions..."
 
@@ -296,7 +296,7 @@ rm -rf /tmp/test-project/.cursor  # Remove workspace-specific config
 Open /tmp/test-project in Cursor
 
 If crash disappears, .cursor config is corrupted
-Recreate default: rm -rf .cursor && restart Cursor
+Recreate default - rm -rf .cursor && restart Cursor
 ```
 
 GPU Driver Compatibility Matrix
@@ -372,7 +372,7 @@ Frequently Asked Questions
 
 What if the fix described here does not work?
 
-Try each fix in this order: cache clear → safe mode test → GPU driver update → extension isolation → memory monitoring. If all fail, the issue is likely workspace-specific. Test a brand-new workspace. If it works there, backup your .cursor config and delete it. If crashes continue in blank workspace, contact Cursor support with your crash logs from ~/Library/Logs/DiagnosticReports/.
+Try each fix in this order - cache clear → safe mode test → GPU driver update → extension isolation → memory monitoring. If all fail, the issue is likely workspace-specific. Test a brand-new workspace. If it works there, backup your .cursor config and delete it. If crashes continue in blank workspace, contact Cursor support with your crash logs from ~/Library/Logs/DiagnosticReports/.
 
 Could this problem be caused by a recent update?
 

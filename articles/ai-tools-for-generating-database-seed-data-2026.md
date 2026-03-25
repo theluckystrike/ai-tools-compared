@@ -19,10 +19,10 @@ Claude 3 Opus generates realistic seed data with proper constraints, relationshi
 Table of Contents
 
 - [The Seed Data Generation Problem](#the-seed-data-generation-problem)
-- [Claude 3 Opus: Constraint-Aware Seed Data](#claude-3-opus-constraint-aware-seed-data)
-- [GPT-4: Realistic Data Patterns](#gpt-4-realistic-data-patterns)
-- [Mistral: Speed and Simplicity](#mistral-speed-and-simplicity)
-- [Practical Implementation: Building Seed Data Pipeline](#practical-implementation-building-seed-data-pipeline)
+- [Claude 3 Opus - Constraint-Aware Seed Data](#claude-3-opus-constraint-aware-seed-data)
+- [GPT-4 - Realistic Data Patterns](#gpt-4-realistic-data-patterns)
+- [Mistral - Speed and Simplicity](#mistral-speed-and-simplicity)
+- [Practical Implementation - Building Seed Data Pipeline](#practical-implementation-building-seed-data-pipeline)
 - [Real Dataset Comparison](#real-dataset-comparison)
 - [Common Patterns and Templates](#common-patterns-and-templates)
 - [Cost Comparison](#cost-comparison)
@@ -35,11 +35,11 @@ Many developers use libraries like Faker (JavaScript), Factory Boy (Python), or 
 
 Three AI platforms excel at this: Claude's understanding of relational design, GPT-4's broad knowledge of realistic data patterns, and Mistral's speed for rapid iteration.
 
-Claude 3 Opus: Constraint-Aware Seed Data
+Claude 3 Opus - Constraint-Aware Seed Data
 
 Claude generates seed data respecting complex relational constraints. It understands foreign keys, uniqueness rules, date logic, and cascading relationships without explicit direction.
 
-Strength: Referential Integrity
+Strength - Referential Integrity
 
 Claude generates data where every foreign key reference exists in the parent table:
 
@@ -147,13 +147,13 @@ A team with a PostgreSQL ecommerce database needed seed data for testing. They p
 - 50,000 orders with 150,000 order items: 12 minutes
 - All data validated against constraints without errors
 
-Total time: 25 minutes. Manual creation would have taken 40+ hours.
+Total time - 25 minutes. Manual creation would have taken 40+ hours.
 
-GPT-4: Realistic Data Patterns
+GPT-4 - Realistic Data Patterns
 
 GPT-4 excels at generating diverse, realistic datasets. Customer names, email patterns, product descriptions, and addresses feel authentic. However, it sometimes violates constraints without explicit reminders.
 
-Strength: Data Realism
+Strength - Data Realism
 
 GPT-4 generates believable data patterns:
 
@@ -194,7 +194,7 @@ Generate realistic customer data showing different acquisition funnels:
 3. Churned customers: Early purchases, then 12+ months inactive
 
 Use realistic patterns for email domains, names, regions.
-Include behavioral data: signup_source, referral_code, preferred_category.
+Include behavioral data - signup_source, referral_code, preferred_category.
 ```
 
 GPT-4 Output:
@@ -219,11 +219,11 @@ INSERT INTO customers (id, email, name, signup_source, last_order_date, ltv) VAL
 -- Shows pattern: early signup, no recent activity
 ```
 
-Mistral: Speed and Simplicity
+Mistral - Speed and Simplicity
 
 Mistral generates functional seed data quickly. API response times are 40% faster than GPT-4, making it ideal for rapid iteration during development.
 
-Strength: API Performance
+Strength - API Performance
 
 Mistral generates 10,000 rows of basic seed data in 30 seconds. Useful for local testing loops where speed matters more than perfect constraint satisfaction.
 
@@ -241,17 +241,17 @@ Mistral generates 10,000 rows of basic seed data in 30 seconds. Useful for local
 }
 ```
 
-Response time: 8 seconds for 1000 records (vs. 15 seconds for GPT-4).
+Response time - 8 seconds for 1000 records (vs. 15 seconds for GPT-4).
 
 Limitations
 
 Mistral requires more explicit specification of constraints. It doesn't automatically understand relationships between tables. Better suited for single-table datasets than complex relational schemas.
 
-Practical Implementation: Building Seed Data Pipeline
+Practical Implementation - Building Seed Data Pipeline
 
-Scenario: Generate realistic seed data for a SaaS product testing environment.
+Scenario - Generate realistic seed data for a SaaS product testing environment.
 
-Step 1: Schema Definition
+Step 1 - Schema Definition
 
 ```python
 Define your schema clearly for the AI
@@ -285,7 +285,7 @@ SCHEMA = {
 }
 ```
 
-Step 2: Claude Prompt
+Step 2 - Claude Prompt
 
 ```
 Generate 500 rows of seed data for this SaaS schema:
@@ -300,10 +300,10 @@ Requirements:
 - Salary ranges: CEO $150K-300K, Managers $80K-150K, Engineers $90K-200K, Sales $60K-120K
 - Annual revenue between $1M-$1B depending on employee count
 
-Output: Individual SQL INSERT statements for each table.
+Output - Individual SQL INSERT statements for each table.
 ```
 
-Step 3: Claude Output Structure
+Step 3 - Claude Output Structure
 
 Claude produces three SQL scripts:
 
@@ -329,7 +329,7 @@ INSERT INTO projects (id, company_id, name, status, created_at, budget) VALUES
 -- ... 98 more projects ...
 ```
 
-Step 4: Validation Script
+Step 4 - Validation Script
 
 ```python
 import sqlite3
@@ -377,7 +377,7 @@ def validate_seed_data(db_path):
     return True
 ```
 
-Step 5: Integration with Testing Framework
+Step 5 - Integration with Testing Framework
 
 ```python
 pytest fixture
@@ -417,7 +417,7 @@ Generate data for 1000 customers, 10,000 orders:
 
 Common Patterns and Templates
 
-Pattern 1: Ecommerce with Orders
+Pattern 1 - Ecommerce with Orders
 
 ```
 Generate [N] users with [M] orders each. Include:
@@ -428,7 +428,7 @@ Generate [N] users with [M] orders each. Include:
 - Order status distribution: 70% completed, 20% pending, 10% cancelled
 ```
 
-Pattern 2: SaaS with Subscription Tiers
+Pattern 2 - SaaS with Subscription Tiers
 
 ```
 Generate [N] accounts with subscription data:
@@ -438,7 +438,7 @@ Generate [N] accounts with subscription data:
 - MRR realistic: Calculate from active subscribers
 ```
 
-Pattern 3: Social Network with Relationships
+Pattern 3 - Social Network with Relationships
 
 ```
 Generate [N] users with social graph:

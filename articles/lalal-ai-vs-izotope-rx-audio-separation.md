@@ -44,7 +44,7 @@ Understanding Audio Source Separation
 
 Audio source separation (also called stem extraction) splits a mixed audio track into its component parts, vocals, drums, bass, and other instruments. This technology powers applications ranging from karaoke creation to remixing, sample extraction, and audio restoration. The two leading solutions take different approaches: LALAL.AI offers a cloud-first API model, while iZotope RX provides a desktop-first workstation with local processing.
 
-LALAL.AI: Cloud API Approach
+LALAL.AI - Cloud API Approach
 
 LALAL.AI provides a REST API that processes audio through their server infrastructure, returning separated stems in various formats. The service uses proprietary neural network models trained on diverse audio datasets.
 
@@ -225,8 +225,8 @@ Results in:
 - other.wav
 ```
 
-Strengths: Free, open-source, local processing
-Limitations: Lower quality than commercial tools, slower processing
+Strengths - Free, open-source, local processing
+Limitations - Lower quality than commercial tools, slower processing
 
 UVR5 (Ultimate Vocal Remover)
 
@@ -239,8 +239,8 @@ python main.py -i input.mp3 -o output_folder -m 2_HP-UNet.pth
 Results in separated stems
 ```
 
-Strengths: Free, community-supported, multiple models available
-Limitations: No API, GUI-focused, requires local setup
+Strengths - Free, community-supported, multiple models available
+Limitations - No API, GUI-focused, requires local setup
 
 Practical Integration Examples
 

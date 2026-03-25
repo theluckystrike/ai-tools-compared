@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Project Setup and Dependencies
+Step 1 - Project Setup and Dependencies
 
 Create a new Python project for your MCP server. You'll need the FastMCP library, which simplifies server implementation:
 
@@ -63,7 +63,7 @@ design-system-mcp/
  requirements.txt
 ```
 
-Step 2: Build the Component Registry
+Step 2 - Build the Component Registry
 
 First, establish how your server will access component metadata. For most design systems, a JSON registry works well. Create a `components/registry.json` that describes your components:
 
@@ -132,7 +132,7 @@ First, establish how your server will access component metadata. For most design
 
 This registry structure mirrors what TypeScript interfaces would expose, making it easy for AI models to understand component contracts.
 
-Step 3: Implementing the MCP Server
+Step 3 - Implementing the MCP Server
 
 Now create `app.py` with your server implementation:
 
@@ -179,10 +179,10 @@ def get_component(name: str) -> str:
 
 {component.get('description', 'No description')}
 
-Step 4: Props
+Step 4 - Props
 {chr(10).join(props_list) if props_list else '  No props defined'}
 
-Step 5: Usage Examples
+Step 5 - Usage Examples
 {usage_text}
 """
 
@@ -216,7 +216,7 @@ if __name__ == "__main__":
     mcp.run()
 ```
 
-Step 6: Connecting to Claude Code
+Step 6 - Connecting to Claude Code
 
 With your server running, configure Claude Code to connect. The server runs as a subprocess that Claude communicates with via stdin/stdout:
 
@@ -240,7 +240,7 @@ In your Claude Code configuration (typically `~/.claude/settings.json` or projec
 
 After restarting Claude Code, your AI assistant gains three new tools: `get_component` for detailed component info, `list_components` for enumerating available components, and `search_components` for finding components by keyword.
 
-Step 7: Practical Usage Examples
+Step 7 - Practical Usage Examples
 
 Once connected, developers can have natural conversations about your design system:
 
@@ -262,15 +262,15 @@ Discovering components:
 
 > → Calls `list_components()` → Returns all components with descriptions
 
-Step 8: Extending the Server
+Step 8 - Extending the Server
 
 Several enhancements make your MCP server more powerful:
 
-Dynamic loading from source: Parse TypeScript/Flow prop types directly from your component source files using AST parsers rather than maintaining a separate registry.
+Dynamic loading from source - Parse TypeScript/Flow prop types directly from your component source files using AST parsers rather than maintaining a separate registry.
 
-Version tracking: Include version information so developers can query historical props or identify deprecated usage.
+Version tracking - Include version information so developers can query historical props or identify deprecated usage.
 
-Live documentation URLs: Return links to live Storybook or documentation pages for components that have visual examples.
+Live documentation URLs - Return links to live Storybook or documentation pages for components that have visual examples.
 
 Integration with package managers: Query `node_modules` to verify installed versions and detect outdated usage patterns.
 

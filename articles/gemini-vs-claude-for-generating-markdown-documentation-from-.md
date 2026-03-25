@@ -105,9 +105,9 @@ Gemini provides a slightly different output format. Its documentation tends towa
 ```markdown
 Module Documentation
 
-Function: calculate_metrics
+Function - calculate_metrics
 
-Description: Calculates basic statistical metrics from input data.
+Description - Calculates basic statistical metrics from input data.
 
 Input Parameters:
 | Parameter | Type | Description | Default |
@@ -119,7 +119,7 @@ Return Value:
 - Type: dict
 - Contains: mean, min, max
 
-Error Handling: Raises ValueError for empty input
+Error Handling - Raises ValueError for empty input
 ```
 
 
@@ -169,7 +169,7 @@ Customization Control
 When you need documentation in specific formats, Claude responds well to detailed style instructions. Requests like "use JSDoc format" or "include usage examples for each function" produce accurate, consistent results. Gemini also follows formatting instructions but may occasionally include additional explanatory text that developers did not request.
 
 
-A practical technique with Claude: include a short example of your preferred documentation style in the prompt itself. Claude mirrors that format with high fidelity across the entire output. With Gemini, adding the style constraint at the end of the prompt (rather than the beginning) reduces unwanted additions.
+A practical technique with Claude - include a short example of your preferred documentation style in the prompt itself. Claude mirrors that format with high fidelity across the entire output. With Gemini, adding the style constraint at the end of the prompt (rather than the beginning) reduces unwanted additions.
 
 
 Error Handling Documentation
@@ -306,7 +306,7 @@ Choose Gemini if you prefer:
 - Table-heavy documentation layouts for parameter-rich APIs
 - Formal specification-style output that mirrors standards documents
 - Dense information presentation with less narrative prose
-- Google's ecosystem integration through Vertex AI and Cloud tooling
+- Google's environment integration through Vertex AI and Cloud tooling
 
 
 Recommendations

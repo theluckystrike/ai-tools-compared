@@ -39,7 +39,7 @@ RUN GOARCH=$TARGETARCH CGO_ENABLED=0 go build -o app .
 - Multi-stage builds use intermediate: stages to compile artifacts, then copy only the necessary outputs to a slim final image.
 - The builder pattern works: best when each stage contains precisely what it needs and nothing more.
 - Useful for projects with: lengthy build processes.
-- CMD ["./worker"] ``` This: pattern reuses the base stage for multiple services, reducing rebuild times and disk space.
+- CMD ["./worker"] ``` This - pattern reuses the base stage for multiple services, reducing rebuild times and disk space.
 - What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 Why Multi-Stage Builds Matter
@@ -58,7 +58,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Prompting Copilot Effectively
+Step 1 - Prompting Copilot Effectively
 
 Copilot works best when you provide clear context. Instead of a vague request like "write a Dockerfile," specify your runtime, build tools, and output expectations. A practical prompt includes the language, framework, and any special requirements like build arguments or environment variables.
 
@@ -66,7 +66,7 @@ For a Python application using Poetry for dependency management, you might promp
 
 The quality of Copilot's suggestions depends heavily on your prompt specificity. Include version numbers when stability matters, mention package managers, and describe any compilation steps your application requires.
 
-Step 2: Practical Dockerfile Examples
+Step 2 - Practical Dockerfile Examples
 
 Consider a Python application with the following structure. The prompt specifies Flask as the framework, Poetry for dependencies, and gunicorn for production serving:
 
@@ -112,7 +112,7 @@ CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:app"]
 
 This Dockerfile demonstrates several best practices Copilot frequently suggests: slim base images, non-root users, layer optimization through strategic COPY statements, and proper port configuration. The build stage handles dependency installation while the production stage contains only runtime necessities.
 
-Step 3: Node.js Multi-Stage Configuration
+Step 3 - Node.js Multi-Stage Configuration
 
 A React application with a separate build step follows similar patterns. Copilot can generate configurations that handle the build process correctly:
 
@@ -147,7 +147,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 This example shows how Copilot handles the distinction between build-time and runtime dependencies. Node.js is needed only for the build stage; nginx serves the static output in production. The resulting image contains only the compiled assets and web server, eliminating the entire Node.js runtime from the final deployment.
 
-Step 4: Go Application Optimization
+Step 4 - Go Application Optimization
 
 Compiled languages benefit enormously from multi-stage builds. A Go application can be built in an intermediate stage with compilation tools, then the binary copied to a minimal final image:
 
@@ -180,7 +180,7 @@ CMD ["./main"]
 
 This pattern produces remarkably small images. The final Alpine-based image weighs approximately 15MB, compared to over 300MB for a single-stage Go Dockerfile. Copilot understands these optimizations and applies them when you specify a compiled language.
 
-Step 5: Refining Copilot Suggestions
+Step 5 - Refining Copilot Suggestions
 
 Copilot provides excellent starting points, but review and refine the suggestions. Verify base image versions match your requirements, ensure security configurations align with your policies, and adjust layer ordering for optimal caching.
 
@@ -195,7 +195,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 
 Copilot can suggest health check configurations when you explicitly request them, improving your container's reliability in production environments.
 
-Step 6: Common Pitfalls to Avoid
+Step 6 - Common Pitfalls to Avoid
 
 Several mistakes reduce multi-stage build effectiveness. Installing all dependencies in every stage wastes space and build time. Copying source code before dependencies means rebuilding dependencies when code changes. Using full base images instead of slim variants defeats the size reduction purpose.
 
@@ -205,7 +205,7 @@ Advanced Multi-Stage Patterns
 
 Beyond basic builder patterns, Copilot can generate sophisticated multi-stage configurations:
 
-Three-Stage Builds: Dependency stage, build stage, runtime stage. Useful for projects with lengthy build processes.
+Three-Stage Builds - Dependency stage, build stage, runtime stage. Useful for projects with lengthy build processes.
 
 ```dockerfile
 FROM golang:1.21-alpine as dependencies
@@ -222,7 +222,7 @@ COPY --from=builder /app/app .
 CMD ["./app"]
 ```
 
-Build Arguments for Flexibility: Multi-stage builds benefit from build arguments to control which artifacts get included:
+Build Arguments for Flexibility - Multi-stage builds benefit from build arguments to control which artifacts get included:
 
 ```dockerfile
 ARG BUILD_ENV=production
@@ -236,9 +236,9 @@ RUN if [ "$BUILD_ENV" = "production" ]; then \
     fi
 ```
 
-When you ask Copilot: "Add build arguments to control whether we build with optimizations," it recognizes the pattern and generates appropriate configurations.
+When you ask Copilot - "Add build arguments to control whether we build with optimizations," it recognizes the pattern and generates appropriate configurations.
 
-Cross-Platform Builds: Modern applications need to run on multiple architectures (x86_64, ARM64). Copilot can suggest buildx configurations:
+Cross-Platform Builds - Modern applications need to run on multiple architectures (x86_64, ARM64). Copilot can suggest buildx configurations:
 
 ```dockerfile
 docker buildx build --platform linux/amd64,linux/arm64 .
@@ -250,17 +250,17 @@ FROM alpine:3.18
 COPY --from=builder /app/app .
 ```
 
-Step 7: Security Hardening
+Step 7 - Security Hardening
 
 Copilot can help with Docker security best practices when prompted correctly:
 
-Non-Root Users: Always create a dedicated user instead of running as root.
+Non-Root Users - Always create a dedicated user instead of running as root.
 
-Read-Only Filesystem: Containers with read-only roots (except /tmp) prevent many attack vectors.
+Read-Only Filesystem - Containers with read-only roots (except /tmp) prevent many attack vectors.
 
-Security Scanning: Container scanning to identify vulnerable dependencies.
+Security Scanning - Container scanning to identify vulnerable dependencies.
 
-Prompt Copilot: "Create a Dockerfile with non-root user, read-only filesystem, and minimal privileges."
+Prompt Copilot - "Create a Dockerfile with non-root user, read-only filesystem, and minimal privileges."
 
 ```dockerfile
 FROM alpine:3.18 as runtime
@@ -280,19 +280,19 @@ CMD ["./app"]
 
 This example demonstrates several hardening techniques Copilot can generate: minimal base image, package verification, non-root user creation, and explicit ownership assignment.
 
-Step 8: Caching Strategies
+Step 8 - Caching Strategies
 
 Docker layer caching dramatically impacts build performance. Copilot understands proper layer ordering:
 
-Immutable first: Place commands that rarely change early in the Dockerfile.
+Immutable first - Place commands that rarely change early in the Dockerfile.
 
-Dependency caching: Install dependencies before copying source code. Source changes won't invalidate the dependency layer.
+Dependency caching - Install dependencies before copying source code. Source changes won't invalidate the dependency layer.
 
-Version pinning: Pin base image and package versions to ensure reproducible builds.
+Version pinning - Pin base image and package versions to ensure reproducible builds.
 
 Copilot generates proper layer ordering when you specify: "Optimize this Dockerfile for rebuild speed, dependencies rarely change but source code changes frequently."
 
-Step 9: Integration with CI/CD
+Step 9 - Integration with CI/CD
 
 Multi-stage Dockerfiles work best integrated into CI/CD pipelines. Copilot can generate CI/CD configurations alongside Dockerfiles:
 
@@ -313,13 +313,13 @@ jobs:
           tags: myapp:latest
 ```
 
-When you ask: "Generate a GitHub Actions workflow that builds this multi-stage Dockerfile," Copilot produces complete CI/CD configurations.
+When you ask - "Generate a GitHub Actions workflow that builds this multi-stage Dockerfile," Copilot produces complete CI/CD configurations.
 
-Step 10: Debugging Multi-Stage Builds
+Step 10 - Debugging Multi-Stage Builds
 
 When builds fail, debugging is harder because intermediate stages disappear. Copilot can suggest techniques:
 
-Debug Stage: A stage that outputs build artifacts for inspection.
+Debug Stage - A stage that outputs build artifacts for inspection.
 
 ```dockerfile
 FROM builder as debug
@@ -327,7 +327,7 @@ RUN ls -la /app
 RUN echo "Build complete" && cat version.txt
 ```
 
-Build Output Inspection: Building specific stages to verify they work independently.
+Build Output Inspection - Building specific stages to verify they work independently.
 
 ```bash
 Build only the builder stage to verify dependencies install
@@ -337,9 +337,9 @@ Inspect the builder stage
 docker run -it myapp:builder /bin/sh
 ```
 
-Prompt Copilot: "Add a debug stage to this Dockerfile that helps troubleshoot build failures."
+Prompt Copilot - "Add a debug stage to this Dockerfile that helps troubleshoot build failures."
 
-Step 11: Real-World Example: Microservices
+Step 11 - Real-World Example: Microservices
 
 Consider a microservices architecture with shared dependencies. Copilot handles complex scenarios:
 

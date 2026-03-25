@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand ChatGPT API Token Pricing
+Step 1 - Understand ChatGPT API Token Pricing
 
 OpenAI charges based on the number of tokens processed, both input tokens (your prompts) and output tokens (the model's responses). Each model has different pricing rates, and prices vary between the preview/older models and the latest GPT-4 variants.
 
@@ -53,7 +53,7 @@ The pricing follows a simple formula:
 
 Cost = (Input Tokens × Input Rate) + (Output Tokens × Output Rate)
 
-Step 2: Build a Token Pricing Calculator
+Step 2 - Build a Token Pricing Calculator
 
 Create a Python function that calculates costs based on your expected token usage:
 
@@ -109,7 +109,7 @@ result = calculate_chatgpt_cost(
 print(f"Cost: ${result['total_cost']}")
 ```
 
-Step 3: Estimating Monthly Usage
+Step 3 - Estimating Monthly Usage
 
 To estimate monthly costs, you need to project your usage patterns. Consider these factors:
 
@@ -141,7 +141,7 @@ Different use cases require different response lengths. A code completion tool m
 
 Practical Examples
 
-Example 1: Customer Support Chatbot
+Example 1 - Customer Support Chatbot
 
 A small business runs a chatbot that handles 100 conversations per day, with an average of 6 message exchanges per conversation.
 
@@ -170,7 +170,7 @@ Using GPT-4o-mini (the most cost-effective option for this use case):
 
 - Monthly cost: approximately $2.70
 
-Example 2: Content Generation API
+Example 2 - Content Generation API
 
 A SaaS product generates blog post outlines for 50 users, with each user making 10 requests per day.
 
@@ -196,7 +196,7 @@ Using GPT-4o:
 
 - Monthly cost: approximately $675
 
-Example 3: Code Review Assistant
+Example 3 - Code Review Assistant
 
 A development team integrates an AI code review tool that processes 200 pull requests daily, with an average of 3000 tokens per review (input) and 500 tokens response.
 
@@ -216,7 +216,7 @@ Using GPT-4o-mini:
 
 - Annual cost: approximately $4,015
 
-Step 4: Cost Optimization Strategies
+Step 4 - Cost Optimization Strategies
 
 Once you have a calculator running, use it to identify optimization opportunities:
 
@@ -230,7 +230,7 @@ Once you have a calculator running, use it to identify optimization opportunitie
 
 5. Monitor with alerts: Set up budget alerts using OpenAI's usage dashboard or build custom monitoring that tracks daily spend.
 
-Step 5: Use the Calculator for Budget Planning
+Step 5 - Use the Calculator for Budget Planning
 
 Create a spreadsheet or dashboard that tracks:
 

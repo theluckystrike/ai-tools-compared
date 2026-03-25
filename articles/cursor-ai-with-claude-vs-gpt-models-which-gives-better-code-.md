@@ -31,7 +31,7 @@ Table of Contents
 - [Practical Testing Setup](#practical-testing-setup)
 - [Cost Comparison for Regular Use](#cost-comparison-for-regular-use)
 - [Configuration Tips for Cursor Settings](#configuration-tips-for-cursor-settings)
-- [Real-World Code Example: Complex Type Utility](#real-world-code-example-complex-type-utility)
+- [Real-World Code Example - Complex Type Utility](#real-world-code-example-complex-type-utility)
 - [Model Selection Checklist](#model-selection-checklist)
 - [Switching Models During Development](#switching-models-during-development)
 
@@ -194,16 +194,16 @@ Here's how to evaluate both models in Cursor for your specific codebase:
 Create test cases across different code complexity levels
 mkdir -p tests/model-comparison/{easy,medium,hard}
 
-Easy test: Standard React hook
+Easy test - Standard React hook
 cat > tests/model-comparison/easy/useForm.ts << 'EOF'
 // Implement a custom hook for form state management
 // Should handle form values, errors, and submission
 export function useForm(initialValues) {
-  // Test: Does model complete correctly?
+  // Test - Does model complete correctly?
 }
 EOF
 
-Medium test: TypeScript generics
+Medium test - TypeScript generics
 cat > tests/model-comparison/medium/DataStore.ts << 'EOF'
 // Implement a generic data store with type-safe retrieval
 export class DataStore<T extends Record<string, any>> {
@@ -215,7 +215,7 @@ export class DataStore<T extends Record<string, any>> {
 }
 EOF
 
-Hard test: Cross-package refactoring
+Hard test - Cross-package refactoring
 cat > tests/model-comparison/hard/monorepo-refactor.md << 'EOF'
 Move authentication logic from @myapp/auth to @myapp/core.
 Update imports in 15+ packages.
@@ -232,7 +232,7 @@ Daily development usage (typical developer):
 - Monthly: 10K × 22 working days = 220K tokens
 
 Pricing per month:
-- Claude: (220K × $3) / 1M = $0.66 input + output costs
+- Claude - (220K × $3) / 1M = $0.66 input + output costs
 - GPT-4o: (220K × $5) / 1M = $1.10 input + output costs
 - Difference: ~$0.40-0.50 monthly per developer (negligible)
 
@@ -268,7 +268,7 @@ Optimize Cursor's model settings for your workflow:
 
 This configuration uses GPT-4o for speed in inline completions, but routes chat and refactoring work to Claude where accuracy matters more.
 
-Real-World Code Example: Complex Type Utility
+Real-World Code Example - Complex Type Utility
 
 Here's a test case showing where Claude excels over GPT-4o:
 
@@ -331,7 +331,7 @@ Cursor allows switching models mid-session for different tasks:
 ```bash
 In Cursor chat, switch models within a single conversation:
 Type "Switch to Claude" to toggle between models
-Or use keyboard shortcut: Cmd+Shift+M (Mac) / Ctrl+Shift+M (Windows)
+Or use keyboard shortcut - Cmd+Shift+M (Mac) / Ctrl+Shift+M (Windows)
 
 For programmatic access via Cursor API:
 cursor.setModel("claude-3-5-sonnet") // Switches to Claude

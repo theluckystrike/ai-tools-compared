@@ -52,19 +52,19 @@ Comparing AI Tools for Test Generation
 | GitHub Copilot | In-IDE generation, incremental tests | All frameworks via IDE plugins | Average. generates 2-3 edge cases | Instant (IDE context) |
 | Claude Opus 4.6 | Complex multi-service bugs, architectural issues | All backends + E2E frameworks | Excellent. generates context-aware suites | Slower (200-500ms) but higher quality |
 
-Why Claude excels: Claude handles multi-file bug analysis (reading related services, database schemas, API contracts) better than competitors, making it ideal for distributed system bugs.
+Why Claude excels - Claude handles multi-file bug analysis (reading related services, database schemas, API contracts) better than competitors, making it ideal for distributed system bugs.
 
-Practical Example: Generating Tests From a Real Bug
+Practical Example - Generating Tests From a Real Bug
 
 Bug Report:
 ```
-Title: Order total calculation fails when quantity exceeds 999
-Description: When order line items exceed qty 999, the total calculation overflows and shows negative amount. Occurs in checkout page only.
+Title - Order total calculation fails when quantity exceeds 999
+Description - When order line items exceed qty 999, the total calculation overflows and shows negative amount. Occurs in checkout page only.
 Steps to reproduce:
 1. Create order with 1000 units of product X
 2. View checkout page
 3. Total shows as negative number instead of correct sum
-Environment: Chrome 125, production database, Node 20.10
+Environment - Chrome 125, production database, Node 20.10
 ```
 
 Prompting Claude for Test Generation:
@@ -233,7 +233,7 @@ async function generateTest(bugReport, sourceCode) {
   return message.content[0].type === "text" ? message.content[0].text : "";
 }
 
-// Usage: node generate-regression-test.js < bug-report.txt
+// Usage - node generate-regression-test.js < bug-report.txt
 const bugReport = fs.readFileSync(0, "utf-8");
 const sourceFile = process.argv[2];
 const sourceCode = fs.readFileSync(sourceFile, "utf-8");
@@ -278,9 +278,9 @@ The quality of AI-generated tests scales directly with the quality of the bug re
 High-signal bug report template:
 
 ```
-Bug ID: REGRESSION-XXXX
-Component: [OrderService / CheckoutPage / PaymentProcessor]
-Severity: [Critical / High / Medium / Low]
+Bug ID - REGRESSION-XXXX
+Component - [OrderService / CheckoutPage / PaymentProcessor]
+Severity - [Critical / High / Medium / Low]
 
 Observed Behavior
 [One sentence: what actually happened]
@@ -295,7 +295,7 @@ Reproduction Steps
 
 Environment
 - Node version: 20.10
-- Database: PostgreSQL 15.2
+- Database - PostgreSQL 15.2
 - Browser: Chrome 125 (if applicable)
 
 Root Cause (if known)
@@ -311,7 +311,7 @@ Related Issues
 
 When you paste a bug report in this format alongside the relevant source files, Claude generates tests that cover the exact boundary condition, the adjacent values, and related code paths that share the same vulnerability.
 
-Expanding Coverage: From Single Bug to Test Cluster
+Expanding Coverage - From Single Bug to Test Cluster
 
 A well-structured regression test does more than prevent one specific bug. it maps the vulnerable code surface and adds tests for the entire class of defect. Prompt AI to think in terms of defect classes:
 

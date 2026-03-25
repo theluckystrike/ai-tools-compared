@@ -33,7 +33,7 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]
 For developers building podcast production workflows, choosing the right AI-powered recording platform impacts both production quality and automation capabilities. This comparison examines Castle and Riverside from a technical perspective, focusing on API access, integration patterns, and practical use cases for programmatic podcast creation.
 
 
-- This comparison examines Castle: and Riverside from a technical perspective, focusing on API access, integration patterns, and practical use cases for programmatic podcast creation.
+- This comparison examines Castle - and Riverside from a technical perspective, focusing on API access, integration patterns, and practical use cases for programmatic podcast creation.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - Castle emphasizes browser-based recording: with AI-powered editing features, while Riverside focuses on studio-quality local recording with cloud processing.
@@ -55,7 +55,7 @@ Castle provides a REST API for managing recordings, accessing transcripts, and t
 ```python
 import requests
 
-Castle API: Start a new recording session
+Castle API - Start a new recording session
 def create_podcastle_session(api_key, title, hosts):
     url = "https://api.castle.ai/v1/sessions"
     headers = {
@@ -90,7 +90,7 @@ Riverside offers a more API suite, including their standard REST API and a webho
 import requests
 import json
 
-Riverside API: Create recording session and configure AI features
+Riverside API - Create recording session and configure AI features
 def create_riverside_session(api_key, scene_id):
     url = "https://api.riverside.fm/api/v1/scenes"
     headers = {

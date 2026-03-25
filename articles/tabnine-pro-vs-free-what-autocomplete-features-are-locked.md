@@ -22,8 +22,8 @@ Table of Contents
 - [Understanding Tabnine's Free Tier](#understanding-tabnines-free-tier)
 - [What's Locked Behind Tabnine Pro](#whats-locked-behind-tabnine-pro)
 - [Performance Differences in Real-World Usage](#performance-differences-in-real-world-usage)
-- [When to Upgrade: Practical Scenarios](#when-to-upgrade-practical-scenarios)
-- [Code Examples: Free vs Pro Side by Side](#code-examples-free-vs-pro-side-by-side)
+- [When to Upgrade - Practical Scenarios](#when-to-upgrade-practical-scenarios)
+- [Code Examples - Free vs Pro Side by Side](#code-examples-free-vs-pro-side-by-side)
 - [Making the Decision](#making-the-decision)
 - [Integration with Development Workflow](#integration-with-development-workflow)
 - [Comparison with Alternatives](#comparison-with-alternatives)
@@ -63,9 +63,9 @@ The Pro version unlocks significantly more powerful features that transform Tabn
 
 1. Full-File Context Awareness
 
-Free: Only sees the current file and limited surrounding context.
+Free - Only sees the current file and limited surrounding context.
 
-Pro: Analyzes your entire project including multiple files, dependencies, and project structure.
+Pro - Analyzes your entire project including multiple files, dependencies, and project structure.
 
 This means Pro can understand that you're working with a specific API pattern across your codebase and suggest completions that fit your project's established conventions:
 
@@ -97,13 +97,13 @@ Tabnine Pro includes an integrated chat interface where you can:
 
 ```bash
 Example chat interaction in Tabnine Pro
-User: "Explain this function"
-Tabnine: "This function calculates the Fibonacci sequence recursively..."
+User - "Explain this function"
+Tabnine - "This function calculates the Fibonacci sequence recursively..."
 ```
 
 4. Custom AI Model Training
 
-Pro feature: You can train a custom AI model on your own codebase. This means Tabnine learns your coding style, naming conventions, and project-specific patterns.
+Pro feature - You can train a custom AI model on your own codebase. This means Tabnine learns your coding style, naming conventions, and project-specific patterns.
 
 ```python
 After training on your codebase, Tabnine Pro suggests:
@@ -146,7 +146,7 @@ In practical terms, the difference between free and Pro is noticeable. Here's a 
 
 | Offline mode | Yes | Limited |
 
-When to Upgrade: Practical Scenarios
+When to Upgrade - Practical Scenarios
 
 Stick with Free if:
 
@@ -170,7 +170,7 @@ Upgrade to Pro if:
 
 - Your team wants shared knowledge and consistent coding standards
 
-Code Examples: Free vs Pro Side by Side
+Code Examples - Free vs Pro Side by Side
 
 Here's a concrete example showing the difference:
 
@@ -297,9 +297,9 @@ Setup process:
 3. Trains a custom model on your coding patterns
 4. Deploys model to your local instances
 
-Time investment: 2-4 hours setup, including repository access and privacy configuration.
+Time investment - 2-4 hours setup, including repository access and privacy configuration.
 
-Return: Significantly more accurate completions that match your team's exact conventions.
+Return - Significantly more accurate completions that match your team's exact conventions.
 
 For teams with consistent coding standards and significant proprietary code, custom models justify the Pro upgrade quickly.
 

@@ -53,7 +53,7 @@ Strengths:
 - Generates provider configurations with proper error handling
 - Fast at refactoring for state isolation
 
-Pricing: Free tier (Claude.ai), $20/month Pro, $500/month+ API
+Pricing - Free tier (Claude.ai), $20/month Pro, $500/month+ API
 
 Example Prompt:
 ```
@@ -65,7 +65,7 @@ Generate a Terraform module for AWS that creates:
 Use variables for all values, support multi-region deployments
 ```
 
-Output Quality: 9/10. Handles cross-resource dependencies correctly.
+Output Quality - 9/10. Handles cross-resource dependencies correctly.
 
 GitHub Copilot
 
@@ -75,7 +75,7 @@ Strengths:
 - Real-time suggestions as you type `.tf` files
 - Free for students, open source
 
-Pricing: $10/month (individuals), $19/month (enterprise), Free (students/OSS)
+Pricing - $10/month (individuals), $19/month (enterprise), Free (students/OSS)
 
 In-Editor Experience:
 1. Start typing `resource "aws_vpc" "main"`
@@ -83,7 +83,7 @@ In-Editor Experience:
 3. Tab through suggestions, adjust parameters
 4. Create full VPC stack in 3 minutes instead of 20
 
-Output Quality: 7/10. Good for AWS basics, lacks nuance for complex multi-cloud setups.
+Output Quality - 7/10. Good for AWS basics, lacks nuance for complex multi-cloud setups.
 
 ChatGPT 4 / OpenAI API
 
@@ -93,9 +93,9 @@ Strengths:
 - Handles edge cases (IPv6, cross-account IAM, multi-region)
 - Strong on best practices guidance
 
-Pricing: Free tier (limited), $20/month Plus, $0.02, $0.30 per 1K tokens (API)
+Pricing - Free tier (limited), $20/month Plus, $0.02, $0.30 per 1K tokens (API)
 
-Prompt Accuracy: 8/10. Occasionally generates deprecated resources or suboptimal naming.
+Prompt Accuracy - 8/10. Occasionally generates deprecated resources or suboptimal naming.
 
 Real Prompt:
 ```
@@ -115,17 +115,17 @@ Strengths:
 - Suggests fixes for Terraform validation errors
 - Cmd+K to generate inline blocks
 
-Pricing: $20/month (Pro)
+Pricing - $20/month (Pro)
 
 Real Example:
 ```
-User: Cmd+K in main.tf
-Error: "missing required argument: availability_zone"
-Cursor: "Add variable for AZ, reference in aws_subnet.private"
+User - Cmd+K in main.tf
+Error - "missing required argument: availability_zone"
+Cursor - "Add variable for AZ, reference in aws_subnet.private"
 Valid Terraform with proper variable passing
 ```
 
-Output Quality: 9/10. Context-aware fixes save hours on debugging.
+Output Quality - 9/10. Context-aware fixes save hours on debugging.
 
 Tabnine (CodeVio)
 
@@ -135,9 +135,9 @@ Strengths:
 - Fast suggestions for Terraform state files
 - Supports JetBrains, VS Code
 
-Pricing: Free (cloud), $15/month (local), $300/month (enterprise)
+Pricing - Free (cloud), $15/month (local), $300/month (enterprise)
 
-Terraform-Specific: 6/10. Better for syntax than architecture.
+Terraform-Specific - 6/10. Better for syntax than architecture.
 
 Detailed Comparison Table
 
@@ -283,11 +283,11 @@ resource "aws_db_instance" "main" {
 }
 ```
 
-Time Saved: 60 minutes → 5 minutes
+Time Saved - 60 minutes → 5 minutes
 
 GCP Cloud Run + Cloud SQL
 
-Prompt: "Generate Terraform for Cloud Run service + Cloud SQL PostgreSQL with VPC connector"
+Prompt - "Generate Terraform for Cloud Run service + Cloud SQL PostgreSQL with VPC connector"
 
 ```hcl
 resource "google_cloud_run_service" "app" {
@@ -386,7 +386,7 @@ Cost Comparison (Monthly)
 FAQ
 
 Q: Can AI-generated Terraform go to production immediately?
-A: No. Always: terraform plan locally, review outputs, test in staging first, use CI/CD approval gates.
+A: No. Always - terraform plan locally, review outputs, test in staging first, use CI/CD approval gates.
 
 Q: Does AI handle Terraform state migrations?
 A: Poorly. AI can scaffold new state, but migrating existing infrastructure requires manual steps and `terraform state` commands.

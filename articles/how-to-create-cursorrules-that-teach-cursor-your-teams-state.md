@@ -23,7 +23,7 @@ Table of Contents
 - [Why State Management Patterns Matter in CursorRules](#why-state-management-patterns-matter-in-cursorrules)
 - [Prerequisites](#prerequisites)
 - [Common Mistakes to Avoid](#common-mistakes-to-avoid)
-- [Advanced State Patterns: Persistence and Sync](#advanced-state-patterns-persistence-and-sync)
+- [Advanced State Patterns - Persistence and Sync](#advanced-state-patterns-persistence-and-sync)
 - [When to Lift State](#when-to-lift-state)
 - [Troubleshooting](#troubleshooting)
 
@@ -43,25 +43,25 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Writing Effective State Management CursorRules
+Step 1 - Writing Effective State Management CursorRules
 
 Effective CursorRules follow a structured approach: define the pattern, show concrete examples, and specify any constraints. Here's a framework you can adapt:
 
 ```markdown
 State Management Patterns
 
-Step 2: Our Redux Toolkit Setup
+Step 2 - Our Redux Toolkit Setup
 - We use Redux Toolkit with createSlice for all global state
 - Slices live in /src/store/slices/
 - Each slice includes: name, initialState, reducers, and async thunks
 - Selectors are created with createSelector and stored in /src/store/selectors/
 
-Step 3: Component State Patterns
+Step 3 - Component State Patterns
 - Local state uses useState with explicit type annotations
 - useState is preferred over useReducer unless complex state transitions exist
 - Form state uses controlled components with onChange handlers
 
-Step 4: State Access in Components
+Step 4 - State Access in Components
 - Always import selectors from /src/store/selectors/
 - Use useSelector and useDispatch hooks from react-redux
 - Never access store state directly, always use selectors
@@ -69,14 +69,14 @@ Step 4: State Access in Components
 
 This structure gives Cursor clear guidance on where state lives, how it's organized, and how components should interact with it.
 
-Step 5: Pattern Examples for Different Frameworks
+Step 5 - Pattern Examples for Different Frameworks
 
 React Context Pattern
 
 If your team uses React Context for state management, include specific guidance about Context providers and custom hooks:
 
 ```markdown
-Step 6: React Context Patterns
+Step 6 - React Context Patterns
 - Global UI state lives in /src/context/
 - Each context has a Provider component and useContext hook
 - Custom hooks wrap useContext with proper TypeScript types
@@ -94,7 +94,7 @@ Zustand Pattern
 Zustand offers a simpler alternative to Redux. Your CursorRules should reflect its minimal approach:
 
 ```markdown
-Step 7: Zustand Store Pattern
+Step 7 - Zustand Store Pattern
 - All stores use create from zustand
 - Stores include TypeScript interfaces for state and actions
 - Slices pattern not required, single store per domain
@@ -112,19 +112,19 @@ Redux Toolkit with createAsyncThunk
 For teams using Redux Toolkit with async operations, specify how to handle API calls:
 
 ```markdown
-Step 8: Async State with Redux Toolkit
+Step 8 - Async State with Redux Toolkit
 - Use createAsyncThunk for all API calls
 - Handle loading, success, and failure states in extraReducers
 - Use useQuery from RTK Query for server-state when possible
 - Normalize API responses using createEntityAdapter for large lists
 ```
 
-Step 9: Integrate Rules with Project Structure
+Step 9 - Integrate Rules with Project Structure
 
 CursorRules work best when they reference your actual directory structure. Include a section that maps patterns to file locations:
 
 ```markdown
-Step 10: File Organization
+Step 10 - File Organization
 
 State-related files follow these locations:
 
@@ -142,12 +142,12 @@ When creating new state, check if a pattern already exists in these directories.
 
 This mapping helps Cursor place new files in the correct locations and understand relationships between different state management approaches.
 
-Step 11: Test State Management Code
+Step 11 - Test State Management Code
 
 Include guidance on how your team tests state logic:
 
 ```markdown
-Step 12: Test State Management
+Step 12 - Test State Management
 - Redux slices: test reducers in isolation with jest
 - Custom hooks: test with @testing-library/react-hooks
 - Integration: test connected components with mocked store
@@ -166,7 +166,7 @@ When writing CursorRules for state management, avoid these pitfalls:
 
 4. No constraints: Specify what NOT to do. "Don't use useState for global data" prevents common mistakes.
 
-Step 13: Updating Rules as Patterns Evolve
+Step 13 - Updating Rules as Patterns Evolve
 
 Your state management approach will evolve. Set up a process to keep CursorRules current:
 
@@ -178,12 +178,12 @@ Your state management approach will evolve. Set up a process to keep CursorRules
 
 - Test new developers' code generation against rules
 
-Advanced State Patterns: Persistence and Sync
+Advanced State Patterns - Persistence and Sync
 
 Beyond basic state management, include patterns for persistence and client-server sync. These are frequent sources of inconsistency:
 
 ```markdown
-Step 14: Persistence Patterns
+Step 14 - Persistence Patterns
 
 LocalStorage and SessionStorage
 - Critical data (auth tokens, user preferences) uses localStorage with encryption
@@ -199,7 +199,7 @@ IndexedDB for Complex Data
 
 This prevents developers from accidentally storing sensitive data in plain localStorage or querying unindexed databases.
 
-Step 15: State Boundaries and Lifting Rules
+Step 15 - State Boundaries and Lifting Rules
 
 Help Cursor understand when to lift state up the component tree:
 
@@ -218,12 +218,12 @@ fetching separately in each component.
 
 This guidance prevents the common mistake of duplicating data in separate useState hooks.
 
-Step 16: Error Handling Within State
+Step 16 - Error Handling Within State
 
 Add specific guidance on managing error states:
 
 ```markdown
-Step 17: Error State Patterns
+Step 17 - Error State Patterns
 
 - Error states live alongside data states (loading, error, success)
 - Use discriminated unions: {status: 'error', error: {...}} vs {status: 'success', data: {...}}
@@ -234,14 +234,14 @@ Step 17: Error State Patterns
 
 This prevents state becoming inconsistent when errors occur.
 
-Step 18: Real Example: Complete State Management Rule Set
+Step 18 - Real Example: Complete State Management Rule Set
 
 Here's a CursorRule combining multiple patterns:
 
 ```markdown
 State Management Architecture
 
-Step 19: Redux Toolkit with RTK Query
+Step 19 - Redux Toolkit with RTK Query
 
 Directory Structure
 - /src/store/slices/ - Redux Toolkit slices
@@ -284,12 +284,12 @@ function MyComponent() {
 
 With this rule set, Cursor generates code that feels consistent with established patterns.
 
-Step 20: Test State-Generated Code
+Step 20 - Test State-Generated Code
 
 Include testing expectations in CursorRules:
 
 ```markdown
-Step 21: Test State Code
+Step 21 - Test State Code
 
 - Redux slices: Unit test reducers with specific state transitions
 - Selectors: Verify they return expected values and filter correctly

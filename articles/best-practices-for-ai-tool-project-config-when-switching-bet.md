@@ -20,7 +20,7 @@ Manage AI tool configurations across client projects by using environment-specif
 Copilot Instructions
 
 This project uses Python 3.11 with strict type hints.
-- Instead: use environment-specific files that load based on the active project context.
+- Instead - use environment-specific files that load based on the active project context.
 - If you use a: single AI platform account for multiple clients, create separate API keys per project.
 - handle the most common ones across client projects: ### Cursor Cursor reads `.cursorrules` from the project root.
 - Always use the internal: logging library at `internal/logger`.

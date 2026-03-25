@@ -39,7 +39,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Effective Codebase Search Strategies
+Step 1 - Effective Codebase Search Strategies
 
 
 Pattern-Based Search
@@ -112,16 +112,16 @@ For a TypeScript React application, this might mean finding the main component f
 ```
 
 
-Step 2: Practical Workflow for Search-Then-Generate
+Step 2 - Practical Workflow for Search-Then-Generate
 
 
-Step One: Define Your Target
+Step One - Define Your Target
 
 
 Before searching, clearly articulate what you're building. Instead of "I need an API endpoint," specify "I need a POST endpoint that accepts user registration data, validates the email format, hashes the password, and stores the user in PostgreSQL."
 
 
-Step Two: Find Similar Implementations
+Step Two - Find Similar Implementations
 
 
 Search for existing code that shares characteristics with your target:
@@ -134,7 +134,7 @@ Search for existing code that shares characteristics with your target:
 - Comparable authentication or authorization logic
 
 
-Step Three: Extract Relevant Context
+Step Three - Extract Relevant Context
 
 
 Copy the most pertinent code sections. Focus on:
@@ -149,7 +149,7 @@ Copy the most pertinent code sections. Focus on:
 - Integration points with other systems
 
 
-Step Four: Provide Context in Your Prompt
+Step Four - Provide Context in Your Prompt
 
 
 Structure your AI prompt to include the found code as a reference:
@@ -235,7 +235,7 @@ Skipping the Search Phase
 It can be tempting to ask AI to generate code immediately, especially for seemingly simple tasks. However, even simple tasks benefit from consistency with your codebase's patterns. The few minutes spent searching typically save more time in review and refactoring.
 
 
-Step 3: Measuring Success
+Step 3 - Measuring Success
 
 
 After implementing code generated with codebase search context, evaluate:

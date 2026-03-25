@@ -65,7 +65,7 @@ Limitations:
 
 - Less focused on query optimization suggestions
 
-Pricing: Free for open source, $10/month for individuals, $19/user/month for business.
+Pricing - Free for open source, $10/month for individuals, $19/user/month for business.
 
 Cursor
 
@@ -87,7 +87,7 @@ Limitations:
 
 - SQL-specific features still evolving
 
-Pricing: Free tier available, Pro at $20/month, Business at $40/user/month.
+Pricing - Free tier available, Pro at $20/month, Business at $40/user/month.
 
 Codeium
 
@@ -109,7 +109,7 @@ Limitations:
 
 - AI chat features less developed
 
-Pricing: Free for individuals, $12/user/month for teams.
+Pricing - Free for individuals, $12/user/month for teams.
 
 Tabnine
 
@@ -131,7 +131,7 @@ Limitations:
 
 - Requires training for best results
 
-Pricing: Free tier, Pro at $12/month, Enterprise at $20/user/month.
+Pricing - Free tier, Pro at $12/month, Enterprise at $20/user/month.
 
 Tool Comparison at a Glance
 
@@ -144,7 +144,7 @@ Tool Comparison at a Glance
 
 Practical Examples
 
-Consider this scenario: you need to write a query joining three tables with specific filtering conditions.
+Consider this scenario - you need to write a query joining three tables with specific filtering conditions.
 
 Without AI autocomplete, you would manually type:
 
@@ -206,13 +206,13 @@ Dialect-Specific Behavior
 
 SQL dialects differ in ways that matter: date functions, string concatenation, recursive CTEs, and array operations all have dialect-specific syntax. Here is how the tools perform across the most common databases:
 
-PostgreSQL: All four tools handle Postgres well. Copilot and Cursor both suggest Postgres-specific functions like `jsonb_agg`, `array_agg`, and `generate_series` when the context implies a Postgres environment. Cursor picks this up from your `DATABASE_URL` environment variable or ORM configuration.
+PostgreSQL - All four tools handle Postgres well. Copilot and Cursor both suggest Postgres-specific functions like `jsonb_agg`, `array_agg`, and `generate_series` when the context implies a Postgres environment. Cursor picks this up from your `DATABASE_URL` environment variable or ORM configuration.
 
-MySQL / MariaDB: Copilot has strong MySQL coverage, particularly for `GROUP_CONCAT` and MySQL-style `LIMIT x OFFSET y` syntax. Tabnine's local model shows some lag on newer MySQL 8.x window function syntax.
+MySQL / MariaDB - Copilot has strong MySQL coverage, particularly for `GROUP_CONCAT` and MySQL-style `LIMIT x OFFSET y` syntax. Tabnine's local model shows some lag on newer MySQL 8.x window function syntax.
 
-SQLite: All tools handle SQLite basics well. Codeium's free tier is especially useful here for hobbyist developers building local apps with SQLite backends.
+SQLite - All tools handle SQLite basics well. Codeium's free tier is especially useful here for hobbyist developers building local apps with SQLite backends.
 
-Microsoft SQL Server: Copilot (given Microsoft's backing) has the strongest TSQL coverage, correctly suggesting `TOP n`, `NOLOCK` hints, and `WITH (UPDLOCK)` patterns that are MSSQL-specific.
+Microsoft SQL Server - Copilot (given Microsoft's backing) has the strongest TSQL coverage, correctly suggesting `TOP n`, `NOLOCK` hints, and `WITH (UPDLOCK)` patterns that are MSSQL-specific.
 
 Maximizing Your SQL Autocomplete
 
@@ -279,15 +279,15 @@ WHERE o.created_date > '2025-01-01'
 -- AI suggestions:
 -- 1. Add index: CREATE INDEX idx_orders_created ON orders(created_date)
 -- 2. Optimize: Select specific columns instead of *
--- 3. Consider: EXPLAIN PLAN shows this query needs 2.5M rows scanned
+-- 3. Consider - EXPLAIN PLAN shows this query needs 2.5M rows scanned
 -- 4. Suggest: Add customer_status condition to reduce result set
 ```
 
 Real-World SQL Generation Workflows
 
-Scenario 1: Exploratory Analysis
+Scenario 1 - Exploratory Analysis
 
-Goal: Quickly understand data without writing complex queries
+Goal - Quickly understand data without writing complex queries
 
 ```sql
 -- Prompt: Summarize monthly revenue trends
@@ -317,9 +317,9 @@ ORDER BY lifetime_value DESC
 LIMIT 10;
 ```
 
-Scenario 2: Complex Multi-Join Queries
+Scenario 2 - Complex Multi-Join Queries
 
-Goal: Generate accurate multi-table joins without manual specification
+Goal - Generate accurate multi-table joins without manual specification
 
 ```sql
 -- You describe: "Find active customers with recent orders containing electronics"
@@ -342,9 +342,9 @@ GROUP BY c.customer_id, c.name, c.email
 ORDER BY recent_order_count DESC;
 ```
 
-Scenario 3: Window Functions and Advanced Analytics
+Scenario 3 - Window Functions and Advanced Analytics
 
-Goal: Calculate running totals, rankings, and analytical metrics
+Goal - Calculate running totals, rankings, and analytical metrics
 
 ```sql
 -- You describe: "Calculate running monthly revenue and rank customers"
@@ -381,7 +381,7 @@ Choosing SQL Autocomplete by Use Case
 
 For Data Scientists / Analytics
 
-Best choice: Cursor or GitHub Copilot
+Best choice - Cursor or GitHub Copilot
 
 - You write exploratory queries frequently
 - You need fast schema understanding
@@ -414,7 +414,7 @@ df = pd.read_sql_query(query, engine)
 
 For Database Administrators
 
-Best choice: DBeaver with AI or Tabnine
+Best choice - DBeaver with AI or Tabnine
 
 - You need local execution and testing
 - Schema understanding is critical
@@ -437,7 +437,7 @@ Typical workflow:
 
 For Application Developers
 
-Best choice: Cursor or GitHub Copilot
+Best choice - Cursor or GitHub Copilot
 
 - You're writing queries in application code
 - You want completions while typing application code
@@ -459,7 +459,7 @@ const user = await db.query(
 
 For SQL Optimization / Query Tuning
 
-Best choice: AI-enabled database tools (DataGrip, DBeaver Pro)
+Best choice - AI-enabled database tools (DataGrip, DBeaver Pro)
 
 - You're debugging slow queries
 - EXPLAIN PLAN analysis is essential
@@ -480,23 +480,23 @@ Performance Impact Comparison
 How much does AI autocomplete actually improve your query writing speed?
 
 ```
-Task: Write a 5-table JOIN with complex filtering
+Task - Write a 5-table JOIN with complex filtering
 
 Without AI autocomplete:
 - Research column names: 3 min
 - Type query manually: 5 min
 - Fix syntax errors: 2 min
 - Verify correctness: 2 min
-Total: 12 minutes
+Total - 12 minutes
 
 With Cursor/Copilot:
 - Describe query in comment: 1 min
 - Accept AI suggestion: 1 min
 - Minor edits: 1 min
 - Verify correctness: 1 min
-Total: 4 minutes
+Total - 4 minutes
 
-Speedup: 3x faster for complex queries
+Speedup - 3x faster for complex queries
 ```
 
 For simple SELECT queries, the speedup is smaller (1.5x), but for complex analytical queries, it's substantial.

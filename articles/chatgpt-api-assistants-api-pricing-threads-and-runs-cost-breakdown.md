@@ -32,7 +32,7 @@ Table of Contents
 - [Cost Forecasting Tool](#cost-forecasting-tool)
 - [Cost Monitoring and Alerts](#cost-monitoring-and-alerts)
 - [Comparison with Alternative APIs](#comparison-with-alternative-apis)
-- [ROI Analysis: When Assistants API Makes Sense](#roi-analysis-when-assistants-api-makes-sense)
+- [ROI Analysis - When Assistants API Makes Sense](#roi-analysis-when-assistants-api-makes-sense)
 
 Assistants API Pricing Model Overview
 
@@ -141,9 +141,9 @@ def cleanup_old_threads(client, assistant_id, days_old=30):
     return deleted_count
 ```
 
-Use model routing: Route simple queries to gpt-4o-mini and complex reasoning tasks to gpt-4o. This hybrid approach maintains quality where needed while keeping costs low for straightforward tasks.
+Use model routing - Route simple queries to gpt-4o-mini and complex reasoning tasks to gpt-4o. This hybrid approach maintains quality where needed while keeping costs low for straightforward tasks.
 
-Cache system prompts: Store frequently used system instructions as assistant objects rather than repeating them in every message. The assistant object stores its instructions persistently.
+Cache system prompts - Store frequently used system instructions as assistant objects rather than repeating them in every message. The assistant object stores its instructions persistently.
 
 ```python
 Create an assistant with built-in instructions
@@ -154,7 +154,7 @@ assistant = client.beta.assistants.create(
 )
 ```
 
-Monitor with usage tracking: Implement logging for each run to track actual token consumption:
+Monitor with usage tracking - Implement logging for each run to track actual token consumption:
 
 ```python
 def log_run_cost(run_id, thread_id):
@@ -181,11 +181,11 @@ For a practical estimate, consider an application with these parameters:
 
 - gpt-4o-mini pricing
 
-Monthly storage: 10,000 × 25,000 × $0.10/1M × 30 days = $75
+Monthly storage - 10,000 × 25,000 × $0.10/1M × 30 days = $75
 
-Monthly runs: 10,000 × 3 × 30 × 0.0006 = $540
+Monthly runs - 10,000 × 3 × 30 × 0.0006 = $540
 
-Total estimated cost: approximately $615 per month.
+Total estimated cost - approximately $615 per month.
 
 Switching to gpt-4o for all runs would increase costs to approximately $9,000 per month. This demonstrates the importance of model selection and run optimization.
 
@@ -227,7 +227,7 @@ gpt4o_cost = calculate_run_cost("gpt-4o", 2000, 500)
 
 print(f"gpt-4o-mini: ${mini_cost:.4f}")
 print(f"gpt-4o: ${gpt4o_cost:.4f}")
-print(f"Difference: {gpt4o_cost / mini_cost:.1f}x")
+print(f"Difference - {gpt4o_cost / mini_cost:.1f}x")
 ```
 
 Thread Storage Cost Calculation
@@ -259,7 +259,7 @@ Advanced Cost Optimization Techniques
 
 Beyond basic strategies, advanced techniques minimize costs:
 
-Technique 1: Prompt Compression
+Technique 1 - Prompt Compression
 
 ```python
 def compress_prompt(messages):
@@ -275,7 +275,7 @@ summarize first 45, send summary + last 5 messages
 50% token reduction on large conversations
 ```
 
-Technique 2: Token Budgets
+Technique 2 - Token Budgets
 
 ```python
 class TokenBudgetedAssistant:
@@ -295,7 +295,7 @@ class TokenBudgetedAssistant:
         return self.budget - self.spent
 ```
 
-Technique 3: Intelligent Model Routing
+Technique 3 - Intelligent Model Routing
 
 ```python
 def choose_model_for_query(query):
@@ -456,7 +456,7 @@ Understanding cost trade-offs helps select the right approach:
 
 For most assistants applications, gpt-4o-mini provides the best cost-to-capability ratio.
 
-ROI Analysis: When Assistants API Makes Sense
+ROI Analysis - When Assistants API Makes Sense
 
 Determine if Assistants API fits your budget:
 

@@ -37,7 +37,7 @@ AI coding tools have evolved significantly, but their value depends heavily on h
 - For routine boilerplate code: acceptance rates above 70% indicate good tool alignment.
 - For complex or novel implementations: 40-50% may be acceptable.
 - Rates below 30% typically: signal problems with prompt quality, context setup, or tool configuration.
-- Initially: their acceptance rate was 35%.
+- Initially - their acceptance rate was 35%.
 - Tracked acceptance metrics per: endpoint type Their acceptance rate increased to 58% within three weeks.
 - Type hints on all: functions (→ +15% acceptance) 2.
 
@@ -57,7 +57,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Measuring Acceptance Rate Effectively
+Step 1 - Measuring Acceptance Rate Effectively
 
 Using Built-in Analytics
 
@@ -125,7 +125,7 @@ Modification Rate tracks how often you accept but modify suggestions. High modif
 
 Rejection Categories classify why you reject suggestions. Common categories include incorrect logic, wrong API usage, style mismatches, and security concerns.
 
-Step 2: Improving Suggestion Acceptance Rate
+Step 2 - Improving Suggestion Acceptance Rate
 
 Optimize Your Context Setup
 
@@ -190,7 +190,7 @@ def log_rejection(suggestion_text, reason, context=""):
 
 Review this log monthly. Common rejection patterns often point to fixable issues in your workflow or tool configuration.
 
-Step 3: Real-World Example
+Step 3 - Real-World Example
 
 Consider a team working on a Python FastAPI application. Initially, their acceptance rate was 35%. After implementing these strategies:
 
@@ -328,11 +328,11 @@ patterns = analyzer.analyze()
 Shows most common rejection reasons
 ```
 
-Step 4: Improvement Checklist by Acceptance Rate
+Step 4 - Improvement Checklist by Acceptance Rate
 
 Below 30% Acceptance Rate
 
-Diagnosis: Tool not aligned with your workflow
+Diagnosis - Tool not aligned with your workflow
 
 Actions:
 - Review tool's context window settings
@@ -342,7 +342,7 @@ Actions:
 - Reduce file context size (might be truncating important code)
 
 ```python
-Debug: Check what context tool is receiving
+Debug - Check what context tool is receiving
 def estimate_token_count(file_content: str) -> int:
     """Rough estimate of token usage"""
     # 1 token ≈ 4 characters
@@ -354,7 +354,7 @@ Reducing file size improves context quality
 
 30-50% Acceptance Rate
 
-Diagnosis: Tool works for simple cases, struggles with complexity
+Diagnosis - Tool works for simple cases, struggles with complexity
 
 Actions:
 - Add type hints throughout codebase
@@ -364,7 +364,7 @@ Actions:
 - Use custom instructions aligned with your standards
 
 ```python
-BEFORE: 25% acceptance
+BEFORE - 25% acceptance
 def process(d, f):
     r = {}
     for k, v in d.items():
@@ -372,7 +372,7 @@ def process(d, f):
             r[k] = v * f
     return r
 
-AFTER: 68% acceptance
+AFTER - 68% acceptance
 def apply_multiplier(data: Dict[str, int],
                      multiplier: float) -> Dict[str, int]:
     """Apply multiplier only to values exceeding 100."""
@@ -385,7 +385,7 @@ def apply_multiplier(data: Dict[str, int],
 
 50-70% Acceptance Rate
 
-Diagnosis: Tool works well; optimization possible
+Diagnosis - Tool works well; optimization possible
 
 Actions:
 - Identify which file types have lower acceptance rates
@@ -404,7 +404,7 @@ async def process_stream_with_backpressure(stream):
 
 70%+ Acceptance Rate
 
-Diagnosis: Excellent tool alignment
+Diagnosis - Excellent tool alignment
 
 Actions:
 - Document what's working well for other team members
@@ -427,21 +427,21 @@ Our Copilot Acceptance Success Factors:
 """
 ```
 
-Step 5: Industry Benchmarks
+Step 5 - Industry Benchmarks
 
 Based on public data from GitHub and Copilot users:
 
-Boilerplate Code: 85-95% acceptance typical
+Boilerplate Code - 85-95% acceptance typical
 
-Business Logic: 40-60% acceptance typical
+Business Logic - 40-60% acceptance typical
 
-Error Handling: 50-70% acceptance typical
+Error Handling - 50-70% acceptance typical
 
-Testing: 60-80% acceptance typical
+Testing - 60-80% acceptance typical
 
 If your rates are significantly below these benchmarks, investigate settings and code organization.
 
-Step 6: A/B Testing Tool Configurations
+Step 6 - A/B Testing Tool Configurations
 
 ```python
 import json
@@ -489,7 +489,7 @@ class ToolConfigABTest:
 Test different context settings
 tester = ToolConfigABTest("Copilot")
 
-Test A: Default settings
+Test A - Default settings
 tester.run_test("default")
 
 After 3 days, switch to Test B

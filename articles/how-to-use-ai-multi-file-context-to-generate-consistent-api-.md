@@ -31,7 +31,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Multi-File Context in AI Coding Tools
+Step 1 - Understand Multi-File Context in AI Coding Tools
 
 Multi-file context refers to an AI assistant's ability to read and understand multiple source files simultaneously before generating code. Rather than pasting snippets into a chat window, you provide the AI with access to your existing project files. The assistant analyzes your patterns, naming conventions, data models, and error handling approaches, then generates new code that aligns with what already exists.
 
@@ -47,7 +47,7 @@ Modern AI coding tools offer several ways to provide multi-file context:
 
 Each approach has tradeoffs in setup complexity and the depth of context the AI can access.
 
-Step 2: Preparing Your Project for Context-Aware Generation
+Step 2 - Preparing Your Project for Context-Aware Generation
 
 Before generating API endpoints with AI assistance, ensure your project provides clear signals about your conventions. Structure matters because the AI uses existing patterns as templates.
 
@@ -94,7 +94,7 @@ class UserResponse(UserBase):
 
 When the AI sees this pattern, it generates new models following the same structure.
 
-Step 3: Generate Endpoints with Full Context Awareness
+Step 3 - Generate Endpoints with Full Context Awareness
 
 With proper project structure in place, you can now generate endpoints that match your existing code. The key is providing the AI with enough context to understand your patterns.
 
@@ -152,7 +152,7 @@ def list_products(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)
 
 Notice how the generated code mirrors the user endpoint patterns: consistent error handling, similar response models, proper HTTP status codes, and matching parameter conventions.
 
-Step 4: Manage Context Window Limitations
+Step 4 - Manage Context Window Limitations
 
 Large projects exceed what any AI can process in a single context window. When working with extensive codebases, you need strategies to maximize relevant context without hitting limits.
 
@@ -173,7 +173,7 @@ context_files = [
 ]
 ```
 
-Step 5: Validating Generated Endpoint Consistency
+Step 5 - Validating Generated Endpoint Consistency
 
 After generation, verify consistency across several dimensions:
 
@@ -210,7 +210,7 @@ Include dependency injection patterns. If your endpoints use authentication, log
 
 Document override conventions. Sometimes generated code needs modification. Establish clear patterns for where and how developers should extend AI-generated code, preventing inconsistent manual additions.
 
-Step 6: Practical Workflow for Teams
+Step 6 - Practical Workflow for Teams
 
 Teams benefit from establishing conventions that AI tools can reliably follow:
 

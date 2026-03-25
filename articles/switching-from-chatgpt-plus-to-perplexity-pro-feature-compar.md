@@ -54,7 +54,7 @@ ChatGPT Plus excels at:
 - Working with files you upload directly
 
 ```javascript
-// Example: ChatGPT generating a Node.js API handler
+// Example - ChatGPT generating a Node.js API handler
 app.get('/api/users/:id', async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -197,23 +197,23 @@ Practical Decision Framework
 
 Evaluate your primary use case against these questions:
 
-Question 1: How often do you need current information?
+Question 1 - How often do you need current information?
 - If always or most of the time: Perplexity Pro wins decisively
 - If rarely or only for code: ChatGPT Plus serves well
 
-Question 2: Do you work with large code files or documents?
+Question 2 - Do you work with large code files or documents?
 - If yes: ChatGPT Plus (larger context, file upload)
 - If no: Either works
 
-Question 3: Do you need citations and source verification?
+Question 3 - Do you need citations and source verification?
 - If yes: Perplexity Pro (citations are built-in)
 - If no: ChatGPT Plus (sources require additional steps)
 
-Question 4: Do you create images or need creative generation?
+Question 4 - Do you create images or need creative generation?
 - If yes: ChatGPT Plus (DALL-E access)
 - If no: Perplexity Pro handles research better
 
-Question 5: Is your work split between coding and research?
+Question 5 - Is your work split between coding and research?
 - If 70%+ coding: ChatGPT Plus
 - If 50/50 or more research: Perplexity Pro
 - If truly split: Consider using both (same price)

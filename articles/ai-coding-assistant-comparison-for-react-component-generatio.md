@@ -46,7 +46,7 @@ Claude Code
 
 Claude Code generates React components with strong attention to modern patterns. When prompted to create a component, it consistently applies TypeScript interfaces for props, includes proper memoization hints, and considers accessibility from the start. The assistant understands React 18 features including concurrent mode considerations and automatic batching.
 
-Example prompt: "Create a TypeScript React component for a data table with sorting, pagination, and row selection."
+Example prompt - "Create a TypeScript React component for a data table with sorting, pagination, and row selection."
 
 Claude Code produces components like this:
 
@@ -256,7 +256,7 @@ For maintaining consistency across large codebases: Cursor's codebase awareness 
 
 For keyboard-focused developers preferring editor integration: Zed delivers solid results with minimal context switching.
 
-For teams new to React 18: Claude Code's explanations alongside generated code reduce onboarding friction and help developers understand the patterns they are using.
+For teams new to React 18 - Claude Code's explanations alongside generated code reduce onboarding friction and help developers understand the patterns they are using.
 
 Related Reading
 

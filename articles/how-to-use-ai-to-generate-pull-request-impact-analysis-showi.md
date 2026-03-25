@@ -21,7 +21,7 @@ AI coding assistants can help you analyze pull request changes and identify affe
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Practical Example: Analyzing a Shared Library Change](#practical-example-analyzing-a-shared-library-change)
+- [Practical Example - Analyzing a Shared Library Change](#practical-example-analyzing-a-shared-library-change)
 - [Best Practices for AI-Powered Impact Analysis](#best-practices-for-ai-powered-impact-analysis)
 - [Troubleshooting](#troubleshooting)
 
@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Challenge of Impact Analysis in Monorepos
+Step 1 - The Challenge of Impact Analysis in Monorepos
 
 Modern software architectures often involve multiple projects, services, or packages that depend on each other. When you modify a shared library, core service, or common component, you need to understand which downstream consumers might be affected. Doing this manually is error-prone and time-consuming, especially in large monorepos with complex dependency chains.
 
 The traditional approach involves manually tracing imports, checking package.json or requirements.txt files, and relying on tribal knowledge about which teams own which components. This breaks down as teams grow and the codebase evolves.
 
-Step 2: How AI Tools Approach Impact Analysis
+Step 2 - How AI Tools Approach Impact Analysis
 
 AI assistants can accelerate impact analysis by reading your PR diff and cross-referencing it with dependency configuration files, module definitions, and service boundaries. The process involves several key steps that you can guide the AI to perform effectively.
 
@@ -51,7 +51,7 @@ Second, ask the AI to identify direct dependencies. For a change in a shared pac
 
 Third, request transitive dependency analysis. A change might not directly affect a project but could impact it through intermediate dependencies. The AI can trace these chains and identify indirect consumers.
 
-Practical Example: Analyzing a Shared Library Change
+Practical Example - Analyzing a Shared Library Change
 
 Consider a scenario where you've modified a utility package that multiple services depend on. Here's how you might structure your prompt to an AI assistant:
 
@@ -73,7 +73,7 @@ The AI will examine your codebase and produce a list similar to:
 
 - Risk assessment: High impact, formatDate is used across 8 different services
 
-Step 3: Use AI with Dependency Graph Tools
+Step 3 - Use AI with Dependency Graph Tools
 
 For more analysis, combine AI assistance with dedicated dependency graph tools. GitHub's dependency graph, Renovate Bot, and tools like depcruise can export dependency relationships that you feed to the AI for interpretation.
 
@@ -102,7 +102,7 @@ about this change, including their Slack channels or email aliases if available
 in our team documentation.
 ```
 
-Step 4: Analyzing Impact in Polyglot Environments
+Step 4 - Analyzing Impact in Polyglot Environments
 
 Many organizations use multiple programming languages, which complicates impact analysis. AI assistants can help bridge this gap by understanding how different language ecosystems represent dependencies.
 
@@ -119,7 +119,7 @@ Look for:
 
 The AI can trace these cross-language relationships by looking at naming conventions, documentation comments, and actual usage patterns in the code.
 
-Step 5: Automate Impact Analysis with CI Integration
+Step 5 - Automate Impact Analysis with CI Integration
 
 You can set up automated impact analysis in your CI pipeline using AI-assisted scripts. Here's an example GitHub Actions workflow that runs impact analysis on PRs:
 
@@ -156,9 +156,9 @@ jobs:
 
             const body = `## Impact Analysis
 
-Affected Services: ${report.services.join(', ')}
-Risk Level: ${report.riskLevel}
-Recommended Reviewers: ${reviewers.join(', ')}
+Affected Services - ${report.services.join(', ')}
+Risk Level - ${report.riskLevel}
+Recommended Reviewers - ${reviewers.join(', ')}
 `;
 
             github.rest.issues.createComment({
@@ -181,7 +181,7 @@ Provide sample outputs. Show the AI what format you expect for impact reports. S
 
 Iterate on the analysis. AI might miss edge cases on the first pass. Ask follow-up questions like "Are there any test files that would also need updating?" or "What about configuration files that reference these values?"
 
-Step 6: Common Limitations to Watch For
+Step 6 - Common Limitations to Watch For
 
 While AI tools excel at pattern matching and code analysis, they have limitations you should account for:
 
@@ -191,7 +191,7 @@ Transitive dependencies can be tricky. If package A depends on B depends on C, a
 
 Configuration drift, where production differs from code, can cause AI to miss real-world impacts. Always verify critical dependencies against actual deployment configurations.
 
-Step 7: Automated Impact Analysis via GitHub Actions
+Step 7 - Automated Impact Analysis via GitHub Actions
 
 Implement impact analysis as part of your CI pipeline. This comment appears automatically on every PR:
 
@@ -267,12 +267,12 @@ jobs:
 
 This automation sends impact reports to reviewers instantly without manual effort.
 
-Step 8: Impact Analysis Template and Checklist
+Step 8 - Impact Analysis Template and Checklist
 
 Structure your impact analysis requests with a consistent template. This improves consistency and helps AI tools understand what information you need:
 
 ```markdown
-Step 9: Impact Analysis Template
+Step 9 - Impact Analysis Template
 
 Files Changed
 - [list of files]
@@ -302,7 +302,7 @@ Notification Priority
 
 Pass this template to your AI tool alongside the PR diff for structured output.
 
-Step 10: Command-Line Tool for Local Analysis
+Step 10 - Command-Line Tool for Local Analysis
 
 Run impact analysis locally before pushing:
 
@@ -338,16 +338,16 @@ Usage:
 ./ai-impact-analysis.sh feature/new-api-endpoint main
 ```
 
-Step 11: Real-World Impact Analysis Example
+Step 11 - Real-World Impact Analysis Example
 
 Given a PR that modifies a user authentication module, the AI analysis reveals:
 
-Input: PR diff of 287 lines changing `auth/token.ts`
+Input - PR diff of 287 lines changing `auth/token.ts`
 
 Output from Claude:
 
 ```
-Step 12: Impact Analysis: Authentication Module Changes
+Step 12 - Impact Analysis: Authentication Module Changes
 
 Direct Consumers (5 services)
 1. User Service (auth/token.ts import)
@@ -382,7 +382,7 @@ Timeline
 
 The AI analysis takes 30 seconds vs. 30+ minutes of manual investigation.
 
-Step 13: Measuring Impact Analysis Effectiveness
+Step 13 - Measuring Impact Analysis Effectiveness
 
 Track these metrics to ensure your impact analysis process drives value:
 

@@ -141,7 +141,7 @@ Practical Implementation Strategy
 
 For teams implementing AI breakpoint auditing, a layered approach works best:
 
-Layer 1: Automated CI Checks
+Layer 1 - Automated CI Checks
 
 Run basic accessibility tests at your defined breakpoints on every pull request. This catches obvious issues before they reach production.
 
@@ -154,11 +154,11 @@ GitHub Actions example
     accessibility-audit: true
 ```
 
-Layer 2: Weekly Deep Audits
+Layer 2 - Weekly Deep Audits
 
 Schedule AI-assisted audits that analyze patterns across your entire application. These run less frequently but provide more thorough analysis.
 
-Layer 3: User Impact Analysis
+Layer 3 - User Impact Analysis
 
 Use AI to correlate accessibility issues with actual user behavior data. Some breakpoint issues might affect very few users while others impact significant portions of your audience.
 
@@ -180,17 +180,17 @@ Common Breakpoint Accessibility Issues
 
 Regardless of which tool you choose, certain issues appear frequently in responsive accessibility testing:
 
-Focus Disappearance: Elements that lose their focusable state when the viewport narrows. This commonly affects navigation menus that collapse into hamburger patterns.
+Focus Disappearance - Elements that lose their focusable state when the viewport narrows. This commonly affects navigation menus that collapse into hamburger patterns.
 
-Label Truncation: Form labels that get cut off at smaller breakpoints without proper fallback text or visible truncation indicators.
+Label Truncation - Form labels that get cut off at smaller breakpoints without proper fallback text or visible truncation indicators.
 
-Modal Positioning: Dialogs that become inaccessible at certain widths because they're positioned off-screen or covered by other elements.
+Modal Positioning - Dialogs that become inaccessible at certain widths because they're positioned off-screen or covered by other elements.
 
-Touch Target Sizing: Buttons that meet the 44×44 pixel touch target requirement at desktop but fail at mobile viewports due to zoom or scaling issues.
+Touch Target Sizing - Buttons that meet the 44×44 pixel touch target requirement at desktop but fail at mobile viewports due to zoom or scaling issues.
 
-ARIA Role Mismatch on Layout Change: Components that switch between disclosure widget and navigation landmark patterns depending on viewport size can create ARIA role inconsistencies. Screen readers cache role information, so dynamic role changes require explicit `aria-live` region updates to announce the change.
+ARIA Role Mismatch on Layout Change - Components that switch between disclosure widget and navigation landmark patterns depending on viewport size can create ARIA role inconsistencies. Screen readers cache role information, so dynamic role changes require explicit `aria-live` region updates to announce the change.
 
-Reading Order Divergence: CSS Grid and Flexbox reordering with `order` property or `flex-direction: row-reverse` can make visual reading order differ from DOM reading order at certain breakpoints. AI tools that analyze both visual layout and DOM structure can catch this class of bug automatically, pure code analysis cannot.
+Reading Order Divergence - CSS Grid and Flexbox reordering with `order` property or `flex-direction: row-reverse` can make visual reading order differ from DOM reading order at certain breakpoints. AI tools that analyze both visual layout and DOM structure can catch this class of bug automatically, pure code analysis cannot.
 
 Setting Up a Breakpoint Audit Workflow
 

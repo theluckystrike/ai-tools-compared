@@ -22,10 +22,10 @@ Claude Code generates production-ready compose files on first try approximately 
 Table of Contents
 
 - [Docker Compose Challenges](#docker-compose-challenges)
-- [Claude Code: The Strongest Output](#claude-code-the-strongest-output)
-- [GitHub Copilot: Fast, Good Enough](#github-copilot-fast-good-enough)
-- [Cursor: IDE-First AI](#cursor-ide-first-ai)
-- [Real-World Comparison: Multi-Service Web App](#real-world-comparison-multi-service-web-app)
+- [Claude Code - The Strongest Output](#claude-code-the-strongest-output)
+- [GitHub Copilot - Fast, Good Enough](#github-copilot-fast-good-enough)
+- [Cursor - IDE-First AI](#cursor-ide-first-ai)
+- [Real-World Comparison - Multi-Service Web App](#real-world-comparison-multi-service-web-app)
 - [Networking Patterns](#networking-patterns)
 - [Environment Configuration](#environment-configuration)
 - [Volume Management](#volume-management)
@@ -49,7 +49,7 @@ Most teams write compose files manually, introducing inconsistencies. Services m
 
 AI tools promise to generate correct compose syntax automatically. Reality is mixed, each tool has blind spots.
 
-Claude Code: The Strongest Output
+Claude Code - The Strongest Output
 
 Claude Code excels at Docker Compose generation because it understands the full specification and can maintain long context. Ask it to generate a compose file for a Node.js + PostgreSQL + Redis stack, and it produces working code on the first try.
 
@@ -63,7 +63,7 @@ Strengths:
 - Remembers context across follow-up edits
 - Can analyze existing compose files and suggest improvements
 
-Accuracy: 85-90% first-pass correctness. Remaining 10-15% typically involves missing environment variables or port conflicts you'll catch in testing.
+Accuracy - 85-90% first-pass correctness. Remaining 10-15% typically involves missing environment variables or port conflicts you'll catch in testing.
 
 Typical Output:
 
@@ -136,13 +136,13 @@ networks:
     driver: bridge
 ```
 
-Cost: $0.01-0.05 per generation (Opus 4.6).
+Cost - $0.01-0.05 per generation (Opus 4.6).
 
-Limitations: Slower than IDE-based tools (30-60 seconds per request). Requires switching contexts. Not ideal for rapid iteration.
+Limitations - Slower than IDE-based tools (30-60 seconds per request). Requires switching contexts. Not ideal for rapid iteration.
 
-Best For: Complex multi-service setups, production configurations, learning correct patterns.
+Best For - Complex multi-service setups, production configurations, learning correct patterns.
 
-GitHub Copilot: Fast, Good Enough
+GitHub Copilot - Fast, Good Enough
 
 Copilot lives inside VS Code, making it the fastest option for quick generations. Type a comment describing your stack, and Copilot autocompletes the entire compose file in seconds.
 
@@ -155,7 +155,7 @@ Strengths:
 - Free (if you have GitHub Copilot subscription)
 - Works offline
 
-Accuracy: 70-75% for simple stacks, 50-60% for complex setups. Common issues include missing health checks, hardcoded values instead of env vars, and incorrect service dependencies.
+Accuracy - 70-75% for simple stacks, 50-60% for complex setups. Common issues include missing health checks, hardcoded values instead of env vars, and incorrect service dependencies.
 
 Typical Output Issues:
 
@@ -180,13 +180,13 @@ services:
 
 Copilot requires 2-3 manual fixes for production use.
 
-Cost: $20/month (Copilot subscription).
+Cost - $20/month (Copilot subscription).
 
-Limitations: Limited context. Forgets previous parts of the file. Struggles with multi-file setups. No understanding of environment-specific configurations.
+Limitations - Limited context. Forgets previous parts of the file. Struggles with multi-file setups. No understanding of environment-specific configurations.
 
-Best For: Quick iterations during development, learning syntax, simple stacks.
+Best For - Quick iterations during development, learning syntax, simple stacks.
 
-Cursor: IDE-First AI
+Cursor - IDE-First AI
 
 Cursor is a VS Code fork with better AI integration. It offers both Claude and custom model options. The tab completion is aggressive, sometimes completing entire services before you finish typing the service name.
 
@@ -198,17 +198,17 @@ Strengths:
 - Can reference multiple files
 - Local execution options available
 
-Accuracy: 75% for standard stacks, 65% for complex setups. Better than Copilot on networking but sometimes misses environment configuration details.
+Accuracy - 75% for standard stacks, 65% for complex setups. Better than Copilot on networking but sometimes misses environment configuration details.
 
-Cost: Free tier available, $20/month for Claude backend.
+Cost - Free tier available, $20/month for Claude backend.
 
-Limitations: Relatively new tool (less battle-tested than Copilot). Compose generation is strong but not as reliable as Claude Code directly. Document reference sometimes fails.
+Limitations - Relatively new tool (less battle-tested than Copilot). Compose generation is strong but not as reliable as Claude Code directly. Document reference sometimes fails.
 
-Best For: Full-time IDE use with good autocomplete, developers preferring Claude over OpenAI.
+Best For - Full-time IDE use with good autocomplete, developers preferring Claude over OpenAI.
 
-Real-World Comparison: Multi-Service Web App
+Real-World Comparison - Multi-Service Web App
 
-Setup: Node.js web server + PostgreSQL + Redis + Nginx reverse proxy + development and production configurations.
+Setup - Node.js web server + PostgreSQL + Redis + Nginx reverse proxy + development and production configurations.
 
 Claude Code (first attempt):
 - Generates complete docker-compose.yml: Correct
@@ -315,7 +315,7 @@ Claude generates detailed explanation including:
 - What could break during development
 - How to debug networking issues
 
-Copilot/Cursor: Limited explanation
+Copilot/Cursor - Limited explanation
 ```
 
 Quick Decision Matrix
@@ -356,7 +356,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -368,7 +368,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

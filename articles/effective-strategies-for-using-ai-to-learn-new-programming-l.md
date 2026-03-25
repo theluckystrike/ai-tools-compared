@@ -25,7 +25,7 @@ Table of Contents
 - [Use AI to Generate Practice Exercises](#use-ai-to-generate-practice-exercises)
 - [Use AI for Reading Existing Codebases](#use-ai-for-reading-existing-codebases)
 - [Create a Personal Language Reference](#create-a-personal-language-reference)
-- [Avoid Over-Reliance: Verify AI Output](#avoid-over-reliance-verify-ai-output)
+- [Avoid Over-Reliance - Verify AI Output](#avoid-over-reliance-verify-ai-output)
 - [Combine AI with Language-Specific Learning Resources](#combine-ai-with-language-specific-learning-resources)
 - [Practical Workflow Example](#practical-workflow-example)
 - [Using AI for Language-Specific Idiom Learning](#using-ai-for-language-specific-idiom-learning)
@@ -104,7 +104,7 @@ Use AI to Generate Practice Exercises
 Once you've learned basic syntax, use AI to create progressive practice exercises tailored to your skill level:
 
 ```python
-Request example: "Generate 5 exercises for learning list comprehensions
+Request example - "Generate 5 exercises for learning list comprehensions
 in Python, starting from easy to medium difficulty"
 ```
 
@@ -138,7 +138,7 @@ Build a quick-reference document as you learn, using AI to populate it with lang
 
 This becomes a valuable personal resource that accelerates recall during actual coding.
 
-Avoid Over-Reliance: Verify AI Output
+Avoid Over-Reliance - Verify AI Output
 
 AI tools occasionally generate incorrect or outdated code. Develop the habit of verifying AI-generated code through:
 
@@ -180,7 +180,7 @@ Using AI for Language-Specific Idiom Learning
 
 Each language has idioms and patterns that code must follow to be considered "native." AI excels at explaining these idioms in comparison:
 
-Python idiom: List comprehensions
+Python idiom - List comprehensions
 ```python
 Verbose approach
 results = []
@@ -192,7 +192,7 @@ Pythonic approach (idiom)
 results = [item['value'] * 2 for item in items if item['active']]
 ```
 
-Ask AI: "Explain this Python idiom compared to equivalent approaches in [your known language]. When should I use this vs traditional loops?"
+Ask AI - "Explain this Python idiom compared to equivalent approaches in [your known language]. When should I use this vs traditional loops?"
 
 This targets the hidden knowledge that separates beginners from experienced developers in any language.
 
@@ -201,13 +201,13 @@ Creating a Language Learning Dashboard
 Track your progress learning a new language by maintaining metrics AI helps you understand:
 
 ```bash
-Days learning: 14
-Concepts mastered: 18/50
-Code written: ~2000 lines
-Open-source contributions: 2
+Days learning - 14
+Concepts mastered - 18/50
+Code written - ~2000 lines
+Open-source contributions - 2
 
-Strengths: Basic syntax, function definitions, collections
-Weaknesses: Error handling patterns, testing practices, concurrency
+Strengths - Basic syntax, function definitions, collections
+Weaknesses - Error handling patterns, testing practices, concurrency
 ```
 
 Share this with AI monthly for assessment: "Based on my learning progress [stats], what should I focus on next month?"
@@ -217,10 +217,10 @@ Debugging Language-Specific Errors with AI
 When you encounter cryptic compiler errors in a new language, AI becomes invaluable:
 
 ```
-Error: "cannot assign to immutable binding"
-Code: let x = 5; x = 10;
+Error - "cannot assign to immutable binding"
+Code - let x = 5; x = 10;
 
-Context: I'm learning Rust. This code compiles fine in Python.
+Context - I'm learning Rust. This code compiles fine in Python.
 ```
 
 AI explains the error within the context of your known languages: "Rust enforces immutability by default. This is different from Python where variables are mutable. To fix this, add `mut` keyword: `let mut x = 5;`"
@@ -242,10 +242,10 @@ Working on real projects provides concrete motivation and practical experience, 
 
 Language-Specific Tool Ecosystems
 
-Each language has unique tooling (package managers, build systems, testing frameworks). AI helps you navigate this ecosystem:
+Each language has unique tooling (package managers, build systems, testing frameworks). AI helps you navigate this environment:
 
 ```
-Ecosystem comparison table:
+environment comparison table:
 
 | Aspect | Python | Go | Rust |
 |--------|--------|----|----|
@@ -256,7 +256,7 @@ Ecosystem comparison table:
 | Format | black | gofmt | rustfmt |
 ```
 
-Ask AI to explain: "For each of these Rust ecosystem tools, what's the Python equivalent?" This maps your existing knowledge to new tools.
+Ask AI to explain - "For each of these Rust environment tools, what's the Python equivalent?" This maps your existing knowledge to new tools.
 
 Handling Language Syntax Anxiety
 
@@ -277,10 +277,10 @@ Measuring Language Proficiency Growth
 Track your learning journey with metrics AI helps establish:
 
 ```
-Month 1: Hello world, basic loops, simple functions
-Month 2: Data structures, error handling, file operations
-Month 3: Testing, package dependencies, small project
-Month 4: Contributing to open-source, teaching others
+Month 1 - Hello world, basic loops, simple functions
+Month 2 - Data structures, error handling, file operations
+Month 3 - Testing, package dependencies, small project
+Month 4 - Contributing to open-source, teaching others
 ```
 
 This progression provides concrete evidence of growth and helps identify remaining gaps.

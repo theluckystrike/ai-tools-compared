@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Retool Data Connection Pipeline
+Step 1 - Understand the Retool Data Connection Pipeline
 
 Retool connects to databases through queries that retrieve, filter, and manipulate data. When you have an existing PostgreSQL, MySQL, or MongoDB schema, AI assistants can analyze the table structures, relationships, and data types to generate the corresponding Retool query logic automatically.
 
 The workflow involves three primary stages: schema extraction, query generation, and UI component mapping. Each stage benefits from AI assistance, reducing the repetitive boilerplate code that typically accompanies admin panel development.
 
-Step 2: Extracting Your Database Schema
+Step 2 - Extracting Your Database Schema
 
 Before generating Retool components, you need a clear representation of your database structure. Most modern databases provide information schema queries that reveal table definitions, column types, and relationships.
 
@@ -75,7 +75,7 @@ ORDER BY TABLE_NAME, ORDINAL_POSITION;
 
 Execute these queries and save the results. You'll pass this schema information to your AI assistant for analysis.
 
-Step 3: Prompting AI Assistants for Retool Generation
+Step 3 - Prompting AI Assistants for Retool Generation
 
 When working with AI assistants, the quality of your prompt determines the quality of the generated output. Structure your prompts to include the schema details, desired functionality, and any specific business logic requirements.
 
@@ -100,7 +100,7 @@ Provide:
 
 The AI assistant processes this information and outputs SQL queries formatted for Retool's query editor, along with recommendations for table components, text inputs, and form configurations.
 
-Step 4: Generate CRUD Queries
+Step 4 - Generate CRUD Queries
 
 Retool uses specific SQL syntax for different database operations. AI assistants can translate your schema into appropriate queries for each action type.
 
@@ -157,7 +157,7 @@ SET deleted_at = NOW(), active = false
 WHERE id = {{ table1.selectedRow.id }};
 ```
 
-Step 5: Mapping Schema Types to UI Components
+Step 5 - Mapping Schema Types to UI Components
 
 AI assistants can recommend appropriate Retool components based on column data types. This mapping accelerates the UI configuration process.
 
@@ -169,7 +169,7 @@ For enum-like columns with limited valid values, AI assistants can generate quer
 SELECT DISTINCT role FROM users WHERE role IS NOT NULL;
 ```
 
-Step 6: Implementing Advanced Features
+Step 6 - Implementing Advanced Features
 
 Beyond basic CRUD operations, AI assistants help implement common admin panel features that would otherwise require significant custom logic.
 
@@ -208,13 +208,13 @@ SET status = 'archived'
 WHERE id = ANY({{ table1.selectedRowIds }});
 ```
 
-Step 7: Validating Generated Output
+Step 7 - Validating Generated Output
 
 AI-generated queries require validation before deployment. Test each query within Retool's query editor, checking for proper parameter binding and error handling. Verify that the UI components correctly reference query data and that the flow matches your application's requirements.
 
 Common issues include incorrect parameter syntax, missing RETURNING clauses for inserted records, and improper handling of NULL values in filters. Address these during development rather than after deployment.
 
-Step 8: Optimizing for Production
+Step 8 - Optimizing for Production
 
 Once generated, optimize your Retool application for performance and security. AI assistants can suggest improvements including:
 
@@ -227,22 +227,22 @@ These optimizations ensure your generated admin panel performs well under load a
 
 Troubleshooting Common Generation Issues
 
-Issue: Generated queries fail with syntax errors
+Issue - Generated queries fail with syntax errors
 - Retool syntax differs from standard SQL (variable binding with `{{ }}`)
 - Solution: Provide AI with example Retool queries from your existing app
-- Prompt: "Here's a working Retool query: [paste example]. Generate similar patterns for..."
+- Prompt - "Here's a working Retool query: [paste example]. Generate similar patterns for..."
 
-Issue: Component bindings reference non-existent resources
+Issue - Component bindings reference non-existent resources
 - AI may suggest query names that don't match your actual resource names
 - Solution: List your exact resource names before generation
 - Always test in Retool's query editor before deployment
 
-Issue: Pagination breaks or returns incomplete data
+Issue - Pagination breaks or returns incomplete data
 - AI sometimes forgets LIMIT clauses or uses incorrect variable references
 - Solution: Explicitly specify page size and row count requirements
 - Test with actual data volume to verify query performance
 
-Issue: Filters don't work correctly
+Issue - Filters don't work correctly
 - Generated WHERE clauses may have NULL handling issues
 - Solution: Provide specific filter logic requirements and test edge cases
 - Use COALESCE() for optional filter handling
@@ -251,49 +251,49 @@ Performance Optimization Strategies
 
 After AI generates your queries:
 
-Index Analysis: Ask the AI to suggest database indexes based on the query patterns it generated. Common admin patterns benefit from indexes on:
+Index Analysis - Ask the AI to suggest database indexes based on the query patterns it generated. Common admin patterns benefit from indexes on:
 - Timestamp columns (for sorting/filtering)
 - Foreign key columns (for joins)
 - Status/category columns (for filtering)
 
-Query Optimization: Have the AI review generated queries for N+1 problems or inefficient joins. For large datasets, ask it to suggest pagination strategies and caching approaches.
+Query Optimization - Have the AI review generated queries for N+1 problems or inefficient joins. For large datasets, ask it to suggest pagination strategies and caching approaches.
 
-Component Performance: AI can suggest which components should use lazy loading, virtualization, or server-side operations. For tables with thousands of rows, server-side filtering and pagination are critical.
+Component Performance - AI can suggest which components should use lazy loading, virtualization, or server-side operations. For tables with thousands of rows, server-side filtering and pagination are critical.
 
-Step 9: Real-World Implementation Example
+Step 9 - Real-World Implementation Example
 
-Scenario: Building an admin panel for an e-commerce platform with 50K orders.
+Scenario - Building an admin panel for an e-commerce platform with 50K orders.
 
-Schema includes: orders (id, customer_id, status, total, created_at), order_items (id, order_id, product_id, quantity, price), customers (id, name, email).
+Schema includes - orders (id, customer_id, status, total, created_at), order_items (id, order_id, product_id, quantity, price), customers (id, name, email).
 
-Step 1: Schema extraction (5 minutes)
+Step 1 - Schema extraction (5 minutes)
 ```sql
 SELECT table_name, column_name, data_type FROM information_schema.columns
 WHERE table_schema = 'public' AND table_name IN ('orders', 'order_items', 'customers');
 ```
 
-Step 2: AI generation (10 minutes)
+Step 2 - AI generation (10 minutes)
 Prompt AI with schema and requirements:
-"Generate Retool CRUD queries and component configuration for an order management admin panel. Requirements: list all orders with customer name and total, filter by status and date range, ability to update order status, delete orders (soft delete with timestamp)."
+"Generate Retool CRUD queries and component configuration for an order management admin panel. Requirements - list all orders with customer name and total, filter by status and date range, ability to update order status, delete orders (soft delete with timestamp)."
 
-Step 3: Implementation (20 minutes)
+Step 3 - Implementation (20 minutes)
 - Copy generated queries into Retool query editor
 - Adjust parameter names to match Retool's variable syntax
 - Connect table component to read query
 - Link form component to update query
 - Test with sample data
 
-Step 4: Testing and optimization (15 minutes)
+Step 4 - Testing and optimization (15 minutes)
 - Verify queries with actual data volume
 - Check pagination performance
 - Validate filter combinations
 - Add error handling
 
-Total time: ~50 minutes for a functional admin panel.
+Total time - ~50 minutes for a functional admin panel.
 
 Without AI assistance, the same panel would require 3-5 hours of manual SQL writing and Retool configuration.
 
-Step 10: Cost-Benefit Analysis
+Step 10 - Cost-Benefit Analysis
 
 AI-assisted admin panel generation saves significant development time:
 
@@ -314,7 +314,7 @@ When AI generates your admin queries:
 3. Audit logging: Add logging to UPDATE/DELETE operations even though AI may not suggest it.
 4. Query validation: Never trust parameter binding without testing. Malformed Retool parameters could cause SQL errors.
 
-Step 11: Integration with Existing Systems
+Step 11 - Integration with Existing Systems
 
 AI-generated panels work best when:
 

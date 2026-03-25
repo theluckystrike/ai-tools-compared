@@ -134,10 +134,10 @@ k8sgpt analyze --explain
 
 Output:
 Namespace: production
-Error: Pod/api-service-7d8f9 - Back-off restarting failed container
+Error - Pod/api-service-7d8f9 - Back-off restarting failed container
 The container is crashing due to OOMKilled events.
    The memory limit (128Mi) is insufficient for the observed usage (~340Mi).
-Suggestion: Increase memory limit to at least 512Mi.
+Suggestion - Increase memory limit to at least 512Mi.
 
 k8sgpt generate --description "A deployment for a Node.js API on port 3000 with 2 replicas"
 ```
@@ -227,7 +227,7 @@ spec:
                   cpu: "200m"
 ```
 
-The schedule, restart policy, and resource limits were all correctly handled. Missing: security context hardening (Cursor doesn't add this by default without being asked).
+The schedule, restart policy, and resource limits were all correctly handled. Missing - security context hardening (Cursor doesn't add this by default without being asked).
 
 Security Checklist for AI-Generated Manifests
 
@@ -256,7 +256,7 @@ Real applications need more than a Deployment. Here's a prompt pattern that gets
 
 ```
 Generate a full Kubernetes application stack for a Node.js REST API with PostgreSQL.
-Include: Deployment, Service (ClusterIP), Ingress (nginx), HorizontalPodAutoscaler,
+Include - Deployment, Service (ClusterIP), Ingress (nginx), HorizontalPodAutoscaler,
 PodDisruptionBudget, NetworkPolicy (allow only from ingress), and a ConfigMap for
 non-secret environment variables. Namespace: staging.
 ```
@@ -299,7 +299,7 @@ Cursor/Copilot in IDE. quick inline generation when you're already editing YAML.
 
 ChatGPT. good fallback when Claude API is unavailable. Produces correct basic manifests but requires extra prompting for production-grade security defaults.
 
-For new manifest generation: Claude with a detailed prompt. For cluster diagnosis: K8sGPT. For IDE-native quick generation: Cursor.
+For new manifest generation - Claude with a detailed prompt. For cluster diagnosis: K8sGPT. For IDE-native quick generation: Cursor.
 
 Frequently Asked Questions
 
@@ -309,7 +309,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -321,7 +321,7 @@ AI tools generate queries well for common patterns, but always test generated qu
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

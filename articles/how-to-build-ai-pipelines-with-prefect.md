@@ -34,14 +34,14 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Set Up
+Step 1 - Set Up
 
 ```bash
 pip install prefect anthropic openai pinecone-client
 prefect server start  # Local server, or use Prefect Cloud
 ```
 
-Step 2: Pipeline 1: Document Ingestion for RAG
+Step 2 - Pipeline 1: Document Ingestion for RAG
 
 ```python
 ingestion_pipeline.py
@@ -204,7 +204,7 @@ def ingest_documents(
     return total_upserted
 ```
 
-Step 3: Pipeline 2: LLM Batch Processing with Evaluation
+Step 3 - Pipeline 2: LLM Batch Processing with Evaluation
 
 ```python
 evaluation_pipeline.py
@@ -245,9 +245,9 @@ def evaluate_response(result: dict, expected_pattern: str = None) -> dict:
         messages=[{
             "role": "user",
             "content": f"""Rate this response 1-5 for quality.
-Expected pattern: {expected_pattern}
-Response: {result['response']}
-Return only a JSON object: {{"score": N, "reason": "..."}}"""
+Expected pattern - {expected_pattern}
+Response - {result['response']}
+Return only a JSON object - {{"score": N, "reason": "..."}}"""
         }]
     )
 
@@ -289,7 +289,7 @@ if __name__ == "__main__":
     print("Deployment created. Run: prefect worker start --pool default")
 ```
 
-Step 6: Concurrency Limits (Rate Limit Management)
+Step 6 - Concurrency Limits (Rate Limit Management)
 
 ```python
 prefect_concurrency_limits.py

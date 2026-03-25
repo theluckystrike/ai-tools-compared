@@ -21,11 +21,11 @@ Table of Contents
 
 - [The Legacy Code Testing Problem](#the-legacy-code-testing-problem)
 - [Why AI Tools Excel at Legacy Code Testing](#why-ai-tools-excel-at-legacy-code-testing)
-- [Tool Comparison: Features and Capabilities](#tool-comparison-features-and-capabilities)
+- [Tool Comparison - Features and Capabilities](#tool-comparison-features-and-capabilities)
 - [Practical Comparison Table](#practical-comparison-table)
-- [Real-World Example: Testing Legacy E-Commerce Code](#real-world-example-testing-legacy-e-commerce-code)
+- [Real-World Example - Testing Legacy E-Commerce Code](#real-world-example-testing-legacy-e-commerce-code)
 - [Test Generation Workflow Patterns](#test-generation-workflow-patterns)
-- [Coverage Metrics: What Do Generated Tests Actually Catch?](#coverage-metrics-what-do-generated-tests-actually-catch)
+- [Coverage Metrics - What Do Generated Tests Actually Catch?](#coverage-metrics-what-do-generated-tests-actually-catch)
 - [Limitations All Tools Share](#limitations-all-tools-share)
 - [Choosing the Right Tool](#choosing-the-right-tool)
 - [Getting Started Checklist](#getting-started-checklist)
@@ -48,7 +48,7 @@ AI models are particularly effective at test generation because they:
 
 The limitation is that AI generates tests based on code analysis alone. If the code is buggy, tests will validate buggy behavior. You must review generated tests critically and adjust them when the code genuinely needs fixing.
 
-Tool Comparison: Features and Capabilities
+Tool Comparison - Features and Capabilities
 
 GitHub Copilot
 
@@ -67,9 +67,9 @@ Limitations:
 - Coverage metrics are implicit; no guidance on what's actually untested
 - Best for adding tests to individual methods, not analyzing entire modules
 
-Cost: $10/month for individuals, $21/month per user for enterprises.
+Cost - $10/month for individuals, $21/month per user for enterprises.
 
-Best for: Developers adding tests incrementally while writing code.
+Best for - Developers adding tests incrementally while writing code.
 
 Cursor
 
@@ -88,9 +88,9 @@ Limitations:
 - May generate overly verbose tests without explicit brevity guidance
 - Testing-specific knowledge less deep than specialized tools
 
-Cost: $20/month for Pro (includes Claude integration), $120/year for Basic.
+Cost - $20/month for Pro (includes Claude integration), $120/year for Basic.
 
-Best for: Teams willing to switch IDEs and want instruction-based test generation.
+Best for - Teams willing to switch IDEs and want instruction-based test generation.
 
 Claude (API + Web)
 
@@ -110,9 +110,9 @@ Limitations:
 - Slower than real-time IDE suggestions
 - Higher token cost for large codebases
 
-Cost: $3-20/month subscription, or $0.003/1K input tokens + $0.015/1K output tokens via API.
+Cost - $3-20/month subscription, or $0.003/1K input tokens + $0.015/1K output tokens via API.
 
-Best for: Teams analyzing large modules, understanding existing tests, and generating test strategies.
+Best for - Teams analyzing large modules, understanding existing tests, and generating test strategies.
 
 Diffblue
 
@@ -132,9 +132,9 @@ Limitations:
 - Enterprise-focused pricing model
 - Requires setup and integration with your build system
 
-Cost: Free tier for small projects; enterprise pricing starts at $15,000+/year.
+Cost - Free tier for small projects; enterprise pricing starts at $15,000+/year.
 
-Best for: Large Java codebases requiring systematic coverage metrics and mutation analysis.
+Best for - Large Java codebases requiring systematic coverage metrics and mutation analysis.
 
 Practical Comparison Table
 
@@ -145,7 +145,7 @@ Practical Comparison Table
 | Claude | All | 200k tokens | Slow | Manual | API/Web | Pay per use |
 | Diffblue | Java, C# | Internal | Medium | Automatic | Plugin | $15k+/year |
 
-Real-World Example: Testing Legacy E-Commerce Code
+Real-World Example - Testing Legacy E-Commerce Code
 
 Consider a legacy Java class for order processing that has never had tests:
 
@@ -321,9 +321,9 @@ The report shows:
 
 Test Generation Workflow Patterns
 
-Pattern 1: Rapid Coverage for Legacy Module
+Pattern 1 - Rapid Coverage for Legacy Module
 
-Best tool: Cursor (or Claude for larger codebases)
+Best tool - Cursor (or Claude for larger codebases)
 
 1. Copy the untested module
 2. Instruct: "Generate tests covering all public methods, all branches, null inputs, and error cases"
@@ -331,11 +331,11 @@ Best tool: Cursor (or Claude for larger codebases)
 4. Run tests and identify any failures (usually indicates bugs)
 5. Fix the code or adjust tests accordingly
 
-Time: 20-30 minutes for a 500-line module.
+Time - 20-30 minutes for a 500-line module.
 
-Pattern 2: Systematic Coverage with Metrics
+Pattern 2 - Systematic Coverage with Metrics
 
-Best tool: Diffblue
+Best tool - Diffblue
 
 1. Configure Diffblue in your build system
 2. Run analysis on entire codebase
@@ -344,32 +344,32 @@ Best tool: Diffblue
 5. Review and integrate generated tests into CI/CD
 6. Monitor mutation scores over time
 
-Time: Initial setup 2-4 hours; ongoing monitoring is automated.
+Time - Initial setup 2-4 hours; ongoing monitoring is automated.
 
-Pattern 3: Incremental Testing During Refactoring
+Pattern 3 - Incremental Testing During Refactoring
 
-Best tool: Copilot (or Cursor)
+Best tool - Copilot (or Cursor)
 
 1. As you refactor legacy code, add tests using IDE suggestions
 2. Each commit adds test coverage for modified methods
 3. Over time, legacy code gets coverage without disrupting other work
 
-Time: Ongoing, integrated into normal development workflow.
+Time - Ongoing, integrated into normal development workflow.
 
-Coverage Metrics: What Do Generated Tests Actually Catch?
+Coverage Metrics - What Do Generated Tests Actually Catch?
 
 Real data from applying these tools to legacy codebases:
 
-Line Coverage: Most generated tests achieve 75-85% line coverage without human adjustment. The remaining 15-25% typically includes:
+Line Coverage - Most generated tests achieve 75-85% line coverage without human adjustment. The remaining 15-25% typically includes:
 - Error handling paths (e.g., "if this fails, log and exit") that are hard to trigger
 - Deprecated code paths
 - Platform-specific code
 
-Branch Coverage: More important than line coverage. Generated tests often achieve 70-80% branch coverage. Remaining gaps:
+Branch Coverage - More important than line coverage. Generated tests often achieve 70-80% branch coverage. Remaining gaps:
 - Complex nested conditionals
 - Interaction-dependent paths
 
-What Tests Actually Catch: When you run generated tests against buggy code:
+What Tests Actually Catch - When you run generated tests against buggy code:
 - Null pointer exceptions: Caught ~95% of the time
 - Off-by-one errors: Caught ~85% of the time
 - Logic errors (wrong operator): Caught ~75% of the time
@@ -434,7 +434,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -446,7 +446,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

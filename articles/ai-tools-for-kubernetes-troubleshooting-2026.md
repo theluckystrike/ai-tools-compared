@@ -21,9 +21,9 @@ Table of Contents
 
 - [Understanding Kubernetes Debugging Challenges](#understanding-kubernetes-debugging-challenges)
 - [k8sgpt: Kubernetes-Specialized Tool](#k8sgpt-kubernetes-specialized-tool)
-- [Claude Code: General-Purpose Debugging](#claude-code-general-purpose-debugging)
-- [GitHub Copilot: IDE-Integrated Approach](#github-copilot-ide-integrated-approach)
-- [Robusta: AI-Powered Incident Response](#robusta-ai-powered-incident-response)
+- [Claude Code - General-Purpose Debugging](#claude-code-general-purpose-debugging)
+- [GitHub Copilot - IDE-Integrated Approach](#github-copilot-ide-integrated-approach)
+- [Robusta - AI-Powered Incident Response](#robusta-ai-powered-incident-response)
 - [Comparison Matrix](#comparison-matrix)
 - [Practical Troubleshooting Workflow](#practical-troubleshooting-workflow)
 - [Recommendations by Team Size](#recommendations-by-team-size)
@@ -32,13 +32,13 @@ Understanding Kubernetes Debugging Challenges
 
 Troubleshooting Kubernetes involves several distinct tasks:
 
-Pod crash analysis: Understanding why a container exits, examining restart logs, checking resource limits, and identifying configuration mismatches.
+Pod crash analysis - Understanding why a container exits, examining restart logs, checking resource limits, and identifying configuration mismatches.
 
-Log interpretation: Parsing multi-container logs, correlating events across namespaces, and separating signal from noise in verbose output.
+Log interpretation - Parsing multi-container logs, correlating events across namespaces, and separating signal from noise in verbose output.
 
-Resource optimization: Right-sizing CPU/memory requests, identifying pending pods due to insufficient capacity, and tuning autoscaler parameters.
+Resource optimization - Right-sizing CPU/memory requests, identifying pending pods due to insufficient capacity, and tuning autoscaler parameters.
 
-Networking diagnostics: Analyzing service DNS resolution, investigating network policies, and debugging ingress routing issues.
+Networking diagnostics - Analyzing service DNS resolution, investigating network policies, and debugging ingress routing issues.
 
 Each task benefits differently from AI assistance. Pod crashes need contextual explanation; logs need filtering and correlation; optimization needs quantitative recommendations; networking needs protocol-level understanding.
 
@@ -64,17 +64,17 @@ k8sgpt analyze --with-examples
 
 k8sgpt automatically detects issues: pending pods, failed deployments, unschedulable nodes, and more. Output shows the problem, AI-generated explanation, and recommended fixes.
 
-Real-World Example: Pod Crash Loop
+Real-World Example - Pod Crash Loop
 
 When a pod continuously restarts:
 
 ```bash
 $ k8sgpt analyze --resource pod
 
-Issue: Pod nginx-deploy-12345 in CrashLoopBackOff
-Details: Container exited with code 1
+Issue - Pod nginx-deploy-12345 in CrashLoopBackOff
+Details - Container exited with code 1
 
-AI Explanation: The application is crashing because the config file is missing. The container mounts
+AI Explanation - The application is crashing because the config file is missing. The container mounts
 /etc/config from a ConfigMap, but the ConfigMap 'app-config' is not present in the namespace.
 
 Create the missing ConfigMap:
@@ -100,7 +100,7 @@ Pricing
 
 k8sgpt itself is free. Analysis uses OpenAI API: $0.0005 per prompt + token usage. A typical analysis costs $0.01-0.05.
 
-Claude Code: General-Purpose Debugging
+Claude Code - General-Purpose Debugging
 
 Claude Code (the Claude Haiku model with artifact generation) works for Kubernetes through manual log/manifest input. It's excellent for understanding complex configurations and architectural decisions.
 
@@ -109,7 +109,7 @@ Workflow for Pod Debugging
 Copy pod definition and recent logs into Claude Code:
 
 ```
-Query: "I'm debugging a pod that keeps crashing. Here's the YAML and logs. What's wrong?"
+Query - "I'm debugging a pod that keeps crashing. Here's the YAML and logs. What's wrong?"
 
 [Paste kubectl describe pod output]
 [Paste kubectl logs output]
@@ -140,7 +140,7 @@ Pricing
 
 Claude API varies by model. For Kubernetes troubleshooting, Claude 3.5 Sonnet works well: $3 per million input tokens, $15 per million output tokens. A typical debugging session costs $0.01-0.05.
 
-GitHub Copilot: IDE-Integrated Approach
+GitHub Copilot - IDE-Integrated Approach
 
 GitHub Copilot helps generate kubectl commands, fix YAML manifests, and understand error messages within your editor.
 
@@ -186,9 +186,9 @@ Limitations
 
 Pricing
 
-GitHub Copilot: $10/month for individual developers, $19/month for business, or $35/month per user for enterprise teams.
+GitHub Copilot - $10/month for individual developers, $19/month for business, or $35/month per user for enterprise teams.
 
-Robusta: AI-Powered Incident Response
+Robusta - AI-Powered Incident Response
 
 Robusta integrates AI analysis with Kubernetes monitoring. It detects issues automatically and surfaces AI-powered explanations in Slack, Teams, or PagerDuty.
 
@@ -221,7 +221,7 @@ Suggestion:
 - Increase initialDelaySeconds from 5 to 30 seconds
 - Or increase timeoutSeconds from 1 to 3 seconds
 
-Confidence: 87%
+Confidence - 87%
 ```
 
 Strengths
@@ -275,9 +275,9 @@ Recommendations by Team Size
 
 Solo developer or small team (1-5 people): Use k8sgpt + Claude Code. k8sgpt gives quick answers; Claude Code helps understand complex issues. Total cost: ~$5-10/month in API usage.
 
-Growing team (5-25 people): Add GitHub Copilot ($10/month) for shared manifest editing, plus k8sgpt for cluster analysis. Total: ~$20-30/month.
+Growing team (5-25 people) - Add GitHub Copilot ($10/month) for shared manifest editing, plus k8sgpt for cluster analysis. Total - ~$20-30/month.
 
-Large teams (25+ people): Deploy Robusta for continuous monitoring + Copilot ($19/month per user) + k8sgpt for ad-hoc analysis. Robusta pays for itself by reducing incident response time. Total: ~$500-1000/month depending on team size.
+Large teams (25+ people) - Deploy Robusta for continuous monitoring + Copilot ($19/month per user) + k8sgpt for ad-hoc analysis. Robusta pays for itself by reducing incident response time. Total - ~$500-1000/month depending on team size.
 
 Frequently Asked Questions
 

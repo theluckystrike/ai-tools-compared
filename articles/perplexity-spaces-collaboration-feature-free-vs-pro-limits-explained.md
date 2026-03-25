@@ -34,12 +34,12 @@ Perplexity Spaces is a powerful feature that allows users to create shared resea
 
 
 - Free users can only: share within their organization if the organization uses Perplexity's team features, but the functionality is limited compared to Pro.
-- Search and Query Limits: Free users face stricter rate limits on searches, which impacts collaborative research.
-- Storage and History: Free plan Spaces retain conversation history for only 7 days, limiting the ability to build long-term collaborative knowledge bases.
-- Higher Query Limits: Pro users receive approximately 300 searches per day, enabling intensive collaborative research without hitting rate limits.
+- Search and Query Limits - Free users face stricter rate limits on searches, which impacts collaborative research.
+- Storage and History - Free plan Spaces retain conversation history for only 7 days, limiting the ability to build long-term collaborative knowledge bases.
+- Higher Query Limits - Pro users receive approximately 300 searches per day, enabling intensive collaborative research without hitting rate limits.
 - Member Limit Conflicts
-Problem: New team members can't access Space
-Solution: Remove least-active member or upgrade
+Problem - New team members can't access Space
+Solution - Remove least-active member or upgrade
 
 3.
 - Understanding the differences between: Free and Pro plan limits is essential for choosing the right collaboration setup for your workflow.
@@ -60,7 +60,7 @@ Key capabilities of Spaces include:
 
 - Real-time collaboration on research projects
 
-Free Plan: Collaboration Limits
+Free Plan - Collaboration Limits
 
 The Free plan provides basic access to Perplexity's core search capabilities but imposes significant restrictions on collaboration features.
 
@@ -68,11 +68,11 @@ Free Plan Space Limitations:
 
 Personal Use Focus: Free users can create personal Spaces for individual research, but the collaborative features are severely limited. You can create up to 3 Spaces total, with each Space supporting a maximum of 2 members including yourself.
 
-Search and Query Limits: Free users face stricter rate limits on searches, which impacts collaborative research. The daily limit is approximately 5 searches per day, making it difficult for teams to conduct thorough collaborative research without quickly hitting restrictions.
+Search and Query Limits - Free users face stricter rate limits on searches, which impacts collaborative research. The daily limit is approximately 5 searches per day, making it difficult for teams to conduct thorough collaborative research without quickly hitting restrictions.
 
-Storage and History: Free plan Spaces retain conversation history for only 7 days, limiting the ability to build long-term collaborative knowledge bases. Storage capacity is limited to 100MB across all Spaces.
+Storage and History - Free plan Spaces retain conversation history for only 7 days, limiting the ability to build long-term collaborative knowledge bases. Storage capacity is limited to 100MB across all Spaces.
 
-Sharing Capabilities: Sharing Spaces with external collaborators is restricted. Free users can only share within their organization if the organization uses Perplexity's team features, but the functionality is limited compared to Pro.
+Sharing Capabilities - Sharing Spaces with external collaborators is restricted. Free users can only share within their organization if the organization uses Perplexity's team features, but the functionality is limited compared to Pro.
 
 What Free Users Can Do:
 
@@ -86,7 +86,7 @@ What Free Users Can Do:
 
 - Access standard AI-powered search features
 
-Pro Plan: Enhanced Collaboration Features
+Pro Plan - Enhanced Collaboration Features
 
 The Pro plan unlocks the full potential of Perplexity Spaces for team collaboration, removing the restrictions that limit Free users.
 
@@ -94,13 +94,13 @@ Pro Plan Space Benefits:
 
 Unlimited Spaces: Pro users can create unlimited Spaces, removing the 3-Space cap that restricts Free users. This is particularly valuable for teams managing multiple ongoing research projects or client work.
 
-Expanded Member Limits: Pro Spaces support up to 10 members per Space, enabling larger team collaboration. For organizations requiring even broader access, team pricing provides additional scaling options.
+Expanded Member Limits - Pro Spaces support up to 10 members per Space, enabling larger team collaboration. For organizations requiring even broader access, team pricing provides additional scaling options.
 
-Higher Query Limits: Pro users receive approximately 300 searches per day, enabling intensive collaborative research without hitting rate limits. This is essential for teams conducting thorough competitive analysis, academic research, or market investigation.
+Higher Query Limits - Pro users receive approximately 300 searches per day, enabling intensive collaborative research without hitting rate limits. This is essential for teams conducting thorough competitive analysis, academic research, or market investigation.
 
-Extended Storage and History: Pro plan Spaces retain conversation history for 90 days, with options to export and archive important research threads. Storage capacity increases to 10GB per Space, accommodating extensive source collections and knowledge bases.
+Extended Storage and History - Pro plan Spaces retain conversation history for 90 days, with options to export and archive important research threads. Storage capacity increases to 10GB per Space, accommodating extensive source collections and knowledge bases.
 
-Advanced Sharing Features: Pro users can share Spaces with external collaborators via secure links, control permission levels (view-only vs. editing), and integrate with third-party tools like Slack and Notion.
+Advanced Sharing Features - Pro users can share Spaces with external collaborators via secure links, control permission levels (view-only vs. editing), and integrate with third-party tools like Slack and Notion.
 
 Pro Plan Collaboration Tools:
 
@@ -183,8 +183,8 @@ Pro Space system instructions template for competitive research:
 3. Flag information older than 6 months as potentially stale
 4. Provide a confidence level (high/medium/low) for key claims"
 
-Suggested files to attach: competitor annual reports, industry whitepapers
-Members: research lead, product manager, strategy analyst
+Suggested files to attach - competitor annual reports, industry whitepapers
+Members - research lead, product manager, strategy analyst
 ```
 
 Real-World Collaboration Workflows
@@ -195,7 +195,7 @@ Product Teams (5-10 members)
 Product teams benefit most from Pro's expanded member limits and extended history:
 
 ```
-Workflow: Feature research and competitive analysis
+Workflow - Feature research and competitive analysis
 - Product Manager: Creates Space for new feature area
 - Design Lead: Attaches wireframes and design systems
 - Engineers: Research technical implementations
@@ -211,7 +211,7 @@ Content and Editorial Teams
 Editorial teams use Spaces for fact-checking and source management:
 
 ```
-Workflow: Article research with source validation
+Workflow - Article research with source validation
 - Editor: Initiates Space for article topic
 - Writers: Conduct collaborative research
 - Fact-checkers: Verify claims with AI-assisted verification
@@ -227,7 +227,7 @@ Research Teams
 Academic and market research teams need deep history and large collections:
 
 ```
-Workflow: Longitudinal market research tracking
+Workflow - Longitudinal market research tracking
 - Research Lead: Manages main Space with quarterly benchmarks
 - Analysts: Contribute ongoing research
 - Stakeholders: Access shared findings
@@ -259,12 +259,12 @@ Migration Strategies from Free to Pro
 If your team outgrows Free tier:
 
 ```
-Phase 1: Identify bottleneck (usually member limit or search quota)
-Phase 2: Create new Pro Space, manually migrate important threads
-Phase 3: Gradually shift team to Pro Space
-Phase 4: Maintain Free Space for reference only
+Phase 1 - Identify bottleneck (usually member limit or search quota)
+Phase 2 - Create new Pro Space, manually migrate important threads
+Phase 3 - Gradually shift team to Pro Space
+Phase 4 - Maintain Free Space for reference only
 
-Gotcha: Perplexity doesn't auto-migrate Free Spaces to Pro.
+Gotcha - Perplexity doesn't auto-migrate Free Spaces to Pro.
 You must manually recreate or move work.
 ```
 
@@ -279,7 +279,7 @@ Small team (3-5 people):
 
 Medium team (8-15 people):
 - Free: Completely blocked (exceeds member limit)
-- Pro: $300-600/month (7.5-15 seats)
+- Pro - $300-600/month (7.5-15 seats)
 - Team Plan: Custom pricing, typically $25-35/seat for bulk
 
 Large team (20+):
@@ -292,21 +292,21 @@ Setting Up Effective Spaces for Your Use Case
 Configure Spaces for maximum team productivity:
 
 ```
-Space: Competitive Intelligence
+Space - Competitive Intelligence
  System prompt: "You are a competitive analyst..."
  Suggested sources: Industry reports, earnings calls
  Members: 3 analysts + manager
  Search frequency: 50+ daily searches
  History retention: Critical (keep all 90 days)
 
-Space: Product Roadmap Research
+Space - Product Roadmap Research
  System prompt: "Research feature viability..."
  Attached files: Design system, user research data
  Members: Product + 2 engineers
  Search frequency: 10-20 daily
  External share: Yes, with stakeholder access
 
-Space: Content Research Hub
+Space - Content Research Hub
  System prompt: "Verify facts and find authoritative sources..."
  Suggested sources: Academic databases, news archives
  Members: Editor + 2 writers
@@ -319,7 +319,7 @@ Evaluating Whether Pro Is Worth the Cost
 Decision matrix for your situation:
 
 ```
-Annual cost: Free = $0, Pro = $200+ per person
+Annual cost - Free = $0, Pro = $200+ per person
 
 Calculate value:
 - Time saved per person per month: _____ hours
@@ -337,20 +337,20 @@ Common Pain Points to Avoid
 Free users frequently encounter these bottlenecks:
 
 1. Search Quota Exhaustion
-Problem: Team hits 5 searches/day quickly
-Solution: Pro upgrade or async research workflow
+Problem - Team hits 5 searches/day quickly
+Solution - Pro upgrade or async research workflow
 
 2. Member Limit Conflicts
-Problem: New team members can't access Space
-Solution: Remove least-active member or upgrade
+Problem - New team members can't access Space
+Solution - Remove least-active member or upgrade
 
 3. History Loss
-Problem: 7-day retention loses important context
-Solution: Export critical threads before expiration
+Problem - 7-day retention loses important context
+Solution - Export critical threads before expiration
 
 4. External Collaboration Gaps
-Problem: Can't share with clients or partners
-Solution: Pro's external sharing with permissions
+Problem - Can't share with clients or partners
+Solution - Pro's external sharing with permissions
 
 Workspace Organization for Collaboration
 

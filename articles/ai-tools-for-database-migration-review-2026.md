@@ -130,8 +130,8 @@ async def fetch_file_content(raw_url: str) -> str:
 
 async def review_migration(filename: str, content: str, db_type: str = "postgresql") -> dict:
     prompt = f"""
-Database type: {db_type}
-Migration file: {filename}
+Database type - {db_type}
+Migration file - {filename}
 
 {REVIEW_CHECKLIST}
 
@@ -352,7 +352,7 @@ async def main():
 asyncio.run(main())
 ```
 
-Tool Comparison: AI Models for Migration Review
+Tool Comparison - AI Models for Migration Review
 
 Not every AI model performs equally well on migration analysis. it understands the difference between `ALTER TABLE ... ADD COLUMN` (lock-free in PostgreSQL 11+) versus `ALTER TABLE ... ADD COLUMN NOT NULL DEFAULT expr` (full table rewrite in PostgreSQL 10 and below), and surfaces these distinctions correctly in its findings.
 

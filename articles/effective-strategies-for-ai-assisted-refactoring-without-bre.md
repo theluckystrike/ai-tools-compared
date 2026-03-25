@@ -21,19 +21,19 @@ This guide covers practical strategies for AI-assisted refactoring that keep you
 
 Table of Contents
 
-- [The Core Principle: Small, Verifiable Changes](#the-core-principle-small-verifiable-changes)
-- [Strategy 1: Contextual Prompting with Test Awareness](#strategy-1-contextual-prompting-with-test-awareness)
-- [Strategy 2: Use AI for Mechanical Transformations](#strategy-2-use-ai-for-mechanical-transformations)
-- [Strategy 3: Scaffold Before Committing](#strategy-3-scaffold-before-committing)
-- [Strategy 4: Use AI to Generate Regression Tests](#strategy-4-use-ai-to-generate-regression-tests)
-- [Strategy 5: Interpret Test Failures Strategically](#strategy-5-interpret-test-failures-strategically)
-- [Real-World Example: Extracting a Service Class](#real-world-example-extracting-a-service-class)
+- [The Core Principle - Small, Verifiable Changes](#the-core-principle-small-verifiable-changes)
+- [Strategy 1 - Contextual Prompting with Test Awareness](#strategy-1-contextual-prompting-with-test-awareness)
+- [Strategy 2 - Use AI for Mechanical Transformations](#strategy-2-use-ai-for-mechanical-transformations)
+- [Strategy 3 - Scaffold Before Committing](#strategy-3-scaffold-before-committing)
+- [Strategy 4 - Use AI to Generate Regression Tests](#strategy-4-use-ai-to-generate-regression-tests)
+- [Strategy 5 - Interpret Test Failures Strategically](#strategy-5-interpret-test-failures-strategically)
+- [Real-World Example - Extracting a Service Class](#real-world-example-extracting-a-service-class)
 - [Advanced Refactoring Patterns](#advanced-refactoring-patterns)
 - [Real-World Refactoring Metrics](#real-world-refactoring-metrics)
 - [Test-Driven Refactoring Workflow](#test-driven-refactoring-workflow)
 - [Handling Refactoring Conflicts](#handling-refactoring-conflicts)
 
-The Core Principle: Small, Verifiable Changes
+The Core Principle - Small, Verifiable Changes
 
 The most effective approach treats AI as a collaborative partner rather than an autonomous agent. You maintain control over the scope and pace of changes while AI handles mechanical transformations.
 
@@ -45,7 +45,7 @@ Use version control branches. Create a dedicated branch for refactoring work. Th
 
 One refactoring operation at a time. Rename a method, then verify tests pass. Extract a function, then verify tests pass. Move a class, then verify tests pass. This discipline prevents compound failures that become difficult to diagnose.
 
-Strategy 1: Contextual Prompting with Test Awareness
+Strategy 1 - Contextual Prompting with Test Awareness
 
 Effective AI refactoring requires providing the right context. Include your test files in the context window when prompting AI tools.
 
@@ -62,7 +62,7 @@ continue passing: [include test code]"
 
 This approach works because you explicitly tell AI what behavior must remain constant. The tests serve as a contract that AI must preserve.
 
-Strategy 2: Use AI for Mechanical Transformations
+Strategy 2 - Use AI for Mechanical Transformations
 
 Certain refactoring tasks are mechanical and low-risk. AI excels at these:
 
@@ -87,7 +87,7 @@ references."
 
 After AI completes this, run tests immediately. The mechanical nature of these changes means failures usually indicate missed references, which are quick to fix.
 
-Strategy 3: Scaffold Before Committing
+Strategy 3 - Scaffold Before Committing
 
 When AI suggests larger architectural changes, use a scaffold approach:
 
@@ -122,7 +122,7 @@ function calculateTotal(items) {
 
 Run both in parallel, compare outputs, then migrate callers one at a time.
 
-Strategy 4: Use AI to Generate Regression Tests
+Strategy 4 - Use AI to Generate Regression Tests
 
 Before refactoring complex logic, ask AI to generate additional test cases that capture current behavior:
 
@@ -135,7 +135,7 @@ cases. These tests should fail if the current behavior changes."
 
 These extra tests become a safety net. After refactoring, if these new tests pass alongside your existing suite, you have higher confidence the refactoring preserved correct behavior.
 
-Strategy 5: Interpret Test Failures Strategically
+Strategy 5 - Interpret Test Failures Strategically
 
 When tests fail after AI refactoring, the failure message tells you what changed. Use this information constructively:
 
@@ -147,7 +147,7 @@ When tests fail after AI refactoring, the failure message tells you what changed
 
 Never just "fix" failures manually without understanding why they occurred. The goal is teaching AI patterns that work for your codebase.
 
-Real-World Example: Extracting a Service Class
+Real-World Example - Extracting a Service Class
 
 Consider a controller with business logic you want to extract:
 
@@ -166,19 +166,19 @@ class OrderController:
         # ... 40 more lines
 ```
 
-Step 1: Ask AI to extract just the business logic into a service class, keeping the controller intact for now.
+Step 1 - Ask AI to extract just the business logic into a service class, keeping the controller intact for now.
 
-Step 2: Run controller tests. They should pass because nothing changed from the outside.
+Step 2 - Run controller tests. They should pass because nothing changed from the outside.
 
-Step 3: Gradually update the controller to use the new service. One method call at a time.
+Step 3 - Gradually update the controller to use the new service. One method call at a time.
 
-Step 4: After all methods migrate, remove the duplicate logic from the controller.
+Step 4 - After all methods migrate, remove the duplicate logic from the controller.
 
 This incremental approach keeps tests green throughout.
 
 Advanced Refactoring Patterns
 
-Pattern 1: Renaming at Scale
+Pattern 1 - Renaming at Scale
 
 Large refactoring projects often start with renaming, updating function names, class names, and variables throughout a codebase. This mechanical transformation is where AI excels:
 
@@ -197,7 +197,7 @@ git add -A && git commit -m "Refactor: rename fetchUser to getActiveUser"
 
 The key is providing clear scope boundaries and asking AI to show you before/after examples for a few files to verify consistency.
 
-Pattern 2: Type System Upgrades
+Pattern 2 - Type System Upgrades
 
 Converting untyped or loosely-typed code to TypeScript requires both mechanical transformation and semantic understanding. AI handles this elegantly:
 
@@ -238,7 +238,7 @@ function processOrderItems(items: OrderItem[]): ProcessedItem[] {
 
 Prompt AI with your typing conventions and existing type definitions, and let it apply them consistently across the codebase.
 
-Pattern 3: Microservices Extraction
+Pattern 3 - Microservices Extraction
 
 Breaking monolithic code into reusable services is complex but follows patterns. AI can handle the mechanical separation while you verify behavior:
 
@@ -263,7 +263,7 @@ class OrderService:
 Ask AI to extract validation logic first, keeping everything else the same:
 
 ```bash
-Prompt: "Extract all validation logic (validate_user, validate_items)
+Prompt - "Extract all validation logic (validate_user, validate_items)
 into a separate ValidationService class. The OrderService should
 instantiate and delegate to this service. Ensure all existing tests
 continue to pass without modification."
@@ -298,7 +298,7 @@ git checkout -b refactor/feature-name
 npm test > baseline_results.txt
 
 3. Ask AI to generate edge case tests
-Prompt: "Write 5 additional unit tests for this function that cover
+Prompt - "Write 5 additional unit tests for this function that cover
 edge cases the current tests don't: null inputs, empty arrays,
 very large inputs, concurrent access, etc."
 
@@ -306,7 +306,7 @@ very large inputs, concurrent access, etc."
 npm test > with_edge_cases.txt
 
 5. Let AI perform refactoring with edge cases as guard rails
-Prompt: "Refactor this function to [specific goal]. These edge case
+Prompt - "Refactor this function to [specific goal]. These edge case
 tests must continue passing after the refactoring."
 
 6. Verify all tests pass

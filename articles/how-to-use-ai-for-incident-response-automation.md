@@ -22,7 +22,7 @@ The goal is not full automation of resolution. it's reducing the time from "aler
 
 ---
 
-Step 1: Receive PagerDuty Webhooks
+Step 1 - Receive PagerDuty Webhooks
 
 Set up a lightweight receiver that forwards incident payloads to your triage function:
 
@@ -58,7 +58,7 @@ def pagerduty_webhook():
 
 ---
 
-Step 2: AI Triage with Claude
+Step 2 - AI Triage with Claude
 
 The triage function sends incident details to Claude and returns a structured response with severity assessment, likely root cause hypotheses, and suggested runbook steps:
 
@@ -98,7 +98,7 @@ def analyze_incident(incident: dict) -> dict:
 
 ---
 
-Step 3: Post Triage to Slack
+Step 3 - Post Triage to Slack
 
 Send the AI triage result as a formatted Slack message with action buttons for acknowledgment:
 
@@ -131,7 +131,7 @@ def post_triage_result(incident: dict, triage: dict):
                 "type": "header",
                 "text": {
                     "type": "plain_text",
-                    "text": f"{severity_emoji} Incident: {incident['title']}"
+                    "text": f"{severity_emoji} Incident - {incident['title']}"
                 }
             },
             {
@@ -150,7 +150,7 @@ def post_triage_result(incident: dict, triage: dict):
 
 ---
 
-Step 4: Automated Post-Mortem Drafts
+Step 4 - Automated Post-Mortem Drafts
 
 After an incident is resolved, Claude can draft the post-mortem from the incident timeline:
 
@@ -166,10 +166,10 @@ def draft_postmortem(incident: dict, timeline: list[dict]) -> str:
         messages=[{
             "role": "user",
             "content": f"""Draft a blameless post-mortem for this incident.
-Include: Summary, Timeline, Root Cause, Contributing Factors, Impact, and Action Items.
+Include - Summary, Timeline, Root Cause, Contributing Factors, Impact, and Action Items.
 
-Incident: {incident['title']}
-Duration: {incident['duration_minutes']} minutes
+Incident - {incident['title']}
+Duration - {incident['duration_minutes']} minutes
 Timeline:
 {timeline_text}
 """
@@ -239,10 +239,10 @@ def handler(event, context):
             "content": f"""CloudWatch alarm fired. Provide a 3-sentence summary for on-call engineers:
 what likely caused this, what to check first, and whether it needs immediate human response.
 
-Alarm: {sns_message.get('AlarmName')}
-Description: {sns_message.get('AlarmDescription')}
-State: {sns_message.get('NewStateValue')} (was {sns_message.get('OldStateValue')})
-Reason: {sns_message.get('NewStateReason')}
+Alarm - {sns_message.get('AlarmName')}
+Description - {sns_message.get('AlarmDescription')}
+State - {sns_message.get('NewStateValue')} (was {sns_message.get('OldStateValue')})
+Reason - {sns_message.get('NewStateReason')}
 """
         }]
     )
@@ -251,7 +251,7 @@ Reason: {sns_message.get('NewStateReason')}
     import urllib.request
     message = response.content[0].text
     slack_payload = json.dumps({
-        "text": f":bell: *CloudWatch Alert: {sns_message.get('AlarmName')}*\n\n{message}"
+        "text": f":bell: *CloudWatch Alert - {sns_message.get('AlarmName')}*\n\n{message}"
     }).encode()
     req = urllib.request.Request(
         os.environ["SLACK_WEBHOOK_URL"],

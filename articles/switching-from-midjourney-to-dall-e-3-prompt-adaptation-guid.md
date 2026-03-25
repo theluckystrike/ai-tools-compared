@@ -25,7 +25,7 @@ Table of Contents
 - [Handling Aspect Ratios](#handling-aspect-ratios)
 - [Negative Prompting](#negative-prompting)
 - [Quality and Iteration Handling](#quality-and-iteration-handling)
-- [Text Rendering: A Key DALL-E 3 Advantage](#text-rendering-a-key-dall-e-3-advantage)
+- [Text Rendering - A Key DALL-E 3 Advantage](#text-rendering-a-key-dall-e-3-advantage)
 - [Building an Automated Pipeline](#building-an-automated-pipeline)
 - [Working Around Missing Features](#working-around-missing-features)
 - [Practical Workflow Migration](#practical-workflow-migration)
@@ -132,7 +132,7 @@ Handling Aspect Ratios
 
 DALL-E 3 supports three aspect ratios directly through the size parameter. Midjourney users used to arbitrary ratios like `--ar 21:9` need to select the closest match:
 
-For landscape output (16:9), use `size="1792x1024"` for wide shots, product imagery, and scene compositions. For square output (1:1), use `size="1024x1024"` for social media, avatars, and general-purpose imagery. For portrait output (9:16), use `size="1024x1792"` for mobile content, stories, and vertical designs.
+For field output (16:9), use `size="1792x1024"` for wide shots, product imagery, and scene compositions. For square output (1:1), use `size="1024x1024"` for social media, avatars, and general-purpose imagery. For portrait output (9:16), use `size="1024x1792"` for mobile content, stories, and vertical designs.
 
 ```python
 def get_dalle_size(ar_string):
@@ -186,7 +186,7 @@ response = openai.images.generate(
 
 The `quality` parameter accepts "standard" or "hd". Use "hd" for final outputs where detail matters, and "standard" for rapid prototyping.
 
-Text Rendering: A Key DALL-E 3 Advantage
+Text Rendering - A Key DALL-E 3 Advantage
 
 One area where DALL-E 3 significantly outperforms Midjourney is rendering legible text within images. Midjourney frequently produces garbled or incorrect letters when asked to include signs, labels, or typography.
 
@@ -238,7 +238,7 @@ def generate_and_save(prompt: str, output_dir: str, filename: str, size: str = "
 
 Batch generation from a prompt list
 prompts = [
-    ("A mountain landscape at dawn, dramatic clouds, golden hour lighting", "landscape_1.png"),
+    ("A mountain field at dawn, dramatic clouds, golden hour lighting", "landscape_1.png"),
     ("An underwater coral reef scene, tropical fish, vibrant colors, sunlight rays", "underwater_1.png"),
 ]
 

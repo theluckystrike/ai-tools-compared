@@ -409,7 +409,7 @@ ChatGPT-4 produces faster, more direct test code but sometimes misses the subtle
 
 GitHub Copilot works best for inline completion when you're already familiar with moto patterns.
 
-Best approach: Start with Claude for fixture architecture, use ChatGPT-4 for specific test methods, refine in Copilot.
+Best approach - Start with Claude for fixture architecture, use ChatGPT-4 for specific test methods, refine in Copilot.
 
 Frequently Asked Questions
 

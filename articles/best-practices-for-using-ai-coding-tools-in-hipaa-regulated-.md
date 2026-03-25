@@ -27,7 +27,7 @@ Table of Contents
 - [Security Patterns for Healthcare AI Usage](#security-patterns-for-healthcare-ai-usage)
 - [Tools with HIPAA BAA Availability](#tools-with-hipaa-baa-availability)
 - [Implementing HIPAA-Compliant Audit Logs](#implementing-hipaa-compliant-audit-logs)
-- [Encryption at Rest: What AI Gets Right and Wrong](#encryption-at-rest-what-ai-gets-right-and-wrong)
+- [Encryption at Rest - What AI Gets Right and Wrong](#encryption-at-rest-what-ai-gets-right-and-wrong)
 
 Understanding the Risk Model
 
@@ -173,11 +173,11 @@ Security Patterns for Healthcare AI Usage
 
 When designing your healthcare codebase architecture, consider these patterns:
 
-The Air Gap Pattern: Keep PHI-processing code in a separate module that never interfaces with AI tools directly. AI assists only the non-PHI surrounding infrastructure.
+The Air Gap Pattern - Keep PHI-processing code in a separate module that never interfaces with AI tools directly. AI assists only the non-PHI surrounding infrastructure.
 
-The Gateway Pattern: Route all AI requests through a sanitization service that strips potential PHI before reaching external services.
+The Gateway Pattern - Route all AI requests through a sanitization service that strips potential PHI before reaching external services.
 
-The Validation Pattern: Implement automated checks that verify AI-generated code doesn't contain hardcoded credentials, improper logging, or missing encryption.
+The Validation Pattern - Implement automated checks that verify AI-generated code doesn't contain hardcoded credentials, improper logging, or missing encryption.
 
 Tools with HIPAA BAA Availability
 
@@ -246,13 +246,13 @@ def get_patient(patient_id: str) -> dict:
 
 When reviewing AI-generated code, check every data access function for this pattern. AI tools consistently generate working queries without audit decorators unless you explicitly prompt for them.
 
-Encryption at Rest: What AI Gets Right and Wrong
+Encryption at Rest - What AI Gets Right and Wrong
 
 AI tools handle encryption at the application layer inconsistently. For HIPAA, encryption at rest is an addressable implementation specification (§ 164.312(a)(2)(iv)).
 
 What Claude and ChatGPT get right: they know to use AES-256 and will generate key management scaffolding when prompted.
 
-What they miss: they rarely implement field-level encryption for specific PHI columns, defaulting to full-disk encryption assumptions. For databases storing a mix of PHI and non-PHI, field-level encryption is more appropriate:
+What they miss - they rarely implement field-level encryption for specific PHI columns, defaulting to full-disk encryption assumptions. For databases storing a mix of PHI and non-PHI, field-level encryption is more appropriate:
 
 ```python
 from cryptography.fernet import Fernet
@@ -285,7 +285,7 @@ class Patient(Base):
         self._ssn_encrypted = encrypt_phi_field(value)
 ```
 
-Prompt AI tools explicitly: "Add field-level encryption for SSN, DOB, and email columns using a key loaded from environment variables."
+Prompt AI tools explicitly - "Add field-level encryption for SSN, DOB, and email columns using a key loaded from environment variables."
 
 FAQ
 

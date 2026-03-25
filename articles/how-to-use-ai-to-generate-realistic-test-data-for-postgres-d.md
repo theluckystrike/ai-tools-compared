@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Use AI to Generate Seed Data
+Step 1 - Use AI to Generate Seed Data
 
 AI coding assistants excel at understanding your schema and generating appropriate seed data. The process involves three core steps:
 
@@ -221,14 +221,14 @@ ALTER TABLE orders ADD CONSTRAINT valid_total CHECK (total > 0);
 ALTER TABLE users ADD CONSTRAINT valid_role CHECK (role IN ('user', 'moderator', 'admin'));
 ```
 
-Step 2: Automate Seed Generation
+Step 2 - Automate Seed Generation
 
 Integrate AI-generated seeds into your workflow by saving prompts as reusable scripts:
 
 ```bash
 Generate fresh seed data
 cat << 'EOF' | claude -p "Generate PostgreSQL INSERT statements"
-Table: users (id, username, email, full_name, created_at, is_active, role)
+Table - users (id, username, email, full_name, created_at, is_active, role)
 Generate 200 rows with realistic data following these specifications:
 [your detailed requirements here]
 EOF

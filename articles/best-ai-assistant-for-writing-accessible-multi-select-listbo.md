@@ -47,7 +47,7 @@ Building accessible multi-select listbox components requires careful attention t
 
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- Use it with Firefox: for the best ARIA support.
+- Use it with Firefox - for the best ARIA support.
 - The most widely used: screen readers respond differently to ARIA patterns, so testing across multiple tools surfaces edge cases that manual code review misses.
 - NVDA (Windows) is the: most popular free screen reader.
 - Most tools skip this unless prompted: even though it is critical for screen reader users.
@@ -57,15 +57,15 @@ What Makes an AI Assistant Effective for Accessible Components
 
 When evaluating AI tools for building accessible multi-select listboxes, several capabilities matter most:
 
-ARIA Pattern Knowledge: The assistant must understand the listbox pattern from the WAI-ARIA Authoring Practices Guide, including the required roles (listbox, option, group), aria-multiselectable, and aria-activedescendant for managing focus.
+ARIA Pattern Knowledge - The assistant must understand the listbox pattern from the WAI-ARIA Authoring Practices Guide, including the required roles (listbox, option, group), aria-multiselectable, and aria-activedescendant for managing focus.
 
-Keyboard Navigation Support: A capable AI generates code that implements Arrow keys for navigation, Space for selection toggle, Home/End for jumping to ends, and Shift+Arrow for range selection.
+Keyboard Navigation Support - A capable AI generates code that implements Arrow keys for navigation, Space for selection toggle, Home/End for jumping to ends, and Shift+Arrow for range selection.
 
-Screen Reader Compatibility: The assistant should ensure proper announcements for selection changes, group labels, and option count using aria-checked, aria-selected, and aria-live regions.
+Screen Reader Compatibility - The assistant should ensure proper announcements for selection changes, group labels, and option count using aria-checked, aria-selected, and aria-live regions.
 
-State Management: Multi-select listboxes require complex state handling, the AI must generate proper code for selected options array, focus management, and visual indication of selection.
+State Management - Multi-select listboxes require complex state handling, the AI must generate proper code for selected options array, focus management, and visual indication of selection.
 
-Practical Example: AI-Generated Accessible Listbox
+Practical Example - AI-Generated Accessible Listbox
 
 When prompting an AI assistant to create an accessible multi-select listbox, the quality of output varies significantly. Here is what a well-implemented component should include:
 
@@ -245,13 +245,13 @@ Prompting Strategy That Gets Better Results
 
 The quality of AI-generated accessible code depends heavily on how you frame your request. Vague prompts produce vague results. After testing dozens of prompt variations, a structured approach consistently outperforms simple requests.
 
-Include the ARIA pattern name: Instead of "make a multi-select dropdown," say "implement the WAI-ARIA listbox pattern with aria-multiselectable." This single change causes most AI tools to reference the correct specification.
+Include the ARIA pattern name - Instead of "make a multi-select dropdown," say "implement the WAI-ARIA listbox pattern with aria-multiselectable." This single change causes most AI tools to reference the correct specification.
 
-Specify the interaction model: State explicitly which keyboard interactions you need, Arrow navigation, Space to toggle, Shift+Arrow for range selection, Ctrl+A to select all. Without this list, tools often omit Shift+Arrow range selection.
+Specify the interaction model - State explicitly which keyboard interactions you need, Arrow navigation, Space to toggle, Shift+Arrow for range selection, Ctrl+A to select all. Without this list, tools often omit Shift+Arrow range selection.
 
-Request the live region: Explicitly ask for an aria-live="polite" region that announces selection count changes. Most tools skip this unless prompted, even though it is critical for screen reader users.
+Request the live region - Explicitly ask for an aria-live="polite" region that announces selection count changes. Most tools skip this unless prompted, even though it is critical for screen reader users.
 
-Ask for test scenarios: Append "and include 3 Jest/Vitest test cases covering keyboard navigation" to your prompt. This forces the AI to think through edge cases and often improves the implementation itself.
+Ask for test scenarios - Append "and include 3 Jest/Vitest test cases covering keyboard navigation" to your prompt. This forces the AI to think through edge cases and often improves the implementation itself.
 
 Example prompt that reliably produces complete implementations:
 
@@ -271,7 +271,7 @@ Handling Edge Cases in AI-Generated Code
 
 Even the best AI-generated listbox implementations require review for several recurring edge cases that tools consistently miss or handle incorrectly.
 
-Group support: The WAI-ARIA listbox pattern supports groups via role="group" with an aria-label. When options are grouped (e.g., "Fruits" and "Vegetables" in a food picker), the AI must apply aria-setsize and aria-posinset manually since browsers do not compute these across groups automatically.
+Group support - The WAI-ARIA listbox pattern supports groups via role="group" with an aria-label. When options are grouped (e.g., "Fruits" and "Vegetables" in a food picker), the AI must apply aria-setsize and aria-posinset manually since browsers do not compute these across groups automatically.
 
 ```jsx
 // Correct group implementation with positional ARIA
@@ -306,9 +306,9 @@ const GroupedListbox = ({ groups, selected }) => {
 };
 ```
 
-Virtual scrolling: Large option lists (500+ items) require virtual rendering for performance. AI tools rarely combine the listbox ARIA pattern with virtualization correctly. When using libraries like react-window, you must maintain a full options array in state for aria-setsize and use aria-posinset to communicate true position even when only a slice renders in the DOM.
+Virtual scrolling - Large option lists (500+ items) require virtual rendering for performance. AI tools rarely combine the listbox ARIA pattern with virtualization correctly. When using libraries like react-window, you must maintain a full options array in state for aria-setsize and use aria-posinset to communicate true position even when only a slice renders in the DOM.
 
-Disabled options: Options can carry aria-disabled="true" rather than the native disabled attribute (which does not apply to li elements). Keyboard navigation should skip disabled options in most implementations, Arrow keys should jump past them rather than landing on an uninteractable item. Verify that AI-generated code implements this skip logic.
+Disabled options - Options can carry aria-disabled="true" rather than the native disabled attribute (which does not apply to li elements). Keyboard navigation should skip disabled options in most implementations, Arrow keys should jump past them rather than landing on an uninteractable item. Verify that AI-generated code implements this skip logic.
 
 
 

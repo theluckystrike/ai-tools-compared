@@ -24,7 +24,7 @@ Three things:
 2. Config generation: Write Litmus, Chaos Mesh, or AWS FIS experiment configs
 3. Blast radius analysis: Review an experiment definition and predict what could break
 
-Step 1: Architecture-Driven Experiment Design
+Step 1 - Architecture-Driven Experiment Design
 
 Feed Claude your architecture and ask it to generate a chaos experiment backlog:
 
@@ -80,31 +80,31 @@ print(backlog)
 Sample output (condensed):
 
 ```
-NAME: payment-service-latency
-HYPOTHESIS: Orders complete within 5s even when payment API adds 2s latency,
+NAME - payment-service-latency
+HYPOTHESIS - Orders complete within 5s even when payment API adds 2s latency,
 because our frontend shows a loading state and the API has a 10s timeout.
-FAILURE_MODE: Add 2000ms latency to all egress from payment-service to stripe.com
-BLAST_RADIUS: Order completion rate, P95 latency, timeout errors if > 10s total
-PRIORITY: P1
-TOOLING: Istio VirtualService fault injection
+FAILURE_MODE - Add 2000ms latency to all egress from payment-service to stripe.com
+BLAST_RADIUS - Order completion rate, P95 latency, timeout errors if > 10s total
+PRIORITY - P1
+TOOLING - Istio VirtualService fault injection
 
-NAME: order-service-pod-kill
-HYPOTHESIS: 1/3 pod failure causes <200ms disruption as Kubernetes reschedules
-FAILURE_MODE: Kill 1 of 3 order-service pods
-BLAST_RADIUS: In-flight requests on killed pod; ~5s for new pod to become ready
-PRIORITY: P1
-TOOLING: Litmus PodDelete
+NAME - order-service-pod-kill
+HYPOTHESIS - 1/3 pod failure causes <200ms disruption as Kubernetes reschedules
+FAILURE_MODE - Kill 1 of 3 order-service pods
+BLAST_RADIUS - In-flight requests on killed pod; ~5s for new pod to become ready
+PRIORITY - P1
+TOOLING - Litmus PodDelete
 
-NAME: redis-cluster-node-failure
-HYPOTHESIS: Inventory reads fall back to PostgreSQL when Redis node fails, with
+NAME - redis-cluster-node-failure
+HYPOTHESIS - Inventory reads fall back to PostgreSQL when Redis node fails, with
 <500ms latency increase
-FAILURE_MODE: Stop one Redis cluster node
-BLAST_RADIUS: inventory-service read latency, cache hit rate drops to ~50%
-PRIORITY: P2
-TOOLING: AWS FIS (stop EC2 instance)
+FAILURE_MODE - Stop one Redis cluster node
+BLAST_RADIUS - inventory-service read latency, cache hit rate drops to ~50%
+PRIORITY - P2
+TOOLING - AWS FIS (stop EC2 instance)
 ```
 
-Step 2: Generate Litmus Experiment Configs
+Step 2 - Generate Litmus Experiment Configs
 
 ```python
 chaos_config_generator.py
@@ -207,7 +207,7 @@ spec:
               probePollingInterval: 2
 ```
 
-Step 3: Blast Radius Analysis
+Step 3 - Blast Radius Analysis
 
 Before running any experiment, have Claude review it for unexpected blast radius:
 
@@ -246,7 +246,7 @@ analysis = analyze_blast_radius(yaml_config, ARCHITECTURE_DESCRIPTION)
 print(analysis["analysis"])
 ```
 
-Step 4: Automated Istio Fault Injection
+Step 4 - Automated Istio Fault Injection
 
 For network chaos without cluster-level permissions:
 
@@ -314,7 +314,7 @@ spec:
             host: api.stripe.com
 ```
 
-Step 5: Generating AWS FIS Experiment Templates
+Step 5 - Generating AWS FIS Experiment Templates
 
 AWS Fault Injection Service is the right tool for infrastructure-level experiments that affect EC2 instances, ECS tasks, or RDS failovers. Claude can generate FIS templates directly:
 

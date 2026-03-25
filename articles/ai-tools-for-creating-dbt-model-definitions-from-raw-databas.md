@@ -39,7 +39,7 @@ How AI Tools Generate dbt Models
 
 AI tools analyze your database schema and generate dbt-compatible files automatically. The process typically works like this: you provide the table definitions (either through an SQL `DESCRIBE` query, a schema export, or a connection to your data warehouse), and the AI outputs source YAML files, model SQL files, and sometimes tests and documentation.
 
-Input: Raw Table Schema
+Input - Raw Table Schema
 
 A typical table schema looks like this:
 
@@ -56,7 +56,7 @@ CREATE TABLE orders (
 );
 ```
 
-Output: Generated dbt Source Configuration
+Output - Generated dbt Source Configuration
 
 The AI transforms this into a dbt sources.yml file:
 
@@ -96,7 +96,7 @@ sources:
                   values: ['pending', 'shipped', 'delivered', 'cancelled']
 ```
 
-Output: Generated dbt Model SQL
+Output - Generated dbt Model SQL
 
 The AI also creates the corresponding model file:
 
@@ -267,7 +267,7 @@ Combine AI generation with validation:
 
 ```bash
 #!/bin/bash
-Step 1: Export schema
+Step 1 - Export schema
 snowsql -c prod << EOF > /tmp/schema.sql
 SELECT table_name, column_name, data_type
 FROM information_schema.columns
@@ -275,15 +275,15 @@ WHERE table_schema = 'RAW'
 ORDER BY table_name, ordinal_position;
 EOF
 
-Step 2: Feed to AI tool with prompt
+Step 2 - Feed to AI tool with prompt
 Generate dbt models for these tables
 
-Step 3: Review generated files
+Step 3 - Review generated files
 - Check materialization choices
 - Verify test coverage
 - Validate business logic
 
-Step 4: Test and commit
+Step 4 - Test and commit
 dbt run --select path:models/
 dbt test
 git add models/ && git commit -m "Add dbt models [Generated + reviewed]"

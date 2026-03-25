@@ -51,7 +51,7 @@ TypeScript/React Component
 
 Let's test both models on a common task: generating a React component with state management and API integration.
 
-Prompt: Create a TypeScript React component that displays a paginated list of users fetched from an API. Include loading states, error handling, and pagination controls.
+Prompt - Create a TypeScript React component that displays a paginated list of users fetched from an API. Include loading states, error handling, and pagination controls.
 
 Claude Sonnet produced:
 
@@ -226,13 +226,13 @@ const UserList: React.FC = () => {
 export default UserList;
 ```
 
-Analysis: Both outputs are functional and type-safe. Claude includes better TypeScript practices with explicit interfaces outside the component. GPT-4o adds more styling classes and handler functions, which may or may not match your project conventions. Claude's approach to pagination is more concise; GPT-4o's handler functions add clarity but increase code volume.
+Analysis - Both outputs are functional and type-safe. Claude includes better TypeScript practices with explicit interfaces outside the component. GPT-4o adds more styling classes and handler functions, which may or may not match your project conventions. Claude's approach to pagination is more concise; GPT-4o's handler functions add clarity but increase code volume.
 
 API Backend Task
 
 Testing a Python FastAPI endpoint with database operations:
 
-Prompt: Create a FastAPI endpoint that accepts an user registration request, validates the input, hashes the password, and stores the user in a PostgreSQL database using SQLAlchemy.
+Prompt - Create a FastAPI endpoint that accepts an user registration request, validates the input, hashes the password, and stores the user in a PostgreSQL database using SQLAlchemy.
 
 Claude Sonnet focused on security best practices and error handling:
 
@@ -353,7 +353,7 @@ Choose GPT-4o when you:
 
 - Use the model for general-purpose tasks alongside coding
 
-- Need integration with Microsoft's ecosystem
+- Need integration with Microsoft's environment
 
 Cost Considerations
 

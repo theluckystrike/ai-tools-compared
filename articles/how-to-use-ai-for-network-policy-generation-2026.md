@@ -58,7 +58,7 @@ spec:
   # no egress rules = deny all
 ```
 
-The `podSelector: {}` (empty selector) applies to all pods in the namespace. Most mistakes here involve a missing `policyTypes` field. without it, Kubernetes only applies the policy type that has rules defined.
+The `podSelector - {}` (empty selector) applies to all pods in the namespace. Most mistakes here involve a missing `policyTypes` field. without it, Kubernetes only applies the policy type that has rules defined.
 
 Allow Specific Traffic
 

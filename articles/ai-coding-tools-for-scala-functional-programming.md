@@ -58,7 +58,7 @@ Practical Examples
 
 Working with Option Types
 
-Consider a common scenario: extracting and transforming nested optional values. Here is how an AI assistant might help:
+Consider a common scenario - extracting and transforming nested optional values. Here is how an AI assistant might help:
 
 ```scala
 case class User(id: String, email: String, profile: Option[Profile])

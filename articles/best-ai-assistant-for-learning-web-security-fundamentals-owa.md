@@ -27,7 +27,7 @@ Traditional security education often relies on static tutorials that lack intera
 
 The best AI assistants for security learning share several characteristics: they provide context-aware explanations, generate progressively complex scenarios, and adapt to your skill level. Rather than memorizing vulnerability checklists, you develop intuitive recognition of dangerous patterns through hands-on practice.
 
-Core Competencies: What to Look For
+Core Competencies - What to Look For
 
 When evaluating AI tools for web security education, prioritize assistants that excel in several areas.
 
@@ -66,11 +66,11 @@ ChatGPT with Code Interpreter excels when you want to actually execute vulnerabl
 
 Local models via Ollama (Mistral, Llama 3) offer full privacy, nothing you discuss leaves your machine. This matters when you're experimenting with actual code from your employer's systems. Quality varies but Mistral 7B handles OWASP coverage competently.
 
-Hands-On Practice: A Practical Example
+Hands-On Practice - A Practical Example
 
 Consider learning about SQL injection. Instead of reading documentation, work through this progression with an AI assistant:
 
-Step 1: Identify the Vulnerability
+Step 1 - Identify the Vulnerability
 
 Present vulnerable code to your AI assistant:
 
@@ -86,7 +86,7 @@ def get_profile():
 
 The assistant explains why string interpolation creates injection risk and demonstrates how an attacker inputs `' OR '1'='1` to bypass authentication.
 
-Step 2: Fix Using Parameterized Queries
+Step 2 - Fix Using Parameterized Queries
 
 Ask the assistant to demonstrate the secure version:
 
@@ -102,7 +102,7 @@ def get_profile():
 
 The assistant highlights how parameter binding separates code from data, neutralizing malicious input.
 
-Step 3: Verify and Test
+Step 3 - Verify and Test
 
 Request test cases that verify your fix works:
 

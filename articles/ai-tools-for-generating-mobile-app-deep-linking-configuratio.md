@@ -37,7 +37,7 @@ The Deep Linking Configuration Problem
 Before comparing tools, understanding what needs to be generated helps evaluate outputs. A typical cross-platform deep linking setup requires:
 
 - iOS: Apple-App-Site-Association (AASA) file hosted on your domain
-- Android: assetlinks.json file for App Links verification
+- Android - assetlinks.json file for App Links verification
 - Mobile app: Code to handle incoming links and route users correctly
 - Web fallback: URLs that work when the app is not installed
 
@@ -114,15 +114,15 @@ iOS AASA file:
 
 Claude Code also generated React Native handling code with proper intent filtering. The key advantage: it asked clarifying questions about the signing certificate SHA-256 hash before finalizing the Android config. It understood that this value cannot be guessed and needs user input.
 
-Score: 8/10 - output with good structure, but requires manual intervention for fingerprints.
+Score - 8/10 - output with good structure, but requires manual intervention for fingerprints.
 
 Cursor
 
 Cursor generated working configurations but with less context-awareness. It produced the configuration files but missed the web fallback requirement initially. When prompted again, it added the necessary changes.
 
-Strengths: Fast generation, good integration with existing React Native projects.
+Strengths - Fast generation, good integration with existing React Native projects.
 
-Weakness: The initial output included placeholder values without explaining how to obtain real fingerprints. The AASA file used wildcards where specific paths would be more secure.
+Weakness - The initial output included placeholder values without explaining how to obtain real fingerprints. The AASA file used wildcards where specific paths would be more secure.
 
 ```javascript
 // Cursor-generated React Native handler
@@ -132,7 +132,7 @@ Weakness: The initial output included placeholder values without explaining how 
  });
 ```
 
-Score: 6/10 - Functional but requires iteration.
+Score - 6/10 - Functional but requires iteration.
 
 GitHub Copilot
 
@@ -151,7 +151,7 @@ When explicitly prompted for an AASA file, it generated:
 
 This used the wrong key ("appLinks" instead of "details"). Copilot appears trained on older AASA formats and newer documentation is less represented in its training data.
 
-Score: 4/10 - Incorrect output that would fail verification.
+Score - 4/10 - Incorrect output that would fail verification.
 
 Windsurf
 
@@ -165,10 +165,10 @@ Windsurf showed the best understanding of the end-to-end flow. It generated not 
 Windsurf-generated verification script
 #!/bin/bash
 curl -I https://shopflow.app/.well-known/apple-app-site-association
-Expected: Content-Type: application/json
+Expected - Content-Type: application/json
 ```
 
-Score: 9/10 - Most practical output with deployment and testing guidance.
+Score - 9/10 - Most practical output with deployment and testing guidance.
 
 Amazon Q Developer
 
@@ -176,7 +176,7 @@ Amazon Q correctly generated the configurations but focused heavily on AWS-speci
 
 The Android configuration correctly included the multiple fingerprint format for both debug and release builds, which other tools missed.
 
-Score: 7/10 - Solid output with AWS-specific optimizations.
+Score - 7/10 - Solid output with AWS-specific optimizations.
 
 Practical Recommendations
 
@@ -229,7 +229,7 @@ curl -I https://yourdomain.com/.well-known/apple-app-site-association
 
 Check file format and MIME type
 file apple-app-site-association
-Should show: JSON data
+Should show - JSON data
 
 Validate JSON structure
 cat apple-app-site-association | jq .

@@ -22,7 +22,7 @@ The key quality signal is whether the generated spec actually reflects your code
 
 ---
 
-Claude: Best for Complex Schema Inference
+Claude - Best for Complex Schema Inference
 
 Claude (claude-sonnet-4-6 or Opus) excels at inferring OpenAPI specs from existing code, especially when route handlers, middleware, and validation logic are spread across multiple files.
 
@@ -40,17 +40,17 @@ async def create_user(
     ...
 ```
 
-Prompt Claude: "Generate an OpenAPI 3.1 path entry for this FastAPI route including the security scheme, request body schema, and all possible response codes."
+Prompt Claude - "Generate an OpenAPI 3.1 path entry for this FastAPI route including the security scheme, request body schema, and all possible response codes."
 
-Claude will infer: `201` (success), `400` (validation), `401` (unauthenticated), `403` (non-admin), and `422` (FastAPI's unprocessable entity). It also picks up that `CreateUserRequest` and `UserResponse` need to be defined in `#/components/schemas`.
+Claude will infer - `201` (success), `400` (validation), `401` (unauthenticated), `403` (non-admin), and `422` (FastAPI's unprocessable entity). It also picks up that `CreateUserRequest` and `UserResponse` need to be defined in `#/components/schemas`.
 
-Strengths: Multi-file context, accurate error response enumeration, security scheme inference.
+Strengths - Multi-file context, accurate error response enumeration, security scheme inference.
 
-Limitation: Does not integrate into your CI pipeline. you paste code in and paste YAML out.
+Limitation - Does not integrate into your CI pipeline. you paste code in and paste YAML out.
 
 ---
 
-GitHub Copilot: Best for In-Editor Iteration
+GitHub Copilot - Best for In-Editor Iteration
 
 Copilot works best when you're editing the spec file directly. Open your `openapi.yaml`, position the cursor after an existing path, and Copilot autocompletes the next one based on patterns it infers from the file.
 
@@ -88,13 +88,13 @@ router.get('/products', productController.list);
 
 Tools like `swagger-jsdoc` then compile these annotations into a full spec.
 
-Strengths: Low friction for greenfield APIs, keeps spec and code co-located.
+Strengths - Low friction for greenfield APIs, keeps spec and code co-located.
 
-Limitation: Quality degrades for complex nested schemas and edge-case status codes.
+Limitation - Quality degrades for complex nested schemas and edge-case status codes.
 
 ---
 
-Speakeasy: Best for Production-Grade Automation
+Speakeasy - Best for Production-Grade Automation
 
 Speakeasy generates OpenAPI specs from code and then uses those specs to generate SDKs, Terraform providers, and documentation. It's the right choice when your spec needs to be a machine-readable artifact consumed downstream.
 
@@ -111,13 +111,13 @@ speakeasy generate sdk --lang typescript --schema ./openapi.yaml --out ./sdk
 
 Speakeasy also validates your spec against the OpenAPI 3.1 schema and reports violations with fix suggestions. useful as a linter in CI.
 
-Strengths: Full automation pipeline, SDK generation, strict validation.
+Strengths - Full automation pipeline, SDK generation, strict validation.
 
-Limitation: Paid product for team features; overkill if you just need a spec for documentation.
+Limitation - Paid product for team features; overkill if you just need a spec for documentation.
 
 ---
 
-Go Gin: Generating Specs with swaggo
+Go Gin - Generating Specs with swaggo
 
 For Go Gin APIs, the `swaggo/swag` tool parses comment annotations and generates a `swagger.json` automatically:
 
@@ -141,7 +141,7 @@ func (h *OrderHandler) Create(c *gin.Context) {
 Install and run swag
 go install github.com/swaggo/swag/cmd/swag@latest
 swag init -g cmd/server/main.go --output docs/
-Produces: docs/swagger.json, docs/swagger.yaml, docs/docs.go
+Produces - docs/swagger.json, docs/swagger.yaml, docs/docs.go
 ```
 
 Use Claude or Copilot to generate the annotation blocks from your existing handler code. paste the function signature and Claude produces the correct `@Param` and `@Success` annotations.
@@ -158,7 +158,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -170,5 +170,5 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 {% endraw %}

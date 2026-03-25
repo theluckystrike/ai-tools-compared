@@ -49,7 +49,7 @@ Tasks Tested
 4. README files for open-source libraries
 5. Post-mortem reports from incident timelines
 
-Task 1: API Documentation from Code
+Task 1 - API Documentation from Code
 
 Input given to both models. a FastAPI endpoint for creating webhooks:
 
@@ -81,7 +81,7 @@ POST /api/v2/webhooks
 
 Creates a new webhook endpoint for the authenticated user.
 
-Authentication: Bearer token required. Caller must have `webhooks:write` permission.
+Authentication - Bearer token required. Caller must have `webhooks:write` permission.
 
 Request Body:
 | Field | Type | Required | Description |
@@ -89,7 +89,7 @@ Request Body:
 | url | string (URL) | Yes | HTTPS endpoint to receive webhook events |
 | events | string[] | Yes | Array of event types to subscribe to |
 
-Response: `201 Created`
+Response - `201 Created`
 
 Errors:
 - `403 Forbidden`. Missing `webhooks:write` permission
@@ -101,7 +101,7 @@ ChatGPT's output (condensed):
 ```markdown
 Create Webhook
 
-Endpoint: `POST /api/v2/webhooks`
+Endpoint - `POST /api/v2/webhooks`
 
 This endpoint allows authenticated users to create a webhook...
 
@@ -109,14 +109,14 @@ Parameters:
 - `url` (required): The URL where webhook events will be sent
 - `events` (required): List of events to subscribe to
 
-Returns: A webhook object on success.
+Returns - A webhook object on success.
 ```
 
 Claude's output includes the permission requirement, typed request fields in a proper table, and specific error codes with causes. ChatGPT's output is accurate but less detailed. the missing permission documentation is a real gap that causes integration errors.
 
-Task 2: Incident Runbook
+Task 2 - Incident Runbook
 
-Prompt: "Write a runbook for responding to a database connection pool exhaustion alert in a Node.js application using pg-pool."
+Prompt - "Write a runbook for responding to a database connection pool exhaustion alert in a Node.js application using pg-pool."
 
 Claude included actual diagnosis queries:
 
@@ -143,13 +143,13 @@ const pool = new Pool({
 });
 ```
 
-ChatGPT's runbook: Provided correct high-level steps (check connections, check application logs, restart service) without the specific SQL queries or configuration details.
+ChatGPT's runbook - Provided correct high-level steps (check connections, check application logs, restart service) without the specific SQL queries or configuration details.
 
 For a runbook to be useful during an incident, it must be executable without additional research. Claude's output was. ChatGPT's required lookup.
 
-Task 3: Architecture Decision Records
+Task 3 - Architecture Decision Records
 
-Prompt: "Write an ADR for choosing PostgreSQL over MongoDB for a new user account service."
+Prompt - "Write an ADR for choosing PostgreSQL over MongoDB for a new user account service."
 
 Both produced structurally correct ADRs. The quality difference was in the Consequences section:
 
@@ -166,7 +166,7 @@ Positive:
 Negative:
 - Schema migrations require coordination. no schema-less flexibility for evolving user attributes
 
-Review trigger: Re-evaluate if user attribute schema changes require more than 2 migrations per quarter
+Review trigger - Re-evaluate if user attribute schema changes require more than 2 migrations per quarter
 ```
 
 ChatGPT's Consequences section:
@@ -179,9 +179,9 @@ schema migrations but benefits from their existing knowledge.
 
 Claude's version is specific enough to serve as a reference six months from now. ChatGPT's version would not.
 
-Task 4: README for an Open-Source Library
+Task 4 - README for an Open-Source Library
 
-Prompt: "Write a README for a Python library called 'fastqueue' that provides a decorator-based task queue backed by Redis."
+Prompt - "Write a README for a Python library called 'fastqueue' that provides a decorator-based task queue backed by Redis."
 
 Both produced readable READMEs. Claude's differentiators:
 - Installation section with both pip and poetry commands
@@ -191,9 +191,9 @@ Both produced readable READMEs. Claude's differentiators:
 
 ChatGPT's README was shorter but complete. good for most purposes. Claude's was noticeably more thorough in the configuration documentation.
 
-Task 5: Post-Mortem Reports
+Task 5 - Post-Mortem Reports
 
-Prompt: "Write a post-mortem for a 45-minute outage caused by a misconfigured Redis maxmemory-policy that evicted session keys, logging out all users."
+Prompt - "Write a post-mortem for a 45-minute outage caused by a misconfigured Redis maxmemory-policy that evicted session keys, logging out all users."
 
 Claude's post-mortem:
 - Used concrete times and impact numbers in the timeline
@@ -241,7 +241,7 @@ Generate API documentation from this FastAPI code:
 
 {open('app.py').read()}
 
-Include: endpoint URL, request/response schemas, error codes, examples.
+Include - endpoint URL, request/response schemas, error codes, examples.
 Use markdown format suitable for a public docs site.
 """
         }
@@ -300,8 +300,8 @@ for endpoint in endpoints:
             "role": "user",
             "content": f"""
 Document this endpoint for our API reference:
-Path: {endpoint['path']}
-Method: {endpoint['method']}
+Path - {endpoint['path']}
+Method - {endpoint['method']}
 
 Code:
 {endpoint['code']}
@@ -320,7 +320,7 @@ with open("api_docs.md", "w") as f:
         f.write(f"{doc}\n\n")
 ```
 
-Cost: 50 endpoints × ~300 tokens = $0.30 with Claude, $0.45 with ChatGPT.
+Cost - 50 endpoints × ~300 tokens = $0.30 with Claude, $0.45 with ChatGPT.
 
 Writing Consistency Checks
 
@@ -402,11 +402,11 @@ Real-World Workflow
 Most teams benefit from a hybrid approach:
 
 ```
-Draft phase: ChatGPT (faster, good enough for initial outline)
+Draft phase - ChatGPT (faster, good enough for initial outline)
     ↓
-Detail phase: Claude (fills in specifics, catches gaps)
+Detail phase - Claude (fills in specifics, catches gaps)
     ↓
-Review: Human (5-10 min) vs. 30 min with either model alone
+Review - Human (5-10 min) vs. 30 min with either model alone
 ```
 
 For a 10-endpoint API:

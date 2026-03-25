@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Custom Instructions in ChatGPT
+Step 1 - Understand Custom Instructions in ChatGPT
 
 Custom instructions live in your ChatGPT settings and apply to every new conversation. They consist of two fields: "What would you like ChatGPT to know about you?" and "How would you like ChatGPT to respond?" Both fields work together to establish the context and behavioral patterns you want the model to follow.
 
@@ -51,7 +51,7 @@ For API design work, you need to address several dimensions in your instructions
 
 The key to effective custom instructions is specificity. Generic statements like "write good API code" produce generic results. Concrete, measurable requirements generate precise, useful suggestions.
 
-Step 2: Writing the Profile Section
+Step 2 - Writing the Profile Section
 
 The first field should establish your technical context. Include your primary language, framework, and any specific constraints your projects typically face.
 
@@ -66,7 +66,7 @@ with JSON request/response bodies. Error responses use problem details format (R
 
 This tells ChatGPT exactly what tools and patterns you use, eliminating the need to repeat this information in every prompt. The model will suggest Pydantic models, FastAPI route handlers, and JWT-based auth patterns because it knows those are your standards.
 
-Step 3: Defining Response Behavior
+Step 3 - Defining Response Behavior
 
 The second custom instruction field controls how ChatGPT structures its responses. For API design, you want suggestions that are immediately usable in your codebase, not abstract concepts.
 
@@ -87,9 +87,9 @@ and path, 2) Request model with field types and validation, 3) Response model,
 4) Implementation code, 5) Example request/response, 6) Common error cases.
 ```
 
-Step 4: Examples of Effective Custom Instructions
+Step 4 - Examples of Effective Custom Instructions
 
-Example 1: Microservices Developer
+Example 1 - Microservices Developer
 
 If you work on microservices architectures, your instructions might emphasize:
 
@@ -102,7 +102,7 @@ Version APIs using URI versioning (/v1/, /v2/). Include rate limiting in all end
 
 With these instructions, ChatGPT will suggest gRPC definitions, URI versioning strategies, and Go idioms like middleware chains for rate limiting.
 
-Example 2: Enterprise Java Developer
+Example 2 - Enterprise Java Developer
 
 For enterprise Java environments:
 
@@ -116,7 +116,7 @@ Validation uses Bean Validation with custom constraint annotations.
 
 The model will generate Spring annotations, reactive programming patterns, and validation constraints matching enterprise requirements.
 
-Example 3: TypeScript/Node.js Developer
+Example 3 - TypeScript/Node.js Developer
 
 For TypeScript environments:
 
@@ -130,7 +130,7 @@ Follow DDD principles with clear separation of controllers, services, and reposi
 
 This produces TypeScript-first suggestions with proper typing, Zod schemas, and NestJS patterns.
 
-Step 5: Test and Refining Your Instructions
+Step 5 - Test and Refining Your Instructions
 
 After setting up custom instructions, test them with a few API design questions:
 
@@ -178,7 +178,7 @@ When suggesting improvements, cite specific benefits (performance, security, mai
 If I could achieve the same result with less code, show the simpler approach.
 ```
 
-Step 6: Maintaining Consistency Across Sessions
+Step 6 - Maintaining Consistency Across Sessions
 
 Custom instructions persist until you change them, which creates consistency but also requires maintenance. Review and update your instructions when:
 
@@ -190,40 +190,40 @@ Custom instructions persist until you change them, which creates consistency but
 
 Consider keeping a backup of your custom instructions in a document. This lets you maintain different instruction sets for different project types and quickly swap between contexts.
 
-Step 7: Custom Instructions Library
+Step 7 - Custom Instructions Library
 
 Save these ready-to-use instruction templates for different tech stacks:
 
 Next.js with Supabase
 
 ```
-Profile: I build full-stack applications using Next.js 15, TypeScript strict mode, and Supabase for PostgreSQL backend. I use Server Actions for API logic, client components with React hooks, and Zod for validation. Authentication uses Supabase Auth with JWT. Database access through Supabase client library with RLS policies.
+Profile - I build full-stack applications using Next.js 15, TypeScript strict mode, and Supabase for PostgreSQL backend. I use Server Actions for API logic, client components with React hooks, and Zod for validation. Authentication uses Supabase Auth with JWT. Database access through Supabase client library with RLS policies.
 
-Response: When I request API endpoints, show: 1) Server Action code with proper error handling, 2) TypeScript types for request/response, 3) Zod validation schemas, 4) RLS policy requirements, 5) Client-side usage example. Include database schema assumptions.
+Response - When I request API endpoints, show: 1) Server Action code with proper error handling, 2) TypeScript types for request/response, 3) Zod validation schemas, 4) RLS policy requirements, 5) Client-side usage example. Include database schema assumptions.
 ```
 
 Django with Django REST Framework
 
 ```
-Profile: I develop with Django 5.0 and Django REST Framework. Using PostgreSQL with django-environ for configuration. Models use Django ORM with proper relationships and constraints. Authentication via drf-spectacular and OpenAPI 3.0 documentation.
+Profile - I develop with Django 5.0 and Django REST Framework. Using PostgreSQL with django-environ for configuration. Models use Django ORM with proper relationships and constraints. Authentication via drf-spectacular and OpenAPI 3.0 documentation.
 
-Response: For API endpoints, provide: 1) Serializer class definition with field validation, 2) ViewSet implementation with proper queryset filtering, 3) Pagination and permission classes, 4) URL routing configuration, 5) Example API calls. Always include docstrings following Django conventions.
+Response - For API endpoints, provide: 1) Serializer class definition with field validation, 2) ViewSet implementation with proper queryset filtering, 3) Pagination and permission classes, 4) URL routing configuration, 5) Example API calls. Always include docstrings following Django conventions.
 ```
 
 Rust with Actix-web
 
 ```
-Profile: I write APIs in Rust using Actix-web framework. Database access through SQLx with compile-time query verification. Error handling with custom error types implementing ResponseError. Serde for JSON serialization with derive macros. All endpoints require explicit error types and Result returns.
+Profile - I write APIs in Rust using Actix-web framework. Database access through SQLx with compile-time query verification. Error handling with custom error types implementing ResponseError. Serde for JSON serialization with derive macros. All endpoints require explicit error types and Result returns.
 
-Response: When suggesting endpoints, show: 1) Handler function with proper type signatures, 2) Request/response struct definitions with Serde attributes, 3) Custom error enum implementation, 4) Database query code, 5) Endpoint registration in App configuration. Use #[derive(Serialize, Deserialize)] consistently.
+Response - When suggesting endpoints, show: 1) Handler function with proper type signatures, 2) Request/response struct definitions with Serde attributes, 3) Custom error enum implementation, 4) Database query code, 5) Endpoint registration in App configuration. Use #[derive(Serialize, Deserialize)] consistently.
 ```
 
 Go with Gin
 
 ```
-Profile: I build REST APIs in Go 1.21+ using Gin web framework. Database access through GORM ORM with PostgreSQL. Error handling returns errors as part of function signatures. Validation uses struct tags with popular validators. All responses use consistent JSON envelope format.
+Profile - I build REST APIs in Go 1.21+ using Gin web framework. Database access through GORM ORM with PostgreSQL. Error handling returns errors as part of function signatures. Validation uses struct tags with popular validators. All responses use consistent JSON envelope format.
 
-Response: For API suggestions, provide: 1) Handler function with gin.Context parameter, 2) Struct definitions with struct tags for validation and JSON serialization, 3) GORM query examples with proper error checking, 4) Middleware setup if needed, 5) Curl examples. Follow Go conventions: CamelCase for exported functions, lowercase for packages.
+Response - For API suggestions, provide: 1) Handler function with gin.Context parameter, 2) Struct definitions with struct tags for validation and JSON serialization, 3) GORM query examples with proper error checking, 4) Middleware setup if needed, 5) Curl examples. Follow Go conventions: CamelCase for exported functions, lowercase for packages.
 ```
 
 Advanced Custom Instruction Techniques
@@ -233,15 +233,15 @@ Conditional Instructions for Multiple Workflows
 ```
 Add these conditional instructions to your response profile:
 
-If I ask about database design: First show the ER diagram in ASCII art, then provide the schema.
+If I ask about database design - First show the ER diagram in ASCII art, then provide the schema.
 
-If I ask about testing: Always include unit test examples using my testing framework of choice.
+If I ask about testing - Always include unit test examples using my testing framework of choice.
 
-If I ask about deployment: Assume containerized deployment with Docker and Kubernetes.
+If I ask about deployment - Assume containerized deployment with Docker and Kubernetes.
 
 If I mention "urgent" or "quick": Provide the most concise solution without extensive explanation.
 
-If I reference a specific file: Ask for the file content first before suggesting changes.
+If I reference a specific file - Ask for the file content first before suggesting changes.
 ```
 
 Style and Tone Customization
@@ -256,11 +256,11 @@ Style guidance:
 - Always include what NOT to do alongside what to do.
 
 Example tone:
-"Bad: Use proper error handling in your code.
-Good: Use typed error responses to prevent information leakage in production. Example: return status 500 with generic 'Internal Error' rather than stacktraces."
+"Bad - Use proper error handling in your code.
+Good - Use typed error responses to prevent information leakage in production. Example - return status 500 with generic 'Internal Error' rather than stacktraces."
 ```
 
-Step 8: Measuring Custom Instruction Effectiveness
+Step 8 - Measuring Custom Instruction Effectiveness
 
 Track whether custom instructions are improving suggestion quality:
 
@@ -305,7 +305,7 @@ def analyze_effectiveness():
 
 Track acceptance rates before and after updating instructions. If acceptance rate drops, revert instructions and try different wording.
 
-Step 9: Integration with Workflow
+Step 9 - Integration with Workflow
 
 ChatGPT Plus Workflow
 
@@ -334,7 +334,7 @@ Session Flow:
    (Produces production-ready code)
 ```
 
-Step 10: Updating Instructions Over Time
+Step 10 - Updating Instructions Over Time
 
 Maintenance schedule:
 
@@ -345,8 +345,8 @@ Maintenance schedule:
 Example update:
 
 ```
-Before: "Use JWT for authentication"
-After: "Use JWT with RS256 algorithm, 15-minute expiry for access tokens, 7-day for refresh tokens. Implement token rotation on refresh."
+Before - "Use JWT for authentication"
+After - "Use JWT with RS256 algorithm, 15-minute expiry for access tokens, 7-day for refresh tokens. Implement token rotation on refresh."
 ```
 
 Specific instructions yield better results than generic ones.

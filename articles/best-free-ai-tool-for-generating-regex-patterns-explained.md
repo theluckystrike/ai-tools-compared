@@ -35,8 +35,8 @@ Regular expressions remain one of the most powerful tools in a developer's toolk
 
 
 - This guide covers how: to use free AI tools effectively for regex pattern creation, with concrete examples you can apply immediately.
-- Should match: user@example.com, test.user@domain.org
-Should NOT match: @example.com, user@, invalid@domain
+- Should match - user@example.com, test.user@domain.org
+Should NOT match - @example.com, user@, invalid@domain
 The pattern should be permissive enough for most real-world email formats.
 - Free regex testing tools: like regex101.com provide immediate feedback, showing exactly what your pattern matches and highlighting potential issues.
 - If you validate an entire field: include `^` and `$` in your requirements.
@@ -59,8 +59,8 @@ Consider this effective prompt structure:
 
 ```
 Generate a regex that matches valid email addresses.
-Should match: user@example.com, test.user@domain.org
-Should NOT match: @example.com, user@, invalid@domain
+Should match - user@example.com, test.user@domain.org
+Should NOT match - @example.com, user@, invalid@domain
 The pattern should be permissive enough for most real-world email formats.
 ```
 
@@ -86,8 +86,8 @@ Create a regex that validates passwords meeting these requirements:
 - Contains at least one number
 - Contains at least one special character (!@#$%^&*)
 
-Should match: SecurePass1!
-Should NOT match: password, Password1, securepass1!
+Should match - SecurePass1!
+Should NOT match - password, Password1, securepass1!
 ```
 
 The generated pattern handles all these requirements:
@@ -112,7 +112,7 @@ You need to extract the timestamp, log level, and IP address. Your prompt should
 Extract fields from server logs with format:
 [YYYY-MM-DD HH:MM:SS] LEVEL: Message from IP
 
-Extract: timestamp, level, message, IP address
+Extract - timestamp, level, message, IP address
 [2026-03-16 14:32:15] ERROR: Connection timeout from 192.168.1.100
 
 Provide a regex with named capture groups.
@@ -182,21 +182,21 @@ Free Tools Compared for Regex Generation
 | Regex101 + manual | Web UI | Regex with visualization | Good | Yes |
 | ChatGPT + Regex101 | Web UI (both) | Combination | Excellent | Yes |
 
-Most practical free workflow: Use ChatGPT or Claude free tier to generate regex, then test on regex101.com. Total cost: $0.
+Most practical free workflow - Use ChatGPT or Claude free tier to generate regex, then test on regex101.com. Total cost: $0.
 
 Advanced Regex Patterns Examples
 
 URL validation with path capture:
 
 ```
-Requirement: Extract domain and path from URLs
+Requirement - Extract domain and path from URLs
 Should match:
   https://example.com/api/users
   http://localhost:3000/test?query=1
 
 Ask AI:
 "Generate a regex that captures the domain and path separately from URLs.
-Match these: [examples above]
+Match these - [examples above]
 Provide named capture groups."
 
 ^(?<protocol>https?):\/\/(?<domain>[^\/]+)(?<path>\/[^?]*)?(?:\?(?<query>.*))?$
@@ -210,10 +210,10 @@ Test this on regex101.com:
 Credit card number validation:
 
 ```
-Requirement: Validate common credit card formats
-Should match: 4532 1234 5678 9010 (Visa, spaces allowed)
-Should match: 378282246310005 (Amex, no spaces)
-Should NOT match: 1234 1234 1234 123 (invalid length)
+Requirement - Validate common credit card formats
+Should match - 4532 1234 5678 9010 (Visa, spaces allowed)
+Should match - 378282246310005 (Amex, no spaces)
+Should NOT match - 1234 1234 1234 123 (invalid length)
 
 Ask AI:
 "Generate a regex validating credit card numbers.
@@ -255,8 +255,8 @@ def generate_and_test_regex(requirement: str, test_cases: dict) -> str:
     prompt = f"""Generate a regex matching this requirement:
 {requirement}
 
-Should match: {test_cases['should_match']}
-Should NOT match: {test_cases['should_not_match']}
+Should match - {test_cases['should_match']}
+Should NOT match - {test_cases['should_not_match']}
 
 Respond with ONLY the regex pattern, no explanation."""
 
@@ -301,7 +301,7 @@ def generate_and_test_regex_with_feedback(
     prompt = f"""The regex {previous_pattern} failed these tests:
 {failures}
 
-Original requirement: {requirement}
+Original requirement - {requirement}
 
 Generate an improved regex. Respond with ONLY the pattern."""
 
@@ -365,7 +365,7 @@ def test_regex_performance(pattern: str, test_strings: list) -> float:
     end = time.perf_counter()
     return (end - start) * 1000
 
-Test case: Greedy vs non-greedy patterns
+Test case - Greedy vs non-greedy patterns
 pattern_greedy = "^.*@.*\.com$"  # Greedy (slow on some inputs)
 pattern_nongreedy = "^[^@]+@[^.]+\.[a-z]+$"  # Non-greedy (faster)
 
@@ -374,7 +374,7 @@ test_data = ["user@example.com"] * 10000
 time_greedy = test_regex_performance(pattern_greedy, test_data)
 time_nongreedy = test_regex_performance(pattern_nongreedy, test_data)
 
-print(f"Greedy: {time_greedy:.2f}ms")
+print(f"Greedy - {time_greedy:.2f}ms")
 print(f"Non-greedy: {time_nongreedy:.2f}ms")
 
 If greedy is significantly slower (>2x), ask AI to optimize:
@@ -396,7 +396,7 @@ Use regex101.com debugger:
 Ask AI for step-by-step explanation:
 
 ```
-Pattern: ^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{8,}$
+Pattern - ^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{8,}$
 
 Ask AI:
 "Break down this regex step-by-step:
@@ -410,12 +410,12 @@ Common Pitfalls in AI-Generated Regex
 Overly specific patterns:
 
 ```
-AI generates: ^[A-Z][a-z]+\s[A-Z][a-z]+$
-For: "Match names like John Smith"
+AI generates - ^[A-Z][a-z]+\s[A-Z][a-z]+$
+For - "Match names like John Smith"
 
-This fails on: "JOHN SMITH", "john smith", "Mary-Jane"
+This fails on - "JOHN SMITH", "john smith", "Mary-Jane"
 
-Solution: Ask AI to be more permissive:
+Solution - Ask AI to be more permissive:
 "Make this pattern case-insensitive and support hyphens."
 ^[a-z]+-?[a-z]+\s[a-z]+-?[a-z]+$/i
 ```
@@ -423,12 +423,12 @@ Solution: Ask AI to be more permissive:
 Unicode handling:
 
 ```
-Requirement: Match international character names
+Requirement - Match international character names
 
-Bad: [a-zA-Z]  // English only
-Better: \p{L}  // Unicode letters (if regex engine supports)
+Bad - [a-zA-Z]  // English only
+Better - \p{L}  // Unicode letters (if regex engine supports)
 
-Ask AI: "This needs to match names with accents, umlauts, and non-Latin scripts"
+Ask AI - "This needs to match names with accents, umlauts, and non-Latin scripts"
 ```
 
 Frequently Asked Questions
@@ -439,7 +439,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -451,7 +451,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

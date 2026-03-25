@@ -22,10 +22,10 @@ Table of Contents
 - [Why AI-Generated Mock Servers Matter](#why-ai-generated-mock-servers-matter)
 - [AI-Powered Mock Server Generation Workflow](#ai-powered-mock-server-generation-workflow)
 - [AI-Assisted Mock Server Generation: Step-by-Step](#ai-assisted-mock-server-generation-step-by-step)
-- [Comparison Table: AI-Assisted Mock Server Approaches](#comparison-table-ai-assisted-mock-server-approaches)
+- [Comparison Table - AI-Assisted Mock Server Approaches](#comparison-table-ai-assisted-mock-server-approaches)
 - [Real-World Decision Framework](#real-world-decision-framework)
-- [Cost Comparison: Manual vs. AI-Assisted](#cost-comparison-manual-vs-ai-assisted)
-- [Advanced: AI-Generated Load Testing Mock Server](#advanced-ai-generated-load-testing-mock-server)
+- [Cost Comparison - Manual vs. AI-Assisted](#cost-comparison-manual-vs-ai-assisted)
+- [Advanced - AI-Generated Load Testing Mock Server](#advanced-ai-generated-load-testing-mock-server)
 - [Integration with CI/CD Pipelines](#integration-with-cicd-pipelines)
 - [Limitations of AI-Generated Mocks](#limitations-of-ai-generated-mocks)
 - [Recommended Workflow for Teams](#recommended-workflow-for-teams)
@@ -44,7 +44,7 @@ Building these manually takes 30, 60 hours per project. AI tools reduce this to 
 
 AI-Powered Mock Server Generation Workflow
 
-Step 1: Prepare Your OpenAPI Specification
+Step 1 - Prepare Your OpenAPI Specification
 
 Start with a complete OpenAPI 3.0 or Swagger 2.0 specification. If you don't have one, AI tools can even help generate it from your documentation.
 
@@ -124,7 +124,7 @@ components:
           type: string
 ```
 
-Step 2: Use Claude or GPT-4 to Generate Mock Server Code
+Step 2 - Use Claude or GPT-4 to Generate Mock Server Code
 
 Provide your OpenAPI spec to Claude or GPT-4 with a specific prompt.
 
@@ -137,7 +137,7 @@ Generate a Node.js/Express mock API server from this OpenAPI specification:
 Requirements:
 1. Use Express.js for routing
 2. Generate realistic fake data using faker.js
-3. Simulate API latency (200–500ms)
+3. Simulate API latency (200, 500ms)
 4. Support all endpoints in the spec
 5. Return proper HTTP status codes
 6. Include CORS headers
@@ -147,7 +147,7 @@ Requirements:
 10. Include error handling for invalid inputs
 ```
 
-Step 3: Implement with Popular Mock Server Tools
+Step 3 - Implement with Popular Mock Server Tools
 
 Three tools dominate the space:
 
@@ -157,13 +157,13 @@ Prism (Stoplight)
 - Supports dynamic examples with faker.js integration
 - Docker-ready, runs in seconds
 - Cost: Free and open-source
-- Command: `prism mock your-api.yaml --host 0.0.0.0 --port 3000`
+- Command - `prism mock your-api.yaml --host 0.0.0.0 --port 3000`
 
 WireMock
 - Traditional approach: define mock responses in JSON/YAML config files
 - AI helps generate the mapping configurations from OpenAPI
 - Excellent for stateful mocks with conditional responses
-- Strong Java ecosystem integration
+- Strong Java environment integration
 - Cost: Free and open-source, enterprise version available ($3,000+/year)
 - Response mapping example:
 
@@ -210,7 +210,7 @@ I have an e-commerce API with these endpoints:
 Generate a Docker-ready mock server that:
 1. Uses Node.js/Express
 2. Returns realistic fake data (product names, prices, order numbers)
-3. Simulates 300–500ms latency on all endpoints
+3. Simulates 300, 500ms latency on all endpoints
 4. Handles state persistence (POST creates order, GET retrieves same order)
 5. Validates POST/PUT request bodies against schema
 6. Returns proper 400/404/500 errors
@@ -225,7 +225,7 @@ Deliver:
 - package.json
 ```
 
-Expected output: Complete, production-ready mock server (~300, 400 lines).
+Expected output - Complete, production-ready mock server (~300, 400 lines).
 
 Docker Implementation Example
 
@@ -262,9 +262,9 @@ services:
       - ./server.js:/app/server.js
 ```
 
-Run with: `docker-compose up --build`
+Run with - `docker-compose up --build`
 
-Comparison Table: AI-Assisted Mock Server Approaches
+Comparison Table - AI-Assisted Mock Server Approaches
 
 | Approach | Setup Time | Data Realism | State Persistence | Docker Ready | Learning Curve | Cost |
 |----------|-----------|--------------|-------------------|--------------|---------------|----|
@@ -281,7 +281,7 @@ Choose Prism if:
 - Your frontend team only needs read operations (GET)
 - You don't need state persistence
 - No enterprise requirements
-- Command: `prism mock openapi.yaml --host 0.0.0.0`
+- Command - `prism mock openapi.yaml --host 0.0.0.0`
 
 Choose WireMock if:
 - You need complex conditional responses
@@ -304,7 +304,7 @@ Choose Custom Node/Python (Claude-generated) if:
 - Your team is comfortable with code maintenance
 - Setup time: 45, 90 minutes including review
 
-Cost Comparison: Manual vs. AI-Assisted
+Cost Comparison - Manual vs. AI-Assisted
 
 Manual approach:
 - Developer time: 40, 60 hours @ $100/hour = $4,000, 6,000
@@ -318,7 +318,7 @@ AI-assisted approach:
 
 For a team generating 3, 4 mocks annually, AI saves $12,000, 24,000.
 
-Advanced: AI-Generated Load Testing Mock Server
+Advanced - AI-Generated Load Testing Mock Server
 
 For realistic performance testing, Claude can generate mock servers with:
 
@@ -381,7 +381,7 @@ Recommended Workflow for Teams
 1. Week 1: API spec freeze. Use Claude to generate Prism mock server (free, 5 min setup).
 2. Week 2: Frontend team develops against Prism mock. Backend team builds real API.
 3. Week 3: Switch frontend to real API. Keep Prism mock for integration tests.
-4. Ongoing: Update mock whenever API spec changes (Claude regenerates in 2 minutes).
+4. Ongoing - Update mock whenever API spec changes (Claude regenerates in 2 minutes).
 
 Frequently Asked Questions
 

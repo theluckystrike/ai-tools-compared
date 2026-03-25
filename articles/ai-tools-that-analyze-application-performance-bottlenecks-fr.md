@@ -23,7 +23,7 @@ Table of Contents
 - [What Are Trace-Based Performance Analyzers?](#what-are-trace-based-performance-analyzers)
 - [Key Capabilities to Look For](#key-capabilities-to-look-for)
 - [Comparing Leading AI Trace Analysis Tools](#comparing-leading-ai-trace-analysis-tools)
-- [Practical Example: Finding a Database Bottleneck](#practical-example-finding-a-database-bottleneck)
+- [Practical Example - Finding a Database Bottleneck](#practical-example-finding-a-database-bottleneck)
 - [Open Source Alternatives](#open-source-alternatives)
 - [Practical Trace Analysis Workflow](#practical-trace-analysis-workflow)
 - [Choosing the Right Tool](#choosing-the-right-tool)
@@ -45,15 +45,15 @@ Key Capabilities to Look For
 
 When evaluating AI tools for trace analysis, several capabilities matter most for practical use:
 
-Automatic Anomaly Detection: The best tools learn your application's normal behavior and flag deviations automatically. This includes unusual latency increases, elevated error rates, and dependency failures. Good tools establish baselines during normal operations, then alert when actual performance deviates significantly.
+Automatic Anomaly Detection - The best tools learn your application's normal behavior and flag deviations automatically. This includes unusual latency increases, elevated error rates, and dependency failures. Good tools establish baselines during normal operations, then alert when actual performance deviates significantly.
 
-Root Cause Suggestions: Rather than showing you thousands of spans, AI tools should point you directly to the problematic operation and explain why it's causing issues. This includes identifying which service is slowest, which database queries are most expensive, and which dependencies are impacting latency.
+Root Cause Suggestions - Rather than showing you thousands of spans, AI tools should point you directly to the problematic operation and explain why it's causing issues. This includes identifying which service is slowest, which database queries are most expensive, and which dependencies are impacting latency.
 
-Correlation with Metrics and Logs: Performance problems rarely exist in isolation. Tools that bridge traces with metrics and logs provide faster resolution. When a trace shows high latency, correlated metrics reveal whether CPU spiked, memory filled, disk I/O blocked, or network bandwidth saturated.
+Correlation with Metrics and Logs - Performance problems rarely exist in isolation. Tools that bridge traces with metrics and logs provide faster resolution. When a trace shows high latency, correlated metrics reveal whether CPU spiked, memory filled, disk I/O blocked, or network bandwidth saturated.
 
-Support for Open Standards: Look for tools that work with OpenTelemetry, Jaeger, and Zipkin formats. This ensures vendor independence and long-term viability. OpenTelemetry standardization means you can switch tools without re-instrumenting your application.
+Support for Open Standards - Look for tools that work with OpenTelemetry, Jaeger, and Zipkin formats. This ensures vendor independence and long-term viability. OpenTelemetry standardization means you can switch tools without re-instrumenting your application.
 
-Cost Attribution: Understanding which customers, features, or operations consume the most infrastructure resources. AI tools that trace requests end-to-end can attribute compute costs accurately.
+Cost Attribution - Understanding which customers, features, or operations consume the most infrastructure resources. AI tools that trace requests end-to-end can attribute compute costs accurately.
 
 Comparing Leading AI Trace Analysis Tools
 
@@ -91,7 +91,7 @@ Datadog AI Monitoring
 
 Datadog's AI-powered capabilities include anomaly detection, forecasting, and automated root cause correlation. Their infrastructure dashboard integration means you see trace data alongside container metrics, cloud provider data, and custom metrics.
 
-Practical Example: Finding a Database Bottleneck
+Practical Example - Finding a Database Bottleneck
 
 Consider a typical e-commerce application where checkout requests are slow. Without AI assistance, you might examine dozens of spans manually. With an AI trace analyzer, the workflow looks different:
 
@@ -110,7 +110,7 @@ Open Source Alternatives
 
 Jaeger with Prometheus
 
-The open-source ecosystem offers cost-effective options. Jaeger provides trace storage and visualization, while Prometheus handles metrics. You won't get AI-powered insights out of the box, but you can build custom ML pipelines using the collected data.
+The open-source environment offers cost-effective options. Jaeger provides trace storage and visualization, while Prometheus handles metrics. You won't get AI-powered insights out of the box, but you can build custom ML pipelines using the collected data.
 
 SigNoz
 
@@ -120,7 +120,7 @@ Practical Trace Analysis Workflow
 
 A realistic trace analysis process using AI tools involves several phases:
 
-Phase 1: Data Collection
+Phase 1 - Data Collection
 Set up OpenTelemetry instrumentation across your services. Configure sampling intelligently, capture 100% of errors, 10% of slow requests, and 1% of normal traffic. This balances cost with visibility.
 
 ```yaml
@@ -155,38 +155,38 @@ data:
           exporters: [jaeger]
 ```
 
-Phase 2: Baseline Establishment
+Phase 2 - Baseline Establishment
 Collect traces during normal operations for at least one week. This establishes baseline latency, error rates, and service dependencies that the AI tool learns from.
 
-Phase 3: Alert Configuration
+Phase 3 - Alert Configuration
 Based on established baselines, configure alerts that fire when actual performance deviates significantly. A rule like "P99 latency increases by more than 50%" triggers investigation rather than static "p99 > 1000ms" thresholds.
 
-Phase 4: Incident Investigation
+Phase 4 - Incident Investigation
 When alerts fire, use the AI tool to rapidly locate root cause. The tool correlates the trace anomaly with related metric changes and log entries.
 
 Choosing the Right Tool
 
 Your choice depends on several factors:
 
-Existing Infrastructure: If you already use Grafana, Datadog, or Elastic, their AI features integrate smoothly. Migration costs favor staying with your current ecosystem.
+Existing Infrastructure - If you already use Grafana, Datadog, or Elastic, their AI features integrate smoothly. Migration costs favor staying with your current environment.
 
-Team Expertise: Some tools require significant configuration and domain knowledge. Others prioritize out-of-the-box functionality with sensible defaults.
+Team Expertise - Some tools require significant configuration and domain knowledge. Others prioritize out-of-the-box functionality with sensible defaults.
 
-Budget: Commercial tools offer more sophisticated AI but at enterprise pricing. Open-source alternatives require more manual effort but provide greater flexibility.
+Budget - Commercial tools offer more sophisticated AI but at enterprise pricing. Open-source alternatives require more manual effort but provide greater flexibility.
 
-Scale: High-volume applications generate massive trace data. Some tools handle this better than others, with implications for storage costs and query performance. Plan for 50-100 bytes per span, multiply by expected daily spans, and budget accordingly.
+Scale - High-volume applications generate massive trace data. Some tools handle this better than others, with implications for storage costs and query performance. Plan for 50-100 bytes per span, multiply by expected daily spans, and budget accordingly.
 
 Implementation Best Practices
 
 Regardless of which tool you choose, certain practices improve your success:
 
-Instrument Early: Add tracing instrumentation during development, not just production. This gives AI tools baseline data for comparison.
+Instrument Early - Add tracing instrumentation during development, not just production. This gives AI tools baseline data for comparison.
 
-Control Trace Sampling: Not every request needs full tracing. Sample intelligently, error requests, slow requests, and a percentage of normal traffic.
+Control Trace Sampling - Not every request needs full tracing. Sample intelligently, error requests, slow requests, and a percentage of normal traffic.
 
-Define Business Transactions: Mark important user journeys as transactions. AI tools can then optimize for user experience rather than technical metrics.
+Define Business Transactions - Mark important user journeys as transactions. AI tools can then optimize for user experience rather than technical metrics.
 
-Correlate with Deployment Data: Connect your trace data with deployment timestamps. This helps AI distinguish between code changes and infrastructure issues.
+Correlate with Deployment Data - Connect your trace data with deployment timestamps. This helps AI distinguish between code changes and infrastructure issues.
 
 Analyzing Span Duration Patterns
 
@@ -234,7 +234,7 @@ User Request
     -> Pricing Service (30ms)
   -> Response Assembly (5ms)
 
-Critical Path: 230ms (Auth → User Cache → Database, Product → Search Index)
+Critical Path - 230ms (Auth → User Cache → Database, Product → Search Index)
 ```
 
 Optimizing the critical path provides the most bang for effort. An AI tool that identifies this automatically saves substantial analysis time.

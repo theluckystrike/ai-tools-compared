@@ -42,13 +42,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Choose the Right AI Tool for Release Notes
+Step 1 - Choose the Right AI Tool for Release Notes
 
 Different AI tools handle release note generation with varying effectiveness. Claude Code and ChatGPT both produce high-quality prose and handle structured formatting well. GitHub Copilot Chat, accessed directly in your IDE, is convenient when you want to generate release notes without leaving your editor. For automated pipelines, the Anthropic API and OpenAI API let you embed generation into CI workflows.
 
 If your project uses GitHub's native release tooling, the Generate release notes button uses GitHub's own AI to summarize merged pull requests since the last release. This is a solid starting point that you can then refine with a more capable model for polish and additional context.
 
-Step 2: Providing the Right Context to AI
+Step 2 - Providing the Right Context to AI
 
 The quality of AI-generated release descriptions depends heavily on the context you provide. Instead of simply asking "write a release description," supply specific information about your release.
 
@@ -77,7 +77,7 @@ A good AI prompt for release descriptions follows this pattern:
 ```
 Write a GitHub release description for version X.Y.Z of [project name].
 
-Release type: [major/minor/patch]
+Release type - [major/minor/patch]
 
 New features:
 - [feature 1]
@@ -98,7 +98,7 @@ Write in a clear, user-friendly style suitable for developers.
 
 For even better output, feed AI the raw `git log` output between two tags and ask it to categorize and summarize the commits. The command `git log v2.0.0..v2.1.0 --pretty=format:"- %s"` produces a clean list that AI handles well.
 
-Step 3: Create Download Instructions
+Step 3 - Create Download Instructions
 
 Clear download instructions are essential for helping users get your software. AI can help you generate consistent, complete download sections for every release.
 
@@ -107,7 +107,7 @@ Download Section Template
 Include these elements in your download instructions:
 
 ```
-Step 4: Downloads
+Step 4 - Downloads
 
 Direct Downloads
 - [Source code (ZIP)](link)
@@ -120,26 +120,26 @@ Platform-Specific Binaries
 - [Linux x64](link)
 
 Installation
-#### macOS (Homebrew)
+macOS (Homebrew)
 ```bash
 brew install your-package
 
 ```
 
-#### Linux
+Linux
 ```bash
 curl -sL https://your-repo.com/install.sh | bash
 
 ```
 
-#### Windows (Chocolatey)
+Windows (Chocolatey)
 ```bash
 choco install your-package
 
 ```
 ```
 
-Step 5: Handling Different Release Types
+Step 5 - Handling Different Release Types
 
 AI adapts its output based on the type of release. Here's how to guide it effectively:
 
@@ -179,7 +179,7 @@ Include:
 3. Any hotfixes users should apply immediately
 ```
 
-Step 6: Automate Release Descriptions
+Step 6 - Automate Release Descriptions
 
 You can integrate AI into your release workflow for consistent, automated descriptions.
 
@@ -248,7 +248,7 @@ For more control, generate descriptions manually but use AI for refinement:
 
 5. Post the final release description
 
-Step 7: Maintaining Consistency Across Releases
+Step 7 - Maintaining Consistency Across Releases
 
 One underrated benefit of AI-assisted release notes is consistency. Define a system prompt or template that specifies your project's preferred tone, what sections to include, and how to handle specific scenarios like CVEs or deprecations. Store this template in your repository so every team member and CI pipeline uses the same starting point.
 
@@ -270,12 +270,12 @@ Follow these practices to maximize the value of your release descriptions:
 
 - Keep it scannable: Use formatting, bullet points, and code blocks for easy reading
 
-Step 8: Example Release Description
+Step 8 - Example Release Description
 
 Here's a complete example combining all the elements:
 
 ```
-Step 9: What's New in v2.1.0
+Step 9 - What's New in v2.1.0
 
 This release introduces major performance improvements and adds support for custom themes.
 

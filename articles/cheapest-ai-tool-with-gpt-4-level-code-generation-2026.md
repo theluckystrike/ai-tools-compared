@@ -103,7 +103,7 @@ Pricing:
 
 - Paid API: $0.075 per million input tokens, $0.30 per million output tokens
 
-Use case: Excellent for quick code generation, understanding unfamiliar APIs, and tasks that benefit from long context. Gemini 2.0 Flash supports a 1 million token context window even on the free tier, making it uniquely suited to analyzing large codebases in a single prompt.
+Use case - Excellent for quick code generation, understanding unfamiliar APIs, and tasks that benefit from long context. Gemini 2.0 Flash supports a 1 million token context window even on the free tier, making it uniquely suited to analyzing large codebases in a single prompt.
 
 Setup:
 

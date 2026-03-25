@@ -61,7 +61,7 @@ from sklearn.metrics import classification_report, roc_auc_score
 Load user behavior data
 df = pd.read_csv('user_behavior.csv')
 
-Feature engineering: calculate engagement metrics
+Feature engineering - calculate engagement metrics
 df['login_frequency_30d'] = df['logins_last_30_days']
 df['feature_adoption_score'] = (
     df['features_used'] / df['total_features'] * 100
@@ -270,13 +270,13 @@ X_train_resampled, y_train_resampled = smote.fit_resample(X_train, y_train)
 
 Threshold adjustment changes the decision boundary from the default 0.5. For churn prediction, lowering the threshold to 0.3 catches more at-risk users at the cost of more false positives, a reasonable trade-off when the cost of missing a churner exceeds the cost of sending an unnecessary retention offer.
 
-Tool Comparison: Managed ML Platforms for Churn Prediction
+Tool Comparison - Managed ML Platforms for Churn Prediction
 
 | Platform | Strengths | Best For |
 |----------|-----------|----------|
 | AWS SageMaker | End-to-end MLOps, autopilot feature engineering | Teams already on AWS |
 | Google Vertex AI | AutoML for tabular data, BigQuery integration | Teams using GCP/BigQuery |
-| Azure ML | Microsoft ecosystem, responsible AI tooling | Microsoft-stack teams |
+| Azure ML | Microsoft environment, responsible AI tooling | Microsoft-stack teams |
 | Databricks | Unified analytics + ML, Delta Lake integration | Large-scale data teams |
 | Weights & Biases | Experiment tracking, model registry | Research-heavy workflows |
 
@@ -294,13 +294,13 @@ Common Pitfalls to Avoid
 
 Several mistakes frequently undermine churn prediction projects:
 
-Defining churn too narrowly: Different business contexts define churn differently. An user who downgrades from premium to free might still represent valuable retention compared to complete cancellation.
+Defining churn too narrowly - Different business contexts define churn differently. An user who downgrades from premium to free might still represent valuable retention compared to complete cancellation.
 
-Ignoring class imbalance: Churn typically affects a minority of users. Use appropriate techniques like SMOTE, class weighting, or adjust prediction thresholds rather than optimizing for raw accuracy.
+Ignoring class imbalance - Churn typically affects a minority of users. Use appropriate techniques like SMOTE, class weighting, or adjust prediction thresholds rather than optimizing for raw accuracy.
 
 Overfitting to historical patterns: Models trained on past data may miss emerging churn signals. Regularly retrain and validate against recent time periods.
 
-Failing to close the loop: Prediction without action wastes resources. Build clear workflows connecting model outputs to retention interventions.
+Failing to close the loop - Prediction without action wastes resources. Build clear workflows connecting model outputs to retention interventions.
 
 Related Reading
 

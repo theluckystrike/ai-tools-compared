@@ -24,7 +24,7 @@ Table of Contents
 - [Quick Comparison](#quick-comparison)
 - [Multi-File Editing in Copilot Workspace](#multi-file-editing-in-copilot-workspace)
 - [Multi-File Editing in Cursor Composer](#multi-file-editing-in-cursor-composer)
-- [Practical Comparison: Adding a Feature](#practical-comparison-adding-a-feature)
+- [Practical Comparison - Adding a Feature](#practical-comparison-adding-a-feature)
 - [Context and Memory](#context-and-memory)
 - [Which Tool for Multi-File Editing?](#which-tool-for-multi-file-editing)
 - [Performance Considerations](#performance-considerations)
@@ -35,7 +35,7 @@ Table of Contents
 - [Integration with Version Control](#integration-with-version-control)
 - [Handling Conflicts in Multi-File Edits](#handling-conflicts-in-multi-file-edits)
 - [Scaling to Large Teams](#scaling-to-large-teams)
-- [Decision Tree: Which Tool to Choose](#decision-tree-which-tool-to-choose)
+- [Decision Tree - Which Tool to Choose](#decision-tree-which-tool-to-choose)
 - [Practical Tips for Each Tool](#practical-tips-for-each-tool)
 
 Understanding the Two Approaches
@@ -105,7 +105,7 @@ const login = async (credentials) => {
 
 Cursor's strength lies in its ability to reference files explicitly. You can include `@filename` in your prompts to give the AI direct access to specific file contents, enabling precise edits without requiring full project context.
 
-Practical Comparison: Adding a Feature
+Practical Comparison - Adding a Feature
 
 Let's compare how each tool handles a concrete task: adding a notification system to an existing application.
 
@@ -183,7 +183,7 @@ For small teams (2-5 developers), both cost roughly $200-250/month. For larger t
 
 Real-World Workflow Comparison
 
-Scenario: Refactoring authentication across a Next.js application
+Scenario - Refactoring authentication across a Next.js application
 
 Using Copilot Workspace:
 ```
@@ -192,7 +192,7 @@ Using Copilot Workspace:
 3. Accept plan
 4. Apply all changes in single commit
 ```
-Time: 2-3 minutes planning + verification
+Time - 2-3 minutes planning + verification
 
 Using Cursor Composer:
 ```
@@ -204,7 +204,7 @@ Using Cursor Composer:
 6. Cmd+K: "Add Auth0 verification"
 7. Manual coordination between files
 ```
-Time: 5-10 minutes with manual file switching
+Time - 5-10 minutes with manual file switching
 
 Copilot excels at coordinated changes. Cursor excels at focused, single-file edits.
 
@@ -212,13 +212,13 @@ File Context Limits and Workarounds
 
 Both tools have limits on how much context they can process:
 
-Copilot Workspace limits: ~200KB of codebase context
-Cursor Composer limits: Dependent on model (Claude: 200K tokens, GPT-4: 8K-128K)
+Copilot Workspace limits - ~200KB of codebase context
+Cursor Composer limits - Dependent on model (Claude: 200K tokens, GPT-4: 8K-128K)
 
 When hitting limits:
 
 ```python
-Workaround 1: Create a focused .cursorrules file
+Workaround 1 - Create a focused .cursorrules file
 .cursorrules (for Cursor)
 You are refactoring authentication.
 
@@ -229,11 +229,11 @@ Key files involved:
 - /app/api/user/route.ts - User endpoint
 
 Maintain consistency across these files.
-Auth0 domain: ${process.env.AUTH0_DOMAIN}
+Auth0 domain - ${process.env.AUTH0_DOMAIN}
 ```
 
 ```bash
-Workaround 2: Create minimal reproduction of related files
+Workaround 2 - Create minimal reproduction of related files
 Extract just the interfaces and key functions to provide context
 cat > related_files.md << 'EOF'
 Current Authentication Structure
@@ -267,7 +267,7 @@ Integration with Version Control
 Both tools can view git history:
 
 Copilot: Analyzes recent commits to understand coding patterns
-Cursor: Shows git blame inline, links to commit messages
+Cursor - Shows git blame inline, links to commit messages
 
 For multi-file changes, always review diffs before committing:
 
@@ -277,7 +277,7 @@ git diff --stat  # See what changed
 git diff app/    # Review specific changes
 git add -p       # Stage interactively
 
-Cursor tip: Use git diff in terminal, then Cmd+K on the output
+Cursor tip - Use git diff in terminal, then Cmd+K on the output
 to ask AI to explain the changes
 ```
 
@@ -316,7 +316,7 @@ Cursor advantage:
 - No external service dependency
 - Better for rapid iteration
 
-Decision Tree: Which Tool to Choose
+Decision Tree - Which Tool to Choose
 
 Use Copilot Workspace when:
 - You need coordinated multi-file changes

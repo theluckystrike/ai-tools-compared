@@ -26,7 +26,7 @@ Table of Contents
 - [Incident Response Best Practices](#incident-response-best-practices)
 - [Limitations and Gotchas](#limitations-and-gotchas)
 - [Setting Up Log Analysis with External Tools](#setting-up-log-analysis-with-external-tools)
-- [Preventing Future Incidents: Monitoring Strategy](#preventing-future-incidents-monitoring-strategy)
+- [Preventing Future Incidents - Monitoring Strategy](#preventing-future-incidents-monitoring-strategy)
 - [Cost Optimization for Log Analysis at Scale](#cost-optimization-for-log-analysis-at-scale)
 
 AI Log Analysis Workflow
@@ -41,7 +41,7 @@ Analyzing a database connection pool exhaustion incident
 
 ```plaintext
 [2026-03-20 14:32:15] ERROR: Connection pool exhausted (0/50 available)
-[2026-03-20 14:32:15] Stack: at HikariPool.getConnection() Line 412
+[2026-03-20 14:32:15] Stack - at HikariPool.getConnection() Line 412
 [2026-03-20 14:32:14] WARN: Slow query detected (12.3s) SELECT * FROM orders WHERE created > ?
 [2026-03-20 14:32:10] INFO: Lambda: Start cold_start_duration=3200ms
 [2026-03-20 14:31:55] DEBUG: API gateway timeout after 30s, retries=3
@@ -72,7 +72,7 @@ cpu_usage: 94%
 memory_usage: 89%
 ```
 
-Ask GPT-4: "Explain the cascading effects from the metrics change above, and list three hypotheses for root cause." GPT-4 quantifies the severity delta and generates plausible failure modes ranked by probability.
+Ask GPT-4 - "Explain the cascading effects from the metrics change above, and list three hypotheses for root cause." GPT-4 quantifies the severity delta and generates plausible failure modes ranked by probability.
 
 Perplexity for Real-Time Log Context
 
@@ -81,8 +81,8 @@ Perplexity's web search integration helps correlate production issues with known
 Incident with cloud provider issues
 
 ```
-Your incident: Database timeouts starting 14:15 UTC on 2026-03-20
-Perplexity query: "AWS RDS MySQL connection limit issues March 2026"
+Your incident - Database timeouts starting 14:15 UTC on 2026-03-20
+Perplexity query - "AWS RDS MySQL connection limit issues March 2026"
 AWS issued a regionwide advisory about conn pool issues at 14:10 UTC
 ```
 
@@ -96,7 +96,7 @@ Modern incident response combines centralized logging with AI:
 2. Parse: Convert unstructured logs to structured JSON with timestamp, service, severity, message
 3. Feed to AI: Copy relevant log window (5-10 minutes around incident start) into Claude or GPT-4
 4. Generate hypothesis: AI identifies root cause with 70-85% accuracy
-5. Validate: Run AI suggestions (e.g., "increase connection pool to 100", "restart service X")
+5. Validate - Run AI suggestions (e.g., "increase connection pool to 100", "restart service X")
 
 Tool Comparison Table
 
@@ -225,13 +225,13 @@ print(result)
 
 Incident Response Best Practices
 
-Log enrichment: Include request IDs, trace IDs, and user context. This helps AI correlate events across services.
+Log enrichment - Include request IDs, trace IDs, and user context. This helps AI correlate events across services.
 
-Baseline metrics: Store normal operational metrics (CPU, memory, latency) as a reference. When analyzing incidents, always provide the baseline delta.
+Baseline metrics - Store normal operational metrics (CPU, memory, latency) as a reference. When analyzing incidents, always provide the baseline delta.
 
-Tiered severity: Use structured log levels (DEBUG, INFO, WARN, ERROR, CRITICAL). AI prioritizes CRITICAL/ERROR logs first, reducing noise.
+Tiered severity - Use structured log levels (DEBUG, INFO, WARN, ERROR, CRITICAL). AI prioritizes CRITICAL/ERROR logs first, reducing noise.
 
-Time synchronization: Ensure all services use UTC and NTP sync. Timestamp misalignment breaks causal analysis.
+Time synchronization - Ensure all services use UTC and NTP sync. Timestamp misalignment breaks causal analysis.
 
 Limitations and Gotchas
 
@@ -321,13 +321,13 @@ result = analyze_incident_from_elasticsearch(query)
 print(result)
 ```
 
-Preventing Future Incidents: Monitoring Strategy
+Preventing Future Incidents - Monitoring Strategy
 
 Effective incident response includes preventing recurrence. AI can help identify monitoring gaps:
 
 Use AI to evaluate your monitoring coverage:
 
-Ask Claude: "Given these error patterns [paste your error logs], what monitoring alerts should we add to catch this earlier?"
+Ask Claude - "Given these error patterns [paste your error logs], what monitoring alerts should we add to catch this earlier?"
 
 Common monitoring blind spots AI helps identify:
 - Silent failures (no error logged, but requests fail)
@@ -369,7 +369,7 @@ Processing millions of log lines through AI tools requires understanding pricing
 | Internal LLM (self-hosted) | Infrastructure cost | ~$0.01 (compute) | $200-500/month (infra) |
 | Datadog AI Monitoring | Per-metric subscription | $0 (included) | $500+ |
 
-Cost optimization strategy: Process only ERROR/CRITICAL logs through expensive AI APIs. Filter low-priority logs locally before sending to external tools.
+Cost optimization strategy - Process only ERROR/CRITICAL logs through expensive AI APIs. Filter low-priority logs locally before sending to external tools.
 
 ```python
 Filter before sending to API (saves 70-80% of costs)
@@ -394,7 +394,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -406,7 +406,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

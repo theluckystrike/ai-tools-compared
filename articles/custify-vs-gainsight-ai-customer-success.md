@@ -42,7 +42,7 @@ When evaluating AI-powered customer success platforms, developers and technical 
 Both platforms offer free trials that let you test these aspects before committing.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- This comparison examines Custify: and Gainsight AI through the lens of implementation complexity, API capabilities, and extensibility for power users building custom workflows.
+- This comparison examines Custify - and Gainsight AI through the lens of implementation complexity, API capabilities, and extensibility for power users building custom workflows.
 
 Platform Overview
 
@@ -110,7 +110,7 @@ def trigger_playbook(customer_id, playbook_id):
 
 Gainsight API
 
-Gainsight offers a more complex API ecosystem with multiple endpoints for different functions. The platform uses OAuth 2.0 for authentication, which adds an initial setup step but provides better security for enterprise environments.
+Gainsight offers a more complex API environment with multiple endpoints for different functions. The platform uses OAuth 2.0 for authentication, which adds an initial setup step but provides better security for enterprise environments.
 
 ```python
 import requests

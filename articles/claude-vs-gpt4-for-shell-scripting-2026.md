@@ -19,13 +19,13 @@ Claude vs GPT-4 for Shell Scripting 2026
 
 Shell scripts are unforgiving. A missing quote, an unset variable check, or a `rm -rf` without a guard can cause real damage. This comparison tests Claude and GPT-4o on five real-world scripting tasks.
 
-Test 1: Safe File Processing Script
+Test 1 - Safe File Processing Script
 
 Prompt:
 ```text
 Write a Bash script that processes all .log files in a directory.
-For each file: count lines, find unique IPs (format X.X.X.X), write results to a CSV.
-The script should: use strict mode, handle missing directory argument,
+For each file - count lines, find unique IPs (format X.X.X.X), write results to a CSV.
+The script should - use strict mode, handle missing directory argument,
 not fail if no .log files exist, be POSIX-portable where possible.
 ```
 
@@ -101,7 +101,7 @@ GPT-4o produces a functional script but:
 
 Claude. significantly safer for production use.
 
-Test 2: Deployment Script with Rollback
+Test 2 - Deployment Script with Rollback
 
 Prompt:
 ```text
@@ -180,11 +180,11 @@ trap - ERR
 log "INFO" "Deployment complete"
 ```
 
-Key details Claude gets right: `trap cleanup_new ERR` for automatic rollback on any failure, publishing the new container to a different port for smoke testing (doesn't interfere with running service), `${VAR:?message}` for required env vars, and `|| true` on cleanup commands so they don't abort.
+Key details Claude gets right - `trap cleanup_new ERR` for automatic rollback on any failure, publishing the new container to a different port for smoke testing (doesn't interfere with running service), `${VAR:?message}` for required env vars, and `|| true` on cleanup commands so they don't abort.
 
 GPT-4o wrote a similar script but forgot the `trap` and tested against the production port instead of an isolated one.
 
-Test 3: Argument Parsing
+Test 3 - Argument Parsing
 
 Prompt:
 ```text
@@ -203,7 +203,7 @@ INPUT=""
 
 usage() {
     cat <<EOF
-Usage: $(basename "$0") --input FILE [OPTIONS]
+Usage - $(basename "$0") --input FILE [OPTIONS]
 
 Options:
   --input FILE      Input file (required)
@@ -238,7 +238,7 @@ ${VERBOSE} && echo "Processing ${INPUT} → ${OUTPUT} (format: ${FORMAT})" >&2
 
 Both Claude and GPT-4o handle argument parsing well. Claude's version adds input validation (file existence check, format enum validation) without being asked. GPT-4o skips these unless specified.
 
-Test 4: Process Monitor
+Test 4 - Process Monitor
 
 Prompt:
 ```text
@@ -308,9 +308,9 @@ while true; do
 done
 ```
 
-This is a meaningful difference: the time-windowed restart counter prevents the monitor from permanently locking out a process that had a burst of failures but is now stable, while still protecting against rapid crash loops.
+This is a meaningful difference - the time-windowed restart counter prevents the monitor from permanently locking out a process that had a burst of failures but is now stable, while still protecting against rapid crash loops.
 
-Test 5: Parallel Task Runner
+Test 5 - Parallel Task Runner
 
 Prompt:
 ```text
@@ -398,7 +398,7 @@ Summary Scorecard
 | POSIX portability notes | Yes | Sometimes | Claude proactively notes bash-isms |
 | Destructive operation guards | Always | Usually | Claude never writes unguarded rm -rf |
 
-Overall: Claude is the stronger shell scripting tool for production scripts. The gap is clearest in safety-critical patterns: trap-based cleanup, proper glob expansion, time-windowed circuit breakers, and guarded destructive operations. GPT-4o produces functional scripts that usually work, but lacks Claude's habit of adding defensive layers unprompted.
+Overall - Claude is the stronger shell scripting tool for production scripts. The gap is clearest in safety-critical patterns: trap-based cleanup, proper glob expansion, time-windowed circuit breakers, and guarded destructive operations. GPT-4o produces functional scripts that usually work, but lacks Claude's habit of adding defensive layers unprompted.
 
 For inline autocomplete in editors, GitHub Copilot remains convenient. it's fast and context-aware within a file. But for generating complete, production-ready scripts from a prompt, Claude is the better choice in 2026.
 

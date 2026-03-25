@@ -117,7 +117,7 @@ For a fintech dashboard, generate component names using these tokens:
 - Success: #10B981 (positive values)
 - Danger: #EF4444 (alerts)
 
-Components needed: form submit, cancel action, delete confirmation, success notification
+Components needed - form submit, cancel action, delete confirmation, success notification
 ```
 
 Hierarchical Prompts
@@ -157,7 +157,7 @@ Step 7. Commit the naming table to your design system docs. Store it in your rep
 
 Practical Examples
 
-Example 1: Color Token to Component Name
+Example 1 - Color Token to Component Name
 
 Given these tokens:
 
@@ -182,11 +182,11 @@ An AI assistant can generate:
 | color.action.hover | ButtonActionPrimaryHover | State variants |
 | color.action.disabled | ButtonActionDisabled | Inactive states |
 
-Example 2: Spacing Tokens to Component Variants
+Example 2 - Spacing Tokens to Component Variants
 
 ```
-Input tokens: spacing-xs (4px), spacing-sm (8px), spacing-md (16px)
-Context: Button padding variants
+Input tokens - spacing-xs (4px), spacing-sm (8px), spacing-md (16px)
+Context - Button padding variants
 ```
 
 Output recommendations:
@@ -197,7 +197,7 @@ Output recommendations:
 
 - `ButtonPaddingRelaxed` (using spacing-md + spacing-lg)
 
-Example 3: Typography to Component Mapping
+Example 3 - Typography to Component Mapping
 
 ```
 Tokens:
@@ -223,13 +223,13 @@ Validation and Refinement
 
 AI-generated names require human validation. Check for:
 
-- Consistency: Do names follow your established patterns?
+- Consistency - Do names follow your established patterns?
 
-- Clarity: Would another developer understand the component from the name?
+- Clarity - Would another developer understand the component from the name?
 
-- Uniqueness: Do names conflict with existing components?
+- Uniqueness - Do names conflict with existing components?
 
-- Scalability: Do names accommodate future component variants?
+- Scalability - Do names accommodate future component variants?
 
 Iterate on prompts based on initial results. Adjust context, provide more examples, or constrain the output format to improve accuracy.
 

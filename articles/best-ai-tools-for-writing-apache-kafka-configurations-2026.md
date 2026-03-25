@@ -24,9 +24,9 @@ This guide compares the top AI tools for Kafka configuration work across accurac
 
 Claude (claude-opus-4-6)
 
-Pricing: $15/month Claude Pro (unlimited)
-Speed: Fast
-Configuration Depth: Expert-level
+Pricing - $15/month Claude Pro (unlimited)
+Speed - Fast
+Configuration Depth - Expert-level
 
 Claude excels at Kafka work. It generates syntactically correct YAML/JSON configs, explains every parameter choice, and flags security risks.
 
@@ -56,15 +56,15 @@ min.insync.replicas=2
 
 The output includes inline comments explaining why each value was chosen. Claude also generates accompanying producer and consumer configs that work together.
 
-Best For: Teams needing, well-documented Kafka setups. Architecture review and mentoring.
+Best For - Teams needing, well-documented Kafka setups. Architecture review and mentoring.
 
 ---
 
 GitHub Copilot
 
-Pricing: $10/month (individual)
-Speed: Very Fast
-Configuration Depth: Intermediate
+Pricing - $10/month (individual)
+Speed - Very Fast
+Configuration Depth - Intermediate
 
 Copilot excels at context-aware suggestions. If you have existing configs in your repo, it learns your patterns and generates matching configs.
 
@@ -83,24 +83,24 @@ Weaknesses:
 
 Example Workflow:
 ```
-You type: broker_id=1
+You type - broker_id=1
         log.dirs=/var/kafka/logs
         listeners=PLAINTEXT://
 
-Copilot suggests: listeners=PLAINTEXT://localhost:9092
+Copilot suggests - listeners=PLAINTEXT://localhost:9092
                   advertised.listeners=PLAINTEXT://broker-1.kafka.internal:9092
                   security.inter.broker.protocol=PLAINTEXT
 ```
 
-Best For: Individual developers, rapid prototyping, teams with existing Kafka infrastructure.
+Best For - Individual developers, rapid prototyping, teams with existing Kafka infrastructure.
 
 ---
 
 ChatGPT (GPT-4, $20/month)
 
-Pricing: $20/month ChatGPT Plus
-Speed: Moderate
-Configuration Depth: Intermediate
+Pricing - $20/month ChatGPT Plus
+Speed - Moderate
+Configuration Depth - Intermediate
 
 GPT-4 handles Kafka configs reasonably well. It understands architectural concepts but sometimes misses production details.
 
@@ -119,15 +119,15 @@ Weaknesses:
 Example Limitation:
 GPT-4 might suggest `auto.offset.reset=latest` without probing whether the team's SLA allows message loss. Claude asks clarifying questions first.
 
-Best For: General learning, multi-language producer/consumer code, conceptual questions.
+Best For - General learning, multi-language producer/consumer code, conceptual questions.
 
 ---
 
 Perplexity (Free/Pro $20/month)
 
-Pricing: Free + Pro $20/month
-Speed: Moderate
-Configuration Depth: Intermediate
+Pricing - Free + Pro $20/month
+Speed - Moderate
+Configuration Depth - Intermediate
 
 Perplexity retrieves current Kafka documentation and generates configs grounded in official sources.
 
@@ -143,15 +143,15 @@ Weaknesses:
 - Requires internet access
 - Verbose output (includes many doc excerpts)
 
-Best For: Compliance-sensitive work, version migrations, documentation-heavy environments.
+Best For - Compliance-sensitive work, version migrations, documentation-heavy environments.
 
 ---
 
 Gemini (Google, Free/Premium $20/month)
 
-Pricing: Free + Premium $20/month
-Speed: Fast
-Configuration Depth: Intermediate
+Pricing - Free + Premium $20/month
+Speed - Fast
+Configuration Depth - Intermediate
 
 Gemini understands Kafka but lags behind Claude and GPT-4 in configuration consistency.
 
@@ -166,7 +166,7 @@ Weaknesses:
 - Less nuanced about partition rebalancing strategies
 - Fewer examples in training data (Kafka is Java-centric)
 
-Best For: Infrastructure-as-code generation, cloud deployment automation.
+Best For - Infrastructure-as-code generation, cloud deployment automation.
 
 ---
 
@@ -275,7 +275,7 @@ AI tools like Claude generate these with clear reasoning: why min.insync.replica
 How to Use AI Tools Effectively for Kafka
 
 1. Start with Constraints
-Tell the tool: "I need a 3-broker cluster for 50M events/day, 100ms latency SLA, full audit trail required." Don't just ask for "a Kafka config."
+Tell the tool - "I need a 3-broker cluster for 50M events/day, 100ms latency SLA, full audit trail required." Don't just ask for "a Kafka config."
 
 2. Request Monitoring Alongside Configs
 Ask for JMX/Prometheus exporter configs. Kafka configs are only half the story. Monitoring validates your choices.

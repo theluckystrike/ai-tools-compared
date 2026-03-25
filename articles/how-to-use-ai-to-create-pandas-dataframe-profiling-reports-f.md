@@ -54,7 +54,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand DataFrame Profiling
+Step 1 - Understand DataFrame Profiling
 
 DataFrame profiling generates reports that cover multiple dimensions of your dataset. A complete profile typically includes descriptive statistics, data type information, missing value counts, correlation matrices, and distribution visualizations. This automated approach replaces hundreds of lines of exploratory code with a single function call.
 
@@ -73,7 +73,7 @@ Three libraries dominate the Python profiling space, each with distinct strength
 
 For most workflows, ydata-profiling is the right starting point. Switch to sweetviz when you need to compare datasets side by side. Use dataprep when you want to clean and profile in one pass.
 
-Step 2: Set Up Your Profiling Environment
+Step 2 - Set Up Your Profiling Environment
 
 Install the required libraries using pip:
 
@@ -83,7 +83,7 @@ pip install pandas ydata-profiling sweetviz autoviz
 
 The `ydata-profiling` library (formerly pandas-profiling) remains the most open-source option. `sweetviz` and `autoviz` provide alternative approaches with different visualization styles and comparison capabilities.
 
-Step 3: Generate Your First Profile Report
+Step 3 - Generate Your First Profile Report
 
 Create a simple profiling report using ydata-profiling:
 
@@ -115,7 +115,7 @@ profile = ProfileReport(
 )
 ```
 
-Step 4: AI-Enhanced Profiling Techniques
+Step 4 - AI-Enhanced Profiling Techniques
 
 Beyond basic automated reports, AI tools can interpret your profiling results and suggest next steps. Large language models excel at analyzing summary statistics and identifying potential issues or opportunities in your data.
 
@@ -159,7 +159,7 @@ def build_analysis_prompt(df, profile):
 
     prompt = f"""
     Dataset summary:
-    - Rows: {len(df)}, Columns: {len(df.columns)}
+    - Rows - {len(df)}, Columns: {len(df.columns)}
     - Columns with >10% missing: {high_missing}
     - Highly skewed columns (|skew|>1): {skewed}
 
@@ -194,7 +194,7 @@ df['anomaly_flag'] = anomalies
 print(f"Detected {sum(anomalies == -1)} potential anomalies")
 ```
 
-Step 5: Comparing Datasets with Profiling
+Step 5 - Comparing Datasets with Profiling
 
 When validating data pipeline outputs or comparing training and test sets, profiling comparisons reveal structural differences:
 
@@ -211,7 +211,7 @@ comparison_report.show_html("data_comparison.html")
 
 Sweetviz highlights differences in feature distributions, missing value patterns, and value frequencies between datasets. This proves invaluable for catching data leakage or identifying distribution shift that degrades model performance.
 
-Step 6: Use dataprep for Combined Cleaning and Profiling
+Step 6 - Use dataprep for Combined Cleaning and Profiling
 
 The `dataprep` library takes an integrated approach: it profiles and cleans in one pass, which avoids the common pitfall of profiling a dirty dataset and then profiling again after cleaning without tracking what changed.
 
@@ -230,7 +230,7 @@ clean_report.save("cleaned_profile.html")
 
 The side-by-side comparison of raw and cleaned profiles gives you a precise record of every transformation applied. useful for reproducibility audits and for explaining data preprocessing decisions to non-technical stakeholders.
 
-Step 7: Practical Workflows for Common Scenarios
+Step 7 - Practical Workflows for Common Scenarios
 
 Quick Initial Exploration
 
@@ -323,7 +323,7 @@ if flags:
 
 This pattern integrates naturally with Airflow, Prefect, or any scheduled job system.
 
-Step 8: Integration with Data Pipelines
+Step 8 - Integration with Data Pipelines
 
 Embed profiling into automated workflows for continuous data quality monitoring:
 

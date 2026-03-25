@@ -38,7 +38,7 @@ Service Level Indicators (SLIs) and Service Level Objectives (SLOs) form the fou
 - When you set an: SLO of 99.9% over 30 days, you allow approximately 43 minutes of allowed downtime.
 - AI tools can transform this process: helping you articulate clear metrics that genuinely reflect user experience.
 - When prompting an AI tool: provide context about your service architecture, user expectations, and existing infrastructure.
-- The service uses Redis: for caching and PostgreSQL for persistent storage.
+- The service uses Redis - for caching and PostgreSQL for persistent storage.
 
 Prerequisites
 
@@ -50,13 +50,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Makes SLI and SLO Definitions Effective
+Step 1 - What Makes SLI and SLO Definitions Effective
 
 An effective SLI measures something that matters to users. An SLO sets a realistic target that your team can actually maintain. The challenge lies in translating vague requirements like "the service should be fast" into concrete, measurable criteria.
 
 SLIs typically fall into these categories: availability, latency, throughput, and error rates. Each category requires careful consideration of what you're measuring and why.
 
-Step 2: Use AI to Generate SLI Definitions
+Step 2 - Use AI to Generate SLI Definitions
 
 AI excels at translating conceptual requirements into structured definitions. When prompting an AI tool, provide context about your service architecture, user expectations, and existing infrastructure.
 
@@ -97,7 +97,7 @@ slis:
     category: throughput
 ```
 
-Step 3: Crafting SLO Targets from SLI Measurements
+Step 3 - Crafting SLO Targets from SLI Measurements
 
 Once you have SLIs defined, setting appropriate SLO targets requires balancing user expectations with operational reality. AI can help analyze historical data and recommend realistic thresholds.
 
@@ -123,13 +123,13 @@ slo:
       - maintenance_window: "Sunday 02:00-04:00 UTC"
 ```
 
-Step 4: Avoiding Common Pitfalls in SLI Selection
+Step 4 - Avoiding Common Pitfalls in SLI Selection
 
 AI can help identify issues in your definitions before they cause problems. One common mistake is measuring internal metrics instead of user-facing ones. For example, tracking database query times matters less than tracking end-to-end request latency.
 
 Another pitfall involves setting unrealistic targets. An SLO of 99.999% availability sounds impressive but requires massive operational investment. AI tools can analyze your current performance data and suggest targets that represent meaningful improvement without excessive burden.
 
-Step 5: Practical Workflow for AI-Assisted Definition Writing
+Step 5 - Practical Workflow for AI-Assisted Definition Writing
 
 Start with a clear description of your service's user-facing behavior. Include information about dependencies, expected traffic patterns, and any existing performance baselines. The more context you provide, the better the AI can tailor recommendations.
 
@@ -143,7 +143,7 @@ After receiving initial definitions, validate them against these questions:
 
 - Do you have alerting in place before the SLO is breached?
 
-Step 6: Example: Complete SLI/SLO Package for an User Service
+Step 6 - Example: Complete SLI/SLO Package for an User Service
 
 Here's a practical example showing how AI might generate a complete definition package for an user authentication service:
 
@@ -187,13 +187,13 @@ slos:
     window: 7d
 ```
 
-Step 7: Refining Definitions Through Iteration
+Step 7 - Refining Definitions Through Iteration
 
 Your initial SLI and SLO definitions will likely need refinement. Use AI to simulate different scenarios and edge cases. Ask it to identify potential gaps in your measurement approach or suggest additional indicators you might have overlooked.
 
 Document your definitions alongside code in version control. This practice ensures reproducibility and helps new team members understand your reliability contracts.
 
-Step 8: Work with Error Budgets
+Step 8 - Work with Error Budgets
 
 Error budgets provide a mathematical approach to balancing reliability with development velocity. When you set an SLO of 99.9% over 30 days, you allow approximately 43 minutes of allowed downtime. AI can help calculate these budgets and suggest appropriate policies.
 
@@ -217,7 +217,7 @@ error_budget:
 
 The burn rate concept matters because fast-burn scenarios indicate acute problems requiring immediate attention, while slow-burn situations suggest systemic issues that need longer-term investigation.
 
-Step 9: Multi-Layer SLI Design
+Step 9 - Multi-Layer SLI Design
 
 Sophisticated systems benefit from SLIs at multiple layers. Infrastructure SLIs measure underlying dependencies, application SLIs track service behavior, and business SLIs capture user outcomes. AI can help you design this hierarchy.
 
@@ -247,7 +247,7 @@ layers:
 
 Each layer informs different stakeholders. Infrastructure SLIs matter to ops teams, application SLIs guide developers, and business SLIs align with product objectives.
 
-Step 10: Integration with Alerting Systems
+Step 10 - Integration with Alerting Systems
 
 Effective SLO management requires alerting that respects error budgets. Too many alerts create noise; too few allow problems to escalate. AI can recommend alert thresholds based on your SLO configuration.
 

@@ -14,9 +14,9 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Writing mocks and stubs is tedious but necessary for unit testing. AI tools can generate valid, framework-specific mock code from interfaces and function signatures. Free (open source), $19/month for cloud version.
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- Cost: $0.50-$2/month for typical team (depends on volume).
-- Cost: $10-$20/month per developer (GitHub Copilot subscription).
-- Limitations: Requires running separate service, not ideal for unit tests (too slow), better for integration tests.
+- Cost - $0.50-$2/month for typical team (depends on volume).
+- Cost - $10-$20/month per developer (GitHub Copilot subscription).
+- Limitations - Requires running separate service, not ideal for unit tests (too slow), better for integration tests.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
 Why Mocks Matter
@@ -32,11 +32,11 @@ You can't test unit tests against real services (slow, flaky, cost). Mocks solve
 
 1. Claude API (Best Overall, Framework-Agnostic)
 
-Best for: Teams using multiple languages/frameworks, custom mock patterns.
+Best for - Teams using multiple languages/frameworks, custom mock patterns.
 
 Claude understands test patterns across languages and generates production-quality mocks.
 
-Example 1: Python pytest-mock
+Example 1 - Python pytest-mock
 ```
 Input:
 class UserRepository:
@@ -44,8 +44,8 @@ class UserRepository:
         # Fetches from database
         pass
 
-Test function stub needed for: test_user_service_returns_active_users()
-Framework: pytest-mock
+Test function stub needed for - test_user_service_returns_active_users()
+Framework - pytest-mock
 ```
 
 Claude generates:
@@ -89,9 +89,9 @@ def test_user_service_handles_missing_user(mock_user_repo, mocker):
         service.get_active_users()
 ```
 
-Quality: Production-ready. Includes setup, assertions, edge case handling.
+Quality - Production-ready. Includes setup, assertions, edge case handling.
 
-Example 2: JavaScript Jest
+Example 2 - JavaScript Jest
 ```
 Input:
 class PaymentGateway {
@@ -100,7 +100,7 @@ class PaymentGateway {
     }
 }
 
-Test: Verify retry logic on timeout
+Test - Verify retry logic on timeout
 ```
 
 Claude generates:
@@ -149,18 +149,18 @@ describe('PaymentGateway', () => {
 });
 ```
 
-Quality: Excellent. Handles async, retry patterns, error cases.
+Quality - Excellent. Handles async, retry patterns, error cases.
 
-Prompt technique: Paste interface + failing test name + framework. Claude infers the pattern.
+Prompt technique - Paste interface + failing test name + framework. Claude infers the pattern.
 
-Cost: $0.50-$2/month for typical team (depends on volume).
+Cost - $0.50-$2/month for typical team (depends on volume).
 
-Limitations: Requires prompt engineering for complex scenarios, no IDE integration, one-off requests.
+Limitations - Requires prompt engineering for complex scenarios, no IDE integration, one-off requests.
 ---
 
 2. GitHub Copilot (Best for IDE Integration)
 
-Best for: Developers wanting autocomplete mock generation during coding.
+Best for - Developers wanting autocomplete mock generation during coding.
 
 Copilot generates mocks inline as you type test files.
 
@@ -180,7 +180,7 @@ def test_email_service_sends_welcome():
 Complete with Tab
 ```
 
-Speed: Instant (no API calls), inline suggestions.
+Speed - Instant (no API calls), inline suggestions.
 
 Example Go (gomock):
 ```go
@@ -193,7 +193,7 @@ func TestUserServiceFetchesUser(t *testing.T) {
     mockRepo := mocks.NewMockUserRepository(ctrl)
     mockRepo.EXPECT().
         GetUser(gomock.Any(), 123).
-        Return(&User{ID: 123, Name: "Alice"}, nil).
+        Return(&User{ID: 123, Name - "Alice"}, nil).
         Times(1)
 
     service := NewUserService(mockRepo)
@@ -204,17 +204,17 @@ func TestUserServiceFetchesUser(t *testing.T) {
 }
 ```
 
-Quality: Good for simple cases, hits and misses on complex patterns.
+Quality - Good for simple cases, hits and misses on complex patterns.
 
-Cost: $10-$20/month per developer (GitHub Copilot subscription).
+Cost - $10-$20/month per developer (GitHub Copilot subscription).
 
-Limitations: Requires active coding, less accurate than Claude on framework-specific patterns, hallucinations possible.
+Limitations - Requires active coding, less accurate than Claude on framework-specific patterns, hallucinations possible.
 
 ---
 
 3. Mockoon (Specialized for API Mocking)
 
-Best for: Teams needing realistic mock HTTP APIs and services.
+Best for - Teams needing realistic mock HTTP APIs and services.
 
 Mockoon is a desktop/web tool for creating mock APIs with realistic responses.
 
@@ -264,17 +264,17 @@ def test_payment_service_retries_on_rate_limit():
     # Verifies retry logic works
 ```
 
-Quality: Excellent for integration testing, less useful for unit testing isolated functions.
+Quality - Excellent for integration testing, less useful for unit testing isolated functions.
 
-Cost: Free (open source), $19/month for cloud version.
+Cost - Free (open source), $19/month for cloud version.
 
-Limitations: Requires running separate service, not ideal for unit tests (too slow), better for integration tests.
+Limitations - Requires running separate service, not ideal for unit tests (too slow), better for integration tests.
 
 ---
 
 4. Teleprompter (Kotlin/Java Specific)
 
-Best for: Java/Kotlin teams, Mockito-heavy projects.
+Best for - Java/Kotlin teams, Mockito-heavy projects.
 
 Teleprompter generates Mockito mocks with argument matchers, stubbed chains, and spy configurations.
 
@@ -316,17 +316,17 @@ verify(paymentProcessor, times(1)).processPayment(any());
 verify(paymentProcessor, never()).refund(any());
 ```
 
-Quality: Production-ready Mockito patterns.
+Quality - Production-ready Mockito patterns.
 
-Cost: Free plugin for IntelliJ.
+Cost - Free plugin for IntelliJ.
 
-Limitations: JVM-only, requires IDE setup, less sophisticated than Claude.
+Limitations - JVM-only, requires IDE setup, less sophisticated than Claude.
 
 ---
 
 5. Testcontainers (Specialized for Container-Based Services)
 
-Best for: Tests needing actual service behavior (not pure mocks), containerized dependencies.
+Best for - Tests needing actual service behavior (not pure mocks), containerized dependencies.
 
 Testcontainers spins up Docker containers of real services for testing (PostgreSQL, Redis, Kafka, etc.).
 
@@ -349,17 +349,17 @@ def test_user_repository_saves_and_retrieves():
         assert user.name == "Alice"
 ```
 
-Quality: Tests real database behavior, catches actual issues.
+Quality - Tests real database behavior, catches actual issues.
 
-Cost: Setup overhead, test speed (30s vs 30ms for pure mocks).
+Cost - Setup overhead, test speed (30s vs 30ms for pure mocks).
 
-Limitations: Not a mock generator, slower than mocks, requires Docker, good for integration not unit tests.
+Limitations - Not a mock generator, slower than mocks, requires Docker, good for integration not unit tests.
 
 ---
 
 Language-Specific Comparison
 
-Python: pytest-mock + Claude API
+Python - pytest-mock + Claude API
 - Setup: `pip install pytest-mock`
 - Time to generate mock: 30 seconds with Claude prompt
 - Complexity: Can handle async mocks, fixtures, parametrized tests
@@ -374,7 +374,7 @@ async def test_async_service():
     assert result["status"] == "ok"
 ```
 
-JavaScript: jest + GitHub Copilot
+JavaScript - jest + GitHub Copilot
 - Setup: jest (included in most Node projects)
 - Time to generate: Instant with Copilot
 - Complexity: Handles promises, async/await, module mocking
@@ -388,7 +388,7 @@ fetch.mockResolvedValue({
 ```
 
 Go: gomock + Claude API
-- Setup: `go install github.com/golang/mock@latest`
+- Setup - `go install github.com/golang/mock@latest`
 - Time to generate: 1 minute with Claude prompt
 - Complexity: Interface-based mocks, excellent for dependency injection
 - ```go
@@ -399,7 +399,7 @@ mockRepo.EXPECT().
     Times(1)
 ```
 
-Java: Mockito + IDE plugins
+Java - Mockito + IDE plugins
 - Setup: Gradle/Maven dependency
 - Time to generate: 20 seconds with Teleprompter
 - Complexity: Argument matchers, spy/partial mocks, exception stubbing
@@ -412,13 +412,13 @@ when(mock.findById(123L)).thenReturn(Optional.of(new User(123L, "Alice")));
 
 Recommended Workflow
 
-Week 1: Use Claude API for 3 complex mocks (unusual patterns). Get comfortable with prompts.
+Week 1 - Use Claude API for 3 complex mocks (unusual patterns). Get comfortable with prompts.
 
-Week 2: Enable GitHub Copilot. Use for standard mocks during coding.
+Week 2 - Enable GitHub Copilot. Use for standard mocks during coding.
 
-Week 3: For framework-specific (Go/Java), use framework plugins.
+Week 3 - For framework-specific (Go/Java), use framework plugins.
 
-Week 4+: Establish team patterns. Codify common mocks in fixtures/helpers to reduce generation needs.
+Week 4+ - Establish team patterns. Codify common mocks in fixtures/helpers to reduce generation needs.
 
 ---
 
@@ -434,9 +434,9 @@ Cost-Benefit Analysis
 
 ---
 
-Practical Example: Full Test Suite
+Practical Example - Full Test Suite
 
-Given: Service with external dependencies
+Given - Service with external dependencies
 
 ```python
 app.py
@@ -471,9 +471,9 @@ Use fixtures for reusable mocks.
 
 Claude generates ~200 lines of production-quality tests.
 
-Manual effort: 0 minutes (entirely generated, copy/paste).
+Manual effort - 0 minutes (entirely generated, copy/paste).
 
-Time saved vs writing manually: 45 minutes.
+Time saved vs writing manually - 45 minutes.
 
 ---
 

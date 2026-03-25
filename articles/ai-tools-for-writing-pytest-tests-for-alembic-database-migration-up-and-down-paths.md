@@ -98,17 +98,17 @@ Practical Workflow for AI-Assisted Test Generation
 
 To get the best results from AI tools when generating migration tests, follow a structured approach:
 
-Step 1: Provide Context
+Step 1 - Provide Context
 
 Share your project's database configuration, existing migration files, and any custom Alembic operations you've defined. The more context you provide, the more accurate the generated tests will be.
 
-Step 2: Request Specific Test Patterns
+Step 2 - Request Specific Test Patterns
 
 Instead of asking for "tests for migrations," specify exactly what you need:
 
 > "Generate pytest tests for this Alembic migration that verify the upgrade creates a foreign key relationship between the orders and customers tables, and the downgrade properly removes the constraint without data loss."
 
-Step 3: Review and Enhance
+Step 3 - Review and Enhance
 
 AI-generated tests serve as a starting point. Review the output to add assertions for:
 
@@ -289,13 +289,13 @@ Common Pitfalls and How AI Helps Avoid Them
 
 Manual migration testing often suffers from several recurring issues that AI tools can help address:
 
-Forgotten edge cases: AI tools can analyze your migration code and suggest test scenarios you might have missed, such as handling NULL values, unique constraint violations, or cascade deletes.
+Forgotten edge cases - AI tools can analyze your migration code and suggest test scenarios you might have missed, such as handling NULL values, unique constraint violations, or cascade deletes.
 
-Inconsistent test patterns: By generating tests from templates, AI ensures consistent fixture usage and assertion patterns across your entire test suite.
+Inconsistent test patterns - By generating tests from templates, AI ensures consistent fixture usage and assertion patterns across your entire test suite.
 
-Outdated tests: When migrations change, AI can help update existing tests to match new schema requirements, reducing technical debt.
+Outdated tests - When migrations change, AI can help update existing tests to match new schema requirements, reducing technical debt.
 
-Missing downgrade verification: Developers often test upgrades thoroughly but skip downgrade testing entirely, assuming it won't be needed. AI tools consistently include downgrade tests when prompted for "complete migration coverage."
+Missing downgrade verification - Developers often test upgrades thoroughly but skip downgrade testing entirely, assuming it won't be needed. AI tools consistently include downgrade tests when prompted for "complete migration coverage."
 
 Best Practices for AI-Generated Migration Tests
 

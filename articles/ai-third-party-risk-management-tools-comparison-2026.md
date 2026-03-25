@@ -53,7 +53,7 @@ Limitations:
 - Rating methodology lacks transparency for custom scoring needs
 - Higher pricing tiers required for detailed reports
 
-Best for: Organizations needing quick vendor risk visibility without deep technical integration.
+Best for - Organizations needing quick vendor risk visibility without deep technical integration.
 
 BitSight
 
@@ -69,7 +69,7 @@ Limitations:
 - Limited API security scanning capabilities
 - Requires significant setup time
 
-Best for: Enterprise security teams with established vendor governance programs.
+Best for - Enterprise security teams with established vendor governance programs.
 
 UpGuard
 
@@ -85,7 +85,7 @@ Limitations:
 - API rate limits on lower tiers
 - Less emphasis on AI-powered analysis
 
-Best for: Teams wanting both ratings and technical scanning in one platform.
+Best for - Teams wanting both ratings and technical scanning in one platform.
 
 CycognITo
 
@@ -101,7 +101,7 @@ Limitations:
 - Smaller market presence compared to larger platforms
 - Less automated vendor discovery
 
-Best for: Development teams prioritizing API security in their vendor risk program.
+Best for - Development teams prioritizing API security in their vendor risk program.
 
 SafeBase
 
@@ -117,7 +117,7 @@ Limitations:
 - Requires vendor participation in the platform
 - Less continuous monitoring capability
 
-Best for: Teams managing frequent security questionnaires and compliance documentation.
+Best for - Teams managing frequent security questionnaires and compliance documentation.
 
 Implementation Considerations
 
@@ -213,11 +213,11 @@ Cost-per-vendor decreases significantly with organization size. A startup with 5
 
 Implementation Timeline
 
-Week 1-2: Identify all third-party integrations and create vendor inventory
-Week 3-4: Select 2-3 tools based on use cases, negotiate contracts
-Week 5-6: Integrate with existing security workflow, configure initial scans
-Week 7-8: Run first assessment cycle, establish baselines
-Ongoing: Monthly reviews, remediation tracking, policy updates
+Week 1-2 - Identify all third-party integrations and create vendor inventory
+Week 3-4 - Select 2-3 tools based on use cases, negotiate contracts
+Week 5-6 - Integrate with existing security workflow, configure initial scans
+Week 7-8 - Run first assessment cycle, establish baselines
+Ongoing - Monthly reviews, remediation tracking, policy updates
 
 Expect 4-6 weeks from selection to first complete assessment cycle.
 
@@ -271,7 +271,7 @@ A typical mid-market tech company ($100M ARR) might deploy:
 2. CycognITo ($12k/year): Test 20 critical API integrations quarterly
 3. Jira + Custom Scripts ($5k/year): Orchestrate remediation workflows
 
-Total TPRM Budget: ~$32k/year
+Total TPRM Budget - ~$32k/year
 
 This covers:
 - Daily vendor security monitoring
@@ -289,11 +289,11 @@ Automated TPRM workflows prevent expensive security incidents:
 
 Example ROI calculation:
 ```
-Saved Incidents per Year: 1
-Cost per Incident: $4,500,000
-Annual TPRM Cost: $50,000
-Savings: $4,450,000
-ROI: 8,800%
+Saved Incidents per Year - 1
+Cost per Incident - $4,500,000
+Annual TPRM Cost - $50,000
+Savings - $4,450,000
+ROI - 8,800%
 ```
 
 Modern TPRM Practices

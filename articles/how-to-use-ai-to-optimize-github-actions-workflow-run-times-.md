@@ -56,7 +56,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Analyzing Your Current Workflows
+Step 1 - Analyzing Your Current Workflows
 
 Before optimizing, you need visibility into where time goes. The GitHub Actions workflow run history provides basic timing data, but AI tools can dig deeper. Start by examining your most frequent workflows and identify the longest-running jobs.
 
@@ -91,7 +91,7 @@ jobs:
 
 This basic workflow likely runs longer than necessary. Let's examine how AI can help identify and fix the issues.
 
-Step 2: AI-Powered Optimization Strategies
+Step 2 - AI-Powered Optimization Strategies
 
 Intelligent Caching
 
@@ -173,7 +173,7 @@ jobs:
 
 AI can also recommend when to use `fail-fast: false` to get complete matrix results even when one combination fails, helping you understand compatibility across your entire supported environment.
 
-Step 3: Use AI to Generate Optimized Workflows
+Step 3 - Use AI to Generate Optimized Workflows
 
 Modern AI coding assistants can generate optimized GitHub Actions workflows from scratch. When prompting an AI, provide context about your project:
 
@@ -247,7 +247,7 @@ jobs:
           cache-to: type=gha,mode=max
 ```
 
-Step 4: Identifying Bottlenecks with AI Analysis
+Step 4 - Identifying Bottlenecks with AI Analysis
 
 When your workflows still feel slow, AI can analyze execution patterns to find hidden bottlenecks. Common issues include:
 
@@ -307,7 +307,7 @@ Choosing the Right Runner
 
 AI tools also flag when a workflow would benefit from a larger or self-hosted runner. GitHub's standard `ubuntu-latest` runner provides 2 vCPUs and 7 GB of RAM. For compute-heavy builds, switching to a 4-core or 8-core runner can cut runtimes in half. Ask AI to compare your current resource usage against available runner tiers and recommend a cost-effective upgrade path.
 
-Step 5: Comparing AI Tools for Workflow Optimization
+Step 5 - Comparing AI Tools for Workflow Optimization
 
 Different AI coding tools have distinct strengths when it comes to GitHub Actions optimization. The table below summarizes how the most popular options stack up:
 
@@ -321,7 +321,7 @@ Different AI coding tools have distinct strengths when it comes to GitHub Action
 
 For teams running workflows that exceed 20 minutes, starting with a log-analysis session in Claude or ChatGPT typically surfaces the highest-impact wins. Copilot is the better choice for day-to-day editing and incremental improvements.
 
-Step 6: Workflow Design Patterns AI Recommends Most Often
+Step 6 - Workflow Design Patterns AI Recommends Most Often
 
 After analyzing hundreds of developer workflows, AI tools consistently surface the same set of architectural improvements:
 
@@ -333,7 +333,7 @@ Conditionally skip expensive jobs. Use `paths` filters on workflow triggers so t
 
 Pin action versions with SHA hashes. AI security tools increasingly flag workflows that use `@v4` floating tags because maintainers can push breaking changes at any time. Pinning to a commit SHA prevents unexpected failures.
 
-Step 7: Measuring Success
+Step 7 - Measuring Success
 
 Track your optimization efforts with GitHub's built-in metrics:
 

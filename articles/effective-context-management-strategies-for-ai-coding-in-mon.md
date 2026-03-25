@@ -47,7 +47,7 @@ AI coding assistants operate within token limits, and monorepos can contain hund
 
 Understanding how different AI tools handle context windows helps. Claude Code, Cursor, and GitHub Copilot each approach this differently. Some tools maintain persistent indexes of your codebase, while others rely entirely on what you explicitly provide in each conversation. Your strategy must account for these differences.
 
-Strategy One: Workspace-Aware Project References
+Strategy One - Workspace-Aware Project References
 
 The most effective approach involves explicitly referencing the specific package or module you are working on. Instead of asking "how do I add authentication," specify "I am working on the auth-service package in packages/auth-service/."
 
@@ -64,7 +64,7 @@ following the pattern in packages/auth-lib/ that handles token refresh"
 
 Notice how the second version names the exact file, specifies the type of authentication, and references an existing pattern in the codebase. This dramatically improves the relevance of generated code.
 
-Strategy Two: Selective Context Inclusion
+Strategy Two - Selective Context Inclusion
 
 Rather than providing maximum context, experienced developers have learned to provide minimal but sufficient context. This means including only the files directly relevant to the task at hand.
 
@@ -80,7 +80,7 @@ A practical technique involves creating context bundles. When you need help with
 
 This approach requires understanding your monorepo structure, but it produces much better results than dumping entire packages into context.
 
-Strategy Three: Using Tool-Specific Index Features
+Strategy Three - Using Tool-Specific Index Features
 
 Modern AI coding tools maintain indexes of your codebase for semantic search. Understanding how your tool's index works lets you take advantage of it effectively.
 
@@ -94,14 +94,14 @@ Add validation for the stripe customer ID field following the existing
 pattern for external ID validation in the shared package.
 ```
 
-Strategy Four: Context Refinement Through Conversation
+Strategy Four - Context Refinement Through Conversation
 
 AI assistants excel at iterative refinement, and this becomes especially powerful in monorepo contexts. Rather than asking for a complete solution in one prompt, start with a focused request and refine based on the response.
 
 This approach works because it lets the AI demonstrate its understanding before you invest more context. If the first response is heading in the wrong direction, a simple correction often gets better results than re-explaining everything.
 
 ```python
-First prompt: focused request
+First prompt - focused request
 "Show me how to add a new API endpoint in the gateway service"
 
 Follow-up refinement based on response
@@ -111,7 +111,7 @@ making HTTP calls directly. Update the example to use that pattern."
 
 This conversation-based refinement typically uses fewer total tokens than trying to specify everything upfront, while producing more accurate results.
 
-Strategy Five: Managing Cross-Package Dependencies
+Strategy Five - Managing Cross-Package Dependencies
 
 Monorepos often have complex dependency graphs where changes in one package affect others. When working on features that span packages, provide explicit dependency context.
 
@@ -187,7 +187,7 @@ Copilot works best with minimal but specific context:
 
 ```typescript
 // Strategy: Establish context with comments before asking
-// File: packages/api/src/handlers.ts
+// File - packages/api/src/handlers.ts
 // This file imports from: @company/auth (packages/auth/), @company/types (packages/types/)
 
 export async function handleLogin(req) {
@@ -336,16 +336,16 @@ Monorepo-Specific Prompting
 Good Monorepo Prompts
 
 ```
-GOOD: "In packages/auth-service/src/validators, add email validation following
+GOOD - "In packages/auth-service/src/validators, add email validation following
 the pattern used in packages/shared/validators/stringValidators.ts"
 
-GOOD: "Implement the PaymentGateway interface from packages/shared/types/payment.ts
+GOOD - "Implement the PaymentGateway interface from packages/shared/types/payment.ts
 in packages/stripe-service/src/gateway.ts"
 
-GOOD: "Create a database migration in packages/database/migrations that adds
+GOOD - "Create a database migration in packages/database/migrations that adds
 a users table with fields: id, email, created_at, updated_at"
 
-BETTER: "I'm working on packages/user-service. Existing code uses the BaseService
+BETTER - "I'm working on packages/user-service. Existing code uses the BaseService
 from packages/shared/services/BaseService.ts. Create a UserService extending it
 with methods: createUser, getUserById, updateUser"
 ```
@@ -353,16 +353,16 @@ with methods: createUser, getUserById, updateUser"
 Poor Monorepo Prompts
 
 ```
-POOR: "Write authentication code"
+POOR - "Write authentication code"
 (Too vague, doesn't reference existing patterns)
 
-POOR: "Add a feature to the API"
+POOR - "Add a feature to the API"
 (Doesn't specify which packages or what the feature is)
 
-POOR: [Paste entire monorepo structure]
+POOR - [Paste entire monorepo structure]
 (Too much context, buries the actual request)
 
-POOR: "Make this work with the rest of the code"
+POOR - "Make this work with the rest of the code"
 (Assumes AI knows your architecture without specifying)
 ```
 
@@ -371,7 +371,7 @@ Handling Large Dependencies
 ```typescript
 // Instead of including all of node_modules context, create a type definitions summary
 
-// File: packages/api/src/.ai-deps-summary.ts
+// File - packages/api/src/.ai-deps-summary.ts
 /
  * AI Context: External Dependencies
  *
@@ -431,19 +431,19 @@ Tool Comparison for Monorepo Support
 Troubleshooting Context Issues
 
 ```bash
-Problem: AI generates code incompatible with shared types
-Solution: Include shared type files explicitly
+Problem - AI generates code incompatible with shared types
+Solution - Include shared type files explicitly
 claude code packages/shared/types//*.ts packages/your-service/src//*.ts \
   "Implement feature using shared types"
 
-Problem: AI doesn't understand monorepo import paths
-Solution: Show actual import patterns
+Problem - AI doesn't understand monorepo import paths
+Solution - Show actual import patterns
 Create context file showing:
 "We use: import { User } from '@company/shared/types'"
 "We import like: import UserService from '../../services'"
 
-Problem: Token limit reached with large feature
-Solution: Break into subtasks
+Problem - Token limit reached with large feature
+Solution - Break into subtasks
 1. First: Generate types and interfaces
 2. Second: Implement service layer
 3. Third: Create API handlers

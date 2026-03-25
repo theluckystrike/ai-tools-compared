@@ -17,7 +17,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Standard linters enforce syntax and style. AI-powered linting rules can detect semantic anti-patterns, enforce team-specific conventions, and generate natural language explanations for violations. This guide covers two approaches: using AI to generate custom ESLint rules, and building an AI linting layer that runs alongside standard linters.
 
-Approach 1: AI-Generated ESLint Rules
+Approach 1 - AI-Generated ESLint Rules
 
 ESLint rules operate on the AST (Abstract Syntax Tree). Writing them from scratch requires deep ESLint API knowledge. AI tools can generate the rule code from a plain English description.
 
@@ -204,7 +204,7 @@ module.exports = {
 };
 ```
 
-Approach 2: AI Linting Layer
+Approach 2 - AI Linting Layer
 
 An AI linting layer runs after standard linters and catches semantic issues that AST-based rules can't detect:
 
@@ -295,13 +295,13 @@ if __name__ == "__main__":
 Example AI linting output:
 
 ```
-AI Lint: src/api/users.js
+AI Lint - src/api/users.js
   ERROR line 34 [sql_injection_risk]: String interpolation in SQL query via user input
-    Fix: Use parameterized query: db.query('SELECT * FROM users WHERE id = $1', [userId])
+    Fix - Use parameterized query: db.query('SELECT * FROM users WHERE id = $1', [userId])
   WARNING line 67 [unhandled_rejection]: Promise-returning function called without await or .catch()
-    Fix: Add await or .catch((err) => logger.error(err)) to sendEmail() call
+    Fix - Add await or .catch((err) => logger.error(err)) to sendEmail() call
   WARNING line 89 [n_plus_one_query]: Loop contains a database query. fetches N queries for N items
-    Fix: Fetch all items in one query using WHERE id IN (...) before the loop
+    Fix - Fetch all items in one query using WHERE id IN (...) before the loop
 ```
 
 Feeding Existing Linter Output to the AI

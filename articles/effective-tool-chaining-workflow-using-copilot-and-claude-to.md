@@ -28,7 +28,7 @@ Table of Contents
 - [When to Use Each Tool](#when-to-use-each-tool)
 - [Comparative Productivity Metrics](#comparative-productivity-metrics)
 - [Building a Tool-Chaining Decision Tree](#building-a-tool-chaining-decision-tree)
-- [Advanced Workflow: Feature Branch Lifecycle](#advanced-workflow-feature-branch-lifecycle)
+- [Advanced Workflow - Feature Branch Lifecycle](#advanced-workflow-feature-branch-lifecycle)
 - [Tool Chaining Cost Analysis](#tool-chaining-cost-analysis)
 
 Understanding Tool Strengths
@@ -41,7 +41,7 @@ The key insight is that these tools serve different purposes at different stages
 
 The Tool Chaining Workflow
 
-Phase 1: Architecture and Planning with Claude
+Phase 1 - Architecture and Planning with Claude
 
 Before writing code, use Claude to think through the approach. Describe your goal and ask for architectural guidance. Claude can analyze your existing codebase and suggest implementations that fit your patterns.
 
@@ -55,12 +55,12 @@ What's the cleanest approach for JWT authentication?"
 
 Claude might respond with a complete strategy including middleware setup, token generation, and protected route decorators. This gives you a roadmap before Copilot generates individual components.
 
-Phase 2: Component Generation with Copilot
+Phase 2 - Component Generation with Copilot
 
 Once you have a plan, switch to Copilot for rapid component generation. With the architectural context from Claude, you can prompt Copilot more effectively.
 
 ```python
-Copilot prompt: Generate JWT token helper
+Copilot prompt - Generate JWT token helper
 def create_access_token(data: dict, secret_key: str, expires_delta: timedelta):
     to_encode = data.copy()
     expire = datetime.utcnow() + expires_delta
@@ -71,7 +71,7 @@ def create_access_token(data: dict, secret_key: str, expires_delta: timedelta):
 
 Copilot generates this quickly based on your function signature and docstring. Repeat this for each component: models, routes, middleware.
 
-Phase 3: Integration and Debugging with Claude
+Phase 3 - Integration and Debugging with Claude
 
 When components need to work together, return to Claude. Paste the generated pieces and ask Claude to integrate them, identify conflicts, or debug issues.
 
@@ -91,7 +91,7 @@ This back-and-forth creates a productive loop: Claude plans, Copilot executes, C
 
 Practical Examples
 
-Example 1: Building a REST API Endpoint
+Example 1 - Building a REST API Endpoint
 
 With Claude first:
 
@@ -100,10 +100,10 @@ Ask Claude to design the endpoint structure. Specify input/output models, error 
 ```python
 Claude outputs this specification:
 POST /api/users
-Request: {"email": str, "name": str, "password": str}
-Response: {"id": int, "email": str, "name": str, "created_at": datetime}
-Errors: 400 for duplicate email, 422 for validation errors
-Database: Insert to users table, hash password first
+Request - {"email": str, "name": str, "password": str}
+Response - {"id": int, "email": str, "name": str, "created_at": datetime}
+Errors - 400 for duplicate email, 422 for validation errors
+Database - Insert to users table, hash password first
 ```
 
 Then Copilot:
@@ -131,7 +131,7 @@ def create_user(user_data: UserCreate, db: Session = Depends(get_db)):
     return user
 ```
 
-Example 2: Writing Test Suites
+Example 2 - Writing Test Suites
 
 Workflow:
 
@@ -157,7 +157,7 @@ def test_create_user_success():
     assert result.id is not None
 ```
 
-Example 3: Refactoring Legacy Code
+Example 3 - Refactoring Legacy Code
 
 Use Claude for analysis and Copilot for implementation:
 
@@ -242,7 +242,7 @@ Building a Tool-Chaining Decision Tree
 Different situations call for different tool combinations. Use this decision tree:
 
 ```
-START: New coding task
+START - New coding task
  Is this code I've written before?
    YES → Use Copilot (pattern recognition)
    NO → Use Claude (new approach)
@@ -263,31 +263,31 @@ START: New coding task
     Flexible (> 2 hours) → Use Claude (quality)
 ```
 
-Advanced Workflow: Feature Branch Lifecycle
+Advanced Workflow - Feature Branch Lifecycle
 
 Here's how effective tool chaining works across a complete feature cycle:
 
-Day 1: Planning Phase (Claude)
+Day 1 - Planning Phase (Claude)
 ```
-User: "We need user authentication with JWT and refresh tokens.
+User - "We need user authentication with JWT and refresh tokens.
 Current stack is FastAPI, PostgreSQL, React. Users need to stay
 logged in for 7 days. Requirements: sign up, login, logout,
 password reset. How would you structure this?"
 
-Claude response: Complete architecture including:
+Claude response - Complete architecture including:
 - User table schema with hashed passwords
 - JWT vs refresh token trade-offs
 - Endpoint structure and error handling
 - Frontend state management approach
 ```
 
-Day 2: Backend Implementation (Copilot + Claude)
+Day 2 - Backend Implementation (Copilot + Claude)
 ```
 Copilot generates individual endpoints based on Claude's specification.
 Claude reviews the generated endpoints for security issues.
 ```
 
-Day 3: Testing (Claude then Copilot)
+Day 3 - Testing (Claude then Copilot)
 ```
 Claude outlines test scenarios covering:
 - Happy path flows
@@ -297,13 +297,13 @@ Claude outlines test scenarios covering:
 Copilot generates individual test functions based on Claude's outline.
 ```
 
-Day 4: Frontend Integration (Copilot)
+Day 4 - Frontend Integration (Copilot)
 ```
 Copilot generates React hooks for authentication context
 based on the API endpoints designed in Day 1.
 ```
 
-Day 5: Code Review (Claude)
+Day 5 - Code Review (Claude)
 ```
 Paste all generated code to Claude:
 "Review this full authentication implementation for:
@@ -315,13 +315,13 @@ Paste all generated code to Claude:
 Claude identifies issues Copilot missed, requests fixes.
 ```
 
-Day 6: Bug Fixes (Copilot + Claude)
+Day 6 - Bug Fixes (Copilot + Claude)
 ```
 Copilot quickly implements specific fixes Claude identified.
 Claude validates the fixes don't introduce new issues.
 ```
 
-Day 7: Optimization (Claude)
+Day 7 - Optimization (Claude)
 ```
 Claude suggests optimizations (caching, query efficiency,
 frontend performance) that Copilot then implements.
@@ -356,7 +356,7 @@ Using Both Tools Optimally
 - Effective labor: 1,600 ÷ 1.6 = 1,000 hours = $75,000
 - Total cost: $75,000 + $500 = $75,500 (37% savings)
 
-Team savings from tool chaining: $44,500/month = $534,000/year
+Team savings from tool chaining - $44,500/month = $534,000/year
 
 This ROI compounds as developers become more proficient with both tools.
 

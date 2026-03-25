@@ -47,7 +47,7 @@ Before writing your CLAUDE.md, decide which versioning scheme fits your project.
 | Scheme | Example | AI Behavior Needed |
 |--------|---------|-------------------|
 | URL path | `/api/v2/users` | Prefix all new routes with `/api/v{N}/` |
-| Request header | `Accept: application/vnd.myapp.v2+json` | Add header handling to every controller |
+| Request header | `Accept - application/vnd.myapp.v2+json` | Add header handling to every controller |
 | Query parameter | `/api/users?version=2` | Validate and route on query param |
 | Subdomain | `v2.api.myapp.com` | Generate routes without version prefix |
 
@@ -66,10 +66,10 @@ API Versioning Strategy
 
 Versioning Scheme
 - URL Path Versioning: `/api/v1/users`, `/api/v2/users`
-- Header Versioning: `Accept: application/vnd.myapp.v1+json`
-- Query Parameter: `/api/users?version=1`
+- Header Versioning: `Accept - application/vnd.myapp.v1+json`
+- Query Parameter - `/api/users?version=1`
 
-Our project uses: URL Path Versioning (v1, v2, v3)
+Our project uses - URL Path Versioning (v1, v2, v3)
 ```
 
 Endpoint Versioning Rules
@@ -164,17 +164,17 @@ Your CLAUDE.md should specify how the AI should handle responses differently acr
 ```markdown
 Response Versioning Strategy
 
-#### Version 1 (Deprecated)
+Version 1 (Deprecated)
 - Basic user object with only: id, email, name
 - No nested objects
 - Limited metadata
 
-#### Version 2 (Current Stable)
+Version 2 (Current Stable)
 - Extended user object: id, email, name, profile, preferences
 - Includes nested preference object
 - Full metadata support
 
-#### Version 3 (Beta)
+Version 3 (Beta)
 - All v2 fields plus: analytics, activityLog
 - Cursor-based pagination
 - Real-time subscriptions via WebSocket

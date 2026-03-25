@@ -47,7 +47,7 @@ A Copilot Extension is a GitHub App that receives conversation messages and retu
 - `@runbook`. Execute runbooks or check system status
 - `@review`. Apply custom code review rules beyond what Copilot knows
 
-The key architectural point: your extension runs your own backend code. You choose the LLM, the data sources, and the business logic. GitHub handles the user interface (Copilot Chat in VS Code, JetBrains, github.com) and passes messages to your endpoint.
+The key architectural point - your extension runs your own backend code. You choose the LLM, the data sources, and the business logic. GitHub handles the user interface (Copilot Chat in VS Code, JetBrains, github.com) and passes messages to your endpoint.
 
 Prerequisites
 
@@ -55,7 +55,7 @@ Prerequisites
 - A public HTTPS endpoint (or ngrok for development)
 - Node.js 20+
 
-Step 1: Register the GitHub App
+Step 1 - Register the GitHub App
 
 1. Go to Settings > Developer settings > GitHub Apps > New GitHub App
 2. Set the callback URL and webhook URL to your endpoint
@@ -65,7 +65,7 @@ Step 1: Register the GitHub App
 
 Save the App ID, Client ID, and generate a Private Key (PEM file).
 
-Step 2: Build the Agent Server
+Step 2 - Build the Agent Server
 
 ```javascript
 // server.js
@@ -119,7 +119,7 @@ app.listen(3000, () => console.log('Extension running on :3000'));
 
 The `verifyAndParseRequest` call validates the request signature using GitHub's public key. Skip this and you risk accepting forged requests.
 
-Step 3: Implement Response Logic
+Step 3 - Implement Response Logic
 
 Replace the simple `generateResponse` with your actual logic. Here's an example that queries internal docs:
 
@@ -165,7 +165,7 @@ async function searchInternalDocs(query) {
 }
 ```
 
-Step 4: Handle Streaming Properly
+Step 4 - Handle Streaming Properly
 
 For better user experience, stream tokens as they arrive from the LLM:
 
@@ -195,7 +195,7 @@ async function streamResponse(res, userMessage, conversationHistory) {
 }
 ```
 
-Step 5: Reference Files from the Editor
+Step 5 - Reference Files from the Editor
 
 When users `@mention` files in Copilot Chat, those files are included in the payload. Access them:
 
@@ -225,7 +225,7 @@ const files = extractFileContext(payload.messages);
 const fileContext = files.map(f => `File: ${f.path}\n\`\`\`\n${f.content}\n\`\`\``).join('\n');
 ```
 
-Step 6: Local Development with ngrok
+Step 6 - Local Development with ngrok
 
 ```bash
 Install ngrok
@@ -241,7 +241,7 @@ Copy the https URL (e.g., https://abc123.ngrok.io)
 Update your GitHub App's Agent URL to https://abc123.ngrok.io/agent
 ```
 
-Step 7: Error Handling and Resilience
+Step 7 - Error Handling and Resilience
 
 Production extensions need to handle failures gracefully. The critical rule: never close the SSE connection with an HTTP error code after you've started streaming. Once you send headers and the acknowledgment event, return errors as text events instead:
 

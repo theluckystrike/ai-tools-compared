@@ -46,7 +46,7 @@ GDPR applies when processing personal data of EU residents. AI coding tools typi
 
 The key GDPR principles relevant to AI coding tools include lawfulness, transparency, data minimization, accuracy, storage limitation, and integrity and confidentiality. Understanding these principles helps teams make informed decisions about tool selection and configuration.
 
-One frequently overlooked point: even schema definitions and ORM models can constitute personal data processing. If your AI coding tool analyzes a `User` model with fields like `ssn`, `date_of_birth`, or `medical_record_id`, the tool is processing metadata about how personal data is structured. Supervisory authorities in Germany and France have signaled that this falls within GDPR's scope, though definitive enforcement guidance remains pending.
+One frequently overlooked point - even schema definitions and ORM models can constitute personal data processing. If your AI coding tool analyzes a `User` model with fields like `ssn`, `date_of_birth`, or `medical_record_id`, the tool is processing metadata about how personal data is structured. Supervisory authorities in Germany and France have signaled that this falls within GDPR's scope, though definitive enforcement guidance remains pending.
 
 GDPR Compliance Checklist for AI Coding Tools
 

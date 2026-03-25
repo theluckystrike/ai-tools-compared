@@ -35,7 +35,7 @@ When evaluating AI-powered customer service platforms, developers need more than
 
 
 - Teams under 10 agents: on Professional pay around $900/month total for the service suite.
-- Salesforce Service Cloud Enterprise: runs approximately $3,300/month before Einstein add-ons.
+- Salesforce Service Cloud Enterprise - runs approximately $3,300/month before Einstein add-ons.
 - The total cost of: ownership gap widens further when you factor in Salesforce implementation consulting fees, which routinely run $50,000-$200,000 for complex deployments.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
@@ -45,7 +45,7 @@ Platform Architecture Overview
 
 Both platforms position AI as a core service layer, but their architectural approaches differ significantly.
 
-HubSpot embeds AI capabilities within its CRM ecosystem. The AI features are accessible through HubSpot's public API and a set of custom apps. The platform uses a service-oriented architecture where AI features like summarization, classification, and content generation plug into existing objects (tickets, conversations, contacts).
+HubSpot embeds AI capabilities within its CRM environment. The AI features are accessible through HubSpot's public API and a set of custom apps. The platform uses a service-oriented architecture where AI features like summarization, classification, and content generation plug into existing objects (tickets, conversations, contacts).
 
 Salesforce Service Cloud integrates AI through Einstein, which operates as a separate service layer with deep platform access. Einstein can interact with case objects, knowledge articles, and custom fields at a granular level. The architecture provides more extensive customization options but requires more configuration overhead.
 
@@ -126,7 +126,7 @@ AI Feature Comparison
 | Sentiment Analysis | Basic | Advanced with Einstein |
 | Case Deflection | Content suggestions | Predictive routing |
 
-Practical Implementation: Auto-Responder Logic
+Practical Implementation - Auto-Responder Logic
 
 Here's how you might implement AI-powered auto-response logic in each platform:
 
@@ -217,17 +217,17 @@ Understanding the cost structure is essential for making a realistic platform de
 
 HubSpot Service Hub pricing:
 - Free tier: Basic ticketing, limited automation
-- Starter: $15/seat/month. essential helpdesk features, simple automation
-- Professional: $90/seat/month. AI features, custom reports, SLA management
-- Enterprise: $150/seat/month. advanced AI, custom objects, hierarchical teams
+- Starter - $15/seat/month. essential helpdesk features, simple automation
+- Professional - $90/seat/month. AI features, custom reports, SLA management
+- Enterprise - $150/seat/month. advanced AI, custom objects, hierarchical teams
 
 AI features on HubSpot are generally available starting at the Professional tier. Teams under 10 agents on Professional pay around $900/month total for the service suite.
 
 Salesforce Service Cloud pricing:
-- Starter Suite: $25/user/month. basic case management
-- Professional: $80/user/month. full case management, standard Einstein features
-- Enterprise: $165/user/month. advanced customization, Einstein AI included
-- Unlimited: $330/user/month. full Einstein, unlimited customization
+- Starter Suite - $25/user/month. basic case management
+- Professional - $80/user/month. full case management, standard Einstein features
+- Enterprise - $165/user/month. advanced customization, Einstein AI included
+- Unlimited - $330/user/month. full Einstein, unlimited customization
 - Einstein add-ons: Some advanced AI capabilities (Einstein Copilot, Conversation Intelligence) require additional licenses at $50-75/user/month on top of base pricing
 
 For a team of 20 service agents, HubSpot Professional runs approximately $1,800/month. Salesforce Service Cloud Enterprise runs approximately $3,300/month before Einstein add-ons. The total cost of ownership gap widens further when you factor in Salesforce implementation consulting fees, which routinely run $50,000-$200,000 for complex deployments.
@@ -270,7 +270,7 @@ Choose Salesforce Service Cloud if you need:
 
 - Complex entitlement and SLA management
 
-- Integration with a broader Salesforce ecosystem (Sales, Marketing, Commerce)
+- Integration with a broader Salesforce environment (Sales, Marketing, Commerce)
 
 For developers building custom AI-powered service solutions, both platforms provide the necessary building blocks. HubSpot offers quicker time-to-value with its unified approach, while Salesforce delivers more control at the cost of additional complexity. Evaluate your team's technical capacity and long-term platform strategy before committing.
 

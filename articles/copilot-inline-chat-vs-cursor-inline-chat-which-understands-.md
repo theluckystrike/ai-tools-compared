@@ -32,7 +32,7 @@ Table of Contents
 - [Pricing and Real-World Value Comparison](#pricing-and-real-world-value-comparison)
 - [Real-World Debugging Showdown](#real-world-debugging-showdown)
 - [Performance Metrics Over Time](#performance-metrics-over-time)
-- [Migration Path: Switching from Copilot to Cursor](#migration-path-switching-from-copilot-to-cursor)
+- [Migration Path - Switching from Copilot to Cursor](#migration-path-switching-from-copilot-to-cursor)
 
 How Inline Chat Works in Each Platform
 
@@ -97,9 +97,9 @@ Practical Performance Examples
 
 The most meaningful way to compare these tools is through actual usage scenarios developers encounter regularly.
 
-Scenario 1: Writing boilerplate code
+Scenario 1 - Writing boilerplate code
 
-Query: "Create a React component with form validation"
+Query - "Create a React component with form validation"
 
 Copilot generates functional React code with basic validation:
 
@@ -164,9 +164,9 @@ function LoginForm() {
 
 The second example assumes more about your project structure, which works well when those patterns exist but could be incorrect if they don't.
 
-Scenario 2: Debugging assistance
+Scenario 2 - Debugging assistance
 
-Query: "Why is this function returning undefined?"
+Query - "Why is this function returning undefined?"
 
 When debugging, both tools analyze the code you provide. Copilot typically offers suggestions based on common patterns and potential issues it can identify in the immediate context. Cursor's broader project awareness allows it to consider how your code interacts with other modules, potentially identifying issues that stem from external dependencies or mismatched types.
 
@@ -261,7 +261,7 @@ For developers working on larger projects (>50,000 lines), Cursor's $92 annual p
 
 Real-World Debugging Showdown
 
-Scenario: Frontend form validation isn't working. You suspect it's a mismatch between client-side validation and backend server-side validation.
+Scenario - Frontend form validation isn't working. You suspect it's a mismatch between client-side validation and backend server-side validation.
 
 With Copilot Inline Chat:
 - You open the validation component
@@ -277,7 +277,7 @@ With Cursor Inline Chat:
 - Cursor understands the relationship, sees the mismatch, and suggests coordinated fixes
 - Takes 5-8 minutes, all in one query
 
-The difference: Cursor understands the semantic relationship between your validation layers without you explicitly pointing it out.
+The difference - Cursor understands the semantic relationship between your validation layers without you explicitly pointing it out.
 
 Performance Metrics Over Time
 
@@ -299,9 +299,9 @@ Cursor Weekly Metrics:
 - Weekly productivity gain: 17.4 hours
 - Annual productivity value: $45,240 (@ $50/hr)
 
-Total annual value: Cursor provides 81% more raw productivity value, though Copilot costs 47% less. For teams billing clients, Cursor's 80% higher value often justifies the premium.
+Total annual value - Cursor provides 81% more raw productivity value, though Copilot costs 47% less. For teams billing clients, Cursor's 80% higher value often justifies the premium.
 
-Migration Path: Switching from Copilot to Cursor
+Migration Path - Switching from Copilot to Cursor
 
 If you're currently on Copilot and considering Cursor:
 
@@ -311,7 +311,7 @@ If you're currently on Copilot and considering Cursor:
 4. Reconfigure your keyboard shortcuts in Cursor to match Copilot's defaults (Ctrl+I → Ctrl+L remapping via keybindings.json)
 5. Create a "learning project" in Cursor where you explicitly test multi-file editing and symbol references
 
-Expected onboarding time: 3-5 hours to feel as productive as on Copilot.
+Expected onboarding time - 3-5 hours to feel as productive as on Copilot.
 
 Related Articles
 

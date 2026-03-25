@@ -147,7 +147,7 @@ Startup MVP (Low Volume)
 
 A small team building an internal tool with 100 daily users:
 
-- Training: 100K tokens on GPT-4o Mini = $0.10
+- Training - 100K tokens on GPT-4o Mini = $0.10
 
 - Inference: 10K input + 30K output daily = 300K input + 900K output monthly
 
@@ -159,7 +159,7 @@ Production App (Medium Volume)
 
 A customer support chatbot handling 10,000 conversations daily:
 
-- Training: 1M tokens on GPT-4o Mini = $1.00
+- Training - 1M tokens on GPT-4o Mini = $1.00
 
 - Inference: 5M input + 15M output daily = 150M input + 450M output monthly
 
@@ -171,11 +171,11 @@ Enterprise Solution (High Volume)
 
 A large SaaS platform serving 100,000 daily active users:
 
-- Training: 5M tokens on GPT-4o = $15.00
+- Training - 5M tokens on GPT-4o = $15.00
 
-- Inference: 50M input + 150M output daily = 1.5B input + 4.5B output monthly
+- Inference - 50M input + 150M output daily = 1.5B input + 4.5B output monthly
 
-- Monthly: (1500 × $2.50) + (4500 × $10.00) = $3,750 + $45,000 = $48,750/month
+- Monthly - (1500 × $2.50) + (4500 × $10.00) = $3,750 + $45,000 = $48,750/month
 
 - Total first year: $15.00 + (12 × $48,750) = $585,015.00
 

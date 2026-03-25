@@ -44,7 +44,7 @@ With Claude vision + Figma screenshot:
 ```
 1.
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.
-- Best for: Extracting specific component styles when you already know the responsive behavior you want.
+- Best for - Extracting specific component styles when you already know the responsive behavior you want.
 - Use CSS custom properties: for colors.
 - A week-long trial with: actual work gives better signal than feature comparison charts.
 
@@ -75,11 +75,11 @@ Figma's Dev Mode (Professional plans) generates CSS for any selected element:
 }
 ```
 
-Strengths: Pixel-accurate values, direct from design tokens, no plugin required.
+Strengths - Pixel-accurate values, direct from design tokens, no plugin required.
 
-Weaknesses: Outputs static CSS with exact pixel values, not responsive. Auto-layout in Figma maps poorly to flexbox in some edge cases.
+Weaknesses - Outputs static CSS with exact pixel values, not responsive. Auto-layout in Figma maps poorly to flexbox in some edge cases.
 
-Best for: Extracting specific component styles when you already know the responsive behavior you want.
+Best for - Extracting specific component styles when you already know the responsive behavior you want.
 
 Locofy.ai
 
@@ -122,9 +122,9 @@ const Navbar = () => {
 }
 ```
 
-Strengths: Generates full component files, not just CSS. Handles nested layouts. Tailwind output is often production-usable.
+Strengths - Generates full component files, not just CSS. Handles nested layouts. Tailwind output is often production-usable.
 
-Weaknesses: Interaction logic requires manual addition. Complex designs with overlapping layers generate messy CSS. Costs $29-49/month.
+Weaknesses - Interaction logic requires manual addition. Complex designs with overlapping layers generate messy CSS. Costs $29-49/month.
 
 Vision Model Prompting (Claude / GPT-4V)
 
@@ -198,9 +198,9 @@ Convert screenshot directly to code
 builder convert-image mockup.png --output index.html --format html-tailwind
 ```
 
-Strengths: Works with non-Figma designs. Handles screenshots directly. Good for retrofitting existing designs into code.
+Strengths - Works with non-Figma designs. Handles screenshots directly. Good for retrofitting existing designs into code.
 
-Weaknesses: Layout detection fails on complex overlapping elements. Color accuracy lower than vision models. Limited responsive behavior.
+Weaknesses - Layout detection fails on complex overlapping elements. Color accuracy lower than vision models. Limited responsive behavior.
 
 When Each Tool Fails
 
@@ -234,9 +234,9 @@ Use this decision tree:
 4. Is this an one-off component? → Yes: Claude vision, paste output into your IDE
 5. Do you have design system tokens to extract? → Yes: Figma Dev Mode
 
-Real-World Example: Landing Page
+Real-World Example - Landing Page
 
-Starting design: A 5-section landing page (hero, features, CTA, testimonials, footer) in Figma.
+Starting design - A 5-section landing page (hero, features, CTA, testimonials, footer) in Figma.
 
 With Locofy:
 ```
@@ -323,9 +323,9 @@ Open DevTools, Device Toolbar, test: iPhone SE (375px), iPad (768px), Desktop (1
 
 Recommended Workflow
 
-For teams with Figma designs: use Locofy for the initial scaffold, then refine with Claude for responsive behavior and interaction states.
+For teams with Figma designs - use Locofy for the initial scaffold, then refine with Claude for responsive behavior and interaction states.
 
-For screenshot-to-code: Builder.io Visual Copilot or the vision model approach.
+For screenshot-to-code - Builder.io Visual Copilot or the vision model approach.
 
 For one-off component extraction: Figma Dev Mode CSS, pasted into Claude with "make this responsive and convert pixel values to relative units."
 
@@ -345,7 +345,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -357,6 +357,6 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 ```
 {% endraw %}

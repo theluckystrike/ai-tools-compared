@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install Dependencies and Set Up Authentication
+Step 1 - Install Dependencies and Set Up Authentication
 
 ```bash
 pip install anthropic pygithub python-dotenv
@@ -44,7 +44,7 @@ ANTHROPIC_API_KEY=sk-ant-...
 GITHUB_TOKEN=ghp_...
 ```
 
-Step 2: Fetch the PR Diff
+Step 2 - Fetch the PR Diff
 
 ```python
 review_bot.py
@@ -82,7 +82,7 @@ def get_pr_diff(repo_name: str, pr_number: int) -> dict:
     }
 ```
 
-Step 3: Design the Review Prompt
+Step 3 - Design the Review Prompt
 
 The prompt structure determines review quality. Asking for free-form feedback produces noise. Asking for structured output with file/line references produces actionable comments:
 
@@ -126,8 +126,8 @@ def build_review_prompt(pr_data: dict) -> str:
         files_text += f"```diff\n{f['patch']}\n```\n"
 
     return f"""PR Title: {pr_data['title']}
-PR Description: {pr_data['body'][:500] if pr_data['body'] else 'None'}
-Base branch: {pr_data['base_branch']}
+PR Description - {pr_data['body'][:500] if pr_data['body'] else 'None'}
+Base branch - {pr_data['base_branch']}
 
 Changed files:
 {files_text}
@@ -135,7 +135,7 @@ Changed files:
 Review this pull request for bugs, security issues, and significant problems."""
 ```
 
-Step 4: Call the Claude API
+Step 4 - Call the Claude API
 
 ```python
 import json
@@ -175,7 +175,7 @@ def review_pull_request(repo_name: str, pr_number: int) -> dict:
  }
 ```
 
-Step 5: Post Review Comments to GitHub
+Step 5 - Post Review Comments to GitHub
 
 ```python
 def post_github_review(repo_name: str, pr_number: int, review: dict) -> None:
@@ -222,7 +222,7 @@ def post_github_review(repo_name: str, pr_number: int, review: dict) -> None:
  print(f"Posted review: {review['verdict']} ({critical_count} critical issues)")
 ```
 
-Step 6: GitHub Actions Webhook Integration
+Step 6 - GitHub Actions Webhook Integration
 
 Trigger the reviewer automatically on every PR:
 
@@ -258,10 +258,10 @@ jobs:
 
  - name: Run AI review
  env:
-ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-REPO_NAME: ${{ github.repository }}
-PR_NUMBER: ${{ github.event.pull_request.number }}
+ANTHROPIC_API_KEY - ${{ secrets.ANTHROPIC_API_KEY }}
+GITHUB_TOKEN - ${{ secrets.GITHUB_TOKEN }}
+REPO_NAME - ${{ github.repository }}
+PR_NUMBER - ${{ github.event.pull_request.number }}
  run: |
  python -c "
  import os
@@ -273,7 +273,7 @@ PR_NUMBER: ${{ github.event.pull_request.number }}
  "
 ```
 
-Step 7: Add File Context Beyond the Diff
+Step 7 - Add File Context Beyond the Diff
 
 For better accuracy on complex changes, send the full file alongside the diff:
 
@@ -309,7 +309,7 @@ def build_enhanced_review_prompt(pr_data: dict, repo_name: str, head_sha: str) -
 Review for bugs, security vulnerabilities, and critical issues only."""
 ```
 
-Step 8: Control Cost and Rate Limits
+Step 8 - Control Cost and Rate Limits
 
 ```python
 import time

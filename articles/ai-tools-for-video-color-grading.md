@@ -170,7 +170,7 @@ Key Considerations for Integration
 
 When selecting AI color grading tools for development projects, evaluate these factors:
 
-API flexibility matters: look for REST APIs or Python bindings. DaVinci Resolve requires the Fusion Studio license for full automation; cloud services like Color.io offer simpler integration at scale.
+API flexibility matters - look for REST APIs or Python bindings. DaVinci Resolve requires the Fusion Studio license for full automation; cloud services like Color.io offer simpler integration at scale.
 
 Some tools allow custom model training on reference footage, which matters for brands requiring a consistent look across content or studios with signature color styles.
 

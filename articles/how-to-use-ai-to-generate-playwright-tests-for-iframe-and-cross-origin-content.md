@@ -23,7 +23,7 @@ AI tools are useful here for generating the correct Playwright API patterns. the
 
 ---
 
-Approach 1: Same-Origin iframes with frameLocator
+Approach 1 - Same-Origin iframes with frameLocator
 
 For iframes serving content from your own domain, `frameLocator` is the simplest approach:
 
@@ -49,7 +49,7 @@ test('should interact with embedded checkout iframe', async ({ page }) => {
 
 ---
 
-Approach 2: Cross-Origin iframes (Stripe, YouTube, Maps)
+Approach 2 - Cross-Origin iframes (Stripe, YouTube, Maps)
 
 Cross-origin iframes are sandboxed by the browser. Playwright can locate and click elements within them, but cannot read their internal DOM state from the parent context.
 
@@ -78,7 +78,7 @@ test('should verify Stripe payment iframe loads and accepts input', async ({ pag
 
 ---
 
-Approach 3: Waiting for Dynamic iframe Content
+Approach 3 - Waiting for Dynamic iframe Content
 
 Some iframes load content asynchronously after the parent page. Use `waitForSelector` within the frame context:
 

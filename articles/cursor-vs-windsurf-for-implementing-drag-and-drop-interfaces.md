@@ -31,7 +31,7 @@ Table of Contents
 - [Keyboard Navigation Fallback](#keyboard-navigation-fallback)
 - [Persistence and Undo/Redo](#persistence-and-undoredo)
 - [Performance Optimization](#performance-optimization)
-- [Real-World Example: Kanban Board](#real-world-example-kanban-board)
+- [Real-World Example - Kanban Board](#real-world-example-kanban-board)
 - [Debugging Common Drag-and-Drop Issues](#debugging-common-drag-and-drop-issues)
 
 Understanding React DnD Basics
@@ -173,7 +173,7 @@ Advanced Drag-and-Drop Patterns
 
 Beyond basic React DnD, modern interfaces need sophisticated patterns:
 
-Drag Handle Pattern: Only allow dragging from a specific element (the handle):
+Drag Handle Pattern - Only allow dragging from a specific element (the handle):
 
 ```jsx
 const DragHandle = ({ children }) => (
@@ -188,7 +188,7 @@ const DragHandle = ({ children }) => (
 
 Both Cursor and Windsurf understand this pattern when you explain: "Add drag handles that only allow dragging from specific UI elements."
 
-Nested Drop Zones: Items drop into containers, but containers can be within other containers:
+Nested Drop Zones - Items drop into containers, but containers can be within other containers:
 
 ```jsx
 <Board>
@@ -201,7 +201,7 @@ Nested Drop Zones: Items drop into containers, but containers can be within othe
 
 Cursor handles nested zones better due to superior context awareness. Windsurf sometimes requires extra prompting to avoid flat-structure assumptions.
 
-Preview During Drag: Show a preview or ghost element while dragging:
+Preview During Drag - Show a preview or ghost element while dragging:
 
 ```jsx
 const [{ isDragging }, drag, preview] = useDrag(() => ({
@@ -220,7 +220,7 @@ Touch Support and Mobile
 
 Drag-and-drop on mobile requires special handling:
 
-Touch Backend: React DnD supports touch through different backends:
+Touch Backend - React DnD supports touch through different backends:
 
 ```javascript
 import { TouchBackend } from 'react-dnd-touch-backend';
@@ -229,11 +229,11 @@ import { TouchBackend } from 'react-dnd-touch-backend';
 const dndManager = DndProvider({ backend: TouchBackend };
 ```
 
-Ask Cursor: "Add mobile/touch support using React DnD's touch backend."
+Ask Cursor - "Add mobile/touch support using React DnD's touch backend."
 
 Windsurf sometimes suggests gesture libraries when the built-in touch backend is sufficient.
 
-Performance on Mobile: Mobile devices need performance optimization:
+Performance on Mobile - Mobile devices need performance optimization:
 
 ```jsx
 // Only enable drag-and-drop on non-touch devices
@@ -316,7 +316,7 @@ Drag-and-drop isn't accessible to keyboard users. Provide alternatives:
 />
 ```
 
-Ask both tools: "Make this drag-and-drop interface keyboard accessible with arrow keys and Enter."
+Ask both tools - "Make this drag-and-drop interface keyboard accessible with arrow keys and Enter."
 
 Both understand accessibility requirements, but Cursor generates more keyboard event handling.
 
@@ -363,7 +363,7 @@ Performance Optimization
 
 Large lists with drag-and-drop can be slow. Optimization strategies:
 
-Windowing: Only render visible items:
+Windowing - Only render visible items:
 ```jsx
 import { FixedSizeList } from 'react-window';
 
@@ -382,7 +382,7 @@ import { FixedSizeList } from 'react-window';
 </FixedSizeList>
 ```
 
-Memoization: Prevent unnecessary re-renders:
+Memoization - Prevent unnecessary re-renders:
 ```jsx
 const DraggableItem = React.memo(({ item, index }) => {
   const [{ isDragging }, drag] = useDrag(() => ({...}));
@@ -392,7 +392,7 @@ const DraggableItem = React.memo(({ item, index }) => {
 
 Cursor suggests these optimizations when you mention performance. Windsurf might generate working code without performance considerations.
 
-Real-World Example: Kanban Board
+Real-World Example - Kanban Board
 
 A complete kanban implementation using React DnD:
 
@@ -433,11 +433,11 @@ Cursor generates complete kanban implementations with proper type safety, error 
 
 Debugging Common Drag-and-Drop Issues
 
-Items won't drag: Check if drag source is properly connected, monitor is active.
+Items won't drag - Check if drag source is properly connected, monitor is active.
 
-Hover state doesn't update: Verify drop target monitor and collection function.
+Hover state doesn't update - Verify drop target monitor and collection function.
 
-Items overlap after drop: Ensure state updates complete before re-render.
+Items overlap after drop - Ensure state updates complete before re-render.
 
 Performance degradation with large lists: Implement windowing and memoization.
 

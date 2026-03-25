@@ -152,7 +152,7 @@ The Cursor format allows you to be more descriptive about the intent behind each
 
 Migrating WindSurf Context Rules
 
-Context rules determine what information the AI considers when generating code or suggestions. WindSurf uses explicit file lists and pattern matching, while Cursor takes a more holistic approach combining file patterns with natural language instructions.
+Context rules determine what information the AI considers when generating code or suggestions. WindSurf uses explicit file lists and pattern matching, while Cursor takes a more complete approach combining file patterns with natural language instructions.
 
 A WindSurf context configuration might look like this:
 

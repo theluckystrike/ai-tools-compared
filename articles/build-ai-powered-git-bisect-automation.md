@@ -21,7 +21,7 @@ How Git Bisect Works (Brief)
 
 Git bisect performs a binary search through commit history to find the first "bad" commit. You mark a known good commit and a known bad commit, then run a test script that exits 0 (good) or non-zero (bad) for each tested commit. Git bisect needs `log2(N)` test runs to find the culprit in N commits.
 
-The bottleneck: writing the test script.
+The bottleneck - writing the test script.
 
 Architecture of the Automated Tool
 
@@ -41,7 +41,7 @@ Bug description
  Root cause explanation + diff analysis
 ```
 
-Step 1: Generate the Test Script
+Step 1 - Generate the Test Script
 
 ```python
 ai_bisect.py
@@ -89,12 +89,12 @@ Start with #!/bin/bash and set -e. Return ONLY the script, no explanations."""
         system=system_prompt,
         messages=[{
             "role": "user",
-            "content": f"""Bug description: {bug_description}
+            "content": f"""Bug description - {bug_description}
 
 Recent commits:
 {recent_commits}
 
-Project files present: {project_files}
+Project files present - {project_files}
 
 Generate a bisect test script."""
         }]
@@ -177,7 +177,7 @@ def analyze_bad_commit(repo_path: str, commit_hash: str, bug_description: str) -
             "role": "user",
             "content": f"""Git bisect identified this commit as the first bad commit.
 
-Bug description: {bug_description}
+Bug description - {bug_description}
 
 Commit message:
 {message_result.stdout}
@@ -195,7 +195,7 @@ Explain:
     return message.content[0].text
 ```
 
-Step 2: The CLI Interface
+Step 2 - The CLI Interface
 
 ```python
 ai_bisect_cli.py
@@ -256,7 +256,7 @@ $ python ai_bisect_cli.py \
   --bad HEAD \
   --bug "User login returns 500 error when email contains uppercase letters"
 
-Generating test script for: User login returns 500 error when email contains uppercase letters
+Generating test script for - User login returns 500 error when email contains uppercase letters
 
 Generated test script:
 #!/bin/bash
@@ -283,12 +283,12 @@ fi
 Run bisect with this script? [y/N]: y
 
 Running bisect between v2.3.0 and HEAD...
-Bisecting: 15 revisions left to test after this (roughly 4 steps)
+Bisecting - 15 revisions left to test after this (roughly 4 steps)
 [abc1234] Fix: normalize email before lookup
 ...
 abc1234def5678 is the first bad commit
 
-Analyzing bad commit: abc1234def5678...
+Analyzing bad commit - abc1234def5678...
 
 Root cause analysis:
 The commit "Fix: normalize email before lookup" introduced the bug on line 47 of
@@ -403,16 +403,16 @@ The quality of the generated test script depends on how precisely you describe t
 
 Imprecise:
 ```
-Bug: Login is broken
+Bug - Login is broken
 ```
 
 Precise:
 ```
-Bug: POST /api/login returns HTTP 500 when the email field contains uppercase
-letters. Example: {"email": "User@EXAMPLE.com", "password": "abc123"} → 500.
+Bug - POST /api/login returns HTTP 500 when the email field contains uppercase
+letters. Example - {"email": "User@EXAMPLE.com", "password": "abc123"} → 500.
 Lowercase email works fine. Started happening after deploy on 2026-03-15.
-Test command to reproduce: curl -X POST http://localhost:3000/api/login
--H "Content-Type: application/json" -d '{"email": "User@EXAMPLE.COM", "password": "test"}'
+Test command to reproduce - curl -X POST http://localhost:3000/api/login
+-H "Content-Type - application/json" -d '{"email": "User@EXAMPLE.COM", "password": "test"}'
 ```
 
 Additional prompting strategies that improve script quality:

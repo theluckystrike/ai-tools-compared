@@ -161,13 +161,13 @@ Comparing AI Tool Performance
 
 When evaluating AI code completion for Flutter BLoC development, consider these factors:
 
-Pattern Recognition Speed: How quickly does the tool recognize you're implementing a BLoC after typing `extends Bloc`?
+Pattern Recognition Speed - How quickly does the tool recognize you're implementing a BLoC after typing `extends Bloc`?
 
-Context Awareness: Does the tool remember the event classes you defined earlier in the file when suggesting state transitions?
+Context Awareness - Does the tool remember the event classes you defined earlier in the file when suggesting state transitions?
 
-Code Quality: Are the generated `copyWith` methods correct? Do they handle nullability properly?
+Code Quality - Are the generated `copyWith` methods correct? Do they handle nullability properly?
 
-Completeness: Does the tool suggest the entire handler method, or just partial snippets?
+Completeness - Does the tool suggest the entire handler method, or just partial snippets?
 
 Tools with deep Flutter understanding excel at recognizing the BLoC pattern and can dramatically reduce the boilerplate you need to write manually. They generate not just the class structure but also the common patterns within each class.
 

@@ -39,7 +39,7 @@ When you need to generate PostgreSQL migration scripts, the choice between ChatG
 - The best AI assistant: for this task should understand PostgreSQL's specific features, including arrays, JSONB, CTEs, and proper transaction handling.
 - It generates functional SQL rapidly: making it useful for prototyping or when you already know exactly what you need.
 - Use Claude when migrations: involve critical data, complex relationships, or require rollback strategies.
-- However: ChatGPT remains useful for rapid iteration.
+- However - ChatGPT remains useful for rapid iteration.
 
 Understanding the Migration Challenge
 
@@ -240,7 +240,7 @@ What happens to my data when using ChatGPT or Claude?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-Real-World Migration Scenario: Scaling Production Database
+Real-World Migration Scenario - Scaling Production Database
 
 Consider a scenario where you're adding a new analytics feature that requires joining user behavioral data with account information. This requires a careful migration:
 
@@ -318,25 +318,25 @@ Migration Complexity Levels
 
 Different migrations require different approaches:
 
-Level 1: Simple (Preferred by ChatGPT)
+Level 1 - Simple (Preferred by ChatGPT)
 - Add new column to existing table
 - Create new table with no data migration
 - Add simple index
 - Both tools handle these well
 
-Level 2: Moderate (Claude Advantage)
+Level 2 - Moderate (Claude Advantage)
 - Rename column or table
 - Modify column type with data transformation
 - Add constraints to existing data
 - Both tools can generate code, Claude's is more production-ready
 
-Level 3: Complex (Claude Strong Advantage)
+Level 3 - Complex (Claude Strong Advantage)
 - Large table data migrations with type conversions
 - Adding constraints to tables with existing data
 - Reshaping normalized schema structure
 - Rolling back failed migrations without data loss
 
-Level 4: Critical (Strongly Prefer Claude)
+Level 4 - Critical (Strongly Prefer Claude)
 - Migrations on tables handling financial or compliance data
 - Migrations requiring zero downtime in production
 - Migrations with complex multi-step rollback requirements

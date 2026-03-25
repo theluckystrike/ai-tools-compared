@@ -31,7 +31,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Inline Completion for Function Signatures
+Step 1 - Understand Inline Completion for Function Signatures
 
 Inline completion works by analyzing the code you've already written and predicting what comes next. For function signatures, this means the AI examines your function name, any preceding comments or docstrings, and the surrounding code context to suggest the complete signature.
 
@@ -39,7 +39,7 @@ Modern AI completion tools like GitHub Copilot, Cursor, and others offer this fu
 
 The key to getting accurate suggestions is providing clear context. A function named `calculateUserMetrics` will generate better suggestions than one named `processData`.
 
-Step 2: How Inline Completion Differs Across Tools
+Step 2 - How Inline Completion Differs Across Tools
 
 Before exploring techniques, it helps to understand how the major tools approach inline completion differently:
 
@@ -53,7 +53,7 @@ Before exploring techniques, it helps to understand how the major tools approach
 
 Cursor's codebase indexing gives it an edge when your codebase has consistent naming conventions, it learns your patterns from similar functions and applies them to new signatures.
 
-Step 3: Practical Techniques
+Step 3 - Practical Techniques
 
 1. Use Descriptive Function Names
 
@@ -117,7 +117,7 @@ def create_user_profile(
     pass
 ```
 
-Step 4: Language-Specific Examples
+Step 4 - Language-Specific Examples
 
 Python
 
@@ -204,7 +204,7 @@ pub fn parse_config(
 
 For Rust specifically, starting with a `#[doc]` comment substantially improves suggestion quality because the compiler documentation conventions constrain what the function should do.
 
-Step 5: Optimizing Your Workflow
+Step 5 - Optimizing Your Workflow
 
 Position Your Cursor Strategically
 
@@ -227,7 +227,7 @@ Review Before Accepting
 
 AI suggestions are predictions, not certainties. Always review the suggested signature before accepting it, verify that parameter types and names match your intent.
 
-Step 6: Step-by-Step Workflow for Maximum Speed
+Step 6 - Step-by-Step Workflow for Maximum Speed
 
 Here is the keystroke-efficient workflow that experienced developers use:
 
@@ -239,7 +239,7 @@ Here is the keystroke-efficient workflow that experienced developers use:
 
 This workflow reduces signature writing from 30-60 seconds of active typing to 5-10 seconds of review and Tab presses.
 
-Step 7: Common Pitfalls to Avoid
+Step 7 - Common Pitfalls to Avoid
 
 Avoid accepting suggestions blindly. AI might suggest parameters that don't match your actual needs. Check each parameter before accepting.
 
@@ -249,7 +249,7 @@ Watch for context pollution. If your file has unrelated code above your function
 
 Avoid vague return types. If you let the AI infer return types from a function name alone, it may default to `any` in TypeScript or `object` in Python. Always specify the return type if you know it, this creates a contract the AI respects.
 
-Step 8: Measuring Your Productivity Gain
+Step 8 - Measuring Your Productivity Gain
 
 Track how long it takes to write function signatures before and after adopting AI completion. Most developers report 30-50% time savings on signature writing, which adds up significantly across large codebases.
 

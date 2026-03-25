@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Database Test Fixtures Guide"
-description: "Create database test fixtures with Claude Code: factory patterns, seed data generation, foreign key handling, and cleanup strategies covered."
+description: "Create database test fixtures with Claude Code - factory patterns, seed data generation, foreign key handling, and cleanup strategies covered."
 date: 2026-03-17
 last_modified_at: 2026-03-17
 author: "theluckystrike"
@@ -48,7 +48,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Comparing Fixture Approaches
+Step 1 - Comparing Fixture Approaches
 
 Before choosing a fixture strategy, understand the tradeoffs:
 
@@ -63,7 +63,7 @@ Before choosing a fixture strategy, understand the tradeoffs:
 For most Python projects using SQLAlchemy, the combination of Factory Boy factories with transaction rollback fixtures provides the best balance of speed, isolation, and realism. Claude Code generates this pattern reliably when given your SQLAlchemy model definitions.
 
 
-Step 2: Create Fixture Factories with Claude Code
+Step 2 - Create Fixture Factories with Claude Code
 
 
 Fixture factories generate test data on-demand rather than relying on static SQL dumps. Claude Code excels at building these patterns for various ORMs and databases.
@@ -120,7 +120,7 @@ class OrderFactory(SQLAlchemyModelFactory):
 ```
 
 
-Step 3: Use Claude Code for Fixture Generation
+Step 3 - Use Claude Code for Fixture Generation
 
 Claude Code generates accurate fixture factories from model definitions. The most effective workflow is to open the models file in your Claude Code session and prompt directly:
 
@@ -136,7 +136,7 @@ Claude Code reads your actual field types and constraints, so it generates appro
 When your schema changes, re-run the prompt with the updated model file. Claude Code will update factory definitions to match, flagging any fields where it cannot infer an appropriate Faker provider.
 
 
-Step 4: Test Isolation Strategies
+Step 4 - Test Isolation Strategies
 
 
 Test isolation prevents data leakage between tests. Each test should see a clean database state and not depend on execution order.
@@ -211,7 +211,7 @@ def fresh_database():
 ```
 
 
-Step 5: Step-by-Step: Setting Up Fixtures with Claude Code
+Step 5 - Step-by-Step: Setting Up Fixtures with Claude Code
 
 Follow this workflow to build a complete fixture system for a new project:
 
@@ -221,11 +221,11 @@ Open Claude Code with your `models.py` (or equivalent) in the working directory.
 
 Step 2. Generate base factories
 
-Prompt: "Generate Factory Boy factories for all SQLAlchemy models in models.py. Use SubFactory for ForeignKey fields. Ensure Sequence-based IDs to prevent collisions."
+Prompt - "Generate Factory Boy factories for all SQLAlchemy models in models.py. Use SubFactory for ForeignKey fields. Ensure Sequence-based IDs to prevent collisions."
 
 Step 3. Generate the session fixture
 
-Prompt: "Write a pytest fixture called `db_session` that uses SQLAlchemy's savepoint pattern for test isolation. The fixture should be function-scoped and roll back changes after each test."
+Prompt - "Write a pytest fixture called `db_session` that uses SQLAlchemy's savepoint pattern for test isolation. The fixture should be function-scoped and roll back changes after each test."
 
 The savepoint (nested transaction) pattern is preferable to full transaction rollback when your application code itself opens and closes transactions:
 
@@ -253,7 +253,7 @@ def db_session(database_engine):
 
 Step 4. Wire factories to the session fixture
 
-Update factory `Meta.sqlalchemy_session` to use the fixture session rather than a module-level session. Ask Claude Code: "Update the factories to accept a session parameter so they use the test's db_session fixture instead of the global session."
+Update factory `Meta.sqlalchemy_session` to use the fixture session rather than a module-level session. Ask Claude Code - "Update the factories to accept a session parameter so they use the test's db_session fixture instead of the global session."
 
 Step 5. Generate scenario fixtures
 
@@ -264,7 +264,7 @@ Step 6. Validate with a smoke test
 Run `pytest -v tests/test_fixtures.py` to confirm factories create records correctly and rollback works. Paste any failures back to Claude Code with the stack trace.
 
 
-Step 6: Data Seeding Strategies
+Step 6 - Data Seeding Strategies
 
 
 Effective seeding balances realism with practicality. Claude Code can help you generate seed data that mimics production patterns.
@@ -337,7 +337,7 @@ Set `sqlalchemy_session_persistence = None` on the factory Meta class and flush 
 
 Q: Can Claude Code generate fixtures for NoSQL databases like MongoDB?
 
-Yes. Claude Code generates `mongomock` fixtures for MongoDB testing, using the `mongomock` library which provides an in-memory MongoDB implementation compatible with `pymongo`. For Redis, it generates fixtures using `fakeredis`. Prompt: "Generate pytest fixtures for MongoDB using mongomock, with factory functions for User and Session documents matching this schema."
+Yes. Claude Code generates `mongomock` fixtures for MongoDB testing, using the `mongomock` library which provides an in-memory MongoDB implementation compatible with `pymongo`. For Redis, it generates fixtures using `fakeredis`. Prompt - "Generate pytest fixtures for MongoDB using mongomock, with factory functions for User and Session documents matching this schema."
 
 ---
 

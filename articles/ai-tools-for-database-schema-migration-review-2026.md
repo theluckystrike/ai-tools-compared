@@ -19,8 +19,8 @@ Database migrations are the highest-risk deployments in most systems. A schema c
 This guide evaluates which AI tools provide actionable migration review and which produce false confidence.
 
 
-- others) - Models the: actual blocking time accurately - Suggests a zero-downtime approach with chunking - Provides a testable sequence Cost: Free with Claude Code, or $20/month Claude Pro.
-- Cost: $20/month or self-hosted.
+- others) - Models the: actual blocking time accurately - Suggests a zero-downtime approach with chunking - Provides a testable sequence Cost - Free with Claude Code, or $20/month Claude Pro.
+- Cost - $20/month or self-hosted.
 - The most costly production: incidents are often caused by migrations that looked safe in review.
 - For occasional use: consider whether a free alternative covers enough of your needs.
 - Backfill in chunks in: background job (doesn't lock table): UPDATE orders SET status = 'pending' WHERE status IS NULL AND id % 100 = 0 AND id < 2500000; Repeat for each modulo slice 4.
@@ -57,11 +57,11 @@ Claude - Context-Aware Migration Analysis
 
 Claude excels at understanding the full production context and analyzing migrations holistically. Give it the migration file, current schema, and table metadata, and it produces detailed risk analysis.
 
-Approach: Submit a migration file with table size estimates and current schema. Claude analyzes the change across multiple dimensions and suggests safer alternatives.
+Approach - Submit a migration file with table size estimates and current schema. Claude analyzes the change across multiple dimensions and suggests safer alternatives.
 
 ```
-Database: PostgreSQL 14
-Table: orders (25M rows, 800KB/sec read, 50KB/sec write)
+Database - PostgreSQL 14
+Table - orders (25M rows, 800KB/sec read, 50KB/sec write)
 Current schema:
   CREATE TABLE orders (
     id BIGSERIAL PRIMARY KEY,
@@ -80,14 +80,14 @@ Review this for production readiness.
 Claude produces:
 
 ```
-RISK ASSESSMENT: HIGH
+RISK ASSESSMENT - HIGH
 
-Issue 1: ALTER TABLE ... ADD COLUMN NOT NULL will lock table during rewrite
+Issue 1 - ALTER TABLE ... ADD COLUMN NOT NULL will lock table during rewrite
   Impact: 25M rows × ~50ms per row = 20+ minutes table lock
   Current writes: 50KB/sec = ~1000 writes/sec blocked during migration
   Business impact: 20 minutes of order creation failures
 
-Issue 2: Index creation on large table without CONCURRENTLY
+Issue 2 - Index creation on large table without CONCURRENTLY
   Will block writes during index build
 
 SAFER APPROACH:
@@ -110,7 +110,7 @@ SAFER APPROACH:
 5. Create index CONCURRENTLY to not block writes:
    CREATE INDEX CONCURRENTLY idx_orders_status ON orders(status);
 
-Timeline: 5 minutes table-level changes + 2 hours background backfill = 0 minutes of blocking
+Timeline - 5 minutes table-level changes + 2 hours background backfill = 0 minutes of blocking
 
 Test this approach with a replica first.
 ```
@@ -122,15 +122,15 @@ This analysis is sophisticated because Claude:
 - Suggests a zero-downtime approach with chunking
 - Provides a testable sequence
 
-Cost: Free with Claude Code, or $20/month Claude Pro.
+Cost - Free with Claude Code, or $20/month Claude Pro.
 
-Limitations: Requires a back-and-forth interaction. For batch review of 50 migrations, you'd need individual conversations. Not integrated into GitHub pull requests yet.
+Limitations - Requires a back-and-forth interaction. For batch review of 50 migrations, you'd need individual conversations. Not integrated into GitHub pull requests yet.
 
 GitHub Copilot - Migration Template Suggestions
 
 Copilot helps write correct migration syntax and suggests safe patterns as you type. It's useful for guardrails during migration authorship.
 
-Approach: Start writing a migration in your editor, and Copilot suggests safe patterns (transaction wrapping, verification scripts, rollback procedures).
+Approach - Start writing a migration in your editor, and Copilot suggests safe patterns (transaction wrapping, verification scripts, rollback procedures).
 
 Start typing a Liquibase migration:
 
@@ -163,17 +163,17 @@ Copilot additions:
 - Explicit rollback definitions
 - Clear structure
 
-Cost: $10/month.
+Cost - $10/month.
 
-Strengths: Inline, fast, integrated into your editor. Good for guardrails during migration writing.
+Strengths - Inline, fast, integrated into your editor. Good for guardrails during migration writing.
 
-Limitations: Cannot analyze actual table size or traffic impact. Generates correct syntax but not context-aware safety recommendations.
+Limitations - Cannot analyze actual table size or traffic impact. Generates correct syntax but not context-aware safety recommendations.
 
 Cody (Sourcegraph) - Repository and Database Schema Integration
 
 Cody can integrate your database schema as context, enabling smarter migration reviews based on your actual schema state.
 
-Approach: Configure Cody with database connection metadata. Ask Cody to review a migration, and it analyzes against your actual current schema, not a hypothetical one.
+Approach - Configure Cody with database connection metadata. Ask Cody to review a migration, and it analyzes against your actual current schema, not a hypothetical one.
 
 With database context:
 
@@ -195,13 +195,13 @@ Cody analyzes:
 
 The schema context enables recommendations that Copilot cannot make.
 
-Cost: $20/month or self-hosted.
+Cost - $20/month or self-hosted.
 
-Strengths: Database-aware through schema integration. Can correlate migrations with actual table metadata.
+Strengths - Database-aware through schema integration. Can correlate migrations with actual table metadata.
 
-Limitations: Requires database connection configuration. Setup friction higher than Copilot.
+Limitations - Requires database connection configuration. Setup friction higher than Copilot.
 
-Specialized Tools: Atlas (HashiCorp) and Liquibase
+Specialized Tools - Atlas (HashiCorp) and Liquibase
 
 These are not pure AI tools but migration management platforms with AI-assisted review features.
 
@@ -209,7 +209,7 @@ Atlas
 
 Atlas is an open-source schema management tool with AI code generation for writing migrations.
 
-Approach: Define desired schema in a declarative file (HCL or SQL), and Atlas generates the migration script. Can also analyze existing schemas and generate migrations from actual database state.
+Approach - Define desired schema in a declarative file (HCL or SQL), and Atlas generates the migration script. Can also analyze existing schemas and generate migrations from actual database state.
 
 ```hcl
 table "orders" {
@@ -242,17 +242,17 @@ Running `atlas schema diff` compares this desired state to your database and gen
 - Missing indexes on foreign keys
 - Type compatibility issues
 
-Cost: Free tier (good), cloud tier ($99/month for team features).
+Cost - Free tier (good), cloud tier ($99/month for team features).
 
-Strengths: Schema-as-code eliminates manual SQL writing. Can generate migrations from real databases. Integrates with CI/CD.
+Strengths - Schema-as-code eliminates manual SQL writing. Can generate migrations from real databases. Integrates with CI/CD.
 
-Limitations: Requires learning HCL. Not pure AI review; mostly templated migration generation based on schema diffs.
+Limitations - Requires learning HCL. Not pure AI review; mostly templated migration generation based on schema diffs.
 
 Liquibase with AI Assistant
 
 Liquibase is an older migration tool (XML-based or YAML), and they added AI features via their integrated assistant.
 
-Approach: Write migrations in Liquibase format, and the AI assistant validates them, suggests rollback procedures, and checks for known anti-patterns.
+Approach - Write migrations in Liquibase format, and the AI assistant validates them, suggests rollback procedures, and checks for known anti-patterns.
 
 ```yaml
 databaseChangeLog:
@@ -279,11 +279,11 @@ Liquibase AI validation:
 - Suggests safe execution windows
 - Validates preconditions
 
-Cost: Free (open source), commercial features at $499/year+.
+Cost - Free (open source), commercial features at $499/year+.
 
-Strengths: Mature tool with enterprise adoption. Schema versioning is solid.
+Strengths - Mature tool with enterprise adoption. Schema versioning is solid.
 
-Limitations: XML/YAML is verbose. Not as user-friendly as newer tools. AI features are bolted on, not core to the design.
+Limitations - XML/YAML is verbose. Not as user-friendly as newer tools. AI features are bolted on, not core to the design.
 
 Practical Migration Review Checklist (AI-Assisted)
 
@@ -321,9 +321,9 @@ Use this checklist and have Claude or Cody review against it:
 
 Real-World Migration Disasters AI Review Prevents
 
-Case 1: The Type Change Deadlock
+Case 1 - The Type Change Deadlock
 ```sql
--- Migration: Change user.age from INT to SMALLINT
+-- Migration - Change user.age from INT to SMALLINT
 -- Table: users (500M rows in Postgres)
 ALTER TABLE users ALTER COLUMN age TYPE SMALLINT;
 -- This locks the table and rewrites 500M rows
@@ -331,9 +331,9 @@ ALTER TABLE users ALTER COLUMN age TYPE SMALLINT;
 -- Actual outage: Email alerts fail, auth service queues back up
 ```
 
-AI review catches this: "Changing column type on table with 500M rows will lock table. Suggest: new column, backfill, switch in app, drop old column."
+AI review catches this - "Changing column type on table with 500M rows will lock table. Suggest - new column, backfill, switch in app, drop old column."
 
-Case 2: The Unindexed Foreign Key
+Case 2 - The Unindexed Foreign Key
 ```sql
 -- Migration: Add FK constraint
 ALTER TABLE orders ADD CONSTRAINT fk_user
@@ -342,9 +342,9 @@ ALTER TABLE orders ADD CONSTRAINT fk_user
 -- Takes 12 minutes on 50M row table, blocks writes
 ```
 
-AI review catches: "Adding foreign key constraint on large table will scan entire table. Ensure index on orders.user_id exists first."
+AI review catches - "Adding foreign key constraint on large table will scan entire table. Ensure index on orders.user_id exists first."
 
-Case 3: The Breaking Change Incompatibility
+Case 3 - The Breaking Change Incompatibility
 ```sql
 -- Migration: Rename column
 ALTER TABLE products RENAME COLUMN price TO cost;
@@ -352,7 +352,7 @@ ALTER TABLE products RENAME COLUMN price TO cost;
 -- New application code expects products.cost → ERROR during transition
 ```
 
-AI review catches: "Renaming columns requires dual-writing in application code. Suggest blue-green migration: 1) Add new column, 2) Backfill, 3) Deploy app to dual-write, 4) Point reads to new column, 5) Drop old column."
+AI review catches - "Renaming columns requires dual-writing in application code. Suggest blue-green migration: 1) Add new column, 2) Backfill, 3) Deploy app to dual-write, 4) Point reads to new column, 5) Drop old column."
 
 CI/CD Integration for Migration Review
 

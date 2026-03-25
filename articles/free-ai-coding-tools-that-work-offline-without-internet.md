@@ -48,7 +48,7 @@ Offline AI coding tools provide several advantages beyond just working without i
 
 The trade-off is that offline tools typically run smaller models compared to cloud-based options like ChatGPT or Claude. However, for many coding tasks, autocomplete, refactoring, bug detection, and code explanation, these local models perform remarkably well.
 
-Ollama: Run Local LLMs for Coding
+Ollama - Run Local LLMs for Coding
 
 Ollama is the most accessible way to run large language models locally on your machine. It supports various models including Llama 3, Mistral, and CodeLlama, specifically optimized for coding tasks.
 
@@ -83,7 +83,7 @@ Ollama works with several editor extensions:
 
 - VS Code: Use the Continue extension configured to use Ollama
 
-- Neovim: Configure coc-ollama or use the Continue.nvim plugin
+- Neovim - Configure coc-ollama or use the Continue.nvim plugin
 
 - Emacs: Use ellama package
 
@@ -101,7 +101,7 @@ Example Continue configuration in VS Code (`~/.continue/config.json`):
 }
 ```
 
-Tabnine: Free Offline Autocomplete
+Tabnine - Free Offline Autocomplete
 
 Tabnine offers a free tier with offline code completion capabilities. It uses a combination of local and cloud models, but the free plan provides sufficient offline functionality for most developers.
 
@@ -123,7 +123,7 @@ Tabnine provides intelligent autocomplete that learns from your codebase. The fr
 
 For enhanced offline features, Tabnine Pro ($12/month) adds multi-file context and longer completions, but the free tier works adequately for offline use.
 
-Continue: Open Source IDE Extension
+Continue - Open Source IDE Extension
 
 Continue is an open-source extension for VS Code and JetBrains that brings AI assistance to your IDE. It supports connecting to local models through Ollama, LM Studio, or other local inference servers.
 
@@ -161,7 +161,7 @@ With Continue configured, you can highlight code and use commands like:
 
 All processing happens locally through Ollama.
 
-Codeium: Free Tier with Offline Support
+Codeium - Free Tier with Offline Support
 
 Codeium provides a generous free tier that includes offline autocomplete for over 70 languages. While some advanced features require internet, the core autocomplete engine works without connectivity.
 
@@ -183,7 +183,7 @@ Codeium's offline mode covers:
 
 The limitation is that some enterprise features and longer-context analysis require cloud processing.
 
-LM Studio: Desktop App for Local Models
+LM Studio - Desktop App for Local Models
 
 LM Studio provides an user-friendly desktop application for running various AI models locally. While primarily designed for general LLM use, it works well for coding assistance when paired with code-optimized models.
 

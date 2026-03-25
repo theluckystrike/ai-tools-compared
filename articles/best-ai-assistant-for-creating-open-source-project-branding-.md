@@ -266,7 +266,7 @@ For multi-file projects, Cursor coordinates generation across files effectively.
 For brainstorming and iteration, ChatGPT offers quick feedback on brand directions.
 
 
-Consider your workflow: if you spend hours manually creating brand assets, AI assistants can reduce this to minutes of generation plus refinement time.
+Consider your workflow - if you spend hours manually creating brand assets, AI assistants can reduce this to minutes of generation plus refinement time.
 
 
 Best Practices
@@ -284,7 +284,7 @@ Best Practices
 4. Document decisions: Use AI to generate explanations alongside the assets, capturing why certain choices were made.
 
 
-5. Export multiple formats: Generate CSS, JSON, and YAML versions simultaneously to support different tools in your project ecosystem.
+5. Export multiple formats: Generate CSS, JSON, and YAML versions simultaneously to support different tools in your project environment.
 
 ---
 

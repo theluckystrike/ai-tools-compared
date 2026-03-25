@@ -70,9 +70,9 @@ resource "aws_instance" "example" {
 
 This is syntactically correct but misses security groups, IAM instance profiles, and monitoring configuration.
 
-Best for: Individual developers writing straightforward infrastructure, or as a starting point for more careful refinement.
+Best for - Individual developers writing straightforward infrastructure, or as a starting point for more careful refinement.
 
-Pricing: $10/month GitHub Copilot, $20/month Copilot Pro (higher limits).
+Pricing - $10/month GitHub Copilot, $20/month Copilot Pro (higher limits).
 
 Cursor IDE with Claude Backend
 
@@ -147,9 +147,9 @@ resource "aws_security_group" "rds" {
 
 This includes security configuration, monitoring, and networking, not just basic resource creation.
 
-Best for: Teams writing complex infrastructure with strong security requirements, or multi-file projects needing architectural consistency.
+Best for - Teams writing complex infrastructure with strong security requirements, or multi-file projects needing architectural consistency.
 
-Pricing: $20/month Cursor Pro, plus Claude API usage ($3-15/month depending on usage).
+Pricing - $20/month Cursor Pro, plus Claude API usage ($3-15/month depending on usage).
 
 Claude (Web Interface or API)
 
@@ -171,7 +171,7 @@ Limitations:
 - No direct IDE integration out-of-box
 
 Example multi-step workflow:
-1. Paste your current Terraform into Claude: "Audit this infrastructure for security issues."
+1. Paste your current Terraform into Claude - "Audit this infrastructure for security issues."
 2. Claude identifies problems: missing KMS encryption, overly permissive IAM roles, inadequate logging.
 3. Ask for remediation: "Rewrite this with encryption, least-privilege IAM, and full CloudTrail logging."
 4. Claude generates corrected code in artifact for direct copying.
@@ -179,9 +179,9 @@ Example multi-step workflow:
 
 This conversational iteration is stronger in Claude than other tools because context persists and you can ask follow-up questions without restating requirements.
 
-Best for: Infrastructure architects designing systems from scratch, or teams conducting infrastructure audits.
+Best for - Infrastructure architects designing systems from scratch, or teams conducting infrastructure audits.
 
-Pricing: Claude API at $3/month (light usage) to $30/month (heavy usage). Claude web interface is free with usage limits.
+Pricing - Claude API at $3/month (light usage) to $30/month (heavy usage). Claude web interface is free with usage limits.
 
 Pulumi AI
 
@@ -237,9 +237,9 @@ pulumi.export("public_subnet_id", public_subnet.id)
 
 Pulumi AI understands the relationship between resources and generates exports for cross-stack composition.
 
-Best for: Organizations using Pulumi's platform, or teams wanting to write infrastructure in general-purpose programming languages rather than HCL.
+Best for - Organizations using Pulumi's platform, or teams wanting to write infrastructure in general-purpose programming languages rather than HCL.
 
-Pricing: Free for self-managed, $50/month for Pulumi Cloud (team features and automation).
+Pricing - Free for self-managed, $50/month for Pulumi Cloud (team features and automation).
 
 Detailed Feature Comparison Table
 
@@ -262,30 +262,30 @@ Security Best Practices When Using AI for IaC
 
 AI tools generate syntactically correct Terraform, but security requires human oversight. Never deploy AI-generated infrastructure without review:
 
-Encryption: Verify all stateful resources use encryption at rest. AI sometimes forgets KMS key references or enables encryption with AWS-managed keys instead of customer-managed keys.
+Encryption - Verify all stateful resources use encryption at rest. AI sometimes forgets KMS key references or enables encryption with AWS-managed keys instead of customer-managed keys.
 
-Network isolation: Check security groups and network ACLs. AI may create overly permissive rules (allow 0.0.0.0/0) for convenience during prototyping that should be refined to specific CIDR blocks.
+Network isolation - Check security groups and network ACLs. AI may create overly permissive rules (allow 0.0.0.0/0) for convenience during prototyping that should be refined to specific CIDR blocks.
 
-IAM policies: Review generated IAM roles carefully. AI tends to generate working policies but not minimal policies. Policies should follow least-privilege: the minimum permissions required for the application.
+IAM policies - Review generated IAM roles carefully. AI tends to generate working policies but not minimal policies. Policies should follow least-privilege: the minimum permissions required for the application.
 
-Audit logging: Verify CloudTrail, S3 access logging, and database audit logs are enabled. These are often omitted from AI generation despite being critical for security and compliance.
+Audit logging - Verify CloudTrail, S3 access logging, and database audit logs are enabled. These are often omitted from AI generation despite being critical for security and compliance.
 
-Secrets management: Never hardcode secrets in Terraform. Review generated code for any sensitive values. Use AWS Secrets Manager or HashiCorp Vault references instead.
+Secrets management - Never hardcode secrets in Terraform. Review generated code for any sensitive values. Use AWS Secrets Manager or HashiCorp Vault references instead.
 
-Compliance tagging: Ensure resources are tagged for cost allocation and compliance tracking. Most AI tools add basic tags but miss environment, owner, and cost-center tags your organization requires.
+Compliance tagging - Ensure resources are tagged for cost allocation and compliance tracking. Most AI tools add basic tags but miss environment, owner, and cost-center tags your organization requires.
 
 Real-World Integration Scenarios
 
-Scenario 1: Rapid Prototyping
+Scenario 1 - Rapid Prototyping
 Use Claude to generate complete infrastructure stacks. Copy the code into Terraform, review carefully for security, and deploy to development. This workflow takes 30 minutes instead of 3 hours.
 
-Scenario 2: Code Review
-Use Claude as a code review tool. Paste existing Terraform: "Review this for security issues and best practices." Claude identifies problems and suggests improvements. This catches gaps your team might miss.
+Scenario 2 - Code Review
+Use Claude as a code review tool. Paste existing Terraform - "Review this for security issues and best practices." Claude identifies problems and suggests improvements. This catches gaps your team might miss.
 
-Scenario 3: Migration Planning
-Ask Claude: "We have this legacy CloudFormation template. Generate Terraform to replicate it." Claude converts between formats and can note differences and advantages of the new approach.
+Scenario 3 - Migration Planning
+Ask Claude - "We have this legacy CloudFormation template. Generate Terraform to replicate it." Claude converts between formats and can note differences and advantages of the new approach.
 
-Scenario 4: Module Library Development
+Scenario 4 - Module Library Development
 Use Claude to generate well-structured, reusable modules. The generated modules have proper inputs, outputs, variables, and documentation, accelerating library development by 50%.
 
 Provider Coverage and Limitations
@@ -296,13 +296,13 @@ For multi-cloud infrastructure, Claude performs slightly better because it can u
 
 Getting Started Recommendations
 
-For individuals: Start with GitHub Copilot ($10/month). It's integrated, cheap, and sufficient for straightforward infrastructure. Upgrade to Claude when you encounter complex patterns.
+For individuals - Start with GitHub Copilot ($10/month). It's integrated, cheap, and sufficient for straightforward infrastructure. Upgrade to Claude when you encounter complex patterns.
 
 For teams with strong security requirements: Use Cursor ($20/month) for daily development, plus Claude ($10/month) for architectural decisions and security audits.
 
-For organizations migrating to Pulumi: Use Pulumi AI for new stacks. It teaches Pulumi patterns naturally while generating code.
+For organizations migrating to Pulumi - Use Pulumi AI for new stacks. It teaches Pulumi patterns naturally while generating code.
 
-For infrastructure architects: Use Claude for design and refactoring work. The deep architectural understanding pays for itself in time saved.
+For infrastructure architects - Use Claude for design and refactoring work. The deep architectural understanding pays for itself in time saved.
 
 Frequently Asked Questions
 

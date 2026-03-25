@@ -29,7 +29,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Use a Standard Project Layout
+Step 1 - Use a Standard Project Layout
 
 AI tools excel when they can apply pattern recognition across your codebase. Using conventional project structures signals intent and helps these tools anticipate what belongs where.
 
@@ -64,7 +64,7 @@ myproject/
 
 The key principle is keeping source code in a dedicated directory. This lets AI tools distinguish between production code and configuration files, improving their suggestions for where new code should live.
 
-Step 2: Use Configuration Files as Context Anchors
+Step 2 - Use Configuration Files as Context Anchors
 
 Your project's configuration files serve as crucial context anchors. AI tools read these files to understand dependencies, build processes, and project conventions. Place them at the root level where they're easily discoverable:
 
@@ -78,7 +78,7 @@ Your project's configuration files serve as crucial context anchors. AI tools re
 
 When AI assistants can quickly scan these files, they generate code that aligns with your project's established patterns and dependencies.
 
-Step 3: Organize Tests Alongside Source Code
+Step 3 - Organize Tests Alongside Source Code
 
 Tests often live far from the code they validate, which limits AI tools' understanding of implementation details. Group tests near their corresponding source files using conventions like:
 
@@ -92,7 +92,7 @@ src/
 
 This proximity helps AI tools recognize relationships between code and its tests, enabling more accurate suggestions for both implementation and test coverage.
 
-Step 4: Use Clear, Consistent Naming Conventions
+Step 4 - Use Clear, Consistent Naming Conventions
 
 AI coding tools rely heavily on file and directory names to infer purpose and relationships. Choose names that communicate intent:
 
@@ -104,7 +104,7 @@ AI coding tools rely heavily on file and directory names to infer purpose and re
 
 Consistent naming helps AI tools build mental models of your architecture and generate contextually appropriate code.
 
-Step 5: Create Documentation That AI Can Read
+Step 5 - Create Documentation That AI Can Read
 
 While README files serve humans, they also train AI assistants about your project. Include clear sections covering:
 
@@ -118,7 +118,7 @@ While README files serve humans, they also train AI assistants about your projec
 
 A well-documented project helps AI tools understand not just what your code does, but why it was built that way.
 
-Step 6: Use Index or Entry Point Files Strategically
+Step 6 - Use Index or Entry Point Files Strategically
 
 AI tools often analyze your project's entry points to understand the overall structure. Make these entry points explicit:
 
@@ -130,7 +130,7 @@ AI tools often analyze your project's entry points to understand the overall str
 
 These files give AI assistants a quick path to understanding your project's public API and module organization.
 
-Step 7: Maintain a Clean Root Directory
+Step 7 - Maintain a Clean Root Directory
 
 A cluttered root directory confuses AI tools about project structure. Keep only essential files at the root:
 
@@ -146,11 +146,11 @@ myproject/
 
 Move configuration files, build outputs, and documentation into appropriate subdirectories. This clarity helps AI tools focus on what's important.
 
-Step 8: Apply These Principles Across Frameworks
+Step 8 - Apply These Principles Across Frameworks
 
 These strategies work across different frameworks and languages. The underlying principle remains consistent: make your project's structure transparent and predictable. Whether you're working with React, Django, Express, or any other framework, AI tools perform better when they can quickly map your project's architecture.
 
-Step 9: Use Feature-Based Directory Organization
+Step 9 - Use Feature-Based Directory Organization
 
 For larger applications, organizing by feature rather than by file type often provides better context to AI tools. Instead of grouping all controllers together, group them by feature domain:
 
@@ -179,7 +179,7 @@ src/
 
 This approach helps AI assistants understand feature boundaries and generate code that stays within appropriate domains.
 
-Step 10: Implement Environment-Specific Configurations
+Step 10 - Implement Environment-Specific Configurations
 
 When your project has environment-specific configurations, structure them consistently:
 
@@ -193,7 +193,7 @@ config/
 
 AI coding tools can then generate code that appropriately handles different environments based on these configuration files. This pattern is particularly valuable when working with deployment pipelines or feature flags.
 
-Step 11: Define Explicit TypeScript or Type Definitions
+Step 11 - Define Explicit TypeScript or Type Definitions
 
 If your language supports type annotations or type definitions, use them extensively. For TypeScript projects, create dedicated type files:
 
@@ -210,7 +210,7 @@ src/
 
 These type definitions serve as contracts that AI tools can reference when generating code, ensuring consistency across your entire codebase.
 
-Step 12: Use Consistent Import Patterns
+Step 12 - Use Consistent Import Patterns
 
 How you import modules affects AI tools' understanding of code relationships. Establish and maintain consistent import patterns:
 
@@ -225,24 +225,24 @@ import * as Utils from '@/utils';
 
 Clear import paths help AI assistants trace code through your project and provide more accurate suggestions.
 
-Step 13: Create a Project Context File
+Step 13 - Create a Project Context File
 
 Consider adding a `PROJECT_CONTEXT.md` or `ARCHITECTURE.md` file that explicitly documents your project structure and conventions. This goes beyond a standard README:
 
 ```markdown
 Project Architecture
 
-Step 14: Directory Structure
+Step 14 - Directory Structure
 - `/src/features` - Domain-specific feature modules
 - `/src/shared` - Cross-cutting concerns
 - `/tests` - Integration tests
 
-Step 15: Naming Conventions
-- Components: PascalCase (UserProfile.tsx)
-- Utilities: camelCase (formatDate.ts)
+Step 15 - Naming Conventions
+- Components - PascalCase (UserProfile.tsx)
+- Utilities - camelCase (formatDate.ts)
 - Constants: UPPER_SNAKE_CASE
 
-Step 16: State Management
+Step 16 - State Management
 - Local state: React useState
 - Feature state: React Context
 - Global state: Redux Toolkit
@@ -250,7 +250,7 @@ Step 16: State Management
 
 This explicit documentation gives AI tools a reference for generating code that matches your project's patterns.
 
-Step 17: Monitor and Refine Your Structure
+Step 17 - Monitor and Refine Your Structure
 
 Your project structure should evolve with your needs. Periodically review whether your organization still makes sense:
 

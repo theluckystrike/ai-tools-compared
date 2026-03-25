@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Configure GitHub Copilot for Your Conventions
+Step 1 - Configure GitHub Copilot for Your Conventions
 
 GitHub Copilot offers several configuration options that influence its suggestions. The most effective approach combines editor settings with context awareness.
 
@@ -67,7 +67,7 @@ Beyond editor settings, Copilot learns from your codebase through open file cont
 
 GitHub Copilot also respects language server protocols. If your project uses a linter or formatter configured for specific conventions, Copilot observes these settings when generating code.
 
-Step 2: Training Cursor to Match Your Style
+Step 2 - Training Cursor to Match Your Style
 
 Cursor, built on VS Code, provides more direct control over AI behavior through its Rules feature. Create a `.cursorrules` file in your project root to establish naming guidelines:
 
@@ -92,7 +92,7 @@ def get_user_account_status(user_id):
 
 Yields suggestions that respect the snake_case pattern rather than defaulting to camelCase.
 
-Step 3: Use Project Context for Better Suggestions
+Step 3 - Use Project Context for Better Suggestions
 
 All major AI coding assistants benefit from project context. The more relevant code the tool can analyze, the better its suggestions align with your patterns.
 
@@ -100,12 +100,12 @@ Create convention example files that serve dual purposes: documentation and AI t
 
 ```python
 Naming convention examples for this project
-Variables: snake_case
+Variables - snake_case
 user_name = "example"
 order_total = 149.99
 is_active = True
 
-Functions: snake_case with verb_prefix
+Functions - snake_case with verb_prefix
 def get_user_by_id(user_id):
     pass
 
@@ -115,27 +115,27 @@ def calculate_order_total(order_items):
 def validate_user_input(user_input):
     pass
 
-Classes: PascalCase
+Classes - PascalCase
 class UserAccount:
     pass
 
 class OrderProcessor:
     pass
 
-Constants: UPPER_SNAKE_CASE
+Constants - UPPER_SNAKE_CASE
 MAX_RETRY_ATTEMPTS = 3
 DEFAULT_TIMEOUT_SECONDS = 30
 ```
 
 Reference this file in your documentation and keep it accessible. AI tools that index your project will incorporate these patterns into their suggestions.
 
-Step 4: Use Codeium with Custom Dictionaries
+Step 4 - Use Codeium with Custom Dictionaries
 
 Codeium's enterprise features include custom dictionary support, allowing teams to define approved terminology and naming patterns. Configure these through your team's Codeium dashboard.
 
 For individual developers, Codeium learns from your editing patterns. When you consistently accept or reject certain suggestion styles, the tool adjusts its future recommendations. This feedback loop requires patience but produces results over time.
 
-Step 5: Tabnine's Contextual Learning
+Step 5 - Tabnine's Contextual Learning
 
 Tabnine offers both local and cloud modes, with the local option providing enhanced privacy for proprietary codebases. Its Pro and Enterprise tiers support team-wide configuration files that define coding standards.
 
@@ -152,7 +152,7 @@ naming_convention = "camelCase"
 
 Tabnine reads these settings and generates suggestions aligned with your specified conventions. This approach works particularly well for teams enforcing standardized naming across multiple projects.
 
-Step 6: Strategies for Consistent Results
+Step 6 - Strategies for Consistent Results
 
 Beyond tool configuration, adopt practices that improve AI suggestion quality:
 
@@ -170,13 +170,13 @@ Accept and refine. When AI suggestions match your conventions, accept them. This
 
 Provide feedback. Most tools include mechanisms to report incorrect suggestions. Use these features to improve both your experience and future model versions.
 
-Step 7: Measuring Improvement
+Step 7 - Measuring Improvement
 
 Track your naming convention compliance over time using linter reports. If your project uses flake8 for Python or ESLint for JavaScript, run these tools regularly and monitor naming-related warnings. A decreasing trend indicates your AI configuration successfully aligns with project standards.
 
 You can also time your coding sessions. With properly configured AI suggestions, you should spend less time refactoring variable names and more time writing functional code.
 
-Step 8: Language-Specific Naming Configuration
+Step 8 - Language-Specific Naming Configuration
 
 Different languages have different conventions. Set up AI tools correctly for each:
 
@@ -184,15 +184,15 @@ Different languages have different conventions. Set up AI tools correctly for ea
 Python (.cursorrules):
 - Variable names: snake_case (max 30 chars)
 - Functions: snake_case with action verb prefix
-- Classes: PascalCase
-- Constants: UPPER_SNAKE_CASE
+- Classes - PascalCase
+- Constants - UPPER_SNAKE_CASE
 - Private methods: _leading_underscore
 - get_user_orders(), UserAccount, MAX_RETRIES
 
 JavaScript (.cursorrules):
 - Variable/function: camelCase
-- Classes: PascalCase
-- Constants: UPPER_SNAKE_CASE
+- Classes - PascalCase
+- Constants - UPPER_SNAKE_CASE
 - React components: PascalCase
 - Boolean variables: is_*, has_*, should_* prefix
 - fetchUserOrders(), UserAccount, MAX_RETRIES
@@ -205,32 +205,32 @@ Go (.cursorrules):
 - GetUserOrders(), userRepository, Reader
 
 Rust (.cursorrules):
-- Variables: snake_case
+- Variables - snake_case
 - Functions: snake_case
 - Structs/Enums: PascalCase
-- Constants: UPPER_SNAKE_CASE
+- Constants - UPPER_SNAKE_CASE
 - Module names: snake_case
 - get_user_orders(), UserAccount, MAX_RETRIES
 ```
 
 Store language-specific rules files in your repository and reference them in team documentation.
 
-Step 9: Progressive Enforcement: Feedback Loop Training
+Step 9 - Progressive Enforcement: Feedback Loop Training
 
 AI tools improve through positive feedback loops:
 
 ```
-Week 1: AI learns your conventions
+Week 1 - AI learns your conventions
 - Accept 90% of correctly named suggestions
 - Reject/refactor incorrectly named ones
 - Keep track of which suggestions you fix
 
-Week 2: Improvement phase
+Week 2 - Improvement phase
 - AI adjusts based on feedback
 - Acceptance rate should increase to 95%
 - Continue documenting non-compliant suggestions
 
-Week 3: Optimization
+Week 3 - Optimization
 - Configure tool settings based on Week 1-2 patterns
 - Create convention documentation from collected fixes
 - Share with team
@@ -238,7 +238,7 @@ Week 3: Optimization
 
 This approach trains AI tools through practice, similar to human learning.
 
-Step 10: Team Standardization with Shared Configuration
+Step 10 - Team Standardization with Shared Configuration
 
 Multi-developer teams benefit from centralized convention enforcement:
 
@@ -251,9 +251,9 @@ vscode-settings.json      # VS Code extension settings
 naming-conventions.md     # Human-readable reference
 
 .cursorrules content:
-Your project uses: camelCase for JavaScript, snake_case for Python
-Function prefixes: get*, set*, is*, has*, should*
-Class names: PascalCase with business domain prefix
+Your project uses - camelCase for JavaScript, snake_case for Python
+Function prefixes - get*, set*, is*, has*, should*
+Class names - PascalCase with business domain prefix
 Examples:
   getUserOrders() - correct
   GetUserOrders() - wrong
@@ -279,7 +279,7 @@ eslint src/ --format json | jq '.[] | select(.messages[].rule == "camelcase")' |
 
 Generate compliance reports monthly showing improvement from AI suggestion refinement.
 
-Step 11: Handling Edge Cases and Exceptions
+Step 11 - Handling Edge Cases and Exceptions
 
 Some names require exceptions to standard conventions. Document these:
 
@@ -305,7 +305,7 @@ Naming Exceptions:
 
 Communicate these exceptions clearly so AI tools (and humans) understand the boundaries.
 
-Step 12: Onboarding New Team Members with AI Configuration
+Step 12 - Onboarding New Team Members with AI Configuration
 
 New developers should receive pre-configured AI tools matching the team's conventions:
 
@@ -320,12 +320,12 @@ Developer onboarding checklist:
 6. Review naming-conventions.md
 7. Ask AI: "What naming conventions should I follow in this project?"
 
-Expected result: AI immediately suggests code following established conventions
+Expected result - AI immediately suggests code following established conventions
 ```
 
 This reduces onboarding friction and ensures consistency from day one.
 
-Step 13: Customizing AI Behavior Per File Type
+Step 13 - Customizing AI Behavior Per File Type
 
 Advanced configuration targets specific file patterns:
 

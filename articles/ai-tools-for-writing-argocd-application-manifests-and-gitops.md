@@ -119,7 +119,7 @@ Copilot works well for generating standard ArgoCD Application manifests when you
 Copilot's main limitation is occasional confusion between similar fields across different Kubernetes resources. You may need to explicitly specify fields that differ from standard Kubernetes resource definitions.
 
 
-A practical tip for Copilot: open an existing Application manifest in the same editor window before asking it to generate a new one. The in-context example dramatically improves output quality because Copilot uses visible code as a strong hint for the style and structure it should follow.
+A practical tip for Copilot - open an existing Application manifest in the same editor window before asking it to generate a new one. The in-context example dramatically improves output quality because Copilot uses visible code as a strong hint for the style and structure it should follow.
 
 
 4. Aider. Best Terminal Workflow

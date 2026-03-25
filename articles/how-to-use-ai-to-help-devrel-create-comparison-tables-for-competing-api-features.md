@@ -41,7 +41,7 @@ A comparison of fewer than 3 options provides limited value: it becomes obvious 
 - Be explicit about limitations.: If an API caps free tier requests at 1,000/day, include that number.
 - Handle missing features consistently. Use "No" or "Not supported" rather than leaving cells blank: this makes the table easier to scan.
 - A comparison table with: 30 features is harder to use than one focused on the 5-8 features that actually drive adoption decisions.
-- Instead of "Ease of use: Easy vs Hard," use "Learning curve: 2 hours to first API call" or "Documentation: 50 examples provided." Measurable comparison is more valuable to developers.
+- Instead of "Ease of use: Easy vs Hard," use "Learning curve: 2 hours to first API call" or "Documentation - 50 examples provided." Measurable comparison is more valuable to developers.
 - This guide covers how: to use AI to help DevRel create comparison tables for competing API features, focusing on practical workflows that maintain accuracy while reducing manual effort.
 
 Why AI Works Well for API Comparison Tables
@@ -52,7 +52,7 @@ The real value AI provides is speed in initial research and structure. You still
 
 Practical Workflow for API Feature Comparison
 
-Step 1: Define Your Comparison Dimensions
+Step 1 - Define Your Comparison Dimensions
 
 Before using AI, establish what you're comparing. Typical API comparison dimensions include:
 
@@ -72,14 +72,14 @@ Before using AI, establish what you're comparing. Typical API comparison dimensi
 
 Write these dimensions as a structured list. This serves as your prompt framework.
 
-Step 2: Generate Initial Feature Lists with AI
+Step 2 - Generate Initial Feature Lists with AI
 
 Provide the AI with a structured prompt that includes the API names and your comparison dimensions. Here's an effective prompt pattern:
 
 ```
 Compare the following APIs on these features: [list features]
-APIs to compare: [API names]
-For each API, provide: feature availability, specific details, and any limitations.
+APIs to compare - [API names]
+For each API, provide - feature availability, specific details, and any limitations.
 Format the output as a structured list.
 ```
 
@@ -98,7 +98,7 @@ Provide a structured comparison with specific details from their documentation.
 
 The AI generates an initial list based on its training data. Always verify against current documentation.
 
-Step 3: Structure Output as Markdown Tables
+Step 3 - Structure Output as Markdown Tables
 
 Once you have raw feature data, convert it to markdown tables. AI can help with this too:
 
@@ -113,7 +113,7 @@ Once you have raw feature data, convert it to markdown tables. AI can help with 
 
 This markdown format integrates directly into documentation sites, GitHub READMEs, or Jekyll-powered blogs.
 
-Step 4: Use AI for Cross-Referencing and Gaps
+Step 4 - Use AI for Cross-Referencing and Gaps
 
 After creating an initial table, ask AI to identify gaps:
 
@@ -129,7 +129,7 @@ Table content:
 
 This helps catch features you might have overlooked.
 
-Code Example: Automating Table Generation
+Code Example - Automating Table Generation
 
 For teams processing multiple APIs regularly, consider a script that combines AI extraction with structured output:
 
@@ -243,7 +243,7 @@ While Jekyll markdown doesn't support built-in styling, you can add HTML comment
 | Enterprise SLA | Limited | Only for annual contracts >$50k |
 ```
 
-Automation: Generating Tables Programmatically
+Automation - Generating Tables Programmatically
 
 For teams managing multiple API comparison tables, consider automating table generation:
 
@@ -284,7 +284,7 @@ features = {
 print(generators.generate_markdown_table(features))
 ```
 
-Real-World Comparison Example: CDN Services
+Real-World Comparison Example - CDN Services
 
 Let's walk through a complete comparison table for Content Delivery Networks:
 
@@ -292,7 +292,7 @@ Let's walk through a complete comparison table for Content Delivery Networks:
 | Feature | Cloudflare | AWS CloudFront | Akamai |
 |---------|---|---|---|
 | Pricing Model | | | |
-| Per-GB egress | $0.20 (first 10TB) | $0.085 (first 10TB) | $0.10–$0.35 (custom) |
+| Per-GB egress | $0.20 (first 10TB) | $0.085 (first 10TB) | $0.10, $0.35 (custom) |
 | Per-request | Included | $0.0075/10k | Included |
 | Setup cost | None | None | Varies |
 | Performance | | | |
@@ -323,7 +323,7 @@ Yes, but note that pricing changes frequently. Include a "Last updated" date pro
 
 How do I handle subjective features like "ease of use"?
 
-Avoid subjective categories unless you can ground them in measurable criteria. Instead of "Ease of use: Easy vs Hard," use "Learning curve: 2 hours to first API call" or "Documentation: 50 examples provided." Measurable comparison is more valuable to developers.
+Avoid subjective categories unless you can ground them in measurable criteria. Instead of "Ease of use: Easy vs Hard," use "Learning curve: 2 hours to first API call" or "Documentation - 50 examples provided." Measurable comparison is more valuable to developers.
 
 Can I use AI to maintain tables automatically?
 

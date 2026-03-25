@@ -41,8 +41,8 @@ Accessible cookie consent banners are essential for compliance with GDPR, CCPA, 
 
 - The preferences panel toggle: needs proper keyboard support including Enter and Space activation.
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.
-- First: proper semantic HTML structure identifies the banner, buttons, and preferences panel.
-- Third: keyboard users can access all functionality without a mouse.
+- First - proper semantic HTML structure identifies the banner, buttons, and preferences panel.
+- Third - keyboard users can access all functionality without a mouse.
 - The component included proper: ARIA roles, keyboard event handling, and state management for cookie preferences.
 - It correctly implemented the: `useEffect` hook for cookie storage and retrieval.
 
@@ -101,39 +101,39 @@ Claude (Anthropic)
 
 Claude produced a well-structured React component with excellent TypeScript typing. The component included proper ARIA roles, keyboard event handling, and state management for cookie preferences. It correctly implemented the `useEffect` hook for cookie storage and retrieval. The code was production-ready with minimal modifications needed.
 
-Strengths: Clean TypeScript interfaces, prop types, proper focus management when opening/closing the banner.
+Strengths - Clean TypeScript interfaces, prop types, proper focus management when opening/closing the banner.
 
 ChatGPT (OpenAI)
 
 ChatGPT generated a functional component with good accessibility foundations. It included basic ARIA attributes and keyboard navigation. However, the component required additions for proper focus trapping when the preferences panel is open.
 
-Strengths: Quick generation, familiar component structure, decent CSS styling suggestions.
+Strengths - Quick generation, familiar component structure, decent CSS styling suggestions.
 
 Cursor
 
 Cursor's IDE-integrated approach allowed for iterative refinement. The initial generation was solid, and the ability to make targeted edits improved the final output. It handled the state management logic well.
 
-Strengths: Real-time editing, context-aware suggestions, easy integration with existing codebase.
+Strengths - Real-time editing, context-aware suggestions, easy integration with existing codebase.
 
 GitHub Copilot
 
 Copilot generated accessible markup but relied heavily on comments to guide its suggestions. The TypeScript integration worked well, though some ARIA implementations needed verification against WCAG guidelines.
 
-Strengths: Fast inline completions, good React patterns, familiar VS Code integration.
+Strengths - Fast inline completions, good React patterns, familiar VS Code integration.
 
 Key Accessibility Features to Verify
 
 Regardless of which AI tool you use, verify these critical accessibility features in the generated code:
 
-Focus Management: When the banner appears, focus should move to the banner or a focusable element within it. When closed, focus should return to the trigger element.
+Focus Management - When the banner appears, focus should move to the banner or a focusable element within it. When closed, focus should return to the trigger element.
 
-State Communication: Use `aria-live` regions to announce consent changes to screen readers. The banner should communicate whether cookies are accepted, rejected, or customized.
+State Communication - Use `aria-live` regions to announce consent changes to screen readers. The banner should communicate whether cookies are accepted, rejected, or customized.
 
-Keyboard Navigation: All interactive elements must be reachable via Tab key. The preferences panel toggle needs proper keyboard support including Enter and Space activation.
+Keyboard Navigation - All interactive elements must be reachable via Tab key. The preferences panel toggle needs proper keyboard support including Enter and Space activation.
 
-Screen Reader Labels: Every button needs an `aria-label` or `aria-describedby` that explains its action clearly. Generic labels like "Accept" should include context about what is being accepted.
+Screen Reader Labels - Every button needs an `aria-label` or `aria-describedby` that explains its action clearly. Generic labels like "Accept" should include context about what is being accepted.
 
-Color Contrast: The banner must meet 4.5:1 contrast ratio for normal text. Ensure button colors and background combinations pass WCAG guidelines.
+Color Contrast - The banner must meet 4.5:1 contrast ratio for normal text. Ensure button colors and background combinations pass WCAG guidelines.
 
 Practical Implementation Example
 
@@ -291,7 +291,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -303,7 +303,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

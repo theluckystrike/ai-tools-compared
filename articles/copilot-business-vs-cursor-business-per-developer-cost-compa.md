@@ -95,7 +95,7 @@ Feature-by-Feature Analysis
 Code Completion Quality
 
 
-Both tools use large language models to provide intelligent code suggestions. Copilot uses OpenAI's models directly integrated into GitHub's ecosystem, while Cursor uses a customized combination of Claude and GPT-4 class models depending on the task.
+Both tools use large language models to provide intelligent code suggestions. Copilot uses OpenAI's models directly integrated into GitHub's environment, while Cursor uses a customized combination of Claude and GPT-4 class models depending on the task.
 
 
 In practice, developers report similar completion accuracy for common patterns. However, Cursor's context-aware suggestions sometimes perform better when working with larger codebases due to its codebase indexing capabilities. Cursor builds a semantic index of your entire repository and uses it to inform completions, which helps with cross-file references and internal API usage.
@@ -139,7 +139,7 @@ Copilot Business offers cached offline completions for common patterns through i
 Practical Code Examples
 
 
-Example 1: Generating a React Hook
+Example 1 - Generating a React Hook
 
 
 Both tools produce comparable output for well-established patterns:
@@ -183,7 +183,7 @@ function useUserData(userId) {
 Both Copilot and Cursor will suggest implementations like this based on the prompt and surrounding code context. The key difference is that Cursor may also infer your project's fetch wrapper or API client from the codebase index, producing a more idiomatic suggestion.
 
 
-Example 2: Refactoring with Context
+Example 2 - Refactoring with Context
 
 
 Where Cursor shows a clearer advantage is refactoring tasks that require understanding non-local context:

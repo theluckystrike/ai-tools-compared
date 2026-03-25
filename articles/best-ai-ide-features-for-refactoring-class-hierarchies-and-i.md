@@ -29,7 +29,7 @@ Table of Contents
 - [Composition Over Inheritance Recommendations](#composition-over-inheritance-recommendations)
 - [Practical Workflow for Hierarchy Refactoring](#practical-workflow-for-hierarchy-refactoring)
 - [IDE-Specific Refactoring Features](#ide-specific-refactoring-features)
-- [Real-World Refactoring Example: E-Commerce Product Hierarchy](#real-world-refactoring-example-e-commerce-product-hierarchy)
+- [Real-World Refactoring Example - E-Commerce Product Hierarchy](#real-world-refactoring-example-e-commerce-product-hierarchy)
 - [Testing During Refactoring](#testing-during-refactoring)
 - [Measuring Refactoring Success](#measuring-refactoring-success)
 
@@ -205,13 +205,13 @@ VS Code requires more manual refactoring but can use GitHub Copilot and other AI
 
 ```bash
 With Copilot in VS Code
-Highlight a method, ask Copilot: "Extract this method to a parent class"
+Highlight a method, ask Copilot - "Extract this method to a parent class"
 Copilot suggests the extraction, you verify and apply
 ```
 
 The workflow is more manual but integrates well with your coding flow.
 
-Real-World Refactoring Example: E-Commerce Product Hierarchy
+Real-World Refactoring Example - E-Commerce Product Hierarchy
 
 Consider a complex inheritance structure for an e-commerce system:
 
@@ -330,7 +330,7 @@ Testing During Refactoring
 Critical tests to run before, during, and after hierarchy refactoring:
 
 ```python
-Test 1: Behavior preservation
+Test 1 - Behavior preservation
 class TestProductBehavior(unittest.TestCase):
     def test_physical_product_shipping_calculation(self):
         # This test must pass before, during, and after refactoring
@@ -342,7 +342,7 @@ class TestProductBehavior(unittest.TestCase):
         product = create_digital_product()
         self.assertEqual(product.calculate_shipping("US"), 0)
 
-Test 2: Type compatibility
+Test 2 - Type compatibility
 class TestTypeCompatibility(unittest.TestCase):
     def test_all_products_respond_to_price(self):
         # After refactoring, all products should provide price
@@ -351,7 +351,7 @@ class TestTypeCompatibility(unittest.TestCase):
             self.assertTrue(hasattr(product, 'price'))
             self.assertIsInstance(product.price, (int, float))
 
-Test 3: Substitutability (if keeping inheritance)
+Test 3 - Substitutability (if keeping inheritance)
 class TestLiskovSubstitution(unittest.TestCase):
     def handle_product(self, product):
         # This function should work with ANY product type

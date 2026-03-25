@@ -29,7 +29,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Cursor AI's Privacy Mode
+Step 1 - Understand Cursor AI's Privacy Mode
 
 
 When you use Cursor AI in its default configuration, code context is sent to AI servers to generate suggestions, chat responses, and autocomplete features. Privacy mode changes this behavior by processing AI requests locally or limiting what data leaves your machine.
@@ -45,7 +45,7 @@ Privacy mode in Cursor AI is designed for developers who need AI assistance but 
 Understanding the distinction between what privacy mode prevents and what it still allows is essential for setting accurate expectations with compliance teams. Privacy mode is not equivalent to a fully air-gapped environment, Cursor itself still needs network access for authentication and updates, but it stops your source code from being included in AI inference requests sent to third-party providers.
 
 
-Step 2: Enable Privacy Mode in Cursor AI
+Step 2 - Enable Privacy Mode in Cursor AI
 
 
 To enable privacy mode, follow these steps:
@@ -73,7 +73,7 @@ Settings → Privacy →
 Always restart Cursor after toggling privacy mode. Settings changes apply to new sessions, not the currently running editor process.
 
 
-Step 3: Practical Configuration Examples
+Step 3 - Practical Configuration Examples
 
 
 Basic Privacy Configuration
@@ -142,7 +142,7 @@ For organizations where individual developer settings cannot be trusted, Cursor 
 Setting `allowOverride` to false prevents individual developers from disabling privacy mode through the settings UI, which is critical for regulated environments.
 
 
-Step 4: What Works in Privacy Mode
+Step 4 - What Works in Privacy Mode
 
 
 When privacy mode is enabled, certain features remain functional:
@@ -156,7 +156,7 @@ When privacy mode is enabled, certain features remain functional:
 - Linting and diagnostics: ESLint, TypeScript errors, and other language server features are unaffected
 
 
-Step 5: What Changes in Privacy Mode
+Step 5 - What Changes in Privacy Mode
 
 
 Some AI features may be limited or unavailable:
@@ -172,7 +172,7 @@ Some AI features may be limited or unavailable:
 It is worth auditing your team's most-used Cursor features before switching to privacy mode. If your workflow depends heavily on the chat interface for code generation, you may need to evaluate whether a self-hosted model integration satisfies both your productivity and compliance needs.
 
 
-Step 6: Use Cursor AI Features Without Sending Code
+Step 6 - Use Cursor AI Features Without Sending Code
 
 
 Even with privacy mode enabled, you can use many AI features effectively:
@@ -231,7 +231,7 @@ To maximize productivity in privacy mode:
 5. Invest in language server tooling: TypeScript's own language server provides intelligent rename, find-references, and go-to-definition that don't require AI
 
 
-Step 7: Verify Your Privacy Settings
+Step 7 - Verify Your Privacy Settings
 
 
 To confirm privacy mode is working correctly:
@@ -244,7 +244,7 @@ To confirm privacy mode is working correctly:
 For a more rigorous verification, use a network proxy like Charles or mitmproxy to inspect outbound traffic from the Cursor process. In strict privacy mode, you should see no requests to AI inference endpoints. Any requests you observe should only reach Cursor's authentication and update servers.
 
 
-Comparison: Default vs Privacy Mode
+Comparison - Default vs Privacy Mode
 
 
 | Feature | Default Mode | Privacy Mode |
@@ -279,13 +279,13 @@ Troubleshooting Privacy Mode
 
 If you encounter issues after enabling privacy mode:
 
-Suggestions not appearing: Check that local autocomplete is enabled in the general settings. Privacy mode disables cloud suggestions but should not disable the local suggestion engine.
+Suggestions not appearing - Check that local autocomplete is enabled in the general settings. Privacy mode disables cloud suggestions but should not disable the local suggestion engine.
 
-Feature unavailable error: Verify the feature does not require cloud processing. Features that show a cloud icon in the UI require server-side inference and will not function in privacy mode.
+Feature unavailable error - Verify the feature does not require cloud processing. Features that show a cloud icon in the UI require server-side inference and will not function in privacy mode.
 
-Slow performance: Ensure your local machine meets Cursor AI requirements. With cloud offloading disabled, the local machine handles more computation. 16 GB of RAM is recommended for comfortable use.
+Slow performance - Ensure your local machine meets Cursor AI requirements. With cloud offloading disabled, the local machine handles more computation. 16 GB of RAM is recommended for comfortable use.
 
-Settings not persisting: If privacy settings reset after restart, check whether a managed device policy is overriding your preferences. Contact your IT team if this occurs.
+Settings not persisting - If privacy settings reset after restart, check whether a managed device policy is overriding your preferences. Contact your IT team if this occurs.
 
 Restart Cursor AI after changing privacy settings for changes to take effect.
 

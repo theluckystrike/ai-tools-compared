@@ -72,7 +72,7 @@ When to Use Full Tunnel Routing
 
 Full tunnel routing is the right choice in several scenarios. When using public WiFi networks at cafes, airports, or hotels, you should always use a full tunnel VPN because these networks are notoriously insecure. Attackers can easily intercept unencrypted traffic on public networks, potentially stealing passwords, session cookies, or installing malware. A full tunnel ensures all your traffic is encrypted, making it impossible for anyone on the same network to see what you're doing.
 
-Journalists, activists, and anyone living in countries with internet censorship benefit greatly from full tunnel routing. When privacy is paramount and you can't afford any traffic leaks, sending everything through the VPN is the safest approach. This prevents accidentally accessing a website without protection or having your real IP address exposed through DNS leaks.
+Journalists, activists, and anyone living in countries with internet censorship benefit greatly from full tunnel routing. When privacy is essential and you can't afford any traffic leaks, sending everything through the VPN is the safest approach. This prevents accidentally accessing a website without protection or having your real IP address exposed through DNS leaks.
 
 Corporate environments typically require full tunnel routing for remote workers. Company policies usually mandate that all work-related traffic passes through the corporate VPN to ensure it passes through security filters, maintains compliance, and stays within the company's network perimeter. This protects sensitive business data from being transmitted over unsecured connections.
 
@@ -111,13 +111,13 @@ Most VPN applications make it easy to switch between full tunnel and split tunne
 For more advanced control, you can configure routing rules at the operating system level. On Linux, you can use iptables or nftables to create sophisticated routing policies. On Windows, the routing table and Windows Firewall can be configured for granular control. Some users create multiple VPN configurations, one for full tunnel and one for split tunneling, and switch between them as needed.
 
 ```bash
-Linux: inspect the routing table to verify which traffic goes through VPN
+Linux - inspect the routing table to verify which traffic goes through VPN
 ip route show
 
 Check which interface handles default traffic
 ip route get 8.8.8.8
 
-WireGuard config: AllowedIPs controls split vs full tunnel
+WireGuard config - AllowedIPs controls split vs full tunnel
 Full tunnel. all traffic through VPN:
   AllowedIPs = 0.0.0.0/0, ::/0
 Split tunnel. only corporate subnet:
@@ -133,7 +133,7 @@ Advanced Configuration Examples
 
 For developers and sysadmins who want to configure this at the OS level:
 
-Linux: Creating Split Tunnel with iptables
+Linux - Creating Split Tunnel with iptables
 ```bash
 #!/bin/bash
 Configure split tunneling on Linux using routing rules
@@ -153,9 +153,9 @@ Flush DNS cache to prevent leaks
 systemctl restart systemd-resolved
 ```
 
-Windows: Routing Table Configuration
+Windows - Routing Table Configuration
 ```powershell
-PowerShell: Configure split tunneling on Windows
+PowerShell - Configure split tunneling on Windows
 $vpnInterface = "vpn"
 $vpnGateway = "10.8.0.1"
 
@@ -212,23 +212,23 @@ iperf -c server.com -B vpn_ip -P 4  # Through tunnel
 
 Real-World Use Cases and Configurations
 
-Case 1: Remote Worker on Corporate VPN
+Case 1 - Remote Worker on Corporate VPN
 - Configuration: Full tunnel for all traffic
 - Reason: Company security policy requires it; all business data must be encrypted
 - Trade-off: Slight slowdown acceptable for security compliance
 
-Case 2: Freelancer Using Multiple Cloud Providers
+Case 2 - Freelancer Using Multiple Cloud Providers
 - Configuration: Split tunneling
 - Routes through VPN: SSH access to private servers (security)
 - Routes direct: Cloud provider APIs, downloads (performance)
 - Maintains security for critical access while preserving speed
 
-Case 3: Journalist in Restricted Country
+Case 3 - Journalist in Restricted Country
 - Configuration: Full tunnel to reliable VPN server
 - Reason: Must hide all activity; using public WiFi frequently
 - Trade-off: Speed is secondary to safety; may use closest VPN server for best performance
 
-Case 4: Online Gamer with Privacy Concerns
+Case 4 - Online Gamer with Privacy Concerns
 - Configuration: Hybrid approach
 - Game traffic: Direct connection (for low ping)
 - Browsing: Through VPN (for privacy)
@@ -253,8 +253,8 @@ nameserver 10.8.0.1    # VPN provider's DNS
 nameserver 10.8.0.2    # Backup
 
 Or use DoH (DNS over HTTPS) to encrypt DNS requests
-Cloudflare: https://1.1.1.1/dns-query
-Quad9: https://9.9.9.9/dns-query
+Cloudflare - https://1.1.1.1/dns-query
+Quad9 - https://9.9.9.9/dns-query
 ```
 
 Practical Decision Matrix

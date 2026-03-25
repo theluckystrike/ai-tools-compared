@@ -27,13 +27,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Claude API Pricing
+Step 1 - Understand Claude API Pricing
 
 Claude API uses a token-based pricing model. You pay for both input tokens (your prompts) and output tokens (Claude's responses). The pricing varies by model, Haiku is the cheapest, Sonnet offers the best value for most use cases, and Opus is the most capable but expensive.
 
 For small projects, the key is selecting the right model for each task and optimizing your prompts to minimize token usage without sacrificing quality.
 
-Step 2: Choose the Right Model
+Step 2 - Choose the Right Model
 
 The model you choose directly impacts your costs. Here is a practical approach:
 
@@ -45,7 +45,7 @@ The model you choose directly impacts your costs. Here is a practical approach:
 
 For small coding projects, you will find that Sonnet provides the best balance between capability and cost.
 
-Step 3: Model Selection by Task Type
+Step 3 - Model Selection by Task Type
 
 The biggest savings come from routing tasks to the cheapest model that can handle them. Many developers default to Sonnet for everything, but Haiku handles a surprising range of common tasks just as well.
 
@@ -62,7 +62,7 @@ The biggest savings come from routing tasks to the cheapest model that can handl
 
 Routing correctly saves 60-80% on simpler tasks. A quick heuristic: if a junior developer could do it mechanically, Haiku probably can too.
 
-Step 4: Practical Code Implementation
+Step 4 - Practical Code Implementation
 
 Here is a basic Python implementation to call the Claude API:
 
@@ -85,7 +85,7 @@ def ask_claude(prompt: str, model: str = "claude-sonnet-4-20250514") -> str:
 
 This minimal implementation works for simple queries. However, you can optimize further by reusing the client and implementing proper error handling.
 
-Step 5: Cost-Saving Strategies
+Step 5 - Cost-Saving Strategies
 
 1. Cache Common Responses
 
@@ -176,7 +176,7 @@ message = client.messages.create(
 
 For projects where you repeatedly query the same large codebase, prompt caching alone can cut your monthly bill by 50% or more.
 
-Step 6: Real-World Example: Code Review Bot
+Step 6 - Real-World Example: Code Review Bot
 
 Here is a practical example of a cost-effective code review bot:
 
@@ -193,7 +193,7 @@ class CheapCodeReviewer:
 
     def review_diff(self, diff: str) -> str:
         prompt = f"""Review this code diff for issues.
-Focus on: bugs, security vulnerabilities, and performance.
+Focus on - bugs, security vulnerabilities, and performance.
 Provide concise feedback.
 
 Diff:
@@ -216,7 +216,7 @@ Diff:
 
 This bot limits output tokens and focuses the model on specific concerns, keeping costs minimal while still providing useful feedback.
 
-Step 7: Monitor and Budgeting
+Step 7 - Monitor and Budgeting
 
 Implement basic cost tracking to stay within budget:
 
@@ -243,7 +243,7 @@ class CostTracker:
 
 Use the actual `usage` field from the API response for accurate tracking. `message.usage.input_tokens` and `message.usage.output_tokens` are exact, not estimates.
 
-Step 8: Estimating Monthly Costs Before You Start
+Step 8 - Estimating Monthly Costs Before You Start
 
 Before building anything, run a rough estimate against your expected usage. This prevents surprises:
 
@@ -269,7 +269,7 @@ def estimate_monthly_cost(
 100 requests/day, 500 input tokens, 200 output tokens
 monthly = estimate_monthly_cost(100, 500, 200, "sonnet")
 print(f"Estimated monthly cost: ${monthly:.2f}")
-Output: ~$1.23/month. manageable for a small project
+Output - ~$1.23/month. manageable for a small project
 ```
 
 For most small coding projects (a personal tool, a side project, a script you run occasionally), Claude API costs stay well under $5/month with sensible defaults. The spending spikes happen when you feed it large files without trimming context first.

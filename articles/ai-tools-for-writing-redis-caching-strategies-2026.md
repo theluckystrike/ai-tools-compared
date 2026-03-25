@@ -20,9 +20,9 @@ Claude 3.5 Sonnet excels at generating production-grade Redis caching patterns w
 Table of Contents
 
 - [Understanding Redis Caching Strategies](#understanding-redis-caching-strategies)
-- [Claude 3.5 Sonnet: Production-Grade Patterns](#claude-35-sonnet-production-grade-patterns)
-- [ChatGPT-4: Solid Foundation with Iteration](#chatgpt-4-solid-foundation-with-iteration)
-- [Cursor (Claude-Based): Codebase-Aware Caching](#cursor-claude-based-codebase-aware-caching)
+- [Claude 3.5 Sonnet - Production-Grade Patterns](#claude-35-sonnet-production-grade-patterns)
+- [ChatGPT-4 - Solid Foundation with Iteration](#chatgpt-4-solid-foundation-with-iteration)
+- [Cursor (Claude-Based) - Codebase-Aware Caching](#cursor-claude-based-codebase-aware-caching)
 - [Specialized Tools for Cache Monitoring](#specialized-tools-for-cache-monitoring)
 - [Practical Caching Checklist](#practical-caching-checklist)
 - [Common AI Tool Mistakes](#common-ai-tool-mistakes)
@@ -36,7 +36,7 @@ Three primary caching strategies address different workload patterns. Write-thro
 
 TTL (time-to-live) strategies determine cache freshness. Fixed TTL works for static data like product catalogs. Sliding TTL extends expiration each time data is accessed, useful for session management. Conditional TTL varies based on data volatility; user profiles might use 3600 seconds while stock prices use 10 seconds.
 
-Claude 3.5 Sonnet: Production-Grade Patterns
+Claude 3.5 Sonnet - Production-Grade Patterns
 
 Claude 3.5 Sonnet consistently generates cache implementations that handle edge cases. When asked to "write Redis caching for user profiles with smart invalidation," Claude produces:
 
@@ -136,7 +136,7 @@ Usage examples
 redis_client = redis.Redis(host='localhost', port=6379, decode_responses=True)
 cache = RedisCacheStrategy(redis_client)
 
-Write-through: user profile lookup
+Write-through - user profile lookup
 def fetch_user_from_db(user_id: int):
     # Simulated database call
     return {'id': user_id, 'name': f'User {user_id}', 'email': f'user{user_id}@example.com'}
@@ -144,7 +144,7 @@ def fetch_user_from_db(user_id: int):
 user_data = cache.cache_write_through(f'user:{user_id}',
     lambda: fetch_user_from_db(user_id))
 
-Write-behind: activity logging
+Write-behind - activity logging
 activity_event = {
     'user_id': user_id,
     'action': 'page_view',
@@ -166,7 +166,7 @@ This pattern demonstrates all three strategies with clear comments explaining wh
 
 Claude also explains the cost tradeoff clearly, write-behind increases performance 3-4x but requires background flush logic and introduces temporary inconsistency windows. This helps developers choose appropriately rather than blindly adopting the fastest option.
 
-ChatGPT-4: Solid Foundation with Iteration
+ChatGPT-4 - Solid Foundation with Iteration
 
 ChatGPT-4 produces correct Redis code but requires refinement on advanced patterns. Initial ChatGPT responses generate basic caching:
 
@@ -189,14 +189,14 @@ This pattern works but misses edge cases. Pushing ChatGPT deeper with follow-up 
 
 ChatGPT-4 excels at explaining Redis data structures (strings, lists, sets, hashes, sorted sets) and command syntax. For Redis-specific questions like "which data structure minimizes memory for leaderboards," ChatGPT provides accurate sorted-set recommendations with example commands.
 
-Cursor (Claude-Based): Codebase-Aware Caching
+Cursor (Claude-Based) - Codebase-Aware Caching
 
 Cursor provides exceptional value when refactoring caching across an existing codebase. The IDE integration allows Cursor to understand your current cache implementation and suggest improvements across files.
 
 For example, Cursor identified a common anti-pattern in a test codebase:
 
 ```python
-Before: No cache invalidation after test updates
+Before - No cache invalidation after test updates
 def test_user_profile():
     user = create_user('Alice')
     assert user.name == 'Alice'

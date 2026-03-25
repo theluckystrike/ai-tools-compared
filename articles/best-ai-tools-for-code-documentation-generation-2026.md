@@ -30,9 +30,9 @@ Top Tools Compared
 
 GitHub Copilot for Documentation
 
-Setup: Install Copilot extension in VS Code, log in, enable chat mode.
+Setup - Install Copilot extension in VS Code, log in, enable chat mode.
 
-How it works: Ask Copilot to generate JSDoc for a function. It analyzes the function body, parameters, and return types.
+How it works - Ask Copilot to generate JSDoc for a function. It analyzes the function body, parameters, and return types.
 
 ```javascript
 // Your function
@@ -57,15 +57,15 @@ Fast, in-editor, handles context well, free tier available, works across 40+ lan
 
 Misses edge cases, sometimes generic descriptions, requires manual cleanup for complex functions, limited to 4k context per request.
 
-Cost: $10/month individual, $39/month per business user.
+Cost - $10/month individual, $39/month per business user.
 
-Best for: Python/JavaScript teams needing quick docstring generation without setup overhead.
+Best for - Python/JavaScript teams needing quick docstring generation without setup overhead.
 
 Claude via Codebase Analysis
 
-Setup: Upload entire repository to Claude.ai or use Claude API with file context.
+Setup - Upload entire repository to Claude.ai or use Claude API with file context.
 
-How it works: Paste multiple related functions or entire modules. Claude analyzes function interdependencies, naming conventions, and domain logic to generate cohesive documentation.
+How it works - Paste multiple related functions or entire modules. Claude analyzes function interdependencies, naming conventions, and domain logic to generate cohesive documentation.
 
 ```python
 Upload your Flask API module
@@ -77,7 +77,7 @@ class UserAPI:
         # Function implementation
         pass
 
-Ask Claude: "Generate thorough docstrings for this API class"
+Ask Claude - "Generate thorough docstrings for this API class"
 Claude understands the pattern and produces:
 
 class UserAPI:
@@ -110,15 +110,15 @@ Understands architecture across multiple files, handles edge cases well, generat
 
 Requires manual file uploads, slower than IDE tools, may need iterative prompts for specialized domains.
 
-Cost: Free (limited), Claude.ai Pro $20/month, or Claude API ($0.003/1K input tokens, $0.015/1K output tokens).
+Cost - Free (limited), Claude.ai Pro $20/month, or Claude API ($0.003/1K input tokens, $0.015/1K output tokens).
 
-Best for: Teams generating API docs, README files, and architecture guides from entire codebases.
+Best for - Teams generating API docs, README files, and architecture guides from entire codebases.
 
 Codeium Docs (Team-Focused)
 
-Setup: Install Codeium VS Code extension, enable Docs mode.
+Setup - Install Codeium VS Code extension, enable Docs mode.
 
-How it works: Highlight a function, run "Generate Documentation" command. Works offline on your machine.
+How it works - Highlight a function, run "Generate Documentation" command. Works offline on your machine.
 
 ```python
 def validate_phone_number(phone: str) -> bool:
@@ -138,15 +138,15 @@ Works offline, free tier covers most use cases, IDE-integrated, fast response ti
 
 Less context-aware than Claude, sometimes produces boilerplate text, limited enterprise support.
 
-Cost: Free tier sufficient for most teams, Pro $12/month adds team features.
+Cost - Free tier sufficient for most teams, Pro $12/month adds team features.
 
-Best for: Development teams wanting documentation generation without leaving their IDE.
+Best for - Development teams wanting documentation generation without leaving their IDE.
 
 Mintlify Writer
 
-Setup: Install extension, select code block, click "Generate Docs".
+Setup - Install extension, select code block, click "Generate Docs".
 
-How it works: Generates JSDoc/docstrings and auto-formats them in Mintlify style, which syncs to your documentation site.
+How it works - Generates JSDoc/docstrings and auto-formats them in Mintlify style, which syncs to your documentation site.
 
 ```typescript
 // Input function
@@ -174,9 +174,9 @@ Outputs formatted for docs sites, beautiful markdown, includes examples, handles
 
 Requires Mintlify setup, not true offline generation, slower processing, oriented toward public API docs.
 
-Cost: Free, Pro tier $99/month for teams.
+Cost - Free, Pro tier $99/month for teams.
 
-Best for: Open-source projects and companies maintaining public API documentation.
+Best for - Open-source projects and companies maintaining public API documentation.
 
 Real-World Accuracy Test
 
@@ -214,13 +214,13 @@ Codeium Output (7/10 accuracy):
 
 Choosing Your Tool
 
-For individuals/small teams: GitHub Copilot ($10/mo) + occasional Claude API calls covers 90% of needs.
+For individuals/small teams - GitHub Copilot ($10/mo) + occasional Claude API calls covers 90% of needs.
 
-For Python-heavy teams: Codeium Docs free tier + Copilot Pro ($20/mo Claude.ai) for complex APIs.
+For Python-heavy teams - Codeium Docs free tier + Copilot Pro ($20/mo Claude.ai) for complex APIs.
 
 For large codebases needing README + API docs: Claude API (pay-per-use) + Mintlify for final formatting.
 
-For enterprises: Document.ai ($99/mo) handles compliance documentation and specialized domains.
+For enterprises - Document.ai ($99/mo) handles compliance documentation and specialized domains.
 
 Workflow Best Practices
 
@@ -248,7 +248,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -260,7 +260,7 @@ Most modern tools support asynchronous workflows that work well across time zone
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

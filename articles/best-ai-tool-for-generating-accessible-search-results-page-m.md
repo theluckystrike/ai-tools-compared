@@ -27,7 +27,7 @@ Table of Contents
 - [Structured Data for Search Results](#structured-data-for-search-results)
 - [Evaluating AI Tool Output](#evaluating-ai-tool-output)
 - [AI Tool Comparison for Accessible Markup Generation](#ai-tool-comparison-for-accessible-markup-generation)
-- [Dynamic Search Results: The Live Region Problem](#dynamic-search-results-the-live-region-problem)
+- [Dynamic Search Results - The Live Region Problem](#dynamic-search-results-the-live-region-problem)
 - [Testing AI-Generated Accessible Markup](#testing-ai-generated-accessible-markup)
 - [Real-World Search Results Implementation](#real-world-search-results-implementation)
 - [Pagination and Dynamic Results Accessibility](#pagination-and-dynamic-results-accessibility)
@@ -87,7 +87,7 @@ Strengths:
 - Outputs validated WCAG-compliant markup
 - Supports multiple output formats (HTML, JSX, Vue templates)
 
-Best for: Teams prioritizing accessibility compliance and needing built-in validation.
+Best for - Teams prioritizing accessibility compliance and needing built-in validation.
 
 3. Figma-to-HTML AI Tools (Locofy, Builder.io)
 
@@ -203,7 +203,7 @@ Here is how the leading tools perform specifically on accessible search results 
 
 Claude Opus 4.6 produces the most complete accessible markup without extra prompting. When asked to "generate a search results component," it includes `aria-live="polite"` regions for dynamic result updates, `role="status"` for result count announcements, and proper focus management for keyboard users, patterns that other models only include when explicitly requested.
 
-Dynamic Search Results: The Live Region Problem
+Dynamic Search Results - The Live Region Problem
 
 The hardest accessibility challenge in search results pages is dynamic content. When a user types in a search box and results update without a page reload, screen reader users receive no feedback unless an ARIA live region announces the change.
 
@@ -517,16 +517,16 @@ Before shipping, verify:
 
 Common AI Mistakes in Search Result Markup
 
-Mistake 1: Using `<div role="link">` instead of `<a>`
+Mistake 1 - Using `<div role="link">` instead of `<a>`
 AI sometimes generates semantic HTML when the shortcut would work. Always use actual `<a>` elements for links, they're keyboard accessible by default.
 
-Mistake 2: Forgetting result count context
-Screen reader users need to know how many results exist. Include: "Found 1,240 results for 'javascript async/await'."
+Mistake 2 - Forgetting result count context
+Screen reader users need to know how many results exist. Include - "Found 1,240 results for 'javascript async/await'."
 
-Mistake 3: Auto-focusing first result
+Mistake 3 - Auto-focusing first result
 Tempting to auto-focus the first result, but this breaks user expectations. Let users focus, they'll tab to the first result naturally.
 
-Mistake 4: Pagination without keyboard control
+Mistake 4 - Pagination without keyboard control
 "Load more" buttons should be keyboard accessible and announced. Infinite scroll without keyboard alternatives excludes keyboard-only users.
 
 Recommendations
@@ -565,7 +565,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -577,4 +577,4 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.

@@ -346,9 +346,9 @@ cloud_metrics = benchmark_completion(
     "Write a Python function that validates email"
 )
 
-print(f"Local: {local_metrics['avg_latency_ms']:.0f}ms, "
+print(f"Local - {local_metrics['avg_latency_ms']:.0f}ms, "
       f"{local_metrics['tokens_per_second']:.0f} tok/sec")
-print(f"Cloud: {cloud_metrics['avg_latency_ms']:.0f}ms, "
+print(f"Cloud - {cloud_metrics['avg_latency_ms']:.0f}ms, "
       f"{cloud_metrics['tokens_per_second']:.0f} tok/sec")
 ```
 
@@ -395,8 +395,8 @@ ollama list  # Shows "gpu" if available
 Diagnose why GPU isn't used
 ollama -v run deepseek-coder  # Verbose mode shows GPU detection
 
-Solution: Install GPU drivers and CUDA
-For NVIDIA: https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
+Solution - Install GPU drivers and CUDA
+For NVIDIA - https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
 ```
 
 Cloud API timeouts:

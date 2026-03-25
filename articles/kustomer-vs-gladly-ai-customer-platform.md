@@ -284,9 +284,9 @@ For teams that cannot decide, running both platforms in parallel for 30 days on 
 
 Common Pitfalls
 
-Kustomer: Avoid relying on the visual flow builder for complex branching logic. Flows with more than 10 decision nodes become difficult to maintain and debug. Migrate complex routing logic to webhook-driven code instead, where version control and testing are straightforward.
+Kustomer - Avoid relying on the visual flow builder for complex branching logic. Flows with more than 10 decision nodes become difficult to maintain and debug. Migrate complex routing logic to webhook-driven code instead, where version control and testing are straightforward.
 
-Gladly: The person-centric model can create duplicate person records when customers contact support using multiple email addresses. Build a deduplication layer early in your integration to merge person records by phone number or external customer ID, or you will accumulate data quality debt that is expensive to clean up retroactively.
+Gladly - The person-centric model can create duplicate person records when customers contact support using multiple email addresses. Build a deduplication layer early in your integration to merge person records by phone number or external customer ID, or you will accumulate data quality debt that is expensive to clean up retroactively.
 
 Frequently Asked Questions
 

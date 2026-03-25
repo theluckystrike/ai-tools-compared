@@ -21,10 +21,10 @@ This guide tests Claude Code, GitHub Copilot, and Cursor on real Pulumi tasks in
 
 Table of Contents
 
-- [Task 1: EKS Cluster with Node Groups](#task-1-eks-cluster-with-node-groups)
-- [Task 2: ComponentResource Pattern](#task-2-componentresource-pattern)
-- [Task 3: Output Handling](#task-3-output-handling)
-- [Task 4: Stack References and Cross-Stack Dependencies](#task-4-stack-references-and-cross-stack-dependencies)
+- [Task 1 - EKS Cluster with Node Groups](#task-1-eks-cluster-with-node-groups)
+- [Task 2 - ComponentResource Pattern](#task-2-componentresource-pattern)
+- [Task 3 - Output Handling](#task-3-output-handling)
+- [Task 4 - Stack References and Cross-Stack Dependencies](#task-4-stack-references-and-cross-stack-dependencies)
 - [Tool Comparison](#tool-comparison)
 - [Configuring AI Tools for Better Pulumi Output](#configuring-ai-tools-for-better-pulumi-output)
 - [Stack Organization](#stack-organization)
@@ -33,9 +33,9 @@ Table of Contents
 - [Secrets](#secrets)
 - [Related Reading](#related-reading)
 
-Task 1: EKS Cluster with Node Groups
+Task 1 - EKS Cluster with Node Groups
 
-Prompt: "Create a Pulumi TypeScript stack for an EKS cluster with two node groups: one for general workloads, one spot instance group for batch jobs."
+Prompt - "Create a Pulumi TypeScript stack for an EKS cluster with two node groups: one for general workloads, one spot instance group for batch jobs."
 
 Copilot's output (simplified):
 
@@ -139,11 +139,11 @@ Claude correctly:
 - Diversified spot instance types for availability
 - Added Kubernetes labels and taints for workload scheduling
 
-Task 2: ComponentResource Pattern
+Task 2 - ComponentResource Pattern
 
 Pulumi's `ComponentResource` is the equivalent of a CDK Construct. a reusable infrastructure building block. Most AI tools don't know the pattern.
 
-Prompt: "Write a Pulumi ComponentResource for a S3 bucket with encryption, versioning, and lifecycle rules."
+Prompt - "Write a Pulumi ComponentResource for a S3 bucket with encryption, versioning, and lifecycle rules."
 
 Cursor's output:
 
@@ -240,7 +240,7 @@ export const storageBucketName = appStorage.bucketName;
 
 The `registerOutputs` call is critical. without it, Pulumi can't track the component's outputs correctly. Only Claude included it.
 
-Task 3: Output Handling
+Task 3 - Output Handling
 
 Pulumi's `Output<T>` type is the most common source of bugs in AI-generated Pulumi code. This pattern causes runtime errors:
 
@@ -272,11 +272,11 @@ const connectionString = pulumi.all([dbHost, dbPort, dbName]).apply(
 
 Copilot and Cursor both generate `${}` string interpolation mistakes on `Output<T>` values in roughly 40% of cases.
 
-Task 4: Stack References and Cross-Stack Dependencies
+Task 4 - Stack References and Cross-Stack Dependencies
 
 A test that separates strong Pulumi knowledge from surface-level familiarity is the `StackReference` pattern. Teams that run multiple stacks. network, cluster, application. need to pass outputs from one stack to another without hardcoding values.
 
-Prompt: "Our networking stack exports a VPC ID and subnet IDs. Write a Pulumi TypeScript stack that consumes those outputs and creates a RDS instance in the private subnets."
+Prompt - "Our networking stack exports a VPC ID and subnet IDs. Write a Pulumi TypeScript stack that consumes those outputs and creates a RDS instance in the private subnets."
 
 Copilot's output:
 
@@ -372,8 +372,8 @@ Use `new pulumi.StackReference(`myorg/{stack}/{env}`)` to consume outputs.
 Our org name is "myorg".
 
 Naming Convention
-Resources: `{component}-{env}` (e.g., "api-db-production")
-Tags: always include Environment, Team, ManagedBy=pulumi
+Resources - `{component}-{env}` (e.g., "api-db-production")
+Tags - always include Environment, Team, ManagedBy=pulumi
 
 Secrets
 Use `pulumi.Config.requireSecret()` for all sensitive values.

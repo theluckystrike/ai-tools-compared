@@ -22,9 +22,9 @@ Table of Contents
 - [Why AI for Unit Tests Makes Sense](#why-ai-for-unit-tests-makes-sense)
 - [What Free Tools Actually Deliver Results](#what-free-tools-actually-deliver-results)
 - [Workflow Strategies for Better Results](#workflow-strategies-for-better-results)
-- [Practical Example: Complete Test Suite Generation](#practical-example-complete-test-suite-generation)
+- [Practical Example - Complete Test Suite Generation](#practical-example-complete-test-suite-generation)
 - [Limitations to Understand](#limitations-to-understand)
-- [Comparison Table: Free AI Tools for Unit Test Generation](#comparison-table-free-ai-tools-for-unit-test-generation)
+- [Comparison Table - Free AI Tools for Unit Test Generation](#comparison-table-free-ai-tools-for-unit-test-generation)
 - [Advanced Test Generation Patterns](#advanced-test-generation-patterns)
 - [Integration with CI/CD](#integration-with-cicd)
 - [Recommendation](#recommendation)
@@ -67,7 +67,7 @@ Claude Code produces tests covering the validation logic, the different member s
 
 The CLI approach works particularly well for batch processing. You can loop through multiple files and generate tests for an entire module in one session.
 
-Aider: Open Source Terminal Assistant
+Aider - Open Source Terminal Assistant
 
 Aider is an open-source AI coding assistant that runs in your terminal. It connects to various language models and can edit code directly in your repository. For test generation, its key feature is the ability to understand your existing codebase structure.
 
@@ -87,7 +87,7 @@ international addresses. Cover edge cases like negative weights.
 
 Aider integrates with your git workflow, making commits as it goes. This creates a clear history of test additions.
 
-GitHub Copilot: IDE Integration
+GitHub Copilot - IDE Integration
 
 GitHub Copilot's free tier offers basic code completion including test suggestions. When you open a new test file and start typing, Copilot suggests completions based on your function signatures.
 
@@ -102,7 +102,7 @@ def test_calculate_discount_valid_inputs():
 
 The limitation is that Copilot works best with obvious patterns. Complex business logic with multiple edge cases may require more explicit prompting or manual completion.
 
-Codeium: Free Tier with Good Context
+Codeium - Free Tier with Good Context
 
 Codeium offers a generous free tier that includes test generation. Its strength is understanding project context, imports, dependencies, and existing test patterns.
 
@@ -130,7 +130,7 @@ Generate Tests in Context
 
 Rather than testing functions in isolation, provide related functions and constants. This helps the AI understand data structures and prevents test failures from missing fixtures.
 
-Practical Example: Complete Test Suite Generation
+Practical Example - Complete Test Suite Generation
 
 Consider a Python module handling user authentication:
 
@@ -174,7 +174,7 @@ Free AI tools have constraints. They may miss complex business logic that requir
 
 For critical applications, treat AI-generated tests as a foundation that human review makes production-ready. The time savings remains substantial even with this additional review step.
 
-Comparison Table: Free AI Tools for Unit Test Generation
+Comparison Table - Free AI Tools for Unit Test Generation
 
 | Tool | Language Support | Framework Coverage | Speed | Context | Learning Curve |
 |------|---|---|---|---|---|
@@ -409,7 +409,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -421,7 +421,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

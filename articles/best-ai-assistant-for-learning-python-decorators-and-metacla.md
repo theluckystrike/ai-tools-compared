@@ -38,17 +38,17 @@ Key Features to Look for in an AI Learning Assistant
 
 When selecting an AI assistant for learning decorators and metaclasses, prioritize tools that demonstrate these capabilities:
 
-Step-by-step code generation: The best assistants generate complete, runnable examples rather than snippets. They show the decorated function, the decorator implementation, and explain each line's purpose. For metaclasses, they should demonstrate how the metaclass intercepts class creation and modifies the resulting class.
+Step-by-step code generation - The best assistants generate complete, runnable examples rather than snippets. They show the decorated function, the decorator implementation, and explain each line's purpose. For metaclasses, they should demonstrate how the metaclass intercepts class creation and modifies the resulting class.
 
 Exercise generation with progressive difficulty: Look for assistants that provide exercises starting with simple decorators (like timing functions), progressing to class decorators (like adding methods dynamically), and culminating in metaclasses (like implementing an ORM-like pattern).
 
-Error explanation and debugging: When your decorator or metaclass code fails, the assistant should explain why the error occurred and guide you toward a solution rather than simply providing the corrected code.
+Error explanation and debugging - When your decorator or metaclass code fails, the assistant should explain why the error occurred and guide you toward a solution rather than simply providing the corrected code.
 
 Practical Exercise Examples for Decorators
 
 The following exercise types help cement understanding of decorators:
 
-Basic timing decorator: Create a decorator that measures and prints function execution time. This teaches you how to preserve the original function's metadata using `functools.wraps`.
+Basic timing decorator - Create a decorator that measures and prints function execution time. This teaches you how to preserve the original function's metadata using `functools.wraps`.
 
 ```python
 import functools
@@ -72,7 +72,7 @@ def slow_function():
 
 Retry decorator with configurable attempts: Implement a decorator that retries a function call a specified number of times on failure, useful for handling network operations or flaky dependencies.
 
-Decorator factories: Create functions that return decorators, allowing parameterized behavior. For example, a `repeat(times)` decorator factory that repeats the decorated function multiple times.
+Decorator factories - Create functions that return decorators, allowing parameterized behavior. For example, a `repeat(times)` decorator factory that repeats the decorated function multiple times.
 
 Metaclass Exercises That Build Real Skills
 
@@ -88,7 +88,7 @@ class MyClass(metaclass=Meta):
     pass
 ```
 
-Exercise: Automatic register: Create a metaclass that automatically registers classes in a registry dictionary. This pattern appears in plugin systems and dependency injection frameworks.
+Exercise - Automatic register: Create a metaclass that automatically registers classes in a registry dictionary. This pattern appears in plugin systems and dependency injection frameworks.
 
 ```python
 class RegistryMeta(type):
@@ -104,9 +104,9 @@ class RegistryMeta(type):
         return RegistryMeta.registry[cls_name]
 ```
 
-Exercise: Enforce method implementation: Build a metaclass that validates subclasses implement required methods, similar to abstract base classes but with custom validation logic.
+Exercise - Enforce method implementation: Build a metaclass that validates subclasses implement required methods, similar to abstract base classes but with custom validation logic.
 
-Exercise: Attribute validation: Create a metaclass that validates class attributes match certain constraints, such as type annotations being present or attribute names following a convention.
+Exercise - Attribute validation: Create a metaclass that validates class attributes match certain constraints, such as type annotations being present or attribute names following a convention.
 
 How AI Assistants Enhance the Learning Process
 
@@ -138,7 +138,7 @@ Getting Started with Practice
 Code progression example (Week 1 → Week 4):
 
 ```python
-Week 1: Simple timing decorator
+Week 1 - Simple timing decorator
 def timer(func):
     def wrapper(*args, kwargs):
         import time
@@ -148,7 +148,7 @@ def timer(func):
         return result
     return wrapper
 
-Week 2: Parameterized decorator factory
+Week 2 - Parameterized decorator factory
 def repeat(times):
     def decorator(func):
         def wrapper(*args, kwargs):
@@ -159,7 +159,7 @@ def repeat(times):
         return wrapper
     return decorator
 
-Week 3: Class decorator
+Week 3 - Class decorator
 def dataclass_like(cls):
     def __init__(self, kwargs):
         for key, value in kwargs.items():
@@ -167,7 +167,7 @@ def dataclass_like(cls):
     cls.__init__ = __init__
     return cls
 
-Week 4: Metaclass for plugin registry
+Week 4 - Metaclass for plugin registry
 class PluginRegistry(type):
     plugins = {}
 

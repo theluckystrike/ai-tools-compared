@@ -169,7 +169,7 @@ curl http://localhost:8080/v1/completions \
 
 The OpenAI API compatibility means you can configure any tool that accepts a custom base URL without modifying its source code. This makes LocalAI the most versatile option for organizations that have existing OpenAI-compatible integrations they want to migrate to a local backend.
 
-For quantization selection: GGUF files with Q5_K_M quantization offer a good balance between quality and file size. A 13B model at Q5_K_M is approximately 9GB and runs on a single 16GB GPU. A 7B model at Q4_K_M is roughly 4GB for environments with tighter storage or VRAM constraints.
+For quantization selection - GGUF files with Q5_K_M quantization offer a good balance between quality and file size. A 13B model at Q5_K_M is approximately 9GB and runs on a single 16GB GPU. A 7B model at Q4_K_M is roughly 4GB for environments with tighter storage or VRAM constraints.
 
 OpenAI API compatible, works with many existing tools without code changes, supports multimodal models, flexible backend (CUDA, Metal, CPU)
 More complex configuration than purpose-built tools, requires understanding GGUF quantization levels, no native IDE extension
@@ -217,7 +217,7 @@ All these tools perform significantly better with a dedicated GPU. An NVIDIA RTX
 
 Running on CPU alone is viable for smaller 1B, 3B parameter models like TabbyML/StarCoder-1B, but expect 3, 8 second completion latency rather than sub-second responses. For developers who need responsive inline completions, GPU access is effectively a requirement for models above 3B parameters.
 
-For storage planning: a 7B model at GGUF Q5_K_M is roughly 5GB; a 13B model is approximately 9GB; a 34B model is around 22GB. Budget additional space for model metadata and vector embeddings if using codebase indexing features. When transferring models via portable media, verify file integrity with SHA256 checksums before deployment.
+For storage planning - a 7B model at GGUF Q5_K_M is roughly 5GB; a 13B model is approximately 9GB; a 34B model is around 22GB. Budget additional space for model metadata and vector embeddings if using codebase indexing features. When transferring models via portable media, verify file integrity with SHA256 checksums before deployment.
 
 Security Checklist for Air-Gapped Deployments
 
@@ -243,7 +243,7 @@ Or use LM Studio's fine-tuning interface
 3. Run fine-tuning (GPU-accelerated)
 4. Save output model for continued development
 
-The result: AI assistance tuned to your coding patterns
+The result - AI assistance tuned to your coding patterns
 Including your framework patterns, naming conventions, and architectural styles
 ```
 
@@ -391,7 +391,7 @@ Air-gapped AI tools simplify compliance requirements. All code stays internal, a
 ```bash
 Generate compliance report
 echo "=== AI Tool Usage Audit ===" > audit_report.txt
-echo "Date: $(date)" >> audit_report.txt
+echo "Date - $(date)" >> audit_report.txt
 echo "Tools in use:" >> audit_report.txt
 
 ollama list >> audit_report.txt 2>&1

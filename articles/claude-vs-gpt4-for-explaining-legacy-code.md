@@ -31,7 +31,7 @@ Explain what this code does. Be specific about:
 
 No additional context was provided. just the code.
 
-Test 1: COBOL Batch Job
+Test 1 - COBOL Batch Job
 
 ```cobol
        IDENTIFICATION DIVISION.
@@ -88,9 +88,9 @@ GPT-4o's explanation (condensed):
 >
 > The program uses a FILE STATUS field to detect end of file ('10'). It closes files and stops cleanly.
 
-Assessment: Claude's explanation identifies the COMP-3 encoding risk, the silent skipping behavior, and asks about credit accounts. GPT-4o's explanation is syntactically accurate but operationally shallow. it describes what the code does line by line without surfacing what matters for safe modification.
+Assessment - Claude's explanation identifies the COMP-3 encoding risk, the silent skipping behavior, and asks about credit accounts. GPT-4o's explanation is syntactically accurate but operationally shallow. it describes what the code does line by line without surfacing what matters for safe modification.
 
-Test 2: Java EJB 2.x Session Bean
+Test 2 - Java EJB 2.x Session Bean
 
 ```java
 public class AccountFacadeBean implements SessionBean {
@@ -144,7 +144,7 @@ Claude flagged:
 
 GPT-4o noted the pattern as EJB 2.x and explained the lifecycle methods but did not flag the connection leak or the RemoteException serialization issue.
 
-Test 3: Undocumented C Utility
+Test 3 - Undocumented C Utility
 
 ```c
 static int g_fd = -1;
@@ -199,7 +199,7 @@ For both models, specificity helps:
 ```
 You are reviewing code before a production migration.
 Assume the code has been running in production for 10+ years.
-Focus on: hidden assumptions, failure modes under load,
+Focus on - hidden assumptions, failure modes under load,
 and anything that would break if called from a different context
 (multithreaded, different JVM version, cloud environment).
 ```
@@ -232,7 +232,7 @@ GPT-4o excels at:
 - Adding feature enhancements to existing code
 - Code that's been through multiple iterations
 
-Practical Workflow: Using Both Tools
+Practical Workflow - Using Both Tools
 
 Most teams improve results by using both:
 
@@ -242,7 +242,7 @@ Workflow for explaining legacy code:
 2. Get explanation of business logic and risks
 3. Paste the same code to GPT-4o
 4. Get explanation of technical structure
-5. Compare: Are the failure modes the same? Did each catch different issues?
+5. Compare - Are the failure modes the same? Did each catch different issues?
 6. Use insights from both for migration planning
 ```
 

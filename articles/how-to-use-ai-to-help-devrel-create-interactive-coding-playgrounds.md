@@ -116,15 +116,15 @@ AI translation helps maintain consistency across language variants, though you s
 
 Practical Workflow for DevRel Teams
 
-Step 1: Define Your Learning Objectives
+Step 1 - Define Your Learning Objectives
 
 Before involving AI, clarify what developers should learn from your playground. Are you demonstrating core features, showing integration patterns, or comparing your product against alternatives? Clear objectives help you provide better context to AI tools and create more focused experiences.
 
-Step 2: Generate Initial Code with AI
+Step 2 - Generate Initial Code with AI
 
 Provide detailed prompts to AI tools specifying your tech stack, the features you want to demonstrate, and your preferred code style. Include sample inputs and expected outputs to help AI understand the context.
 
-Step 3: Review and Refine
+Step 3 - Review and Refine
 
 AI-generated code requires human review for accuracy, security, and style consistency. Check for:
 
@@ -136,7 +136,7 @@ AI-generated code requires human review for accuracy, security, and style consis
 
 - Appropriate commenting and documentation
 
-Step 4: Add Interactive Elements
+Step 4 - Add Interactive Elements
 
 Enhance your playground with interactive features that AI can't fully generate:
 
@@ -148,7 +148,7 @@ Enhance your playground with interactive features that AI can't fully generate:
 
 - Sharing capabilities so developers can showcase their work
 
-Step 5: Test Across Browsers and Devices
+Step 5 - Test Across Browsers and Devices
 
 Verify your playground works consistently across different browsers, screen sizes, and network conditions. AI can help generate test cases, but manual testing remains essential for user experience.
 
@@ -156,13 +156,13 @@ Tools That Accelerate Playground Creation
 
 Several AI-powered tools can assist in different aspects of playground development:
 
-Code Generation Tools: Claude, GPT-4, and similar models excel at generating starter code, code examples, and scaffolding. They understand context and can maintain consistency across multiple files.
+Code Generation Tools - Claude, GPT-4, and similar models excel at generating starter code, code examples, and scaffolding. They understand context and can maintain consistency across multiple files.
 
-Frontend Libraries: Monaco Editor (used in VS Code), CodeMirror, and Prism provide editor functionality. AI can generate integration code, but the libraries themselves require manual setup.
+Frontend Libraries - Monaco Editor (used in VS Code), CodeMirror, and Prism provide editor functionality. AI can generate integration code, but the libraries themselves require manual setup.
 
-Sandbox Solutions: Tools like StackBlitz, CodeSandbox, and Piston provide infrastructure for code execution. AI can help configure these services but cannot replace them.
+Sandbox Solutions - Tools like StackBlitz, CodeSandbox, and Piston provide infrastructure for code execution. AI can help configure these services but cannot replace them.
 
-Documentation Generators: AI can convert code comments into documentation, helping maintain sync between playground examples and official docs.
+Documentation Generators - AI can convert code comments into documentation, helping maintain sync between playground examples and official docs.
 
 Measuring Playground Success
 
@@ -186,9 +186,9 @@ Over-reliance on AI-generated content without review: AI can introduce subtle bu
 
 Generic examples that don't showcase your product: AI might generate generic code that demonstrates programming concepts but doesn't highlight your specific product's value. Provide clear context about what makes your product unique.
 
-Ignoring accessibility: Ensure your playground works for developers using screen readers and keyboard navigation. AI can help generate accessible markup but cannot test the actual experience.
+Ignoring accessibility - Ensure your playground works for developers using screen readers and keyboard navigation. AI can help generate accessible markup but cannot test the actual experience.
 
-Skipping mobile testing: Many developers browse documentation on mobile devices. Verify your playground functions on smaller screens.
+Skipping mobile testing - Many developers browse documentation on mobile devices. Verify your playground functions on smaller screens.
 
 Generating Examples with Claude Code
 
@@ -216,7 +216,7 @@ Requirements:
 - Handle the most common error case in each example
 - Output as separate code blocks with file names
 
-Language: JavaScript (Node.js 20)
+Language - JavaScript (Node.js 20)
 EOF
 ```
 
@@ -255,7 +255,7 @@ Structuring Multi-Step Tutorial Flows
 
 The most effective DevRel playgrounds guide developers through a progression of concepts, not just a single code block. AI can accelerate the design of these flows, but the sequencing requires product expertise.
 
-A proven structure: establish context, demonstrate the minimal case, add one complexity at a time, then present a realistic integration. Use AI to generate content for each step and to verify that each example builds naturally on the previous one.
+A proven structure - establish context, demonstrate the minimal case, add one complexity at a time, then present a realistic integration. Use AI to generate content for each step and to verify that each example builds naturally on the previous one.
 
 ```javascript
 // Step progression manager. AI generates the content, you define the flow
@@ -292,7 +292,7 @@ function renderStep(step, index) {
       <h3>${index + 1}. ${step.title}</h3>
       <p>${step.description}</p>
       <div class="editor" data-initial="${step.code}"></div>
-      <div class="expected">Expected: <code>${step.expectedOutput}</code></div>
+      <div class="expected">Expected - <code>${step.expectedOutput}</code></div>
     </div>
   `;
 }
@@ -319,7 +319,7 @@ for example_file in $PLAYGROUND_DIR//*.js; do
 
   # Ask AI to verify against current SDK docs
   echo "Methods used: $methods
-SDK version: $SDK_VERSION
+SDK version - $SDK_VERSION
 Review these method names against the current SDK changelog.
 Flag any that were deprecated or renamed in the last 3 versions." | claude -p
 done

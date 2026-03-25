@@ -154,7 +154,7 @@ def recommend_content(student_profile, content_library):
 
 This approach scales well and integrates with most learning management systems. You can enhance it by adding weights for factors like difficulty progression and learning pace.
 
-Tool Comparison: Adaptive Learning Platforms
+Tool Comparison - Adaptive Learning Platforms
 
 Several platforms expose APIs for integrating adaptive content delivery into custom applications:
 
@@ -229,7 +229,7 @@ def assess_student_wellbeing(message_text):
         model="claude-sonnet-4-20250514",
         max_tokens=256,
         system="""Analyze the student's message for emotional distress indicators.
-        Categories: safe, mild_concern, moderate_concern, high_concern, crisis.
+        Categories - safe, mild_concern, moderate_concern, high_concern, crisis.
         Respond with only the category.""",
         messages=[{"role": "user", "content": message_text}]
     )

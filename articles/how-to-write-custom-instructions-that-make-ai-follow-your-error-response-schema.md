@@ -24,7 +24,7 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Why AI Deviates From Your Schema Without Instructions](#why-ai-deviates-from-your-schema-without-instructions)
 - [Tool-by-Tool Configuration Comparison](#tool-by-tool-configuration-comparison)
-- [Advanced: TypeScript Type-Driven Instructions](#advanced-typescript-type-driven-instructions)
+- [Advanced - TypeScript Type-Driven Instructions](#advanced-typescript-type-driven-instructions)
 - [Troubleshooting](#troubleshooting)
 
 Prerequisites
@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Error Response Schemas
+Step 1 - Understand Error Response Schemas
 
 Before writing custom instructions, you need a clearly defined error response schema. Most modern APIs use a standardized format like this:
 
@@ -65,9 +65,9 @@ Why AI Deviates From Your Schema Without Instructions
 
 AI coding assistants learn from millions of codebases and naturally produce the patterns they have seen most frequently. GPT-4 and Claude have ingested thousands of Express.js, FastAPI, and Django projects, each with different error response conventions. Without explicit guidance, the model picks the structure that statistically fits the surrounding code, which may be RFC 7807 Problem Details, a flat `{ error: "message" }` object, or any number of other patterns.
 
-The result is drift: the first endpoint your AI generates returns `{ success, error: { code, message } }`, the second returns `{ status: "error", message: "..." }`, and the third returns `{ errors: [...] }`. Consumers of your API now need branching logic to handle every variant. Custom instructions lock the AI into a single canonical structure before it writes a single line.
+The result is drift - the first endpoint your AI generates returns `{ success, error: { code, message } }`, the second returns `{ status: "error", message: "..." }`, and the third returns `{ errors: [...] }`. Consumers of your API now need branching logic to handle every variant. Custom instructions lock the AI into a single canonical structure before it writes a single line.
 
-Step 2: Writing Effective Custom Instructions
+Step 2 - Writing Effective Custom Instructions
 
 Specify the Exact Schema Structure
 
@@ -149,14 +149,14 @@ Map error codes to HTTP status codes:
 
 This ensures AI generates both the correct response body and the appropriate status code.
 
-Step 3: Practical Implementation
+Step 3 - Practical Implementation
 
 For Cursor and Cline Users
 
 Add custom instructions to your `.cursorrules` or project-specific rules file:
 
 ```
-Step 4: Error Handling
+Step 4 - Error Handling
 
 All error responses must follow our API error schema defined in docs/error-schema.md.
 
@@ -219,7 +219,7 @@ Different AI tools vary in how persistently they honor custom instructions. Unde
 
 Tools that read project-level config files on every request (Cursor, Claude Code, Cline) provide more consistent adherence than tools that rely on account-level settings or inline prompting. For critical schema enforcement, project-level config files are the most reliable mechanism.
 
-Advanced: TypeScript Type-Driven Instructions
+Advanced - TypeScript Type-Driven Instructions
 
 If your project uses TypeScript, embedding your type definitions directly into the custom instructions is the most precise way to communicate your schema. AI models parse TypeScript interface definitions accurately and generate code that satisfies the type contracts:
 
@@ -257,7 +257,7 @@ interface ApiResponse<T> {
 
 With these type definitions in your custom instructions, the AI will generate code that satisfies the type checker automatically, no runtime surprises.
 
-Step 5: Test Your Custom Instructions
+Step 5 - Test Your Custom Instructions
 
 After adding custom instructions, verify they work by asking AI to generate error handling code. Check for:
 
@@ -273,17 +273,17 @@ A useful verification workflow is to ask the AI to generate error handling for t
 
 If the AI deviates from your schema, refine your instructions with more specific examples or constraints.
 
-Step 6: Common Pitfalls to Avoid
+Step 6 - Common Pitfalls to Avoid
 
-Being too vague: Instructions like "use good error handling" leave too much room for interpretation. Be specific about every field and format.
+Being too vague - Instructions like "use good error handling" leave too much room for interpretation. Be specific about every field and format.
 
-Missing edge cases: If your schema handles partial failures differently from complete failures, explain both scenarios in your instructions.
+Missing edge cases - If your schema handles partial failures differently from complete failures, explain both scenarios in your instructions.
 
-Forgetting validation details: Many APIs include field-level validation errors. Specify whether this is an array of objects or a flat object.
+Forgetting validation details - Many APIs include field-level validation errors. Specify whether this is an array of objects or a flat object.
 
-Ignoring language differences: Error handling patterns differ between languages. Provide examples for each language you use.
+Ignoring language differences - Error handling patterns differ between languages. Provide examples for each language you use.
 
-Omitting the "why": AI models follow instructions more reliably when the instructions include brief rationale. Adding "so that API consumers can parse errors without branching logic" after your schema definition improves adherence, the model treats the instruction as a meaningful constraint rather than an arbitrary rule.
+Omitting the "why" - AI models follow instructions more reliably when the instructions include brief rationale. Adding "so that API consumers can parse errors without branching logic" after your schema definition improves adherence, the model treats the instruction as a meaningful constraint rather than an arbitrary rule.
 
 Not versioning your instructions: Store your `.cursorrules`, `CLAUDE.md`, and related files in version control. When your schema evolves, update the instructions at the same time. Drift between your actual schema and your AI instructions is a common source of inconsistent code in growing codebases.
 

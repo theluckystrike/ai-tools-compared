@@ -39,7 +39,7 @@ When building AI-powered applications that need reliable data access, choosing t
 - AtScale generates appropriate SQL: for your warehouse Cube approach: 1.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- Both AtScale and Cube: offer AI capabilities that sit between your data warehouse and your application, but they take different approaches.
+- Both AtScale and Cube - offer AI capabilities that sit between your data warehouse and your application, but they take different approaches.
 - An AI-powered semantic layer: adds the ability to handle conversational queries, making data accessible to non-technical users while maintaining accuracy.
 
 What Is an AI Semantic Layer
@@ -48,7 +48,7 @@ A semantic layer acts as an abstraction between your raw data and the applicatio
 
 The core value for developers is consistency. Without a semantic layer, AI applications risk generating contradictory answers based on which table or query they accidentally access. An AI-powered semantic layer adds the ability to handle conversational queries, making data accessible to non-technical users while maintaining accuracy.
 
-AtScale: Intelligent Data Abstraction
+AtScale - Intelligent Data Abstraction
 
 AtScale positions itself as an "intelligent semantic layer" with AI features built into its core platform. The system connects to your existing data warehouse and creates an abstraction layer that normalizes metrics across different data sources.
 
@@ -66,7 +66,7 @@ AtScale centralizes metric definitions, calculations like "customer lifetime val
 
 The practical benefit for AI applications is that your semantic model becomes the single source of truth. When you ask your AI agent about "monthly active users," it pulls from the same definition whether the request comes from a dashboard, API, or chatbot.
 
-Cube: Open Semantic Layer with AI Agents
+Cube - Open Semantic Layer with AI Agents
 
 Cube provides an open-source semantic layer that has evolved to include AI agent capabilities. Originally focused on providing a consistent API layer for data, Cube now offers features specifically designed for AI applications.
 
@@ -327,9 +327,9 @@ Pricing Comparison at Scale
 
 For a typical mid-market data team (50 GB warehouse, 20 regular users):
 
-AtScale: ~$50k/year (seat-based: 5 seats × $2k/seat × 5 compute units)
-Cube Cloud: ~$5k/year ($500/mo standard + minimal compute usage)
-Cube Self-Hosted: Free (open source) + ops cost (~2 FTE for mid-scale)
+AtScale - ~$50k/year (seat-based: 5 seats × $2k/seat × 5 compute units)
+Cube Cloud - ~$5k/year ($500/mo standard + minimal compute usage)
+Cube Self-Hosted - Free (open source) + ops cost (~2 FTE for mid-scale)
 
 The cost gap widens at enterprise scale, where AtScale's managed approach reduces operational overhead, partially offsetting the licensing cost.
 

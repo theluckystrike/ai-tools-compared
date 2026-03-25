@@ -17,7 +17,7 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]
 
 Cloud cost management has a distinct AI layer now. Beyond static dashboards, modern tools apply anomaly detection, natural language querying, and automated right-sizing recommendations. This guide compares dedicated AI cost analyzer tools (Cloudthread, Vantage, Spot.io) against using Claude directly via the API to analyze Cost and Usage Reports.
 
-The Landscape
+The field
 
 Three categories:
 
@@ -40,7 +40,7 @@ What the AI layer does:
 Real query output:
 
 ```
-Query: "What caused our AWS spend to increase by $12,000 last month?"
+Query - "What caused our AWS spend to increase by $12,000 last month?"
 
 Vantage AI response:
 The $12,432 increase (34% month-over-month) was driven by three services:
@@ -55,7 +55,7 @@ The $12,432 increase (34% month-over-month) was driven by three services:
    debug logging enabled on the "payments" service on March 5th.
 ```
 
-Pricing: Free tier (1 account), paid starts at $100/month per account.
+Pricing - Free tier (1 account), paid starts at $100/month per account.
 
 Cloudthread
 
@@ -69,8 +69,8 @@ Key AI features:
 Sample Cloudthread cost story:
 
 ```
-Sprint 23 Cost Summary (March 10–24):
-Total cloud spend: $18,450 (+8% vs Sprint 22)
+Sprint 23 Cost Summary (March 10, 24):
+Total cloud spend - $18,450 (+8% vs Sprint 22)
 
 Key drivers:
 → Feature: User Analytics Dashboard (+$2,100)
@@ -85,7 +85,7 @@ Key drivers:
   3x r6g.large, 1-year term. Monthly savings: $890.
 ```
 
-Pricing: Starts at $500/month for teams.
+Pricing - Starts at $500/month for teams.
 
 Spot.io (NetApp)
 
@@ -159,7 +159,7 @@ Cost and Usage Report Summary (top 50 line items):
 Daily spend trend (last 30 days):
 {daily.to_string()}
 
-Total period spend: ${df['lineItem/UnblendedCost'].sum():,.2f}
+Total period spend - ${df['lineItem/UnblendedCost'].sum():,.2f}
 """
 
     message = client.messages.create(
@@ -192,18 +192,18 @@ Top 3 month-over-month increases:
    Action: Check if Multi-AZ is needed for dev/staging; consider Aurora Serverless v2
    for variable workloads.
 
-2. AWS Lambda: +$1,800 (+240%). Invocation count increased from 2M to 9M.
-   Action: Review CloudWatch Logs for the invocation source. possible recursive trigger.
+2. AWS Lambda - +$1,800 (+240%). Invocation count increased from 2M to 9M.
+   Action - Review CloudWatch Logs for the invocation source. possible recursive trigger.
 
 3. Amazon S3: +$890 (+45%). S3 Select requests drove most of the increase.
-   Action: Review query patterns; consider moving to Athena for analytics workloads.
+   Action - Review query patterns; consider moving to Athena for analytics workloads.
 
 Top 3 savings opportunities:
 1. EC2 Reserved Instances: 3 m5.xlarge instances running 720h/month on On-Demand.
    1-year RI would save ~$420/month.
 
 2. EBS GP2 → GP3 migration: 12 volumes still on GP2. GP3 is 20% cheaper with
-   better baseline IOPS. Savings: ~$180/month.
+   better baseline IOPS. Savings - ~$180/month.
 
 3. Unused Elastic IPs: Billing shows 4 unattached EIPs at $3.72/IP/month = $14.88/month.
    Terminate or reassign.
@@ -370,7 +370,7 @@ class CostAnalyzer:
         costs = self.get_cost_anomalies()
         unused = self.get_unused_resources()
 
-        # Format comprehensive prompt
+        # Format complete prompt
         analysis_prompt = f"""Analyze our AWS costs and usage for the past week.
 
 Cost Breakdown by Service:
@@ -419,8 +419,8 @@ Cost spike of $8,000 on March 15 correlates with:
 - CloudWatch Logs ingestion increased (debug logging enabled)
 - 50 new EC2 t3.medium instances (user traffic spike + auto-scaling)
 
-Not recommended: Killing instances (they're handling real traffic)
-Recommended: Optimize logging (structured, sample rate 20%), implement log retention
+Not recommended - Killing instances (they're handling real traffic)
+Recommended - Optimize logging (structured, sample rate 20%), implement log retention
 ```
 
 Tools Pricing Deep Dive
@@ -430,12 +430,12 @@ True Cost of Ownership (TCO) Calculator
 When comparing SaaS cost tools vs DIY, Claude helps calculate TCO:
 
 ```
-Vantage: $100/month = $1,200/year
+Vantage - $100/month = $1,200/year
 - Saves 5 hours/week managing cost visibility
 - 5 hrs × $100/hr (engineer cost) × 52 weeks = $26,000 saved annually
 - ROI: 21x
 
-Claude API DIY: ~$50/month = $600/year
+Claude API DIY - ~$50/month = $600/year
 - Requires 2 hours setup + 30 min/week maintenance
 - 2 hours + (30 min × 52 weeks) = 28 hours annual effort
 - 28 hours × $100/hr = $2,800 cost

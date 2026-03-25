@@ -34,7 +34,7 @@ tags: [ai-tools-compared, comparison, security, artificial-intelligence]
 AI-enhanced security scanners have changed the economics of application security. The old model. run a scanner, get 2,000 findings, triage for a week. has shifted toward tools that prioritize reachable vulnerabilities, auto-generate fixes, and integrate into PR workflows. This comparison covers the tools that engineers actually use day-to-day.
 
 
-- Weaknesses: Higher false positive rate on Python async code, free tier limits scan frequency.
+- Weaknesses - Higher false positive rate on Python async code, free tier limits scan frequency.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - The old model: run a scanner, get 2,000 findings, triage for a week. has shifted toward tools that prioritize reachable vulnerabilities, auto-generate fixes, and integrate into PR workflows.
@@ -83,9 +83,9 @@ const query = "SELECT * FROM users WHERE id = ?";
 db.query(query, [userId]);
 ```
 
-Strengths: Detects injection vulnerabilities with high accuracy, fix suggestions are context-aware, tracks vulnerability reachability.
+Strengths - Detects injection vulnerabilities with high accuracy, fix suggestions are context-aware, tracks vulnerability reachability.
 
-Weaknesses: Higher false positive rate on Python async code, free tier limits scan frequency.
+Weaknesses - Higher false positive rate on Python async code, free tier limits scan frequency.
 
 Semgrep
 
@@ -120,9 +120,9 @@ rules:
       ./semgrep-rules/
 ```
 
-Strengths: Custom rules take minutes to write, `p/secrets` catches hardcoded API keys, fast (100K-line codebase in under 30 seconds).
+Strengths - Custom rules take minutes to write, `p/secrets` catches hardcoded API keys, fast (100K-line codebase in under 30 seconds).
 
-Weaknesses: Pattern-matching misses complex semantic vulnerabilities across multiple files.
+Weaknesses - Pattern-matching misses complex semantic vulnerabilities across multiple files.
 
 CodeQL
 
@@ -167,9 +167,9 @@ def fetch_user(request):
     return db.raw(query)  # CodeQL flags this as SQL injection
 ```
 
-Strengths: Low false positive rate (5% on test codebase), semantic data flow analysis finds complex injection paths.
+Strengths - Low false positive rate (5% on test codebase), semantic data flow analysis finds complex injection paths.
 
-Weaknesses: Slow (10-30 min on large codebases), requires GitHub Advanced Security (paid), complex custom queries.
+Weaknesses - Slow (10-30 min on large codebases), requires GitHub Advanced Security (paid), complex custom queries.
 
 Socket
 
@@ -188,8 +188,8 @@ socket ci --strict
 Socket catches what npm audit misses. novel malicious packages and supply chain attacks:
 
 ```
-Package: colors@1.4.44 (not the real colors package)
-Risk: Install script that exfiltrates environment variables
+Package - colors@1.4.44 (not the real colors package)
+Risk - Install script that exfiltrates environment variables
 Signals:
   - Install scripts present (none in legitimate colors package)
   - Network calls to external IP in postinstall

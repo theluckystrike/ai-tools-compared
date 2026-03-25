@@ -28,13 +28,13 @@ How AI Postmortem Generation Works
 
 Most AI postmortem generation systems follow a multi-stage pipeline:
 
-1. Data Collection: The system aggregates logs, metrics, traces, incident channel messages, and version control commits related to the incident timeframe.
+1. Data Collection - The system aggregates logs, metrics, traces, incident channel messages, and version control commits related to the incident timeframe.
 
-2. Temporal Analysis: AI models correlate events across different data sources, establishing causality rather than mere correlation. This involves identifying the sequence of events that led to the incident.
+2. Temporal Analysis - AI models correlate events across different data sources, establishing causality rather than mere correlation. This involves identifying the sequence of events that led to the incident.
 
-3. Root Cause Inference: Using trained models or LLM reasoning, the system proposes potential root causes based on patterns like error spikes, configuration changes, or dependency failures.
+3. Root Cause Inference - Using trained models or LLM reasoning, the system proposes potential root causes based on patterns like error spikes, configuration changes, or dependency failures.
 
-4. Document Synthesis: The final stage generates a structured postmortem with sections for summary, impact, timeline, root cause, resolution, and action items.
+4. Document Synthesis - The final stage generates a structured postmortem with sections for summary, impact, timeline, root cause, resolution, and action items.
 
 Practical Implementation Approaches
 
@@ -53,10 +53,10 @@ def generate_postmortem(incident_data: dict, client: OpenAI) -> str:
     prompt = f"""Generate a blameless postmortem for the following incident.
 
 Incident Summary
-- Title: {incident_data.get('title', 'Unknown')}
-- Severity: {incident_data.get('severity', 'SEV-3')}
-- Duration: {incident_data.get('duration_minutes', 0)} minutes
-- Impact: {incident_data.get('impact', 'Unknown')}
+- Title - {incident_data.get('title', 'Unknown')}
+- Severity - {incident_data.get('severity', 'SEV-3')}
+- Duration - {incident_data.get('duration_minutes', 0)} minutes
+- Impact - {incident_data.get('impact', 'Unknown')}
 
 Timeline Events
 {incident_data.get('timeline', '')}
@@ -197,7 +197,7 @@ Challenges and Limitations
 
 AI postmortem generation faces several challenges. Context windows limit how much historical data models can process, requiring careful selection of relevant logs and events. Root cause inference remains probabilistic, AI can suggest probable causes but cannot replace human investigation for complex issues. Additionally, certain root causes like race conditions or distributed system timing issues are inherently difficult for AI to identify without deep system knowledge.
 
-Tool Comparison: Cost and Features
+Tool Comparison - Cost and Features
 
 Several dedicated platforms handle AI postmortem generation. Here's a practical comparison:
 
@@ -311,7 +311,7 @@ Real-World Postmortem Example
 Here's what AI-generated postmortems typically look like (this example was created with Claude):
 
 ```markdown
-Postmortem: Database Connection Pool Exhaustion
+Postmortem - Database Connection Pool Exhaustion
 
 Impact
 - 2,847 users unable to log in
@@ -331,10 +331,10 @@ Connection pool timeout was changed from 30s to 5s in the new release, causing c
 to be recycled too aggressively. This created connection churn that exhausted the pool.
 
 Resolution
-Immediate: Rollback to v2.4.0. The previous connection timeout of 30s had been validated
+Immediate - Rollback to v2.4.0. The previous connection timeout of 30s had been validated
 in production for 6 months.
 
-Permanent: Update connection pool configuration to use 45s timeout with monitoring.
+Permanent - Update connection pool configuration to use 45s timeout with monitoring.
 ```
 
 Addressing AI Limitations in Postmortem Generation

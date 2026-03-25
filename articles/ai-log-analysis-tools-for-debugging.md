@@ -43,7 +43,7 @@ The Problem with Traditional Log Analysis
 
 A production incident often generates 50,000+ log lines across 10+ services. The signal is buried: one specific database timeout that triggered a cascade of retries. Grep and regex find known patterns. they can't find unknown ones. AI log analysis specifically addresses "I don't know what I'm looking for."
 
-Tool 1: Datadog Watchdog and AI Features
+Tool 1 - Datadog Watchdog and AI Features
 
 Datadog's Watchdog automatically detects anomalies in metrics and logs. Its AI features include:
 - Pattern clustering: groups similar log messages to surface novel errors
@@ -87,7 +87,7 @@ def investigate_incident(service: str, start_time: str, end_time: str) -> str:
             "role": "user",
             "content": f"""Analyze these production error logs from the {service} service.
 
-Time range: {start_time} to {end_time}
+Time range - {start_time} to {end_time}
 
 Logs:
 {log_sample}
@@ -104,7 +104,7 @@ Identify:
     return response.content[0].text
 ```
 
-Tool 2: Honeycomb with AI Query Assistance
+Tool 2 - Honeycomb with AI Query Assistance
 
 Honeycomb's AI features help construct queries over structured log data (events with fields), not just text logs. Its strength is "wide events". logs that contain many fields per entry.
 
@@ -121,7 +121,7 @@ VISUALIZE p99(db.duration_ms), COUNT
 
 Honeycomb AI doesn't analyze log text for root causes. it helps you build the right observability query. Different use case from Datadog.
 
-Tool 3: Custom Pipeline with OpenSearch + LLM
+Tool 3 - Custom Pipeline with OpenSearch + LLM
 
 For teams with on-premise or self-hosted logging, build a custom pipeline:
 
@@ -198,13 +198,13 @@ def investigate_cluster(error_message: str, index: str) -> str:
             "role": "user",
             "content": f"""Production error cluster to investigate:
 
-Error: {error_message}
-Occurrences in last 30 minutes: {len(hits)}
+Error - {error_message}
+Occurrences in last 30 minutes - {len(hits)}
 
 Sample log entries with context:
 {log_context}
 
-Diagnose: What is causing this error? Is it a code bug, infrastructure issue,
+Diagnose - What is causing this error? Is it a code bug, infrastructure issue,
 or data problem? What's the fastest path to resolution?"""
         }]
     )

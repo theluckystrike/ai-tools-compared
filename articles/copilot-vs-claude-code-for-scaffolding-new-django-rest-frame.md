@@ -74,7 +74,7 @@ Copilot excels at filling in boilerplate once you start writing, but you still n
 Claude Code can handle the entire scaffolding in one interaction. You describe your goal, and Claude executes the necessary steps:
 
 ```
-You: Create a new Django REST Framework project called "booksapi" with user authentication, CORS headers, and a "books" app with Author and Book models,ModelSerializer, and viewsets.
+You - Create a new Django REST Framework project called "booksapi" with user authentication, CORS headers, and a "books" app with Author and Book models,ModelSerializer, and viewsets.
 ```
 
 Claude Code would then create the project structure, generate the necessary files, and produce working code like this for your models:
@@ -284,7 +284,7 @@ Using Copilot (typical workflow):
 5. Open views.py, describe ViewSet comment, get suggestions
 6. Repeat steps 4-5 for each additional feature
 
-Time investment: 30-45 minutes for basic scaffold
+Time investment - 30-45 minutes for basic scaffold
 
 Using Claude Code (typical workflow):
 1. Describe complete requirements in natural language
@@ -293,7 +293,7 @@ Using Claude Code (typical workflow):
 4. Run migrations: `python manage.py migrate`
 5. Start development server
 
-Time investment: 5-10 minutes for complete scaffold
+Time investment - 5-10 minutes for complete scaffold
 
 Version Management and Dependency Handling
 
@@ -323,9 +323,9 @@ Team Collaboration Considerations
 
 For teams using the same scaffold as a foundation, consistency matters:
 
-Copilot advantage: When the entire team uses Copilot with the same IDE settings, suggested code is consistent. Team members see the same suggestions, making code reviews easier.
+Copilot advantage - When the entire team uses Copilot with the same IDE settings, suggested code is consistent. Team members see the same suggestions, making code reviews easier.
 
-Claude Code advantage: One person scaffolds the project, shares it with the team. Claude can generate an entire starter template file that documents the structure for all team members.
+Claude Code advantage - One person scaffolds the project, shares it with the team. Claude can generate an entire starter template file that documents the structure for all team members.
 
 Common Pitfalls Avoided with AI Scaffolding
 

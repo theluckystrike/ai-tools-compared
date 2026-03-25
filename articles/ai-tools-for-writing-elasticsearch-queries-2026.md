@@ -39,7 +39,7 @@ Elasticsearch DSL queries require understanding nested bool filters, aggregation
 Elasticsearch Version Compatibility
 
 Syntax varies between Elasticsearch 6.x, 7.x, 8.x, and OpenSearch.
-- GPT-4: May default to latest (8.x), not always backward compatible.
+- GPT-4 - May default to latest (8.x), not always backward compatible.
 
 Elasticsearch Query Complexity
 
@@ -247,7 +247,7 @@ const searchProductsQuery = {
 
 Once Copilot learns your codebase's Elasticsearch patterns, it generates consistent, contextually appropriate queries inline. Faster than Claude for one-off queries, but less explanatory for learning.
 
-Tool Comparison: Elasticsearch Query Generation
+Tool Comparison - Elasticsearch Query Generation
 
 | Feature | Claude | GPT-4 | Copilot |
 |---------|--------|-------|---------|
@@ -259,11 +259,11 @@ Tool Comparison: Elasticsearch Query Generation
 | Speed | ~20 seconds for complex | ~25 seconds | Instant autocomplete |
 | Best For | Understanding query logic | Learning and documentation | Active development |
 
-Real Query Examples: Common Scenarios
+Real Query Examples - Common Scenarios
 
-Scenario 1: User Activity Search with Recency Boost
+Scenario 1 - User Activity Search with Recency Boost
 
-Query requirement: Find active users, boost recent activity, filter by account status.
+Query requirement - Find active users, boost recent activity, filter by account status.
 
 ```json
 {
@@ -306,7 +306,7 @@ Query requirement: Find active users, boost recent activity, filter by account s
 
 Claude generates this with explanation: function_score applies decay based on recency, users inactive >2 months drop in relevance, but don't disappear.
 
-Scenario 2: Content Discovery with Collaborative Filtering
+Scenario 2 - Content Discovery with Collaborative Filtering
 
 Aggregation to find trending topics among similar users:
 
@@ -394,9 +394,9 @@ Elasticsearch Version Compatibility
 
 Syntax varies between Elasticsearch 6.x, 7.x, 8.x, and OpenSearch. Specify version when asking:
 
-Claude: Outputs all versions cleanly, explains differences.
-GPT-4: May default to latest (8.x), not always backward compatible.
-Copilot: Matches your existing codebase versions.
+Claude - Outputs all versions cleanly, explains differences.
+GPT-4 - May default to latest (8.x), not always backward compatible.
+Copilot - Matches your existing codebase versions.
 
 Related Articles
 

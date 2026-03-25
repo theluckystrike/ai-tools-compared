@@ -57,7 +57,7 @@ Start by creating a reference Dockerfile that demonstrates your team's conventio
 
 ```dockerfile
 Reference Dockerfile - Team Convention Example
-Layer Order: Base → System → Runtime → Dependencies → Source → Config → Entrypoint
+Layer Order - Base → System → Runtime → Dependencies → Source → Config → Entrypoint
 
 FROM node:20-alpine AS base
 WORKDIR /app
@@ -170,8 +170,8 @@ After configuring your AI tools, verify they produce the expected output. Create
 
 ```dockerfile
 Test Dockerfile generation with configured AI
-Service: Python Flask API with PostgreSQL dependency
-Expected: Dependencies copied before source, proper layer ordering
+Service - Python Flask API with PostgreSQL dependency
+Expected - Dependencies copied before source, proper layer ordering
 ```
 
 Compare the output against your team's reference Dockerfile. Check whether the layer ordering matches your conventions, whether cache optimization is properly implemented, and whether security considerations are addressed appropriately.
@@ -250,7 +250,7 @@ Configuration Tool Comparison
 | VS Code + Extensions | settings.json | Per workspace | Explicit | Medium |
 | JetBrains IDEs | .idea/inspectionProfiles | Per project | Explicit | High |
 
-Advanced Configuration: Team-Wide Standards
+Advanced Configuration - Team-Wide Standards
 
 For organizations with multiple services, create a shared configuration repository:
 
@@ -352,17 +352,17 @@ def measure_compliance():
 
 Troubleshooting Configuration Issues
 
-Problem: AI still generates non-compliant Dockerfiles despite configuration.
+Problem - AI still generates non-compliant Dockerfiles despite configuration.
 
-Solution: The AI may not see the configuration file. Ensure:
+Solution - The AI may not see the configuration file. Ensure:
 1. File is in the correct location for your tool
 2. File is committed to git (not in .gitignore)
 3. IDE has reloaded the project
 4. Test with a simple, obvious rule first
 
-Problem: Configuration conflicts between team standards and framework best practices.
+Problem - Configuration conflicts between team standards and framework best practices.
 
-Solution: Document exceptions explicitly. For example:
+Solution - Document exceptions explicitly. For example:
 ```text
 Framework Exceptions
 
@@ -370,12 +370,12 @@ For Dockerfiles using Django, the layer order may be:
 - Standard: COPY source before RUN install
 - Django exception: COPY source after RUN install (due to manage.py compilation)
 
-Include a comment: # Django exception - requires source for compilation
+Include a comment - # Django exception - requires source for compilation
 ```
 
-Problem: New team members don't consistently use the configuration.
+Problem - New team members don't consistently use the configuration.
 
-Solution: Add a pre-commit hook that prevents committing non-compliant Dockerfiles:
+Solution - Add a pre-commit hook that prevents committing non-compliant Dockerfiles:
 
 ```bash
 .git/hooks/pre-commit

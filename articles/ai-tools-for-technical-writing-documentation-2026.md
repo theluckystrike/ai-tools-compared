@@ -28,12 +28,12 @@ Table of Contents
 - [Quick Start](#quick-start)
 - [Configuration](#configuration)
 - [Troubleshooting](#troubleshooting)
-- [Status: Proposed](#status-proposed)
+- [Status - Proposed](#status-proposed)
 - [Context](#context)
 - [Decision](#decision)
 - [Tradeoffs](#tradeoffs)
 - [Consequences](#consequences)
-- [Runbook: High Replication Lag (>60s)](#runbook-high-replication-lag-60s)
+- [Runbook - High Replication Lag (>60s)](#runbook-high-replication-lag-60s)
 - [Overview](#overview)
 - [Architecture](#architecture)
 - [Key Concepts](#key-concepts)
@@ -46,57 +46,57 @@ Claude Opus 4.6
 
 Claude understands technical depth and writes with precision. Give it a Python FastAPI endpoint and ask for full API documentation, and it generates complete, accurate docs with correct parameter types, return schemas, and error handling. It balances clarity with technical rigor.
 
-Strengths: Understands complex concepts (eventually-consistent caches, distributed consensus) and explains them without hand-waving. Generates API documentation with proper OpenAPI/JSON schema examples. Writes runbooks with decision trees and edge cases. ADRs from Claude include genuine tradeoffs, not fake ones. READMEs include setup instructions that actually work.
+Strengths - Understands complex concepts (eventually-consistent caches, distributed consensus) and explains them without hand-waving. Generates API documentation with proper OpenAPI/JSON schema examples. Writes runbooks with decision trees and edge cases. ADRs from Claude include genuine tradeoffs, not fake ones. READMEs include setup instructions that actually work.
 
-Weaknesses: Can be verbose in early drafts, you'll trim 20% of the output. Sometimes includes overly academic explanations when you need practical quick-start guides.
+Weaknesses - Can be verbose in early drafts, you'll trim 20% of the output. Sometimes includes overly academic explanations when you need practical quick-start guides.
 
-Best for: Detailed API docs, architecture decision records, and documentation that must survive technical scrutiny.
+Best for - Detailed API docs, architecture decision records, and documentation that must survive technical scrutiny.
 
 ChatGPT (GPT-4)
 
 GPT-4 produces readable documentation quickly, but skips details. It's great for marketing-style READMEs that make your project sound cool. For technical accuracy, it struggles.
 
-Strengths: Excellent for audience-appropriate language (can write for beginners or power users). Good at structuring docs with clear headings and logical flow. Generates decent quick-start guides.
+Strengths - Excellent for audience-appropriate language (can write for beginners or power users). Good at structuring docs with clear headings and logical flow. Generates decent quick-start guides.
 
-Weaknesses: API documentation is often incomplete, missing parameter constraints, edge cases, or error codes. Runbooks sometimes include steps that won't actually work without additional context. Tends to oversimplify complex systems, producing docs that are easy to read but technically insufficient.
+Weaknesses - API documentation is often incomplete, missing parameter constraints, edge cases, or error codes. Runbooks sometimes include steps that won't actually work without additional context. Tends to oversimplify complex systems, producing docs that are easy to read but technically insufficient.
 
-Best for: README files, getting-started guides, and documentation aimed at non-expert audiences.
+Best for - README files, getting-started guides, and documentation aimed at non-expert audiences.
 
 Cursor with Claude Backend
 
 Cursor's editor integration with Claude Opus backend excels at generating documentation snippets inline. Select a function, ask Cursor to "generate JSDoc comments," and it produces accurate, concise documentation that matches your code style.
 
-Strengths: Real-time documentation generation as you write code. Maintains consistency across your codebase (all JSDoc follows the same format). Catches documentation debt immediately, if you add a function without docs, Cursor highlights it.
+Strengths - Real-time documentation generation as you write code. Maintains consistency across your codebase (all JSDoc follows the same format). Catches documentation debt immediately, if you add a function without docs, Cursor highlights it.
 
-Weaknesses: Works best for inline documentation (comments, docstrings). Struggles with full-page documentation like architecture guides or deployment runbooks. Limited to what it can see in your editor context.
+Weaknesses - Works best for inline documentation (comments, docstrings). Struggles with full-page documentation like architecture guides or deployment runbooks. Limited to what it can see in your editor context.
 
-Best for: API documentation through inline code comments, docstrings, and function-level documentation.
+Best for - API documentation through inline code comments, docstrings, and function-level documentation.
 
 Gemini (Google)
 
 Gemini's multimodal approach helps with technical docs that need diagrams or code-heavy explanations. Feed it code and ask for documentation, and it generates both text and can describe ASCII diagrams.
 
-Strengths: Good at breaking down complex code into clear explanations. Can generate documentation that highlights specific code sections. Understands Google Cloud concepts better than competitors.
+Strengths - Good at breaking down complex code into clear explanations. Can generate documentation that highlights specific code sections. Understands Google Cloud concepts better than competitors.
 
-Weaknesses: Less reliable for non-Google tech stacks. Sometimes generates vague AWS documentation (because its training data favors GCP). Struggles with newer frameworks and languages.
+Weaknesses - Less reliable for non-Google tech stacks. Sometimes generates vague AWS documentation (because its training data favors GCP). Struggles with newer frameworks and languages.
 
-Best for: Google Cloud documentation, architecture guides that benefit from ASCII diagrams, and codebase walkthroughs.
+Best for - Google Cloud documentation, architecture guides that benefit from ASCII diagrams, and codebase walkthroughs.
 
 Anthropic Claude 3.5 Sonnet
 
 Claude 3.5 Sonnet (Claude's previous-generation model, still available) generates solid documentation but less rigorously than Claude Opus 4.6. It's faster, which matters for teams iterating on docs in real time.
 
-Strengths: Faster generation than Opus without major accuracy loss. Good at writing READMEs that are both technically accurate and approachable. Can generate documentation in multiple formats (Markdown, reStructuredText, Asciidoc).
+Strengths - Faster generation than Opus without major accuracy loss. Good at writing READMEs that are both technically accurate and approachable. Can generate documentation in multiple formats (Markdown, reStructuredText, Asciidoc).
 
-Weaknesses: Less detailed than Opus on edge cases and error scenarios. Sometimes misses important security considerations in runbooks.
+Weaknesses - Less detailed than Opus on edge cases and error scenarios. Sometimes misses important security considerations in runbooks.
 
-Best for: Teams needing fast documentation generation with acceptable accuracy tradeoffs.
+Best for - Teams needing fast documentation generation with acceptable accuracy tradeoffs.
 
 Real-World Documentation Tasks
 
 API Documentation
 
-Request: "Generate OpenAPI 3.0 documentation for a FastAPI endpoint: POST /api/batch-process that accepts a JSON array of job configurations, validates against a Pydantic schema, and returns a list of job IDs with async processing status."
+Request - "Generate OpenAPI 3.0 documentation for a FastAPI endpoint: POST /api/batch-process that accepts a JSON array of job configurations, validates against a Pydantic schema, and returns a list of job IDs with async processing status."
 
 Claude Opus generates:
 
@@ -149,7 +149,7 @@ GPT-4 generates similar structure but sometimes omits the description field in p
 
 README Files
 
-Request: "Write a README for a Python library that provides connection pooling for PostgreSQL with async/await support. Include installation, basic usage, configuration options, and troubleshooting."
+Request - "Write a README for a Python library that provides connection pooling for PostgreSQL with async/await support. Include installation, basic usage, configuration options, and troubleshooting."
 
 Claude Opus generates:
 
@@ -184,25 +184,25 @@ Configuration
 
 Troubleshooting
 
-Problem: "too many connections" error
-Solution: Reduce max_size or investigate connection leaks. Use pool.connection_stats() to diagnose.
+Problem - "too many connections" error
+Solution - Reduce max_size or investigate connection leaks. Use pool.connection_stats() to diagnose.
 
-Problem: Slow connection acquisition
-Solution: Increase min_size to pre-warm connections. Monitor pool.metrics() for saturation.
+Problem - Slow connection acquisition
+Solution - Increase min_size to pre-warm connections. Monitor pool.metrics() for saturation.
 ```
 
 GPT-4 produces equally readable READMEs but sometimes includes vague "advanced configuration" sections instead of concrete settings. Cursor works better when the README already exists (it refines). Gemini produces good structure. Sonnet matches Opus.
 
 Architecture Decision Records
 
-Request: "Write an ADR: we're migrating from cron jobs to Temporal.io for distributed workflow orchestration. What are the tradeoffs?"
+Request - "Write an ADR: we're migrating from cron jobs to Temporal.io for distributed workflow orchestration. What are the tradeoffs?"
 
 Claude Opus generates:
 
 ```
-ADR: Migrate Cron Jobs to Temporal Workflow Orchestration
+ADR - Migrate Cron Jobs to Temporal Workflow Orchestration
 
-Status: Proposed
+Status - Proposed
 
 Context
 
@@ -231,7 +231,7 @@ Costs
 - Learning curve: Temporal SDKs differ from standard async libraries
 - Operational complexity: Must monitor Temporal cluster health separately
 
-Alternative: Keep Cron + Add Temporal Selectively
+Alternative - Keep Cron + Add Temporal Selectively
 - Lower risk: only migrate high-value workflows
 - Tradeoff: multiple orchestration systems increase complexity
 
@@ -247,14 +247,14 @@ GPT-4 generates weaker tradeoff analysis (sometimes argues for the decision with
 
 Runbooks
 
-Request: "Write a runbook for the scenario: our Postgres replica falls behind by >60 seconds. What steps does on-call take?"
+Request - "Write a runbook for the scenario: our Postgres replica falls behind by >60 seconds. What steps does on-call take?"
 
 Claude Opus generates:
 
 ```
-Runbook: High Replication Lag (>60s)
+Runbook - High Replication Lag (>60s)
 
-Severity: P2 (service degraded, not down)
+Severity - P2 (service degraded, not down)
 
 Detection
 - PagerDuty alert: "pg_wal_lsn_diff(pg_current_wal_lsn(), pg_last_xact_replay_lsn()) > 60s"
@@ -272,18 +272,18 @@ Initial Diagnostics (first 5 minutes)
 
 Fix (depends on root cause)
 
-Cause: Replica query blocking replication
-- Run: `SELECT pid, query, query_start FROM pg_stat_activity WHERE state != 'idle' AND query_start < now() - interval '2 minutes'"
+Cause - Replica query blocking replication
+- Run - `SELECT pid, query, query_start FROM pg_stat_activity WHERE state != 'idle' AND query_start < now() - interval '2 minutes'"
 - Kill blocking queries: `SELECT pg_terminate_backend(pid) FROM ...`
 - Replica catches up usually within 30s
 
-Cause: Network saturation
+Cause - Network saturation
 - Check network: `iftop -n` or CloudWatch egress
 - If <100Mbps available and still lagging: kernel buffer issue
 - Solution: Increase `wal_receiver_buffer_size` on replica (default 16MB)
 - Restart replication: `SELECT pg_wal_replay_resume()` (if paused)
 
-Cause: Checkpoint stalling
+Cause - Checkpoint stalling
 - Check: `SELECT name, setting FROM pg_settings WHERE name LIKE '%checkpoint%'"
 - If `checkpoint_completion_target` < 0.7: replication starves during checkpoints
 - Increase via `ALTER SYSTEM SET checkpoint_completion_target = 0.9"`
@@ -298,7 +298,7 @@ GPT-4 generates runbook structure but often skips diagnostic queries and escalat
 
 Wiki Pages (System Design)
 
-Request: "Write a wiki page explaining our GraphQL federation architecture: multiple services expose their own schemas, Apollo Gateway stitches them together."
+Request - "Write a wiki page explaining our GraphQL federation architecture: multiple services expose their own schemas, Apollo Gateway stitches them together."
 
 Claude Opus generates:
 
@@ -324,7 +324,7 @@ Schema Composition
 On startup, Apollo Gateway fetches SDL (schema definition language) from each service. If schemas conflict, startup fails.
 
 Cross-Service References
-To fetch related data: Service B defines User @external in its schema, Apollo Gateway routes to service A to resolve.
+To fetch related data - Service B defines User @external in its schema, Apollo Gateway routes to service A to resolve.
 
 Debugging Checklist
 - Circular reference errors: Usually means @external is missing or @key is wrong
@@ -336,7 +336,7 @@ GPT-4 produces similar structure but often oversimplifies federation patterns. C
 
 Real-World Usage Patterns
 
-Best workflow: Use Claude Opus to generate complete documentation from specifications or code examples, then use Cursor to refine inline while coding. For fast iteration on simple docs (READMEs, quick-start guides), GPT-4 is acceptable.
+Best workflow - Use Claude Opus to generate complete documentation from specifications or code examples, then use Cursor to refine inline while coding. For fast iteration on simple docs (READMEs, quick-start guides), GPT-4 is acceptable.
 
 Most teams starting from scratch use Claude Opus for initial generation (accurate, detailed, survives review). Then iterate within Cursor as code changes. This produces docs that stay in sync with actual implementations.
 
@@ -359,7 +359,7 @@ For inline code documentation (docstrings, function comments): Use Cursor with C
 
 For fast iteration on marketing-focused docs (READMEs aimed at developers new to your project): Use GPT-4 for faster turnaround.
 
-For Google-heavy stacks: Use Gemini for architecture guides and deployment docs.
+For Google-heavy stacks - Use Gemini for architecture guides and deployment docs.
 
 Never ship AI-generated documentation without human review. Documentation is the contract between your system and its users. Ensure it's accurate, tested against actual behavior, and matches reality.
 
@@ -371,7 +371,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -383,7 +383,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

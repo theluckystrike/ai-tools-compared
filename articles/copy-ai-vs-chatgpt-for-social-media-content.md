@@ -93,8 +93,8 @@ Keep under character limit.
 Never use emoji - plain text only.""".format(platform)
 
     user_prompt = f"""Create a post about {product_name}.
-Key benefit: {key_benefit}
-Tone: {tone}
+Key benefit - {key_benefit}
+Tone - {tone}
 
 Format as JSON:
 {{"post": "...", "hashtags": ["...", "..."]}}"""

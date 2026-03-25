@@ -40,7 +40,7 @@ Technical debt accumulates in every codebase. AI tools don't eliminate debt, but
 - This is a useful: prioritization signal that pure code analysis misses.
 - What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-Stage 1: Identification
+Stage 1 - Identification
 
 AI-assisted debt identification goes beyond what linters catch. Linters find style violations; AI identifies architectural problems, outdated patterns, and code that works but was written before modern idioms existed.
 
@@ -112,7 +112,7 @@ def audit_file(file_path: Path) -> dict:
         max_tokens=1024,
         messages=[{
             'role': 'user',
-            'content': f"{DEBT_PROMPT.format(language=language)}\n\nFile: {file_path}\n\n{content}"
+            'content': f"{DEBT_PROMPT.format(language=language)}\n\nFile - {file_path}\n\n{content}"
         }]
     )
 
@@ -166,7 +166,7 @@ if __name__ == '__main__':
 
 Run this on a 200-file codebase in about 10 minutes at ~$2-3 in API costs with Claude Haiku.
 
-Stage 2: Prioritization
+Stage 2 - Prioritization
 
 Raw debt lists are not actionable. Prioritize by combining impact and effort:
 
@@ -196,7 +196,7 @@ def prioritize_debt(audit_results: list[dict]) -> list[dict]:
 
 The prioritization formula rewards: high category issues that are easy to fix with low risk. A CRITICAL issue that takes 30 minutes and affects only one file scores higher than an IMPORTANT issue that touches 20 files.
 
-Stage 3: Fixing with AI Assistance
+Stage 3 - Fixing with AI Assistance
 
 For identified debt items, AI generates the refactored code:
 
@@ -211,9 +211,9 @@ def generate_fix(file_path: str, issue: dict) -> str:
  'role': 'user',
  'content': f"""Fix this technical debt issue in the file below.
 
-Issue: {issue['description']}
-Location: {issue.get('function') or f'line {issue.get("line")}'}
-Category: {issue['category']}
+Issue - {issue['description']}
+Location - {issue.get('function') or f'line {issue.get("line")}'}
+Category - {issue['category']}
 
 Requirements:
 - Fix ONLY this specific issue, don't refactor anything else
@@ -221,7 +221,7 @@ Requirements:
 - Keep all existing tests passing
 - Use the same style as the surrounding code
 
-File: {file_path}
+File - {file_path}
 ```
 {content}
 ```
@@ -283,7 +283,7 @@ print(f'OK: 0 critical issues')
 "
 ```
 
-Set a zero-critical-debt policy: new code can't introduce critical technical debt. Existing debt is tracked and paid down sprint by sprint.
+Set a zero-critical-debt policy - new code can't introduce critical technical debt. Existing debt is tracked and paid down sprint by sprint.
 
 The 20% Time Model
 

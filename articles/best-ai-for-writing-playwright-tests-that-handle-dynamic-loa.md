@@ -25,7 +25,7 @@ Table of Contents
 - [Top AI Tools for This Use Case](#top-ai-tools-for-this-use-case)
 - [AI Tool Comparison at a Glance](#ai-tool-comparison-at-a-glance)
 - [Practical Testing Patterns](#practical-testing-patterns)
-- [Step-by-Step Workflow: Using AI to Write a Dynamic Loading Test](#step-by-step-workflow-using-ai-to-write-a-dynamic-loading-test)
+- [Step-by-Step Workflow - Using AI to Write a Dynamic Loading Test](#step-by-step-workflow-using-ai-to-write-a-dynamic-loading-test)
 - [Handling Intersection Observer-Based Lazy Loading](#handling-intersection-observer-based-lazy-loading)
 - [Common Pitfalls and How AI Tools Help Avoid Them](#common-pitfalls-and-how-ai-tools-help-avoid-them)
 - [Pro Tips for Getting Better AI Output](#pro-tips-for-getting-better-ai-output)
@@ -180,7 +180,7 @@ await page.waitForFunction(() => {
 });
 ```
 
-Step-by-Step Workflow: Using AI to Write a Dynamic Loading Test
+Step-by-Step Workflow - Using AI to Write a Dynamic Loading Test
 
 Here is a repeatable workflow for getting quality dynamic-load tests from any AI tool.
 

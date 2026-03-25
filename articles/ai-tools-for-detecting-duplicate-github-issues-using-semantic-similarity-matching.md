@@ -28,7 +28,7 @@ Table of Contents
 - [Maintaining a Clean Issue Tracker](#maintaining-a-clean-issue-tracker)
 - [Real-World Implementation Results](#real-world-implementation-results)
 - [Choosing Embedding Models for Your Domain](#choosing-embedding-models-for-your-domain)
-- [Advanced Detection: Multi-Field Matching](#advanced-detection-multi-field-matching)
+- [Advanced Detection - Multi-Field Matching](#advanced-detection-multi-field-matching)
 - [Handling False Positives and False Negatives](#handling-false-positives-and-false-negatives)
 - [Performance at Scale](#performance-at-scale)
 - [Integration with GitHub's Native Features](#integration-with-githubs-native-features)
@@ -196,7 +196,7 @@ for model_name in models_to_test:
 
 For code-focused projects, consider `code-search-distilspell-multilingual-v1` which specializes in programming terminology. For documentation or feature request tracking, the standard `all-mpnet-base-v2` often suffices.
 
-Advanced Detection: Multi-Field Matching
+Advanced Detection - Multi-Field Matching
 
 Simple title-and-body matching misses some duplicates. A system compares multiple fields:
 
@@ -307,7 +307,7 @@ vectors = np.array([embedding for _, embedding in all_issues])
 index = faiss.IndexFlatL2(vectors.shape[1])
 index.add(vectors)
 
-Search: k nearest neighbors to new issue
+Search - k nearest neighbors to new issue
 new_embedding = model.encode(new_issue_text)
 distances, indices = index.search(np.array([new_embedding]), k=10)
 ```
@@ -331,7 +331,7 @@ Track these metrics to assess your duplicate detection system:
 
 - Detection Rate: Percentage of actual duplicates caught automatically
 - False Positive Rate: Percentage of flagged duplicates that were incorrect
-- Time Saved: Hours spent on duplicate triage before vs. after
+- Time Saved - Hours spent on duplicate triage before vs. after
 - User Satisfaction: Feedback from contributors on false closures
 
 Most projects see 30-40% reduction in duplicate issues within the first month, with further improvements as the system learns from your specific terminology and issue patterns.

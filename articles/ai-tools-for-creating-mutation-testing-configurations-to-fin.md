@@ -111,19 +111,19 @@ Practical Workflow for Finding Weak Assertions
 
 Integrate mutation testing into your development workflow using AI assistance at each stage.
 
-Step 1: Project Assessment
+Step 1 - Project Assessment
 
 Describe your project to an AI assistant: language, test framework, build tool, and code complexity. The AI recommends a mutation testing tool and estimates configuration effort.
 
-Step 2: Configuration Generation
+Step 2 - Configuration Generation
 
 Provide your project structure to the AI. Ask for a configuration file targeting core business logic while excluding generated code, test utilities, and third-party libraries. Review the configuration for accuracy before applying it.
 
-Step 3: Baseline Execution
+Step 3 - Baseline Execution
 
 Run mutation testing on a small subset of code first. Analyze which mutations survive and why. Use this baseline to refine configuration, adjust operators, add exclusions, or increase mutation threshold.
 
-Step 4: Assertion Improvement
+Step 4 - Assertion Improvement
 
 For each surviving mutation, use AI to generate improved test assertions. Show the AI the original test and the mutation that survived. Ask for stronger assertions that would catch the mutation.
 
@@ -137,7 +137,7 @@ expect(user.name).toHaveLengthGreaterThan(0);
 expect(user.name).toMatch(/^[A-Za-z\s]+$/);
 ```
 
-Step 5: Continuous Integration
+Step 5 - Continuous Integration
 
 Add mutation testing to your CI pipeline using the optimized configuration. Run it nightly or on pull requests to catch new weak assertions before they merge.
 
@@ -260,10 +260,10 @@ AI-Assisted Weak Assertion Detection Workflow
 Here's how to use Claude or ChatGPT to improve assertions based on mutation results:
 
 ```python
-Step 1: Run mutation testing and collect report
+Step 1 - Run mutation testing and collect report
 mutmut run --paths-to-mutate=src > mutation-report.txt
 
-Step 2: Prompt AI with report
+Step 2 - Prompt AI with report
 """
 I ran mutation testing on my Python project. These mutations survived:
 - Line 45: Changing '<' to '<=' in price validation
@@ -276,7 +276,7 @@ Here are my current assertions for these functions:
 Suggest stronger assertions that would catch these mutations.
 """
 
-Step 3: AI generates improved assertions
+Step 3 - AI generates improved assertions
 def test_price_validation():
     assert validate_price(0) == False  # Catches boundary mutation
     assert validate_price(-1) == False  # Catches arithmetic mutation

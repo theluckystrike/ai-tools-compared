@@ -33,8 +33,8 @@ Table of Contents
 - [Practical License Evaluation Matrix](#practical-license-evaluation-matrix)
 - [Advanced Reference Checking](#advanced-reference-checking)
 - [Documenting Code References](#documenting-code-references)
-- [Date: 2026-03-20](#date-2026-03-20)
-- [Flagged by Copilot: Yes](#flagged-by-copilot-yes)
+- [Date - 2026-03-20](#date-2026-03-20)
+- [Flagged by Copilot - Yes](#flagged-by-copilot-yes)
 - [Copilot Reference Detection in 2026](#copilot-reference-detection-in-2026)
 - [The Bottom Line](#the-bottom-line)
 
@@ -81,10 +81,10 @@ For code derived from GPL-licensed projects, the situation becomes more complex.
 Here is an example of how a license notification might appear in VS Code:
 
 ```
-Code reference detected: MIT License
-Source: github.com/example/repo
-File: utils/helpers.py
-Match: 85% similarity
+Code reference detected - MIT License
+Source - github.com/example/repo
+File - utils/helpers.py
+Match - 85% similarity
 ```
 
 Configuring Reference Settings
@@ -135,13 +135,13 @@ Real-World Code Reference Scenarios
 
 Understanding how Copilot's code referencing works in practice helps you make informed decisions. Consider these scenarios:
 
-Scenario 1: Common Utility Function
+Scenario 1 - Common Utility Function
 You ask Copilot to generate a debounce function for JavaScript. The suggestion might match implementations from dozens of popular libraries like Lodash. Copilot flags the match with a license reference. In this case, the match is likely fine, debounce implementations are straightforward patterns used across MIT and Apache-licensed code. You can safely use the suggestion.
 
-Scenario 2: Specialized Algorithm
+Scenario 2 - Specialized Algorithm
 You need an implementation of the Knuth-Morris-Pratt string matching algorithm. Copilot suggests code that closely matches an academic implementation you've studied. The tool flags a match to a GPL-licensed repository. This requires careful consideration. You can study the algorithmic approach freely, but directly copying that code means your project inherits the GPL obligation.
 
-Scenario 3: Framework-Specific Boilerplate
+Scenario 3 - Framework-Specific Boilerplate
 You're setting up a React component with context and hooks. Copilot's suggestion matches examples from the official React documentation (MIT license) and several popular tutorials. Multiple references appear. This is routine, framework boilerplate appears everywhere with permissive licenses. The references confirm you're using standard patterns.
 
 Building a License Audit Workflow
@@ -259,12 +259,12 @@ Maintain transparency by documenting how you used flagged suggestions:
 ```markdown
 Code References Documentation
 
-Date: 2026-03-20
-Flagged by Copilot: Yes
+Date - 2026-03-20
+Flagged by Copilot - Yes
 
 Reference Details
 - Source Repository: github.com/example/utility-library
-- File: src/string-utils.js
+- File - src/string-utils.js
 - License: MIT
 - Similarity: 92%
 - Modified: Yes, added parameter validation
@@ -273,7 +273,7 @@ Justification
 The flagged code implements a standard string escaping function. MIT license permits commercial use with attribution. We added input validation beyond the original implementation.
 
 Attribution
-Original implementation: https://github.com/example/utility-library/blob/main/src/string-utils.js
+Original implementation - https://github.com/example/utility-library/blob/main/src/string-utils.js
 Licensed under MIT (see LICENSE file in our dependencies)
 ```
 

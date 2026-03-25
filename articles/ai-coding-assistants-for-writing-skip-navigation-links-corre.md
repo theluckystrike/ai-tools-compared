@@ -28,9 +28,9 @@ Table of Contents
 - [Practical Recommendations](#practical-recommendations)
 - [Multiple Skip Links for Complex Page Structures](#multiple-skip-links-for-complex-page-structures)
 - [Testing Skip Links with Real Assistive Technology](#testing-skip-links-with-real-assistive-technology)
-- [Tool Comparison: Which AI Assistant Handles Skip Links Best](#tool-comparison-which-ai-assistant-handles-skip-links-best)
+- [Tool Comparison - Which AI Assistant Handles Skip Links Best](#tool-comparison-which-ai-assistant-handles-skip-links-best)
 - [Avoiding Common Mistakes in AI-Generated Skip Links](#avoiding-common-mistakes-in-ai-generated-skip-links)
-- [Decision Framework: When to Use Which Tool](#decision-framework-when-to-use-which-tool)
+- [Decision Framework - When to Use Which Tool](#decision-framework-when-to-use-which-tool)
 - [Testing Framework for AI-Generated Skip Links](#testing-framework-for-ai-generated-skip-links)
 - [Best Practices When Prompting AI for Skip Links](#best-practices-when-prompting-ai-for-skip-links)
 - [Related Articles on Accessibility and AI](#related-articles-on-accessibility-and-ai)
@@ -166,9 +166,9 @@ AI-generated skip links pass automated accessibility checkers but can still fail
 
 Test manually with at least two scenarios:
 
-Keyboard-only navigation: Tab to the skip link (it should be the first Tab stop), press Enter, and confirm that keyboard focus has moved to the target. Press Tab again, the next focused element should be within or after the target area, not back in the navigation.
+Keyboard-only navigation - Tab to the skip link (it should be the first Tab stop), press Enter, and confirm that keyboard focus has moved to the target. Press Tab again, the next focused element should be within or after the target area, not back in the navigation.
 
-Screen reader testing: Use NVDA with Firefox on Windows and VoiceOver with Safari on macOS. With a screen reader active, navigate to the page. The screen reader should announce the skip link immediately. Activate it and confirm the screen reader announces the target heading or landmark. Then verify that subsequent keyboard navigation moves through the main content, not the navigation.
+Screen reader testing - Use NVDA with Firefox on Windows and VoiceOver with Safari on macOS. With a screen reader active, navigate to the page. The screen reader should announce the skip link immediately. Activate it and confirm the screen reader announces the target heading or landmark. Then verify that subsequent keyboard navigation moves through the main content, not the navigation.
 
 A common failure mode in AI-generated implementations is a skip link that moves visual focus correctly but does not update the screen reader's reading position. This happens when the target element lacks a `tabindex` attribute or when JavaScript focus management interferes with native browser behavior.
 
@@ -210,21 +210,21 @@ test("skip navigation link reaches main content", async ({ page }) => {
 
 This test catches regressions where a code change breaks skip link functionality. Run it as part of your accessibility test suite alongside automated WCAG scanning.
 
-Tool Comparison: Which AI Assistant Handles Skip Links Best
+Tool Comparison - Which AI Assistant Handles Skip Links Best
 
 | Tool | Code Quality | Accuracy | Explanation | Framework Support | Cost |
 |------|-------------|----------|-------------|------------------|------|
 | Claude Code | Excellent | Very High | Explains rationale well | All frameworks | $20/mo or API |
 | GitHub Copilot | Good | High | Quick suggestions | VS Code, JetBrains | $10/mo or free |
 | Cursor | Excellent | Very High | Context-aware refinement | VS Code-based | $20/mo |
-| Amazon CodeWhisperer | Fair | Medium | Generic templates | AWS ecosystem | Free or $20/mo |
+| Amazon CodeWhisperer | Fair | Medium | Generic templates | AWS environment | Free or $20/mo |
 | Zed AI | Good | High | Real-time inline hints | Zed editor | Free |
 
 Avoiding Common Mistakes in AI-Generated Skip Links
 
 AI tools sometimes produce skip links that pass automated accessibility checks but fail in real use. Watch for these pitfalls:
 
-Mistake 1: Missing tabindex on target
+Mistake 1 - Missing tabindex on target
 AI may generate code without `tabindex="-1"` on the target element, which means focus moves to the element but isn't properly managed for all assistive technology contexts:
 
 ```html
@@ -239,7 +239,7 @@ AI may generate code without `tabindex="-1"` on the target element, which means 
 </main>
 ```
 
-Mistake 2: Skip link in hidden container
+Mistake 2 - Skip link in hidden container
 Some AI implementations accidentally nest the skip link inside a hidden element or scrollable container, making it unreachable:
 
 ```html
@@ -255,7 +255,7 @@ Some AI implementations accidentally nest the skip link inside a hidden element 
 </nav>
 ```
 
-Mistake 3: Broken href attribute
+Mistake 3 - Broken href attribute
 Watch for inconsistencies where the href points to an ID that doesn't exist or has a typo:
 
 ```html
@@ -268,7 +268,7 @@ Watch for inconsistencies where the href points to an ID that doesn't exist or h
 <main id="main-content">
 ```
 
-Decision Framework: When to Use Which Tool
+Decision Framework - When to Use Which Tool
 
 Use Claude Code if:
 - You need thorough explanation of accessibility requirements

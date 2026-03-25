@@ -22,11 +22,11 @@ Table of Contents
 
 - [Why Use MCP for Jira Integration](#why-use-mcp-for-jira-integration)
 - [Prerequisites](#prerequisites)
-- [Step 1: Install the Jira MCP Server](#step-1-install-the-jira-mcp-server)
-- [Step 2: Configure MCP for Your Jira Instance](#step-2-configure-mcp-for-your-jira-instance)
-- [Step 3: Verify the Connection](#step-3-verify-the-connection)
-- [Step 4: Use Jira Context in AI Conversations](#step-4-use-jira-context-in-ai-conversations)
-- [Step 5: Customize for Your Workflow](#step-5-customize-for-your-workflow)
+- [Step 1 - Install the Jira MCP Server](#step-1-install-the-jira-mcp-server)
+- [Step 2 - Configure MCP for Your Jira Instance](#step-2-configure-mcp-for-your-jira-instance)
+- [Step 3 - Verify the Connection](#step-3-verify-the-connection)
+- [Step 4 - Use Jira Context in AI Conversations](#step-4-use-jira-context-in-ai-conversations)
+- [Step 5 - Customize for Your Workflow](#step-5-customize-for-your-workflow)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Extending the Integration](#extending-the-integration)
 
@@ -58,7 +58,7 @@ Before starting, ensure you have:
 
 You'll also need a Jira API token. For Jira Cloud, generate one at [id.atlassian.com/manage-profile/security/api-tokens](https://id.atlassian.com/manage-profile/security/api-tokens).
 
-Step 1: Install the Jira MCP Server
+Step 1 - Install the Jira MCP Server
 
 The official MCP servers repository includes a Jira integration. Install it using npm:
 
@@ -77,7 +77,7 @@ npm run build
 
 For teams with strict dependency policies, the local clone approach is better: it pins the exact server version and lets you audit the source code before it runs with your Jira credentials. You can also vendor the build artifacts into your team's shared tooling repo.
 
-Step 2: Configure MCP for Your Jira Instance
+Step 2 - Configure MCP for Your Jira Instance
 
 Create a configuration file for the Jira MCP server. The location depends on your AI tool:
 
@@ -141,7 +141,7 @@ export JIRA_EMAIL="your-email@company.com"
 export JIRA_API_TOKEN="your-api-token"
 ```
 
-Step 3: Verify the Connection
+Step 3 - Verify the Connection
 
 Restart your AI tool after updating the configuration. Most tools notify you when MCP servers connect successfully.
 
@@ -157,11 +157,11 @@ You can also verify at the MCP server level by running the server directly and c
 
 ```bash
 npx -y @modelcontextprotocol/server-jira
-Expected output: MCP server started, listening on stdio
-Available tools: get_issue, search_issues, get_project, list_projects
+Expected output - MCP server started, listening on stdio
+Available tools - get_issue, search_issues, get_project, list_projects
 ```
 
-Step 4: Use Jira Context in AI Conversations
+Step 4 - Use Jira Context in AI Conversations
 
 Once connected, you can reference Jira tickets naturally in your prompts. Here are practical patterns:
 
@@ -211,7 +211,7 @@ Include the ticket number in the footer.
 
 The AI reads the ticket summary, acceptance criteria, and type, then produces a commit message that matches your team's format. This is faster and more consistent than writing messages manually, especially for bug fixes where the ticket already contains the root cause.
 
-Step 5: Customize for Your Workflow
+Step 5 - Customize for Your Workflow
 
 The Jira MCP server supports several tools beyond basic ticket retrieval. Customize your setup by enabling specific capabilities:
 
@@ -266,13 +266,13 @@ By default, MCP retrieves standard fields. To include custom fields, specify the
 
 Troubleshooting Common Issues
 
-Connection timeout: Verify your Jira URL is accessible and your API token has not expired. Corporate firewalls may block the connection, consider running the MCP server locally behind your firewall.
+Connection timeout - Verify your Jira URL is accessible and your API token has not expired. Corporate firewalls may block the connection, consider running the MCP server locally behind your firewall.
 
-Authentication errors: Double-check that your email matches the account used to generate the API token. For Jira Server instances, ensure your API token is generated correctly for your version.
+Authentication errors - Double-check that your email matches the account used to generate the API token. For Jira Server instances, ensure your API token is generated correctly for your version.
 
-Missing ticket data: Some custom fields require explicit permission. Contact your Jira administrator to ensure the integration account has adequate permissions.
+Missing ticket data - Some custom fields require explicit permission. Contact your Jira administrator to ensure the integration account has adequate permissions.
 
-Rate limiting: Jira Cloud imposes API rate limits. If you hit them frequently, implement caching in your AI prompts or reduce query frequency.
+Rate limiting - Jira Cloud imposes API rate limits. If you hit them frequently, implement caching in your AI prompts or reduce query frequency.
 
 MCP server not appearing in AI tool: On Claude Desktop, the config file must be valid JSON. a trailing comma or missing brace will silently prevent the server from loading. Use `python3 -m json.tool < ~/Library/Application\ Support/Claude/claude_desktop_config.json` to validate the file before restarting the application.
 

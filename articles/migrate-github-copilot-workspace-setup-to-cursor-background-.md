@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Core Differences
+Step 1 - Understand the Core Differences
 
 GitHub Copilot operates as a plugin within your IDE, providing inline suggestions and chat-based interactions. When you configure workspace-specific settings, Copilot relies on your editor's configuration files and extension settings. Cursor, built on top of VS Code, takes a different approach with its background agent that can run continuous tasks across your project.
 
 The key distinction lies in how each tool handles project context. Copilot reads your current file and surrounding code for context, while Cursor's background agent maintains awareness of your entire codebase throughout a session. This difference affects how you structure your project settings and workflows.
 
-Step 2: Preparing Your Project for Migration
+Step 2 - Preparing Your Project for Migration
 
 Before making the switch, gather your current GitHub Copilot configuration. Check your `.vscode/settings.json` file for Copilot-specific settings. You will likely find entries related to `github.copilot.` prefixes that define behavior for inline suggestions, chat, and workspace awareness.
 
@@ -57,7 +57,7 @@ grep "github.copilot" ~/.vscode/settings.json > copilot-settings.txt
 
 This backup ensures you can reference your previous setup during the transition.
 
-Step 3: Set Up Cursor Background Agent
+Step 3 - Set Up Cursor Background Agent
 
 Cursor's background agent requires different configuration compared to Copilot's workspace setup. The agent runs as a persistent process that understands your project structure and can execute multi-step tasks.
 
@@ -114,17 +114,17 @@ Copilot uses `.github/copilot-instructions.md` for workspace-specific instructio
 ```markdown
 Project Rules
 
-Step 4: Code Style
+Step 4 - Code Style
 - Use TypeScript strict mode
 - Follow Airbnb JavaScript style guide
 - Prefer functional components over class components
 
-Step 5: Test
+Step 5 - Test
 - Write tests alongside implementation
 - Use Vitest for unit tests
 - Maintain 80% code coverage minimum
 
-Step 6: Documentation
+Step 6 - Documentation
 - Document all exported functions
 - Use JSDoc for complex logic
 - Keep README updated with API changes
@@ -132,7 +132,7 @@ Step 6: Documentation
 
 These rules inform Cursor's background agent about your project conventions, replacing the need for Copilot's instruction files.
 
-Step 7: Handling Multi-File Operations
+Step 7 - Handling Multi-File Operations
 
 One of Cursor's advantages is its ability to handle refactoring across multiple files simultaneously. If you used scripts or tools to automate Copilot interactions, you can use Cursor's agent for similar purposes.
 
@@ -182,7 +182,7 @@ The background agent consumes more resources than Copilot's plugin model because
 
 Excluding folders like `node_modules` reduces the agent's workload without losing functionality.
 
-Step 8: Comparing Feature-by-Feature: Copilot to Cursor
+Step 8 - Comparing Feature-by-Feature: Copilot to Cursor
 
 | Feature | Copilot | Cursor | Winner |
 |---------|---------|--------|--------|
@@ -197,7 +197,7 @@ Step 8: Comparing Feature-by-Feature: Copilot to Cursor
 
 Cursor's background agent and larger context window provide significant advantages for complex codebases.
 
-Step 9: Preserving Git History During Migration
+Step 9 - Preserving Git History During Migration
 
 Don't discard your Copilot workflow history. Archive it:
 
@@ -211,17 +211,17 @@ cp ~/.vscode/settings.json ./vscode_settings_copilot.json
 Create migration log
 cat > MIGRATION_LOG.md << EOF
 Copilot to Cursor Migration Log
-Date: $(date)
+Date - $(date)
 
-Step 10: Previous Configuration
+Step 10 - Previous Configuration
 - Editor: VS Code
 - Copilot version: [extracted from backup]
 - Active extensions: [list]
 
-Step 11: Key Workflows
+Step 11 - Key Workflows
 - [Document workflows you relied on]
 
-Step 12: Cursor Setup
+Step 12 - Cursor Setup
 - [How you configured Cursor]
 EOF
 
@@ -231,7 +231,7 @@ git commit -m "Archive Copilot configuration before migration to Cursor"
 
 This preserves institutional knowledge if you need to revert or reference the old setup.
 
-Step 13: Test Cursor's Background Agent Effectiveness
+Step 13 - Test Cursor's Background Agent Effectiveness
 
 Validate that Cursor meets your needs before fully migrating:
 
@@ -239,13 +239,13 @@ Validate that Cursor meets your needs before fully migrating:
 Create test branch for Cursor evaluation
 git checkout -b test/cursor-evaluation
 
-Task 1: Simple file refactoring
+Task 1 - Simple file refactoring
 Ask Cursor to rename a variable across 3 files
 
-Task 2: Feature implementation
+Task 2 - Feature implementation
 Request Cursor generate a new utility function
 
-Task 3: Bug investigation
+Task 3 - Bug investigation
 Provide an error and ask Cursor to find root cause
 
 Metrics to track:
@@ -258,7 +258,7 @@ Review results and decide to proceed or stay with Copilot
 
 A 1-2 week evaluation period reduces migration risk.
 
-Step 14: Configure Cursor for Team Consistency
+Step 14 - Configure Cursor for Team Consistency
 
 Ensure all team members have matching Cursor configurations:
 
@@ -282,7 +282,7 @@ Ensure all team members have matching Cursor configurations:
 
 Share this configuration file via your repository so new team members start with the right setup.
 
-Step 15: Handling Performance Issues in Cursor
+Step 15 - Handling Performance Issues in Cursor
 
 The background agent consumes resources. Optimize if needed:
 
@@ -305,7 +305,7 @@ The background agent consumes resources. Optimize if needed:
 
 Aggressive exclusions prevent the agent from consuming excessive resources on large projects.
 
-Step 16: Keyboard Shortcuts: Cursor vs Copilot Migration
+Step 16 - Keyboard Shortcuts: Cursor vs Copilot Migration
 
 VS Code users often have muscle memory for Copilot shortcuts. Map equivalents in Cursor:
 
@@ -319,18 +319,18 @@ Copilot (VS Code) → Cursor Equivalent:
 
 Most shortcuts transfer directly, reducing the learning curve.
 
-Step 17: Migration Checklist for Teams
+Step 17 - Migration Checklist for Teams
 
 Use this checklist to ensure complete migration:
 
 ```markdown
-Step 18: Pre-Migration
+Step 18 - Pre-Migration
 - [ ] Back up current Copilot configuration
 - [ ] Document team's Copilot workflows
 - [ ] Evaluate Cursor on test branch
 - [ ] Identify performance requirements
 
-Step 19: Migration
+Step 19 - Migration
 - [ ] Install Cursor on all developer machines
 - [ ] Configure .cursor/rules.md with team standards
 - [ ] Set up .cursor/mcp.json for background agent
@@ -338,7 +338,7 @@ Step 19: Migration
 - [ ] Test background agent on sample refactoring task
 - [ ] Configure IDE performance limits if needed
 
-Step 20: Post-Migration
+Step 20 - Post-Migration
 - [ ] Collect feedback from team on Cursor experience
 - [ ] Monitor CPU/memory usage during typical workflow
 - [ ] Document any Copilot features Cursor doesn't replicate

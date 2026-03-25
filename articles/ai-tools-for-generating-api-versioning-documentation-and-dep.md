@@ -25,7 +25,7 @@ Deprecation notices need to communicate three things clearly: what is being remo
 Claude prompt pattern:
 ```
 Generate deprecation notices for these deprecated endpoints.
-Format each as: a developer-facing warning suitable for API docs,
+Format each as - a developer-facing warning suitable for API docs,
 an HTTP response header value, and a brief migration guide.
 
 Deprecated endpoints:
@@ -36,23 +36,23 @@ Deprecated endpoints:
 Claude generates:
 
 ```markdown
-Deprecation: GET /api/v1/users
+Deprecation - GET /api/v1/users
 
-Status: Deprecated as of 2026-01-01. Sunset date: 2026-07-01.
+Status - Deprecated as of 2026-01-01. Sunset date: 2026-07-01.
 
 After July 1, 2026, this endpoint will return `410 Gone`. Requests must be
 migrated to `GET /api/v2/users` before that date.
 
-Migration: The v2 endpoint returns the same user fields plus `last_seen_at`.
+Migration - The v2 endpoint returns the same user fields plus `last_seen_at`.
 Change your base URL from `/api/v1/` to `/api/v2/`. Pagination parameters are
 identical. No authentication changes required.
 ```
 
 And the HTTP header value:
 ```
-Deprecation: Thu, 01 Jan 2026 00:00:00 GMT
-Sunset: Wed, 01 Jul 2026 00:00:00 GMT
-Link: <https://api.example.com/v2/users>; rel="successor-version"
+Deprecation - Thu, 01 Jan 2026 00:00:00 GMT
+Sunset - Wed, 01 Jul 2026 00:00:00 GMT
+Link - <https://api.example.com/v2/users>; rel="successor-version"
 ```
 
 These headers are defined in RFC 8594 and are supported by API gateway tooling including AWS API Gateway, Kong, and Apigee.
@@ -83,9 +83,9 @@ def describe_version_diff(old_spec_path: str, new_spec_path: str) -> str:
             "content": f"""Compare these two OpenAPI specs and generate a changelog.
 Format as Markdown with sections: Breaking Changes, New Endpoints, Modified Endpoints, Deprecated.
 
-Old spec (v1): {json.dumps(old_spec, indent=2)[:8000]}
+Old spec (v1) - {json.dumps(old_spec, indent=2)[:8000]}
 
-New spec (v2): {json.dumps(new_spec, indent=2)[:8000]}
+New spec (v2) - {json.dumps(new_spec, indent=2)[:8000]}
 """
         }]
     )
@@ -106,7 +106,7 @@ How you version your API shapes the kind of documentation tooling you need. The 
 
 URL path versioning (`/api/v1/`, `/api/v2/`) is the most common and easiest to document. Every version is a distinct namespace, so tools like Mintlify and Scalar can generate separate reference sections per version without ambiguity.
 
-Header-based versioning (`API-Version: 2026-01`) produces a single URL surface but many behavioral variants. Documentation must clearly explain which headers trigger which behavior, and your OpenAPI spec needs vendor extensions (`x-api-version`) to capture this. Scalar handles this better than most.
+Header-based versioning (`API-Version - 2026-01`) produces a single URL surface but many behavioral variants. Documentation must clearly explain which headers trigger which behavior, and your OpenAPI spec needs vendor extensions (`x-api-version`) to capture this. Scalar handles this better than most.
 
 Date-based versioning (used by Anthropic, Stripe, and others) ties behavior to release dates rather than integer versions. It simplifies the consumer's upgrade path but requires documentation tooling that can display a timeline of behavioral changes alongside endpoint references. ReadMe's changelog integration works well for this pattern.
 

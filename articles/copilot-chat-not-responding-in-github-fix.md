@@ -112,7 +112,7 @@ Configuration conflicts sometimes emerge from custom settings. Export your curre
 
 Examine Chat Panel and Window State
 
-The chat panel itself may be in an error state. Try closing the Chat panel entirely and reopening it through the editor's command palette or sidebar. For VS Code, use the "GitHub Copilot: Open Chat" command from the command palette.
+The chat panel itself may be in an error state. Try closing the Chat panel entirely and reopening it through the editor's command palette or sidebar. For VS Code, use the "GitHub Copilot - Open Chat" command from the command palette.
 
 If the panel opens but messages send without responses, check whether the chat is processing your input at all. Some users report that messages appear to send but never trigger a response from the AI. This indicates a connection issue rather than an UI problem.
 
@@ -141,19 +141,19 @@ For developers who prefer command-line approaches, these commands help diagnose 
 ```bash
 Test GitHub API connectivity
 curl -I https://api.github.com
-Expected: HTTP/2 200
+Expected - HTTP/2 200
 
 Test Copilot proxy connectivity
 curl -I https://copilot-proxy.githubusercontent.com
-Expected: HTTP/2 200 or appropriate redirect
+Expected - HTTP/2 200 or appropriate redirect
 
 Check VS Code extension host logs
 macOS: ~/Library/Logs/Code/
-Linux: ~/.config/Code/logs/
-Windows: %APPDATA%\Code\logs\
+Linux - ~/.config/Code/logs/
+Windows - %APPDATA%\Code\logs\
 
 View extension output for debugging
-In VS Code: Output panel > GitHub Copilot
+In VS Code - Output panel > GitHub Copilot
 ```
 
 If both URLs return connection errors, your network blocks GitHub Copilot. If they succeed but Chat still fails, the issue is likely local configuration.

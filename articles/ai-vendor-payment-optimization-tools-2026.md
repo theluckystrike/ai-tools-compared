@@ -175,7 +175,7 @@ Vendor Payment Tool Pricing and Costs (2026)
 Real pricing for vendors using these tools:
 
 Invoice Processing & OCR
-- Mindee: Free tier (50 docs/month), then $0.25-$0.50 per document
+- Mindee - Free tier (50 docs/month), then $0.25-$0.50 per document
 - AWS Textract: $0.015 per page (minimum 100)
 - Docparser: $99-$499/month depending on volume
 - Best for teams processing 500+ invoices monthly: Textract with custom integration
@@ -188,7 +188,7 @@ Payment Optimization Platforms
 
 Fraud Detection Services
 - Feedzai: Custom pricing from $50K+/year
-- Signifyd: Based on transaction volume, $0.01-$0.50 per transaction
+- Signifyd - Based on transaction volume, $0.01-$0.50 per transaction
 - Forter: Similar transaction-based, enterprise-focused
 - Best for mid-market: Signifyd or custom model in-house
 
@@ -228,10 +228,10 @@ Comparing Popular 2026 Platforms
 
 Implementation Roadmap by Maturity
 
-Week 1-2: Pilot with Single Vendor
+Week 1-2 - Pilot with Single Vendor
 - Extract invoices using OCR
 - Implement basic payment timing logic
-- Measure: Time saved vs. manual processing
+- Measure - Time saved vs. manual processing
 
 ```python
 Week 1 pilot code
@@ -241,13 +241,13 @@ def pilot_invoice_extraction(pdf_url, api_key):
     # Manually review, then scale
 ```
 
-Week 3-4: Multi-Vendor Extraction at Scale
+Week 3-4 - Multi-Vendor Extraction at Scale
 - Process 50+ invoices
 - Implement discount optimization logic
 - Track discount capture rate
 
 ```python
-Week 3-4: Scale extraction
+Week 3-4 - Scale extraction
 def batch_process_invoices(invoice_urls, api_key):
     for url in invoice_urls:
         extracted = extract_invoice_data(url, api_key)
@@ -255,13 +255,13 @@ def batch_process_invoices(invoice_urls, api_key):
         store_in_database(extracted, discount_recommendation)
 ```
 
-Week 5-6: Add Fraud Detection
+Week 5-6 - Add Fraud Detection
 - Score all processed invoices
 - Block high-risk payments automatically
 - Log all decisions for audit
 
 ```python
-Week 5-6: Add fraud scoring
+Week 5-6 - Add fraud scoring
 def process_with_fraud_detection(extracted_invoice, model_endpoint):
     risk_score = score_payment_risk(extracted_invoice, model_endpoint)
     if risk_score > 0.6:
@@ -269,13 +269,13 @@ def process_with_fraud_detection(extracted_invoice, model_endpoint):
     return {"status": "APPROVED", "risk": risk_score}
 ```
 
-Week 7-8: Implement Reconciliation
+Week 7-8 - Implement Reconciliation
 - Match extracted data to bank statements
 - Automate exception handling
 - Achieve 95%+ matching rate
 
 ```python
-Week 7-8: Reconciliation
+Week 7-8 - Reconciliation
 def reconcile_all_payments():
     payments = fetch_executed_payments()
     bank_statements = fetch_bank_statements()
@@ -289,28 +289,28 @@ def reconcile_all_payments():
 
 Real-World Implementation Case Studies
 
-Case Study 1: SaaS Company (100 employees)
+Case Study 1 - SaaS Company (100 employees)
 - Initial state: Manual invoice processing, 60 hours/month on payments
 - Implementation: Ramp + Mindee OCR
 - Timeline: 4 weeks
 - Results: 45 hours/month saved, $50K early-payment discounts captured in first month
 - ROI: 6 months payback period
 
-Case Study 2: Professional Services (50+ vendors)
+Case Study 2 - Professional Services (50+ vendors)
 - Initial state: Spreadsheet tracking, frequent duplicate payments
 - Implementation: Bill.com + custom fraud detection
 - Timeline: 6 weeks (includes team training)
 - Results: 30% faster payment cycle, 2 prevented duplicate payments ($80K)
 - ROI: Immediate positive from fraud prevention
 
-Case Study 3: Manufacturing (500+ vendors globally)
+Case Study 3 - Manufacturing (500+ vendors globally)
 - Initial state: ERP-based but manual approval, weak FX optimization
 - Implementation: Tipalti enterprise + multi-currency optimization
 - Timeline: 12 weeks (complex enterprise integration)
 - Results: 5-day average payment acceleration, FX savings of $200K+/year
 - ROI: 6-12 months depending on discount structure
 
-Looking Ahead: 2026 and Beyond
+Looking Ahead - 2026 and Beyond
 
 The next generation of vendor payment optimization will likely feature:
 

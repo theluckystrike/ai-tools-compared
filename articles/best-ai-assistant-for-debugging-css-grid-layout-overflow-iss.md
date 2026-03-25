@@ -26,8 +26,8 @@ Table of Contents
 - [Working with AI Assistants Effectively](#working-with-ai-assistants-effectively)
 - [Comparative Recommendations](#comparative-recommendations)
 - [Prevention Best Practices](#prevention-best-practices)
-- [Advanced Grid Debugging: Container Queries and Subgrid](#advanced-grid-debugging-container-queries-and-subgrid)
-- [Visual Debugging Example: Before and After](#visual-debugging-example-before-and-after)
+- [Advanced Grid Debugging - Container Queries and Subgrid](#advanced-grid-debugging-container-queries-and-subgrid)
+- [Visual Debugging Example - Before and After](#visual-debugging-example-before-and-after)
 - [CSS Grid Overflow Decision Matrix](#css-grid-overflow-decision-matrix)
 - [Performance Considerations for Grid Layouts](#performance-considerations-for-grid-layouts)
 - [Mobile-First Grid Strategy](#mobile-first-grid-strategy)
@@ -119,7 +119,7 @@ This reveals which elements exceed their expected boundaries.
 
 Common Solutions
 
-Solution 1: Responsive Column Definitions
+Solution 1 - Responsive Column Definitions
 
 ```css
 .dashboard-grid {
@@ -132,7 +132,7 @@ Solution 1: Responsive Column Definitions
 
 The `auto-fit` combined with `minmax` creates columns that automatically wrap when insufficient space exists, eliminating overflow.
 
-Solution 2: Preventing Content Expansion
+Solution 2 - Preventing Content Expansion
 
 ```css
 .card {
@@ -142,9 +142,9 @@ Solution 2: Preventing Content Expansion
 }
 ```
 
-Setting `min-width: 0` on Grid items allows them to shrink below their content's natural size, giving the Grid proper control over dimensions.
+Setting `min-width - 0` on Grid items allows them to shrink below their content's natural size, giving the Grid proper control over dimensions.
 
-Solution 3: Viewport-Based Media Queries
+Solution 3 - Viewport-Based Media Queries
 
 ```css
 .dashboard-grid {
@@ -184,7 +184,7 @@ For developers working primarily with JavaScript frameworks like React or Vue, C
 
 For those who prefer detailed explanations and want to understand the underlying causes, Claude provides the most analysis. Its responses tend to include multiple solution approaches with trade-off explanations.
 
-For quick fixes and pattern recognition across common Grid scenarios, GitHub Copilot remains efficient, especially when working within GitHub's ecosystem.
+For quick fixes and pattern recognition across common Grid scenarios, GitHub Copilot remains efficient, especially when working within GitHub's environment.
 
 Prevention Best Practices
 
@@ -202,7 +202,7 @@ Building responsive Grid layouts that work across all device sizes requires unde
 
 The best approach combines AI assistance with solid fundamentals. Use your preferred assistant to speed diagnosis and solution finding, but invest time in understanding why certain Grid configurations cause overflow. This knowledge prevents future issues and makes you more effective at guiding AI tools toward optimal solutions.
 
-Advanced Grid Debugging: Container Queries and Subgrid
+Advanced Grid Debugging - Container Queries and Subgrid
 
 Modern CSS Grid features require advanced analysis. When using container queries or CSS subgrid, AI tools excel at identifying dimensional cascades that cause overflow:
 
@@ -230,7 +230,7 @@ Modern CSS Grid features require advanced analysis. When using container queries
 
 Claude can trace these complex interactions and identify where overflow originates in the cascade. It understands that subgrid issues often require fixes at multiple hierarchy levels.
 
-Visual Debugging Example: Before and After
+Visual Debugging Example - Before and After
 
 When describing a CSS Grid overflow problem to AI, providing a visual comparison helps:
 
@@ -307,8 +307,8 @@ Mobile-First Grid Strategy
 Structure your analysis prompts to guide AI toward mobile-first thinking:
 
 ```markdown
-Prompt: "I'm building a responsive dashboard using CSS Grid.
-Mobile-first approach: start with single column on mobile,
+Prompt - "I'm building a responsive dashboard using CSS Grid.
+Mobile-first approach - start with single column on mobile,
 then expand. Here's my mobile CSS:
 
 .dashboard { grid-template-columns: 1fr; }

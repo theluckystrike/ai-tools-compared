@@ -108,7 +108,7 @@ What Does Not Count Toward Limits
 
 It is worth clarifying what does not consume your Plus quota:
 
-- Browsing: When ChatGPT Plus users browse the internet through the integrated browser, this operates on a separate allocation.
+- Browsing - When ChatGPT Plus users browse the internet through the integrated browser, this operates on a separate allocation.
 
 - DALL-E image generation: Image generation has its own rate limits distinct from text messaging.
 
@@ -138,25 +138,25 @@ API Integration:
 
 Real-World Token Consumption Examples
 
-Scenario A: Light Memory User
+Scenario A - Light Memory User
 
 ```
-Base conversation: 150 prompt tokens
-Memory content: 200 tokens
-Completion: 300 tokens
-Total: 650 tokens per message
+Base conversation - 150 prompt tokens
+Memory content - 200 tokens
+Completion - 300 tokens
+Total - 650 tokens per message
 
 Hourly cost at $0.005/1k prompt tokens: $0.003
 ```
 
-Scenario B: Heavy Memory User
+Scenario B - Heavy Memory User
 
 ```
-Base conversation: 150 prompt tokens
-Memory content: 3,000 tokens (detailed history)
-Knowledge files: 2,500 tokens
-Completion: 300 tokens
-Total: 5,950 tokens per message
+Base conversation - 150 prompt tokens
+Memory content - 3,000 tokens (detailed history)
+Knowledge files - 2,500 tokens
+Completion - 300 tokens
+Total - 5,950 tokens per message
 
 Hourly cost at $0.005/1k prompt tokens: $0.030
 ```
@@ -165,7 +165,7 @@ The difference between light and heavy memory configurations creates a 10x cost 
 
 Custom GPT Configuration Impact Analysis
 
-Configuration 1: Minimal Custom GPT
+Configuration 1 - Minimal Custom GPT
 
 ```python
 Minimal system prompt
@@ -174,17 +174,17 @@ system_prompt = """You are a helpful assistant."""
 No knowledge files
 No tools enabled
 
-Token cost per message: ~50 tokens
+Token cost per message - ~50 tokens
 Plus base conversation overhead
 ```
 
-Configuration 2: Full-Featured Custom GPT
+Configuration 2 - Full-Featured Custom GPT
 
 ```python
 Extended system prompt
 system_prompt = """
 You are an expert data engineer specializing in ETL pipelines.
-You understand: Apache Spark, Airflow, dbt, SQL optimization.
+You understand - Apache Spark, Airflow, dbt, SQL optimization.
 You follow company standards for error handling and logging.
 [... 8 additional paragraphs ...]
 """
@@ -194,9 +194,9 @@ Knowledge files attached:
 - sql_best_practices.md (800 tokens)
 - architecture_patterns.json (600 tokens)
 
-Tools enabled: 5 custom tools with full descriptions
+Tools enabled - 5 custom tools with full descriptions
 
-Token cost per message: ~4,000 tokens
+Token cost per message - ~4,000 tokens
 Plus base conversation overhead
 ```
 
@@ -204,7 +204,7 @@ The fully-featured Custom GPT consumes 80x more tokens than the minimal version.
 
 Optimization Strategies with Quantified Impact
 
-Strategy 1: System Prompt Minimization
+Strategy 1 - System Prompt Minimization
 
 Before (2,000 tokens):
 ```
@@ -214,12 +214,12 @@ You are an expert programmer with 20 years of experience in cloud architecture..
 
 After (200 tokens):
 ```
-Expert cloud architect. Prefer: AWS, Terraform, Go. Output: concise, production-ready code.
+Expert cloud architect. Prefer - AWS, Terraform, Go. Output - concise, production-ready code.
 ```
 
-Impact: Reduces per-message overhead by 90%. Hourly consumption drops from ~12,000 to ~1,200 tokens.
+Impact - Reduces per-message overhead by 90%. Hourly consumption drops from ~12,000 to ~1,200 tokens.
 
-Strategy 2: Knowledge File Chunking
+Strategy 2 - Knowledge File Chunking
 
 Instead of one 5,000-token knowledge file:
 
@@ -231,11 +231,11 @@ knowledge_files = {
     "troubleshooting_guide.md": 600    # Common issues only
 }
 
-Total: 2,600 tokens vs. 5,000 tokens previously
+Total - 2,600 tokens vs. 5,000 tokens previously
 48% reduction while maintaining coverage
 ```
 
-Strategy 3: Conditional Context Loading
+Strategy 3 - Conditional Context Loading
 
 ```python
 Only include memory if conversation explicitly requests it
@@ -253,7 +253,7 @@ Rate Limit Calculation Worksheet
 Use this framework to calculate your actual limits:
 
 ```
-Your Plus subscription allows: 40 GPT-4o messages/hour
+Your Plus subscription allows - 40 GPT-4o messages/hour
 
 Message breakdown:
 - Base tokens: 150
@@ -262,11 +262,11 @@ Message breakdown:
 - Knowledge files: [Z]
 - Average completion tokens: [W]
 
-Total tokens per message: 150 + X + Y + Z + W = [Total]
-Token budget per hour: 40 messages × [Total] tokens = [Budget]
+Total tokens per message - 150 + X + Y + Z + W = [Total]
+Token budget per hour - 40 messages × [Total] tokens = [Budget]
 
 At $0.005 per 1,000 prompt tokens:
-Hourly cost: ([Budget] / 1,000) × $0.005 = [Cost]
+Hourly cost - ([Budget] / 1,000) × $0.005 = [Cost]
 ```
 
 Pricing Impact Calculator

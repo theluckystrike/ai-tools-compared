@@ -23,7 +23,7 @@ Table of Contents
 
 - [Why AI-Assisted Generation Matters](#why-ai-assisted-generation-matters)
 - [Tools Tested](#tools-tested)
-- [Results: Code Quality and Completeness](#results-code-quality-and-completeness)
+- [Results - Code Quality and Completeness](#results-code-quality-and-completeness)
 - [Comparison Summary](#comparison-summary)
 - [Implementation Recommendations](#implementation-recommendations)
 - [Common Implementation Patterns](#common-implementation-patterns)
@@ -49,7 +49,7 @@ I evaluated four AI tools for generating membership and subscription management 
 
 Each tool was given the same prompt: "Generate a Node.js/Express backend with user authentication, role-based access control, subscription tiers (free, pro, enterprise), Stripe integration for payments, and RESTful endpoints for managing memberships."
 
-Results: Code Quality and Completeness
+Results - Code Quality and Completeness
 
 GitHub Copilot
 

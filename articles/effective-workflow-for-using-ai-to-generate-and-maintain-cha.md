@@ -39,7 +39,7 @@ This guide covers a practical workflow for using AI to generate and maintain cha
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
-- Audience: Will users understand this description?
+- Audience - Will users understand this description?
 
 3.
 - Mastering advanced features takes: 1-2 weeks of regular use.
@@ -57,7 +57,7 @@ Configure your team to use conventional commits with a simple format:
 [optional body]
 ```
 
-A commit like `feat(auth): add OAuth2 login support for Google` gives AI tools clear signals about what changed and in which area. The type prefix (`feat`, `fix`, `docs`, `refactor`) allows AI to categorize changes automatically.
+A commit like `feat(auth) - add OAuth2 login support for Google` gives AI tools clear signals about what changed and in which area. The type prefix (`feat`, `fix`, `docs`, `refactor`) allows AI to categorize changes automatically.
 
 Tools like Commitizen or husky can enforce this format through git hooks. Once your commit history follows a consistent pattern, AI can parse and transform this data into useful changelog entries.
 
@@ -85,11 +85,11 @@ Maintaining Changelog Quality
 
 AI excels at generating initial drafts, but human oversight remains essential for accuracy. Establish a review step where someone verifies:
 
-1. Accuracy: Does the description correctly represent what changed?
+1. Accuracy - Does the description correctly represent what changed?
 
-2. Audience: Will users understand this description?
+2. Audience - Will users understand this description?
 
-3. Completeness: Are any important changes missing?
+3. Completeness - Are any important changes missing?
 
 A practical pattern is using AI to generate a draft, then having a developer review and refine before merging. This hybrid approach captures the efficiency benefits of AI while maintaining the quality standards users expect.
 
@@ -158,7 +158,7 @@ Consider a team shipping a payment processing update. Using the workflow describ
 
 1. Commits follow conventional format: `fix(payments): resolve race condition in refund processing`, `feat(payments): add support for Apple Pay`
 
-2. AI generates: "Bug Fixes: Resolved an issue where refund requests could fail during high traffic. New Features: Added Apple Pay support for faster checkout."
+2. AI generates: "Bug Fixes - Resolved an issue where refund requests could fail during high traffic. New Features - Added Apple Pay support for faster checkout."
 
 3. Developer reviews, adjusts tone, adds context about which versions are affected
 
@@ -176,31 +176,31 @@ Tools and Integrations
 
 Several tools can reduce changelog friction:
 
-Conventional Commits + Commitizen: Enforces structure at commit time.
+Conventional Commits + Commitizen - Enforces structure at commit time.
 
-Git Hooks: Pre-commit checks ensure your team follows the format before pushing.
+Git Hooks - Pre-commit checks ensure your team follows the format before pushing.
 
-Release-It: Automates changelog generation and versioning.
+Release-It - Automates changelog generation and versioning.
 
-Lerna: For monorepos, manages changelogs across packages.
+Lerna - For monorepos, manages changelogs across packages.
 
-Semantic Release: Fully automated releases with AI-generated changelog entries.
+Semantic Release - Fully automated releases with AI-generated changelog entries.
 
-These tools chain together: structured commits → AI-generated draft → human review → published changelog.
+These tools chain together - structured commits → AI-generated draft → human review → published changelog.
 
 Addressing Common Pitfalls
 
 Many teams encounter issues when first automating changelog generation:
 
-Over-aggregation: AI sometimes combines related features into a single entry when they should remain separate. This happens when commits are vague or when multiple features affect the same code path. The fix: ensure your commit messages scope each feature clearly.
+Over-aggregation - AI sometimes combines related features into a single entry when they should remain separate. This happens when commits are vague or when multiple features affect the same code path. The fix: ensure your commit messages scope each feature clearly.
 
-Grouping problems: AI might categorize a refactor as a breaking change if it involved changing an internal API. Provide explicit context about which APIs are public vs. internal.
+Grouping problems - AI might categorize a refactor as a breaking change if it involved changing an internal API. Provide explicit context about which APIs are public vs. internal.
 
-Version context loss: When changelog entries don't mention which release fixed an issue, users cannot determine if they need to upgrade. Always include version markers or ask AI to include them.
+Version context loss - When changelog entries don't mention which release fixed an issue, users cannot determine if they need to upgrade. Always include version markers or ask AI to include them.
 
-Incomplete migration notes: For major version upgrades, changelog entries should link to migration guides. Ask AI to suggest migration documentation alongside breaking changes.
+Incomplete migration notes - For major version upgrades, changelog entries should link to migration guides. Ask AI to suggest migration documentation alongside breaking changes.
 
-Typos and grammatical errors: AI occasionally generates entries with syntax errors or awkward phrasing. Always include a spell-check step, ideally automated.
+Typos and grammatical errors - AI occasionally generates entries with syntax errors or awkward phrasing. Always include a spell-check step, ideally automated.
 
 Scaling Across Teams
 
@@ -217,15 +217,15 @@ Integration with Release Notes
 
 Changelogs and release notes serve different audiences. Changelogs target developers; release notes target end users. A single AI generation pass cannot satisfy both.
 
-Use a two-pass approach: first, generate a developer-focused changelog from commits. Then, have AI translate key entries into user-friendly language for release notes. This ensures consistency between internal and external documentation.
+Use a two-pass approach - first, generate a developer-focused changelog from commits. Then, have AI translate key entries into user-friendly language for release notes. This ensures consistency between internal and external documentation.
 
 ```bash
 Generate changelog from commits
 git log --pretty=format:"%s%n%b" v1.2.0..v1.3.0 > commits.txt
 
 Pass to Claude with two prompts
-Prompt 1: Generate technical changelog
-Prompt 2: Translate entries to user-facing release notes
+Prompt 1 - Generate technical changelog
+Prompt 2 - Translate entries to user-facing release notes
 ```
 
 Maintenance and Long-Term Viability
@@ -240,7 +240,7 @@ Changelogs drift over time. Entries become outdated, links break, and version nu
 AI can help with this audit process. Feed it your changelog and git history, then ask it to identify inconsistencies:
 
 ```python
-Audit script: Find inconsistencies
+Audit script - Find inconsistencies
 import subprocess
 import re
 

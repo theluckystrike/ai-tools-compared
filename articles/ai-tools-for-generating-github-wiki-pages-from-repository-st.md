@@ -28,7 +28,7 @@ Table of Contents
 - [Tool-Specific Integration Notes](#tool-specific-integration-notes)
 - [Best Practices for AI-Generated Documentation](#best-practices-for-ai-generated-documentation)
 - [Choosing the Right Tool](#choosing-the-right-tool)
-- [Advanced: Automating Wiki Generation in CI/CD](#advanced-automating-wiki-generation-in-cicd)
+- [Advanced - Automating Wiki Generation in CI/CD](#advanced-automating-wiki-generation-in-cicd)
 - [Script for Repository Analysis](#script-for-repository-analysis)
 - [Decision Framework for Wiki Generation Tools](#decision-framework-for-wiki-generation-tools)
 - [Real-World Examples](#real-world-examples)
@@ -54,7 +54,7 @@ Key Features:
 - Customizable documentation templates
 - Support for multiple programming languages
 
-Pricing: Free tier available; paid plans starting at $39/month
+Pricing - Free tier available; paid plans starting at $39/month
 
 Example Configuration:
 
@@ -85,14 +85,14 @@ Key Features:
 - Version control for documentation
 - Collaborative editing features
 
-Pricing: Free tier available; paid plans starting at $7.50/month
+Pricing - Free tier available; paid plans starting at $7.50/month
 
 Docusaurus with AI Plugins
 
 Docusaurus, while not originally an AI tool, now has community plugins that use AI to generate documentation from code. You can export Docusaurus-generated docs to GitHub Wiki format.
 
 Key Features:
-- Extensive plugin ecosystem
+- Extensive plugin environment
 - AI-powered content generation through integrations
 - Blog support alongside documentation
 - Versioning built-in
@@ -131,7 +131,7 @@ Key Features:
 - Multiple output formats including GitHub Wiki
 - CLI for CI/CD integration
 
-Pricing: Free for open source; paid plans available
+Pricing - Free for open source; paid plans available
 
 GitHub Copilot for Docs
 
@@ -141,9 +141,9 @@ Key Features:
 - Inline documentation suggestions
 - Comment generation
 - README file assistance
-- Integration with GitHub ecosystem
+- Integration with GitHub environment
 
-Pricing: Copilot Individual $10/month; Copilot Business $19/user/month
+Pricing - Copilot Individual $10/month; Copilot Business $19/user/month
 
 Comparison Matrix
 
@@ -159,7 +159,7 @@ Practical Implementation Example
 
 Here's how to generate GitHub Wiki pages from your repository using a combination of tools:
 
-Step 1: Analyze Your Repository Structure
+Step 1 - Analyze Your Repository Structure
 
 ```bash
 List repository contents
@@ -169,11 +169,11 @@ Check existing documentation
 ls -la README* docs/ wiki/
 ```
 
-Step 2: Choose Your Tool
+Step 2 - Choose Your Tool
 
 For most projects, Mintlify or Docugen provide the best balance of automation and output quality. Both integrate directly with GitHub and produce Markdown output suitable for Wiki pages.
 
-Step 3: Configure the Generator
+Step 3 - Configure the Generator
 
 Create a configuration file that matches your repository structure:
 
@@ -194,7 +194,7 @@ Create a configuration file that matches your repository structure:
 }
 ```
 
-Step 4: Generate and Push to Wiki
+Step 4 - Generate and Push to Wiki
 
 ```bash
 Generate documentation
@@ -266,9 +266,9 @@ Handling the wiki repository access: GitHub wiki repos live at `https://github.c
 
 Tool-Specific Integration Notes
 
-Mintlify + GitHub Sync: Mintlify's GitHub integration uses a webhook that triggers on push events. When set up, it automatically re-generates docs and publishes them to your configured destination. For teams already using Mintlify for public API docs, extending it to internal wiki generation is straightforward.
+Mintlify + GitHub Sync - Mintlify's GitHub integration uses a webhook that triggers on push events. When set up, it automatically re-generates docs and publishes them to your configured destination. For teams already using Mintlify for public API docs, extending it to internal wiki generation is straightforward.
 
-Docugen CLI: Docugen runs as a CLI command and integrates naturally with any CI system. A typical invocation:
+Docugen CLI - Docugen runs as a CLI command and integrates naturally with any CI system. A typical invocation:
 
 ```bash
 docugen analyze ./src --output ./wiki-output --format github-wiki --include-private false
@@ -276,19 +276,19 @@ docugen analyze ./src --output ./wiki-output --format github-wiki --include-priv
 
 The `--format github-wiki` flag produces a `Home.md` plus individual pages per module, matching GitHub's expected wiki structure exactly.
 
-GitBook GitHub Sync: GitBook's two-way sync treats your GitHub repository as the source of truth. Changes pushed to the `docs/` directory automatically appear in GitBook, and GitBook edits create commits back to the repo. For teams that want non-engineers to edit documentation through a visual interface while keeping everything in Git, this bidirectional sync is the strongest feature.
+GitBook GitHub Sync - GitBook's two-way sync treats your GitHub repository as the source of truth. Changes pushed to the `docs/` directory automatically appear in GitBook, and GitBook edits create commits back to the repo. For teams that want non-engineers to edit documentation through a visual interface while keeping everything in Git, this bidirectional sync is the strongest feature.
 
 Best Practices for AI-Generated Documentation
 
-1. Review AI Output: AI tools generate accurate but sometimes generic documentation. Always review and enhance the output with project-specific context.
+1. Review AI Output - AI tools generate accurate but sometimes generic documentation. Always review and enhance the output with project-specific context.
 
-2. Maintain a Style Guide: Establish documentation conventions early. AI tools can learn from examples, producing more consistent results.
+2. Maintain a Style Guide - Establish documentation conventions early. AI tools can learn from examples, producing more consistent results.
 
-3. Use CI/CD Integration: Automate documentation updates on each push to main branch to keep wiki pages current.
+3. Use CI/CD Integration - Automate documentation updates on each push to main branch to keep wiki pages current.
 
-4. Supplement with Manuals: AI-generated docs cover structure well. Add manual sections for architecture decisions, contributing guidelines, and usage examples.
+4. Supplement with Manuals - AI-generated docs cover structure well. Add manual sections for architecture decisions, contributing guidelines, and usage examples.
 
-5. Version Control Your Wiki: Treat wiki pages like code. Use branches for major changes and review pull requests before merging.
+5. Version Control Your Wiki - Treat wiki pages like code. Use branches for major changes and review pull requests before merging.
 
 Choosing the Right Tool
 
@@ -324,7 +324,7 @@ What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-Advanced: Automating Wiki Generation in CI/CD
+Advanced - Automating Wiki Generation in CI/CD
 
 Set up continuous wiki generation triggered by documentation changes:
 
@@ -479,7 +479,7 @@ Practical decision criteria:
 
 Real-World Examples
 
-Example 1: Node.js library with multiple modules
+Example 1 - Node.js library with multiple modules
 ```bash
 Generate docs for each module separately
 for module in src/*/; do
@@ -487,7 +487,7 @@ for module in src/*/; do
 done
 ```
 
-Example 2: Python monorepo
+Example 2 - Python monorepo
 ```bash
 Generate using Sphinx with AI enhancement
 sphinx-quickstart -q -p "Project Docs" .
@@ -495,7 +495,7 @@ python scripts/enhance_sphinx_with_ai.py
 make html
 ```
 
-Example 3: Go microservices
+Example 3 - Go microservices
 ```bash
 Generate from each service's README
 for service in services/*/; do

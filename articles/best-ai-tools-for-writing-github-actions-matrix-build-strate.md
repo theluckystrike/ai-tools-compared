@@ -33,7 +33,7 @@ Why Matrix Build Strategies Matter
 
 Matrix builds transform a single workflow into parallel execution across multiple dimensions. Instead of writing separate jobs for each Node.js version, operating system, or dependency configuration, you define a matrix that generates all combinations automatically.
 
-Consider a typical scenario: testing a Node.js application across three Node versions (16, 18, 20), on two operating systems (ubuntu-latest, windows-latest), and with both SQLite and PostgreSQL databases. Without matrix, you would write twelve separate job definitions. With matrix strategy, a single job declaration expands into all twelve combinations.
+Consider a typical scenario - testing a Node.js application across three Node versions (16, 18, 20), on two operating systems (ubuntu-latest, windows-latest), and with both SQLite and PostgreSQL databases. Without matrix, you would write twelve separate job definitions. With matrix strategy, a single job declaration expands into all twelve combinations.
 
 ```yaml
 jobs:
@@ -61,7 +61,7 @@ Claude (Anthropic)
 
 Claude excels at understanding complex configuration requirements and generating precise YAML structures. When you describe your testing requirements, Claude translates them into properly formatted matrix definitions with appropriate include/exclude rules.
 
-For example, you might say: "I need to test on Node 18 and 20, but skip Windows with Node 20 due to known compatibility issues." Claude generates:
+For example, you might say - "I need to test on Node 18 and 20, but skip Windows with Node 20 due to known compatibility issues." Claude generates:
 
 ```yaml
 strategy:
@@ -118,7 +118,7 @@ Tool Comparison Summary
 
 Practical Examples
 
-Example 1: Optimizing a JavaScript Test Matrix
+Example 1 - Optimizing a JavaScript Test Matrix
 
 Suppose you have a legacy matrix that's become slow:
 
@@ -144,7 +144,7 @@ jobs:
 
 The tool explains that ubuntu-latest always points to the current LTS, making specific version pinning unnecessary for most use cases.
 
-Example 2: Handling Database-Specific Tests
+Example 2 - Handling Database-Specific Tests
 
 When testing against multiple database backends, AI tools help structure the matrix efficiently:
 
@@ -163,7 +163,7 @@ jobs:
 
 This creates separate jobs for each database while allowing PostgreSQL to test multiple versions without affecting other database configurations.
 
-Example 3: Conditional Matrix Expansion
+Example 3 - Conditional Matrix Expansion
 
 AI tools help implement complex conditional logic within matrix definitions:
 
@@ -185,7 +185,7 @@ jobs:
     if: matrix.coverage == true || matrix.os != 'windows-latest'
 ```
 
-Example 4: Dynamic Matrix from a JSON File
+Example 4 - Dynamic Matrix from a JSON File
 
 For large or frequently changing matrices, AI tools can help you generate the matrix definition dynamically from a JSON file using a preceding job:
 
@@ -292,7 +292,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -304,7 +304,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

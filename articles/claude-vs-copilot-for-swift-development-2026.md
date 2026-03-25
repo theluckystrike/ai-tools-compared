@@ -19,13 +19,13 @@ Claude vs Copilot for Swift Development 2026
 
 Swift's type system, structured concurrency model, and SwiftUI's declarative syntax are all demanding targets for AI code completion. This comparison covers day-to-day development workflows across modern Swift patterns.
 
-Test 1: Async/Await Networking
+Test 1 - Async/Await Networking
 
 Prompt:
 ```text
 Write a Swift async function that fetches a list of User objects from https://api.example.com/users.
 Decode JSON, handle URLSession errors and HTTP status codes separately, and use structured concurrency.
-User has id: Int, name: String, email: String.
+User has id - Int, name: String, email: String.
 ```
 
 Claude Output
@@ -90,7 +90,7 @@ Copilot generates similar code but tends to use a single `catch` block with `Str
 
 Claude. better error type separation, more idiomatic Swift patterns.
 
-Test 2: SwiftUI View with Observable
+Test 2 - SwiftUI View with Observable
 
 Prompt:
 ```text
@@ -197,14 +197,14 @@ Copilot still defaults to `@StateObject` and `ObservableObject` in many cases, a
 
 Claude. significantly more up-to-date with Swift 5.9+ APIs.
 
-Test 3: Swift Package Manager Configuration
+Test 3 - Swift Package Manager Configuration
 
 Prompt:
 ```text
 Write a Package.swift for a library called SwiftNetworking.
-Targets: library (SwiftNetworking), test target (SwiftNetworkingTests).
-Dependencies: swift-log from Apple, swift-argument-parser for a CLI example target.
-Minimum Swift: 5.9. Supports macOS 13+, iOS 16+.
+Targets - library (SwiftNetworking), test target (SwiftNetworkingTests).
+Dependencies - swift-log from Apple, swift-argument-parser for a CLI example target.
+Minimum Swift - 5.9. Supports macOS 13+, iOS 16+.
 ```
 
 Claude Output
@@ -264,7 +264,7 @@ let package = Package(
 
 Both Claude and Copilot handle SPM well. Claude uses `.executableTarget` (correct for Swift 5.4+) while older Copilot suggestions sometimes use `.target` with `@main`. Minor difference in practice.
 
-Test 4: Actor Concurrency
+Test 4 - Actor Concurrency
 
 Prompt:
 ```text
@@ -319,7 +319,7 @@ actor LRUCache<Value: Sendable> {
 
 The actor model here is significant: callers must use `await` for every access, which guarantees thread safety at the type system level rather than through manual locking. Copilot's `NSLock` version works but forces you to remember to acquire/release the lock correctly everywhere.
 
-Test 5: Combine Publisher Chain
+Test 5 - Combine Publisher Chain
 
 Prompt:
 ```text
@@ -378,7 +378,7 @@ class SearchViewModel: ObservableObject {
 
 Claude's pipeline correctly uses `.flatMap` (not `.switchToLatest` + `.map`, which requires extra type gymnastics) and wraps the error in `.catch { _ in Just([]) }` to produce a `Never`-failing publisher that composes cleanly with `@Published`. Copilot tends to suggest `.switchToLatest()` which requires explicit type annotations that beginners often miss.
 
-Test 6: XCTest with async/await
+Test 6 - XCTest with async/await
 
 Prompt:
 ```text

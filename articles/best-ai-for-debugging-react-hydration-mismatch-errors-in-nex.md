@@ -26,7 +26,7 @@ Table of Contents
 - [How AI Assistants Help](#how-ai-assistants-help)
 - [AI Tool Comparison for Hydration Debugging](#ai-tool-comparison-for-hydration-debugging)
 - [Practical Debugging Workflow](#practical-debugging-workflow)
-- [Advanced: Debugging Third-Party Library Hydration Issues](#advanced-debugging-third-party-library-hydration-issues)
+- [Advanced - Debugging Third-Party Library Hydration Issues](#advanced-debugging-third-party-library-hydration-issues)
 - [Using suppressHydrationWarning Correctly](#using-suppresshydrationwarning-correctly)
 - [Prompting Strategy for Hydration Debugging](#prompting-strategy-for-hydration-debugging)
 - [Choosing Your AI Tool](#choosing-your-ai-tool)
@@ -225,7 +225,7 @@ function UserGreeting({ user }) {
 }
 ```
 
-Advanced: Debugging Third-Party Library Hydration Issues
+Advanced - Debugging Third-Party Library Hydration Issues
 
 Some of the hardest hydration bugs originate in third-party libraries that access browser globals on import. A common culprit is charting libraries, map libraries, and rich text editors. The fix is dynamic import with `ssr: false`:
 
@@ -294,7 +294,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -306,7 +306,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

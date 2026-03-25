@@ -23,7 +23,7 @@ Table of Contents
 - [What Gemini Advanced Does NOT Store in Your Google One Quota](#what-gemini-advanced-does-not-store-in-your-google-one-quota)
 - [What Actually Uses Your Google One Storage](#what-actually-uses-your-google-one-storage)
 - [Practical Storage Management for Gemini Users](#practical-storage-management-for-gemini-users)
-- [The 2TB AI Premium Plan: Is It Enough?](#the-2tb-ai-premium-plan-is-it-enough)
+- [The 2TB AI Premium Plan - Is It Enough?](#the-2tb-ai-premium-plan-is-it-enough)
 - [Understanding Data Retention Policies](#understanding-data-retention-policies)
 - [Practical Storage Audit for Gemini Users](#practical-storage-audit-for-gemini-users)
 - [Gemini Advanced vs Other AI Plans](#gemini-advanced-vs-other-ai-plans)
@@ -86,7 +86,7 @@ When you ask Gemini to analyze a Google Sheet
 The file remains in your Drive (counting toward quota)
 Gemini processes the data temporarily without creating a copy
 
-Scenario: Analyzing a 500MB CSV in Google Drive
+Scenario - Analyzing a 500MB CSV in Google Drive
 - Original file: 500MB in Drive (counts toward quota)
 - Gemini processing: Temporary, not stored separately
 - If you export analysis: New file in Drive (counts toward quota)
@@ -114,7 +114,7 @@ Regularly check your Google One storage through the web interface or mobile app.
 
 ```bash
 Check storage via Google One web interface
-Navigate to: one.google.com/settings/storage
+Navigate to - one.google.com/settings/storage
 ```
 
 Watch for these common storage consumers:
@@ -144,17 +144,17 @@ For heavy Gemini users with storage constraints:
 ```python
 A developer's workflow to minimize storage impact
 
-DON'T: Save every AI-generated code snippet to Drive
+DON'T - Save every AI-generated code snippet to Drive
 DO: Use local storage or code repositories instead
 
-DON'T: Keep all conversation exports
+DON'T - Keep all conversation exports
 DO: Export only final versions, delete intermediates
 
-DON'T: Use Drive for AI-generated image assets if you have alternatives
+DON'T - Use Drive for AI-generated image assets if you have alternatives
 DO: Use dedicated CDNs or local storage for generated assets
 ```
 
-The 2TB AI Premium Plan: Is It Enough?
+The 2TB AI Premium Plan - Is It Enough?
 
 The Google One AI Premium plan provides 2TB of storage, which is substantial for most users. Here's how it breaks down for power users:
 
@@ -193,7 +193,7 @@ Opting out of data retention:
 
 ```
 Settings → Gemini → Data & privacy
-Toggle: "Improve Gemini with activity"
+Toggle - "Improve Gemini with activity"
 Toggle OFF to prevent model improvement training
 ```
 
@@ -228,8 +228,8 @@ def audit_google_one_storage():
     available = int(total_quota) - int(used)
 
     print(f"Total quota: {int(total_quota) / (10243):.2f} GB")
-    print(f"Used: {int(used) / (10243):.2f} GB")
-    print(f"Available: {int(available) / (10243):.2f} GB")
+    print(f"Used - {int(used) / (10243):.2f} GB")
+    print(f"Available - {int(available) / (10243):.2f} GB")
 
     # Find largest files
     query = "trashed=false"
@@ -268,12 +268,12 @@ Gemini Advanced is the only option bundling substantial storage with advanced AI
 
 Maximizing Gemini Advanced Value
 
-Strategy 1: Use Gemini for analysis, not generation
+Strategy 1 - Use Gemini for analysis, not generation
 
 Instead of generating large files:
 
 ```python
-DON'T: Generate and save to Drive
+DON'T - Generate and save to Drive
 response = gemini.generate("Create a 50-page report on...")
 This creates a large file consuming storage
 
@@ -283,7 +283,7 @@ gemini_analysis = gemini.analyze(files_in_drive)
 Analysis stays in conversation history (minimal storage impact)
 ```
 
-Strategy 2: Delete generated content strategically
+Strategy 2 - Delete generated content strategically
 
 ```python
 Workflow for managing AI-generated files
@@ -304,7 +304,7 @@ def manage_gemini_generated_files():
     # Keep only: Final, curated versions
 ```
 
-Strategy 3: Use Drive for storage, Gemini for analysis
+Strategy 3 - Use Drive for storage, Gemini for analysis
 
 Most efficient approach:
 
@@ -325,7 +325,7 @@ Integration with Google Workspace for Teams
 For teams sharing Google One AI Premium:
 
 ```
-Team scenario: 5 developers, Google One AI Premium
+Team scenario - 5 developers, Google One AI Premium
 - Each dev gets Gemini Advanced access
 - Each dev gets 2TB individual storage... NO
   (2TB is shared across team)

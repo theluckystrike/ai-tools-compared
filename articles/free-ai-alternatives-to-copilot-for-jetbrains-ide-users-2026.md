@@ -42,13 +42,13 @@ Tabnine Free
 Tabnine offers a generous free tier that works directly within JetBrains IDEs through its plugin. The tool provides context-aware code completions based on your entire codebase, not just the current file.
 
 
-Installation: Search for "Tabnine" in JetBrains Marketplace and install the official plugin. After installation, sign up for a free account to activate AI features.
+Installation - Search for "Tabnine" in JetBrains Marketplace and install the official plugin. After installation, sign up for a free account to activate AI features.
 
 
-What you get: Tabnine Free provides single-line and multi-line completions. It learns from your coding patterns and offers suggestions that match your project's style. The free version uses smaller, faster models optimized for local execution, meaning your code stays on your machine.
+What you get - Tabnine Free provides single-line and multi-line completions. It learns from your coding patterns and offers suggestions that match your project's style. The free version uses smaller, faster models optimized for local execution, meaning your code stays on your machine.
 
 
-Limitations: The free tier limits context window size compared to paid plans. You won't get the full codebase awareness that paid versions offer, and some advanced features like chat-based interaction require upgrading.
+Limitations - The free tier limits context window size compared to paid plans. You won't get the full codebase awareness that paid versions offer, and some advanced features like chat-based interaction require upgrading.
 
 
 ```python
@@ -69,13 +69,13 @@ Codeium
 Codeium provides a free tier with extensive IDE support, including all major JetBrains IDEs. It offers both inline completions and a chat interface for interacting with AI.
 
 
-Installation: Download the Codeium plugin from JetBrains Marketplace. Create a free account and log in through the plugin settings.
+Installation - Download the Codeium plugin from JetBrains Marketplace. Create a free account and log in through the plugin settings.
 
 
-What you get: Codeium's free tier includes unlimited completions and chats with access to their AI models. The tool excels at understanding project context and can generate entire functions from comments or natural language descriptions. It supports over 70 programming languages and works well with frameworks like React, Django, and Spring Boot.
+What you get - Codeium's free tier includes unlimited completions and chats with access to their AI models. The tool excels at understanding project context and can generate entire functions from comments or natural language descriptions. It supports over 70 programming languages and works well with frameworks like React, Django, and Spring Boot.
 
 
-Practical example: In a Java Spring Boot project, you can write a comment describing what you need:
+Practical example - In a Java Spring Boot project, you can write a comment describing what you need:
 
 
 ```java
@@ -136,16 +136,16 @@ Continue (VS Code-centric but works)
 While Continue is primarily designed for VS Code, it can work with JetBrains through CLI integration. The tool uses local models or connects to remote endpoints, giving you flexibility in how AI processes your code.
 
 
-Setup: Install the Continue CLI and configure it to work alongside your JetBrains IDE. You can run Continue as a local server and interact with it through the terminal or by integrating with JetBrains' terminal features.
+Setup - Install the Continue CLI and configure it to work alongside your JetBrains IDE. You can run Continue as a local server and interact with it through the terminal or by integrating with JetBrains' terminal features.
 
 
-What you get: Continue supports various AI models including Llama, Claude, and GPT. You can run these models locally using Ollama, keeping your code completely private. The free aspect comes from using open-source models that run on your own hardware.
+What you get - Continue supports various AI models including Llama, Claude, and GPT. You can run these models locally using Ollama, keeping your code completely private. The free aspect comes from using open-source models that run on your own hardware.
 
 
 ```bash
 Running Continue with Ollama
-First, install Ollama: brew install ollama
-Then pull a coding model: ollama pull codellama
+First, install Ollama - brew install ollama
+Then pull a coding model - ollama pull codellama
 
 Configure Continue to use local Ollama
 In config.py:
@@ -167,10 +167,10 @@ Blackbox AI
 Blackbox AI offers a free tier that works in JetBrains IDEs through its plugin. It focuses on code search and generation, with access to a knowledge base of open-source code.
 
 
-Installation: Search for "Blackbox" in JetBrains Marketplace and install the plugin. Free users get daily credits for code generation and explanation.
+Installation - Search for "Blackbox" in JetBrains Marketplace and install the plugin. Free users get daily credits for code generation and explanation.
 
 
-What you get: Blackbox excels at finding code patterns from real-world projects. You can ask it to explain code sections, generate implementations based on descriptions, or find similar solutions in open-source repositories. The chat interface makes it easy to iterate on code together.
+What you get - Blackbox excels at finding code patterns from real-world projects. You can ask it to explain code sections, generate implementations based on descriptions, or find similar solutions in open-source repositories. The chat interface makes it easy to iterate on code together.
 
 
 Comparing the Options
@@ -194,16 +194,16 @@ Comparing the Options
 Recommendations by Use Case
 
 
-Students and beginners: Codeium offers the best balance of features and ease of use. The chat interface helps you learn by explaining code and generating examples tailored to your project.
+Students and beginners - Codeium offers the best balance of features and ease of use. The chat interface helps you learn by explaining code and generating examples tailored to your project.
 
 
-Privacy-conscious developers: Continue with Ollama runs entirely locally. Your code never leaves your machine, and you can use various open-source models depending on your hardware.
+Privacy-conscious developers - Continue with Ollama runs entirely locally. Your code never leaves your machine, and you can use various open-source models depending on your hardware.
 
 
-Quick completions: Tabnine provides the fastest inline suggestions with minimal latency. It works well when you want unobtrusive assistance that doesn't interrupt your flow.
+Quick completions - Tabnine provides the fastest inline suggestions with minimal latency. It works well when you want unobtrusive assistance that doesn't interrupt your flow.
 
 
-Learning from codebases: Blackbox's strength lies in finding how other projects solve similar problems. Use it when you want to discover patterns from real-world open-source implementations.
+Learning from codebases - Blackbox's strength lies in finding how other projects solve similar problems. Use it when you want to discover patterns from real-world open-source implementations.
 
 
 Setting Up Your Free AI Assistant

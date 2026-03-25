@@ -24,7 +24,7 @@ Table of Contents
 - [GitHub Copilot for Workflow Generation](#github-copilot-for-workflow-generation)
 - [Claude and GPT-4 for Complex Workflows](#claude-and-gpt-4-for-complex-workflows)
 - [Specialized Workflow Generation Tools](#specialized-workflow-generation-tools)
-- [Practical Example: From Description to Working Workflow](#practical-example-from-description-to-working-workflow)
+- [Practical Example - From Description to Working Workflow](#practical-example-from-description-to-working-workflow)
 - [Best Practices for AI-Generated Workflows](#best-practices-for-ai-generated-workflows)
 - [Selecting the Right Tool](#selecting-the-right-tool)
 
@@ -64,9 +64,9 @@ The strength of Copilot is its contextual understanding. It knows which actions 
 
 Claude and GPT-4 for Complex Workflows
 
-Large language models like Claude and GPT-4 offer more flexibility for complex workflow requirements. These models excel when your workflow involves conditional logic, multiple environments, or integration with services beyond the standard GitHub ecosystem.
+Large language models like Claude and GPT-4 offer more flexibility for complex workflow requirements. These models excel when your workflow involves conditional logic, multiple environments, or integration with services beyond the standard GitHub environment.
 
-Consider this scenario: you need a workflow that runs different tests based on which files changed. A model can generate this conditional workflow:
+Consider this scenario - you need a workflow that runs different tests based on which files changed. A model can generate this conditional workflow:
 
 ```
 name: Conditional Tests
@@ -112,7 +112,7 @@ Actionize and similar tools let you describe your CI/CD needs in natural languag
 
 These specialized tools shine when you need specific templates. If you want a workflow that deploys to Kubernetes, publishes a package to npm, or runs security scans, these tools provide curated templates that a general AI might not generate optimally on the first try.
 
-Practical Example: From Description to Working Workflow
+Practical Example - From Description to Working Workflow
 
 Here is a real-world example of how the AI generation process works. Suppose you need a workflow with these requirements:
 
@@ -208,9 +208,9 @@ AI-generated workflows require human review before production use. Verify the fo
 
 - Secrets management: Ensure you understand which secrets the workflow requires and configure them in your repository settings.
 
-- Permissions: Review the requested permissions, especially for workflows that push code or deploy to external services.
+- Permissions - Review the requested permissions, especially for workflows that push code or deploy to external services.
 
-- Timeouts: Default timeouts may not suit your needs. Long-running test suites may require explicit timeout settings.
+- Timeouts - Default timeouts may not suit your needs. Long-running test suites may require explicit timeout settings.
 
 Selecting the Right Tool
 

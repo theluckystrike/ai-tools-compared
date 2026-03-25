@@ -21,12 +21,12 @@ Table of Contents
 
 - [Why AI Tools Excel at Query Optimization](#why-ai-tools-excel-at-query-optimization)
 - [Tool Comparison for Database Optimization](#tool-comparison-for-database-optimization)
-- [Step 1: Capture Your Query Execution Plans](#step-1-capture-your-query-execution-plans)
-- [Step 2: Analyze with Claude 3.5 Sonnet](#step-2-analyze-with-claude-35-sonnet)
-- [Step 3: Index Recommendations with Analysis](#step-3-index-recommendations-with-analysis)
-- [Step 4: Automate Detection with Monitoring](#step-4-automate-detection-with-monitoring)
-- [Real-World Example: N+1 Query Problem](#real-world-example-n1-query-problem)
-- [Step 5: Query Refactoring Patterns](#step-5-query-refactoring-patterns)
+- [Step 1 - Capture Your Query Execution Plans](#step-1-capture-your-query-execution-plans)
+- [Step 2 - Analyze with Claude 3.5 Sonnet](#step-2-analyze-with-claude-35-sonnet)
+- [Step 3 - Index Recommendations with Analysis](#step-3-index-recommendations-with-analysis)
+- [Step 4 - Automate Detection with Monitoring](#step-4-automate-detection-with-monitoring)
+- [Real-World Example - N+1 Query Problem](#real-world-example-n1-query-problem)
+- [Step 5 - Query Refactoring Patterns](#step-5-query-refactoring-patterns)
 - [Benchmarking Your Improvements](#benchmarking-your-improvements)
 - [Common Pitfalls with AI Database Advice](#common-pitfalls-with-ai-database-advice)
 - [Recommended Workflow](#recommended-workflow)
@@ -55,7 +55,7 @@ Tool Comparison for Database Optimization
 
 Use Claude 3.5 Sonnet for critical query analysis (you can paste entire execution plans), ChatGPT-4 for quick suggestions, and Code Llama for internal team patterns.
 
-Step 1: Capture Your Query Execution Plans
+Step 1 - Capture Your Query Execution Plans
 
 The most valuable input to AI tools is your actual execution plan. Here's how to extract them:
 
@@ -103,7 +103,7 @@ db.orders.aggregate([
 ]).explain("executionStats")
 ```
 
-Step 2: Analyze with Claude 3.5 Sonnet
+Step 2 - Analyze with Claude 3.5 Sonnet
 
 Paste your execution plan directly into Claude with context:
 
@@ -146,7 +146,7 @@ GROUP BY o.order_id, c.customer_name;
 This pushes the date filter down before joins, reducing rows processed.
 ```
 
-Step 3: Index Recommendations with Analysis
+Step 3 - Index Recommendations with Analysis
 
 Claude and ChatGPT can analyze your existing indexes and recommend improvements:
 
@@ -167,7 +167,7 @@ Paste this to Claude with the question:
 "Which of these indexes are unused and safe to drop?
 What new indexes would improve my common queries?"
 
-Step 4: Automate Detection with Monitoring
+Step 4 - Automate Detection with Monitoring
 
 Use AI to generate monitoring queries that flag slow queries automatically:
 
@@ -197,7 +197,7 @@ mysqldumpslow -s c -t 10 /var/log/mysql/slow-query.log | \
   xargs -I {} echo "Query: {}. How can I optimize this?"
 ```
 
-Real-World Example: N+1 Query Problem
+Real-World Example - N+1 Query Problem
 
 Original problem (slow):
 ```python
@@ -208,12 +208,12 @@ for order in Order.objects.filter(created_at__gte=thirty_days_ago):
         print(item.product.name)
 ```
 
-Ask Claude: "My Django code runs 100,000 queries for 1000 orders. Fix it."
+Ask Claude - "My Django code runs 100,000 queries for 1000 orders. Fix it."
 
 Claude response:
 
 ```python
-Optimized: Use select_related and prefetch_related
+Optimized - Use select_related and prefetch_related
 orders = Order.objects.filter(
     created_at__gte=thirty_days_ago
 ).select_related('customer').prefetch_related('items__product')
@@ -224,7 +224,7 @@ for order in orders:
         print(item.product.name)  # No extra query
 ```
 
-Step 5: Query Refactoring Patterns
+Step 5 - Query Refactoring Patterns
 
 AI tools excel at suggesting query rewrites. Common patterns:
 
@@ -277,7 +277,7 @@ optimized_time = benchmark_query(engine, "optimized", optimized_sql)
 
 improvement = ((original_time - optimized_time) / original_time) * 100
 print(f"Performance improvement: {improvement:.1f}%")
-print(f"Original: {original_time:.2f}s → Optimized: {optimized_time:.2f}s")
+print(f"Original - {original_time:.2f}s → Optimized - {optimized_time:.2f}s")
 ```
 
 Common Pitfalls with AI Database Advice

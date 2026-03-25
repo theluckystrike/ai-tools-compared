@@ -21,12 +21,12 @@ Table of Contents
 
 - [Understanding Provider Version Conflicts in Terraform](#understanding-provider-version-conflicts-in-terraform)
 - [How AI Assistants Parse Terraform Error Messages](#how-ai-assistants-parse-terraform-error-messages)
-- [Practical Example: Resolving an AWS Provider Version Conflict](#practical-example-resolving-an-aws-provider-version-conflict)
+- [Practical Example - Resolving an AWS Provider Version Conflict](#practical-example-resolving-an-aws-provider-version-conflict)
 - [Handling Multiple Provider Conflicts](#handling-multiple-provider-conflicts)
 - [Interpreting State Drift and Version Mismatches](#interpreting-state-drift-and-version-mismatches)
 - [Best Practices for Using AI with Terraform Errors](#best-practices-for-using-ai-with-terraform-errors)
 - [Building Version-Aware Terraform Workflows](#building-version-aware-terraform-workflows)
-- [Real Deployment Incident: AWS Provider Version Jump](#real-deployment-incident-aws-provider-version-jump)
+- [Real Deployment Incident - AWS Provider Version Jump](#real-deployment-incident-aws-provider-version-jump)
 - [Provider Migration Strategies](#provider-migration-strategies)
 - [Handling State Drift During Provider Updates](#handling-state-drift-during-provider-updates)
 - [Cross-Provider Compatibility Matrix](#cross-provider-compatibility-matrix)
@@ -56,12 +56,12 @@ The process works by feeding the complete error message, your current provider v
 
 For instance, when encountering an error about a deprecated attribute, the AI can reference the exact provider version where the deprecation occurred and provide the migration path. This saves significant time compared to manually searching through provider documentation.
 
-Practical Example: Resolving an AWS Provider Version Conflict
+Practical Example - Resolving an AWS Provider Version Conflict
 
 Consider a Terraform configuration that previously worked but fails after running `terraform init` or `terraform plan`. The error message might appear as:
 
 ```
-Error: Unsupported attribute
+Error - Unsupported attribute
 
    on main.tf line 25, in resource "aws_instance" "web":
    25:     vpc_security_group_ids = aws_security_group.web.id
@@ -146,12 +146,12 @@ When you need to upgrade providers, do so incrementally rather than jumping mult
 
 AI tools for interpreting Terraform plan errors with provider version conflicts represent a significant productivity improvement for infrastructure teams. By providing immediate context around cryptic error messages and suggesting concrete fixes, these tools reduce the time spent on debugging while helping developers understand the underlying causes of provider incompatibilities.
 
-Real Deployment Incident: AWS Provider Version Jump
+Real Deployment Incident - AWS Provider Version Jump
 
-Consider a real scenario: a team running AWS provider 4.67 suddenly encounters critical errors after accidentally upgrading to 5.0. The errors appear cryptic:
+Consider a real scenario - a team running AWS provider 4.67 suddenly encounters critical errors after accidentally upgrading to 5.0. The errors appear cryptic:
 
 ```
-Error: Error in function call: error retrieving Availability Zones
+Error - Error in function call: error retrieving Availability Zones
    on main.tf line 12, in data "aws_availability_zones" "available":
    12:   data "aws_availability_zones" "available" {
 
@@ -188,7 +188,7 @@ Moving between major provider versions requires careful planning. AI tools help 
 When planning migration from AWS provider 4.x to 5.x, create a migration document:
 
 ```hcl
-Migration guide: AWS Provider 4.x → 5.x
+Migration guide - AWS Provider 4.x → 5.x
 
 1. Auto-scaling groups now use mixed_instances_policy
 resource "aws_autoscaling_group" "app" {
@@ -307,7 +307,7 @@ When errors span multiple providers, understanding the root cause requires analy
 Kubernetes provider failing due to AWS authentication changes:
 
 ```
-Error: Unable to connect to Kubernetes cluster
+Error - Unable to connect to Kubernetes cluster
 
  The AWS provider role doesn't have permission to assume the EKS role
  Error: AccessDenied on cross-account assumption
@@ -343,14 +343,14 @@ Maintaining internal documentation of provider issues helps teams avoid repeated
 Template for provider issue tracking:
 
 ```markdown
-Provider Issue: AWS 5.0 - autoscaling_group Changes
+Provider Issue - AWS 5.0 - autoscaling_group Changes
 
-Date Encountered: 2026-03-15
-Provider Version: aws 5.0.0
-Terraform Version: 1.5.0
+Date Encountered - 2026-03-15
+Provider Version - aws 5.0.0
+Terraform Version - 1.5.0
 
 Symptoms
-Error: Error in function call: error retrieving Availability Zones
+Error - Error in function call: error retrieving Availability Zones
 
 Root Cause
 AWS provider 5.0 changed filter syntax for data sources

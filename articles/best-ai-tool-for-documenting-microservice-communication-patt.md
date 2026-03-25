@@ -201,7 +201,7 @@ Modern microservice architectures can quickly become difficult to understand as 
 
 - AI documentation tools analyze code, logs, and traffic patterns to automatically generate service dependency maps and communication diagrams.
 - Look for tools that integrate with your CI/CD pipeline to keep documentation current without manual updates.
-- The best solutions combine static code analysis with runtime observation for comprehensive dependency tracking.
+- The best solutions combine static code analysis with runtime observation for complete dependency tracking.
 - Open-source options exist alongside commercial offerings, making this accessible for teams of various sizes.
 
 Why Microservice Documentation Matters
@@ -348,7 +348,7 @@ Comparing Leading Tools
 
 Several AI-powered solutions have emerged for addressing microservice documentation challenges. Each has distinct strengths.
 
-Tool A: Static Analysis Focus
+Tool A - Static Analysis Focus
 
 This tool excels at quickly scanning large codebases to identify dependencies. It parses multiple languages and can detect both synchronous HTTP calls and asynchronous message patterns. The primary strength lies in immediately showing all potential communication paths without requiring deployment.
 
@@ -361,7 +361,7 @@ Limitations:
 - Cannot verify actual communication
 - May flag deprecated endpoints
 
-Tool B: Runtime Observation Focus
+Tool B - Runtime Observation Focus
 
 This tool integrates deeply with service meshes like Istio and Linkerd, observing actual traffic to generate accurate communication diagrams. It can identify communication frequency, latency patterns, and error rates alongside the basic dependency graph.
 
@@ -374,12 +374,12 @@ Limitations:
 - Requires service mesh deployment
 - Initial setup takes longer
 
-Tool C: Integrated Platform
+Tool C - Integrated Platform
 
 This approach combines multiple data sources including code analysis, tracing systems, and configuration repositories. It uses AI to interpret relationships and generate human-readable documentation explaining not just what communicates, but why and how.
 
 Strengths:
-- Most comprehensive view
+- Most complete view
 - AI-generated context and explanations
 - Continuous updates
 
@@ -491,7 +491,7 @@ Existing Infrastructure
 If you already run a service mesh, runtime observation tools integrate easily. If starting fresh, static analysis tools offer a faster path to initial documentation.
 
 Documentation Requirements
-Teams needing high-level architecture diagrams benefit from any tool. Teams requiring detailed protocol specifications need more comprehensive solutions.
+Teams needing high-level architecture diagrams benefit from any tool. Teams requiring detailed protocol specifications need more complete solutions.
 
 Budget Considerations
 Open-source options exist for basic dependency mapping. Commercial tools offer more sophisticated AI interpretation and visualization features.
@@ -514,7 +514,7 @@ Advanced Configuration Examples
 
 Kubernetes Service Mesh Documentation
 
-For teams running Istio or Linkerd, here's how to configure comprehensive service documentation:
+For teams running Istio or Linkerd, here's how to configure complete service documentation:
 
 ```yaml
 service-documentation-config.yaml
@@ -580,7 +580,7 @@ The AI tool parses this and generates:
 
 Real-World Integration Scenarios
 
-Scenario 1: Event-Driven Architecture
+Scenario 1 - Event-Driven Architecture
 
 In systems using message brokers like RabbitMQ or Kafka:
 
@@ -615,7 +615,7 @@ def extract_event_documentation(kafka_cluster, consumer_group):
     return documentation
 ```
 
-Scenario 2: REST API Gateway Dependencies
+Scenario 2 - REST API Gateway Dependencies
 
 When services expose REST APIs behind an API gateway:
 
@@ -637,14 +637,14 @@ python generate-dependency-graph.py service-dependencies.txt
 
 Troubleshooting Common Documentation Issues
 
-Problem: Documentation shows dead services
-Solution: The tool should only include services that actively communicate. Configure it to ignore services with zero traffic over a 7-day window, or manually mark deprecated services as archived.
+Problem - Documentation shows dead services
+Solution - The tool should only include services that actively communicate. Configure it to ignore services with zero traffic over a 7-day window, or manually mark deprecated services as archived.
 
-Problem: Circular dependencies not clearly documented
-Solution: Use visualization tools that highlight circular dependencies in red. Document fallback behaviors when services in a cycle fail.
+Problem - Circular dependencies not clearly documented
+Solution - Use visualization tools that highlight circular dependencies in red. Document fallback behaviors when services in a cycle fail.
 
-Problem: Documentation lag during rapid deployments
-Solution: Configure the tool to run on deployment events, not just on schedules. Use webhooks to trigger documentation updates within seconds of service changes.
+Problem - Documentation lag during rapid deployments
+Solution - Configure the tool to run on deployment events, not just on schedules. Use webhooks to trigger documentation updates within seconds of service changes.
 
 CLI Tools for Documentation Generation
 

@@ -49,7 +49,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Architecture
+Step 1 - The Architecture
 
 An AI linter differs from ESLint or Pylint in one key way: instead of matching patterns against an AST, it sends code to an LLM with a structured prompt and parses the JSON response. The tradeoff is latency and cost vs. catching nuanced issues.
 
@@ -59,7 +59,7 @@ The tool we'll build:
 3. Returns structured JSON with issue location, severity, and description
 4. Exits with code 1 if errors are found (CI-compatible)
 
-Step 2: Set Up the Project
+Step 2 - Set Up the Project
 
 ```bash
 mkdir ai-linter && cd ai-linter
@@ -67,7 +67,7 @@ npm init -y
 npm install @anthropic-ai/sdk commander glob
 ```
 
-Step 3: Core Linter Implementation
+Step 3 - Core Linter Implementation
 
 ```javascript
 // src/linter.js
@@ -123,7 +123,7 @@ export async function lintFile(filePath) {
 }
 ```
 
-Step 4: CLI Entry Point
+Step 4 - CLI Entry Point
 
 ```javascript
 // src/cli.js
@@ -183,7 +183,7 @@ program
 program.parse();
 ```
 
-Step 5: CI Integration
+Step 5 - CI Integration
 
 ```yaml
 .github/workflows/ai-lint.yml
@@ -212,7 +212,7 @@ jobs:
 
 Running only on changed files keeps CI costs under control. A typical PR with 10 changed files costs under $0.01 with Claude Haiku.
 
-Step 6: Adding File-Level Caching
+Step 6 - Adding File-Level Caching
 
 ```javascript
 import { createHash } from 'crypto';
@@ -247,7 +247,7 @@ export async function lintFileWithCache(filePath) {
 
 With caching, subsequent runs on unchanged files are instant and free.
 
-Step 7: Cost and Performance
+Step 7 - Cost and Performance
 
 On a 500-line TypeScript file with Claude Haiku:
 - Latency: 1.2-2.5 seconds
@@ -289,7 +289,7 @@ async function runCombinedLint(files) {
 
 This pipeline ensures you don't waste API calls on files with syntax errors.
 
-Step 8: Custom Rule Definitions
+Step 8 - Custom Rule Definitions
 
 Define project-specific rules in a configuration file:
 

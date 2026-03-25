@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Rate Limit Structures
+Step 1 - Understand Rate Limit Structures
 
 AI coding tools implement rate limits at different levels. API-based tools like Claude API and ChatGPT API typically measure limits in requests per minute (RPM) or tokens per minute (TPM). IDE-integrated tools like Cursor and GitHub Copilot enforce limits through subscription tiers, free plans often provide 200-500 completions per month, while pro plans offer thousands.
 
@@ -49,9 +49,9 @@ Here is how major tools structure their limits in 2026:
 | Claude API | $5 credit (new accounts) | Usage-based, soft limits | Higher TPM by negotiation |
 | ChatGPT API | $5 credit (new accounts) | Tier 1: 500 RPD | Tier 5: 10,000 RPM |
 
-The practical implication: Cursor's "fast requests" use the most capable models (Claude 3.5 Sonnet, GPT-4o) while "slow requests" fall back to lower-tier models when quota is exhausted. Teams that burn through fast requests by mid-month get noticeably worse completions for the remainder.
+The practical implication - Cursor's "fast requests" use the most capable models (Claude 3.5 Sonnet, GPT-4o) while "slow requests" fall back to lower-tier models when quota is exhausted. Teams that burn through fast requests by mid-month get noticeably worse completions for the remainder.
 
-Step 2: Implementing a Shared API Key with Rate Limiting
+Step 2 - Implementing a Shared API Key with Rate Limiting
 
 For teams using AI APIs directly, a shared API key with a rate limiter provides the simplest solution. Here's a practical implementation using Python:
 
@@ -125,7 +125,7 @@ def call_ai_api(prompt: str) -> str:
     return response.json()
 ```
 
-Step 3: Use Individual Keys with Team Quota Tracking
+Step 3 - Use Individual Keys with Team Quota Tracking
 
 Some teams prefer giving each developer their own API key while monitoring aggregate usage. This approach provides better accountability but requires coordination.
 
@@ -182,7 +182,7 @@ if __name__ == '__main__':
     app.run(port=5000)
 ```
 
-Step 4: Queue-Based Request Distribution
+Step 4 - Queue-Based Request Distribution
 
 For high-traffic teams, implementing a request queue ensures fair distribution and prevents any single developer from monopolizing resources. This approach works particularly well for batch processing tasks like nightly code review automation or CI-triggered documentation generation.
 
@@ -220,7 +220,7 @@ class AIRequestQueue:
             self.semaphore.acquire()
             try:
                 # Simulate API call - replace with actual API integration
-                result = f"Processed: {request['prompt'][:50]}..."
+                result = f"Processed - {request['prompt'][:50]}..."
                 self.results[request["id"]] = result
             finally:
                 self.semaphore.release()
@@ -229,11 +229,11 @@ class AIRequestQueue:
 Usage
 queue_system = AIRequestQueue(max_concurrent=5)
 req_id = queue_system.submit("Refactor this Python function", "developer-1")
-Non-blocking: check for result later
+Non-blocking - check for result later
 result = queue_system.get_result(req_id)
 ```
 
-Step 5: IDE-Level Solutions for Integrated Tools
+Step 5 - IDE-Level Solutions for Integrated Tools
 
 For IDE-integrated tools like Cursor or VS Code extensions, direct API control isn't available. Instead, focus on behavioral strategies and tool configuration.
 
@@ -248,7 +248,7 @@ Implement team guidelines:
 
 Monitor through admin dashboards. GitHub Copilot Business and Enterprise both provide organization-level usage dashboards at `github.com/organizations/YOUR_ORG/copilot`. Cursor Business exposes seat-level analytics in the team admin panel. Schedule weekly reviews to identify overuse patterns before they cause outages.
 
-Step 6: Model Tiering Strategy
+Step 6 - Model Tiering Strategy
 
 One underused technique is routing requests to different model tiers based on task complexity. Not every request needs GPT-4o or Claude Opus. Implement a classifier that routes simple tasks to cheaper, faster models:
 
@@ -262,7 +262,7 @@ One underused technique is routing requests to different model tiers based on ta
 
 A team of 10 running all requests through claude-opus will exhaust their monthly budget quickly. Routing 70% of requests to haiku typically reduces costs by 60-70% with minimal quality impact.
 
-Step 7: Set Up Alerts and Notifications
+Step 7 - Set Up Alerts and Notifications
 
 Proactive monitoring prevents unexpected quota exhaustion:
 

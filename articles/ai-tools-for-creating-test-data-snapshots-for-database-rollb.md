@@ -169,7 +169,7 @@ def test_user_registration():
 
 This context manager pattern ensures cleanup happens regardless of test outcome.
 
-Step-by-Step Workflow: Setting Up AI Snapshot Management
+Step-by-Step Workflow - Setting Up AI Snapshot Management
 
 Here is a practical workflow for integrating AI snapshot tools into an existing test suite.
 

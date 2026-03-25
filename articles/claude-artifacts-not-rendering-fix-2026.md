@@ -59,7 +59,7 @@ Claude artifacts load in an iframe embedded within the conversation interface. T
 
 Detailed Troubleshooting Steps
 
-Step 1: Verify Network Connectivity
+Step 1 - Verify Network Connectivity
 
 Artifacts require a stable connection to Claude's servers. Check the following:
 
@@ -73,7 +73,7 @@ Artifacts require a stable connection to Claude's servers. Check the following:
 
 Network issues often manifest as artifacts showing a loading spinner indefinitely or displaying connection error messages.
 
-Step 2: Clear Browser Data
+Step 2 - Clear Browser Data
 
 Corrupted browser data can prevent proper rendering:
 
@@ -89,7 +89,7 @@ Corrupted browser data can prevent proper rendering:
 
 This resolves issues where artifacts display partially or show outdated content.
 
-Step 3: Check Browser Console for Errors
+Step 3 - Check Browser Console for Errors
 
 Modern browsers provide developer tools that reveal rendering errors:
 
@@ -109,7 +109,7 @@ Modern browsers provide developer tools that reveal rendering errors:
 
 Common console errors include `Failed to load resource`, `Refused to display`, or `SyntaxError`. Note any error messages, you may need to adjust your browser settings or report persistent issues to Anthropic.
 
-Step 4: Verify Artifact Server Status
+Step 4 - Verify Artifact Server Status
 
 Claude artifacts depend on Anthropic's infrastructure. Check these resources:
 
@@ -121,7 +121,7 @@ Claude artifacts depend on Anthropic's infrastructure. Check these resources:
 
 Server-side outages are rare but do occur. If the artifact server is down, you can only wait for Anthropic to resolve the issue.
 
-Step 5: Adjust Browser Security Settings
+Step 5 - Adjust Browser Security Settings
 
 Overly strict security settings can block artifact rendering:
 
@@ -133,7 +133,7 @@ Overly strict security settings can block artifact rendering:
 
 These settings exist to protect your privacy, so re-enable them after troubleshooting. If security settings are the culprit, the artifact should render properly once adjusted.
 
-Step 6: Update Your Browser
+Step 6 - Update Your Browser
 
 Outdated browsers may lack features required for modern artifact rendering:
 
@@ -145,7 +145,7 @@ Outdated browsers may lack features required for modern artifact rendering:
 
 Browser updates frequently include improvements to iframe handling and JavaScript execution that affect artifact rendering.
 
-Step 7: Test with Different Artifact Types
+Step 7 - Test with Different Artifact Types
 
 Some artifact types have specific requirements:
 
@@ -157,7 +157,7 @@ Some artifact types have specific requirements:
 
 Create a simple artifact yourself to test if the problem is specific to certain types or universal across all artifacts.
 
-Step 8: Check for Account and Subscription Issues
+Step 8 - Check for Account and Subscription Issues
 
 Certain artifact features require specific subscription tiers:
 

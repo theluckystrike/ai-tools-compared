@@ -62,7 +62,7 @@ interface ProductsListParams {
 ```
 
 
-Step 2: Request Specific Edge Case Categories
+Step 2 - Request Specific Edge Case Categories
 
 
 Prompt the AI to generate tests for each category systematically. A well-structured prompt produces better results than asking for "everything at once."
@@ -79,17 +79,17 @@ Focus specifically on edge cases:
 ```
 
 
-Step 3: Review and Refine Generated Tests
+Step 3 - Review and Refine Generated Tests
 
 
 AI-generated tests require developer oversight. Review for:
 
 
-- Correctness: Does the test actually verify what it claims?
+- Correctness - Does the test actually verify what it claims?
 
-- Completeness: Are critical edge cases missing?
+- Completeness - Are critical edge cases missing?
 
-- Clarity: Can other developers understand what each test validates?
+- Clarity - Can other developers understand what each test validates?
 
 
 Practical Code Examples

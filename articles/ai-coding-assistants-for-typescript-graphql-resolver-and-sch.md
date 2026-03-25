@@ -78,7 +78,7 @@ export const resolvers: Resolvers = {
       return dataSources.users.findAll();
     },
   },
-  User: {
+  User - {
     posts: async (user, _, { dataSources }) => {
       return dataSources.posts.findByAuthorId(user.id);
     },
@@ -183,7 +183,7 @@ export const resolvers: Resolvers = {
       return context.dataSources.users.getAll();
     }
   },
-  User: {
+  User - {
     posts: async (user, _, context) => {
       const loader = context.loaders.posts;
       return loader.load(user.id);
@@ -246,13 +246,13 @@ Claude Code excels at schema-first approaches because its large context window a
 
 Pricing Comparison
 
-Claude Code: $20/month for resolver generation and complex schema work
+Claude Code - $20/month for resolver generation and complex schema work
 
-GitHub Copilot: $20/month individual or $21/month per user for teams, best for daily IDE suggestions
+GitHub Copilot - $20/month individual or $21/month per user for teams, best for daily IDE suggestions
 
-Cursor: $20/month for integrated IDE experience with strong GraphQL support
+Cursor - $20/month for integrated IDE experience with strong GraphQL support
 
-Windsurf: $20/month with multi-file editing capabilities for coordinated schema and resolver changes
+Windsurf - $20/month with multi-file editing capabilities for coordinated schema and resolver changes
 
 Complete Resolver Generation Workflow
 
@@ -268,7 +268,7 @@ This structured approach produces resolvers that integrate with existing project
 
 Common Pitfalls and Solutions
 
-Pitfall 1: Circular References
+Pitfall 1 - Circular References
 AI sometimes generates circular schema references that don't work:
 ```typescript
 // Wrong - creates infinite type loop
@@ -282,25 +282,25 @@ type Post {
 }
 ```
 
-Pitfall 2: N+1 Query Problems
+Pitfall 2 - N+1 Query Problems
 Without guidance, generated resolvers fetch data field-by-field:
 ```typescript
 // Wrong - causes N+1 queries
-User: {
+User - {
   posts: async (user) => {
     return db.posts.findByAuthorId(user.id); // Called once per user!
   }
 }
 
 // Right - uses batch loading
-User: {
+User - {
   posts: async (user, _, context) => {
     return context.loaders.posts.load(user.id); // Batches requests
   }
 }
 ```
 
-Pitfall 3: Error Type Inconsistency
+Pitfall 3 - Error Type Inconsistency
 Standard JavaScript errors don't work well in GraphQL:
 ```typescript
 // Wrong - loses context

@@ -28,7 +28,7 @@ Rust's approach to error handling relies on two primary mechanisms: recoverable 
 Custom error types allow you to create meaningful error hierarchies that communicate exactly what went wrong during execution. The `thiserror` crate simplifies derive macros for custom error types, while `anyhow` provides more flexible error handling for applications that don't need fine-grained error control.
 
 
-GitHub Copilot: Inline Assistance Model
+GitHub Copilot - Inline Assistance Model
 
 
 GitHub Copilot operates as an inline code completion tool integrated directly into supported editors. It suggests code as you type, working within the context of your current file and any open tabs.
@@ -72,7 +72,7 @@ Copilot struggles when your error handling becomes more complex. It frequently s
 The inline completion model also means Copilot cannot easily refactor existing error handling. If you need to migrate from `String` errors to a custom error enum, Copilot won't proactively suggest the changes across your codebase.
 
 
-Cursor: IDE-Level AI Integration
+Cursor - IDE-Level AI Integration
 
 
 Cursor positions itself as an AI-first code editor built on VS Code. It offers broader contextual awareness and more interactive AI features, including chat-based assistance and the ability to make multi-file changes.
@@ -110,7 +110,7 @@ Challenges with Rust Pattern Recognition
 Cursor sometimes suggests solutions that work but aren't idiomatic Rust. It may recommend using `unwrap()` in contexts where proper error handling would be more appropriate, or suggest `anyhow` when `thiserror` would provide better type safety. You need to evaluate each suggestion against Rust best practices.
 
 
-Practical Comparison: Building a Custom Error Type
+Practical Comparison - Building a Custom Error Type
 
 
 Let's examine how each tool assists when creating a complete custom error implementation.
@@ -266,7 +266,7 @@ Real-World Error Handling Audit
 
 When reviewing a Rust codebase, both tools can identify error handling anti-patterns:
 
-Anti-pattern 1: Error Suppression
+Anti-pattern 1 - Error Suppression
 ```rust
 // WRONG: Silently discarding errors
 let result = risky_operation().unwrap_or(default_value);
@@ -274,7 +274,7 @@ let result = risky_operation().unwrap_or(default_value);
 
 Copilot sometimes suggests this shorthand. Cursor flags it and suggests proper error propagation.
 
-Anti-pattern 2: Ambiguous Error Types
+Anti-pattern 2 - Ambiguous Error Types
 ```rust
 // WRONG: String errors lose context
 fn validate(input: &str) -> Result<(), String> {
@@ -288,7 +288,7 @@ fn validate(input: &str) -> Result<(), String> {
 
 Both tools recognize this but Cursor more consistently suggests custom error enums as the solution.
 
-Anti-pattern 3: Panic in Libraries
+Anti-pattern 3 - Panic in Libraries
 ```rust
 // WRONG: Panicking instead of returning Result
 pub fn parse_config(path: &str) -> Config {

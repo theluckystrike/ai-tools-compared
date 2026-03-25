@@ -52,7 +52,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Prompt Engineering for CVE Descriptions
+Step 1 - Prompt Engineering for CVE Descriptions
 
 
 The quality of AI-generated CVE descriptions depends heavily on your prompts. A well-structured prompt provides the necessary context, constraints, and examples.
@@ -101,14 +101,14 @@ Write in formal security advisory tone. Include:
 Practical Examples
 
 
-Example 1: Authentication Bypass
+Example 1 - Authentication Bypass
 
 
 Input to AI:
 
 ```
 Write CVE description for an authentication bypass in OAuth 2.0 implementation.
-- Product: auth-lib v3.0-3.5
+- Product - auth-lib v3.0-3.5
 - Issue: access tokens not validated properly in certain redirect_uri scenarios
 - Attack: attacker crafts malicious redirect URI to steal authorization codes
 - Impact: account takeover possible
@@ -121,19 +121,19 @@ AI Output:
 ```
 [COMPANY] auth-lib versions 3.0 through 3.5 contain an improper authentication vulnerability in the OAuth 2.0 authorization code flow. The library fails to properly validate the redirect_uri parameter during token exchange, allowing attackers to specify arbitrary redirect URIs. An attacker can exploit this by crafting a malicious authorization request with a controlled redirect_uri to intercept authorization codes and exchange them for access tokens, potentially leading to full account takeover.
 
-Affected versions: auth-lib versions 3.0 through 3.5.
+Affected versions - auth-lib versions 3.0 through 3.5.
 This issue has been fixed in version 3.6.
 ```
 
 
-Example 2: Remote Code Execution
+Example 2 - Remote Code Execution
 
 
 Input to AI:
 
 ```
 CVE description for deserialization vulnerability.
-- Product: data-handler Java library 1.x and 2.x before 2.4
+- Product - data-handler Java library 1.x and 2.x before 2.4
 - CWE-502: Deserialization of Untrusted Data
 - Unsafe deserialization in the parseObject() method when processing untrusted input
 - Can lead to RCE via malicious serialized payloads
@@ -150,7 +150,7 @@ This issue affects both the 1.x and 2.x branches. Users of versions 2.0-2.3 shou
 ```
 
 
-Step 2: AI Configuration for Security Writing
+Step 2 - AI Configuration for Security Writing
 
 
 When using AI for security content, configure your tool appropriately:
@@ -187,7 +187,7 @@ Always validate AI output against:
 - Technical feasibility of described attacks
 
 
-Step 3: Workflow Integration
+Step 3 - Workflow Integration
 
 
 For teams processing multiple CVEs, integrate AI into your workflow:
@@ -244,22 +244,22 @@ Generate these from the core description:
 ```
 
 
-Step 4: Common Pitfalls to Avoid
+Step 4 - Common Pitfalls to Avoid
 
 
 Over-reliance on AI without validation: Always have security experts review technical accuracy. AI can generate plausible but incorrect technical details.
 
 
-Missing version ranges: AI sometimes omits specific version boundaries. Explicitly require version ranges in your prompts.
+Missing version ranges - AI sometimes omits specific version boundaries. Explicitly require version ranges in your prompts.
 
 
-Inconsistent severity: CVSS scores should come from official sources, not AI generation. Use AI to describe the technical basis for scoring rather than the score itself.
+Inconsistent severity - CVSS scores should come from official sources, not AI generation. Use AI to describe the technical basis for scoring rather than the score itself.
 
 
-Generic language: Security advisories need specificity. Train your prompts to avoid vague terms like "potential security issue" in favor of concrete descriptions.
+Generic language - Security advisories need specificity. Train your prompts to avoid vague terms like "potential security issue" in favor of concrete descriptions.
 
 
-Step 5: Tools and Approaches
+Step 5 - Tools and Approaches
 
 
 General-purpose LLMs with strong instruction-following capabilities work well for CVE description generation. Claude, GPT-4, and similar models can produce accurate descriptions when given proper context and constraints. The key is providing detailed input data and clear formatting requirements.

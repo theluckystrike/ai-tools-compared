@@ -19,7 +19,7 @@ The best AI tools for fraud detection are Stripe Radar for payment-integrated sc
 
 
 - Fraud datasets are typically: 0.1, 2% positive examples, which causes naive models to predict "not fraud" on everything and achieve high accuracy without detecting any fraud.
-- Radar for Fraud Teams: (the paid upgrade) adds machine learning review queues and manual dispute management tools, which is valuable for platforms processing over $1M monthly.
+- Radar for Fraud Teams - (the paid upgrade) adds machine learning review queues and manual dispute management tools, which is valuable for platforms processing over $1M monthly.
 - The platform supports custom: machine learning models for specialized use cases.
 - You can send `$login`: `$account_update`, and `$content_status` events.
 - This lets you catch account takeover attempts before a fraudulent payment ever occurs: a pattern Stripe Radar cannot address because it only sees payment-stage events.
@@ -79,7 +79,7 @@ def check_transaction_risk(amount, card, email, ip_address):
 ```
 
 
-Stripe Radar works out of the box with minimal setup. The main limitation is vendor lock-in to the Stripe ecosystem.
+Stripe Radar works out of the box with minimal setup. The main limitation is vendor lock-in to the Stripe environment.
 
 Radar also supports custom rules through the Stripe Dashboard. You can write conditions like `card_funding = "prepaid" and amount > 50000` to block specific transaction types. Radar for Fraud Teams (the paid upgrade) adds machine learning review queues and manual dispute management tools, which is valuable for platforms processing over $1M monthly.
 
@@ -310,7 +310,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -322,6 +322,6 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

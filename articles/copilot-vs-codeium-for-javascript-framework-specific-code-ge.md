@@ -264,15 +264,15 @@ Codeium consistently produces TypeScript-typed code without explicit configurati
 
 Framework Awareness
 
-Both tools recognize React and Vue patterns, but Codeium shows stronger adherence to modern patterns like React hooks and Vue Composition API. Copilot occasionally suggests older patterns like class components or Options API when more modern alternatives exist. In Vue 3 projects using `<script setup>`, Codeium is more reliable at staying in the Script Setup paradigm rather than drifting back to `defineComponent` boilerplate.
+Both tools recognize React and Vue patterns, but Codeium shows stronger adherence to modern patterns like React hooks and Vue Composition API. Copilot occasionally suggests older patterns like class components or Options API when more modern alternatives exist. In Vue 3 projects using `<script setup>`, Codeium is more reliable at staying in the Script Setup model rather than drifting back to `defineComponent` boilerplate.
 
 Context Awareness
 
-Copilot uses GitHub's repository context to understand patterns from similar projects. This is useful early in a project or for common patterns, but it means suggestions are anchored in the broader open-source ecosystem rather than your codebase. Codeium builds understanding from your current workspace and can learn from your project's specific conventions. If your project has a particular component API style, Codeium is more likely to match it after a few files.
+Copilot uses GitHub's repository context to understand patterns from similar projects. This is useful early in a project or for common patterns, but it means suggestions are anchored in the broader open-source environment rather than your codebase. Codeium builds understanding from your current workspace and can learn from your project's specific conventions. If your project has a particular component API style, Codeium is more likely to match it after a few files.
 
-Ecosystem Integrations
+environment Integrations
 
-Copilot integrates with GitHub Actions, Pull Requests, and GitHub Codespaces. Teams already in the GitHub ecosystem get additional value from these integrations, Copilot can reference open issues or PR descriptions when generating code in some configurations. Codeium's integrations are more IDE-focused, with strong support for VS Code and JetBrains, plus an API for enterprise self-hosting.
+Copilot integrates with GitHub Actions, Pull Requests, and GitHub Codespaces. Teams already in the GitHub environment get additional value from these integrations, Copilot can reference open issues or PR descriptions when generating code in some configurations. Codeium's integrations are more IDE-focused, with strong support for VS Code and JetBrains, plus an API for enterprise self-hosting.
 
 Recommendations
 
@@ -280,7 +280,7 @@ Choose GitHub Copilot if:
 
 - You prioritize speed and inline suggestions
 - You work primarily with standard patterns widely represented in open source
-- You prefer minimal configuration and smooth GitHub ecosystem integration
+- You prefer minimal configuration and smooth GitHub environment integration
 - Your team already has GitHub Enterprise accounts
 
 Choose Codeium if:

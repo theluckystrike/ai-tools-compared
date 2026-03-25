@@ -20,9 +20,9 @@ Three major AI coding assistants dominate 2026: GitHub Copilot at $10-39/user, C
 
 Table of Contents
 
-- [GitHub Copilot: Pricing and Hidden Costs](#github-copilot-pricing-and-hidden-costs)
-- [Cursor: Pro vs Business Tiers](#cursor-pro-vs-business-tiers)
-- [Windsurf: New Entrant with Competitive Pricing](#windsurf-new-entrant-with-competitive-pricing)
+- [GitHub Copilot - Pricing and Hidden Costs](#github-copilot-pricing-and-hidden-costs)
+- [Cursor - Pro vs Business Tiers](#cursor-pro-vs-business-tiers)
+- [Windsurf - New Entrant with Competitive Pricing](#windsurf-new-entrant-with-competitive-pricing)
 - [Detailed Comparison Table](#detailed-comparison-table)
 - [Real-World Cost Scenarios](#real-world-cost-scenarios)
 - [True Cost Per Developer Per Year](#true-cost-per-developer-per-year)
@@ -30,16 +30,16 @@ Table of Contents
 - [Hidden Efficiency Gains and Productivity ROI](#hidden-efficiency-gains-and-productivity-roi)
 - [Implementation Recommendation](#implementation-recommendation)
 
-GitHub Copilot: Pricing and Hidden Costs
+GitHub Copilot - Pricing and Hidden Costs
 
-Individual Plan: $10/month
+Individual Plan - $10/month
 - Unlimited code completions via autocomplete
 - Unlimited chat in VS Code/GitHub.com
 - 4 o1-preview uses per day (advanced reasoning model)
 - All features: Copilot in IDE, CLI, GitHub.com integration
 - Free trial: 2 months for new users
 
-Enterprise Plan: $39/user/month (minimum 5 users)
+Enterprise Plan - $39/user/month (minimum 5 users)
 - Everything in Individual, plus:
 - Early access to new features
 - Admin controls and organizational policies
@@ -60,23 +60,23 @@ Hidden Costs in Copilot:
 
 10-person startup using Copilot
 ```
-Individual tier: 10 × $10 = $100/month
-API usage (estimated): 50M tokens/month = $3K/month
-Total: $3.1K/month
-Per developer: $310/month
+Individual tier - 10 × $10 = $100/month
+API usage (estimated) - 50M tokens/month = $3K/month
+Total - $3.1K/month
+Per developer - $310/month
 ```
 
 Add Copilot for Business licensing on top for enterprise features:
 ```
-Enterprise tier: 10 × $39 = $390/month
-API usage: 50M tokens/month = $3K/month
-Total: $3.39K/month
-Per developer: $339/month
+Enterprise tier - 10 × $39 = $390/month
+API usage - 50M tokens/month = $3K/month
+Total - $3.39K/month
+Per developer - $339/month
 ```
 
-Cursor: Pro vs Business Tiers
+Cursor - Pro vs Business Tiers
 
-Pro Plan: $20/month
+Pro Plan - $20/month
 - 500 fast requests per month (Claude 3.5 Sonnet)
 - Unlimited slow requests (Claude 3.5 Haiku, faster but lower quality)
 - Local models support (Ollama integration for offline coding)
@@ -84,7 +84,7 @@ Pro Plan: $20/month
 - Chat, codebase indexing, multi-file edits
 - No team management; one seat per license
 
-Business Plan: $40/month (per user)
+Business Plan - $40/month (per user)
 - Everything in Pro, plus:
 - 1000 fast requests per month (doubled from Pro)
 - Priority support
@@ -100,39 +100,39 @@ Hidden Costs in Cursor:
 
 10-person startup using Cursor
 ```
-Pro tier: 10 × $20 = $200/month
+Pro tier - 10 × $20 = $200/month
 Ollama server infrastructure (optional): $50-200/month
-Total: $250-400/month
-Per developer: $25-40/month (if using Ollama)
+Total - $250-400/month
+Per developer - $25-40/month (if using Ollama)
 ```
 
 If upgrading to Business tier for team management:
 ```
-Business tier: 10 × $40 = $400/month
-Infrastructure: $50-200/month
-Total: $450-600/month
-Per developer: $45-60/month
+Business tier - 10 × $40 = $400/month
+Infrastructure - $50-200/month
+Total - $450-600/month
+Per developer - $45-60/month
 ```
 
-Cursor's advantage: predictable monthly spend with no variable API costs. The disadvantage: fast requests run out if you heavily use advanced models.
+Cursor's advantage - predictable monthly spend with no variable API costs. The disadvantage: fast requests run out if you heavily use advanced models.
 
-Windsurf: New Entrant with Competitive Pricing
+Windsurf - New Entrant with Competitive Pricing
 
-Individual Plan: $15/month (2026 early pricing)
+Individual Plan - $15/month (2026 early pricing)
 - 500 "actions" per month (edits, refactors, code generations)
 - Unlimited file preview and context retrieval
 - Flow mode (multi-step reasoning and planning)
 - Local inference support (via Codeium's infrastructure)
 - Web-based and desktop IDE options
 
-Team Plan: $30/user/month
+Team Plan - $30/user/month
 - 2000 actions per month (4x the individual tier)
 - Team workspace management
 - Usage analytics per developer
 - Priority model routing (newer models first)
 - Batch processing API for large teams
 
-Usage-Based Overage: $0.15 per additional action beyond monthly limit
+Usage-Based Overage - $0.15 per additional action beyond monthly limit
 
 Hidden Costs in Windsurf:
 - "Actions" are vaguely defined; a single refactor might consume 1-5 actions
@@ -142,10 +142,10 @@ Hidden Costs in Windsurf:
 
 10-person startup using Windsurf
 ```
-Team Plan: 10 × $30 = $300/month
-Overage actions (worst case): 1000 extra actions @ $0.15 = $150/month
-Total: $300-450/month
-Per developer: $30-45/month
+Team Plan - 10 × $30 = $300/month
+Overage actions (worst case) - 1000 extra actions @ $0.15 = $150/month
+Total - $300-450/month
+Per developer - $30-45/month
 ```
 
 Windsurf undercuts Cursor on base price but has variable costs if you exceed action limits.
@@ -168,29 +168,29 @@ Detailed Comparison Table
 
 Real-World Cost Scenarios
 
-Scenario 1: Early-stage startup (5 devs, moderate API usage)
+Scenario 1 - Early-stage startup (5 devs, moderate API usage)
 
-Copilot Individual: 5 × $10 + $500 (API) = $550/month ($110/dev)
-Cursor Pro: 5 × $20 = $100/month ($20/dev)
-Windsurf Team: 5 × $30 = $150/month ($30/dev)
+Copilot Individual - 5 × $10 + $500 (API) = $550/month ($110/dev)
+Cursor Pro - 5 × $20 = $100/month ($20/dev)
+Windsurf Team - 5 × $30 = $150/month ($30/dev)
 
-Winner: Cursor Pro, no variable costs, predictable spend, saves $450/month vs Copilot.
+Winner - Cursor Pro, no variable costs, predictable spend, saves $450/month vs Copilot.
 
-Scenario 2: Mid-size company (30 devs, heavy compute load)
+Scenario 2 - Mid-size company (30 devs, heavy compute load)
 
-Copilot Enterprise: 30 × $39 + $8K (API for high-traffic teams) = $9.17K/month ($306/dev)
-Cursor Business: 30 × $40 = $1.2K/month ($40/dev)
-Windsurf Team: 30 × $30 + $2K (overages for high-volume users) = $3.2K/month ($107/dev)
+Copilot Enterprise - 30 × $39 + $8K (API for high-traffic teams) = $9.17K/month ($306/dev)
+Cursor Business - 30 × $40 = $1.2K/month ($40/dev)
+Windsurf Team - 30 × $30 + $2K (overages for high-volume users) = $3.2K/month ($107/dev)
 
-Winner: Cursor Business, saves $5.97K/month vs Copilot Enterprise, includes team management and priority support.
+Winner - Cursor Business, saves $5.97K/month vs Copilot Enterprise, includes team management and priority support.
 
-Scenario 3: Enterprise (200+ devs, compliance/audit requirements)
+Scenario 3 - Enterprise (200+ devs, compliance/audit requirements)
 
-Copilot Enterprise: 200 × $39 + $50K (API) + $10K (admin overhead) = $67.8K/month ($339/dev)
-Cursor Business: 200 × $40 + $30K (Ollama infrastructure) = $110K/month ($550/dev)
-Windsurf Team: 200 × $30 + $10K (overages) = $16K/month ($80/dev)
+Copilot Enterprise - 200 × $39 + $50K (API) + $10K (admin overhead) = $67.8K/month ($339/dev)
+Cursor Business - 200 × $40 + $30K (Ollama infrastructure) = $110K/month ($550/dev)
+Windsurf Team - 200 × $30 + $10K (overages) = $16K/month ($80/dev)
 
-Winner: Windsurf Team, but Copilot's audit logs and compliance features may justify the cost difference in regulated industries.
+Winner - Windsurf Team, but Copilot's audit logs and compliance features may justify the cost difference in regulated industries.
 
 True Cost Per Developer Per Year
 
@@ -261,11 +261,11 @@ The cheapest tool is not always the best value. Cursor's fixed cost and producti
 
 Implementation Recommendation
 
-Month 1: Try each tool's free trial tier. Measure request volume and model preferences.
+Month 1 - Try each tool's free trial tier. Measure request volume and model preferences.
 
-Month 2: Calculate your team's actual usage patterns and create cost projections.
+Month 2 - Calculate your team's actual usage patterns and create cost projections.
 
-Month 3+: Commit to the lowest true-cost option (not just base price) based on your usage data.
+Month 3+ - Commit to the lowest true-cost option (not just base price) based on your usage data.
 
 For most 5-30 person development teams, Cursor Pro delivers the lowest total cost of ownership with predictable spend and no API surprises. For enterprises requiring compliance and audit trails, Copilot Enterprise justifies its premium despite higher absolute costs. For solopreneurs and micro-teams, Windsurf Team at $30/user offers competitive pricing with strong features.
 

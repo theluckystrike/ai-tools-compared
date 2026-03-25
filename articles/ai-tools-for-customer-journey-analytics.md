@@ -46,7 +46,7 @@ Traditional analytics answers "what happened." Journey analytics answers "why it
 
 The technical challenge involves handling event streams, managing user identity resolution across devices, and applying machine learning to find patterns invisible to manual analysis. Modern AI tools handle much of this complexity, letting developers focus on building features rather than algorithms.
 
-Tool Comparison: AI Platforms for Customer Journey Analytics
+Tool Comparison - AI Platforms for Customer Journey Analytics
 
 | Tool | Approach | Real-Time | Custom Models | Best For |
 |---|---|---|---|---|
@@ -221,7 +221,7 @@ Identity resolution remains challenging. Users may browse anonymously before sig
 
 Privacy regulations affect how you collect and process journey data. Implement consent management early, and design your data pipeline to support data deletion requests and access audits. GDPR and CCPA both impose obligations on journey data because it often constitutes personal data by linking behavioral history to identified users.
 
-Step-by-Step: Setting Up Your First Journey Analytics Pipeline
+Step-by-Step - Setting Up Your First Journey Analytics Pipeline
 
 For teams starting from scratch, this sequence minimizes wasted effort:
 

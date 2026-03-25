@@ -47,16 +47,16 @@ The bot runs as a GitHub Actions workflow triggered on `pull_request` events. It
 4. Posts inline comments using the GitHub Review API
 5. Submits a summary review (APPROVE, REQUEST_CHANGES, or COMMENT)
 
-Step 1: Create the GitHub App
+Step 1 - Create the GitHub App
 
 1. Go to Settings > Developer settings > GitHub Apps > New
 2. Permissions: Pull requests (Read & write), Contents (Read)
 3. Install on your target repositories
 4. Generate a private key, download the PEM file
 
-Add to repository secrets: `APP_ID` and `APP_PRIVATE_KEY`.
+Add to repository secrets - `APP_ID` and `APP_PRIVATE_KEY`.
 
-Step 2: GitHub Actions Workflow
+Step 2 - GitHub Actions Workflow
 
 ```yaml
 .github/workflows/ai-review.yml
@@ -90,7 +90,7 @@ jobs:
         run: node .github/scripts/ai-review.js
 ```
 
-Step 3: The Review Script
+Step 3 - The Review Script
 
 ```javascript
 // .github/scripts/ai-review.js
@@ -105,7 +105,7 @@ Review for:
 3. Missing error handling (unhandled promises, missing null checks)
 4. Performance issues (N+1 queries, unnecessary re-computation)
 
-Do NOT comment on: code style, formatting, naming, or missing tests.
+Do NOT comment on - code style, formatting, naming, or missing tests.
 
 Respond with JSON:
 {

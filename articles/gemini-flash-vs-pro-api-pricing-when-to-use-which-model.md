@@ -85,7 +85,7 @@ Use Flash for initial filtering, categorization, or summarization before passing
 
 
 ```python
-Workflow: Flash for triage, Pro for detailed work
+Workflow - Flash for triage, Pro for detailed work
 def process_support_ticket(ticket_text):
     # Quick categorization with Flash
     category_model = genai.GenerativeModel('gemini-1.5-flash')

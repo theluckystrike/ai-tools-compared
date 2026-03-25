@@ -33,13 +33,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Trunk-Based Workflow
+Step 1 - Understand the Trunk-Based Workflow
 
 Trunk-based development typically involves developers creating short-lived branches that live for hours or a few days at most. Multiple developers commit to these branches multiple times per day, with frequent merges back to main. This contrasts with Git Flow models where branches might persist for weeks.
 
-The key constraint: your branch must stay mergeable. Long gaps between integration cause painful conflicts. AI assistants can help you move faster, but they can also generate large, complex changes that complicate merging if not managed properly.
+The key constraint - your branch must stay mergeable. Long gaps between integration cause painful conflicts. AI assistants can help you move faster, but they can also generate large, complex changes that complicate merging if not managed properly.
 
-Step 2: Strategic AI Integration Points
+Step 2 - Strategic AI Integration Points
 
 1. Use AI for Code Generation, Not Architecture Decisions
 
@@ -67,10 +67,10 @@ When working in trunk-based development, smaller commits win. Train yourself to 
 
 - Bad: "Refactor the entire authentication system"
 
-- Good: "Add password reset endpoint to auth.py"
+- Good - "Add password reset endpoint to auth.py"
 
 ```bash
-Example workflow: generate, review, commit quickly
+Example workflow - generate, review, commit quickly
 git checkout -b feature/password-reset
 Use AI to generate password_reset.py
 Review the output carefully
@@ -86,7 +86,7 @@ Trunk-based development requires strong test coverage because you're merging fre
 ```python
 After implementing this function, ask AI:
 """Generate pytest test cases for the validate_email function below.
-Cover: valid emails, invalid formats, edge cases with special characters.
+Cover - valid emails, invalid formats, edge cases with special characters.
 Use parametrized tests."""
 
 def validate_email(email: str) -> bool:
@@ -98,9 +98,9 @@ def validate_email(email: str) -> bool:
 
 Running AI-generated tests immediately after implementation catches issues before they reach the trunk.
 
-Step 3: Practical Workflow Patterns
+Step 3 - Practical Workflow Patterns
 
-Pattern 1: AI-Assisted TDD
+Pattern 1 - AI-Assisted TDD
 
 1. Write the test first (you or AI)
 
@@ -121,7 +121,7 @@ git add . && git commit -m "Implement user search with name matching"
 git push -u origin feature/user-search
 ```
 
-Pattern 2: AI Code Review Before Commit
+Pattern 2 - AI Code Review Before Commit
 
 Even with trunk-based workflows, you should review AI output before committing:
 
@@ -139,7 +139,7 @@ Example check you should do:
 - Does error handling match your project patterns?
 ```
 
-Pattern 3: Context-Aware Prompts
+Pattern 3 - Context-Aware Prompts
 
 Provide AI assistants with just enough context to be useful without overwhelming them:
 
@@ -152,7 +152,7 @@ Working on a Django 4.2 project with:
 - DRF for API views
 - pytest for testing
 
-Task: Create a serializer for the User model that:
+Task - Create a serializer for the User model that:
 - Excludes password field
 - Includes email, username, date_joined
 - Uses ModelSerializer
@@ -161,18 +161,18 @@ Task: Create a serializer for the User model that:
 
 This approach works well because you're specifying your constraints without dumping your entire codebase into the AI context window.
 
-Step 4: Common Pitfalls to Avoid
+Step 4 - Common Pitfalls to Avoid
 
 Over-Reliance on AI Suggestions
 
 AI suggestions are starting points, not final answers. Always understand what the code does before committing:
 
 ```python
-Questionable: blindly accepting AI suggestion
+Questionable - blindly accepting AI suggestion
 Accepting this without review could introduce bugs:
 result = execute_query(user_input)  # SQL injection risk!
 
-Better: ask AI to fix the issue
+Better - ask AI to fix the issue
 """Rewrite this to prevent SQL injection using parameterized queries."""
 ```
 
@@ -210,7 +210,7 @@ git rebase main  # Better than merge for cleaner history
 Now continue working with latest code
 ```
 
-Step 5: Tools That Support Trunk-Based Workflows
+Step 5 - Tools That Support Trunk-Based Workflows
 
 Several AI tools integrate particularly well with trunk-based development:
 
@@ -224,7 +224,7 @@ Several AI tools integrate particularly well with trunk-based development:
 
 Choose tools that minimize friction between thinking and committing.
 
-Step 6: Measuring Success
+Step 6 - Measuring Success
 
 Track these metrics to ensure your AI-assisted trunk workflow is working:
 

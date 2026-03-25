@@ -21,7 +21,7 @@ Casetext has emerged as one of the most influential AI-powered legal research pl
 Table of Contents
 
 - [What is Casetext?](#what-is-casetext)
-- [CoCounsel: The Flagship AI Assistant](#cocounsel-the-flagship-ai-assistant)
+- [CoCounsel - The Flagship AI Assistant](#cocounsel-the-flagship-ai-assistant)
 - [Pricing and Subscription Tiers](#pricing-and-subscription-tiers)
 - [Integration and API Capabilities](#integration-and-api-capabilities)
 - [Strengths and Advantages](#strengths-and-advantages)
@@ -44,7 +44,7 @@ Casetext is a legal technology company that combines a case law database with AI
 
 The platform differentiates itself through its focus on AI-first design rather than bolting AI features onto a traditional search engine. This approach results in a more intuitive research experience where the AI actively assists in understanding legal concepts rather than simply returning keyword-matched results.
 
-CoCounsel: The Flagship AI Assistant
+CoCounsel - The Flagship AI Assistant
 
 CoCounsel represents Casetext's primary AI offering and serves as the backbone of their value proposition. In 2026, CoCounsel has evolved to include several sophisticated capabilities that set it apart from traditional legal research tools.
 
@@ -184,7 +184,7 @@ Comparison with Competitors
 
 Compared to established competitors like Westlaw and LexisNexis, Casetext offers a more modern interface and often superior AI capabilities. However, the traditional platforms maintain advantages in certain specialized practice areas and enterprise feature sets. Many firms choose to maintain subscriptions to multiple platforms to ensure research coverage.
 
-The competitive ecosystem has intensified significantly in 2026, with both Westlaw and LexisNexis investing heavily in their own AI capabilities. Casetext's advantage lies in its AI-first design philosophy and typically more aggressive feature development timeline.
+The competitive environment has intensified significantly in 2026, with both Westlaw and LexisNexis investing heavily in their own AI capabilities. Casetext's advantage lies in its AI-first design philosophy and typically more aggressive feature development timeline.
 
 Advanced CoCounsel Features for Legal Workflows
 
@@ -214,19 +214,19 @@ In M&A transactions, preliminary due diligence involves reviewing hundreds of do
 
 Integration with Legal Workflows: Real Examples
 
-Example 1: Motion Practice
+Example 1 - Motion Practice
 
 A litigator preparing a motion on qualified immunity needs current case law on recent developments in Fourth Amendment search standards. Rather than spending hours on Westlaw searches, the attorney asks CoCounsel: "What has the Supreme Court said about reasonable searches in the context of digital data since 2020?" CoCounsel provides relevant cases with summaries of holdings and distinguishing factors.
 
-The attorney then asks: "Which of these cases support or undermine our client's position that the officer lacked reasonable suspicion?" CoCounsel analyzes the facts of each case and provides an assessment of how they apply to the client's situation.
+The attorney then asks - "Which of these cases support or undermine our client's position that the officer lacked reasonable suspicion?" CoCounsel analyzes the facts of each case and provides an assessment of how they apply to the client's situation.
 
-Example 2: Contract Review for Corporate Transaction
+Example 2 - Contract Review for Corporate Transaction
 
 An in-house counsel reviews a master service agreement from a new vendor. Rather than manually reviewing hundreds of pages, she uploads the contract to CoCounsel and asks: "Identify any provisions that deviate significantly from our standard MSA, flag any unusual limitation-of-liability language, and highlight any indemnification requirements that might expose us to liability."
 
 CoCounsel returns a structured analysis of deviations with specific recommendations about whether each deviation is acceptable or requires negotiation.
 
-Example 3: Research for Complex Regulatory Issue
+Example 3 - Research for Complex Regulatory Issue
 
 A healthcare lawyer researching privacy obligations under multiple state laws can ask CoCounsel: "Compare HIPAA requirements with California Consumer Privacy Act and New York SHIELD Act requirements for notification of data breaches. What are the key differences in notification timing, notification recipients, and acceptable notification methods?"
 
@@ -256,9 +256,9 @@ Building Effective CoCounsel Workflows
 
 Lawyers most effective with CoCounsel develop specific prompting patterns that maximize the AI's usefulness while acknowledging its limitations.
 
-Effective approach: "Based on [specific factual scenario], what case law most directly applies? I'm particularly interested in [jurisdiction/context]."
+Effective approach - "Based on [specific factual scenario], what case law most directly applies? I'm particularly interested in [jurisdiction/context]."
 
-Less effective approach: "Should we win this case?"
+Less effective approach - "Should we win this case?"
 
 CoCounsel provides research assistance and analytical support, not strategic judgment. The best workflows use CoCounsel for research tasks while reserving strategic decisions for attorney judgment.
 
@@ -274,11 +274,11 @@ Hands-On Casetext Workflow Examples
 
 Understanding how lawyers actually use Casetext reveals its practical value beyond theoretical capabilities.
 
-Workflow 1: Motion Practice Research
+Workflow 1 - Motion Practice Research
 
 A litigation attorney preparing a motion for summary judgment on a qualified immunity claim faces a tight deadline and needs current law on Fourth Amendment reasonable search standards in her circuit.
 
-Traditional approach (Westlaw): Multiple keyword searches, manual review of 50+ cases, synthesis of holdings.
+Traditional approach (Westlaw) - Multiple keyword searches, manual review of 50+ cases, synthesis of holdings.
 
 Casetext approach:
 
@@ -290,19 +290,19 @@ Casetext approach:
 
 4. CoCounsel analyzes the motion facts against the cases and identifies three cases that provide strong support
 
-5. Ask: "What distinguishing factors might weaken these authorities? What has the opposing party likely found?"
+5. Ask - "What distinguishing factors might weaken these authorities? What has the opposing party likely found?"
 
 6. CoCounsel identifies distinguishing factors from opposing cases and suggests how to preemptively address them in the motion
 
-Time savings: 4-6 hours of initial research compressed into 45 minutes, with more thorough analysis due to AI assistance.
+Time savings - 4-6 hours of initial research compressed into 45 minutes, with more thorough analysis due to AI assistance.
 
-Workflow 2: Contract Review for Acquisition Target
+Workflow 2 - Contract Review for Acquisition Target
 
 An M&A partner needs to review 300+ pages of acquisition documents for an $50M transaction. Rather than assigning a junior associate to flag all issues for partner review, she uses Casetext's document analysis:
 
 1. Upload all closing documents to CoCounsel
 
-2. Ask: "Identify provisions that create material liability exposure for the acquirer. Prioritize by risk level."
+2. Ask - "Identify provisions that create material liability exposure for the acquirer. Prioritize by risk level."
 
 3. CoCounsel analyzes the documents and identifies 12 potentially problematic provisions with risk assessments
 
@@ -314,9 +314,9 @@ An M&A partner needs to review 300+ pages of acquisition documents for an $50M t
 
 7. CoCounsel suggests alternative language balancing buyer and seller interests
 
-Impact: Junior associate review time reduced by 60%, while partner gets higher-quality preliminary analysis highlighting strategic issues rather than clerical problems.
+Impact - Junior associate review time reduced by 60%, while partner gets higher-quality preliminary analysis highlighting strategic issues rather than clerical problems.
 
-Workflow 3: Regulatory Compliance Research
+Workflow 3 - Regulatory Compliance Research
 
 An in-house counsel for a healthcare company needs to understand new state privacy regulations and how they interact with existing HIPAA compliance obligations.
 
@@ -340,11 +340,11 @@ Asking Better Research Questions
 
 Casetext performs better with specific questions than vague ones.
 
-Vague: "What's the law on employment law?"
+Vague - "What's the law on employment law?"
 
-Better: "What is the standard for constructive termination under California law, and how have courts applied it to forced transfers with salary reductions?"
+Better - "What is the standard for constructive termination under California law, and how have courts applied it to forced transfers with salary reductions?"
 
-Even better: "In California employment cases, when do courts find constructive termination based on workplace reassignment? What evidence must an employee present? How have courts assessed damages?"
+Even better - "In California employment cases, when do courts find constructive termination based on workplace reassignment? What evidence must an employee present? How have courts assessed damages?"
 
 Using Citation Context
 
@@ -360,8 +360,8 @@ Use CoCounsel in iterative conversations, building on previous answers:
 
 1. Initial question: "What cases address punitive damages in contract disputes?"
 2. Follow-up: "Of those cases, which ones involved bad faith conduct similar to our fact pattern?"
-3. Next: "How do courts quantify punitive damages in cases like those?"
-4. Final: "What evidence should we gather to support a punitive damages claim under this standard?"
+3. Next - "How do courts quantify punitive damages in cases like those?"
+4. Final - "What evidence should we gather to support a punitive damages claim under this standard?"
 
 Each conversation builds on prior context, producing increasingly refined and specific analysis.
 
@@ -383,7 +383,7 @@ For firms with sufficient research volume, Casetext enterprise pricing (often $5
 - Better quality preliminary analysis
 - Reduced errors from incomplete research
 
-ROI calculation: If CoCounsel reduces research time by 25% for 30 research-intensive attorneys at $200/hour, the annual savings is 30 attorneys × 500 hours/year × $200/hour × 25% = $750,000. Against $100,000 annual cost, the ROI is 7.5x.
+ROI calculation - If CoCounsel reduces research time by 25% for 30 research-intensive attorneys at $200/hour, the annual savings is 30 attorneys × 500 hours/year × $200/hour × 25% = $750,000. Against $100,000 annual cost, the ROI is 7.5x.
 
 Mid-Size Firms (30-100 attorneys)
 
@@ -401,7 +401,7 @@ Implementation Considerations
 
 When adopting Casetext firm-wide:
 
-1. Training: CoCounsel requires learning optimal prompting techniques. Allocate time for training
+1. Training - CoCounsel requires learning optimal prompting techniques. Allocate time for training
 2. Workflow integration: Identify specific practice areas where AI research assistance provides most value
 3. Quality review: Establish protocols for verifying AI-generated legal research, especially for critical matters
 4. Billing and ethics: Clarify how time using Casetext affects billing practices and client communications

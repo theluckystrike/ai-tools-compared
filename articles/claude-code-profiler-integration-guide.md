@@ -49,7 +49,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Profiling Fundamentals
+Step 1 - Understand Profiling Fundamentals
 
 Before integrating profilers, understand the different types of profiling available:
 
@@ -60,7 +60,7 @@ Before integrating profilers, understand the different types of profiling availa
 
 Claude Code can help interpret profiler output, suggest optimizations based on the data, and implement changes iteratively.
 
-Step 2: Set Up Python Profilers
+Step 2 - Set Up Python Profilers
 
 Python offers several profiling tools that integrate well with Claude Code workflows.
 
@@ -125,7 +125,7 @@ Run with memory tracking:
 python -m memory_profiler your_script.py
 ```
 
-Step 3: Integrate Profilers with Claude Code Workflow
+Step 3 - Integrate Profilers with Claude Code Workflow
 
 Automated Profile Analysis
 
@@ -192,7 +192,7 @@ def your_function():
     pass
 ```
 
-Step 4: JavaScript and TypeScript Profiling
+Step 4 - JavaScript and TypeScript Profiling
 
 Using Chrome DevTools Protocol
 
@@ -227,7 +227,7 @@ bun --profile your_script.ts
 
 This generates a Chrome-compatible profile that you can load in `chrome://inspect`.
 
-Step 5: Analyzing Profile Results with Claude Code
+Step 5 - Analyzing Profile Results with Claude Code
 
 When you have profiling data, share it with Claude Code using these strategies:
 
@@ -247,7 +247,7 @@ Iterative Optimization Workflow
 4. Re-profile to verify improvement
 5. Repeat until performance goals are met
 
-Step 6: How to Frame Profiler Output for Claude Code
+Step 6 - How to Frame Profiler Output for Claude Code
 
 The quality of Claude Code's optimization suggestions depends heavily on how you present your profiling data. Vague prompts produce vague advice.
 
@@ -269,7 +269,7 @@ For the best results, share three things with Claude Code:
 
 Claude Code can then reason about the relationship between the profile data and the code structure rather than guessing from statistics alone.
 
-Step 7: Work with Go and Rust Profilers
+Step 7 - Work with Go and Rust Profilers
 
 Claude Code handles profiling data from multiple languages, not just Python and JavaScript.
 
@@ -324,7 +324,7 @@ Best Practices for Profiler Integration
 - Use line-level profiling for critical functions
 - Profile memory separately from CPU to get clear signals
 
-Step 8: Common Profiler Interpretations
+Step 8 - Common Profiler Interpretations
 
 Claude Code can help interpret common profiling patterns:
 

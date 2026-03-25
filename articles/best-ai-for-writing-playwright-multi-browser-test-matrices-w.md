@@ -25,7 +25,7 @@ Table of Contents
 - [GitHub Actions Integration](#github-actions-integration)
 - [Optimizing Your Test Matrix](#optimizing-your-test-matrix)
 - [Best Practices for AI-Generated Test Matrices](#best-practices-for-ai-generated-test-matrices)
-- [Step-by-Step: Using Claude to Generate Your First Matrix](#step-by-step-using-claude-to-generate-your-first-matrix)
+- [Step-by-Step - Using Claude to Generate Your First Matrix](#step-by-step-using-claude-to-generate-your-first-matrix)
 - [Choosing the Right AI Tool](#choosing-the-right-ai-tool)
 - [Related Reading](#related-reading)
 
@@ -117,7 +117,7 @@ Strengths:
 
 - Quick iterations on test configurations
 
-Limitation: Copilot struggles with complex multi-file Playwright configurations. It tends to generate individual test completions well but falls short when you need a cohesive matrix strategy spanning multiple config files and workflow YAML.
+Limitation - Copilot struggles with complex multi-file Playwright configurations. It tends to generate individual test completions well but falls short when you need a cohesive matrix strategy spanning multiple config files and workflow YAML.
 
 3. OpenAI GPT-4
 
@@ -310,7 +310,7 @@ Best Practices for AI-Generated Test Matrices
 
 6. Pin browser versions: Use `npx playwright install --with-deps chromium@1117` to pin specific browser versions and prevent surprise failures after Playwright updates.
 
-Step-by-Step: Using Claude to Generate Your First Matrix
+Step-by-Step - Using Claude to Generate Your First Matrix
 
 1. Open Claude and paste your current `playwright.config.ts` if you have one, or describe your project's testing needs.
 
@@ -330,13 +330,13 @@ Choosing the Right AI Tool
 
 Consider these factors when selecting an AI assistant:
 
-- Integration: How well does it work with your existing IDE and workflow?
+- Integration - How well does it work with your existing IDE and workflow?
 
-- Understanding of Playwright: Look for tools with strong knowledge of Playwright's latest features.
+- Understanding of Playwright - Look for tools with strong knowledge of Playwright's latest features.
 
 - Context retention: Can it maintain context across multiple file generations?
 
-- Customization: How easily can you fine-tune outputs to match your coding standards?
+- Customization - How easily can you fine-tune outputs to match your coding standards?
 
 For most teams, Claude provides the best balance of code quality and explanation, making it ideal for generating complex test matrices that other developers will maintain. However, the best choice depends on your specific workflow and requirements.
 

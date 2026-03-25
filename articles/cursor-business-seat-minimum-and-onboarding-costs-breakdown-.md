@@ -49,7 +49,7 @@ def calculate_cursor_business_cost(team_size, annual=True):
 5-developer team
 result = calculate_cursor_business_cost(5, annual=True)
 print(f"5 developers: ${result['monthly_total']}/month or ${result['annual_total']}/year")
-Output: 5 developers: $75/month or $900/year
+Output - 5 developers: $75/month or $900/year
 ```
 
 
@@ -92,7 +92,7 @@ Before committing to Cursor Business, it helps to benchmark the pricing against 
 | Codeium Teams | $12/seat/month | 5 seats | Yes | No |
 | JetBrains AI Pro | $20/seat/month | 1 seat | Via JetBrains Hub | No |
 
-Cursor's two-seat minimum makes it one of the most accessible business-tier tools for small teams. The notable differentiator is Cursor's deeper context window and its ability to reference entire repositories during completions. a feature that matters more as codebases grow in complexity. GitHub Copilot Business wins on simplicity and ecosystem integration, but Cursor typically outperforms it on multi-file reasoning tasks.
+Cursor's two-seat minimum makes it one of the most accessible business-tier tools for small teams. The notable differentiator is Cursor's deeper context window and its ability to reference entire repositories during completions. a feature that matters more as codebases grow in complexity. GitHub Copilot Business wins on simplicity and environment integration, but Cursor typically outperforms it on multi-file reasoning tasks.
 
 For teams heavily invested in JetBrains IDEs, the JetBrains AI Pro option avoids switching costs entirely. Teams already using VS Code will find Cursor's migration path significantly smoother.
 
@@ -225,19 +225,19 @@ def calculate_tco(team_size, years=3):
 
 result = calculate_tco(10, 3)
 print(f"10-person team, 3 years: ${result['total_tco']}")
-Output: 10-person team, 3 years: $21,600
+Output - 10-person team, 3 years: $21,600
 ```
 
 
-ROI Benchmarks: What Teams Actually Report
+ROI Benchmarks - What Teams Actually Report
 
 The financial case for Cursor Business usually rests on measurable productivity gains. Industry surveys and team case studies consistently point to the same categories of time savings:
 
-Code completion speed: Developers report writing routine code 30, 50% faster once they internalize Cursor's Tab-complete patterns for repetitive logic, boilerplate, and test scaffolding.
+Code completion speed - Developers report writing routine code 30, 50% faster once they internalize Cursor's Tab-complete patterns for repetitive logic, boilerplate, and test scaffolding.
 
-Code review throughput: Cursor's inline explanations reduce back-and-forth during reviews. Teams with junior developers report that PR turnaround times drop by roughly 20% within the first month.
+Code review throughput - Cursor's inline explanations reduce back-and-forth during reviews. Teams with junior developers report that PR turnaround times drop by roughly 20% within the first month.
 
-Debugging time: The Ctrl+K in-file chat allows developers to ask questions about unfamiliar code without context switching to a browser. Teams report saving 20, 40 minutes per developer per day on average once adoption is solid.
+Debugging time - The Ctrl+K in-file chat allows developers to ask questions about unfamiliar code without context switching to a browser. Teams report saving 20, 40 minutes per developer per day on average once adoption is solid.
 
 To quantify ROI for your team specifically, use a conservative estimate of one hour per developer per day saved. At $80/hour loaded developer cost, a 10-person team saves $800/day. The $15/seat/month annual plan adds up to $1,800/year for 10 seats. a payback period of roughly two to three workdays. Even under pessimistic assumptions (30 minutes saved per day), the ROI case is strong for teams working primarily in large, complex codebases.
 

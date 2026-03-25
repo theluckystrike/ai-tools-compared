@@ -17,13 +17,13 @@ voice-checked: true
 
 Converting a design mockup into a fully functional Next.js application requires the right AI-powered coding assistant. This guide compares Cursor and Windsurf, the two leading AI editors, focusing on their ability to transform design files into production-ready React code.
 
-The Workflow: From Mockup to Next.js
+The Workflow - From Mockup to Next.js
 
 
 When you receive a Figma or Sketch mockup for a Next.js project, the typical workflow involves extracting component structures, identifying responsive breakpoints, implementing Tailwind CSS styling, and wiring up client-side interactivity. Both Cursor and Windsurf can assist, but their approaches differ significantly.
 
 
-Cursor: On-Demand AI Assistance
+Cursor - On-Demand AI Assistance
 
 
 Cursor provides AI assistance through a chat interface and inline autocomplete. When building from a design mockup, you describe what you need, and Cursor generates the corresponding code.
@@ -94,7 +94,7 @@ export default function PageLayout({ children }) {
 Cursor generates accurate code but requires you to prompt each section explicitly. This gives precise control but can slow down the overall process.
 
 
-Windsurf: Proactive Flow Mode
+Windsurf - Proactive Flow Mode
 
 
 Windsurf takes a different approach with its Flow mode, which proactively suggests code as you work. When you describe your design mockup, Windsurf attempts to generate multiple related components simultaneously.
@@ -186,7 +186,7 @@ Direct Comparison for Design-to-Code
 | Speed | Slower for large features | Faster initial scaffolding |
 
 
-Practical Example: Building a Landing Page
+Practical Example - Building a Landing Page
 
 
 Suppose you have a Figma mockup for a SaaS landing page with a hero, feature grid, pricing table, and contact form. Here is how each tool handles this workflow:
@@ -258,20 +258,20 @@ Windsurf Flow Mode Speed
 Windsurf's Flow mode generates multiple files simultaneously in 20-60 seconds:
 
 ```bash
-Input: "Create admin dashboard with sidebar, header, user profile widget"
-Generation time: ~45 seconds
+Input - "Create admin dashboard with sidebar, header, user profile widget"
+Generation time - ~45 seconds
 Generated files:
   - AdminLayout.tsx
   - Sidebar.tsx
   - Header.tsx
   - UserProfileWidget.tsx
   - types.ts
-Total lines: 400-500 lines across all files
+Total lines - 400-500 lines across all files
 ```
 
 For a complete landing page with 5-7 sections, Cursor requires 5-7 prompts (2-3 minutes total), while Windsurf generates everything in one 60-second pass.
 
-Real-World Workflow Example: SaaS Dashboard
+Real-World Workflow Example - SaaS Dashboard
 
 Imagine building a SaaS dashboard from a Figma mockup with 8 pages: login, dashboard overview, settings, billing, team management, integration marketplace, activity logs, and help center.
 
@@ -279,7 +279,7 @@ With Cursor:
 - Page 1 (login): 1 prompt, 45 seconds
 - Dashboard overview: 3 prompts (header, main grid, widgets) = 2 minutes
 - Settings page: 2 prompts = 1.5 minutes
-- Billing: 2 prompts = 1.5 minutes
+- Billing - 2 prompts = 1.5 minutes
 - Team management: 3 prompts = 2 minutes
 - Integrations marketplace: 4 prompts = 3 minutes
 - Activity logs: 2 prompts = 1.5 minutes
@@ -305,7 +305,7 @@ Create a `.cursorrules` file in your project root to guide Cursor's generation:
 
 ```
 .cursorrules
-Stack: Next.js 15, React 19, TypeScript, Tailwind CSS, shadcn/ui
+Stack - Next.js 15, React 19, TypeScript, Tailwind CSS, shadcn/ui
 
 Component Structure
 - All components are functional components with TypeScript interfaces
@@ -357,25 +357,25 @@ Configure Flow mode behavior in your workspace:
 
 Incremental Development vs. Full Scaffold
 
-Cursor Approach: Incremental
+Cursor Approach - Incremental
 
 Cursor's workflow naturally leads to incremental development:
 
 ```
-Day 1: Generate core components (Login, Nav, Dashboard Grid)
-Day 2: Generate data layer (hooks, API client)
-Day 3: Integrate with backend, add error handling
-Day 4: Fine-tune styling, performance optimization
+Day 1 - Generate core components (Login, Nav, Dashboard Grid)
+Day 2 - Generate data layer (hooks, API client)
+Day 3 - Integrate with backend, add error handling
+Day 4 - Fine-tune styling, performance optimization
 ```
 
-Windsurf Approach: Rapid Prototype
+Windsurf Approach - Rapid Prototype
 
 Windsurf encourages rapid prototyping:
 
 ```
-Hour 1: Generate full feature scaffolds (all pages and components)
-Hour 2-3: Review and refactor generated code
-Hour 4: Integrate with backend services
+Hour 1 - Generate full feature scaffolds (all pages and components)
+Hour 2-3 - Review and refactor generated code
+Hour 4 - Integrate with backend services
 ```
 
 For complex applications requiring tight integration with existing systems, Cursor's incremental approach may be safer. For greenfield projects where you want fast iteration, Windsurf's batch generation speeds up the process.

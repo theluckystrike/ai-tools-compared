@@ -208,7 +208,7 @@ When creating changelog entries:
 ```
 
 
-Tool Comparison: Changelog Instruction Adherence
+Tool Comparison - Changelog Instruction Adherence
 
 | Tool | Config File | Section Ordering | PR Reference Enforcement | Consistency Across Sessions |
 |---|---|---|---|---|
@@ -226,15 +226,15 @@ Step-by-Step Workflow for AI-Assisted Changelog Entries
 
 Once your custom instructions are in place, this workflow produces consistent entries with minimal friction:
 
-Step 1: Generate the candidate entry. Ask your AI tool to draft a changelog entry based on the PR description or commit log. With instructions in place, it will apply your format automatically.
+Step 1 - Generate the candidate entry. Ask your AI tool to draft a changelog entry based on the PR description or commit log. With instructions in place, it will apply your format automatically.
 
-Step 2: Review for accuracy. The AI understands format rules but may not know whether a change is truly "Added" versus "Changed." Apply your own judgment on categorization.
+Step 2 - Review for accuracy. The AI understands format rules but may not know whether a change is truly "Added" versus "Changed." Apply your own judgment on categorization.
 
-Step 3: Verify PR references. Confirm that issue and PR numbers are correct. AI tools sometimes generate plausible-looking but incorrect reference numbers if the context is ambiguous.
+Step 3 - Verify PR references. Confirm that issue and PR numbers are correct. AI tools sometimes generate plausible-looking but incorrect reference numbers if the context is ambiguous.
 
-Step 4: Check entry length. If your rules cap entries at 100 characters, paste each bullet into a character counter. Long AI-generated descriptions benefit from a final human tightening.
+Step 4 - Check entry length. If your rules cap entries at 100 characters, paste each bullet into a character counter. Long AI-generated descriptions benefit from a final human tightening.
 
-Step 5: Append and commit. Add the entry to CHANGELOG.md above the previous most-recent version. Commit with a message like `docs: update changelog for v2.1.0`.
+Step 5 - Append and commit. Add the entry to CHANGELOG.md above the previous most-recent version. Commit with a message like `docs: update changelog for v2.1.0`.
 
 
 Automating Format Validation

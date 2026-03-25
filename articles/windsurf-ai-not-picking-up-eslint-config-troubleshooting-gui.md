@@ -24,7 +24,7 @@ Table of Contents
 - [Solutions for Common Scenarios](#solutions-for-common-scenarios)
 - [Verification](#verification)
 - [Quick Reference Checklist](#quick-reference-checklist)
-- [Advanced Configuration: Workspace Settings Deep Dive](#advanced-configuration-workspace-settings-deep detailed look)
+- [Advanced Configuration - Workspace Settings Deep Dive](#advanced-configuration-workspace-settings-deep detailed look)
 - [ESLint Configuration Examples](#eslint-configuration-examples)
 - [Debugging ESLint Detection with CLI Commands](#debugging-eslint-detection-with-cli-commands)
 - [Windsurf-Specific Troubleshooting](#windsurf-specific-troubleshooting)
@@ -57,7 +57,7 @@ Diagnostic Steps
 
 Follow these steps to identify why Windsurf is not detecting your ESLint configuration.
 
-Step 1: Verify Your Configuration File Exists
+Step 1 - Verify Your Configuration File Exists
 
 Check that your ESLint config file exists in a recognized location:
 
@@ -89,7 +89,7 @@ export default [
 ];
 ```
 
-Step 2: Validate Your Configuration
+Step 2 - Validate Your Configuration
 
 Run ESLint from the command line to confirm your configuration is valid:
 
@@ -99,15 +99,15 @@ npx eslint --print-config . > /dev/null 2>&1 && echo "Config is valid"
 
 If this command fails, fix your configuration before troubleshooting Windsurf.
 
-Step 3: Check Windsurf Workspace Settings
+Step 3 - Check Windsurf Workspace Settings
 
 Open Windsurf settings (Cmd/Ctrl + ,) and verify:
 
 1. Workspace Folder: Ensure Windsurf has the correct project folder open
 2. ESLint Enabled: Verify that ESLint integration is enabled in settings
-3. Node Path: Confirm Windsurf is using the correct Node.js path
+3. Node Path - Confirm Windsurf is using the correct Node.js path
 
-Step 4: Inspect Windsurf Logs
+Step 4 - Inspect Windsurf Logs
 
 Windsurf logs diagnostic information that can reveal detection issues. Access logs through:
 
@@ -122,7 +122,7 @@ Look for messages like:
 
 Solutions for Common Scenarios
 
-Solution 1: Rename to Standard Filename
+Solution 1 - Rename to Standard Filename
 
 If your config uses a non-standard name, rename it:
 
@@ -133,7 +133,7 @@ mv eslint.config.mjs eslint.config.js
 
 For ESLint flat config, use `eslint.config.js` or `eslint.config.mjs` in the project root.
 
-Solution 2: Specify Config Path Explicitly
+Solution 2 - Specify Config Path Explicitly
 
 If your config lives in a subdirectory, tell ESLint where to find it:
 
@@ -150,7 +150,7 @@ To make Windsurf use this path, add it to your VS Code settings:
 }
 ```
 
-Solution 3: Reinstall Dependencies
+Solution 3 - Reinstall Dependencies
 
 Remove and reinstall your node_modules to ensure all ESLint packages are properly installed:
 
@@ -165,7 +165,7 @@ Verify the installation:
 npm list eslint
 ```
 
-Solution 4: Clear Windsurf Cache
+Solution 4 - Clear Windsurf Cache
 
 Clear Windsurf's cache and restart:
 
@@ -180,7 +180,7 @@ rm -rf ~/.cache/windsurf
 
 3. Reopen your project in Windsurf
 
-Solution 5: Configure Monorepo Projects
+Solution 5 - Configure Monorepo Projects
 
 For monorepos, explicitly tell Windsurf which subproject to use:
 
@@ -227,7 +227,7 @@ Use this checklist to ensure complete configuration:
 - [ ] ESLint extension enabled in VS Code settings
 - [ ] Cache cleared after configuration changes
 
-Advanced Configuration: Workspace Settings Deep Dive
+Advanced Configuration - Workspace Settings Deep Dive
 
 For complex setups, create a `.vscode/settings.json` at your project root with granular ESLint configuration:
 
@@ -414,7 +414,7 @@ If ESLint linting is slow or blocking Windsurf, adjust these settings:
 }
 ```
 
-Setting `run: "onSave"` instead of `onChange` prevents constant checking as you type. For monorepos, limiting working directories reduces the scope ESLint must analyze.
+Setting `run - "onSave"` instead of `onChange` prevents constant checking as you type. For monorepos, limiting working directories reduces the scope ESLint must analyze.
 
 Testing Your Config with Sample Files
 

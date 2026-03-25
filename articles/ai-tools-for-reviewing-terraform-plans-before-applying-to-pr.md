@@ -234,7 +234,7 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 
 What is the learning curve like?
 
-Comprehensive Tool Comparison Matrix
+complete Tool Comparison Matrix
 
 | Feature | Claude API | GitHub Copilot | Checkov | tfsec | Policy as Code |
 |---------|-----------|-----------------|---------|-------|-------------------|
@@ -247,7 +247,7 @@ Comprehensive Tool Comparison Matrix
 | Setup complexity | Low | Low | Medium | Medium | High |
 | Learning curve | 30 min | 1 hour | 2 hours | 2 hours | 4-6 hours |
 
-Claude API excels at understanding business context and cost implications. Checkov and tfsec provide comprehensive security scanning. Policy as Code offers maximum customization for organizations with complex governance.
+Claude API excels at understanding business context and cost implications. Checkov and tfsec provide complete security scanning. Policy as Code offers maximum customization for organizations with complex governance.
 
 Production Implementation Guide
 
@@ -319,7 +319,7 @@ class TerraformReviewPipeline:
 
         prompt = f"""Review this Terraform plan and identify:
 
-PROJECT: {self.project}
+PROJECT - {self.project}
 
 RESOURCES BEING CHANGED:
 {json.dumps(resources, indent=2)[:2000]}
@@ -371,7 +371,7 @@ Analyze for:
 
 This pipeline integrates security scanning with AI reasoning for complete review coverage.
 
-Cost Analysis: Infrastructure Changes
+Cost Analysis - Infrastructure Changes
 
 AI tools catch expensive mistakes before they happen:
 
@@ -522,12 +522,12 @@ def notify_plan_review(pr_number: str, review_result: Dict, slack_token: str):
 
     message = f"""{status_emoji} Terraform Plan Review - PR #{pr_number}
 
-Changes: {changes_count} resources
-Status: {'Safe to apply' if review_result['safe_to_apply'] else 'Review required'}
+Changes - {changes_count} resources
+Status - {'Safe to apply' if review_result['safe_to_apply'] else 'Review required'}
 
-Cost Impact: {review_result.get('cost_impact', 'Minimal')}
-Security Findings: {len(review_result.get('security_issues', []))}
-Critical Issues: {len([i for i in review_result.get('security_issues', []) if i.get('severity') == 'critical'])}
+Cost Impact - {review_result.get('cost_impact', 'Minimal')}
+Security Findings - {len(review_result.get('security_issues', []))}
+Critical Issues - {len([i for i in review_result.get('security_issues', []) if i.get('severity') == 'critical'])}
 
 <{review_result.get('pr_url', '#')}|View PR>"""
 

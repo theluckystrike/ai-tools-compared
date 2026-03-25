@@ -126,7 +126,7 @@ app.listen(3000, () => {
 
 Memory Profiling Workflow with Claude Code
 
-Step 1: Baseline Memory Measurement
+Step 1 - Baseline Memory Measurement
 
 Start by establishing a baseline using Node.js built-in memory tracking:
 
@@ -157,7 +157,7 @@ Or use the heapstats module
 npm install heapstats
 ```
 
-Step 2: Identifying Memory Leaks
+Step 2 - Identifying Memory Leaks
 
 Once you have memory profiling data, engage Claude Code to help interpret the results. Provide the memory snapshot or heap dump and ask specific questions:
 
@@ -177,7 +177,7 @@ Claude Code can help you identify patterns like:
 
 - Unbounded cache or data structure growth
 
-Step 3: Analyzing Heap Snapshots
+Step 3 - Analyzing Heap Snapshots
 
 Take multiple heap snapshots at different times to identify growth patterns:
 
@@ -221,7 +221,7 @@ app.get('/debug/compare', (req, res) => {
 
 Debugging Common Memory Issues
 
-Fix 1: Bounded Cache with LRU
+Fix 1 - Bounded Cache with LRU
 
 Replace unbounded cache with a bounded LRU cache:
 
@@ -264,7 +264,7 @@ class LRUCache {
 const lruCache = new LRUCache(100); // Max 100 entries
 ```
 
-Fix 2: Proper Event Listener Cleanup
+Fix 2 - Proper Event Listener Cleanup
 
 Ensure event listeners are properly removed:
 
@@ -300,7 +300,7 @@ const handlerId = addHandler(app, (req) => process(req));
 removeHandler(app, handlerId);
 ```
 
-Fix 3: Closure Leak Prevention
+Fix 3 - Closure Leak Prevention
 
 Break closure references when no longer needed:
 

@@ -28,11 +28,11 @@ Quick Comparison Table
 | GitHub Copilot | 3 min | Very Good | Average | VS Code native | $10/mo | Solo engineers |
 | ReadMe AI | 10 min | Very Good | Outstanding | Stripe webhook | $400/mo | API-first products |
 
-Mintlify: The Fastest Setup
+Mintlify - The Fastest Setup
 
 Mintlify dominates for speed-to-docs. It generates docstrings inline in VS Code, then publishes automatically to a branded portal.
 
-Pricing: $29/month or $490/year (5-person teams). Free tier for single contributor.
+Pricing - $29/month or $490/year (5-person teams). Free tier for single contributor.
 
 Setup (5 minutes):
 
@@ -117,24 +117,24 @@ Gotchas:
 
 ---
 
-Swimm: Enterprise Knowledge Graphs
+Swimm - Enterprise Knowledge Graphs
 
 Table of Contents
 
-- [Swimm: Enterprise Knowledge Graphs](#swimm-enterprise-knowledge-graphs)
-- [Endpoint: POST /api/v1/payments](#endpoint-post-apiv1payments)
-- [Claude Code: Pay-Per-Use Inline Docstrings](#claude-code-pay-per-use-inline-docstrings)
-- [GitHub Copilot: IDE-Native, Lightweight](#github-copilot-ide-native-lightweight)
-- [ReadMe AI: API-First Documentation](#readme-ai-api-first-documentation)
+- [Swimm - Enterprise Knowledge Graphs](#swimm-enterprise-knowledge-graphs)
+- [Endpoint - POST /api/v1/payments](#endpoint-post-apiv1payments)
+- [Claude Code - Pay-Per-Use Inline Docstrings](#claude-code-pay-per-use-inline-docstrings)
+- [GitHub Copilot - IDE-Native, Lightweight](#github-copilot-ide-native-lightweight)
+- [ReadMe AI - API-First Documentation](#readme-ai-api-first-documentation)
 - [Get Invoice](#get-invoice)
 - [Pricing & ROI Matrix](#pricing-roi-matrix)
-- [Integration Setup: Side-by-Side](#integration-setup-side-by-side)
+- [Integration Setup - Side-by-Side](#integration-setup-side-by-side)
 - [Decision Tree](#decision-tree)
-- [Practical Implementation: Quick Start](#practical-implementation-quick-start)
+- [Practical Implementation - Quick Start](#practical-implementation-quick-start)
 
 Swimm takes a different approach: it builds a persistent knowledge base of your codebase architecture, not just docstrings.
 
-Pricing: Custom quotes starting $1,500/month. Free tier for open source.
+Pricing - Custom quotes starting $1,500/month. Free tier for open source.
 
 What You Get:
 
@@ -154,16 +154,16 @@ Connects to your Git repo
 Scans codebase for APIs, functions
 ```
 
-Example Output: API Documentation
+Example Output - API Documentation
 
 Instead of just docstrings, Swimm generates:
 
 ```markdown
 Payment Processing API
 
-Endpoint: POST /api/v1/payments
+Endpoint - POST /api/v1/payments
 
-Function: `processPayment(userId, amount, paymentMethodId)`
+Function - `processPayment(userId, amount, paymentMethodId)`
 
 Inputs:
 - `userId` (string): Customer ID from Stripe
@@ -226,11 +226,11 @@ Weaknesses:
 
 ---
 
-Claude Code: Pay-Per-Use Inline Docstrings
+Claude Code - Pay-Per-Use Inline Docstrings
 
 Claude Code (Anthropic's CLI + editor) generates docstrings inline using Claude Opus 4.6 API.
 
-Pricing: Free (no subscription). Pay per API call (~$0.01-0.03 per docstring for Opus 4.6).
+Pricing - Free (no subscription). Pay per API call (~$0.01-0.03 per docstring for Opus 4.6).
 
 Setup (2 minutes):
 
@@ -254,7 +254,7 @@ def transfer_funds(from_account, to_account, amount, memo=None):
     return Transaction(from_account, to_account, amount)
 ```
 
-Run: `/document-function`
+Run - `/document-function`
 
 Generated:
 ```python
@@ -298,7 +298,7 @@ claude batch-document src/ \
   --skip-existing \
   --output-format google
 Generates docstrings for 500 functions in ~3 minutes
-Cost: ~$5 for entire codebase
+Cost - ~$5 for entire codebase
 ```
 
 CI/CD Integration (Manual):
@@ -334,11 +334,11 @@ Pricing Comparison:
 
 ---
 
-GitHub Copilot: IDE-Native, Lightweight
+GitHub Copilot - IDE-Native, Lightweight
 
 GitHub Copilot isn't purpose-built for docs, but its docstring generation works well for solo engineers.
 
-Pricing: $10/month (individual) or $21/month (business).
+Pricing - $10/month (individual) or $21/month (business).
 
 Setup (3 minutes):
 
@@ -390,11 +390,11 @@ Weaknesses:
 
 ---
 
-ReadMe AI: API-First Documentation
+ReadMe AI - API-First Documentation
 
 ReadMe AI targets product teams building APIs with the goal of beautiful, searchable API docs.
 
-Pricing: $400/month. Free tier for open source projects.
+Pricing - $400/month. Free tier for open source projects.
 
 What You Get:
 
@@ -435,7 +435,7 @@ jobs:
             --token ${{ secrets.README_API_TOKEN }}
 ```
 
-Output: Auto-Generated API Reference
+Output - Auto-Generated API Reference
 
 From your OpenAPI spec:
 ```yaml
@@ -466,7 +466,7 @@ Retrieve a single invoice by ID.
 
 Request
 
-Endpoint: `GET /api/v2/invoices/{invoiceId}`
+Endpoint - `GET /api/v2/invoices/{invoiceId}`
 
 Parameters:
 
@@ -476,7 +476,7 @@ Parameters:
 
 Response
 
-Status: 200 OK
+Status - 200 OK
 
 Body:
 
@@ -551,11 +551,11 @@ For a 15-person engineering team:
 | API-first product | ReadMe AI | $4,800 | 120 hours/year |
 | Solo indie dev | GitHub Copilot | $120/year | 20 hours/year |
 
-Time calculation: 15 engineers × 2 hours onboarding new code per week = 1,560 hours/year without AI. AI tools reduce by 5-15%.
+Time calculation - 15 engineers × 2 hours onboarding new code per week = 1,560 hours/year without AI. AI tools reduce by 5-15%.
 
 ---
 
-Integration Setup: Side-by-Side
+Integration Setup - Side-by-Side
 
 GitHub Actions Trigger:
 
@@ -630,7 +630,7 @@ Choose ReadMe AI if:
 
 ---
 
-Practical Implementation: Quick Start
+Practical Implementation - Quick Start
 
 Fastest path (Mintlify):
 

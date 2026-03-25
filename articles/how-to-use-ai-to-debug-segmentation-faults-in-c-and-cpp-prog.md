@@ -21,7 +21,7 @@ Table of Contents
 
 - [Why Segmentation Faults Are Challenging](#why-segmentation-faults-are-challenging)
 - [Prerequisites](#prerequisites)
-- [Practical Example: Finding a Dangling Pointer](#practical-example-finding-a-dangling-pointer)
+- [Practical Example - Finding a Dangling Pointer](#practical-example-finding-a-dangling-pointer)
 - [Best Practices for AI-Assisted Debugging](#best-practices-for-ai-assisted-debugging)
 - [Troubleshooting](#troubleshooting)
 
@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: AI-Powered Crash Analysis
+Step 1 - AI-Powered Crash Analysis
 
 When you encounter a segmentation fault, start by collecting the core dump or crash information. AI tools excel at interpreting this data. Provide your stack trace to an AI assistant, and it can often identify the likely cause within seconds.
 
@@ -58,7 +58,7 @@ An AI can immediately recognize this pattern as a double-free or use-after-free 
 
 For more complex scenarios, provide the AI with relevant code sections. Ask specific questions like "what happens if pointer `p` is null here?" or "is this function accessing memory after it's been freed?" The AI can analyze your code paths and identify potential issues without you manually stepping through every conditional branch.
 
-Step 2: Common Segmentation Fault Patterns
+Step 2 - Common Segmentation Fault Patterns
 
 AI tools recognize common vulnerability patterns that lead to segmentation faults. Understanding these patterns helps you provide better context to AI assistants and interpret their suggestions.
 
@@ -70,7 +70,7 @@ Buffer overflows happen when you write beyond array bounds. AI can analyze array
 
 Use-after-free bugs occur when you access an object after its destructor runs. AI can track object lifetimes and identify cases where a pointer might be used after its target goes out of scope.
 
-Practical Example: Finding a Dangling Pointer
+Practical Example - Finding a Dangling Pointer
 
 Let's walk through a concrete example. Suppose you have this C++ code with a segmentation fault:
 
@@ -131,7 +131,7 @@ public:
 };
 ```
 
-Step 3: Use AI with Debugging Tools
+Step 3 - Use AI with Debugging Tools
 
 Combine AI analysis with traditional debugging tools for best results. Run your program under gdb or lldb to get exact crash locations. Then feed this information to AI along with relevant code sections.
 
@@ -139,7 +139,7 @@ For example, when gdb shows a crash at address 0x0000000000000000, ask AI: "My p
 
 Address Sanitizer (ASan) and Valgrind provide additional memory error detection. AI can help interpret their output, explaining what each error message means and suggesting specific fixes. Instead of spending time understanding complex error formats, you can paste the output directly to AI and get actionable guidance.
 
-Step 4: Preventive Strategies
+Step 4 - Preventive Strategies
 
 AI can also help prevent segmentation faults before they occur. Use AI code review to catch potential issues during development. Ask AI to audit your memory management code and suggest improvements. Look for patterns like raw pointers that should be smart pointers, missing nullptr checks, or inconsistent ownership semantics.
 
@@ -153,7 +153,7 @@ Verify AI suggestions before applying them. AI can sometimes misidentify the roo
 
 Document what you learn. When you find and fix a segmentation fault, note what caused it and how you identified it. This builds your personal knowledge base and helps you recognize similar issues faster in the future.
 
-Step 5: Real-World Debugging Tools and CLI Commands
+Step 5 - Real-World Debugging Tools and CLI Commands
 
 AI works best when combined with traditional debugging tools. Here are essential commands for capturing data to feed into AI:
 
@@ -187,7 +187,7 @@ When you get AddressSanitizer output like:
 
 Copy this entire output to Claude or ChatGPT along with the relevant code. AI can immediately identify that you're accessing freed memory and pinpoint the exact issue.
 
-Step 6: Memory Analysis Workflow with AI
+Step 6 - Memory Analysis Workflow with AI
 
 A practical workflow for debugging segmentation faults:
 
@@ -214,7 +214,7 @@ Here's my code:
 What's the root cause and how do I fix it?
 ```
 
-Step 7: Comparing AI Tools for Memory Debugging
+Step 7 - Comparing AI Tools for Memory Debugging
 
 | Tool | Strength | Best For |
 |------|----------|----------|
@@ -223,7 +223,7 @@ Step 7: Comparing AI Tools for Memory Debugging
 | GitHub Copilot | IDE-integrated, real-time suggestions | Immediate inline fixes |
 | Cursor AI | Multi-file context, analysis | Large codebase segfaults |
 
-Step 8: Common Pitfalls When Using AI for Debugging
+Step 8 - Common Pitfalls When Using AI for Debugging
 
 Incomplete stack traces. Provide the full trace, not just the first few lines. The actual cause is often several frames deep.
 

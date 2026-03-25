@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand What Your Assistant Can Learn
+Step 1 - Understand What Your Assistant Can Learn
 
 
 AI coding assistants learn from multiple sources: your codebase, documentation, and explicit instructions. Each learning method serves different purposes and produces different results.
@@ -45,7 +45,7 @@ Documentation and configuration files offer explicit guidance. Adding a README, 
 Custom instructions and preferences let you define behavior explicitly. Most modern assistants support project-level or global configuration that shapes their responses. These settings persist across sessions and apply to all interactions within your project.
 
 
-Step 2: Set Up Context Files
+Step 2 - Set Up Context Files
 
 
 Creating a dedicated coding standards file in your project gives assistants a reference they can rely on. This file should contain your team's essential conventions in a format the assistant can parse easily.
@@ -57,24 +57,24 @@ A practical approach uses Markdown with clear sections. Here's an example struct
 ```markdown
 Project Coding Standards
 
-Step 3: Naming Conventions
+Step 3 - Naming Conventions
 - Use camelCase for variables and functions
 - Use PascalCase for classes and components
 - Use SCREAMING_SNAKE_CASE for constants
 - Prefix boolean variables with `is`, `has`, `should`, or `can`
 
-Step 4: Code Organization
+Step 4 - Code Organization
 - Place related functions in the same module
 - Export default for primary functionality, named exports for utilities
 - Group imports: external libraries, then relative imports
 - Maximum function length: 50 lines
 
-Step 5: Error Handling
+Step 5 - Error Handling
 - Use custom error classes extending Error
 - Include error codes and user-friendly messages
 - Never expose sensitive information in error responses
 
-Step 6: Test
+Step 6 - Test
 - Test file naming: `*.test.ts` alongside `*.ts`
 - Describe blocks should be sentence-style descriptions
 - Include Arrange-Act-Assert comments in test structure
@@ -84,7 +84,7 @@ Step 6: Test
 Save this file as `CODING_STANDARDS.md` in your project root. Most assistants check for this file automatically or can be configured to reference it.
 
 
-Step 7: Use Assistant Configuration Files
+Step 7 - Use Assistant Configuration Files
 
 
 Many AI coding assistants respect configuration files that define project-specific behavior. For Cursor, create a `.cursorrules` file. For GitHub Copilot, use a `copilot-inputs.txt` or similar configuration. These files accept natural language descriptions of your preferences.
@@ -113,7 +113,7 @@ When generating code:
 This configuration shapes every response the assistant generates within your project context.
 
 
-Step 8: Teaching Through Code Examples
+Step 8 - Teaching Through Code Examples
 
 
 Beyond documentation, showing the assistant examples of code you consider good produces more accurate results. Create reference files that demonstrate your patterns explicitly.
@@ -172,7 +172,7 @@ export function Button({
 Place these reference files in a `references/` or `examples/` directory. The assistant learns from their structure, typing patterns, and style.
 
 
-Step 9: Providing Feedback on Suggestions
+Step 9 - Providing Feedback on Suggestions
 
 
 When the assistant generates code that doesn't match your standards, providing corrective feedback helps it learn. Most assistants respond well to explicit corrections.
@@ -195,7 +195,7 @@ Our team uses async/await instead of .then() chains. Please refactor to use asyn
 The more specific your feedback, the better the assistant adjusts. Over time, the assistant develops a mental model of your preferences and anticipates your needs.
 
 
-Step 10: Automate Standards Enforcement
+Step 10 - Automate Standards Enforcement
 
 
 Consider integrating linting and formatting tools that automatically enforce your standards. When the assistant generates code that violates these rules, your tools flag issues immediately. This creates a feedback loop: the assistant learns from the lint errors and gradually produces cleaner code.
@@ -215,7 +215,7 @@ Popular tools include:
 Configure your editor to run these tools on save, providing immediate feedback when code deviates from standards.
 
 
-Step 11: Measuring Improvement
+Step 11 - Measuring Improvement
 
 
 Track how often you override or rewrite AI suggestions. A decrease in overrides typically indicates the assistant is learning your patterns. Conversely, if you constantly correct the same issues, adjust your configuration or documentation.
@@ -224,7 +224,7 @@ Track how often you override or rewrite AI suggestions. A decrease in overrides 
 Also note response relevance. After implementing training methods, assess whether suggestions now match your file organization, naming conventions, and architectural patterns. Quality improvements are often more valuable than quantity metrics.
 
 
-Step 12: Build Long-Term Knowledge
+Step 12 - Build Long-Term Knowledge
 
 
 Most assistants maintain conversation context and learn within a session. However, project-level knowledge often resets between sessions or when opening new workspaces. To build persistent knowledge:

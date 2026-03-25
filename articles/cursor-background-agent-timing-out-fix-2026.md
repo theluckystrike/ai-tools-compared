@@ -50,7 +50,7 @@ The background agent is fundamentally different from the inline autocomplete fea
 Step-by-Step Fixes
 
 
-Fix 1: Check Your Internet Connection
+Fix 1 - Check Your Internet Connection
 
 
 Start with the simplest fix. Cursor's AI agents communicate with external servers. Test your connection:
@@ -68,7 +68,7 @@ If these fail, restart your router or switch networks. For developers behind cor
 If `ping` succeeds but `curl` times out, the issue may be TLS inspection by a corporate proxy. Cursor's API traffic uses HTTPS, and some proxy configurations break the TLS handshake or introduce enough latency to trigger timeouts at the application layer. Ask your network team whether AI tool traffic is being intercepted.
 
 
-Fix 2: Adjust Timeout Settings
+Fix 2 - Adjust Timeout Settings
 
 
 Cursor allows configuration of agent timeout values. Access your settings file:
@@ -96,7 +96,7 @@ Increase the timeout value from the default (usually 60 seconds) to 300 seconds 
 The `maxRetries` setting controls how many times the agent attempts a failed request before surfacing an error. Setting this to 3 with a 5-second delay means the agent will try for up to 15 additional seconds before giving up, which covers most transient network blips without making the experience feel broken.
 
 
-Fix 3: Reduce Context Load
+Fix 3 - Reduce Context Load
 
 
 When Cursor tries to process too much context, agents struggle to complete within the time limit. Reduce the load:
@@ -131,7 +131,7 @@ __pycache__/
 A `.cursorignore` file works similarly to `.gitignore`. Any path listed there is excluded from the agent's context window. For monorepos, be selective: ignoring `packages/legacy-service/` when you are working on `packages/api/` cuts context dramatically without losing relevant code. The agent will still be able to reference files you explicitly mention in your prompt, even if they are in an ignored directory.
 
 
-Fix 4: Update Cursor to the Latest Version
+Fix 4 - Update Cursor to the Latest Version
 
 
 Newer versions include performance improvements and bug fixes. Update through:
@@ -141,7 +141,7 @@ Newer versions include performance improvements and bug fixes. Update through:
 
 - Windows: Open Cursor and go to Help > Check for Updates
 
-- Linux: Reinstall the latest .deb or .AppImage package
+- Linux - Reinstall the latest .deb or .AppImage package
 
 
 After updating, restart Cursor completely and test if timeouts persist.
@@ -150,7 +150,7 @@ After updating, restart Cursor completely and test if timeouts persist.
 Cursor releases background agent improvements frequently. Release notes for 2025-2026 versions specifically address timeout handling for large repositories, improved retry logic, and smarter context windowing. If you are more than two minor versions behind, update before attempting other fixes. the root cause may already be patched.
 
 
-Fix 5: Clear Cache and Reset Settings
+Fix 5 - Clear Cache and Reset Settings
 
 
 Corrupted cache data causes unpredictable behavior. Clear Cursor's cache:
@@ -176,7 +176,7 @@ After clearing cache, reset settings to default and reconfigure only what you ne
 Cache corruption most commonly occurs after Cursor crashes mid-session or after an abrupt system shutdown. The agent stores partial index data in its cache; if that data is malformed, subsequent sessions may hang while trying to read it. A clean cache forces a fresh index on next launch, which takes longer initially but resolves the hang.
 
 
-Fix 6: Check System Resources
+Fix 6 - Check System Resources
 
 
 Insufficient system resources affect agent performance. Monitor your system:
@@ -195,7 +195,7 @@ Close other resource-intensive applications. For developers on older hardware, c
 On macOS, use Activity Monitor to watch Cursor's memory footprint. For large projects, the background agent process (`Cursor Helper`) can consume 1-2GB of RAM independently of the main application. If your system is under memory pressure, the OS begins swapping, and the agent's index reads slow dramatically. often enough to trigger timeouts even on a fast network.
 
 
-Fix 7: Configure Proxy Settings (Corporate Networks)
+Fix 7 - Configure Proxy Settings (Corporate Networks)
 
 
 If you're behind a corporate firewall or proxy, misconfigured network settings cause timeouts. Add these to your Cursor settings:
@@ -238,7 +238,7 @@ Turn on detailed logging to see what happens during timeouts:
 
  - Linux: `~/.config/Cursor/logs/main.log`
 
- - Windows: `%APPDATA%\Cursor\logs\main.log`
+ - Windows - `%APPDATA%\Cursor\logs\main.log`
 
 
 Look for error messages like "Agent request timed out" or "Connection lost" to pinpoint the failure point.

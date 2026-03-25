@@ -20,12 +20,12 @@ Split large files into focused modules before sharing with AI to stay within con
 Table of Contents
 
 - [Understanding Context Window Constraints](#understanding-context-window-constraints)
-- [Strategy One: Targeted File Selection](#strategy-one-targeted-file-selection)
-- [Strategy Two: Directory-Based Context Grouping](#strategy-two-directory-based-context-grouping)
-- [Strategy Three: Context Compression Through Comments](#strategy-three-context-compression-through-comments)
-- [Strategy Four: Chunked Analysis for Complex Tasks](#strategy-four-chunked-analysis-for-complex-tasks)
-- [Strategy Five: Use Project Knowledge Features](#strategy-five-use-project-knowledge-features)
-- [Practical Application: Real-World Example](#practical-application-real-world-example)
+- [Strategy One - Targeted File Selection](#strategy-one-targeted-file-selection)
+- [Strategy Two - Directory-Based Context Grouping](#strategy-two-directory-based-context-grouping)
+- [Strategy Three - Context Compression Through Comments](#strategy-three-context-compression-through-comments)
+- [Strategy Four - Chunked Analysis for Complex Tasks](#strategy-four-chunked-analysis-for-complex-tasks)
+- [Strategy Five - Use Project Knowledge Features](#strategy-five-use-project-knowledge-features)
+- [Practical Application - Real-World Example](#practical-application-real-world-example)
 - [Measuring and Optimizing Your Approach](#measuring-and-optimizing-your-approach)
 - [Semantic Chunking Techniques](#semantic-chunking-techniques)
 - [Context Window Size Comparison (2026)](#context-window-size-comparison-2026)
@@ -43,7 +43,7 @@ Modern AI coding assistants offer varying context window sizes, from around 32,0
 
 The key insight is that not all code carries equal importance. Strategic context selection, providing the right files in the right order, produces better results than flooding the context with everything. AI models excel at pattern recognition, so giving them focused, relevant code samples yields more accurate suggestions than overwhelming them with irrelevant files.
 
-Strategy One: Targeted File Selection
+Strategy One - Targeted File Selection
 
 The most effective approach involves manually selecting which files to include in your AI session. Before starting a coding task, identify the files directly relevant to your objective.
 
@@ -61,7 +61,7 @@ Skip files that exist in your project but do not directly relate to the task. A 
 
 Most AI coding tools support file-specific commands that let you explicitly include or exclude files from context. Learn the specific syntax for your tool, Cursor uses `@Files`, GitHub Copilot supports `/references`, and similar patterns exist across platforms.
 
-Strategy Two: Directory-Based Context Grouping
+Strategy Two - Directory-Based Context Grouping
 
 Rather than selecting individual files, organize your project into logical directory structures that align with specific features or modules. This approach simplifies context management for complex multi-file tasks.
 
@@ -91,7 +91,7 @@ src/
 
 When working on payment features, including the entire `features/payments/` directory provides cohesive context. The AI understands the payment module holistically rather than receiving scattered unrelated files.
 
-Strategy Three: Context Compression Through Comments
+Strategy Three - Context Compression Through Comments
 
 Sometimes you need to reference code that exceeds available context space. In these situations, summarizing code through comments provides a practical alternative to full file inclusion.
 
@@ -118,11 +118,11 @@ For larger files, extract only the critical sections:
 // - created_at, updated_at: timestamps
 ```
 
-Strategy Four: Chunked Analysis for Complex Tasks
+Strategy Four - Chunked Analysis for Complex Tasks
 
 Large refactoring tasks often exceed context limits even with careful selection. The chunked approach breaks massive changes into manageable sessions.
 
-First session: Analyze the current implementation
+First session - Analyze the current implementation
 
 ```
 Review the following files and identify dependencies:
@@ -131,7 +131,7 @@ Review the following files and identify dependencies:
 - src/utils/currency.ts
 ```
 
-Second session: Implement changes based on analysis
+Second session - Implement changes based on analysis
 
 ```
 Based on the previous analysis showing tight coupling between
@@ -141,7 +141,7 @@ PaymentGateway interface defined in src/interfaces/payment.ts
 
 This sequential approach uses AI's context window while maintaining coherent progress through large tasks. Each session builds upon previous analysis without overwhelming the context.
 
-Strategy Five: Use Project Knowledge Features
+Strategy Five - Use Project Knowledge Features
 
 Modern AI coding assistants offer project-level awareness features that maintain context across sessions. These systems build an internal understanding of your codebase structure, reducing the need to repeatedly explain your project layout.
 
@@ -157,14 +157,14 @@ Configure your AI tool to index your codebase effectively:
 
 The initial setup investment pays dividends through improved suggestions across all future sessions. The AI learns your project structure and can intelligently reference files you have not explicitly mentioned.
 
-Practical Application: Real-World Example
+Practical Application - Real-World Example
 
 Suppose you need to add retry logic to API calls in a microservices architecture. Rather than dumping all service files into context, apply these strategies:
 
 ```typescript
 // Session 1: Understand the pattern
 // Focus on: one working service implementation and the base HTTP client
-// Files: services/user-service.ts, lib/http-client.ts
+// Files - services/user-service.ts, lib/http-client.ts
 
 // Session 2: Implement retry logic
 // Based on http-client.ts structure, add exponential backoff retry
@@ -332,19 +332,19 @@ Batch Processing for Large Projects
 Break mammoth refactoring into sessions:
 
 ```bash
-Session 1: Analyze and plan
+Session 1 - Analyze and plan
 Provide 3-4 files, understand the structure
 claude --mode analyze "How would you refactor payment-service.ts?"
 
-Session 2: Implement authentication changes
+Session 2 - Implement authentication changes
 claude --include "src/services/auth.ts" --include "src/middleware/auth.ts" \
        "Migrate auth service to JWT tokens"
 
-Session 3: Update dependent services
+Session 3 - Update dependent services
 claude --include "src/services/payment-service.ts" \
        "Update payment service to use new auth tokens"
 
-Session 4: Migrate tests
+Session 4 - Migrate tests
 claude --include "src//*.test.ts" \
        "Update tests to match new auth structure"
 ```

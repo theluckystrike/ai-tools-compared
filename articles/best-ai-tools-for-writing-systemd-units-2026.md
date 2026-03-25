@@ -25,16 +25,16 @@ Writing a minimal systemd service unit is easy. Writing one that correctly handl
 
 AI tools collapse that research time. The key question is whether they apply the right directives by default, understand the interactions between them, and flag common mistakes before you discover them in production.
 
-Service Unit: Production Web App
+Service Unit - Production Web App
 
 Prompt to Claude:
 ```text
 Write a systemd service unit for a Node.js web server.
-Binary: /usr/local/bin/node /opt/myapp/server.js
-User: myapp, Group: myapp
-Environment: PORT=3000, NODE_ENV=production
+Binary - /usr/local/bin/node /opt/myapp/server.js
+User - myapp, Group: myapp
+Environment - PORT=3000, NODE_ENV=production
 Auto-restart on failure with backoff. Start after network-online.target.
-Apply security hardening: no new privileges, private tmp, protect system, restrict address families.
+Apply security hardening - no new privileges, private tmp, protect system, restrict address families.
 Limit to 2 CPU shares and 512MB memory.
 ```
 
@@ -96,9 +96,9 @@ WantedBy=multi-user.target
 
 This is a production-quality unit. Claude adds `Wants=network-online.target` (not just `After=`) so systemd actually waits for a real network connection, not just the systemd-networkd socket. It uses `SystemCallFilter=@system-service` which restricts to a safe set of syscalls rather than trying to enumerate them individually. this is the maintainable approach.
 
-One note: `MemoryDenyWriteExecute=true` can break JIT-enabled runtimes like V8 (Node.js). Claude flags this in its explanation, but will include it by default. remove it for Node.js, Python, or any JIT language.
+One note - `MemoryDenyWriteExecute=true` can break JIT-enabled runtimes like V8 (Node.js). Claude flags this in its explanation, but will include it by default. remove it for Node.js, Python, or any JIT language.
 
-Comparison: ChatGPT
+Comparison - ChatGPT
 
 ChatGPT produces syntactically correct units but tends to use weaker hardening defaults:
 - Uses `After=network.target` instead of `network-online.target` (the difference: `network.target` is reached when systemd-networkd starts, `network-online.target` requires an actual routable IP)
@@ -286,8 +286,8 @@ WantedBy=multi-user.target
 /etc/systemd/system/api.service
 [Unit]
 Description=API Server
-After: this service starts after the listed services
-Requires: if these services fail/stop, this service stops
+After - this service starts after the listed services
+Requires - if these services fail/stop, this service stops
 After=database.service cache.service
 Requires=database.service cache.service
 Wants=network-online.target
@@ -359,7 +359,7 @@ systemctl show nginx --property=MemoryMax
 ```
 
 Claude explains that drop-in files in `.service.d/` directories merge with the base unit. you only need to include the directives you're changing. ChatGPT sometimes suggests editing `/lib/systemd/system/nginx.service` directly, which is overwritten on package updates.
-The key distinction: `After` orders startup but allows independent operation. `Requires` makes the dependency mandatory. if the database crashes, the API service stops too. `PartOf` further ties the lifecycle. stopping the database stops the API.
+The key distinction - `After` orders startup but allows independent operation. `Requires` makes the dependency mandatory. if the database crashes, the API service stops too. `PartOf` further ties the lifecycle. stopping the database stops the API.
 
 Drop-in Overrides
 
@@ -504,7 +504,7 @@ Use Claude when you need production-quality units with complete hardening. The a
 
 Use ChatGPT for quick scaffolding when you know you'll review the hardening separately. Its units are syntactically correct and follow the basic structure, but plan to add hardening directives yourself before deploying to production.
 
-For either tool: always run `systemd-analyze verify` before deploying, and `systemd-analyze security` if the service runs with elevated privileges or handles sensitive data.
+For either tool - always run `systemd-analyze verify` before deploying, and `systemd-analyze security` if the service runs with elevated privileges or handles sensitive data.
 
 Related Reading
 

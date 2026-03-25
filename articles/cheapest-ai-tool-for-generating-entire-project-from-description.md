@@ -23,8 +23,8 @@ Table of Contents
 - [Why Generate Projects from Description?](#why-generate-projects-from-description)
 - [Top Cheap Options for Project Generation](#top-cheap-options-for-project-generation)
 - [Cost Comparison Table](#cost-comparison-table)
-- [Practical Example: $0 Project Generation](#practical-example-0-project-generation)
-- [Step-by-Step: Setting Up Cost-Effective Project Generation](#step-by-step-setting-up-cost-effective-project-generation)
+- [Practical Example - $0 Project Generation](#practical-example-0-project-generation)
+- [Step-by-Step - Setting Up Cost-Effective Project Generation](#step-by-step-setting-up-cost-effective-project-generation)
 - [Pro Tips for Maximizing Output Quality](#pro-tips-for-maximizing-output-quality)
 - [Which Tool Should You Choose?](#which-tool-should-you-choose)
 - [Tips for Reducing Costs Further](#tips-for-reducing-costs-further)
@@ -72,7 +72,7 @@ response = client.messages.create(
 print(response.content[0].text)
 ```
 
-Cost example: Generating a full project structure typically uses 500-2000 tokens of input and 2000-8000 tokens of output. At Haiku pricing ($0.25/M input, $1.25/M output), a complete project scaffold costs approximately $0.01-$0.03. That's less than a penny for most projects.
+Cost example - Generating a full project structure typically uses 500-2000 tokens of input and 2000-8000 tokens of output. At Haiku pricing ($0.25/M input, $1.25/M output), a complete project scaffold costs approximately $0.01-$0.03. That's less than a penny for most projects.
 
 2. Aider (CLI Power User's Choice)
 
@@ -114,8 +114,8 @@ Cursor combines AI assistance with project generation directly in your editor. W
 ```python
 In Cursor, use Composer with:
 @Context: Create a full-stack e-commerce site
-Include: React, Stripe integration, cart functionality
-Budget option: Use the free tier which includes generous AI usage
+Include - React, Stripe integration, cart functionality
+Budget option - Use the free tier which includes generous AI usage
 ```
 
 The free tier includes limited AI requests, but for project scaffolding, it's often enough to get started.
@@ -148,7 +148,7 @@ Cost Comparison Table
 | Copilot (Student) | Yes | $10/month | Bundled | Existing GitHub users |
 | Codeium | Yes | $12/user/month | Bundled | Budget teams |
 
-Practical Example: $0 Project Generation
+Practical Example - $0 Project Generation
 
 Here's how to generate a complete project for under $0.01 using Claude Haiku:
 
@@ -178,11 +178,11 @@ def generate_project(project_type, description):
     # Parse and create files from response
     return response.content[0].text
 
-Usage: Less than $0.01 per project
+Usage - Less than $0.01 per project
 result = generate_project("flask", "SQLAlchemy, REST API, authentication")
 ```
 
-Step-by-Step: Setting Up Cost-Effective Project Generation
+Step-by-Step - Setting Up Cost-Effective Project Generation
 
 The following workflow keeps costs predictable while still generating production-quality scaffolding.
 

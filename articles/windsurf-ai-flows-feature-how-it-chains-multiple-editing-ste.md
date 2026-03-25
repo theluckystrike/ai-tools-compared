@@ -22,7 +22,7 @@ Table of Contents
 
 - [What Are Windsurf AI Flows?](#what-are-windsurf-ai-flows)
 - [How Multi-Step Chaining Works](#how-multi-step-chaining-works)
-- [Practical Example: Automated Code Refactoring Pipeline](#practical-example-automated-code-refactoring-pipeline)
+- [Practical Example - Automated Code Refactoring Pipeline](#practical-example-automated-code-refactoring-pipeline)
 - [Benefits for Developer Workflows](#benefits-for-developer-workflows)
 - [Configuring Flow Execution](#configuring-flow-execution)
 - [Real-World Use Cases](#real-world-use-cases)
@@ -30,7 +30,7 @@ Table of Contents
 - [Advanced Flow Patterns](#advanced-flow-patterns)
 - [Real-World Use Cases Expanded](#real-world-use-cases-expanded)
 - [Comparing Windsurf Flows to Alternatives](#comparing-windsurf-flows-to-alternatives)
-- [Step-by-Step: Building Your First Flow](#step-by-step-building-your-first-flow)
+- [Step-by-Step - Building Your First Flow](#step-by-step-building-your-first-flow)
 - [Performance Considerations](#performance-considerations)
 - [Monitoring and Debugging Flows](#monitoring-and-debugging-flows)
 - [Pricing and ROI Analysis](#pricing-and-roi-analysis)
@@ -59,7 +59,7 @@ Consider a scenario where you need to refactor a JavaScript function and update 
 
 Each step executes in order, with the AI carrying forward relevant context from previous steps.
 
-Practical Example: Automated Code Refactoring Pipeline
+Practical Example - Automated Code Refactoring Pipeline
 
 Here's how you might structure a flow for refactoring a legacy function:
 
@@ -138,7 +138,7 @@ Review the output of each step before proceeding to subsequent steps. While Flow
 
 Advanced Flow Patterns
 
-Pattern 1: Dependency Chain with Error Recovery
+Pattern 1 - Dependency Chain with Error Recovery
 
 ```yaml
 name: refactor-and-validate
@@ -167,7 +167,7 @@ steps:
     on_failure: "Stop and show errors"
 ```
 
-Pattern 2: Parallel Processing
+Pattern 2 - Parallel Processing
 
 ```yaml
 name: multi-language-refactor
@@ -198,7 +198,7 @@ steps:
 
 Real-World Use Cases Expanded
 
-Use Case 1: Legacy Code Modernization
+Use Case 1 - Legacy Code Modernization
 
 A team has a 10-year-old JavaScript codebase using callbacks everywhere. They want to migrate to async/await while maintaining backward compatibility for 6 months.
 
@@ -215,7 +215,7 @@ Results:
 - Built-in documentation updates
 - Complete test coverage for migrated code
 
-Use Case 2: Documentation Sync
+Use Case 2 - Documentation Sync
 
 When code changes, documentation often falls out of sync. A flow can automate this:
 
@@ -225,9 +225,9 @@ When code changes, documentation often falls out of sync. A flow can automate th
 4. Update references: Find and update all documentation files
 5. Validate links: Ensure all internal documentation links still work
 
-Impact: Documentation stays current without manual effort
+Impact - Documentation stays current without manual effort
 
-Use Case 3: Security Hardening Sprint
+Use Case 3 - Security Hardening Sprint
 
 Before a security audit, a team runs a flow to address common issues:
 
@@ -250,36 +250,36 @@ Comparing Windsurf Flows to Alternatives
 | IDE Integration | Excellent | Excellent | Native | N/A |
 | Cost | $20/month | $20/month | $20/month | Free (labor) |
 
-Step-by-Step: Building Your First Flow
+Step-by-Step - Building Your First Flow
 
 Here's how to build a practical flow from scratch:
 
-Step 1: Define the Goal
+Step 1 - Define the Goal
 ```
-Goal: Modernize TypeScript code from v3 to v5
-Current state: 200+ files using deprecated syntax
-Desired state: All files using modern TypeScript patterns
-Success criteria: Code compiles, tests pass, no breaking changes
-```
-
-Step 2: Break into Phases
-```
-Phase 1: Analyze current codebase (identify patterns to update)
-Phase 2: Auto-migrate syntax (semi-automatic with AI assistance)
-Phase 3: Handle edge cases (manual review points)
-Phase 4: Test and validate (run test suite)
-Phase 5: Documentation (update comments and READMEs)
+Goal - Modernize TypeScript code from v3 to v5
+Current state - 200+ files using deprecated syntax
+Desired state - All files using modern TypeScript patterns
+Success criteria - Code compiles, tests pass, no breaking changes
 ```
 
-Step 3: Structure Prompts
+Step 2 - Break into Phases
 ```
-Phase 1 prompt: "Analyze our TypeScript codebase and list:
+Phase 1 - Analyze current codebase (identify patterns to update)
+Phase 2 - Auto-migrate syntax (semi-automatic with AI assistance)
+Phase 3 - Handle edge cases (manual review points)
+Phase 4 - Test and validate (run test suite)
+Phase 5 - Documentation (update comments and READMEs)
+```
+
+Step 3 - Structure Prompts
+```
+Phase 1 prompt - "Analyze our TypeScript codebase and list:
 1. All deprecated TypeScript patterns
 2. Files using each pattern
 3. Risk level for migrating (critical, high, medium, low)
 4. Total number of instances"
 
-Phase 2 prompt: "Generate migration code for: [list from Phase 1]
+Phase 2 prompt - "Generate migration code for: [list from Phase 1]
 Requirements:
 - Maintain exact functionality
 - Add comments explaining changes
@@ -287,7 +287,7 @@ Requirements:
 - Generate type definitions"
 ```
 
-Step 4: Add Validation
+Step 4 - Add Validation
 ```
 After Phase 2:
 - Run linter (tsc --strict)
@@ -296,7 +296,7 @@ After Phase 2:
 - Check for type errors
 ```
 
-Step 5: Execute and Review
+Step 5 - Execute and Review
 Run the flow, review each phase output, approve before proceeding to the next step.
 
 Performance Considerations

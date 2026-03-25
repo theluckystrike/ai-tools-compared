@@ -176,13 +176,13 @@ Advanced Use Cases
 
 Beyond component generation, Copilot Vision excels in several specialized scenarios:
 
-Design system extraction: Paste screenshots of your existing product and ask Copilot to identify and catalog all unique components, color palettes, and typography patterns. This helps teams build unified design systems from legacy applications.
+Design system extraction - Paste screenshots of your existing product and ask Copilot to identify and catalog all unique components, color palettes, and typography patterns. This helps teams build unified design systems from legacy applications.
 
-Responsive design validation: Take screenshots at multiple breakpoints (mobile, tablet, desktop) and ask Copilot to verify consistency. It can identify where layouts break or text becomes unreadable at smaller sizes.
+Responsive design validation - Take screenshots at multiple breakpoints (mobile, tablet, desktop) and ask Copilot to verify consistency. It can identify where layouts break or text becomes unreadable at smaller sizes.
 
-Accessibility audit: Beyond dedicated accessibility tools, Copilot Vision can identify potential accessibility issues like insufficient color contrast, missing visual indicators, or small touch targets.
+Accessibility audit - Beyond dedicated accessibility tools, Copilot Vision can identify potential accessibility issues like insufficient color contrast, missing visual indicators, or small touch targets.
 
-Cross-platform comparison: Paste screenshots from iOS and Android implementations and ask Copilot to suggest how to bring design consistency between platforms while respecting platform conventions.
+Cross-platform comparison - Paste screenshots from iOS and Android implementations and ask Copilot to suggest how to bring design consistency between platforms while respecting platform conventions.
 
 Advanced Capabilities and Performance Trade-offs
 

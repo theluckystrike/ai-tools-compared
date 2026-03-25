@@ -20,12 +20,12 @@ Table of Contents
 
 - [Why AI-Assisted Python Learning Matters](#why-ai-assisted-python-learning-matters)
 - [Comparing Free AI Tools at a Glance](#comparing-free-ai-tools-at-a-glance)
-- [Claude Code: Terminal-Based Python Assistance](#claude-code-terminal-based-python-assistance)
-- [GitHub Copilot: Inline Code Generation](#github-copilot-inline-code-generation)
-- [Aider: Pair Programming in the Terminal](#aider-pair-programming-in-the-terminal)
-- [ChatGPT and Claude: Conceptual Learning](#chatgpt-and-claude-conceptual-learning)
-- [Debugging Python Errors With AI: A Practical Workflow](#debugging-python-errors-with-ai-a-practical-workflow)
-- [Practical Examples: Building Real Projects](#practical-examples-building-real-projects)
+- [Claude Code - Terminal-Based Python Assistance](#claude-code-terminal-based-python-assistance)
+- [GitHub Copilot - Inline Code Generation](#github-copilot-inline-code-generation)
+- [Aider - Pair Programming in the Terminal](#aider-pair-programming-in-the-terminal)
+- [ChatGPT and Claude - Conceptual Learning](#chatgpt-and-claude-conceptual-learning)
+- [Debugging Python Errors With AI - A Practical Workflow](#debugging-python-errors-with-ai-a-practical-workflow)
+- [Practical Examples - Building Real Projects](#practical-examples-building-real-projects)
 - [Choosing the Right Tool](#choosing-the-right-tool)
 - [Getting Started](#getting-started)
 
@@ -49,14 +49,14 @@ Before examining each tool individually, here is how the major free options comp
 
 The free tiers of Claude and ChatGPT are best for learners who have conceptual questions. Copilot's free tier shines when you want to observe how idiomatic Python looks in practice. Local setups via Aider or Continue are best for developers who work with proprietary code and cannot send it to cloud services.
 
-Claude Code: Terminal-Based Python Assistance
+Claude Code - Terminal-Based Python Assistance
 
 Claude Code functions as a command-line AI assistant that integrates well with Python development workflows. It handles complex debugging scenarios and explains Python concepts thoroughly.
 
 When working with Python, Claude Code helps debug issues that might confuse beginners:
 
 ```python
-Common mistake: modifying list while iterating
+Common mistake - modifying list while iterating
 numbers = [1, 2, 3, 4, 5]
 
 This causes unexpected behavior
@@ -64,7 +64,7 @@ for num in numbers:
     if num % 2 == 0:
         numbers.remove(num)
 
-print(numbers)  # Output: [1, 3, 5, 4] - unexpected!
+print(numbers)  # Output - [1, 3, 5, 4] - unexpected!
 ```
 
 Claude Code identifies the issue and explains why modifying a list during iteration causes unpredictable results. It suggests using list comprehension or creating a copy:
@@ -74,12 +74,12 @@ Correct approach using list comprehension
 numbers = [1, 2, 3, 4, 5]
 numbers = [num for num in numbers if num % 2 != 0]
 
-print(numbers)  # Output: [1, 3, 5] - correct!
+print(numbers)  # Output - [1, 3, 5] - correct!
 ```
 
 The tool also helps with understanding Python's memory model, garbage collection, and performance implications of different approaches.
 
-GitHub Copilot: Inline Code Generation
+GitHub Copilot - Inline Code Generation
 
 GitHub Copilot provides inline suggestions as you type, making it useful for learning Python syntax and common patterns. It works well in popular editors like VS Code and JetBrains IDEs.
 
@@ -116,7 +116,7 @@ flat = [item for sublist in nested for item in sublist]
 
 This is valid Python, but learners who accept it without unpacking the double comprehension syntax miss an important learning moment. The habit to develop: after accepting a Copilot suggestion, ask Claude or ChatGPT to explain why that pattern works. Using both tools together. Copilot for generation, a conversational AI for explanation. accelerates learning more than either alone.
 
-Aider: Pair Programming in the Terminal
+Aider - Pair Programming in the Terminal
 
 Aider offers a terminal-based AI pairing experience specifically designed for software development. It connects with Git repositories and assists with coding tasks directly in your command-line environment.
 
@@ -142,7 +142,7 @@ def process_data(data):
 
 Aider explains the benefits of each approach, helping developers understand when to use list comprehensions versus traditional loops.
 
-ChatGPT and Claude: Conceptual Learning
+ChatGPT and Claude - Conceptual Learning
 
 Free tiers of ChatGPT and Claude provide excellent conceptual explanations for Python learners. These tools break down complex topics into understandable segments.
 
@@ -173,7 +173,7 @@ for animal in animals:
 
 These AI assistants explain inheritance, polymorphism, and proper OOP design patterns in context.
 
-Debugging Python Errors With AI: A Practical Workflow
+Debugging Python Errors With AI - A Practical Workflow
 
 One of the highest-use uses of free AI tools for Python learners is systematic error debugging. Rather than copying a traceback into a search engine and hoping for a Stack Overflow match, you can paste the full traceback plus the relevant code into any conversational AI and get a targeted explanation.
 
@@ -189,20 +189,20 @@ user_data = [
 
 for user in user_data:
     print(f"{user['name']} is {user['age']} years old")
-Raises: KeyError: 'age'
+Raises - KeyError: 'age'
 ```
 
 Pasting this code and the traceback into Claude's free tier returns not only the fix but an explanation of Python's dictionary access semantics and three alternative patterns ranked by use case:
 
 ```python
-Option 1: dict.get() with default. best for simple cases
+Option 1 - dict.get() with default. best for simple cases
 print(f"{user['name']} is {user.get('age', 'unknown')} years old")
 
-Option 2: Explicit key check. best when missing key is rare
+Option 2 - Explicit key check. best when missing key is rare
 if 'age' in user:
     print(f"{user['name']} is {user['age']} years old")
 
-Option 3: try/except. best when age is always expected
+Option 3 - try/except. best when age is always expected
 try:
     print(f"{user['name']} is {user['age']} years old")
 except KeyError:
@@ -211,7 +211,7 @@ except KeyError:
 
 This kind of explanation. here are three ways to fix it, and here is when you would choose each one. is the learning mode where conversational AI tools outperform documentation and tutorials. The free tiers of both Claude and ChatGPT handle this level of depth without rate-limiting issues for typical learning sessions.
 
-Practical Examples: Building Real Projects
+Practical Examples - Building Real Projects
 
 The best learning happens through building projects. Free AI tools help throughout the development process.
 

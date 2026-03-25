@@ -235,7 +235,7 @@ Related Reading
 - [AI Tools Guides Hub](/)
 - [Kommunicate vs Crisp AI Chat Widgets: A Developer Comparison](/kommunicate-vs-crisp-ai-chat-widgets/)
 - [Cognigy vs Boost AI Virtual Agents: A Developer Comparison](/cognigy-vs-boost-ai-virtual-agents/)
-- [Kustomer vs Gladly AI Customer Platform: A Developer.](/kustomer-vs-gladly-ai-customer-platform/)
+- [Kustomer vs Gladly AI Customer Platform - A Developer.](/kustomer-vs-gladly-ai-customer-platform/)
 
 Related Articles
 

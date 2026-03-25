@@ -74,7 +74,7 @@ Connection failures usually trace back to one of these root causes:
 
 Step-by-Step Fixes
 
-Step 1: Verify the MCP Server is Running
+Step 1 - Verify the MCP Server is Running
 
 First, confirm whether your MCP server process is actually running:
 
@@ -103,7 +103,7 @@ or
 python -m mcp_server
 ```
 
-Step 2: Check Port Availability
+Step 2 - Check Port Availability
 
 MCP servers communicate over specific ports. Verify the port isn't in use:
 
@@ -120,7 +120,7 @@ If another process is using the port, either:
 
 - Change your MCP server configuration to use a different port
 
-Step 3: Review Configuration Files
+Step 3 - Review Configuration Files
 
 Your MCP configuration likely lives in one of these locations:
 
@@ -165,7 +165,7 @@ Common configuration mistakes:
 
 - Missing required arguments
 
-Step 4: Update MCP Packages
+Step 4 - Update MCP Packages
 
 Outdated packages frequently cause connection issues. Update all MCP-related packages:
 
@@ -181,7 +181,7 @@ pip install --upgrade mcp
 
 After updating, restart Claude completely (quit and reopen).
 
-Step 5: Check Authentication Credentials
+Step 5 - Check Authentication Credentials
 
 For MCP servers requiring authentication:
 
@@ -196,7 +196,7 @@ $env:MCP_API_KEY="your-api-key"
 
 Verify your credentials haven't expired and have the necessary permissions.
 
-Step 6: Firewall and Network Diagnostics
+Step 6 - Firewall and Network Diagnostics
 
 Network issues often cause intermittent failures:
 
@@ -222,7 +222,7 @@ Linux
 sudo ufw allow 3000/tcp
 ```
 
-Step 7: Clear Cache and Reinstall
+Step 7 - Clear Cache and Reinstall
 
 Corrupted caches cause mysterious failures:
 
@@ -239,7 +239,7 @@ rm -rf node_modules
 npm install
 ```
 
-Step 8: Check Logs for Detailed Errors
+Step 8 - Check Logs for Detailed Errors
 
 Logs provide specific error messages:
 
@@ -258,7 +258,7 @@ claude --verbose
 
 Look for specific error codes or messages that point to the exact failure.
 
-Step 9: Version Compatibility Check
+Step 9 - Version Compatibility Check
 
 Ensure your Claude version supports your MCP server:
 
@@ -274,7 +274,7 @@ npm list @modelcontextprotocol/server-filesystem
 
 If there's a mismatch, either downgrade your server or update Claude.
 
-Step 10: Permission Fixes
+Step 10 - Permission Fixes
 
 Run with appropriate permissions:
 

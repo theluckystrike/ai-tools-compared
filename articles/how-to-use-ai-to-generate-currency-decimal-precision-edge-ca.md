@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Challenge of Currency Decimal Precision
+Step 1 - The Challenge of Currency Decimal Precision
 
 Financial applications must handle currency with exact precision. Unlike general-purpose arithmetic, currency calculations have strict requirements:
 
@@ -51,7 +51,7 @@ Financial applications must handle currency with exact precision. Unlike general
 
 Java's `BigDecimal`, Python's `Decimal`, and JavaScript's libraries like `decimal.js` provide the necessary precision, but the test coverage for edge cases often falls short. This is where AI-generated test cases become valuable.
 
-Step 2: Use AI to Generate Edge Case Tests
+Step 2 - Use AI to Generate Edge Case Tests
 
 AI tools can analyze your currency handling code and suggest edge cases you might have missed. Here's how to effectively prompt an AI for test generation:
 
@@ -61,7 +61,7 @@ When asking AI to generate currency decimal precision tests, provide context abo
 
 ```python
 Generate tests for a price calculation function
-Include: the function signature, currency type, and expected behavior
+Include - the function signature, currency type, and expected behavior
 AI will suggest edge cases like:
 - Zero amount handling
 - Maximum decimal precision scenarios
@@ -189,7 +189,7 @@ describe('Currency Calculation Edge Cases', () => {
 });
 ```
 
-Step 3: Common Edge Cases AI Can Identify
+Step 3 - Common Edge Cases AI Can Identify
 
 Beyond basic tests, AI tools excel at identifying less obvious edge cases:
 
@@ -222,7 +222,7 @@ Different AI tools handle financial edge case generation with varying depth. Her
 
 For complex rounding scenarios. such as banker's rounding (HALF_EVEN) applied across multi-currency pipelines. Claude consistently produces the most accurate test expectations. Copilot is faster for simple CRUD-adjacent money handling.
 
-Step 4: Handling Multi-Currency Test Scenarios
+Step 4 - Handling Multi-Currency Test Scenarios
 
 When your application processes multiple currencies simultaneously, the test matrix expands significantly. AI tools can generate test fixtures that cover the full currency matrix:
 
@@ -253,25 +253,25 @@ def test_rounding_respects_currency_decimals(currency, decimals):
 
 This parameterized approach. which AI tools generate readily when asked for "currency-aware" tests. catches bugs where a single hardcoded `setScale(2)` silently truncates JPY amounts or loses KWD precision.
 
-Step 5: Prompting AI for Maximum Coverage
+Step 5 - Prompting AI for Maximum Coverage
 
 The quality of AI-generated tests depends heavily on prompt construction. These prompt patterns consistently produce thorough edge case suites:
 
-Pattern 1: Describe the rounding contract explicitly
+Pattern 1 - Describe the rounding contract explicitly
 ```
 Generate JUnit 5 tests for calculateTotal(BigDecimal price, BigDecimal taxRate).
 The function must use HALF_UP rounding to 2 decimal places.
-Include tests for: zero, negative (should throw), precision boundary at exactly x.xx5,
+Include tests for - zero, negative (should throw), precision boundary at exactly x.xx5,
 large values near Long.MAX_VALUE equivalent, and null inputs.
 ```
 
-Pattern 2: Provide a failing example to anchor the AI
+Pattern 2 - Provide a failing example to anchor the AI
 ```
-This test fails: calculateTotal("10.995", "1.10") returns 12.10 but should return 12.09.
+This test fails - calculateTotal("10.995", "1.10") returns 12.10 but should return 12.09.
 Generate 10 additional tests that would catch similar rounding off-by-one errors.
 ```
 
-Pattern 3: Ask for property-based test seeds
+Pattern 3 - Ask for property-based test seeds
 ```
 Generate Hypothesis strategies for testing currency rounding invariants:
 result should always have exactly 2 decimal places, never be negative when inputs are positive,

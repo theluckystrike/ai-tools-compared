@@ -57,13 +57,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install ation
+Step 1 - Install ation
 
 ```bash
 pip install langgraph langchain-anthropic langchain-core
 ```
 
-Step 2: Example: Test-Driven Code Agent
+Step 2 - Example: Test-Driven Code Agent
 
 This agent writes code to pass a test suite, runs the tests, reads failures, and iterates:
 
@@ -91,7 +91,7 @@ def write_initial_code(state: CodeAgentState) -> dict:
     test_content = open(state['test_file']).read()
     response = model.invoke([
         HumanMessage(content=f"""Write Python code to pass these tests.
-Task: {state['task']}
+Task - {state['task']}
 Tests:
 ```python
 {test_content}
@@ -182,7 +182,7 @@ result = graph.invoke({
 print(f"Status: {result['status']}, Iterations: {result['iterations']}")
 ```
 
-Step 3: Example: Multi-Stage Code Review Pipeline
+Step 3 - Example: Multi-Stage Code Review Pipeline
 
 Route code through different reviewers in parallel:
 
@@ -244,7 +244,7 @@ builder.add_edge('performance', 'verdict')
 builder.add_edge('verdict', END)
 ```
 
-Step 4: Persisting State Between Runs
+Step 4 - Persisting State Between Runs
 
 LangGraph supports checkpointing to resume long-running agent tasks:
 
@@ -267,7 +267,7 @@ When to Use LangGraph vs Simple Prompts
 
 Use LangGraph when your workflow has more than 2 sequential LLM calls, conditional branching, retry loops, or multiple specialized agents. Use simple LLM calls for one-shot tasks or when latency is critical (graph overhead adds ~50ms).
 
-Step 5: Error Handling and Observability
+Step 5 - Error Handling and Observability
 
 Production LangGraph workflows need proper error handling and logging:
 
@@ -312,7 +312,7 @@ Production Deployment Tips
 4. Monitor token usage per node. Track which nodes consume the most tokens and optimize their prompts.
 5. Test with deterministic mocks. Replace LLM calls with recorded responses during unit testing.
 
-Step 6: Example: Automated Documentation Generator
+Step 6 - Example: Automated Documentation Generator
 
 Build a graph that reads source code, generates documentation, validates it against the code, and iterates:
 

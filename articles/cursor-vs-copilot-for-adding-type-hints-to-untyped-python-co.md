@@ -312,7 +312,7 @@ mypy your_module.py
 Both tools sometimes generate type hints that fail mypy strict mode checks. Cursor tends to produce more mypy-friendly code, but you should always verify with:
 
 ```python
-Example that needs # type: ignore comments
+Example that needs # type - ignore comments
 result = json.loads(user_input)  # mypy might complain here
 ```
 
@@ -334,7 +334,7 @@ Choose GitHub Copilot if you:
 
 - Need basic type hints quickly
 
-- Already heavily invested in VS Code ecosystem
+- Already heavily invested in VS Code environment
 
 - Want simpler, more conservative type annotations
 

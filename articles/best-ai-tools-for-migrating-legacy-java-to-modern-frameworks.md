@@ -49,7 +49,7 @@ Why Claude excels at Java migrations: Claude maintains context across 200K token
 
 Migration Phases and AI Tools
 
-Phase 1: Dependency Analysis and Planning
+Phase 1 - Dependency Analysis and Planning
 
 Before touching code, analyze your dependency tree to understand coupling:
 
@@ -83,10 +83,10 @@ MEDIUM PRIORITY (Deprecation warnings):
   AFFECTED FILES: 15 filter/servlet classes
   EFFORT: 1 day (automated find-replace + validation)
 
-Estimated Total Effort: 2-3 weeks
+Estimated Total Effort - 2-3 weeks
 ```
 
-Phase 2: Framework Upgrade Path
+Phase 2 - Framework Upgrade Path
 
 Ask Claude to design the upgrade sequence:
 
@@ -98,8 +98,8 @@ I'm migrating a legacy Spring 3.1 monolith with:
 - 40 scheduled jobs
 - Integration with legacy EJB components
 
-Current Java version: 7
-Target: Java 21, Spring Boot 3.1, Hibernate 6.4
+Current Java version - 7
+Target - Java 21, Spring Boot 3.1, Hibernate 6.4
 
 What's the safest step-by-step upgrade path that minimizes risk?
 Include intermediate versions if needed.
@@ -138,7 +138,7 @@ Recommended Upgrade Path (12-16 weeks):
 This path keeps the application testable at each step.
 ```
 
-Phase 3: Automated Refactoring
+Phase 3 - Automated Refactoring
 
 For large-scale changes, use Claude in batch mode:
 
@@ -188,7 +188,7 @@ for xml_file in glob.glob("src/main/resources//*.xml", recursive=True):
     print(f"  → Generated {output_name}")
 ```
 
-Phase 4: Hibernate Criteria → JPA Specification Migration
+Phase 4 - Hibernate Criteria → JPA Specification Migration
 
 Criteria API rewrites are among the most complex migrations:
 
@@ -209,7 +209,7 @@ and JPA Criteria API or QueryDSL. Preserve the exact same filtering logic:
 
 [paste code above]
 
-Target: Spring Boot 3.1, Hibernate 6.4, Spring Data JPA 3.1
+Target - Spring Boot 3.1, Hibernate 6.4, Spring Data JPA 3.1
 
 Generate both:
 1. A Spring Data repository method (if simple enough)
@@ -285,7 +285,7 @@ public class OrderQueryDslRepository extends QuerydslRepositorySupport {
 }
 ```
 
-Real-World Migration Example: 200K LOC Spring 3.1 Monolith
+Real-World Migration Example - 200K LOC Spring 3.1 Monolith
 
 Timeline Estimate:
 - 12-16 weeks with 2 engineers using AI tools
@@ -395,8 +395,8 @@ Tools and Resources
 
 Automation Frameworks:
 - Spring Boot Migration Guide: https://spring.io/projects/spring-boot
-- Quarkus Migration Guides: https://quarkus.io/guides/
-- Micronaut Migration: https://micronaut.io/
+- Quarkus Migration Guides - https://quarkus.io/guides/
+- Micronaut Migration - https://micronaut.io/
 
 AI-Powered Tools:
 - OpenRewrite (IDE integration for automated refactoring)
@@ -413,7 +413,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -425,7 +425,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

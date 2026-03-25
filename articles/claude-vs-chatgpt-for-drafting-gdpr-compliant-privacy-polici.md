@@ -139,7 +139,7 @@ Side-by-Side Comparison
 
 Practical Examples for Developers
 
-Example 1: Cookie Consent Banner
+Example 1 - Cookie Consent Banner
 
 Both tools can generate cookie consent code, but the implementations differ.
 
@@ -173,7 +173,7 @@ function hasConsent(category) {
 
 Claude's version includes specific cookie names and a clearer data structure. ChatGPT's version is more generic but easier to adapt.
 
-Example 2: Data Processing Agreement Snippet
+Example 2 - Data Processing Agreement Snippet
 
 For SaaS applications processing user data, you need a data processing agreement (DPA) section:
 
@@ -182,8 +182,8 @@ Claude generates:
 ```markdown
 Data Processing Agreement
 
-Processor: [Your Company Name]
-Controller: [Client Company Name]
+Processor - [Your Company Name]
+Controller - [Client Company Name]
 
 The Processor shall:
 1. Process personal data only on documented instructions from the Controller
@@ -301,7 +301,7 @@ For US + EU:
 ```
 Generate GDPR compliant privacy policies, but also include CCPA compliance for California users.
 Clarify where privacy rules differ and how your application handles each region.
-Specifically: data minimization in EU vs. right to deletion in California.
+Specifically - data minimization in EU vs. right to deletion in California.
 ```
 
 For Canada + US:

@@ -181,7 +181,7 @@ Memory alignment matters for DMA-based transfers on high-performance microcontro
 
 Real Prompt Examples for Production-Quality Code
 
-Example 1: Complete W25Q128 Driver for STM32H7
+Example 1 - Complete W25Q128 Driver for STM32H7
 
 ```
 Generate a complete SPI flash driver for W25Q128 on STM32H743 microcontroller.
@@ -203,9 +203,9 @@ Provide:
 5. Complete header file with error codes
 ```
 
-Expected output: 300, 400 lines of production-ready code with proper error handling.
+Expected output - 300, 400 lines of production-ready code with proper error handling.
 
-Example 2: Performance-Optimized Driver with FastRead
+Example 2 - Performance-Optimized Driver with FastRead
 
 ```
 Generate an optimized SPI flash driver for W25Q256 (32MB) on ESP32-S3.
@@ -225,7 +225,7 @@ Provide:
 4. Power management functions
 ```
 
-Expected output: Optimized driver for high-performance scenarios.
+Expected output - Optimized driver for high-performance scenarios.
 
 Practical CLI Commands for Driver Development
 
@@ -319,9 +319,9 @@ gcc -o test_flash test_flash_driver.c spi_flash.c -I./inc
 
 Common Issues and AI Fixes
 
-Issue: Timeout on Write Operations
+Issue - Timeout on Write Operations
 
-Symptom: flash_write_page() hangs indefinitely
+Symptom - flash_write_page() hangs indefinitely
 
 AI-generated fix:
 ```c
@@ -338,9 +338,9 @@ void flash_wait_ready(uint32_t timeout_ms) {
 }
 ```
 
-Issue: DMA Transfers Not Working
+Issue - DMA Transfers Not Working
 
-Symptom: Writes corrupt data or read data is garbage
+Symptom - Writes corrupt data or read data is garbage
 
 AI-generated fix:
 ```c

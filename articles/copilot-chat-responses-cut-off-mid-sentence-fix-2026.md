@@ -35,7 +35,7 @@ GitHub Copilot Chat has become an essential tool for developers seeking AI-assis
 - Understanding the root causes: helps you apply the right fix.
 - Each cause requires a: different approach to resolve.
 - Break complex requests into smaller: focused questions.
-- Check for updates in VS Code: ```bash
+- Check for updates in VS Code - ```bash
 In VS Code, press Ctrl+Shift+P and run "Check for Updates"
 ```
 
@@ -137,7 +137,7 @@ For VS Code:
 2. Run "Developer: Clear Window State"
 3. Close VS Code completely
 4. Delete the extension cache folder:
- - Windows: `%APPDATA%\Code\User\globalStorage\github.copilot`
+ - Windows - `%APPDATA%\Code\User\globalStorage\github.copilot`
  - macOS: `~/Library/Application Support/Code/User/globalStorage/github.copilot`
  - Linux: `~/.config/Code/User/globalStorage/github.copilot`
 5. Reopen VS Code and let the extension rebuild its cache
@@ -226,7 +226,7 @@ Monitor Response Quality Over Time
 
 After implementing fixes, track whether the truncation issue resolves and monitor for any recurrence. Create a simple log to note when truncation occurs, which IDE you were using, and what type of request triggered it. This information helps identify patterns and may reveal environment-specific issues that require custom solutions.
 
-Advanced Troubleshooting: Token Analysis
+Advanced Troubleshooting - Token Analysis
 
 Understanding token limits helps prevent truncation before it happens:
 
@@ -253,7 +253,7 @@ For Copilot Chat, the typical token budget is:
 
 If your prompt uses 3000 tokens, only ~1000 tokens remain for the response, likely causing truncation.
 
-Comparative Analysis: Version Performance
+Comparative Analysis - Version Performance
 
 Track truncation patterns across different Copilot versions:
 
@@ -363,7 +363,7 @@ window.fetch = async function(...args) {
 
 This shows whether the connection is closing cleanly or being abruptly terminated.
 
-Emergency Recovery: Resuming Incomplete Responses
+Emergency Recovery - Resuming Incomplete Responses
 
 When truncation occurs, use this technique to recover the lost portion:
 

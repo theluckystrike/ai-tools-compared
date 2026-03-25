@@ -46,7 +46,7 @@ Video summarization generally falls into two categories: extractive and abstract
 
 The choice between approaches depends on your use case. If you need quick highlights from sports or surveillance footage, extractive works well. For educational content or meetings, abstractive summaries provide more context.
 
-Tool Comparison: AI Video Summarization Options in 2026
+Tool Comparison - AI Video Summarization Options in 2026
 
 Before looking at implementation, here is how the leading tools compare across the dimensions that matter most for developer use cases:
 
@@ -90,7 +90,7 @@ This approach works well when you need timestamps for key segments. You can then
 
 AWS Rekognition Video
 
-AWS provides similar capabilities through Rekognition, with the added benefit of content moderation and celebrity recognition. For developers already in the AWS ecosystem, this integrates cleanly with other AWS services.
+AWS provides similar capabilities through Rekognition, with the added benefit of content moderation and celebrity recognition. For developers already in the AWS environment, this integrates cleanly with other AWS services.
 
 ```python
 import boto3
@@ -221,7 +221,7 @@ class VideoSummarizer:
         }
 ```
 
-Real-World Workflow: Meeting Recording Summarization
+Real-World Workflow - Meeting Recording Summarization
 
 One of the highest-value use cases for video summarization is processing recorded meetings. Here is a production-ready workflow that handles Zoom or Google Meet recordings stored in S3:
 
@@ -258,7 +258,7 @@ def summarize_meeting_recording(s3_bucket: str, s3_key: str) -> dict:
         messages=[
             {
                 "role": "system",
-                "content": "Extract: 1) key decisions made, 2) action items with owners, 3) open questions. Format as JSON."
+                "content": "Extract - 1) key decisions made, 2) action items with owners, 3) open questions. Format as JSON."
             },
             {"role": "user", "content": transcript[:8000]}
         ]

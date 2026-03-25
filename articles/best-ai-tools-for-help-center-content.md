@@ -29,8 +29,8 @@ Table of Contents
 - [Symptom](#symptom)
 - [Cause](#cause)
 - [Resolution](#resolution)
-- [Step 1: [Action]](#step-1-action)
-- [Step 2: [Action]](#step-2-action)
+- [Step 1 - [Action]](#step-1-action)
+- [Step 2 - [Action]](#step-2-action)
 - [Troubleshooting](#troubleshooting)
 - [Recommendations](#recommendations)
 - [Tool Selection Matrix](#tool-selection-matrix)
@@ -114,8 +114,8 @@ When working with extensive help centers, Cursor can:
 For example, updating product terminology across all affected articles becomes more manageable:
 
 ```markdown
-Before: "API Key"
-After: "Access Token"
+Before - "API Key"
+After - "Access Token"
 
 Cursor can locate every instance of "API Key" in your docs,
 verify context, and apply the appropriate replacement.
@@ -172,10 +172,10 @@ Cause
 Resolution
 [Step-by-step solution]
 
-Step 1: [Action]
+Step 1 - [Action]
 [Clear instruction]
 
-Step 2: [Action]
+Step 2 - [Action]
 [Clear instruction]
 
 Troubleshooting
@@ -306,7 +306,7 @@ for article in $ARTICLES_DIR/*.md; do
     claude --print "$CLAUDE_PROMPT" < "$article" > "${article%.md}_updated.md"
 
     # Log for review
-    echo "Updated: $article" >> batch_log.txt
+    echo "Updated - $article" >> batch_log.txt
 done
 ```
 
@@ -364,10 +364,10 @@ Common Causes
 - {{Cause 2}}
 
 Solution
-#### Step 1: {{Action}}
+Step 1 - {{Action}}
 {{Details}}
 
-#### Step 2: {{Action}}
+Step 2 - {{Action}}
 {{Details}}
 
 Still Not Working?
@@ -512,7 +512,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -524,7 +524,7 @@ Most modern tools support asynchronous workflows that work well across time zone
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

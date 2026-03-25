@@ -55,7 +55,7 @@ Automatic context indexing runs continuously in the background, scanning your en
 
 Step-by-Step Fixes
 
-Fix 1: Reduce Context Window Size
+Fix 1 - Reduce Context Window Size
 
 Cursor AI maintains context across your entire project. You can limit how much context it attempts to process at once.
 
@@ -71,7 +71,7 @@ Cursor AI maintains context across your entire project. You can limit how much c
 
 This prevents Cursor from attempting to load your entire codebase into context with each request.
 
-Fix 2: Clear Chat History Regularly
+Fix 2 - Clear Chat History Regularly
 
 Long-running chat threads accumulate context that gets sent with every new message.
 
@@ -85,7 +85,7 @@ Long-running chat threads accumulate context that gets sent with every new messa
 
 Each fresh conversation starts with minimal context, dramatically reducing API usage per message.
 
-Fix 3: Disable Unnecessary AI Features
+Fix 3 - Disable Unnecessary AI Features
 
 Cursor offers multiple AI features. Disable those you do not actively use.
 
@@ -101,7 +101,7 @@ Cursor offers multiple AI features. Disable those you do not actively use.
 
 Disabling features eliminates their associated background API calls.
 
-Fix 4: Configure Project-Specific Settings
+Fix 4 - Configure Project-Specific Settings
 
 Create a `.cursorrules` file in your project root to limit AI behavior for specific projects.
 
@@ -116,7 +116,7 @@ Create a `.cursorrules` file in your project root to limit AI behavior for speci
 
 The `indexExclusions` field prevents Cursor from wasting API calls indexing generated files like dependencies and build outputs.
 
-Fix 5: Use Smaller Models for Routine Tasks
+Fix 5 - Use Smaller Models for Routine Tasks
 
 If your Cursor plan supports model selection, choose smaller models for everyday tasks.
 
@@ -130,7 +130,7 @@ If your Cursor plan supports model selection, choose smaller models for everyday
 
 Smaller models use significantly fewer tokens while maintaining adequate performance for routine coding assistance.
 
-Fix 6: Monitor API Usage in Real-Time
+Fix 6 - Monitor API Usage in Real-Time
 
 Cursor includes built-in usage statistics.
 
@@ -144,7 +144,7 @@ Cursor includes built-in usage statistics.
 
 Regular monitoring helps you spot problems before they deplete your quota.
 
-Fix 7: Exclude Large Directories from Indexing
+Fix 7 - Exclude Large Directories from Indexing
 
 Large directories like node_modules, vendor folders, and build artifacts inflate API usage without providing value.
 
@@ -174,12 +174,12 @@ Use keyboard shortcuts to accept AI suggestions quickly rather than letting them
 
 Configure Cursor to ask confirmation before making API calls for non-critical features, giving you manual control over usage.
 
-GitHub Copilot vs Cursor: Real-World Benchmark
+GitHub Copilot vs Cursor - Real-World Benchmark
 
 Comparing AI coding assistants on real tasks reveals meaningful differences in suggestion quality and workflow integration.
 
 ```python
-Test task: implement a binary search tree with deletion
+Test task - implement a binary search tree with deletion
 Both tools were given the same prompt:
 "Implement a BST with insert, search, and delete operations in Python"
 
@@ -248,7 +248,7 @@ Disable telemetry in VS Code settings.json:
     "github.copilot.telemetry.enable": false
 }
 
-For organizations: disable Copilot training on org repos
+For organizations - disable Copilot training on org repos
 GitHub Org Settings -> Copilot -> Policies
 "Allow GitHub to use my code snippets for product improvements" -> Disabled
 

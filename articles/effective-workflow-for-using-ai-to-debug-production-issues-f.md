@@ -33,13 +33,13 @@ The Core Debugging Workflow
 
 The most effective approach combines AI pattern recognition with human domain expertise. Rather than blindly pasting entire log files, structure your AI debugging sessions to maximize relevant context while minimizing noise.
 
-Step 1: Isolate the Problem Window
+Step 1 - Isolate the Problem Window
 
 Before involving AI, narrow your search to the relevant time window. Identify when the issue began by checking metrics, user reports, or error rate spikes. This focused window prevents AI from processing irrelevant data and producing less accurate analysis.
 
 For example, if users reported checkout failures starting at 2:30 PM, extract logs from 2:15 PM to 2:45 PM rather than the entire day's output.
 
-Step 2: Prepare Log Context for AI
+Step 2 - Prepare Log Context for AI
 
 Raw log files often contain excessive noise. Structure your input to help AI focus on what matters:
 
@@ -51,7 +51,7 @@ Or filter by specific service if you have structured logs
 jq 'select(.level == "error") | select(.timestamp > "2026-03-15T14:15:00" and .timestamp < "2026-03-15T14:45:00")' production.json
 ```
 
-Step 3: Build Effective AI Prompts
+Step 3 - Build Effective AI Prompts
 
 The quality of AI debugging depends heavily on how you frame the problem. Include these elements in your prompts:
 
@@ -69,7 +69,7 @@ Here's an example prompt structure:
 
 > I'm seeing these errors in my payment service around 2:30 PM today. The error message is "connection refused" when calling the billing API. We deployed a new version this morning. Can you identify patterns in these logs and suggest potential causes?
 
-Step 4: Analyze Log Patterns
+Step 4 - Analyze Log Patterns
 
 AI excels at identifying patterns across multiple log entries that humans might miss. Here's how to interpret the results:
 
@@ -105,7 +105,7 @@ def analyze_error_patterns(log_file):
     return error_counts.most_common(10)
 ```
 
-Step 5: Verify and Implement Fixes
+Step 5 - Verify and Implement Fixes
 
 AI suggestions require validation. Always verify proposed fixes against your codebase and run tests before deploying. Use the AI analysis as a starting point for investigation rather than a definitive answer.
 

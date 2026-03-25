@@ -37,7 +37,7 @@ Artificial intelligence has transformed how developers approach infrastructure c
 - For multi-cloud or nuanced: configurations, Claude and GPT-4o handle complex constraints better.
 - Set memory to 512MB: and timeout to 30 seconds.
 - Q: What is the most common mistake in AI-generated serverless.yml files?
-Missing `existing: true` on S3 event triggers when the bucket already exists.
+Missing `existing - true` on S3 event triggers when the bucket already exists.
 - This clarity translates directly: into better prompts.
 - This keeps AI context: focused and prevents it from losing track of IAM requirements or environment variable consistency as the file grows.
 - Suggest least-privilege alternatives." AI: catches obvious over-permissioning when asked directly.
@@ -72,7 +72,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Generate Basic Function Configurations
+Step 1 - Generate Basic Function Configurations
 
 Start with a simple prompt describing your serverless function. A well-crafted prompt includes the function name, runtime, handler path, and trigger event.
 
@@ -114,7 +114,7 @@ functions:
 
 This configuration defines a complete function with S3 trigger. You can extend it with environment variables, VPC settings, or custom IAM roles as needed.
 
-Step 2: Create Multi-Function Configurations
+Step 2 - Create Multi-Function Configurations
 
 For applications with multiple functions, describe each function and its purpose clearly. AI excels at organizing related functions into a cohesive configuration.
 
@@ -232,7 +232,7 @@ resources:
 
 This configuration includes IAM permissions, environment variables, HTTP API routes, SQS triggers, and DynamoDB table definitions.
 
-Step 3: Step-by-Step Workflow for AI-Generated Configs
+Step 3 - Step-by-Step Workflow for AI-Generated Configs
 
 Getting consistently good configurations from AI requires an iterative approach rather than a single large prompt:
 
@@ -248,17 +248,17 @@ Step 5. Add environment-specific variables. Ask AI to convert any hardcoded valu
 
 Step 6. Validate and deploy to staging. Run `serverless deploy --stage staging` and verify each function triggers correctly. Check CloudWatch logs for runtime errors that YAML validation wouldn't surface.
 
-Step 4: Optimizing AI-Generated Configurations
+Step 4 - Optimizing AI-Generated Configurations
 
 AI produces functional configurations, but you should review and optimize them for production use. Check these critical areas:
 
-Memory and timeout settings: AI estimates based on typical workloads. Profile your functions to find optimal settings. Over-provisioned memory increases costs, while under-provisioned memory causes timeouts.
+Memory and timeout settings - AI estimates based on typical workloads. Profile your functions to find optimal settings. Over-provisioned memory increases costs, while under-provisioned memory causes timeouts.
 
-IAM permissions: Always verify IAM roles follow the principle of least privilege. AI may generate broader permissions than necessary.
+IAM permissions - Always verify IAM roles follow the principle of least privilege. AI may generate broader permissions than necessary.
 
-Environment variables: Add secrets through AWS Systems Manager Parameter Store or Secrets Manager rather than hardcoding values in your configuration.
+Environment variables - Add secrets through AWS Systems Manager Parameter Store or Secrets Manager rather than hardcoding values in your configuration.
 
-Custom domains: If using custom domains, include the domain configuration and certificate ARN in your serverless.yml.
+Custom domains - If using custom domains, include the domain configuration and certificate ARN in your serverless.yml.
 
 Advanced Patterns AI Can Generate
 
@@ -286,7 +286,7 @@ Add failure destinations to SQS-triggered function to capture
 failed messages in a dead-letter queue.
 ```
 
-Step 5: Pro Tips for Better Results
+Step 5 - Pro Tips for Better Results
 
 Include version constraints explicitly. Specify `frameworkVersion: '3'` and the exact runtime (e.g., `python3.11` not `python3`) to prevent AI from using deprecated syntax.
 
@@ -323,7 +323,7 @@ Q: Should I use AI to update an existing serverless.yml or regenerate it?
 For large updates (adding a new service component or refactoring provider settings), paste the full existing file into the AI context and ask it to modify specific sections. For small additions like a new function or trigger, describe the addition and manually merge the output. Asking AI to regenerate a complex existing file risks losing customizations.
 
 Q: What is the most common mistake in AI-generated serverless.yml files?
-Missing `existing: true` on S3 event triggers when the bucket already exists. AI frequently generates `existing: false`, which causes CloudFormation to attempt creating a bucket that already exists and fails the deployment. Always verify this flag on any S3 event configuration.
+Missing `existing - true` on S3 event triggers when the bucket already exists. AI frequently generates `existing: false`, which causes CloudFormation to attempt creating a bucket that already exists and fails the deployment. Always verify this flag on any S3 event configuration.
 
 Best Practices for AI Configuration Generation
 

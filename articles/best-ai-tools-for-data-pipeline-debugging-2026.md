@@ -22,7 +22,7 @@ Table of Contents
 - [Data Pipeline Debugging Challenges](#data-pipeline-debugging-challenges)
 - [Claude for Pipeline Analysis](#claude-for-pipeline-analysis)
 - [GitHub Copilot for Pipeline Code](#github-copilot-for-pipeline-code)
-- [Databricks Assistant: Pipeline-Native AI](#databricks-assistant-pipeline-native-ai)
+- [Databricks Assistant - Pipeline-Native AI](#databricks-assistant-pipeline-native-ai)
 - [dbt Cloud AI: Transformation-Focused](#dbt-cloud-ai-transformation-focused)
 - [Comparison Matrix](#comparison-matrix)
 - [Practical Debugging Workflow](#practical-debugging-workflow)
@@ -32,15 +32,15 @@ Data Pipeline Debugging Challenges
 
 Modern data pipelines combine multiple layers: batch jobs, streaming connectors, transformation logic, and schema management. Debugging requires understanding:
 
-Transformation failures: SQL errors, null value handling, type mismatches, and incorrect join conditions.
+Transformation failures - SQL errors, null value handling, type mismatches, and incorrect join conditions.
 
-Data lineage issues: Tracking where records come from, understanding dependencies, and identifying which upstream failure caused downstream gaps.
+Data lineage issues - Tracking where records come from, understanding dependencies, and identifying which upstream failure caused downstream gaps.
 
-Performance problems: Slow queries, inefficient joins, unnecessary full scans, and bottleneck identification.
+Performance problems - Slow queries, inefficient joins, unnecessary full scans, and bottleneck identification.
 
-Schema evolution: Handling field additions, removals, and type changes across multiple systems.
+Schema evolution - Handling field additions, removals, and type changes across multiple systems.
 
-Connector issues: Authentication failures, rate limiting, partition handling, and incremental load configuration.
+Connector issues - Authentication failures, rate limiting, partition handling, and incremental load configuration.
 
 Each requires different AI approaches. SQL transformation logic needs code analysis; lineage needs visual/structural understanding; performance needs query optimization expertise.
 
@@ -71,7 +71,7 @@ Claude typically identifies:
 - Type mismatches in aggregations
 - Assumptions about data freshness that changed
 
-Real-World Example: Missing Data
+Real-World Example - Missing Data
 
 ```sql
 -- dbt transformation
@@ -83,7 +83,7 @@ JOIN regions ON regions.region_id = source_sales.region_code
 GROUP BY region
 ```
 
-Claude identifies the issue: `region_id` is now a string (UUID) but `region_code` is an integer. The join silently fails, producing NULLs.
+Claude identifies the issue - `region_id` is now a string (UUID) but `region_code` is an integer. The join silently fails, producing NULLs.
 
 Suggested fix:
 ```sql
@@ -112,13 +112,13 @@ Limitations
 
 Pricing
 
-Claude API: $3 per million input tokens, $15 per million output tokens. A typical debugging session costs $0.02-0.08.
+Claude API - $3 per million input tokens, $15 per million output tokens. A typical debugging session costs $0.02-0.08.
 
 GitHub Copilot for Pipeline Code
 
 GitHub Copilot helps write and fix transformation code by suggesting correct SQL and handling common patterns.
 
-Real-World Usage: Writing dbt Tests
+Real-World Usage - Writing dbt Tests
 
 ```yaml
 dbt tests/assertions.yml
@@ -172,9 +172,9 @@ Limitations
 
 Pricing
 
-GitHub Copilot: $10/month individual, $19/month business, $35/month enterprise per user.
+GitHub Copilot - $10/month individual, $19/month business, $35/month enterprise per user.
 
-Databricks Assistant: Pipeline-Native AI
+Databricks Assistant - Pipeline-Native AI
 
 Databricks Assistant integrates directly into SQL notebooks and understands your data workspace context.
 
@@ -185,7 +185,7 @@ Databricks Assistant provides:
 Query generation: Describe what you need in English, it generates SQL.
 
 ```
-Request: "Show me the top 10 customers by revenue last quarter"
+Request - "Show me the top 10 customers by revenue last quarter"
 
 Suggested query:
 SELECT
@@ -198,7 +198,7 @@ ORDER BY revenue DESC
 LIMIT 10
 ```
 
-Query optimization: Input a slow query, Assistant suggests indexes and rewrites.
+Query optimization - Input a slow query, Assistant suggests indexes and rewrites.
 
 ```
 Slow query (5 minutes runtime):
@@ -216,7 +216,7 @@ INNER JOIN customers c ON t.customer_id = c.id
 WHERE t.amount > 1000
 ```
 
-Schema understanding: Assistant knows your tables, columns, and lineage automatically.
+Schema understanding - Assistant knows your tables, columns, and lineage automatically.
 
 Data Lineage Support
 
@@ -231,7 +231,7 @@ customer_data (source)
     → customer_behavior (analysis)
 ```
 
-Query the lineage: "Which tables use the customer_id field?" Assistant returns tables and transformation logic.
+Query the lineage - "Which tables use the customer_id field?" Assistant returns tables and transformation logic.
 
 Strengths
 
@@ -258,10 +258,10 @@ dbt Cloud AI provides AI assistance specifically for dbt transformations.
 
 Features
 
-Generate dbt models: Describe a business metric, it generates model code.
+Generate dbt models - Describe a business metric, it generates model code.
 
 ```
-Request: "Create a model that calculates monthly customer cohort retention"
+Request - "Create a model that calculates monthly customer cohort retention"
 
 dbt Cloud AI generates:
 models/marts/customer_cohort_retention.yml
@@ -269,7 +269,7 @@ models/marts/customer_cohort_retention.sql
 tests/asserting_cohort_sizes.sql
 ```
 
-Fix documentation: Automatically generates model documentation.
+Fix documentation - Automatically generates model documentation.
 
 ```
 Generated documentation:
@@ -280,26 +280,26 @@ Generated documentation:
 - Common use cases
 ```
 
-Lineage analysis: Visualize how models depend on each other and identify unused transformations.
+Lineage analysis - Visualize how models depend on each other and identify unused transformations.
 
 Debugging Missing Data in dbt
 
 ```bash
 dbt Cloud shows:
-Model: users_with_segment
-Status: FAILED
-Last run: 2 hours ago
+Model - users_with_segment
+Status - FAILED
+Last run - 2 hours ago
 
-Error: Null check failed for column "segment_id"
+Error - Null check failed for column "segment_id"
 
 dbt Cloud AI suggests:
 The upstream model "user_segments" hasn't run since upstream schema changed.
-Solution: Re-run "user_segments" then "users_with_segment"
+Solution - Re-run "user_segments" then "users_with_segment"
 ```
 
 Strengths
 
-- Deep integration with dbt ecosystem
+- Deep integration with dbt environment
 - Understands your dbt project structure
 - Good at generating boilerplate model code
 - Suggests test cases automatically
@@ -353,7 +353,7 @@ Recommendations by Pipeline Type
 
 SQL-only pipelines (e.g., dbt without Databricks): Use Claude + Copilot. Claude for logic debugging, Copilot for code generation.
 
-Databricks-native pipelines: Use Databricks Assistant + Claude. Assistant for queries, Claude for transformation logic.
+Databricks-native pipelines - Use Databricks Assistant + Claude. Assistant for queries, Claude for transformation logic.
 
 dbt teams: Use dbt Cloud AI + Claude. dbt Cloud AI for model generation, Claude for complex logic issues.
 
@@ -367,7 +367,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -379,7 +379,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

@@ -118,8 +118,8 @@ While primarily a coding assistant, Copilot helps with the hands-on portions of 
 
 ```yaml
 Copilot can help write CloudFormation for practice
-AWSTemplateFormatVersion: '2010-09-09'
-Description: 'VPC with public and private subnets'
+AWSTemplateFormatVersion - '2010-09-09'
+Description - 'VPC with public and private subnets'
 Resources:
   VPC:
     Type: AWS::EC2::VPC
@@ -261,11 +261,11 @@ For AWS Solutions Architect preparation, combining multiple AI tools works best:
 
 Common Pitfalls When Using AI for AWS Cert Prep
 
-Pitfall 1: Trusting outdated service limits. AI models have training cutoffs, and AWS service quotas and feature availability change frequently. Always cross-reference AI-generated answers about specific limits (Lambda timeout maximums, SQS message size, S3 object size) against the current AWS documentation.
+Pitfall 1 - Trusting outdated service limits. AI models have training cutoffs, and AWS service quotas and feature availability change frequently. Always cross-reference AI-generated answers about specific limits (Lambda timeout maximums, SQS message size, S3 object size) against the current AWS documentation.
 
-Pitfall 2: Skipping hands-on practice. AI-generated explanations feel satisfying but do not replace actually deploying services in a free-tier AWS account. The exam includes questions about error behavior and operational details that only stick when you have seen them in a real environment.
+Pitfall 2 - Skipping hands-on practice. AI-generated explanations feel satisfying but do not replace actually deploying services in a free-tier AWS account. The exam includes questions about error behavior and operational details that only stick when you have seen them in a real environment.
 
-Pitfall 3: Relying on a single AI tool. Each model has knowledge gaps in different areas. If Claude gives you an uncertain answer about a specific pricing model, verify it with ChatGPT using the browsing tool. Treat AI answers as a starting point for investigation, not a final authority.
+Pitfall 3 - Relying on a single AI tool. Each model has knowledge gaps in different areas. If Claude gives you an uncertain answer about a specific pricing model, verify it with ChatGPT using the browsing tool. Treat AI answers as a starting point for investigation, not a final authority.
 
 
 

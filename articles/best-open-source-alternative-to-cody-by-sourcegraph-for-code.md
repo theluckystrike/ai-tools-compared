@@ -25,7 +25,7 @@ Table of Contents
 - [Why Look for an Open Source Alternative to Cody?](#why-look-for-an-open-source-alternative-to-cody)
 - [Top Open Source Alternatives for Code Search](#top-open-source-alternatives-for-code-search)
 - [Comparing Features](#comparing-features)
-- [Practical Implementation: Building a Local Code Search Stack](#practical-implementation-building-a-local-code-search-stack)
+- [Practical Implementation - Building a Local Code Search Stack](#practical-implementation-building-a-local-code-search-stack)
 - [Choosing the Right Alternative](#choosing-the-right-alternative)
 
 Why Look for an Open Source Alternative to Cody?
@@ -54,7 +54,7 @@ Strengths:
 - Batch changes and refactoring tools
 - Self-hosted deployment options
 
-Best for: Teams prioritizing code search and navigation with AI as a secondary concern.
+Best for - Teams prioritizing code search and navigation with AI as a secondary concern.
 
 2. Tabby
 
@@ -204,7 +204,7 @@ Comparing Features
 | Multi-user Auth | Yes | No | No | Yes |
 | JetBrains Support | Yes | Yes | No | Yes |
 
-Practical Implementation: Building a Local Code Search Stack
+Practical Implementation - Building a Local Code Search Stack
 
 For teams wanting full control, combining multiple open source tools creates a powerful code search and assistance platform:
 

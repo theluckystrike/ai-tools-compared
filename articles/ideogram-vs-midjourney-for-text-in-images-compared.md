@@ -49,7 +49,7 @@ AI image generators struggle with text because they fundamentally work with pixe
 
 Ideogram explicitly designed their model to handle typography. Midjourney improved their text rendering over time but still treats it as a secondary capability. Understanding these differences helps you choose the right tool for text-heavy projects.
 
-Ideogram: Built for Text
+Ideogram - Built for Text
 
 Ideogram emerged with text rendering as a core feature. Their model understands typography as a first-class concept, producing readable text more reliably than competitors.
 
@@ -99,7 +99,7 @@ Limitations
 
 Ideogram's image quality sometimes lags behind Midjourney for general scenes. Complex compositions with multiple text elements can still produce errors. The style options are more limited compared to more established generators.
 
-Midjourney: Evolution of Text Capabilities
+Midjourney - Evolution of Text Capabilities
 
 Midjourney initially struggled with text, producing garbled characters consistently. Version 6 marked significant improvement, and version 7 continues refining text rendering.
 
@@ -128,7 +128,7 @@ Best Practices for Midjourney Text
 Successful text generation in Midjourney follows these patterns:
 
 ```text
-Prompt: "A coffee shop sign reading 'Daily Brew' in vintage script font, wooden storefront, warm afternoon light --v 7 --s 250 --ar 3:2"
+Prompt - "A coffee shop sign reading 'Daily Brew' in vintage script font, wooden storefront, warm afternoon light --v 7 --s 250 --ar 3:2"
 ```
 
 Key parameters:

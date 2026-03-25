@@ -345,10 +345,10 @@ Beyond caching, the actual install command matters. Claude will suggest faster a
 
 Node.js:
 ```yaml
-Slow: npm install (resolves lockfile each time)
+Slow - npm install (resolves lockfile each time)
 - run: npm install
 
-Fast: npm ci (reads lockfile directly, skips resolution)
+Fast - npm ci (reads lockfile directly, skips resolution)
 - run: npm ci --prefer-offline
 ```
 

@@ -28,9 +28,9 @@ Caddy has unique behaviors that AI tools sometimes get wrong:
 
 Most AI tools trained on web data have seen Caddy v1 config syntax, which is significantly different from Caddy v2. GPT-4 and Copilot can produce v1-style configs (`proxy`, `tls self_signed`) that fail on a modern Caddy v2 installation. Claude is more reliable here, but it still benefits from a prompt that specifies "Caddy v2 Caddyfile syntax."
 
-Task 1: PHP Application Server
+Task 1 - PHP Application Server
 
-Prompt: "Write a Caddyfile for a PHP/WordPress site at example.com. PHP-FPM via Unix socket, WordPress pretty permalinks (rewrite all non-file routes to index.php), hide WordPress config files from web access."
+Prompt - "Write a Caddyfile for a PHP/WordPress site at example.com. PHP-FPM via Unix socket, WordPress pretty permalinks (rewrite all non-file routes to index.php), hide WordPress config files from web access."
 
 Claude's output:
 
@@ -88,11 +88,11 @@ What Goes Wrong With GPT-4 Here
 
 The most common GPT-4 failure on this task is generating a `rewrite` directive without the `not file` matcher. The result is a config that rewrites every request. including requests for `/wp-content/themes/style.css`. to `index.php`. WordPress then returns a 404 or blank page for all static assets. It is a subtle bug that only shows up when you test with a real browser.
 
-A secondary issue: GPT-4 sometimes uses `try_files` which is not a valid Caddy v2 directive. That is a carry-over from Nginx/PHP-FPM configs in the training data.
+A secondary issue - GPT-4 sometimes uses `try_files` which is not a valid Caddy v2 directive. That is a carry-over from Nginx/PHP-FPM configs in the training data.
 
-Task 2: Multi-Subdomain with Internal Services
+Task 2 - Multi-Subdomain with Internal Services
 
-Prompt: "Caddyfile for: api.example.com → proxy to localhost:8080, static.example.com → serve /var/www/static as file server with directory listing enabled, internal.example.com → accessible only from 10.0.0.0/8 network."
+Prompt - "Caddyfile for: api.example.com → proxy to localhost:8080, static.example.com → serve /var/www/static as file server with directory listing enabled, internal.example.com → accessible only from 10.0.0.0/8 network."
 
 Claude:
 
@@ -141,7 +141,7 @@ Rate Limiting on the API Subdomain
 A common follow-up need on API subdomains is rate limiting. Caddy's core module does not include rate limiting. it requires the `caddy-ratelimit` or `caddy-ext/ratelimit` plugin. Claude correctly identifies this when asked:
 
 ```caddyfile
-Requires: xcaddy build --with github.com/mholt/caddy-ratelimit
+Requires - xcaddy build --with github.com/mholt/caddy-ratelimit
 api.example.com {
     rate_limit {
         zone api_zone {
@@ -160,9 +160,9 @@ api.example.com {
 
 GPT-4 has been observed generating `rate_limit` directives in response to the same prompt without noting that the directive requires a plugin. leaving users with a config that Caddy silently ignores or rejects at startup.
 
-Task 3: Advanced Load Balancing
+Task 3 - Advanced Load Balancing
 
-Prompt: "Configure Caddy to load balance across 3 backend servers with: round-robin, health checks, sticky sessions via cookie, and circuit breaker after 3 failures."
+Prompt - "Configure Caddy to load balance across 3 backend servers with: round-robin, health checks, sticky sessions via cookie, and circuit breaker after 3 failures."
 
 Claude:
 
@@ -210,9 +210,9 @@ The `fail_duration` and `max_fails` directives implement Caddy's passive health 
 
 This is different from the active health check (`health_uri`, `health_interval`) which proactively polls backends. Both can be used together: the active check detects gradual degradation, while the passive check responds instantly to backend failures under live traffic.
 
-Task 4: Local Development with Automatic HTTPS Off
+Task 4 - Local Development with Automatic HTTPS Off
 
-Prompt: "Caddyfile for local development on localhost:3000. No HTTPS, no TLS, just a dev proxy."
+Prompt - "Caddyfile for local development on localhost:3000. No HTTPS, no TLS, just a dev proxy."
 
 ```caddyfile
 Local development. disable automatic HTTPS
@@ -257,9 +257,9 @@ localhost {
 
 The `local_certs` global option tells Caddy to use its internal CA (trusted locally) rather than attempting ACME. GPT-4 sometimes suggests `tls self_signed` which is Caddy v1 syntax and will fail in Caddy v2.
 
-Task 5: Global Error Pages and Request ID Injection
+Task 5 - Global Error Pages and Request ID Injection
 
-Prompt: "Add custom error pages for 404 and 500 responses across all virtual hosts. Also inject a unique request ID header for each incoming request."
+Prompt - "Add custom error pages for 404 and 500 responses across all virtual hosts. Also inject a unique request ID header for each incoming request."
 
 Claude:
 

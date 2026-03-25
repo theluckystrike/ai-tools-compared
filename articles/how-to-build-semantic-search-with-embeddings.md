@@ -32,7 +32,7 @@ The key components:
 - Vector store: pgvector extension on Postgres
 - API: FastAPI with async SQLAlchemy
 
-Step 1: Set Up pgvector
+Step 1 - Set Up pgvector
 
 ```sql
 -- Enable extension
@@ -61,7 +61,7 @@ CREATE INDEX ON documents USING gin(to_tsvector('english', content));
 
 The `ivfflat` index trades some recall for speed. For exact search (smaller datasets), use `CREATE INDEX ON documents USING hnsw (embedding vector_cosine_ops)`. HNSW has better recall but slower build time.
 
-Step 2: Document Chunking
+Step 2 - Document Chunking
 
 Chunking strategy matters more than the embedding model. Too large = noisy vectors. Too small = lost context.
 
@@ -106,7 +106,7 @@ def chunk_text(
 
 The 64-token overlap prevents sentences from being split across chunks with no context on either side.
 
-Step 3: Embedding Generation and Indexing
+Step 3 - Embedding Generation and Indexing
 
 ```python
 indexer.py
@@ -162,7 +162,7 @@ async def index_document(source_id: str, content: str) -> int:
     return len(chunks)
 ```
 
-Step 4: Query API
+Step 4 - Query API
 
 ```python
 api.py

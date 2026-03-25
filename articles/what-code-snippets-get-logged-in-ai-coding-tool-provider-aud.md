@@ -109,7 +109,7 @@ What Typically Gets Excluded
 
 Providers generally exclude certain types of sensitive information from audit logs:
 
-Credentials and Secrets: Most tools have filters to exclude API keys, passwords, and tokens that appear in your code:
+Credentials and Secrets - Most tools have filters to exclude API keys, passwords, and tokens that appear in your code:
 
 ```bash
 These patterns are typically filtered from logs
@@ -117,9 +117,9 @@ export API_KEY="sk-1234567890abcdef"
 DATABASE_URL="postgresql://user:password@localhost/db"
 ```
 
-Sensitive File Patterns: Files matching patterns like `.env`, `*.key`, or `credentials.json` are usually excluded automatically.
+Sensitive File Patterns - Files matching patterns like `.env`, `*.key`, or `credentials.json` are usually excluded automatically.
 
-Enterprise Private Repositories: Many paid tiers offer options to disable logging entirely for private repositories, giving enterprises more control over what leaves their infrastructure.
+Enterprise Private Repositories - Many paid tiers offer options to disable logging entirely for private repositories, giving enterprises more control over what leaves their infrastructure.
 
 How Different Providers Handle Logging
 
@@ -188,7 +188,7 @@ const config = {
 
 Optimizing for Privacy
 
-If privacy is paramount, you can structure your workflow accordingly:
+If privacy is essential, you can structure your workflow accordingly:
 
 - Use local-only AI tools when possible
 

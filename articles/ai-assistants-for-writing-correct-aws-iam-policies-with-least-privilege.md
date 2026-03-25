@@ -29,7 +29,7 @@ Table of Contents
 - [Security Best Practices](#security-best-practices)
 - [Comparing AI Assistants for IAM Policy Generation](#comparing-ai-assistants-for-iam-policy-generation)
 - [Tool Comparison Table](#tool-comparison-table)
-- [Real-World Example: Multi-Tier Application](#real-world-example-multi-tier-application)
+- [Real-World Example - Multi-Tier Application](#real-world-example-multi-tier-application)
 - [Validation Checklist](#validation-checklist)
 - [Iterative Refinement Workflow](#iterative-refinement-workflow)
 - [Pricing Implications](#pricing-implications)
@@ -155,7 +155,7 @@ Tool Comparison Table
 | Amazon CodeGuru | AWS-native environments | Real CloudTrail | Free tier available | Medium | Deep AWS integration |
 | Cursor | Multi-file policies | 100k+ tokens | $20/month | Fast | API + IDE |
 
-Real-World Example: Multi-Tier Application
+Real-World Example - Multi-Tier Application
 
 Imagine building a three-tier application with specific requirements:
 
@@ -187,8 +187,8 @@ I need IAM policies for Lambda functions in my application:
    - Operations: GET, SET, DELETE (not ADMIN)
 5. Put custom metrics to CloudWatch Metrics namespace 'MyApp/Lambda'
 
-Account ID: 123456789012
-Region: us-east-1
+Account ID - 123456789012
+Region - us-east-1
 ```
 
 The assistant can generate policies addressing each requirement:
@@ -239,12 +239,12 @@ Validation Checklist
 
 After generating policies with AI assistance, validate using this checklist:
 
-1. Action Specificity: Is each action precisely defined, or are there wildcards that could be narrowed?
+1. Action Specificity - Is each action precisely defined, or are there wildcards that could be narrowed?
 2. Resource ARNs: Are resources restricted to the minimum needed? Check for `"Resource": "*"` which often indicates overly broad permissions.
-3. Conditions: Do applicable conditions exist (time-based access, IP restrictions, encryption requirements)?
-4. Wildcard Review: Search for any `*` characters and verify each one is intentional.
-5. Least Privilege Test: Can you remove any statement and still have the application function?
-6. Service Limits: Are there service-specific limits that should be enforced?
+3. Conditions - Do applicable conditions exist (time-based access, IP restrictions, encryption requirements)?
+4. Wildcard Review - Search for any `*` characters and verify each one is intentional.
+5. Least Privilege Test - Can you remove any statement and still have the application function?
+6. Service Limits - Are there service-specific limits that should be enforced?
 
 AWS Access Analyzer can validate most of these automatically. Feed your generated policies through the analyzer before deployment:
 

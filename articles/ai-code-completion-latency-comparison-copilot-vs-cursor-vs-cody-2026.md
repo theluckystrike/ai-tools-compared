@@ -21,9 +21,9 @@ Table of Contents
 
 - [How Latency Matters in Code Completion](#how-latency-matters-in-code-completion)
 - [Testing Methodology](#testing-methodology)
-- [Results: GitHub Copilot](#results-github-copilot)
-- [Results: Cursor](#results-cursor)
-- [Results: Codeium](#results-codeium)
+- [Results - GitHub Copilot](#results-github-copilot)
+- [Results - Cursor](#results-cursor)
+- [Results - Codeium](#results-codeium)
 - [Comparison Table](#comparison-table)
 - [Factors Affecting Your Actual Latency](#factors-affecting-your-actual-latency)
 - [How to Optimize Latency in Your Setup](#how-to-optimize-latency-in-your-setup)
@@ -57,7 +57,7 @@ Scenarios tested:
 6. Network degraded - Simulated 50ms latency on network
 7. Large file context - File with 2000+ lines of context
 
-Results: GitHub Copilot
+Results - GitHub Copilot
 
 Copilot consistently delivered mid-range latency across all scenarios. Average latency across all tests: 285ms (95th percentile: 620ms).
 
@@ -91,15 +91,15 @@ def calculate_subscription_revenue(
 Custom business logic confuses all tools. Copilot takes longest here because it's searching broader training data without clear patterns. Adding a docstring explaining the logic cut this to 380ms.
 
 Cold start (first suggestion after IDE launch):
-Copilot: 890ms. The tool initializes background services, authenticates, and warms up model caching.
+Copilot - 890ms. The tool initializes background services, authenticates, and warms up model caching.
 
 Warm cache (repeated suggestions in same file):
-Copilot: 120ms. Once the file is in context and Copilot's cache is warm, suggestions arrive almost instantly.
+Copilot - 120ms. Once the file is in context and Copilot's cache is warm, suggestions arrive almost instantly.
 
 Network degradation (+50ms added latency):
 Copilot added exactly 50ms consistently. This shows Copilot's architecture includes redundancy and handles network jitter gracefully.
 
-Results: Cursor
+Results - Cursor
 
 Cursor (a Copilot fork with integrated AI-first features) showed consistently lower latency. Average latency across all tests: 215ms (95th percentile: 480ms).
 
@@ -111,7 +111,7 @@ function ProductCard({ product }) {
       // Cursor suggestion appeared: 95ms
 ```
 
-Cursor's strength: fast response on common patterns. Its custom model training appears optimized for speed-to-suggestion tradeoff.
+Cursor's strength - fast response on common patterns. Its custom model training appears optimized for speed-to-suggestion tradeoff.
 
 Standard library:
 ```python
@@ -143,7 +143,7 @@ Cursor: 85ms. Excellent context handling caching.
 Network degradation:
 Cursor added 48ms for 50ms added latency, nearly perfect passthrough with minimal overhead.
 
-Results: Codeium
+Results - Codeium
 
 Codeium (free tier with paid Pro) prioritizes speed. Average latency across all tests: 165ms (95th percentile: 350ms).
 
@@ -162,7 +162,7 @@ Standard library:
 import requests
 response = requests.get('https://api.example.com/users')
 users = response.json()
-Codeium suggestion appeared: 140ms
+Codeium suggestion appeared - 140ms
 ```
 
 Codeium consistently faster across standard patterns.
@@ -205,17 +205,17 @@ Factors Affecting Your Actual Latency
 
 These benchmarks represent ideal conditions. Your real-world latency depends on several factors:
 
-Network quality: Copilot and Cursor make network requests to cloud servers. Poor WiFi, high-latency networks, or geographic distance from servers add 50-300ms. Codeium offers a local model option (Pro only) that eliminates network dependency entirely.
+Network quality - Copilot and Cursor make network requests to cloud servers. Poor WiFi, high-latency networks, or geographic distance from servers add 50-300ms. Codeium offers a local model option (Pro only) that eliminates network dependency entirely.
 
-File size and context: All tools slow down with larger files. A 5000-line file will show 50-100% higher latency than a 200-line file because the model needs to process more context tokens.
+File size and context - All tools slow down with larger files. A 5000-line file will show 50-100% higher latency than a 200-line file because the model needs to process more context tokens.
 
-IDE communication overhead: VS Code, JetBrains IDEs, and Vim all communicate with tools differently. VS Code plugins tend to have lower overhead than JetBrains LSP integration.
+IDE communication overhead - VS Code, JetBrains IDEs, and Vim all communicate with tools differently. VS Code plugins tend to have lower overhead than JetBrains LSP integration.
 
-CPU and RAM constraints: On machines with limited RAM or CPU, inference stalls. The M2 MacBook tested here is high-end. A Windows machine with 8GB RAM may see 40-60% higher latency.
+CPU and RAM constraints - On machines with limited RAM or CPU, inference stalls. The M2 MacBook tested here is high-end. A Windows machine with 8GB RAM may see 40-60% higher latency.
 
-Model complexity: Larger, more capable models are slower. Copilot uses larger models than Codeium's free tier, so inference takes longer. Cursor optimizes for speed with smaller models.
+Model complexity - Larger, more capable models are slower. Copilot uses larger models than Codeium's free tier, so inference takes longer. Cursor optimizes for speed with smaller models.
 
-Concurrent requests: If you're running tests, builds, or other resource-intensive processes while using code completion, latency increases as the tool competes for resources.
+Concurrent requests - If you're running tests, builds, or other resource-intensive processes while using code completion, latency increases as the tool competes for resources.
 
 How to Optimize Latency in Your Setup
 
@@ -232,12 +232,12 @@ Add type hints and docstrings
 When you provide explicit context (type annotations, docstrings, clear variable names), models have less ambiguity to resolve. This actually speeds up inference:
 
 ```python
-Without context: Copilot latency 420ms
+Without context - Copilot latency 420ms
 def process_user(data):
     result = transform(data)
     return result
 
-With context: Copilot latency 240ms
+With context - Copilot latency 240ms
 def process_user(data: Dict[str, Any]) -> ProcessedUser:
     """Transform raw user data into ProcessedUser object.
 

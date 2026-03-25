@@ -22,8 +22,8 @@ This guide evaluates the best AI assistants for generating accessibility audit r
 
 Table of Contents
 
-- [The Workflow: From Screenshot to Accessibility Report](#the-workflow-from-screenshot-to-accessibility-report)
-- [Practical Example: Using Claude for Accessibility Analysis](#practical-example-using-claude-for-accessibility-analysis)
+- [The Workflow - From Screenshot to Accessibility Report](#the-workflow-from-screenshot-to-accessibility-report)
+- [Practical Example - Using Claude for Accessibility Analysis](#practical-example-using-claude-for-accessibility-analysis)
 - [Generating Structured Reports with Code](#generating-structured-reports-with-code)
 - [Evaluating AI Tools for Screenshot Analysis](#evaluating-ai-tools-for-screenshot-analysis)
 - [Comparing Approaches](#comparing-approaches)
@@ -37,13 +37,13 @@ Table of Contents
 - [Testing Results and Success Rates](#testing-results-and-success-rates)
 - [Best Practices for Effective Analysis](#best-practices-for-effective-analysis)
 
-The Workflow: From Screenshot to Accessibility Report
+The Workflow - From Screenshot to Accessibility Report
 
 Modern AI tools can analyze design screenshots and output structured accessibility findings. The typical workflow involves providing an image, either a design mockup or a rendered screenshot, and receiving a detailed report covering contrast ratios, text hierarchy, interactive element sizing, color blindness simulation, and screen reader considerations.
 
 The key advantage of AI-driven analysis is speed. What might take a human auditor 30 minutes to review manually can be processed in seconds, allowing for rapid iteration during the design phase.
 
-Practical Example: Using Claude for Accessibility Analysis
+Practical Example - Using Claude for Accessibility Analysis
 
 One effective approach involves using AI coding assistants with multimodal capabilities. Here's how you can structure a prompt for accessibility analysis:
 
@@ -98,17 +98,17 @@ Evaluating AI Tools for Screenshot Analysis
 
 When selecting an AI assistant for accessibility work, several factors matter for developers and power users:
 
-Multimodal Understanding: The tool must process images accurately, recognizing UI elements, text, and interactive components. Not all AI assistants have equal vision capabilities, some excel at identifying layout issues while others struggle with text extraction.
+Multimodal Understanding - The tool must process images accurately, recognizing UI elements, text, and interactive components. Not all AI assistants have equal vision capabilities, some excel at identifying layout issues while others struggle with text extraction.
 
-WCAG Knowledge: The assistant should have current knowledge of WCAG 2.1 and emerging WCAG 3.0 guidelines. It should reference specific success criteria rather than making generic statements about accessibility.
+WCAG Knowledge - The assistant should have current knowledge of WCAG 2.1 and emerging WCAG 3.0 guidelines. It should reference specific success criteria rather than making generic statements about accessibility.
 
-Actionable Recommendations: Beyond identifying problems, the best tools suggest specific solutions, hex color codes for compliant alternatives, ARIA attribute recommendations, or structural changes to improve screen reader compatibility.
+Actionable Recommendations - Beyond identifying problems, the best tools suggest specific solutions, hex color codes for compliant alternatives, ARIA attribute recommendations, or structural changes to improve screen reader compatibility.
 
-Output Flexibility: Consider whether you need plain text responses, structured JSON, or markdown reports. Integration with existing workflows often depends on output format flexibility.
+Output Flexibility - Consider whether you need plain text responses, structured JSON, or markdown reports. Integration with existing workflows often depends on output format flexibility.
 
 Comparing Approaches
 
-Different AI assistants offer varying strengths. Some are better at holistic design analysis, considering how elements work together. Others excel at specific accessibility concerns like color theory or cognitive accessibility. The best approach often involves using multiple tools in combination, a general-purpose AI for overall analysis and specialized tools for specific checks.
+Different AI assistants offer varying strengths. Some are better at complete design analysis, considering how elements work together. Others excel at specific accessibility concerns like color theory or cognitive accessibility. The best approach often involves using multiple tools in combination, a general-purpose AI for overall analysis and specialized tools for specific checks.
 
 For screenshot analysis specifically, look for tools that can handle various image formats and resolutions. High-fidelity mockups often contain small text or subtle UI details that require analysis at full resolution.
 
@@ -141,7 +141,7 @@ Practical Tools and Their Strengths
 
 Claude (Anthropic) offers strong accessibility analysis through its vision capabilities. You can upload design files (PNG, JPEG, SVG) or screenshots and request detailed WCAG 2.1 analysis. The tool understands both technical accessibility requirements and design patterns, making it useful for analyzing complex interfaces. Cost is $20/month for Claude Pro or usage-based pricing through the API.
 
-GPT-4 Vision provides similar screenshot analysis with strong understanding of color contrast and layout considerations. It excels at suggesting color alternatives that maintain design aesthetics while meeting WCAG requirements. Pricing: $20/month for ChatGPT Plus or API-based usage.
+GPT-4 Vision provides similar screenshot analysis with strong understanding of color contrast and layout considerations. It excels at suggesting color alternatives that maintain design aesthetics while meeting WCAG requirements. Pricing - $20/month for ChatGPT Plus or API-based usage.
 
 Accessibility Insights (Microsoft) combines automated scanning with AI analysis. While not purely AI-driven, its intelligent engine identifies accessibility patterns and suggests fixes. Free for browsers and desktop applications.
 

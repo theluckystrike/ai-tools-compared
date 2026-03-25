@@ -36,7 +36,7 @@ Table of Contents
 
 - [Top Figma-to-Code Tools](#top-figma-to-code-tools)
 - [Accuracy Comparison Table](#accuracy-comparison-table)
-- [Real-World Benchmark: 10-Page Landing Site](#real-world-benchmark-10-page-landing-site)
+- [Real-World Benchmark - 10-Page Landing Site](#real-world-benchmark-10-page-landing-site)
 - [Framework Support Comparison](#framework-support-comparison)
 - [Best Practices for Design-to-Code Success](#best-practices-for-design-to-code-success)
 - [Recommendations by Use Case](#recommendations-by-use-case)
@@ -44,7 +44,7 @@ Table of Contents
 
 1. Locofy.ai
 
-Price: Free tier (5 projects) / $19/month (50 projects) / $79/month (unlimited)
+Price - Free tier (5 projects) / $19/month (50 projects) / $79/month (unlimited)
 
 Locofy is the market leader in Figma-to-code conversion with the highest accuracy rate and most framework options.
 
@@ -248,7 +248,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 2. Builder.io
 
-Price: Free tier / $499/month (team plan)
+Price - Free tier / $499/month (team plan)
 
 Builder.io converts Figma designs into a headless visual CMS that generates code on-demand.
 
@@ -276,7 +276,7 @@ export default function ProductCard() {
 
 With Builder's visual editor, non-technical marketers can update product images, change prices, and create A/B test variants without code.
 
-Accuracy: 82% - Layout excellent, interactions need manual integration.
+Accuracy - 82% - Layout excellent, interactions need manual integration.
 
 Strengths:
 - CMS + code generation hybrid
@@ -293,7 +293,7 @@ Weaknesses:
 
 3. Anima
 
-Price: Free (10 screens/month) / $25/month (unlimited) / $100/month (team)
+Price - Free (10 screens/month) / $25/month (unlimited) / $100/month (team)
 
 Anima focuses on design-to-prototype conversion with code export as a secondary feature.
 
@@ -301,7 +301,7 @@ Supported Outputs:
 - React, Next.js, Vue, HTML/CSS
 - Mobile via React Native
 
-Key Feature: Interaction Mapping
+Key Feature - Interaction Mapping
 
 Define interactions in Figma:
 - Button click → Navigate to next screen
@@ -352,7 +352,7 @@ const CheckoutForm = ({ onSubmit }) => {
 };
 ```
 
-Accuracy: 85% - Good for prototyping, needs refinement for production.
+Accuracy - 85% - Good for prototyping, needs refinement for production.
 
 Strengths:
 - Excellent interaction/animation support
@@ -369,7 +369,7 @@ Weaknesses:
 
 4. Framer
 
-Price: Free / $12/month (team) / Custom (enterprise)
+Price - Free / $12/month (team) / Custom (enterprise)
 
 Framer is a design-to-web platform that generates interactive websites directly from Figma designs.
 
@@ -428,7 +428,7 @@ export const ProductCarousel = () => {
 };
 ```
 
-Accuracy: 90% for web designs, excellent for animations.
+Accuracy - 90% for web designs, excellent for animations.
 
 Strengths:
 - Best animation export quality
@@ -446,7 +446,7 @@ Weaknesses:
 
 5. Claude/ChatGPT + Figma JSON Export
 
-Price: Free (use free tier) / $20/month Pro
+Price - Free (use free tier) / $20/month Pro
 
 Export Figma design as JSON via API or screenshot, then use Claude to generate code.
 
@@ -524,7 +524,7 @@ export const Dashboard = () => {
 };
 ```
 
-Accuracy: 85-92% depending on design complexity.
+Accuracy - 85-92% depending on design complexity.
 
 Strengths:
 - Zero cost (use free tier)
@@ -551,7 +551,7 @@ Accuracy Comparison Table
 
 ---
 
-Real-World Benchmark: 10-Page Landing Site
+Real-World Benchmark - 10-Page Landing Site
 
 Time Comparison:
 
@@ -586,8 +586,8 @@ Best Practices for Design-to-Code Success
 Create a Figma component library with color variables, typography styles, button variants, form elements, and icons. Tools export cleaner code when components are reusable.
 
 2. Name Layers Semantically
-Bad: "Group 5", "Rectangle 23"
-Good: "LoginButton", "EmailInput", "HeaderNav"
+Bad - "Group 5", "Rectangle 23"
+Good - "LoginButton", "EmailInput", "HeaderNav"
 
 Tools use layer names for CSS class generation.
 
@@ -621,11 +621,11 @@ Quick Landing Pages (< 5 screens): Framer - Fastest conversion, built-in hosting
 
 Complex Applications (10+ screens): Locofy - Highest accuracy, best component handling, good React quality.
 
-CMS-Driven Websites: Builder.io - Content management, team collaboration, non-developer updates.
+CMS-Driven Websites - Builder.io - Content management, team collaboration, non-developer updates.
 
-Design System Expansion: Anima - Interaction prototyping, design-to-code traceability, iteration friendly.
+Design System Expansion - Anima - Interaction prototyping, design-to-code traceability, iteration friendly.
 
-Cost-Conscious Teams: Claude/ChatGPT API - Lowest cost, most flexibility, requires technical skill.
+Cost-Conscious Teams - Claude/ChatGPT API - Lowest cost, most flexibility, requires technical skill.
 
 ---
 

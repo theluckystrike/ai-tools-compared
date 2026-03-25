@@ -24,7 +24,7 @@ This guide covers practical approaches for using Copilot agent mode in your deve
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Practical Example: Building a Feature End-to-End](#practical-example-building-a-feature-end-to-end)
+- [Practical Example - Building a Feature End-to-End](#practical-example-building-a-feature-end-to-end)
 - [Best Practices for Effective Agent Mode Usage](#best-practices-for-effective-agent-mode-usage)
 - [Getting Started](#getting-started)
 - [Troubleshooting](#troubleshooting)
@@ -39,19 +39,19 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Agent Mode vs. Traditional Completions
+Step 1 - Understand Agent Mode vs. Traditional Completions
 
 Traditional Copilot suggestions appear as you type, offering inline completions for the current line or function. Agent mode takes a different approach: you describe what you want to accomplish, and Copilot plans and executes the changes across your project.
 
 Agent mode works best when you have a clear objective but the implementation requires changes in multiple files. For example, adding authentication to a React application might involve creating context providers, updating routing, modifying API handlers, and adding protected route components. Doing this manually takes time; agent mode can coordinate these changes in a single session.
 
-Step 2: Activating Agent Mode
+Step 2 - Activating Agent Mode
 
 Agent mode is available in VS Code through the GitHub Copilot Chat interface. Open the chat panel and select the agent mode option from the dropdown menu. You can also activate it using the `/agent` command in the chat input.
 
 The interface shows agent mode active through a dedicated indicator. Once activated, you provide high-level instructions rather than asking specific questions. Copilot analyzes your codebase, proposes a plan, and asks for confirmation before making changes.
 
-Practical Example: Building a Feature End-to-End
+Practical Example - Building a Feature End-to-End
 
 Consider a scenario where you need to add user notification preferences to an existing application. The feature requires:
 
@@ -77,7 +77,7 @@ Copilot agent mode analyzes your project structure, identifies the relevant file
 
 Review the plan carefully. Agent mode may make assumptions about your project structure that differ from your implementation. If something looks incorrect, provide feedback before proceeding.
 
-Step 3: Work with Complex Refactoring
+Step 3 - Work with Complex Refactoring
 
 Agent mode excels at refactoring tasks that span multiple files. Suppose you need to migrate from a class-based component architecture to functional components in a React application. This involves:
 
@@ -121,7 +121,7 @@ const UserProfile = () => {
 };
 ```
 
-Step 4: Handling Debugging Across Files
+Step 4 - Handling Debugging Across Files
 
 Debugging often requires tracing issues through multiple files. Agent mode can analyze error messages and trace through your codebase to identify root causes.
 
@@ -139,13 +139,13 @@ Review every change before accepting. Agent mode makes intelligent guesses about
 
 Use the chat history to iterate. If the first attempt does not quite match what you need, provide feedback. The conversational interface allows you to refine the results without starting over.
 
-Step 5: Limitations to Consider
+Step 5 - Limitations to Consider
 
 Agent mode works best with well-structured projects. If your codebase lacks clear organization or has inconsistent patterns, the results may require more manual cleanup. Large files can also pose challenges, the agent may have difficulty with files exceeding several thousand lines.
 
 Some tasks still benefit from human judgment. Architectural decisions, performance optimizations, and security-sensitive changes often require careful consideration that AI assistants cannot fully replicate. Use agent mode as a powerful tool but maintain oversight for critical decisions.
 
-Step 6: When Agent Mode Makes Sense
+Step 6 - When Agent Mode Makes Sense
 
 Agent mode is particularly valuable for:
 
@@ -169,7 +169,7 @@ Pay attention to how agent mode interprets your requests and adjust your communi
 
 Agent mode represents a significant evolution in AI-assisted development. By understanding when and how to use it effectively, you can accelerate complex development tasks while maintaining code quality.
 
-Step 7: Structuring Agent Mode Requests for Maximum Effectiveness
+Step 7 - Structuring Agent Mode Requests for Maximum Effectiveness
 
 The way you phrase requests dramatically impacts agent mode results. Effective requests include:
 
@@ -181,7 +181,7 @@ The way you phrase requests dramatically impacts agent mode results. Effective r
 Example structured request:
 
 ```
-Objective: Add real-time user notification system to our application
+Objective - Add real-time user notification system to our application
 
 Scope:
 - Create new notification service in src/services/
@@ -202,17 +202,17 @@ Success criteria:
 
 This level of detail prevents agent mode from making incorrect assumptions.
 
-Step 8: Handling Agent Mode Failures and Iterations
+Step 8 - Handling Agent Mode Failures and Iterations
 
 When agent mode produces incomplete or incorrect results, provide specific feedback rather than starting over:
 
-Instead of: "That didn't work, try again"
+Instead of - "That didn't work, try again"
 
-Use: "The notification service connected to the wrong database. Update the connection string in src/services/notificationService.ts to use the secondary database cluster we discussed."
+Use - "The notification service connected to the wrong database. Update the connection string in src/services/notificationService.ts to use the secondary database cluster we discussed."
 
 This targeted feedback trains the agent to refine its approach rather than restarting from scratch.
 
-Step 9: Cost Considerations for Agent Mode
+Step 9 - Cost Considerations for Agent Mode
 
 Agent mode typically costs more per interaction than traditional completions because the agent explores multiple code paths. For a $20 Copilot monthly subscription, agent mode requests count against your usage quota. Consider using agent mode strategically:
 
@@ -221,7 +221,7 @@ Agent mode typically costs more per interaction than traditional completions bec
 - Code review and analysis (worth the cost)
 - Auto-completion for obvious patterns (use inline instead)
 
-Step 10: Comparing Agent Mode Across Tools
+Step 10 - Comparing Agent Mode Across Tools
 
 GitHub Copilot Agent Mode - Best for VS Code users, integrates with GitHub repositories, strong for multi-file changes
 
@@ -231,7 +231,7 @@ Claude with Code - Requires file uploads/context but handles very complex reason
 
 Test a small refactoring task with your primary tool, then benchmark against alternatives if cost is a concern.
 
-Step 11: Security and Code Review with Agent Mode
+Step 11 - Security and Code Review with Agent Mode
 
 Never accept agent mode changes without reviewing them. Even well-structured requests can produce security issues or performance problems. Establish a review process:
 
@@ -243,7 +243,7 @@ Never accept agent mode changes without reviewing them. Even well-structured req
 
 This process is faster than manual implementation but maintains code safety standards.
 
-Step 12: Exporting and Sharing Agent Mode Results
+Step 12 - Exporting and Sharing Agent Mode Results
 
 After agent mode completes a complex task, export the results for team reference:
 
@@ -253,10 +253,10 @@ git diff HEAD~1..HEAD > task_completion.patch
 
 Create a summary document
 cat > task_summary.md << EOF
-Step 13: Task: [Your task description]
-Step 14: Files modified: $(git diff HEAD~1..HEAD --name-only | wc -l)
-Step 15: Lines changed: $(git diff HEAD~1..HEAD --stat | tail -1)
-Step 16: Approach: [How agent mode solved the problem]
+Step 13 - Task: [Your task description]
+Step 14 - Files modified: $(git diff HEAD~1..HEAD --name-only | wc -l)
+Step 15 - Lines changed: $(git diff HEAD~1..HEAD --stat | tail -1)
+Step 16 - Approach: [How agent mode solved the problem]
 EOF
 ```
 

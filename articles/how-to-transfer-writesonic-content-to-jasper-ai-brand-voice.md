@@ -46,7 +46,7 @@ WriteSonic excels at generating SEO-optimized marketing copy with its AI-powered
 
 The process involves three main steps: exporting your WriteSonic content, analyzing that content to extract style characteristics, and configuring Jasper AI Brand Voice with those characteristics.
 
-Step 1: Export Your WriteSonic Content
+Step 1 - Export Your WriteSonic Content
 
 WriteSonic does not provide a bulk export feature through its UI, but you can retrieve your content programmatically using their API. Here's how to export your documents:
 
@@ -148,7 +148,7 @@ def export_all_content(username, password):
         return content_items
 ```
 
-Step 2: Analyze Content for Style Characteristics
+Step 2 - Analyze Content for Style Characteristics
 
 Once you have exported your WriteSonic content, you need to extract the style characteristics that define your brand voice. This involves analyzing tone, vocabulary, sentence structure, and formatting patterns.
 
@@ -208,7 +208,7 @@ print(json.dumps(style_analysis, indent=2))
 
 This analysis gives you quantified metrics about your writing style. Use these numbers when configuring Jasper AI Brand Voice.
 
-Step 3: Configure Jasper AI Brand Voice
+Step 3 - Configure Jasper AI Brand Voice
 
 Now you can transfer your WriteSonic style to Jasper AI. Jasper Brand Voice works by uploading sample content that represents your brand style. Jasper then analyzes this content to understand your tone, vocabulary, and formatting preferences.
 
@@ -280,7 +280,7 @@ If you prefer the UI approach:
 
  - Sentence structure variations
 
-Step 4: Validate the Migration
+Step 4 - Validate the Migration
 
 After setting up Brand Voice, test it with a sample prompt similar to your WriteSonic content:
 

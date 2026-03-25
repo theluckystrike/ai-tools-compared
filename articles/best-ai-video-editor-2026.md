@@ -38,7 +38,7 @@ For developers and power users, AI video editors in 2026 range from CLI-powered 
 - DaVinci Resolve's free version: includes most AI features, making it accessible for individual developers.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - For developers and power users: AI video editors in 2026 range from CLI-powered pipelines to GUI applications with automation APIs.
-- However: it works best for talking-head videos and may feel restrictive for cinematic editing.
+- However - it works best for talking-head videos and may feel restrictive for cinematic editing.
 
 What Developers Need From AI Video Editing Tools
 
@@ -241,10 +241,10 @@ INPUT_VIDEO="raw_footage.mov"
 TEMP_DIR="/tmp/video_processing"
 OUTPUT_DIR="./final_output"
 
-Step 1: Transcode to working format with FFmpeg
+Step 1 - Transcode to working format with FFmpeg
 ffmpeg -i "$INPUT_VIDEO" -c:v libx264 -preset fast -c:a aac "$TEMP_DIR/working.mp4"
 
-Step 2: Descript for transcription and dialogue cleanup
+Step 2 - Descript for transcription and dialogue cleanup
 curl -X POST "https://api.descript.com/v1/projects" \
   -H "Authorization: Bearer $DESCRIPT_API_KEY" \
   -F "file=@$TEMP_DIR/working.mp4" \
@@ -260,16 +260,16 @@ curl "https://api.descript.com/v1/projects/$PROJECT_ID/transcription" \
   -X POST \
   -d '{"remove_filler_words": true}'
 
-Step 3: Export from Descript with cleaned audio
+Step 3 - Export from Descript with cleaned audio
 curl "https://api.descript.com/v1/projects/$PROJECT_ID/export" \
   -H "Authorization: Bearer $DESCRIPT_API_KEY" \
   -X POST \
   > "$TEMP_DIR/descript_export.mp4"
 
-Step 4: DaVinci Resolve for color and final polish
+Step 4 - DaVinci Resolve for color and final polish
 (Would require DaVinci automation via Python API)
 
-Step 5: Final FFmpeg processing
+Step 5 - Final FFmpeg processing
 ffmpeg -i "$TEMP_DIR/descript_export.mp4" \
   -vf "scale=1920:1080" \
   -c:v libx264 -preset slow -crf 22 \

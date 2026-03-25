@@ -20,7 +20,7 @@ When you need to combine data from multiple API endpoints into unified pandas Da
 
 Table of Contents
 
-- [The Challenge: Merging Data from Multiple APIs](#the-challenge-merging-data-from-multiple-apis)
+- [The Challenge - Merging Data from Multiple APIs](#the-challenge-merging-data-from-multiple-apis)
 - [Tool Comparison](#tool-comparison)
 - [Head-to-Head Capability Comparison](#head-to-head-capability-comparison)
 - [Performance Considerations](#performance-considerations)
@@ -29,7 +29,7 @@ Table of Contents
 - [Prompting Tips for Better AI-Generated Merge Code](#prompting-tips-for-better-ai-generated-merge-code)
 - [Recommendation](#recommendation)
 
-The Challenge: Merging Data from Multiple APIs
+The Challenge - Merging Data from Multiple APIs
 
 Real-world data pipelines often pull from multiple REST APIs, CRM systems, analytics platforms, third-party services. Each API returns data in different formats, with varying schemas and relationship structures. Writing efficient pandas code to unify this data requires understanding merge strategies, handling duplicates, managing memory, and dealing with missing values.
 
@@ -237,7 +237,7 @@ Users API response structure:
 Orders API response structure:
 {"order_id": "ord_123", "user_id": 1, "amount": 49.99, "status": "shipped"}
 #
-Goal: Left join users to orders on users.id = orders.user_id
+Goal - Left join users to orders on users.id = orders.user_id
 ```
 
 With this context, both Claude and Copilot reliably generate merge code that handles the `id` vs `user_id` naming discrepancy, selects only the needed columns, and applies the correct join direction.

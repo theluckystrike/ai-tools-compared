@@ -21,10 +21,10 @@ Table of Contents
 
 - [Architecture Overview](#architecture-overview)
 - [Prerequisites](#prerequisites)
-- [Step 1: Document Ingestion](#step-1-document-ingestion)
-- [Step 2: Retrieval](#step-2-retrieval)
-- [Step 3: Generation with Claude](#step-3-generation-with-claude)
-- [Step 4: FastAPI Endpoint](#step-4-fastapi-endpoint)
+- [Step 1 - Document Ingestion](#step-1-document-ingestion)
+- [Step 2 - Retrieval](#step-2-retrieval)
+- [Step 3 - Generation with Claude](#step-3-generation-with-claude)
+- [Step 4 - FastAPI Endpoint](#step-4-fastapi-endpoint)
 - [Common Failure Modes](#common-failure-modes)
 - [Chunk Strategy by Document Type](#chunk-strategy-by-document-type)
 - [Multi-Tenant Isolation with Namespaces](#multi-tenant-isolation-with-namespaces)
@@ -41,7 +41,7 @@ User Query → Embedder → Pinecone Search → Top-K Chunks
               System Prompt + Chunks + Query → LLM → Response
 ```
 
-Three moving parts: ingestion pipeline, retrieval, and generation. Each has failure modes worth understanding.
+Three moving parts - ingestion pipeline, retrieval, and generation. Each has failure modes worth understanding.
 
 Prerequisites
 
@@ -58,7 +58,7 @@ OPENAI_API_KEY=your_openai_key      # for embeddings
 ANTHROPIC_API_KEY=your_anthropic_key # for generation
 ```
 
-Step 1: Document Ingestion
+Step 1 - Document Ingestion
 
 ```python
 ingest.py
@@ -167,7 +167,7 @@ if __name__ == "__main__":
     ingest_documents(sample_docs)
 ```
 
-Step 2: Retrieval
+Step 2 - Retrieval
 
 ```python
 retrieval.py
@@ -232,7 +232,7 @@ def format_context_block(contexts: list[dict]) -> str:
     return "\n\n---\n\n".join(parts)
 ```
 
-Step 3: Generation with Claude
+Step 3 - Generation with Claude
 
 ```python
 generation.py
@@ -267,7 +267,7 @@ def generate_answer(
 
 ---
 
-Question: {query}"""
+Question - {query}"""
     })
 
     response = client.messages.create(
@@ -292,7 +292,7 @@ Question: {query}"""
     }
 ```
 
-Step 4: FastAPI Endpoint
+Step 4 - FastAPI Endpoint
 
 ```python
 api.py
@@ -345,7 +345,7 @@ async def clear_session(session_id: str):
 async def health():
     return {"status": "ok"}
 
-Run with: uvicorn api:app --reload
+Run with - uvicorn api:app --reload
 ```
 
 Common Failure Modes
@@ -387,11 +387,11 @@ Chunk Strategy by Document Type
 
 Not all documents chunk the same way. Using 512-token fixed-size chunks works fine for prose documentation but breaks poorly for structured content.
 
-API reference docs: Split by endpoint or method. A chunk should contain one complete endpoint description. mixing two endpoint descriptions into one chunk dilutes the embedding for both.
+API reference docs - Split by endpoint or method. A chunk should contain one complete endpoint description. mixing two endpoint descriptions into one chunk dilutes the embedding for both.
 
-Markdown with headers: Use `RecursiveCharacterTextSplitter` with `"\n## "` as a high-priority separator. This keeps H2 sections together, which typically represent coherent concepts.
+Markdown with headers - Use `RecursiveCharacterTextSplitter` with `"\n## "` as a high-priority separator. This keeps H2 sections together, which typically represent coherent concepts.
 
-Code-heavy docs: Add a custom splitter that respects code fence boundaries. A chunk that cuts across a code block mid-function will embed poorly and retrieve inaccurately.
+Code-heavy docs - Add a custom splitter that respects code fence boundaries. A chunk that cuts across a code block mid-function will embed poorly and retrieve inaccurately.
 
 ```python
 CODE_AWARE_SEPARATORS = [

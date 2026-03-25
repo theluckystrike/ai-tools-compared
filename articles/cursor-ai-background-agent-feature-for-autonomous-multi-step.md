@@ -21,11 +21,11 @@ Table of Contents
 
 - [Understanding the Background Agent Architecture](#understanding-the-background-agent-architecture)
 - [Setting Up Background Agent Tasks](#setting-up-background-agent-tasks)
-- [Practical Example: Implementing a Feature End-to-End](#practical-example-implementing-a-feature-end-to-end)
+- [Practical Example - Implementing a Feature End-to-End](#practical-example-implementing-a-feature-end-to-end)
 - [Configuring Agent Behavior](#configuring-agent-behavior)
 - [Best Practices for Autonomous Workflows](#best-practices-for-autonomous-workflows)
 - [Handling Agent Limitations](#handling-agent-limitations)
-- [Advanced: Chaining Multiple Agents](#advanced-chaining-multiple-agents)
+- [Advanced - Chaining Multiple Agents](#advanced-chaining-multiple-agents)
 - [Error Recovery and Debugging Agent Tasks](#error-recovery-and-debugging-agent-tasks)
 - [Measuring Agent Productivity Gains](#measuring-agent-productivity-gains)
 - [Cost Implications of Background Agents](#cost-implications-of-background-agents)
@@ -53,7 +53,7 @@ Include unit tests for all endpoints.
 
 The agent analyzes your request, identifies the relevant files in your project, and begins executing the necessary changes. It reads existing code to understand patterns and conventions, then generates modifications that align with your codebase style.
 
-Practical Example: Implementing a Feature End-to-End
+Practical Example - Implementing a Feature End-to-End
 
 Consider a scenario where you need to add user notification preferences to an existing application. With the background agent, you can initiate the following workflow:
 
@@ -98,9 +98,9 @@ Best Practices for Autonomous Workflows
 Effective use of background agents requires structuring your requests clearly. Break complex tasks into logical phases rather than issuing monolithic commands. Instead of asking the agent to "rewrite the entire authentication system," specify each phase:
 
 ```
-Phase 1: Add password reset functionality with email verification
-Phase 2: Implement two-factor authentication using TOTP
-Phase 3: Add session management with secure cookie handling
+Phase 1 - Add password reset functionality with email verification
+Phase 2 - Implement two-factor authentication using TOTP
+Phase 3 - Add session management with secure cookie handling
 ```
 
 This approach keeps the agent focused and makes it easier to review changes between phases.
@@ -121,7 +121,7 @@ The background agent excels at well-defined tasks but may struggle with ambiguou
 
 For tasks requiring deep knowledge of your business logic or specific library internals, provide additional context in your initial prompt. Include relevant documentation references, existing code patterns to follow, or specific constraints the agent should observe.
 
-Advanced: Chaining Multiple Agents
+Advanced - Chaining Multiple Agents
 
 For extremely complex workflows, consider running multiple background agents in sequence or parallel. Cursor supports initiating agents with different configurations, perhaps one focused on backend changes and another handling frontend modifications.
 
@@ -137,15 +137,15 @@ Once you approve the plan, you can execute each task through separate agent call
 Multi-agent orchestration pattern:
 
 ```
-Agent 1 (Backend): "Add API endpoint for real-time data sync"
+Agent 1 (Backend) - "Add API endpoint for real-time data sync"
   - Dependencies: Database schema migration, auth service
   - Files to touch: /api/routes, /models, /migrations
 
-Agent 2 (Frontend): "Build WebSocket listener component"
+Agent 2 (Frontend) - "Build WebSocket listener component"
   - Dependencies: Message types from Agent 1
   - Files to touch: /components, /hooks, /utils
 
-Agent 3 (Tests): "Write integration tests for real-time sync"
+Agent 3 (Tests) - "Write integration tests for real-time sync"
   - Dependencies: Completion of Agents 1 & 2
   - Files to touch: /tests, /fixtures
 ```
@@ -192,8 +192,8 @@ Then initiate agents with context:
 
 ```
 I have a task list in .agent-tasks.json. Please work on task "backend-sync".
-The task description is: [task description]
-Dependencies are satisfied: [yes/no]
+The task description is - [task description]
+Dependencies are satisfied - [yes/no]
 Use these patterns from existing code: [code snippets]
 ```
 
@@ -253,7 +253,7 @@ Example recovery scenario:
 ```
 Previous attempt partially completed. You generated the authentication module and tests passed.
 However, the integration step failed because you used wrong auth service URL.
-The correct URL is: https://auth.company.internal (not https://auth.company.com)
+The correct URL is - https://auth.company.internal (not https://auth.company.com)
 
 Continue from where you left off. Complete the integration step with the correct URL.
 Don't regenerate the module you already built, just finish integrating it.
@@ -273,7 +273,7 @@ Debugging why an agent failed:
 Check Cursor's logs for agent activity
 tail -f ~/.cursor/logs/agent-*.log
 
-Look for: resource not found, permission denied, timeout errors
+Look for - resource not found, permission denied, timeout errors
 Match errors against task requirements to identify mismatches
 ```
 
@@ -285,7 +285,7 @@ Feature implementation with agent
 - Agent time: 35 minutes
 - Human review time: 10 minutes
 - Manual fixes: 5 minutes
-- Total: 50 minutes vs. 150+ minutes manually
+- Total - 50 minutes vs. 150+ minutes manually
 
 Test generation with agent
 - Agent generates: 200 test cases

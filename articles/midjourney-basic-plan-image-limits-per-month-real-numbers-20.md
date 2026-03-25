@@ -21,7 +21,7 @@ The Midjourney Basic Plan remains the entry point for developers and hobbyists w
 - If you have used: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
 - For the Basic Plan at $10/month: you receive 3.3 hours of fast mode time per month.
 - Evaluate your monthly generation needs honestly: if 200 images per month falls short, the Standard Plan at $30/month provides significantly more headroom without dramatic cost increases.
-- However: improvements in rendering efficiency mean the 3.3 fast hours now generate approximately 10% more images than previous years under equivalent parameters.
+- However - improvements in rendering efficiency mean the 3.3 fast hours now generate approximately 10% more images than previous years under equivalent parameters.
 - Is the annual plan: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
 - Discounts of 25-50% are: common for qualifying organizations.
 
@@ -105,7 +105,7 @@ Using `--q .25` quadruples your effective image count on the Basic Plan, making 
 
 Practical Usage Scenarios
 
-Scenario 1: App Development Assets
+Scenario 1 - App Development Assets
 
 A developer building a prototype needs 50 UI mockups with varied backgrounds. Using the Basic Plan:
 
@@ -118,30 +118,30 @@ for i in range(50):
 
 50 standard images consume approximately 0.8 hours of fast time, well within the 3.3-hour limit.
 
-Scenario 2: Content Creation
+Scenario 2 - Content Creation
 
 A content creator needs 100 social media images monthly:
 
 ```bash
 Generate 100 images over the month
-Each image: ~0.016 hours (1 minute)
+Each image - ~0.016 hours (1 minute)
 /imagine: "abstract gradient background --ar 9:16"
 ```
 
 100 images use roughly 1.6 hours, leaving remaining hours for variations and retries.
 
-Scenario 3: Heavy Prototyping
+Scenario 3 - Heavy Prototyping
 
 A team iterating on 200+ image concepts will exceed Basic Plan limits:
 
 ```
 200 images × 0.02 hours = 4 hours required
-Basic Plan provides: 3.3 hours
+Basic Plan provides - 3.3 hours
 
 Upgrade to Standard Plan needed
 ```
 
-Scenario 4: Mixed Fast and Relaxed Workflow
+Scenario 4 - Mixed Fast and Relaxed Workflow
 
 A realistic production workflow uses fast mode for final selects and relaxed mode for exploration:
 
@@ -149,7 +149,7 @@ A realistic production workflow uses fast mode for final selects and relaxed mod
 Month allocation strategy:
 - Use fast hours for: 60 final renders + 40 upscales = ~130 fast images
 - Use relaxed for: unlimited concept exploration
-- Net: fast hours stay under 3.3h; output volume uncapped
+- Net - fast hours stay under 3.3h; output volume uncapped
 ```
 
 This hybrid approach works well for freelancers who need high-quality finals but generate many rough concepts to find the right direction. Scheduling relaxed mode generations during US off-peak hours (early morning EST) typically yields 2-4 minute wait times versus 8-15 minutes during the afternoon peak.
@@ -165,7 +165,7 @@ Relaxed mode generation (no fast hours consumed)
 
 This makes the Basic Plan viable for high-volume, time-insensitive workflows. Schedule batch jobs during off-peak hours for faster relaxed processing.
 
-One practical limitation: Midjourney does not provide a formal API for automated generation. All prompts must be submitted through the Discord bot or the web interface at midjourney.com. This means automation scripts that cycle through prompt queues are against the terms of service, though manual batching across a work session is common practice.
+One practical limitation - Midjourney does not provide a formal API for automated generation. All prompts must be submitted through the Discord bot or the web interface at midjourney.com. This means automation scripts that cycle through prompt queues are against the terms of service, though manual batching across a work session is common practice.
 
 Comparing Plan Economics
 
@@ -234,13 +234,13 @@ The 2026 web interface at midjourney.com added an usage dashboard that displays 
 
 Common Pitfalls for New Basic Plan Users
 
-Pitfall 1: Upscaling everything. Many new users upscale every image they generate, not realizing it doubles fast hour consumption. Establish a habit of selecting only 1-2 candidates from each 4-image grid before upscaling.
+Pitfall 1 - Upscaling everything. Many new users upscale every image they generate, not realizing it doubles fast hour consumption. Establish a habit of selecting only 1-2 candidates from each 4-image grid before upscaling.
 
-Pitfall 2: Forgetting relaxed mode. The default mode after subscribing is fast. Switch your default to relaxed using `/settings` in Discord so fast hours are only spent when you explicitly add `--fast` to a prompt.
+Pitfall 2 - Forgetting relaxed mode. The default mode after subscribing is fast. Switch your default to relaxed using `/settings` in Discord so fast hours are only spent when you explicitly add `--fast` to a prompt.
 
-Pitfall 3: Mixing --ar with --upscale repeatedly. Each variation and upscale of the same image consumes additional fast hours. Use the Vary (Subtle) option before committing to a full upscale cycle.
+Pitfall 3 - Mixing --ar with --upscale repeatedly. Each variation and upscale of the same image consumes additional fast hours. Use the Vary (Subtle) option before committing to a full upscale cycle.
 
-Pitfall 4: Running out of fast hours early. Without the usage dashboard, it is easy to burn through 3.3 hours in the first week of the month. Check your `/info` stats every 2-3 days until you have a stable sense of your consumption rate.
+Pitfall 4 - Running out of fast hours early. Without the usage dashboard, it is easy to burn through 3.3 hours in the first week of the month. Check your `/info` stats every 2-3 days until you have a stable sense of your consumption rate.
 
 ---
 

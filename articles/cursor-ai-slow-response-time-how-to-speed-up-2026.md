@@ -52,7 +52,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Select the Right Model for Your Task
+Step 1 - Select the Right Model for Your Task
 
 Cursor offers multiple AI models with different speed profiles. The default configuration may not be optimal for your specific use case. Navigate to Cursor Settings > Models and evaluate which option balances speed and capability for your workflow.
 
@@ -71,7 +71,7 @@ The Balanced model provides a middle ground, faster than the most option but wit
 
 Reserve the most capable models for complex debugging tasks or when you need thorough code review. When you only need a quick autocomplete, manually switching to a faster model prevents unnecessary latency.
 
-Step 2: Optimize Context Chunk Size and File Limits
+Step 2 - Optimize Context Chunk Size and File Limits
 
 Context management directly impacts response speed. When Cursor processes too much context, it wastes tokens on irrelevant information and slows down inference.
 
@@ -92,7 +92,7 @@ The Max Context Files setting controls how many files Cursor considers for each 
 
 For projects with clear module boundaries, open only the relevant subdirectory as your workspace. Instead of opening a massive monorepo root, work within the specific package you are actively modifying.
 
-Step 3: Configure .cursorrules for Faster Responses
+Step 3 - Configure .cursorrules for Faster Responses
 
 The `.cursorrules` file influences how Cursor processes your codebase. An optimized configuration reduces unnecessary indexing and processing:
 
@@ -125,7 +125,7 @@ This configuration restricts indexing to source files only, excludes build artif
 
 Create or update your `.cursorrules` file in your project root. Cursor automatically picks up this configuration on the next session.
 
-Step 4: Address Network and Proxy Issues
+Step 4 - Address Network and Proxy Issues
 
 Cursor AI relies on cloud-based inference for most operations. Network conditions significantly affect response times. If you work behind a corporate firewall or VPN, latency from proxy traversal can add seconds to every response.
 
@@ -139,7 +139,7 @@ curl -w "%{time_total}\n" -o /dev/null -s https://api.anthropic.com
 
 Latency above 200ms indicates network-related slowdowns. Solutions include:
 
-Configure Proxy Settings: If your organization uses a proxy, ensure Cursor's network settings point to the correct endpoint:
+Configure Proxy Settings - If your organization uses a proxy, ensure Cursor's network settings point to the correct endpoint:
 
 ```json
 // In Cursor's config
@@ -150,11 +150,11 @@ Configure Proxy Settings: If your organization uses a proxy, ensure Cursor's net
 }
 ```
 
-Use Local Caching: Enable response caching in settings to avoid repeated API calls for identical queries. This is particularly useful when debugging similar issues or iterating on code patterns.
+Use Local Caching - Enable response caching in settings to avoid repeated API calls for identical queries. This is particularly useful when debugging similar issues or iterating on code patterns.
 
-Switch to Offline Models: For sensitive projects or high-latency environments, configure Cursor to use local inference when available. This feature requires additional setup but eliminates network dependency entirely.
+Switch to Offline Models - For sensitive projects or high-latency environments, configure Cursor to use local inference when available. This feature requires additional setup but eliminates network dependency entirely.
 
-Step 5: Manage Extension Conflicts
+Step 5 - Manage Extension Conflicts
 
 Extensions installed in Cursor can interfere with AI functionality and cause response delays. A problematic extension might be making conflicting API calls or consuming resources needed for AI operations.
 
@@ -166,7 +166,7 @@ To diagnose extension conflicts:
 
 Common offenders include conflicting AI extensions, outdated language servers, and heavy UI customization tools. After identifying problematic extensions, either update them or find alternatives that do not conflict with Cursor's AI features.
 
-Step 6: Adjust Editor and Hardware Settings
+Step 6 - Adjust Editor and Hardware Settings
 
 Local hardware and editor configuration affect how quickly Cursor renders suggestions. These optimizations often get overlooked but provide measurable improvements.
 
@@ -182,11 +182,11 @@ Disable Unnecessary Visual Effects: Reduce animations and visual processing over
 }
 ```
 
-Increase RAM Allocation: If you work with large codebases, ensure your system has adequate memory available. Cursor's indexing process consumes significant RAM. Closing other memory-intensive applications during coding sessions improves responsiveness.
+Increase RAM Allocation - If you work with large codebases, ensure your system has adequate memory available. Cursor's indexing process consumes significant RAM. Closing other memory-intensive applications during coding sessions improves responsiveness.
 
-Use SSD Storage: Cursor indexes and caches data on local storage. Slow hard drives create bottlenecks during initial indexing and cache retrieval. Migrating your projects to SSD storage noticeably improves load times.
+Use SSD Storage - Cursor indexes and caches data on local storage. Slow hard drives create bottlenecks during initial indexing and cache retrieval. Migrating your projects to SSD storage noticeably improves load times.
 
-Step 7: Monitor and Debug Performance Issues
+Step 7 - Monitor and Debug Performance Issues
 
 Cursor includes diagnostic tools for identifying persistent performance problems. Access developer tools to view detailed timing information:
 
@@ -262,7 +262,7 @@ Performance impact per hardware upgrade:
 - Switching to faster CPU: 20-30% faster inference
 - Improved network: 10-20% faster chat responses
 
-Step 8: Implementing Your Optimization Strategy
+Step 8 - Implementing Your Optimization Strategy
 
 Start with the highest-impact changes first. Model selection and context limits typically provide immediate improvements. Progress through the remaining fixes based on your specific symptoms:
 
@@ -276,7 +276,7 @@ Start with the highest-impact changes first. Model selection and context limits 
 
 After implementing changes, test response times using the same queries to establish a before-and-after comparison. Document your optimal configuration so you can replicate it across projects.
 
-Step 9: Benchmarking Before and After
+Step 9 - Benchmarking Before and After
 
 Create a standardized test to measure improvements:
 
@@ -347,7 +347,7 @@ for key in before:
     print(f"{key}: {improvement:+.1f}%")
 ```
 
-Step 10: Configuration Template for Different Project Types
+Step 10 - Configuration Template for Different Project Types
 
 React/TypeScript Project
 ```json
@@ -390,7 +390,7 @@ Large Enterprise Project (100k+ files)
 }
 ```
 
-Step 11: Perform Maintenance : Keeping Cursor Fast Long-term
+Step 11 - Perform Maintenance : Keeping Cursor Fast Long-term
 
 Schedule regular optimization:
 

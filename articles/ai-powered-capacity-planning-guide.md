@@ -20,16 +20,16 @@ Capacity planning is the art of having enough resources before you need them wit
 Table of Contents
 
 - [What AI Adds to Capacity Planning](#what-ai-adds-to-capacity-planning)
-- [Step 1: Collect and Prepare Metrics](#step-1-collect-and-prepare-metrics)
-- [Step 2: Generate Forecasts with Prophet](#step-2-generate-forecasts-with-prophet)
-- [Step 3: AI-Powered Capacity Analysis](#step-3-ai-powered-capacity-analysis)
-- [Step 4: Autoscaling Policy Generation](#step-4-autoscaling-policy-generation)
-- [Step 5: Capacity Planning Report](#step-5-capacity-planning-report)
+- [Step 1 - Collect and Prepare Metrics](#step-1-collect-and-prepare-metrics)
+- [Step 2 - Generate Forecasts with Prophet](#step-2-generate-forecasts-with-prophet)
+- [Step 3 - AI-Powered Capacity Analysis](#step-3-ai-powered-capacity-analysis)
+- [Step 4 - Autoscaling Policy Generation](#step-4-autoscaling-policy-generation)
+- [Step 5 - Capacity Planning Report](#step-5-capacity-planning-report)
 - [Executive Summary (3-4 sentences)](#executive-summary-3-4-sentences)
 - [High Priority Actions (must do this week)](#high-priority-actions-must-do-this-week)
 - [Upcoming Capacity Events (next 30 days)](#upcoming-capacity-events-next-30-days)
 - [Cost Optimization Opportunities](#cost-optimization-opportunities)
-- [Step 6: Anomaly-Driven Capacity Alerts](#step-6-anomaly-driven-capacity-alerts)
+- [Step 6 - Anomaly-Driven Capacity Alerts](#step-6-anomaly-driven-capacity-alerts)
 - [Choosing Your Forecasting Horizon](#choosing-your-forecasting-horizon)
 - [Related Reading](#related-reading)
 
@@ -43,7 +43,7 @@ Traditional capacity planning uses linear extrapolation. AI-assisted planning ad
 
 The biggest practical gain is speed. A human analyst reviewing 90 days of CloudWatch data across 20 services might take a full day. The pipeline below runs end-to-end in about four minutes and surfaces the same insights in a structured format that engineers can act on immediately.
 
-Step 1: Collect and Prepare Metrics
+Step 1 - Collect and Prepare Metrics
 
 ```python
 capacity_data.py
@@ -103,7 +103,7 @@ def fetch_service_metrics(service_name: str) -> dict[str, pd.DataFrame]:
     }
 ```
 
-Step 2: Generate Forecasts with Prophet
+Step 2 - Generate Forecasts with Prophet
 
 ```python
 forecaster.py
@@ -158,7 +158,7 @@ def forecast_metric(
     }
 ```
 
-Step 3: AI-Powered Capacity Analysis
+Step 3 - AI-Powered Capacity Analysis
 
 ```python
 def analyze_capacity_needs(
@@ -183,9 +183,9 @@ def analyze_capacity_needs(
             "role": "user",
             "content": f"""You are a cloud infrastructure capacity planning expert.
 
-Service: {service_name}
-Current configuration: {json.dumps(current_config, indent=2)}
-Budget constraints: {json.dumps(budget_constraints, indent=2) if budget_constraints else "None specified"}
+Service - {service_name}
+Current configuration - {json.dumps(current_config, indent=2)}
+Budget constraints - {json.dumps(budget_constraints, indent=2) if budget_constraints else "None specified"}
 
 30-day metric forecasts:
 {json.dumps(metrics_summary, indent=2)}
@@ -223,7 +223,7 @@ analysis = analyze_capacity_needs(service_name, forecasts, current_config)
 print(analysis)
 ```
 
-Step 4: Autoscaling Policy Generation
+Step 4 - Autoscaling Policy Generation
 
 Claude can generate autoscaling policies from capacity analysis:
 
@@ -245,10 +245,10 @@ def generate_autoscaling_policy(
             "role": "user",
             "content": f"""Generate an AWS ECS auto scaling policy for {service_name}.
 
-Peak CPU forecast: {forecast_peak}%
-Current CPU per instance: {current_cpu_per_instance}%
-Target CPU utilization: {target_cpu_utilization}%
-Recommended max instances: {recommended_max}
+Peak CPU forecast - {forecast_peak}%
+Current CPU per instance - {current_cpu_per_instance}%
+Target CPU utilization - {target_cpu_utilization}%
+Recommended max instances - {recommended_max}
 
 Return a JSON object with:
 - target_tracking_policy: AWS-compatible target tracking config
@@ -273,7 +273,7 @@ Base the policy on best practices for production ECS services."""
     return {"raw_recommendation": response.content[0].text}
 ```
 
-Step 5: Capacity Planning Report
+Step 5 - Capacity Planning Report
 
 ```python
 def generate_capacity_report(services: list[str]) -> str:
@@ -322,7 +322,7 @@ report = generate_capacity_report(["order-service", "inventory-service", "paymen
 Send to #infra-capacity Slack channel
 ```
 
-Step 6: Anomaly-Driven Capacity Alerts
+Step 6 - Anomaly-Driven Capacity Alerts
 
 Forecasts tell you what to expect under normal growth. Anomaly detection tells you when something unexpected is happening right now. Combining both gives you both strategic and tactical visibility:
 
@@ -360,7 +360,7 @@ def explain_anomalies(service_name: str, anomalies: list[dict]) -> str:
         max_tokens=600,
         messages=[{
             "role": "user",
-            "content": f"""Service: {service_name}
+            "content": f"""Service - {service_name}
 The following metric anomalies were detected in the last 24 hours:
 {json.dumps(anomalies, indent=2, default=str)}
 

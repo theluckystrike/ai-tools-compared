@@ -291,7 +291,7 @@ def test_age_boundary_values(age, should_pass):
 ```
 
 
-This approach is especially effective when prompting Claude, Cursor, or Copilot: ask explicitly for "parametrized boundary tests including off-by-one values" and the assistant will generate a sweep rather than a handful of spot checks.
+This approach is especially effective when prompting Claude, Cursor, or Copilot - ask explicitly for "parametrized boundary tests including off-by-one values" and the assistant will generate a sweep rather than a handful of spot checks.
 
 
 Testing model_validator for Cross-Field Logic

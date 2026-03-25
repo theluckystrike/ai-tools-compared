@@ -32,11 +32,11 @@ State management tasks that benefit most from AI:
 - Import block generation. writing `import` blocks for resources created outside Terraform
 - State surgery prompts. safely removing resources without destroying them
 
-Tasks where AI is less useful: actually moving or modifying state (always do that yourself with reviewed commands).
+Tasks where AI is less useful - actually moving or modifying state (always do that yourself with reviewed commands).
 
 ---
 
-Workflow 1: Interpreting State List Output
+Workflow 1 - Interpreting State List Output
 
 When you have hundreds of resources in state, AI helps you navigate it quickly.
 
@@ -63,11 +63,11 @@ Claude tends to be better at this kind of structured analysis because it maintai
 
 ---
 
-Workflow 2: Generating State MV Commands for Refactors
+Workflow 2 - Generating State MV Commands for Refactors
 
 When you rename a module or reorganize resources, `terraform state mv` is required to prevent destroy/recreate cycles.
 
-Scenario: You're moving resources from a flat structure into a module.
+Scenario - You're moving resources from a flat structure into a module.
 
 Before:
 ```hcl
@@ -128,7 +128,7 @@ Always run `terraform plan` after these commands to verify zero changes before a
 
 ---
 
-Workflow 3: AI-Assisted Drift Detection
+Workflow 3 - AI-Assisted Drift Detection
 
 Drift happens when someone modifies infrastructure outside Terraform. AI helps write the cloud CLI queries to detect it.
 
@@ -163,7 +163,7 @@ This workflow is significantly faster than manually parsing JSON diffs. Claude's
 
 ---
 
-Workflow 4: Writing Terraform Import Blocks
+Workflow 4 - Writing Terraform Import Blocks
 
 Since Terraform 1.5, you can use `import` blocks in HCL instead of running `terraform import` commands. AI is good at generating these.
 
@@ -228,16 +228,16 @@ Run `terraform plan` after generating import blocks. it will show what attribute
 
 ---
 
-Workflow 5: Safe State Removal
+Workflow 5 - Safe State Removal
 
 When you need to remove a resource from state without destroying it (e.g., handing off to another team's state file):
 
 ```bash
-First: confirm what you're removing
+First - confirm what you're removing
 terraform state show aws_rds_cluster.legacy
 
 Then generate the removal command via AI
-Prompt: "I need to remove aws_rds_cluster.legacy from Terraform state
+Prompt - "I need to remove aws_rds_cluster.legacy from Terraform state
 without destroying the actual RDS cluster. It will be managed by another
 state file. What's the safe sequence of commands?"
 ```
@@ -245,16 +245,16 @@ state file. What's the safe sequence of commands?"
 AI output:
 
 ```bash
-Step 1: Back up current state
+Step 1 - Back up current state
 terraform state pull > terraform.tfstate.backup.$(date +%Y%m%d_%H%M%S)
 
-Step 2: Remove from state (does NOT delete the resource)
+Step 2 - Remove from state (does NOT delete the resource)
 terraform state rm aws_rds_cluster.legacy
 
-Step 3: Verify it's gone
+Step 3 - Verify it's gone
 terraform state list | grep rds_cluster
 
-Step 4: Plan to confirm no unintended changes
+Step 4 - Plan to confirm no unintended changes
 terraform plan
 ```
 

@@ -30,7 +30,7 @@ Table of Contents
 - [Practical Steps to Minimize Data Exposure](#practical-steps-to-minimize-data-exposure)
 - [What Gets Stored Permanently](#what-gets-stored-permanently)
 - [Making an Informed Decision](#making-an-informed-decision)
-- [Feature Comparison: Privacy Options Across Tools](#feature-comparison-privacy-options-across-tools)
+- [Feature Comparison - Privacy Options Across Tools](#feature-comparison-privacy-options-across-tools)
 - [Advanced Configuration for Sensitive Projects](#advanced-configuration-for-sensitive-projects)
 - [Legal and Compliance Implications](#legal-and-compliance-implications)
 - [Monitoring and Auditing Your AI Tool Usage](#monitoring-and-auditing-your-ai-tool-usage)
@@ -188,9 +188,9 @@ Cursor AI offers powerful AI-assisted coding capabilities, but understanding the
 
 For most developers, Cursor's convenience outweighs the privacy considerations, especially with configuration options to minimize data exposure. For those working with highly sensitive codebases, healthcare software, financial systems, or government projects, you may want to evaluate enterprise options or local processing alternatives.
 
-The key takeaway: Cursor AI stores your code on their servers for processing, but you have meaningful controls to limit what's shared and how long it's retained.
+The key takeaway - Cursor AI stores your code on their servers for processing, but you have meaningful controls to limit what's shared and how long it's retained.
 
-Feature Comparison: Privacy Options Across Tools
+Feature Comparison - Privacy Options Across Tools
 
 A practical comparison of how different AI tools handle data privacy:
 
@@ -249,13 +249,13 @@ Legal and Compliance Implications
 
 Different regulations require different data handling:
 
-GDPR (EU): Cursor must process personal data only under explicit data processing agreements. Ensure your Cursor enterprise contract includes a Data Processing Addendum (DPA).
+GDPR (EU) - Cursor must process personal data only under explicit data processing agreements. Ensure your Cursor enterprise contract includes a Data Processing Addendum (DPA).
 
-HIPAA (Healthcare US): If processing protected health information, verify Cursor has signed a Business Associate Agreement (BAA) and maintains HIPAA audit logs.
+HIPAA (Healthcare US) - If processing protected health information, verify Cursor has signed a Business Associate Agreement (BAA) and maintains HIPAA audit logs.
 
-SOX (Financial Services): Implement logging of all Cursor AI usage in your compliance audit trail. Document why AI was used, what was processed, and who reviewed the output.
+SOX (Financial Services) - Implement logging of all Cursor AI usage in your compliance audit trail. Document why AI was used, what was processed, and who reviewed the output.
 
-CCPA (California): Users have rights to know what data is collected. Disclose Cursor's data collection in your privacy policies.
+CCPA (California) - Users have rights to know what data is collected. Disclose Cursor's data collection in your privacy policies.
 
 Contact Cursor's enterprise sales team with your specific compliance requirements. They can provide compliance documentation, audit reports, and custom agreements.
 

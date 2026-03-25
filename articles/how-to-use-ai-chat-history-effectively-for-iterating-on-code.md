@@ -38,7 +38,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: When NOT to Use Chat History
+Step 1 - When NOT to Use Chat History
 
 Sometimes starting fresh is better:
 
@@ -49,10 +49,10 @@ Sometimes starting fresh is better:
 Following our discussion of the user authentication flow: # we're getting 'Token expired' errors exactly 15 minutes
 after login.
 -  Migrated user service: to TypeScript 2.
-- User: Added explicit waits, still failing occasionally
+- User - Added explicit waits, still failing occasionally
 
 Attempt 2 (Next day):
-User: Still hitting that race condition we debugged yesterday.
+User - Still hitting that race condition we debugged yesterday.
 - Use chat history effectively: by maintaining context across iterations, referring back to earlier discussions, and building on previous code decisions.
 - Learning to use this: history effectively transforms how you iterate on problems with AI assistance.
 
@@ -64,7 +64,7 @@ Consider a typical development scenario: you're building a feature that requires
 
 This matters especially for complex refactoring tasks, debugging sessions, and when exploring multiple implementation approaches. The AI becomes more useful when it has context about your specific situation.
 
-Step 2: Techniques for Using Conversation Context
+Step 2 - Techniques for Using Conversation Context
 
 Reference Previous Attempts Directly
 
@@ -79,7 +79,7 @@ Develop a habit of including context markers in your prompts. Phrases like "cont
 For example:
 
 ```
-User: We're refactoring the payment module we worked on last week.
+User - We're refactoring the payment module we worked on last week.
 The current implementation has a race condition when processing
 concurrent refunds. Can you help us add pessimistic locking while
 keeping the existing transaction structure?
@@ -94,12 +94,12 @@ For ongoing projects, maintain a lightweight reference document that summarizes 
 A practical reference document might include:
 
 ```
-Step 3: Project Constraints
+Step 3 - Project Constraints
 - Node.js 18 LTS
 - PostgreSQL with connection pooling
 - Max 100ms response time for API calls
 
-Step 4: Coding Standards
+Step 4 - Coding Standards
 - Use async/await over promises
 - Prefer functional components in React
 - All database queries in dedicated repository files
@@ -141,7 +141,7 @@ the premature expiration?
 
 This approach helps the AI connect the error to your specific implementation rather than providing generic troubleshooting steps.
 
-Step 5: Organizing Long Conversations
+Step 5 - Organizing Long Conversations
 
 For extended coding sessions, periodically summarize the current state. This creates natural breakpoints and ensures key decisions are preserved:
 
@@ -158,7 +158,7 @@ When to Start Fresh
 
 Despite the benefits of chat history, sometimes starting fresh makes sense. If you're working on a completely unrelated feature, switching projects, or if the conversation has become convoluted with abandoned approaches, a clean start often produces better results. The goal is to use history strategically, not rigidly.
 
-Step 6: Build Better AI Collaboration Habits
+Step 6 - Build Better AI Collaboration Habits
 
 Effective use of AI chat history is a skill that improves with practice. Each conversation becomes more productive as you develop patterns for providing context, referencing previous work, and maintaining clarity about your goals. The investment in learning these techniques pays dividends in reduced iteration cycles and better code solutions.
 
@@ -171,32 +171,32 @@ For longer projects, managing context becomes critical. Here are sophisticated t
 Creating Knowledge Summary Files
 
 ```markdown
-Project: E-Commerce API Refactor
+Project - E-Commerce API Refactor
 
-Step 7: Tech Stack
+Step 7 - Tech Stack
 - Node.js 18 LTS + TypeScript
 - PostgreSQL with Prisma ORM
 - Express.js with async/await
 - Jest for testing
 
-Step 8: Architecture Decisions
+Step 8 - Architecture Decisions
 - Monorepo with /api, /services, /migrations
 - All DB access through repository pattern
 - Authentication: JWT tokens, 24-hour expiry
 - Rate limiting: Redis, 100 req/min per IP
 
-Step 9: Known Constraints
+Step 9 - Known Constraints
 - API response time SLA: 200ms p95
 - Database connections: max 20 concurrent
 - No breaking changes to public API without versioning
 
-Step 10: Completed Iterations
+Step 10 - Completed Iterations
 1.  Migrated user service to TypeScript
 2.  Added complete error handling
 3. ⏳ Working on: Product service refactor
 4.  Next: Payment service integration
 
-Step 11: Current Issues
+Step 11 - Current Issues
 - N+1 query problem in product listing (under investigation)
 - Jest test suite slow (>30 seconds for full run)
 ```
@@ -206,17 +206,17 @@ When starting a new conversation, paste this summary in your first message. The 
 Segmenting by Feature Lifecycle
 
 ```
-Chat Session 1: "Design Phase"
+Chat Session 1 - "Design Phase"
 - Explore architecture options
 - Discuss tradeoffs
 - Validate approach
 
-Chat Session 2: "Implementation Phase"
+Chat Session 2 - "Implementation Phase"
 - Reference design decisions from Session 1
 - Implement feature
 - Write tests
 
-Chat Session 3: "Refinement Phase"
+Chat Session 3 - "Refinement Phase"
 - Reference what we built in Session 2
 - Optimize performance
 - Add edge cases
@@ -224,20 +224,20 @@ Chat Session 3: "Refinement Phase"
 
 Rather than one massive conversation, break into logical phases. Reference earlier sessions: "Following our design from Session 1, the implementation is working but we need to optimize the database queries we discussed."
 
-Step 12: Practical Chat History Patterns
+Step 12 - Practical Chat History Patterns
 
-Pattern 1: Progressive Problem Solving
+Pattern 1 - Progressive Problem Solving
 
 Session 1 (Initial attempt):
 ```
-User: How do I implement caching in Node.js?
+User - How do I implement caching in Node.js?
 AI: Here's a basic Redis implementation...
-User: This works but is slow for initial cache population.
+User - This works but is slow for initial cache population.
 ```
 
 Session 2 (Next day, building on findings):
 ```
-User: Continuing from yesterday's caching discussion, 
+User - Continuing from yesterday's caching discussion, 
 the initial population is still slow. We have 100K
 items to cache and it takes 30 minutes. Can we
 parallelize it with Worker Threads?
@@ -250,31 +250,31 @@ Context from yesterday:
 
 The AI immediately understands the problem and constraints because you've provided session context.
 
-Pattern 2: Iterative Refinement
+Pattern 2 - Iterative Refinement
 
 ```python
-Session 1: Basic implementation
+Session 1 - Basic implementation
 def fetch_user(user_id):
  return db.query("SELECT * FROM users WHERE id = ?", user_id)
 
-AI suggests: Add error handling
+AI suggests - Add error handling
 
-Session 2: Error handling added, but performance issue
-Reference: "Building on the error handling from Session 1..."
+Session 2 - Error handling added, but performance issue
+Reference - "Building on the error handling from Session 1..."
 def fetch_user(user_id):
  try:
  return db.query("SELECT * FROM users WHERE id = ?", user_id)
  except DatabaseError:
  # Now investigating N+1 issue
 
-Session 3: Optimize with caching
-Reference: "We fixed error handling in Session 2,
+Session 3 - Optimize with caching
+Reference - "We fixed error handling in Session 2,
 now adding caching to Session 1's basic query..."
 ```
 
 Each session builds on prior work, reducing context loss.
 
-Step 13: ChatBot-Specific History Features
+Step 13 - ChatBot-Specific History Features
 
 Claude (claude.ai and API):
 - Conversation context is automatic within a session
@@ -295,20 +295,20 @@ Cursor IDE:
 - Use `cmd+K` with @file references
 - Context persists within project
 
-Step 14: Use Chat History for Debugging
+Step 14 - Use Chat History for Debugging
 
 Debugging sessions benefit most from good history tracking:
 
 ```
-Session Start: "Debugging race condition in payment processing"
+Session Start - "Debugging race condition in payment processing"
 
 Attempt 1:
 User: Getting intermittent test failures in payment tests
 AI: Here are common race condition causes...
-User: Added explicit waits, still failing occasionally
+User - Added explicit waits, still failing occasionally
 
 Attempt 2 (Next day):
-User: Still hitting that race condition we debugged yesterday.
+User - Still hitting that race condition we debugged yesterday.
  New finding: failures only happen under load > 100 concurrent requests.
  The test passes in isolation.
 
@@ -322,7 +322,7 @@ What's different about the concurrent scenario?
 
 The AI connects your new findings to yesterday's investigation, proposing concurrency-specific solutions rather than re-suggesting the basics.
 
-Step 15: CLI and Automation Integration
+Step 15 - CLI and Automation Integration
 
 For automated debugging, feed previous AI suggestions into logs:
 
@@ -356,7 +356,7 @@ curl https://api.anthropic.com/v1/messages \
  }
 ```
 
-Step 16: Organizing Multi-Month Projects
+Step 16 - Organizing Multi-Month Projects
 
 For projects spanning months, create indexed summaries:
 
@@ -392,7 +392,7 @@ completed_components:
 
 When starting work on a component, reference the specific session range: "Working on payment processing as continued from sessions 68-82. Current blocker: webhook integration."
 
-Step 17: When NOT to Use Chat History
+Step 17 - When NOT to Use Chat History
 
 Sometimes starting fresh is better:
 
@@ -404,7 +404,7 @@ Sometimes starting fresh is better:
 
 4. When exploring radically different solutions. Don't force new ideas into an existing conversation focused on the old approach
 
-Step 18: Metrics: Tracking How Chat History Improves Productivity
+Step 18 - Metrics: Tracking How Chat History Improves Productivity
 
 Track these metrics to see impact of better history management:
 

@@ -28,9 +28,9 @@ Before comparing tools, define what a production-quality migration requires:
 - Correct column type mappings (not using `TEXT` where `VARCHAR(255)` is appropriate)
 - No implicit table locks on tables with millions of rows
 
-Test 1: Adding a Non-Nullable Column with Alembic
+Test 1 - Adding a Non-Nullable Column with Alembic
 
-This is a classic danger zone: adding a NOT NULL column requires all existing rows to have a value, which causes a full table rewrite without careful handling.
+This is a classic danger zone - adding a NOT NULL column requires all existing rows to have a value, which causes a full table rewrite without careful handling.
 
 Prompt:
 
@@ -47,9 +47,9 @@ Claude's output:
 ```python
 """Add notification_preferences to users
 
-Revision ID: a1b2c3d4e5f6
-Revises: prev_revision
-Create Date: 2026-03-22
+Revision ID - a1b2c3d4e5f6
+Revises - prev_revision
+Create Date - 2026-03-22
 """
 from alembic import op
 import sqlalchemy as sa
@@ -125,7 +125,7 @@ def downgrade():
 
 Copilot's version adds the column as NOT NULL immediately. On PostgreSQL 11+, a column with a constant default value doesn't trigger a table rewrite. but it does still acquire an AccessExclusiveLock for the ALTER TABLE, which blocks all reads and writes for the duration. On a 5M row table, this is seconds to minutes depending on load. Copilot doesn't warn about this.
 
-Test 2: Adding an Index to a Large Table
+Test 2 - Adding an Index to a Large Table
 
 Prompt:
 
@@ -166,13 +166,13 @@ And configure the migration to disable transaction wrapping:
 ```python
 In your migration file header:
 This migration requires transaction=False
-Add to env.py: context.configure(..., transaction_per_migration=False)
-Or use: with op.get_context().autocommit_block():
+Add to env.py - context.configure(..., transaction_per_migration=False)
+Or use - with op.get_context().autocommit_block():
 ```
 
 Copilot generates a standard `op.create_index()` call, which does not use `CONCURRENTLY` by default and will lock the table.
 
-Test 3: Flyway Migration (Java/PostgreSQL)
+Test 3 - Flyway Migration (Java/PostgreSQL)
 
 ```sql
 -- V3__add_soft_delete_to_orders.sql
@@ -190,7 +190,7 @@ CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_orders_active
 
 -- NOTE: Flyway does not support CONCURRENTLY inside transactions by default.
 -- Either use Flyway's outOfOrder or a separate migration file for the index.
--- See: https://flywaydb.org/documentation/database/postgresql#concurrent-index
+-- See - https://flywaydb.org/documentation/database/postgresql#concurrent-index
 ```
 
 ```sql
@@ -202,7 +202,7 @@ ALTER TABLE orders DROP COLUMN IF EXISTS deleted_at;
 
 Claude adds the Flyway CONCURRENTLY caveat. a detail that would otherwise cause a surprise production failure.
 
-Test 4: Liquibase Multi-Step Column Rename
+Test 4 - Liquibase Multi-Step Column Rename
 
 Column renaming with zero downtime requires multiple deploy cycles:
 
@@ -292,7 +292,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -304,5 +304,5 @@ AI tools generate queries well for common patterns, but always test generated qu
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 {% endraw %}

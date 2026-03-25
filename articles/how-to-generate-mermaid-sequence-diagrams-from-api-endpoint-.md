@@ -46,7 +46,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Converting OpenAPI Specifications to Mermaid
+Step 1 - Converting OpenAPI Specifications to Mermaid
 
 OpenAPI specifications contain endpoint information that AI tools can parse and convert. When you provide an OpenAPI spec (JSON or YAML), AI assistants extract the relevant details and generate corresponding sequence diagrams.
 
@@ -95,7 +95,7 @@ sequenceDiagram
 
 This conversion captures the main request flow and error path. The resulting diagram renders immediately in GitHub Markdown, documentation sites, or Mermaid viewers.
 
-Step 2: Effective Prompt Strategies
+Step 2 - Effective Prompt Strategies
 
 AI-generated diagram quality depends significantly on how you structure prompts. Clear, specific descriptions produce better results than vague requests.
 
@@ -118,8 +118,8 @@ Example Prompt Structure
 ```
 Convert this endpoint description to a Mermaid sequence diagram:
 
-Endpoint: POST /api/checkout
-Description: Initiates checkout process for authenticated users
+Endpoint - POST /api/checkout
+Description - Initiates checkout process for authenticated users
 Steps:
 1. Client sends cart data with payment token
 2. Server validates payment with payment provider
@@ -132,7 +132,7 @@ Show success and failure paths for payment validation.
 
 This structured prompt gives the AI complete context for generating an accurate diagram.
 
-Step 3: Tools That Excel at Diagram Generation
+Step 3 - Tools That Excel at Diagram Generation
 
 Several AI coding assistants handle Mermaid generation effectively. Each offers distinct advantages depending on your workflow.
 
@@ -158,7 +158,7 @@ GitHub Copilot
 
 Copilot suggests code completions including Mermaid syntax within Markdown files. While less interactive than Claude or Cursor, Copilot works well when you already have endpoint descriptions written in comments or documentation blocks adjacent to your Markdown.
 
-Step 4: Workflow Integration
+Step 4 - Workflow Integration
 
 Integrating AI-generated diagrams into your documentation workflow maximizes their value. Consider these practical approaches.
 
@@ -174,7 +174,7 @@ Collaboration Benefits
 
 Sequence diagrams created from AI output communicate API behavior effectively to team members who prefer visual representations over text documentation. Share generated diagrams in pull requests, technical specifications, or onboarding materials.
 
-Step 5: Handling Complex API Flows
+Step 5 - Handling Complex API Flows
 
 Real-world APIs often involve more complexity than simple request-response pairs. AI tools handle various scenarios when prompted appropriately.
 
@@ -221,7 +221,7 @@ sequenceDiagram
     end
 ```
 
-Step 6: Practical Tips
+Step 6 - Practical Tips
 
 Several techniques improve diagram generation results:
 

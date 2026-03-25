@@ -40,7 +40,7 @@ Cursor provides the smoothest experience for asyncio development within VS Code.
 - Codeium: Free Tier Advantage
 
 Codeium's free tier includes decent asyncio support, making it accessible for developers learning concurrent Python.
-- For teams already using VS Code: Cursor provides the best workflow integration with solid asyncio support.
+- For teams already using VS Code - Cursor provides the best workflow integration with solid asyncio support.
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.
 - Claude Code: Best for Complex Concurrent Patterns
 
@@ -183,7 +183,7 @@ For teams already using VS Code, Cursor provides the best workflow integration w
 
 If you are learning asyncio or working on hobby projects, Codeium's free tier offers sufficient capabilities to get started with basic concurrent patterns.
 
-Advanced Pattern: Producer-Consumer with asyncio Queues
+Advanced Pattern - Producer-Consumer with asyncio Queues
 
 Regardless of which AI tool you choose, understanding the producer-consumer pattern remains essential for many concurrent applications:
 
@@ -220,7 +220,7 @@ async def main():
 
 This pattern demonstrates proper queue-based concurrency that AI tools can help scaffold but require developer understanding to implement correctly.
 
-Advanced Pattern: Task Groups with Error Aggregation
+Advanced Pattern - Task Groups with Error Aggregation
 
 Python 3.11+ TaskGroup provides structured concurrency with proper exception handling:
 
@@ -262,7 +262,7 @@ async def process_urls(urls: list[str]) -> list[str]:
 
 Common Asyncio Pitfalls and AI-Assisted Solutions
 
-Pitfall 1: Blocking the Event Loop
+Pitfall 1 - Blocking the Event Loop
 
 ```python
 Bad (blocks event loop)
@@ -278,7 +278,7 @@ async def good_async_function():
 
 Claude Code consistently avoids this pattern; Copilot sometimes suggests it without warning.
 
-Pitfall 2: Race Conditions on Shared State
+Pitfall 2 - Race Conditions on Shared State
 
 ```python
 Bad (race condition)
@@ -299,7 +299,7 @@ async def increment_good():
 
 When prompting about shared state, mention "race condition safe" explicitly. Claude Code proactively identifies these risks.
 
-Real-World Example: Resilient API Client
+Real-World Example - Resilient API Client
 
 ```python
 import asyncio
@@ -372,7 +372,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -384,7 +384,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

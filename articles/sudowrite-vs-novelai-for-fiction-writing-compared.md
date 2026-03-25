@@ -164,9 +164,9 @@ Real-World Writing Examples
 
 Understanding how each tool handles actual fiction helps reveal their strengths.
 
-Sudowrite: Character Development
+Sudowrite - Character Development
 
-Prompt: "Develop the backstory for my protagonist, a former military officer turned detective, age 47, haunted by a decision made in Afghanistan."
+Prompt - "Develop the backstory for my protagonist, a former military officer turned detective, age 47, haunted by a decision made in Afghanistan."
 
 Sudowrite's Story Engine would generate:
 
@@ -174,7 +174,7 @@ Sudowrite's Story Engine would generate:
 
 Sudowrite excels at this because it understands character arc and trauma development. It works quickly and provides usable scaffolding for your character.
 
-NovelAI: Long-Form Narrative with Custom Knowledge
+NovelAI - Long-Form Narrative with Custom Knowledge
 
 Using NovelAI with a custom Lorebook entry:
 
@@ -209,8 +209,8 @@ NovelAI Pricing (March 2026)
 - Opus: $24.99/month (unlimited tokens + image generation)
 
 Token economics:
-- Basic: ~90,000 tokens/month (1.2 novels)
-- Tablet: ~180,000 tokens/month (2.4 novels)
+- Basic - ~90,000 tokens/month (1.2 novels)
+- Tablet - ~180,000 tokens/month (2.4 novels)
 - Scroll/Opus: Unlimited
 
 For high-volume writers (3+ novels monthly), Sudowrite Unlimited ($50) or NovelAI Scroll/Opus ($16-25) are viable. For casual writers (1 novel/month), NovelAI's Basic tier is most economical.
@@ -219,7 +219,7 @@ Model Architecture Differences
 
 Understanding underlying models affects generation quality.
 
-Sudowrite uses a fine-tuned version of GPT (older generation, pre-GPT-4). Training emphasized fiction quality and creative writing. Strengths: character development, dialogue, pacing. Weaknesses: occasional generic phrases, less technical accuracy in specialized domains.
+Sudowrite uses a fine-tuned version of GPT (older generation, pre-GPT-4). Training emphasized fiction quality and creative writing. Strengths - character development, dialogue, pacing. Weaknesses - occasional generic phrases, less technical accuracy in specialized domains.
 
 NovelAI uses multiple custom-trained models:
 - Clio (latest, trained on fiction specifically)
@@ -230,7 +230,7 @@ NovelAI's custom training means it was built ground-up for fiction, not adapted 
 
 Advanced Customization Examples
 
-Sudowrite: Using "Edit" Mode for Revision
+Sudowrite - Using "Edit" Mode for Revision
 
 Original passage:
 "She walked into the room. It was dark. There was a table. A gun sat on it."
@@ -242,7 +242,7 @@ Generated revision:
 
 Sudowrite understands revision context and improves prose without requiring explicit craft instructions.
 
-NovelAI: Fine-Grained Customization
+NovelAI - Fine-Grained Customization
 
 Same passage, using NovelAI parameters:
 
@@ -317,7 +317,7 @@ NovelAI Community
 - Extensive documentation and API examples
 - Community-created tools and scripts
 
-NovelAI's open API spawns third-party tools. The community has created: web interfaces, Discord bots, alternative frontends, and specialized writing tools. This ecosystem appeals to developers and power users.
+NovelAI's open API spawns third-party tools. The community has created: web interfaces, Discord bots, alternative frontends, and specialized writing tools. This environment appeals to developers and power users.
 
 Performance and Speed
 
@@ -408,7 +408,7 @@ Choose NovelAI if:
 - You're willing to invest setup time in Lorebooks
 - You want API access for custom integrations
 - You write frequently (3+ novels/month, benefit from unlimited)
-- You appreciate a developer-friendly ecosystem
+- You appreciate a developer-friendly environment
 
 Use both if:
 - You have budget ($50 + $25/month = $75)

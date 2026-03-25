@@ -21,7 +21,7 @@ Table of Contents
 
 - [Why AI-Assisted SQL Migrations Matter](#why-ai-assisted-sql-migrations-matter)
 - [Top AI Tools for SQL Migrations](#top-ai-tools-for-sql-migrations)
-- [Comparison Table: AI Tools for SQL Migrations](#comparison-table-ai-tools-for-sql-migrations)
+- [Comparison Table - AI Tools for SQL Migrations](#comparison-table-ai-tools-for-sql-migrations)
 - [Real-World Migration Example](#real-world-migration-example)
 - [Best Practices for AI-Generated Migrations](#best-practices-for-ai-generated-migrations)
 - [Cost Comparison for Teams](#cost-comparison-for-teams)
@@ -40,8 +40,8 @@ Top AI Tools for SQL Migrations
 
 1. GitHub Copilot + VS Code Extension
 
-Pricing: $10/month individual, $19/month business, $100/month enterprise
-Best For: Inline code generation during development
+Pricing - $10/month individual, $19/month business, $100/month enterprise
+Best For - Inline code generation during development
 
 GitHub Copilot excels at generating migration boilerplate directly in your editor. When writing Flyway migrations, Copilot suggests:
 - Standardized naming conventions (V1__initial_schema.sql, V2__add_users_table.sql)
@@ -53,7 +53,7 @@ Example Copilot Output for Alembic:
 ```python
 """Add user authentication table
 
-Revision ID: abc123def456
+Revision ID - abc123def456
 Revises:
 Create Date: 2026-03-21 10:15:00.000000
 
@@ -94,12 +94,12 @@ Weaknesses:
 
 2. ChatGPT-4 with Custom Instructions
 
-Pricing: $20/month (Plus), $200/month (Team), $4 per 1M input tokens (API)
-Best For: Complex schema transformations, architectural decisions
+Pricing - $20/month (Plus), $200/month (Team), $4 per 1M input tokens (API)
+Best For - Complex schema transformations, architectural decisions
 
-ChatGPT-4 handles intricate migration scenarios: reshaping tables, data migrations, index strategies, and rollback planning. Unlike Copilot, GPT-4 can review your entire current schema and suggest holistic changes.
+ChatGPT-4 handles intricate migration scenarios: reshaping tables, data migrations, index strategies, and rollback planning. Unlike Copilot, GPT-4 can review your entire current schema and suggest complete changes.
 
-Use Case: Denormalization Migration
+Use Case - Denormalization Migration
 
 ```
 Input Prompt:
@@ -118,7 +118,7 @@ ChatGPT-4 Response:
    AFTER INSERT ON orders FOR EACH ROW
    BEGIN UPDATE users SET order_count = order_count + 1 WHERE id = NEW.user_id; END;
 4. Verify consistency, then remove old JOIN logic from application.
-5. Rollback: DROP TRIGGER, drop column.
+5. Rollback - DROP TRIGGER, drop column.
 ```
 
 Strengths:
@@ -135,8 +135,8 @@ Weaknesses:
 
 3. Prisma AI + Prisma Studio
 
-Pricing: Free (core), $10/month (Premium Studio features)
-Best For: ORM-first teams using Prisma
+Pricing - Free (core), $10/month (Premium Studio features)
+Best For - ORM-first teams using Prisma
 
 Prisma's AI assistant generates migrations from schema changes automatically. Define your data model in `schema.prisma`, and Prisma generates optimized SQL migrations.
 
@@ -229,8 +229,8 @@ Weaknesses:
 
 4. AWS Glue Data Quality + DataGrip AI
 
-Pricing: AWS Glue $0.44/DPU-hour, DataGrip IDE $15/month
-Best For: Data pipeline teams, JetBrains IDE users
+Pricing - AWS Glue $0.44/DPU-hour, DataGrip IDE $15/month
+Best For - Data pipeline teams, JetBrains IDE users
 
 DataGrip's built-in AI assistant (via JetBrains AI Gateway) suggests schema changes from your IDE, analyzing query patterns and suggesting indexes, partitions, and column optimizations.
 
@@ -247,8 +247,8 @@ Weaknesses:
 
 5. Claude API with Migration Context
 
-Pricing: $3 per 1M input tokens, $15 per 1M output tokens
-Best For: Custom migration workflows, batch processing
+Pricing - $3 per 1M input tokens, $15 per 1M output tokens
+Best For - Custom migration workflows, batch processing
 
 Claude excels at complex SQL reasoning. For teams processing hundreds of migrations, Claude API can:
 - Validate migration syntax before execution
@@ -289,7 +289,7 @@ Current schema:
 Required changes:
 {target_changes}
 
-Format: SQL with versioning. Include rollback logic.
+Format - SQL with versioning. Include rollback logic.
 Include indexes for common query patterns."""
         }
     ]
@@ -309,7 +309,7 @@ Weaknesses:
 - Requires prompt engineering for consistency
 - Slower than IDE-integrated tools
 
-Comparison Table: AI Tools for SQL Migrations
+Comparison Table - AI Tools for SQL Migrations
 
 | Tool | Pricing | Best For | SQL Dialects | Frameworks | IDE Integration |
 |------|---------|----------|--------------|-----------|-----------------|
@@ -321,7 +321,7 @@ Comparison Table: AI Tools for SQL Migrations
 
 Real-World Migration Example
 
-Scenario: Migrating from monolithic users table to sharded architecture.
+Scenario - Migrating from monolithic users table to sharded architecture.
 
 Flyway Migration with AI Assistance
 
@@ -456,15 +456,15 @@ Enterprise (100+ developers):
 
 Choosing Your AI Migration Tool
 
-Use GitHub Copilot if: You need quick generation during development and prefer IDE integration. Cost: $10/month.
+Use GitHub Copilot if - You need quick generation during development and prefer IDE integration. Cost: $10/month.
 
-Use ChatGPT-4 if: Migrations involve complex schema redesigns or you need decision-making assistance. Cost: $20/month.
+Use ChatGPT-4 if - Migrations involve complex schema redesigns or you need decision-making assistance. Cost: $20/month.
 
-Use Prisma AI if: You're already building with Prisma ORM and want type-safe migrations. Cost: Free to $10/month.
+Use Prisma AI if - You're already building with Prisma ORM and want type-safe migrations. Cost - Free to $10/month.
 
-Use Claude API if: You have hundreds of migrations to process or need custom workflow automation. Cost: $3-15 per 1M tokens (variable).
+Use Claude API if - You have hundreds of migrations to process or need custom workflow automation. Cost - $3-15 per 1M tokens (variable).
 
-Use DataGrip AI if: You focus on query optimization and work in JetBrains IDEs. Cost: $15/month.
+Use DataGrip AI if - You focus on query optimization and work in JetBrains IDEs. Cost: $15/month.
 
 Frequently Asked Questions
 
@@ -474,7 +474,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -486,7 +486,7 @@ Most modern tools support asynchronous workflows that work well across time zone
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

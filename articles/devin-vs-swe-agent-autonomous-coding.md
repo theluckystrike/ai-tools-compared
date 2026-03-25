@@ -114,23 +114,23 @@ environment:
 
 Real Task Comparison
 
-Task 1: Fix a pagination bug
-Issue: "Page 2 of search results shows the same results as page 1 when search term contains special characters."
+Task 1 - Fix a pagination bug
+Issue - "Page 2 of search results shows the same results as page 1 when search term contains special characters."
 
-- Devin: Found the issue in 12 minutes, identified URL encoding bug in the search query builder, wrote a fix and added a test. The fix was correct.
+- Devin - Found the issue in 12 minutes, identified URL encoding bug in the search query builder, wrote a fix and added a test. The fix was correct.
 - SWE-Agent (Claude): Found the same root cause in 8 minutes, wrote a more complete fix that also handled edge cases in the URL decoder. Both tests and the agent-written test passed.
 
-Task 2: Add a new API endpoint
-Issue: "Add a `/api/users/:id/export` endpoint that returns user data as CSV."
+Task 2 - Add a new API endpoint
+Issue - "Add a `/api/users/:id/export` endpoint that returns user data as CSV."
 
-- Devin: Implemented the endpoint, followed existing patterns for auth middleware, wrote unit and integration tests. PR was production-quality. Took 20 minutes and one user clarification.
-- SWE-Agent: Implemented a basic endpoint but missed the auth middleware pattern used in other endpoints. Required a review and re-run with additional instructions.
+- Devin - Implemented the endpoint, followed existing patterns for auth middleware, wrote unit and integration tests. PR was production-quality. Took 20 minutes and one user clarification.
+- SWE-Agent - Implemented a basic endpoint but missed the auth middleware pattern used in other endpoints. Required a review and re-run with additional instructions.
 
-Task 3: Dependency upgrade with breaking changes
-Issue: "Upgrade from Express 4 to Express 5."
+Task 3 - Dependency upgrade with breaking changes
+Issue - "Upgrade from Express 4 to Express 5."
 
-- Devin: Attempted the upgrade, ran tests, found 8 failures due to API changes, fixed 6 of them. Flagged the remaining 2 as requiring design decisions. This was the most impressive task. multi-file changes across 30+ files.
-- SWE-Agent: Made the version bump and fixed obvious signature changes but missed several subtle behavioral differences. Ran tests but didn't investigate all failures. The diff required significant review.
+- Devin - Attempted the upgrade, ran tests, found 8 failures due to API changes, fixed 6 of them. Flagged the remaining 2 as requiring design decisions. This was the most impressive task. multi-file changes across 30+ files.
+- SWE-Agent - Made the version bump and fixed obvious signature changes but missed several subtle behavioral differences. Ran tests but didn't investigate all failures. The diff required significant review.
 
 Cost Comparison
 
@@ -219,7 +219,7 @@ Human-in-the-Loop Best Practices
 Even when agents fail completely, they save time by identifying where the problem is:
 
 ```
-Task: "Fix the CSV export feature, it's throwing a memory error on large files"
+Task - "Fix the CSV export feature, it's throwing a memory error on large files"
 
 SWE-Agent attempt 1 (failed):
 - Correctly identified the file: src/export/csv-writer.ts
@@ -254,15 +254,15 @@ For teams processing 50+ issues per month:
 
 ```bash
 Estimate ROI on agent usage
-Average issue manual time: 60 minutes
-Agent success rate: 40%
-Agent time: 15 minutes
-Human review time: 10 minutes (success), 20 minutes (failure)
+Average issue manual time - 60 minutes
+Agent success rate - 40%
+Agent time - 15 minutes
+Human review time - 10 minutes (success), 20 minutes (failure)
 
 Cost calculation:
 50 issues/month × 60 min/issue ÷ 60 = 50 hours
-With 40% success agent: 50 issues × [0.4 × (15+10) + 0.6 × (15+20)] = 18.75 hours
-Savings: 31.25 hours/month = ~$1250/month at $40/hour
+With 40% success agent - 50 issues × [0.4 × (15+10) + 0.6 × (15+20)] = 18.75 hours
+Savings - 31.25 hours/month = ~$1250/month at $40/hour
 ```
 
 Even with modest success rates, agent automation is ROI-positive for high-volume issue processing.
@@ -293,7 +293,7 @@ Your codebase may have different results. Always test locally.
 
 Integration Patterns
 
-Pattern 1: GitHub Issue Auto-Fix (SWE-Agent)
+Pattern 1 - GitHub Issue Auto-Fix (SWE-Agent)
 
 ```yaml
 .github/workflows/auto-fix.yml
@@ -327,7 +327,7 @@ jobs:
           done < /tmp/issues.txt
 ```
 
-Pattern 2: Devin as a Code Review Assistant
+Pattern 2 - Devin as a Code Review Assistant
 
 Instead of autonomous fixing, use Devin to propose changes for human review:
 
@@ -343,13 +343,13 @@ Handling Edge Cases
 
 Both agents struggle with these scenarios:
 
-Database migrations: Agent can write the migration but doesn't know if it's the right schema design. Requires human review of intent, not just correctness.
+Database migrations - Agent can write the migration but doesn't know if it's the right schema design. Requires human review of intent, not just correctness.
 
-Infrastructure changes: Agent can update code to support new infrastructure but doesn't evaluate if the infrastructure change is good architecture.
+Infrastructure changes - Agent can update code to support new infrastructure but doesn't evaluate if the infrastructure change is good architecture.
 
-Security changes: Agent can patch security bugs mechanically but may miss related vulnerabilities or introduce new ones.
+Security changes - Agent can patch security bugs mechanically but may miss related vulnerabilities or introduce new ones.
 
-Multi-repo changes: Agent typically works on a single repo. Cross-repo changes require orchestration.
+Multi-repo changes - Agent typically works on a single repo. Cross-repo changes require orchestration.
 
 For these, agents are tools for acceleration, not replacement. Use them to generate the mechanical parts, then have experts review the architectural decisions.
 

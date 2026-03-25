@@ -159,7 +159,7 @@ Real Server Component Pitfalls to Test
 
 When evaluating AI assistants, test these specific scenarios:
 
-Test Case 1: Server Functions in Server Components
+Test Case 1 - Server Functions in Server Components
 ```typescript
 // Server Component that defines a server action
 'use server'
@@ -176,9 +176,9 @@ export default async function UserForm() {
 }
 ```
 
-Accuracy test: Does the assistant place `'use server'` directive correctly for server actions?
+Accuracy test - Does the assistant place `'use server'` directive correctly for server actions?
 
-Test Case 2: Mixed Server/Client Component Tree
+Test Case 2 - Mixed Server/Client Component Tree
 ```typescript
 // Server Component with Suspense boundary
 export default async function Page() {
@@ -191,9 +191,9 @@ export default async function Page() {
 }
 ```
 
-Accuracy test: Does it correctly identify which components must be client vs server?
+Accuracy test - Does it correctly identify which components must be client vs server?
 
-Test Case 3: Streaming SSR
+Test Case 3 - Streaming SSR
 ```typescript
 // Server Component with streaming
 import { unstable_rsc } from 'react';
@@ -204,7 +204,7 @@ export default async function StreamedResults() {
 }
 ```
 
-Accuracy test: Does the assistant understand streaming semantics in Server Components?
+Accuracy test - Does the assistant understand streaming semantics in Server Components?
 
 Practical Recommendations
 
@@ -225,7 +225,7 @@ Pricing and Tool Comparison
 
 Common Mistakes AI Assistants Make
 
-Mistake 1: Suggesting useState in Server Components
+Mistake 1 - Suggesting useState in Server Components
 ```typescript
 // WRONG - Server Component trying to use hook
 export default async function Page() {
@@ -233,7 +233,7 @@ export default async function Page() {
 }
 ```
 
-Mistake 2: Forgetting cache control in fetch
+Mistake 2 - Forgetting cache control in fetch
 ```typescript
 // Less optimized - missing cache strategy
 const res = await fetch('https://api.example.com/data');
@@ -244,7 +244,7 @@ const res = await fetch('https://api.example.com/data', {
 });
 ```
 
-Mistake 3: Not using notFound() for 404 cases
+Mistake 3 - Not using notFound() for 404 cases
 ```typescript
 // WRONG - returning null or empty
 export default async function Page({ params }) {
@@ -267,7 +267,7 @@ Testing Your AI Assistant
 Before paying for an annual subscription, test with this Server Components scenario:
 
 ```
-Prompt: "Create a Next.js 14 Server Component that:
+Prompt - "Create a Next.js 14 Server Component that:
 1. Fetches user data from /api/users/:id
 2. Shows loading state with Suspense
 3. Has an edit button that calls a Server Action

@@ -21,7 +21,7 @@ Table of Contents
 - [ChatGPT Plus (GPT-4)](#chatgpt-plus-gpt-4)
 - [Copilot (GitHub Copilot)](#copilot-github-copilot)
 - [Official Prometheus Documentation](#official-prometheus-documentation)
-- [Comparative Benchmark: Complete Alerting Setup](#comparative-benchmark-complete-alerting-setup)
+- [Comparative Benchmark - Complete Alerting Setup](#comparative-benchmark-complete-alerting-setup)
 - [Advanced PromQL Patterns](#advanced-promql-patterns)
 - [Practical Alert Design](#practical-alert-design)
 - [Production Validation](#production-validation)
@@ -54,7 +54,7 @@ Claude generates idiomatic PromQL that actually evaluates as intended. When you 
     description: "CPU usage is {{ $value | humanizePercentage }} on {{ $labels.instance }}"
 ```
 
-Notice the precision: `(1 - avg(...))` correctly inverts idle time to compute utilization. The `for: 5m` ensures you only alert after sustained high usage, not transient spikes. The annotations use templating (`{{ $labels.instance }}`, `{{ $value }}`) correctly.
+Notice the precision - `(1 - avg(...))` correctly inverts idle time to compute utilization. The `for: 5m` ensures you only alert after sustained high usage, not transient spikes. The annotations use templating (`{{ $labels.instance }}`, `{{ $value }}`) correctly.
 
 Claude also explains the reasoning. It clarifies why `rate()` is necessary (smooths out metric spikes), why averaging across CPUs makes sense, and what `humanizePercentage` does (renders `0.85` as `85%`).
 
@@ -77,7 +77,7 @@ alerting on high error rates with cardinality awareness.
   for: 2m
 ```
 
-Claude explains: "This divides 5xx errors by total requests to compute error rate. The `sum by (service)` groups across instances. The `for: 2m` prevents paging on brief outages."
+Claude explains - "This divides 5xx errors by total requests to compute error rate. The `sum by (service)` groups across instances. The `for: 2m` prevents paging on brief outages."
 
 ChatGPT would probably write:
 
@@ -85,7 +85,7 @@ ChatGPT would probably write:
 expr: http_requests_total{status=~"5.."} > 50
 ```
 
-This breaks immediately: `http_requests_total` is a counter (monotonically increasing). Comparing it to a fixed threshold doesn't work. You need `rate()` to get requests-per-second.
+This breaks immediately - `http_requests_total` is a counter (monotonically increasing). Comparing it to a fixed threshold doesn't work. You need `rate()` to get requests-per-second.
 
 Alertmanager Routing Logic
 
@@ -182,11 +182,11 @@ inhibit_rules:
     equal: ['job', 'instance']
 ```
 
-The first rule: if a node alert fires, suppress all pod alerts on that node (matched by the `node` label). This prevents cascading alerts from a single failure.
+The first rule - if a node alert fires, suppress all pod alerts on that node (matched by the `node` label). This prevents cascading alerts from a single failure.
 
-The second: if a PVC is stuck pending, suppress pod-not-ready alerts that are likely caused by the PVC.
+The second - if a PVC is stuck pending, suppress pod-not-ready alerts that are likely caused by the PVC.
 
-The third: critical alerts inhibit warnings on the same job/instance.
+The third - critical alerts inhibit warnings on the same job/instance.
 
 Claude explains the `equal` field: alerts match inhibition rules only if they share the same label values for the specified labels.
 
@@ -198,7 +198,7 @@ Also, Claude assumes standard Prometheus setup. If you're using custom exporters
 
 Pricing & Speed
 
-Same as above: $0.01-0.03 per moderately complex rule. Fast enough for interactive iteration.
+Same as above - $0.01-0.03 per moderately complex rule. Fast enough for interactive iteration.
 
 ChatGPT Plus (GPT-4)
 
@@ -270,7 +270,7 @@ Weaknesses
 
 The docs assume you know what you want. They're reference material, not generative. You need to search, find the relevant section, and adapt the example to your case. Slower than asking Claude.
 
-Comparative Benchmark: Complete Alerting Setup
+Comparative Benchmark - Complete Alerting Setup
 
 We generated a complete Prometheus alerting setup for a 3-tier web application (frontend, API, database):
 
@@ -311,7 +311,7 @@ Alert if disk usage reaches 90% within the next 24 hours (linear regression):
   for: 10m
 ```
 
-Claude explains: `predict_linear()` extrapolates the 1-hour trend into the future. We check if the projection 24 hours ahead leaves less than 10% free space. The `for: 10m` prevents false alarms from temporary dips.
+Claude explains - `predict_linear()` extrapolates the 1-hour trend into the future. We check if the projection 24 hours ahead leaves less than 10% free space. The `for: 10m` prevents false alarms from temporary dips.
 
 ChatGPT wouldn't suggest `predict_linear` and would probably write a static threshold instead.
 
@@ -334,7 +334,7 @@ This alerts on high error rate only Monday-Friday, 8am-6pm. Claude suggests this
 
 Nested Aggregations
 
-Alert on outliers: if a service's error rate is 10x the cluster average:
+Alert on outliers - if a service's error rate is 10x the cluster average:
 
 ```yaml
 - alert: ServiceErrorRateOutlier
@@ -347,7 +347,7 @@ Alert on outliers: if a service's error rate is 10x the cluster average:
   for: 3m
 ```
 
-Claude breaks this down: first aggregation computes per-service error rate. Second computes the cluster average. We alert when a service's rate exceeds 10x the mean. This catches anomalies even if the absolute rate is low.
+Claude breaks this down - first aggregation computes per-service error rate. Second computes the cluster average. We alert when a service's rate exceeds 10x the mean. This catches anomalies even if the absolute rate is low.
 
 Practical Alert Design
 

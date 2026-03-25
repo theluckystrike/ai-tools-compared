@@ -26,7 +26,7 @@ Table of Contents
 - [Resource Configuration and Best Practices](#resource-configuration-and-best-practices)
 - [Working with Module Dependencies](#working-with-module-dependencies)
 - [Test and Validation Workflows](#test-and-validation-workflows)
-- [Complete Module Example: DynamoDB Table with Backups](#complete-module-example-dynamodb-table-with-backups)
+- [Complete Module Example - DynamoDB Table with Backups](#complete-module-example-dynamodb-table-with-backups)
 - [Cost Comparison and Pricing (2026)](#cost-comparison-and-pricing-2026)
 - [Which Tool Should You Choose](#which-tool-should-you-choose)
 
@@ -164,7 +164,7 @@ func TestS3BucketModule(t *testing.T) {
 
 Cursor can assist with both the Terraform configuration and the test code, maintaining consistency between them. If you add a new output to your module, Cursor can update your test to verify it.
 
-Complete Module Example: DynamoDB Table with Backups
+Complete Module Example - DynamoDB Table with Backups
 
 Here's a realistic Terraform module that both tools can help create. Cursor typically generates more complete structures faster, while Copilot works best when you guide it step by step:
 

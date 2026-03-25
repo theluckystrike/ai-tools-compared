@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Set Up Your i18n Test Environment
+Step 1 - Set Up Your i18n Test Environment
 
 Before generating tests, your project needs proper internationalization setup. Most JavaScript applications use libraries like `i18next` with `react-i18next` for React applications, or standalone `i18next` for Node.js projects.
 
@@ -89,7 +89,7 @@ i18n
 export default i18n;
 ```
 
-Step 2: Use AI to Generate Core Translation Tests
+Step 2 - Use AI to Generate Core Translation Tests
 
 When you need translation tests, provide your AI assistant with clear context about your i18n setup. Here's a prompt that yields effective results:
 
@@ -134,7 +134,7 @@ describe('Translation Tests', () => {
 });
 ```
 
-Step 3: Test Locale Switching Functionality
+Step 3 - Test Locale Switching Functionality
 
 Dynamic locale switching requires testing the user-facing change mechanism and verifying that all affected components re-render correctly. The following test suite covers the essential scenarios:
 
@@ -206,7 +206,7 @@ describe('Locale Switching', () => {
 });
 ```
 
-Step 4: Generate Date and Number Formatting Tests
+Step 4 - Generate Date and Number Formatting Tests
 
 Internationalization extends beyond simple text replacement. Dates, numbers, currencies, and measurement units all require locale-specific formatting. AI can help generate tests for these scenarios:
 
@@ -244,7 +244,7 @@ When working with AI to generate internationalization tests, keep these guidelin
 
 AI-generated tests provide an excellent starting point, but review them carefully. Ensure the tests cover edge cases specific to your application's scope, and add assertions for accessibility requirements like proper language attributes on HTML elements.
 
-Step 5: Test Missing and Malformed Translation Keys
+Step 5 - Test Missing and Malformed Translation Keys
 
 One of the most valuable test categories AI tools often skip is verifying behavior when translation keys are absent or malformed. An incomplete translation file silently falls back to the key string itself, which produces visible regressions in production.
 
@@ -275,7 +275,7 @@ describe('Missing Translation Key Handling', () => {
 });
 ```
 
-Step 6: Test RTL Layout Switching
+Step 6 - Test RTL Layout Switching
 
 Right-to-left languages like Arabic and Hebrew require more than translation strings. they require document direction and CSS changes. Test that your locale switch triggers the correct `dir` attribute:
 
@@ -304,7 +304,7 @@ describe('RTL Layout', () => {
 });
 ```
 
-Step 7: Prompting AI Tools for Better i18n Tests
+Step 7 - Prompting AI Tools for Better i18n Tests
 
 The prompt you give AI tools heavily influences what i18n test scenarios they generate. These patterns produce more complete coverage:
 

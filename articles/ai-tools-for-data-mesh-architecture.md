@@ -108,7 +108,7 @@ Governance across domains requires consistent policies. AI tools can help genera
 Apache Atlas provides intelligent classification:
 
 ```python
-Atlas: Automated classification example
+Atlas - Automated classification example
 from atlas_client import Atlas
 
 client = Atlas('http://atlas:21000', ('admin', 'admin'))
@@ -117,7 +117,7 @@ entity = client.entity.get_by_guid('guid-here')
 AI suggests classifications based on entity attributes
 suggested_classifications = client.ml.suggest_classifications(entity)
 for classification in suggested_classifications:
-    print(f"Recommended: {classification.name} (confidence: {classification.score})")
+    print(f"Recommended - {classification.name} (confidence: {classification.score})")
 ```
 
 Sensitive Data Detection
@@ -144,7 +144,7 @@ Natural Language Data Access
 The self-serve principle benefits enormously from AI-powered query interfaces. Databricks Lakehouse IQ enables developers to query data using natural language:
 
 ```python
-Databricks: Natural language to SQL
+Databricks - Natural language to SQL
 import databricks.workflow
 
 query = "Show me total revenue by region for Q4 2025"
@@ -158,7 +158,7 @@ Automated Pipeline Generation
 Apache Airflow with AI extensions can suggest pipeline configurations:
 
 ```python
-Airflow: AI-assisted pipeline creation
+Airflow - AI-assisted pipeline creation
 from airflow import DAG
 from airflow.operators.ai import AIDataPipelineOperator
 
@@ -265,7 +265,7 @@ Choose tools that connect to your current data infrastructure and can be overrid
 
 Start with open-source options like Amundsen or DataHub for cataloging, then add commercial tools for sensitive data discovery as needs mature.
 
-A practical phased approach: in the first quarter, deploy Amundsen and integrate it with your largest two or three domains. Instrument Great Expectations on their most critical pipelines. In the second quarter, integrate lineage tracking with OpenLineage and surface the graph in your catalog UI. By month six, you have the metadata foundation and quality signal needed to make governance tooling like Purview or Apache Ranger effective. Governance without a catalog is blind enforcement. the most common reason data mesh governance initiatives fail.
+A practical phased approach - in the first quarter, deploy Amundsen and integrate it with your largest two or three domains. Instrument Great Expectations on their most critical pipelines. In the second quarter, integrate lineage tracking with OpenLineage and surface the graph in your catalog UI. By month six, you have the metadata foundation and quality signal needed to make governance tooling like Purview or Apache Ranger effective. Governance without a catalog is blind enforcement. the most common reason data mesh governance initiatives fail.
 
 When AI suggestions conflict with a domain team's judgment, default to the domain team. AI tools should augment expertise, not override it. Build exception workflows that let teams document why they overrode a suggestion, which feeds back into improving the model's recommendations over time.
 

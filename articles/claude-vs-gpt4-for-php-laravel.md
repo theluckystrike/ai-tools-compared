@@ -21,9 +21,9 @@ Testing Methodology
 
 Tasks run across both models with identical prompts. Evaluated on: framework idiom correctness, use of Laravel helpers vs. raw PHP, proper use of Eloquent vs. Query Builder, and handling of edge cases like N+1 prevention.
 
-Task 1: Eloquent Relationship with Eager Loading
+Task 1 - Eloquent Relationship with Eager Loading
 
-Prompt: "Write an Eloquent model for a `Post` that belongs to a `User` and has many `Comments`. Include a scope for published posts and a method that returns the post with its author and top 3 comments."
+Prompt - "Write an Eloquent model for a `Post` that belongs to a `User` and has many `Comments`. Include a scope for published posts and a method that returns the post with its author and top 3 comments."
 
 Claude's output:
 
@@ -113,11 +113,11 @@ class Post extends Model
 
 GPT-4's output works but lacks return type hints, doesn't constrain the eager loaded columns (potential data leak / memory issue), and uses the older `function($q)` syntax rather than the arrow function. Functional, but not idiomatic Laravel 11.
 
-Winner: Claude. more complete type hints, constrained eager loading, arrow function syntax.
+Winner - Claude. more complete type hints, constrained eager loading, arrow function syntax.
 
-Task 2: Form Request Validation
+Task 2 - Form Request Validation
 
-Prompt: "Create a Laravel Form Request for creating an order. Fields: user_id (required, exists in users), items (required array, each has product_id and quantity), shipping_address (required object with street, city, zip). Add custom error messages."
+Prompt - "Create a Laravel Form Request for creating an order. Fields - user_id (required, exists in users), items (required array, each has product_id and quantity), shipping_address (required object with street, city, zip). Add custom error messages."
 
 Claude:
 
@@ -180,9 +180,9 @@ protected function prepareForValidation(): void
 
 This pattern. overwriting `user_id` from the authenticated user rather than trusting client input. is a security best practice that Claude applies when the prompt mentions authenticated endpoints. GPT-4 omits it unless the security concern is spelled out explicitly.
 
-Task 3: Queue Job with Retry Logic
+Task 3 - Queue Job with Retry Logic
 
-Prompt: "Write a Laravel queue job that sends an order confirmation email. Handle failures: retry up to 3 times with exponential backoff, log the failure, send Slack notification on final failure."
+Prompt - "Write a Laravel queue job that sends an order confirmation email. Handle failures: retry up to 3 times with exponential backoff, log the failure, send Slack notification on final failure."
 
 ```php
 <?php
@@ -261,7 +261,7 @@ class SendOrderConfirmationEmail implements ShouldQueue, ShouldBeUnique
 
 The `uniqueFor` property ensures the lock expires after a hour even if the job fails without releasing it. GPT-4 generates the `uniqueId()` method but regularly omits `uniqueFor`, which can cause jobs to stay locked indefinitely on worker crash.
 
-Task 4: API Resource Transformation
+Task 4 - API Resource Transformation
 
 Both models handle API Resources, but Claude includes conditional fields and meta more naturally:
 
@@ -330,7 +330,7 @@ class PostCollection extends ResourceCollection
 
 GPT-4 generates a flat `toArray` that merges pagination into the top level, which breaks API consumers expecting a consistent `data` + `meta` envelope.
 
-Task 5: Service Container and Dependency Injection
+Task 5 - Service Container and Dependency Injection
 
 Both models understand the service container, but Claude produces more testable patterns using interface binding:
 

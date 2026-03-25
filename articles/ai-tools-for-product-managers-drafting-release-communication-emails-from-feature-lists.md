@@ -22,7 +22,7 @@ This guide examines approaches for using AI to draft release emails from feature
 
 Table of Contents
 
-- [The Problem: From Feature List to Release Email](#the-problem-from-feature-list-to-release-email)
+- [The Problem - From Feature List to Release Email](#the-problem-from-feature-list-to-release-email)
 - [Approaches for AI-Powered Release Communication](#approaches-for-ai-powered-release-communication)
 - [Practical Implementation Considerations](#practical-implementation-considerations)
 - [Comparing AI Tools for This Task](#comparing-ai-tools-for-this-task)
@@ -32,7 +32,7 @@ Table of Contents
 - [Building a Prompt Library](#building-a-prompt-library)
 - [Getting Started](#getting-started)
 
-The Problem: From Feature List to Release Email
+The Problem - From Feature List to Release Email
 
 When a product team completes a sprint or release cycle, someone must compile feature descriptions into communication emails. This involves:
 

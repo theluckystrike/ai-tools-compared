@@ -17,7 +17,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 How to Use AI for Kafka Configuration 2026
 
-Kafka configuration is dense: dozens of broker properties, topic-level overrides, consumer group settings, and producer tuning knobs. all with production implications if misconfigured. AI tools can generate correct starting points, but you need to understand what to ask for.
+Kafka configuration is dense - dozens of broker properties, topic-level overrides, consumer group settings, and producer tuning knobs. all with production implications if misconfigured. AI tools can generate correct starting points, but you need to understand what to ask for.
 
 Broker Configuration
 
@@ -25,7 +25,7 @@ Prompt to Claude:
 ```text
 Generate a production-grade Kafka broker server.properties for a 3-broker cluster.
 Requirements:
-- Retention: 7 days, max 100GB per topic
+- Retention - 7 days, max 100GB per topic
 - Replication factor: 3, min ISR: 2
 - Enable log compaction as default
 - TLS for internal and client communication
@@ -73,7 +73,7 @@ Log Storage
 log.dirs=/data/kafka/logs
 num.recovery.threads.per.data.dir=4
 
-Retention: 7 days
+Retention - 7 days
 log.retention.hours=168
 
 Max 100GB per partition (set per-topic if needed)
@@ -82,7 +82,7 @@ log.retention.bytes=107374182400
 Log compaction enabled by default
 log.cleanup.policy=compact,delete
 
-Segment size: roll every 1GB or 7 days
+Segment size - roll every 1GB or 7 days
 log.segment.bytes=1073741824
 log.roll.hours=168
 
@@ -168,7 +168,7 @@ Consumer Group Tuning
 Prompt:
 ```text
 Write a Kafka consumer configuration for a high-throughput order processor.
-Requirements: manual commit, fetch 10MB batches, poll timeout 500ms,
+Requirements - manual commit, fetch 10MB batches, poll timeout 500ms,
 session timeout 30s, max poll records 500, partition assignment: sticky.
 Java properties format.
 ```
@@ -258,7 +258,7 @@ When you need guaranteed delivery with no data loss, producer settings matter as
 Prompt:
 ```text
 Write a Kafka producer configuration for a financial transactions system.
-Requirements: exactly-once semantics, max latency 100ms, acks=all,
+Requirements - exactly-once semantics, max latency 100ms, acks=all,
 compression lz4, idempotent producer, retry on transient failures.
 Java properties format with comments.
 ```
@@ -267,7 +267,7 @@ Java properties format with comments.
 Producer identity
 client.id=payments-producer-${hostname}
 
-Durability: require all in-sync replicas to acknowledge
+Durability - require all in-sync replicas to acknowledge
 acks=all
 
 Idempotent producer. prevents duplicate messages on retry
@@ -276,12 +276,12 @@ enable.idempotence=true
 Exactly-once semantics (requires idempotence=true)
 transactional.id=payments-producer-${hostname}-${pid}
 
-Retries: retry up to 10 times with backoff
+Retries - retry up to 10 times with backoff
 retries=10
 retry.backoff.ms=100
 delivery.timeout.ms=120000       # 2 min total delivery timeout
 
-Batching: balance latency vs throughput
+Batching - balance latency vs throughput
 linger.ms=5                      # Wait up to 5ms for batch fill
 batch.size=65536                 # 64KB batch size
 
@@ -400,7 +400,7 @@ AI is also useful for diagnosing Kafka issues from log snippets or metric descri
 Prompt:
 ```text
 My Kafka consumer is lagging 500k messages on partition 3 of the "orders" topic.
-Consumer group: order-processor. The consumer CPU is at 10%, network is fine.
+Consumer group - order-processor. The consumer CPU is at 10%, network is fine.
 What are the most likely causes and how do I investigate?
 ```
 

@@ -22,11 +22,11 @@ Rust WebAssembly (WASM) development has become increasingly popular for high-per
 Table of Contents
 
 - [The Test Methodology](#the-test-methodology)
-- [Test Case 1: Basic WASM Library Structure](#test-case-1-basic-wasm-library-structure)
-- [Test Case 2: String Handling Across the WASM Boundary](#test-case-2-string-handling-across-the-wasm-boundary)
-- [Test Case 3: Passing Arrays Between Rust and JavaScript](#test-case-3-passing-arrays-between-rust-and-javascript)
-- [Test Case 4: Complex Structs with wasm-bindgen](#test-case-4-complex-structs-with-wasm-bindgen)
-- [Test Case 5: Async WASM Functions](#test-case-5-async-wasm-functions)
+- [Test Case 1 - Basic WASM Library Structure](#test-case-1-basic-wasm-library-structure)
+- [Test Case 2 - String Handling Across the WASM Boundary](#test-case-2-string-handling-across-the-wasm-boundary)
+- [Test Case 3 - Passing Arrays Between Rust and JavaScript](#test-case-3-passing-arrays-between-rust-and-javascript)
+- [Test Case 4 - Complex Structs with wasm-bindgen](#test-case-4-complex-structs-with-wasm-bindgen)
+- [Test Case 5 - Async WASM Functions](#test-case-5-async-wasm-functions)
 - [Key Findings](#key-findings)
 
 The Test Methodology
@@ -35,7 +35,7 @@ I tested three major AI coding assistants, Claude Code, GitHub Copilot, and Curs
 
 The test cases covered basic WASM library structure, JavaScript interface bindings, async WASM functions, and handling of complex types across the Rust-JavaScript boundary.
 
-Test Case 1: Basic WASM Library Structure
+Test Case 1 - Basic WASM Library Structure
 
 The first test asked for a simple WASM library with a function that adds two numbers:
 
@@ -80,7 +80,7 @@ pub fn add(a: i32, b: i32) -> i32 {
 
 Identical to Claude Code's output. Accuracy: 95%
 
-Test Case 2: String Handling Across the WASM Boundary
+Test Case 2 - String Handling Across the WASM Boundary
 
 String handling is where WASM interoperability gets tricky. Rust strings and JavaScript strings represent data differently, requiring explicit conversion. I tested this with a function that greets a user:
 
@@ -125,7 +125,7 @@ pub fn greet(name: &str) -> String {
 
 This compiles and runs correctly. The string concatenation approach works, though `format!` is generally preferred for readability. Accuracy: 90%
 
-Test Case 3: Passing Arrays Between Rust and JavaScript
+Test Case 3 - Passing Arrays Between Rust and JavaScript
 
 Working with arrays is essential for WASM performance. I tested a function that processes a list of numbers:
 
@@ -170,7 +170,7 @@ pub fn sum_numbers(numbers: Vec<i32>) -> i32 {
 
 This compiles correctly. Using `into_iter()` instead of `iter()` is slightly less efficient since it consumes the vector, but it works. Accuracy: 95%
 
-Test Case 4: Complex Structs with wasm-bindgen
+Test Case 4 - Complex Structs with wasm-bindgen
 
 Exporting Rust structs to JavaScript requires careful attribute usage:
 
@@ -252,7 +252,7 @@ impl User {
 
 This compiles and provides a constructor, but lacks the `#[wasm-bindgen(constructor)]` attribute, meaning JavaScript cannot use `new User(...)`. Instead, JavaScript would call `User.new(...)`. This still works but may surprise developers expecting standard constructor behavior. Accuracy: 80%
 
-Test Case 5: Async WASM Functions
+Test Case 5 - Async WASM Functions
 
 Async functions require special handling in wasm-bindgen:
 

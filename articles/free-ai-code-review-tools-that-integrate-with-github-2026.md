@@ -103,9 +103,9 @@ function processUsers(users) {
 }
 ```
 
-CodeRabbit suggests: Refactor to `users.filter(u => u.active)`
-Sourcery suggests: Same refactoring
-ReviewNB provides: Visual comparison showing improvement
+CodeRabbit suggests - Refactor to `users.filter(u => u.active)`
+Sourcery suggests - Same refactoring
+ReviewNB provides - Visual comparison showing improvement
 
 All tools catch this basic improvement, but they present feedback differently.
 
@@ -113,11 +113,11 @@ Integration with Team Workflows
 
 For effective code review, matching the tool to your team's workflow matters:
 
-For distributed teams: CodeRabbit and Sourcery work best since they post reviews directly in GitHub. Your team doesn't need IDE extensions or special setup.
+For distributed teams - CodeRabbit and Sourcery work best since they post reviews directly in GitHub. Your team doesn't need IDE extensions or special setup.
 
-For IDE-centric teams: GitHub Copilot integrated into your editor provides immediate feedback without context-switching to GitHub.
+For IDE-centric teams - GitHub Copilot integrated into your editor provides immediate feedback without context-switching to GitHub.
 
-For visual-first reviewers: ReviewNB excels at showing diffs visually and highlighting problematic areas.
+For visual-first reviewers - ReviewNB excels at showing diffs visually and highlighting problematic areas.
 
 Performance and Cost Implications
 
@@ -171,13 +171,13 @@ Over 2-3 weeks, you'll see which tools provide real value for your team's codeba
 
 Recommendations by Project Type
 
-Open-source projects: CodeRabbit free tier handles unlimited public repos, making it ideal for maintainers.
+Open-source projects - CodeRabbit free tier handles unlimited public repos, making it ideal for maintainers.
 
-Small team repositories: GitHub Copilot provides good baseline value without additional tools.
+Small team repositories - GitHub Copilot provides good baseline value without additional tools.
 
-Data science projects: ReviewNB's notebook-specific features make it essential.
+Data science projects - ReviewNB's notebook-specific features make it essential.
 
-Enterprise codebases: Combining Copilot (IDE) + CodeRabbit (PR review) + Sourcery (Python optimization) provides coverage.
+Enterprise codebases - Combining Copilot (IDE) + CodeRabbit (PR review) + Sourcery (Python optimization) provides coverage.
 
 Related Reading
 

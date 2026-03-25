@@ -30,7 +30,7 @@ Table of Contents
 - [Performance Optimization Techniques](#performance-optimization-techniques)
 - [Security Considerations](#security-considerations)
 - [Integration with CI/CD](#integration-with-cicd)
-- [Cost Analysis: Self-Hosted vs Cloud](#cost-analysis-self-hosted-vs-cloud)
+- [Cost Analysis - Self-Hosted vs Cloud](#cost-analysis-self-hosted-vs-cloud)
 - [Workflow Integration](#workflow-integration)
 
 Why Self-Hosted for Dockerfile Generation
@@ -187,7 +187,7 @@ Models quantized to 4-bit significantly reduce memory requirements with minimal 
 
 Real-World Dockerfile Generation Examples
 
-Example 1: Multi-Stage Python Application
+Example 1 - Multi-Stage Python Application
 
 Prompt to your self-hosted AI:
 ```
@@ -226,7 +226,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
-Example 2: Go Application with Static Binary
+Example 2 - Go Application with Static Binary
 
 ```
 Generate a Dockerfile for a Go application that:
@@ -298,17 +298,17 @@ Self-hosted models introduce security responsibilities:
 
 Model Source Verification
 Only pull models from official sources:
-- Ollama: Download from ollama.ai
-- Hugging Face: Download from huggingface.co
+- Ollama - Download from ollama.ai
+- Hugging Face - Download from huggingface.co
 - Verify checksums and GPG signatures when available
 
 Network Isolation
 Run your inference server only on localhost or trusted networks:
 ```bash
-Wrong: Exposes model to the internet
+Wrong - Exposes model to the internet
 ollama serve --host 0.0.0.0:11434
 
-Right: Local-only or private network
+Right - Local-only or private network
 ollama serve --host localhost:11434
 ```
 
@@ -352,7 +352,7 @@ jobs:
           fi
 ```
 
-Cost Analysis: Self-Hosted vs Cloud
+Cost Analysis - Self-Hosted vs Cloud
 
 Self-Hosted Costs:
 - GPU hardware: $2,000-$5,000 (one-time)
@@ -362,7 +362,7 @@ Self-Hosted Costs:
 
 Cloud API Costs (Dockerfile generation at scale):
 - Average prompt: 100 input tokens, 300 output tokens
-- Claude: $3/M input + $15/M output = (100×3 + 300×15) / 1,000,000 = $0.0054 per Dockerfile
+- Claude - $3/M input + $15/M output = (100×3 + 300×15) / 1,000,000 = $0.0054 per Dockerfile
 - At 100 Dockerfiles/month: $0.54/month = $6.48/year
 
 Analysis:

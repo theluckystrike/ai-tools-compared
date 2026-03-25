@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Architecture
+Step 1 - Architecture
 
 ```
 Slack → Bolt App (FastAPI) → Claude/GPT-4 → Slack Response
@@ -37,7 +37,7 @@ Slack → Bolt App (FastAPI) → Claude/GPT-4 → Slack Response
 
 The Slack Bolt SDK handles the OAuth, event routing, and response timing. Your bot focuses on the AI layer.
 
-Step 2: Set Up
+Step 2 - Set Up
 
 ```bash
 pip install slack-bolt anthropic redis fastapi uvicorn python-dotenv
@@ -57,7 +57,7 @@ ANTHROPIC_API_KEY=...
 REDIS_URL=redis://localhost:6379
 ```
 
-Step 3: Core Bot Implementation
+Step 3 - Core Bot Implementation
 
 ```python
 bot.py
@@ -175,7 +175,7 @@ def handle_ask(ack, command, respond):
     })
 ```
 
-Step 4: Slash Command: /summarize
+Step 4 - Slash Command: /summarize
 
 A more complex command that fetches channel history from Slack and summarizes it:
 
@@ -256,7 +256,7 @@ Conversation:
     })
 ```
 
-Step 5: Handling Slash Command Timeouts
+Step 5 - Handling Slash Command Timeouts
 
 Slack requires a response within 3 seconds. For slow AI calls, use the `respond` URL pattern:
 
@@ -282,7 +282,7 @@ def handle_analyze(ack, command, respond):
     thread.start()
 ```
 
-Step 6: Run the Bot
+Step 6 - Run the Bot
 
 ```python
 main.py
@@ -317,7 +317,7 @@ EXPOSE 8080
 CMD ["uvicorn", "main:api", "--host", "0.0.0.0", "--port", "8080"]
 ```
 
-Step 7: Rate Limiting and Cost Control
+Step 7 - Rate Limiting and Cost Control
 
 ```python
 RATE_LIMIT_REQUESTS = 10   # Per user per hour
@@ -342,9 +342,9 @@ Both Claude and GPT-4 work well as Slack bot backends, but they have different s
 
 Claude (Anthropic) follows instructions with high fidelity. When you give it formatting rules. "use Slack markdown, keep responses scannable, don't use hyphens for lists". it tends to follow them consistently across long conversations. Claude also handles ambiguous multi-part questions gracefully without hallucinating confidence.
 
-GPT-4 (OpenAI) is faster on short queries and has a larger ecosystem of function-calling examples. If your bot needs to trigger external actions (create Jira ticket, look up a user in your database) via structured function calls, GPT-4's JSON mode can be slightly more predictable.
+GPT-4 (OpenAI) is faster on short queries and has a larger environment of function-calling examples. If your bot needs to trigger external actions (create Jira ticket, look up a user in your database) via structured function calls, GPT-4's JSON mode can be slightly more predictable.
 
-Practical recommendation: Use Claude for Q&A bots, knowledge-base assistants, and writing-heavy tasks. Use GPT-4 with function calling for action-oriented bots that orchestrate API calls.
+Practical recommendation - Use Claude for Q&A bots, knowledge-base assistants, and writing-heavy tasks. Use GPT-4 with function calling for action-oriented bots that orchestrate API calls.
 
 Slack Block Kit for Richer Responses
 

@@ -107,7 +107,7 @@ main = rule {
 
     # Warn but don't block for non-critical drift
     all significant_drift as _, drift {
-        print("AI Assessment: Drift on", drift.address, "has low operational impact")
+        print("AI Assessment - Drift on", drift.address, "has low operational impact")
     }
 
     # Enforce critical security configurations
@@ -193,7 +193,7 @@ The ML model analyzes configuration changes, API call patterns, and historical d
 
 5. OpenTofu/Terraform State Analysis with AI
 
-OpenTofu and its ecosystem have developed tools that analyze state files using AI to detect drift patterns that traditional comparison methods miss.
+OpenTofu and its environment have developed tools that analyze state files using AI to detect drift patterns that traditional comparison methods miss.
 
 ```python
 Python script using OpenTofu state analysis with AI

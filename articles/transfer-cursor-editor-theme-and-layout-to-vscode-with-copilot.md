@@ -44,9 +44,9 @@ Locating Cursor Configuration Files
 
 Cursor stores its configuration in several locations depending on your operating system. The primary locations include:
 
-- Settings: `~/Library/Application Support/Cursor/User/settings.json` (macOS)
+- Settings - `~/Library/Application Support/Cursor/User/settings.json` (macOS)
 
-- Keybindings: `~/Library/Application Support/Cursor/User/keybindings.json` (macOS)
+- Keybindings - `~/Library/Application Support/Cursor/User/keybindings.json` (macOS)
 
 - Themes: `~/Library/Application Support/Cursor/User/themes/` (macOS)
 
@@ -190,7 +190,7 @@ VSCode with Copilot has its own settings for AI assistance. Add these to customi
 }
 ```
 
-One key behavioral difference: Cursor's AI panel is always visible in the sidebar, while Copilot Chat opens as a separate panel that you invoke explicitly. Set `"chat.editor.wordWrap": "on"` to improve readability of long Copilot responses.
+One key behavioral difference - Cursor's AI panel is always visible in the sidebar, while Copilot Chat opens as a separate panel that you invoke explicitly. Set `"chat.editor.wordWrap": "on"` to improve readability of long Copilot responses.
 
 Recreating Your Layout
 
@@ -239,7 +239,7 @@ Configure your navigation panel:
 
 Split Editor and Workbench Layout
 
-Recreate split editor layouts using `View: Split Editor Right` or `View: Split Editor Down` from the Command Palette (`Cmd+Shift+P`). Save a workspace file (`.code-workspace`) to persist your preferred arrangement across restarts.
+Recreate split editor layouts using `View - Split Editor Right` or `View: Split Editor Down` from the Command Palette (`Cmd+Shift+P`). Save a workspace file (`.code-workspace`) to persist your preferred arrangement across restarts.
 
 Transferring Keyboard Shortcuts
 

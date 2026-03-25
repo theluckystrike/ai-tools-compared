@@ -21,8 +21,8 @@ Table of Contents
 
 - [Understanding the Challenge](#understanding-the-challenge)
 - [Testing Methodology](#testing-methodology)
-- [Results: Where AI Tools Excel](#results-where-ai-tools-excel)
-- [Results: Where AI Tools Struggle](#results-where-ai-tools-struggle)
+- [Results - Where AI Tools Excel](#results-where-ai-tools-excel)
+- [Results - Where AI Tools Struggle](#results-where-ai-tools-struggle)
 - [AI Tool Accuracy by Task Category](#ai-tool-accuracy-by-task-category)
 - [Synchronization Mistakes in Concurrent Unsafe Code](#synchronization-mistakes-in-concurrent-unsafe-code)
 - [Memory Layout Pitfalls with `#[repr(C)]`](#memory-layout-pitfalls-with-reprc)
@@ -33,7 +33,7 @@ Table of Contents
 - [Prompting Strategies for Better Unsafe Code](#prompting-strategies-for-better-unsafe-code)
 - [Safe Wrapper Pattern for Risky Operations](#safe-wrapper-pattern-for-risky-operations)
 - [Common Mistakes in AI-Generated Unsafe Rust](#common-mistakes-in-ai-generated-unsafe-rust)
-- [Decision Framework: When to Ask AI for Unsafe Code](#decision-framework-when-to-ask-ai-for-unsafe-code)
+- [Decision Framework - When to Ask AI for Unsafe Code](#decision-framework-when-to-ask-ai-for-unsafe-code)
 
 Understanding the Challenge
 
@@ -61,7 +61,7 @@ I evaluated several AI coding assistants across three categories of tasks involv
 
 Each test case focused on memory safety, proper use of unsafe primitives, and adherence to Rust's safety documentation requirements.
 
-Results: Where AI Tools Excel
+Results - Where AI Tools Excel
 
 Simple FFI Declarations
 
@@ -106,7 +106,7 @@ fn initialize_array(len: usize) -> Vec<i32> {
 
 The challenge emerges when AI tools must determine whether such code is actually safe, a task that requires understanding program-level invariants beyond the immediate code.
 
-Results: Where AI Tools Struggle
+Results - Where AI Tools Struggle
 
 Missing Safety Documentation
 
@@ -193,13 +193,13 @@ Understanding where each tool fails helps you decide when to rely on AI assistan
 | Callback ownership across FFI | ~45% | Dangling pointer risk |
 | Complex union types | ~40% | Incorrect active variant tracking |
 
-The pattern is consistent: simpler, well-documented patterns score high; complex ownership semantics across language boundaries score poorly.
+The pattern is consistent - simpler, well-documented patterns score high; complex ownership semantics across language boundaries score poorly.
 
 Synchronization Mistakes in Concurrent Unsafe Code
 
 One of the most dangerous categories of AI error involves concurrent unsafe code. AI tools frequently omit or misplace synchronization primitives when wrapping C libraries that aren't thread-safe.
 
-A real example: wrapping a C library that uses a global mutable state. AI tools often produce:
+A real example - wrapping a C library that uses a global mutable state. AI tools often produce:
 
 ```rust
 static mut GLOBAL_STATE: *mut CLibState = std::ptr::null_mut();
@@ -263,9 +263,9 @@ When to Skip AI and Write Unsafe Manually
 
 Some patterns are reliable enough to delegate to AI with light review. Others require expert manual authorship regardless of the AI's output quality.
 
-Write manually: complex lifetime-parameterized FFI structs, custom allocators, async-safe FFI callbacks, union types representing tagged unions from C, and any code where `Send` or `Sync` is manually implemented. These patterns require understanding invariants that cannot be inferred from code alone.
+Write manually - complex lifetime-parameterized FFI structs, custom allocators, async-safe FFI callbacks, union types representing tagged unions from C, and any code where `Send` or `Sync` is manually implemented. These patterns require understanding invariants that cannot be inferred from code alone.
 
-Delegate with review: simple `extern "C"` declarations, `#[repr(C)]` structs for simple data types, single-threaded unsafe blocks with bounded scope, and conversion between raw pointers and `NonNull`.
+Delegate with review - simple `extern "C"` declarations, `#[repr(C)]` structs for simple data types, single-threaded unsafe blocks with bounded scope, and conversion between raw pointers and `NonNull`.
 
 The 30% error rate cited at the start of this guide is an average across all task types. For the highest-risk categories, errors appear in over 50% of AI-generated outputs.
 Unsafe Pattern Accuracy Matrix
@@ -458,7 +458,7 @@ if (ptr as usize) % std::mem::align_of::<Aligned>() == 0 {
 }
 ```
 
-Decision Framework: When to Ask AI for Unsafe Code
+Decision Framework - When to Ask AI for Unsafe Code
 
 Use this matrix to decide when AI assistance is appropriate:
 

@@ -34,7 +34,7 @@ AI coding assistants have become indispensable tools for developers, but their e
 
 
 - Can you refine this: approach and provide production-ready code? ``` This technique improves accuracy on complex problems by 30-50%.
-- Include: - Best practices for cache keys
+- Include - - Best practices for cache keys
 - Fallback strategies
 - Common pitfalls
 - Performance metrics
@@ -43,7 +43,7 @@ Structure your response for someone with 2 years of experience.
 - AI models work best: when they understand your background situation, including the programming language, framework, and the specific problem you are solving.
 - A weak prompt provides no context: ```
 Write a function to process user data.
-- Instead of: ```
+- Instead of - ```
 Build a complete user authentication system with registration, login, password reset, and JWT token management.
 - Use the reqwest and: serde crates.
 
@@ -57,7 +57,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Foundation: Clear Context and Intent
+Step 1 - The Foundation: Clear Context and Intent
 
 Before writing any prompt, establish the context. AI models work best when they understand your background situation, including the programming language, framework, and the specific problem you are solving.
 
@@ -75,7 +75,7 @@ Write a Python function using FastAPI and Pydantic v2 that validates incoming us
 
 The second version specifies the language, framework, validation requirements, and expected behavior. This specificity eliminates guesswork and produces immediately usable code.
 
-Step 2: Specify Input and Output Formats
+Step 2 - Specify Input and Output Formats
 
 One of the most effective prompt improvements involves clearly defining what the code should accept as input and what it should produce as output. This reduces iterations and rework.
 
@@ -104,7 +104,7 @@ Write a TypeScript function using the Express framework that handles file upload
 
 This approach produces production-ready code that aligns with your requirements from the start.
 
-Step 3: Provide Examples of Expected Behavior
+Step 3 - Provide Examples of Expected Behavior
 
 When possible, include concrete examples of expected input and output. This technique, often called few-shot prompting, significantly improves accuracy for complex transformations or calculations.
 
@@ -113,9 +113,9 @@ For instance, when asking AI to generate parsing logic:
 ```
 Parse this CSV-like string into structured objects:
 
-Input: "user_id,action,timestamp\n12345,login,2026-01-15T10:30:00Z\n12345,logout,2026-01-15T11:45:00Z\n67890,login,2026-01-15T12:00:00Z"
+Input - "user_id,action,timestamp\n12345,login,2026-01-15T10:30:00Z\n12345,logout,2026-01-15T11:45:00Z\n67890,login,2026-01-15T12:00:00Z"
 
-Expected Output: [
+Expected Output - [
   { userId: "12345", action: "login", timestamp: "2026-01-15T10:30:00Z" },
   { userId: "12345", action: "logout", timestamp: "2026-01-15T11:45:00Z" },
   { userId: "67890", action: "login", timestamp: "2026-01-15T12:00:00Z" }
@@ -126,7 +126,7 @@ Generate a TypeScript function that performs this transformation with proper err
 
 The example clarifies naming conventions (camelCase), data types, and error handling expectations that would otherwise require clarification.
 
-Step 4: Break Complex Tasks into Steps
+Step 4 - Break Complex Tasks into Steps
 
 For complex functionality, consider decomposing your request into logical steps. This improves both the quality of individual components and their integration.
 
@@ -158,7 +158,7 @@ Finally, write middleware to authenticate JWT tokens from request headers.
 
 This structured approach produces modular, maintainable code with clear separation of concerns.
 
-Step 5: Specify Code Style and Conventions
+Step 5 - Specify Code Style and Conventions
 
 AI models generate code in various styles unless you specify your preferences. Include requirements for naming conventions, documentation patterns, and architectural approaches.
 
@@ -175,7 +175,7 @@ Write a Rust function to fetch and parse JSON from a REST API endpoint. Use the 
 
 This produces code that matches your codebase conventions without post-generation refactoring.
 
-Step 6: Request Test Coverage
+Step 6 - Request Test Coverage
 
 Including test requirements in your prompts ensures the generated code comes with verification. This practice catches edge cases and prevents regressions.
 
@@ -193,7 +193,7 @@ Create a Python function to calculate compound interest with parameters for prin
 
 The resulting code arrives with built-in test coverage, immediately ready for integration.
 
-Step 7: Iterate and Refine
+Step 7 - Iterate and Refine
 
 Even well-crafted prompts may require refinement. Treat prompt writing as an iterative process. When the output misses the mark, analyze what information was missing or ambiguous, then update your prompt accordingly.
 
@@ -299,7 +299,7 @@ Only show the modified functions, not the entire file.
 
 Including context dramatically improves output relevance.
 
-Step 8: Prompt Template Library
+Step 8 - Prompt Template Library
 
 API Endpoint Template
 
@@ -319,9 +319,9 @@ Output:
 - Error (400): [error schema]
 - Error (500): [error handling]
 
-Implementation framework: [Framework name]
-Validation library: [e.g., Zod, Yup]
-Error handling: [Custom errors vs standard HTTP]
+Implementation framework - [Framework name]
+Validation library - [e.g., Zod, Yup]
+Error handling - [Custom errors vs standard HTTP]
 
 Include:
 - Full implementation
@@ -335,8 +335,8 @@ Database Query Template
 ```
 Create a [Language] function that:
 
-Database: [e.g., PostgreSQL, MongoDB]
-ORM: [e.g., Prisma, Sequelize]
+Database - [e.g., PostgreSQL, MongoDB]
+ORM - [e.g., Prisma, Sequelize]
 
 Query requirements:
 - Select: [fields]
@@ -360,7 +360,7 @@ Include:
 Component Template
 
 ```
-Create a [Framework] component: [ComponentName]
+Create a [Framework] component - [ComponentName]
 
 Props:
 - prop1: [type] - [description]
@@ -388,7 +388,7 @@ Include:
 - Accessibility features (ARIA, keyboard nav)
 ```
 
-Step 9: Measuring Prompt Effectiveness
+Step 9 - Measuring Prompt Effectiveness
 
 Track which prompts work best:
 
@@ -452,7 +452,7 @@ class PromptEffectiveness:
         }
 ```
 
-Step 10: Common Pitfalls in Prompt Writing
+Step 10 - Common Pitfalls in Prompt Writing
 
 Too Vague
  "Create a function"

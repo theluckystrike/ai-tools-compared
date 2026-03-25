@@ -22,7 +22,7 @@ Table of Contents
 - [Why AI Code Completion in Vim Matters](#why-ai-code-completion-in-vim-matters)
 - [Top Budget-Friendly Options for Vim AI Completion](#top-budget-friendly-options-for-vim-ai-completion)
 - [Comparison at a Glance](#comparison-at-a-glance)
-- [Supermaven: A Rising Free Contender](#supermaven-a-rising-free-contender)
+- [Supermaven - A Rising Free Contender](#supermaven-a-rising-free-contender)
 - [Practical Setup Guide](#practical-setup-guide)
 - [Choosing the Right Local Model for Ollama](#choosing-the-right-local-model-for-ollama)
 - [Performance Tips](#performance-tips)
@@ -128,7 +128,7 @@ Comparison at a Glance
 | Tabnine Free | $0 | Limited | No | Medium |
 | Supermaven Free | $0 | Unlimited | No | Medium |
 
-Supermaven: A Rising Free Contender
+Supermaven - A Rising Free Contender
 
 Supermaven is worth adding to this comparison. It launched with a free tier that includes unlimited completions and supports Vim through its plugin. It uses a model specifically trained for code completion with a very large context window, which means it can draw on more of your surrounding code when generating suggestions.
 
@@ -144,14 +144,14 @@ Practical Setup Guide
 
 Here is a quick start for setting up the most cost-effective option, Codeium, in Vim:
 
-Step 1: Install vim-plug if you have not already
+Step 1 - Install vim-plug if you have not already
 
 ```bash
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-Step 2: Configure your .vimrc
+Step 2 - Configure your .vimrc
 
 ```vim
 call plug#begin('~/.vim/plugged')
@@ -168,7 +168,7 @@ let g:codeium_filetypes = { '*': 1 }
 imap <script> <Plug>(codeium-complete) <Tab>
 ```
 
-Step 3: Restart Vim and authenticate
+Step 3 - Restart Vim and authenticate
 
 Run `:Codeium Auth` in Vim and follow the prompts to link your account.
 
@@ -212,17 +212,17 @@ let g:codeium_filetypes = {
 
 Avoiding Common Setup Problems
 
-Tab key conflicts: Multiple completion plugins can fight over Tab. If Codeium suggestions interfere with your existing tab-based completions, use `<C-g>` as the Codeium accept key instead:
+Tab key conflicts - Multiple completion plugins can fight over Tab. If Codeium suggestions interfere with your existing tab-based completions, use `<C-g>` as the Codeium accept key instead:
 
 ```vim
 imap <C-g> <cmd>call codeium#Accept()<CR>
 ```
 
-Slow startup: Copilot's Node.js backend adds startup time. If Vim launch speed matters, Codeium is lighter. Local Ollama models add no startup overhead since the server runs separately.
+Slow startup - Copilot's Node.js backend adds startup time. If Vim launch speed matters, Codeium is lighter. Local Ollama models add no startup overhead since the server runs separately.
 
-Authentication failures: Both Codeium and Copilot require outbound network access on first auth. If you are behind a corporate proxy, set `https_proxy` before launching Vim.
+Authentication failures - Both Codeium and Copilot require outbound network access on first auth. If you are behind a corporate proxy, set `https_proxy` before launching Vim.
 
-Plugin manager conflicts: If you use `lazy.nvim` or `packer.nvim` (Neovim plugin managers), the configuration syntax differs from vim-plug examples. Check each plugin's GitHub README for the correct format for your plugin manager.
+Plugin manager conflicts - If you use `lazy.nvim` or `packer.nvim` (Neovim plugin managers), the configuration syntax differs from vim-plug examples. Check each plugin's GitHub README for the correct format for your plugin manager.
 
 Frequently Asked Questions
 
@@ -242,7 +242,7 @@ Can I use two plugins at once?
 
 Technically possible but not recommended. Conflicting Tab handlers and completion popups create more frustration than benefit. Pick one AI completion plugin and disable or remove others.
 
-Advanced Configuration: Multi-Tool Setup
+Advanced Configuration - Multi-Tool Setup
 
 Use multiple free tools together for broader coverage:
 
@@ -299,17 +299,17 @@ MONTHLY_COPILOT=$10
 MONTHLY_TABNINE=$12
 COST_LOCAL_MODEL=$0  # Just electricity
 
-Value: 2 hours/week saved × $100/hr = $800/month
-Codeium: ROI = $800 / $0 = infinite
-Copilot: ROI = $800 / $10 = 80x
-Local: ROI = $800 / $5 (electricity) = 160x
+Value - 2 hours/week saved × $100/hr = $800/month
+Codeium - ROI = $800 / $0 = infinite
+Copilot - ROI = $800 / $10 = 80x
+Local - ROI = $800 / $5 (electricity) = 160x
 ```
 
 For solo developers, the free tiers already break even.
 
 Vim-Specific Gotchas
 
-Issue: Vim 8 vs Neovim Compatibility
+Issue - Vim 8 vs Neovim Compatibility
 
 Codeium works in classic Vim 8+. Supermaven prefers Neovim. If you're stuck on Vim:
 
@@ -322,7 +322,7 @@ Stick with Codeium
 Plug 'exafunction/codeium.vim'
 ```
 
-Issue: vim-plug vs Lazy.nvim Syntax
+Issue - vim-plug vs Lazy.nvim Syntax
 
 The examples use vim-plug (classic Vim). If you use Lazy.nvim (Neovim):
 
@@ -340,7 +340,7 @@ return {
 }
 ```
 
-Issue: Conflicting Key Bindings
+Issue - Conflicting Key Bindings
 
 If Tab is used for actual tabs, don't override it:
 
@@ -361,20 +361,20 @@ Test completion latency on different hardware
 
 M3 MacBook Pro (8 GPU cores)
 time ollama run codellama:7b "def fibonacci(n):"
-Real: 0.8s
+Real - 0.8s
 
 Intel i7 CPU-only (no GPU)
 time ollama run codellama:7b "def fibonacci(n):"
-Real: 3.2s
+Real - 3.2s
 
 AWS t3.medium CPU
 time ollama run codellama:7b "def fibonacci(n):"
-Real: 8.5s
+Real - 8.5s
 ```
 
 If you're on slow hardware, Codeium's cloud backend is faster despite network latency.
 
-Real-World Productivity: Vim Developers Share
+Real-World Productivity - Vim Developers Share
 
 From developers who tested these tools:
 
@@ -398,7 +398,7 @@ Developer C (uses both Codeium + Copilot):
 ```
 "I hit Tab for Codeium first. If it's wrong, Ctrl+L for Copilot.
  90% of the time, one of them is good enough.
- Cost: $10/mo for Copilot. Productivity gain: ~10 hours/month."
+ Cost - $10/mo for Copilot. Productivity gain: ~10 hours/month."
  ROI: 200%
 ```
 

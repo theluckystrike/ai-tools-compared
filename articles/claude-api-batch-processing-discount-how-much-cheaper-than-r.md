@@ -68,7 +68,7 @@ Batch processing allows you to submit large volumes of requests that are process
 
 - You can parallelize your workload
 
-The trade-off is simple: you sacrifice immediate results for substantial cost savings. For many production workloads, this is an excellent trade.
+The trade-off is simple - you sacrifice immediate results for substantial cost savings. For many production workloads, this is an excellent trade.
 
 Anthropic processes batch requests within 24 hours, though in practice most complete within a few hours depending on load. You submit a JSONL-formatted payload with up to 10,000 requests per batch, each with its own `custom_id` for matching results back to inputs. The API is idempotent. if a request fails partway through, you can safely resubmit without duplicating work.
 
@@ -111,7 +111,7 @@ batch_request = client.messages.batch.create(
 )
 
 print(f"Batch ID: {batch_request.id}")
-print(f"Status: {batch_request.status}")
+print(f"Status - {batch_request.status}")
 ```
 
 After submitting, you can check the batch status and retrieve results:
@@ -166,7 +166,7 @@ Using Batch Processing (Sonnet 4.6):
 
 - Cost: (5M × $1.50) + (2M × $7.50) = $7,500 + $15,000 = $22,500
 
-Total Savings: $22,500 (50% reduction)
+Total Savings - $22,500 (50% reduction)
 
 For high-volume workloads processing millions of tokens monthly, the savings compound significantly. A team processing 100M tokens monthly could save $500K+ annually by switching to batch processing for appropriate workloads.
 

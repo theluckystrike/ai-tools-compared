@@ -41,7 +41,7 @@ Strengths:
 - Generates clear comments explaining each step
 - Fast at refactoring workflows for DRY principles
 
-Pricing: Free tier (Claude.ai), $20/month Pro, $500/month API
+Pricing - Free tier (Claude.ai), $20/month Pro, $500/month API
 
 Example Prompt:
 ```
@@ -53,7 +53,7 @@ Write a GitHub Actions workflow for a Node.js monorepo that:
 - Runs linting and type checking in parallel
 ```
 
-Output Quality: 9/10 for production workflows. Handles edge cases like fork PRs correctly.
+Output Quality - 9/10 for production workflows. Handles edge cases like fork PRs correctly.
 
 GitHub Copilot
 
@@ -63,7 +63,7 @@ Strengths:
 - Learns from your repo's existing workflows
 - Free for students and open source maintainers
 
-Pricing: $10/month (individuals), $19/month (enterprise), Free (students/OSS)
+Pricing - $10/month (individuals), $19/month (enterprise), Free (students/OSS)
 
 In-Editor Experience:
 1. Start typing `name: Build and Test`
@@ -71,7 +71,7 @@ In-Editor Experience:
 3. Tab through suggestions, modify as needed
 4. Build faster than pasting from templates
 
-Output Quality: 7/10. Good for standard flows, struggles with complex conditionals.
+Output Quality - 7/10. Good for standard flows, struggles with complex conditionals.
 
 ChatGPT 4 / OpenAI API
 
@@ -81,9 +81,9 @@ Strengths:
 - Can generate workflows AND documentation
 - Widely available, stable API
 
-Pricing: Free tier (limited), $20/month Plus, $0.02, $0.30 per 1K tokens (API)
+Pricing - Free tier (limited), $20/month Plus, $0.02, $0.30 per 1K tokens (API)
 
-Workflow Generation Accuracy: 8/10. Occasionally over-complicates simple tasks.
+Workflow Generation Accuracy - 8/10. Occasionally over-complicates simple tasks.
 
 Prompt Template:
 ```yaml
@@ -101,18 +101,18 @@ Strengths:
 - Suggests fixes for workflow errors immediately
 - Cmd+K to generate inline code blocks
 
-Pricing: $20/month (Pro), includes Claude API credits
+Pricing - $20/month (Pro), includes Claude API credits
 
 Real Example:
 ```
-User: Cmd+K in .github/workflows/deploy.yml
-Cursor: "This workflow deploys without testing.
+User - Cmd+K in .github/workflows/deploy.yml
+Cursor - "This workflow deploys without testing.
 Add test-first job with matrix, add caching."
-User: Accepts suggestion
+User - Accepts suggestion
 50-line production-ready workflow generated
 ```
 
-Output Quality: 8.5/10. Context awareness is a significant improvement.
+Output Quality - 8.5/10. Context awareness is a significant improvement.
 
 Amazon CodeWhisperer
 
@@ -121,11 +121,11 @@ Strengths:
 - Free tier included (for AWS users)
 - Integrates with VS Code, JetBrains, Visual Studio
 
-Pricing: Free (2 years), then $19/month
+Pricing - Free (2 years), then $19/month
 
-Best Use Case: AWS CodePipeline, CloudFormation deployments, Lambda workflows
+Best Use Case - AWS CodePipeline, CloudFormation deployments, Lambda workflows
 
-Output Quality: 7/10 generally, 9/10 for AWS-specific tasks.
+Output Quality - 7/10 generally, 9/10 for AWS-specific tasks.
 
 Detailed Comparison Table
 
@@ -178,7 +178,7 @@ jobs:
         uses: codecov/codecov-action@v3
 ```
 
-Time Saved: 10 minutes → 1 minute
+Time Saved - 10 minutes → 1 minute
 
 Multi-Environment Deployment
 
@@ -214,7 +214,7 @@ jobs:
 
 Caching Strategy for Docker
 
-Prompt: "Optimize Docker builds with layer caching and inline metadata"
+Prompt - "Optimize Docker builds with layer caching and inline metadata"
 
 ```yaml
 - uses: docker/setup-buildx-action@v3
@@ -228,9 +228,9 @@ Prompt: "Optimize Docker builds with layer caching and inline metadata"
 Best Practices When Using AI
 
 1. Start Specific: "Deploy to AWS ECS staging" beats "Deploy"
-2. Reference Your Repo: "Our package-lock.json is committed, use cache: npm"
-3. Test Locally: Use `act` (https://github.com/nektos/act) to run workflows locally before pushing
-4. Review for Secrets: AI may suggest hardcoding values; always use `${{ secrets.VAR }}`
+2. Reference Your Repo - "Our package-lock.json is committed, use cache: npm"
+3. Test Locally - Use `act` (https://github.com/nektos/act) to run workflows locally before pushing
+4. Review for Secrets - AI may suggest hardcoding values; always use `${{ secrets.VAR }}`
 5. Commit History: Review generated YAML before committing; maintain DRY principle
 6. Validate YAML: Use yamllint before pushing
 

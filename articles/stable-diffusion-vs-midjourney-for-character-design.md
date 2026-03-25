@@ -99,7 +99,7 @@ Stable Diffusion's Consistency Solutions
 
 Stable Diffusion offers multiple approaches to character consistency:
 
-ControlNet: This extension allows you to specify pose skeletons, depth maps, or edge detection guides that the generation must follow. For character design, the OpenPose controlnet is particularly useful:
+ControlNet - This extension allows you to specify pose skeletons, depth maps, or edge detection guides that the generation must follow. For character design, the OpenPose controlnet is particularly useful:
 
 ```python
 Automatic1111 WebUI ControlNet setup
@@ -109,9 +109,9 @@ Automatic1111 WebUI ControlNet setup
 4. Generate with your character prompt
 ```
 
-IP Adapter: This newer feature works similarly to Midjourney's `--cref`, allowing you to use reference images to guide character consistency. The IP Adapter is more flexible than ControlNet for face and style consistency.
+IP Adapter - This newer feature works similarly to Midjourney's `--cref`, allowing you to use reference images to guide character consistency. The IP Adapter is more flexible than ControlNet for face and style consistency.
 
-LoRA Training: For long-term character franchises, training a dedicated LoRA on your character designs provides the highest consistency. Training requires 10-20 reference images and takes 20-40 minutes on consumer hardware.
+LoRA Training - For long-term character franchises, training a dedicated LoRA on your character designs provides the highest consistency. Training requires 10-20 reference images and takes 20-40 minutes on consumer hardware.
 
 Workflow Integration
 
@@ -147,7 +147,7 @@ Model Versions and Updates
 
 Midjourney automatically updates to new model versions (V6, V7, etc.), giving you access to improvements without action. However, this means your workflow may change unexpectedly when parameters evolve.
 
-Stable Diffusion's open ecosystem means model releases are fragmented, you choose which checkpoint to use. Popular options for character design include:
+Stable Diffusion's open environment means model releases are fragmented, you choose which checkpoint to use. Popular options for character design include:
 
 - Juggernaut XL: Photorealistic character generation
 
@@ -161,23 +161,23 @@ Newcomers often find Midjourney's simplicity more approachable, while developers
 
 Recommendations by Use Case
 
-Game Development: Stable Diffusion with ControlNet for consistent character sheets across poses and angles. Train a LoRA on your game's art style for maximum consistency.
+Game Development - Stable Diffusion with ControlNet for consistent character sheets across poses and angles. Train a LoRA on your game's art style for maximum consistency.
 
-Concept Art Exploration: Midjourney for rapid iteration and aesthetic exploration. Use the Discord workflow to quickly generate dozens of directions before refining in Stable Diffusion.
+Concept Art Exploration - Midjourney for rapid iteration and aesthetic exploration. Use the Discord workflow to quickly generate dozens of directions before refining in Stable Diffusion.
 
-Webtoon/Comics: Stable Diffusion with IP Adapter for maintaining character faces across panels. The local processing also allows for batch generation of panel sequences.
+Webtoon/Comics - Stable Diffusion with IP Adapter for maintaining character faces across panels. The local processing also allows for batch generation of panel sequences.
 
-Character Franchise: Stable Diffusion with custom-trained LoRAs. The upfront investment in training pays dividends in consistency across dozens or hundreds of character images.
+Character Franchise - Stable Diffusion with custom-trained LoRAs. The upfront investment in training pays dividends in consistency across dozens or hundreds of character images.
 
-Quick Prototyping: Midjourney when you need to validate character concepts quickly without technical setup.
+Quick Prototyping - Midjourney when you need to validate character concepts quickly without technical setup.
 
 For most professional workflows, the two tools complement each other rather than compete.
 
-Detailed Workflow Comparison: Concept to Final Asset
+Detailed Workflow Comparison - Concept to Final Asset
 
 Let's trace how each tool handles a complete character design project:
 
-Project: Create 5 character variants for a fantasy game
+Project - Create 5 character variants for a fantasy game
 
 Midjourney workflow (3-4 hours total):
 1. Write base prompt describing character archetype
@@ -307,7 +307,7 @@ Stable Diffusion iteration speed (ComfyUI with GPU optimization):
 
 This 3-4x faster iteration makes a psychological difference. You can refine a character in real-time, trying different prompts, seeds, or LoRA weights.
 
-The trade-off: Stable Diffusion requires understanding the generation parameters (CFG, steps, samplers), while Midjourney abstracts these away.
+The trade-off - Stable Diffusion requires understanding the generation parameters (CFG, steps, samplers), while Midjourney abstracts these away.
 
 Quality Comparison by Style
 

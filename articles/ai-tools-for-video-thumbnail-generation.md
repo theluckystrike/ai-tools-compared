@@ -48,7 +48,7 @@ Text-to-image generation creates thumbnails from descriptive prompts, offering c
 
 The choice depends on your workflow. If you have existing video content, intelligent frame extraction provides the most authentic results. For concept-based thumbnails or creative projects, text-to-image generation offers unlimited creative possibilities.
 
-Tool Comparison: Which Approach Fits Your Needs
+Tool Comparison - Which Approach Fits Your Needs
 
 Before looking at implementation, understanding the trade-offs between approaches helps you choose the right tool:
 

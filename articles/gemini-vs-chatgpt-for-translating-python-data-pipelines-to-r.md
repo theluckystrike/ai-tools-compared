@@ -15,7 +15,7 @@ voice-checked: true
 ---
 
 
-Choose Gemini for idiomatic Rust code that uses the ecosystem's best libraries and patterns. Choose ChatGPT if you need more explicit explanations and step-by-step guidance during translation. This comparison evaluates both on handling Rust's ownership model, error types, and the conceptual gap between Python and Rust approaches.
+Choose Gemini for idiomatic Rust code that uses the environment's best libraries and patterns. Choose ChatGPT if you need more explicit explanations and step-by-step guidance during translation. This comparison evaluates both on handling Rust's ownership model, error types, and the conceptual gap between Python and Rust approaches.
 
 Table of Contents
 
@@ -28,7 +28,7 @@ Table of Contents
 - [Error Message Quality Comparison](#error-message-quality-comparison)
 - [Decision Framework for Tool Selection](#decision-framework-for-tool-selection)
 - [Workflow Optimization Tips](#workflow-optimization-tips)
-- [Struct-Driven Architecture: The Missing Step in AI Translations](#struct-driven-architecture-the-missing-step-in-ai-translations)
+- [Struct-Driven Architecture - The Missing Step in AI Translations](#struct-driven-architecture-the-missing-step-in-ai-translations)
 - [Handling Python's Dynamic Typing at the Boundary](#handling-pythons-dynamic-typing-at-the-boundary)
 - [Post-Translation Validation Checklist](#post-translation-validation-checklist)
 
@@ -40,7 +40,7 @@ The translation process requires more than mechanical conversion. Rust's ownersh
 
 Gemini's Approach to Python-to-Rust Translation
 
-Gemini handles Python-to-Rust translation with a strong emphasis on idiomatic Rust code. When prompted with Python pipeline code, Gemini typically generates Rust that uses the ecosystem's best libraries rather than attempting direct syntactic mapping.
+Gemini handles Python-to-Rust translation with a strong emphasis on idiomatic Rust code. When prompted with Python pipeline code, Gemini typically generates Rust that uses the environment's best libraries rather than attempting direct syntactic mapping.
 
 Consider this Python transformation function:
 
@@ -103,13 +103,13 @@ For error handling, ChatGPT properly converts Python's exception patterns to Rus
 
 Comparative Strengths for Pipeline Translation
 
-Type System Handling: Gemini more frequently suggests struct-based approaches that use Rust's type system. ChatGPT tends toward HashMap-based solutions that maintain Python's dynamic flexibility. For maintainable pipelines, Gemini's struct-focused approach generally produces better long-term results.
+Type System Handling - Gemini more frequently suggests struct-based approaches that use Rust's type system. ChatGPT tends toward HashMap-based solutions that maintain Python's dynamic flexibility. For maintainable pipelines, Gemini's struct-focused approach generally produces better long-term results.
 
-Dependency Translation: Both tools identify common equivalents like `reqwest` for `requests` or `serde` for JSON handling. Gemini shows stronger familiarity with Rust-specific crates like `polars`, `datafusion`, or `tokio` for data pipeline workloads.
+Dependency Translation - Both tools identify common equivalents like `reqwest` for `requests` or `serde` for JSON handling. Gemini shows stronger familiarity with Rust-specific crates like `polars`, `datafusion`, or `tokio` for data pipeline workloads.
 
-Performance Optimization: Gemini tends to suggest parallelization strategies proactively. It recommends `rayon` for data parallelism and async patterns for I/O-bound operations more consistently than ChatGPT.
+Performance Optimization - Gemini tends to suggest parallelization strategies proactively. It recommends `rayon` for data parallelism and async patterns for I/O-bound operations more consistently than ChatGPT.
 
-Error Messages: When generated code contains errors, ChatGPT provides more detailed explanations of what went wrong and why. This makes iterative refinement easier, particularly for developers less familiar with Rust.
+Error Messages - When generated code contains errors, ChatGPT provides more detailed explanations of what went wrong and why. This makes iterative refinement easier, particularly for developers less familiar with Rust.
 
 Practical Recommendations
 
@@ -125,7 +125,7 @@ Translation Quality Benchmarking
 
 A systematic evaluation of both tools on specific Python patterns:
 
-Test Case 1: DataFrame Filtering and Transformation
+Test Case 1 - DataFrame Filtering and Transformation
 
 Python Source:
 ```python
@@ -187,7 +187,7 @@ Performance Comparison:
 
 Gemini's use of Polars lazy evaluation and vectorized operations dramatically outperforms ChatGPT's HashMap iteration approach.
 
-Test Case 2: Async Pipeline with Error Handling
+Test Case 2 - Async Pipeline with Error Handling
 
 Python Source:
 ```python
@@ -274,7 +274,7 @@ Error Message Quality Comparison
 
 When translation fails, the quality of explanation matters:
 
-Scenario: A pandas `.groupby().agg()` pattern that doesn't translate directly
+Scenario - A pandas `.groupby().agg()` pattern that doesn't translate directly
 
 Gemini response:
 "Your `groupby().agg()` pattern needs to be expressed as Polars group operations. Here's the equivalent approach using `group_by().agg()`, which is semantically similar but requires explicitly naming aggregation functions."
@@ -310,7 +310,7 @@ For ChatGPT:
 2. Ask for potential performance improvements after translation
 3. Request multiple translation approaches when unsure
 
-Struct-Driven Architecture: The Missing Step in AI Translations
+Struct-Driven Architecture - The Missing Step in AI Translations
 
 Both Gemini and ChatGPT default to HashMap-based representations when Python code uses dynamic dictionaries. This is the single biggest architectural mistake in AI-generated Rust pipeline code. HashMap lookups are O(1) but carry allocation overhead; Rust structs are zero-cost by comparison and allow the compiler to validate field access at compile time.
 

@@ -76,7 +76,7 @@ def effective_copilot_cost(total_seats, active_users, monthly_cost_per_seat=10):
 50 seats assigned, 30 actively using
 result = effective_copilot_cost(50, 30)
 print(f"Total: ${result['total_monthly']}/month")
-print(f"Effective: ${result['effective_cost_per_user']:.2f}/active user")
+print(f"Effective - ${result['effective_cost_per_user']:.2f}/active user")
 print(f"Wasted: ${result['wasted_monthly']}/month")
 ```
 
@@ -180,7 +180,7 @@ const alertConfig = {
 ```
 
 
-Reclaiming Idle Seats: A Practical Workflow
+Reclaiming Idle Seats - A Practical Workflow
 
 
 GitHub allows you to remove seat assignments at any time from the organization's Copilot settings page. The billing adjustment takes effect at the start of the next billing cycle. you will not receive a prorated refund for the current month. Given this, the optimal reclamation cadence is monthly, aligned with your billing renewal date.
@@ -257,7 +257,7 @@ If only a few developers will use Copilot, compare the options:
 For teams with less than 10 potential users, individual subscriptions might make more financial sense, though you lose organizational control.
 
 
-Break-Even Analysis: Is Org-Wide Worth It?
+Break-Even Analysis - Is Org-Wide Worth It?
 
 
 The key question is whether the operational savings from removing per-seat management justify the cost of idle seats. Use this break-even framework:

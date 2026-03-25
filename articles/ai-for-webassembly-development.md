@@ -161,7 +161,7 @@ WASI Module Development
 
 For server-side Wasm (running in Wasmtime), the workflow is different:
 
-Prompt: "Write a WASI component in Rust that reads a JSON config file from the filesystem, validates it, and writes a processed version. Use the WASI preview 2 component model."
+Prompt - "Write a WASI component in Rust that reads a JSON config file from the filesystem, validates it, and writes a processed version. Use the WASI preview 2 component model."
 
 Claude generates the WIT interface first:
 
@@ -240,9 +240,9 @@ Debugging Wasm Memory Errors
 
 AI is particularly useful for decoding cryptic Wasm memory errors:
 
-Prompt: "I'm getting 'RuntimeError: memory access out of bounds' in my Wasm module. Here's the Rust code and the JavaScript call. What's wrong?"
+Prompt - "I'm getting 'RuntimeError: memory access out of bounds' in my Wasm module. Here's the Rust code and the JavaScript call. What's wrong?"
 
-Claude diagnoses: the JavaScript side is passing a `Float32Array` view of a buffer, but after calling a Wasm function that reallocates memory (like a `Vec::push`), the view becomes stale because Wasm linear memory was resized. The fix:
+Claude diagnoses - the JavaScript side is passing a `Float32Array` view of a buffer, but after calling a Wasm function that reallocates memory (like a `Vec::push`), the view becomes stale because Wasm linear memory was resized. The fix:
 
 ```javascript
 // WRONG: Float32Array view can become stale after Wasm memory reallocation
@@ -260,7 +260,7 @@ Passing Complex Data Across the JS/Wasm Boundary
 
 One of the trickiest parts of Wasm development is efficiently passing non-primitive data between JavaScript and Wasm without excessive copying. Claude handles this well when prompted explicitly.
 
-Prompt: "I need to pass a large array of f32 values from JavaScript into a Wasm function without copying. How do I do zero-copy access with wasm-bindgen?"
+Prompt - "I need to pass a large array of f32 values from JavaScript into a Wasm function without copying. How do I do zero-copy access with wasm-bindgen?"
 
 Claude's response covers the `unsafe` pointer approach:
 
@@ -306,11 +306,11 @@ Claude notes that `wasm.alloc` and `wasm.dealloc` need to be exposed from Rust u
 
 Comparing Claude vs GPT-4 for Wasm Workflows
 
-Toolchain knowledge: Claude has better recall of the `wasm-pack` toolchain flags and `wasm-opt` optimization passes. GPT-4 occasionally confuses `wasm32-unknown-unknown` and `wasm32-wasi` targets, which require different Cargo.toml settings.
+Toolchain knowledge - Claude has better recall of the `wasm-pack` toolchain flags and `wasm-opt` optimization passes. GPT-4 occasionally confuses `wasm32-unknown-unknown` and `wasm32-wasi` targets, which require different Cargo.toml settings.
 
-WIT interface generation: Claude generates valid WIT syntax consistently. GPT-4 sometimes produces WIT that mixes preview 1 and preview 2 syntax, which breaks `wit-bindgen` code generation.
+WIT interface generation - Claude generates valid WIT syntax consistently. GPT-4 sometimes produces WIT that mixes preview 1 and preview 2 syntax, which breaks `wit-bindgen` code generation.
 
-Memory debugging: Both tools diagnose the stale view problem, but Claude typically explains the underlying reason (Wasm linear memory is a single contiguous buffer that can be reallocated, invalidating all `ArrayBufferView` objects pointing into it) rather than just providing the fix.
+Memory debugging - Both tools diagnose the stale view problem, but Claude typically explains the underlying reason (Wasm linear memory is a single contiguous buffer that can be reallocated, invalidating all `ArrayBufferView` objects pointing into it) rather than just providing the fix.
 
 Build and Optimization Tips
 

@@ -33,7 +33,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Build an Effective Coding Standards System Prompt
+Step 1 - Build an Effective Coding Standards System Prompt
 
 An effective system prompt for enforcing coding standards contains several key components. Start with your language preferences, then specify formatting rules, and finally add any architectural constraints your team follows.
 
@@ -62,7 +62,7 @@ NAMING CONVENTIONS
 - Variables and functions: camelCase
 - React components: PascalCase
 - Constants: SCREAMING_SNAKE_CASE
-- Interfaces: prefix with 'I' (e.g., IUserProfile)
+- Interfaces - prefix with 'I' (e.g., IUserProfile)
 
 ERROR HANDLING
 - Always handle async errors with try-catch
@@ -88,7 +88,7 @@ PROJECT REQUIREMENTS
 - Follow the repository's commit message format
 ```
 
-Step 2: Implementation Example
+Step 2 - Implementation Example
 
 Here's how to use these prompts with the OpenAI API in Python:
 
@@ -132,7 +132,7 @@ def generate_code_with_standards(user_request: str) -> str:
 
 The `temperature` parameter set to 0.3 produces more consistent, predictable output. Higher values introduce randomness that may result in non-standard code patterns.
 
-Step 3: Enforcing Standards Across Multiple Languages
+Step 3 - Enforcing Standards Across Multiple Languages
 
 If your project spans multiple programming languages, create language-specific sections in your system prompt:
 
@@ -152,7 +152,7 @@ GO STANDARDS
 
 The model will switch between standards based on the language requested in the user's message.
 
-Step 4: Test Your System Prompt
+Step 4 - Test Your System Prompt
 
 After creating your system prompt, verify it works correctly. Generate code for several scenarios and check against your standards checklist:
 
@@ -182,7 +182,7 @@ function calculateTotal(items) {
 }
 ```
 
-Step 5: Prompt Priority and Instruction Conflict Resolution
+Step 5 - Prompt Priority and Instruction Conflict Resolution
 
 One challenge teams encounter is that the model sometimes prioritizes user-message instructions over system-prompt rules. A user might say "use var instead of const for this one" and the model complies, overriding your standard. You can mitigate this by adding an explicit override policy to your system prompt:
 
@@ -197,7 +197,7 @@ OVERRIDE POLICY
 
 This locks in your standards while still giving senior developers an escape hatch for legitimate exceptions.
 
-Step 6: Use System Prompts for Code Review Integration
+Step 6 - Use System Prompts for Code Review Integration
 
 Beyond code generation, system prompts work well for automated code review workflows. Structure the prompt to act as a reviewer rather than a generator:
 
@@ -233,7 +233,7 @@ def review_code(code_snippet: str) -> str:
 
 Setting `temperature` to 0.1 for review tasks produces highly deterministic output, which is what you want when catching rule violations consistently across the team.
 
-Step 7: Handling Context Length and Prompt Efficiency
+Step 7 - Handling Context Length and Prompt Efficiency
 
 Long system prompts consume tokens on every API call, which adds up at scale. A 500-token system prompt on a high-traffic endpoint can represent meaningful cost overhead over millions of requests. Balance completeness against efficiency:
 
@@ -244,7 +244,7 @@ Long system prompts consume tokens on every API call, which adds up at scale. A 
 
 A practical target for most teams is 300, 500 tokens for the system prompt. Measure token usage with OpenAI's tokenizer tool or the `tiktoken` library before deploying at scale.
 
-Step 8: Maintaining Consistency Over Time
+Step 8 - Maintaining Consistency Over Time
 
 Your coding standards evolve, and your system prompt should too. Keep your prompt in version control alongside your code. When standards change, update the prompt and regenerate any affected code to maintain consistency.
 

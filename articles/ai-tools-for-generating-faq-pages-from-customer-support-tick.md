@@ -310,15 +310,15 @@ def incremental_faq_update(existing_faqs, since_date):
 
 Common Challenges
 
-Ticket Noise: Support tickets often contain greetings, signatures, and unrelated details. Preprocessing significantly impacts quality.
+Ticket Noise - Support tickets often contain greetings, signatures, and unrelated details. Preprocessing significantly impacts quality.
 
-Similar Questions: Customers ask the same problem in dozens of ways. Clustering helps group these, but you'll need to normalize questions to a canonical form.
+Similar Questions - Customers ask the same problem in dozens of ways. Clustering helps group these, but you'll need to normalize questions to a canonical form.
 
-Outdated Information: Products change. Build a pipeline that flags FAQs needing review when you release new features. A simple approach: tag FAQ entries with the product version they were generated under and alert when that version goes EOL.
+Outdated Information - Products change. Build a pipeline that flags FAQs needing review when you release new features. A simple approach: tag FAQ entries with the product version they were generated under and alert when that version goes EOL.
 
-Language Variations: Non-English tickets require multilingual models or translation steps. The `paraphrase-multilingual-MiniLM-L12-v2` SentenceTransformer model handles 50+ languages without a separate translation step.
+Language Variations - Non-English tickets require multilingual models or translation steps. The `paraphrase-multilingual-MiniLM-L12-v2` SentenceTransformer model handles 50+ languages without a separate translation step.
 
-PII Exposure: Never include customer names, email addresses, order IDs, or any other personal data in published FAQs. Run a dedicated anonymization pass using a library like `presidio-analyzer` before any LLM call.
+PII Exposure - Never include customer names, email addresses, order IDs, or any other personal data in published FAQs. Run a dedicated anonymization pass using a library like `presidio-analyzer` before any LLM call.
 
 Building an End-to-End FAQ Pipeline
 
@@ -396,10 +396,10 @@ Tickets:
 
 Generate:
 1. A natural question customers might ask
-2. A comprehensive answer (2-3 sentences max)
+2. A complete answer (2-3 sentences max)
 3. A link label if external docs exist
 
-Format as JSON: {{"question": "...", "answer": "...", "link": "..."}}"""
+Format as JSON - {{"question": "...", "answer": "...", "link": "..."}}"""
             }],
             temperature=0.3,
             max_tokens=200
@@ -520,7 +520,7 @@ title: FAQ
 
 Frequently Asked Questions
 
-Last updated: {data['generated_at']}
+Last updated - {data['generated_at']}
 
 {chr(10).join(f"- [{faq['question']}](#{i})" for i, faq in enumerate(data['faqs']))}
 
@@ -600,7 +600,7 @@ def measure_faq_impact(before_tickets, after_tickets, faq_published_date):
 
     print(f"Tickets before FAQ: {len(before)}")
     print(f"Tickets after FAQ: {len(after)}")
-    print(f"Reduction: {reduction:.1f}%")
+    print(f"Reduction - {reduction:.1f}%")
 
     # Identify which FAQ topics have highest impact
     common_before = Counter([t['category'] for t in before]).most_common(10)

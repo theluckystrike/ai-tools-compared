@@ -27,11 +27,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Python 2 to Python 3 Migration with AI
+Step 1 - Python 2 to Python 3 Migration with AI
 
 Python 2 reached end-of-life in 2020. Migrating large codebases requires handling print statements, division operators, unicode/string differences, imports, and deprecated libraries.
 
-Migration Example: Print Statements and Print Functions
+Migration Example - Print Statements and Print Functions
 
 Python 2 code:
 ```python
@@ -51,12 +51,12 @@ Copilot X (Claude-powered code context) correctly handles this:
 ```bash
 Run Claude locally or via API with your migration context
 echo "print 'value is', x" | claude-migrate --from python2 --to python3
-Output: print("value is", x)
+Output - print("value is", x)
 ```
 
 Copilot-based tools achieve 87% accuracy on print statement conversion, 92% on division operator fixes (`/` vs `//`), but only 61% on unicode handling due to context-dependent string encodings.
 
-Real Codebase: Scrapy Library Migration
+Real Codebase - Scrapy Library Migration
 
 A 40,000-line web scraping project required:
 - 1,200 `print` statement conversions (99% correct with Copilot)
@@ -84,9 +84,9 @@ copilot --apply migration_plan.md --output python3_codebase/
 cd python3_codebase && python -m pytest tests/
 ```
 
-Success metric: 94% of the codebase compiled without errors after first pass. The remaining 6% had implicit unicode dependencies that required domain knowledge.
+Success metric - 94% of the codebase compiled without errors after first pass. The remaining 6% had implicit unicode dependencies that required domain knowledge.
 
-Step 2: Java 8 to Java 21 Migration
+Step 2 - Java 8 to Java 21 Migration
 
 Java 8 introduced streams and lambdas. Java 11+ added var keyword. Java 17+ introduced records and sealed classes. Java 21 added virtual threads and pattern matching.
 
@@ -111,7 +111,7 @@ List<String> names = users.stream()
 public record User(String name, int age) {}
 ```
 
-Enterprise Codebase: Spring Boot Migration
+Enterprise Codebase - Spring Boot Migration
 
 A 65,000-line financial services application migrated from Java 8 to Java 21. Key transformations:
 
@@ -152,7 +152,7 @@ Cost Analysis:
 - Claude API: $0.003/token input, migration project ~$12.50
 - IntelliJ Premium: $199/year, no API costs but tool-specific
 
-Step 3: JavaScript CommonJS to ESM Migration
+Step 3 - JavaScript CommonJS to ESM Migration
 
 CommonJS was Node.js standard for 20+ years. ES Modules (ESM) are now standard, but migration breaks default exports, require patterns, and __dirname handling.
 
@@ -224,7 +224,7 @@ Tool Performance on 400-Module ESM Migration:
 - Anthropic Claude: 14 hours review, better pattern recognition, fewer false conversions
 - OpenAI GPT-4: 20 hours review, verbose suggestions, requires more filtering
 
-Cost and Timeline Comparison: Real-World Metrics
+Cost and Timeline Comparison - Real-World Metrics
 
 For a realistic enterprise migration (50,000+ lines across 200+ files), the economics are compelling:
 
@@ -250,7 +250,7 @@ Tool costs for combined 130K-line migration:
 - Anthropic Claude API: ~$15 token-based
 - GPT-4 API: ~$35
 
-Step 4: Critical Edge Cases and Limitations
+Step 4 - Critical Edge Cases and Limitations
 
 No AI tool achieves 100% accuracy. Plan for these manual interventions:
 
@@ -269,7 +269,7 @@ CJS→ESM:
 - Native C++ modules requiring build tool updates
 - Performance-critical lazy-loading patterns
 
-Step 5: Practical Implementation Strategy and Execution
+Step 5 - Practical Implementation Strategy and Execution
 
 Before running any migration, establish ground truth about your codebase and plan accordingly:
 
@@ -277,7 +277,7 @@ Before running any migration, establish ground truth about your codebase and pla
 
 AST-based analysis example:
 ```bash
-Python: Count print statements vs other patterns
+Python - Count print statements vs other patterns
 python3 -c "
 import ast
 import os
@@ -311,7 +311,7 @@ This tells you exactly what patterns to expect in your migration.
 
 5. Document assumptions: Record which patterns the AI struggled with for your codebase. This guides manual review and future migrations.
 
-Step 6: Recommended Tools by Scale
+Step 6 - Recommended Tools by Scale
 
 - Under 20K lines: Use Claude directly via API, best cost-performance ratio
 - 20K-100K lines: GitHub Copilot with manual validation, cheapest subscription model
@@ -343,7 +343,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -355,7 +355,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

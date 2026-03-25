@@ -49,7 +49,7 @@ TypeScript language server issues are the most frequent culprit. Cursor relies o
 
 Step-by-Step Fixes for TypeScript Autocompletion
 
-Fix 1: Restart the TypeScript Language Server
+Fix 1 - Restart the TypeScript Language Server
 
 The TypeScript language server powers much of Cursor's understanding of your code. Restarting it often resolves stalled completions.
 
@@ -66,7 +66,7 @@ After restarting, wait a few moments for the server to reinitialize. You should 
 
 If restarting doesn't help, check the TypeScript version being used. Cursor displays the active TypeScript version in the status bar. Click on it to switch between versions or select "Use Workspace Version" if your project has a local TypeScript installation.
 
-Fix 2: Verify Cursor Settings for TypeScript
+Fix 2 - Verify Cursor Settings for TypeScript
 
 Cursor provides specific settings that control AI autocompletion behavior. Check these settings to ensure completions are enabled.
 
@@ -86,7 +86,7 @@ For TypeScript-specific behavior, search for "typescript" in settings and check:
 
 Save changes and restart Cursor to ensure all settings take effect.
 
-Fix 3: Clear Cursor Cache and Reindex Project
+Fix 3 - Clear Cursor Cache and Reindex Project
 
 Corrupted cache files can prevent completions from appearing correctly. Clearing the cache forces Cursor to rebuild its understanding of your project.
 
@@ -108,7 +108,7 @@ Delete the contents of the Cache folder. Also clear the workspace state:
 
 Restart Cursor and open your TypeScript project. The reindexing process may take a few minutes for larger projects, but completions should resume once complete.
 
-Fix 4: Check for Extension Conflicts
+Fix 4 - Check for Extension Conflicts
 
 Third-party extensions can interfere with Cursor's completion system. Identifying conflicting extensions helps isolate the issue.
 
@@ -124,7 +124,7 @@ Common extension types that cause conflicts include:
 
 - Theme extensions with custom syntax highlighting that may interfere with parsing
 
-Fix 5: Update Cursor and TypeScript
+Fix 5 - Update Cursor and TypeScript
 
 Using outdated versions can cause compatibility issues with newer TypeScript syntax or language server features.
 
@@ -144,7 +144,7 @@ For projects using TypeScript 5.x features, ensure Cursor is running a compatibl
 npm install typescript@latest --save-dev
 ```
 
-Fix 6: Check tsconfig.json Configuration
+Fix 6 - Check tsconfig.json Configuration
 
 Your TypeScript configuration affects what completions Cursor can provide. Incorrect settings may limit autocomplete suggestions.
 
@@ -170,7 +170,7 @@ Open your project's `tsconfig.json` and verify these settings:
 
 Ensure the `"include"` section covers all TypeScript files where you want completions. If files are in directories not covered by "include", Cursor won't provide completions for them.
 
-Fix 7: Verify Network and AI Service Connection
+Fix 7 - Verify Network and AI Service Connection
 
 Cursor's AI completions require an active connection to AI services. Network issues can prevent completions from loading.
 
@@ -180,7 +180,7 @@ Open Cursor's settings and verify the AI service endpoint is reachable. Look for
 
 If you're using a VPN or proxy, try disconnecting temporarily to see if completions resume. Some network configurations interfere with Cursor's AI service communication.
 
-Fix 8: Reset Cursor User Data
+Fix 8 - Reset Cursor User Data
 
 If all other fixes fail, resetting Cursor to default settings removes corrupted configurations that may be causing the issue.
 
@@ -234,7 +234,7 @@ Related Articles
 - [Cursor Composer Stuck in Loop: How to Fix](/cursor-composer-stuck-in-loop-how-to-fix/)
 - [Cursor Extensions Conflicting with AI Fix](/cursor-extensions-conflicting-with-ai-fix/)
 
-Performance Benchmarks: Cursor vs Alternatives for TypeScript
+Performance Benchmarks - Cursor vs Alternatives for TypeScript
 
 | Tool | TypeScript Support | Completion Speed | Context Window | Troubleshooting |
 |------|------------------|------------------|-----------------|-----------------|
@@ -243,9 +243,9 @@ Performance Benchmarks: Cursor vs Alternatives for TypeScript
 | JetBrains AI | Excellent | 100-200ms | 8K+ tokens | IDE-integrated debugging |
 | VS Code Pylance (TS) | Good | 50-100ms | 2K tokens | Limited AI suggestions |
 
-Detailed Troubleshooting: Which Fix Applies to Your Situation
+Detailed Troubleshooting - Which Fix Applies to Your Situation
 
-Scenario 1: Completions stopped working after updating TypeScript
+Scenario 1 - Completions stopped working after updating TypeScript
 
 TypeScript version mismatches often cause this. Check your installed version against Cursor's bundled version:
 
@@ -254,14 +254,14 @@ Check project TypeScript
 cd your-project && npx tsc --version
 
 Check Cursor's status bar for version info
-If mismatch: update project to match
+If mismatch - update project to match
 npm install typescript@latest --save-dev
 npm install --save-dev typescript@5.3.3  # Match Cursor's version
 ```
 
 Then restart the TypeScript server via Command Palette.
 
-Scenario 2: Monorepo completions fail in specific packages
+Scenario 2 - Monorepo completions fail in specific packages
 
 Monorepos require explicit workspace configuration. Each package may need its own `tsconfig.json`:
 
@@ -292,7 +292,7 @@ coverage/
 *.lock
 ```
 
-Scenario 3: Completions work in JS files but not TypeScript
+Scenario 3 - Completions work in JS files but not TypeScript
 
 This indicates the TypeScript language server isn't initialized for your file type. Check `tsconfig.json` includes the right files:
 
@@ -313,7 +313,7 @@ This indicates the TypeScript language server isn't initialized for your file ty
 
 If certain directories aren't in the `include` list, Cursor won't provide completions there.
 
-Scenario 4: Complex types not completing
+Scenario 4 - Complex types not completing
 
 Cursor struggles with very deep type inference. Simplify by:
 
@@ -332,7 +332,7 @@ This makes inference easier for the AI to follow.
 
 Preventing Future Autocompletion Issues
 
-Best Practice 1: Keep TypeScript Updated
+Best Practice 1 - Keep TypeScript Updated
 
 Set up regular updates in your CI pipeline:
 
@@ -346,7 +346,7 @@ npm test
 Merge if tests pass
 ```
 
-Best Practice 2: Version Lock Critical Dependencies
+Best Practice 2 - Version Lock Critical Dependencies
 
 In package.json:
 
@@ -361,7 +361,7 @@ In package.json:
 
 Version locking prevents surprise breaking changes when team members install dependencies.
 
-Best Practice 3: Document Your TypeScript Configuration
+Best Practice 3 - Document Your TypeScript Configuration
 
 Add a README explaining your `tsconfig.json`:
 
@@ -381,7 +381,7 @@ Comparing TypeScript Completion Across Tools
 
 Testing the same TypeScript scenario with different tools reveals their strengths:
 
-Test Case: Generic function with conditional types
+Test Case - Generic function with conditional types
 
 ```typescript
 type IsString<T> = T extends string ? true : false;
@@ -397,7 +397,7 @@ function processValue<T>(value: T): IsString<T> extends true ? string : number {
 - JetBrains AI: Excellent completion with detailed type information
 - VS Code Pylance: Provides IntelliSense but limited AI-assisted suggestions
 
-Lesson: For complex TypeScript scenarios, Cursor and JetBrains AI lead. If you hit a ceiling, consider JetBrains as an alternative.
+Lesson - For complex TypeScript scenarios, Cursor and JetBrains AI lead. If you hit a ceiling, consider JetBrains as an alternative.
 
 TypeScript-Specific Configuration for Cursor
 

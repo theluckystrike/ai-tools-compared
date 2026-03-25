@@ -46,53 +46,53 @@ Understanding the root causes helps you apply the right solution faster. Grammar
 
 Step-by-Step Fixes
 
-Fix 1: Verify Browser Extension Permissions
+Fix 1 - Verify Browser Extension Permissions
 
 Grammarly requires specific permissions to function correctly. Open your browser's extension manager and confirm Grammarly has permission to access all websites or the specific sites where you're experiencing issues.
 
 In Chrome, navigate to `chrome://extensions`, find Grammarly, and click "Details." Check that "Access all sites" is enabled. If Grammarly only has access to specific sites, add the domains where you need AI assistance. Some users report that restricting permissions to "when clicked" prevents AI features from loading automatically on page load.
 
-Fix 2: Clear Browser Cache and Cookies
+Fix 2 - Clear Browser Cache and Cookies
 
 Corrupted cache data frequently causes AI features to fail to load. Clear your browser's cache and cookies specifically for Grammarly's domains.
 
 For Chrome, go to `chrome://settings/cookies`, search for "grammarly," and delete all stored data. In Firefox, access `about:preferences#privacy`, search for cookies, and remove Grammarly entries. After clearing, restart your browser and log back into Grammarly to regenerate fresh cache files.
 
-Fix 3: Update or Reinstall the Extension
+Fix 3 - Update or Reinstall the Extension
 
 An outdated extension version may lack compatibility with Grammarly's latest AI server changes. Uninstall the current extension completely, then reinstall the latest version from your browser's extension store.
 
 Before reinstalling, note your account email so you can sign back in. Some users find that downloading the extension fresh from the official Chrome Web Store or Firefox Add-ons portal resolves version conflicts that auto-updates miss.
 
-Fix 4: Disable Conflicting Extensions
+Fix 4 - Disable Conflicting Extensions
 
 Browser extensions that modify page content, inject scripts, or manage network requests often conflict with Grammarly's AI features. Common culprits include other grammar checkers, ad blockers, privacy extensions, and developer tools that intercept requests.
 
 Create a new browser profile with only Grammarly installed to test for extension conflicts. If AI works in the clean profile, systematically re-enable your other extensions one by one to identify the culprit. Popular conflict sources include uBlock Origin, Privacy Badger, and various VPN extensions that route traffic through proxies.
 
-Fix 5: Check Network and Firewall Settings
+Fix 5 - Check Network and Firewall Settings
 
 Grammarly's AI features require stable connections to their servers. Corporate networks, VPNs, and firewalls may block the API endpoints necessary for AI processing. Check if you can access `https://api.grammarly.io` from your browser. If the connection times out or fails, your network is likely blocking necessary traffic.
 
 Try disconnecting from your VPN temporarily to see if AI features resume. For corporate networks, contact your IT administrator to whitelist Grammarly's domains. Some users report success using browser-specific DNS settings or adding exceptions through their firewall software.
 
-Fix 6: Verify Account Status and Subscription
+Fix 6 - Verify Account Status and Subscription
 
 AI features require an active Grammarly subscription. Free accounts have limited AI access compared to Premium or Business tiers. Log into your Grammarly account dashboard and confirm your subscription is active. Check if you're logged into the correct account associated with your browser extension.
 
 Sometimes users have multiple Grammarly accounts, and the browser extension connects to an account without AI access. Sign out from the extension, clear tokens, and sign back in with the correct account credentials.
 
-Fix 7: Browser-Specific Solutions
+Fix 7 - Browser-Specific Solutions
 
-Chrome: Enable hardware acceleration if it's disabled, as Grammarly's AI uses GPU acceleration for processing. Navigate to `chrome://settings/system` and ensure "Use hardware acceleration when available" is turned on. Restart Chrome after changing this setting.
+Chrome - Enable hardware acceleration if it's disabled, as Grammarly's AI uses GPU acceleration for processing. Navigate to `chrome://settings/system` and ensure "Use hardware acceleration when available" is turned on. Restart Chrome after changing this setting.
 
-Firefox: Check that Enhanced Tracking Protection isn't blocking Grammarly. Click the shield icon in the address bar and adjust protections for sites where Grammarly operates. Firefox's container extensions can also isolate Grammarly's cookies, breaking AI functionality.
+Firefox - Check that Enhanced Tracking Protection isn't blocking Grammarly. Click the shield icon in the address bar and adjust protections for sites where Grammarly operates. Firefox's container extensions can also isolate Grammarly's cookies, breaking AI functionality.
 
-Edge: Microsoft's browser includes built-in tracking prevention that may interfere. Go to `edge://settings/privacy` and set tracking prevention to "Balanced" or add exceptions for Grammarly domains. Edge's efficiency mode can also throttle extension performance, disable it for testing.
+Edge - Microsoft's browser includes built-in tracking prevention that may interfere. Go to `edge://settings/privacy` and set tracking prevention to "Balanced" or add exceptions for Grammarly domains. Edge's efficiency mode can also throttle extension performance, disable it for testing.
 
-Safari: Grammarly's Safari extension requires specific permissions. Go to Safari Preferences, click Extensions, and ensure Grammarly has permission to access all websites. Safari's Intelligent Tracking Prevention can also disrupt Grammarly's session management.
+Safari - Grammarly's Safari extension requires specific permissions. Go to Safari Preferences, click Extensions, and ensure Grammarly has permission to access all websites. Safari's Intelligent Tracking Prevention can also disrupt Grammarly's session management.
 
-Fix 8: Console Diagnostics for Developers
+Fix 8 - Console Diagnostics for Developers
 
 Open Developer Tools (`F12`), go to the Network tab, filter by `grammarly`, and reload the page. Common error patterns:
 
@@ -129,11 +129,11 @@ Memory and Resource Issues
 
 Grammarly AI features require adequate browser memory. Check your browser's task manager:
 
-Chrome: Press Shift+Esc to open Task Manager. Grammarly should use 50-150MB. If it exceeds 500MB, restart your browser or reload the extension.
+Chrome - Press Shift+Esc to open Task Manager. Grammarly should use 50-150MB. If it exceeds 500MB, restart your browser or reload the extension.
 
-Firefox: Use about:processes to monitor memory. Extensions listed as using >200MB may indicate corruption.
+Firefox - Use about:processes to monitor memory. Extensions listed as using >200MB may indicate corruption.
 
-Edge: Press Shift+Esc for Task Manager. Similar thresholds to Chrome.
+Edge - Press Shift+Esc for Task Manager. Similar thresholds to Chrome.
 
 If Grammarly consistently uses excessive memory, try:
 1. Remove other heavy extensions
@@ -158,9 +158,9 @@ Some organizations use Zscaler or Palo Alto Networks for security. These require
 
 ```
 Policy > SSL Inspection Exclusions
-Add: grammarly.io, grammarly.com
-Protocol: SSL/TLS
-Reason: AI feature dependencies
+Add - grammarly.io, grammarly.com
+Protocol - SSL/TLS
+Reason - AI feature dependencies
 ```
 
 Feature-Specific Failures
@@ -180,7 +180,7 @@ Suggestions Appearing as Grayed Out:
 - Wait 1-2 minutes and reload the page
 - If persistent, restart the extension
 
-Diagnosis: Creating a Minimal Test Case
+Diagnosis - Creating a Minimal Test Case
 
 Isolate whether the issue is Grammarly-specific or environment-wide:
 
@@ -201,13 +201,13 @@ Alternative Tools When Grammarly Fails
 
 When Grammarly isn't working and you need AI writing assistance immediately:
 
-Hemingway Editor: Local tool, no connectivity required. Focuses on readability rather than grammar. Free version available.
+Hemingway Editor - Local tool, no connectivity required. Focuses on readability rather than grammar. Free version available.
 
-LanguageTool: Open-source, can be self-hosted. Good grammar coverage, lighter resource use than Grammarly.
+LanguageTool - Open-source, can be self-hosted. Good grammar coverage, lighter resource use than Grammarly.
 
-Notion AI: If writing in Notion, built-in AI features provide basic writing assistance without extension requirements.
+Notion AI - If writing in Notion, built-in AI features provide basic writing assistance without extension requirements.
 
-Claude/ChatGPT Web: For critical writing, paste content directly into ChatGPT for review.
+Claude/ChatGPT Web - For critical writing, paste content directly into ChatGPT for review.
 
 Contact Grammarly Support Effectively
 
@@ -224,7 +224,7 @@ Include the exact workflow that fails (e.g., "Writing emails in Gmail, clicking 
 
 Most issues resolve within 24-48 hours of support response if you provide the above information upfront.
 
-Enterprise Deployment: Grammarly for Teams
+Enterprise Deployment - Grammarly for Teams
 
 Organizations deploying Grammarly across hundreds of users face additional configuration challenges:
 
@@ -265,7 +265,7 @@ For IT teams managing Grammarly across many systems, this diagnostic script stre
 
 ```bash
 #!/bin/bash
-grammarly-diagnostics.sh - Comprehensive Grammarly health check
+grammarly-diagnostics.sh - complete Grammarly health check
 
 check_extension_version() {
     local browser=$1
@@ -350,7 +350,7 @@ Instead of running Grammarly on every website, configure it to work only where n
 
 This reduces CPU usage by 30-40% and eliminates interference with development tools.
 
-Comparison: Grammarly vs. Alternatives When It Fails
+Comparison - Grammarly vs. Alternatives When It Fails
 
 When Grammarly isn't working and you need immediate writing assistance:
 

@@ -138,7 +138,7 @@ content = generate_with_team_context(
 ```
 
 
-The key difference: Grammarly focuses on correcting existing content, while ChatGPT generates new content based on prompts.
+The key difference - Grammarly focuses on correcting existing content, while ChatGPT generates new content based on prompts.
 
 
 Administrative Features for IT Teams
@@ -234,7 +234,7 @@ Grammarly explicitly states it doesn't use customer data for model training. Cha
 Practical Implementation Examples
 
 
-Scenario: Automating Documentation Review
+Scenario - Automating Documentation Review
 
 
 Using Grammarly:
@@ -306,7 +306,7 @@ Provide:
 ```
 
 
-Scenario: Brand Voice Consistency
+Scenario - Brand Voice Consistency
 
 
 Grammarly Business allows defining brand voice profiles:

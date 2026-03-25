@@ -50,7 +50,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Set Up Your Java Library Project
+Step 1 - Set Up Your Java Library Project
 
 Start by defining your library's scope and purpose. Before writing code, articulate what problem your library solves and who your target users are. This clarity guides every subsequent decision.
 
@@ -85,7 +85,7 @@ Create your `pom.xml` or `build.gradle` file with appropriate dependencies. For 
 </project>
 ```
 
-Step 2: Designing Your Library API
+Step 2 - Designing Your Library API
 
 Effective Java libraries balance functionality with usability. Claude Code excels at helping you design intuitive APIs that follow Java conventions and best practices.
 
@@ -181,7 +181,7 @@ public final class Money {
 }
 ```
 
-Step 3: Test Your Library
+Step 3 - Test Your Library
 
 Testing ensures your library behaves correctly across different scenarios and Java versions.
 
@@ -228,7 +228,7 @@ void shouldHandleEmptyCollections() {
 }
 ```
 
-Step 4: Documentation Strategies
+Step 4 - Documentation Strategies
 
 Well-documented libraries gain adoption. Claude Code helps you create documentation that answers user questions proactively.
 
@@ -268,7 +268,7 @@ ObjectMapper customMapper = new ObjectMapper()
 JsonProcessor customProcessor = new JsonProcessor(customMapper);
 ```
 
-Step 5: Versioning and Release
+Step 5 - Versioning and Release
 
 Follow semantic versioning to communicate changes clearly:
 
@@ -280,19 +280,19 @@ Follow semantic versioning to communicate changes clearly:
 
 Document breaking changes in a CHANGELOG and provide migration guides for major version updates.
 
-Step 6: Use Claude Code for Iterative API Refinement
+Step 6 - Use Claude Code for Iterative API Refinement
 
 API design rarely comes out perfect on the first pass. Claude Code accelerates the iteration cycle by analyzing your existing API and suggesting improvements before you commit to a stable release.
 
-A practical workflow: write a first draft of your public API, then ask Claude Code to review it with specific questions like "Are the method names consistent?" or "Does the parameter ordering follow a predictable pattern?" Claude Code will surface inconsistencies that are easy to miss when you are close to the code.
+A practical workflow - write a first draft of your public API, then ask Claude Code to review it with specific questions like "Are the method names consistent?" or "Does the parameter ordering follow a predictable pattern?" Claude Code will surface inconsistencies that are easy to miss when you are close to the code.
 
 For example, if your library has a method `JsonProcessor.parseString(csv)` but elsewhere uses `CsvParser.fromText(input)`, Claude Code flags the naming inconsistency and suggests standardizing to one convention. Addressing these issues before v1.0 avoids painful migration guides later.
 
 Keep a dedicated `DESIGN_NOTES.md` file tracking API decisions and their rationale. When you revisit the API six months later, having this context prevents re-litigating decisions that were made deliberately.
 
-Step 7: Publish to Maven Central
+Step 7 - Publish to Maven Central
 
-Getting your library onto Maven Central makes it accessible to the broader Java ecosystem without requiring users to add custom repositories.
+Getting your library onto Maven Central makes it accessible to the broader Java environment without requiring users to add custom repositories.
 
 The publishing process requires:
 
@@ -325,7 +325,7 @@ Configure signing in your Maven build:
 
 Claude Code helps generate the full `pom.xml` with all required Central publishing metadata when you describe your library's purpose and provide your group ID.
 
-Step 8: Test Compatibility Across Java Versions
+Step 8 - Test Compatibility Across Java Versions
 
 Java library authors support multiple JVM versions simultaneously. Configure your test matrix to catch version-specific issues early:
 
@@ -359,7 +359,7 @@ steps:
 
 Claude Code can audit your codebase for APIs deprecated in newer Java versions, helping you address compatibility issues proactively rather than discovering them after a user files a bug report.
 
-Step 9: Handling Optional Dependencies Gracefully
+Step 9 - Handling Optional Dependencies Gracefully
 
 Libraries that integrate with optional external tools. logging frameworks, serialization libraries, HTTP clients. should not force those dependencies on users who do not need them.
 

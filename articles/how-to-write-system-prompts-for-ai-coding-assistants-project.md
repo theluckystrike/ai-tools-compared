@@ -62,7 +62,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Core Components of Effective System Prompts
+Step 1 - Core Components of Effective System Prompts
 
 Project Context and Technology Stack
 
@@ -99,7 +99,7 @@ structured responses.
 
 Practical Examples
 
-Example 1: React Component Development
+Example 1 - React Component Development
 
 When working with React components, specify your component structure, prop types, and state management approach.
 
@@ -147,7 +147,7 @@ export const Button: React.FC<ButtonProps> = memo(({
 });
 ```
 
-Example 2: Testing Conventions
+Example 2 - Testing Conventions
 
 Specify your testing framework, test file organization, and assertion patterns.
 
@@ -160,7 +160,7 @@ Use expect assertions with toBeTruthy, toEqual, and toHaveBeenCalled
 for verifying mock interactions.
 ```
 
-Step 2: Structuring System Prompts for Maximum Effectiveness
+Step 2 - Structuring System Prompts for Maximum Effectiveness
 
 Layer Your Instructions
 
@@ -181,8 +181,8 @@ Use Concrete Examples
 Include actual code examples from your project to illustrate expected patterns. Examples communicate your intent more precisely than abstract descriptions.
 
 ```
-Instead of: "Follow our error handling conventions"
-Use: "Follow the error handling pattern in controllers/auth.ts:
+Instead of - "Follow our error handling conventions"
+Use - "Follow the error handling pattern in controllers/auth.ts:
 try-catch blocks catch DomainError, log the error with logger.error,
 and return HTTP 400 for validation errors or HTTP 409 for conflict
 errors."
@@ -199,7 +199,7 @@ Do not commit console.log statements, use the logger service instead.
 Do not bypass TypeScript strict mode or add // @ts-ignore comments.
 ```
 
-Step 3: Maintaining and Evolving System Prompts
+Step 3 - Maintaining and Evolving System Prompts
 
 System prompts require ongoing refinement. As your project evolves, update prompts to reflect new conventions or changed requirements. Keep a living document of your project conventions that you can reference when crafting or updating system prompts.
 
@@ -207,7 +207,7 @@ Track which prompts produce consistently good results and which need adjustment.
 
 Remember that system prompts work best when they're specific without being overly verbose. Include enough detail to guide the AI effectively, but avoid overwhelming it with information it doesn't need for the task at hand.
 
-Step 4: Writing System Prompts for Specific Domains
+Step 4 - Writing System Prompts for Specific Domains
 
 The structure of a good system prompt shifts depending on what kind of code the AI will generate. A prompt optimized for backend API work differs substantially from one tuned for frontend component development or data pipeline scripts.
 
@@ -228,7 +228,7 @@ appropriate status codes for validation and authorization errors. Use
 async/await throughout; never write synchronous database calls.
 ```
 
-Step 5: Prompt Length and Specificity Trade-offs
+Step 5 - Prompt Length and Specificity Trade-offs
 
 Longer system prompts are not automatically better. Each additional rule the AI must hold in mind competes for attention with the actual coding task. A prompt covering 20 conventions produces code that follows 15 of them inconsistently. A prompt covering 8 conventions with concrete examples produces code that follows all 8 reliably.
 
@@ -236,7 +236,7 @@ The practical approach is to start with a core prompt covering your three or fou
 
 Split your prompt into sections with clear headers when it grows beyond 300 words. The AI handles structured text better than a wall of prose, and you can quickly locate and update individual sections as conventions evolve.
 
-Step 6: Store and Versioning System Prompts
+Step 6 - Store and Versioning System Prompts
 
 System prompts are project artifacts that should live in version control alongside your code. A common pattern is to store them in a `prompts/` directory at the repository root:
 

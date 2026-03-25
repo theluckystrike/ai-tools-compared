@@ -20,23 +20,23 @@ This guide provides an overview to help you understand and make informed decisio
 Table of Contents
 
 - [Understanding Inline Diff Preview](#understanding-inline-diff-preview)
-- [GitHub Copilot: Subtle Ghost Text](#github-copilot-subtle-ghost-text)
-- [Cursor: Composer Diff Preview](#cursor-composer-diff-preview)
-- [Windsurf: Cascade Diff Visualization](#windsurf-cascade-diff-visualization)
+- [GitHub Copilot - Subtle Ghost Text](#github-copilot-subtle-ghost-text)
+- [Cursor - Composer Diff Preview](#cursor-composer-diff-preview)
+- [Windsurf - Cascade Diff Visualization](#windsurf-cascade-diff-visualization)
 - [Practical Comparison by Use Case](#practical-comparison-by-use-case)
 - [Performance Considerations](#performance-considerations)
 - [Which Tool Provides the Best Inline Diff Preview?](#which-tool-provides-the-best-inline-diff-preview)
-- [GitHub Copilot vs Cursor: Real-World Benchmark](#github-copilot-vs-cursor-real-world-benchmark)
+- [GitHub Copilot vs Cursor - Real-World Benchmark](#github-copilot-vs-cursor-real-world-benchmark)
 - [Configuring Copilot for Private Repositories](#configuring-copilot-for-private-repositories)
 - [Detailed Comparison Table](#detailed-comparison-table)
 - [Practical Workflow Comparison](#practical-workflow-comparison)
 - [Real-World Performance Testing](#real-world-performance-testing)
 - [Keyboard Shortcuts Comparison](#keyboard-shortcuts-comparison)
 - [Detailed Cost Analysis](#detailed-cost-analysis)
-- [Integration Examples: Adding to Your Workflow](#integration-examples-adding-to-your-workflow)
+- [Integration Examples - Adding to Your Workflow](#integration-examples-adding-to-your-workflow)
 - [When Each Tool Excels](#when-each-tool-excels)
 - [Transitioning Between Tools](#transitioning-between-tools)
-- [Benchmark: 1-Hour Coding Session](#benchmark-1-hour-coding-session)
+- [Benchmark - 1-Hour Coding Session](#benchmark-1-hour-coding-session)
 
 Understanding Inline Diff Preview
 
@@ -44,7 +44,7 @@ Inline diff preview shows you the exact differences between your current code an
 
 The three tools take distinct approaches to presenting these previews, each with tradeoffs between visibility, performance, and integration depth.
 
-GitHub Copilot: Subtle Ghost Text
+GitHub Copilot - Subtle Ghost Text
 
 GitHub Copilot uses ghost text as its primary suggestion mechanism. When Copilot suggests code, it appears as faded gray text following your cursor position. The ghost text represents the complete suggestion, but Copilot does not display a traditional diff view.
 
@@ -68,7 +68,7 @@ Copilot Chat provides more detailed diff views when discussing code changes in c
 
 For developers who need explicit diff previews, Copilot's inline suggestions fall short. The ghost text shows what will be inserted but provides no highlights indicating deletions or modifications to existing code.
 
-Cursor: Composer Diff Preview
+Cursor - Composer Diff Preview
 
 Cursor offers the most sophisticated inline diff preview system through its Composer feature. When using Composer to generate multi-file changes or significant refactoring, Cursor presents a diff view.
 
@@ -103,7 +103,7 @@ When Cursor generates inline edits (using Ctrl+K or Cmd+K), the tool shows a pre
 
 Cursor also supports "Apply" at different granularities, you can accept an entire suggestion or apply changes file-by-file when multiple files are involved.
 
-Windsurf: Cascade Diff Visualization
+Windsurf - Cascade Diff Visualization
 
 Windsurf, developed by Codeium, provides diff preview through its Cascade agent. When Cascade proposes code changes across files, it displays a unified diff view in the sidebar.
 
@@ -146,12 +146,12 @@ Choose Copilot if you prefer minimal interface intrusion and rely on pattern rec
 
 Choose Windsurf if you want a middle ground, detailed diffs available on demand without cluttering the editing experience for simple suggestions.
 
-GitHub Copilot vs Cursor: Real-World Benchmark
+GitHub Copilot vs Cursor - Real-World Benchmark
 
 Comparing AI coding assistants on real tasks reveals meaningful differences in suggestion quality and workflow integration.
 
 ```python
-Test task: implement a binary search tree with deletion
+Test task - implement a binary search tree with deletion
 Both tools were given the same prompt:
 "Implement a BST with insert, search, and delete operations in Python"
 
@@ -220,7 +220,7 @@ Disable telemetry in VS Code settings.json:
     "github.copilot.telemetry.enable": false
 }
 
-For organizations: disable Copilot training on org repos
+For organizations - disable Copilot training on org repos
 GitHub Org Settings -> Copilot -> Policies
 "Allow GitHub to use my code snippets for product improvements" -> Disabled
 
@@ -250,7 +250,7 @@ Detailed Comparison Table
 
 Practical Workflow Comparison
 
-Scenario: Add TypeScript Type Guards to 3 Functions
+Scenario - Add TypeScript Type Guards to 3 Functions
 
 Using Copilot Ghost Text:
 ```typescript
@@ -263,7 +263,7 @@ function processData(data: any) {
 }
 ```
 
-Workflow: Accept suggestions line-by-line, no visual comparison. Requires reading generated code carefully.
+Workflow - Accept suggestions line-by-line, no visual comparison. Requires reading generated code carefully.
 
 Using Cursor Composer:
 ```typescript
@@ -275,7 +275,7 @@ Using Cursor Composer:
 //    // ... rest of function
 ```
 
-Workflow: Review full diff before accepting. Accept all or accept per-hunk. Clear visual feedback.
+Workflow - Review full diff before accepting. Accept all or accept per-hunk. Clear visual feedback.
 
 Using Windsurf Cascade:
 ```typescript
@@ -285,7 +285,7 @@ Using Windsurf Cascade:
 // Apply button is always visible
 ```
 
-Workflow: Changes proposed off to the side, no interruption to editing area.
+Workflow - Changes proposed off to the side, no interruption to editing area.
 
 Real-World Performance Testing
 
@@ -298,7 +298,7 @@ All three tools tested on a MacBook Pro (M1) with ~1000-line TypeScript file:
 | Accept/reject decision | 50ms | 100ms | 100ms |
 | Full editing session latency | Minimal | Minimal | Minimal |
 
-Outcome: Copilot fastest for single suggestions, Cursor/Windsurf minimal overhead for diff rendering.
+Outcome - Copilot fastest for single suggestions, Cursor/Windsurf minimal overhead for diff rendering.
 
 Keyboard Shortcuts Comparison
 
@@ -330,18 +330,18 @@ Up/Down                      # Navigate diffs
 
 Detailed Cost Analysis
 
-Copilot: $10, 20/month
+Copilot - $10, 20/month
 - VS Code: $10/month
 - GitHub Pro bundle: $4/month (includes Copilot)
 - JetBrains: varies by IDE, ~$15, 20/month
 - Best value if: you use multiple GitHub features
 
-Cursor: $20/month
+Cursor - $20/month
 - Unlimited slow requests
 - 500 fast requests/month
 - Best value if: dedicated coding assistant is your primary focus
 
-Windsurf: $30/month
+Windsurf - $30/month
 - Includes Cascade agent (multi-file edits)
 - Unlimited requests
 - Best value if: you need aggressive multi-file automation
@@ -351,7 +351,7 @@ Break-even analysis:
 - Cursor ROI: Breakeven at ~5 hours/month of productivity gain
 - Windsurf ROI: Breakeven at ~8 hours/month of productivity gain
 
-Integration Examples: Adding to Your Workflow
+Integration Examples - Adding to Your Workflow
 
 Copilot + Terminal
 
@@ -431,15 +431,15 @@ From Copilot to Windsurf:
 - Similar migration path, but `.windsurf/rules` replaces `.cursor/rules`
 - Windsurf rules are more powerful (support context injection)
 
-Benchmark: 1-Hour Coding Session
+Benchmark - 1-Hour Coding Session
 
-Test all three on the same task: Add new feature with 5 files touched.
+Test all three on the same task - Add new feature with 5 files touched.
 
-Copilot result: 8 suggestions, ~3 accepted. 45 minutes total. 2 fixes needed afterward.
+Copilot result - 8 suggestions, ~3 accepted. 45 minutes total. 2 fixes needed afterward.
 
-Cursor result: 5 suggestions with full diffs shown. 38 minutes total. 1 minor fix needed.
+Cursor result - 5 suggestions with full diffs shown. 38 minutes total. 1 minor fix needed.
 
-Windsurf result: 3 Cascade operations (multi-file). 32 minutes total. No fixes needed; Cascade caught edge case.
+Windsurf result - 3 Cascade operations (multi-file). 32 minutes total. No fixes needed; Cascade caught edge case.
 
 For complex multi-file changes, Cascade (Windsurf) is most efficient. For simple edits, Copilot is fastest.
 

@@ -30,7 +30,7 @@ Table of Contents
 - [Error Handling Across Versions](#error-handling-across-versions)
 - [Testing Version-Specific Code](#testing-version-specific-code)
 - [Best Practices Summary](#best-practices-summary)
-- [Current Status (Last updated: 2026-03-20)](#current-status-last-updated-2026-03-20)
+- [Current Status (Last updated - 2026-03-20)](#current-status-last-updated-2026-03-20)
 - [Version Selection Rules](#version-selection-rules)
 - [v3 Key Differences from v2](#v3-key-differences-from-v2)
 - [Breaking Changes History](#breaking-changes-history)
@@ -56,7 +56,7 @@ Current Version
 - Deprecated: v1 (sunset date: 2026-06-01)
 
 Versioning Method
-URL-based: /api/v1/, /api/v2/
+URL-based - /api/v1/, /api/v2/
 ```
 
 This structure immediately tells an AI assistant which version to use and which ones to avoid. Include clear indicators of deprecated versions with sunset dates to prevent the AI from generating code that uses outdated endpoints.
@@ -132,7 +132,7 @@ Complete CLAUDE.md Example for Versioning
 ```markdown
 API Versioning Guide for AI Assistants
 
-Current Status (Last updated: 2026-03-20)
+Current Status (Last updated - 2026-03-20)
 - Active version: v3
 - Recommended for new projects: v3
 - In maintenance mode: v2 (sunset: 2026-09-01)

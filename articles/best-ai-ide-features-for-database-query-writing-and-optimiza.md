@@ -76,9 +76,9 @@ FROM oredrs
 WHERE orer_id = 123;
 
 -- Real-time feedback:
--- Error: Table 'oredrs' does not exist. Did you mean 'orders'?
--- Error: Column 'oder_id' does not exist. Did you mean 'order_id'?
--- Error: Column 'prodct_name' does not exist. Did you mean 'product_name'?
+-- Error - Table 'oredrs' does not exist. Did you mean 'orders'?
+-- Error - Column 'oder_id' does not exist. Did you mean 'order_id'?
+-- Error - Column 'prodct_name' does not exist. Did you mean 'product_name'?
 ```
 
 This goes beyond simple syntax checking. The IDE validates that:
@@ -151,7 +151,7 @@ Natural Language to SQL
 Some IDEs now support describing what you want in plain English and generating the corresponding SQL:
 
 ```
-User: "Show me all users who placed orders in the last 30 days
+User - "Show me all users who placed orders in the last 30 days
        but haven't made a purchase in the last 90 days"
 
 AI generates:
@@ -230,7 +230,7 @@ def get_orders_with_users(request):
         })
     return JsonResponse({'orders': result})
 
-AI suggestion: use select_related to JOIN in a single query
+AI suggestion - use select_related to JOIN in a single query
 def get_orders_with_users(request):
     orders = Order.objects.select_related('user').all()  # 1 query total
     result = [

@@ -29,7 +29,7 @@ Why Context Management Matters Across Repositories
 
 When you work with multiple repositories that share code, libraries, or domain logic, AI assistants need to understand the relationships between them. A typical scenario involves a shared library repository used by several service repositories, or a monorepo split into separate Git repositories over time. Without proper context management, AI tools generate code that conflicts with existing patterns or duplicate functionality that already exists elsewhere.
 
-The core issue is that each repository operates in isolation from the AI's perspective. Your AI assistant does not automatically know about the other repositories in your ecosystem unless you explicitly provide that context. This means you need strategies to bridge that gap effectively.
+The core issue is that each repository operates in isolation from the AI's perspective. Your AI assistant does not automatically know about the other repositories in your environment unless you explicitly provide that context. This means you need strategies to bridge that gap effectively.
 
 Prerequisites
 
@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Strategy 1: Centralized Context Documentation
+Step 1 - Strategy 1: Centralized Context Documentation
 
 Create a master context file that lives in your primary repository or a dedicated docs repository. This file should document the repository relationships, shared dependencies, and architectural decisions that span across all your projects.
 
@@ -59,12 +59,12 @@ Shared patterns:
 - API responses use shared-lib/ApiResponse<T>
 - Authentication via common-utils/auth
 
-See central-docs: /architecture/overview for full context
+See central-docs - /architecture/overview for full context
 ```
 
 Update this file whenever you add new cross-repository dependencies or change integration patterns.
 
-Step 2: Strategy 2: Git Submodules for Shared Code
+Step 2 - Strategy 2: Git Submodules for Shared Code
 
 If you have shared code that lives in separate repositories, Git submodules provide a clean way to keep that code accessible within each dependent repository. Your AI assistant can then reference the submodule directly.
 
@@ -80,10 +80,10 @@ After adding submodules, tell your AI assistant where to find shared code:
 
 ```
 This project uses libs/shared-lib for common data models.
-Import path: from libs.shared_lib import DataModel
+Import path - from libs.shared_lib import DataModel
 ```
 
-Step 3: Strategy 3: for Complex Features
+Step 3 - Strategy 3: for Complex Features
 
 When working on a feature that spans multiple repositories, create a context snapshot that captures the relevant code from each repository. This is particularly useful for cross-cutting concerns like authentication, logging, or data models.
 
@@ -108,7 +108,7 @@ async def verify_token(token: str) -> User:
 
 Reference this file when discussing feature implementation with your AI assistant. Update the snapshot as you make changes across repositories.
 
-Step 4: Strategy 4: Consistent Project Structure
+Step 4 - Strategy 4: Consistent Project Structure
 
 AI assistants provide better suggestions when projects follow consistent patterns. Establish a template or scaffold that all your repositories use, then reference this standard in your context documentation.
 
@@ -125,9 +125,9 @@ config/        # Configuration files
 
 Your AI assistant will make fewer structural mistakes when working across repositories.
 
-Step 5: Strategy 5: in AI Commands
+Step 5 - Strategy 5: in AI Commands
 
-Most AI coding assistants support custom instructions or system prompts. Configure your editor or CLI to include persistent context about your repository ecosystem.
+Most AI coding assistants support custom instructions or system prompts. Configure your editor or CLI to include persistent context about your repository environment.
 
 For Claude Code, create a `CLAUDE.md` file in your project root:
 
@@ -139,7 +139,7 @@ This repository is part of a microservices architecture:
 - User service: github.com/yourorg/user-service
 - Billing service: github.com/yourorg/billing-service
 
-Shared library: github.com/yourorg/platform-lib
+Shared library - github.com/yourorg/platform-lib
 
 All services:
 - Use platform-lib for database operations
@@ -150,7 +150,7 @@ All services:
 
 The AI assistant reads this file automatically and applies the context to all conversations.
 
-Step 6: Strategy 6: Repository Tags and References
+Step 6 - Strategy 6: Repository Tags and References
 
 When discussing code with your AI assistant, be explicit about which repository you mean. Use a consistent naming convention:
 
@@ -162,7 +162,7 @@ When discussing code with your AI assistant, be explicit about which repository 
 
 This makes it clear which codebase you are referring to, especially when similar class names or functions exist in multiple repositories.
 
-Step 7: Putting It All Together
+Step 7 - Putting It All Together
 
 Effective context management across multiple repositories requires combining these strategies. Start by documenting your repository relationships in a central location. Use submodules for shared code that you actively develop. Create context snapshots for feature work that spans repositories. Maintain consistent project structures. Configure persistent instructions in your AI tools.
 
@@ -174,8 +174,8 @@ For complex multi-repo features, create more detailed context snapshots:
 
 ```python
 context_snapshot.py
-Snapshot created: 2026-03-20
-Feature: Add OAuth 2.0 authentication across all services
+Snapshot created - 2026-03-20
+Feature - Add OAuth 2.0 authentication across all services
 
 From auth-service/models.py (commit: a1b2c3d)
 class OAuth2Provider:
@@ -187,7 +187,7 @@ class OAuth2Provider:
         """Exchange authorization code for access token"""
         pass
 
-From shared-lib/auth.py (commit: e4f5g6h)
+From shared-lib/auth.py (commit - e4f5g6h)
 def validate_oauth_token(token: str, provider: str) -> Dict:
     """Validate OAuth token and return user info"""
     cache_key = f"oauth:{provider}:{token}"
@@ -206,26 +206,26 @@ async def oauth_callback(code: str, provider: str):
 
 This snapshot shows the exact contracts and signatures across repositories, preventing incompatibilities.
 
-Step 8: Context Management for Microservices
+Step 8 - Context Management for Microservices
 
 Microservice architectures require special context handling:
 
 ```markdown
 Microservices Context
 
-Step 9: Service Communication
+Step 9 - Service Communication
 - All services use REST over HTTP with JSON
 - Service discovery via Consul
 - Timeouts: 5s for internal, 30s for external APIs
 - Retry logic: exponential backoff up to 3 attempts
 
-Step 10: Data Models
+Step 10 - Data Models
 - User service owns User model
 - Order service owns Order model
 - Events published to message queue for cross-service updates
 - No direct database access between services
 
-Step 11: Common Patterns
+Step 11 - Common Patterns
 - Saga pattern for distributed transactions
 - Event sourcing for audit trail
 - Circuit breaker for failing services
@@ -234,7 +234,7 @@ Step 11: Common Patterns
 
 When working across microservices, this context prevents the AI from suggesting inappropriate tight coupling.
 
-Step 12: Version Management Across Repos
+Step 12 - Version Management Across Repos
 
 Track which versions of dependencies are used across services:
 
@@ -262,31 +262,31 @@ Documentation Requirements for Multi-Repo Features
 Create a feature documentation template for cross-repo changes:
 
 ```markdown
-Feature: [Feature Name]
+Feature - [Feature Name]
 
-Step 13: Affected Repositories
+Step 13 - Affected Repositories
 - [shared-lib]: Updated models and validators
 - [auth-service]: New OAuth provider support
 - [api-gateway]: New authentication endpoints
 
-Step 14: Dependencies Between Repos
+Step 14 - Dependencies Between Repos
 1. shared-lib changes must be merged first (1 day buffer for integration)
 2. auth-service can proceed once shared-lib is released
 3. api-gateway depends on auth-service being deployed
 
-Step 15: Test Strategy
+Step 15 - Test Strategy
 - Unit tests in each repository
 - Integration tests in api-gateway (tests all services)
 - E2E tests verify entire flow end-to-end
 - Staging deployment verification before production
 
-Step 16: Rollback Plan
+Step 16 - Rollback Plan
 - If api-gateway fails: revert to previous version (5 min)
 - If auth-service fails: fall back to legacy auth (immediate)
 - If shared-lib fails: requires full rollback of all services (15 min)
 ```
 
-Step 17: Manage Context Window Limits
+Step 17 - Manage Context Window Limits
 
 With multiple repos, you can easily exceed AI context windows. Manage this by:
 
@@ -314,7 +314,7 @@ IGNORE:
 
 This helps the AI focus on the most important context within window limits.
 
-Step 18: Automated Context Updates
+Step 18 - Automated Context Updates
 
 Create a system to automatically update context documentation:
 
@@ -342,26 +342,26 @@ done
 
 Run this as a CI job to catch context issues before they cause problems.
 
-Step 19: Communication With Your Team
+Step 19 - Communication With Your Team
 
 Document the context management approach so teammates understand it:
 
 ```markdown
 Context Management for Multi-Repo Development
 
-Step 20: When starting work on a feature:
+Step 20 - When starting work on a feature:
 1. Check CONTEXT.md for repository relationships
 2. Review versions.txt to confirm compatible versions
 3. If working across multiple repos, create a snapshot of key files
 4. Specify your scope to the AI tool (focus on these repos, ignore those)
 
-Step 21: When adding new repositories:
+Step 21 - When adding new repositories:
 1. Document dependencies in CONTEXT.md
 2. Add version constraints in versions.txt
 3. Update CI checks for broken imports
 4. Review with team before first use
 
-Step 22: When you discover an issue:
+Step 22 - When you discover an issue:
 1. Update CONTEXT.md immediately
 2. Notify team in Slack
 3. Add to "known issues" section

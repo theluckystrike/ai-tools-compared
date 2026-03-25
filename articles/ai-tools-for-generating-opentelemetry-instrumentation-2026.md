@@ -25,7 +25,7 @@ Table of Contents
 - [Key Instrumentation Metrics to Capture](#key-instrumentation-metrics-to-capture)
 - [Exporter Configuration Comparison](#exporter-configuration-comparison)
 - [Challenges and Limitations](#challenges-and-limitations)
-- [Sampling Strategy: Instrument Everything, Export Selectively](#sampling-strategy-instrument-everything-export-selectively)
+- [Sampling Strategy - Instrument Everything, Export Selectively](#sampling-strategy-instrument-everything-export-selectively)
 - [Propagating Business Context Through Spans](#propagating-business-context-through-spans)
 
 AI Tools for OpenTelemetry Instrumentation Generation
@@ -43,11 +43,11 @@ Strengths:
 - Handles context propagation correctly between microservices
 - Suggests appropriate exporter configuration (Jaeger, Honeycomb, Datadog)
 
-Pricing: Claude API: $3-$15 per million input tokens (Claude 3.5 Sonnet), $15/$45 for Opus 4.6.
+Pricing - Claude API: $3-$15 per million input tokens (Claude 3.5 Sonnet), $15/$45 for Opus 4.6.
 
 Real Example - Python OTel Instrumentation:
 
-Request: Generate FastAPI instrumentation with automatic span creation for database queries.
+Request - Generate FastAPI instrumentation with automatic span creation for database queries.
 
 Claude generates:
 ```python
@@ -100,7 +100,7 @@ Claude explains:
 - Manual span context with `tracer.start_as_current_span()` for business logic
 - Prometheus metrics exposed on port 8000 automatically
 
-Use Case: Production teams, complex distributed systems, teams needing multi-language support.
+Use Case - Production teams, complex distributed systems, teams needing multi-language support.
 
 GPT-4 (OpenAI)
 
@@ -118,7 +118,7 @@ Weaknesses:
 - Less detailed about exporter configuration trade-offs
 - May suggest redundant instrumentation
 
-Pricing: GPT-4o: $2.50/$10 per million tokens. GPT-4 Turbo: $10/$30 per million tokens.
+Pricing - GPT-4o: $2.50/$10 per million tokens. GPT-4 Turbo - $10/$30 per million tokens.
 
 Real Example - Go OTel Instrumentation:
 
@@ -180,7 +180,7 @@ GPT-4 provides:
 - Proper defer span.End() cleanup
 - Context propagation from HTTP request
 
-Use Case: API teams, Go microservices, teams familiar with OpenAI API.
+Use Case - API teams, Go microservices, teams familiar with OpenAI API.
 
 GitHub Copilot (Microsoft)
 
@@ -199,7 +199,7 @@ Weaknesses:
 - Limited explanation of instrumentation decisions
 - Context window limited to recent file changes
 
-Pricing: Free with GitHub Pro ($4/month). Enterprise: $19-$40/user/month.
+Pricing - Free with GitHub Pro ($4/month). Enterprise - $19-$40/user/month.
 
 Real Example - Java OTel Instrumentation:
 
@@ -250,7 +250,7 @@ Copilot provides:
 - Span builder pattern
 - No need for SDK initialization (uses GlobalOpenTelemetry)
 
-Use Case: Individual developers, rapid prototyping, teams in GitHub/VS Code ecosystem.
+Use Case - Individual developers, rapid prototyping, teams in GitHub/VS Code environment.
 
 Comparison Table
 
@@ -276,7 +276,7 @@ Real-World Instrumentation Workflow
 
 Common Instrumentation Patterns
 
-Pattern 1: Database Query Tracing
+Pattern 1 - Database Query Tracing
 ```python
 with tracer.start_as_current_span("db.query") as span:
     span.set_attribute("db.statement", "SELECT...")
@@ -285,7 +285,7 @@ with tracer.start_as_current_span("db.query") as span:
     span.set_attribute("db.row_count", len(results))
 ```
 
-Pattern 2: HTTP Request Tracing
+Pattern 2 - HTTP Request Tracing
 ```go
 _, span := tracer.Start(ctx, "http.request")
 defer span.End()
@@ -297,7 +297,7 @@ span.SetAttributes(
 )
 ```
 
-Pattern 3: Cache Hit/Miss Metrics
+Pattern 3 - Cache Hit/Miss Metrics
 ```python
 cache_hits = meter.create_counter("cache.hits")
 cache_misses = meter.create_counter("cache.misses")
@@ -336,7 +336,7 @@ All AI tools struggle with:
 - Database connection pool instrumentation
 - Distributed trace sampling decisions
 
-Sampling Strategy: Instrument Everything, Export Selectively
+Sampling Strategy - Instrument Everything, Export Selectively
 
 One mistake teams make when adopting OTel is exporting 100% of traces in production. At meaningful scale, this floods your backend with data and generates significant cost. AI tools are helpful for generating sampling configuration, but they rarely mention this context.
 

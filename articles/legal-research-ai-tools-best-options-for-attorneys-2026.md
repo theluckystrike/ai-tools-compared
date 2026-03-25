@@ -42,7 +42,7 @@ Legal research has undergone a significant transformation with the integration o
 
 Why Legal Research AI Matters in 2026
 
-The legal industry generates enormous volumes of documents daily. Court filings, precedents, statutes, and regulatory updates create a complex information ecosystem that traditional search methods struggle to navigate efficiently. AI-powered legal research tools address this challenge by using natural language processing to understand legal concepts rather than just matching keywords.
+The legal industry generates enormous volumes of documents daily. Court filings, precedents, statutes, and regulatory updates create a complex information environment that traditional search methods struggle to navigate efficiently. AI-powered legal research tools address this challenge by using natural language processing to understand legal concepts rather than just matching keywords.
 
 Modern legal AI tools can analyze semantic relationships between cases, identify hidden patterns in judicial reasoning, and surface relevant precedents that manual searches might miss. For developers building legal applications, understanding these tools' capabilities and integration options becomes essential for creating effective solutions.
 
@@ -232,11 +232,11 @@ Making the Right Choice
 
 Selecting the right legal research AI tool depends on several factors:
 
-For Large Law Firms: Westlaw Edge and LexisNexis+ AI offer enterprise features with strong integration capabilities, justified by their higher price points.
+For Large Law Firms - Westlaw Edge and LexisNexis+ AI offer enterprise features with strong integration capabilities, justified by their higher price points.
 
-For Solo Practitioners and Small Firms: CaseText CoCounsel provides excellent value with its pricing structure and intuitive interface.
+For Solo Practitioners and Small Firms - CaseText CoCounsel provides excellent value with its pricing structure and intuitive interface.
 
-For Custom Solutions: Open-source approaches using vector databases enable building tailored systems, though they require more development investment.
+For Custom Solutions - Open-source approaches using vector databases enable building tailored systems, though they require more development investment.
 
 All three major platforms offer API access, making it possible to build custom workflows that use their underlying AI capabilities while maintaining your own user interface and processes.
 
@@ -300,8 +300,8 @@ class LegalResearchAssistant:
         """Analyze legal question and suggest research strategy."""
 
         system_prompt = f"""You are a legal research specialist.
-Jurisdiction: {jurisdiction}
-Practice Area: {practice_area}
+Jurisdiction - {jurisdiction}
+Practice Area - {practice_area}
 
 When given a legal question:
 1. Identify key legal concepts

@@ -22,12 +22,12 @@ Writing API documentation remains one of the most time-consuming tasks in softwa
 Table of Contents
 
 - [Understanding the Documentation Challenge](#understanding-the-documentation-challenge)
-- [Strategy One: Generate Documentation from Code Annotations](#strategy-one-generate-documentation-from-code-annotations)
-- [Strategy Two: Use AI for Consistency Across Endpoints](#strategy-two-use-ai-for-consistency-across-endpoints)
-- [Strategy Three: Generate Practical Code Examples](#strategy-three-generate-practical-code-examples)
-- [Strategy Four: Implement Documentation-as-Code Workflows](#strategy-four-implement-documentation-as-code-workflows)
-- [Strategy Five: Validate Documentation Against Implementation](#strategy-five-validate-documentation-against-implementation)
-- [Strategy Six: Maintain Documentation Through Code Reviews](#strategy-six-maintain-documentation-through-code-reviews)
+- [Strategy One - Generate Documentation from Code Annotations](#strategy-one-generate-documentation-from-code-annotations)
+- [Strategy Two - Use AI for Consistency Across Endpoints](#strategy-two-use-ai-for-consistency-across-endpoints)
+- [Strategy Three - Generate Practical Code Examples](#strategy-three-generate-practical-code-examples)
+- [Strategy Four - Implement Documentation-as-Code Workflows](#strategy-four-implement-documentation-as-code-workflows)
+- [Strategy Five - Validate Documentation Against Implementation](#strategy-five-validate-documentation-against-implementation)
+- [Strategy Six - Maintain Documentation Through Code Reviews](#strategy-six-maintain-documentation-through-code-reviews)
 - [Best Practices for AI-Assisted Documentation](#best-practices-for-ai-assisted-documentation)
 - [Measuring Documentation Quality](#measuring-documentation-quality)
 - [AI Documentation Pitfalls to Avoid](#ai-documentation-pitfalls-to-avoid)
@@ -38,7 +38,7 @@ API documentation must cover multiple dimensions: endpoint descriptions, request
 
 AI tools can assist in several ways: generating initial documentation from code, suggesting improvements to existing content, maintaining consistency across endpoints, and creating practical code examples. The key lies in understanding which tasks AI handles well and where human oversight remains essential.
 
-Strategy One: Generate Documentation from Code Annotations
+Strategy One - Generate Documentation from Code Annotations
 
 Modern API frameworks like FastAPI, Express, and Spring support decorators and annotations that describe endpoint behavior. AI tools can parse these annotations and generate structured documentation.
 
@@ -82,7 +82,7 @@ async def create_user(
 
 AI can transform these type hints and decorators into OpenAPI documentation automatically. Tools like Swagger UI and Redoc then render interactive documentation from the generated spec.
 
-Strategy Two: Use AI for Consistency Across Endpoints
+Strategy Two - Use AI for Consistency Across Endpoints
 
 One common problem in API documentation is inconsistent terminology and formatting. AI tools excel at applying consistent patterns across multiple endpoints.
 
@@ -106,7 +106,7 @@ When documenting error responses, establish a standard format:
 
 AI can generate similar error structures for all endpoints, ensuring developers receive consistent error information regardless of which endpoint they call.
 
-Strategy Three: Generate Practical Code Examples
+Strategy Three - Generate Practical Code Examples
 
 Code examples form the backbone of useful API documentation. AI can generate examples in multiple programming languages from a single specification.
 
@@ -147,7 +147,7 @@ response = requests.post(
 )
 ```
 
-Strategy Four: Implement Documentation-as-Code Workflows
+Strategy Four - Implement Documentation-as-Code Workflows
 
 Integrating AI-generated documentation into version control ensures traceability and review processes. Store OpenAPI specifications alongside code:
 
@@ -184,7 +184,7 @@ paths:
                 $ref: '#/components/schemas/User'
 ```
 
-Strategy Five: Validate Documentation Against Implementation
+Strategy Five - Validate Documentation Against Implementation
 
 AI can cross-reference documentation with actual code behavior. Static analysis tools compare endpoint implementations against their documented contracts, flagging discrepancies before they reach production.
 
@@ -216,7 +216,7 @@ class EndpointValidator:
             return False
 ```
 
-Strategy Six: Maintain Documentation Through Code Reviews
+Strategy Six - Maintain Documentation Through Code Reviews
 
 AI-assisted code reviews can include documentation checks. When developers submit changes, AI can verify:
 

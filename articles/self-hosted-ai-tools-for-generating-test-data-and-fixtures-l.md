@@ -69,7 +69,7 @@ from llamafill import FixtureGenerator
 generator = FixtureGenerator(schema="./models/user.schema.json")
 users = generator.generate(count=100, locale="en_US")
 
-Output: List[dict] with valid emails, phone numbers, addresses
+Output - List[dict] with valid emails, phone numbers, addresses
 ```
 
 LlamaFill excels at respecting data types and relationships. If your schema defines a foreign key relationship, generated records maintain referential integrity. The tool supports Faker-like patterns and can inject edge cases automatically.
@@ -360,7 +360,7 @@ Teams successfully using self-hosted fixture generation follow these patterns. F
 }
 ```
 
-Second, the layered approach: use FakerAI for rapid prototyping, switch to LlamaFill for integration tests, and run DataForge for full relational datasets in end-to-end tests. This balances speed with coverage:
+Second, the layered approach - use FakerAI for rapid prototyping, switch to LlamaFill for integration tests, and run DataForge for full relational datasets in end-to-end tests. This balances speed with coverage:
 
 ```python
 test_unit.py - Fast, simple fixtures
@@ -383,8 +383,8 @@ Prompt Engineering for Better Outputs
 
 When using TestGPT Local or general-purpose LLMs for fixture generation, prompt structure matters significantly. Specific, detailed prompts produce better results:
 
-Poor prompt: "Generate users"
-Better prompt: "Generate 100 user records for a healthcare application. Include: patient_id (UUID v4), full_name (realistic names, mixed gender), date_of_birth (ages 18-95, realistic distribution), insurance_provider (one of: Medicare, Medicaid, BlueCross, Aetna, UnitedHealth), medical_record_number (8-digit numeric ID, no duplicates), emergency_contact (nested object with name and phone fields). Format as JSON array."
+Poor prompt - "Generate users"
+Better prompt - "Generate 100 user records for a healthcare application. Include - patient_id (UUID v4), full_name (realistic names, mixed gender), date_of_birth (ages 18-95, realistic distribution), insurance_provider (one of: Medicare, Medicaid, BlueCross, Aetna, UnitedHealth), medical_record_number (8-digit numeric ID, no duplicates), emergency_contact (nested object with name and phone fields). Format as JSON array."
 
 The detailed prompt eliminates ambiguity and typically produces usable output on the first try.
 

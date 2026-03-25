@@ -23,7 +23,7 @@ Table of Contents
 - [Top AI Assistants for Grafana Panel Development](#top-ai-assistants-for-grafana-panel-development)
 - [AI Assistant Comparison Table](#ai-assistant-comparison-table)
 - [Practical Examples](#practical-examples)
-- [Step-by-Step: Using an AI Assistant for a New Dashboard](#step-by-step-using-an-ai-assistant-for-a-new-dashboard)
+- [Step-by-Step - Using an AI Assistant for a New Dashboard](#step-by-step-using-an-ai-assistant-for-a-new-dashboard)
 - [Choosing the Right Tool](#choosing-the-right-tool)
 - [Best Practices](#best-practices)
 
@@ -55,7 +55,7 @@ Prompt:
 
 ```
 Create a Grafana panel showing error rate as a percentage of total requests.
-My Prometheus metrics are: http_requests_total (label: status, endpoint)
+My Prometheus metrics are - http_requests_total (label: status, endpoint)
 and http_requests_errors_total (label: status, endpoint).
 ```
 
@@ -161,7 +161,7 @@ For greenfield dashboard development with complex PromQL, Claude or Cursor provi
 
 Practical Examples
 
-Example 1: CPU Utilization Panel
+Example 1 - CPU Utilization Panel
 
 Building a CPU usage panel requires the right PromQL and panel settings:
 
@@ -177,7 +177,7 @@ This query calculates CPU usage percentage by taking idle time and subtracting f
 
 - Set appropriate rate intervals (1m, 5m, 15m)
 
-Example 2: Memory Usage with Thresholds
+Example 2 - Memory Usage with Thresholds
 
 For memory panels with warning and critical thresholds:
 
@@ -205,7 +205,7 @@ An AI can help you configure Grafana field configurations:
 }
 ```
 
-Example 3: Custom Ratio Queries
+Example 3 - Custom Ratio Queries
 
 When you need to calculate custom ratios between metrics:
 
@@ -218,7 +218,7 @@ sum(rate(api_requests_total{service="auth"}[5m]))
 
 AI assistants help ensure you use matching labels and appropriate rate intervals for both metrics.
 
-Example 4: SLO Burn Rate Panel
+Example 4 - SLO Burn Rate Panel
 
 Burn rate panels are among the trickiest to write correctly. AI assistants reduce iteration time significantly here. A 1-hour burn rate alert for a 99.9% SLO looks like this:
 
@@ -232,7 +232,7 @@ Burn rate panels are among the trickiest to write correctly. AI assistants reduc
 
 When the burn rate exceeds 14, your error budget for a 30-day window will be exhausted in under 2 hours. Ask an AI assistant to generate both the fast-burn (1h/5m window pair) and slow-burn (6h/30m window pair) queries for a complete SLO alert setup.
 
-Step-by-Step: Using an AI Assistant for a New Dashboard
+Step-by-Step - Using an AI Assistant for a New Dashboard
 
 Here is a repeatable workflow for building Grafana panels with AI assistance.
 

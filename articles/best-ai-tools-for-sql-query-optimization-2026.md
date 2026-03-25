@@ -26,7 +26,7 @@ Table of Contents
 - [Key Metrics to Monitor](#key-metrics-to-monitor)
 - [Limitations and Caveats](#limitations-and-caveats)
 - [Advanced Optimization Techniques](#advanced-optimization-techniques)
-- [AI Tool Comparison: Pricing and Value Analysis](#ai-tool-comparison-pricing-and-value-analysis)
+- [AI Tool Comparison - Pricing and Value Analysis](#ai-tool-comparison-pricing-and-value-analysis)
 - [Real-World Implementation Case Study](#real-world-implementation-case-study)
 - [Building Your Own Optimization Framework](#building-your-own-optimization-framework)
 - [Cost Optimization Through AI](#cost-optimization-through-ai)
@@ -47,7 +47,7 @@ Strengths:
 - Handles complex queries with subqueries, CTEs, and window functions
 - Provides context-aware suggestions based on full schema understanding
 
-Pricing: Claude API costs $3-$15 per million input tokens depending on model (Claude 3.5 Sonnet standard tier). Opus 4.6 at $15/$45 per million tokens for complex analysis.
+Pricing - Claude API costs $3-$15 per million input tokens depending on model (Claude 3.5 Sonnet standard tier). Opus 4.6 at $15/$45 per million tokens for complex analysis.
 
 Real Example - PostgreSQL Query Optimization:
 
@@ -75,7 +75,7 @@ Claude's analysis:
 
 Claude generates the rewritten query with explanations for each modification.
 
-Use Case: Development teams, database architects, performance engineering.
+Use Case - Development teams, database architects, performance engineering.
 
 GPT-4 (OpenAI)
 
@@ -93,7 +93,7 @@ Weaknesses:
 - Sometimes suggests micro-optimizations with negligible impact
 - Requires more prompt engineering for complex schemas
 
-Pricing: GPT-4o costs $2.50/$10 per million tokens. GPT-4 Turbo at $10/$30 per million tokens.
+Pricing - GPT-4o costs $2.50/$10 per million tokens. GPT-4 Turbo at $10/$30 per million tokens.
 
 Real Example - MySQL Query Optimization:
 
@@ -115,7 +115,7 @@ GPT-4 recommendations:
 
 GPT-4 generates optimized SQL with alternative approaches.
 
-Use Case: Teams already in OpenAI ecosystem, API-first workflows.
+Use Case - Teams already in OpenAI environment, API-first workflows.
 
 GitHub Copilot (Microsoft/OpenAI)
 
@@ -134,7 +134,7 @@ Weaknesses:
 - Requires IDE integration (doesn't work in SQL terminal clients)
 - Limited schema awareness without explicit imports
 
-Pricing: Free with GitHub Pro ($4/month). Enterprise pricing available.
+Pricing - Free with GitHub Pro ($4/month). Enterprise pricing available.
 
 Real Example - BigQuery Optimization:
 
@@ -151,7 +151,7 @@ Copilot suggestion:
 - Use `APPROX_COUNT_DISTINCT()` if exact count unnecessary
 - Expected savings: 45-55% compute cost reduction
 
-Use Case: Individual developers, teams using GitHub/Azure ecosystem.
+Use Case - Individual developers, teams using GitHub/Azure environment.
 
 Comparison Table
 
@@ -286,7 +286,7 @@ WHERE order_date >= '2025-01-01' AND order_date < '2025-02-01';
 
 Partitioning enables horizontal scaling and faster sequential scans on large datasets.
 
-AI Tool Comparison: Pricing and Value Analysis
+AI Tool Comparison - Pricing and Value Analysis
 
 | Tool | API Cost | Setup Time | Accuracy on Real Schemas | Best ROI |
 |------|----------|-----------|------------------------|----------|
@@ -301,7 +301,7 @@ Claude (Opus 4.6) at $15 per 1M tokens justifies its higher cost when analyzing 
 
 Real-World Implementation Case Study
 
-Scenario: E-commerce platform with 500M orders, slow checkout page.
+Scenario - E-commerce platform with 500M orders, slow checkout page.
 
 Initial slow query (3,200ms):
 ```sql
@@ -406,7 +406,7 @@ Provide:
 
 {query}
 
-Schema: {schema}
+Schema - {schema}
 
 Generate 3 alternative approaches with different trade-offs. Explain each."""
             }]
@@ -477,7 +477,7 @@ print(f"Annual savings: ${result['net_savings']:,.0f}")
 print(f"Payback in days: {result['payback_period_days']:.0f}")
 ```
 
-Example output: Optimizing 1M daily queries from 500ms to 200ms saves ~$43,800/year on database costs.
+Example output - Optimizing 1M daily queries from 500ms to 200ms saves ~$43,800/year on database costs.
 
 Frequently Asked Questions
 

@@ -39,13 +39,13 @@ TypeScript-specific AI completion is a distinct skill from general code completi
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - Use AI-generated tests as: a starting point, then add cases that cover your unique requirements and failure modes.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- Codeium: Completed with a generic validation approach that didn't use reflect-metadata.
+- Codeium - Completed with a generic validation approach that didn't use reflect-metadata.
 
 Testing Methodology
 
 Both tools were tested in VS Code on a TypeScript 5.x project with strict mode enabled. Each scenario was tested 5 times to account for suggestion variability. Acceptance rate = how often the first suggestion was correct without editing.
 
-Scenario 1: Generic Utility Type Completion
+Scenario 1 - Generic Utility Type Completion
 
 ```typescript
 type DeepPartial<T> = T extends object
@@ -56,7 +56,7 @@ type DeepPartial<T> = T extends object
 type DeepRequired<T> = // expect the tool to complete this
 ```
 
-Copilot: Immediately suggested the correct recursive mapped type:
+Copilot - Immediately suggested the correct recursive mapped type:
 ```typescript
 type DeepRequired<T> = T extends object
   ? { [P in keyof T]-?: DeepRequired<T[P]> }
@@ -64,13 +64,13 @@ type DeepRequired<T> = T extends object
 ```
 The `-?` (required modifier) was correct and non-obvious. Acceptance rate: 4/5.
 
-Codeium: Suggested a non-recursive version first:
+Codeium - Suggested a non-recursive version first:
 ```typescript
 type DeepRequired<T> = Required<T>;
 ```
 Correct for shallow types but wrong for nested objects. After dismissing, the second suggestion was the recursive version. Acceptance rate: 1/5 for first suggestion.
 
-Scenario 2: Class Decorator with TypeScript Metadata
+Scenario 2 - Class Decorator with TypeScript Metadata
 
 ```typescript
 import "reflect-metadata";
@@ -82,11 +82,11 @@ function Validate() {
       // Tool should complete this with metadata reflection
 ```
 
-Copilot: Completed with a working reflect-metadata based implementation that retrieved parameter types and validated them. Decorator pattern-aware.
+Copilot - Completed with a working reflect-metadata based implementation that retrieved parameter types and validated them. Decorator pattern-aware.
 
-Codeium: Completed with a generic validation approach that didn't use reflect-metadata. Required manual intervention to add metadata reflection.
+Codeium - Completed with a generic validation approach that didn't use reflect-metadata. Required manual intervention to add metadata reflection.
 
-Scenario 3: Discriminated Union Exhaustiveness
+Scenario 3 - Discriminated Union Exhaustiveness
 
 ```typescript
 type Shape =
@@ -103,13 +103,13 @@ function getArea(shape: Shape): number {
     // Start typing "case". does the tool suggest "triangle"?
 ```
 
-Copilot: Suggested `case "triangle":` with the correct formula `(shape.base * shape.height) / 2`. Also added an `assertNever` call in the `default` case. TypeScript exhaustiveness checking pattern.
+Copilot - Suggested `case "triangle":` with the correct formula `(shape.base * shape.height) / 2`. Also added an `assertNever` call in the `default` case. TypeScript exhaustiveness checking pattern.
 
-Codeium: Suggested `case "triangle":` correctly. Did not add the exhaustiveness check in the default case.
+Codeium - Suggested `case "triangle":` correctly. Did not add the exhaustiveness check in the default case.
 
 Both passed this scenario. Copilot's addition of the exhaustiveness pattern was impressive but not critical.
 
-Scenario 4: Complex Generic Constraints
+Scenario 4 - Complex Generic Constraints
 
 ```typescript
 interface Repository<T extends { id: string | number }> {
@@ -122,9 +122,9 @@ class UserRepository implements Repository<User> {
   async findById(id: // tool should suggest: string | number, not "any"
 ```
 
-Copilot: Correctly suggested `id: string | number` (inferred from `T["id"]` where `T = User`). Full method signature was type-correct.
+Copilot - Correctly suggested `id: string | number` (inferred from `T["id"]` where `T = User`). Full method signature was type-correct.
 
-Codeium: Suggested `id: string` (only part of the union). Required manual correction.
+Codeium - Suggested `id: string` (only part of the union). Required manual correction.
 
 Acceptance Rate Summary (TypeScript-Specific Patterns)
 
@@ -147,7 +147,7 @@ For regular TypeScript (non-advanced type system usage), both tools perform comp
 
 The gap only emerges when working with TypeScript's advanced type features.
 
-Chat Features: Generating Types from JSON
+Chat Features - Generating Types from JSON
 
 ```typescript
 // Ask Codeium Chat to generate types from JSON response
@@ -166,7 +166,7 @@ interface UserResponse {
 
 Both tools handle JSON-to-TypeScript type generation well in chat mode.
 
-Scenario 5: Async Error Handling with Type Narrowing
+Scenario 5 - Async Error Handling with Type Narrowing
 
 ```typescript
 async function fetchUserWithPosts(userId: string): Promise<UserWithPosts | Error> {
@@ -175,11 +175,11 @@ async function fetchUserWithPosts(userId: string): Promise<UserWithPosts | Error
     if (!user) // Tool should complete the narrow type here
 ```
 
-Copilot: Correctly narrowed to `user extends User` after the findById guard. Suggested proper Promise handling and error propagation.
+Copilot - Correctly narrowed to `user extends User` after the findById guard. Suggested proper Promise handling and error propagation.
 
-Codeium: Suggested simple existence check without TypeScript's type narrowing syntax. Required clarification to add `as const` for type guard behavior.
+Codeium - Suggested simple existence check without TypeScript's type narrowing syntax. Required clarification to add `as const` for type guard behavior.
 
-Scenario 6: React Component Typing with Generics
+Scenario 6 - React Component Typing with Generics
 
 ```typescript
 interface DataTableProps<T> {
@@ -191,11 +191,11 @@ interface DataTableProps<T> {
 // Tool should recognize K is unbound and suggest fixes
 ```
 
-Copilot: Caught the unbounded generic immediately and suggested using a union type or adding a generic parameter `<T, K extends keyof T>`. Offered three different solutions.
+Copilot - Caught the unbounded generic immediately and suggested using a union type or adding a generic parameter `<T, K extends keyof T>`. Offered three different solutions.
 
-Codeium: Generated code that compiled but used `any` for the cell renderer, losing type safety.
+Codeium - Generated code that compiled but used `any` for the cell renderer, losing type safety.
 
-Advanced Pattern: Namespace Merging
+Advanced Pattern - Namespace Merging
 
 ```typescript
 namespace Logger {
@@ -211,9 +211,9 @@ namespace Logger {
   // Tool should add new interface or extend Config
 ```
 
-Copilot: Understood namespace merging patterns. Suggested extending the Config interface with additional properties while preserving the existing definitions.
+Copilot - Understood namespace merging patterns. Suggested extending the Config interface with additional properties while preserving the existing definitions.
 
-Codeium: Generated a new separate namespace instead of merging, requiring manual correction.
+Codeium - Generated a new separate namespace instead of merging, requiring manual correction.
 
 IDE Integration and Autocomplete Speed
 
@@ -258,15 +258,15 @@ Tested on a 50K-line TypeScript/React codebase with strict mode, custom utility 
 - Copilot: Maintained 87% first-try acceptance rate across 200 auto-completions over 5 days
 - Codeium: Maintained 78% acceptance rate; required dismissals and re-prompts for advanced patterns
 
-The gap compounded over time: Copilot developers shipped features faster because fewer suggestions required editing.
+The gap compounded over time - Copilot developers shipped features faster because fewer suggestions required editing.
 
 Fine-Tuning on Your Codebase
 
 Neither tool offers on-device fine-tuning, but both improve with project context:
 
-Copilot: Reads open tabs and git history to understand style. New projects take 1-2 days to converge to your patterns.
+Copilot - Reads open tabs and git history to understand style. New projects take 1-2 days to converge to your patterns.
 
-Codeium: Includes an optional "Codebase Indexing" feature that reads all files and adapts suggestions. This must be explicitly enabled and requires 5-10 minutes per project.
+Codeium - Includes an optional "Codebase Indexing" feature that reads all files and adapts suggestions. This must be explicitly enabled and requires 5-10 minutes per project.
 
 Long-Context TypeScript Files
 
@@ -298,9 +298,9 @@ Codeium's free tier is genuinely unlimited for completions. For teams where the 
 
 Which to Choose
 
-Choose Copilot when: Your TypeScript work involves advanced type system patterns (mapped types, conditional types, decorators, complex generics). The acceptance rate gap on these scenarios translates to real productivity.
+Choose Copilot when - Your TypeScript work involves advanced type system patterns (mapped types, conditional types, decorators, complex generics). The acceptance rate gap on these scenarios translates to real productivity.
 
-Choose Codeium when: Your TypeScript is mostly standard patterns and cost is a factor. The free tier provides real value.
+Choose Codeium when - Your TypeScript is mostly standard patterns and cost is a factor. The free tier provides real value.
 
 Frequently Asked Questions
 

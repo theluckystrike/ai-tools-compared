@@ -21,7 +21,7 @@ Table of Contents
 
 - [From Plugins to Custom GPTs](#from-plugins-to-custom-gpts)
 - [Understanding Custom GPTs Pricing](#understanding-custom-gpts-pricing)
-- [Building a Custom GPT: Practical Example](#building-a-custom-gpt-practical-example)
+- [Building a Custom GPT - Practical Example](#building-a-custom-gpt-practical-example)
 - [Estimating Your Monthly Costs](#estimating-your-monthly-costs)
 - [Cost Optimization Strategies](#cost-optimization-strategies)
 - [Migration Considerations](#migration-considerations)
@@ -61,7 +61,7 @@ GPT Store and Monetization
 
 OpenAI introduced the GPT Store where developers can publish their Custom GPTs. Some developers monetize their GPTs through various programs. The specific revenue-sharing terms depend on OpenAI's current policies and your location.
 
-Building a Custom GPT: Practical Example
+Building a Custom GPT - Practical Example
 
 Creating a Custom GPT involves defining instructions and optionally uploading knowledge files or configuring actions. Here is how you can create one programmatically using the Assistant API:
 
@@ -131,11 +131,11 @@ Estimating Your Monthly Costs
 
 Calculating Custom GPT costs requires estimating your expected usage. Consider these factors:
 
-Conversation Volume: How many messages will users send daily? Multiply by the average tokens per message and the number of days in your billing period.
+Conversation Volume - How many messages will users send daily? Multiply by the average tokens per message and the number of days in your billing period.
 
-Context Length: Longer conversation histories increase input token costs. Implement strategies to summarize or truncate history when needed.
+Context Length - Longer conversation histories increase input token costs. Implement strategies to summarize or truncate history when needed.
 
-Model Selection: Using GPT-4o-mini instead of GPT-4o reduces costs by approximately 94% for input and 98% for output tokens.
+Model Selection - Using GPT-4o-mini instead of GPT-4o reduces costs by approximately 94% for input and 98% for output tokens.
 
 Here is a simple cost estimation function:
 
@@ -191,11 +191,11 @@ Cost Optimization Strategies
 
 Several approaches reduce Custom GPT expenses without sacrificing functionality.
 
-Model Selection: Reserve GPT-4o for complex reasoning tasks. Route simple queries to GPT-4o-mini, which handles many standard use cases at a fraction of the cost.
+Model Selection - Reserve GPT-4o for complex reasoning tasks. Route simple queries to GPT-4o-mini, which handles many standard use cases at a fraction of the cost.
 
-Prompt Optimization: Concise prompts reduce input token costs. Remove unnecessary context and use clear, direct language.
+Prompt Optimization - Concise prompts reduce input token costs. Remove unnecessary context and use clear, direct language.
 
-Caching Responses: Implement caching for repeated queries. Store responses for identical or similar prompts and serve cached results when applicable.
+Caching Responses - Implement caching for repeated queries. Store responses for identical or similar prompts and serve cached results when applicable.
 
 ```python
 import hashlib
@@ -221,7 +221,7 @@ def cache_response(redis_client, prompt: str, response: str, ttl_seconds: int = 
     redis_client.setex(key, ttl_seconds, json.dumps(response))
 ```
 
-Prompt Caching: OpenAI supports automatic prompt caching for long, repeated system prompts. If your Custom GPT has a lengthy system instruction (over 1,024 tokens), repeated calls that share the same prefix receive a 50% discount on cached input tokens. Structure your prompts so the stable system content comes first to maximize cache hits.
+Prompt Caching - OpenAI supports automatic prompt caching for long, repeated system prompts. If your Custom GPT has a lengthy system instruction (over 1,024 tokens), repeated calls that share the same prefix receive a 50% discount on cached input tokens. Structure your prompts so the stable system content comes first to maximize cache hits.
 
 Migration Considerations
 

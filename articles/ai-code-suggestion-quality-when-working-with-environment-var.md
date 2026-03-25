@@ -271,19 +271,19 @@ Red Flags in AI-Generated Code
 
 Watch for these dangerous patterns:
 
-Red Flag 1: Hardcoded Fallbacks
+Red Flag 1 - Hardcoded Fallbacks
 ```python
 BAD
 api_key = os.environ.get("API_KEY", "sk-default-key")
 ```
 
-Red Flag 2: Silent Failures
+Red Flag 2 - Silent Failures
 ```python
 BAD - Missing validation
 port = int(os.environ.get("PORT", "8000"))
 ```
 
-Red Flag 3: Logging Secrets
+Red Flag 3 - Logging Secrets
 ```python
 BAD
 logger.debug(f"Connecting with API key: {api_key}")

@@ -46,7 +46,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Exporting Cursor Snippets and Templates
+Step 1 - Exporting Cursor Snippets and Templates
 
 Cursor stores your custom snippets in a specific location. To export them, you'll need to locate the configuration directory. On macOS, this typically lives in `~/Library/Application Support/Cursor/User/snippets/`. On Linux, check `~/.config/Cursor/User/snippets/`.
 
@@ -70,7 +70,7 @@ A better long-term approach is to convert your most-used Cursor snippets into Cl
 
 ```markdown
 CLAUDE.md
-Step 2: Common Code Patterns
+Step 2 - Common Code Patterns
 
 React Component
 When I say "new component", generate a React functional component with TypeScript props interface, default export, and a basic test file.
@@ -79,7 +79,7 @@ Express Route
 When I say "new route", generate an Express router with GET, POST, PUT, DELETE handlers, input validation middleware, and JSDoc comments.
 ```
 
-Step 3: Preserving Keyboard Shortcuts
+Step 3 - Preserving Keyboard Shortcuts
 
 If you've customized keybindings in Cursor, you need to recreate them for Claude Code. Cursor stores keybindings in `keybindings.json`, found in the same configuration directory as snippets.
 
@@ -118,7 +118,7 @@ ccreview() {
 }
 ```
 
-Step 4: Transferring Workspace Settings
+Step 4 - Transferring Workspace Settings
 
 Cursor maintains workspace-specific settings in `.cursor` files within each project. These contain project-level configurations that affect AI behavior. Review each project's `.cursor` directory:
 
@@ -138,24 +138,24 @@ export CLAUDE_CONTEXT_WINDOW=200000
 The most effective way to preserve project-specific behavior is to create a `CLAUDE.md` at the root of each project. This file loads automatically whenever you run Claude Code from within the project directory, providing the same persistent context that Cursor's workspace rules gave you:
 
 ```markdown
-Project: payments-service CLAUDE.md
+Project - payments-service CLAUDE.md
 
-Step 5: Tech Stack
+Step 5 - Tech Stack
 - Node.js 20, TypeScript 5.4
 - PostgreSQL 16 via Prisma ORM
 - Express 4 with Zod validation
 
-Step 6: Conventions
+Step 6 - Conventions
 - All database queries go through the repository layer in `src/repositories/`
 - Use `Result<T, E>` from neverthrow for error handling. never throw
 - Tests use Vitest with in-memory SQLite for DB tests
 
-Step 7: Sensitive Areas
+Step 7 - Sensitive Areas
 - Never modify `src/billing/stripe-webhook.ts` without reading STRIPE.md first
 - Payment amounts are always stored in cents (integer)
 ```
 
-Step 8: Exporting Chat History and Context
+Step 8 - Exporting Chat History and Context
 
 Cursor stores conversation history locally. While Claude Code maintains its own conversation history, you can export important discussions from Cursor for reference. The history database typically lives in:
 
@@ -174,7 +174,7 @@ sqlite3 ~/Library/Application\ Support/Cursor/ExtensionHost/*/chat-history.db \
 
 Important architectural decisions recorded in Cursor chat threads are worth extracting and placing into your project's `CLAUDE.md` or a `docs/decisions/` directory. This preserves institutional knowledge that would otherwise disappear when you stop using Cursor.
 
-Step 9: Set Up Claude Code with Your Workflow
+Step 9 - Set Up Claude Code with Your Workflow
 
 After backing up your settings, install Claude Code and configure it to match your preferences:
 
@@ -201,7 +201,7 @@ Create a `~/.claude/settings.json` file to establish default behaviors:
 }
 ```
 
-Step 10: Recreating Custom Commands
+Step 10 - Recreating Custom Commands
 
 If you've created custom Cursor commands or agents, build equivalents in Claude Code. The command pattern differs, Cursor uses a visual interface while Claude Code relies on natural language instructions.
 
@@ -221,7 +221,7 @@ alias cc-refactor='claude code "Refactor this function to be more readable"'
 alias cc-docs='claude code "Generate documentation for"'
 ```
 
-Step 11: What You'll Need to Rebuild
+Step 11 - What You'll Need to Rebuild
 
 Some Cursor-specific features don't have direct equivalents in Claude Code:
 
@@ -239,7 +239,7 @@ mkdir -p .claude
 echo "This is a React TypeScript project. Use functional components and TypeScript strict mode." > .claude/instructions.md
 ```
 
-Step 12: Verification Checklist
+Step 12 - Verification Checklist
 
 Before deleting Cursor, verify you've transferred everything:
 

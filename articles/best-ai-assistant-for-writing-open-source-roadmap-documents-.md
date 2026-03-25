@@ -25,7 +25,7 @@ Table of Contents
 - [Why AI Assistants Transform Roadmap Documentation](#why-ai-assistants-transform-roadmap-documentation)
 - [Top AI Assistants for Roadmap Generation](#top-ai-assistants-for-roadmap-generation)
 - [Q2 2026 Roadmap](#q2-2026-roadmap)
-- [Practical Workflow: Automated Roadmap Generation](#practical-workflow-automated-roadmap-generation)
+- [Practical Workflow - Automated Roadmap Generation](#practical-workflow-automated-roadmap-generation)
 - [Choosing the Right AI Assistant](#choosing-the-right-ai-assistant)
 
 Why AI Assistants Transform Roadmap Documentation
@@ -161,7 +161,7 @@ Medium Priority
 Nice to Have
 [Grouped issues with descriptions]
 
-Include effort estimates: S (Small), M (Medium), L (Large)
+Include effort estimates - S (Small), M (Medium), L (Large)
 """
 
 response = openai.chat.completions.create(
@@ -195,12 +195,12 @@ import google.generativeai as genai
 genai.configure(api_key="your-api-key")
 
 issues_summary = """
-Epic: User Authentication
+Epic - User Authentication
 - #201: Implement JWT tokens
 - #205: Add password reset flow
 - #210: Social login integration
 
-Epic: Performance
+Epic - Performance
 - #189: Optimize image loading
 - #195: Reduce bundle size
 - #220: Implement lazy loading
@@ -224,7 +224,7 @@ response = model.generate_content(roadmap_prompt)
 print(response.text)
 ```
 
-Practical Workflow: Automated Roadmap Generation
+Practical Workflow - Automated Roadmap Generation
 
 Combining these AI tools with GitHub's API creates a powerful automated pipeline:
 
@@ -261,7 +261,7 @@ def generate_roadmap(owner, repo, milestone, ai_client):
     # Step 4: Generate roadmap with AI
     prompt = f"""Create a roadmap for {milestone_data['title']}
 
-Milestone Description: {milestone_data.get('description', 'N/A')}
+Milestone Description - {milestone_data.get('description', 'N/A')}
 
 Categorized Issues:
 {json.dumps(categorized, indent=2)}

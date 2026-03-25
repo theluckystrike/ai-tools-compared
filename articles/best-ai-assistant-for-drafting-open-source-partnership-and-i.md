@@ -22,14 +22,14 @@ Table of Contents
 - [Why AI Assistants Matter for Partnership Proposals](#why-ai-assistants-matter-for-partnership-proposals)
 - [Key Features to Evaluate](#key-features-to-evaluate)
 - [AI Tool Comparison for Partnership Proposals](#ai-tool-comparison-for-partnership-proposals)
-- [Practical Example: Drafting a Partnership Proposal](#practical-example-drafting-a-partnership-proposal)
-- [Partnership Proposal: OpenTelemetry Integration](#partnership-proposal-opentelemetry-integration)
-- [Code Snippet: Contribution Agreement Generator](#code-snippet-contribution-agreement-generator)
+- [Practical Example - Drafting a Partnership Proposal](#practical-example-drafting-a-partnership-proposal)
+- [Partnership Proposal - OpenTelemetry Integration](#partnership-proposal-opentelemetry-integration)
+- [Code Snippet - Contribution Agreement Generator](#code-snippet-contribution-agreement-generator)
 - [Contributor License Agreement](#contributor-license-agreement)
 - [Integration Documentation Generation](#integration-documentation-generation)
 - [Partner Registration API](#partner-registration-api)
 - [License Compatibility Quick Reference](#license-compatibility-quick-reference)
-- [Step-by-Step Workflow: Drafting a Proposal with AI](#step-by-step-workflow-drafting-a-proposal-with-ai)
+- [Step-by-Step Workflow - Drafting a Proposal with AI](#step-by-step-workflow-drafting-a-proposal-with-ai)
 - [Evaluating AI Assistants for This Use Case](#evaluating-ai-assistants-for-this-use-case)
 - [Workflow Integration Tips](#workflow-integration-tips)
 
@@ -51,11 +51,11 @@ Key Features to Evaluate
 
 When selecting an AI assistant for partnership proposals, prioritize these capabilities:
 
-License Intelligence: Your AI tool should understand SPDX license identifiers, FSF-approved licenses, and OSI definitions. It should flag incompatible license combinations and suggest alternatives.
+License Intelligence - Your AI tool should understand SPDX license identifiers, FSF-approved licenses, and OSI definitions. It should flag incompatible license combinations and suggest alternatives.
 
-Technical Writing Support: Look for tools that generate clear technical documentation, API references, and integration guides automatically.
+Technical Writing Support - Look for tools that generate clear technical documentation, API references, and integration guides automatically.
 
-Template Awareness: The best assistants know common open source contribution patterns, Developer Certificate of Origin (DCO), Contributor License Agreements (CLA), and joint venture frameworks.
+Template Awareness - The best assistants know common open source contribution patterns, Developer Certificate of Origin (DCO), Contributor License Agreements (CLA), and joint venture frameworks.
 
 AI Tool Comparison for Partnership Proposals
 
@@ -71,7 +71,7 @@ AI Tool Comparison for Partnership Proposals
 
 Claude leads on tasks that require synthesizing legal constraints with technical content. Its long context window lets it review an entire codebase's license headers, dependency manifests, and existing partnership agreements in a single session before drafting a proposal. ChatGPT performs well for standard templates and benefits from Canvas for iterative document editing. Gemini handles structured document generation capably but is less reliable on edge cases in license compatibility. Copilot is best suited for inline code-level documentation rather than long-form proposal drafting.
 
-Practical Example: Drafting a Partnership Proposal
+Practical Example - Drafting a Partnership Proposal
 
 Consider a scenario where your company wants to integrate an open source project into your commercial product. Here's how an AI assistant can help:
 
@@ -85,7 +85,7 @@ guarantees.
 The AI assistant generates a structured proposal with relevant sections:
 
 ```markdown
-Partnership Proposal: OpenTelemetry Integration
+Partnership Proposal - OpenTelemetry Integration
 
 Executive Summary
 This proposal outlines a technical and legal partnership
@@ -108,7 +108,7 @@ Technical Integration
 - Custom processor for enterprise features
 ```
 
-Code Snippet: Contribution Agreement Generator
+Code Snippet - Contribution Agreement Generator
 
 Many AI assistants can generate appropriate contribution agreements based on your requirements:
 
@@ -146,7 +146,7 @@ Integration Documentation Generation
 AI assistants excel at generating integration documentation from code or specifications:
 
 ```yaml
-Input: OpenAPI specification fragment
+Input - OpenAPI specification fragment
 paths:
   /api/v1/partners:
     post:
@@ -207,7 +207,7 @@ AI assistants frequently get asked to check whether two licenses can coexist in 
 
 Claude correctly identifies these compatibility rules in most cases and flags the Apache 2.0 + GPL v2 incompatibility, a commonly missed edge case. ChatGPT handles the common cases correctly but occasionally misses version-specific nuances. Always have a legal professional confirm the analysis before signing agreements.
 
-Step-by-Step Workflow: Drafting a Proposal with AI
+Step-by-Step Workflow - Drafting a Proposal with AI
 
 Follow this workflow to produce a complete partnership proposal efficiently:
 
@@ -215,7 +215,7 @@ Follow this workflow to produce a complete partnership proposal efficiently:
 
 2. Load context into the AI. Paste all documents into the AI session or attach them as files. For Claude or ChatGPT, use the file upload feature. Tell the AI: "Review these documents. We will be drafting a partnership proposal based on them."
 
-3. Generate the license analysis section first. Ask: "Identify any license compatibility issues between our codebase (Apache 2.0) and the target project's license. List incompatible clauses and suggested resolutions."
+3. Generate the license analysis section first. Ask - "Identify any license compatibility issues between our codebase (Apache 2.0) and the target project's license. List incompatible clauses and suggested resolutions."
 
 4. Draft the technical integration section. Provide the target project's OpenAPI spec or README and ask the AI to summarize the integration points, authentication requirements, and data flow.
 
@@ -229,11 +229,11 @@ Evaluating AI Assistants for This Use Case
 
 Not all AI assistants perform equally for open source partnership work. Consider testing these aspects:
 
-Context Window Size: Longer contexts allow the AI to review existing partnership agreements, license files, and codebases before generating proposals. Claude's 200K token context handles even large dependency trees without truncation.
+Context Window Size - Longer contexts allow the AI to review existing partnership agreements, license files, and codebases before generating proposals. Claude's 200K token context handles even large dependency trees without truncation.
 
-Knowledge Cutoff: Verify the assistant's training data includes recent license updates and partnership frameworks. The EUPL v1.2 and Business Source License (BSL) are examples of newer licenses that older training data may handle incorrectly.
+Knowledge Cutoff - Verify the assistant's training data includes recent license updates and partnership frameworks. The EUPL v1.2 and Business Source License (BSL) are examples of newer licenses that older training data may handle incorrectly.
 
-Custom Instruction Support: Look for tools that can follow detailed style guides and organizational templates. Claude and ChatGPT both support persistent system prompts or custom instructions that enforce your organization's document structure.
+Custom Instruction Support - Look for tools that can follow detailed style guides and organizational templates. Claude and ChatGPT both support persistent system prompts or custom instructions that enforce your organization's document structure.
 
 Workflow Integration Tips
 

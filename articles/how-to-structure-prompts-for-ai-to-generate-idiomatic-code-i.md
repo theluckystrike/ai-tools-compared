@@ -63,7 +63,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Core Prompt Framework
+Step 1 - The Core Prompt Framework
 
 Effective prompts for idiomatic code contain five elements:
 
@@ -81,12 +81,12 @@ Here's a template that works across languages:
 
 ```
 Write a [language] function that [description].
-Input: [data type and structure]
-Output: [expected result type]
-Requirements: [specific patterns, libraries, or constraints]
+Input - [data type and structure]
+Output - [expected result type]
+Requirements - [specific patterns, libraries, or constraints]
 ```
 
-Step 2: Language-Specific Prompt Patterns
+Step 2 - Language-Specific Prompt Patterns
 
 Python
 
@@ -214,20 +214,20 @@ async function fetchJson<T>(url: string): Promise<Result<T>> {
 }
 ```
 
-Step 3: Specifying Patterns and Libraries
+Step 3 - Specifying Patterns and Libraries
 
 If you need specific approaches, mention them directly. For React components, say "use functional components with hooks." For data processing, mention "use pandas DataFrames." The AI responds to these signals.
 
 ```
 Write a Python function that calculates moving average using pandas.
-Input: list of prices, window size
-Output: Series with moving averages
+Input - list of prices, window size
+Output - Series with moving averages
 Use pandas rolling() method.
 ```
 
 This explicitly requests pandas rather than getting a manual implementation.
 
-Step 4: Prompt Patterns for Code Reviews
+Step 4 - Prompt Patterns for Code Reviews
 
 Prompt engineering for idiomatic code is not just about generation, AI assistants are also effective reviewers. Structured review prompts produce more actionable feedback:
 
@@ -245,7 +245,7 @@ Review this Python code for idiomaticity. Flag any places that use C-style loops
 
 The strong prompt scopes the review precisely, preventing the AI from returning generic feedback about variable naming or docstring format when you want idiom-specific guidance.
 
-Step 5: Handling Multi-Language Consistency
+Step 5 - Handling Multi-Language Consistency
 
 When generating code for multiple languages, structure prompts identically with language as a variable:
 
@@ -259,7 +259,7 @@ Requirements:
 
 Replace `[language]` with each target. This produces comparable implementations that respect each language's conventions.
 
-Step 6: Prompt Templates by Use Case
+Step 6 - Prompt Templates by Use Case
 
 The following templates are ready to copy and adapt. They are structured to consistently produce idiomatic output across the most common code generation scenarios.
 
@@ -267,9 +267,9 @@ Data transformation pipeline (Python):
 
 ```
 Write a Python function that transforms a list of raw API response dicts into a list of dataclasses.
-Language: Python 3.11+
-Input: list[dict] with fields: id (int), created_at (str ISO8601), value (float or null)
-Output: list[SaleRecord] where SaleRecord is a dataclass with typed fields
+Language - Python 3.11+
+Input - list[dict] with fields: id (int), created_at (str ISO8601), value (float or null)
+Output - list[SaleRecord] where SaleRecord is a dataclass with typed fields
 Requirements:
 - Use dataclasses with field defaults
 - Parse created_at to datetime using fromisoformat
@@ -282,9 +282,9 @@ Async HTTP client (TypeScript):
 
 ```
 Write a TypeScript async function that fetches paginated data from a REST API.
-Language: TypeScript 5.x with strict mode
-Input: base URL string, endpoint string, auth token string
-Output: AsyncGenerator yielding arrays of T (use a generic type parameter)
+Language - TypeScript 5.x with strict mode
+Input - base URL string, endpoint string, auth token string
+Output - AsyncGenerator yielding arrays of T (use a generic type parameter)
 Requirements:
 - Use the Fetch API (no axios)
 - Follow the cursor-based pagination pattern: each response includes next_cursor or null
@@ -296,9 +296,9 @@ Error handling wrapper (Rust):
 
 ```
 Write a Rust function that wraps a fallible operation with retry logic.
-Language: Rust 2021 edition
-Input: async closure that returns Result<T, E>, max_retries: u32, delay: Duration
-Output: Result<T, E>
+Language - Rust 2021 edition
+Input - async closure that returns Result<T, E>, max_retries: u32, delay: Duration
+Output - Result<T, E>
 Requirements:
 - Use tokio::time::sleep for delays
 - Use exponential backoff: double the delay on each retry
@@ -307,15 +307,15 @@ Requirements:
 - Avoid unwrap() anywhere
 ```
 
-Step 7: Iterative Refinement: When the First Output Falls Short
+Step 7 - Iterative Refinement: When the First Output Falls Short
 
 Even well-structured prompts sometimes produce code that is correct but not idiomatic. A refinement workflow:
 
-Round 1: Send your structured initial prompt.
+Round 1 - Send your structured initial prompt.
 
-Round 2: If the output has non-idiomatic patterns, be specific: "The loop on line 8 would typically be written as a list comprehension in Python. Please rewrite using that pattern."
+Round 2 - If the output has non-idiomatic patterns, be specific: "The loop on line 8 would typically be written as a list comprehension in Python. Please rewrite using that pattern."
 
-Round 3: Ask the AI to self-evaluate: "Is there anything in this code that an experienced Python developer would immediately refactor? If yes, make that change."
+Round 3 - Ask the AI to self-evaluate: "Is there anything in this code that an experienced Python developer would immediately refactor? If yes, make that change."
 
 This three-step loop consistently moves outputs from functional-but-generic toward genuinely idiomatic code.
 
@@ -333,15 +333,15 @@ Asking for style without naming conventions. "Write clean code" means nothing. I
 
 Not specifying the target language version. Python 3.10+ pattern matching, JavaScript ES2022 features, and Rust 2021 edition idioms differ meaningfully from older versions. Include the version when it matters.
 
-Step 8: Test Generated Code
+Step 8 - Test Generated Code
 
 Review generated code for language-specific patterns:
 
-- Python: Are list comprehensions or built-in methods used?
+- Python - Are list comprehensions or built-in methods used?
 
 - JavaScript: Are modern features like arrow functions and destructuring present?
 
-- Rust: Does the code use iterators and avoid unnecessary cloning?
+- Rust - Does the code use iterators and avoid unnecessary cloning?
 
 - Go: Are errors handled explicitly with meaningful messages?
 

@@ -161,9 +161,9 @@ Generating From Different Schema Formats
 
 Your starting point matters. Many platforms provide OpenAPI docs describing their webhook events. Extract the relevant schema object and feed it to your AI tool with a prompt like: "Generate a webhook handler in [language] that validates against this JSON Schema."
 
-JSON Schema Documents: Direct input. Ensure you include the full schema with all nested object definitions, not just the top-level properties.
+JSON Schema Documents - Direct input. Ensure you include the full schema with all nested object definitions, not just the top-level properties.
 
-Sample Payloads: Give the AI 3-5 realistic examples and ask it to infer the schema, then generate validation code. This works well but requires manual verification of inferred types.
+Sample Payloads - Give the AI 3-5 realistic examples and ask it to infer the schema, then generate validation code. This works well but requires manual verification of inferred types.
 
 A Practical Workflow
 
@@ -462,7 +462,7 @@ For teams already using Claude Code or Cursor, the integration workflow feels na
 
 Start with the tool that minimizes context-switching, then evaluate the generated code for production readiness. Most scaffolded receivers require minimal modifications before deployment, mainly adding your specific business logic and integrating with your observability infrastructure.
 
-Remember: AI generates the infrastructure and boilerplate. Your job is adding domain expertise, understanding what each webhook event means in your business context and what actions should result from receiving it.
+Remember - AI generates the infrastructure and boilerplate. Your job is adding domain expertise, understanding what each webhook event means in your business context and what actions should result from receiving it.
 
 Frequently Asked Questions
 

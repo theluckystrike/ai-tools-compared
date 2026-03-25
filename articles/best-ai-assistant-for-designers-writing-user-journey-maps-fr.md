@@ -19,16 +19,16 @@ AI assistants have become valuable tools for designers who need to transform raw
 
 Table of Contents
 
-- [The Core Challenge: From Data Points to Journey Narratives](#the-core-challenge-from-data-points-to-journey-narratives)
+- [The Core Challenge - From Data Points to Journey Narratives](#the-core-challenge-from-data-points-to-journey-narratives)
 - [How AI Assistants Process Analytics Data](#how-ai-assistants-process-analytics-data)
-- [Practical Example: Analyzing Checkout Abandonment](#practical-example-analyzing-checkout-abandonment)
-- [Code Snippet: Preparing Data for AI Analysis](#code-snippet-preparing-data-for-ai-analysis)
+- [Practical Example - Analyzing Checkout Abandonment](#practical-example-analyzing-checkout-abandonment)
+- [Code Snippet - Preparing Data for AI Analysis](#code-snippet-preparing-data-for-ai-analysis)
 - [Comparing AI Approaches for Journey Mapping](#comparing-ai-approaches-for-journey-mapping)
 - [Structuring Effective Prompts for Journey Analysis](#structuring-effective-prompts-for-journey-analysis)
 - [Limitations and Verification](#limitations-and-verification)
 - [Checkout Journey - Mobile Users (iPhone)](#checkout-journey-mobile-users-iphone)
 
-The Core Challenge: From Data Points to Journey Narratives
+The Core Challenge - From Data Points to Journey Narratives
 
 User journey mapping requires connecting disparate data sources, Google Analytics event logs, Mixpanel exports, Amplitude funnels, and raw database queries, into a cohesive story about how users move through your product. The challenge isn't just visualization; it's interpretation. Raw analytics tell you what users did, but journey maps require understanding why they did it and what should happen next.
 
@@ -48,7 +48,7 @@ Most AI assistants can work with analytics data in several formats:
 
 The quality of output depends heavily on how you frame your request. Simply asking "create a user journey map" produces generic results. Providing specific data with clear questions about particular user segments or conversion paths yields practical recommendations.
 
-Practical Example: Analyzing Checkout Abandonment
+Practical Example - Analyzing Checkout Abandonment
 
 Consider a scenario where you have analytics data showing users abandoning the checkout process. Here's how to work with an AI assistant effectively:
 
@@ -69,7 +69,7 @@ Suggest what might cause users to abandon at each point.
 
 The AI can then analyze this data and provide structured insights about where users leave, what behaviors precede abandonment, and hypotheses about why.
 
-Code Snippet: Preparing Data for AI Analysis
+Code Snippet - Preparing Data for AI Analysis
 
 Before feeding analytics data to an AI assistant, you often need to format it appropriately. Here's a Python snippet that transforms raw event data into a concise summary:
 
@@ -99,7 +99,7 @@ def summarize_user_sessions(csv_path, max_events_per_user=20):
 
     return pd.DataFrame(patterns)
 
-Usage: summarize_user_sessions('checkout_events.csv')
+Usage - summarize_user_sessions('checkout_events.csv')
 ```
 
 This transformation makes it easier for AI assistants to spot patterns across thousands of users rather than getting lost in individual event details.
@@ -187,7 +187,7 @@ AI-generated segment analysis template:
 ```markdown
 Checkout Journey - Mobile Users (iPhone)
 
-User Segment: Mobile iOS Users
+User Segment - Mobile iOS Users
 - Sample size: 2,847 unique sessions
 - Conversion rate: 18% (below 25% desktop average)
 - Average session duration: 8:32

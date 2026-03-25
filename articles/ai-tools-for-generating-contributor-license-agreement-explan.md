@@ -55,17 +55,17 @@ AI tools can help in several specific ways:
 
 Practical Examples
 
-Example 1: Summarizing a CLA with Claude
+Example 1 - Summarizing a CLA with Claude
 
 When you need a quick explanation of what a CLA actually means for contributors, you can provide the document and ask for a plain language summary. Here's how this works in practice:
 
 ```
-Input: Paste the full CLA text and ask:
+Input - Paste the full CLA text and ask:
 "What rights does this CLA grant to the project? What
 rights does the contributor retain? Include specific
 examples of what the contributor can and cannot do."
 
-Output: A clear breakdown covering:
+Output - A clear breakdown covering:
 - What "irrevocable license" means in practice
 - Which intellectual property rights are transferred
 - How the contributor can still use their own code
@@ -74,7 +74,7 @@ Output: A clear breakdown covering:
 
 This approach works with most AI assistants. The key is asking specific questions rather than requesting a generic summary.
 
-Example 2: Generating Project-Specific Explanations
+Example 2 - Generating Project-Specific Explanations
 
 For your actual project, you might want to create a custom explanation that references your specific situation. Here's a template you can adapt:
 
@@ -106,7 +106,7 @@ revoke permission later for code already submitted.
 
 AI tools can help generate these explanations by analyzing your specific CLA and producing targeted output.
 
-Example 3: Creating Interactive Explanations with AI
+Example 3 - Creating Interactive Explanations with AI
 
 For more advanced implementations, you can use AI to create interactive CLA explanation tools. Here's a conceptual example using a simple approach:
 

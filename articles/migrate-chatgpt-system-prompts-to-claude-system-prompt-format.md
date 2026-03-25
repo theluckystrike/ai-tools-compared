@@ -35,7 +35,7 @@ Table of Contents
 - [Common Migration Issues and Solutions](#common-migration-issues-and-solutions)
 - [Handling Token Budget and Prompt Length Differences](#handling-token-budget-and-prompt-length-differences)
 - [Multi-Turn Context and Memory Handling](#multi-turn-context-and-memory-handling)
-- [Prompt Versioning: Managing Migrations Across Environments](#prompt-versioning-managing-migrations-across-environments)
+- [Prompt Versioning - Managing Migrations Across Environments](#prompt-versioning-managing-migrations-across-environments)
 - [When Not to Migrate](#when-not-to-migrate)
 
 Key Differences Between ChatGPT and Claude System Prompts
@@ -87,7 +87,7 @@ Claude excels with:
 
 Step-by-Step Migration Guide
 
-Step 1: Analyze Your Current ChatGPT System Prompt
+Step 1 - Analyze Your Current ChatGPT System Prompt
 
 Review your existing ChatGPT system prompt and identify:
 
@@ -95,31 +95,31 @@ Review your existing ChatGPT system prompt and identify:
 
 - Primary objectives: What tasks should it prioritize?
 
-- Constraints: What should the AI avoid or refuse?
+- Constraints - What should the AI avoid or refuse?
 
 - Output preferences: How should responses be formatted?
 
 - Special instructions: Any unique behaviors or capabilities?
 
-Step 2: Expand Context and Reasoning
+Step 2 - Expand Context and Reasoning
 
 Claude performs better with richer context. Transform concise rules into detailed explanations:
 
 ChatGPT format:
 
 ```
-Rule: Don't provide medical advice
+Rule - Don't provide medical advice
 ```
 
 Claude format:
 
 ```
-Constraint: Medical advice prohibition
-Reasoning: I am not a licensed medical professional. Providing medical advice could lead to harmful outcomes for users.
-Application: When users ask about medical conditions, symptoms, or treatments, I should recommend consulting qualified healthcare professionals instead.
+Constraint - Medical advice prohibition
+Reasoning - I am not a licensed medical professional. Providing medical advice could lead to harmful outcomes for users.
+Application - When users ask about medical conditions, symptoms, or treatments, I should recommend consulting qualified healthcare professionals instead.
 ```
 
-Step 3: Restructure for Claude's Thinking Process
+Step 3 - Restructure for Claude's Thinking Process
 
 Claude's constitutional AI approach means it reasons through responses. Structure prompts to use this:
 
@@ -135,7 +135,7 @@ When explaining complex topics:
 - Acknowledge limitations and uncertainties
 ```
 
-Step 4: Define Clear Output Formats
+Step 4 - Define Clear Output Formats
 
 Specify exact output structures:
 
@@ -147,7 +147,7 @@ Response Format:
 - End with next steps or additional resources if applicable
 ```
 
-Step 5: Integrate Ethical Guidelines Naturally
+Step 5 - Integrate Ethical Guidelines Naturally
 
 Rather than listing prohibitions, frame guidelines as positive principles:
 
@@ -179,8 +179,8 @@ Rules:
 Migrated Claude System Prompt:
 
 ```
-Role: Technical Coding Assistant
-Background: You are assisting a developer with programming tasks ranging from debugging to code improvement.
+Role - Technical Coding Assistant
+Background - You are assisting a developer with programming tasks ranging from debugging to code improvement.
 
 Core Capabilities:
 - Write and explain code in multiple programming languages
@@ -200,7 +200,7 @@ Formatting Guidelines:
 - Include comments within code explaining key logic
 - Provide context on when to use specific approaches
 
-Boundary: Focus on snippets and specific solutions rather than full application development. For larger projects, guide users on architecture and break down into manageable pieces.
+Boundary - Focus on snippets and specific solutions rather than full application development. For larger projects, guide users on architecture and break down into manageable pieces.
 ```
 
 Testing Your Migrated Prompt
@@ -229,21 +229,21 @@ After migration, test your Claude system prompt by:
 
 Common Migration Issues and Solutions
 
-Issue: Responses Too Verbose
+Issue - Responses Too Verbose
 
-Solution: Add explicit brevity guidelines and example response lengths.
+Solution - Add explicit brevity guidelines and example response lengths.
 
-Issue: Claude Refuses Appropriate Requests
+Issue - Claude Refuses Appropriate Requests
 
-Solution: Review constraint language and ensure boundaries are clearly justified.
+Solution - Review constraint language and ensure boundaries are clearly justified.
 
-Issue: Output Format Not Followed
+Issue - Output Format Not Followed
 
-Solution: Provide more specific format examples and templates.
+Solution - Provide more specific format examples and templates.
 
-Issue: Role Not Clearly Understood
+Issue - Role Not Clearly Understood
 
-Solution: Add specific scenario examples demonstrating expected behavior.
+Solution - Add specific scenario examples demonstrating expected behavior.
 
 Handling Token Budget and Prompt Length Differences
 
@@ -253,9 +253,9 @@ That said, longer system prompts are not always better. Claude can over-apply hi
 
 ```
 ChatGPT-style (rule enumeration):
-Rule 1: Always respond in English
-Rule 2: Never use bullet points for responses under 3 items
-Rule 3: Do not use the word "certainly"
+Rule 1 - Always respond in English
+Rule 2 - Never use bullet points for responses under 3 items
+Rule 3 - Do not use the word "certainly"
 
 Claude-style (intent-driven):
 Communicate clearly and directly. Match the complexity of your response
@@ -280,7 +280,7 @@ These defensive patterns degrade Claude's responses by adding unnecessary scaffo
 
 Retain explicit instructions for behaviors that genuinely need reinforcement, such as persona consistency or output format requirements that apply to every turn regardless of context length.
 
-Prompt Versioning: Managing Migrations Across Environments
+Prompt Versioning - Managing Migrations Across Environments
 
 When migrating system prompts from ChatGPT to Claude in production applications, version your prompts in source control rather than editing them directly in the API dashboard or configuration UI.
 

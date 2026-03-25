@@ -107,7 +107,7 @@ Practical Debugging Workflow with AI
 
 Combine AI assistance with systematic debugging to resolve breakpoint issues efficiently.
 
-Step 1: Verify Actual Viewport Dimensions
+Step 1 - Verify Actual Viewport Dimensions
 
 Start by confirming what your browser actually reports. AI can generate a bookmarklet or overlay that displays real-time viewport information directly on your page.
 
@@ -127,11 +127,11 @@ Start by confirming what your browser actually reports. AI can generate a bookma
 })();
 ```
 
-Step 2: Map Your Active Styles
+Step 2 - Map Your Active Styles
 
 Ask AI to generate a script that logs all currently applied media queries and their resulting styles for your element. This reveals which rules actually influence your layout at any given width.
 
-Step 3: Test Across Simulated Viewports
+Step 3 - Test Across Simulated Viewports
 
 Use AI to write Puppeteer or Playwright tests that systematically verify your breakpoints across a range of viewport sizes:
 
@@ -154,11 +154,11 @@ Preventing Breakpoint Problems
 
 AI tools also help prevent issues before they occur.
 
-Use relative units wisely: AI can flag instances where fixed pixel values might cause problems and suggest converting to rem, em, or percentages where appropriate.
+Use relative units wisely - AI can flag instances where fixed pixel values might cause problems and suggest converting to rem, em, or percentages where appropriate.
 
-Document your breakpoints: Ask AI to generate a style guide from your existing media queries, making the intended behavior explicit.
+Document your breakpoints - Ask AI to generate a style guide from your existing media queries, making the intended behavior explicit.
 
-Implement continuous testing: AI-assisted setup of visual regression tests catches breakpoint regressions before deployment.
+Implement continuous testing - AI-assisted setup of visual regression tests catches breakpoint regressions before deployment.
 
 When AI Falls Short
 

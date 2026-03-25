@@ -174,7 +174,7 @@ Clearing Cache and Cookies
 Browser cache accumulation can interfere with ChatGPT's JavaScript execution. Clear your browser cache regularly, or use incognito/private mode for ChatGPT sessions to ensure fresh loading:
 
 ```bash
-Chrome: Clear cache via keyboard shortcut
+Chrome - Clear cache via keyboard shortcut
 Ctrl+Shift+Delete (Windows) or Cmd+Shift+Delete (Mac)
 ```
 

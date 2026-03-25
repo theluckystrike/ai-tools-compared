@@ -25,9 +25,9 @@ Table of Contents
 - [Feature Comparison for Common Workflows](#feature-comparison-for-common-workflows)
 - [Annual Cost Scenarios](#annual-cost-scenarios)
 - [Making the Financial Decision](#making-the-financial-decision)
-- [Beyond Cost: Feature Depth Comparison](#beyond-cost-feature-depth-comparison)
+- [Beyond Cost - Feature Depth Comparison](#beyond-cost-feature-depth-comparison)
 - [Quick Decision Tree](#quick-decision-tree)
-- [Extended Real-World Comparisons: Across Different Job Roles](#extended-real-world-comparisons-across-different-job-roles)
+- [Extended Real-World Comparisons - Across Different Job Roles](#extended-real-world-comparisons-across-different-job-roles)
 - [Annual ROI Calculation by Employment Type](#annual-roi-calculation-by-employment-type)
 - [Switching Costs and Productivity Dips](#switching-costs-and-productivity-dips)
 - [Tax and Expense Treatment (US Context)](#tax-and-expense-treatment-us-context)
@@ -95,7 +95,7 @@ Annual Cost Scenarios
 
 Let us look at three common developer scenarios to understand the real cost of ownership.
 
-Scenario 1: Hobbyist Developer
+Scenario 1 - Hobbyist Developer
 
 - Coding hours: 8-10 hours weekly (weekend coding)
 - Annual coding hours: 416-520 hours
@@ -108,7 +108,7 @@ Scenario 1: Hobbyist Developer
 
 Copilot Individual. Hobbyist usage won't justify Cursor's premium, and even Copilot struggles to create positive ROI at low hours. Both are optional at this volume.
 
-Scenario 2: Freelance Developer
+Scenario 2 - Freelance Developer
 
 - Coding hours: 35-40 hours weekly (consulting/contract work)
 - Billable rate: $75-$150/hour
@@ -121,7 +121,7 @@ Scenario 2: Freelance Developer
 
 Cursor Pro justifies itself in week 1. The difference between tools: Cursor's multi-file Composer feature saves 3-5 additional hours weekly for refactoring tasks (45-60% faster than Copilot for large changes). Annual extra value: $11,700-$39,000. Cursor's $92 premium becomes negligible.
 
-Quantified example: Freelancer spending 40 hours/week coding for clients at $100/hour billable rate:
+Quantified example - Freelancer spending 40 hours/week coding for clients at $100/hour billable rate:
 - Without AI: 40 hours coding = $4,000/week revenue
 - With Copilot (15% efficiency): 34 hours coding, 6 hours other work = $4,000/week revenue + tools/admin time freed
 - With Cursor (20% efficiency): 32 hours coding, 8 hours other work = $4,000/week revenue + more admin time
@@ -129,7 +129,7 @@ Quantified example: Freelancer spending 40 hours/week coding for clients at $100
 - Cursor's extra cost: $92/year
 - ROI: 112x return on the $92 premium
 
-Scenario 3: Full-Time Employed Developer
+Scenario 3 - Full-Time Employed Developer
 
 - Coding hours: 25-30 hours weekly (meetings, reviews, other tasks take 40-50%)
 - Base salary: $90,000/year
@@ -144,7 +144,7 @@ Scenario 3: Full-Time Employed Developer
 
 Both tools have strong ROI. Cursor's advantage: multi-file editing helps with refactoring and large structural changes (common in employment settings). If your role involves frequent codebase reorganization, Cursor's $92 premium pays for itself in saved debugging time. Otherwise, Copilot Individual suffices.
 
-Real-world example: Enterprise backend engineer using Cursor Pro:
+Real-world example - Enterprise backend engineer using Cursor Pro:
 - Daily coding: 4-5 hours (rest is meetings, code review, planning)
 - Average task: 2-3 file changes across service (Cursor Composer saves 20 min vs. manual switching)
 - Weekly multi-file tasks: 8-10 (160-200 min saved/week)
@@ -161,7 +161,7 @@ If you already know you need advanced multi-file editing, extensive codebase awa
 
 Both subscriptions can be canceled at any time, so you are not locked into a multi-year commitment. This flexibility means you can test each tool for a month and make your decision based on real experience rather than speculation.
 
-Beyond Cost: Feature Depth Comparison
+Beyond Cost - Feature Depth Comparison
 
 Pricing alone tells an incomplete story. Excellent for single-file context
 - Chat in IDE: Solid, but weaker at multi-file reasoning
@@ -179,7 +179,7 @@ Cursor Pro ($192/year)
 - Privacy mode: Optional zero-retention processing
 - Enterprise features: Organization plans available (not just individual)
 
-Decision rule: If you work on projects under 10,000 lines of code and rarely refactor multiple files simultaneously, Copilot Individual wins on both cost and sufficiency. If your projects exceed 50,000 lines or you frequently touch multiple interconnected files, Cursor's $92 premium pays for itself in refactoring time alone.
+Decision rule - If you work on projects under 10,000 lines of code and rarely refactor multiple files simultaneously, Copilot Individual wins on both cost and sufficiency. If your projects exceed 50,000 lines or you frequently touch multiple interconnected files, Cursor's $92 premium pays for itself in refactoring time alone.
 
 Hidden Costs Not Reflected in Pricing
 
@@ -190,7 +190,7 @@ Copilot Individual:
 
 Cursor Pro:
 - Requires switching to Cursor editor (psychological cost, even if it's VS Code-based)
-- Loss of some VS Code extensions (ecosystem isn't identical)
+- Loss of some VS Code extensions (environment isn't identical)
 - Learning curve: 2-4 hours to optimize Cursor-specific features
 - Potential IDE switch-back cost: if Cursor doesn't work for you, reinstalling Copilot extension takes 10 minutes
 
@@ -241,7 +241,7 @@ What happens to my data when using Copilot or Cursor?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-Extended Real-World Comparisons: Across Different Job Roles
+Extended Real-World Comparisons - Across Different Job Roles
 
 Different roles benefit differently from each tool's capabilities:
 
@@ -306,29 +306,29 @@ Copilot Individual sufficient unless doing major pipeline rewrites.
 
 Annual ROI Calculation by Employment Type
 
-Scenario 1: Salaried Software Engineer ($120K/year)
+Scenario 1 - Salaried Software Engineer ($120K/year)
 - Base hourly cost: $57.70
 - AI productivity gain: 18-22% (7-9 hours saved weekly)
 - Annual time saved: 360-470 hours
 - Dollar value saved: $20,700-$27,100
 
-Copilot ROI: 20,700 - 100 = $20,600 (207x return)
-Cursor ROI: 20,700 - 192 = $20,508 (106x return)
+Copilot ROI - 20,700 - 100 = $20,600 (207x return)
+Cursor ROI - 20,700 - 192 = $20,508 (106x return)
 
 Both have exceptional ROI. Cursor's advantage: refactoring time savings pay for themselves within weeks.
 
-Scenario 2: Freelance Developer Earning $100/hour
+Scenario 2 - Freelance Developer Earning $100/hour
 - Direct impact on billable hours
 - Can complete more projects per month
 - Time saved = direct revenue impact
 
-Copilot: Save 6 hours/week = +$600/week = +$31,200/year
-Cursor: Save 8 hours/week = +$800/week = +$41,600/year
-Difference: +$10,400/year for Cursor, net of $92 subscription = $10,308 additional value
+Copilot - Save 6 hours/week = +$600/week = +$31,200/year
+Cursor - Save 8 hours/week = +$800/week = +$41,600/year
+Difference - +$10,400/year for Cursor, net of $92 subscription = $10,308 additional value
 
 For freelancers, Cursor is a no-brainer investment. The $92 premium returns itself in 8.4 hours of saved time.
 
-Scenario 3: Startup Engineer (Equity-Based Compensation)
+Scenario 3 - Startup Engineer (Equity-Based Compensation)
 - Direct impact on startup value creation
 - Faster feature shipping = faster revenue
 - Bug reduction = lower support costs
@@ -339,8 +339,8 @@ Assumptions:
 - Each engineer's equity worth: $1M
 - Productivity gain worth: +5% engineering velocity = +$50K per engineer per year
 
-Copilot value: $50,000 - $100 = $49,900 per engineer
-Cursor value: $50,000 - $192 = $49,808 per engineer
+Copilot value - $50,000 - $100 = $49,900 per engineer
+Cursor value - $50,000 - $192 = $49,808 per engineer
 
 At this scale, the tool cost is negligible. Both provide massive upside.
 
@@ -354,8 +354,8 @@ Switching from Copilot to Cursor:
 - Week 2: 95% productivity (adapting to codebase awareness)
 - Week 3+: 105-110% productivity (leveraging multi-file features you didn't have before)
 
-Total productivity loss: ~8 hours over 3 weeks
-Dollar cost: 8 hours × $57.70/hour (salaried) = $462
+Total productivity loss - ~8 hours over 3 weeks
+Dollar cost - 8 hours × $57.70/hour (salaried) = $462
 
 ROI calculation for switching:
 - Cost of switching: $462

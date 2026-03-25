@@ -176,7 +176,7 @@ echo "Running pre-submission review..."
 git diff main...HEAD --stat > /tmp/changes.txt
 
 claude "Review the changes in this diff against our team's PR checklist.
-Focus on: security issues, test coverage, code quality, and documentation.
+Focus on - security issues, test coverage, code quality, and documentation.
 Report any concerns before I submit this PR."
 ```
 
@@ -367,11 +367,11 @@ Required format:
 <footer>
 ```
 
-Types: feat, fix, docs, style, refactor, perf, test
-Scope: area of code affected
-Subject: 50 character limit, imperative mood
-Body: 72 character line wrapping, explain why not what
-Footer: References to issues (#123), breaking changes
+Types - feat, fix, docs, style, refactor, perf, test
+Scope - area of code affected
+Subject - 50 character limit, imperative mood
+Body - 72 character line wrapping, explain why not what
+Footer - References to issues (#123), breaking changes
 ```
 
 Code Review Feedback Tiers

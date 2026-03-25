@@ -73,7 +73,7 @@ Claude Code excels at multi-step transformations. It can chain operations like `
 For complex reshaping tasks, Claude Code handles wide-to-long and long-to-wide transformations correctly, understanding when to use `melt()` versus `stack()` and when `pivot_table()` is more appropriate than a `groupby().agg()` chain:
 
 ```python
-Wide to long: Claude correctly recommends melt() for this shape
+Wide to long - Claude correctly recommends melt() for this shape
 df_long = df.melt(
     id_vars=['date', 'store_id'],
     value_vars=['q1_sales', 'q2_sales', 'q3_sales', 'q4_sales'],
@@ -215,13 +215,13 @@ Selecting the Right Tool for Your Workflow
 
 The best AI coding tool depends on your specific workflow:
 
-For deep pandas expertise: Claude Code provides the most understanding of pandas patterns and produces high-quality, vectorized solutions.
+For deep pandas expertise - Claude Code provides the most understanding of pandas patterns and produces high-quality, vectorized solutions.
 
-For notebook workflows: Cursor AI integrates with Jupyter environments and understands exploratory analysis patterns.
+For notebook workflows - Cursor AI integrates with Jupyter environments and understands exploratory analysis patterns.
 
-For standard autocomplete: GitHub Copilot and Codeium offer reliable suggestions for common pandas operations.
+For standard autocomplete - GitHub Copilot and Codeium offer reliable suggestions for common pandas operations.
 
-For terminal workflows: Aider excels when working in command-line environments with existing codebases.
+For terminal workflows - Aider excels when working in command-line environments with existing codebases.
 
 All tools require developer oversight. Pandas API changes over time, and AI-generated code should be tested, particularly when handling edge cases or large datasets where performance matters.
 
@@ -245,18 +245,18 @@ df['new_col'] = df['a'] * df['b']
 Beyond basic vectorization, watch for these subtler performance issues in AI-generated code:
 
 ```python
-Slow: apply() with a Python function on large DataFrames
+Slow - apply() with a Python function on large DataFrames
 df['result'] = df['values'].apply(lambda x: x * 2 if x > 0 else 0)
 
-Fast: vectorized with numpy where
+Fast - vectorized with numpy where
 df['result'] = np.where(df['values'] > 0, df['values'] * 2, 0)
 
-Slow: repeated string concatenation in a loop
+Slow - repeated string concatenation in a loop
 result = pd.DataFrame()
 for chunk in chunks:
     result = pd.concat([result, chunk])  # quadratic time complexity
 
-Fast: collect then concat once
+Fast - collect then concat once
 result = pd.concat(chunks, ignore_index=True)
 ```
 
@@ -290,7 +290,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -302,7 +302,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

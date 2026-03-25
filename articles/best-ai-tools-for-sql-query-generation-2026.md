@@ -42,7 +42,7 @@ SQL query generation is one of the few AI tasks with objective evaluation criter
 - For production query generation, the schema-in-prompt approach with Claude is most reliable: especially for complex analytical queries where the accuracy gap between tools is widest.
 - Date arithmetic across databases: MySQL uses DATE_ADD, Postgres uses INTERVAL syntax
 
-Ask Claude explicitly: "Include NULL checks.
+Ask Claude explicitly - "Include NULL checks.
 
 Tools Compared
 
@@ -62,9 +62,9 @@ Simple SELECTs are trivial for any modern LLM. The failure modes appear at compl
 - Aggregations with HAVING vs WHERE distinction
 - NULL handling across different databases
 
-Benchmark Query 1: Year-over-Year Revenue with Window Functions
+Benchmark Query 1 - Year-over-Year Revenue with Window Functions
 
-Prompt: "Show monthly revenue for 2024 and 2025 side by side with percent change, for each product category"
+Prompt - "Show monthly revenue for 2024 and 2025 side by side with percent change, for each product category"
 
 ```sql
 WITH monthly_revenue AS (
@@ -103,9 +103,9 @@ ORDER BY category, month;
 | SQLAI.ai | Partial | Missed the NULLIF, division by zero on new categories |
 | Copilot Chat | Partial | Generated window function but wrong PARTITION BY |
 
-Benchmark Query 2: Recursive CTE for Hierarchy
+Benchmark Query 2 - Recursive CTE for Hierarchy
 
-Prompt: "Find all managers in the org chart above employee ID 1042, including their level"
+Prompt - "Find all managers in the org chart above employee ID 1042, including their level"
 
 ```sql
 WITH RECURSIVE org_hierarchy AS (
@@ -132,9 +132,9 @@ ORDER BY depth;
 | SQLAI.ai | No | Generated iterative approach, not recursive CTE |
 | Copilot Chat | Partial | Recursive structure correct, wrong termination |
 
-Benchmark Query 3: BigQuery QUALIFY Clause
+Benchmark Query 3 - BigQuery QUALIFY Clause
 
-Prompt: "In BigQuery, filter rows where the most recent event per user is a 'purchase', using QUALIFY"
+Prompt - "In BigQuery, filter rows where the most recent event per user is a 'purchase', using QUALIFY"
 
 ```sql
 SELECT
@@ -180,7 +180,7 @@ CREATE TABLE order_items (
     unit_price_cents INTEGER
 );
 
-Query: Find the top 10 products by revenue in the last 30 days,
+Query - Find the top 10 products by revenue in the last 30 days,
 showing product name, units sold, and total revenue in dollars.
 Include only products with at least 5 orders.
 ```
@@ -189,7 +189,7 @@ With schema context, Claude and GPT-4o produce correct column names and join con
 
 Accuracy Summary
 
-Tested on 40 queries covering: basic aggregations, window functions, CTEs, recursive queries, dialect-specific syntax, and NULL edge cases.
+Tested on 40 queries covering - basic aggregations, window functions, CTEs, recursive queries, dialect-specific syntax, and NULL edge cases.
 
 | Tool | Accuracy | Schema Aware | Dialect Support | Cost |
 |---|---|---|---|---|
@@ -205,9 +205,9 @@ For analysts without IDE access, SQLAI.ai or Outerbase gives the best experience
 
 For production query generation, the schema-in-prompt approach with Claude is most reliable. especially for complex analytical queries where the accuracy gap between tools is widest.
 
-Benchmark Query 4: Percentile Calculation Without Window Functions
+Benchmark Query 4 - Percentile Calculation Without Window Functions
 
-Prompt: "Find the 95th percentile of order value in the last 30 days, for each product category"
+Prompt - "Find the 95th percentile of order value in the last 30 days, for each product category"
 
 ```sql
 -- Claude output (correct for PostgreSQL)
@@ -350,7 +350,7 @@ Common Query Generation Mistakes to Watch For
 4. Subquery correlation errors. Outer query columns not visible in subqueries without explicit correlation names
 5. Date arithmetic across databases. MySQL uses DATE_ADD, Postgres uses INTERVAL syntax
 
-Ask Claude explicitly: "Include NULL checks. Ensure all non-aggregated columns in GROUP BY. Use {database} specific syntax."
+Ask Claude explicitly - "Include NULL checks. Ensure all non-aggregated columns in GROUP BY. Use {database} specific syntax."
 
 When to Skip AI Query Generation
 
@@ -371,7 +371,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -383,7 +383,7 @@ AI tools generate queries well for common patterns, but always test generated qu
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

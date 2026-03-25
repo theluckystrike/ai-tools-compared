@@ -35,9 +35,9 @@ Claude Code wins for repo-wide refactoring that requires reasoning across many f
 
 
 - If `getUserById()` is called: via a wrapper that itself is called 40 places, Claude Code traces that chain; Cursor Composer may stop at the direct callers.
-- Group by: Prisma schema, DB queries, API layer, React components, tests."
+- Group by - Prisma schema, DB queries, API layer, React components, tests."
 
-Step 2: Plan the migration
+Step 2 - Plan the migration
 claude "Create a migration plan for renaming user_id to userId.
 - All files in src/api/: that query user_id 3.
 - Remove all unused imports
@@ -46,7 +46,7 @@ claude "Create a migration plan for renaming user_id to userId.
 - Show diffs for each."
 ```
 
-Tip 2: Use Git After Each Phase
+Tip 2 - Use Git After Each Phase
 
 ```bash
 After each Claude Code refactor phase
@@ -57,7 +57,7 @@ Context Window Handling
 Claude Code (Sonnet 4.6 and Opus 4.6) ships with a 200k token context window. For a large codebase, this matters directly:
 
 ```bash
-Claude Code: read the entire src/ directory before planning
+Claude Code - read the entire src/ directory before planning
 claude "Read all files in src/ and list every function that uses the deprecated
 getUserById() API. Then replace all calls with the new getUser({ id }) signature
 across all files."
@@ -76,23 +76,23 @@ across the codebase. Show me the files you'll change.
 
 The difference surfaces when refactoring involves implicit dependencies. If `getUserById()` is called via a wrapper that itself is called 40 places, Claude Code traces that chain; Cursor Composer may stop at the direct callers.
 
-Multi-File Refactoring: Real Workflow
+Multi-File Refactoring - Real Workflow
 
-Scenario: Rename a database column `user_id` to `userId` (camelCase migration) across a TypeScript monorepo with Prisma, Express routes, React components, and Jest tests.
+Scenario - Rename a database column `user_id` to `userId` (camelCase migration) across a TypeScript monorepo with Prisma, Express routes, React components, and Jest tests.
 
 Claude Code Approach
 
 ```bash
-Step 1: Audit scope
+Step 1 - Audit scope
 claude "List every file in src/ that references 'user_id' (snake_case).
-Group by: Prisma schema, DB queries, API layer, React components, tests."
+Group by - Prisma schema, DB queries, API layer, React components, tests."
 
-Step 2: Plan the migration
+Step 2 - Plan the migration
 claude "Create a migration plan for renaming user_id to userId.
 Output it as an ordered list of files to change, with the specific
 lines that need updating in each file."
 
-Step 3: Execute (Claude Code does this autonomously)
+Step 3 - Execute (Claude Code does this autonomously)
 claude "Execute the migration plan. Update:
 1. prisma/schema.prisma - rename the field
 2. All files in src/api/ that query user_id
@@ -116,7 +116,7 @@ Cursor shows inline diffs for each file. You review and accept/reject per-file. 
 
 Prompt Engineering for Large Refactors
 
-Claude Code: give it a goal + constraints, not instructions
+Claude Code - give it a goal + constraints, not instructions
 
 ```bash
 Weak prompt (too procedural):
@@ -129,7 +129,7 @@ parameter naming compared to the rest of the codebase. Fix this and
 any callers that use positional arguments that would break."
 ```
 
-Cursor: anchor to specific files and use @-mentions liberally
+Cursor - anchor to specific files and use @-mentions liberally
 
 ```
 Weak prompt:
@@ -147,13 +147,13 @@ Handling Large Files
 Both tools struggle with files over ~2000 lines. Strategies differ:
 
 ```bash
-Claude Code: split the task explicitly
+Claude Code - split the task explicitly
 claude "The file src/api/routes.ts is very large.
 Focus only on the auth-related routes (lines containing 'auth',
 'login', 'token'). List those line numbers, then refactor only those
 sections to use the new middleware pattern."
 
-Cursor: use the symbol reference @
+Cursor - use the symbol reference @
 Type @ClassName or @functionName to pull specific symbols into context
 without loading the entire file
 ```
@@ -179,7 +179,7 @@ Cursor limitations:
 - Multi-file batch editing via Composer sometimes applies partial changes if one file fails
 - Rules files (`.cursorrules`) don't fully replicate `CLAUDE.md` project instructions depth
 
-Combined Workflow: Best of Both
+Combined Workflow - Best of Both
 
 Use Claude Code for the planning and analysis phase, Cursor for the execution phase:
 
@@ -201,10 +201,10 @@ This hybrid approach uses Claude Code's superior analysis and planning against l
 Cost Comparison for Large Refactors
 
 ```
-Claude Code (Opus 4.6): ~$15 per 1M input tokens, ~$75 per 1M output tokens
-A typical 50-file refactor: ~300k tokens input = ~$4.50 in Claude API costs
+Claude Code (Opus 4.6) - ~$15 per 1M input tokens, ~$75 per 1M output tokens
+A typical 50-file refactor - ~300k tokens input = ~$4.50 in Claude API costs
 
-Cursor Pro: $20/month flat
+Cursor Pro - $20/month flat
 Includes 500 fast requests/month + unlimited slow requests
 Heavy refactoring sessions (10/day): exhausts fast quota in ~50 days
 ```
@@ -249,7 +249,7 @@ Refactor these authentication files:
 4. Replace magic strings (HS256, exp) with exported constants
 ```
 
-Real-World Refactoring Scenario: Express to Fastify Migration
+Real-World Refactoring Scenario - Express to Fastify Migration
 
 Here's how each tool handles a complex, multi-file refactor:
 
@@ -293,7 +293,7 @@ Execute migration:
 Focus on correctness over speed. Show me each file's changes."
 ```
 
-Expected output: Full migration with clear file-by-file changes, ~45 minutes to completion.
+Expected output - Full migration with clear file-by-file changes, ~45 minutes to completion.
 
 Cursor Approach (Composer)
 
@@ -303,16 +303,16 @@ Cursor Approach (Composer)
 Migrate from Express to Fastify:
 
 Step 1: Update @src/app.ts to initialize Fastify instead of Express
-Step 2: Convert each middleware function in @src/middleware/ to Fastify preHandler hooks
-Step 3: Refactor routes in @src/routes/ to use Fastify handlers
-Step 4: Update types in @src/types/ for Fastify request/reply
+Step 2 - Convert each middleware function in @src/middleware/ to Fastify preHandler hooks
+Step 3 - Refactor routes in @src/routes/ to use Fastify handlers
+Step 4 - Update types in @src/types/ for Fastify request/reply
 
 Show me the diff for each file before applying. I'll accept or reject per-file changes.
 ```
 
-Expected workflow: 60, 90 minutes, includes human review of each diff, catches more edge cases.
+Expected workflow - 60, 90 minutes, includes human review of each diff, catches more edge cases.
 
-Table: Tool Strengths by Scenario
+Table - Tool Strengths by Scenario
 
 | Scenario | Claude Code | Cursor | Winner |
 |----------|---|---|---|
@@ -326,7 +326,7 @@ Table: Tool Strengths by Scenario
 
 Practical Tips for Large Refactors with Claude Code
 
-Tip 1: Break Into Logical Phases
+Tip 1 - Break Into Logical Phases
 
 ```bash
 Instead of "refactor everything", phase it:
@@ -340,7 +340,7 @@ claude "Phase 3: Migrate files one at a time. Start with utilities,
 then models, then routes. Show diffs for each."
 ```
 
-Tip 2: Use Git After Each Phase
+Tip 2 - Use Git After Each Phase
 
 ```bash
 After each Claude Code refactor phase
@@ -350,7 +350,7 @@ git commit -m "Refactor phase 2: New API module created"
 This lets you rollback if phase 3 goes wrong
 ```
 
-Tip 3: Test Early and Often
+Tip 3 - Test Early and Often
 
 ```bash
 After each major refactor, run tests immediately
@@ -363,7 +363,7 @@ The affected code is in src/api/. Fix this without breaking other APIs."
 
 Practical Tips for Large Refactors with Cursor
 
-Tip 1: Use Symbol References
+Tip 1 - Use Symbol References
 
 Instead of pasting whole files, reference specific functions:
 
@@ -374,7 +374,7 @@ Rename these functions to verifyJWT() and refreshJWT() throughout the codebase.
 Update all callers.
 ```
 
-Tip 2: Accept Partial Diffs
+Tip 2 - Accept Partial Diffs
 
 When Cursor shows a diff spanning multiple functions, you can accept some and reject others:
 
@@ -383,7 +383,7 @@ Diff shows 5 function updates. Accept the first 3, reject the last 2.
 Refactor the last 2 manually after reviewing Cursor's approach.
 ```
 
-Tip 3: use IDE Integration
+Tip 3 - use IDE Integration
 
 Since Cursor runs in your IDE, you can:
 - See compilation errors immediately after applying changes

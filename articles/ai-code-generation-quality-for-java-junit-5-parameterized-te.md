@@ -234,7 +234,7 @@ class NestedParameterizedTests {
 
 Common Quality Issues and Fixes
 
-Issue 1: Missing Argument Import
+Issue 1 - Missing Argument Import
 
 AI sometimes generates `Arguments.of()` without importing the `Arguments` class:
 
@@ -252,7 +252,7 @@ static Stream<Arguments> testCases() {
 }
 ```
 
-Issue 2: Incorrect Null Handling in CSV
+Issue 2 - Incorrect Null Handling in CSV
 
 CSV sources don't handle null values well. AI sometimes suggests unsafe patterns:
 

@@ -64,7 +64,7 @@ Basic Plan Savings:
 
 - Yearly: $95/year
 
-- Savings: $25 per year (20.8%)
+- Savings - $25 per year (20.8%)
 
 
 Standard Plan Savings:
@@ -103,13 +103,13 @@ When Yearly Billing Makes Sense
 Choosing yearly billing works well under specific conditions. If you know you'll use Midjourney consistently over the next twelve months, the upfront savings are guaranteed. This applies particularly to:
 
 
-Professional creative workflows: Designers and developers building Midjourney into client projects or product assets typically generate images consistently. For a freelance designer billing $100/hour, the $72 annual savings on a Standard plan represents roughly 43 minutes of billable work.
+Professional creative workflows - Designers and developers building Midjourney into client projects or product assets typically generate images consistently. For a freelance designer billing $100/hour, the $72 annual savings on a Standard plan represents roughly 43 minutes of billable work.
 
 
-Side projects and startups: Early-stage products requiring visual assets benefit from predictable costs. The Mega plan yearly option at $96/month (effectively) provides 60 fast hours, enough for most MVP visual needs.
+Side projects and startups - Early-stage products requiring visual assets benefit from predictable costs. The Mega plan yearly option at $96/month (effectively) provides 60 fast hours, enough for most MVP visual needs.
 
 
-Content creators: YouTubers, bloggers, and social media managers who produce visual content regularly will use their monthly allocation consistently.
+Content creators - YouTubers, bloggers, and social media managers who produce visual content regularly will use their monthly allocation consistently.
 
 
 When to Stick with Monthly Billing
@@ -118,16 +118,16 @@ When to Stick with Monthly Billing
 Monthly billing remains the better choice in several scenarios:
 
 
-Variable usage patterns: If you're exploring Midjourney for a specific project with an unknown timeline, committing to a full year may not make sense. The flexibility of monthly billing lets you scale up or down without financial penalty.
+Variable usage patterns - If you're exploring Midjourney for a specific project with an unknown timeline, committing to a full year may not make sense. The flexibility of monthly billing lets you scale up or down without financial penalty.
 
 
-Trial period: New users should start with monthly billing to gauge their actual usage. Many discover they need less generation time than they initially expected.
+Trial period - New users should start with monthly billing to gauge their actual usage. Many discover they need less generation time than they initially expected.
 
 
-Budget constraints: The upfront yearly cost requires more capital, even with the per-month savings. Some teams prefer preserving cash flow with smaller monthly payments.
+Budget constraints - The upfront yearly cost requires more capital, even with the per-month savings. Some teams prefer preserving cash flow with smaller monthly payments.
 
 
-Uncertain commitment: If there's any chance you'll switch to alternative tools like Stable Diffusion, DALL-E 3, or Adobe Firefly within the year, monthly billing reduces your switching cost.
+Uncertain commitment - If there's any chance you'll switch to alternative tools like Stable Diffusion, DALL-E 3, or Adobe Firefly within the year, monthly billing reduces your switching cost.
 
 
 Understanding Fast Hours vs Relaxed Mode
@@ -154,7 +154,7 @@ For power users, fast hours often become the limiting factor rather than monthly
 Practical Examples for Developer Use Cases
 
 
-Example 1: App UI Visualization
+Example 1 - App UI Visualization
 
 
 A developer building a design tool needs to generate 50-100 UI mockups monthly for a SaaS dashboard. Each generation takes approximately 30-60 seconds in fast mode.
@@ -167,7 +167,7 @@ A developer building a design tool needs to generate 50-100 UI mockups monthly f
 - Annual savings: $25 with yearly billing
 
 
-Example 2: Marketing Campaign Assets
+Example 2 - Marketing Campaign Assets
 
 
 A marketing team requires 200+ product images, social media graphics, and landing page visuals monthly for a product launch.
@@ -180,7 +180,7 @@ A marketing team requires 200+ product images, social media graphics, and landin
 - Annual savings: $72 with yearly billing
 
 
-Example 3: Studio Production
+Example 3 - Studio Production
 
 
 A design studio handling multiple client accounts needs 500+ generations monthly, including high-resolution outputs for print.
@@ -199,16 +199,16 @@ Hidden Costs and Considerations
 Several factors beyond the base subscription price affect your total investment:
 
 
-Subscription pauses: Midjourney allows subscribers to pause their plan for one month per year. This feature works identically for monthly and yearly plans.
+Subscription pauses - Midjourney allows subscribers to pause their plan for one month per year. This feature works identically for monthly and yearly plans.
 
 
-Plan downgrades: You can downgrade your plan at any time, but yearly subscribers receive prorated refunds while monthly subscribers simply stop paying.
+Plan downgrades - You can downgrade your plan at any time, but yearly subscribers receive prorated refunds while monthly subscribers simply stop paying.
 
 
-Image ownership: All paid plans include full commercial usage rights for images you generate, regardless of billing frequency.
+Image ownership - All paid plans include full commercial usage rights for images you generate, regardless of billing frequency.
 
 
-API access: Midjourney's API operates separately from subscriptions with its own pricing. If you need programmatic image generation at scale, factor API costs into your budget separately.
+API access - Midjourney's API operates separately from subscriptions with its own pricing. If you need programmatic image generation at scale, factor API costs into your budget separately.
 
 
 Making Your Decision

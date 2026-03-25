@@ -32,7 +32,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Custom Instructions
+Step 1 - Understand Custom Instructions
 
 
 Custom instructions are persistent preferences that AI tools reference when generating code. Unlike one-off prompts, these instructions apply across sessions and projects. Most modern AI coding assistants support this feature through configuration files, workspace settings, or dedicated instruction fields.
@@ -41,7 +41,7 @@ Custom instructions are persistent preferences that AI tools reference when gene
 The key is specificity. A vague instruction like "use good logging" produces inconsistent results. A detailed instruction like "always use structured JSON logging with timestamp, level, message, and context fields" gives the AI clear boundaries to work within.
 
 
-Step 2: Set Up Custom Instructions in GitHub Copilot
+Step 2 - Set Up Custom Instructions in GitHub Copilot
 
 
 GitHub Copilot accepts custom instructions through `.github/copilot-instructions.md` or directly in your IDE settings. Create a file called `.github/copilot-instructions.md` in your repository root:
@@ -68,7 +68,7 @@ Use Python's logging module with JSONFormatter. Never use print() statements for
 When you write code in this repository, Copilot reads these instructions and generates log statements matching your specification. The AI understands the pattern and applies it consistently throughout your codebase.
 
 
-Step 3: Configure Cursor for Structured Logging
+Step 3 - Configure Cursor for Structured Logging
 
 
 Cursor, built on VS Code, offers a similar feature through its workspace instructions. Open `.cursor/rules` or add instructions through the settings UI:
@@ -92,7 +92,7 @@ For all logging statements:
 This approach works particularly well in TypeScript and JavaScript projects where you want machine-parseable log output for your logging infrastructure.
 
 
-Step 4: Create a Reusable Instruction Template
+Step 4 - Create a Reusable Instruction Template
 
 
 For teams managing multiple projects, a shared instruction template ensures consistency across repositories. Create a file like `docs/ai-instructions.md` that teams can copy:
@@ -184,7 +184,7 @@ const logger = {
 
 ```
 
-Step 5: Test Your Custom Instructions
+Step 5 - Test Your Custom Instructions
 
 After setting up custom instructions, verify they work by asking the AI to generate a simple function. For example:
 
@@ -197,7 +197,7 @@ Common issues include:
 - Missing context: instructions should cover both format and when to log
 - Overly complex rules: simpler instructions produce more consistent results
 
-Advanced: Conditional Logging Instructions
+Advanced - Conditional Logging Instructions
 
 For sophisticated projects, you can create context-aware instructions that adapt based on environment:
 
@@ -205,11 +205,11 @@ For sophisticated projects, you can create context-aware instructions that adapt
 Environment-Specific Logging
 
 
-Development: Use console.log with colors and human-readable timestamps
+Development - Use console.log with colors and human-readable timestamps
 
-Production: Use JSON format for log aggregation tools
+Production - Use JSON format for log aggregation tools
 
-Testing: Suppress all log output or use in-memory capture
+Testing - Suppress all log output or use in-memory capture
 
 
 Detect environment from NODE_ENV or DEBUG flag.
@@ -218,7 +218,7 @@ Detect environment from NODE_ENV or DEBUG flag.
 
 The AI applies these rules intelligently, switching between formats based on your project configuration.
 
-Step 6: Comparing AI Tools for Custom Instruction Support
+Step 6 - Comparing AI Tools for Custom Instruction Support
 
 Different AI coding assistants handle custom instructions with varying degrees of flexibility and persistence. Understanding these differences helps you choose the right tool and configure it correctly.
 
@@ -234,21 +234,21 @@ The file-based approaches used by Copilot and Cursor have a major advantage: you
 
 Claude's API-based approach is more flexible for programmatic use cases, you can inject different system prompts depending on context, such as using stricter logging rules in production code generation versus a more relaxed format in prototyping contexts.
 
-Step 7: Step-by-Step Workflow for Setting Up a Team Logging Standard
+Step 7 - Step-by-Step Workflow for Setting Up a Team Logging Standard
 
 Here is a concrete workflow for rolling out custom instruction-based logging standards across a team.
 
-Step 1: Define your log schema. Start with a simple JSON schema document that specifies every field, its type, and its purpose. Keep this schema in your project wiki so it can be referenced independently of any AI tool configuration.
+Step 1 - Define your log schema. Start with a simple JSON schema document that specifies every field, its type, and its purpose. Keep this schema in your project wiki so it can be referenced independently of any AI tool configuration.
 
-Step 2: Write example log lines. Write three to five realistic example log entries that conform to your schema. Include edge cases like errors with stack traces, logs with nested context objects, and minimal logs with no optional fields.
+Step 2 - Write example log lines. Write three to five realistic example log entries that conform to your schema. Include edge cases like errors with stack traces, logs with nested context objects, and minimal logs with no optional fields.
 
-Step 3: Draft the instruction file. Translate your schema and examples into the instruction format for your chosen AI tool. Lead with the most important rules. Put the most common case first, then handle edge cases. Avoid negatives where possible, "use JSON format" is clearer than "do not use plain text format."
+Step 3 - Draft the instruction file. Translate your schema and examples into the instruction format for your chosen AI tool. Lead with the most important rules. Put the most common case first, then handle edge cases. Avoid negatives where possible, "use JSON format" is clearer than "do not use plain text format."
 
-Step 4: Test with representative prompts. Ask your AI assistant to write a function for each of the following: an API endpoint handler, a background job, and an error handler. Check whether the generated logging matches your schema in all three cases.
+Step 4 - Test with representative prompts. Ask your AI assistant to write a function for each of the following: an API endpoint handler, a background job, and an error handler. Check whether the generated logging matches your schema in all three cases.
 
-Step 5: Iterate and commit. Refine the instructions based on what you observe. Commit the final instruction file to version control. Add a note in your onboarding documentation explaining that this file controls AI logging behavior.
+Step 5 - Iterate and commit. Refine the instructions based on what you observe. Commit the final instruction file to version control. Add a note in your onboarding documentation explaining that this file controls AI logging behavior.
 
-Step 8: Pro Tips for Better AI Logging Instructions
+Step 8 - Pro Tips for Better AI Logging Instructions
 
 Anchor your instructions with a named formatter. Instead of describing the format in prose, provide a concrete implementation of a logging formatter class and instruct the AI to use it by name. This reduces ambiguity dramatically.
 
@@ -260,7 +260,7 @@ Version your instructions. Add a comment at the top of your instruction file wit
 
 ```markdown
 Logging Standards v2.1
-Updated: 2026-03-01. Added request_id to all log context objects
+Updated - 2026-03-01. Added request_id to all log context objects
 ```
 
 Test against your log aggregation tool. If you use Datadog, Splunk, or a similar platform, paste a sample log line from AI-generated code directly into the query interface and verify it parses correctly before rolling out the instructions to your full team.
@@ -297,7 +297,7 @@ It helps to include at least a skeleton implementation. The AI will anchor to yo
 How often should I update the instructions?
 Review them whenever your log aggregation configuration changes, when you adopt a new observability tool, or when team members report that AI-generated logging is inconsistent with the expected format. Quarterly reviews are a reasonable default for stable projects.
 
-Step 9: Maintaining Your Instructions
+Step 9 - Maintaining Your Instructions
 
 Review and update your custom instructions periodically. As your project evolves, logging requirements change. Keep instructions in version control so changes are tracked and can be rolled back if needed.
 

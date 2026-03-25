@@ -67,11 +67,11 @@ The export process uses Google Takeout, which provides your data in JSON format.
 
 Step-by-Step Export Process
 
-Step 1: Access Google Takeout
+Step 1 - Access Google Takeout
 
 Navigate to [Google Takeout](https://takeout.google.com/) and sign in with the account connected to your Gemini subscription. You will see a list of Google services that store your data.
 
-Step 2: Select Gemini Data
+Step 2 - Select Gemini Data
 
 Scroll through the service list and find "Gemini". If you do not see it explicitly listed, check under "Other Google services" or "Cloud Storage" depending on how your data is stored. Google periodically updates which products appear in Takeout, so if Gemini is not visible, check the "Select all" option for a complete archive.
 
@@ -85,11 +85,11 @@ takeout-YYYYMMDD/
          settings.json
 ```
 
-Step 3: Choose Export Format and Frequency
+Step 3 - Choose Export Format and Frequency
 
 Select your preferred delivery method. You can choose to receive a download link via email, add files to Google Drive, or send to cloud storage providers. Decide between a one-time export or scheduled exports if you want ongoing backups.
 
-Step 4: Download and Verify
+Step 4 - Download and Verify
 
 Once Google prepares your archive (this may take minutes to hours depending on data volume), download the ZIP file. Verify the contents include what you expect before deleting from your account.
 

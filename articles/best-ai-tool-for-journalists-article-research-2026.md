@@ -49,7 +49,7 @@ Journalists approach research differently than academic researchers or students.
 
 The core tasks that consume journalist time include background research on topics, finding expert quotes, cross-referencing facts across multiple sources, tracking down primary documents, and organizing research into coherent narratives. Each of these tasks presents distinct challenges that different AI tools address with varying degrees of effectiveness.
 
-Claude: Strong for Deep Investigative Research
+Claude - Strong for Deep Investigative Research
 
 Claude excels at analyzing long documents and synthesizing complex information into clear summaries. For investigative journalism, this proves particularly valuable when parsing leaked documents, court filings, or extensive public records.
 
@@ -61,7 +61,7 @@ Claude also handles interview prep effectively. Journalists can paste previous q
 
 The constitutional limitations matter, however. Claude's training data has a cutoff, meaning it cannot access current events or the latest news developments. Journalists must verify any claims about recent events independently.
 
-Perplexity: Best for Quick Topic Overview and Source Discovery
+Perplexity - Best for Quick Topic Overview and Source Discovery
 
 Perplexity serves a different but equally important function: rapid topic familiarization and source discovery. When assigned a story in an unfamiliar domain, journalists need quick ways to understand basic context and find authoritative sources.
 
@@ -73,7 +73,7 @@ For breaking news situations, Perplexity's ability to synthesize multiple perspe
 
 The trade-off involves depth. Perplexity provides excellent overviews but less analytical depth than Claude when handling complex documents. Journalists typically use it early in the research process, then switch to other tools for detailed analysis.
 
-NotebookLM: Superior for Organizing Personal Research
+NotebookLM - Superior for Organizing Personal Research
 
 Google's NotebookLM has evolved into a powerful tool for journalists managing large volumes of research materials. Its functionality centers around uploaded documents, making it ideal for beat journalists who regularly work with official reports, transcripts, and press releases.
 
@@ -110,15 +110,15 @@ Free tier of Claude + Perplexity covers most journalist needs. Upgrade to Pro if
 
 Real Research Workflows by Story Type
 
-Scenario 1: Breaking News Story
-Timeline: 4 hours until publication
-Tools needed: Speed, source credibility, fact verification
+Scenario 1 - Breaking News Story
+Timeline - 4 hours until publication
+Tools needed - Speed, source credibility, fact verification
 
 ```
 9:00 AM - Breaking story assignment
- Perplexity: "What's the background on [story topic]?" (2 min)
+ Perplexity - "What's the background on [story topic]?" (2 min)
  Perplexity: "Find recent expert analysis and sources" (3 min)
- Claude: Interview prep - "What questions should I ask [person]?" (3 min)
+ Claude - Interview prep - "What questions should I ask [person]?" (3 min)
 
 9:15 AM - Begin interviews & reporting
 
@@ -132,43 +132,43 @@ Tools needed: Speed, source credibility, fact verification
 3:00 PM - Final verification before publication
 ```
 
-Scenario 2: Investigative Piece
-Timeline: 4-6 weeks for major investigation
-Tools needed: Deep analysis, source tracking, contradiction identification
+Scenario 2 - Investigative Piece
+Timeline - 4-6 weeks for major investigation
+Tools needed - Deep analysis, source tracking, contradiction identification
 
 ```
-Week 1: Initial Research & Source Building
+Week 1 - Initial Research & Source Building
  Perplexity: "Overview of the regulatory environment" (15 min)
  Perplexity: Find expert sources & academics (20 min)
  NotebookLM: Create research notebook for sources
 
-Week 2-3: Document Deep Dive
+Week 2-3 - Document Deep Dive
  Claude: Upload 500+ pages of documents
- Claude: "What patterns emerge from these documents?" (10 min)
+ Claude - "What patterns emerge from these documents?" (10 min)
  Claude: "Identify contradictions between these statements" (5 min)
- Claude: "What questions should follow-up reporting answer?" (5 min)
+ Claude - "What questions should follow-up reporting answer?" (5 min)
 
-Week 4: Expert Interview Synthesis
+Week 4 - Expert Interview Synthesis
  Claude: "Summarize interview notes and compare against documents" (10 min)
  Perplexity: "Find any other reporting on these claims" (10 min)
  Claude: "Identify remaining gaps in reporting" (5 min)
 
-Week 5-6: Final Fact Check
+Week 5-6 - Final Fact Check
  Claude: Full story draft analysis (10 min)
  Perplexity: Final fact verification (10 min)
  Claude: "Verify every claim can be attributed or removed" (10 min)
 ```
 
-Scenario 3: Beat Reporter - Daily Updates
-Timeline: Continuous
-Tools needed: Organization, quick summaries, contradiction tracking
+Scenario 3 - Beat Reporter - Daily Updates
+Timeline - Continuous
+Tools needed - Organization, quick summaries, contradiction tracking
 
 ```
 Daily Workflow:
 Morning:
  NotebookLM: "What developments on my beat?" (reviewing uploaded docs) (5 min)
  Perplexity: "Latest news on [beat topic]" (5 min)
- Claude: "What should I ask sources today?" (5 min)
+ Claude - "What should I ask sources today?" (5 min)
 
 Afternoon:
  NotebookLM: Upload new documents/press releases (2 min)
@@ -180,13 +180,13 @@ Evening:
 Weekly (Sunday):
  Claude: Upload 5+ days of notes & documents
  Claude: "Identify story trends & emerging themes" (15 min)
- Claude: "What contradictions exist between sources?" (10 min)
+ Claude - "What contradictions exist between sources?" (10 min)
  NotebookLM: Organize findings for the week (10 min)
 ```
 
 Fact-Checking Workflow Example
 
-Article claim: "Company X's labor violations increased 40% year-over-year"
+Article claim - "Company X's labor violations increased 40% year-over-year"
 
 AI-assisted verification process:
 
@@ -197,10 +197,10 @@ AI-assisted verification process:
 
 2. Claude: "Resolve contradiction between OSHA and lawsuits" (5 min)
     Upload both documents
-    Request: "Why do these numbers differ? Which is accurate?"
+    Request - "Why do these numbers differ? Which is accurate?"
     Explanation of different counting methods
 
-3. Perplexity: "How has industry reported this?" (5 min)
+3. Perplexity - "How has industry reported this?" (5 min)
     Find comparable companies
     Understand typical year-over-year variations
 
@@ -210,9 +210,9 @@ AI-assisted verification process:
     Note any discrepancies in reporting
 ```
 
-Time savings: 30+ minutes of manual research → 15 minutes with AI assistance
+Time savings - 30+ minutes of manual research → 15 minutes with AI assistance
 
-Real-World Application: Daily News Workflow
+Real-World Application - Daily News Workflow
 
 Consider a metro reporter covering city government. Morning research typically involves checking recent city council actions, understanding implications of new ordinances, and identifying story angles. Using Perplexity, they quickly understand the context of a complex zoning decision and find relevant expert sources.
 
@@ -222,22 +222,22 @@ Throughout the day, NotebookLM serves as the organizational hub, accumulating do
 
 Common Journalist Mistakes with AI Research Tools
 
-Mistake 1: Treating AI output as verified fact
+Mistake 1 - Treating AI output as verified fact
 -  Using AI summaries directly in articles without checking sources
 -  Using AI summaries as starting points for deeper research
 - Stories lacking proper attribution and vulnerable to errors
 
-Mistake 2: Incomplete source tracking
+Mistake 2 - Incomplete source tracking
 -  Asking AI to find sources but not recording where they came from
 -  Using Perplexity (which cites sources) and verifying each citation
 - Ability to defend reporting vs. credibility questions
 
-Mistake 3: Over-reliance on single tool
+Mistake 3 - Over-reliance on single tool
 -  Using one tool for all research phases
 -  Matching tool to task (Perplexity for quick facts, Claude for analysis)
 - 30-40% time savings vs. 5-10% with single tool
 
-Mistake 4: Neglecting privacy for sensitive sources
+Mistake 4 - Neglecting privacy for sensitive sources
 -  Uploading sensitive interview notes to public AI tools
 -  Using on-premises or private deployment for confidential materials
 - Avoiding data breaches and protecting sources
@@ -290,7 +290,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -302,7 +302,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

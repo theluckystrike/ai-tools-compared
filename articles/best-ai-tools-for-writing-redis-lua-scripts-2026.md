@@ -31,8 +31,8 @@ Poor scripts create production incidents: race conditions between script version
 AI Tools Comparison
 
 Claude (Opus 4.6, Haiku 4.5)
-Price: $3/month (Claude.ai Pro) or $20 per 1M input tokens (API)
-Best for: Complex atomic operations, rate limiters, multi-key mutations
+Price - $3/month (Claude.ai Pro) or $20 per 1M input tokens (API)
+Best for - Complex atomic operations, rate limiters, multi-key mutations
 
 Claude produces battle-tested Redis Lua consistently. Its Lua knowledge covers:
 - Proper EVALSHA patterns with fallback to EVAL
@@ -67,22 +67,22 @@ else
 end
 ```
 
-The script is correct: uses sorted sets for window, cleans expired entries, handles the boundary case where current == max_requests properly.
+The script is correct - uses sorted sets for window, cleans expired entries, handles the boundary case where current == max_requests properly.
 
-Weaknesses: Requires specific prompting around edge cases. Claude won't warn you unprompted about cluster compatibility if you don't ask.
+Weaknesses - Requires specific prompting around edge cases. Claude won't warn you unprompted about cluster compatibility if you don't ask.
 
-Cost per query: $0.08 (API) for full script generation including testing.
+Cost per query - $0.08 (API) for full script generation including testing.
 
 OpenAI GPT-4o
-Price: $20/month (ChatGPT Plus) or $0.03/$0.15 per 1K input/output tokens (API)
-Best for: Quick prototypes, simple scripts
+Price - $20/month (ChatGPT Plus) or $0.03/$0.15 per 1K input/output tokens (API)
+Best for - Quick prototypes, simple scripts
 
 GPT-4o handles basic Redis Lua. Effective for:
 - INCR wrapper scripts
 - Simple key lookups
 - TTL management
 
-Example prompt: "Write a Redis Lua script that increments a counter and returns the value after incrementing."
+Example prompt - "Write a Redis Lua script that increments a counter and returns the value after incrementing."
 
 GPT-4o produces:
 
@@ -95,18 +95,18 @@ end
 return current
 ```
 
-This is functional but naive: doesn't handle the case where EXPIRE fails between INCR and EXPIRE calls (though technically atomic in Redis, the pattern is defensive).
+This is functional but naive - doesn't handle the case where EXPIRE fails between INCR and EXPIRE calls (though technically atomic in Redis, the pattern is defensive).
 
 Weaknesses:
 - Inconsistent on EVALSHA caching strategy
 - Often generates Lua 5.1 code incompatible with Redis 7.0+
 - Doesn't understand LIMIT patterns for sorted set pagination
 
-Cost per query: $0.004 (API) for simple scripts, $0.01 for complex ones.
+Cost per query - $0.004 (API) for simple scripts, $0.01 for complex ones.
 
 GitHub Copilot
-Price: $10/month or $100/year
-Best for: Inline script generation, repository-aware context
+Price - $10/month or $100/year
+Best for - Inline script generation, repository-aware context
 
 Copilot shines when you're working inside your codebase with existing Redis patterns.
 
@@ -120,13 +120,13 @@ Weaknesses:
 - Doesn't explain the Redis semantics
 - No multi-turn conversation to refine edge cases
 
-Best workflow: Use Copilot for 30-line scripts, Claude for scripts over 100 lines.
+Best workflow - Use Copilot for 30-line scripts, Claude for scripts over 100 lines.
 
-Cost per query: $0 (already paid for).
+Cost per query - $0 (already paid for).
 
 Google Gemini (Advanced)
-Price: $20/month
-Best for: Redis module scripts, advanced features
+Price - $20/month
+Best for - Redis module scripts, advanced features
 
 Gemini is comparable to GPT-4o but handles:
 - RedisJSON and RedisSearch integration
@@ -139,7 +139,7 @@ Weaknesses:
 - Limited Redis-specific training data
 - Slower than Claude at error recovery
 
-Cost per query: $0.004 per 1K input tokens.
+Cost per query - $0.004 per 1K input tokens.
 
 Comparison Table
 
@@ -171,7 +171,7 @@ For building production rate limiters:
 
 ```bash
 redis-cli SCRIPT LOAD "$(cat rate_limiter.lua)"
-Output: e0e1f9fabfc9d4800c877a703b823ac0578ff8d6
+Output - e0e1f9fabfc9d4800c877a703b823ac0578ff8d6
 
 redis-benchmark -n 100000 \
   EVALSHA e0e1f9fabfc9d4800c877a703b823ac0578ff8d6 \
@@ -189,7 +189,7 @@ Real-World Examples
 
 Distributed Rate Limiter (Token Bucket)
 
-Prompt to Claude: "Build a token bucket rate limiter in Redis Lua. User has 100 tokens per minute, refill rate 1.67/sec."
+Prompt to Claude - "Build a token bucket rate limiter in Redis Lua. User has 100 tokens per minute, refill rate 1.67/sec."
 
 Claude produces a production-ready script handling:
 - Sub-second precision (milliseconds)
@@ -198,15 +198,15 @@ Claude produces a production-ready script handling:
 
 Leaderboard with Expiring Scores
 
-Use case: Daily gaming leaderboard, reset at midnight UTC.
+Use case - Daily gaming leaderboard, reset at midnight UTC.
 
-Prompt: "Write a Redis Lua script that: (1) adds a user score, (2) returns their rank, (3) auto-expires the leaderboard at next UTC midnight."
+Prompt - "Write a Redis Lua script that: (1) adds a user score, (2) returns their rank, (3) auto-expires the leaderboard at next UTC midnight."
 
 Claude handles the edge case of midnight crossing mid-request.
 
 Distributed Lock with Timeout
 
-Prompt: "Implement a Redis lock with timeout in Lua. Lock key is {resource_id}, max lock duration is ARGV[1] ms, allow lock upgrade if same owner."
+Prompt - "Implement a Redis lock with timeout in Lua. Lock key is {resource_id}, max lock duration is ARGV[1] ms, allow lock upgrade if same owner."
 
 Claude generates:
 
@@ -233,7 +233,7 @@ Red Flags to Avoid
 
 When reviewing AI-generated Redis Lua:
 
-1. Missing EVALSHA caching: Script isn't prepared with `SCRIPT LOAD` strategy. Ask: "How do I cache this?"
+1. Missing EVALSHA caching: Script isn't prepared with `SCRIPT LOAD` strategy. Ask - "How do I cache this?"
 
 2. Cluster-unsafe key patterns: Script uses `KEYS[1]` but assumes all hash slots are accessible. Clusters need all accessed keys in same slot.
 

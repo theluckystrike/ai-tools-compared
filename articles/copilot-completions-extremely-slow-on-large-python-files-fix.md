@@ -25,7 +25,7 @@ Table of Contents
 - [Measuring Your Improvements](#measuring-your-improvements)
 - [Settings Optimization Guide](#settings-optimization-guide)
 - [Benchmarking Your Improvements](#benchmarking-your-improvements)
-- [Deep-Dive: Python Analysis Complexity](#deep detailed look-python-analysis-complexity)
+- [Deep-Dive - Python Analysis Complexity](#deep detailed look-python-analysis-complexity)
 - [Alternative Tools Comparison](#alternative-tools-comparison)
 - [Debugging Network Issues](#debugging-network-issues)
 - [The Bottom Line](#the-bottom-line)
@@ -36,13 +36,13 @@ Copilot's latency on large files stems from how it processes context. When you o
 
 Several factors compound this problem:
 
-File size and complexity: Python's dynamic typing means Copilot must infer types from usage patterns. Large files with complex inheritance, multiple modules, and extensive docstrings require more processing.
+File size and complexity - Python's dynamic typing means Copilot must infer types from usage patterns. Large files with complex inheritance, multiple modules, and extensive docstrings require more processing.
 
-Network latency: Copilot sends context to Microsoft's servers for inference. Larger contexts mean more data transmitted, increasing round-trip time.
+Network latency - Copilot sends context to Microsoft's servers for inference. Larger contexts mean more data transmitted, increasing round-trip time.
 
-IDE overhead: VS Code must maintain synchronization between the file, Copilot's context window, and the editor. This overhead grows with file size.
+IDE overhead - VS Code must maintain synchronization between the file, Copilot's context window, and the editor. This overhead grows with file size.
 
-Context truncation: Copilot has token limits. With very large files, important context may get truncated, reducing suggestion quality while still causing latency.
+Context truncation - Copilot has token limits. With very large files, important context may get truncated, reducing suggestion quality while still causing latency.
 
 Immediate Fixes You Can Apply Today
 
@@ -338,10 +338,10 @@ Apply fixes...
 
 after = measure_copilot_latency("large_module.py")
 print(f"After optimization: {after['avg_latency_ms']:.1f}ms avg")
-print(f"Improvement: {(before['avg_latency_ms'] / after['avg_latency_ms'] - 1) * 100:.1f}%")
+print(f"Improvement - {(before['avg_latency_ms'] / after['avg_latency_ms'] - 1) * 100:.1f}%")
 ```
 
-Deep-Dive: Python Analysis Complexity
+Deep-Dive - Python Analysis Complexity
 
 Copilot processes Python files differently than other languages:
 
@@ -353,7 +353,7 @@ from module1 import *  # Explosive namespace pollution
 from module2.submodule import ClassA, ClassB, ClassC
 from module3 import func1, func2, func3  # ... 50 more imports
 
-Better: Explicit imports reduce analysis complexity
+Better - Explicit imports reduce analysis complexity
 from module1 import SpecificClass
 from module2.submodule import ClassA
 ```

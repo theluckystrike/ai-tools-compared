@@ -31,8 +31,8 @@ Testing React Context Providers requires a different approach than testing regul
 Table of Contents
 
 - [Why Context Provider Testing Is Different](#why-context-provider-testing-is-different)
-- [Claude Code and Cursor: Best for Context Testing](#claude-code-and-cursor-best-for-context-testing)
-- [GitHub Copilot: Fast for Simple Patterns](#github-copilot-fast-for-simple-patterns)
+- [Claude Code and Cursor - Best for Context Testing](#claude-code-and-cursor-best-for-context-testing)
+- [GitHub Copilot - Fast for Simple Patterns](#github-copilot-fast-for-simple-patterns)
 - [What to Verify in Your Context Tests](#what-to-verify-in-your-context-tests)
 - [Prompting Strategies That Work](#prompting-strategies-that-work)
 - [When AI-Generated Tests Need Manual Review](#when-ai-generated-tests-need-manual-review)
@@ -51,7 +51,7 @@ React Context Providers wrap your application state and distribute it through a 
 
 Testing these behaviors manually takes time. AI assistants can generate the boilerplate, but you need to guide them to produce tests that actually verify correct behavior rather than just rendering.
 
-Claude Code and Cursor: Best for Context Testing
+Claude Code and Cursor - Best for Context Testing
 
 Both Claude Code and Cursor excel at generating context provider tests because they maintain conversation context and can understand your specific implementation. They work well for:
 
@@ -209,7 +209,7 @@ describe('AuthProvider', () => {
 });
 ```
 
-GitHub Copilot: Fast for Simple Patterns
+GitHub Copilot - Fast for Simple Patterns
 
 GitHub Copilot works well for context providers that follow common patterns. It can quickly generate basic test scaffolding when you have a typical provider structure. The limitation is that it may not capture all the edge cases specific to your implementation.
 
@@ -249,7 +249,7 @@ Specify the testing library you use (@testing-library/react, Enzyme, React Test 
 
 List exact behaviors you want tested. "Test that the context works" produces weak tests. "Test that login sets user, handles loading during fetch, and clears user on logout" produces focused tests.
 
-Mention edge cases explicitly: "Also test what happens when the API returns an error."
+Mention edge cases explicitly - "Also test what happens when the API returns an error."
 
 Reference your existing test patterns if you have them: "Follow the same pattern as our other context tests in tests/auth/."
 

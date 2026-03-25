@@ -254,14 +254,14 @@ Sample Output
 ```bash
 $ python api_diff_cli.py openapi-v1.yaml openapi-v2.yaml --old-version v1 --new-version v2
 
-Severity: MAJOR
-Breaking changes: 3
-Non-breaking changes: 5
+Severity - MAJOR
+Breaking changes - 3
+Non-breaking changes - 5
 
 BREAKING CHANGES:
  [DELETE /api/v1/users/{id}]: Endpoint removed
  Impact: Clients calling DELETE /users/:id will receive 404
- Fix: Migrate to DELETE /api/v2/users/{id}. identical behavior
+ Fix - Migrate to DELETE /api/v2/users/{id}. identical behavior
 
  [POST /api/v1/orders]: New required field 'shipping_address_id' added to request body
  Impact: Clients not sending shipping_address_id will receive 422
@@ -269,7 +269,7 @@ BREAKING CHANGES:
 
  [GET /api/v1/products]: Response field 'price' type changed from string to number
  Impact: Clients parsing price as string will need to handle numeric type
- Fix: Update price handling to expect number type (e.g., 29.99 instead of "29.99")
+ Fix - Update price handling to expect number type (e.g., 29.99 instead of "29.99")
 ```
 
 CI Integration

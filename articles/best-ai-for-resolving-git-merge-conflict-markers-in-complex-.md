@@ -96,7 +96,7 @@ For instance, if you're rebasing a feature that adds a new database field, the c
 Practical Strategies for AI-Assisted Conflict Resolution
 
 
-Strategy 1: Context-Prompted Resolution
+Strategy 1 - Context-Prompted Resolution
 
 
 Before running `git rebase --continue`, feed the conflicting file to your AI assistant with relevant context:
@@ -108,14 +108,14 @@ git diff --name-only --diff-filter=U > conflicted_files.txt
 cat conflicted_files.txt
 Choose a file to resolve
 cat path/to/conflicted/file.js | pbcopy
-Paste into AI with: "Resolve this merge conflict in our React project..."
+Paste into AI with - "Resolve this merge conflict in our React project..."
 ```
 
 
 The key is providing enough context: your coding conventions, the purpose of the changes, and any architectural decisions that should guide the resolution.
 
 
-Strategy 2: Batch Resolution with Project Rules
+Strategy 2 - Batch Resolution with Project Rules
 
 
 For projects with established patterns, create a system prompt that encodes your conventions:
@@ -133,7 +133,7 @@ When resolving merge conflicts in this codebase:
 This helps the AI make consistent decisions across multiple conflicts.
 
 
-Strategy 3: Interactive Terminal Sessions
+Strategy 3 - Interactive Terminal Sessions
 
 
 For the most complex scenarios, maintain an interactive AI session throughout the rebase:
@@ -295,7 +295,7 @@ Prompt Engineering for Better Resolutions
 The quality of AI assistance depends heavily on how you frame the conflict. Several strategies improve outcomes:
 
 
-Strategy: Include Project Architecture Documentation
+Strategy - Include Project Architecture Documentation
 
 
 ```
@@ -314,7 +314,7 @@ Both changes are valuable. Help me merge them while maintaining type safety and 
 ```
 
 
-Strategy: Provide Test Expectations
+Strategy - Provide Test Expectations
 
 
 ```
@@ -330,7 +330,7 @@ Should I combine both approaches or pick one?
 ```
 
 
-Strategy: Ask for Explanation First
+Strategy - Ask for Explanation First
 
 
 Instead of immediately asking for code:
@@ -399,12 +399,12 @@ Small, focused commits make conflict resolution easier:
 
 
 ```bash
-Good: specific, reviewable commits
+Good - specific, reviewable commits
 git commit -m "Add quantity field to order model"
 git commit -m "Update order calculation to use quantity"
 git commit -m "Add migration for quantity column"
 
-Avoid: monolithic commits mixing unrelated changes
+Avoid - monolithic commits mixing unrelated changes
 git commit -m "Update orders and fix everything"
 ```
 
@@ -415,7 +415,7 @@ Production Workflows with AI
 Large teams can establish patterns that combine AI assistance with review processes:
 
 
-Pattern: AI-Assisted Conflict Resolution with Team Review
+Pattern - AI-Assisted Conflict Resolution with Team Review
 
 
 ```bash
@@ -436,7 +436,7 @@ Continue rebase after team approves the resolution
 ```
 
 
-Pattern: Conflict Analysis Before Rebase
+Pattern - Conflict Analysis Before Rebase
 
 
 For large rebases affecting many files:

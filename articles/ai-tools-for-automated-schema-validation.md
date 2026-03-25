@@ -52,7 +52,7 @@ message UserEvent {
 
 A human reviewer focused on the new `metadata` field might miss the field number collision. An AI tool reviewing the schema diff will catch it every time.
 
-Approach 1: AI Schema Review in CI
+Approach 1 - AI Schema Review in CI
 
 This GitHub Action sends schema diffs to Claude for review before merge:
 
@@ -154,7 +154,7 @@ jobs:
             });
 ```
 
-Approach 2: JSON Schema Generation and Validation
+Approach 2 - JSON Schema Generation and Validation
 
 AI can generate JSON Schema from example payloads, then validate new examples against it:
 
@@ -293,7 +293,7 @@ Sample generated schema output:
 
 Claude correctly inferred the enum from two examples, the `usr_` ID prefix pattern, and the `date-time` format.
 
-Approach 3: SQL Schema Migration Analysis
+Approach 3 - SQL Schema Migration Analysis
 
 Before running migrations, use AI to predict impact:
 
@@ -315,9 +315,9 @@ Check for:
 
 For each issue found, output:
 RISK: [HIGH | MEDIUM | LOW]
-LINE: [line number or N/A]
-ISSUE: [description]
-FIX: [recommended fix]
+LINE - [line number or N/A]
+ISSUE - [description]
+FIX - [recommended fix]
 
 Migration:
 """

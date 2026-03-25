@@ -27,10 +27,10 @@ Table of Contents
 - [Limitations and Best Practices](#limitations-and-best-practices)
 - [Integration with Development Environments](#integration-with-development-environments)
 - [Performance Optimization for Large Datasets](#performance-optimization-for-large-datasets)
-- [Real-World Example: E-Commerce Analytics](#real-world-example-e-commerce-analytics)
+- [Real-World Example - E-Commerce Analytics](#real-world-example-e-commerce-analytics)
 - [Common Groupby Patterns and AI Generation](#common-groupby-patterns-and-ai-generation)
 - [Debugging AI-Generated Queries](#debugging-ai-generated-queries)
-- [Tool Comparison: Pandas Code Generation](#tool-comparison-pandas-code-generation)
+- [Tool Comparison - Pandas Code Generation](#tool-comparison-pandas-code-generation)
 - [Advanced Patterns for Complex Analysis](#advanced-patterns-for-complex-analysis)
 - [Best Practices When Working with AI](#best-practices-when-working-with-ai)
 
@@ -60,7 +60,7 @@ Here are common scenarios where AI tools excel:
 
 Simple Aggregations
 
-Your description: "Calculate the total sales by product category"
+Your description - "Calculate the total sales by product category"
 
 Generated code:
 
@@ -70,7 +70,7 @@ sales_by_category = df.groupby('product_category')['sales'].sum()
 
 Multiple Aggregation Functions
 
-Your description: "Show me the count, mean, and maximum price for each product type"
+Your description - "Show me the count, mean, and maximum price for each product type"
 
 Generated code:
 
@@ -80,7 +80,7 @@ price_stats = df.groupby('product_type')['price'].agg(['count', 'mean', 'max'])
 
 Custom Aggregation Logic
 
-Your description: "Get the first and last order date for each customer, along with their total spending"
+Your description - "Get the first and last order date for each customer, along with their total spending"
 
 Generated code:
 
@@ -93,7 +93,7 @@ customer_summary = df.groupby('customer_id').agg({
 
 Filtering After Aggregation
 
-Your description: "Find departments where the average salary exceeds 75000"
+Your description - "Find departments where the average salary exceeds 75000"
 
 Generated code:
 
@@ -106,19 +106,19 @@ Practical Applications for Developers
 
 The ability to generate pandas groupby code from natural language descriptions serves several practical purposes in development workflows.
 
-Rapid Prototyping: When exploring data, you often want to quickly test different aggregation approaches. Describing your intent in English and getting instant code allows faster iteration through analysis ideas.
+Rapid Prototyping - When exploring data, you often want to quickly test different aggregation approaches. Describing your intent in English and getting instant code allows faster iteration through analysis ideas.
 
-Learning Tool: If you're new to pandas or want to learn specific aggregation techniques, seeing the code generated from your descriptions helps you understand the underlying pandas methods. You can gradually memorize the patterns that appear most frequently.
+Learning Tool - If you're new to pandas or want to learn specific aggregation techniques, seeing the code generated from your descriptions helps you understand the underlying pandas methods. You can gradually memorize the patterns that appear most frequently.
 
-Complex Transformations: For advanced operations involving multiple grouping columns, custom functions, or chained transformations, AI assistance reduces the cognitive load of keeping track of all the moving parts.
+Complex Transformations - For advanced operations involving multiple grouping columns, custom functions, or chained transformations, AI assistance reduces the cognitive load of keeping track of all the moving parts.
 
-Error Prevention: Syntax errors in pandas operations can be frustrating to debug. AI-generated code tends to be syntactically correct, letting you focus on verifying the logic rather than fixing basic errors.
+Error Prevention - Syntax errors in pandas operations can be frustrating to debug. AI-generated code tends to be syntactically correct, letting you focus on verifying the logic rather than fixing basic errors.
 
 Working with Multi-Level Grouping
 
 One area where AI tools provide significant value is handling complex grouping scenarios with multiple levels or custom logic.
 
-Your description: "Group by year and month, then calculate the total revenue and average transaction size for each combination"
+Your description - "Group by year and month, then calculate the total revenue and average transaction size for each combination"
 
 Generated code:
 
@@ -135,11 +135,11 @@ Limitations and Best Practices
 
 While AI-generated code is generally accurate, certain practices improve the results:
 
-Be Specific About Data Types: Include information about column data types when relevant. "Group by the date column and calculate weekly totals" performs better than generic requests.
+Be Specific About Data Types - Include information about column data types when relevant. "Group by the date column and calculate weekly totals" performs better than generic requests.
 
-Specify Output Expectations: If you need a specific output format, such as a particular index structure or column naming, include that in your description.
+Specify Output Expectations - If you need a specific output format, such as a particular index structure or column naming, include that in your description.
 
-Review Generated Code: Always verify the generated code against your expectations, especially for critical data processing pipelines.
+Review Generated Code - Always verify the generated code against your expectations, especially for critical data processing pipelines.
 
 Integration with Development Environments
 
@@ -180,7 +180,7 @@ result = (dask_df
 )
 ```
 
-Real-World Example: E-Commerce Analytics
+Real-World Example - E-Commerce Analytics
 
 Request AI to generate complete analysis pipeline:
 
@@ -259,10 +259,10 @@ print(df.groupby('category')[['value', 'amount']].sum())  # Multiple columns
 
 Check for NaN affecting results
 print(df.isnull().sum())  # Find missing data
-Inform AI: "I have NaN values in the 'price' column"
+Inform AI - "I have NaN values in the 'price' column"
 ```
 
-Tool Comparison: Pandas Code Generation
+Tool Comparison - Pandas Code Generation
 
 | Tool | Generation Speed | Code Quality | Optimization | Learning Support |
 |------|------------------|--------------|--------------|------------------|

@@ -47,7 +47,7 @@ When Claude Code throws a permission denied error, it usually happens in one of 
 
 The error message itself often includes the specific path or command that failed. Pay attention to this detail, it points directly to the source of the problem.
 
-Fix 1: Verify Shell Command Execution Permissions
+Fix 1 - Verify Shell Command Execution Permissions
 
 The most common cause involves Claude Code's ability to execute shell commands. If your shell cannot run certain commands due to permission issues, Claude Code cannot use them either.
 
@@ -69,7 +69,7 @@ For commands installed via Homebrew on macOS, you may need to reinstall them:
 brew reinstall package-name
 ```
 
-Fix 2: Check Directory and File Access
+Fix 2 - Check Directory and File Access
 
 Claude Code needs read access to your project files and write access to create or modify files. Permission errors occur when the user running Claude Code lacks these permissions.
 
@@ -102,7 +102,7 @@ chmod 700 ~/.ssh
 chmod 600 ~/.ssh/id_rsa
 ```
 
-Fix 3: Fix Claude Code's Internal Permissions
+Fix 3 - Fix Claude Code's Internal Permissions
 
 Claude Code stores configuration and cache data in specific directories. If these become corrupted or have incorrect permissions, you may see permission denied errors when Claude Code tries to access its own files.
 
@@ -134,7 +134,7 @@ Reset permissions with:
 sudo chown -R $USER ~/.config/Claude/
 ```
 
-Fix 4: Resolve Shell Profile Issues
+Fix 4 - Resolve Shell Profile Issues
 
 Sometimes the issue stems from your shell profile (`.bashrc`, `.zshrc`, `.bash_profile`) having commands that fail due to permission errors. When Claude Code spawns a new shell, it may encounter these failures.
 
@@ -164,7 +164,7 @@ Common Culprits
 
 Comment out or fix any problematic lines, then restart your terminal session.
 
-Fix 5: Handle macOS Gatekeeper and Quarantine
+Fix 5 - Handle macOS Gatekeeper and Quarantine
 
 On macOS, security features can prevent Claude Code or its components from running. If you recently installed Claude Code or updated it, Gatekeeper may have flagged it.
 
@@ -192,7 +192,7 @@ Allow Claude Code in Security Preferences
 
 If Gatekeeper is blocking Claude Code, open System Preferences → Security & Privacy → General and click "Allow Anyway" next to the blocked software.
 
-Fix 6: Check Sudo and Root Access Issues
+Fix 6 - Check Sudo and Root Access Issues
 
 If Claude Code attempts to run commands with elevated privileges, your user may lack sudo permissions. Verify your sudo access:
 
@@ -204,7 +204,7 @@ Enter your password when prompted. If this fails, contact your system administra
 
 For Claude Code itself, avoid running with sudo unless absolutely necessary. Running as root can cause permission issues with files in your home directory.
 
-Fix 7: npm and Node.js Global Package Permissions
+Fix 7 - npm and Node.js Global Package Permissions
 
 A frequently overlooked source of permission errors is npm's global package directory. If Claude Code uses Node.js tools installed globally via npm, and those tools were installed as root, you will see permission denied errors when Claude Code tries to invoke them as your regular user.
 
@@ -229,7 +229,7 @@ export PATH=~/.npm-global/bin:$PATH
 
 Reload your shell and reinstall any globally needed tools as your regular user (without sudo). Claude Code will then be able to invoke them without permission errors.
 
-Fix 8: Python Virtual Environment and pip Issues
+Fix 8 - Python Virtual Environment and pip Issues
 
 Similar permission conflicts occur with Python tooling. If Claude Code invokes Python scripts or pip-installed CLI tools, and those tools live in a system Python installation, you may see permission denied when Claude Code tries to execute them.
 

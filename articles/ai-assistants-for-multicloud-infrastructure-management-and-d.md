@@ -20,7 +20,7 @@ To manage infrastructure across AWS, Azure, and GCP efficiently, use AI assistan
 Table of Contents
 
 - [The Challenge of Multicloud Management](#the-challenge-of-multicloud-management)
-- [Practical Example: Infrastructure Querying](#practical-example-infrastructure-querying)
+- [Practical Example - Infrastructure Querying](#practical-example-infrastructure-querying)
 - [Generating Infrastructure as Code](#generating-infrastructure-as-code)
 - [Deployment Automation Workflows](#deployment-automation-workflows)
 - [Intelligent Cost Optimization](#intelligent-cost-optimization)
@@ -36,7 +36,7 @@ Managing infrastructure across multiple cloud providers introduces complexity. E
 
 AI assistants address these challenges by acting as a unified interface. They translate high-level intent into provider-specific commands, generate infrastructure code, and help troubleshoot issues across your entire multicloud environment.
 
-Practical Example: Infrastructure Querying
+Practical Example - Infrastructure Querying
 
 Imagine you need to identify all compute resources across your AWS and GCP environments. An AI assistant can query both providers and summarize the results:
 
@@ -183,7 +183,7 @@ Database Migration Across Clouds
 Migrating a database from AWS RDS to GCP Cloud SQL requires careful planning. AI assistants can generate migration scripts:
 
 ```
-Scenario: Move a PostgreSQL database from AWS RDS (db.t3.medium, us-east-1)
+Scenario - Move a PostgreSQL database from AWS RDS (db.t3.medium, us-east-1)
 to GCP Cloud SQL (db-custom-2-8192, us-central1) while maintaining
 zero downtime.
 
@@ -261,7 +261,7 @@ When workloads span multiple clouds, cost optimization becomes complex. AI analy
 "Show me which workloads should move from AWS to GCP or vice versa
 based on cost efficiency. Consider:
 - Current cloud: AWS Lambda at $0.20 per million requests
-- Alternative: GCP Cloud Functions at $0.40 per million requests
+- Alternative - GCP Cloud Functions at $0.40 per million requests
 - But: GCP cheaper egress to GCP databases (save on data transfer)
 - And: GCP committed use discounts for sustained loads"
 ```

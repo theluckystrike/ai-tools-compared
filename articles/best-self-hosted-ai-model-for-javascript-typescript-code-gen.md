@@ -23,7 +23,7 @@ Table of Contents
 - [Performance Comparison Table](#performance-comparison-table)
 - [Choosing the Right Model](#choosing-the-right-model)
 - [Setting Up Your Environment](#setting-up-your-environment)
-- [Advanced: Fine-Tuning Models on Your Codebase](#advanced-fine-tuning-models-on-your-codebase)
+- [Advanced - Fine-Tuning Models on Your Codebase](#advanced-fine-tuning-models-on-your-codebase)
 - [IDE Integration Examples](#ide-integration-examples)
 - [Performance Tuning for Production](#performance-tuning-for-production)
 - [Measuring Success Metrics](#measuring-success-metrics)
@@ -41,7 +41,7 @@ Top Self-Hosted Models for JavaScript and TypeScript
 
 DeepSeek Coder V2 stands out as the strongest open-source option for code generation in 2026. This model was specifically trained on code across 300+ programming languages, with particular strength in JavaScript and TypeScript.
 
-Hardware requirements: Minimum 24GB VRAM for the 16B parameter version, 80GB+ for larger variants.
+Hardware requirements - Minimum 24GB VRAM for the 16B parameter version, 80GB+ for larger variants.
 
 Strengths:
 - Excellent TypeScript type inference
@@ -82,7 +82,7 @@ ollama run deepseek-coder-v2
 
 Alibaba's Qwen 2.5 Coder has rapidly improved and now competes with the best for JavaScript/TypeScript tasks. The model handles complex React components and Node.js backends particularly well.
 
-Hardware requirements: 16GB VRAM for the 7B version, 48GB for 14B.
+Hardware requirements - 16GB VRAM for the 7B version, 48GB for 14B.
 
 Strengths:
 - Fast inference speeds
@@ -126,7 +126,7 @@ function useLocalStorage<T>(key: string, initialValue: T) {
 
 Meta's CodeLlama remains a solid choice, especially the 70B parameter version which handles complex TypeScript patterns well. It's particularly strong when you need longer context windows for understanding entire monorepos.
 
-Hardware requirements: Requires significant GPU resources. typically 2x A100 (80GB) or equivalent for efficient inference.
+Hardware requirements - Requires significant GPU resources. typically 2x A100 (80GB) or equivalent for efficient inference.
 
 Strengths:
 - 128K context window
@@ -146,7 +146,7 @@ vllm serve codellama/CodeLlama-70b-Instruct \
 
 Microsoft's StarCoder 2 offers a good balance between performance and resource requirements. The 15B version runs reasonably well on consumer hardware with quantization.
 
-Hardware requirements: 16GB VRAM with 4-bit quantization, 32GB for FP16.
+Hardware requirements - 16GB VRAM with 4-bit quantization, 32GB for FP16.
 
 Strengths:
 - Fill-in-the-middle training improves code completion
@@ -222,7 +222,7 @@ curl http://localhost:11434/v1/chat/completions \
   }'
 ```
 
-Advanced: Fine-Tuning Models on Your Codebase
+Advanced - Fine-Tuning Models on Your Codebase
 
 Self-hosted models shine when you can fine-tune them on your specific codebase patterns:
 
@@ -235,7 +235,7 @@ Why Fine-Tune?
 Fine-Tuning Workflow:
 
 ```python
-Step 1: Collect training data from your repo
+Step 1 - Collect training data from your repo
 import os
 import json
 
@@ -255,7 +255,7 @@ def collect_code_samples(repo_path, file_pattern="*.ts"):
                         })
     return samples
 
-Step 2: Format for training
+Step 2 - Format for training
 def format_training_data(samples):
     training_data = []
     for sample in samples:
@@ -266,7 +266,7 @@ def format_training_data(samples):
         })
     return training_data
 
-Step 3: Fine-tune using Ollama or similar
+Step 3 - Fine-tune using Ollama or similar
 (Framework-specific, consult model documentation)
 ```
 
@@ -349,10 +349,10 @@ Load Balancing:
 For teams with many developers, run multiple inference servers:
 
 ```bash
-Server 1: GPU 0
+Server 1 - GPU 0
 CUDA_VISIBLE_DEVICES=0 ollama serve --host 127.0.0.1:11434
 
-Server 2: GPU 1
+Server 2 - GPU 1
 CUDA_VISIBLE_DEVICES=1 ollama serve --host 127.0.0.1:11435
 
 Load balancer (nginx)

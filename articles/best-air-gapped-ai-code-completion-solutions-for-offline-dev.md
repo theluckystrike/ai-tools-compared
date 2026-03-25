@@ -207,13 +207,13 @@ Setting Up a Fully Offline Environment
 
 Downloading models and dependencies requires internet access, but the working environment can be completely offline after initial setup. Here is the sequence for bootstrapping an air-gapped machine:
 
-Step 1: Download Ollama and models on a connected machine. Pull all models you plan to use while connected. Ollama stores models in `~/.ollama/models/` on macOS and Linux.
+Step 1 - Download Ollama and models on a connected machine. Pull all models you plan to use while connected. Ollama stores models in `~/.ollama/models/` on macOS and Linux.
 
-Step 2: Transfer model files to the air-gapped machine. Copy the `~/.ollama/models/` directory to the air-gapped machine via USB drive or secure file transfer.
+Step 2 - Transfer model files to the air-gapped machine. Copy the `~/.ollama/models/` directory to the air-gapped machine via USB drive or secure file transfer.
 
-Step 3: Install extensions from VSIX files. Download the Continue.dev VSIX package from the GitHub releases page while connected. Install it in VS Code with `code --install-extension continue.vsix`.
+Step 3 - Install extensions from VSIX files. Download the Continue.dev VSIX package from the GitHub releases page while connected. Install it in VS Code with `code --install-extension continue.vsix`.
 
-Step 4: Verify the configuration works offline. Disconnect from the network and test that completions appear. If suggestions fail, check that Ollama is running (`ollama serve`) and that the `api_base` in your config points to `http://localhost:11434`.
+Step 4 - Verify the configuration works offline. Disconnect from the network and test that completions appear. If suggestions fail, check that Ollama is running (`ollama serve`) and that the `api_base` in your config points to `http://localhost:11434`.
 
 Compliance Considerations for Air-Gapped Environments
 
@@ -229,13 +229,13 @@ Document which model you are using, when it was downloaded, and how it is config
 
 Best Practices for Offline AI Code Completion
 
-Keep models updated locally: Periodically pull updated model versions when you have internet access to benefit from improvements.
+Keep models updated locally - Periodically pull updated model versions when you have internet access to benefit from improvements.
 
-Optimize context window: Configure your tool to use appropriate context limits. Smaller contexts speed up suggestions significantly.
+Optimize context window - Configure your tool to use appropriate context limits. Smaller contexts speed up suggestions significantly.
 
-Use project-specific training: Tools like Tabnine improve dramatically after analyzing your specific codebase. Allow sufficient indexing time.
+Use project-specific training - Tools like Tabnine improve dramatically after analyzing your specific codebase. Allow sufficient indexing time.
 
-Consider hybrid approaches: Some tools offer partial offline mode where basic completion works locally while complex suggestions require connectivity. Understand your tool's specific behavior.
+Consider hybrid approaches - Some tools offer partial offline mode where basic completion works locally while complex suggestions require connectivity. Understand your tool's specific behavior.
 
 Related Reading
 

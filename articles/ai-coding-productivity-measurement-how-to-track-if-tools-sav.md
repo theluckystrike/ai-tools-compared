@@ -58,7 +58,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Core Metrics for Tracking Time Savings
+Step 1 - Core Metrics for Tracking Time Savings
 
 Task Completion Time
 
@@ -114,7 +114,7 @@ Most AI coding tools surface an acceptance rate metric. the percentage of sugges
 
 Track acceptance rate over time. It typically improves as you refine prompts, configure project context files, or the tool learns your style through repeated use.
 
-Step 2: Code Quality Metrics
+Step 2 - Code Quality Metrics
 
 Bug Density
 
@@ -157,7 +157,7 @@ Example
 coverage_delta(68.4, 74.1)  # Coverage change: +5.7%
 ```
 
-Step 3: Practical Tracking Framework
+Step 3 - Practical Tracking Framework
 
 Daily Log Template
 
@@ -210,9 +210,9 @@ def analyze_weekly_productivity(log_file):
 print(analyze_weekly_productivity('task_log.yaml'))
 ```
 
-Step 4: Set Up Measurement in Your Workflow
+Step 4 - Set Up Measurement in Your Workflow
 
-Phase 1: Baseline (Week 1-2)
+Phase 1 - Baseline (Week 1-2)
 
 1. Track all coding tasks without AI tools
 
@@ -220,7 +220,7 @@ Phase 1: Baseline (Week 1-2)
 
 3. Establish your baseline metrics
 
-Phase 2: AI Adoption (Week 3-6)
+Phase 2 - AI Adoption (Week 3-6)
 
 1. Introduce AI coding assistant
 
@@ -228,11 +228,11 @@ Phase 2: AI Adoption (Week 3-6)
 
 3. Note where AI helped and where it hindered
 
-Phase 3: Analysis (Week 7+)
+Phase 3 - Analysis (Week 7+)
 
 Compare metrics across phases. Look for patterns in task types where AI performs best.
 
-Step 5: What to Track Beyond Time
+Step 5 - What to Track Beyond Time
 
 Consider these additional factors:
 
@@ -258,7 +258,7 @@ Not all AI coding assistants expose the same productivity metrics. Here is how t
 
 For tools without native analytics, combine external time tracking (Toggl, RescueTime) with commit-level analysis from your Git history.
 
-Step 6: Common Pitfalls
+Step 6 - Common Pitfalls
 
 Avoid these measurement errors:
 
@@ -272,7 +272,7 @@ Avoid these measurement errors:
 
 5. Cherry-picking data: Measure everything, including sessions where AI made things harder
 
-Step 7: Real-World Example
+Step 7 - Real-World Example
 
 A development team tracked their AI coding assistant usage over three months. Results showed:
 

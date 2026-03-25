@@ -21,9 +21,9 @@ Claude Code and Cursor outperform GitHub Copilot at predicting test assertions, 
 Table of Contents
 
 - [Understanding Assertion Prediction in AI Autocomplete](#understanding-assertion-prediction-in-ai-autocomplete)
-- [Python: pytest and unittest Scenarios](#python-pytest-and-unittest-scenarios)
-- [JavaScript and TypeScript: Jest and Vitest](#javascript-and-typescript-jest-and-vitest)
-- [Java: JUnit 5 and Assertion Libraries](#java-junit-5-and-assertion-libraries)
+- [Python - pytest and unittest Scenarios](#python-pytest-and-unittest-scenarios)
+- [JavaScript and TypeScript - Jest and Vitest](#javascript-and-typescript-jest-and-vitest)
+- [Java - JUnit 5 and Assertion Libraries](#java-junit-5-and-assertion-libraries)
 - [Factors That Improve Assertion Prediction](#factors-that-improve-assertion-prediction)
 - [Practical Recommendations](#practical-recommendations)
 - [Tool Comparison Matrix](#tool-comparison-matrix)
@@ -38,7 +38,7 @@ AI autocomplete tools have evolved beyond simple syntax completion. Modern tools
 
 When you start typing a test file, the best AI tools analyze your function's return type, parameter names, and expected behavior to suggest assertions that match your intent. Less capable tools may suggest generic assertions like `assertTrue()` or `expect().toBe()` without considering the specific values or edge cases that would make your tests meaningful.
 
-Python: pytest and unittest Scenarios
+Python - pytest and unittest Scenarios
 
 Python developers typically work with either pytest or the built-in unittest framework. Let's examine how different AI tools handle assertion prediction for a typical Python function.
 
@@ -64,7 +64,7 @@ When writing tests for this function, AI tools vary in their assertion predictio
 
 The most accurate predictions come from tools that have access to the function's docstring and type hints. These tools can infer that `validate_email` returns a boolean and suggest appropriate assertion patterns, while also recognizing that `register_user` raises exceptions for invalid inputs.
 
-JavaScript and TypeScript: Jest and Vitest
+JavaScript and TypeScript - Jest and Vitest
 
 JavaScript testing with Jest or Vitest presents different challenges. The dynamic nature of JavaScript means AI tools have less type information to work with, though TypeScript can mitigate this.
 
@@ -97,7 +97,7 @@ expect(createUser("John", "john@example.com")).toEqual({
 
 This level of detail shows the tool understood not just the return type, but also the structure of the returned object. GitHub Copilot sometimes suggests simpler assertions that don't fully validate the response.
 
-Java: JUnit 5 and Assertion Libraries
+Java - JUnit 5 and Assertion Libraries
 
 Java testing with JUnit 5 offers rich assertion methods, which creates both opportunities and challenges for AI autocomplete. The extensive `Assertions` class provides methods like `assertEquals`, `assertTrue`, `assertThrows`, and more specialized assertions.
 
@@ -169,7 +169,7 @@ When choosing an AI tool for test assertion autocomplete, evaluate these specifi
 | Context window | Largest | Large | Moderate | Moderate |
 | Multi-language coverage | Excellent | Excellent | Excellent | Good |
 
-Claude Code consistently ranks highest because its larger context window allows it to analyze entire test files and understand your testing patterns before suggesting assertions. Cursor comes in second due to excellent IDE integration and multi-file analysis. GitHub Copilot remains solid for organizations already embedded in GitHub's ecosystem but sometimes lacks the reasoning depth for complex test scenarios.
+Claude Code consistently ranks highest because its larger context window allows it to analyze entire test files and understand your testing patterns before suggesting assertions. Cursor comes in second due to excellent IDE integration and multi-file analysis. GitHub Copilot remains solid for organizations already embedded in GitHub's environment but sometimes lacks the reasoning depth for complex test scenarios.
 
 Advanced Testing Patterns
 
@@ -184,7 +184,7 @@ func TestUserRepository(t *testing.T) {
     mockDB := mocks.NewMockDatabase(ctrl)
     mockDB.EXPECT().
         Query("SELECT * FROM users WHERE id = ?", 1).
-        Return(&User{ID: 1, Name: "John"}, nil).
+        Return(&User{ID: 1, Name - "John"}, nil).
         Times(1)
 
     repo := &UserRepository{db: mockDB}

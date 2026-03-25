@@ -37,15 +37,15 @@ Key Indicators AI Tools Monitor
 
 Understanding what these tools track helps you appreciate their value and optimize your pipeline data:
 
-Test Failure Patterns: AI systems analyze which test suites fail most frequently, which tests are flaky, and which code changes typically trigger test failures. A change touching a file with historically unstable tests gets flagged.
+Test Failure Patterns - AI systems analyze which test suites fail most frequently, which tests are flaky, and which code changes typically trigger test failures. A change touching a file with historically unstable tests gets flagged.
 
-Build Time Anomalies: Sudden increases in build duration often signal problems. Dependencies pulling unnecessary packages, inefficient build scripts, or cached artifacts becoming corrupted can slow builds significantly.
+Build Time Anomalies - Sudden increases in build duration often signal problems. Dependencies pulling unnecessary packages, inefficient build scripts, or cached artifacts becoming corrupted can slow builds significantly.
 
-Dependency Conflicts: When a developer adds a new dependency, AI tools check for version conflicts with existing dependencies based on your project's dependency graph history.
+Dependency Conflicts - When a developer adds a new dependency, AI tools check for version conflicts with existing dependencies based on your project's dependency graph history.
 
-Code Complexity Metrics: Changes increasing cyclomatic complexity, coupling, or code duplication in critical modules get flagged as higher risk.
+Code Complexity Metrics - Changes increasing cyclomatic complexity, coupling, or code duplication in critical modules get flagged as higher risk.
 
-Commit Message Patterns: Some tools correlate commit message quality with failure rates,  rushed commits with vague messages often correlate with more bugs.
+Commit Message Patterns - Some tools correlate commit message quality with failure rates,  rushed commits with vague messages often correlate with more bugs.
 
 Practical Approaches to Prediction
 
@@ -133,7 +133,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: ` Pipeline Failure Risk: ${prediction.risk_percentage}%\n\nPredicted to fail based on:\n${prediction.factors.join('\n')}`
+              body: ` Pipeline Failure Risk - ${prediction.risk_percentage}%\n\nPredicted to fail based on:\n${prediction.factors.join('\n')}`
             })
 ```
 
@@ -221,7 +221,7 @@ Track these metrics to evaluate your prediction system:
 
 - Prediction accuracy: What percentage of predicted failures actually fail?
 
-- Recall: What percentage of actual failures were predicted?
+- Recall - What percentage of actual failures were predicted?
 
 - False positive rate: How often did predictions incorrectly flag safe changes?
 

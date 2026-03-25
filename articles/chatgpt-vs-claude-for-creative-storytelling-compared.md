@@ -88,15 +88,15 @@ Narrative Coherence and Character Voice
 
 For multi-paragraph storytelling, consistency in character voice and plot logic matters. Testing both models with the same prompt reveals different strengths.
 
-Prompt: "Write a dialogue between a reluctant detective and an AI that has become self-aware. The detective is skeptical, the AI is philosophical."
+Prompt - "Write a dialogue between a reluctant detective and an AI that has become self-aware. The detective is skeptical, the AI is philosophical."
 
 ChatGPT tends to produce more exposition-heavy dialogue with clear emotional beats. The output often follows a structured pattern: setup, conflict, resolution. This works well for formulaic storytelling but can feel predictable when you need characters to surprise the reader.
 
 Claude frequently generates dialogue with more subtext and hesitation, characters that pause, redirect, and reveal information obliquely. The responses often include more nuanced internal monologue, which developers can use for interactive fiction where player choices affect narrative branches. Claude tends to let characters talk around a subject rather than stating their feelings directly, which produces more literary-feeling output.
 
-Where ChatGPT wins: Genre fiction with clear conventions, thrillers, mysteries, romance. The model's tendency toward explicit emotional beats suits readers who want satisfaction over ambiguity.
+Where ChatGPT wins - Genre fiction with clear conventions, thrillers, mysteries, romance. The model's tendency toward explicit emotional beats suits readers who want satisfaction over ambiguity.
 
-Where Claude wins: Literary fiction, character studies, and interactive fiction where player agency matters. When a character's motivation should be ambiguous or evolve through inference rather than exposition, Claude's output requires less rewriting.
+Where Claude wins - Literary fiction, character studies, and interactive fiction where player agency matters. When a character's motivation should be ambiguous or evolve through inference rather than exposition, Claude's output requires less rewriting.
 
 Handling Long-Form Context
 
@@ -108,7 +108,7 @@ Creative storytelling often requires maintaining consistency across thousands of
 
 For developers building serial content or interactive fiction, this impacts how you structure prompts. With Claude, you can include a detailed character bible at the start and expect consistent adherence throughout a long session. With ChatGPT, you may need to periodically restate key character details mid-session to prevent drift.
 
-A practical test: feed both models a 15,000-word story draft and ask them to write the next chapter, maintaining consistent character voices from chapter one. Claude holds voice consistency more reliably. ChatGPT sometimes subtly shifts a character's vocabulary or emotional register without apparent cause.
+A practical test - feed both models a 15,000-word story draft and ask them to write the next chapter, maintaining consistent character voices from chapter one. Claude holds voice consistency more reliably. ChatGPT sometimes subtly shifts a character's vocabulary or emotional register without apparent cause.
 
 Temperature and Creativity Control
 
@@ -174,7 +174,7 @@ Prompt Engineering for Better Story Output
 
 Getting the best creative output from either model requires deliberate prompt structure. A few patterns that consistently improve results:
 
-Character sheets in the system prompt. Before the narrative begins, define key characters with specific voice notes. Example: "Elena speaks in short sentences when nervous, uses academic vocabulary when confident, and never uses contractions." Both models honor this, but Claude adheres to it more consistently across long sessions.
+Character sheets in the system prompt. Before the narrative begins, define key characters with specific voice notes. Example - "Elena speaks in short sentences when nervous, uses academic vocabulary when confident, and never uses contractions." Both models honor this, but Claude adheres to it more consistently across long sessions.
 
 Explicit POV instruction. Specify point of view clearly: "Write in close third person, from Marcus's perspective only. Do not include information Marcus cannot observe directly." ChatGPT occasionally shifts perspective without instruction; Claude holds the specified POV more reliably.
 
@@ -218,7 +218,7 @@ Which Model Should You Choose?
 
 Choose ChatGPT when:
 - You need structured, plot-driven narratives with clear emotional arcs
-- Your application benefits from OpenAI's broader ecosystem (Assistants API, fine-tuning)
+- Your application benefits from OpenAI's broader environment (Assistants API, fine-tuning)
 - You prioritize formulaic genre fiction over literary ambiguity
 - Your stories are short enough that context window differences do not matter
 
@@ -229,7 +229,7 @@ Choose Claude when:
 - You want cleaner streaming interfaces in your application
 - Cost optimization on input tokens is meaningful at your volume
 
-Both models serve creative storytelling well. The choice depends on your specific application needs, plot predictability versus character depth, ecosystem preference, and cost optimization for your use case.
+Both models serve creative storytelling well. The choice depends on your specific application needs, plot predictability versus character depth, environment preference, and cost optimization for your use case.
 
 For developers building interactive fiction or content-generation tools, testing with your actual prompt templates matters more than relying on general comparisons. Run identical prompts through both APIs and evaluate outputs against your specific quality criteria before committing to an integration.
 

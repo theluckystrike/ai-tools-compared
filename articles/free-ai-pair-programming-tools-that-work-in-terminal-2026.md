@@ -19,15 +19,15 @@ The best terminal AI pair programming tools are Cline, Claude in terminal via AP
 
 Table of Contents
 
-- [Claude Code: Anthropic's CLI Companion](#claude-code-anthropics-cli-companion)
-- [GitHub Copilot CLI: Microsoft's Terminal Offering](#github-copilot-cli-microsofts-terminal-offering)
-- [Aider: Open Source Terminal AI Assistant](#aider-open-source-terminal-ai-assistant)
-- [CodeWhisperer: Amazon's Free Terminal Tool](#codewhisperer-amazons-free-terminal-tool)
-- [Ollama: Local AI Models for Terminal Work](#ollama-local-ai-models-for-terminal-work)
-- [Tabnine: Hybrid Terminal and IDE Approach](#tabnine-hybrid-terminal-and-ide-approach)
+- [Claude Code - Anthropic's CLI Companion](#claude-code-anthropics-cli-companion)
+- [GitHub Copilot CLI - Microsoft's Terminal Offering](#github-copilot-cli-microsofts-terminal-offering)
+- [Aider - Open Source Terminal AI Assistant](#aider-open-source-terminal-ai-assistant)
+- [CodeWhisperer - Amazon's Free Terminal Tool](#codewhisperer-amazons-free-terminal-tool)
+- [Ollama - Local AI Models for Terminal Work](#ollama-local-ai-models-for-terminal-work)
+- [Tabnine - Hybrid Terminal and IDE Approach](#tabnine-hybrid-terminal-and-ide-approach)
 - [Choosing Your Terminal AI Tool](#choosing-your-terminal-ai-tool)
 
-Claude Code: Anthropic's CLI Companion
+Claude Code - Anthropic's CLI Companion
 
 Claude Code (claude.ai/code) provides a free CLI that works as an interactive coding assistant. After installing via npm or downloading the binary, you get a conversational interface for code generation, debugging, and file manipulation.
 
@@ -59,7 +59,7 @@ Claude Code responds with code you can review and copy. For file editing, use th
 
 The free tier includes substantial usage, suitable for individual development work. Anthropic offers paid plans with higher limits, but the free tier handles most daily coding tasks.
 
-GitHub Copilot CLI: Microsoft's Terminal Offering
+GitHub Copilot CLI - Microsoft's Terminal Offering
 
 GitHub Copilot CLI (copilot-cli) brings Copilot's AI assistance to your terminal. The tool works as a shell extension, providing command explanations and generation for terminal operations.
 
@@ -85,7 +85,7 @@ The CLI suggests shell commands based on your description. It explains each sugg
 
 For non-eligible users, the CLI requires a Copilot subscription. However, the command explanation feature remains partially accessible, and the tool still helps understand complex shell operations.
 
-Aider: Open Source Terminal AI Assistant
+Aider - Open Source Terminal AI Assistant
 
 Aider (aider.chat) is an open source AI coding assistant that runs entirely in your terminal. It connects to various LLM backends, including free options, making it highly flexible for budget-conscious developers.
 
@@ -115,7 +115,7 @@ Write a unit test for the calculate_total function in src/basket.py
 
 The tool applies edits directly to files you specify, making it efficient for targeted modifications. Since it is open source, you can inspect its behavior, contribute improvements, or self-host the backend.
 
-CodeWhisperer: Amazon's Free Terminal Tool
+CodeWhisperer - Amazon's Free Terminal Tool
 
 Amazon CodeWhisperer offers a CLI component through the AWS CLI v2. While primarily known for IDE integration, the service provides terminal access for individual developers at no cost.
 
@@ -140,7 +140,7 @@ codewhisperer generate --prompt "Create a simple Express.js server"
 
 The tool generates code snippets based on your description. Since it integrates with AWS, you need an AWS account, but the individual tier costs nothing for personal projects. CodeWhisperer works particularly well with AWS services, making it a strong choice if you build on Amazon infrastructure.
 
-Ollama: Local AI Models for Terminal Work
+Ollama - Local AI Models for Terminal Work
 
 Ollama (ollama.ai) runs large language models locally, providing a completely free solution for terminal-based AI assistance. Unlike API-based tools, Ollama processes everything on your machine, eliminating usage limits and privacy concerns.
 
@@ -185,7 +185,7 @@ alias ai='ollama run codellama'
 ai "write a bash script to find duplicate files"
 ```
 
-Tabnine: Hybrid Terminal and IDE Approach
+Tabnine - Hybrid Terminal and IDE Approach
 
 Tabnine offers both IDE integration and a CLI tool. The free tier provides basic AI assistance, though the most capable features require a subscription.
 

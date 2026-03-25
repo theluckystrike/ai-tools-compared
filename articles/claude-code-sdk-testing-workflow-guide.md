@@ -40,7 +40,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Set Up Your Test Environment
+Step 1 - Set Up Your Test Environment
 
 Before writing tests, ensure your development environment is properly configured:
 
@@ -52,7 +52,7 @@ Install SDK dependencies
 npm install @anthropic-ai/claude-code-sdk
 ```
 
-Step 2: Unit Testing Fundamentals
+Step 2 - Unit Testing Fundamentals
 
 Unit tests form the foundation of your testing strategy. Focus on testing individual functions and methods in isolation:
 
@@ -80,7 +80,7 @@ describe('ClaudeCodeClient', () => {
 });
 ```
 
-Step 3: Integration Testing
+Step 3 - Integration Testing
 
 Integration tests verify that your SDK works correctly with external services:
 
@@ -106,7 +106,7 @@ describe('Claude Code SDK Integration', () => {
 });
 ```
 
-Step 4: Mock Testing Strategies
+Step 4 - Mock Testing Strategies
 
 When testing without API access or to control responses, use mocking:
 
@@ -144,7 +144,7 @@ describe('Mocked SDK Tests', () => {
 });
 ```
 
-Step 5: End-to-End Testing
+Step 5 - End-to-End Testing
 
 E2E tests validate complete user workflows:
 
@@ -177,7 +177,7 @@ describe('Complete SDK Workflow', () => {
 });
 ```
 
-Step 6: Continuous Integration Setup
+Step 6 - Continuous Integration Setup
 
 Automate your tests in CI/CD pipelines:
 
@@ -245,7 +245,7 @@ describe('Performance Tests', () => {
 });
 ```
 
-Step 7: Structuring Your Test Suite for Long-Term Maintainability
+Step 7 - Structuring Your Test Suite for Long-Term Maintainability
 
 As your SDK usage grows, disorganized tests become a liability. A well-structured test suite reduces maintenance burden and makes it easier to onboard new developers.
 
@@ -268,11 +268,11 @@ rateLimitError.name = 'ClaudeRateLimitError';
 
 Apply the test pyramid principle. Aim for roughly 70% unit tests, 20% integration tests, and 10% E2E tests. Unit tests run in milliseconds; E2E tests against live APIs take seconds and cost tokens. Keeping this ratio ensures fast feedback loops without sacrificing confidence.
 
-Step 8: Handling Flaky Tests in SDK Workflows
+Step 8 - Handling Flaky Tests in SDK Workflows
 
 SDK tests that hit real APIs introduce flakiness from network timeouts, rate limits, and non-deterministic model outputs. Address each category explicitly.
 
-Rate limit flakiness: Add exponential backoff in your test retry configuration:
+Rate limit flakiness - Add exponential backoff in your test retry configuration:
 
 ```typescript
 // jest.config.ts
@@ -283,7 +283,7 @@ export default {
 };
 ```
 
-Non-deterministic output: For tests that verify generated code correctness, avoid asserting on exact string matches. Instead, test structural properties:
+Non-deterministic output - For tests that verify generated code correctness, avoid asserting on exact string matches. Instead, test structural properties:
 
 ```typescript
 it('should return valid TypeScript', async () => {
@@ -300,9 +300,9 @@ it('should return valid TypeScript', async () => {
 });
 ```
 
-Network timeouts: Set conservative timeouts per test and use mock servers for the bulk of your test runs. Reserve live API calls for a nightly integration suite that runs outside of PR checks.
+Network timeouts - Set conservative timeouts per test and use mock servers for the bulk of your test runs. Reserve live API calls for a nightly integration suite that runs outside of PR checks.
 
-Step 9: Snapshot Testing for SDK Response Schemas
+Step 9 - Snapshot Testing for SDK Response Schemas
 
 When your application depends on specific shapes of API responses, snapshot tests catch regressions from schema changes automatically.
 
@@ -338,7 +338,7 @@ describe('Response schema snapshots', () => {
 
 Run `jest --updateSnapshot` when you intentionally update the response schema. Commit the updated snapshot file so reviewers can see exactly what changed. This pattern is especially useful when upgrading SDK versions. broken snapshots immediately surface breaking changes.
 
-Step 10: Test Token Usage and Cost Controls
+Step 10 - Test Token Usage and Cost Controls
 
 Production SDK integrations need safeguards against runaway token consumption. Test your cost control logic as a first-class concern:
 

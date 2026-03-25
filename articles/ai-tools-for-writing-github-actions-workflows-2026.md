@@ -21,7 +21,7 @@ Table of Contents
 - [The Challenge of CI/CD Workflow Configuration](#the-challenge-of-cicd-workflow-configuration)
 - [Top AI Tools for GitHub Actions](#top-ai-tools-for-github-actions)
 - [Practical Comparison Table](#practical-comparison-table)
-- [Real-World Scenario: Node.js Full-Stack Application](#real-world-scenario-nodejs-full-stack-application)
+- [Real-World Scenario - Node.js Full-Stack Application](#real-world-scenario-nodejs-full-stack-application)
 - [Advanced Patterns](#advanced-patterns)
 - [Performance Benchmarks](#performance-benchmarks)
 - [Selection Guide by Use Case](#selection-guide-by-use-case)
@@ -45,8 +45,8 @@ GitHub Actions workflows are powerful but complex. A single misconfigured matrix
 Top AI Tools for GitHub Actions
 
 Claude (Claude 3.5 Sonnet / Opus 4.6)
-Price: $0.003 per 1K input tokens / Free tier available
-Best for: Complex workflow architectures
+Price - $0.003 per 1K input tokens / Free tier available
+Best for - Complex workflow architectures
 
 Claude excels at generating multi-job GitHub Actions workflows with proper error handling and caching strategies.
 
@@ -188,11 +188,11 @@ Performance benchmarks:
 - First-attempt accuracy: 91%
 - Requires refinement: 9%
 
-Limitations: May over-engineer simple workflows; sometimes includes unnecessary conditional steps.
+Limitations - May over-engineer simple workflows; sometimes includes unnecessary conditional steps.
 
 GitHub Copilot
-Price: $10/month (individuals), $21/month (business)
-Best for: Quick inline completions in VS Code
+Price - $10/month (individuals), $21/month (business)
+Best for - Quick inline completions in VS Code
 
 GitHub Copilot provides real-time suggestions as you type `.github/workflows/` files. The latency is minimal, and it learns from your repository's existing workflows.
 
@@ -209,11 +209,11 @@ Performance metrics:
 - Applicable suggestion rate: 76%
 - Time saved on simple workflows: 5-8 minutes
 
-Weaknesses: Struggles with complex conditional logic; doesn't explain architectural decisions.
+Weaknesses - Struggles with complex conditional logic; doesn't explain architectural decisions.
 
 ChatGPT / GPT-4
-Price: $0/month (3.5) or $20/month (GPT-4)
-Best for: Learning workflow patterns
+Price - $0/month (3.5) or $20/month (GPT-4)
+Best for - Learning workflow patterns
 
 ChatGPT excels at explaining GitHub Actions concepts and providing educational examples.
 
@@ -225,15 +225,15 @@ Strengths:
 
 Example dialogue:
 ```
-User: "Explain matrix strategies for testing Node.js apps"
-GPT-4: [Detailed explanation] + [Working example] + [Common mistakes]
+User - "Explain matrix strategies for testing Node.js apps"
+GPT-4 - [Detailed explanation] + [Working example] + [Common mistakes]
 ```
 
-Limitations: Sometimes generates outdated syntax (v2 actions vs v4); requires verification.
+Limitations - Sometimes generates outdated syntax (v2 actions vs v4); requires verification.
 
 Cursor
-Price: $20/month Pro
-Best for: AI-native development environment
+Price - $20/month Pro
+Best for - AI-native development environment
 
 Cursor combines Claude's backend with deep IDE integration specifically for GitHub workflows.
 
@@ -243,11 +243,11 @@ Strengths:
 - Command palette for quick generation
 - Excellent at explaining existing workflows
 
-Example generation speed: 4-6 seconds for multi-job workflow
+Example generation speed - 4-6 seconds for multi-job workflow
 
 Tabnine
-Price: $15/month Pro, Free tier available
-Best for: Privacy-conscious teams
+Price - $15/month Pro, Free tier available
+Best for - Privacy-conscious teams
 
 Tabnine offers local models that don't send your GitHub Actions code to external servers.
 
@@ -257,7 +257,7 @@ Strengths:
 - Privacy-first approach
 - IDE integration options
 
-Accuracy on matrix strategies: 82%
+Accuracy on matrix strategies - 82%
 
 Practical Comparison Table
 
@@ -272,9 +272,9 @@ Practical Comparison Table
 | Explanation Quality | Excellent | Fair | Excellent | Very Good | Fair |
 | Real-time Suggestions | No | Yes | No | Yes | Yes |
 
-Real-World Scenario: Node.js Full-Stack Application
+Real-World Scenario - Node.js Full-Stack Application
 
-Request: "Create a GitHub Actions workflow for a Node.js monorepo with frontend and backend testing, Docker build, and deployment to production on main branch."
+Request - "Create a GitHub Actions workflow for a Node.js monorepo with frontend and backend testing, Docker build, and deployment to production on main branch."
 
 Claude's Output (Most )
 ```yaml
@@ -453,7 +453,7 @@ jobs:
           # Add your deployment commands here
 ```
 
-Claude's advantages: Includes change detection, matrix strategies, services definition, and proper concurrency handling.
+Claude's advantages - Includes change detection, matrix strategies, services definition, and proper concurrency handling.
 
 Copilot's Approach (Quick Completion)
 Generates simpler, functional workflows without explanation. Completes in 2-3 cycles of suggestions.
@@ -563,21 +563,21 @@ Over one year:
 | Cursor | $2,400 | $240 |
 | Tabnine Pro | $1,800 | $180 |
 
-Best value: Free Claude tier + ChatGPT free tier + Copilot for IDE.
+Best value - Free Claude tier + ChatGPT free tier + Copilot for IDE.
 
 Troubleshooting Common Issues
 
 Matrix Job Not Running
-Problem: `if: matrix.os == 'windows-latest'` syntax error
-Solution: Claude and Cursor catch this; ChatGPT usually explains the issue clearly.
+Problem - `if: matrix.os == 'windows-latest'` syntax error
+Solution - Claude and Cursor catch this; ChatGPT usually explains the issue clearly.
 
 Cache Key Misses
-Problem: Using `${{ hashFiles('package.json') }}` when lockfile is `package-lock.json`
-Solution: All tools can identify this; Claude proactively suggests lockfile usage.
+Problem - Using `${{ hashFiles('package.json') }}` when lockfile is `package-lock.json`
+Solution - All tools can identify this; Claude proactively suggests lockfile usage.
 
 Secrets Exposure in Logs
-Problem: Running command that prints `${{ secrets.API_KEY }}`
-Solution: Claude consistently masks secrets; Copilot learns from context.
+Problem - Running command that prints `${{ secrets.API_KEY }}`
+Solution - Claude consistently masks secrets; Copilot learns from context.
 
 Frequently Asked Questions
 

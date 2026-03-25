@@ -51,7 +51,7 @@ This guide covers practical strategies for organizing AI tool configuration file
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.
 - This guide covers practical: strategies for organizing AI tool configuration files that work across different skill levels and use cases.
 - It's better-structured configuration files: that are self-explanatory, version-controlled, and easy to customize for different environments.
-- Use Environment-Specific Configurations Separate: development, staging, and production settings clearly.
+- Use Environment-Specific Configurations Separate - development, staging, and production settings clearly.
 
 Why Customization Files Matter for Onboarding
 
@@ -129,12 +129,12 @@ Every config file should include inline comments explaining what each setting do
 
 ```yaml
 ai-assistant.yaml
-Model selection: affects response quality and latency
+Model selection - affects response quality and latency
 model: claude-3-opus
 
 Creativity vs consistency tradeoff
-Lower (0.1-0.3): factual responses, code generation
-Higher (0.7-0.9): creative writing, brainstorming
+Lower (0.1-0.3) - factual responses, code generation
+Higher (0.7-0.9) - creative writing, brainstorming
 temperature: 0.3
 
 Maximum context window (in tokens)
@@ -274,7 +274,7 @@ migrations:
     old_api_key: DEPRECATED_USE_SECRET_MANAGER
 ```
 
-Onboarding Workflow: Getting New Developers Started Fast
+Onboarding Workflow - Getting New Developers Started Fast
 
 The real value of well-structured AI configuration files comes during onboarding. A new developer joining your team should be productive with AI tools on their first day, not after a week of configuration troubleshooting.
 
@@ -314,7 +314,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -326,7 +326,7 @@ Most modern tools support asynchronous workflows that work well across time zone
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

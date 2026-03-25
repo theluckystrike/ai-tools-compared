@@ -107,13 +107,13 @@ First, use AI assistance to brainstorm and outline your core message. Input your
 Founder-Ready Prompt Framework
 
 ```
-COMPANY: [Your name]
-PROBLEM STATEMENT: [2-3 sentences describing the problem you solve]
-SOLUTION: [One sentence describing your approach]
-TARGET MARKET: [Specific customer profile]
-CURRENT TRACTION: [Any metrics: revenue, users, partnerships]
+COMPANY - [Your name]
+PROBLEM STATEMENT - [2-3 sentences describing the problem you solve]
+SOLUTION - [One sentence describing your approach]
+TARGET MARKET - [Specific customer profile]
+CURRENT TRACTION - [Any metrics: revenue, users, partnerships]
 
-REQUEST: Generate 3 alternative 30-second pitch versions for investor meetings.
+REQUEST - Generate 3 alternative 30-second pitch versions for investor meetings.
 Each should emphasize different value props: (1) speed, (2) cost savings, (3) competitive advantage.
 ```
 
@@ -159,25 +159,25 @@ The best AI tool for pitch deck writing depends on your specific situation. Foun
 
 Founder Profile Assessment
 
-Profile 1: Structured Thinker, Weak Writer
+Profile 1 - Structured Thinker, Weak Writer
 - You have clear business logic but struggle with polished language
 - Best tools: ChatGPT (for language refinement), Copilot (for Powerpoint integration)
 - Workflow: Draft rough bullets → Use AI to polish language → Verify accuracy
 - Time savings: 30-40% (AI reduces editing rounds)
 
-Profile 2: Visionary, Disorganized
+Profile 2 - Visionary, Disorganized
 - You have compelling ideas but struggle to arrange them logically
 - Best tools: Claude (for structure + reasoning), Perplexity (for market data)
 - Workflow: Brain dump thoughts → Ask AI to organize + suggest framework → Add specifics
 - Time savings: 50-60% (AI provides structural scaffolding)
 
-Profile 3: Experienced, Optimizing
+Profile 3 - Experienced, Optimizing
 - You've pitched before; you want to refine and accelerate
 - Best tools: ChatGPT (consistent outputs), Copilot (workflow integration)
 - Workflow: Use template from prior deck → Ask AI for variation options → Pick strongest
 - Time savings: 60-70% (AI accelerates iteration)
 
-Profile 4: Speed-focused
+Profile 4 - Speed-focused
 - You need a pitch deck in <48 hours for urgent deadline
 - Best tools: ChatGPT + Canva, or Pitch.com's AI draft feature
 - Workflow: Provide quick inputs → Generate full deck structure → Edit visuals and slides
@@ -187,7 +187,7 @@ Consider your timeline, existing materials, and personal writing preferences. So
 
 Realistic Expectations
 
-Founders often ask: "Can AI write my pitch deck?" The honest answer: AI can draft 70-80% of a decent pitch deck in 2-3 hours. You'll spend 4-6 additional hours refining, personalizing, and fact-checking. That's still 50-60% faster than writing from scratch (8-12 hours manual), but don't expect zero editing.
+Founders often ask - "Can AI write my pitch deck?" The honest answer: AI can draft 70-80% of a decent pitch deck in 2-3 hours. You'll spend 4-6 additional hours refining, personalizing, and fact-checking. That's still 50-60% faster than writing from scratch (8-12 hours manual), but don't expect zero editing.
 
 Quality levels:
 - Raw AI output: 6.5/10 (competent but generic)
@@ -197,7 +197,7 @@ Quality levels:
 
 The goal remains creating a pitch deck that authentically represents your vision while communicating the investment opportunity clearly. AI tools serve this goal best when they amplify your thinking rather than replace it.
 
-Red Flags: When Your AI Deck Isn't Working
+Red Flags - When Your AI Deck Isn't Working
 
 - Investors say it's "generic" or "sounds like every startup"
 - Your value prop isn't landing (feedback: "I don't understand why this is different")
@@ -214,22 +214,22 @@ Pitch Deck Quality Assessment
 
 Before sending your deck to investors, self-assess using this rubric:
 
-Story clarity (1-5): Can someone unfamiliar with your company understand what you do in 2 minutes?
+Story clarity (1-5) - Can someone unfamiliar with your company understand what you do in 2 minutes?
 - Target: 5 (someone can explain your business to a friend after seeing deck)
 
-Differentiation (1-5): Does it explain why your solution is better than alternatives?
+Differentiation (1-5) - Does it explain why your solution is better than alternatives?
 - Target: 4-5 (investors know immediately what's unique)
 
-Market opportunity (1-5): Is the TAM credible and compelling?
+Market opportunity (1-5) - Is the TAM credible and compelling?
 - Target: 4 (conservative estimates, sourced numbers, realistic SAM)
 
-Team credibility (1-5): Does the team look capable of executing?
+Team credibility (1-5) - Does the team look capable of executing?
 - Target: 4 (relevant experience for this specific problem)
 
-Traction (1-5): Is momentum evident and trajectory believable?
+Traction (1-5) - Is momentum evident and trajectory believable?
 - Target: 3+ (even early startups show some validation)
 
-Ask clarity (1-5): Is it crystal clear how much you're raising and what you'll do with it?
+Ask clarity (1-5) - Is it crystal clear how much you're raising and what you'll do with it?
 - Target: 5 (no ambiguity)
 
 If any category scores below 3, revise before sending. Use AI to help improve the lowest-scoring categories.
@@ -253,7 +253,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -265,7 +265,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

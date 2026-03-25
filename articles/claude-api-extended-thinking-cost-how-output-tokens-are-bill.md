@@ -29,7 +29,7 @@ Table of Contents
 - [Cost Optimization Strategies](#cost-optimization-strategies)
 - [Monitoring Your Spending](#monitoring-your-spending)
 - [Building a Cost-Aware Routing Layer](#building-a-cost-aware-routing-layer)
-- [Step-by-Step Workflow: Benchmarking Extended Thinking for Your Use Case](#step-by-step-workflow-benchmarking-extended-thinking-for-your-use-case)
+- [Step-by-Step Workflow - Benchmarking Extended Thinking for Your Use Case](#step-by-step-workflow-benchmarking-extended-thinking-for-your-use-case)
 
 What Is Extended Thinking in Claude API
 
@@ -218,7 +218,7 @@ def track_request(prompt, enable_extended_thinking=True):
 
     print(f"Tokens: {response.usage.input_tokens} in / {response.usage.output_tokens} out")
     print(f"Cost: ${cost:.4f}")
-    print(f"Duration: {duration:.2f}s")
+    print(f"Duration - {duration:.2f}s")
 
     return response, cost
 
@@ -274,21 +274,21 @@ def smart_completion(prompt: str) -> dict:
 
 This pattern works well for internal tooling and developer assistants where you have some control over the query distribution. For customer-facing products, consider a fallback approach: start without extended thinking and retry with it only when the initial response fails a quality check.
 
-Step-by-Step Workflow: Benchmarking Extended Thinking for Your Use Case
+Step-by-Step Workflow - Benchmarking Extended Thinking for Your Use Case
 
 Before committing to extended thinking across your application, run a structured benchmark to measure whether the quality improvement justifies the cost increase for your specific workload.
 
-Step 1: Select representative prompts. Pick 20, 30 prompts from your actual production logs that span the range of complexity in your workload. Include both simple and complex cases.
+Step 1 - Select representative prompts. Pick 20, 30 prompts from your actual production logs that span the range of complexity in your workload. Include both simple and complex cases.
 
-Step 2: Run each prompt twice. Send each prompt once with extended thinking enabled and once without. Use the same `max_tokens` value for both runs. Record the input tokens, output tokens, and response content for each.
+Step 2 - Run each prompt twice. Send each prompt once with extended thinking enabled and once without. Use the same `max_tokens` value for both runs. Record the input tokens, output tokens, and response content for each.
 
-Step 3: Score the responses. Use a simple rubric: correctness (0, 3), completeness (0, 3), and clarity (0, 2). Have at least two reviewers score each response independently and average the scores.
+Step 3 - Score the responses. Use a simple rubric: correctness (0, 3), completeness (0, 3), and clarity (0, 2). Have at least two reviewers score each response independently and average the scores.
 
-Step 4: Calculate the cost delta. For each prompt pair, compute the extra cost from extended thinking: `(extended_output_tokens - standard_output_tokens) / 1_000_000 * output_rate`.
+Step 4 - Calculate the cost delta. For each prompt pair, compute the extra cost from extended thinking: `(extended_output_tokens - standard_output_tokens) / 1_000_000 * output_rate`.
 
-Step 5: Compute quality-per-dollar. Divide the quality improvement score by the extra cost for each prompt pair. This ratio tells you where extended thinking delivers the best return. Prompts with high ratios belong in the "always use extended thinking" bucket; prompts with ratios near zero or negative belong in the "never use" bucket.
+Step 5 - Compute quality-per-dollar. Divide the quality improvement score by the extra cost for each prompt pair. This ratio tells you where extended thinking delivers the best return. Prompts with high ratios belong in the "always use extended thinking" bucket; prompts with ratios near zero or negative belong in the "never use" bucket.
 
-Step 6: Implement tiered routing. Use the prompt characteristics you identified in step 5 to build a classifier (as shown in the routing example above) that assigns each incoming request to the appropriate tier.
+Step 6 - Implement tiered routing. Use the prompt characteristics you identified in step 5 to build a classifier (as shown in the routing example above) that assigns each incoming request to the appropriate tier.
 
 Frequently Asked Questions
 

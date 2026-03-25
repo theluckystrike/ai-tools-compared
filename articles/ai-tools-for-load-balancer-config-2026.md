@@ -24,7 +24,7 @@ HAProxy Configuration
 Prompt to Claude:
 ```text
 Generate a production HAProxy config for a web application.
-Backend: 3 app servers (app1:8080, app2:8080, app3:8080).
+Backend - 3 app servers (app1:8080, app2:8080, app3:8080).
 Requirements:
 - HTTPS termination on port 443 (cert at /etc/ssl/myapp.pem)
 - HTTP → HTTPS redirect on port 80
@@ -392,11 +392,11 @@ Comparing AI Tools for Load Balancer Config
 
 For traditional load balancer configs (HAProxy, Nginx), Claude and GPT-4 both perform at a high level. The differences emerge in:
 
-HAProxy: Claude consistently generates correct ACL syntax and uses the `http-check` directive for active health checks. GPT-4 occasionally uses deprecated `option httpchk` syntax without the `http-check expect` companion.
+HAProxy - Claude consistently generates correct ACL syntax and uses the `http-check` directive for active health checks. GPT-4 occasionally uses deprecated `option httpchk` syntax without the `http-check expect` companion.
 
-Nginx upstream: Both tools handle basic upstream config. Claude proactively adds `proxy_next_upstream` retry logic; GPT-4 often omits it unless explicitly requested.
+Nginx upstream - Both tools handle basic upstream config. Claude proactively adds `proxy_next_upstream` retry logic; GPT-4 often omits it unless explicitly requested.
 
-Terraform (AWS ALB): Claude defaults to current TLS policies and includes `enable_deletion_protection = true`. GPT-4 leaves deletion protection unset (defaults to false), which is a production risk.
+Terraform (AWS ALB) - Claude defaults to current TLS policies and includes `enable_deletion_protection = true`. GPT-4 leaves deletion protection unset (defaults to false), which is a production risk.
 
 Edge routing (Cloudflare Workers, Lambda@Edge): Claude performs better on JavaScript-based edge routing. particularly around cookie parsing, response cloning, and handling streaming response bodies correctly.
 

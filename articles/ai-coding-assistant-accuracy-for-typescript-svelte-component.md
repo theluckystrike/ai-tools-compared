@@ -45,7 +45,7 @@ Claude Code Performance
 
 Claude Code demonstrates strong understanding of Svelte 5's runes system and produces accurate TypeScript components. When generating components, it correctly applies `$state` for reactive variables, `$derived` for computed values, and `$effect` for side effects. TypeScript interfaces for props are properly defined and applied.
 
-Example prompt: "Create a TypeScript Svelte component for a paginated data list with search filtering and item selection."
+Example prompt - "Create a TypeScript Svelte component for a paginated data list with search filtering and item selection."
 
 Claude Code produces components like this:
 
@@ -169,7 +169,7 @@ Cursor uses its codebase-wide understanding to generate Svelte components that m
 
 The chat interface enables iterative refinement, asking Cursor to add TypeScript types, convert to Svelte 5 runes, or adjust component structure typically produces accurate results. This makes Cursor particularly effective for maintaining consistency across larger Svelte codebases. If you open your `App.svelte` and one complex child component before generating a new one, Cursor reliably mirrors the project style including rune usage and TypeScript patterns.
 
-One practical workflow: paste an existing component as a reference in the Cursor chat, then ask it to generate a new component following the same conventions. The explicit reference dramatically improves rune accuracy and typing fidelity compared to asking without context.
+One practical workflow - paste an existing component as a reference in the Cursor chat, then ask it to generate a new component following the same conventions. The explicit reference dramatically improves rune accuracy and typing fidelity compared to asking without context.
 
 Strengths:
 - Excellent project-specific convention matching
@@ -231,13 +231,13 @@ Getting accurate Svelte 5 output from any AI assistant improves significantly wi
 
 Recommendations
 
-For complex Svelte 5 components: Claude Code produces the most accurate results with proper runes implementation and TypeScript throughout. Its first-attempt accuracy reduces the editing cycle significantly.
+For complex Svelte 5 components - Claude Code produces the most accurate results with proper runes implementation and TypeScript throughout. Its first-attempt accuracy reduces the editing cycle significantly.
 
-For rapid prototyping: GitHub Copilot offers fast iteration, though expect to refine TypeScript and runes syntax. Best used with existing Svelte 5 files open for context.
+For rapid prototyping - GitHub Copilot offers fast iteration, though expect to refine TypeScript and runes syntax. Best used with existing Svelte 5 files open for context.
 
-For large Svelte projects: Cursor's codebase awareness helps maintain consistency across components. The ability to reference existing files in chat makes it the strongest choice for teams with established conventions.
+For large Svelte projects - Cursor's codebase awareness helps maintain consistency across components. The ability to reference existing files in chat makes it the strongest choice for teams with established conventions.
 
-For keyboard-focused workflows: Zed provides solid generation with direct editor integration and no context-switching required.
+For keyboard-focused workflows - Zed provides solid generation with direct editor integration and no context-switching required.
 
 Related Reading
 

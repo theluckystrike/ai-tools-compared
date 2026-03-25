@@ -276,15 +276,15 @@ Step-by-Step Implementation Workflow
 
 Follow this sequence when rolling out CursorRules across an existing microservices monorepo:
 
-Step 1: Audit your proto layout. Run `find . -name "*.proto" | sort` to enumerate all definition files. Group them into shared (used by two or more services) and service-local categories.
+Step 1 - Audit your proto layout. Run `find . -name "*.proto" | sort` to enumerate all definition files. Group them into shared (used by two or more services) and service-local categories.
 
-Step 2: Create the root file. Place `.cursorrules` at the repo root. Declare `project_type`, `proto_base_path`, and the `services` array. Commit this before touching individual service directories so the AI has a baseline.
+Step 2 - Create the root file. Place `.cursorrules` at the repo root. Declare `project_type`, `proto_base_path`, and the `services` array. Commit this before touching individual service directories so the AI has a baseline.
 
-Step 3: Generate per-service stubs. For each service directory, create a `.cursorrules` that `extends` the root. Fill in the `proto_dependencies` list and any service-specific `conventions`. Use `protoc --descriptor_set_out=descriptor.pb` to produce machine-readable schema references the AI can parse.
+Step 3 - Generate per-service stubs. For each service directory, create a `.cursorrules` that `extends` the root. Fill in the `proto_dependencies` list and any service-specific `conventions`. Use `protoc --descriptor_set_out=descriptor.pb` to produce machine-readable schema references the AI can parse.
 
-Step 4: Validate with a test prompt. Open a service file and ask Cursor: "Add a `ListOrders` RPC that returns paginated results using our common pagination types." The AI should pull in `common.PaginationRequest` and `common.PaginationResponse` automatically. If it invents its own types, your import rules need tightening.
+Step 4 - Validate with a test prompt. Open a service file and ask Cursor - "Add a `ListOrders` RPC that returns paginated results using our common pagination types." The AI should pull in `common.PaginationRequest` and `common.PaginationResponse` automatically. If it invents its own types, your import rules need tightening.
 
-Step 5: Add breaking-change guards. Include `buf lint` and `buf breaking` in your CI pipeline:
+Step 5 - Add breaking-change guards. Include `buf lint` and `buf breaking` in your CI pipeline:
 
 ```bash
 buf lint proto/
@@ -293,7 +293,7 @@ buf breaking --against .git#branch=main proto/
 
 These commands catch field number reuse and type changes before they reach production, complementing what the AI flags in the editor.
 
-Step 6: Document the rules for new engineers. Add a `CURSORRULES.md` at the root explaining the hierarchy, how to extend rules, and what the shared proto packages do. The AI will incorporate this context automatically when it indexes the repo.
+Step 6 - Document the rules for new engineers. Add a `CURSORRULES.md` at the root explaining the hierarchy, how to extend rules, and what the shared proto packages do. The AI will incorporate this context automatically when it indexes the repo.
 
 Testing the Configuration
 
@@ -337,7 +337,7 @@ As your microservices grow, update your CursorRules to reflect changes:
 
 - Document changes in a CHANGELOG for the rules themselves
 
-A well-maintained CursorRules setup ensures consistent, high-quality code generation across your entire microservices ecosystem.
+A well-maintained CursorRules setup ensures consistent, high-quality code generation across your entire microservices environment.
 
 {% endraw %}
 

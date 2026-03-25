@@ -17,7 +17,7 @@ voice-checked: true
 
 AI tools like Claude Code, GitHub Copilot, and Cursor can identify Kubernetes misconfigurations including security violations (secrets in environment variables, privileged containers, insecure image tags), resource issues (missing requests/limits), and best practice violations before deployment. By analyzing YAML manifests against CIS Kubernetes benchmarks and your organization's policies, AI assistants catch contextual issues that traditional schema validators miss. Integrating AI analysis into CI/CD pipelines or IDE development workflows prevents problematic configurations from reaching production.
 
-The Problem: Misconfigurations Slip Through Traditional Validation
+The Problem - Misconfigurations Slip Through Traditional Validation
 
 
 Static analysis tools like kubeval and conftest handle basic schema validation, but they miss contextual issues. A deployment might pass schema validation while running containers as root, exposing sensitive data through environment variables, or requesting unreasonable CPU limits. These nuanced problems require understanding both Kubernetes best practices and your specific application context.
@@ -35,7 +35,7 @@ Modern AI tools for Kubernetes misconfiguration detection work in several ways. 
 The most effective approach combines multiple methods. IDE integration catches issues during development, CI/CD gates prevent problematic configurations from merging, and interactive tools help investigate complex configurations.
 
 
-Practical Examples: What AI Tools Can Detect
+Practical Examples - What AI Tools Can Detect
 
 
 Consider this Kubernetes Deployment with several common issues:
@@ -113,7 +113,7 @@ Claude Code identifies security concerns like privileged containers, suggests im
 2. GitHub Copilot
 
 
-Copilot integrates directly into VS Code and GitHub's ecosystem. Its Kubernetes analysis works best when you provide sufficient context about your project.
+Copilot integrates directly into VS Code and GitHub's environment. Its Kubernetes analysis works best when you provide sufficient context about your project.
 
 
 ```yaml
@@ -139,7 +139,7 @@ Cursor provides strong Kubernetes analysis through its AI chat interface. You ca
 ```python
 Cursor can analyze multiple files at once
 Upload deployment.yaml, service.yaml, configmap.yaml
-Then ask: "Find all security vulnerabilities in these files"
+Then ask - "Find all security vulnerabilities in these files"
 ```
 
 
@@ -168,7 +168,7 @@ Integrating AI Analysis into Your Workflow
 The most effective strategy combines AI tools at multiple stages:
 
 
-During Development: Use Claude Code or Cursor in your IDE to catch issues as you write manifests. Configure your AI assistant to flag security concerns automatically.
+During Development - Use Claude Code or Cursor in your IDE to catch issues as you write manifests. Configure your AI assistant to flag security concerns automatically.
 
 
 ```yaml
@@ -189,10 +189,10 @@ jobs:
 ```
 
 
-In CI/CD: Add AI analysis steps to your pipeline. Run the analysis before any `kubectl apply` commands execute. This gate prevents misconfigurations from reaching your cluster.
+In CI/CD - Add AI analysis steps to your pipeline. Run the analysis before any `kubectl apply` commands execute. This gate prevents misconfigurations from reaching your cluster.
 
 
-For Incident Investigation: When something goes wrong in production, use AI tools to analyze your deployed configurations and compare them against your source of truth. AI can help identify drift and misconfigurations that led to the incident.
+For Incident Investigation - When something goes wrong in production, use AI tools to analyze your deployed configurations and compare them against your source of truth. AI can help identify drift and misconfigurations that led to the incident.
 
 
 Building Your Own Kubernetes Analysis Prompts
@@ -272,7 +272,7 @@ Use this decision tree to determine which tool to use for different scenarios:
 | Complex multi-resource audits | Cursor (multi-file context) | Understands relationships across manifests |
 | Policy as Code | Dedicated tools (OPA/Gatekeeper) | Enforceable, not advisory |
 
-Advanced Example: Multi-Tier Application Analysis
+Advanced Example - Multi-Tier Application Analysis
 
 ```yaml
 A complete web application with common issues
@@ -364,7 +364,7 @@ spec:
 AI tools can identify all of these issues and suggest fixes. When analyzing this with Claude:
 
 ```
-Prompt: "Review this Kubernetes manifest for:
+Prompt - "Review this Kubernetes manifest for:
 1. Security violations (root containers, plaintext secrets, public exposure)
 2. Reliability issues (single replica, missing probes, zero PDB)
 3. Best practices (tag pinning, resource limits, namespace organization)
@@ -415,7 +415,7 @@ echo " All manifests passed AI security review"
 exit 0
 ```
 
-Comparison: AI Tools vs. Dedicated K8s Validators
+Comparison - AI Tools vs. Dedicated K8s Validators
 
 | Tool | Strengths | Limitations | Best For |
 |------|---|---|---|
@@ -424,7 +424,7 @@ Comparison: AI Tools vs. Dedicated K8s Validators
 | Datree | Curated policies, CI/CD native | Less flexible, limited AI | Policy enforcement |
 | OPA/Gatekeeper | Enforceable, auditable, deterministic | Requires policy writing, steep learning curve | Production policy gates |
 
-Optimal setup: AI tools for development + deterministic validators in CI/CD + policy engines in cluster.
+Optimal setup - AI tools for development + deterministic validators in CI/CD + policy engines in cluster.
 
 Frequently Asked Questions
 

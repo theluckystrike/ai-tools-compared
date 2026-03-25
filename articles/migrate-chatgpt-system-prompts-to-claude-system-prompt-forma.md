@@ -171,13 +171,13 @@ Stage 1: Data Exploration
 - Note any data quality issues or missing values
 - Suggest initial hypotheses
 
-Stage 2: Analysis
+Stage 2 - Analysis
 - Perform the requested analysis
 - Show your methodology
 - Include relevant statistics
 - Explain significant findings
 
-Stage 3: Visualization and Summary
+Stage 3 - Visualization and Summary
 - Suggest appropriate chart types for the data
 - Provide Python or R code to generate visualizations
 - Summarize key insights in 2-3 sentences

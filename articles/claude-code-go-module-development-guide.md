@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Go Module Development Guide"
-description: "Build Go modules with Claude Code: project scaffolding, interface design, test generation, dependency management, and CI pipeline setup."
+description: "Build Go modules with Claude Code - project scaffolding, interface design, test generation, dependency management, and CI pipeline setup."
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: "theluckystrike"
@@ -38,7 +38,7 @@ Claude Code transforms Go module development by providing intelligent assistance
 - Whether you're creating a: new Go module from scratch or maintaining an existing one, Claude Code helps you write idiomatic Go code, generate tests, and implement best practices efficiently.
 - Include handlers for CRUD: operations on a 'User' struct.
 - Use Chi router and: implement proper error handling.
-- You can use Claude: Code in GitHub Actions to validate code, run tests, and perform security scans automatically.
+- You can use Claude - Code in GitHub Actions to validate code, run tests, and perform security scans automatically.
 
 Prerequisites
 
@@ -50,7 +50,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Set Up Your Go Environment
+Step 1 - Set Up Your Go Environment
 
 Before examining Claude Code for Go development, ensure your environment is properly configured. You'll need Go installed (preferably version 1.21 or later), and Claude Code set up on your system. The combination of these tools creates a powerful development environment that understands both Go semantics and your specific codebase.
 
@@ -58,7 +58,7 @@ Start by verifying your Go installation:
 
 ```bash
 go version
-Should output: go1.21.x or later
+Should output - go1.21.x or later
 ```
 
 Initialize your project directory and create a new Go module:
@@ -70,7 +70,7 @@ go mod init github.com/yourusername/my-go-project
 
 When working with Claude Code, you can initialize the project and have it guide you through the structure. Simply describe your intended functionality, and Claude Code will suggest appropriate package organization, import paths, and dependency management strategies.
 
-Step 2: Scaffolding Go Projects with Claude Code
+Step 2 - Scaffolding Go Projects with Claude Code
 
 One of Claude Code's strongest features is its ability to understand Go project structure and generate appropriate code. Rather than manually creating directories and files, you can describe your project requirements and let Claude Code scaffold everything.
 
@@ -102,7 +102,7 @@ my-go-api/
 
 This scaffolding follows Go best practices, separating concerns across packages and using the standard project layout conventions. Claude Code understands Go's visibility rules and will generate appropriate exports, unexported functions, and interface definitions.
 
-Step 3: Writing Idiomatic Go Code
+Step 3 - Writing Idiomatic Go Code
 
 Claude Code excels at helping you write Go code that follows established patterns and idioms. When you describe functionality, it generates code that adheres to Go conventions, including proper error handling, context propagation, and interface design.
 
@@ -162,7 +162,7 @@ func (r *postgresUserRepository) GetByID(ctx context.Context, id string) (*model
 
 Notice how Claude Code generates code with proper error wrapping using `fmt.Errorf` with the `%w` verb, uses interfaces for abstraction, and implements context propagation throughout.
 
-Step 4: Test Generation and Improvement
+Step 4 - Test Generation and Improvement
 
 Writing tests is crucial for Go projects, and Claude Code makes this significantly easier. It can generate test suites, suggest table-driven test patterns, and help you achieve good coverage.
 
@@ -200,7 +200,7 @@ func TestUserHandler_GetUser_Success(t *testing.T) {
     expectedUser := &models.User{
         ID:    "123",
         Name:  "John Doe",
-        Email: "john@example.com",
+        Email - "john@example.com",
     }
 
     mockService.On("GetUser", "123").Return(expectedUser, nil)
@@ -244,7 +244,7 @@ func TestUserHandler_CreateUser_ValidationError(t *testing.T) {
     }{
         {
             name:       "empty name",
-            user:       models.User{Email: "test@example.com"},
+            user:       models.User{Email - "test@example.com"},
             wantStatus: http.StatusBadRequest,
         },
         {
@@ -278,7 +278,7 @@ func TestUserHandler_CreateUser_ValidationError(t *testing.T) {
 
 The generated tests use testify for assertions, implement table-driven testing patterns, and properly mock dependencies. You can extend these tests with additional cases and edge conditions specific to your application.
 
-Step 5: Configure CI/CD Integration with Go Projects
+Step 5 - Configure CI/CD Integration with Go Projects
 
 Integrating Claude Code into your CI/CD pipeline ensures consistent code quality across your team. You can use Claude Code in GitHub Actions to validate code, run tests, and perform security scans automatically.
 

@@ -70,7 +70,7 @@ and the existing indexes. Identify the bottleneck and suggest specific fixes.
 [paste EXPLAIN ANALYZE]
 [paste indexes]
 
-PostgreSQL version: 16. Table has 8M rows in orders, 2M in customers, 40M in order_items.
+PostgreSQL version - 16. Table has 8M rows in orders, 2M in customers, 40M in order_items.
 ```
 
 Claude's typical response identifies:
@@ -193,7 +193,7 @@ Comparing Output Quality
 
 Handling Bloated CTEs
 
-A common anti-pattern: CTEs used as optimization fences (pre-Postgres 12 behavior that many devs still write):
+A common anti-pattern - CTEs used as optimization fences (pre-Postgres 12 behavior that many devs still write):
 
 ```sql
 -- Old pattern. Postgres 12+ doesn't materialize by default, but many devs still use it
@@ -209,11 +209,11 @@ JOIN expensive_cte e ON e.customer_id = c.id
 WHERE e.avg_order > 500;
 ```
 
-Prompt Claude: "Is this CTE being materialized? How do I verify, and should I use NOT MATERIALIZED or inline it?"
+Prompt Claude - "Is this CTE being materialized? How do I verify, and should I use NOT MATERIALIZED or inline it?"
 
-Claude explains: in Postgres 12+, CTEs without side effects are not materialized by default unless they're referenced more than once. It suggests adding `EXPLAIN` to verify, and shows how to force inlining with `NOT MATERIALIZED` if needed, or force materialization with `MATERIALIZED` when the CTE result is used multiple times and re-computation would be expensive.
+Claude explains - in Postgres 12+, CTEs without side effects are not materialized by default unless they're referenced more than once. It suggests adding `EXPLAIN` to verify, and shows how to force inlining with `NOT MATERIALIZED` if needed, or force materialization with `MATERIALIZED` when the CTE result is used multiple times and re-computation would be expensive.
 
-Real Workflow: Paste EXPLAIN, Get Fix
+Real Workflow - Paste EXPLAIN, Get Fix
 
 The fastest workflow:
 
@@ -223,15 +223,15 @@ The fastest workflow:
 4. Use this template:
 
 ```
-PostgreSQL 16. Table sizes: orders=8M rows, order_items=40M rows.
+PostgreSQL 16. Table sizes - orders=8M rows, order_items=40M rows.
 The following query takes 4.2 seconds. EXPLAIN ANALYZE output:
 
 [paste here]
 
-Existing indexes on orders: [paste]
-Existing indexes on order_items: [paste]
+Existing indexes on orders - [paste]
+Existing indexes on order_items - [paste]
 
-Tell me: (1) what the bottleneck is, (2) what index to create, (3) any query rewrites.
+Tell me - (1) what the bottleneck is, (2) what index to create, (3) any query rewrites.
 ```
 
 Claude typically returns a diagnosis in under 30 seconds and includes copy-paste DDL.
@@ -381,18 +381,18 @@ Claude can generate a decision tree for your specific database:
 Start with an EXPLAIN ANALYZE output. For each node:
 
 1. Is it a "Seq Scan" on a table > 1M rows?
-   → Yes: Do you have an index on the filter column?
+   → Yes - Do you have an index on the filter column?
       → No: Create index. Estimate: 10-100x faster
-      → Yes: Is the index being used? (check EXPLAIN with index hint)
+      → Yes - Is the index being used? (check EXPLAIN with index hint)
    → No: Continue to next node
 
 2. Is it a "Hash Join" with high memory usage?
-   → Yes: Is work_mem too small?
+   → Yes - Is work_mem too small?
       → Increase work_mem for this query
       → Or optimize the subquery to reduce cardinality
    → No: Continue
 
-3. Is there a "CTE" or subquery showing "Filter: (rows removed)"?
+3. Is there a "CTE" or subquery showing "Filter - (rows removed)"?
    → Yes: Filter is happening after joining
       → Move the filter to the subquery WHERE clause
       → Estimate: 2-5x faster

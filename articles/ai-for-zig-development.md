@@ -29,7 +29,7 @@ Allocator Patterns
 
 Zig's explicit allocator passing is unfamiliar to most developers. Claude handles it well.
 
-Prompt: "Write a Zig function that reads a file, parses it as JSON (using a library), and returns a dynamically allocated result. Show correct allocator usage and defer cleanup."
+Prompt - "Write a Zig function that reads a file, parses it as JSON (using a library), and returns a dynamically allocated result. Show correct allocator usage and defer cleanup."
 
 ```zig
 // file_parser.zig
@@ -118,7 +118,7 @@ Comptime Generics
 
 Zig's `comptime` replaces traditional generics. AI tools handle common patterns but struggle with complex comptime type manipulation.
 
-Prompt: "Write a generic `Stack` data structure in Zig using comptime. Include push, pop, peek, and len. Use an ArrayList internally. Make it work with any type."
+Prompt - "Write a generic `Stack` data structure in Zig using comptime. Include push, pop, peek, and len. Use an ArrayList internally. Make it work with any type."
 
 Claude:
 
@@ -207,7 +207,7 @@ Error Union Handling
 
 Zig's error unions (`!T`) require explicit handling. AI tools are good at generating boilerplate for converting between error sets and creating ergonomic wrappers.
 
-Prompt: "I have multiple functions that each return their own error set. Write a function that calls all three and merges errors into a unified error type."
+Prompt - "I have multiple functions that each return their own error set. Write a function that calls all three and merges errors into a unified error type."
 
 ```zig
 const std = @import("std");
@@ -246,7 +246,7 @@ build.zig Configuration
 
 Build configuration is where AI tools provide the most value in Zig. `build.zig` is Zig code, and it's verbose.
 
-Prompt: "Write a build.zig for a project that: links against libcurl and libssl, has debug and release build modes, exposes a build option to enable/disable logging, and runs tests."
+Prompt - "Write a build.zig for a project that: links against libcurl and libssl, has debug and release build modes, exposes a build option to enable/disable logging, and runs tests."
 
 ```zig
 // build.zig
@@ -399,7 +399,7 @@ Translating C Headers Automatically
 Zig's `zig translate-c` command converts C headers to Zig. When the output is confusing, paste it to Claude:
 
 ```
-Prompt: "This is the Zig translation of a C library header. The original function signature
+Prompt - "This is the Zig translation of a C library header. The original function signature
 is `int foo_init(foo_ctx_t ctx, const foo_opts_t *opts)`. Explain what the Zig types mean
 and write a safe Zig wrapper for it."
 ```

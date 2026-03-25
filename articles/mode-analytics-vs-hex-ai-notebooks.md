@@ -38,7 +38,7 @@ Choose Mode Analytics if your team is SQL-centric with structured reporting need
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - Choose Mode Analytics if: your team is SQL-centric with structured reporting needs and stakeholder-facing dashboards.
-- Choose Hex AI Notebooks: if you need complex Python workflows, AI-assisted analysis throughout, and the ability to publish interactive data apps.
+- Choose Hex AI Notebooks - if you need complex Python workflows, AI-assisted analysis throughout, and the ability to publish interactive data apps.
 
 What is Mode Analytics?
 
@@ -134,7 +134,7 @@ Mode has integrated AI capabilities focused on query assistance and report gener
 ```python
 Mode AI-assisted Python analysis
 Type "/" to access AI commands
-AI can suggest: visualizations, transformations, statistical tests
+AI can suggest - visualizations, transformations, statistical tests
 ```
 
 Hex's AI Features
@@ -195,7 +195,7 @@ Choose Mode Analytics if your team is SQL-centric with straightforward reporting
 
 Choose Hex AI Notebooks if your analysis involves complex Python workflows, you need AI assistance throughout the analysis, interactive parameter-driven apps are valuable, or your workflow is exploratory with iterative refinement.
 
-Practical Example: Customer Churn Analysis
+Practical Example - Customer Churn Analysis
 
 Here's how each platform handles a typical customer churn analysis:
 
@@ -300,7 +300,7 @@ Hex to Mode migration:
 
 This portability makes starting with either platform lower-risk, switching later is feasible.
 
-Connector Ecosystem Differences
+Connector environment Differences
 
 Beyond the big data warehouses, connector support varies:
 

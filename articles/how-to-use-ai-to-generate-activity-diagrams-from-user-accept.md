@@ -62,23 +62,23 @@ Some platforms offer direct AI-to-diagram conversion without requiring diagram s
 
 Step-by-Step Workflow
 
-Step 1: Structure Your Acceptance Criteria
+Step 1 - Structure Your Acceptance Criteria
 
 Before feeding acceptance criteria to AI, ensure they follow a structured format. Use the Given-When-Then (Gherkin) style or a simple numbered list format:
 
 ```
-Scenario: User login flow
+Scenario - User login flow
 Given the user is on the login page
 When the user enters valid credentials
 Then the user should be redirected to the dashboard
 And a session token should be created
 ```
 
-Step 2: Choose Your Output Format
+Step 2 - Choose Your Output Format
 
 Decide whether you want Mermaid or PlantUML output. Mermaid renders directly in GitHub, GitLab, and many documentation platforms. PlantUML offers more advanced formatting options and integrates with enterprise tools.
 
-Step 3: Craft the AI Prompt
+Step 3 - Craft the AI Prompt
 
 The quality of your generated diagram depends heavily on your prompt. Here's an effective prompt structure:
 
@@ -95,7 +95,7 @@ Requirements:
 - Keep labels concise but descriptive
 ```
 
-Step 4: Review and Refine
+Step 4 - Review and Refine
 
 AI-generated diagrams require human review. Check for:
 
@@ -109,7 +109,7 @@ AI-generated diagrams require human review. Check for:
 
 Practical Examples
 
-Example 1: Simple Login Flow
+Example 1 - Simple Login Flow
 
 Acceptance Criteria:
 
@@ -144,12 +144,12 @@ activity TDU
     Redirect --> End
 ```
 
-Example 2: E-Commerce Checkout Process
+Example 2 - E-Commerce Checkout Process
 
 Acceptance Criteria:
 
 ```
-Scenario: Complete checkout
+Scenario - Complete checkout
 1. User views cart with items
 2. User clicks checkout
 3. If user not logged in, prompt login or guest checkout
@@ -227,23 +227,23 @@ Review activity diagrams to identify:
 
 Common Pitfalls and Solutions
 
-Pitfall 1: Over-Complex Diagrams
+Pitfall 1 - Over-Complex Diagrams
 
-Problem: AI generates diagrams with too many branches, making them unreadable.
+Problem - AI generates diagrams with too many branches, making them unreadable.
 
-Solution: Break complex acceptance criteria into multiple diagrams. Focus on one scenario per diagram.
+Solution - Break complex acceptance criteria into multiple diagrams. Focus on one scenario per diagram.
 
-Pitfall 2: Missing Edge Cases
+Pitfall 2 - Missing Edge Cases
 
-Problem: Generated diagrams don't account for timeout, network failure, or data validation scenarios.
+Problem - Generated diagrams don't account for timeout, network failure, or data validation scenarios.
 
-Solution: Add explicit prompts requesting error handling paths. Review against failure mode analysis.
+Solution - Add explicit prompts requesting error handling paths. Review against failure mode analysis.
 
-Pitfall 3: Incorrect Syntax
+Pitfall 3 - Incorrect Syntax
 
-Problem: Generated diagram code contains syntax errors preventing rendering.
+Problem - Generated diagram code contains syntax errors preventing rendering.
 
-Solution: Use AI tools with code execution capabilities to validate syntax before saving. Test rendering in a preview environment.
+Solution - Use AI tools with code execution capabilities to validate syntax before saving. Test rendering in a preview environment.
 
 Tips for Better Results
 

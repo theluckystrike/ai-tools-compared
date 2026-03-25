@@ -79,7 +79,7 @@ Copy the conflicting file content into Copilot Chat with a request for resolutio
 
 Practical Workflow for AI-Assisted Conflict Resolution
 
-Step 1: Capture Complete Context
+Step 1 - Capture Complete Context
 
 Before asking AI for help, gather the full context. This includes the conflicting file, related files, and any recent commits that might explain the intent behind changes.
 
@@ -92,13 +92,13 @@ View the diff for context
 git log --patch feature/discount-logic --not main
 ```
 
-Step 2: Structure Your AI Prompt
+Step 2 - Structure Your AI Prompt
 
 Provide the AI with a clear problem statement:
 
 ```
-Context: We're merging feature/discount-logic into main
-Conflict in: src/billing.py, function calculate_total()
+Context - We're merging feature/discount-logic into main
+Conflict in - src/billing.py, function calculate_total()
 
 Current version (main):
 - Applies 10% discount to total
@@ -108,13 +108,13 @@ Incoming version (feature/discount-logic):
 - Removes the discount
 - Multiplies price by quantity
 
-Business requirement: Both features should work together.
+Business requirement - Both features should work together.
 The discount should apply to the quantity-adjusted price.
 
 Please generate a merged version with the discount applied to (price * quantity).
 ```
 
-Step 3: Evaluate AI Suggestions Critically
+Step 3 - Evaluate AI Suggestions Critically
 
 AI-generated resolutions require human verification. Check these aspects:
 
@@ -253,7 +253,7 @@ Resolving a Multi-File Conflict
 
 Consider a scenario where two developers modified different files that work together:
 
-File 1: `src/models.py`
+File 1 - `src/models.py`
 
 ```python
 class Order:
@@ -264,7 +264,7 @@ class Order:
         return sum(item.price for item in self.items) * 1.1
 ```
 
-File 2: `src/discounts.py`
+File 2 - `src/discounts.py`
 
 ```python
 def apply_discount(total, discount_rate=0.1):

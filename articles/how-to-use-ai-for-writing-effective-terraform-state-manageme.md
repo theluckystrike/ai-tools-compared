@@ -29,7 +29,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Terraform State Fundamentals
+Step 1 - Understand Terraform State Fundamentals
 
 Before using AI, you need a solid grasp of how Terraform state works. When you run `terraform apply`, Terraform stores the current state of your infrastructure in a state file. This file maps your resource configurations to actual cloud resources.
 
@@ -37,7 +37,7 @@ The default local state works for learning, but production environments require 
 
 State files are JSON documents that Terraform uses to track resource identity, dependency ordering, and metadata. They can contain sensitive values like passwords, private keys, and connection strings, which is why encryption and access controls are non-negotiable for any shared environment.
 
-Step 2: AI-Powered Backend Configuration
+Step 2 - AI-Powered Backend Configuration
 
 Generating proper Terraform backend configuration is one of the most practical applications of AI. Instead of manually researching backend options, you can describe your requirements and get production-ready configuration.
 
@@ -65,7 +65,7 @@ terraform {
 
 AI also helps you understand when to use different backend types. A quick question about workspace isolation versus directory-based state separation yields clear guidance for your architecture.
 
-Backend Comparison: What AI Recommends by Use Case
+Backend Comparison - What AI Recommends by Use Case
 
 | Backend | Use Case | Locking | Encryption |
 |---------|----------|---------|------------|
@@ -77,7 +77,7 @@ Backend Comparison: What AI Recommends by Use Case
 
 When you describe your stack to an AI assistant, it quickly identifies the right backend based on your cloud provider and organizational structure.
 
-Step 3: Generate State Migration Scripts
+Step 3 - Generate State Migration Scripts
 
 State migration is notoriously tricky. Moving from local to remote state, or reorganizing existing state across modules, requires careful planning. AI can generate migration scripts and catch potential issues before they cause problems.
 
@@ -106,7 +106,7 @@ terraform plan
 
 AI also flags resources with `prevent_destroy` lifecycle rules that could block the migration, and identifies resources that reference each other through data sources, which must be moved together or updated after migration.
 
-Step 4: Automate State Management Documentation
+Step 4 - Automate State Management Documentation
 
 Maintaining documentation for state management is essential for team collaboration. AI can generate and update documentation based on your actual configuration.
 
@@ -120,7 +120,7 @@ retention policies, and disaster recovery procedures.
 
 This produces documentation that stays current as your infrastructure evolves. The output typically includes a state file path convention, access policy summaries, and runbooks for common operations like state imports and workspace creation.
 
-Step 5: State File Security Analysis
+Step 5 - State File Security Analysis
 
 Security misconfigurations in Terraform state can expose sensitive data. AI tools can analyze your configuration and identify security gaps in your state management.
 
@@ -128,7 +128,7 @@ Request a security review:
 
 ```
 Review this Terraform backend configuration for security issues.
-Check for: encryption settings, access control, logging, and
+Check for - encryption settings, access control, logging, and
 compliance with AWS security best practices.
 ```
 
@@ -168,7 +168,7 @@ resource "aws_s3_bucket_public_access_block" "terraform_state" {
 }
 ```
 
-Step 6: Workspace Strategy Development
+Step 6 - Workspace Strategy Development
 
 Terraform workspaces provide environment isolation, but using them effectively requires planning. AI helps you design workspace strategies that match your deployment workflow.
 
@@ -194,7 +194,7 @@ terraform apply -auto-approve
 
 AI explains the tradeoffs between each approach and helps you choose based on your team's needs. It consistently recommends against using workspaces as the only isolation mechanism for production, preferring separate state files and separate IAM roles per environment.
 
-Step 7: Handling State Corruption Recovery
+Step 7 - Handling State Corruption Recovery
 
 State file corruption happens. Whether from concurrent operations, storage failures, or human error, knowing how to recover is crucial. AI can guide you through recovery procedures specific to your setup.
 
@@ -239,7 +239,7 @@ Human judgment is required for:
 
 Always review AI-generated state configurations before applying them to production. The generated code should match your organization's security policies and operational requirements.
 
-Step 8: Integrate AI into Your Workflow
+Step 8 - Integrate AI into Your Workflow
 
 Adding AI to your Terraform workflow doesn't require overhauling your processes. Start with specific, bounded requests:
 

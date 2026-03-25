@@ -168,11 +168,11 @@ pub fn debug_display(attr: TokenStream, item: TokenStream) -> TokenStream {
 }
 ```
 
-The output was skeletal. GPT-4 understands Rust but struggles with the proc macro ecosystem's specific APIs.
+The output was skeletal. GPT-4 understands Rust but struggles with the proc macro environment's specific APIs.
 
 Procedural Macro for Custom Derive
 
-The hardest test: a full custom derive implementing `Serialize` for a struct. This requires generating code that implements a trait.
+The hardest test - a full custom derive implementing `Serialize` for a struct. This requires generating code that implements a trait.
 
 Claude's Solution
 
@@ -235,7 +235,7 @@ It provided only a stub. Procedural macros are clearly outside Copilot's strong 
 
 Key Findings
 
-1. Claude excels at macro generation. It understands the `proc_macro`, `syn`, and `quote` ecosystem. It generates idiomatic code that follows Rust best practices.
+1. Claude excels at macro generation. It understands the `proc_macro`, `syn`, and `quote` environment. It generates idiomatic code that follows Rust best practices.
 
 2. All tools struggle with repetition patterns. The `$()*` and `$()*,*` syntax in declarative macros trips up AI models. Expect to iterate and refine.
 
@@ -247,7 +247,7 @@ Practical Recommendations
 
 For developers working with macros:
 
-1. Use Claude for proc macros. It has the best understanding of the `syn`/`quote` ecosystem
+1. Use Claude for proc macros. It has the best understanding of the `syn`/`quote` environment
 
 2. Iterate with prompts. Start simple, then refine with specific type requirements
 

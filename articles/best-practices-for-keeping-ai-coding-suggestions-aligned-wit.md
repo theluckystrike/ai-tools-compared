@@ -21,20 +21,20 @@ Provide pattern examples in your prompts: "Follow the service-repository pattern
 Table of Contents
 
 - [Understanding the Challenge](#understanding-the-challenge)
-- [Strategy 1: Provide Explicit Context About Your Architecture](#strategy-1-provide-explicit-context-about-your-architecture)
-- [Strategy 2: Define Pattern-Specific Prompts](#strategy-2-define-pattern-specific-prompts)
+- [Strategy 1 - Provide Explicit Context About Your Architecture](#strategy-1-provide-explicit-context-about-your-architecture)
+- [Strategy 2 - Define Pattern-Specific Prompts](#strategy-2-define-pattern-specific-prompts)
 - [Factory Pattern Requirements](#factory-pattern-requirements)
-- [Strategy 3: Implement Code Review Checklists for AI-Generated Code](#strategy-3-implement-code-review-checklists-for-ai-generated-code)
-- [Strategy 4: Use Type Hints as Pattern Enforcement](#strategy-4-use-type-hints-as-pattern-enforcement)
-- [Strategy 5: Validate Generated Code Against Architectural Tests](#strategy-5-validate-generated-code-against-architectural-tests)
-- [Strategy 6: Establish Pattern Documentation in Your Codebase](#strategy-6-establish-pattern-documentation-in-your-codebase)
+- [Strategy 3 - Implement Code Review Checklists for AI-Generated Code](#strategy-3-implement-code-review-checklists-for-ai-generated-code)
+- [Strategy 4 - Use Type Hints as Pattern Enforcement](#strategy-4-use-type-hints-as-pattern-enforcement)
+- [Strategy 5 - Validate Generated Code Against Architectural Tests](#strategy-5-validate-generated-code-against-architectural-tests)
+- [Strategy 6 - Establish Pattern Documentation in Your Codebase](#strategy-6-establish-pattern-documentation-in-your-codebase)
 - [Repository Pattern Implementation](#repository-pattern-implementation)
-- [Strategy 7: Use Architecture Decision Records as AI Context](#strategy-7-use-architecture-decision-records-as-ai-context)
+- [Strategy 7 - Use Architecture Decision Records as AI Context](#strategy-7-use-architecture-decision-records-as-ai-context)
 - [Status](#status)
 - [Context](#context)
 - [Decision](#decision)
 - [Consequences](#consequences)
-- [Strategy 8: Enforce Patterns Through Linting Rules](#strategy-8-enforce-patterns-through-linting-rules)
+- [Strategy 8 - Enforce Patterns Through Linting Rules](#strategy-8-enforce-patterns-through-linting-rules)
 - [Comparing AI Assistants for Pattern Compliance](#comparing-ai-assistants-for-pattern-compliance)
 - [Measuring Success](#measuring-success)
 
@@ -57,7 +57,7 @@ class DatabaseConnection:
 
 This implementation lacks thread safety, a critical consideration for production systems. The AI fulfilled the basic requirement but missed a crucial design consideration, concurrency safety.
 
-Strategy 1: Provide Explicit Context About Your Architecture
+Strategy 1 - Provide Explicit Context About Your Architecture
 
 One of the most effective approaches involves feeding the AI assistant clear information about your project's architectural decisions. Rather than requesting code in isolation, establish context that guides the assistant toward pattern-compliant solutions.
 
@@ -72,7 +72,7 @@ follows these patterns.
 
 This context helps the AI understand constraints and expectations, reducing the likelihood of generating pattern-violating code.
 
-Strategy 2: Define Pattern-Specific Prompts
+Strategy 2 - Define Pattern-Specific Prompts
 
 Creating reusable prompts for common pattern implementations trains your AI assistant to produce consistent, pattern-compliant code. Develop a prompt library that codifies your team's architectural standards.
 
@@ -98,17 +98,17 @@ Factory Pattern Requirements
 - Type hints for all public methods
 ```
 
-Strategy 3: Implement Code Review Checklists for AI-Generated Code
+Strategy 3 - Implement Code Review Checklists for AI-Generated Code
 
 Establishing systematic review processes catches pattern violations before they enter your codebase. Create checklist items specifically targeting common AI-generated issues:
 
-- Single Responsibility: Does this class have one reason to change?
+- Single Responsibility - Does this class have one reason to change?
 
-- Dependency Inversion: Does it depend on abstractions rather than concretions?
+- Dependency Inversion - Does it depend on abstractions rather than concretions?
 
-- Open/Closed Principle: Can behavior extend without modifying existing code?
+- Open/Closed Principle - Can behavior extend without modifying existing code?
 
-- Interface Segregation: Are interfaces focused on specific client needs?
+- Interface Segregation - Are interfaces focused on specific client needs?
 
 ```python
 Review checklist example for factory pattern
@@ -123,7 +123,7 @@ def review_factory_implementation(code: str) -> list[str]:
     return issues
 ```
 
-Strategy 4: Use Type Hints as Pattern Enforcement
+Strategy 4 - Use Type Hints as Pattern Enforcement
 
 Type hints serve dual purposes, they improve code reliability and guide AI assistants toward correct implementations. When AI tools see explicit type annotations, they generate more precise, pattern-compliant code.
 
@@ -148,7 +148,7 @@ class UserRepository:
 
 The second version specifies the pattern (repository), the dependencies (AsyncSession), return types, and includes documentation, all signals that improve AI output quality.
 
-Strategy 5: Validate Generated Code Against Architectural Tests
+Strategy 5 - Validate Generated Code Against Architectural Tests
 
 Automated testing validates that generated code adheres to design patterns. Implement architectural tests using tools like `pytest-architect` or custom checks:
 
@@ -181,7 +181,7 @@ Run these validators as part of your continuous integration pipeline:
     pytest tests/architecture/test_patterns.py -v
 ```
 
-Strategy 6: Establish Pattern Documentation in Your Codebase
+Strategy 6 - Establish Pattern Documentation in Your Codebase
 
 Maintain living documentation that explains how patterns manifest in your project. AI assistants can reference this documentation when generating code:
 
@@ -218,14 +218,14 @@ class Repository(ABC, Generic[T]):
 
 Reference this documentation when working with AI assistants to ensure consistent pattern application.
 
-Strategy 7: Use Architecture Decision Records as AI Context
+Strategy 7 - Use Architecture Decision Records as AI Context
 
 Architecture Decision Records (ADRs) capture the reasoning behind architectural choices. When you feed relevant ADRs to an AI assistant before requesting code, the assistant generates implementations that respect documented constraints.
 
 A well-structured ADR provides exactly the kind of context AI assistants need:
 
 ```markdown
-ADR-004: Use Repository Pattern for All Data Access
+ADR-004 - Use Repository Pattern for All Data Access
 
 Status
 Accepted
@@ -247,7 +247,7 @@ Consequences
 
 Prefacing an AI prompt with "Given ADR-004, generate a repository for the Order entity" produces code that respects your documented decision to avoid direct ORM imports in service classes.
 
-Strategy 8: Enforce Patterns Through Linting Rules
+Strategy 8 - Enforce Patterns Through Linting Rules
 
 Static analysis tools enforce architectural rules automatically. `pylint` custom plugins, `flake8` extensions, and `archunit` (for Java) let you codify pattern constraints as machine-checkable rules. AI tools that have access to your linting configuration naturally generate code that avoids flagged patterns.
 
@@ -311,7 +311,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -323,7 +323,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

@@ -45,7 +45,7 @@ This centralized approach means you no longer need to configure settings individ
 
 Enterprise tier provides superior context awareness by indexing your organization's private repositories. When a developer asks Copilot about your custom authentication system, Enterprise can reference your actual implementation rather than generating generic responses.
 
-Consider this scenario: Your team uses a custom rate-limiting library across multiple services. With Business tier, Copilot might suggest a generic implementation:
+Consider this scenario - Your team uses a custom rate-limiting library across multiple services. With Business tier, Copilot might suggest a generic implementation:
 
 ```python
 Business tier might suggest this generic approach
@@ -140,15 +140,15 @@ For smaller teams, Business tier typically provides sufficient value.
 
 Industry-Specific Value
 
-Financial Services: Compliance requirements make Enterprise essential. The audit trails alone justify the price difference.
+Financial Services - Compliance requirements make Enterprise essential. The audit trails alone justify the price difference.
 
-Healthcare: HIPAA compliance benefits from organizational policy controls and enhanced security features.
+Healthcare - HIPAA compliance benefits from organizational policy controls and enhanced security features.
 
-Enterprise Software: Companies selling to regulated industries need the compliance features to meet customer due diligence requirements.
+Enterprise Software - Companies selling to regulated industries need the compliance features to meet customer due diligence requirements.
 
-Remote Teams: Distributed teams benefit more from centralized policy management since consistency is harder to maintain.
+Remote Teams - Distributed teams benefit more from centralized policy management since consistency is harder to maintain.
 
-Practical Example: Migration Workflow
+Practical Example - Migration Workflow
 
 Here's how Enterprise improves a common workflow, migrating to a new framework:
 
@@ -179,7 +179,7 @@ To determine if Enterprise is worth it for your team, consider:
 | Setup time | Individual | Centralized |
 | Policy enforcement | Manual | Automatic |
 | Context quality | General | Organization-specific |
-| Audit capabilities | Basic | Comprehensive |
+| Audit capabilities | Basic | complete |
 | Security controls | Standard | Enhanced |
 
 If your team spends more than 5 hours monthly on Copilot-related configuration, policy enforcement, or security reviews, Enterprise likely pays for itself.

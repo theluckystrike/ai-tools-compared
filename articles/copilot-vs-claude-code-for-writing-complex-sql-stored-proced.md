@@ -223,12 +223,12 @@ Advanced Techniques for Complex Procedures
 uses multi-step debugging with Claude Code. When a stored procedure fails in production, Claude Code's conversational interface shines. Describe the error, paste the procedure, and request analysis. The tool can identify issues ranging from transaction handling problems to index usage inefficiencies.
 
 ```
-Human: "This procedure processes 10k records but times out after 2 minutes.
+Human - "This procedure processes 10k records but times out after 2 minutes.
 [paste procedure]
 The slow part involves joining Orders with OrderDetails where we group
 by customer. What's the bottleneck?"
 
-Claude Code: [Analyzes and suggests]
+Claude Code - [Analyzes and suggests]
 - Missing index on OrderDetails.OrderID
 - GROUP BY without aggregation optimization
 - Unnecessary DISTINCT in subquery
@@ -239,15 +239,15 @@ This conversational debugging is significantly faster than trial-and-error appro
 Build prompt templates for recurring procedure types. Store reusable prompts for common patterns:
 
 ```
-Template: "I need a stored procedure that:
+Template - "I need a stored procedure that:
 1. Validates input parameters [describe validation rules]
 2. Processes [describe data transformation]
 3. Handles [describe error conditions]
 4. Returns [describe output format]
 
-Database: [SQL Server/PostgreSQL/MySQL]
-Performance consideration: [expected record volume]
-Transactions needed: [Yes/No]"
+Database - [SQL Server/PostgreSQL/MySQL]
+Performance consideration - [expected record volume]
+Transactions needed - [Yes/No]"
 ```
 
 Copilot excels at auto-completing based on these templates. Claude Code uses them as structured context for complex requirements.
@@ -263,10 +263,10 @@ Claude Code will explain the query cost, identify potential N+1 problems, and su
 Test generated procedures against edge cases. Both tools can generate logic that works for happy path scenarios but fails on edge cases. Always ask:
 
 ```
-Copilot follow-up: "Generate a test case for this procedure where
+Copilot follow-up - "Generate a test case for this procedure where
 [edge case condition]"
 
-Claude Code: "What happens if @CustomerID is NULL? What if no records
+Claude Code - "What happens if @CustomerID is NULL? What if no records
 match the WHERE clause?"
 ```
 
@@ -274,11 +274,11 @@ Neither tool should be trusted to handle edge cases without explicit testing. De
 
 Optimize by dialect-specific knowledge. SQL Server, PostgreSQL, and MySQL have different performance characteristics. Be specific in your requests:
 
-For Copilot: Include language hints in comments above your procedure
-For Claude Code: Specify database type in your prompt
+For Copilot - Include language hints in comments above your procedure
+For Claude Code - Specify database type in your prompt
 
 ```
-Claude Code prompt: "PostgreSQL stored procedure (using PL/pgSQL)
+Claude Code prompt - "PostgreSQL stored procedure (using PL/pgSQL)
 that..."
 
 This prevents getting SQL Server syntax for a PostgreSQL system.
@@ -290,13 +290,13 @@ Simple CRUD procedures (2-5 statements): Copilot is 3-4x faster. The inline comp
 
 Complex business logic (10+ statements with branching): Claude Code provides better context and explanation, reducing iteration cycles.
 
-Optimization requests: Claude Code. The tool can explain query plans and suggest indexes. Copilot generates working code but leaves optimization analysis to you.
+Optimization requests - Claude Code. The tool can explain query plans and suggest indexes. Copilot generates working code but leaves optimization analysis to you.
 
-Learning and understanding: Claude Code. The explanations help developers understand not just what the code does, but why specific patterns are used.
+Learning and understanding - Claude Code. The explanations help developers understand not just what the code does, but why specific patterns are used.
 
-Rapid prototyping: Copilot. Speed matters when exploring ideas, and Copilot's inline suggestions let you iterate quickly.
+Rapid prototyping - Copilot. Speed matters when exploring ideas, and Copilot's inline suggestions let you iterate quickly.
 
-Production-ready code: Claude Code, combined with code review. The tool's attention to error handling and edge cases reduces production issues.
+Production-ready code - Claude Code, combined with code review. The tool's attention to error handling and edge cases reduces production issues.
 
 Frequently Asked Questions
 

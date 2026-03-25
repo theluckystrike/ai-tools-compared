@@ -49,7 +49,7 @@ Common Notion AI Issues
 
 Notion AI failures typically fall into several categories: authentication problems, rate limiting, workspace configuration issues, network connectivity, and model availability. Understanding which category your issue falls into helps you apply the right fix quickly.
 
-Issue 1: Notion AI Button Not Responding
+Issue 1 - Notion AI Button Not Responding
 
 The most frequent complaint is the AI button failing to respond or showing a perpetual loading state. This usually indicates a session timeout or cookie issue.
 
@@ -67,7 +67,7 @@ Fix:
 
 If the button responds but produces no output, check your browser console for errors by pressing `F12` and reviewing the Network tab.
 
-Issue 2: Authentication and Permission Errors
+Issue 2 - Authentication and Permission Errors
 
 Notion AI requires proper workspace permissions. Users on Free plans or without AI add-ons see authentication failures.
 
@@ -82,7 +82,7 @@ curl -I https://api.notion.com/v1/
 
 If you receive 401 or 403 errors, your API key may be expired or misconfigured. Regenerate tokens from Settings → Integrations for API-based workflows.
 
-Issue 3: Rate Limiting and Quota Exhaustion
+Issue 3 - Rate Limiting and Quota Exhaustion
 
 Notion implements usage limits, and hitting these limits produces "AI request failed" messages.
 
@@ -110,7 +110,7 @@ def notion_ai_request_with_retry(prompt, max_retries=3):
     raise Exception("Max retries exceeded")
 ```
 
-Issue 4: Workspace Sync and Database Issues
+Issue 4 - Workspace Sync and Database Issues
 
 Notion AI sometimes fails to access certain databases or pages, particularly in shared workspaces with complex permission structures.
 
@@ -124,7 +124,7 @@ Troubleshooting Steps:
 
 For databases, ensure all required properties are populated. AI cannot process pages with missing mandatory fields in structured databases.
 
-Issue 5: Network and Firewall Blocks
+Issue 5 - Network and Firewall Blocks
 
 Corporate firewalls and VPN configurations frequently block Notion's AI endpoints.
 
@@ -145,7 +145,7 @@ If this fails, your network is blocking the API. Solutions include:
 
 - Switching to a less restrictive network temporarily
 
-Issue 6: Model Availability and Server Outages
+Issue 6 - Model Availability and Server Outages
 
 Notion occasionally experiences AI service disruptions. Check [Notion's status page](https://notionstatus.com) for real-time information.
 
@@ -153,7 +153,7 @@ When Servers Are Down:
 
 No client-side fix resolves server outages. Monitor the status page and wait for Notion's team to restore service. Bookmark the status page for quick access during incidents.
 
-Issue 7: Browser Extension Conflicts
+Issue 7 - Browser Extension Conflicts
 
 Browser extensions, particularly ad blockers and privacy tools, can interfere with Notion AI functionality.
 
@@ -216,7 +216,7 @@ When standard fixes fail, a structured full reset resolves the majority of persi
 
 2. Revoke and regenerate API keys. If you use integrations, go to Settings → Integrations and delete all existing keys. Create fresh ones.
 
-3. Clear all Notion browser data. In Chrome: Settings → Privacy → Clear browsing data → check Cookies and Cached images → filter by notion.so.
+3. Clear all Notion browser data. In Chrome - Settings → Privacy → Clear browsing data → check Cookies and Cached images → filter by notion.so.
 
 4. Disable all browser extensions. Use a fresh browser profile or incognito mode to eliminate extension interference entirely.
 
@@ -242,20 +242,20 @@ Not all Notion AI problems are technical. Sometimes the AI responds but produces
 
 For prompt-related failures, the fix is to restructure your instructions. Notion AI works better with explicit constraints: specify the format, length, tone, and target audience directly in the prompt.
 
-Notion AI for API Developers: Common Integration Pitfalls
+Notion AI for API Developers - Common Integration Pitfalls
 
 Developers using the Notion API to trigger or read AI-generated content face unique challenges beyond what standard users encounter.
 
-Pitfall 1: Using outdated API versions
+Pitfall 1 - Using outdated API versions
 
-Notion's AI features require `Notion-Version: 2022-06-28` or newer. Older version headers return 400 errors on AI endpoints.
+Notion's AI features require `Notion-Version - 2022-06-28` or newer. Older version headers return 400 errors on AI endpoints.
 
 ```bash
 Correct header
-curl -H "Notion-Version: 2022-06-28" https://api.notion.com/v1/pages
+curl -H "Notion-Version - 2022-06-28" https://api.notion.com/v1/pages
 ```
 
-Pitfall 2: Polling for AI results synchronously
+Pitfall 2 - Polling for AI results synchronously
 
 Notion AI operations are asynchronous. Do not poll in a tight loop. use webhook callbacks or implement proper polling with delays:
 
@@ -272,7 +272,7 @@ def wait_for_notion_ai(block_id, notion_client, max_attempts=20):
     raise TimeoutError(f"AI block {block_id} did not complete")
 ```
 
-Pitfall 3: Workspace integration scope mismatch
+Pitfall 3 - Workspace integration scope mismatch
 
 If your integration lacks the `read_content` or `update_content` capability, AI features return permission errors. Review your integration's capability settings at notion.so/my-integrations.
 
@@ -296,7 +296,7 @@ The desktop app uses a different cache and network stack. Clear the desktop app'
 
 Q: My Notion AI was working yesterday and stopped today. What changed?
 
-The most common causes are: your monthly AI quota reset (counter went to zero), Notion deployed a backend update that requires a fresh session, or your browser auto-updated and changed extension or cookie behavior. Try signing out and back in first. this resolves roughly 70% of sudden-stop cases.
+The most common causes are - your monthly AI quota reset (counter went to zero), Notion deployed a backend update that requires a fresh session, or your browser auto-updated and changed extension or cookie behavior. Try signing out and back in first. this resolves roughly 70% of sudden-stop cases.
 
 Q: Can I increase my Notion AI quota mid-month?
 

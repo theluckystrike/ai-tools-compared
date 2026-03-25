@@ -29,7 +29,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Set Up Copilot for YAML Workflows
+Step 1 - Set Up Copilot for YAML Workflows
 
 
 Copilot works in any YAML file, including GitHub Actions workflow files located in the `.github/workflows/` directory. Ensure you have the Copilot extension installed in your IDE, VS Code, Visual Studio, and JetBrains editors all support it.
@@ -38,7 +38,7 @@ Copilot works in any YAML file, including GitHub Actions workflow files located 
 When you create a new workflow file, start by naming it descriptively. Copilot uses the filename and surrounding context to provide relevant suggestions. For example, naming a file `ci-pipeline.yml` signals to Copilot that you're building continuous integration.
 
 
-Step 2: Generate a Basic CI Pipeline
+Step 2 - Generate a Basic CI Pipeline
 
 
 A typical CI pipeline needs several components: checking out code, setting up a runtime environment, installing dependencies, and running tests. Rather than looking up documentation, you can describe what you need and let Copilot generate the structure.
@@ -68,7 +68,7 @@ Copilot completes this with typical steps like checking out the repository, sett
 After Copilot generates the initial structure, review each step carefully. Ensure the Node.js version matches your project requirements and that the test commands align with your package.json scripts.
 
 
-Step 3: Adding Matrix Builds for Multiple Configurations
+Step 3 - Adding Matrix Builds for Multiple Configurations
 
 
 Testing across multiple versions or platforms becomes essential as projects mature. Copilot excels at generating matrix configurations that would otherwise require manual YAML manipulation.
@@ -121,7 +121,7 @@ strategy:
 ```
 
 
-Step 4: Build Deployment Pipelines
+Step 4 - Build Deployment Pipelines
 
 
 Deployment workflows require additional considerations like environment configuration, secrets management, and conditional execution. Copilot helps construct these pipelines while following security best practices.
@@ -167,7 +167,7 @@ For containerized applications, Copilot generates Docker build and push steps:
 These suggestions include build caching that significantly speeds up subsequent builds.
 
 
-Step 5: Optimizing Workflow Performance
+Step 5 - Optimizing Workflow Performance
 
 
 Copilot helps implement performance optimizations that reduce pipeline execution time and costs. Common optimizations include dependency caching, artifact management, and parallel job execution.
@@ -216,7 +216,7 @@ For projects with multiple jobs, Copilot recommends using artifacts to pass data
 The `needs` keyword ensures proper job ordering, which Copilot includes automatically when suggesting multi-job workflows.
 
 
-Step 6: Handling Secrets and Environment Variables
+Step 6 - Handling Secrets and Environment Variables
 
 
 Security practices matter in CI CD pipelines. Copilot helps implement proper secrets handling by suggesting environment variable usage through GitHub's encrypted secrets feature.
@@ -237,19 +237,19 @@ When you need to access a secret, Copilot generates:
 It also reminds you to use `secrets.` prefix consistently and avoids logging sensitive values.
 
 
-Step 7: Common Pitfalls and How to Avoid Them
+Step 7 - Common Pitfalls and How to Avoid Them
 
 
 Copilot suggestions are helpful but not perfect. Review generated code for these common issues:
 
 
-YAML indentation errors: Copilot sometimes misaligns nested steps. Use your IDE's YAML validator to catch indentation problems before committing.
+YAML indentation errors - Copilot sometimes misaligns nested steps. Use your IDE's YAML validator to catch indentation problems before committing.
 
 
-Outdated action versions: Copilot may suggest older action versions like `actions/checkout@v2` instead of `v4`. Always verify you're using current major versions.
+Outdated action versions - Copilot may suggest older action versions like `actions/checkout@v2` instead of `v4`. Always verify you're using current major versions.
 
 
-Missing timeout values: Long-running jobs can hang indefinitely. Add timeout values:
+Missing timeout values - Long-running jobs can hang indefinitely. Add timeout values:
 
 
 ```yaml
@@ -259,10 +259,10 @@ Missing timeout values: Long-running jobs can hang indefinitely. Add timeout val
 ```
 
 
-Incorrect branch references: Ensure your trigger conditions match your branching strategy. Copilot generates simple `push: [main]` patterns, but you might need more specific conditions for feature branch workflows.
+Incorrect branch references - Ensure your trigger conditions match your branching strategy. Copilot generates simple `push: [main]` patterns, but you might need more specific conditions for feature branch workflows.
 
 
-Step 8: Practical Workflow Example
+Step 8 - Practical Workflow Example
 
 
 Putting these elements together, here's a complete workflow that Copilot can help you build for a full-stack application:
@@ -323,7 +323,7 @@ jobs:
 This workflow runs tests across multiple Node versions, builds a Docker image on success, and deploys only from the main branch.
 
 
-Step 9: Making the Most of Copilot
+Step 9 - Making the Most of Copilot
 
 
 Effective Copilot usage for GitHub Actions involves providing context. Keep your workflow files in the `.github/workflows/` directory so Copilot recognizes the GitHub Actions context. Include comments describing what you need, and Copilot interprets them to generate appropriate YAML.

@@ -34,7 +34,7 @@ Moving your favorite GitHub Copilot code patterns to Cursor snippets lets you re
 
 - A quick way to: surface your most-used patterns: open a recent project in VS Code, scan your commit history, and identify structural repetition across files.
 - When you insert the snippet: Cursor highlights `$1` first, let you type, then moves to `$2` when you press Tab.
-- Access it with `Cmd+Shift+P`: (Mac) or `Ctrl+Shift+P` (Windows), then search for "Snippets: Configure User Snippets." ### Creating a New Snippet File 1.
+- Access it with `Cmd+Shift+P`: (Mac) or `Ctrl+Shift+P` (Windows), then search for "Snippets - Configure User Snippets." ### Creating a New Snippet File 1.
 - Open Command Palette and type "Snippets: Configure User Snippets"
 
 2.
@@ -57,7 +57,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Copilot vs. Cursor: Which Handles Boilerplate Better?
+Step 1 - Copilot vs. Cursor - Which Handles Boilerplate Better?
 
 Before migrating, it helps to understand what each tool does well:
 
@@ -72,7 +72,7 @@ Before migrating, it helps to understand what each tool does well:
 
 For repetitive boilerplate, custom snippets win over both inline AI tools because they have zero latency and zero cost. Migrating your Copilot patterns to Cursor snippets gives you the best of both worlds: personal muscle-memory shortcuts plus Cursor's deeper AI features for novel problems.
 
-Step 2: Extracting Patterns from Copilot Chat History
+Step 2 - Extracting Patterns from Copilot Chat History
 
 Before creating snippets, collect your most-used Copilot suggestions. The easiest approach involves using Copilot's chat history if you have access to it, or manually noting patterns you frequently accept.
 
@@ -83,8 +83,8 @@ Create a simple text file to catalog patterns you want to migrate:
 ```markdown
 My Copilot Patterns
 
-Step 3: React Component Template
-Shortcut: rcf
+Step 3 - React Component Template
+Shortcut - rcf
 Code:
 ```jsx
 import React from 'react';
@@ -105,8 +105,8 @@ export default function {{ComponentName}}() {
 
 ```
 
-Step 4: TypeScript Interface
-Shortcut: tif
+Step 4 - TypeScript Interface
+Shortcut - tif
 Code:
 ```typescript
 interface {{InterfaceName}} {
@@ -121,8 +121,8 @@ interface {{InterfaceName}} {
 
 ```
 
-Step 5: Error Handler
-Shortcut: err
+Step 5 - Error Handler
+Shortcut - err
 Code:
 ```typescript
 try {
@@ -144,9 +144,9 @@ Review your recent coding sessions and note which Copilot suggestions you accept
 
 A quick way to surface your most-used patterns: open a recent project in VS Code, scan your commit history, and identify structural repetition across files. If you see the same fetch handler shape in ten files, that is a prime candidate for a snippet.
 
-Step 6: Create Snippets in Cursor
+Step 6 - Create Snippets in Cursor
 
-Cursor provides built-in snippet management through the Command Palette. Access it with `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows), then search for "Snippets: Configure User Snippets."
+Cursor provides built-in snippet management through the Command Palette. Access it with `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows), then search for "Snippets - Configure User Snippets."
 
 Creating a New Snippet File
 
@@ -192,7 +192,7 @@ Cursor uses VS Code's snippet syntax. Each snippet requires:
 
 The `$1`, `$2`, `$3` markers create tab stops. When you insert the snippet, Cursor highlights `$1` first, let you type, then moves to `$2` when you press Tab.
 
-Step 7: Converting Common Copilot Patterns
+Step 7 - Converting Common Copilot Patterns
 
 Here are practical examples of patterns worth converting:
 
@@ -307,7 +307,7 @@ Express Route Handler
 }
 ```
 
-Step 8: Organizing Your Snippet Library
+Step 8 - Organizing Your Snippet Library
 
 As your collection grows, organize snippets into categories. Create separate snippet files for different languages or frameworks:
 
@@ -332,7 +332,7 @@ In Cursor, you can also use the `.cursorrules` file to organize snippets by proj
 }
 ```
 
-Step 9: Triggering Your Snippets
+Step 9 - Triggering Your Snippets
 
 Once configured, simply type the prefix and press Tab (or Enter, depending on your settings). Cursor will expand the snippet and place your cursor at the first tab stop.
 
@@ -354,7 +354,7 @@ Snippets handle the structural boilerplate; Cursor's AI handles the logic. A pro
 
 You can also ask Cursor's chat to help you write new snippets. Paste a code pattern you use often and prompt: "Convert this to a VS Code snippet with appropriate tab stops." Cursor will produce valid JSON that you can paste directly into your snippet file.
 
-Step 10: Syncing Snippets Across Machines
+Step 10 - Syncing Snippets Across Machines
 
 Keep your snippet library in sync by storing it in a git repository or using a cloud service. Place your snippet files in a folder, then either:
 

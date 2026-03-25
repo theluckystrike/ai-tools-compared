@@ -301,7 +301,7 @@ As your Chainguard adoption matures, refine policies based on operational experi
 
 ```yaml
 Progressive policy tightening
-Phase 1: Permissive - audit only
+Phase 1 - Permissive - audit only
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
@@ -310,12 +310,12 @@ spec:
   validationFailureAction: Audit  # Alert but don't block
   # ... rules ...
 
-Phase 2: Moderate - soft enforcement
+Phase 2 - Moderate - soft enforcement
 spec:
   validationFailureAction: Audit
   # Stricter rules, but still non-blocking
 
-Phase 3: Strict - hard enforcement
+Phase 3 - Strict - hard enforcement
 spec:
   validationFailureAction: Enforce  # Block violations
   # Most restrictive rules

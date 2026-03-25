@@ -21,13 +21,13 @@ Most engineers write good code comments but hate writing documentation. Modern A
 Table of Contents
 
 - [Why AI-Generated Docs Matter](#why-ai-generated-docs-matter)
-- [Extracting Comments: The Foundation](#extracting-comments-the-foundation)
+- [Extracting Comments - The Foundation](#extracting-comments-the-foundation)
 - [Claude for OpenAPI Specification Generation](#claude-for-openapi-specification-generation)
-- [Python Script: Extract Comments and Generate Docs](#python-script-extract-comments-and-generate-docs)
+- [Python Script - Extract Comments and Generate Docs](#python-script-extract-comments-and-generate-docs)
 - [GPT-4 for Markdown Documentation](#gpt-4-for-markdown-documentation)
-- [Tool Comparison: Documentation Generation](#tool-comparison-documentation-generation)
-- [Workflow: Comment → OpenAPI → Website](#workflow-comment-openapi-website)
-- [Code Example: End-to-End Documentation Generation](#code-example-end-to-end-documentation-generation)
+- [Tool Comparison - Documentation Generation](#tool-comparison-documentation-generation)
+- [Workflow - Comment → OpenAPI → Website](#workflow-comment-openapi-website)
+- [Code Example - End-to-End Documentation Generation](#code-example-end-to-end-documentation-generation)
 - [Best Practices](#best-practices)
 - [Keeping Docs in Sync with Code Changes](#keeping-docs-in-sync-with-code-changes)
 - [Language-Specific Comment Extraction Strategies](#language-specific-comment-extraction-strategies)
@@ -44,7 +44,7 @@ Manual API documentation drifts. Code changes but docs don't. AI tools solve thi
 
 A single integration can generate docs for 50 endpoints in 2 minutes.
 
-Extracting Comments: The Foundation
+Extracting Comments - The Foundation
 
 Before AI can generate docs, extract code comments into a format AI understands:
 
@@ -200,7 +200,7 @@ components:
       bearerFormat: JWT
 ```
 
-Python Script: Extract Comments and Generate Docs
+Python Script - Extract Comments and Generate Docs
 
 ```python
 import ast
@@ -267,7 +267,7 @@ and common errors.
 
 GPT-4 generates polished guides faster than Claude, though with slightly less technical precision.
 
-Tool Comparison: Documentation Generation
+Tool Comparison - Documentation Generation
 
 | Tool | Strength | Best For | Cost |
 |------|----------|----------|------|
@@ -277,30 +277,30 @@ Tool Comparison: Documentation Generation
 | Speakeasy | SDK generation from specs | Multi-language SDKs | $199/month+ |
 | Mintlify | Template-based docs site | Polished docs site | Free tier available |
 
-Workflow: Comment → OpenAPI → Website
+Workflow - Comment → OpenAPI → Website
 
-Step 1: Extract comments
+Step 1 - Extract comments
 
 ```bash
 Use AST parsing for Python, similar tools for other languages
 python extract_docs.py api.py > extracted_comments.json
 ```
 
-Step 2: Claude generates OpenAPI
+Step 2 - Claude generates OpenAPI
 
 ```bash
 cat extracted_comments.json | claude-api \
   "Generate OpenAPI 3.0 spec from these comments" > openapi.yaml
 ```
 
-Step 3: Validate spec
+Step 3 - Validate spec
 
 ```bash
 Use built-in validators
 swagger-cli validate openapi.yaml
 ```
 
-Step 4: Generate docs site
+Step 4 - Generate docs site
 
 ```bash
 Use Swagger UI, ReDoc, or Mintlify
@@ -309,7 +309,7 @@ docker run -p 8080:8080 \
   swaggerapi/swagger-ui
 ```
 
-Code Example: End-to-End Documentation Generation
+Code Example - End-to-End Documentation Generation
 
 ```python
 #!/usr/bin/env python3
@@ -460,9 +460,9 @@ curl -X POST /transfers \
 
 ```python
 """
-Rate limit: 100 requests per minute per account
-Authentication: Bearer token (JWT) required
-Webhook events: transfer.completed, transfer.failed
+Rate limit - 100 requests per minute per account
+Authentication - Bearer token (JWT) required
+Webhook events - transfer.completed, transfer.failed
 """
 ```
 
@@ -522,7 +522,7 @@ Go's standard library includes `go/doc` for parsing godoc comments. An AI-assist
 Java with Javadoc:
 Java's `javadoc` tool produces XML output that AI can consume directly. Pass the Javadoc XML to Claude with a prompt asking for OpenAPI 3.0 output, and it resolves cross-references between `@param`, `@return`, and `@throws` tags into proper schema definitions.
 
-The universal principle: get your comment data into a structured intermediate format (JSON or XML) before handing it to the AI. Unstructured text extraction produces inconsistent documentation quality.
+The universal principle - get your comment data into a structured intermediate format (JSON or XML) before handing it to the AI. Unstructured text extraction produces inconsistent documentation quality.
 
 Validating AI-Generated OpenAPI Specs
 

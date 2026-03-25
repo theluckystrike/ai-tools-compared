@@ -22,10 +22,10 @@ Microservice architecture decisions have long-term consequences that are hard to
 - Use Claude for domain: decomposition (better DDD reasoning) 2.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
-- Mitigation: Cache user context in JWT tokens; Identity Service only called on auth.
+- Mitigation - Cache user context in JWT tokens; Identity Service only called on auth.
 - Use GPT-4o for OpenAPI: spec generation (slightly faster, equally accurate) 3.
 
-Stage 1: Domain Decomposition
+Stage 1 - Domain Decomposition
 
 The hardest part of microservices is deciding where to draw boundaries. AI tools can help by analyzing your domain model and suggesting decompositions based on bounded contexts.
 
@@ -55,30 +55,30 @@ Claude's response identified 6 services with clear ownership and a warning about
 Suggested Service Boundaries
 
 1. Identity Service
-Owns: User accounts, authentication, sessions, address_book
-Publishes: UserCreated, UserUpdated, AddressAdded
-Does NOT own: Order history, payment methods (those are Order/Payment domain)
-Risk: Becomes a synchronous bottleneck if other services call it on every request.
-Mitigation: Cache user context in JWT tokens; Identity Service only called on auth.
+Owns - User accounts, authentication, sessions, address_book
+Publishes - UserCreated, UserUpdated, AddressAdded
+Does NOT own - Order history, payment methods (those are Order/Payment domain)
+Risk - Becomes a synchronous bottleneck if other services call it on every request.
+Mitigation - Cache user context in JWT tokens; Identity Service only called on auth.
 
 2. Catalog Service
-Owns: Product definitions, categories, pricing (base price only)
-Publishes: ProductCreated, ProductUpdated, PriceChanged
-Does NOT own: Inventory levels (Inventory Service), sale pricing (Promotions Service)
-Risk: Coupling catalog reads with inventory in the same query is the #1 mistake.
-Mitigation: Catalog returns base data; frontend assembles with inventory availability separately.
+Owns - Product definitions, categories, pricing (base price only)
+Publishes - ProductCreated, ProductUpdated, PriceChanged
+Does NOT own - Inventory levels (Inventory Service), sale pricing (Promotions Service)
+Risk - Coupling catalog reads with inventory in the same query is the #1 mistake.
+Mitigation - Catalog returns base data; frontend assembles with inventory availability separately.
 
 3. Inventory Service
-Owns: Stock levels per product/variant/warehouse
-Publishes: StockReserved, StockReleased, LowStockAlert
-Does NOT own: Product definitions
-Risk: Race conditions during high-concurrency reservation.
-Mitigation: Use optimistic locking or a saga pattern for reservation/release cycle.
+Owns - Stock levels per product/variant/warehouse
+Publishes - StockReserved, StockReleased, LowStockAlert
+Does NOT own - Product definitions
+Risk - Race conditions during high-concurrency reservation.
+Mitigation - Use optimistic locking or a saga pattern for reservation/release cycle.
 
 [... 3 more services with similar detail]
 ```
 
-Stage 2: API Contract Generation
+Stage 2 - API Contract Generation
 
 Once you have service boundaries, AI generates AsyncAPI or OpenAPI specs from service descriptions:
 
@@ -95,8 +95,8 @@ def generate_api_contract(service_name: str, service_description: str) -> str:
             "role": "user",
             "content": f"""Generate a complete OpenAPI 3.1 specification for this microservice.
 
-Service: {service_name}
-Description: {service_description}
+Service - {service_name}
+Description - {service_description}
 
 Requirements:
 - Use proper HTTP verbs (GET for reads, POST for creates, PUT/PATCH for updates, DELETE for deletes)
@@ -125,7 +125,7 @@ contract = generate_api_contract(
 
 Claude generates complete OpenAPI specs with proper schemas, not just endpoint stubs. Typical output for a 5-operation service is 150-200 lines of valid YAML.
 
-Stage 3: Event Schema Design
+Stage 3 - Event Schema Design
 
 Kafka/SNS topic and event schema design is where AI particularly helps. Consistent event structure across services is hard to enforce without tooling:
 
@@ -184,7 +184,7 @@ GPT-4o produced:
 
 `shippingAddressId` references an address, not the full address inline. this keeps the payload small and avoids duplicating Identity Service data.
 
-Stage 4: Identifying Coupling Problems
+Stage 4 - Identifying Coupling Problems
 
 Paste your service dependency diagram or API call graph and ask AI to identify anti-patterns:
 
@@ -193,23 +193,23 @@ These are the synchronous API calls between our services (extracted from distrib
 
 Order Service → Inventory Service: ReserveStock (on every order creation)
 Order Service → Identity Service: GetUser (on every order creation)
-Order Service → Catalog Service: GetProduct (for each line item)
+Order Service → Catalog Service - GetProduct (for each line item)
 Order Service → Promotions Service: ValidateDiscount (if discount code present)
 Order Service → Notification Service: SendConfirmation (after order created)
-Payment Service → Order Service: GetOrderDetails (before processing payment)
+Payment Service → Order Service - GetOrderDetails (before processing payment)
 Shipment Service → Order Service: GetShippingAddress (when creating shipment)
 
-Identify: coupling problems, single points of failure, and which calls should be async.
+Identify - coupling problems, single points of failure, and which calls should be async.
 ```
 
-Claude identified: "The `Notification Service` call is synchronous but it's a fire-and-forget operation. order creation is blocking on email sending. Make this async via an event. The `Catalog Service` calls for each line item are an N+1 problem. batch fetch all product IDs in one request. The `Payment Service → Order Service` reverse call creates a circular dependency and should be eliminated by including order data in the payment request."
+Claude identified - "The `Notification Service` call is synchronous but it's a fire-and-forget operation. order creation is blocking on email sending. Make this async via an event. The `Catalog Service` calls for each line item are an N+1 problem. batch fetch all product IDs in one request. The `Payment Service → Order Service` reverse call creates a circular dependency and should be eliminated by including order data in the payment request."
 
-Stage 5: Service Mesh Configuration
+Stage 5 - Service Mesh Configuration
 
 Generate Istio/Linkerd policies from service requirements:
 
 ```yaml
-Prompt: "Generate Istio VirtualService and DestinationRule for Order Service
+Prompt - "Generate Istio VirtualService and DestinationRule for Order Service
 with: 60s timeout, retry 3x on 5xx, 10% canary traffic to v2"
 
 Claude output:

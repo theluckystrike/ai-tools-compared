@@ -20,7 +20,7 @@ When your project spans multiple languages, Python backend, TypeScript frontend,
 
 Table of Contents
 
-- [The Core Principle: Language-Aware Directory Structure](#the-core-principle-language-aware-directory-structure)
+- [The Core Principle - Language-Aware Directory Structure](#the-core-principle-language-aware-directory-structure)
 - [CLAUDE.md Placement Strategies](#claudemd-placement-strategies)
 - [Current Priority](#current-priority)
 - [Language-Specific Notes](#language-specific-notes)
@@ -50,7 +50,7 @@ Table of Contents
 - [Testing Your CLAUDE.md Organization](#testing-your-claudemd-organization)
 - [Practical Tips for Daily Use](#practical-tips-for-daily-use)
 
-The Core Principle: Language-Aware Directory Structure
+The Core Principle - Language-Aware Directory Structure
 
 Claude interprets your project through its file organization. Instead of dumping all documentation in a single `docs` folder, mirror your language boundaries in your documentation structure. This allows Claude to understand context faster and provide more relevant suggestions.
 
@@ -97,7 +97,7 @@ Current Priority
 Work in the `python/` directory unless specified otherwise.
 
 Language-Specific Notes
-- Python: Uses FastAPI, see `python/docs/api-reference.md`
+- Python - Uses FastAPI, see `python/docs/api-reference.md`
 - TypeScript: React 18, see `typescript/docs/components.md`
 - Go: CLI tool, see `go/docs/cli-usage.md`
 ```
@@ -150,7 +150,7 @@ Style
 ```markdown
 Commands
 - Run tests: `pytest tests/ -x --cov=src`
-- Lint: `ruff check . && mypy src/`
+- Lint - `ruff check . && mypy src/`
 - Start dev server: `uvicorn src.main:app --reload`
 ```
 
@@ -191,7 +191,7 @@ The API uses JSON serialization. See `python/docs/models.md` for request/respons
 Go CLI → Python Backend
 
 The CLI calls the Python service on `localhost:8000`.
-Startup order: `python/src/server.py` first, then `go/cmd/cli/main.go`.
+Startup order - `python/src/server.py` first, then `go/cmd/cli/main.go`.
 
 Environment Variables
 
@@ -227,7 +227,7 @@ Purpose and usage.
 Purpose, parameters, and return value.
 
 Testing
-Run tests with: `pytest tests/`
+Run tests with - `pytest tests/`
 ```
 
 For TypeScript components:
@@ -321,7 +321,7 @@ Handling Monorepo vs Multi-Repo Layouts
 
 Polyglot projects live in one of two configurations: a monorepo where all services share a single git repository, or a multi-repo setup where each service has its own repository. CLAUDE.md strategy differs between them.
 
-Monorepo: Use a root CLAUDE.md that describes the overall system, then per-service CLAUDE.md files at each service directory. Claude Code respects the hierarchy, when you open a file in `services/billing/`, the billing CLAUDE.md takes precedence over the root file for instructions that conflict.
+Monorepo - Use a root CLAUDE.md that describes the overall system, then per-service CLAUDE.md files at each service directory. Claude Code respects the hierarchy, when you open a file in `services/billing/`, the billing CLAUDE.md takes precedence over the root file for instructions that conflict.
 
 ```
 monorepo-root/
@@ -341,7 +341,7 @@ monorepo-root/
      ...
 ```
 
-Multi-repo: Each repository has its own root CLAUDE.md. The cross-service integration documentation lives in a dedicated `docs` repository or a shared wiki. Reference that wiki URL from each service CLAUDE.md so Claude knows where to look for inter-service contracts.
+Multi-repo - Each repository has its own root CLAUDE.md. The cross-service integration documentation lives in a dedicated `docs` repository or a shared wiki. Reference that wiki URL from each service CLAUDE.md so Claude knows where to look for inter-service contracts.
 
 For teams transitioning from multi-repo to monorepo, copy all existing per-repo CLAUDE.md files into the appropriate service directories immediately. Do not merge them into a single root file yet, the per-service context is valuable and easy to lose during consolidation.
 
@@ -385,7 +385,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -397,7 +397,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

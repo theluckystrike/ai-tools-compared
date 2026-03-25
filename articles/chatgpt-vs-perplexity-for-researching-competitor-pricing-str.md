@@ -38,7 +38,7 @@ When researching competitor pricing strategies, developers and power users need 
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - When researching competitor pricing: strategies, developers and power users need tools that can gather, synthesize, and present market intelligence efficiently.
 - This is particularly useful: when you need to present findings to stakeholders who demand sources.
-- Deep Competitive Analysis: Use ChatGPT.
+- Deep Competitive Analysis - Use ChatGPT.
 
 The Core Difference in Research Approaches
 
@@ -77,7 +77,7 @@ ChatGPT requires a different approach. Since its knowledge has a cutoff date, yo
 
 - Brainstorming pricing positioning
 
-Practical Implementation: Automated Pricing Alerts
+Practical Implementation - Automated Pricing Alerts
 
 For developers building pricing intelligence systems, both tools offer unique integration possibilities. Here's a Python example showing how you might use each tool:
 
@@ -116,17 +116,17 @@ This hybrid approach uses each tool's strengths, Perplexity for data gathering a
 
 Workflow Recommendations by Use Case
 
-Rapid Market Scanning: Use Perplexity. Its search-first approach surfaces current information quickly. Run multiple queries for different competitors in under five minutes.
+Rapid Market Scanning - Use Perplexity. Its search-first approach surfaces current information quickly. Run multiple queries for different competitors in under five minutes.
 
-Deep Competitive Analysis: Use ChatGPT. After gathering current data from Perplexity, feed it to ChatGPT for deeper analysis. Ask it to identify patterns, suggest positioning strategies, and predict competitor moves based on their pricing structure.
+Deep Competitive Analysis - Use ChatGPT. After gathering current data from Perplexity, feed it to ChatGPT for deeper analysis. Ask it to identify patterns, suggest positioning strategies, and predict competitor moves based on their pricing structure.
 
-Stakeholder Reporting: Combine both. Perplexity provides cited, verifiable facts. ChatGPT transforms those facts into narrative insights. The combination produces both accuracy and strategic depth.
+Stakeholder Reporting - Combine both. Perplexity provides cited, verifiable facts. ChatGPT transforms those facts into narrative insights. The combination produces both accuracy and strategic depth.
 
-Building Pricing Intelligence Systems: Both tools have API access. Perplexity's API excels at information retrieval; ChatGPT's API excels at processing and synthesizing. Design your system to use Perplexity for data collection and ChatGPT for analysis.
+Building Pricing Intelligence Systems - Both tools have API access. Perplexity's API excels at information retrieval; ChatGPT's API excels at processing and synthesizing. Design your system to use Perplexity for data collection and ChatGPT for analysis.
 
 Real-World Pricing Research Examples
 
-Example 1: Researching SaaS Competitor Pricing Tiers
+Example 1 - Researching SaaS Competitor Pricing Tiers
 
 Query for Perplexity:
 ```
@@ -159,7 +159,7 @@ Analyze:
 
 ChatGPT synthesizes this into strategic analysis, which competitors target SMBs vs. enterprises, where margin opportunities exist, etc.
 
-Example 2: Tracking Pricing Changes Over Time
+Example 2 - Tracking Pricing Changes Over Time
 
 Using Perplexity quarterly:
 ```
@@ -178,9 +178,9 @@ Analyze the trend, is AWS raising or lowering? By how much?
 What does this suggest about cloud pricing trends generally?
 ```
 
-Example 3: International and Enterprise Pricing
+Example 3 - International and Enterprise Pricing
 
-Perplexity strength: Finding region-specific pricing
+Perplexity strength - Finding region-specific pricing
 ```
 What are GitHub Copilot prices in different countries?
 - USA
@@ -189,7 +189,7 @@ What are GitHub Copilot prices in different countries?
 - Compare to local alternatives in each region
 ```
 
-ChatGPT strength: Synthesizing into strategy
+ChatGPT strength - Synthesizing into strategy
 ```
 Given GitHub's regional pricing strategy, what does this tell us about:
 - Currency hedging strategies
@@ -304,9 +304,9 @@ ChatGPT API (for analysis):
 
 Cost estimation for monthly competitor pricing monitoring:
 ```
-Perplexity: 50 competitors × 4 quarters × $0.005 = $1/month
-ChatGPT: 4 analyses/month × 2000 tokens × $0.01 = $0.08/month
-Total: ~$1.08/month for complete competitive pricing data
+Perplexity - 50 competitors × 4 quarters × $0.005 = $1/month
+ChatGPT - 4 analyses/month × 2000 tokens × $0.01 = $0.08/month
+Total - ~$1.08/month for complete competitive pricing data
 ```
 
 Limitations to Consider

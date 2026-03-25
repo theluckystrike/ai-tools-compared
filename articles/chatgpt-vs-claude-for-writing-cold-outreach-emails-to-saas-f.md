@@ -48,8 +48,8 @@ Getting good results from either model requires understanding how to prompt them
 def generate_cold_email(founder_name, company_name, pain_point, your_solution):
     prompt = f"""Write a cold outreach email to {founder_name}, founder of {company_name}.
 
-Their company struggles with: {pain_point}
-Your product solves: {your_solution}
+Their company struggles with - {pain_point}
+Your product solves - {your_solution}
 
 Requirements:
 - Under 150 words
@@ -67,7 +67,7 @@ Comparing Actual Output
 
 Given the same input, the models produce noticeably different results. Consider this scenario:
 
-Input: Founder of a B2B analytics startup, struggles with data silos, your tool provides unified dashboards.
+Input - Founder of a B2B analytics startup, struggles with data silos, your tool provides unified dashboards.
 
 ChatGPT might produce:
 
@@ -491,7 +491,7 @@ def generate_industry_specific_email(
 
     prompt = f"""Write a cold email for a {industry} prospect.
 
-Prospect: {prospect['name']} at {prospect['company']}
+Prospect - {prospect['name']} at {prospect['company']}
 
 Industry Strategy:
 - Lead angle: {strategy['angle']}
@@ -513,16 +513,16 @@ How many emails should I send per day to avoid spam filters?
 Maximum 50-100 per day from new domain. Increase gradually over 2-3 weeks as reputation builds. Use dedicated IP for serious campaigns.
 
 Should I personalize every email or use templates?
-Mix: Auto-personalize company name, recent news, problem. Use templates for structure and flow. Complete hand-writing 500+ emails is inefficient.
+Mix - Auto-personalize company name, recent news, problem. Use templates for structure and flow. Complete hand-writing 500+ emails is inefficient.
 
 What's the ideal follow-up sequence?
-Follow-up sequence: Initial (day 1) → 3 days → 7 days → 14 days. 50-60% of replies come from follow-ups, not initial email.
+Follow-up sequence - Initial (day 1) → 3 days → 7 days → 14 days. 50-60% of replies come from follow-ups, not initial email.
 
 Can I use the same email to multiple people at the same company?
 Yes, but personalize each to their role. VP of Sales cares about revenue impact. VP of Engineering cares about implementation ease.
 
 How do I know if AI-generated emails are effective?
-Only one way: Send them. Track open rates, reply rates, and meetings booked. Compare to your current baseline. If 12%+ reply rate, keep using AI.
+Only one way - Send them. Track open rates, reply rates, and meetings booked. Compare to your current baseline. If 12%+ reply rate, keep using AI.
 
 Related Articles
 

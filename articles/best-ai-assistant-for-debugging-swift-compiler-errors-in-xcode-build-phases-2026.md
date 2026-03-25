@@ -27,9 +27,9 @@ Table of Contents
 - [Recommendations for Different Development Scenarios](#recommendations-for-different-development-scenarios)
 - [Advanced Error Scenarios and Solutions](#advanced-error-scenarios-and-solutions)
 - [Prompt Engineering for Swift Debugging](#prompt-engineering-for-swift-debugging)
-- [Performance: Which AI Tool Responds Fastest](#performance-which-ai-tool-responds-fastest)
-- [Setup Guide: Using Each Tool with Xcode](#setup-guide-using-each-tool-with-xcode)
-- [Decision Tree: Which Tool for Your Situation](#decision-tree-which-tool-for-your-situation)
+- [Performance - Which AI Tool Responds Fastest](#performance-which-ai-tool-responds-fastest)
+- [Setup Guide - Using Each Tool with Xcode](#setup-guide-using-each-tool-with-xcode)
+- [Decision Tree - Which Tool for Your Situation](#decision-tree-which-tool-for-your-situation)
 - [Common Swift Compiler Errors and Solutions](#common-swift-compiler-errors-and-solutions)
 
 Understanding Swift Compiler Errors in Xcode Build Phases
@@ -58,7 +58,7 @@ struct User {
 }
 
 func processUser(_ user: User) -> String {
-    return user.email.count // Error: Value of optional 'String?' has no member 'count'
+    return user.email.count // Error - Value of optional 'String?' has no member 'count'
 }
 ```
 
@@ -188,13 +188,13 @@ Regardless of which AI assistant you choose, a systematic approach yields the be
 
 Recommendations for Different Development Scenarios
 
-For learning Swift: Claude provides the best educational value by explaining concepts alongside solutions.
+For learning Swift - Claude provides the best educational value by explaining concepts alongside solutions.
 
 For professional iOS development: Cursor offers the tightest Xcode integration with project-wide context awareness.
 
-For rapid prototyping: GitHub Copilot's inline suggestions minimize context switching.
+For rapid prototyping - GitHub Copilot's inline suggestions minimize context switching.
 
-For budget-conscious developers: Codeium's free tier delivers solid Swift debugging assistance without cost.
+For budget-conscious developers - Codeium's free tier delivers solid Swift debugging assistance without cost.
 
 The best choice depends on your specific needs, workflow preferences, and budget. All four tools have demonstrated improvements in resolving Swift compiler errors efficiently, and each brings unique strengths to different development scenarios.
 
@@ -339,7 +339,7 @@ The second prompt includes:
 - Target platform
 - Your understanding level
 
-Performance: Which AI Tool Responds Fastest
+Performance - Which AI Tool Responds Fastest
 
 Measured response time for a Swift compiler error:
 
@@ -352,7 +352,7 @@ Measured response time for a Swift compiler error:
 
 For flow state, Copilot and Cursor win. For deep understanding, Claude wins despite longer latency.
 
-Setup Guide: Using Each Tool with Xcode
+Setup Guide - Using Each Tool with Xcode
 
 GitHub Copilot + Xcode
 
@@ -390,7 +390,7 @@ cd codeium-xcode
 xcodebuild -scheme Codeium
 ```
 
-Decision Tree: Which Tool for Your Situation
+Decision Tree - Which Tool for Your Situation
 
 ```
 Are you learning Swift?

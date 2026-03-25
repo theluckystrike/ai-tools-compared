@@ -35,7 +35,7 @@ Table of Contents
 - [Real-World Data Science Workflows](#real-world-data-science-workflows)
 - [Notebook Magic and Completion](#notebook-magic-and-completion)
 - [Integration Comparison](#integration-comparison)
-- [Cost Analysis: Team of 5 Data Scientists](#cost-analysis-team-of-5-data-scientists)
+- [Cost Analysis - Team of 5 Data Scientists](#cost-analysis-team-of-5-data-scientists)
 - [Debugging and Error Messages](#debugging-and-error-messages)
 - [Best Practices for Data Science with AI Completion](#best-practices-for-data-science-with-ai-completion)
 
@@ -46,7 +46,7 @@ Comparison Table
 | GitHub Copilot | $10 | 7.5/10 | Good (VS Code) | 7/10 | 2-3s | Teams, quick completion |
 | Cursor | $20 | 8/10 | Excellent (native) | 8/10 | 2-3s | Full IDE replacement, notebooks |
 | Claude Code | $20 | 9/10 | Good (chat interface) | 8.5/10 | 3-4s | Complex analysis, reasoning |
-| Amazon CodeWhisperer | Free (or $120/year) | 7/10 | Limited (VS Code only) | 6/10 | 2-3s | AWS ecosystem, cost-conscious |
+| Amazon CodeWhisperer | Free (or $120/year) | 7/10 | Limited (VS Code only) | 6/10 | 2-3s | AWS environment, cost-conscious |
 | Codeium | Free | 6.5/10 | Fair (community support) | 6/10 | 2-3s | Open-source users |
 
 GitHub Copilot for Data Science
@@ -143,7 +143,7 @@ This is production-ready. The pipeline order is correct (features → scaling �
 
 Pandas + Cursor Example
 
-Prompt: "Filter DataFrame for rows where age > 30 and income is not null, then group by region and calculate mean income."
+Prompt - "Filter DataFrame for rows where age > 30 and income is not null, then group by region and calculate mean income."
 
 Cursor generates:
 
@@ -180,7 +180,7 @@ Complex Analysis Example
 Ask Claude Code:
 
 ```
-I have a DataFrame with columns: date, user_id, amount, product_category.
+I have a DataFrame with columns - date, user_id, amount, product_category.
 I need to identify power users (top 10% by spending) and their repeat purchase rate.
 Generate the code and explain the steps.
 ```
@@ -191,17 +191,17 @@ Claude generates:
 import pandas as pd
 import numpy as np
 
-Step 1: Calculate total spending per user
+Step 1 - Calculate total spending per user
 user_spending = df.groupby('user_id')['amount'].sum().sort_values(ascending=False)
 
-Step 2: Identify top 10% by spending
+Step 2 - Identify top 10% by spending
 threshold = user_spending.quantile(0.9)  # 90th percentile
 power_users = user_spending[user_spending >= threshold].index
 
-Step 3: Filter for power users only
+Step 3 - Filter for power users only
 power_user_df = df[df['user_id'].isin(power_users)].copy()
 
-Step 4: Count unique products per user (repeat purchase indicator)
+Step 4 - Count unique products per user (repeat purchase indicator)
 repeat_rate = (
     power_user_df
     .groupby('user_id')['product_category']
@@ -209,7 +209,7 @@ repeat_rate = (
     .div(power_user_df.groupby('user_id').size())  # unique categories / total purchases
 )
 
-Step 5: Get summary statistics
+Step 5 - Get summary statistics
 print(f"Power users: {len(power_users)}")
 print(f"Repeat purchase rate (top 10%): {repeat_rate.mean():.2%}")
 print(f"Highest repeat rate user: {repeat_rate.idxmax()} with {repeat_rate.max():.2%}")
@@ -289,7 +289,7 @@ Strengths
 - Free: No cost
 - Privacy-focused: Can run locally
 - Lightweight: Minimal IDE overhead
-- Community support: Growing ecosystem
+- Community support: Growing environment
 
 Weaknesses
 
@@ -316,12 +316,12 @@ This is correct but doesn't anticipate broader context. Cursor would suggest add
 
 Real-World Data Science Workflows
 
-Workflow 1: Feature Engineering Pipeline
+Workflow 1 - Feature Engineering Pipeline
 
-Best tool: Cursor or Claude Code
+Best tool - Cursor or Claude Code
 
 ```python
-Cursor with Cmd+K prompt: "Create feature engineering pipeline for time-series data"
+Cursor with Cmd+K prompt - "Create feature engineering pipeline for time-series data"
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
@@ -344,15 +344,15 @@ pipeline = Pipeline([
 
 Cursor generates this correctly. Copilot would miss `ColumnTransformer` and suggest simpler alternatives. Claude Code would explain why `handle_unknown='ignore'` is important for production.
 
-Workflow 2: Exploratory Data Analysis
+Workflow 2 - Exploratory Data Analysis
 
-Best tool: Claude Code
+Best tool - Claude Code
 
 Ask:
 
 ```
-Dataset: customer churn. Columns: age, tenure, monthly_charges, total_charges, churn.
-Generate exploratory analysis: missing values, distributions, correlation with churn, segment analysis.
+Dataset - customer churn. Columns - age, tenure, monthly_charges, total_charges, churn.
+Generate exploratory analysis - missing values, distributions, correlation with churn, segment analysis.
 ```
 
 Claude generates:
@@ -376,15 +376,15 @@ tenure_bins = pd.cut(df['tenure'], bins=[0, 12, 24, 60], labels=['<1yr', '1-2yr'
 segment_churn = df.groupby(tenure_bins)['churn'].mean()
 ```
 
-Claude's reasoning: "We're checking distributions first to understand data shape, then correlation to identify important predictors, then tenure segments to uncover patterns."
+Claude's reasoning - "We're checking distributions first to understand data shape, then correlation to identify important predictors, then tenure segments to uncover patterns."
 
 Copilot would suggest basic `df.describe()`, missing the analytical depth.
 
-Workflow 3: Cross-Validation and Hyperparameter Tuning
+Workflow 3 - Cross-Validation and Hyperparameter Tuning
 
-Best tools: Cursor or Claude Code
+Best tools - Cursor or Claude Code
 
-Prompt: "Use GridSearchCV to find optimal RandomForest parameters: max_depth (3-15), min_samples_split (2-10)."
+Prompt - "Use GridSearchCV to find optimal RandomForest parameters: max_depth (3-15), min_samples_split (2-10)."
 
 Cursor generates:
 
@@ -423,7 +423,7 @@ Jupyter Magic Commands
 
 Cell-to-Cell Context
 
-Cursor advantage: Cursor reads entire notebook history and infers variable types from prior cells.
+Cursor advantage - Cursor reads entire notebook history and infers variable types from prior cells.
 
 ```python
 Cell 1:
@@ -448,13 +448,13 @@ Integration Comparison
 | Real-time completion | Yes | Yes | No (chat) | Yes | Yes |
 | Pandas accuracy | 7.5/10 | 8/10 | 9/10 | 6.5/10 | 6/10 |
 
-Cost Analysis: Team of 5 Data Scientists
+Cost Analysis - Team of 5 Data Scientists
 
-Scenario: 5 analysts, each working 40 hours/week in notebooks/IDE.
+Scenario - 5 analysts, each working 40 hours/week in notebooks/IDE.
 
-- GitHub Copilot: $50/month ($10 × 5). Works for quick completions.
-- Cursor: $100/month ($20 × 5). IDE replacement with better Pandas/sklearn knowledge.
-- Claude Code: $100/month ($20 × 5). Use for 2-3 senior analysts on complex analysis.
+- GitHub Copilot - $50/month ($10 × 5). Works for quick completions.
+- Cursor - $100/month ($20 × 5). IDE replacement with better Pandas/sklearn knowledge.
+- Claude Code - $100/month ($20 × 5). Use for 2-3 senior analysts on complex analysis.
 - Amazon CodeWhisperer: Free to $600/year ($10/month × 5 if standalone). Best if already AWS-heavy.
 - Codeium: Free. Acceptable for experimentation, not production.
 
@@ -467,9 +467,9 @@ Debugging and Error Messages
 
 When a generated Pandas transformation fails:
 
-Copilot: "Try `.reset_index()` or add `.values`" (generic suggestions)
+Copilot - "Try `.reset_index()` or add `.values`" (generic suggestions)
 
-Cursor/Claude: Explain the dtype mismatch, suggest `.astype()`, show the correct index handling
+Cursor/Claude - Explain the dtype mismatch, suggest `.astype()`, show the correct index handling
 
 Claude Code is best for debugging, paste error + context, get detailed explanation.
 

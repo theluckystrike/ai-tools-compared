@@ -21,9 +21,9 @@ Claude Code dominates gRPC protobuf generation with the best understanding of pr
 Table of Contents
 
 - [How gRPC Generation Differs from Regular Code](#how-grpc-generation-differs-from-regular-code)
-- [Use Case 1: Migrating REST to gRPC](#use-case-1-migrating-rest-to-grpc)
-- [Use Case 2: Microservice Architecture with Multiple Services](#use-case-2-microservice-architecture-with-multiple-services)
-- [Use Case 3: Streaming Services](#use-case-3-streaming-services)
+- [Use Case 1 - Migrating REST to gRPC](#use-case-1-migrating-rest-to-grpc)
+- [Use Case 2 - Microservice Architecture with Multiple Services](#use-case-2-microservice-architecture-with-multiple-services)
+- [Use Case 3 - Streaming Services](#use-case-3-streaming-services)
 - [Generated Client Code Quality](#generated-client-code-quality)
 - [Practical Recommendations](#practical-recommendations)
 - [Common gRPC Generation Errors](#common-grpc-generation-errors)
@@ -34,14 +34,14 @@ gRPC protobuf definitions require precision beyond typical code generation. Prot
 
 Additionally, gRPC code generation produces multiple artifacts: the proto definition itself, generated stubs in your target language (Go, Python, Node.js), and service implementations. AI tools must understand the relationship between these layers.
 
-Testing methodology: I provided identical specifications to each tool and evaluated:
+Testing methodology - I provided identical specifications to each tool and evaluated:
 - Proto3 syntax accuracy
 - Field numbering and reserved field handling
 - Service definition completeness
 - Streaming directive correctness
 - Generated client code usability
 
-Use Case 1: Migrating REST to gRPC
+Use Case 1 - Migrating REST to gRPC
 
 Starting with a REST API specification, I asked each tool to generate equivalent gRPC services. The API involved user management with create, read, update, delete operations, plus batch user retrieval.
 
@@ -166,7 +166,7 @@ service UserService {
 
 Cursor included most methods but referenced DeleteUserRequest without defining it. The output was mostly usable but required manual addition of missing message types.
 
-Use Case 2: Microservice Architecture with Multiple Services
+Use Case 2 - Microservice Architecture with Multiple Services
 
 I specified a complex system with separate OrderService, PaymentService, and InventoryService that communicate with each other. This tests whether tools understand service-to-service gRPC relationships.
 
@@ -223,7 +223,7 @@ service OrderService {
 }
 ```
 
-No import statement appeared despite referencing types from other services. This would cause compilation failures in the gRPC ecosystem.
+No import statement appeared despite referencing types from other services. This would cause compilation failures in the gRPC environment.
 
 Cursor
 
@@ -238,7 +238,7 @@ service OrderService {
 
 Cursor left the cross-service message definitions incomplete, requiring manual work to implement the PaymentMethod and InventoryItem integration.
 
-Use Case 3: Streaming Services
+Use Case 3 - Streaming Services
 
 Streaming is where gRPC's power emerges, but also where most mistakes occur. I specified a video processing service requiring client streaming (upload chunks), server streaming (send processing progress), and bidirectional streaming (real-time transcoding).
 
@@ -283,7 +283,7 @@ service VideoService {
 }
 ```
 
-All three patterns were correct: client streaming on UploadVideo, server streaming on ProcessVideo, bidirectional on TranscodeVideoRealtime.
+All three patterns were correct - client streaming on UploadVideo, server streaming on ProcessVideo, bidirectional on TranscodeVideoRealtime.
 
 GitHub Copilot
 

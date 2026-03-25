@@ -58,10 +58,10 @@ Strengths:
 
 Example interaction:
 ```
-User: Getting ClassNotFoundException for com.example.MyActivity$InnerClass
+User - Getting ClassNotFoundException for com.example.MyActivity$InnerClass
 after R8 minification
 
-Claude: This occurs because R8 doesn't detect reflection-based class loading.
+Claude - This occurs because R8 doesn't detect reflection-based class loading.
 Add this to your proguard-rules.pro:
 
 -keep class com.example.MyActivity$InnerClass { *; }
@@ -97,7 +97,7 @@ Practical Debugging Workflow
 
 When encountering R8 class shrinking errors, follow this systematic approach:
 
-Step 1: Enable R8 Debugging
+Step 1 - Enable R8 Debugging
 
 Add verbose output to your `gradle.properties`:
 
@@ -106,7 +106,7 @@ android.enableR8.fullMode=true
 android.enableR8.keepRules=true
 ```
 
-Step 2: Analyze the Stack Trace
+Step 2 - Analyze the Stack Trace
 
 AI tools can decode obfuscated stack traces. Paste this typical crash:
 
@@ -117,7 +117,7 @@ java.lang.NoSuchFieldError: a
 
 Claude or Copilot will identify that `a` likely refers to an obfuscated field name and suggest checking which fields your code accesses via reflection.
 
-Step 3: Generate Keep Rules
+Step 3 - Generate Keep Rules
 
 For a typical crash involving Gson serialization, an AI tool might suggest:
 
@@ -137,7 +137,7 @@ Keep your data models
 -keep class com.example.data.model. { *; }
 ```
 
-Step 4: Handle Reflection Issues
+Step 4 - Handle Reflection Issues
 
 Many R8 errors occur with reflection. Use these patterns:
 
@@ -156,7 +156,7 @@ Keep Parcelable implementations
 
 Common Error Patterns and Solutions
 
-Pattern 1: Native Code References
+Pattern 1 - Native Code References
 
 ```proguard
 Keep JNI method signatures
@@ -165,7 +165,7 @@ Keep JNI method signatures
 }
 ```
 
-Pattern 2: ServiceLoader Implementations
+Pattern 2 - ServiceLoader Implementations
 
 ```proguard
 Keep ServiceLoader implementations
@@ -174,7 +174,7 @@ Keep ServiceLoader implementations
 }
 ```
 
-Pattern 3: Custom Views
+Pattern 3 - Custom Views
 
 ```proguard
 Keep custom view constructors
@@ -482,7 +482,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -494,7 +494,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

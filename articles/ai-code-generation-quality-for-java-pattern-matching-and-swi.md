@@ -73,7 +73,7 @@ Practical Examples with AI-Generated Code
 
 Let's examine how AI tools handle a common scenario: processing different types of shapes using pattern matching and switch expressions.
 
-Example 1: Record Pattern Matching
+Example 1 - Record Pattern Matching
 
 ```java
 // A typical request to an AI coding assistant
@@ -99,7 +99,7 @@ record Square(double side) {}
 
 Quality AI tools should generate code that includes null handling, which was often missing in earlier versions. The switch expression correctly uses modern Java syntax with the `->` operator and handles multiple constants in a single case.
 
-Example 2: Pattern Matching with Guards
+Example 2 - Pattern Matching with Guards
 
 Guards add conditional logic within pattern matching:
 
@@ -118,7 +118,7 @@ public static String describe(Object obj) {
 
 AI tools that understand Java 21+ features will generate guards with the `when` keyword. Older or less sophisticated tools may produce errors or use deprecated syntax.
 
-Example 3: Nested Patterns
+Example 3 - Nested Patterns
 
 For complex data structures, nested patterns provide elegant solutions:
 

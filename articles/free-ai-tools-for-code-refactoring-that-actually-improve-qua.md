@@ -21,9 +21,9 @@ Table of Contents
 
 - [Why AI-Assisted Refactoring Matters](#why-ai-assisted-refactoring-matters)
 - [Claude Code: Terminal-First Refactoring](#claude-code-terminal-first-refactoring)
-- [GitHub Copilot: IDE-Integrated Refactoring](#github-copilot-ide-integrated-refactoring)
-- [Cursor: Context-Aware Bulk Refactoring](#cursor-context-aware-bulk-refactoring)
-- [Sourcery: Python-Specific Refactoring](#sourcery-python-specific-refactoring)
+- [GitHub Copilot - IDE-Integrated Refactoring](#github-copilot-ide-integrated-refactoring)
+- [Cursor - Context-Aware Bulk Refactoring](#cursor-context-aware-bulk-refactoring)
+- [Sourcery - Python-Specific Refactoring](#sourcery-python-specific-refactoring)
 - [Comparing Performance and Quality Gains](#comparing-performance-and-quality-gains)
 - [Practical Integration Strategies](#practical-integration-strategies)
 - [Limitations and When to Refactor Manually](#limitations-and-when-to-refactor-manually)
@@ -66,7 +66,7 @@ function process(d) {
 
 Claude Code excels at explaining the reasoning behind each suggestion, which helps developers learn patterns they can apply independently. The tool works well for extracting functions, renaming variables for clarity, and breaking down complex conditional logic.
 
-GitHub Copilot: IDE-Integrated Refactoring
+GitHub Copilot - IDE-Integrated Refactoring
 
 GitHub Copilot provides a free tier that integrates with VS Code and other popular editors. Its refactoring suggestions appear inline as you code, making it easy to accept improvements with a single keystroke.
 
@@ -90,7 +90,7 @@ const calculateTotal = (items, taxRate) =>
 
 Copilot performs best when refactoring repetitive patterns, converting callback-based code to modern async/await, and suggesting more idiomatic language constructs. The suggestions are contextual to your codebase, learning from your project's patterns over time.
 
-Cursor: Context-Aware Bulk Refactoring
+Cursor - Context-Aware Bulk Refactoring
 
 Cursor provides a free tier with powerful refactoring capabilities focused on handling larger-scale changes across your codebase. Its chat interface allows you to describe refactoring goals in plain language.
 
@@ -103,7 +103,7 @@ and add proper error handling with try-catch blocks"
 Cursor handles multi-file refactoring particularly well. You can specify scope and constraints, and the tool applies consistent changes across your project:
 
 ```python
-Before: Synchronous database calls
+Before - Synchronous database calls
 def get_user(user_id):
     conn = get_connection()
     cursor = conn.cursor()
@@ -124,7 +124,7 @@ async def get_user(user_id: int) -> Optional[dict]:
         raise
 ```
 
-Sourcery: Python-Specific Refactoring
+Sourcery - Python-Specific Refactoring
 
 Sourcery offers a free tier specifically for Python developers. It provides inline refactoring suggestions and a chat interface for more complex transformations.
 
@@ -136,7 +136,7 @@ for item in items:
     if item.is_valid:
         results.append(item.process())
 
-After: More Pythonic approach
+After - More Pythonic approach
 results = [item.process() for item in items if item.is_valid]
 
 Sourcery also suggests:
@@ -228,11 +228,11 @@ As you grow comfortable with free tools, tackle more complex refactoring pattern
 
 Converting callback chains to promises: Ask Claude Code specifically: "Convert this callback-based function to async/await while preserving error handling"
 
-Extracting data classes: Cursor excels at identifying repeated property patterns and suggesting data class extraction
+Extracting data classes - Cursor excels at identifying repeated property patterns and suggesting data class extraction
 
 Unifying similar conditional logic: GitHub Copilot handles extracting duplicated conditionals into parameterized functions well
 
-Adding type hints: Sourcery for Python automatically suggests type hints that improve code clarity
+Adding type hints - Sourcery for Python automatically suggests type hints that improve code clarity
 
 Decision Framework for Tool Selection
 
@@ -250,13 +250,13 @@ Implementation Roadmap for New Teams
 
 If your team hasn't used AI refactoring tools, implement them gradually:
 
-Week 1-2: Set up one tool (GitHub Copilot if VS Code, Claude Code if terminal-focused). Have developers refactor one non-critical module as a pilot.
+Week 1-2 - Set up one tool (GitHub Copilot if VS Code, Claude Code if terminal-focused). Have developers refactor one non-critical module as a pilot.
 
-Week 3-4: Review the pilot results. What patterns worked? What surprised you? Document your team's guidelines for AI-assisted refactoring.
+Week 3-4 - Review the pilot results. What patterns worked? What surprised you? Document your team's guidelines for AI-assisted refactoring.
 
-Month 2: Expand usage to more modules. Create a shared configuration file with your project's conventions for consistency.
+Month 2 - Expand usage to more modules. Create a shared configuration file with your project's conventions for consistency.
 
-Month 3+: Integrate refactoring into your development workflow. Consider making "AI-assisted refactoring" a standard step when feature development completes.
+Month 3+ - Integrate refactoring into your development workflow. Consider making "AI-assisted refactoring" a standard step when feature development completes.
 
 Frequently Asked Questions
 

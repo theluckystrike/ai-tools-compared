@@ -23,7 +23,7 @@ AI coding assistants like Claude, Cursor, and GitHub Copilot maintain a conversa
 
 When you work on a large codebase, the AI eventually "forgets" which libraries you've installed, which modules exist, and which third-party packages are actually available. The model then generates import statements based on common patterns or guessed module names rather than your actual dependencies.
 
-Consider this scenario: you ask an AI to add a feature requiring date handling. The assistant imports `from datetime import timezone`, a valid Python import. But your project uses Arrow or Pendulum instead. The code looks correct but fails immediately.
+Consider this scenario - you ask an AI to add a feature requiring date handling. The assistant imports `from datetime import timezone`, a valid Python import. But your project uses Arrow or Pendulum instead. The code looks correct but fails immediately.
 
 Prerequisites
 
@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Techniques That Actually Work
+Step 1 - Techniques That Actually Work
 
 1. Provide Explicit Dependency Lists
 
@@ -70,8 +70,8 @@ Limit context to only the auth module
 Instead of dumping entire large files into context, extract just the relevant sections. When you need the AI to work with a specific function, include only that function plus its immediate dependencies.
 
 ```python
-Instead of: "Here's my entire models.py (500 lines)"
-Use: "Here's the User class I'm modifying:"
+Instead of - "Here's my entire models.py (500 lines)"
+Use - "Here's the User class I'm modifying:"
 
 class User(BaseModel):
     id: int
@@ -99,7 +99,7 @@ Never import from packages not listed in dependencies.
 
 When conversations become long and the AI starts making obvious errors, starting fresh often works better than continuing to pile on context. Save the useful parts of previous discussions, then begin with a clean slate that includes only your current task and necessary dependencies.
 
-Step 2: Practical Workflow Example
+Step 2 - Practical Workflow Example
 
 Here's a workflow that minimizes hallucinated imports:
 
@@ -123,12 +123,12 @@ Project constraints:
 """
 ```
 
-Step 3: Detecting Hallucinated Imports Early
+Step 3 - Detecting Hallucinated Imports Early
 
 Add these checks to your development workflow:
 
 ```bash
-Python: Check for undefined imports
+Python - Check for undefined imports
 pip install pyflakes
 pyflakes your_module.py
 
@@ -142,7 +142,7 @@ go vet ./...
 
 Running these tools immediately after AI-generated code catches hallucinated imports before they reach your main codebase.
 
-Step 4: When Hallucinations Still Happen
+Step 4 - When Hallucinations Still Happen
 
 Sometimes despite your best efforts, the AI still generates invalid imports. Common causes include:
 
@@ -152,9 +152,9 @@ Sometimes despite your best efforts, the AI still generates invalid imports. Com
 
 - Stale dependency information: Your requirements changed but the AI wasn't told
 
-The fix is simple: tell the AI what went wrong and provide the correct dependency information. Most models recover quickly when given explicit correction.
+The fix is simple - tell the AI what went wrong and provide the correct dependency information. Most models recover quickly when given explicit correction.
 
-Step 5: Build Long-Term Context Habits
+Step 5 - Build Long-Term Context Habits
 
 The best defense against hallucinated imports is consistent communication discipline. Always:
 
@@ -168,7 +168,7 @@ The best defense against hallucinated imports is consistent communication discip
 
 These habits reduce AI errors dramatically and make your coding assistant a reliable partner rather than a source of subtle bugs.
 
-Step 6: Comparing Context Windows Across AI Tools
+Step 6 - Comparing Context Windows Across AI Tools
 
 Different AI tools maintain different context window sizes, affecting how much information they can consider:
 
@@ -181,9 +181,9 @@ Different AI tools maintain different context window sizes, affecting how much i
 | Cursor | 50K tokens (default) | Variable | IDE-integrated |
 | GitHub Copilot | 8K-16K | Subscription | Inline suggestions |
 
-Practical implication: If your repository is 500K tokens, Claude 3.5 Sonnet can ingest 40% of it. GPT-4o can handle only 25%. Cursor and Copilot can see nothing at full codebase scale.
+Practical implication - If your repository is 500K tokens, Claude 3.5 Sonnet can ingest 40% of it. GPT-4o can handle only 25%. Cursor and Copilot can see nothing at full codebase scale.
 
-Step 7: Tokenization Awareness
+Step 7 - Tokenization Awareness
 
 Before dumping files into an AI tool, understand how many tokens you're consuming:
 
@@ -220,9 +220,9 @@ print(f"Total project context: {total_tokens} tokens")
 If >100K, you're using 50% of Claude's context window
 ```
 
-Step 8: Smart Context Management Patterns
+Step 8 - Smart Context Management Patterns
 
-Pattern 1: File Priority List
+Pattern 1 - File Priority List
 
 ```python
 Define which files are most relevant to current task
@@ -247,7 +247,7 @@ Add Priority 2 if under 100K tokens
 Add Priority 3 only if working on that specific area
 ```
 
-Pattern 2: Conversation Reset Strategy
+Pattern 2 - Conversation Reset Strategy
 
 ```python
 If conversation becomes long and AI starts hallucinating:
@@ -263,14 +263,14 @@ def prepare_fresh_context(original_conversation_length: int):
         # Start fresh conversation with that file + current task
 ```
 
-Step 9: Real-World Scenario: Large Django Project
+Step 9 - Real-World Scenario: Large Django Project
 
 Suppose you're working on a 2MB Django project with 15 Python files, 100+ database models, and 200 views.
 
 Naive approach (causes hallucinations):
 
 ```bash
-DON'T: Paste everything
+DON'T - Paste everything
 cat src//*.py | xargs cat | xargs -I {} curl... # to Claude
 Hallucinated imports, forgotten constraints
 ```
@@ -278,10 +278,10 @@ Hallucinated imports, forgotten constraints
 Smart approach:
 
 ```python
-Step 1: Identify scope
+Step 1 - Identify scope
 scope = "Add Stripe payment integration to Order model"
 
-Step 2: Include only related files
+Step 2 - Include only related files
 files_needed = [
     "apps/orders/models.py",        # Order model definition
     "apps/orders/serializers.py",   # Order serializer
@@ -291,13 +291,13 @@ files_needed = [
     ".env.example"                   # Environment variable template
 ]
 
-Step 3: Check token count
+Step 3 - Check token count
 total_tokens = sum(estimate_tokens(open(f).read()) for f in files_needed)
 8,500 tokens - well under limits
 
-Step 4: Include explicit constraints
+Step 4 - Include explicit constraints
 context_message = f"""
-Task: {scope}
+Task - {scope}
 
 Key constraints:
 - We use Django 4.2 with DRF
@@ -315,25 +315,25 @@ Send context_message to Claude
 
 This focused approach dramatically reduces hallucinations.
 
-Step 10: Incremental Conversation Strategy
+Step 10 - Incremental Conversation Strategy
 
 Instead of large context dumps, use smaller iterative conversations:
 
 ```python
-Conversation 1: Verify dependencies exist
+Conversation 1 - Verify dependencies exist
 """
 Show me the exact version of 'stripe' in requirements.txt
 and what packages depend on it.
 """
 
-Conversation 2: Understand current models
+Conversation 2 - Understand current models
 """
 Here's my Payment model [paste model code].
 I need to add a payment_intent_id field.
 What migration should I create?
 """
 
-Conversation 3: Generate integration code
+Conversation 3 - Generate integration code
 """
 Given the Payment model and Stripe API docs,
 generate a function that creates a payment intent.
@@ -344,7 +344,7 @@ Each conversation is small and focused
 Less hallucination because less context confusion
 ```
 
-Step 11: Tools for Context Management
+Step 11 - Tools for Context Management
 
 CLI tools to help organize context:
 
@@ -367,7 +367,7 @@ grep -r "^class\|^def\|^import" src/ > /tmp/project_summary.txt
 ~2-5K tokens capturing project structure without implementation
 ```
 
-Step 12: Context Window Limits by Tool
+Step 12 - Context Window Limits by Tool
 
 When each AI tool starts hallucinating (based on testing):
 

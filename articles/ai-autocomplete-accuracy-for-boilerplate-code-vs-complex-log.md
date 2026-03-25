@@ -21,8 +21,8 @@ AI autocomplete tools excel at predicting boilerplate code with accuracy rates a
 Table of Contents
 
 - [Understanding the Accuracy Gap](#understanding-the-accuracy-gap)
-- [Boilerplate Code: Where AI Autocomplete Excels](#boilerplate-code-where-ai-autocomplete-excels)
-- [Complex Logic: Where Accuracy Drops](#complex-logic-where-accuracy-drops)
+- [Boilerplate Code - Where AI Autocomplete Excels](#boilerplate-code-where-ai-autocomplete-excels)
+- [Complex Logic - Where Accuracy Drops](#complex-logic-where-accuracy-drops)
 - [Measuring the Accuracy Difference](#measuring-the-accuracy-difference)
 - [Practical Strategies for Better Results](#practical-strategies-for-better-results)
 - [Tool-Specific Observations](#tool-specific-observations)
@@ -33,11 +33,11 @@ AI autocomplete tools trained on massive code repositories develop strong patter
 
 The difference stems from how these tools learn. They recognize statistical patterns in billions of lines of code. When you write standard CRUD operations, error handling wrappers, or configuration objects, the model has seen countless similar implementations. Complex business logic often requires context that spans beyond the immediate file or even the repository.
 
-Boilerplate Code: Where AI Autocomplete Excels
+Boilerplate Code - Where AI Autocomplete Excels
 
 Boilerplate code includes repetitive patterns that follow language conventions and common library APIs. These patterns are highly predictable, making them ideal for AI assistance.
 
-Example 1: React Component Structure
+Example 1 - React Component Structure
 
 When creating a new React component, AI autocomplete handles the skeleton effectively:
 
@@ -58,7 +58,7 @@ function UserCard({ user }) {
 
 The model recognizes standard component patterns from millions of React codebases. This prediction achieves accuracy rates above 90% in typical scenarios.
 
-Example 2: Python Data Class Definitions
+Example 2 - Python Data Class Definitions
 
 Python dataclasses and Pydantic models follow predictable structures:
 
@@ -77,7 +77,7 @@ class User:
         return f"User(id={self.id}, name={self.name})"
 ```
 
-Example 3: TypeScript Interface Extensions
+Example 3 - TypeScript Interface Extensions
 
 TypeScript interfaces follow consistent patterns that AI tools predict accurately:
 
@@ -93,11 +93,11 @@ interface ApiResponse<T> {
 }
 ```
 
-Complex Logic: Where Accuracy Drops
+Complex Logic - Where Accuracy Drops
 
 Complex logic encompasses business rules, algorithm implementation, stateful operations, and domain-specific code. These areas show noticeably lower accuracy.
 
-Example 1: Custom Business Logic
+Example 1 - Custom Business Logic
 
 When implementing domain-specific rules, AI autocomplete struggles:
 
@@ -120,7 +120,7 @@ function calculateDiscount(customer, items) {
 
 The AI lacks context about your specific business rules, seasonal promotions, and discount stacking policies.
 
-Example 2: State Machine Implementation
+Example 2 - State Machine Implementation
 
 State machines require understanding complex transitions:
 
@@ -158,7 +158,7 @@ class OrderStateMachine:
         return order
 ```
 
-Example 3: Algorithm Implementation
+Example 3 - Algorithm Implementation
 
 Algorithms requiring specific approaches often trip up autocomplete:
 

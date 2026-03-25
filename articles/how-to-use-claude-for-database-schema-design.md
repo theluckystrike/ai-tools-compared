@@ -61,7 +61,7 @@ Constraints:
 - Schema should support plan changes without data loss
 - Audit trail: who changed what and when (on subscriptions)
 
-Output: CREATE TABLE statements with comments explaining decisions.
+Output - CREATE TABLE statements with comments explaining decisions.
 ```
 
 Claude's Output (partial):
@@ -128,7 +128,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Asking for Index Strategy
+Step 1 - Asking for Index Strategy
 
 After generating the schema, ask specifically about indexes:
 
@@ -174,7 +174,7 @@ CREATE INDEX idx_audit_log_subscription
 
 The partial index on subscriptions (only for `status = 'active'`) is an optimization most developers wouldn't reach for without prompting. it's smaller, faster to update, and more cache-friendly.
 
-Step 2: Modeling Complex Constraints
+Step 2 - Modeling Complex Constraints
 
 Describe business rules in plain language, let Claude translate them to SQL constraints:
 
@@ -243,7 +243,7 @@ END;
 $$ LANGUAGE plpgsql;
 ```
 
-Step 3: Schema Evolution Planning
+Step 3 - Schema Evolution Planning
 
 Ask Claude to plan migration paths before you commit to a design:
 
@@ -262,12 +262,12 @@ Claude's response typically identifies:
 - Use a `customer_type` discriminator column rather than a separate `organizations` table, to avoid a large data migration when adding orgs
 - Structure line items with a `unit_price_cents` and `quantity` rather than just `amount_cents`, to support usage-based billing
 
-Step 4: Verify Schema Quality
+Step 4 - Verify Schema Quality
 
 After generating a schema, ask Claude to critique it:
 
 ```
-Review this schema for: normalization issues, missing constraints, index gaps,
+Review this schema for - normalization issues, missing constraints, index gaps,
 and any design decisions that will cause problems at scale (>10M rows per table).
 Be specific about each problem and suggest the fix.
 ```

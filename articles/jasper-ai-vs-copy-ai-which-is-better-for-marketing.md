@@ -328,7 +328,7 @@ Copy.ai is better for:
 - Startups on tight budgets
 - High-volume, low-review-cycle content
 
-Hybrid Approach: Using Both Together
+Hybrid Approach - Using Both Together
 
 Many mature marketing teams use this workflow:
 1. Use Copy.ai to generate 5-10 social post variations

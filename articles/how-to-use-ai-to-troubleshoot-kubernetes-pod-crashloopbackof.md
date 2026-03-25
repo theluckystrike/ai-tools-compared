@@ -35,7 +35,7 @@ Kubernetes pod failures are inevitable in production environments, and the dread
 This guide shows you how to use AI to troubleshoot Kubernetes pod CrashLoopBackOff errors effectively.
 
 
-- Application Configuration Errors Missing: environment variables commonly cause crashes.
+- Application Configuration Errors Missing - environment variables commonly cause crashes.
 - Resource Limits and OOMKills: Memory limits set too low cause containers to terminate abruptly.
 - Will this work with: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
 - Kubernetes pod failures are: inevitable in production environments, and the dreaded CrashLoopBackOff status ranks among the most frustrating issues developers face.
@@ -52,13 +52,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand CrashLoopBackOff
+Step 1 - Understand CrashLoopBackOff
 
 When Kubernetes restarts a container repeatedly because it keeps failing, the pod enters CrashLoopBackOff status. This protective mechanism prevents a failing pod from consuming resources in an endless restart loop. Common triggers include application crashes, missing dependencies, configuration errors, and resource constraints.
 
 Traditional debugging requires running commands like `kubectl describe pod` and `kubectl logs`, then manually interpreting the output. AI accelerates this process by correlating multiple data points and suggesting specific fixes based on patterns from thousands of similar issues.
 
-Step 2: AI-Powered Log Analysis
+Step 2 - AI-Powered Log Analysis
 
 Start by gathering your pod information. Run these commands and feed the output to an AI assistant:
 
@@ -72,7 +72,7 @@ When you paste this output into an AI tool, ask specific questions. Instead of "
 
 The AI examines stack traces, exit codes, and error messages to pinpoint the root cause. For instance, it might identify that your application fails because of a missing environment variable or a database connection timeout.
 
-Step 3: Common CrashLoopBackOff Patterns
+Step 3 - Common CrashLoopBackOff Patterns
 
 AI tools recognize recurring patterns across Kubernetes deployments. Here are frequent issues and how AI helps identify them.
 
@@ -83,7 +83,7 @@ Missing environment variables commonly cause crashes. If your app expects `DATAB
 Example error AI might catch:
 
 ```
-Error: Cannot connect to database: getaddrinfo ENOTFOUND database-service
+Error - Cannot connect to database: getaddrinfo ENOTFOUND database-service
 ```
 
 The AI would check your environment variables, service definitions, and network policies to identify that the database service name is incorrect or the service doesn't exist in the target namespace.
@@ -106,7 +106,7 @@ Volume Mount Issues
 
 Incorrect volume paths or missing PersistentVolumeClaims cause immediate crashes if the application expects those directories to exist. AI cross-references your volume mounts with application requirements to find mismatches.
 
-Step 4: Use AI with kubectl Plugins
+Step 4 - Use AI with kubectl Plugins
 
 Several AI-powered kubectl plugins now exist that integrate directly into your workflow. These tools analyze cluster state without requiring you to manually copy-paste outputs.
 
@@ -119,7 +119,7 @@ kubectl ai diagnose <pod-name> -n <namespace>
 
 These plugins use large language models trained on Kubernetes documentation and community solutions to provide actionable recommendations.
 
-Step 5: Prompt Engineering for Better Results
+Step 5 - Prompt Engineering for Better Results
 
 Getting useful answers from AI requires asking the right questions. Structure your prompts for Kubernetes debugging with these elements:
 
@@ -144,7 +144,7 @@ The application connects to an external Redis instance. What should I check?
 
 AI responds with targeted diagnostics: network policies blocking the connection, incorrect Redis host configuration, or firewall rules preventing outbound connections.
 
-Step 6: Prevention Through AI Monitoring
+Step 6 - Prevention Through AI Monitoring
 
 Beyond reactive debugging, AI helps you catch issues before they cause outages. Configure AI-powered monitoring to detect early warning signs:
 
@@ -158,7 +158,7 @@ Beyond reactive debugging, AI helps you catch issues before they cause outages. 
 
 Tools like Prometheus with AI analysis or managed services like Dynatrace and Datadog can alert you to these patterns automatically.
 
-Step 7: Quick Reference Commands
+Step 7 - Quick Reference Commands
 
 Keep these commands ready for gathering debugging information:
 
@@ -181,7 +181,7 @@ kubectl top pod <pod-name> -n <namespace>
 
 Feed these outputs to AI for faster resolution when issues arise.
 
-Step 8: Analyzing Deployment Manifests Alongside Logs
+Step 8 - Analyzing Deployment Manifests Alongside Logs
 
 CrashLoopBackOff often stems from manifest misconfigurations. Provide your AI tool with both the manifest and the pod logs together:
 
@@ -200,7 +200,7 @@ shown in the logs. Specifically, check environment variables,
 volume mounts, and resource requests.
 ```
 
-Step 9: Debugging Initialization Issues
+Step 9 - Debugging Initialization Issues
 
 Some CrashLoopBackOff errors occur during pod initialization (init containers, readiness probes, startup commands). AI can help analyze complex initialization sequences:
 
@@ -231,7 +231,7 @@ spec:
 
 If the init container fails, the pod crashes before the main container even starts. Asking AI to trace through this sequence helps identify which stage is failing and why.
 
-Step 10: Network and Service Discovery Problems
+Step 10 - Network and Service Discovery Problems
 
 Many CrashLoopBackOff issues relate to network configuration, services can't reach required endpoints, DNS resolution fails, or network policies block connectivity. AI can help map your network configuration:
 
@@ -244,7 +244,7 @@ What could prevent this connection?
 
 AI reviews service selectors, namespace DNS rules, network policies, and firewall settings to identify connectivity blockers.
 
-Step 11: Build a Debugging Checklist with AI
+Step 11 - Build a Debugging Checklist with AI
 
 Create a reusable debugging checklist specific to your applications. AI can generate these based on your past issues:
 
@@ -257,7 +257,7 @@ output tells us about the problem.
 
 This produces a team-specific guide that accelerates future troubleshooting.
 
-Step 12: Monitor for Prevention
+Step 12 - Monitor for Prevention
 
 Beyond reactive debugging, AI helps design proactive monitoring that catches issues before they cause crashes:
 
@@ -274,7 +274,7 @@ kubectl logs <pod-name> -n <namespace> --previous | tail -50
 
 Set up alerts on restart count, memory usage trends, and failed health checks. AI can suggest which metrics to monitor based on your application type.
 
-Step 13: Common CrashLoopBackOff Patterns by Application Type
+Step 13 - Common CrashLoopBackOff Patterns by Application Type
 
 Different application types crash for different reasons. AI uses this knowledge to prioritize diagnostics:
 
@@ -295,7 +295,7 @@ Node.js applications often crash due to:
 
 Tell AI your application type and it will suggest the most likely causes to investigate first.
 
-Step 14: Test Fixes Safely
+Step 14 - Test Fixes Safely
 
 Before deploying fixes to production, test them in a staging environment. AI can help design test scenarios:
 

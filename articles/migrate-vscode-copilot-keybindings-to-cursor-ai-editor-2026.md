@@ -31,7 +31,7 @@ Table of Contents
 - [Platform-Specific Keybinding Paths](#platform-specific-keybinding-paths)
 - [Complete Copilot Command Mapping Reference](#complete-copilot-command-mapping-reference)
 - [Cursor AI Command Reference](#cursor-ai-command-reference)
-- [Advanced: Custom When Clauses](#advanced-custom-when-clauses)
+- [Advanced - Custom When Clauses](#advanced-custom-when-clauses)
 - [Conflict Detection and Resolution](#conflict-detection-and-resolution)
 - [Testing Your Migrated Keybindings](#testing-your-migrated-keybindings)
 - [Keyboard Layout Considerations](#keyboard-layout-considerations)
@@ -155,16 +155,16 @@ Platform-Specific Keybinding Paths
 Finding your keybindings file depends on your platform:
 
 macOS
-VS Code: `~/Library/Application Support/Code/User/keybindings.json`
-Cursor: `~/.cursor/User/keybindings.json`
+VS Code - `~/Library/Application Support/Code/User/keybindings.json`
+Cursor - `~/.cursor/User/keybindings.json`
 
 Windows
-VS Code: `%APPDATA%\Code\User\keybindings.json`
-Cursor: `%APPDATA%\Cursor\User\keybindings.json`
+VS Code - `%APPDATA%\Code\User\keybindings.json`
+Cursor - `%APPDATA%\Cursor\User\keybindings.json`
 
 Linux
-VS Code: `~/.config/Code/User/keybindings.json`
-Cursor: `~/.config/Cursor/User/keybindings.json`
+VS Code - `~/.config/Code/User/keybindings.json`
+Cursor - `~/.config/Cursor/User/keybindings.json`
 
 You can also access these through editor settings menus, which is safer than direct file editing.
 
@@ -260,7 +260,7 @@ Cursor's native AI commands are different:
 }
 ```
 
-Advanced: Custom When Clauses
+Advanced - Custom When Clauses
 
 The "when" clause determines when a keybinding activates. Advanced conditions:
 
@@ -389,7 +389,7 @@ Integration with Extension Keybindings
 
 Extensions add their own keybindings. Manage conflicts:
 
-List all keybindings: Open Command Palette > "Preferences: Open Keyboard Shortcuts"
+List all keybindings - Open Command Palette > "Preferences: Open Keyboard Shortcuts"
 This shows default bindings, your custom bindings, and extension bindings in a searchable interface.
 
 Common extension conflicts:
@@ -406,12 +406,12 @@ Synchronizing Keybindings Across Machines
 
 If you use Cursor on multiple machines:
 
-Option 1: Settings Sync (Built-in)
+Option 1 - Settings Sync (Built-in)
 1. Enable Settings Sync in Cursor
 2. Sign in with your account
 3. Your keybindings automatically sync across machines
 
-Option 2: Manual Sync via Dotfiles
+Option 2 - Manual Sync via Dotfiles
 Store your keybindings in a Git repository:
 
 ```bash
@@ -432,7 +432,7 @@ cp cursor/keybindings.json ~/.cursor/User/
 Restart Cursor
 ```
 
-Option 3: Symbolic Links
+Option 3 - Symbolic Links
 ```bash
 Create symlink
 ln -s ~/dotfiles/cursor/keybindings.json ~/.cursor/User/keybindings.json
@@ -462,9 +462,9 @@ This allows different keybindings for React projects vs. backend API projects.
 
 Migration Troubleshooting
 
-Issue: Keybinding works in VS Code but not Cursor
+Issue - Keybinding works in VS Code but not Cursor
 
-Solution: VS Code and Cursor use slightly different context conditions. Simplify the "when" clause:
+Solution - VS Code and Cursor use slightly different context conditions. Simplify the "when" clause:
 
 ```json
 // Too specific - may not work
@@ -474,18 +474,18 @@ Solution: VS Code and Cursor use slightly different context conditions. Simplify
 "when": "editorTextFocus && !editorReadonly"
 ```
 
-Issue: Key combination doesn't register
+Issue - Key combination doesn't register
 
-Solution: Some key combinations are reserved by your OS. Try alternatives:
+Solution - Some key combinations are reserved by your OS. Try alternatives:
 - macOS reserves Cmd+Space (Spotlight), Cmd+Tab (app switcher)
 - Windows reserves Alt+Tab
 - Linux reserves Super (Windows key)
 
 Pick different keys for these OS-reserved combinations.
 
-Issue: Keybinding triggers multiple commands
+Issue - Keybinding triggers multiple commands
 
-Solution: Add more specific context:
+Solution - Add more specific context:
 
 ```json
 // Instead of binding to just Cmd+K (too general)

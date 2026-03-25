@@ -176,7 +176,7 @@ When prompting any AI tool for SLO queries, include:
 - Your error metric naming convention and available labels
 - Any multi-service or multi-region dimensions
 
-Example prompt: "Generate PromQL for a 99.9% SLO measured over 7-day rolling windows. I track errors with `http_requests_total{status=~"5.."}` and total requests with `http_requests_total`. Create queries for 1-hour and 7-day burn rates, and calculate percentage of error budget consumed."
+Example prompt - "Generate PromQL for a 99.9% SLO measured over 7-day rolling windows. I track errors with `http_requests_total{status=~"5.."}` and total requests with `http_requests_total`. Create queries for 1-hour and 7-day burn rates, and calculate percentage of error budget consumed."
 
 Advanced Burn Rate Query Patterns
 

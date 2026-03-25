@@ -62,7 +62,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Static Code Analysis Approaches
+Step 1 - Static Code Analysis Approaches
 
 Modern AI coding assistants can scan your repositories to identify explicit dependencies. Provide your AI tool with context about your application structure and request dependency analysis:
 
@@ -84,7 +84,7 @@ For infrastructure-as-code repositories, AI can parse Terraform, CloudFormation,
 Querying Terraform state for dependency relationships
 import json
 
-After running: terraform graph -json > graph.json
+After running - terraform graph -json > graph.json
 with open('graph.json') as f:
     graph = json.load(f)
 
@@ -100,7 +100,7 @@ for source, targets in resources.items():
     print(f"  {source} depends on: {targets}")
 ```
 
-Step 2: Run time Dependency Discovery
+Step 2 - Run time Dependency Discovery
 
 Static analysis catches explicit code references but misses dynamic connections. For runtime dependencies, consider deploying traffic analysis tools alongside AI-powered log aggregation.
 
@@ -119,7 +119,7 @@ kubectl exec -it your-app-pod -- cat /proc/net/tcp | \
 
 Feed this connection data to your AI tool to map actual runtime dependencies versus what documentation claims.
 
-Step 3: Build the Dependency Graph
+Step 3 - Build the Dependency Graph
 
 Once you collect static and dynamic dependency data, combine them into an actionable graph. A Python script using NetworkX can visualize the relationships:
 
@@ -161,7 +161,7 @@ for scc in sccs:
 
 This analysis reveals which services form tight coupling clusters and which have clear boundaries for independent migration.
 
-Step 4: Prioritizing Migration Waves
+Step 4 - Prioritizing Migration Waves
 
 Not all dependencies equal. Use your dependency graph to categorize applications:
 
@@ -183,7 +183,7 @@ Given this dependency graph, suggest a migration order that:
 - Delays high-coupling services until dependencies are stable
 ```
 
-Step 5: AI-Assisted Migration Wave Planning Table
+Step 5 - AI-Assisted Migration Wave Planning Table
 
 Use a structured table to track each wave's status, risk level, and dependencies across teams. AI tools like Claude or ChatGPT can generate and maintain this table from your dependency graph output:
 
@@ -196,7 +196,7 @@ Use a structured table to track each wave's status, risk level, and dependencies
 
 Keep this table in a shared document and prompt your AI assistant to update it automatically as new dependencies are discovered during analysis. The AI can also flag when a proposed wave ordering creates a hidden dependency cycle, something spreadsheets alone cannot catch.
 
-Step 6: Handling Configuration Drift
+Step 6 - Handling Configuration Drift
 
 After identifying dependencies, you will find configuration values that break in the cloud environment. Database connection strings might point to on-premise hosts. Environment variables might reference internal DNS names unavailable in the target cloud.
 
@@ -220,7 +220,7 @@ Suggest environment variable names and configuration patterns
 that allow the same code to work in both environments.
 ```
 
-Step 7: Pro Tips for AI-Driven Dependency Analysis
+Step 7 - Pro Tips for AI-Driven Dependency Analysis
 
 These practices consistently improve accuracy when using AI for migration planning:
 
@@ -234,7 +234,7 @@ Cross-validate with your infrastructure team. AI analysis of code does not know 
 
 Generate a dependency risk score. Ask your AI assistant to assign a numeric risk score to each service based on how many other services depend on it, whether it holds shared state, and how frequently it changes. Services scoring above a threshold get dedicated runbooks before migration begins.
 
-Step 8: Validating the Migration Plan
+Step 8 - Validating the Migration Plan
 
 Before executing your migration, validate assumptions with canary deployments. Route a small percentage of traffic to the cloud environment and measure:
 
@@ -248,7 +248,7 @@ Ask AI to generate observability dashboards that compare on-premise versus cloud
 
 After each canary phase, provide the AI with the actual metrics and ask it to compare them against the predicted behavior from the migration plan. Significant deviations, more than 20% latency increase or unexpected timeout spikes, indicate undiscovered dependencies that need investigation before the full cutover proceeds.
 
-Step 9: Common Pitfalls and How AI Helps Avoid Them
+Step 9 - Common Pitfalls and How AI Helps Avoid Them
 
 Several recurring mistakes account for the majority of cloud migration failures. AI tools help surface these before they cause outages:
 

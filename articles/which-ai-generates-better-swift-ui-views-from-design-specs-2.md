@@ -297,13 +297,13 @@ Paste your design token file. If your project uses a `DesignSystem.swift` file w
 
 Key Findings
 
-Accuracy: Claude Code and Claude Sonnet produced the most accurate color conversions. Cursor offered the best code organization but required adding the hex color extension implementation.
+Accuracy - Claude Code and Claude Sonnet produced the most accurate color conversions. Cursor offered the best code organization but required adding the hex color extension implementation.
 
-Completeness: Claude Sonnet included accessibility attributes that other tools omitted. This matters for apps requiring WCAG compliance.
+Completeness - Claude Sonnet included accessibility attributes that other tools omitted. This matters for apps requiring WCAG compliance.
 
-Maintainability: Cursor's extracted component pattern makes the code more maintainable for larger projects, though it requires more manual setup.
+Maintainability - Cursor's extracted component pattern makes the code more maintainable for larger projects, though it requires more manual setup.
 
-Speed: For simple specs, all tools generate usable code in seconds. For complex interfaces with many components, Claude tools produce more complete results with fewer back-and-forth iterations.
+Speed - For simple specs, all tools generate usable code in seconds. For complex interfaces with many components, Claude tools produce more complete results with fewer back-and-forth iterations.
 
 Recommendations
 

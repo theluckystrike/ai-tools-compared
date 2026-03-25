@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Serializer Validation in Django REST Framework
+Step 1 - Understand Serializer Validation in Django REST Framework
 
 Django REST Framework serializers handle data validation, transformation, and serialization. Your serializers likely contain field-level validators, `validate()` methods for cross-field validation, and custom validator functions. Testing these thoroughly ensures your API behaves correctly when receiving various inputs.
 
@@ -42,7 +42,7 @@ Traditional test writing requires manually crafting test cases for valid data, i
 
 The benefit of AI-generated tests compounds as serializers grow in complexity. A serializer with 8 validated fields and 3 cross-field constraints can easily require 30, 40 individual test cases to achieve meaningful coverage. Writing those manually takes hours. Using AI as a starting point gets you to 80% coverage in minutes, leaving human effort for the business-logic-specific edge cases the AI cannot infer.
 
-Step 2: Preparing Your Serializer for AI-Assisted Testing
+Step 2 - Preparing Your Serializer for AI-Assisted Testing
 
 Before using AI to generate tests, ensure your serializer code is clean and accessible. The AI needs to understand your validation logic to produce relevant tests.
 
@@ -82,7 +82,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
 This serializer demonstrates common validation patterns: field-level validation, email uniqueness checks, username format validation, and cross-field password matching.
 
-Step 3: Use AI to Generate Pytest Tests
+Step 3 - Use AI to Generate Pytest Tests
 
 When prompting AI to generate tests, provide context about your testing setup, the serializer code, and specify what aspects you want tested. The more specific your prompt, the more useful the generated tests.
 
@@ -168,7 +168,7 @@ class TestUserRegistrationSerializer:
         assert 'password' in serializer.errors
 ```
 
-Step 4: Comparing AI Tools for Test Generation
+Step 4 - Comparing AI Tools for Test Generation
 
 Not all AI tools produce equally useful DRF tests. Here is how the major options compare for this specific task:
 
@@ -182,7 +182,7 @@ Not all AI tools produce equally useful DRF tests. Here is how the major options
 
 Claude and GPT-4o both produce complete, runnable test files when given the full serializer code and a clear prompt. Claude tends to generate more exhaustive edge case coverage, while GPT-4o is slightly better at inferring factory patterns from ORM models. Copilot excels at generating individual test methods inline as you type, which suits incremental test writing rather than batch generation.
 
-Step 5: Refining AI-Generated Tests
+Step 5 - Refining AI-Generated Tests
 
 AI-generated tests provide excellent coverage for common scenarios, but you should review and enhance them. Add tests for edge cases specific to your business logic, security considerations, and performance requirements.
 
@@ -212,7 +212,7 @@ Beyond these structural additions, there are validation edge cases that AI consi
 - Email provider edge cases: Some real email addresses contain `+` characters (`user+tag@example.com`). Your regex or uniqueness check may incorrectly reject them.
 - Concurrent registration race conditions: Two users registering with the same email simultaneously can both pass the uniqueness check before either inserts. AI will not generate a test for this. you need to handle it at the database constraint level.
 
-Step 6: Set Up Your Test Environment
+Step 6 - Set Up Your Test Environment
 
 Ensure your project has the necessary dependencies installed:
 
@@ -246,7 +246,7 @@ Best Practices for AI-Generated Tests
 
 When using AI to generate tests, follow these guidelines for better results:
 
-Provide complete context. Include relevant imports, fixtures, and any custom validator classes. AI performs better when it understands your entire testing ecosystem.
+Provide complete context. Include relevant imports, fixtures, and any custom validator classes. AI performs better when it understands your entire testing environment.
 
 Specify test naming conventions. Consistent naming helps maintain readability. Use descriptive names that explain what each test verifies.
 
@@ -273,7 +273,7 @@ class UserFactory(factory.django.DjangoModelFactory):
 
 When you include this factory in your prompt, the AI generates tests using `UserFactory.create()` for existing user fixtures rather than `User.objects.create_user()`, keeping your test suite consistent.
 
-Step 7: Automate Test Generation Workflow
+Step 7 - Automate Test Generation Workflow
 
 You can improve AI test generation by maintaining a prompt template:
 
@@ -288,7 +288,7 @@ Include tests for:
 Serializer code:
 [PASTE SERIALIZER CODE]
 
-Test framework: pytest with DRF's APITestCase
+Test framework - pytest with DRF's APITestCase
 ```
 
 This approach makes generating tests for new serializers repeatable and efficient.

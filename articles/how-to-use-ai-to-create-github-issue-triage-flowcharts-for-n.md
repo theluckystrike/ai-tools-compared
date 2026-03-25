@@ -24,7 +24,7 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Troubleshooting](#troubleshooting)
 - [Advanced Automation with GitHub Actions](#advanced-automation-with-github-actions)
-- [Comparison: Manual vs AI-Assisted Triage](#comparison-manual-vs-ai-assisted-triage)
+- [Comparison - Manual vs AI-Assisted Triage](#comparison-manual-vs-ai-assisted-triage)
 
 Understanding the Triage Workflow Requirements
 
@@ -54,7 +54,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Generate Flowcharts with AI
+Step 1 - Generate Flowcharts with AI
 
 Modern AI coding assistants and chat tools can generate flowchart definitions in formats like Mermaid.js, which GitHub renders natively in Markdown files. This makes Mermaid an ideal output format since it integrates directly into your repository's documentation.
 
@@ -101,7 +101,7 @@ flowchart TD
     P4 --> Backlog[Add to Backlog]
 ```
 
-Step 2: Customizing for Your Project Size
+Step 2 - Customizing for Your Project Size
 
 Small projects with a handful of contributors need simpler workflows than large enterprise open source projects. Adjust your AI prompts based on your actual operational needs.
 
@@ -133,7 +133,7 @@ For large projects (20+ maintainers):
 
 Your AI prompt should explicitly state your project scale so the generated flowchart matches your operational reality.
 
-Step 3: Integrate Labels and Automation
+Step 3 - Integrate Labels and Automation
 
 Effective triage flowcharts should reference GitHub Labels and automation tools. Include these details in your AI prompts for more actionable outputs:
 
@@ -188,7 +188,7 @@ jobs:
             }
 ```
 
-Step 4: Maintaining and Evolving Your Flowchart
+Step 4 - Maintaining and Evolving Your Flowchart
 
 Your triage flowchart is a living document. Set up a process to review and update it quarterly or whenever your contribution patterns change significantly. AI tools can help with this too, paste your existing Mermaid diagram and ask for modifications rather than starting from scratch.
 
@@ -202,7 +202,7 @@ Common evolution triggers include:
 
 - Feedback from new contributors about unclear processes
 
-Step 5: Practical Implementation Steps
+Step 5 - Practical Implementation Steps
 
 1. Document your current informal process - Write down the decisions you currently make when triaging issues, even if they're not written anywhere
 
@@ -281,8 +281,8 @@ class GitHubIssueTriageBot:
 5. Recommended assignee profile
 6. Whether this is a duplicate (query against common patterns)
 
-ISSUE TITLE: {issue_title}
-ISSUE BODY: {issue_body}
+ISSUE TITLE - {issue_title}
+ISSUE BODY - {issue_body}
 
 Return as JSON with these exact keys: type, severity, priority, labels, assignee_profile, is_duplicate"""
 
@@ -328,7 +328,7 @@ Return as JSON with these exact keys: type, severity, priority, labels, assignee
 
 This bot can automatically label and assign issues in GitHub Actions workflows.
 
-Step 6: Triage Performance Metrics
+Step 6 - Triage Performance Metrics
 
 Measure the effectiveness of your AI-enhanced triage workflow:
 
@@ -388,7 +388,7 @@ class TriageAnalytics:
 
 Track these metrics monthly to continuously improve triage quality.
 
-Step 7: Multi-Repository Triage Orchestration
+Step 7 - Multi-Repository Triage Orchestration
 
 Manage triage across multiple related repositories:
 
@@ -434,7 +434,7 @@ jobs:
 
 This workflow ensures consistent triage across a monorepo or multiple related projects.
 
-Comparison: Manual vs AI-Assisted Triage
+Comparison - Manual vs AI-Assisted Triage
 
 Real data from open-source projects:
 
@@ -448,7 +448,7 @@ Real data from open-source projects:
 
 AI-assisted triage cuts issue processing time by 60% while improving consistency.
 
-Step 8: Scaling Triage for 1000+ Issues Per Month
+Step 8 - Scaling Triage for 1000+ Issues Per Month
 
 Production-grade implementation for high-volume projects:
 
@@ -513,7 +513,7 @@ class ScalableTriageSystem:
 
 This scales to 1000s of issues/month by batching and parallelizing API calls.
 
-Step 9: Custom Label Taxonomy Design
+Step 9 - Custom Label Taxonomy Design
 
 Different projects benefit from different label structures:
 
@@ -567,7 +567,7 @@ Can AI identify duplicate issues across old and new reports?
 Yes, if you provide context of previously triaged issues. Create a vector database of old issues and have Claude search for semantic similarity.
 
 What if AI makes consistently wrong decisions for our type of issues?
-Provide negative examples: "Here's a bug issue you categorized as feature - here's why that's wrong..." Claude learns from corrections quickly.
+Provide negative examples - "Here's a bug issue you categorized as feature - here's why that's wrong..." Claude learns from corrections quickly.
 
 Should we trust AI for critical security issues?
 No. Critical security issues should always get human review before public visibility. Use AI for initial categorization only.

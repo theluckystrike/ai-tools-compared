@@ -46,7 +46,7 @@ Why Code Structure Matters for AI Autocomplete
 
 AI code completion tools work by analyzing patterns from your current file, surrounding files, and learned patterns from similar projects. When your codebase follows consistent patterns and clear organization, these tools can make better predictions about what you're likely to write next.
 
-Consider two scenarios: in a disorganized project with mixed naming conventions and tangled dependencies, AI suggestions often miss the mark. In a well-structured project with clear module boundaries and consistent patterns, the same AI tool provides highly relevant code completions that feel almost telepathic.
+Consider two scenarios - in a disorganized project with mixed naming conventions and tangled dependencies, AI suggestions often miss the mark. In a well-structured project with clear module boundaries and consistent patterns, the same AI tool provides highly relevant code completions that feel almost telepathic.
 
 The difference isn't the AI, it's how you structure your code.
 
@@ -60,7 +60,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Use Clear and Consistent Naming Conventions
+Step 1 - Use Clear and Consistent Naming Conventions
 
 Naming conventions serve as the primary communication channel between you and AI coding assistants. When you use descriptive, consistent names for variables, functions, classes, and files, AI tools can accurately predict what you intend to write.
 
@@ -99,17 +99,17 @@ user_authentication.py
 
 When AI tools can infer file purpose from names, they provide more relevant suggestions based on the context of what you're working on.
 
-Step 2: Organize Code into Logical Modules
+Step 2 - Organize Code into Logical Modules
 
 Grouping related functionality into clear modules helps AI assistants understand the architectural context of your code. This separation allows AI tools to make predictions based on which module you're working in.
 
 Python Project Structure
 
 ```python
-Before: Everything in one file
+Before - Everything in one file
 main.py - 2000 lines of mixed functionality
 
-After: Logical separation
+After - Logical separation
 models/
     user.py
     order.py
@@ -146,7 +146,7 @@ JavaScript/TypeScript Project Structure
 
 This structure helps AI assistants understand feature boundaries and provide more relevant suggestions within each context.
 
-Step 3: Use Type Annotations and Documentation
+Step 3 - Use Type Annotations and Documentation
 
 Type hints and documentation significantly improve AI comprehension of your code's intent. Modern AI assistants use type information to narrow down suggestion possibilities.
 
@@ -206,7 +206,7 @@ function processOrder(order: Order): void {
 }
 ```
 
-Step 4: Write Code in Self-Contained Units
+Step 4 - Write Code in Self-Contained Units
 
 Functions and classes that do one thing well are easier for AI to understand and suggest completions for. When each unit has a clear single responsibility, AI tools can predict the next logical operation more accurately.
 
@@ -246,7 +246,7 @@ async function handleUserRegistration(userData) {
 
 The refactored version allows AI to understand each step clearly and suggest appropriate completions for each function.
 
-Step 5: Use Consistent Import Patterns
+Step 5 - Use Consistent Import Patterns
 
 AI assistants track your import statements to understand available functionality. Consistent, explicit imports help AI suggest the right functions and classes.
 

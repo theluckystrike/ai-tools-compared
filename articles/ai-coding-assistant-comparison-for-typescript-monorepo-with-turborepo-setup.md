@@ -50,13 +50,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What TypeScript Monorepos with Turborepo Require
+Step 1 - What TypeScript Monorepos with Turborepo Require
 
 TypeScript monorepos using Turborepo have distinct characteristics that affect AI assistant effectiveness. The directory structure typically includes a root `turbo.json`, multiple packages in `packages/` or `apps/`, shared TypeScript configurations, and workspace-aware package managers like pnpm or npm workspaces. An AI assistant must understand how changes in one package affect dependent packages, recognize which tasks can run in parallel, and work with TypeScript project references properly.
 
 Turborepo's task pipeline defined in `turbo.json` creates another layer of complexity. The assistant should understand task dependencies, caching behavior, and how to generate code that respects the monorepo boundaries. These requirements narrow down which AI tools provide genuine value in this specific setup.
 
-Step 2: Claude Code
+Step 2 - Claude Code
 
 Claude Code offers strong capabilities for TypeScript monorepos with Turborepo. Its ability to analyze entire repositories makes it effective at understanding cross-package dependencies. When you ask Claude Code to generate a new utility function, it can identify which existing packages might benefit from that function and suggest the appropriate exports.
 
@@ -76,7 +76,7 @@ export function formatDate(date: Date, locale = 'en-US'): string {
 
 Claude Code excels at explaining build errors that span multiple packages, a common occurrence in monorepos when TypeScript project references break. It can trace dependency chains to identify the root cause of compilation issues.
 
-Step 3: Cursor
+Step 3 - Cursor
 
 Cursor provides IDE-level integration with strong monorepo awareness. Its agent mode can navigate between packages, understand workspace structure, and perform multi-file edits across your entire repository. The context window handles large monorepos effectively, though you may need to be explicit about which packages to focus on.
 
@@ -84,7 +84,7 @@ For Turborepo specifically, Cursor can edit your `turbo.json` configuration and 
 
 Cursor's strength lies in its ability to maintain context across sessions. When working on a feature that touches several packages, Cursor remembers previous decisions and can continue where you left off. This becomes valuable in large monorepos where a single feature might require changes spread across multiple packages.
 
-Step 4: GitHub Copilot
+Step 4 - GitHub Copilot
 
 GitHub Copilot integrates well with popular IDEs like VS Code and provides inline suggestions as you type. For Turborepo monorepos, Copilot understands workspace dependencies and can suggest imports from other packages in your monorepo. However, its suggestions sometimes miss the broader context of your monorepo structure.
 
@@ -115,20 +115,20 @@ export function Button({ children, variant = 'primary', ...props }: ButtonProps)
 
 Copilot's advantage is its low barrier to entry, it's already integrated into editors many developers use daily. For teams already using GitHub, Copilot provides a familiar experience without additional tooling.
 
-Step 5: Zed
+Step 5 - Zed
 
 Zed offers fast editor performance with AI assistant capabilities. Written in Rust, it provides excellent speed for large TypeScript monorepos. The assistant can analyze code quickly and provide suggestions without significant latency. Zed's multi-cursor editing complements AI assistance when making repetitive changes across multiple files.
 
 For Turborepo workflows, Zed handles the editor-side well but lacks some of the deep IDE integrations that Cursor provides. The tool works best for developers who value editor speed and are comfortable working with multiple terminal windows for Turborepo commands.
 
-Step 6: Monorepo-Specific Test Case
+Step 6 - Monorepo-Specific Test Case
 
 To evaluate which assistant suits your team, try this practical test across all tools. Create a feature that involves:
 1. A shared utility package (`packages/shared`)
 2. A consumer package (`packages/web`)
 3. Updates to `turbo.json` task dependencies
 
-Test prompt: "Add a new memoization utility to packages/shared/src/cache.ts that prevents redundant API calls. Update the web app to use this utility in its data fetching hook. Ensure the Turborepo cache key includes both the utility and any API responses."
+Test prompt - "Add a new memoization utility to packages/shared/src/cache.ts that prevents redundant API calls. Update the web app to use this utility in its data fetching hook. Ensure the Turborepo cache key includes both the utility and any API responses."
 
 Expected output comparison:
 
@@ -144,7 +144,7 @@ Claude Code and Cursor should generate code that:
 - Understands that changes to the utility may invalidate downstream build cache
 - Suggests appropriate TypeScript configurations for cross-package references
 
-Step 7: Real-World Workflow: Feature Implementation Across Packages
+Step 7 - Real-World Workflow: Feature Implementation Across Packages
 
 Here's a realistic scenario using a Turborepo monorepo:
 
@@ -172,19 +172,19 @@ packages/
 turbo.json
 ```
 
-Task: Implement request deduplication across the monorepo.
+Task - Implement request deduplication across the monorepo.
 
-With Cursor: You describe the requirement, Cursor examines your `turbo.json`, understands the task dependencies, and generates:
+With Cursor - You describe the requirement, Cursor examines your `turbo.json`, understands the task dependencies, and generates:
 - A deduplication cache in `packages/shared`
 - Integration in `packages/web`'s `useData` hook
 - Recognition that `packages/api` might benefit from the same pattern
 - Proper export from `packages/shared/index.ts`
 
-With Claude Code: Similar capability but requires more explicit guidance about file locations. However, it provides excellent explanations of the monorepo structure and potential dependency issues.
+With Claude Code - Similar capability but requires more explicit guidance about file locations. However, it provides excellent explanations of the monorepo structure and potential dependency issues.
 
-With GitHub Copilot: Generates good code within individual files but may miss that changes to the shared utility require cache invalidation in dependent packages.
+With GitHub Copilot - Generates good code within individual files but may miss that changes to the shared utility require cache invalidation in dependent packages.
 
-Step 8: Making the Right Choice
+Step 8 - Making the Right Choice
 
 The best AI coding assistant depends on your workflow preferences and monorepo complexity:
 
@@ -211,7 +211,7 @@ Pricing and Subscription Comparison
 
 For Turborepo teams, Cursor provides the best value despite higher cost due to superior monorepo understanding. Claude Code is most cost-effective for terminal-focused developers.
 
-Step 9: CLI Setup for Turborepo Projects
+Step 9 - CLI Setup for Turborepo Projects
 
 Configure AI assistants for optimal monorepo performance:
 
@@ -246,7 +246,7 @@ Generate feature across packages
 claude "Add a caching utility to packages/shared and integrate it into packages/web's data fetching"
 ```
 
-Step 10: Monorepo-Specific Code Examples
+Step 10 - Monorepo-Specific Code Examples
 
 Here are patterns that demonstrate which assistants handle monorepo complexity well:
 
@@ -349,7 +349,7 @@ Claude Code, Cursor, and decent implementations should recognize:
 
 GitHub Copilot often generates correct code for individual files but misses the cross-package context.
 
-Step 11: Turborepo Task Understanding
+Step 11 - Turborepo Task Understanding
 
 Test which AI understands Turborepo's task pipeline:
 
@@ -374,7 +374,7 @@ Test which AI understands Turborepo's task pipeline:
 }
 ```
 
-When you ask: "What happens if I modify packages/shared and run `turbo run build`?"
+When you ask - "What happens if I modify packages/shared and run `turbo run build`?"
 
 Good answer (Claude/Cursor):
 "Turborepo sees that packages/shared exports have changed, invalidates the cache for packages/shared#build, then rebuilds all packages that depend on it (dependsOn: ^build). The web, api, and cli packages will be rebuilt in parallel based on their dependency order."
@@ -382,7 +382,7 @@ Good answer (Claude/Cursor):
 Poor answer (Copilot):
 "It rebuilds packages/shared and then other packages" (lacks task graph understanding)
 
-Step 12: Workspace Configuration Patterns
+Step 12 - Workspace Configuration Patterns
 
 AI assistants should understand workspace-specific patterns:
 
@@ -403,11 +403,11 @@ AI assistants should understand workspace-specific patterns:
 
 When generating code for multiple packages, Claude and Cursor correctly use `@myorg/shared` imports, while Copilot might generate relative imports like `../shared/src/cache`.
 
-Step 13: Real-World Feature Implementation Test
+Step 13 - Real-World Feature Implementation Test
 
 Here's a test case for evaluating monorepo understanding:
 
-Requirement: Add request deduplication to prevent duplicate API calls when the same endpoint is requested multiple times in quick succession.
+Requirement - Add request deduplication to prevent duplicate API calls when the same endpoint is requested multiple times in quick succession.
 
 Expected output from good monorepo AI:
 
@@ -419,10 +419,10 @@ Expected output from good monorepo AI:
 6. Suggest updating `turbo.json` task cache if appropriate
 
 What Claude Code and Cursor typically produce: All 6 items above
-What GitHub Copilot produces: Items 1-4 only, with relative imports instead of path aliases
-What Zed produces: Items 1-4, partial path alias understanding
+What GitHub Copilot produces - Items 1-4 only, with relative imports instead of path aliases
+What Zed produces - Items 1-4, partial path alias understanding
 
-Step 14: Monorepo Anti-Patterns to Watch
+Step 14 - Monorepo Anti-Patterns to Watch
 
 Good AI assistants catch these common monorepo mistakes:
 
@@ -456,7 +456,7 @@ claude "refactor this component to use hooks" --measure-impact
 
 Track cache hit rates
 turbo run build --summarize
-Output shows: Cache hit rate improved from 45% to 78% after AI-assisted optimization
+Output shows - Cache hit rate improved from 45% to 78% after AI-assisted optimization
 ```
 
 Troubleshooting

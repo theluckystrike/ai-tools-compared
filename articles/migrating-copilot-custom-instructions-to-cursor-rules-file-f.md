@@ -23,7 +23,7 @@ If you have been using GitHub Copilot with custom instructions and want to switc
 - Does Copilot offer a: free tier? Most major tools offer some form of free tier or trial period.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
-- Cursor: on the other hand, uses `.cursorrules` files that support structured YAML-like syntax with distinct sections for different types of instructions.
+- Cursor - on the other hand, uses `.cursorrules` files that support structured YAML-like syntax with distinct sections for different types of instructions.
 - Only use let when: the variable must be reassigned later.
 
 Key Differences Between Copilot and Cursor Configuration
@@ -34,7 +34,7 @@ Copilot custom instructions work as flat text guidelines that Copilot appends to
 
 Finding Your Copilot Custom Instructions
 
-Before migrating, locate your existing Copilot configuration. In VSCode, go to Settings and search for "Chat: Instructions" under GitHub Copilot Chat. You can also check your `.vscode/settings.json` file directly:
+Before migrating, locate your existing Copilot configuration. In VSCode, go to Settings and search for "Chat - Instructions" under GitHub Copilot Chat. You can also check your `.vscode/settings.json` file directly:
 
 ```json
 {
@@ -198,17 +198,17 @@ Common Conversion Mistakes to Avoid
 
 When migrating, watch for these common issues:
 
-Problem: Putting too much in a single rule.
+Problem - Putting too much in a single rule.
 
-Solution: Break complex guidelines into multiple smaller rules with clear descriptions.
+Solution - Break complex guidelines into multiple smaller rules with clear descriptions.
 
-Problem: Using Copilot-specific terminology.
+Problem - Using Copilot-specific terminology.
 
-Solution: Replace references to "Copilot" with generic AI assistant terms that work with any tool.
+Solution - Replace references to "Copilot" with generic AI assistant terms that work with any tool.
 
-Problem: Forgetting to escape special characters.
+Problem - Forgetting to escape special characters.
 
-Solution: In YAML, special characters like `:`, `{`, `}`, and `[` need proper escaping or quoting.
+Solution - In YAML, special characters like `:`, `{`, `}`, and `[` need proper escaping or quoting.
 
 Advanced Cursor Rules Configuration
 

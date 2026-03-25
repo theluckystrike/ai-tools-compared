@@ -44,13 +44,13 @@ Understanding Your Coverage Options
 
 Freelancers in the United States typically have several routes to health insurance coverage:
 
-ACA Marketplace Plans: The Affordable Care Act marketplace offers plans with subsidies based on income. For freelancers with variable income, understanding how to estimate your annual earnings impacts your subsidy eligibility.
+ACA Marketplace Plans - The Affordable Care Act marketplace offers plans with subsidies based on income. For freelancers with variable income, understanding how to estimate your annual earnings impacts your subsidy eligibility.
 
-Health Sharing Ministries: Faith-based cost-sharing programs that can offer lower monthly contributions but aren't traditional insurance.
+Health Sharing Ministries - Faith-based cost-sharing programs that can offer lower monthly contributions but aren't traditional insurance.
 
-Association Health Plans: Professional associations often negotiate group rates for members, sometimes at more competitive prices than individual marketplace plans.
+Association Health Plans - Professional associations often negotiate group rates for members, sometimes at more competitive prices than individual marketplace plans.
 
-Short-Term Plans: Limited-duration policies that can bridge gaps but don't provide coverage.
+Short-Term Plans - Limited-duration policies that can bridge gaps but don't provide coverage.
 
 Building an Insurance Comparison Tool
 
@@ -298,9 +298,9 @@ Keep income projections conservative: If your income fluctuates significantly, b
 
 Consider catastrophic coverage if young and healthy: For freelancers under 30, catastrophic plans have lower premiums but high deductibles. The math works if you have minimal healthcare needs.
 
-Track all medical expenses: Even with insurance, many expenses count toward your deductible and out-of-pocket maximum. Keep meticulous records.
+Track all medical expenses - Even with insurance, many expenses count toward your deductible and out-of-pocket maximum. Keep meticulous records.
 
-Don't ignore dental and vision: These often require separate policies or add-ons. Factor them into your total coverage cost.
+Don't ignore dental and vision - These often require separate policies or add-ons. Factor them into your total coverage cost.
 
 Making Your Decision
 

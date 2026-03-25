@@ -26,7 +26,7 @@ Table of Contents
 - [How to Access Canvas](#how-to-access-canvas)
 - [What You Can Do in Canvas](#what-you-can-do-in-canvas)
 - [Common Questions](#common-questions)
-- [Practical Example: Writing a Blog Post in Canvas](#practical-example-writing-a-blog-post-in-canvas)
+- [Practical Example - Writing a Blog Post in Canvas](#practical-example-writing-a-blog-post-in-canvas)
 - [Canvas Code Review Workflow](#canvas-code-review-workflow)
 - [Canvas SEO Optimization Workflow](#canvas-seo-optimization-workflow)
 - [Pro Tips for Power Users](#pro-tips-for-power-users)
@@ -171,7 +171,7 @@ Canvas is currently available on the web interface and the desktop application. 
 
 Yes. If you have a custom GPT configured in Plus or Team, you can invoke it within a Canvas session. The custom GPT's system prompt applies to the Canvas context, letting you use specialized personas or domain-specific instructions while editing documents.
 
-Practical Example: Writing a Blog Post in Canvas
+Practical Example - Writing a Blog Post in Canvas
 
 Here's how a content creator might use Canvas:
 
@@ -192,7 +192,7 @@ Canvas Code Review Workflow
 For engineering teams using the Team plan, Canvas provides a structured code review workflow. Here is how to use it effectively:
 
 1. Paste a pull request diff or entire function into Canvas in Code mode.
-2. Prompt: "Review this code for security vulnerabilities, performance issues, and style inconsistencies."
+2. Prompt - "Review this code for security vulnerabilities, performance issues, and style inconsistencies."
 3. ChatGPT annotates specific lines and suggests rewrites inline.
 4. Use Suggest mode so each fix appears as a tracked change, accept or reject individually.
 5. Export the final version as a patch or copy directly into your editor.
@@ -214,7 +214,7 @@ Ensure the primary keyword appears in the first 100 words.
 
 Step 3 -- Internal link suggestions:
 Identify 3 anchor text phrases in the article that could link to related pages.
-Format as: [anchor text] -> [suggested destination topic]
+Format as - [anchor text] -> [suggested destination topic]
 
 Step 4 -- Readability pass:
 Break any paragraph longer than 4 sentences. Convert lists of 4+ items to bullet points.
@@ -255,7 +255,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 Related Articles
 
-- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
+- [ChatGPT Plus Cancel Mid Month - Do You Keep Access Until End?](/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
 - [Switching from ChatGPT Plus to Perplexity Pro Feature](/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
 - [ChatGPT Plus Subscription Not Activating](/chatgpt-plus-subscription-not-activating-fix/)
 - [Claude Artifacts vs ChatGPT Canvas Comparison](/claude-artifacts-vs-chatgpt-canvas-comparison/)

@@ -23,7 +23,7 @@ Table of Contents
 - [How Schools Secure Volume Discounts](#how-schools-secure-volume-discounts)
 - [Implementation Considerations](#implementation-considerations)
 - [Cost-Benefit Analysis for IT Decision-Makers](#cost-benefit-analysis-for-it-decision-makers)
-- [Practical Example: District Rollout Budget](#practical-example-district-rollout-budget)
+- [Practical Example - District Rollout Budget](#practical-example-district-rollout-budget)
 - [Negotiation Tactics That Work](#negotiation-tactics-that-work)
 - [Maximizing ROI from ChatGPT Edu](#maximizing-roi-from-chatgpt-edu)
 - [Security and Compliance](#security-and-compliance)
@@ -156,7 +156,7 @@ Evaluating ChatGPT Edu requires comparing against alternatives:
 
 The privacy advantages of ChatGPT Edu, where data is not used for model training, often justify the cost for institutions handling sensitive student information. Districts subject to state privacy laws stricter than FERPA, such as California's SOPIPA or New York's Education Law 2-d, should specifically verify that ChatGPT Edu's data processing agreements satisfy those requirements before signing.
 
-Practical Example: District Rollout Budget
+Practical Example - District Rollout Budget
 
 Consider a mid-sized district with 30,000 students across 45 schools:
 
@@ -176,9 +176,9 @@ Additional Costs:
 
 - Admin configuration: $5,000 (ongoing)
 
-Year 1 Total: $357,500
+Year 1 Total - $357,500
 
-Years 2-3 Total: $337,500/year
+Years 2-3 Total - $337,500/year
 
 This positions the district to negotiate further based on demonstrated adoption rates and successful outcomes.
 

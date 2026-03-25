@@ -34,7 +34,7 @@ Use AI assistants like Claude, Cursor, or GitHub Copilot to quickly diagnose why
 - This ENI attachment is: the primary cause of cold start delays, often adding 6-10 seconds or more to your function's first invocation.
 - Recommend best practices for: keeping the function warm ``` ### AI-Generated Optimization Strategies Based on your configuration, an AI assistant will typically recommend: 1.
 - Cost is roughly $0.015/hour: per proxy instance, which pays for itself in reduced cold starts within the first week.
-- Current configuration: - Runtime: Python 3.11
+- Current configuration - - Runtime: Python 3.11
 - Memory: 256 MB
 - Timeout: 30 seconds
 - VPC: 2 subnets, 1 security group
@@ -42,7 +42,7 @@ Use AI assistants like Claude, Cursor, or GitHub Copilot to quickly diagnose why
 Please help me:
 1.
 - Identify the likely causes: of the cold start delay 2.
-- DNS Resolution Time: If your function does DNS lookups during initialization, that adds 100-500ms.
+- DNS Resolution Time - If your function does DNS lookups during initialization, that adds 100-500ms.
 
 Understanding Lambda Cold Start in VPC
 
@@ -153,13 +153,13 @@ AI-Generated Optimization Strategies
 
 Based on your configuration, an AI assistant will typically recommend:
 
-1. Increase Memory: Higher memory allocations provide more CPU power, which can reduce initialization time. The relationship is linear, doubling memory roughly halves initialization time.
+1. Increase Memory - Higher memory allocations provide more CPU power, which can reduce initialization time. The relationship is linear, doubling memory roughly halves initialization time.
 
-2. Implement Provisioned Concurrency: For predictable workloads, provision warm instances that eliminate cold starts entirely. AI can help you calculate the cost-benefit.
+2. Implement Provisioned Concurrency - For predictable workloads, provision warm instances that eliminate cold starts entirely. AI can help you calculate the cost-benefit.
 
-3. Use RDS Proxy: RDS Proxy manages a pool of database connections that Lambda functions can share, dramatically reducing cold start impact.
+3. Use RDS Proxy - RDS Proxy manages a pool of database connections that Lambda functions can share, dramatically reducing cold start impact.
 
-4. Optimize VPC Configuration: AI can analyze your subnet and security group setup to identify unnecessary complexity that adds to initialization time.
+4. Optimize VPC Configuration - AI can analyze your subnet and security group setup to identify unnecessary complexity that adds to initialization time.
 
 Implementing VPC Endpoints for Faster Starts
 
@@ -195,23 +195,23 @@ Best Practices for AI-Assisted Lambda Debugging
 
 When working with AI tools to diagnose Lambda cold start issues, follow these practices:
 
-1. Provide Complete Context: Include your function's full configuration, not just the VPC settings. The memory allocation, runtime, and timeout settings all impact cold start behavior.
+1. Provide Complete Context - Include your function's full configuration, not just the VPC settings. The memory allocation, runtime, and timeout settings all impact cold start behavior.
 
-2. Share Error Messages: Include any timeout or initialization error messages your Lambda produces. AI tools can correlate these with specific causes.
+2. Share Error Messages - Include any timeout or initialization error messages your Lambda produces. AI tools can correlate these with specific causes.
 
-3. Show Your Code: Share the initialization code within your Lambda handler. AI assistants can identify patterns that delay cold starts, such as synchronous external API calls during initialization.
+3. Show Your Code - Share the initialization code within your Lambda handler. AI assistants can identify patterns that delay cold starts, such as synchronous external API calls during initialization.
 
-4. Iterate on Solutions: After implementing initial suggestions, ask AI to review the results and suggest further optimizations if cold start times remain high.
+4. Iterate on Solutions - After implementing initial suggestions, ask AI to review the results and suggest further optimizations if cold start times remain high.
 
 Comparing AI Tools for Lambda Debugging
 
 Different AI assistants have varying strengths for debugging VPC Lambda issues:
 
-- Claude: Excellent at explaining AWS networking concepts and generating complete, production-ready code patterns for connection pooling and VPC configuration.
+- Claude - Excellent at explaining AWS networking concepts and generating complete, production-ready code patterns for connection pooling and VPC configuration.
 
-- Cursor: Particularly good at analyzing your existing codebase and suggesting in-line optimizations that integrate with your current patterns.
+- Cursor - Particularly good at analyzing your existing codebase and suggesting in-line optimizations that integrate with your current patterns.
 
-- GitHub Copilot: Strong at generating AWS CDK and CloudFormation templates for VPC infrastructure alongside Lambda configurations.
+- GitHub Copilot - Strong at generating AWS CDK and CloudFormation templates for VPC infrastructure alongside Lambda configurations.
 
 All three can help you implement provisioned concurrency, configure RDS Proxy, and optimize your Lambda's initialization code. The choice depends on your existing workflow and which interface you prefer for iterative debugging.
 
@@ -255,7 +255,7 @@ def lambda_handler(event, context):
         }
 ```
 
-Key benefits: RDS Proxy reduces cold start overhead from 6-10 seconds to under 500ms because connections are pre-established and reused. Cost is roughly $0.015/hour per proxy instance, which pays for itself in reduced cold starts within the first week.
+Key benefits - RDS Proxy reduces cold start overhead from 6-10 seconds to under 500ms because connections are pre-established and reused. Cost is roughly $0.015/hour per proxy instance, which pays for itself in reduced cold starts within the first week.
 
 Lambda Memory and Execution Speed Trade-offs
 
@@ -286,19 +286,19 @@ def handler_with_timing(event, context):
     }
 ```
 
-Scaling rule: Memory allocations from 128MB to 3008MB scale linearly. Moving from 256MB to 512MB roughly halves execution time for CPU-bound code and costs 1.25x more per invocation, but fewer invocations total = lower monthly bill. AI tools can model this trade-off for your specific workload.
+Scaling rule - Memory allocations from 128MB to 3008MB scale linearly. Moving from 256MB to 512MB roughly halves execution time for CPU-bound code and costs 1.25x more per invocation, but fewer invocations total = lower monthly bill. AI tools can model this trade-off for your specific workload.
 
 VPC Lambda Cold Start Troubleshooting Checklist
 
 When diagnosing cold start delays, AI assistants recommend checking these factors in order:
 
-1. ENI Availability: Check your VPC's available ENIs in CloudWatch. If you frequently see all ENIs in use, you need more subnet capacity or to reduce your Lambda concurrency.
+1. ENI Availability - Check your VPC's available ENIs in CloudWatch. If you frequently see all ENIs in use, you need more subnet capacity or to reduce your Lambda concurrency.
 
-2. Subnet IPAM Configuration: Verify your subnets have sufficient IP address space. If IP exhaustion is blocking ENI attachment, you need to expand your CIDR blocks.
+2. Subnet IPAM Configuration - Verify your subnets have sufficient IP address space. If IP exhaustion is blocking ENI attachment, you need to expand your CIDR blocks.
 
-3. Security Group Rules: Overly permissive inbound rules (allowing all ports from 0.0.0.0/0) don't slow Lambda, but restrictive egress rules do. Ensure your function can reach required external services.
+3. Security Group Rules - Overly permissive inbound rules (allowing all ports from 0.0.0.0/0) don't slow Lambda, but restrictive egress rules do. Ensure your function can reach required external services.
 
-4. DNS Resolution Time: If your function does DNS lookups during initialization, that adds 100-500ms. Pre-cache DNS or use VPC endpoints to avoid external DNS queries.
+4. DNS Resolution Time - If your function does DNS lookups during initialization, that adds 100-500ms. Pre-cache DNS or use VPC endpoints to avoid external DNS queries.
 
 AI assistants can analyze CloudWatch Logs Insights queries to identify which of these factors dominates your cold start delay:
 

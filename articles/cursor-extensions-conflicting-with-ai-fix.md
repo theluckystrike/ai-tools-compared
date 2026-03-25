@@ -38,7 +38,7 @@ To fix Cursor extensions conflicting with AI, disable all third-party extensions
 - Does Cursor offer a: free tier? Most major tools offer some form of free tier or trial period.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
-- Ensure Cursor AI triggers: retain their defaults: ``` Tab: Accept AI suggestion Ctrl+L: Open AI chat Ctrl+K: Quick edit with AI ``` The most commonly overridden binding is Tab.
+- Ensure Cursor AI triggers: retain their defaults: ``` Tab - Accept AI suggestion Ctrl+L - Open AI chat Ctrl+K - Quick edit with AI ``` The most commonly overridden binding is Tab.
 - Updates often include conflict fixes: ```bash
 Check for updates in:
 Cursor Settings → Updates
@@ -62,7 +62,7 @@ Diagnostic Steps
 
 Before applying fixes, identify the source of the conflict through systematic testing.
 
-Step 1: Reproduce the Issue
+Step 1 - Reproduce the Issue
 
 Document exactly when the conflict occurs:
 
@@ -74,7 +74,7 @@ Document exactly when the conflict occurs:
 
 Recording these details helps isolate the cause. A conflict that appears only in `.tsx` files points to a TypeScript-specific extension or language server. A conflict that resolves after restart suggests state interference rather than a persistent configuration problem.
 
-Step 2: Test in Safe Mode
+Step 2 - Test in Safe Mode
 
 Cursor includes an extension-safe mode for diagnostics:
 
@@ -88,7 +88,7 @@ Cursor includes an extension-safe mode for diagnostics:
 
 If AI works normally in safe mode, an extension is definitely causing the conflict. If problems persist, the issue lies elsewhere.
 
-Step 3: Identify the Culprit
+Step 3 - Identify the Culprit
 
 Re-enable extensions one at a time, testing AI functionality after each:
 
@@ -111,7 +111,7 @@ For faster isolation, use a binary search approach rather than re-enabling exten
 
 Step-by-Step Fixes
 
-Fix 1: Reset Conflicting Keybindings
+Fix 1 - Reset Conflicting Keybindings
 
 Many extension conflicts stem from keybinding overrides. To fix:
 
@@ -124,9 +124,9 @@ Many extension conflicts stem from keybinding overrides. To fix:
 4. Ensure Cursor AI triggers retain their defaults:
 
 ```
-Tab: Accept AI suggestion
-Ctrl+L: Open AI chat
-Ctrl+K: Quick edit with AI
+Tab - Accept AI suggestion
+Ctrl+L - Open AI chat
+Ctrl+K - Quick edit with AI
 ```
 
 The most commonly overridden binding is Tab. Extensions like `TabNine`, `Tabnine`, `Codeium`, or even `Emmet` may claim Tab for their own completion behavior. When Tab is claimed by another extension, Cursor's ghost text suggestions appear but cannot be accepted. The fix is to delete the conflicting binding in `keybindings.json` rather than in the extension's own settings, which may reinstall the binding on update:
@@ -142,7 +142,7 @@ The most commonly overridden binding is Tab. Extensions like `TabNine`, `Tabnine
 ]
 ```
 
-Fix 2: Configure Language Server Priority
+Fix 2 - Configure Language Server Priority
 
 When multiple language servers compete, Cursor's AI loses context. Fix this by setting explicit priorities:
 
@@ -167,7 +167,7 @@ For example, if using both ESLint and a custom linter:
 
 When you have both Pylance and a custom Python LSP active, you may notice that Cursor's AI generates code that the language server then marks with red squiggles. not because the code is wrong, but because the competing LSP interprets imports differently. Deactivating the secondary LSP resolves both the AI context issue and the spurious error highlighting simultaneously.
 
-Fix 3: Update or Reinstall Problematic Extensions
+Fix 3 - Update or Reinstall Problematic Extensions
 
 Outdated extensions frequently cause conflicts with Cursor updates:
 
@@ -177,7 +177,7 @@ Outdated extensions frequently cause conflicts with Cursor updates:
 
 3. Consider alternatives if the extension is abandoned
 
-Fix 4: Clear Extension Cache
+Fix 4 - Clear Extension Cache
 
 Corrupted extension state can mimic conflicts:
 
@@ -189,7 +189,7 @@ Restart Cursor, extensions will reinstall
 
 Cache corruption most often occurs after Cursor updates its core, when extension host state from the previous version becomes incompatible with the new runtime. The symptom is usually that extensions worked before the update and fail immediately after. not after installing a new extension. Clearing the cache forces a clean reinstall of all extension state.
 
-Fix 5: Adjust Extension Permissions
+Fix 5 - Adjust Extension Permissions
 
 Some extensions request unnecessary permissions that interfere with AI:
 
@@ -273,23 +273,23 @@ As a last resort, reset all settings:
 
 Common Scenarios and Solutions
 
-Scenario: AI Chat Produces No Response
+Scenario - AI Chat Produces No Response
 
 An extension may be blocking network requests or intercepting chat triggers. Disable network-interacting extensions first, then test chat functionality.
 
-Scenario: Autocomplete Shows Wrong Suggestions
+Scenario - Autocomplete Shows Wrong Suggestions
 
 A competing language server is overriding AI context. Explicitly set Cursor's language server as primary in settings.
 
-Scenario: AI Features Slow After Installing Extension
+Scenario - AI Features Slow After Installing Extension
 
 An extension is consuming excessive resources. Use Task Manager to identify resource-heavy extensions, then disable or replace them.
 
-Scenario: Cursor Crashes When AI Is Active
+Scenario - Cursor Crashes When AI Is Active
 
 An extension conflict is causing memory exhaustion. Increase available memory or disable memory-intensive extensions.
 
-Scenario: AI Works in Some Files But Not Others
+Scenario - AI Works in Some Files But Not Others
 
 This almost always indicates a file-type-specific language server conflict. Check which extensions activate for that file type using the status bar's language indicator, then disable competing LSPs for that language.
 

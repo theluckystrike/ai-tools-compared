@@ -39,7 +39,7 @@ Version mismatch errors occur when Cursor applies changes based on stale informa
 
 Step-by-Step Fixes
 
-Fix 1: Use Targeted File Selection
+Fix 1 - Use Targeted File Selection
 
 Rather than editing all files at once, narrow your edit scope:
 
@@ -53,7 +53,7 @@ Rather than editing all files at once, narrow your edit scope:
 
 This approach reduces context load and helps Cursor maintain accuracy across file boundaries.
 
-Fix 2: Implement Edit Chaining
+Fix 2 - Implement Edit Chaining
 
 For complex refactoring spanning multiple files, break your edits into sequential steps:
 
@@ -74,7 +74,7 @@ pytest
 
 This chaining method prevents Cursor from making inconsistent changes across interdependent files.
 
-Fix 3: Add Explicit Dependency Hints
+Fix 3 - Add Explicit Dependency Hints
 
 Include dependency information in your edit prompts:
 
@@ -86,7 +86,7 @@ The default should preserve existing behavior.
 
 The explicit mention of files and the specific relationship between them improves accuracy.
 
-Fix 4: Enable Edit Preview Mode
+Fix 4 - Enable Edit Preview Mode
 
 Before applying multi-file changes, use Cursor's preview capability:
 
@@ -100,7 +100,7 @@ Before applying multi-file changes, use Cursor's preview capability:
 
 This visual verification catches errors before they reach your codebase.
 
-Fix 5: Reset and Retry with Reduced Scope
+Fix 5 - Reset and Retry with Reduced Scope
 
 When multi-file edits consistently fail:
 
@@ -114,7 +114,7 @@ When multi-file edits consistently fail:
 
 Sometimes starting fresh with clearer context solves persistent issues.
 
-Fix 6: Use Cursor Rules for Structural Guardrails
+Fix 6 - Use Cursor Rules for Structural Guardrails
 
 Cursor's `.cursorrules` file (or the newer `cursor/rules/` directory in recent versions) lets you define persistent project-level instructions that apply to every AI interaction. This is different from per-prompt hints. rules are always active.
 
@@ -243,15 +243,15 @@ Recovering from a Bad Multi-File Edit
 
 When Cursor has already broken your codebase and you need to recover quickly, a structured approach is faster than reverting everything and starting over.
 
-Step 1: Assess the damage. Run your build and test commands immediately to get a full error list. Do not start fixing individual files yet. get the complete picture first.
+Step 1 - Assess the damage. Run your build and test commands immediately to get a full error list. Do not start fixing individual files yet. get the complete picture first.
 
-Step 2: Group errors by category. TypeScript errors group naturally by type: missing properties, incompatible signatures, undefined references. Fixing one category often resolves multiple errors at once.
+Step 2 - Group errors by category. TypeScript errors group naturally by type: missing properties, incompatible signatures, undefined references. Fixing one category often resolves multiple errors at once.
 
-Step 3: Start with type/interface definitions. If an interface or type was changed incorrectly, fixing it propagates corrections to all consumers. Address definition files before implementation files.
+Step 3 - Start with type/interface definitions. If an interface or type was changed incorrectly, fixing it propagates corrections to all consumers. Address definition files before implementation files.
 
-Step 4: Use Cursor's own chat to fix Cursor's mistakes. Paste your error output and ask Cursor to identify which of its edits caused the problem. This works surprisingly well. the model can often identify that it changed a return type in file A but forgot to update the corresponding handler in file B.
+Step 4 - Use Cursor's own chat to fix Cursor's mistakes. Paste your error output and ask Cursor to identify which of its edits caused the problem. This works surprisingly well. the model can often identify that it changed a return type in file A but forgot to update the corresponding handler in file B.
 
-Step 5: Verify with a clean build. After each recovery edit, run the full build again. Do not assume an edit is correct until the build confirms it.
+Step 5 - Verify with a clean build. After each recovery edit, run the full build again. Do not assume an edit is correct until the build confirms it.
 
 ```bash
 Quick recovery workflow

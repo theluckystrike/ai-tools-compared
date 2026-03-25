@@ -27,7 +27,7 @@ Table of Contents
 - [Tool Pricing and Availability](#tool-pricing-and-availability)
 - [Real Component Test Example](#real-component-test-example)
 - [Testing Patterns AI Can Help Generate](#testing-patterns-ai-can-help-generate)
-- [Deciding Between Tools: Decision Matrix](#deciding-between-tools-decision-matrix)
+- [Deciding Between Tools - Decision Matrix](#deciding-between-tools-decision-matrix)
 - [Troubleshooting Generated Tests](#troubleshooting-generated-tests)
 - [Test Maintenance and Updates](#test-maintenance-and-updates)
 - [Workflow Optimization](#workflow-optimization)
@@ -174,7 +174,7 @@ For standalone test generation, ChatGPT Plus and Claude.ai are most economical. 
 
 Real Component Test Example
 
-Component: A form with validation, loading state, and error handling
+Component - A form with validation, loading state, and error handling
 
 ```jsx
 // UserRegistrationForm.jsx
@@ -392,7 +392,7 @@ Ask your AI to include:
 4. Edge cases: Disabled states, error conditions
 5. User interactions: Type, click, wait patterns
 
-Deciding Between Tools: Decision Matrix
+Deciding Between Tools - Decision Matrix
 
 | Need | ChatGPT | Claude | Recommendation |
 |------|---------|--------|-----------------|
@@ -405,17 +405,17 @@ Deciding Between Tools: Decision Matrix
 
 Troubleshooting Generated Tests
 
-Issue: Selectors don't match your DOM
+Issue - Selectors don't match your DOM
 - ChatGPT often uses generic selectors
 - Claude usually asks about test IDs first
 - Provide specific DOM examples for better results
 
-Issue: Async tests fail intermittently
+Issue - Async tests fail intermittently
 - ChatGPT sometimes forgets proper wait logic
 - Claude includes better async patterns
 - Ask for `waitFor()` and proper timing explicitly
 
-Issue: Mocks don't match your actual module structure
+Issue - Mocks don't match your actual module structure
 - Both tools need examples of your actual module patterns
 - Provide a sample mock before generation
 - Ask specifically: "We stub fetch like this: [example]"

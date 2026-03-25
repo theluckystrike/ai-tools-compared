@@ -20,14 +20,14 @@ To transfer Custom GPTs to Claude Projects, export your GPT's system prompt, kno
 Table of Contents
 
 - [Understanding What You Are Migrating](#understanding-what-you-are-migrating)
-- [Step 1: Export Your Custom GPT Configuration](#step-1-export-your-custom-gpt-configuration)
-- [Step 2: Organize Your Resources](#step-2-organize-your-resources)
-- [Step 3: Recreate in Claude Projects](#step-3-recreate-in-claude-projects)
+- [Step 1 - Export Your Custom GPT Configuration](#step-1-export-your-custom-gpt-configuration)
+- [Step 2 - Organize Your Resources](#step-2-organize-your-resources)
+- [Step 3 - Recreate in Claude Projects](#step-3-recreate-in-claude-projects)
 - [Instructions](#instructions)
 - [Capabilities](#capabilities)
 - [Knowledge](#knowledge)
-- [Step 4: Preserve Conversation Starters](#step-4-preserve-conversation-starters)
-- [Step 5: Test and Iterate](#step-5-test-and-iterate)
+- [Step 4 - Preserve Conversation Starters](#step-4-preserve-conversation-starters)
+- [Step 5 - Test and Iterate](#step-5-test-and-iterate)
 - [Translating GPT Capabilities to Claude Equivalents](#translating-gpt-capabilities-to-claude-equivalents)
 - [Adapting System Prompts for Claude](#adapting-system-prompts-for-claude)
 - [Automating the Process for Multiple GPTs](#automating-the-process-for-multiple-gpts)
@@ -41,17 +41,17 @@ ChatGPT Custom GPTs store several components: the system prompt, user instructio
 
 Before starting, identify which GPTs you want to transfer and their purpose. Not every GPT needs migration; focus on those containing valuable custom instructions, specialized knowledge, or workflows you rely on frequently.
 
-Step 1: Export Your Custom GPT Configuration
+Step 1 - Export Your Custom GPT Configuration
 
 ChatGPT does not provide a one-click export for Custom GPTs, so you need to manually extract the configuration. Open your Custom GPT in the ChatGPT interface and note the following details:
 
-System Instructions: This is the core prompt defining your GPT's behavior. Copy this text exactly as written. Look for the "Instructions" or "Configure" section in the GPT editor.
+System Instructions - This is the core prompt defining your GPT's behavior. Copy this text exactly as written. Look for the "Instructions" or "Configure" section in the GPT editor.
 
-Knowledge Files: Any documents, PDFs, or text files you uploaded become part of the GPT's knowledge base. Download these individually from the GPT configuration page. If you have many files, you may need to access them through your ChatGPT account's data storage.
+Knowledge Files - Any documents, PDFs, or text files you uploaded become part of the GPT's knowledge base. Download these individually from the GPT configuration page. If you have many files, you may need to access them through your ChatGPT account's data storage.
 
-Conversation Starters: These are the example prompts shown when users start a new conversation with your GPT. Note these down as you may want to recreate them as project-specific shortcuts.
+Conversation Starters - These are the example prompts shown when users start a new conversation with your GPT. Note these down as you may want to recreate them as project-specific shortcuts.
 
-Capabilities: Check which capabilities your GPT uses, web browsing, image generation, or code interpreter. Claude Projects have different capability sets, so note these for reference.
+Capabilities - Check which capabilities your GPT uses, web browsing, image generation, or code interpreter. Claude Projects have different capability sets, so note these for reference.
 
 For developers comfortable with the ChatGPT API, you can also retrieve GPT configurations programmatically:
 
@@ -72,7 +72,7 @@ for gpt in gpts.data:
 
 This approach works if you have converted your Custom GPTs to Assistants API format, which gives you programmatic access to instructions and file IDs.
 
-Step 2: Organize Your Resources
+Step 2 - Organize Your Resources
 
 Create a local folder structure to hold your extracted resources:
 
@@ -90,7 +90,7 @@ my-gpt-migration/
 
 This organization mirrors how Claude Projects work, you can reference local files directly when working with Claude Code. Having a clean folder structure makes the recreation process much smoother.
 
-Step 3: Recreate in Claude Projects
+Step 3 - Recreate in Claude Projects
 
 With your resources organized, you can now build equivalent functionality in Claude Projects. There are two primary approaches:
 
@@ -136,7 +136,7 @@ claude
 
 The CLI reads CLAUDE.md and makes your knowledge files available during conversations.
 
-Step 4: Preserve Conversation Starters
+Step 4 - Preserve Conversation Starters
 
 ChatGPT conversation starters are quick-prompt templates. In Claude Projects, you can recreate these as reusable prompts. Create a `prompts/` folder with markdown files for each starter:
 
@@ -154,7 +154,7 @@ Add to your .bashrc or .zshrc
 alias claude-analyze="claude -p 'Analyze the following code for issues:'"
 ```
 
-Step 5: Test and Iterate
+Step 5 - Test and Iterate
 
 After recreating your GPT as a Claude Project, thorough testing reveals gaps between the original behavior and the new implementation. Ask the same questions you would ask your Custom GPT and compare responses. Common adjustments include:
 
@@ -207,7 +207,7 @@ You are a specialized code review assistant focused on Python best practices.
 </constraints>
 
 <output_format>
-Structure responses as: Issue | Severity | Recommendation | Example Fix
+Structure responses as - Issue | Severity | Recommendation | Example Fix
 </output_format>
 ```
 

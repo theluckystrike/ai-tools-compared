@@ -19,26 +19,26 @@ Free AI tools for learning to code include GitHub Copilot free tier, Claude via 
 
 Table of Contents
 
-- [Claude Code: Terminal-Based Learning Assistant](#claude-code-terminal-based-learning-assistant)
+- [Claude Code - Terminal-Based Learning Assistant](#claude-code-terminal-based-learning-assistant)
 - [GitHub Copilot for Students](#github-copilot-for-students)
-- [Codeium: Generous Free Tier for Individuals](#codeium-generous-free-tier-for-individuals)
-- [Cursor: IDE Built on AI-First Principles](#cursor-ide-built-on-ai-first-principles)
-- [Tabnine: Local AI Completion](#tabnine-local-ai-completion)
-- [Perplexity: Research and Documentation Helper](#perplexity-research-and-documentation-helper)
-- [Continue: Open Source IDE Extension](#continue-open-source-ide-extension)
+- [Codeium - Generous Free Tier for Individuals](#codeium-generous-free-tier-for-individuals)
+- [Cursor - IDE Built on AI-First Principles](#cursor-ide-built-on-ai-first-principles)
+- [Tabnine - Local AI Completion](#tabnine-local-ai-completion)
+- [Perplexity - Research and Documentation Helper](#perplexity-research-and-documentation-helper)
+- [Continue - Open Source IDE Extension](#continue-open-source-ide-extension)
 - [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
 - [How to Use AI Tools Without Stunting Your Learning](#how-to-use-ai-tools-without-stunting-your-learning)
-- [Debugging With AI: A Structured Approach](#debugging-with-ai-a-structured-approach)
+- [Debugging With AI - A Structured Approach](#debugging-with-ai-a-structured-approach)
 - [Combining Tools for Maximum Learning](#combining-tools-for-maximum-learning)
 
-Claude Code: Terminal-Based Learning Assistant
+Claude Code - Terminal-Based Learning Assistant
 
 Claude Code operates as a command-line AI assistant that excels at explaining code, debugging issues, and teaching programming concepts. It runs locally on your machine, providing privacy and no usage limits, critical advantages for students who spend hours coding daily.
 
 For students working on Python projects, Claude Code helps identify and fix common mistakes:
 
 ```python
-Bug: Accidentally using = instead of == in condition
+Bug - Accidentally using = instead of == in condition
 user_input = "hello"
 
 if user_input = "hello":  # Syntax error - assignment in condition
@@ -78,7 +78,7 @@ The inline suggestions expose students to error handling, proper async patterns,
 
 Students can sign up for the free education plan at github.com/education, verifying their school enrollment to unlock Copilot access.
 
-Codeium: Generous Free Tier for Individuals
+Codeium - Generous Free Tier for Individuals
 
 Codeium provides a free tier that includes unlimited code completion and chat assistance without requiring credit card information. This makes it accessible immediately without the friction of trial periods or subscription management.
 
@@ -119,7 +119,7 @@ function UserProfile({ userId }) {
 
 Codeium supports over 40 programming languages and integrates with VS Code, JetBrains, and Vim/Neovim.
 
-Cursor: IDE Built on AI-First Principles
+Cursor - IDE Built on AI-First Principles
 
 Cursor distinguishes itself as an editor built around AI collaboration rather than AI added to an existing editor. The free tier provides substantial capabilities for students learning to code.
 
@@ -149,7 +149,7 @@ def process_data(data: list[dict]) -> list[int]:
 
 This refactoring teaches students about type hints, docstrings, and defensive programming, concepts often skipped in introductory courses.
 
-Tabnine: Local AI Completion
+Tabnine - Local AI Completion
 
 Tabnine offers both cloud-based and local completion options. The free tier provides basic code completion while the local option keeps your code private and works without internet connectivity.
 
@@ -174,14 +174,14 @@ func readConfig(filename string) (*Config, error) {
 
 The tool learns from your coding patterns over time, becoming more personalized to your style as you continue using it.
 
-Perplexity: Research and Documentation Helper
+Perplexity - Research and Documentation Helper
 
 While not a code completion tool, Perplexity serves as an invaluable free resource for learning programming concepts. Its ability to search the web and synthesize information helps students understand documentation, find solutions to errors, and explore new technologies.
 
 Students learning databases can ask specific questions:
 
 ```
-Query: "What's the difference between PostgreSQL row-level security
+Query - "What's the difference between PostgreSQL row-level security
 and MySQL user privileges, with examples?"
 ```
 
@@ -189,7 +189,7 @@ Perplexity provides comparative answers with code examples, helping students mak
 
 The free tier includes significant daily query limits sufficient for most student workloads.
 
-Continue: Open Source IDE Extension
+Continue - Open Source IDE Extension
 
 Continue functions as an open-source extension for VS Code and JetBrains that brings AI pair programming capabilities. Being open source means students can inspect how it works, contribute to its development, and customize its behavior.
 
@@ -242,7 +242,7 @@ The counterproductive pattern is accepting completions without reading them. If 
 
 A concrete practice that experienced developers recommend: after completing each project feature with AI assistance, delete all the AI-suggested code and rebuild it from memory. The reconstruction attempt reveals which concepts genuinely landed and which you were just accepting blindly.
 
-Debugging With AI: A Structured Approach
+Debugging With AI - A Structured Approach
 
 AI assistants are particularly valuable for debugging because they can explain error messages in context. But students often use them inefficiently, pasting an error into chat and waiting for a fix without engaging with the explanation.
 
@@ -250,9 +250,9 @@ A more effective method structures the interaction as a guided diagnosis:
 
 ```
 Step 1. Paste the full error with stack trace, not just the message.
-Step 2. Ask: "What does this error mean, and what are the three most common causes?"
+Step 2. Ask - "What does this error mean, and what are the three most common causes?"
 Step 3. Before asking for the fix, attempt to identify which cause applies to your code.
-Step 4. Ask: "Given that the problem is [your hypothesis], what should I change?"
+Step 4. Ask - "Given that the problem is [your hypothesis], what should I change?"
 ```
 
 This forces the student to engage with the diagnostic reasoning rather than receiving a solution passively. Over time, the patterns of common errors and their causes become internalized. Students who follow this approach report that they stop encountering entire categories of errors after a few months because the AI-guided debugging process accelerated the pattern recognition that normally takes years of trial and error.

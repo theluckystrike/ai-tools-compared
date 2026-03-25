@@ -57,11 +57,11 @@ How AI Tools Generate Autoscaler Configurations
 
 When you ask an AI assistant to generate Knative autoscaler configurations, provide context about your workload characteristics. The quality of output depends heavily on the information you supply. Here's what matters:
 
-Workload Type: Is your workload CPU-bound, memory-intensive, or I/O bound? Different profiles require different target values. A machine learning inference service processing images will have different needs than a simple REST API.
+Workload Type - Is your workload CPU-bound, memory-intensive, or I/O bound? Different profiles require different target values. A machine learning inference service processing images will have different needs than a simple REST API.
 
-Traffic Patterns: Describe your traffic spikes. Does your workload experience sudden bursts, gradual increases, or steady state? Burst-heavy workloads might need aggressive min-scale settings to avoid cold starts.
+Traffic Patterns - Describe your traffic spikes. Does your workload experience sudden bursts, gradual increases, or steady state? Burst-heavy workloads might need aggressive min-scale settings to avoid cold starts.
 
-Latency Requirements: Your target latency directly impacts scaling decisions. Low-latency services typically need lower concurrency targets to maintain responsiveness during scale-up events.
+Latency Requirements - Your target latency directly impacts scaling decisions. Low-latency services typically need lower concurrency targets to maintain responsiveness during scale-up events.
 
 For example, prompting an AI with:
 
@@ -101,11 +101,11 @@ Advanced Autoscaling Parameters
 
 Beyond the basics, Knative supports several advanced annotations that AI tools can help you configure appropriately:
 
-Scale Bounds: Setting `minScale` and `maxScale` prevents both excessive resource waste and unexpected cost spikes. For production services, always set `minScale` to at least 1 or 2 to maintain availability during brief traffic dips.
+Scale Bounds - Setting `minScale` and `maxScale` prevents both excessive resource waste and unexpected cost spikes. For production services, always set `minScale` to at least 1 or 2 to maintain availability during brief traffic dips.
 
-Target Concurrency: The `target` annotation specifies desired concurrent requests per pod. The default is 10, but you might adjust based on your service's resource consumption. A lightweight JSON API might handle 50+ concurrent requests, while a database-heavy service might perform better at 5.
+Target Concurrency - The `target` annotation specifies desired concurrent requests per pod. The default is 10, but you might adjust based on your service's resource consumption. A lightweight JSON API might handle 50+ concurrent requests, while a database-heavy service might perform better at 5.
 
-Scale-to-Zero: One of Knative's most powerful features. The `scaleToZeroPodRetentionPeriod` controls how long a pod must be idle before scaling to zero. For user-facing services, consider keeping at least one instance warm:
+Scale-to-Zero - One of Knative's most powerful features. The `scaleToZeroPodRetentionPeriod` controls how long a pod must be idle before scaling to zero. For user-facing services, consider keeping at least one instance warm:
 
 ```yaml
 autoscaling.knative.dev/minScale: "1"
@@ -116,7 +116,7 @@ Optimizing for Specific Workload Patterns
 
 AI code generation becomes particularly valuable when configuring autoscaling for specialized scenarios. Here are common patterns and how to approach them:
 
-Batch Processing Jobs: If your Knative service handles async processing:
+Batch Processing Jobs - If your Knative service handles async processing:
 
 ```yaml
 autoscaling.knative.dev/minScale: "0"
@@ -128,7 +128,7 @@ autoscaling.knative.dev/panicThreshold: "2"
 
 Lower targets and faster panic thresholds help handle bursty batch workloads efficiently.
 
-API Gateway Services: High-throughput APIs benefit from aggressive scaling:
+API Gateway Services - High-throughput APIs benefit from aggressive scaling:
 
 ```yaml
 autoscaling.knative.dev/minScale: "10"
@@ -137,7 +137,7 @@ autoscaling.knative.dev/target: "100"
 autoscaling.knative.dev/activationScale: "true"
 ```
 
-ML Inference Endpoints: Resource-intensive inference workloads need careful tuning:
+ML Inference Endpoints - Resource-intensive inference workloads need careful tuning:
 
 ```yaml
 autoscaling.knative.dev/minScale: "2"

@@ -125,7 +125,7 @@ class WebsiteStack(Stack):
 
 The IDE integration means Copilot sees your current file and project structure, making suggestions that align with existing patterns. However, it sometimes suggests CDK v1 patterns that require adaptation for CDK v2. Watch particularly for old-style `core.Duration` references and the deprecated `@aws-cdk/aws-*` import paths, Copilot occasionally generates these even in v2 projects.
 
-When Copilot works best for CDK: It excels at filling in construct properties you are mid-way through writing. Start the construct definition yourself, then let Copilot complete the property list. This approach uses its completion strengths while avoiding the v1/v2 confusion that appears when generating from scratch.
+When Copilot works best for CDK - It excels at filling in construct properties you are mid-way through writing. Start the construct definition yourself, then let Copilot complete the property list. This approach uses its completion strengths while avoiding the v1/v2 confusion that appears when generating from scratch.
 
 Amazon CodeWhisperer
 
@@ -217,11 +217,11 @@ Practical Recommendations
 
 Choosing the right AI tool depends on your workflow and project requirements:
 
-For terminal-focused developers: Claude Code provides CDK generation without leaving your command-line environment. Its explanations help developers learn CDK concepts alongside implementation, making it useful for teams building their CDK knowledge.
+For terminal-focused developers - Claude Code provides CDK generation without leaving your command-line environment. Its explanations help developers learn CDK concepts alongside implementation, making it useful for teams building their CDK knowledge.
 
-For IDE-integrated workflows: GitHub Copilot offers the smoothest integration with existing development environments, with reasonable CDK understanding despite occasional version mismatches. Use it for property completion rather than full stack generation.
+For IDE-integrated workflows - GitHub Copilot offers the smoothest integration with existing development environments, with reasonable CDK understanding despite occasional version mismatches. Use it for property completion rather than full stack generation.
 
-For AWS-heavy projects: Amazon CodeWhisperer's deep AWS service knowledge and automatic IAM permission suggestions provide tangible time savings for CDK development. The built-in security scanning catches common IAM mistakes before they reach production.
+For AWS-heavy projects - Amazon CodeWhisperer's deep AWS service knowledge and automatic IAM permission suggestions provide tangible time savings for CDK development. The built-in security scanning catches common IAM mistakes before they reach production.
 
 For complex multi-stack architectures: Cursor's workspace awareness and chat capabilities handle projects with many interdependent stacks more effectively than inline-only solutions. The ability to reference multiple stack files in a single chat interaction is particularly valuable when debugging cross-stack reference issues.
 
@@ -260,7 +260,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -272,6 +272,6 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 {% endraw %}

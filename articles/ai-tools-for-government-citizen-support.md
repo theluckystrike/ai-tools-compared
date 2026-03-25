@@ -287,16 +287,16 @@ Vendor Evaluation Checklist
 When selecting AI vendors for government citizen support, the following criteria should appear in your procurement requirements:
 
 
-Compliance certifications: Confirm the vendor holds the certifications your jurisdiction requires. In the US, FedRAMP Moderate covers most state and federal use cases. Local governments handling particularly sensitive data (child welfare, criminal justice) may require FedRAMP High. Verify certifications are current, some vendors list certifications that have lapsed or are "in process" rather than active.
+Compliance certifications - Confirm the vendor holds the certifications your jurisdiction requires. In the US, FedRAMP Moderate covers most state and federal use cases. Local governments handling particularly sensitive data (child welfare, criminal justice) may require FedRAMP High. Verify certifications are current, some vendors list certifications that have lapsed or are "in process" rather than active.
 
 
-Data processing agreements: Require contractual guarantees that citizen data is not used for model training. Standard consumer AI terms typically allow the provider to use your data to improve their models. Government data cannot be shared this way. If the vendor's standard terms don't prohibit training use, negotiate a custom data processing addendum before signing.
+Data processing agreements - Require contractual guarantees that citizen data is not used for model training. Standard consumer AI terms typically allow the provider to use your data to improve their models. Government data cannot be shared this way. If the vendor's standard terms don't prohibit training use, negotiate a custom data processing addendum before signing.
 
 
-Deployment options: Prefer vendors who offer on-premises or private cloud deployment. SaaS-only vendors create a dependency on external availability and introduce data residency concerns. Even if SaaS is acceptable today, confirm the vendor has a path to private deployment if regulations change.
+Deployment options - Prefer vendors who offer on-premises or private cloud deployment. SaaS-only vendors create a dependency on external availability and introduce data residency concerns. Even if SaaS is acceptable today, confirm the vendor has a path to private deployment if regulations change.
 
 
-Human-in-the-loop controls: The system should make it straightforward to configure which decisions require human review before execution. Avoid platforms where human oversight is an afterthought or requires custom development to implement. This should be a core product feature with configurable thresholds per use case type.
+Human-in-the-loop controls - The system should make it straightforward to configure which decisions require human review before execution. Avoid platforms where human oversight is an afterthought or requires custom development to implement. This should be a core product feature with configurable thresholds per use case type.
 
 ---
 

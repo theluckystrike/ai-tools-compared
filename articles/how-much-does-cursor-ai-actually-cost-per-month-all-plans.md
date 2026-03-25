@@ -162,11 +162,11 @@ Hidden Costs and Considerations
 
 Beyond the base subscription price, consider these factors when budgeting for Cursor:
 
-API Usage Beyond Limits: The Free plan's 2,000 credits convert roughly to several hundred code completions and dozens of chat sessions. Once exhausted, you must wait for monthly resets or upgrade.
+API Usage Beyond Limits - The Free plan's 2,000 credits convert roughly to several hundred code completions and dozens of chat sessions. Once exhausted, you must wait for monthly resets or upgrade.
 
-Team Size Multiplication: Business pricing applies per-user. A 10-person team pays $400 monthly (or $300 annually), compared to $200 for 10 Pro accounts.
+Team Size Multiplication - Business pricing applies per-user. A 10-person team pays $400 monthly (or $300 annually), compared to $200 for 10 Pro accounts.
 
-Alternative Costs: IfCursor doesn't fit your needs, alternatives like GitHub Copilot ($10/month for individuals, $19/user/month for teams) or Claude Code (free for CLI, paid for API) might change your total tooling budget.
+Alternative Costs - IfCursor doesn't fit your needs, alternatives like GitHub Copilot ($10/month for individuals, $19/user/month for teams) or Claude Code (free for CLI, paid for API) might change your total tooling budget.
 
 Practical Usage Examples
 
@@ -290,7 +290,7 @@ When Business Plan Math Makes Sense
 
 Individual developers stay on Pro. Here's when Business becomes rational for teams:
 
-Below 5 developers: Pro accounts cost less. Business adds $20-40 per additional person vs $0 for SSO overhead on a smaller team.
+Below 5 developers - Pro accounts cost less. Business adds $20-40 per additional person vs $0 for SSO overhead on a smaller team.
 
 5-10 developers: Business at $30-40/user/month becomes cost-neutral because:
 - Admin dashboard prevents wasted seats (visibility into usage)
@@ -317,7 +317,7 @@ Real Usage Tracking and Optimization
 Teams that optimize Cursor spend track actual consumption patterns:
 
 ```
-Day 1: Pro users → Team Dashboard
+Day 1 - Pro users → Team Dashboard
 Metrics visible:
   - Requests/user/day (avg 15-20)
   - Slow request consumption (watch this closely)
@@ -337,7 +337,7 @@ Comparative True Cost Analysis
 Comparing to alternatives requires accounting for features, not just price:
 
 ```
-Scenario: 5-developer team, 6-month evaluation
+Scenario - 5-developer team, 6-month evaluation
 
 Cursor Business (5 × $40 × 6):           $1,200
 GitHub Copilot (5 × $19 × 6 + org):      $600 + $100 = $700
@@ -345,7 +345,7 @@ VS Code + Claude API (usage-based):       $200-400
 Supermaven ($6 × 5 × 6):                 $180
 
 Cursor wins on speed integration and model quality.
-Copilot wins on GitHub ecosystem fit and lower cost.
+Copilot wins on GitHub environment fit and lower cost.
 Claude API wins if you're comfortable with chat-only workflow.
 Supermaven wins on budget but sacrifices feature depth.
 ```

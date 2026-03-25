@@ -19,16 +19,16 @@ Best AI Tools for Writing Makefiles in 2026
 
 Makefiles look simple but hide a lot of footguns: tab vs space errors, missing `.PHONY` declarations, broken dependency tracking, and shell quoting issues that only surface in CI. AI tools vary significantly in how well they handle these.
 
-The Test: A Real C Project Makefile
+The Test - A Real C Project Makefile
 
-The benchmark task: generate a Makefile for a C project with a `src/` directory, separate `obj/` for object files, a test target using a test runner, and clean/install targets. The output must use pattern rules, not repeated rules per file.
+The benchmark task - generate a Makefile for a C project with a `src/` directory, separate `obj/` for object files, a test target using a test runner, and clean/install targets. The output must use pattern rules, not repeated rules per file.
 
 Claude
 
 Prompt:
 ```text
 Write a Makefile for a C project. Source files are in src/, object files go in obj/.
-Binary name: myapp. Include: all, clean, install, test targets.
+Binary name - myapp. Include - all, clean, install, test targets.
 test runs ./tests/run_tests. Use pattern rules for compilation.
 CC=gcc, CFLAGS=-Wall -Wextra -O2. Add proper .PHONY declarations.
 ```
@@ -86,13 +86,13 @@ ChatGPT (GPT-4o)
 
 ChatGPT produces valid Makefiles but frequently uses `=` instead of `:=` for variable assignment, which causes recursive expansion issues in larger builds. It also sometimes omits `.PHONY` for `clean`, leading to silent failures if a file named `clean` exists.
 
-Multi-Language Makefile: Go + Generated Code
+Multi-Language Makefile - Go + Generated Code
 
-A harder test: a project with a Go binary and generated protobuf code.
+A harder test - a project with a Go binary and generated protobuf code.
 
 Prompt:
 ```text
-Makefile for a Go project. Targets: build (go build ./cmd/server), generate (runs protoc on proto/*.proto),
+Makefile for a Go project. Targets - build (go build ./cmd/server), generate (runs protoc on proto/*.proto),
 lint (golangci-lint run), test (go test ./...), docker-build.
 Use $(shell go env GOPATH) for tool paths. Enforce that generate runs before build.
 ```
@@ -151,7 +151,7 @@ For monorepos with subdirectories, Claude handles recursive make correctly:
 Prompt:
 ```text
 Write a root Makefile that recurses into subdirectories listed in SUBDIRS.
-Each subdir has its own Makefile. Support: all, test, clean with proper error propagation.
+Each subdir has its own Makefile. Support - all, test, clean with proper error propagation.
 ```
 
 ```makefile
@@ -244,7 +244,7 @@ Claude is useful for diagnosing Makefile errors when you paste the error output:
 
 Prompt:
 ```text
-My Makefile fails with: "make: Nothing to be done for 'test'."
+My Makefile fails with - "make: Nothing to be done for 'test'."
 Here's the relevant section:
 test:
     pytest tests/
@@ -316,7 +316,7 @@ check-tools:
 Make all depend on check-tools to run the check first
 all: check-tools $(TARGET)
 
-To build in parallel, run: make -j$(nproc)
+To build in parallel, run - make -j$(nproc)
 Or set it in the Makefile:
 .DEFAULT_GOAL := all
 ```
@@ -351,7 +351,7 @@ AI tools often struggle with platform-specific build logic. Here's a prompt that
 
 ```text
 Write a Makefile that builds on Linux and macOS.
-On macOS: use clang and add -fPIC. On Linux: use gcc and add -fstack-protector.
+On macOS - use clang and add -fPIC. On Linux - use gcc and add -fstack-protector.
 Add a detect-os target and conditional flags.
 ```
 
@@ -395,7 +395,7 @@ Understanding what Claude and competitors get wrong helps you validate output:
 
 Always review the dependency tracking. A correct Makefile for a 200-file C project should touch only the object files for changed sources, not recompile everything.
 
-Advanced: Generating Dependencies with gcc -MM
+Advanced - Generating Dependencies with gcc -MM
 
 For C/C++ projects, ask Claude to add automated header dependency generation:
 
@@ -436,7 +436,7 @@ Check the output to ensure:
 3. Pattern rules generate correct paths
 4. No circular dependencies
 
-Advanced Patterns: Dependency Tracking and Incremental Builds
+Advanced Patterns - Dependency Tracking and Incremental Builds
 
 The real test of a production Makefile is whether it tracks dependencies correctly for incremental builds. A Makefile that always recompiles everything is no better than a shell script.
 

@@ -31,7 +31,7 @@ tags: [ai-tools-compared, troubleshooting, claude-code, windows, terminal, claud
 Windows users running Claude Code frequently encounter garbled output, characters that appear as boxes, question marks, or completely wrong symbols. This problem stems from encoding mismatches between Claude Code's output and Windows terminal expectations. In 2026, several reliable solutions exist to fix this issue and restore clean, readable terminal output.
 
 
-- Add each variable with: value `1` or `en_US.UTF-8` ## Solution: Terminal Font Compatibility Some fonts don't support the full Unicode character range that Claude Code uses.
+- Add each variable with: value `1` or `en_US.UTF-8` ## Solution - Terminal Font Compatibility Some fonts don't support the full Unicode character range that Claude Code uses.
 - Restoring UTF-8..." chcp 65001: | Out-Null } # Verify environment variables if (-not $env:PYTHONIOENCODING -eq 'utf-8') { Write-Warning "PYTHONIOENCODING not set.
 - For a permanent solution: create a batch file:
 
@@ -58,7 +58,7 @@ The problem manifests in several ways:
 - JSON output shows escaped Unicode sequences instead of actual characters
 - Colored terminal output displays as garbled text
 
-Primary Solution: Configure Terminal Encoding
+Primary Solution - Configure Terminal Encoding
 
 The most effective fix involves setting your Windows terminal to use UTF-8 encoding consistently.
 
@@ -132,7 +132,7 @@ python -m claude_code %*
 
 Save this as `claude.bat` and place it in a directory in your PATH.
 
-Solution: Set Claude Code Environment Variables
+Solution - Set Claude Code Environment Variables
 
 Claude Code respects several environment variables that control encoding behavior. Set these before launching Claude Code:
 
@@ -149,7 +149,7 @@ For permanent configuration, add them to your system environment variables:
 3. Under User variables, click New
 4. Add each variable with value `1` or `en_US.UTF-8`
 
-Solution: Terminal Font Compatibility
+Solution - Terminal Font Compatibility
 
 Some fonts don't support the full Unicode character range that Claude Code uses. Switching to a font with Unicode support resolves display issues:
 
@@ -159,7 +159,7 @@ Some fonts don't support the full Unicode character range that Claude Code uses.
 
 Configure your terminal to use one of these fonts. In Windows Terminal, navigate to Profiles → Your Profile → Appearance and select a compatible font.
 
-Solution: Update Claude Code Installation
+Solution - Update Claude Code Installation
 
 Outdated Claude Code versions may have encoding bugs that newer releases have fixed. Ensure you have the latest version:
 
@@ -209,7 +209,7 @@ export LC_ALL=en_US.UTF-8
 In WSL, also ensure Windows-side encoding is set
 ```
 
-Verification: Testing Your Fix
+Verification - Testing Your Fix
 
 After applying solutions, verify that Claude Code displays output correctly:
 
@@ -316,7 +316,7 @@ Code Page Reference
 | 1252 | Windows-1252 | English/Western Europe | Limited character set |
 | 10000 | Mac Roman | macOS Legacy | Rarely used now |
 
-For Claude Code: Always use 65001 (UTF-8).
+For Claude Code - Always use 65001 (UTF-8).
 
 Integration with CI/CD Pipelines
 
@@ -446,7 +446,7 @@ if (-not $env:PYTHONIOENCODING -eq 'utf-8') {
 Write-Host "Encoding verification complete."
 ```
 
-Preventive Measures: Avoid Garbled Output
+Preventive Measures - Avoid Garbled Output
 
 1. Use Windows Terminal instead of Command Prompt - it handles UTF-8 natively
 2. Keep fonts updated - ensure your terminal font supports Unicode

@@ -25,8 +25,8 @@ Table of Contents
 - [Understanding dbt Test Results](#understanding-dbt-test-results)
 - [Building Your AI-Powered Scorecard System](#building-your-ai-powered-scorecard-system)
 - [AI Tooling Comparison for dbt Scorecard Generation](#ai-tooling-comparison-for-dbt-scorecard-generation)
-- [Real-World Workflow: CI/CD Integration](#real-world-workflow-cicd-integration)
-- [Performance Benchmarks: Manual vs AI-Assisted Scoring](#performance-benchmarks-manual-vs-ai-assisted-scoring)
+- [Real-World Workflow - CI/CD Integration](#real-world-workflow-cicd-integration)
+- [Performance Benchmarks - Manual vs AI-Assisted Scoring](#performance-benchmarks-manual-vs-ai-assisted-scoring)
 - [Automating Your Pipeline](#automating-your-pipeline)
 - [Interpreting Your Scorecard](#interpreting-your-scorecard)
 
@@ -69,7 +69,7 @@ The challenge is aggregating these individual test results into meaningful quali
 
 Building Your AI-Powered Scorecard System
 
-Step 1: Collect and Normalize Test Results
+Step 1 - Collect and Normalize Test Results
 
 First, run your dbt tests and capture the output. Use the `--output json` flag to get machine-readable results:
 
@@ -102,7 +102,7 @@ def load_dbt_results(filepath):
     return normalized
 ```
 
-Step 2: Calculate Quality Metrics
+Step 2 - Calculate Quality Metrics
 
 With normalized data, you can now calculate aggregate metrics. This is where AI adds value by identifying patterns and generating insights:
 
@@ -123,7 +123,7 @@ def calculate_quality_score(results):
     }
 ```
 
-Step 3: Generate AI Insights
+Step 3 - Generate AI Insights
 
 Now use an AI model to analyze the test results and generate practical recommendations:
 
@@ -158,7 +158,7 @@ def generate_ai_insights(results, metrics):
     return prompt  # In production, return AI response
 ```
 
-Step 4: Create the Scorecard Output
+Step 4 - Create the Scorecard Output
 
 Combine everything into an usable scorecard format:
 
@@ -208,7 +208,7 @@ Different AI tools handle the scorecard generation task with varying strengths. 
 
 For most analytics engineering teams, Claude or GPT-4o offer the best balance of reasoning quality and context handling. If you run dbt in a regulated environment where test results contain sensitive schema metadata, running a local model via Ollama eliminates data egress risk entirely.
 
-Real-World Workflow: CI/CD Integration
+Real-World Workflow - CI/CD Integration
 
 The most effective scorecard systems run automatically after every dbt test execution. Here's a complete GitHub Actions workflow:
 
@@ -270,7 +270,7 @@ def post_to_slack(scorecard, webhook_url):
     requests.post(webhook_url, json=payload)
 ```
 
-Performance Benchmarks: Manual vs AI-Assisted Scoring
+Performance Benchmarks - Manual vs AI-Assisted Scoring
 
 Teams that have implemented AI-assisted dbt scorecard pipelines report measurable improvements over manual review workflows:
 
@@ -303,13 +303,13 @@ Interpreting Your Scorecard
 
 When reviewing your scorecard, focus on these key indicators:
 
-- Overall Quality Score: A percentage that represents your data's health. Aim for 95%+ in production environments.
+- Overall Quality Score - A percentage that represents your data's health. Aim for 95%+ in production environments.
 
-- Failed Test Count: Absolute numbers help you prioritize debugging efforts.
+- Failed Test Count - Absolute numbers help you prioritize debugging efforts.
 
-- Model-Level Scores: Identify which models need the most attention.
+- Model-Level Scores - Identify which models need the most attention.
 
-- Trend Over Time: Track scores daily or weekly to detect degradation early.
+- Trend Over Time - Track scores daily or weekly to detect degradation early.
 
 Use the AI-generated insights to move beyond simple pass/fail reporting. Instead of just knowing that tests failed, you'll understand why they failed and what actions to take.
 

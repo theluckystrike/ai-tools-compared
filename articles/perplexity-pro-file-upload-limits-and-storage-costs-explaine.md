@@ -77,7 +77,7 @@ Perplexity Pro's competitive advantage is not file size or storage. it is the co
 
 Practical Examples
 
-Example 1: Analyzing a Technical Specification
+Example 1 - Analyzing a Technical Specification
 
 Suppose you have a 15 MB PDF containing API documentation:
 
@@ -92,7 +92,7 @@ else:
     print("Consider splitting the PDF into smaller chunks")
 ```
 
-Example 2: Processing Multiple Code Review Documents
+Example 2 - Processing Multiple Code Review Documents
 
 When analyzing multiple files simultaneously, track your monthly usage:
 
@@ -111,7 +111,7 @@ function uploadDocument(file) {
 }
 ```
 
-Example 3: Optimizing Large CSV Files
+Example 3 - Optimizing Large CSV Files
 
 For data files exceeding limits, consider preprocessing:
 

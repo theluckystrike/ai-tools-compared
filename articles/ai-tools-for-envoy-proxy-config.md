@@ -38,7 +38,7 @@ What to Verify Manually
 
 ---
 
-Workflow 1: Generating a Basic Envoy Config
+Workflow 1 - Generating a Basic Envoy Config
 
 Prompt:
 
@@ -108,7 +108,7 @@ This is valid v3 API config. Validate with `envoy --mode validate -c config.yaml
 
 ---
 
-Workflow 2: Adding Rate Limiting
+Workflow 2 - Adding Rate Limiting
 
 Envoy's local rate limiting filter is often simpler than the global rate limiting service for basic use cases.
 
@@ -163,7 +163,7 @@ Per-IP rate limiting with local rate limit requires a descriptor-based approach.
 
 ---
 
-Workflow 3: JWT Authentication Filter
+Workflow 3 - JWT Authentication Filter
 
 Prompt:
 
@@ -275,7 +275,7 @@ Specify the Envoy version. Version 1.28+ has different filter names for some ext
 
 Include whether you're running in Docker/Kubernetes or bare metal. affects how you reference clusters and listener addresses.
 
-Ask for validation commands: `envoy --mode validate -c /path/to/config.yaml`
+Ask for validation commands - `envoy --mode validate -c /path/to/config.yaml`
 
 If you're using Envoy as a sidecar with xDS (e.g., in Istio), tell the AI. the config structure is completely different from static configs.
 

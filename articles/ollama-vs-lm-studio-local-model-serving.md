@@ -131,7 +131,7 @@ Remove a model
 ollama rm llama3.2:3b
 ```
 
-LM Studio lets you browse the full Hugging Face GGUF ecosystem directly from the app. This means access to every community-quantized model, but also requires you to choose the right quantization level (Q4_K_M vs Q5_K_S vs Q8_0) manually.
+LM Studio lets you browse the full Hugging Face GGUF environment directly from the app. This means access to every community-quantized model, but also requires you to choose the right quantization level (Q4_K_M vs Q5_K_S vs Q8_0) manually.
 
 For most developers, Ollama's curated library is sufficient and simpler. LM Studio wins if you need a specific obscure model or want to experiment with different quantization levels side by side.
 
@@ -164,7 +164,7 @@ Use with Continue.dev in VS Code (config.json)
   }]
 }
 
-Scripting: list models programmatically
+Scripting - list models programmatically
 curl http://localhost:11434/api/tags | jq '.models[].name'
 ```
 
@@ -238,7 +238,7 @@ Quantization:
 - Q2 (2-bit)    = ~1.5GB, 70% quality, extremely fast
 ```
 
-For most developers: Q4_K_M is the sweet spot. 90% quality with 4x compression.
+For most developers - Q4_K_M is the sweet spot. 90% quality with 4x compression.
 
 LM Studio shows quantization clearly:
 ```
@@ -304,9 +304,9 @@ Cursor can use local models via either tool:
 
 ```
 Settings → Models → Add Local Model
-Provider: Ollama or LM Studio
-Model: llama3.2:7b
-Base URL: http://localhost:11434 (Ollama) or http://localhost:1234 (LM Studio)
+Provider - Ollama or LM Studio
+Model - llama3.2:7b
+Base URL - http://localhost:11434 (Ollama) or http://localhost:1234 (LM Studio)
 ```
 
 Cursor + Ollama is more stable; Cursor + LM Studio occasionally loses connection.
@@ -355,7 +355,7 @@ LM Studio shows real-time stats in the GUI:
 
 For production use, neither tool is ideal without adding your own monitoring.
 
-When to Use Each: Detailed Decision Matrix
+When to Use Each - Detailed Decision Matrix
 
 | Scenario | Ollama | LM Studio |
 |----------|--------|-----------|
@@ -375,7 +375,7 @@ When to Use Each: Detailed Decision Matrix
 
 Hybrid Approach
 
-Use both: Ollama for production, LM Studio for development exploration.
+Use both - Ollama for production, LM Studio for development exploration.
 
 1. Discover models in LM Studio's visual browser
 2. Note the quantization level (Q4_K_M)

@@ -19,13 +19,13 @@ Choose Claude Code for free individual access with the highest code quality and 
 
 Table of Contents
 
-- [Ranking: Best AI Coding Tools Under $10/Month](#ranking-best-ai-coding-tools-under-10month)
+- [Ranking - Best AI Coding Tools Under $10/Month](#ranking-best-ai-coding-tools-under-10month)
 - [Choosing the Right Tool](#choosing-the-right-tool)
-- [Stack Comparison: Real-World Workflow Scenarios](#stack-comparison-real-world-workflow-scenarios)
+- [Stack Comparison - Real-World Workflow Scenarios](#stack-comparison-real-world-workflow-scenarios)
 - [How to Evaluate Any AI Coding Tool Before Committing](#how-to-evaluate-any-ai-coding-tool-before-committing)
 - [When to Upgrade Beyond $10/Month](#when-to-upgrade-beyond-10month)
 
-Ranking: Best AI Coding Tools Under $10/Month
+Ranking - Best AI Coding Tools Under $10/Month
 
 1. Claude Code (Free / Contact for Commercial Pricing)
 
@@ -125,13 +125,13 @@ Practical example:
 Using Cursor's Command K for inline editing
 Select code, press Ctrl+K, then describe the change
 
-Before: Manual data processing
+Before - Manual data processing
 data = [{"name": "Alice", "score": 85}, {"name": "Bob", "score": 92}]
 results = []
 for item in data:
     results.append({"name": item["name"], "passed": item["score"] >= 60})
 
-After (via Ctrl+K): More Pythonic approach
+After (via Ctrl+K) - More Pythonic approach
 results = [{"name": item["name"], "passed": item["score"] >= 60} for item in data]
 ```
 
@@ -213,7 +213,7 @@ For pure code generation quality, Claude Code leads the pack. For IDE-native exp
 
 Most developers benefit from combining tools, for example, using Claude Code for complex debugging and GitHub Copilot for quick autocomplete suggestions during routine coding.
 
-Stack Comparison: Real-World Workflow Scenarios
+Stack Comparison - Real-World Workflow Scenarios
 
 Understanding how each tool performs in isolation is useful, but most developers use at least two tools simultaneously. Here are three common workflow configurations and which tools fit each one.
 
@@ -225,7 +225,7 @@ The Employed Developer Stack (Budget: $10/month)
 
 GitHub Copilot at $10/month provides always-on inline suggestions inside VS Code or JetBrains without credit limits. Pair it with Claude Code (free) for code review and complex debugging sessions that require deeper reasoning than Copilot provides. This is the most common pairing for developers at companies that subsidize one tool subscription.
 
-The Power User Stack (Budget: $19/month with Cursor Pro)
+The Power User Stack (Budget - $19/month with Cursor Pro)
 
 Cursor Pro unlocks unlimited AI credits and access to the strongest underlying models. Combined with Claude Code (free) for terminal-based workflows and long-context analysis, this stack handles large codebases without friction. Useful for full-stack developers who regularly refactor across 10+ files in a single session.
 
@@ -249,7 +249,7 @@ If your team uses Cursor's free tier and frequently hits the 2,000 credit limit 
 
 For developers who do heavy autonomous coding with Claude, long sessions refactoring large codebases, Anthropic's paid API tiers remove rate limits that occasionally affect free access during peak hours.
 
-The decision rule is simple: if you're hitting tool limits more than twice a week, the productivity lost to waiting outweighs the upgrade cost.
+The decision rule is simple - if you're hitting tool limits more than twice a week, the productivity lost to waiting outweighs the upgrade cost.
 
 Frequently Asked Questions
 

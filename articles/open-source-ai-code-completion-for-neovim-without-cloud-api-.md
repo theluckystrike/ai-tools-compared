@@ -30,7 +30,7 @@ Table of Contents
 - [Comparing the Options](#comparing-the-options)
 - [Hardware Considerations](#hardware-considerations)
 - [Performance Tips](#performance-tips)
-- [Advanced Configuration: Building a Production Setup](#advanced-configuration-building-a-production-setup)
+- [Advanced Configuration - Building a Production Setup](#advanced-configuration-building-a-production-setup)
 - [Model Selection for Different Languages](#model-selection-for-different-languages)
 - [Benchmarking Your Setup](#benchmarking-your-setup)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
@@ -232,7 +232,7 @@ To get the best experience from local AI code completion in Neovim:
 - Cache completions locally to avoid redundant API calls
 - Prefer fill-in-the-middle (FIM) capable models (CodeLLama Instruct, Qwen2.5-Coder) for inline completion over pure next-token models
 
-Advanced Configuration: Building a Production Setup
+Advanced Configuration - Building a Production Setup
 
 For developers committed to self-hosted completions, here's a production-ready architecture:
 
@@ -413,17 +413,17 @@ Track:
 
 Troubleshooting Common Issues
 
-Issue: Completions are very slow (>5s)
+Issue - Completions are very slow (>5s)
 - Reduce context length: `--n-ctx 512` instead of 2048
 - Use quantized models (4-bit or 8-bit)
 - Add more VRAM or use smaller models
 
-Issue: Out of memory errors
+Issue - Out of memory errors
 - Check model size: `ollama list`
 - Use 7B parameter models instead of 13B+
 - Enable 4-bit quantization in your model pull command
 
-Issue: Completions don't match the current context
+Issue - Completions don't match the current context
 - Increase context window in your prompt
 - Provide more surrounding code to the API
 - Use a larger model with better code understanding

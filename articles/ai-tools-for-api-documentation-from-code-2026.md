@@ -38,21 +38,21 @@ API documentation generated from code comments tends to be incomplete. developer
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - User-Facing Message: What to show in UI
 4.
-- Retry Strategy: Is this retryable? Exponential backoff?
+- Retry Strategy - Is this retryable? Exponential backoff?
 
 ```markdown
-Error: 402 Payment Required
+Error - 402 Payment Required
 
-Code: `card_declined`
+Code - `card_declined`
 
-Message (to show users): "Your card was declined.
-- Common causes: - Insufficient funds
+Message (to show users) - "Your card was declined.
+- Common causes - - Insufficient funds
 - Card expired
 - Card flagged for fraud
 - Processing limits exceeded
 
-Retry Strategy: Do NOT retry automatically.
-- Scenario: You rename an API endpoint from `/api/v1/users` to `/api/v2/users`.
+Retry Strategy - Do NOT retry automatically.
+- Scenario - You rename an API endpoint from `/api/v1/users` to `/api/v2/users`.
 
 Tools Compared
 
@@ -104,7 +104,7 @@ Mintlify Writer
 Mintlify Writer is a VS Code extension that generates docstrings and documentation from function code.
 
 ```python
-Before: undocumented FastAPI endpoint
+Before - undocumented FastAPI endpoint
 @router.post("/payments")
 async def create_payment(
     payload: PaymentCreateRequest,
@@ -144,7 +144,7 @@ Mintlify Writer generates:
     """
 ```
 
-The docstring is accurate and useful. Weakness: doesn't document the request body fields individually, and misses error codes not visible from the function body.
+The docstring is accurate and useful. Weakness - doesn't document the request body fields individually, and misses error codes not visible from the function body.
 
 Speakeasy
 
@@ -158,7 +158,7 @@ speakeasy generate docs --schema openapi.yaml --out ./docs
 
 Speakeasy's OpenAPI generation from FastAPI is strong. The generated spec includes all routes with request/response schemas. The main differentiator: it generates SDK code (Python, TypeScript, Go, Java) from the spec, with authentication handling and error types built in.
 
-Limitation: the generated OpenAPI spec often misses error details that aren't in the Pydantic model (exceptions thrown deep in the stack).
+Limitation - the generated OpenAPI spec often misses error details that aren't in the Pydantic model (exceptions thrown deep in the stack).
 
 Swimm
 
@@ -183,7 +183,7 @@ For generating complete documentation for undocumented APIs, a structured Claude
 
 ```
 Generate complete API reference documentation for this endpoint.
-Include: description, authentication requirements, all request body fields
+Include - description, authentication requirements, all request body fields
 with types/constraints, response schema with example, all possible error codes
 with causes, and a curl example.
 
@@ -209,7 +209,7 @@ Example Claude error table output:
 | 402 | insufficient_funds | Card has insufficient balance |
 | 422 | source_expired | Stripe token has been used or is expired |
 
-Comparison: When to Use Each Tool
+Comparison - When to Use Each Tool
 
 | Tool | Best For | Cost |
 |---|---|---|
@@ -218,7 +218,7 @@ Comparison: When to Use Each Tool
 | Swimm | Keeping existing docs current | Paid |
 | Claude (direct) | Complete one-off documentation | API cost |
 
-The pragmatic workflow: generate an OpenAPI spec from FastAPI/Express automatically, use Claude to generate human-readable reference pages with error tables and examples, then use Swimm to prevent those pages from going stale.
+The pragmatic workflow - generate an OpenAPI spec from FastAPI/Express automatically, use Claude to generate human-readable reference pages with error tables and examples, then use Swimm to prevent those pages from going stale.
 
 Generating TypeScript Types from API Responses
 
@@ -311,11 +311,11 @@ The most useful error docs include:
 5. Retry Strategy. Is this retryable? Exponential backoff?
 
 ```markdown
-Error: 402 Payment Required
+Error - 402 Payment Required
 
-Code: `card_declined`
+Code - `card_declined`
 
-Message (to show users): "Your card was declined. Please try another payment method or contact your bank."
+Message (to show users) - "Your card was declined. Please try another payment method or contact your bank."
 
 Developer Notes:
 This error occurs when the payment processor (Stripe, etc.) declines the charge.
@@ -325,7 +325,7 @@ Common causes:
 - Card flagged for fraud
 - Processing limits exceeded
 
-Retry Strategy: Do NOT retry automatically. This error requires user intervention.
+Retry Strategy - Do NOT retry automatically. This error requires user intervention.
 Inform the user and request a different payment method.
 
 Example Response:
@@ -345,7 +345,7 @@ Maintaining Docs During Refactors
 
 Using Swimm or similar tools prevents docs from going stale during refactors.
 
-Scenario: You rename an API endpoint from `/api/v1/users` to `/api/v2/users`.
+Scenario - You rename an API endpoint from `/api/v1/users` to `/api/v2/users`.
 
 Without doc linking:
 - Docs stay outdated until someone manually updates them (days or weeks later)

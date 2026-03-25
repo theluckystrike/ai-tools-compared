@@ -29,7 +29,7 @@ A load test that just hammers an endpoint is easy to write. A useful load test r
 
 AI tools vary significantly on these dimensions.
 
-Approach 1: Claude for k6 Script Generation
+Approach 1 - Claude for k6 Script Generation
 
 Claude (Opus or Sonnet) can generate production-quality k6 scripts from an OpenAPI spec or a description of your API.
 
@@ -157,9 +157,9 @@ export default function () {
 }
 ```
 
-This script is production-ready: it correlates tokens, uses SharedArray for user data (loaded once, not per-VU), tracks custom metrics per endpoint, and applies realistic think times.
+This script is production-ready - it correlates tokens, uses SharedArray for user data (loaded once, not per-VU), tracks custom metrics per endpoint, and applies realistic think times.
 
-Approach 2: Grafana Cloud k6 AI Test Builder
+Approach 2 - Grafana Cloud k6 AI Test Builder
 
 Grafana Cloud k6 offers an AI-assisted test builder in the web UI. You describe your API and it generates a test configuration. It's faster to get started but less flexible.
 
@@ -202,7 +202,7 @@ export default function () {
 
 No ramp, no 70/30 split, no write traffic, hardcoded credentials. Useful for a quick smoke test; not useful for realistic load simulation.
 
-Approach 3: Ddosify / Anteon (AI-Native Load Testing)
+Approach 3 - Ddosify / Anteon (AI-Native Load Testing)
 
 Anteon (formerly Ddosify) positions itself as AI-native. Its `hammer` CLI and web UI can infer test scenarios from network traffic captures.
 
@@ -263,7 +263,7 @@ Use Claude to analyze k6 output and suggest threshold adjustments:
 Here is my k6 summary output:
 [paste JSON summary]
 
-Current thresholds: p95 < 500ms, p99 < 1000ms, error rate < 1%
+Current thresholds - p95 < 500ms, p99 < 1000ms, error rate < 1%
 
 Based on this data, suggest:
 1. Whether my thresholds are too tight or too loose for a production payment API

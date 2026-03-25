@@ -33,7 +33,7 @@ Table of Contents
 - [Table Testing Best Practices with AI Assistance](#table-testing-best-practices-with-ai-assistance)
 - [Performance Considerations in Generated Tests](#performance-considerations-in-generated-tests)
 - [Handling Dynamic Table Content](#handling-dynamic-table-content)
-- [Comparison Table: AI Tools for Table Testing](#comparison-table-ai-tools-for-table-testing)
+- [Comparison Table - AI Tools for Table Testing](#comparison-table-ai-tools-for-table-testing)
 - [Production Readiness Checklist](#production-readiness-checklist)
 
 Understanding the Testing Requirements
@@ -132,7 +132,7 @@ Advanced Table Test Scenarios
 
 Beyond basic sorting and filtering, tables often include advanced features that require sophisticated test coverage.
 
-Multi-column sorting: When users click multiple column headers while holding Shift, the table should sort by multiple columns in sequence. Testing this requires verifying that rows maintain proper ordering based on primary and secondary sort columns.
+Multi-column sorting - When users click multiple column headers while holding Shift, the table should sort by multiple columns in sequence. Testing this requires verifying that rows maintain proper ordering based on primary and secondary sort columns.
 
 ```javascript
 // Test multi-column sort behavior
@@ -153,7 +153,7 @@ test('sorts by multiple columns when Shift-clicking headers', async ({ page }) =
 });
 ```
 
-Expandable rows: Tables with expandable rows (for displaying additional details) require tests that verify click handlers, content visibility, and state management.
+Expandable rows - Tables with expandable rows (for displaying additional details) require tests that verify click handlers, content visibility, and state management.
 
 ```javascript
 // Test row expansion and content visibility
@@ -179,7 +179,7 @@ test('expands row and displays detailed information', async ({ page }) => {
 });
 ```
 
-Batch selection and actions: Tables that allow selecting multiple rows and performing bulk operations need tests for checkbox state management and action availability.
+Batch selection and actions - Tables that allow selecting multiple rows and performing bulk operations need tests for checkbox state management and action availability.
 
 ```javascript
 // Test batch selection and bulk actions
@@ -205,7 +205,7 @@ test('enables bulk actions when rows are selected', async ({ page }) => {
 });
 ```
 
-Virtual scrolling: Large tables often implement virtual scrolling to handle thousands of rows efficiently. Testing virtual scrolling requires verifying that DOM content changes as users scroll.
+Virtual scrolling - Large tables often implement virtual scrolling to handle thousands of rows efficiently. Testing virtual scrolling requires verifying that DOM content changes as users scroll.
 
 ```javascript
 // Test virtual scrolling renders correct content
@@ -246,11 +246,11 @@ Performance Considerations in Generated Tests
 
 AI-generated tests sometimes lack awareness of performance implications. Review generated tests for:
 
-Implicit waits: Tests should wait for specific elements or conditions, not arbitrary timeouts. Replace `await page.waitForTimeout(2000)` with `await expect(element).toBeVisible()`.
+Implicit waits - Tests should wait for specific elements or conditions, not arbitrary timeouts. Replace `await page.waitForTimeout(2000)` with `await expect(element).toBeVisible()`.
 
-Batch operations: When testing multiple table actions, combine related operations rather than repeating entire test flows.
+Batch operations - When testing multiple table actions, combine related operations rather than repeating entire test flows.
 
-Fixture optimization: Use page object patterns or fixtures to share table state between tests, reducing setup overhead.
+Fixture optimization - Use page object patterns or fixtures to share table state between tests, reducing setup overhead.
 
 ```javascript
 // Better: Shared fixture reduces duplication
@@ -294,7 +294,7 @@ test('reflects real-time updates in table', async ({ page }) => {
 });
 ```
 
-Comparison Table: AI Tools for Table Testing
+Comparison Table - AI Tools for Table Testing
 
 | Tool | Sorting Tests | Filtering Tests | Pagination Tests | Complex Interactions | Maintainability |
 |------|---------------|-----------------|------------------|---------------------|-----------------|

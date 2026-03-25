@@ -151,7 +151,7 @@ Synthesia charges per video minute with tiered pricing. The personal plan starts
 HeyGen offers more aggressive pricing with their subscription plans starting lower, and API pricing that can be more competitive for high-volume use cases. They also offer a pay-as-you-go option that Synthesia lacks.
 
 
-For a practical example: generating 100 one-minute videos monthly costs roughly $120-240 on Synthesia versus $90-180 on HeyGen, though exact pricing varies by plan and usage patterns.
+For a practical example - generating 100 one-minute videos monthly costs roughly $120-240 on Synthesia versus $90-180 on HeyGen, though exact pricing varies by plan and usage patterns.
 
 
 Custom Avatar Capabilities

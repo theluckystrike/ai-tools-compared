@@ -199,9 +199,9 @@ To maximize AI accuracy when generating C4 diagrams, provide complete system spe
 Generate a C4 System Context diagram for our financial platform.
 
 System Overview
-Name: Investment Portfolio Manager
-Purpose: Allows clients to manage investment accounts and track performance
-Primary Users: Individual investors and financial advisors
+Name - Investment Portfolio Manager
+Purpose - Allows clients to manage investment accounts and track performance
+Primary Users - Individual investors and financial advisors
 
 User Types (Actors)
 1. Individual Investor - Manages personal investment accounts via web/mobile

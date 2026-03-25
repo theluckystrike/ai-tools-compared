@@ -24,12 +24,12 @@ Table of Contents
 - [Practical Solutions](#practical-solutions)
 - [Automated Verification Scripts](#automated-verification-scripts)
 - [Project Configuration Best Practices](#project-configuration-best-practices)
-- [Workaround: Manual Path Correction](#workaround-manual-path-correction)
+- [Workaround - Manual Path Correction](#workaround-manual-path-correction)
 - [Automated Path Correction Script](#automated-path-correction-script)
 - [Path Validation Testing](#path-validation-testing)
-- [Real-World Pattern: NextJS Project Configuration](#real-world-pattern-nextjs-project-configuration)
-- [Debugging: Understanding Composer's Context Extraction](#debugging-understanding-composers-context-extraction)
-- [Emergency Recovery: Batch Path Fix](#emergency-recovery-batch-path-fix)
+- [Real-World Pattern - NextJS Project Configuration](#real-world-pattern-nextjs-project-configuration)
+- [Debugging - Understanding Composer's Context Extraction](#debugging-understanding-composers-context-extraction)
+- [Emergency Recovery - Batch Path Fix](#emergency-recovery-batch-path-fix)
 - [Platform-Specific Path Handling](#platform-specific-path-handling)
 - [Integration with Your IDE](#integration-with-your-ide)
 
@@ -55,7 +55,7 @@ Modern JavaScript and TypeScript projects often use package managers like pnpm w
 
 Practical Solutions
 
-Solution 1: Explicit Root Declaration
+Solution 1 - Explicit Root Declaration
 
 One of the most effective fixes involves explicitly declaring the project root in your prompts. Instead of asking Composer to "create a new utility file," specify the full path from the root:
 
@@ -65,7 +65,7 @@ Create a new file at src/utils/formatDate.ts with a date formatting utility func
 
 This explicit instruction forces Composer to use the correct absolute path reference. For repeated operations, create a snippet or prompt preset that always includes the root declaration.
 
-Solution 2: Configure .cursorignore Strategically
+Solution 2 - Configure .cursorignore Strategically
 
 Review your `.cursorignore` file to ensure it doesn't exclude directories critical for context. While you want to exclude `node_modules` and build artifacts, certain utility folders or shared configs need visibility:
 
@@ -86,7 +86,7 @@ build/
 
 The goal is providing Composer with enough structural awareness without overwhelming it with unnecessary files.
 
-Solution 3: Use Absolute References in Code Generation
+Solution 3 - Use Absolute References in Code Generation
 
 When generating code that includes imports or requires path references, guide Composer toward absolute or alias-based imports:
 
@@ -113,7 +113,7 @@ Configure your `tsconfig.json` or `jsconfig.json` with path aliases, then instru
 }
 ```
 
-Solution 4: Workspace Symbol Reference
+Solution 4 - Workspace Symbol Reference
 
 For monorepo setups, explicitly reference the workspace context in your prompts. Instead of generic requests, be specific about which package or workspace you're targeting:
 
@@ -166,15 +166,15 @@ Project Configuration Best Practices
 
 Maintaining proper project configuration reduces path generation errors significantly. Ensure your project follows these practices:
 
-1. Single Root Configuration: Keep your project structure simple with a clear root. Avoid deeply nested folder hierarchies that confuse AI context extraction.
+1. Single Root Configuration - Keep your project structure simple with a clear root. Avoid deeply nested folder hierarchies that confuse AI context extraction.
 
-2. Consistent Naming Conventions: Use predictable naming for directories. If you use `utils` for utilities, maintain that pattern throughout rather than mixing `helpers`, `lib`, or `utilities`.
+2. Consistent Naming Conventions - Use predictable naming for directories. If you use `utils` for utilities, maintain that pattern throughout rather than mixing `helpers`, `lib`, or `utilities`.
 
-3. Clear Module Boundaries: In monorepos, establish clear boundaries between packages. Composer performs better when it understands which files belong to which workspace.
+3. Clear Module Boundaries - In monorepos, establish clear boundaries between packages. Composer performs better when it understands which files belong to which workspace.
 
-4. Index Files: Create `index.ts` or `index.js` files in key directories. These help Composer understand module exports and directory purposes more quickly.
+4. Index Files - Create `index.ts` or `index.js` files in key directories. These help Composer understand module exports and directory purposes more quickly.
 
-Workaround: Manual Path Correction
+Workaround - Manual Path Correction
 
 When Composer generates incorrect paths, you can correct them without regenerating the entire response. Use these steps:
 
@@ -327,7 +327,7 @@ describe('Generated File Paths', () => {
 });
 ```
 
-Real-World Pattern: NextJS Project Configuration
+Real-World Pattern - NextJS Project Configuration
 
 For Next.js projects, ensure Composer understands the structure:
 
@@ -363,7 +363,7 @@ When generating new files, always use these patterns:
 Here's my tsconfig paths for reference: [paste above config]
 ```
 
-Debugging: Understanding Composer's Context Extraction
+Debugging - Understanding Composer's Context Extraction
 
 When Composer makes mistakes, examine what context it received:
 
@@ -382,7 +382,7 @@ If Composer doesn't understand your structure:
 3. Use consistent naming conventions (no mixing `utils` and `helpers`)
 4. Avoid deeply nested folder hierarchies (max 3-4 levels)
 
-Emergency Recovery: Batch Path Fix
+Emergency Recovery - Batch Path Fix
 
 For multiple files with wrong paths:
 

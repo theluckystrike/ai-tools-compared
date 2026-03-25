@@ -37,7 +37,7 @@ Use the `/clear` command in Claude Code to reset conversation history without en
 - For Claude Code users, the best proxy is keeping an eye on response quality: when it degrades, you're likely approaching the limit.
 - For API users hitting context limits: the standard solution is to implement a sliding window that drops the oldest messages while keeping the system prompt and most recent N turns.
 - Use the `/clear` command: in Claude Code to reset conversation history without ending your session.
-- Current status: User model complete, working on login endpoint.
+- Current status - User model complete, working on login endpoint.
 - I'll use this to: start a fresh session if needed.
 - Asking Claude to read: that file through its file-reading tool is more efficient because Claude processes it internally without that content persisting in the conversation history the same way.
 
@@ -57,7 +57,7 @@ Claude's context window sizes vary by model tier. As of early 2026:
 
 200K tokens sounds enormous, roughly 150,000 words or 500 pages of dense code. But multi-file refactoring sessions, long debugging chains, and large file attachments can fill it faster than expected. A 10,000-line codebase pasted directly into chat consumes around 40,000, 60,000 tokens before you've said a word.
 
-Quick Reference: Fixes by Severity
+Quick Reference - Fixes by Severity
 
 | Situation | Best Fix |
 |---|---|
@@ -136,8 +136,8 @@ When starting a new conversation that continues previous work, provide a brief s
 
 ```
 Continuing from previous session: We're building a REST API with authentication.
-Current status: User model complete, working on login endpoint.
-Goal: Complete JWT token generation
+Current status - User model complete, working on login endpoint.
+Goal - Complete JWT token generation
 ```
 
 This gives Claude the essential context without carrying over the full conversation history.
@@ -288,7 +288,7 @@ Some projects inherently create longer contexts:
 
 Plan around these by breaking work into shorter sessions.
 
-Claude Max vs. Claude API: Different Behavior
+Claude Max vs. Claude API - Different Behavior
 
 If you're using Claude through the API versus Claude Max (the subscription product), context management works differently. The API gives you explicit control over what's in the context window, you can trim history programmatically. Claude Max's web interface and Claude Code manage context automatically, which means you have less control but also less responsibility for managing the window manually.
 

@@ -20,7 +20,7 @@ Use ChatGPT or Claude with custom prompts for full creative control and CI/CD in
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Developers and power users: benefit most from tools that understand app metadata, understand ASO (App Store Optimization) principles, and can generate multiple variations for A/B testing.
-- End with: "Download RunTrack and beat your personal best today!"
+- End with - "Download RunTrack and beat your personal best today!"
 ```
 
 
@@ -64,8 +64,8 @@ Requirements:
 - Maximum {max_chars} characters
 - End with a compelling call-to-action
 
-App category: {category}
-Target audience: {audience}"""
+App category - {category}
+Target audience - {audience}"""
 
 def generate_description(app_name, keywords, tone, category, audience,
                          num_features=5, max_chars=4000):
@@ -142,7 +142,7 @@ Testing across multiple tools reveals consistent differences in how they handle 
 | Sensor Tower | Built-in | Medium | CSV export | Enterprise |
 
 
-The trade-off is clear: general AI models offer more creative flexibility but require manual SEO optimization. Specialized tools handle ASO automatically but constrain your creative options.
+The trade-off is clear - general AI models offer more creative flexibility but require manual SEO optimization. Specialized tools handle ASO automatically but constrain your creative options.
 
 
 Practical Integration for Developers
@@ -217,7 +217,7 @@ Write a 4000-character App Store description for a fitness tracking app called "
 
 First 100 characters must include: "running app," "GPS tracking," "training plans"
 
-Tone: Motivational but technical enough for serious runners
+Tone - Motivational but technical enough for serious runners
 
 Include these features, prioritized:
 1. Real-time GPS tracking with pace zones
@@ -226,9 +226,9 @@ Include these features, prioritized:
 4. Integration with Apple Watch
 5. Race prediction calculator
 
-Differentiator: Unlike generic fitness apps, RunTrack focuses specifically on distance runners with training science-backed plans.
+Differentiator - Unlike generic fitness apps, RunTrack focuses specifically on distance runners with training science-backed plans.
 
-End with: "Download RunTrack and beat your personal best today!"
+End with - "Download RunTrack and beat your personal best today!"
 ```
 
 
@@ -267,7 +267,7 @@ for locale, config in locales.items():
 ```
 
 
-Combining this with the Fastlane `deliver` tool means you can submit localized metadata to App Store Connect in a single CI step. Teams that previously localized only English and Spanish have expanded to 12–15 languages this way without proportionally increasing localization budget.
+Combining this with the Fastlane `deliver` tool means you can submit localized metadata to App Store Connect in a single CI step. Teams that previously localized only English and Spanish have expanded to 12, 15 languages this way without proportionally increasing localization budget.
 
 
 A/B Testing Descriptions Using Store Experiments
@@ -279,7 +279,7 @@ Both Apple and Google now offer native metadata experiments that let you test tw
 Apple's Product Page Optimization allows testing up to three alternate descriptions simultaneously, running for a minimum of 7 days per experiment cycle. Google Play's Store Listing Experiments support description tests with statistical confidence reporting built into the Play Console.
 
 
-A practical workflow: generate five candidate descriptions using AI with deliberately different opening hooks, one leading with a specific use case, one with social proof framing, one with a quantitative benefit claim, one with a pain-point-first structure, and one matching your current baseline. Submit the top two performers into the native experiment tool and let real conversion data determine the winner. This beats internal stakeholder votes, which consistently favor longer descriptions over shorter, punchier ones even when data shows the opposite.
+A practical workflow - generate five candidate descriptions using AI with deliberately different opening hooks, one leading with a specific use case, one with social proof framing, one with a quantitative benefit claim, one with a pain-point-first structure, and one matching your current baseline. Submit the top two performers into the native experiment tool and let real conversion data determine the winner. This beats internal stakeholder votes, which consistently favor longer descriptions over shorter, punchier ones even when data shows the opposite.
 
 
 Evaluating AI Output Before Publishing

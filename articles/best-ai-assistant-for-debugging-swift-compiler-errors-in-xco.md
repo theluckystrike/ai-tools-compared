@@ -27,7 +27,7 @@ Table of Contents
 - [Tips for Getting Better Results](#tips-for-getting-better-results)
 - [Error Classification Framework](#error-classification-framework)
 - [Complex Debugging Workflow Example](#complex-debugging-workflow-example)
-- [Performance Metrics: Tool Comparison on Real Errors](#performance-metrics-tool-comparison-on-real-errors)
+- [Performance Metrics - Tool Comparison on Real Errors](#performance-metrics-tool-comparison-on-real-errors)
 - [Integration Setup Guide](#integration-setup-guide)
 - [Troubleshooting AI-Assisted Debugging](#troubleshooting-ai-assisted-debugging)
 - [Best Practices for Fastest Error Resolution](#best-practices-for-fastest-error-resolution)
@@ -52,7 +52,7 @@ struct User {
 
 let users = [User(id: 1, name: "Alice"), User(id: 2, name: "Bob")]
 let foundUser = users.first { $0.id == 1 }
-print(foundUser.name) // Error: Value of optional type 'User?' must be unwrapped
+print(foundUser.name) // Error - Value of optional type 'User?' must be unwrapped
 ```
 
 An effective AI assistant recognizes that `first` returns an optional and explains the problem clearly:
@@ -129,7 +129,7 @@ Error Classification Framework
 
 Different Swift compiler errors require different AI tools. Understanding which tool handles which error category helps you choose effectively:
 
-Category 1: Type Inference Errors
+Category 1 - Type Inference Errors
 
 Error Example:
 ```swift
@@ -138,34 +138,34 @@ let y = x.map { String($0) }
 let result = x + y // Error: Binary operator '+' cannot be applied to [Int] and [String]
 ```
 
-Best Tool: Claude excels here, explaining that addition requires matching types and suggesting appropriate fixes (concatenation or separate arrays).
+Best Tool - Claude excels here, explaining that addition requires matching types and suggesting appropriate fixes (concatenation or separate arrays).
 
-What to Ask: "Why does Swift's type system prevent this operation, and what are the correct approaches?"
+What to Ask - "Why does Swift's type system prevent this operation, and what are the correct approaches?"
 
-Category 2: Memory Management Errors
+Category 2 - Memory Management Errors
 
 Error Example:
 ```swift
 var delegate: MyDelegate?
-self.delegate = delegate // Error: Cannot assign value of type 'MyDelegate?' to type 'MyDelegate'
+self.delegate = delegate // Error - Cannot assign value of type 'MyDelegate?' to type 'MyDelegate'
 ```
 
-Best Tool: ChatGPT provides clear explanations of Swift's reference counting and optional unwrapping.
+Best Tool - ChatGPT provides clear explanations of Swift's reference counting and optional unwrapping.
 
-What to Ask: "Explain the difference between optional and non-optional types here."
+What to Ask - "Explain the difference between optional and non-optional types here."
 
-Category 3: Xcode Build System Errors
+Category 3 - Xcode Build System Errors
 
 Error Example:
 ```
 error: /path/to/file.swift:1:1: error building for 'iOS [arm64]', but linking in object file '/path/to/object.o' built for 'iOS [x86_64]'
 ```
 
-Best Tool: Cursor IDE handles these well due to its deep project context understanding. GitHub Copilot struggles with build system errors.
+Best Tool - Cursor IDE handles these well due to its deep project context understanding. GitHub Copilot struggles with build system errors.
 
-What to Ask: Upload your build.log and project structure, not just the error message.
+What to Ask - Upload your build.log and project structure, not just the error message.
 
-Category 4: SwiftUI State Management
+Category 4 - SwiftUI State Management
 
 Error Example:
 ```swift
@@ -176,7 +176,7 @@ func incrementCount() {
 }
 ```
 
-Best Tool: Claude Code and ChatGPT both handle this well. Claude typically suggests the most idiomatic solution first.
+Best Tool - Claude Code and ChatGPT both handle this well. Claude typically suggests the most idiomatic solution first.
 
 Complex Debugging Workflow Example
 
@@ -211,9 +211,9 @@ Optimal Debug Sequence:
 3. Request a working solution with explanation
 4. Iterate on any remaining issues
 
-Claude's Likely Response: "The first error stems from `loadData` being async but Button's action closure is synchronous. The second error occurs because async functions can only be called from async contexts. Here's the fix..."
+Claude's Likely Response - "The first error stems from `loadData` being async but Button's action closure is synchronous. The second error occurs because async functions can only be called from async contexts. Here's the fix..."
 
-Performance Metrics: Tool Comparison on Real Errors
+Performance Metrics - Tool Comparison on Real Errors
 
 Tested on 20 diverse Swift compiler errors with varying complexity:
 
@@ -253,14 +253,14 @@ Using Cursor IDE
 
 Troubleshooting AI-Assisted Debugging
 
-Problem: AI suggests code that doesn't compile
-Solution: Provide more context about your project structure. Include import statements and any custom types.
+Problem - AI suggests code that doesn't compile
+Solution - Provide more context about your project structure. Include import statements and any custom types.
 
-Problem: AI's explanation is too complex
-Solution: Ask for explanation in simpler terms or request a step-by-step breakdown.
+Problem - AI's explanation is too complex
+Solution - Ask for explanation in simpler terms or request a step-by-step breakdown.
 
-Problem: Multiple error messages at once
-Solution: Fix the first error completely before moving to the next. Early errors often cause cascading failures.
+Problem - Multiple error messages at once
+Solution - Fix the first error completely before moving to the next. Early errors often cause cascading failures.
 
 Best Practices for Fastest Error Resolution
 

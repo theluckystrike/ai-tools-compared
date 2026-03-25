@@ -93,18 +93,18 @@ These features apply equally to private repositories and don't change based on r
 
 Cost Calculation Examples
 
-Scenario 1: Small 5-Developer Team
+Scenario 1 - Small 5-Developer Team
 - Individual plans (if paying separately): 5 × $10/month = $50/month
 - Better approach: Copilot Business = $19 × 5 = $95/month (includes org-wide policies)
 - Annual savings with Business + annual billing: ($95 × 12) × 0.92 ≈ $1,050
 
-Scenario 2: Enterprise with 100 Developers
+Scenario 2 - Enterprise with 100 Developers
 - Copilot Individual per person: $10 × 100 = $1,000/month
 - Copilot Business: $19 × 100 = $1,900/month (adds audit logs, org policies)
 - Copilot Enterprise: $39 × 100 = $3,900/month (custom models, advanced security)
 - The choice depends on governance needs, not repository visibility
 
-Scenario 3: Mixed Public/Private Project
+Scenario 3 - Mixed Public/Private Project
 - Team working on public open-source AND private enterprise code
 - Cost: Same regardless of repository split
 - A developer with Copilot Pro can switch between public GitHub repos and private company repositories without additional fees
@@ -113,13 +113,13 @@ Hidden Factors That DO Affect Cost
 
 While visibility doesn't matter, other factors legitimately affect your Copilot investment:
 
-Organization Size Scale: Business plans (minimum 3 seats typically) become cost-effective around 3+ developers. Individual plans make sense for solo developers.
+Organization Size Scale - Business plans (minimum 3 seats typically) become cost-effective around 3+ developers. Individual plans make sense for solo developers.
 
-Enterprise Audit Requirements: If your organization requires detailed audit logs showing which suggestions were used in which repositories, Enterprise becomes necessary (cost scales with team size).
+Enterprise Audit Requirements - If your organization requires detailed audit logs showing which suggestions were used in which repositories, Enterprise becomes necessary (cost scales with team size).
 
-Custom Models: Enterprise customers can request custom Copilot models trained on proprietary code patterns. This carries premium pricing above base $39/user/month.
+Custom Models - Enterprise customers can request custom Copilot models trained on proprietary code patterns. This carries premium pricing above base $39/user/month.
 
-Concurrent Usage Limits: Higher tiers provide better concurrency, no degradation when multiple team members use Copilot simultaneously.
+Concurrent Usage Limits - Higher tiers provide better concurrency, no degradation when multiple team members use Copilot simultaneously.
 
 The Bottom Line
 
@@ -184,25 +184,25 @@ copilot:
     external_model_training: false
 ```
 
-Cost Analysis: Private vs Public Repository Copilot Usage
+Cost Analysis - Private vs Public Repository Copilot Usage
 
 When analyzing Copilot costs for an organization with mixed repos:
 
 ```
-Scenario: 20 developers, mix of public and private repos
+Scenario - 20 developers, mix of public and private repos
 
-Option 1: Individual Copilot ($10/month)
+Option 1 - Individual Copilot ($10/month)
 - Cost: 20 × $10 × 12 = $2,400/year
 - Works equally well for public and private
 - No organization-wide policies
 
-Option 2: Copilot Business ($19/user/month)
+Option 2 - Copilot Business ($19/user/month)
 - Cost: 20 × $19 × 12 = $4,560/year
 - Benefit: Organization-wide settings and audit logs
 - Works identically for public and private repos
 - Cost increase: $2,160/year for enterprise governance
 
-Option 3: Copilot Enterprise ($39/user/month)
+Option 3 - Copilot Enterprise ($39/user/month)
 - Cost: 20 × $39 × 12 = $9,360/year
 - Benefit: Custom policies, deep org code indexing, audit logs
 - Enhanced for large private codebases
@@ -286,16 +286,16 @@ Developers working on private codebases often see higher ROI from Copilot becaus
 3. Team knowledge concentration. Copilot fills gaps when specialists are busy
 
 ```
-ROI Calculation: Private Repo Copilot Value
+ROI Calculation - Private Repo Copilot Value
 
-Developer salary: $100/hour
-Time saved per day with Copilot: 45 minutes
-Days worked per year: 220
-Annual time savings: 220 × 0.75 = 165 hours
+Developer salary - $100/hour
+Time saved per day with Copilot - 45 minutes
+Days worked per year - 220
+Annual time savings - 220 × 0.75 = 165 hours
 
-Monetary value: 165 × $100 = $16,500/year
-Copilot cost (Business): $228/user/year
-ROI: ($16,500 - $228) / $228 = 71x return
+Monetary value - 165 × $100 = $16,500/year
+Copilot cost (Business) - $228/user/year
+ROI - ($16,500 - $228) / $228 = 71x return
 
 Even conservative 30-minute daily savings = 47x ROI
 ```

@@ -204,7 +204,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## Accessibility Test Results\n\n- Violations found: ${violations}\n- Status: ${violations === 0 ? ' PASS' : ' FAIL'}`
+              body: `## Accessibility Test Results\n\n- Violations found: ${violations}\n- Status - ${violations === 0 ? ' PASS' : ' FAIL'}`
             });
 ```
 
@@ -239,22 +239,22 @@ WCAG verification checklist:
 WCAG 2.1 AA Checklist Verification
 
 Perceivable
-- [ ] 1.1.1 Non-text Content: AI mentions alt text strategy?
+- [ ] 1.1.1 Non-text Content - AI mentions alt text strategy?
 - [ ] 1.4.3 Contrast: Minimum 4.5:1 for normal text mentioned?
-- [ ] 1.4.11 Non-text Contrast: 3:1 for UI components mentioned?
+- [ ] 1.4.11 Non-text Contrast - 3:1 for UI components mentioned?
 
 Operable
-- [ ] 2.1.1 Keyboard: All functionality keyboard accessible?
-- [ ] 2.4.3 Focus Order: Logical focus management included?
-- [ ] 2.4.7 Focus Visible: Focus indicators visible mentioned?
+- [ ] 2.1.1 Keyboard - All functionality keyboard accessible?
+- [ ] 2.4.3 Focus Order - Logical focus management included?
+- [ ] 2.4.7 Focus Visible - Focus indicators visible mentioned?
 
 Understandable
-- [ ] 3.3.1 Error Identification: Error messages specific?
-- [ ] 3.3.4 Error Prevention: Critical actions have safeguards?
+- [ ] 3.3.1 Error Identification - Error messages specific?
+- [ ] 3.3.4 Error Prevention - Critical actions have safeguards?
 
 Reliable
-- [ ] 4.1.2 Name, Role, Value: ARIA attributes covered?
-- [ ] 4.1.3 Status Messages: Live region updates mentioned?
+- [ ] 4.1.2 Name, Role, Value - ARIA attributes covered?
+- [ ] 4.1.3 Status Messages - Live region updates mentioned?
 ```
 
 AI-assisted checklist refinement:

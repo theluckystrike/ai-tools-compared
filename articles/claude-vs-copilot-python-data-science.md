@@ -17,9 +17,9 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 Python data science work spans multiple domains: data wrangling with pandas, statistical modeling with sklearn, visualization with matplotlib/seaborn/plotly, and exploratory analysis in Jupyter. Claude and GitHub Copilot take fundamentally different approaches. Claude as a conversational assistant for complex analysis, Copilot as an inline completion engine. This guide tests both on real data science tasks.
 
-Task 1: Pandas Data Cleaning Pipeline
+Task 1 - Pandas Data Cleaning Pipeline
 
-Scenario: A messy CSV with mixed types, nulls, inconsistent date formats, and duplicate rows. Build a cleaning pipeline.
+Scenario - A messy CSV with mixed types, nulls, inconsistent date formats, and duplicate rows. Build a cleaning pipeline.
 
 Claude (conversational prompt):
 
@@ -108,11 +108,11 @@ def clean_sales(df):
 
 Copilot's version is simpler but has issues: `infer_datetime_format=True` is deprecated in pandas 2.x, `.str.replace('$', '')` raises an error on NaN values, and it mutates the input DataFrame instead of returning a clean copy.
 
-Winner: Claude. handles edge cases, idiomatic chaining, deprecation-aware.
+Winner - Claude. handles edge cases, idiomatic chaining, deprecation-aware.
 
-Task 2: Sklearn Pipeline with Custom Transformer
+Task 2 - Sklearn Pipeline with Custom Transformer
 
-Prompt: "Build a sklearn pipeline for a classification task. Include: StandardScaler for numeric, OneHotEncoder for categorical, a custom transformer that adds log1p features for skewed numerics, then LogisticRegression. Make it compatible with GridSearchCV."
+Prompt - "Build a sklearn pipeline for a classification task. Include - StandardScaler for numeric, OneHotEncoder for categorical, a custom transformer that adds log1p features for skewed numerics, then LogisticRegression. Make it compatible with GridSearchCV."
 
 Claude:
 
@@ -192,16 +192,16 @@ Claude correctly implements the sklearn estimator API (`fit`/`transform`, `BaseE
 
 Copilot struggles here without context. it generates a basic pipeline but doesn't implement a proper custom transformer. It typically uses `FunctionTransformer` instead, which doesn't expose hyperparameters for GridSearchCV.
 
-Winner: Claude. proper sklearn API, GridSearchCV-compatible custom transformer.
+Winner - Claude. proper sklearn API, GridSearchCV-compatible custom transformer.
 
-Task 3: EDA and Visualization
+Task 3 - EDA and Visualization
 
 For Jupyter-based EDA, Copilot has an advantage: it sees your DataFrame columns and generates relevant visualizations inline.
 
 Copilot inline (after loading a DataFrame):
 
 ```python
-Type: # plot distribution of amount by region
+Type - # plot distribution of amount by region
 Copilot generates:
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -224,11 +224,11 @@ plt.show()
 
 Copilot's visualization completions are fast and contextually relevant. Claude requires more prompt effort but generates more sophisticated plots with proper statistical annotations.
 
-Task 4: Time Series Feature Engineering
+Task 4 - Time Series Feature Engineering
 
 Time series work is where the gap between the two tools becomes clear. Claude can reason about lag features, rolling statistics, and seasonality; Copilot generates boilerplate without understanding the domain.
 
-Prompt to Claude: "I have a daily sales DataFrame with columns: date, sales, store_id. Create a feature engineering function that adds: 7-day rolling mean and std, lag features for 1, 7, and 30 days, day-of-week and month indicators, and a 'is_weekend' flag. Handle the NaN values from lagging correctly."
+Prompt to Claude - "I have a daily sales DataFrame with columns: date, sales, store_id. Create a feature engineering function that adds: 7-day rolling mean and std, lag features for 1, 7, and 30 days, day-of-week and month indicators, and a 'is_weekend' flag. Handle the NaN values from lagging correctly."
 
 Claude:
 
@@ -293,39 +293,39 @@ train_df = featured_df.dropna(subset=[
 ])
 ```
 
-The critical detail: using `.shift(1)` before `.rolling()` prevents data leakage. Copilot sometimes generates rolling features on the raw column, which means the rolling mean at time T includes the value at time T. leaking the target into the feature.
+The critical detail - using `.shift(1)` before `.rolling()` prevents data leakage. Copilot sometimes generates rolling features on the raw column, which means the rolling mean at time T includes the value at time T. leaking the target into the feature.
 
-Winner: Claude. understands data leakage risk, applies groupby correctly per store.
+Winner - Claude. understands data leakage risk, applies groupby correctly per store.
 
-Task 5: Debugging pandas Errors
+Task 5 - Debugging pandas Errors
 
 Claude's conversational ability shines for debugging. Paste in a stack trace and Claude identifies root causes accurately.
 
 Error to debug:
 
 ```
-ValueError: Cannot convert non-finite values (NA or inf) to integer
+ValueError - Cannot convert non-finite values (NA or inf) to integer
 ```
 
-Claude's diagnosis: This error occurs when casting a float column containing NaN to int. Claude identifies the three root causes and gives the fix for each:
+Claude's diagnosis - This error occurs when casting a float column containing NaN to int. Claude identifies the three root causes and gives the fix for each:
 
 ```python
-Root cause 1: Column has NaN, astype(int) fails
+Root cause 1 - Column has NaN, astype(int) fails
 df["col"].astype(int)           # Fails if any NaN
 
-Fix 1: Fill NaN before casting
+Fix 1 - Fill NaN before casting
 df["col"].fillna(0).astype(int)
 
-Fix 2: Use nullable integer type (pandas 1.0+)
+Fix 2 - Use nullable integer type (pandas 1.0+)
 df["col"].astype("Int64")       # Capital I. supports pd.NA
 
-Fix 3: Drop NaN rows first
+Fix 3 - Drop NaN rows first
 df.dropna(subset=["col"])["col"].astype(int)
 
-Root cause 2: Column has inf values from division
+Root cause 2 - Column has inf values from division
 df["rate"] = df["a"] / df["b"]  # inf when b==0
 
-Fix: Replace inf before casting
+Fix - Replace inf before casting
 df["rate"] = df["rate"].replace([np.inf, -np.inf], np.nan)
 ```
 
@@ -345,13 +345,13 @@ Tool Selection Guide
 | Time series features | Claude | Understands leakage, groupby patterns |
 | Simple plot generation | Copilot | Faster with existing column context |
 
-Task 4: Debugging Statistical Analysis
+Task 4 - Debugging Statistical Analysis
 
-Scenario: Your model's validation AUC is 0.68 (bad), but training AUC is 0.95 (overfitting).
+Scenario - Your model's validation AUC is 0.68 (bad), but training AUC is 0.95 (overfitting).
 
 Claude prompt:
 ```
-Training AUC: 0.95, Validation AUC: 0.68
+Training AUC - 0.95, Validation AUC: 0.68
 
 This is a severe overfitting problem. My dataset has:
 - 10,000 training samples
@@ -392,7 +392,7 @@ LogisticRegression(C=0.01, max_iter=1000)
 
 Copilot gives the fix but not the diagnostic. Claude explains why each cause is likely.
 
-Task 5: Hyperparameter Tuning Strategy
+Task 5 - Hyperparameter Tuning Strategy
 
 Prompt to Claude:
 ```
@@ -423,7 +423,7 @@ Priority ranking (impact on performance):
 
 Recommended approach:
 - Phase 1 (10 models): GridSearch on n_estimators × max_depth
-  Time: 50 minutes. Keep top 3 parameter combinations.
+  Time - 50 minutes. Keep top 3 parameter combinations.
 - Phase 2 (15 models): RandomSearch on remaining 3 params around winning combo
   Time: 75 minutes
 - Phase 3 (20 models): Bayesian optimization to fine-tune top performers
@@ -435,7 +435,7 @@ Implementation:
 from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
 from skopt import BayesSearchCV
 
-Phase 1: GridSearch (most important parameters)
+Phase 1 - GridSearch (most important parameters)
 grid = GridSearchCV(
     RandomForestClassifier(n_jobs=-1, random_state=42),
     {
@@ -449,7 +449,7 @@ grid.fit(X_train, y_train)
 Keep best params
 best_params = grid.best_params_
 
-Phase 2: RandomSearch around winners
+Phase 2 - RandomSearch around winners
 search = RandomizedSearchCV(
     RandomForestClassifier(best_params, n_jobs=-1, random_state=42),
     {
@@ -464,9 +464,9 @@ search.fit(X_train, y_train)
 
 This strategy is impossible for Copilot. it can't reason about time constraints and feature importance ranking.
 
-Handling Imbalanced Data: Claude vs Copilot
+Handling Imbalanced Data - Claude vs Copilot
 
-Prompt: "My dataset is 95% class 0, 5% class 1. How do I fix this?"
+Prompt - "My dataset is 95% class 0, 5% class 1. How do I fix this?"
 
 Copilot suggests:
 ```python
@@ -506,7 +506,7 @@ pipeline.fit(X_train, y_train)
 score = pipeline.score(X_test, y_test) # Evaluated on original distribution
 """
 
-Also mention: if SMOTE hurts performance, try class_weight='balanced' instead.
+Also mention - if SMOTE hurts performance, try class_weight='balanced' instead.
 ```
 
 Tool Decision Framework
@@ -523,30 +523,30 @@ Tool Decision Framework
 | Cross-validation strategy | Excellent | Weak | Claude |
 | Hyperparameter tuning design | Excellent | Poor | Claude |
 
-Real Workflow: ML Practitioners Use Both
+Real Workflow - ML Practitioners Use Both
 
 Smart teams use Claude for reasoning and Copilot for speed:
 
 ```python
-Step 1: Use Copilot to generate boilerplate
-Type: "import pandas" → Copilot fills in common imports
+Step 1 - Use Copilot to generate boilerplate
+Type - "import pandas" → Copilot fills in common imports
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
-Step 2: Load data with Copilot
+Step 2 - Load data with Copilot
 df = pd.read_csv('data.csv')
 X = df.drop('target', axis=1)
 y = df['target']
 
-Step 3: Use Claude for strategy
+Step 3 - Use Claude for strategy
 "I have 50k samples, 30 features, binary classification.
 Training is slow. What features should I engineer?"
 → Claude generates domain-specific feature ideas
 
-Step 4: Back to Copilot for implementation
-Type comment: "# normalize numerical features"
+Step 4 - Back to Copilot for implementation
+Type comment - "# normalize numerical features"
 → Copilot suggests StandardScaler
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
@@ -556,12 +556,12 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
-Step 5: Claude for debugging
-Paste error: "ValueError: y_true and y_pred have different shapes"
+Step 5 - Claude for debugging
+Paste error - "ValueError: y_true and y_pred have different shapes"
 → Claude explains and provides fix
 
-Step 6: Copilot for testing boilerplate
-Type: "# test model performance"
+Step 6 - Copilot for testing boilerplate
+Type - "# test model performance"
 from sklearn.metrics import classification_report, confusion_matrix
 print(classification_report(y_test, model.predict(X_test_scaled)))
 ```

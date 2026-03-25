@@ -27,7 +27,7 @@ Table of Contents
 - [Best Practices for Automated Dashboards](#best-practices-for-automated-dashboards)
 - [Advanced Panel Configuration Patterns](#advanced-panel-configuration-patterns)
 - [AI-Assisted Dashboard Quality Standards](#ai-assisted-dashboard-quality-standards)
-- [Comparison Table: Dashboard Generation Approaches](#comparison-table-dashboard-generation-approaches)
+- [Comparison Table - Dashboard Generation Approaches](#comparison-table-dashboard-generation-approaches)
 - [Integration with Alerting Rules](#integration-with-alerting-rules)
 - [Production Deployment Checklist](#production-deployment-checklist)
 
@@ -305,7 +305,7 @@ def validate_generated_dashboard(dashboard_json):
     return len(issues) == 0, issues
 ```
 
-Comparison Table: Dashboard Generation Approaches
+Comparison Table - Dashboard Generation Approaches
 
 | Method | Automation | Customization | Learning Curve | Best For |
 |--------|---|---|---|---|

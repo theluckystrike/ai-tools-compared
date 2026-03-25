@@ -24,7 +24,7 @@ Table of Contents
 
 - [Why Data-in-Transit Encryption Matters](#why-data-in-transit-encryption-matters)
 - [Prerequisites](#prerequisites)
-- [Tools Comparison: Encryption Features](#tools-comparison-encryption-features)
+- [Tools Comparison - Encryption Features](#tools-comparison-encryption-features)
 - [Compliance Documentation](#compliance-documentation)
 - [Troubleshooting](#troubleshooting)
 
@@ -46,7 +46,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Core Encryption Concepts for Evaluation
+Step 1 - Core Encryption Concepts for Evaluation
 
 Before examining specific tools, understand the fundamental standards that matter:
 
@@ -56,7 +56,7 @@ Certificate validation ensures you're actually connecting to the legitimate serv
 
 Perfect Forward Secrecy (PFS) generates unique session keys for each connection. Even if long-term keys are compromised, past sessions remain secure.
 
-Step 2: Practical Evaluation Methods
+Step 2 - Practical Evaluation Methods
 
 1. Check Documentation for Protocol Support
 
@@ -65,7 +65,7 @@ Most AI coding tool documentation specifies which TLS versions they support. Loo
 For example, a well-documented tool might state:
 
 ```
-Transport Security: All API communications use TLS 1.3 with
+Transport Security - All API communications use TLS 1.3 with
 certificate pinning. Connections to *.ai-tool-domain.com
 enforce forward secrecy using ECDHE key exchange.
 ```
@@ -135,7 +135,7 @@ End-to-end encryption means the service cannot decrypt your code even if compell
 
 Data retention policies describe how long transmitted code gets stored. Some tools retain code for model training; others process and immediately discard.
 
-Step 3: Red Flags to Watch For
+Step 3 - Red Flags to Watch For
 
 Certain indicators suggest inadequate encryption practices:
 
@@ -153,7 +153,7 @@ Certain indicators suggest inadequate encryption practices:
 
 Tools that prioritize security typically provide detailed security documentation, often in a dedicated security whitepaper.
 
-Step 4: Example: Evaluating a Hypothetical Tool
+Step 4 - Example: Evaluating a Hypothetical Tool
 
 Suppose you're evaluating "CodeAI," a fictional AI coding assistant. Here's your evaluation process:
 
@@ -175,7 +175,7 @@ Expected output shows TLS 1.3 with strong ciphers.
 
 This systematic approach reveals whether the tool meets your security requirements.
 
-Step 5: Making Informed Decisions
+Step 5 - Making Informed Decisions
 
 After evaluating encryption standards, compare results against your requirements:
 
@@ -187,7 +187,7 @@ After evaluating encryption standards, compare results against your requirements
 
 Document your findings. Security assessments become valuable references when evaluating new tools or responding to security reviews.
 
-Step 6: Encryption Evaluation Checklist
+Step 6 - Encryption Evaluation Checklist
 
 Transport Layer Assessment
 
@@ -280,7 +280,7 @@ def check_certificate_pinning(domain: str) -> bool:
     return None  # Requires manual check
 ```
 
-Tools Comparison: Encryption Features
+Tools Comparison - Encryption Features
 
 | Tool | TLS Version | PFS | Certificate Pinning | End-to-End Encryption |
 |------|---|---|---|---|
@@ -292,9 +292,9 @@ Tools Comparison: Encryption Features
 
 *Ollama runs locally; TLS depends on your setup
 
-Step 7: Real-World Security Scenarios
+Step 7 - Real-World Security Scenarios
 
-Scenario 1: Proprietary Algorithm
+Scenario 1 - Proprietary Algorithm
 
 You're working with a proprietary trading algorithm that is your company's competitive advantage.
 
@@ -304,9 +304,9 @@ Evaluation:
 - Data retention: Critical - verify code isn't used for model training
 - End-to-end encryption: Ideal but not available in commercial tools
 
-Decision: Use local tools (Ollama) or commercial tool with written data agreement
+Decision - Use local tools (Ollama) or commercial tool with written data agreement
 
-Scenario 2: Healthcare Application
+Scenario 2 - Healthcare Application
 
 You're building HIPAA-compliant healthcare software.
 
@@ -317,9 +317,9 @@ Evaluation:
 - Audit logs: Must be available for compliance review
 - Subprocessor agreements: Must be documented
 
-Decision: Only tools with Business Associate Agreements (BAAs)
+Decision - Only tools with Business Associate Agreements (BAAs)
 
-Scenario 3: Open-Source Project
+Scenario 3 - Open-Source Project
 
 You're contributing to an open-source project (code is public).
 
@@ -328,9 +328,9 @@ Evaluation:
 - PFS: Helpful but not essential
 - Any tool works fine since code is public anyway
 
-Decision: Copilot, ChatGPT, or any commercial tool acceptable
+Decision - Copilot, ChatGPT, or any commercial tool acceptable
 
-Step 8: Data Retention and Deletion
+Step 8 - Data Retention and Deletion
 
 Beyond encryption, verify what happens to your code after transmission:
 
@@ -368,11 +368,11 @@ For regulated industries, maintain encryption evaluation documentation:
 ```markdown
 Encryption Assessment Report
 
-Tool: GitHub Copilot
-Date: 2026-03-21
-Reviewer: Security Team
+Tool - GitHub Copilot
+Date - 2026-03-21
+Reviewer - Security Team
 
-Step 9: Findings
+Step 9 - Findings
 
 Transport Security
 - [x] TLS 1.3 enforced
@@ -391,15 +391,15 @@ Compliance
 - [x] SOC 2 Type II certified
 - [ ] HIPAA BAA available
 
-Step 10: Recommendation
-Approved for: General development, non-sensitive code
-Not approved for: HIPAA data, client secrets, proprietary algorithms
+Step 10 - Recommendation
+Approved for - General development, non-sensitive code
+Not approved for - HIPAA data, client secrets, proprietary algorithms
 
-Step 11: Remediation
+Step 11 - Remediation
 For sensitive work, use local tools (Ollama) or implement code redaction layer.
 ```
 
-Step 12: Implementing Code Redaction
+Step 12 - Implementing Code Redaction
 
 For tools without sufficient security, implement code redaction:
 

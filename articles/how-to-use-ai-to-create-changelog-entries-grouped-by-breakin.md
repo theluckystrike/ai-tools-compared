@@ -32,7 +32,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Problem with Manual Changelog Creation
+Step 1 - The Problem with Manual Changelog Creation
 
 
 Writing changelogs manually involves reviewing every commit, pull request, and diff to identify what changed, categorize the changes, and write clear descriptions. This becomes increasingly time-consuming as projects grow. Teams often either skip detailed changelogs entirely or spend hours piecing them together at release time.
@@ -49,18 +49,18 @@ The challenge is particularly acute when you need to distinguish between:
 - Performance improvements that affect internal behavior but not external interfaces
 
 
-Step 2: What a High-Quality AI-Generated Changelog Looks Like
+Step 2 - What a High-Quality AI-Generated Changelog Looks Like
 
 
 Before examining the how, it helps to know what you are aiming for. A well-structured changelog entry produced with AI assistance should look like this:
 
 
 ```
-Step 3: v2.4.0. 2026-03-20
+Step 3 - v2.4.0. 2026-03-20
 
 Breaking Changes
 
-- `authenticate()` now requires `scope` parameter. The `scope` argument is no longer optional. Callers that omit it will receive a 400 error. Migration: add `scope="read"` (or your required scopes) to all `authenticate()` calls.
+- `authenticate()` now requires `scope` parameter. The `scope` argument is no longer optional. Callers that omit it will receive a 400 error. Migration - add `scope="read"` (or your required scopes) to all `authenticate()` calls.
 
 - Removed `legacyMode` config option. This option was deprecated in v2.2.0 and has now been removed. Remove `legacyMode` from your configuration file before upgrading.
 
@@ -82,7 +82,7 @@ Performance
 This structure gives users exactly what they need: a clear signal about what requires action before upgrading, followed by what they gain, followed by what got fixed.
 
 
-Step 4: Use AI to Analyze Git History
+Step 4 - Use AI to Analyze Git History
 
 
 The most effective approach starts with feeding your AI tool the right context. Begin by generating a clean summary of changes using Git commands:
@@ -115,10 +115,10 @@ Use clear, concise language suitable for developer documentation.
 ```
 
 
-Step 5: Prompt Templates for Different Scenarios
+Step 5 - Prompt Templates for Different Scenarios
 
 
-Template 1: From Commit Messages
+Template 1 - From Commit Messages
 
 
 ```
@@ -134,7 +134,7 @@ Format each entry as:
 - Improvements: [description]
 ```
 
-Template 2: From PR Descriptions
+Template 2 - From PR Descriptions
 
 ```
 Review these pull request descriptions and titles, then generate a changelog organized by:
@@ -148,7 +148,7 @@ Focus on user-facing changes only. Skip internal refactoring unless it affects t
 {{PR_LIST}}
 ```
 
-Template 3: From Diff Output
+Template 3 - From Diff Output
 
 ```
 Analyze this diff output and categorize each change as breaking, feature, fix, or improvement.
@@ -157,7 +157,7 @@ For breaking changes, include a migration note.
 {{DIFF_OUTPUT}}
 ```
 
-Step 6: Handling Breaking Changes Specifically
+Step 6 - Handling Breaking Changes Specifically
 
 Breaking changes require special attention because they directly impact users upgrading from previous versions. When prompting AI for breaking changes, be explicit about what you need:
 
@@ -177,7 +177,7 @@ For each breaking change found, provide:
 
 AI models are generally good at identifying obvious API signature changes but can miss subtle behavioral changes -- for example, a function that still accepts the same arguments but now validates them more strictly. Always have a human review the breaking changes section before publishing.
 
-Step 7: Automate the Workflow
+Step 7 - Automate the Workflow
 
 For teams releasing frequently, consider setting up a semi-automated workflow:
 
@@ -212,7 +212,7 @@ curl -s https://api.openai.com/v1/chat/completions \
  }' | jq -r '.choices[0].message.content'
 ```
 
-Step 8: Integrate AI Changelog Generation into CI/CD
+Step 8 - Integrate AI Changelog Generation into CI/CD
 
 The most scalable approach runs changelog generation automatically as part of your release pipeline. A Python script can pull commits between two tags, send them to an AI API with a structured prompt, and output a draft changelog. Invoke this script from a GitHub Actions workflow on tag push, with the output committed back to your CHANGELOG.md or posted as a GitHub Release draft for human review before publishing. The key is to keep human review mandatory for the breaking changes section -- automation handles the tedious extraction work, humans verify accuracy before the release goes public.
 
@@ -230,7 +230,7 @@ Iterate on prompts -- If the first output isn't quite right, refine your prompt 
 
 Keep entries concise -- For each item, aim for one to two sentences. Links to detailed documentation or migration guides can provide additional context without bloating the changelog itself.
 
-Step 9: Common Pitfalls to Avoid
+Step 9 - Common Pitfalls to Avoid
 
 When using AI for changelog generation, watch for these issues:
 

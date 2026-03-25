@@ -69,7 +69,7 @@ Adds:
 Fixes #1234
 ```
 
-Elements: type prefix (feat/fix/chore/refactor), scope, subject under 72 chars, body explaining why, and issue references. Most developers skip the body because writing it is tedious. this is exactly where AI helps most.
+Elements - type prefix (feat/fix/chore/refactor), scope, subject under 72 chars, body explaining why, and issue references. Most developers skip the body because writing it is tedious. this is exactly where AI helps most.
 
 aicommits
 
@@ -95,9 +95,9 @@ Generate multiple variants to pick the best:
 aicommits --generate 5
 ```
 
-What aicommits does well: Fast, stays out of the way.
+What aicommits does well - Fast, stays out of the way.
 
-Weaknesses: Generated body is often minimal or missing. For a large diff with multiple logical changes, it generates one message for all of them instead of suggesting split commits.
+Weaknesses - Generated body is often minimal or missing. For a large diff with multiple logical changes, it generates one message for all of them instead of suggesting split commits.
 
 commitizen with AI hooks
 
@@ -129,7 +129,7 @@ GENERATED=$(curl -s https://api.anthropic.com/v1/messages \
 echo "$GENERATED" > "$COMMIT_MSG_FILE"
 ```
 
-Make it executable: `chmod +x .git/hooks/prepare-commit-msg`
+Make it executable - `chmod +x .git/hooks/prepare-commit-msg`
 
 Now `git commit` opens your editor with an AI-generated message pre-filled. The workflow is faster than writing from scratch and more structured than aicommits.
 
@@ -152,7 +152,7 @@ Pool configuration now reads from DATABASE_POOL_SIZE env var (default: 10).
 
 Claude Code understands the context behind the diff. it reads related files to understand what the change actually does. A diff that shows moving code between files gets a "refactor(module): move X to Y" message, not a message describing raw additions and deletions.
 
-Limitation: Requires being in the Claude Code session, which is heavier than a CLI tool for a quick commit.
+Limitation - Requires being in the Claude Code session, which is heavier than a CLI tool for a quick commit.
 
 Cursor IDE Commit
 
@@ -178,7 +178,7 @@ GitHub Copilot in VS Code has a sparkle button in the Source Control commit mess
 Copilot output for the rate limiter implementation:
 "Add Redis-backed rate limiter"
 
-Missing: type prefix, scope, body explaining why Redis vs in-memory
+Missing - type prefix, scope, body explaining why Redis vs in-memory
 ```
 
 Copilot's messages are shorter and less structured. Accurate subject lines but rarely include conventional commit formatting or body text.
@@ -205,12 +205,12 @@ mkdir -p ~/.git-templates/hooks
 [copy the hook script above]
 chmod +x ~/.git-templates/hooks/prepare-commit-msg
 git config --global init.templateDir ~/.git-templates
-Existing repos: git init (safe to re-run)
+Existing repos - git init (safe to re-run)
 ```
 
 For significant commits (releases, major features), use Claude Code's `/commit`. the quality is noticeably better when the context is complex.
 
-Advanced Hook: Custom Commit Messages for Different Types
+Advanced Hook - Custom Commit Messages for Different Types
 
 Some teams want different message formats for different change types:
 
@@ -308,8 +308,8 @@ Collaborative implementation with @alice and @bob.
 Session TTL is configurable via SESSION_TTL env var (default: 1h).
 Includes fallback to in-memory cache if Redis is unavailable.
 
-Co-Authored-By: Alice <alice@example.com>
-Co-Authored-By: Bob <bob@example.com>"
+Co-Authored-By - Alice <alice@example.com>
+Co-Authored-By - Bob <bob@example.com>"
 ```
 
 AI-generated messages can include the Co-Authored-By trailer automatically if you set it in a config file.

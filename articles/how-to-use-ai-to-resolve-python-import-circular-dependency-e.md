@@ -21,11 +21,11 @@ Circular import errors are among the most frustrating issues Python developers e
 Table of Contents
 
 - [Understanding Circular Import Errors](#understanding-circular-import-errors)
-- [Step 1: Identify the Import Chain](#step-1-identify-the-import-chain)
-- [Step 2: Locate the Specific Import Statements](#step-2-locate-the-specific-import-statements)
-- [Step 3: Apply the Appropriate Fix](#step-3-apply-the-appropriate-fix)
-- [Step 4: Verify the Fix](#step-4-verify-the-fix)
-- [Step 5: Prevent Future Issues](#step-5-prevent-future-issues)
+- [Step 1 - Identify the Import Chain](#step-1-identify-the-import-chain)
+- [Step 2 - Locate the Specific Import Statements](#step-2-locate-the-specific-import-statements)
+- [Step 3 - Apply the Appropriate Fix](#step-3-apply-the-appropriate-fix)
+- [Step 4 - Verify the Fix](#step-4-verify-the-fix)
+- [Step 5 - Prevent Future Issues](#step-5-prevent-future-issues)
 - [Real-World Example](#real-world-example)
 - [Using AI Tools to Detect Circular Imports Proactively](#using-ai-tools-to-detect-circular-imports-proactively)
 - [AI Tool Comparison for Debugging Circular Imports](#ai-tool-comparison-for-debugging-circular-imports)
@@ -45,7 +45,7 @@ Common error messages include:
 
 These errors often appear when your project grows and modules become interdependent. The solution typically involves restructuring imports, delaying imports, or reorganizing code.
 
-Step 1: Identify the Import Chain
+Step 1 - Identify the Import Chain
 
 When you encounter a circular import error, the first step is understanding the dependency flow. AI tools can help you map this quickly. Paste your error message and relevant code into an AI assistant and ask:
 
@@ -55,7 +55,7 @@ Which modules are involved in this circular import? Show me the import chain fro
 
 The AI will analyze your code and identify the exact modules and import statements causing the problem.
 
-Step 2: Locate the Specific Import Statements
+Step 2 - Locate the Specific Import Statements
 
 Once you know which modules are involved, examine the import statements in each file. Look for imports at the top of the file (module level) that trigger the circular dependency. For example:
 
@@ -75,11 +75,11 @@ def process_data():
     return main()
 ```
 
-Step 3: Apply the Appropriate Fix
+Step 3 - Apply the Appropriate Fix
 
 AI tools can recommend the best solution based on your specific code structure. Here are the most common approaches:
 
-Fix 1: Move Imports Inside Functions
+Fix 1 - Move Imports Inside Functions
 
 The simplest fix is to move imports from the module level to inside functions. This delays the import until the function is actually called, by which point the module is fully loaded:
 
@@ -99,7 +99,7 @@ def process_data():
 
 This approach works well when the imported item is only used in specific functions.
 
-Fix 2: Restructure Code into Separate Modules
+Fix 2 - Restructure Code into Separate Modules
 
 Another effective solution is to extract shared code into its own module. If both modules depend on a shared utility, place that utility in a third module that neither depends on:
 
@@ -123,7 +123,7 @@ def process_data():
     return shared_helper()
 ```
 
-Fix 3: Import at the End of the File
+Fix 3 - Import at the End of the File
 
 For some cases, you can move imports to the bottom of the file after all definitions:
 
@@ -141,7 +141,7 @@ from module_b import process_data
 
 This works because all classes and functions are defined before the import executes.
 
-Fix 4: Use importlib for Dynamic Imports
+Fix 4 - Use importlib for Dynamic Imports
 
 When other solutions don't fit, dynamic imports with `importlib` provide a workaround:
 
@@ -156,7 +156,7 @@ def main():
 
 This defers the import entirely and breaks the circular dependency at runtime.
 
-Step 4: Verify the Fix
+Step 4 - Verify the Fix
 
 After applying a fix, test your code thoroughly. Run the imports in a fresh Python session:
 
@@ -166,7 +166,7 @@ python -c "import module_a; print(module_a.main())"
 
 If the error persists, you may have additional circular dependencies or need a different fix. AI can help verify your solution by analyzing whether the circular dependency is truly resolved.
 
-Step 5: Prevent Future Issues
+Step 5 - Prevent Future Issues
 
 Once resolved, establish patterns that prevent circular imports:
 

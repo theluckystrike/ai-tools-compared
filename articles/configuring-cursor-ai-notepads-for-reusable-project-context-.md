@@ -294,8 +294,8 @@ Regular Synchronization with Reality
 Schedule quarterly reviews to ensure notepads reflect actual practices:
 
 ```markdown
-Last Updated: 2026-03-21
-Next Review: 2026-06-21
+Last Updated - 2026-03-21
+Next Review - 2026-06-21
 
 Checklist
 - [ ] Verify all listed dependencies match package.json
@@ -309,11 +309,11 @@ Context Windows and Token Limits
 
 Modern AI models have token limits. Design notepads efficiently:
 
-Optimal notepad size: 4,000-6,000 tokens (roughly 2,000-3,000 words)
+Optimal notepad size - 4,000-6,000 tokens (roughly 2,000-3,000 words)
 
-Too large: Wastes context window; Cursor may ignore parts
+Too large - Wastes context window; Cursor may ignore parts
 
-Too small: Insufficient context for meaningful assistance
+Too small - Insufficient context for meaningful assistance
 
 Use this structure to maximize usefulness within token constraints:
 
@@ -345,7 +345,7 @@ Contextual Prompting with Notepads
 Once notepads are set up, use them effectively in conversations:
 
 ```
-User: "How should I structure the error handler for the new POST endpoint?"
+User - "How should I structure the error handler for the new POST endpoint?"
 
 Cursor reads notepad context:
 - Error handling: Always return {status, message, code}
@@ -395,10 +395,10 @@ Context Relevance Issues
 If Cursor suggests code that ignores your conventions, the notepad context wasn't clear. Add specific examples:
 
 ```markdown
-WRONG: Vague instruction
+WRONG - Vague instruction
 Handle errors appropriately
 
-RIGHT: Specific example
+RIGHT - Specific example
 All route handlers must return this error format:
 res.status(error.statusCode || 500).json({
   status: "error",

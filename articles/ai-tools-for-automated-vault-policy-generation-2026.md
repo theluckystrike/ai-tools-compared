@@ -28,7 +28,7 @@ You are generating HashiCorp Vault policies for Vault 1.15+.
 We use KV secrets engine v2 (kv-v2), mounted at "secret/".
 KV v2 paths require "data/" prefix for reading (secret/data/...) and
 "metadata/" for listing (secret/metadata/...).
-Our auth methods: AppRole for services, Kubernetes auth for pods.
+Our auth methods - AppRole for services, Kubernetes auth for pods.
 ```
 
 This prevents the most common mistake: writing `secret/myapp/*` when you need `secret/data/myapp/*` for KV v2.
@@ -48,20 +48,20 @@ It needs to:
 Claude output:
 
 ```hcl
-Policy: orders-service
+Policy - orders-service
 Grants read-only access to orders-service secrets and database credentials
 
-KV v2: read secrets
+KV v2 - read secrets
 path "secret/data/orders-service/*" {
   capabilities = ["read"]
 }
 
-KV v2: list secret names (metadata path for listing)
+KV v2 - list secret names (metadata path for listing)
 path "secret/metadata/orders-service/*" {
   capabilities = ["list"]
 }
 
-KV v2: list the top-level directory
+KV v2 - list the top-level directory
 path "secret/metadata/orders-service" {
   capabilities = ["list"]
 }
@@ -91,7 +91,7 @@ AppRole Authentication
 Prompt:
 ```text
 Write Vault configuration to set up AppRole auth for orders-service.
-The role should: use the orders-service policy, have a 24-hour token TTL,
+The role should - use the orders-service policy, have a 24-hour token TTL,
 allow token renewal up to 7 days, require secret ID to not be renewable,
 and bind to CIDR 10.0.0.0/8.
 Include the Terraform configuration and the initial credential bootstrap commands.
@@ -100,7 +100,7 @@ Include the Terraform configuration and the initial credential bootstrap command
 Claude output:
 
 ```hcl
-Terraform: enable AppRole auth and configure role
+Terraform - enable AppRole auth and configure role
 
 resource "vault_auth_backend" "approle" {
   type = "approle"
@@ -128,7 +128,7 @@ output "role_id" {
 ```
 
 ```bash
-Bootstrap: retrieve Role ID (not secret, can be stored in config)
+Bootstrap - retrieve Role ID (not secret, can be stored in config)
 ROLE_ID=$(vault read -field=role_id auth/approle/role/orders-service/role-id)
 
 Generate a Secret ID (keep secret, rotate regularly)
@@ -152,7 +152,7 @@ Include both the Vault configuration and the Kubernetes service account manifest
 Claude output:
 
 ```hcl
-Terraform: Kubernetes auth backend role
+Terraform - Kubernetes auth backend role
 resource "vault_kubernetes_auth_backend_role" "orders_service" {
   backend                          = "kubernetes"
   role_name                        = "orders-service"
@@ -167,7 +167,7 @@ resource "vault_kubernetes_auth_backend_role" "orders_service" {
 ```
 
 ```yaml
-Kubernetes: ServiceAccount and RBAC
+Kubernetes - ServiceAccount and RBAC
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -214,7 +214,7 @@ One of Vault's most powerful features is generating short-lived database credent
 Prompt:
 ```text
 Write Vault Terraform configuration to set up dynamic PostgreSQL credentials.
-Database: postgres.internal:5432, dbname: orders.
+Database - postgres.internal:5432, dbname: orders.
 Create a role called "orders-service-role" that generates credentials with
 SELECT, INSERT, UPDATE on all tables in the public schema.
 Credentials should expire after 1 hour.
@@ -423,7 +423,7 @@ resource "vault_database_secret_backend_role" "orders_rw" {
 Policy for services to use database credentials:
 
 ```hcl
-Policy: orders-service-db-access
+Policy - orders-service-db-access
 path "database/creds/orders-service-ro" {
   capabilities = ["read"]
 }

@@ -209,7 +209,7 @@ Common Pitfalls in AI-Generated Worker Tests
 
 AI tools consistently make several mistakes when generating Web Worker tests:
 
-Missing `terminate()` calls: Generated tests often forget to call `worker.terminate()` in cleanup, leading to memory leaks across test runs. Always add cleanup in `afterEach`:
+Missing `terminate()` calls - Generated tests often forget to call `worker.terminate()` in cleanup, leading to memory leaks across test runs. Always add cleanup in `afterEach`:
 Handling Worker Lifecycle in Tests
 
 Testing workers requires careful management of setup and teardown to prevent test pollution. AI can help generate complete test harnesses:
@@ -352,7 +352,7 @@ Incorrect `importScripts` mocking: Web Workers use `importScripts` instead of ES
 
 Service Worker lifecycle confusion: AI assistants frequently mix up `install`, `activate`, and `fetch` event handlers. Verify that generated tests trigger lifecycle events in the correct order: install first, then activate, then fetch.
 
-Missing `waitUntil` handling: Service Worker event handlers use `event.waitUntil()` to extend the event lifetime. AI-generated tests often skip this, causing tests to pass even when async operations inside the handler fail.
+Missing `waitUntil` handling - Service Worker event handlers use `event.waitUntil()` to extend the event lifetime. AI-generated tests often skip this, causing tests to pass even when async operations inside the handler fail.
 
 Performance Testing Considerations
 

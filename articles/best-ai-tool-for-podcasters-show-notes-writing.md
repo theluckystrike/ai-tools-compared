@@ -144,10 +144,10 @@ A well-structured template ensures consistent output across episodes:
 ```
 [EPISODE TITLE]
 
-Guest: [Name]
-Episode: [Number]
-Duration: [Length]
-Published: [Date]
+Guest - [Name]
+Episode - [Number]
+Duration - [Length]
+Published - [Date]
 
 Topics Covered
 [00:00] - Introduction
@@ -172,7 +172,7 @@ Cost-Benefit Analysis for Different Podcasters
 
 Casual podcasters (1 episode/month):
 - Tool: Otter.ai free tier or ChatGPT API
-- Cost: Free or $0.50-2/month
+- Cost - Free or $0.50-2/month
 - Time investment: 20-30 minutes per episode
 - Best choice: Otter.ai free tier handles monthly shows perfectly
 
@@ -194,7 +194,7 @@ Technical podcasters wanting full control:
 - Time investment: 15-20 minutes setup, then automated
 - Best choice: Build once, reuse forever
 
-Advanced: Batch Processing for Show Networks
+Advanced - Batch Processing for Show Networks
 
 For podcast networks, implement batch processing:
 
@@ -225,7 +225,7 @@ Decision matrix:
 
 For professional podcasters serious about their show notes quality, combining accurate transcription with AI-powered summarization delivers the best results. The time savings are substantial, you can produce polished show notes in fifteen minutes rather than spending an hour or more on manual creation. This efficiency allows for more consistent publishing schedules without sacrificing content quality.
 
-The compound effect: spending 15 minutes on show notes instead of 60 minutes saves 3 hours per month for a 4-episode podcast. Over a year, that's 36 hours recovered for content creation, marketing, or interviewing better guests.
+The compound effect - spending 15 minutes on show notes instead of 60 minutes saves 3 hours per month for a 4-episode podcast. Over a year, that's 36 hours recovered for content creation, marketing, or interviewing better guests.
 
 Advanced Show Notes Optimization
 
@@ -292,7 +292,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -304,7 +304,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

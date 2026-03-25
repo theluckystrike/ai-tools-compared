@@ -72,7 +72,7 @@ For individual developers on air-gapped workstations, Ollama + Continue.dev wins
 
 Top Local LLM Options for Coding
 
-Ollama: The Easiest Entry Point
+Ollama - The Easiest Entry Point
 
 Ollama has become the go-to solution for running local LLMs. It supports macOS, Linux, and Windows, with a simple command-line interface.
 
@@ -89,7 +89,7 @@ ollama run codellama --temperature 0.2 --top-p 0.9
 
 Ollama works well for code completion and explanation but lacks the sophisticated IDE integration of cloud tools. You can pair it with Continue.dev for VSCode or Zed for a more integrated experience.
 
-Continue.dev: Local IDE Integration
+Continue.dev - Local IDE Integration
 
 Continue.dev provides IDE extensions that connect to local models. It supports Ollama, LM Studio, and other backends.
 
@@ -111,7 +111,7 @@ Continue.dev provides IDE extensions that connect to local models. It supports O
 
 This configuration enables inline autocomplete and chat functionality within VSCode or JetBrains IDEs, running entirely on local hardware.
 
-LM Studio: Full-Featured Local AI
+LM Studio - Full-Featured Local AI
 
 LM Studio offers a polished GUI for running various open-source models. It includes model discovery, fine-tuning options, and API endpoints that mimic OpenAI's interface.
 
@@ -270,7 +270,7 @@ Compare with checksum published on model's official release page
 
 Keep a record of which model version is deployed, its origin (Hugging Face model card URL, download date), and who approved it. Some FedRAMP environments also require that you run models through a software composition analysis (SCA) tool to check for supply chain risks.
 
-Performance Benchmarks: Local vs Cloud Coding Assistance
+Performance Benchmarks - Local vs Cloud Coding Assistance
 
 Understanding the real performance gap helps teams make an informed decision. These benchmarks compare local models to cloud alternatives on HumanEval (Python coding benchmark) and a custom Go/Rust test suite:
 

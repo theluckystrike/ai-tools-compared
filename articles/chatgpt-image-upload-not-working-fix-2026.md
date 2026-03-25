@@ -60,7 +60,7 @@ Cached credentials, outdated browser data, or extensions interfering with networ
 Step-by-Step Fixes
 
 
-Fix 1: Verify File Specifications
+Fix 1 - Verify File Specifications
 
 
 First, confirm your file meets ChatGPT's requirements. Open a terminal and check file details:
@@ -84,7 +84,7 @@ convert input.heic -quality 90 output.jpg
 ```
 
 
-Fix 2: Clear Browser Data
+Fix 2 - Clear Browser Data
 
 
 Corrupted local storage often causes upload issues. Clear only the relevant site data:
@@ -103,12 +103,12 @@ For a more thorough reset, clear cookies and cache specifically for chat.openai.
 
 
 ```bash
-Chrome: Clear via Settings > Privacy > Clear browsing data
-Or use keyboard shortcut: Cmd+Shift+Delete (Mac) / Ctrl+Shift+Delete (Windows)
+Chrome - Clear via Settings > Privacy > Clear browsing data
+Or use keyboard shortcut - Cmd+Shift+Delete (Mac) / Ctrl+Shift+Delete (Windows)
 ```
 
 
-Fix 3: Disable Browser Extensions
+Fix 3 - Disable Browser Extensions
 
 
 Extensions like ad blockers, privacy tools, or AI assistants can intercept network requests. Temporarily disable all extensions:
@@ -124,7 +124,7 @@ Extensions like ad blockers, privacy tools, or AI assistants can intercept netwo
 If the upload succeeds with extensions disabled, re-enable them one by one to identify the culprit.
 
 
-Fix 4: Switch Network Configuration
+Fix 4 - Switch Network Configuration
 
 
 Network issues often manifest as stalled uploads or connection resets. Try these approaches:
@@ -133,7 +133,7 @@ Network issues often manifest as stalled uploads or connection resets. Try these
 Open a new incognito window and attempt the upload to bypass cached data and cookie conflicts. If that fails, switch from corporate WiFi to a mobile hotspot (or vice versa), since some networks block the WebSocket connections required for uploads. For firewall-related issues, try connecting through a different VPN endpoint, some servers allow WebSocket traffic while others block it.
 
 
-Fix 5: Check Account Limits and API Status
+Fix 5 - Check Account Limits and API Status
 
 
 Visit the [OpenAI Status Page](https://status.openai.com) to check for ongoing outages. Image processing services may experience degradation even when text chat works normally.
@@ -152,7 +152,7 @@ For free tier users, monitor your usage:
 If you consistently hit limits, consider upgrading to ChatGPT Plus ($20/month) for higher quotas.
 
 
-Fix 6: Update Client and Clear DNS Cache
+Fix 6 - Update Client and Clear DNS Cache
 
 
 Outdated clients may have unresolved bugs affecting uploads. Ensure you're running the latest version:
@@ -171,7 +171,7 @@ ipconfig /flushdns
 Restart your browser or the ChatGPT desktop application after clearing caches.
 
 
-Fix 7: Try Alternative Upload Methods
+Fix 7 - Try Alternative Upload Methods
 
 
 If direct uploads consistently fail, alternatives exist:

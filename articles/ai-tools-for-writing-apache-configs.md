@@ -17,9 +17,9 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Apache httpd configuration is notoriously verbose and error-prone. Getting VirtualHost configs, mod_rewrite rules, SSL settings, and security headers right requires memorizing obscure directives. AI tools dramatically reduce the lookup time. but accuracy varies. This guide tests Claude, GPT-4, and Copilot on real Apache configuration tasks.
 
-Task 1: HTTPS VirtualHost with HTTP Redirect
+Task 1 - HTTPS VirtualHost with HTTP Redirect
 
-Prompt: "Write an Apache httpd config for example.com that redirects HTTP to HTTPS, serves from /var/www/example.com, enables PHP-FPM via proxy, and sets modern TLS settings."
+Prompt - "Write an Apache httpd config for example.com that redirects HTTP to HTTPS, serves from /var/www/example.com, enables PHP-FPM via proxy, and sets modern TLS settings."
 
 Claude's output:
 
@@ -87,11 +87,11 @@ HTTPS VirtualHost
 
 Claude includes PHP-FPM via Unix socket (faster than TCP), correct HSTS with preload, disables directory listing, and uses the `SSLHonorCipherOrder Off` setting required for TLS 1.3 forward secrecy. GPT-4 produces similar output but sometimes uses `ProxyPassMatch` instead of the `SetHandler` approach, which is less efficient.
 
-Task 2: mod_rewrite for SPA Routing
+Task 2 - mod_rewrite for SPA Routing
 
 Single-page applications need all routes to serve `index.html`:
 
-Prompt: "Write Apache mod_rewrite rules for a React SPA at /var/www/app. Serve index.html for all routes except actual files and API calls under /api/."
+Prompt - "Write Apache mod_rewrite rules for a React SPA at /var/www/app. Serve index.html for all routes except actual files and API calls under /api/."
 
 Claude's .htaccess:
 
@@ -116,9 +116,9 @@ RewriteRule ^ index.html [L]
 
 GPT-4's version often includes `RewriteRule ^ /index.html [L]` with the leading slash, which causes an infinite redirect loop in some Apache configurations. Claude correctly omits the leading slash in the target.
 
-Task 3: Reverse Proxy with Load Balancing
+Task 3 - Reverse Proxy with Load Balancing
 
-Prompt: "Configure Apache as a reverse proxy load balancer for 3 Node.js backend servers (ports 3001, 3002, 3003). Use leastconn balancing, health checks, and sticky sessions."
+Prompt - "Configure Apache as a reverse proxy load balancer for 3 Node.js backend servers (ports 3001, 3002, 3003). Use leastconn balancing, health checks, and sticky sessions."
 
 Claude:
 
@@ -167,9 +167,9 @@ a2enmod proxy proxy_http proxy_balancer lbmethod_byleastconn headers
 </VirtualHost>
 ```
 
-Task 4: Security Headers and CSP
+Task 4 - Security Headers and CSP
 
-Prompt: "Generate Apache security headers for a banking application. Include strict CSP, HSTS, and disable all unsafe methods."
+Prompt - "Generate Apache security headers for a banking application. Include strict CSP, HSTS, and disable all unsafe methods."
 
 Claude:
 
@@ -216,16 +216,16 @@ Disable unsafe HTTP methods
 
 Claude notes that the CSP nonce requires server-side generation and suggests a PHP snippet or Apache module for dynamic nonce injection.
 
-Task 5: Rate Limiting and IP-Based Access Control
+Task 5 - Rate Limiting and IP-Based Access Control
 
 A common need for APIs and admin panels: rate limiting by IP using `mod_ratelimit` and `mod_evasive`, plus granular IP-based access control.
 
-Prompt: "Configure Apache to rate limit the /api/ endpoint to 100 req/s per IP, block known bad IPs, and allow the /admin/ path only from a specific subnet."
+Prompt - "Configure Apache to rate limit the /api/ endpoint to 100 req/s per IP, block known bad IPs, and allow the /admin/ path only from a specific subnet."
 
 Claude:
 
 ```apache
-Rate limiting. requires: a2enmod ratelimit
+Rate limiting. requires - a2enmod ratelimit
 
 <Location /api/>
     # Limit response rate to 100KB/s per connection (mod_ratelimit)
@@ -260,11 +260,11 @@ For large blocklists (thousands of IPs), Claude recommends using `mod_authz_host
 
 GPT-4 produces similar rate limiting config but sometimes uses the deprecated `mod_bandwidth` or forgets to mention the `a2enmod` commands needed to activate modules.
 
-Task 6: .htaccess for WordPress Multisite
+Task 6 - .htaccess for WordPress Multisite
 
 WordPress Multisite has specific rewrite requirements that differ from single-site WordPress. This is a common source of AI config errors.
 
-Prompt: "Write .htaccess rules for WordPress Multisite in subdirectory mode."
+Prompt - "Write .htaccess rules for WordPress Multisite in subdirectory mode."
 
 Claude's output:
 
@@ -326,7 +326,7 @@ Tool Comparison
 
 Module Activation Cheat Sheet
 
-One consistently useful pattern: Claude always includes the `a2enmod` commands needed to activate referenced modules. Both GPT-4 and Copilot sometimes skip this, leaving you with configs that silently do nothing because the module isn't loaded.
+One consistently useful pattern - Claude always includes the `a2enmod` commands needed to activate referenced modules. Both GPT-4 and Copilot sometimes skip this, leaving you with configs that silently do nothing because the module isn't loaded.
 
 ```bash
 Enable all modules referenced in this guide

@@ -21,10 +21,10 @@ Flaky Cypress tests, those that pass and fail intermittently, are often caused b
 Table of Contents
 
 - [Understanding Timing-Related Flakiness in Cypress](#understanding-timing-related-flakiness-in-cypress)
-- [Claude Code: Context-Aware Timing Analysis](#claude-code-context-aware-timing-analysis)
-- [Cursor: Real-Time Fix Suggestions](#cursor-real-time-fix-suggestions)
-- [GitHub Copilot: Pattern-Based Suggestions](#github-copilot-pattern-based-suggestions)
-- [Codeium: Fast Completions with Context](#codeium-fast-completions-with-context)
+- [Claude Code - Context-Aware Timing Analysis](#claude-code-context-aware-timing-analysis)
+- [Cursor - Real-Time Fix Suggestions](#cursor-real-time-fix-suggestions)
+- [GitHub Copilot - Pattern-Based Suggestions](#github-copilot-pattern-based-suggestions)
+- [Codeium - Fast Completions with Context](#codeium-fast-completions-with-context)
 - [Comparing Tool Effectiveness](#comparing-tool-effectiveness)
 - [Best Practices for AI-Assisted Timing Fixes](#best-practices-for-ai-assisted-timing-fixes)
 - [Common Timing Fixes AI Tools Suggest](#common-timing-fixes-ai-tools-suggest)
@@ -49,7 +49,7 @@ Cypress runs tests in a Node.js environment against a real browser, but the asyn
 
 AI tools that excel at debugging these issues understand Cypress's command queue, retry logic, and built-in waiting mechanisms. They can analyze test code and identify patterns that lead to flakiness, suggesting fixes like proper waiting strategies, aliasing, or conditional assertions.
 
-Claude Code: Context-Aware Timing Analysis
+Claude Code - Context-Aware Timing Analysis
 
 Claude Code excels at understanding the context of timing issues because it can analyze entire test files and identify patterns. When you paste a flaky Cypress test, Claude Code often recognizes common anti-patterns and suggests fixes.
 
@@ -76,7 +76,7 @@ it('should load user data', () => {
 
 Claude Code also excels at explaining Cypress's built-in retry mechanism and suggesting when to use `should()` for assertions versus `then()` for explicit waiting. Its understanding of JavaScript async patterns helps it identify issues like improper use of Cypress commands inside regular JavaScript callbacks.
 
-Cursor: Real-Time Fix Suggestions
+Cursor - Real-Time Fix Suggestions
 
 Cursor provides real-time suggestions as you type, which can help prevent timing issues before they become problems. Its strength lies in understanding the relationship between test code and the application code being tested.
 
@@ -95,7 +95,7 @@ cy.get('.loading').should('not.exist').then(() => {
 
 Cursor's multi-file analysis allows it to examine both the test and the application code, identifying situations where the frontend doesn't properly signal completion. It can suggest adding loading states or modifying the application to expose readiness signals.
 
-GitHub Copilot: Pattern-Based Suggestions
+GitHub Copilot - Pattern-Based Suggestions
 
 GitHub Copilot suggests code based on patterns it has seen in training data. For common Cypress timing patterns, Copilot often suggests appropriate waits and assertions.
 
@@ -111,7 +111,7 @@ cy.wait('@saveUser').its('response.statusCode').should('eq', 200);
 
 However, Copilot sometimes suggests generic waits like `cy.wait(1000)` rather than smarter waiting strategies. When this happens, you can improve results by adding comments in your prompts that specify you want Cypress-native waiting approaches.
 
-Codeium: Fast Completions with Context
+Codeium - Fast Completions with Context
 
 Codeium provides fast completions and can analyze the current file context. Its strength is speed, it quickly suggests timing-related fixes as you type.
 
@@ -194,7 +194,7 @@ it('should submit form after animation', () => {
 });
 ```
 
-The difference is crucial: hardcoded waits fail on slow CI environments, while visibility checks adapt to actual browser performance.
+The difference is crucial - hardcoded waits fail on slow CI environments, while visibility checks adapt to actual browser performance.
 
 Intercepting Network Requests for Stability
 
@@ -259,7 +259,7 @@ Poor timing fixes create fragile tests that pass locally but fail in CI. Good ti
 
 Testing the Tests with AI Guidance
 
-Advanced developers use AI tools to validate their timing fixes. Ask Claude Code: "Are there timing issues with this Cypress test?" or "What could cause this test to be flaky?" to catch problems before they become production issues.
+Advanced developers use AI tools to validate their timing fixes. Ask Claude Code - "Are there timing issues with this Cypress test?" or "What could cause this test to be flaky?" to catch problems before they become production issues.
 
 The most productive workflow involves:
 1. Writing the test with AI suggestions

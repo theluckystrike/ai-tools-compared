@@ -45,7 +45,7 @@ Converting Error Documentation to Test Scenarios
 
 The process starts with extracting error information from your API documentation. Most APIs provide error codes in formats like OpenAPI specs, Markdown docs, or plain text. Here's how to use AI effectively:
 
-Step 1: Prepare Your Error Documentation
+Step 1 - Prepare Your Error Documentation
 
 Gather all error-related documentation from your API provider. This might include:
 
@@ -69,7 +69,7 @@ For example, a typical API error section might look like:
 }
 ```
 
-Step 2: Prompt AI to Generate Test Scenarios
+Step 2 - Prompt AI to Generate Test Scenarios
 
 When working with an AI coding assistant, provide clear context about your testing framework and desired output format. An effective prompt includes:
 
@@ -93,7 +93,7 @@ Based on this API error documentation, generate pytest test cases for a Python A
 Use the requests library and pytest. Output complete, runnable test code.
 ```
 
-Step 3: Review and Refine Generated Tests
+Step 3 - Review and Refine Generated Tests
 
 AI-generated tests provide a solid foundation, but always review them for:
 
@@ -107,7 +107,7 @@ AI-generated tests provide a solid foundation, but always review them for:
 
 Practical Examples
 
-Example 1: Rate Limit Testing
+Example 1 - Rate Limit Testing
 
 Rate limit errors (429) are commonly documented but poorly tested. AI can generate boundary tests:
 
@@ -147,7 +147,7 @@ class TestRateLimiting:
         assert int(response.headers['retry_after']) > 0
 ```
 
-Example 2: Authentication Error Testing
+Example 2 - Authentication Error Testing
 
 Authentication errors (401, 403) have multiple failure modes that AI can systematically identify:
 
@@ -173,7 +173,7 @@ class TestAuthenticationErrors:
         assert response.json()["error"]["code"] == expected_error
 ```
 
-Example 3: Request Validation Testing
+Example 3 - Request Validation Testing
 
 Request validation errors (400) often have complex rules that AI can enumerate:
 
@@ -229,7 +229,7 @@ def generate_tests(doc_path: str, framework: str = "pytest") -> str:
     # For demonstration, returning generated test structure
     return f'''"""
 Auto-generated tests from {doc_path}
-Framework: {framework}
+Framework - {framework}
 """
 import pytest
 

@@ -214,15 +214,15 @@ Best Practices for Version Automation
 
 When implementing semantic versioning automation with Claude Code, follow these best practices:
 
-1. Define Clear Commit Conventions: Use Conventional Commits format to make automatic version detection reliable.
+1. Define Clear Commit Conventions - Use Conventional Commits format to make automatic version detection reliable.
 
-2. Maintain a Single Source of Truth: Store version in one place (package.json, pyproject.toml) and reference it consistently.
+2. Maintain a Single Source of Truth - Store version in one place (package.json, pyproject.toml) and reference it consistently.
 
-3. Validate Before Bumping: Always verify that the proposed version bump matches your actual changes.
+3. Validate Before Bumping - Always verify that the proposed version bump matches your actual changes.
 
-4. Include Rollback Procedures: Have a plan for reverting version bumps if issues are discovered.
+4. Include Rollback Procedures - Have a plan for reverting version bumps if issues are discovered.
 
-5. Test Automation Thoroughly: Run your version detection logic against historical commits to ensure accuracy.
+5. Test Automation Thoroughly - Run your version detection logic against historical commits to ensure accuracy.
 
 Using Claude Code to Enforce Versioning Rules
 
@@ -257,15 +257,15 @@ Prompt Claude Code:
  Generate a script that bumps them all simultaneously from the current
  version to a new version provided as an argument."
 
-Generated: scripts/sync-versions.sh
+Generated - scripts/sync-versions.sh
 #!/bin/bash
 set -euo pipefail
 
-NEW_VERSION="${1:?Usage: sync-versions.sh <new-version>}"
+NEW_VERSION="${1:?Usage - sync-versions.sh <new-version>}"
 
 Validate SemVer format
 if ! [[ "$NEW_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-  echo "Error: version must be in X.Y.Z format" >&2
+  echo "Error - version must be in X.Y.Z format" >&2
   exit 1
 fi
 

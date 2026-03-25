@@ -21,7 +21,7 @@ Table of Contents
 
 - [Understanding Django Middleware Chain Errors](#understanding-django-middleware-chain-errors)
 - [How AI Tools Help Decode Middleware Tracebacks](#how-ai-tools-help-decode-middleware-tracebacks)
-- [Practical Example: Resolving Middleware Ordering Issues](#practical-example-resolving-middleware-ordering-issues)
+- [Practical Example - Resolving Middleware Ordering Issues](#practical-example-resolving-middleware-ordering-issues)
 - [Using AI for Contextual Debugging](#using-ai-for-contextual-debugging)
 - [Common Middleware Chain Error Patterns](#common-middleware-chain-error-patterns)
 - [AI Tools Comparison for Django Debugging](#ai-tools-comparison-for-django-debugging)
@@ -43,7 +43,7 @@ Traceback (most recent call last):
     response = self.process_request(request)
   File "/path/to/myapp/middleware.py", line 34, in get_response
     user = request.user  # AttributeError here
-AttributeError: 'WSGIRequest' object has no attribute 'user'
+AttributeError - 'WSGIRequest' object has no attribute 'user'
 ```
 
 The challenge lies in understanding why the `user` attribute is missing and which middleware in the chain failed to set it.
@@ -73,7 +73,7 @@ MIDDLEWARE = [
 ]
 ```
 
-Practical Example: Resolving Middleware Ordering Issues
+Practical Example - Resolving Middleware Ordering Issues
 
 Consider a scenario where your custom middleware attempts to access `request.user.profile` but receives an `AttributeError: 'AnonymousUser' object has no attribute 'profile'`. This occurs when your middleware runs before authentication completes or when the user object lacks the expected relationship.
 
@@ -143,9 +143,9 @@ AI Tools Comparison for Django Debugging
 
 Real Django Middleware Debugging Scenarios
 
-Scenario 1: Missing request.user in custom middleware
+Scenario 1 - Missing request.user in custom middleware
 ```python
-Problem: AttributeError: 'WSGIRequest' object has no attribute 'user'
+Problem: AttributeError - 'WSGIRequest' object has no attribute 'user'
 
 Solution provided by AI after analyzing traceback:
 1. AuthenticationMiddleware must appear before your middleware in MIDDLEWARE list
@@ -158,11 +158,11 @@ MIDDLEWARE = [
 ]
 ```
 
-Scenario 2: Circular import in middleware
+Scenario 2 - Circular import in middleware
 ```python
-Problem: ModuleNotFoundError when middleware loads
+Problem - ModuleNotFoundError when middleware loads
 
-Common cause: middleware imports from views which import from models
+Common cause - middleware imports from views which import from models
 Which imports signals which imports middleware (circular)
 
 AI-recommended solution:
@@ -172,9 +172,9 @@ def process_request(self, request):
     # ... rest of function
 ```
 
-Scenario 3: QuerySet evaluation in middleware
+Scenario 3 - QuerySet evaluation in middleware
 ```python
-Problem: Middleware is blocking on database queries
+Problem - Middleware is blocking on database queries
 
 Before (blocks request):
 class UserCacheMiddleware:
@@ -192,9 +192,9 @@ class UserCacheMiddleware:
         return self.get_response(request)
 ```
 
-Scenario 4: Third-party middleware conflicts
+Scenario 4 - Third-party middleware conflicts
 ```python
-Problem: Traceback points to django-cors-headers conflicting with Django REST Framework
+Problem - Traceback points to django-cors-headers conflicting with Django REST Framework
 
 Debugging approach AI recommends:
 1. Check MIDDLEWARE order - CORS middleware should come early
@@ -216,25 +216,25 @@ Django-Specific Error Patterns AI Recognizes
 
 AI tools can quickly diagnose these common middleware errors:
 
-Pattern 1: AttributeError accessing request attributes
+Pattern 1 - AttributeError accessing request attributes
 ```
-Traceback mentions: AttributeError: 'WSGIRequest' object has no attribute X
-AI diagnosis: Middleware expecting attribute that earlier middleware should have set
-Solution: Verify middleware order, ensure setting middleware runs first
-```
-
-Pattern 2: Import errors with middleware
-```
-Traceback mentions: ImportError or ModuleNotFoundError at top
-AI diagnosis: Circular imports, typically middleware importing from models
-Solution: Defer imports to function level or restructure imports
+Traceback mentions - AttributeError: 'WSGIRequest' object has no attribute X
+AI diagnosis - Middleware expecting attribute that earlier middleware should have set
+Solution - Verify middleware order, ensure setting middleware runs first
 ```
 
-Pattern 3: Middleware exceptions swallowing real errors
+Pattern 2 - Import errors with middleware
+```
+Traceback mentions - ImportError or ModuleNotFoundError at top
+AI diagnosis - Circular imports, typically middleware importing from models
+Solution - Defer imports to function level or restructure imports
+```
+
+Pattern 3 - Middleware exceptions swallowing real errors
 ```
 Traceback shows generic 500 error, not the real cause
-AI diagnosis: A middleware exception handler (like custom error middleware) is hiding the real error
-Solution: Add logging to middleware, temporarily disable exception handlers
+AI diagnosis - A middleware exception handler (like custom error middleware) is hiding the real error
+Solution - Add logging to middleware, temporarily disable exception handlers
 ```
 
 Advanced Debugging Prompt Strategies

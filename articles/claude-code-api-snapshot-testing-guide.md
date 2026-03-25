@@ -49,7 +49,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Snapshot Testing Fundamentals
+Step 1 - Understand Snapshot Testing Fundamentals
 
 Snapshot testing differs from traditional assertion-based testing. Instead of writing explicit expectations for each field, you capture the actual output and save it. The test then verifies that future outputs match exactly.
 
@@ -57,7 +57,7 @@ When you first run a snapshot test, it generates a baseline snapshot file contai
 
 This approach works exceptionally well with Claude Code because the AI can help you generate snapshot tests, analyze differences when they occur, and determine whether changes are intentional or breaking.
 
-Step 2: Set Up Snapshot Testing with Claude Code
+Step 2 - Set Up Snapshot Testing with Claude Code
 
 Choosing a Snapshot Testing Framework
 
@@ -91,7 +91,7 @@ def test_user_endpoint_snapshot(client, snapshot):
 
 Ask Claude Code to generate the initial test structure for your specific API endpoints. Provide your OpenAPI specification or sample responses to help generate tests.
 
-Step 3: Capturing API Responses with Claude Code
+Step 3 - Capturing API Responses with Claude Code
 
 Generating Snapshots
 
@@ -153,7 +153,7 @@ def test_user_profile_snapshot(client, snapshot):
 
 Ask Claude Code to create custom normalization functions specific to your API's data patterns.
 
-Step 4: Maintaining Snapshots Over Time
+Step 4 - Maintaining Snapshots Over Time
 
 Reviewing Snapshot Differences
 
@@ -263,7 +263,7 @@ def test_user_registration_snapshot(client, snapshot):
 
 This hybrid approach catches both critical logic errors and unexpected structural changes.
 
-Step 5: Use Claude Code Effectively for Snapshot Testing
+Step 5 - Use Claude Code Effectively for Snapshot Testing
 
 Generating Initial Test Suites
 
@@ -297,15 +297,15 @@ pytest --snapshot-strict
 
 Claude Code can help you configure these modes appropriately for different environments and generate documentation explaining why snapshot changes occurred.
 
-Step 6: Common Pitfalls and Solutions
+Step 6 - Common Pitfalls and Solutions
 
-Pitfall: Overly Large Snapshots
+Pitfall - Overly Large Snapshots
 
-Solution: Break large responses into logical chunks and test components separately. This makes differences easier to review and understand.
+Solution - Break large responses into logical chunks and test components separately. This makes differences easier to review and understand.
 
-Pitfall: Sensitive Data in Snapshots
+Pitfall - Sensitive Data in Snapshots
 
-Solution: Implement redaction functions that mask sensitive information before storing snapshots:
+Solution - Implement redaction functions that mask sensitive information before storing snapshots:
 
 ```python
 def redact_sensitive_data(data):
@@ -321,9 +321,9 @@ def redact_sensitive_data(data):
     return data
 ```
 
-Pitfall: Flaky Tests from Data Variations
+Pitfall - Flaky Tests from Data Variations
 
-Solution: Ensure your normalization handles all dynamic data sources. Work with Claude Code to identify all potential sources of variation in your API responses.
+Solution - Ensure your normalization handles all dynamic data sources. Work with Claude Code to identify all potential sources of variation in your API responses.
 
 Troubleshooting
 

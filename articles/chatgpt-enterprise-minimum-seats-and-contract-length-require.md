@@ -23,7 +23,7 @@ Current Minimum Seat Requirements
 ChatGPT Enterprise currently enforces a minimum of 150 seats for new deployments. This requirement applies to organizations signing up directly through OpenAI's sales team. Some sources indicate that promotional or pilot programs may allow smaller deployments, but the standard enterprise contract requires this threshold.
 
 
-For organizations with fewer than 150 potential users, several alternatives exist. The Team plan ($25 per user monthly) supports smaller groups but lacks the advanced security features, API credits, and administrative controls of the Enterprise tier. Another option involves partnering with a Microsoft 365 Copilot license, which includes ChatGPT integration for organizations already invested in the Microsoft ecosystem.
+For organizations with fewer than 150 potential users, several alternatives exist. The Team plan ($25 per user monthly) supports smaller groups but lacks the advanced security features, API credits, and administrative controls of the Enterprise tier. Another option involves partnering with a Microsoft 365 Copilot license, which includes ChatGPT integration for organizations already invested in the Microsoft environment.
 
 
 Here is a comparison of deployment options:
@@ -206,13 +206,13 @@ Hidden Costs and Considerations
 
 Beyond per-seat pricing, account for:
 
-Onboarding and training: Allow 4-6 weeks for full organizational adoption. Budget time for compliance reviews, security sign-offs, and user training.
+Onboarding and training - Allow 4-6 weeks for full organizational adoption. Budget time for compliance reviews, security sign-offs, and user training.
 
-Admin overhead: Dedicate 1 FTE for the first 3 months, then 0.5 FTE ongoing for seat management, support escalation, and policy enforcement.
+Admin overhead - Dedicate 1 FTE for the first 3 months, then 0.5 FTE ongoing for seat management, support escalation, and policy enforcement.
 
 Data retention and security compliance: Enterprise includes custom data handling, but your organization may require additional work to verify compliance with HIPAA, GDPR, or industry-specific regulations.
 
-Integration engineering: If you plan custom GPT deployments or API integrations, budget engineering time (typically 100-200 hours for production-grade integrations).
+Integration engineering - If you plan custom GPT deployments or API integrations, budget engineering time (typically 100-200 hours for production-grade integrations).
 
 Example Organization Calculation
 
@@ -243,13 +243,13 @@ Rollout Strategy
 
 If you've decided on Enterprise, phase the rollout:
 
-Phase 1 (weeks 1-4): Pilot with 50 power users (engineering, product). Evaluate adoption patterns and gather feedback.
+Phase 1 (weeks 1-4) - Pilot with 50 power users (engineering, product). Evaluate adoption patterns and gather feedback.
 
-Phase 2 (weeks 5-8): Expand to department heads and team leads. Establish internal communication and training materials.
+Phase 2 (weeks 5-8) - Expand to department heads and team leads. Establish internal communication and training materials.
 
-Phase 3 (weeks 9-12): Broad rollout to all eligible users. Monitor usage patterns and establish governance policies.
+Phase 3 (weeks 9-12) - Broad rollout to all eligible users. Monitor usage patterns and establish governance policies.
 
-Phase 4 (month 4+): Measure impact against baseline metrics. Optimize seat allocation and develop best practices documentation.
+Phase 4 (month 4+) - Measure impact against baseline metrics. Optimize seat allocation and develop best practices documentation.
 
 This staged approach prevents overwhelming support resources and allows you to catch configuration issues before full deployment.
 ---

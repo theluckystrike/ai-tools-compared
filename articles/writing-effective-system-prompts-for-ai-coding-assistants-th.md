@@ -31,7 +31,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-When you work with AI coding assistants, the difference between generic, awkward code and clean, idiomatic output often comes down to how well you communicate your expectations. System prompts serve as the foundation for every interaction, guiding the AI toward producing code that fits naturally within your project's ecosystem.
+When you work with AI coding assistants, the difference between generic, awkward code and clean, idiomatic output often comes down to how well you communicate your expectations. System prompts serve as the foundation for every interaction, guiding the AI toward producing code that fits naturally within your project's environment.
 
 The challenge lies in understanding that AI models generate code based on patterns learned from millions of repositories. Without explicit direction, they may produce technically correct but stylistically misaligned code, Python that looks like translated Java, or TypeScript that ignores your project's established patterns. Effective system prompts bridge this gap by making your conventions explicit.
 
@@ -40,7 +40,7 @@ The challenge lies in understanding that AI models generate code based on patter
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - Focus on the 20%: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - Use
-utility types like Partial: Required, and Pick where appropriate.
+utility types like Partial - Required, and Pick where appropriate.
 - Mastering advanced features takes: 1-2 weeks of regular use.
 - All async database operations: use the asyncpg driver.
 
@@ -52,7 +52,7 @@ A system prompt that simply states "write good code" provides insufficient direc
 
 Structuring Your System Prompt for Language-Specific Success
 
-Specify Your Language and Ecosystem Details
+Specify Your Language and environment Details
 
 Begin by clearly identifying your programming language, framework version, and key dependencies. This helps the AI select appropriate syntax and avoid deprecated patterns.
 
@@ -230,7 +230,7 @@ Real-World Prompt Comparison
 
 Here's how a system prompt changes output quality across the same request:
 
-Scenario: Build a user authentication endpoint.
+Scenario - Build a user authentication endpoint.
 
 Without system prompt:
 ```python

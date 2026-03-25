@@ -121,7 +121,7 @@ Claude Haiku sometimes adds:
 - Monitoring and analytics considerations
 ```
 
-The difference here is subtle: GPT-4o Mini often produces cleaner structural outlines, while Claude Haiku occasionally includes implementation-heavy sections that may or may not be desired. For content strategy work, GPT-4o Mini's outlines tend to be more immediately usable; for technical documentation, Haiku's implementation focus is often an asset.
+The difference here is subtle - GPT-4o Mini often produces cleaner structural outlines, while Claude Haiku occasionally includes implementation-heavy sections that may or may not be desired. For content strategy work, GPT-4o Mini's outlines tend to be more immediately usable; for technical documentation, Haiku's implementation focus is often an asset.
 
 Technical Specification Drafts
 
@@ -215,7 +215,7 @@ Claude's streaming API provides a cleaner `text_stream` iterator that handles nu
 
 Error Handling and Rate Limits
 
-Both APIs use standard HTTP status codes. Anthropic's rate limit errors come back as 429s with a `retry-after` header; OpenAI follows the same pattern. Neither has a meaningful advantage here for most applications, though OpenAI's ecosystem has more third-party tooling for rate limit management.
+Both APIs use standard HTTP status codes. Anthropic's rate limit errors come back as 429s with a `retry-after` header; OpenAI follows the same pattern. Neither has a meaningful advantage here for most applications, though OpenAI's environment has more third-party tooling for rate limit management.
 
 Which Should You Choose?
 
@@ -223,14 +223,14 @@ Choose Claude Haiku when:
 - Maximum response speed and consistency are critical
 - You need the larger 200K context window for document-aware drafting
 - You prefer consistent, convention-following output for technical content
-- You're already invested in the Anthropic ecosystem
+- You're already invested in the Anthropic environment
 - You're building real-time features where p99 latency matters
 
 Choose GPT-4o Mini when:
 - Cost efficiency is the primary concern at high volume
 - You need nuanced tone variations in communication drafts
 - You're building high-volume drafting pipelines where the per-token savings compound
-- You prefer working with OpenAI's API ecosystem and tooling
+- You prefer working with OpenAI's API environment and tooling
 
 Hybrid Approach
 

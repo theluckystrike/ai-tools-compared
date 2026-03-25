@@ -229,7 +229,7 @@ Database-Specific Test Data
 Different databases require different data generation approaches:
 
 ```python
-PostgreSQL: Use psycopg2 and generate JSONB data
+PostgreSQL - Use psycopg2 and generate JSONB data
 import psycopg2
 import json
 
@@ -260,7 +260,7 @@ def generate_postgres_test_data():
 
     conn.commit()
 
-MongoDB: Generate documents respecting schema validation
+MongoDB - Generate documents respecting schema validation
 from pymongo import MongoClient
 
 def generate_mongodb_test_data():
@@ -322,7 +322,7 @@ def generate_boundary_test_cases():
     return test_cases
 ```
 
-Prompt AI with: "Generate boundary test cases for these validation rules. Include minimum, maximum, empty, and special character scenarios."
+Prompt AI with - "Generate boundary test cases for these validation rules. Include minimum, maximum, empty, and special character scenarios."
 
 Tool Comparison for Test Data Generation
 

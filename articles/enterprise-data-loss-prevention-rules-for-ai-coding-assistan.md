@@ -333,17 +333,17 @@ Testing ensures rules work without blocking legitimate traffic.
 ```bash
 Test pattern matching
 node dlp-tester.js --pattern "AKIAIOSFODNN7EXAMPLE" --type awsAccessKey
-Expected: BLOCK
+Expected - BLOCK
 
 node dlp-tester.js --pattern "AKIAIOSFODNN7EXAMPLE" --type comment
-Expected: ALLOW (commented code)
+Expected - ALLOW (commented code)
 
 Test context rules
 node dlp-tester.js --code 'const password = "real_secret"' --context variable
-Expected: REDACT
+Expected - REDACT
 
 node dlp-tester.js --code '// password example' --context comment
-Expected: ALLOW
+Expected - ALLOW
 ```
 
 Run tests against your actual codebase. False positives frustrate developers and encourage workarounds. A rule that developers bypass is worse than no rule at all, because it creates a false sense of security. Aim for a false positive rate below 2% before deploying any new pattern to production.

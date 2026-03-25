@@ -63,7 +63,7 @@ GitHub Copilot Chat. Available in VS Code, JetBrains, and GitHub.com. Best when 
 
 Pieces Developer. Stores your debugging history, snippets, and error patterns locally. Useful for repeated error types you've solved before.
 
-Scenario 1: Python Async Race Condition
+Scenario 1 - Python Async Race Condition
 
 ```python
 import asyncio
@@ -80,22 +80,22 @@ async def main():
         tasks = [fetch_data(session, url) for url in urls]
         await asyncio.gather(*tasks)
 
-Error: results list is missing entries intermittently
+Error - results list is missing entries intermittently
 ```
 
-Claude Code: Correctly identified that `results.append()` is not thread-safe across coroutines when `gather` runs them concurrently. Suggested using `asyncio.Lock()` or returning values from `fetch_data` and collecting them from `gather`'s return value. Provided both solutions with explanation of why the lock approach adds unnecessary overhead here.
+Claude Code - Correctly identified that `results.append()` is not thread-safe across coroutines when `gather` runs them concurrently. Suggested using `asyncio.Lock()` or returning values from `fetch_data` and collecting them from `gather`'s return value. Provided both solutions with explanation of why the lock approach adds unnecessary overhead here.
 
-Cursor: Identified the race condition correctly but initially suggested `threading.Lock()` instead of `asyncio.Lock()`, which is wrong for async code. Required a follow-up prompt to correct.
+Cursor - Identified the race condition correctly but initially suggested `threading.Lock()` instead of `asyncio.Lock()`, which is wrong for async code. Required a follow-up prompt to correct.
 
-Copilot Chat: Identified the issue correctly and suggested the return-value pattern. Did not explain why the lock is the wrong abstraction.
+Copilot Chat - Identified the issue correctly and suggested the return-value pattern. Did not explain why the lock is the wrong abstraction.
 
-Winner for this scenario: Claude Code (correct solution + explanation of tradeoffs).
+Winner for this scenario - Claude Code (correct solution + explanation of tradeoffs).
 
-Scenario 2: TypeScript "Cannot read properties of undefined"
+Scenario 2 - TypeScript "Cannot read properties of undefined"
 
 ```typescript
 // Stack trace
-TypeError: Cannot read properties of undefined (reading 'map')
+TypeError - Cannot read properties of undefined (reading 'map')
     at ProductList (ProductList.tsx:23:15)
 
 // Line 23
@@ -118,7 +118,7 @@ const items = data.products.map(p => <ProductCard key={p.id} product={p} />);
 
 Claude Code asked whether `data` being undefined means loading or error state and adjusted the fix accordingly.
 
-Scenario 3: SQL N+1 Query Problem
+Scenario 3 - SQL N+1 Query Problem
 
 ```python
 def get_orders_with_items(user_id):
@@ -144,9 +144,9 @@ def get_orders_with_items(user_id):
 
 All four tools caught the N+1 pattern. Claude Code and Cursor both suggested `prefetch_related`. Copilot Chat suggested `select_related` first (wrong for ManyToMany/reverse FK), then corrected when prompted.
 
-Scenario 4: Memory Leak in Node.js
+Scenario 4 - Memory Leak in Node.js
 
-Prompt: "My Node.js API server's memory grows from 200MB to 2GB over 24 hours. Here's the event listener registration code..."
+Prompt - "My Node.js API server's memory grows from 200MB to 2GB over 24 hours. Here's the event listener registration code..."
 
 ```javascript
 // Broken. adds listener on every request
@@ -159,11 +159,11 @@ app.get("/api/data", (req, res) => {
 });
 ```
 
-Claude Code: Immediately identified unbounded event listener accumulation. Pointed to `emitter.setMaxListeners(0)` as a workaround and `emitter.once()` or proper listener cleanup as the real fix. Also mentioned `process.on('warning', ...)` for detecting this pattern in future.
+Claude Code - Immediately identified unbounded event listener accumulation. Pointed to `emitter.setMaxListeners(0)` as a workaround and `emitter.once()` or proper listener cleanup as the real fix. Also mentioned `process.on('warning', ...)` for detecting this pattern in future.
 
-Cursor: Identified the issue but suggested adding `emitter.removeAllListeners()` at the end of the handler. which fixes the leak but creates a race condition if multiple requests are in flight.
+Cursor - Identified the issue but suggested adding `emitter.removeAllListeners()` at the end of the handler. which fixes the leak but creates a race condition if multiple requests are in flight.
 
-Copilot Chat: Did not catch the issue without being explicitly told "this is an event listener leak."
+Copilot Chat - Did not catch the issue without being explicitly told "this is an event listener leak."
 
 Performance Comparison
 
@@ -174,7 +174,7 @@ Performance Comparison
 | Copilot Chat | Medium | Medium | Current file + repo | Fast |
 | Pieces | Medium (cached) | Medium | Stored snippets | Fast |
 
-Scenario 5: Deadlock in Concurrent Rust Code
+Scenario 5 - Deadlock in Concurrent Rust Code
 
 ```rust
 use tokio::sync::Mutex;
@@ -197,13 +197,13 @@ async fn cleanup_session(state: &State, session_id: &str) -> Result<()> {
 }
 ```
 
-Claude Code: Immediately identified the lock ordering issue. Suggested using a single Mutex wrapping both collections, or always acquiring locks in the same order. Also mentioned `parking_lot::Mutex` for better debug output.
+Claude Code - Immediately identified the lock ordering issue. Suggested using a single Mutex wrapping both collections, or always acquiring locks in the same order. Also mentioned `parking_lot::Mutex` for better debug output.
 
-Cursor: Identified that two tasks could deadlock but didn't clearly explain lock ordering. Suggested adding timeouts on locks (masking the problem rather than fixing it).
+Cursor - Identified that two tasks could deadlock but didn't clearly explain lock ordering. Suggested adding timeouts on locks (masking the problem rather than fixing it).
 
-Copilot Chat: Did not identify the deadlock without being explicitly told "this might have a concurrency issue."
+Copilot Chat - Did not identify the deadlock without being explicitly told "this might have a concurrency issue."
 
-Scenario 6: JavaScript Event Loop Blocking
+Scenario 6 - JavaScript Event Loop Blocking
 
 ```javascript
 function processLargeArray(items) {
@@ -223,11 +223,11 @@ app.post("/process", (req, res) => {
 });
 ```
 
-Claude Code: Recognized the synchronous CPU-bound loop in an async context. Suggested converting to `for...of` with `await new Promise(setImmediate(...))` or moving to a Worker thread.
+Claude Code - Recognized the synchronous CPU-bound loop in an async context. Suggested converting to `for...of` with `await new Promise(setImmediate(...))` or moving to a Worker thread.
 
-Cursor: Suggested using `Promise.all` with map. which doesn't actually help here since map executes synchronously. Needed refinement.
+Cursor - Suggested using `Promise.all` with map. which doesn't actually help here since map executes synchronously. Needed refinement.
 
-Pieces: Had seen this pattern before (if previously saved) and could retrieve the solution instantly, but wouldn't generate it from scratch.
+Pieces - Had seen this pattern before (if previously saved) and could retrieve the solution instantly, but wouldn't generate it from scratch.
 
 Using Claude Code's Repository Search for Debugging
 
@@ -272,19 +272,19 @@ I've traced through the code and don't see where it changes. Query log shows [qu
 Debugging Workflows by Error Category
 
 Type-Related Errors (TypeScript, Python)
-Best tool: Claude Code or Cursor with `@file` context on type definitions.
+Best tool - Claude Code or Cursor with `@file` context on type definitions.
 
 Reference/Null Errors (JavaScript, Python, Ruby)
-Best tool: Claude Code. needs to search for all access patterns in the codebase.
+Best tool - Claude Code. needs to search for all access patterns in the codebase.
 
 Performance Issues (Slow endpoints, memory leaks)
-Best tool: Claude Code. can correlate logs, code patterns, and system behavior.
+Best tool - Claude Code. can correlate logs, code patterns, and system behavior.
 
 Concurrency Issues (Deadlocks, race conditions, data races)
-Best tool: Claude Code (understands locking mechanics across files).
+Best tool - Claude Code (understands locking mechanics across files).
 
 Integration Issues (API mismatches, auth failures)
-Best tool: Cursor with @mentions of all relevant integrations.
+Best tool - Cursor with @mentions of all relevant integrations.
 
 Cost Impact on Debugging
 
@@ -305,7 +305,7 @@ Most teams find value in saving debugging prompts:
 
 ```bash
 Save as .claude/debugging-templates/deadlock.md
-Debugging: Check for deadlock patterns in Rust async code
+Debugging - Check for deadlock patterns in Rust async code
 
 I'm investigating possible deadlocks in async code using tokio::sync::Mutex.
 Here are the functions that acquire locks:

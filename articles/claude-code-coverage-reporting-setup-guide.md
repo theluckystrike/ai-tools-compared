@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Coverage Reporting Setup Guide"
-description: "Set up code coverage reporting with Claude Code: Istanbul, Coverage.py, and Go cover integration with CI badge generation and threshold enforcement."
+description: "Set up code coverage reporting with Claude Code - Istanbul, Coverage.py, and Go cover integration with CI badge generation and threshold enforcement."
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: theluckystrike
@@ -42,13 +42,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Choose Your Coverage Tools
+Step 1 - Choose Your Coverage Tools
 
 Different languages and frameworks require different coverage tools. Here's a quick overview:
 
 - JavaScript/TypeScript: Jest, Vitest, or NYC (Istanbul)
 
-- Python: pytest-cov, Coverage.py
+- Python - pytest-cov, Coverage.py
 
 - Java: JaCoCo, Cobertura
 
@@ -60,7 +60,7 @@ Different languages and frameworks require different coverage tools. Here's a qu
 
 Claude Code can help you integrate the appropriate tool based on your project stack and generate configuration files automatically. When you describe your stack and testing framework, Claude Code will suggest the right tool and produce a working configuration. not just pseudocode, but actual config files you can paste directly into your project.
 
-Step 2: Set Up Coverage with Claude Code
+Step 2 - Set Up Coverage with Claude Code
 
 Claude Code can assist in generating the necessary configuration files and scripts for your coverage setup. Here's how to get started:
 
@@ -165,7 +165,7 @@ fi
 echo "Coverage ${COVERAGE}% meets threshold"
 ```
 
-Step 3: Automate Coverage Reports
+Step 3 - Automate Coverage Reports
 
 Claude Code can help you create scripts that generate coverage reports and post them to various destinations. Here's an example GitHub Actions workflow:
 
@@ -217,7 +217,7 @@ jobs:
 
 Claude Code can extend this workflow to post coverage diffs on pull requests. showing not just absolute coverage, but whether a PR increased or decreased coverage compared to the base branch. This is more useful than raw coverage numbers for code review.
 
-Step 4: Setting Realistic Coverage Thresholds
+Step 4 - Setting Realistic Coverage Thresholds
 
 Establishing coverage thresholds requires balancing practicality with code quality goals. Here's a tiered approach:
 
@@ -232,7 +232,7 @@ Claude Code can help you adjust these thresholds based on your project's maturit
 
 A practical approach is to set thresholds at your current coverage level minus 2-3 percentage points. This creates a "no regression" gate without demanding improvement before you are ready. Then use Claude Code to help you write tests that fill gaps methodically. one module at a time.
 
-Step 5: Use Claude Code to Write Coverage-Filling Tests
+Step 5 - Use Claude Code to Write Coverage-Filling Tests
 
 One of the highest-value uses of Claude Code in a coverage workflow is generating tests for uncovered code paths. After running your coverage tool, you get a report showing exactly which lines and branches are untested. Feed that report directly to Claude Code:
 
@@ -251,7 +251,7 @@ path on line 89.
 
 This targeted approach is more efficient than asking Claude Code to write tests from scratch. You already know what's missing. you just need help filling it.
 
-Step 6: Integrate with Claude Code Prompts
+Step 6 - Integrate with Claude Code Prompts
 
 You can use Claude Code to generate coverage-focused prompts for your development workflow:
 
@@ -263,7 +263,7 @@ analysis and identify any uncovered branches.
 
 This approach lets Claude Code actively participate in improving your test coverage. For functions with complex conditional logic, asking Claude Code to enumerate all possible code paths first. then generate a test for each. often produces better coverage than asking for tests directly.
 
-Step 7: Coverage Reporting for Monorepos
+Step 7 - Coverage Reporting for Monorepos
 
 Monorepos require extra configuration to generate per-package and aggregate coverage reports. Claude Code can help set this up:
 

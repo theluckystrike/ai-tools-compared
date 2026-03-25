@@ -35,7 +35,7 @@ For most developers, running Stable Diffusion locally with a specialized line ar
 
 
 - If you want a: faster start with less control, use the DALL-E 3 API with a coloring-book-specific prompt, then run the output through an OpenCV edge-detection pipeline to clean up the soft edges.
-- Stable Diffusion with Outline: LoRAs Stable Diffusion, particularly when run locally via ComfyUI or Automatic1111, offers the most control.
+- Stable Diffusion with Outline - LoRAs Stable Diffusion, particularly when run locally via ComfyUI or Automatic1111, offers the most control.
 - The tradeoff is hardware: requirements (minimum 8GB VRAM recommended), higher setup complexity than API solutions, and some experimentation to get clean outlines.
 - Generate with your preferred: AI tool (Stable Diffusion, DALL-E, Midjourney) 2.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
@@ -354,7 +354,7 @@ def calculate_complexity(contours: list) -> float:
 Cost Analysis for Different Approaches
 
 ```
-Scenario: Generate 10,000 coloring pages for mobile app
+Scenario - Generate 10,000 coloring pages for mobile app
 
 Local Stable Diffusion:
 - Hardware: $500 (used GPU or cloud instance)

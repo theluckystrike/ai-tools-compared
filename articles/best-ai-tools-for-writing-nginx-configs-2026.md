@@ -30,7 +30,7 @@ Table of Contents
 - [Recommendation](#recommendation)
 - [Testing AI-Generated Nginx Configs Safely](#testing-ai-generated-nginx-configs-safely)
 - [Common Mistakes AI Tools Make](#common-mistakes-ai-tools-make)
-- [Real Production Scenario: Multi-Region Load Balancing](#real-production-scenario-multi-region-load-balancing)
+- [Real Production Scenario - Multi-Region Load Balancing](#real-production-scenario-multi-region-load-balancing)
 - [Tool Recommendations by Use Case](#tool-recommendations-by-use-case)
 - [When to Write Nginx Config Manually](#when-to-write-nginx-config-manually)
 
@@ -38,51 +38,51 @@ Claude Opus 4.6
 
 Claude excels at complex nginx architectures. Feed it a description like "set up mutual TLS authentication between my reverse proxy and backends, implement rate limiting per upstream, and force HTTPS with HSTS" and it generates a complete, properly-indented config with correct directive placement and no syntax errors.
 
-Strengths: Understands nested context requirements (directives valid only in http, server, or location blocks). Correctly implements upstream block variables like `$upstream_response_time` and `$upstream_status`. Generates working SSL termination configs with modern cipher suites. Handles complex location block matching with regex, including named capture groups and rewrite rules.
+Strengths - Understands nested context requirements (directives valid only in http, server, or location blocks). Correctly implements upstream block variables like `$upstream_response_time` and `$upstream_status`. Generates working SSL termination configs with modern cipher suites. Handles complex location block matching with regex, including named capture groups and rewrite rules.
 
-Weaknesses: Occasionally includes comments that are too verbose for production environments. Will sometimes suggest directives that require modules not compiled into your nginx binary, though it does flag this risk.
+Weaknesses - Occasionally includes comments that are too verbose for production environments. Will sometimes suggest directives that require modules not compiled into your nginx binary, though it does flag this risk.
 
-Best for: Complex multi-upstream load balancing, mutual TLS setups, and architectures combining reverse proxy with caching and authentication.
+Best for - Complex multi-upstream load balancing, mutual TLS setups, and architectures combining reverse proxy with caching and authentication.
 
 ChatGPT (GPT-4)
 
 GPT-4 generates valid nginx syntax most of the time, but struggles with advanced features. It reliably handles basic reverse proxy configs (proxy_pass, proxy_set_header) and straightforward SSL termination. Rate limiting, upstream health checks, and weighted load balancing? Less reliable.
 
-Strengths: Fast iteration. Good at generating beginner-friendly configs with clear comments. Understands the basics of server blocks and location matching. Works well for static site proxying.
+Strengths - Fast iteration. Good at generating beginner-friendly configs with clear comments. Understands the basics of server blocks and location matching. Works well for static site proxying.
 
-Weaknesses: Frequently misplaces directives across blocks (puts upstream variables in the wrong context). Rate limiting configs often have incorrect pool names or weight syntax. Doesn't consistently generate HTTPS hardening best practices like HSTS headers, certificate pinning, or OCSP stapling.
+Weaknesses - Frequently misplaces directives across blocks (puts upstream variables in the wrong context). Rate limiting configs often have incorrect pool names or weight syntax. Doesn't consistently generate HTTPS hardening best practices like HSTS headers, certificate pinning, or OCSP stapling.
 
-Best for: Basic reverse proxy setups for small teams that don't need complex load balancing or rate limiting.
+Best for - Basic reverse proxy setups for small teams that don't need complex load balancing or rate limiting.
 
 Cursor with Claude Backend
 
 Cursor's in-editor suggestions powered by Claude Opus backend generate excellent nginx syntax inline. The autocomplete works best when you start typing a proxy_pass directive or upstream block, it predicts the rest accurately.
 
-Strengths: Real-time autocomplete prevents syntax errors before you save. Handles reverse proxy and upstream config generation better than most autocomplete tools. Can suggest rate limiting module syntax (limit_req_zone, limit_req) without errors.
+Strengths - Real-time autocomplete prevents syntax errors before you save. Handles reverse proxy and upstream config generation better than most autocomplete tools. Can suggest rate limiting module syntax (limit_req_zone, limit_req) without errors.
 
-Weaknesses: Limited context awareness when jumping between server blocks. Can't see your full nginx.conf at once, so it sometimes duplicates directives or misses required upstream definitions.
+Weaknesses - Limited context awareness when jumping between server blocks. Can't see your full nginx.conf at once, so it sometimes duplicates directives or misses required upstream definitions.
 
-Best for: Engineers writing nginx configs incrementally in their editor and wanting real-time syntax validation.
+Best for - Engineers writing nginx configs incrementally in their editor and wanting real-time syntax validation.
 
 Codeium
 
 Codeium's free tier offers basic nginx autocomplete, but it's brittle. It suggests common directives like proxy_pass and proxy_set_header, but doesn't understand load balancing complexity.
 
-Strengths: Fast autocomplete for standard reverse proxy directives. No latency on basic suggestions.
+Strengths - Fast autocomplete for standard reverse proxy directives. No latency on basic suggestions.
 
-Weaknesses: Poor rate limiting config generation. Often suggests invalid upstream weight syntax. Doesn't understand modern nginx features like stream block for TCP/UDP load balancing or gRPC proxy_pass syntax.
+Weaknesses - Poor rate limiting config generation. Often suggests invalid upstream weight syntax. Doesn't understand modern nginx features like stream block for TCP/UDP load balancing or gRPC proxy_pass syntax.
 
-Best for: Engineers working in constrained environments (minimal latency required) who only need basic reverse proxy syntax.
+Best for - Engineers working in constrained environments (minimal latency required) who only need basic reverse proxy syntax.
 
 GitHub Copilot
 
 Copilot trained on public GitHub nginx configs, so it learns from real production setups. This is powerful, but also dangerous, it replicates common mistakes and anti-patterns from the wild.
 
-Strengths: Autocomplete is fast and contextual. Understands server block scoping. Good at generating common patterns like location ~* \.(jpg|jpeg|png|gif)$ blocks.
+Strengths - Autocomplete is fast and contextual. Understands server block scoping. Good at generating common patterns like location ~* \.(jpg|jpeg|png|gif)$ blocks.
 
-Weaknesses: Frequently suggests outdated SSL ciphers and protocols (SSLv3, RC4). Rate limiting syntax often has deprecated or incorrect parameter names. Upstream health check configs are unreliable, it sometimes generates directives that don't exist or have wrong parameter order.
+Weaknesses - Frequently suggests outdated SSL ciphers and protocols (SSLv3, RC4). Rate limiting syntax often has deprecated or incorrect parameter names. Upstream health check configs are unreliable, it sometimes generates directives that don't exist or have wrong parameter order.
 
-Best for: Engineers comfortable reviewing and hardening AI-generated configs, who need fast autocomplete and don't mind tweaking suggestions.
+Best for - Engineers comfortable reviewing and hardening AI-generated configs, who need fast autocomplete and don't mind tweaking suggestions.
 
 Practical Comparison
 
@@ -90,13 +90,13 @@ Reverse Proxy Setup
 
 All five tools handle basic proxy_pass directives correctly. Give them "set up a reverse proxy that forwards traffic to three upstream servers on port 8080" and they all succeed. The gap widens with advanced requirements.
 
-Request: "Set up reverse proxy with connection pooling, upstream health checks every 5 seconds, and fallback to backup servers."
+Request - "Set up reverse proxy with connection pooling, upstream health checks every 5 seconds, and fallback to backup servers."
 
 Claude Opus generates this immediately with correct upstream block structure, keepalive connections, and valid health_check directives (if using Nginx Plus). GPT-4 generates correct basic structure but skips keepalive. Cursor catches most details. Codeium and Copilot miss the keepalive syntax.
 
 Load Balancing
 
-Request: "Implement weighted round-robin load balancing across three upstreams: 40% to primary (zone 1), 30% to secondary (zone 2), 30% to tertiary (zone 3)."
+Request - "Implement weighted round-robin load balancing across three upstreams: 40% to primary (zone 1), 30% to secondary (zone 2), 30% to tertiary (zone 3)."
 
 Claude Opus writes this cleanly:
 
@@ -112,7 +112,7 @@ GPT-4 gets the weights right but sometimes forgets the upstream block name in pr
 
 SSL Termination
 
-Request: "Terminate TLS 1.3 only, use modern cipher suites, enable HSTS with preload, and redirect HTTP to HTTPS."
+Request - "Terminate TLS 1.3 only, use modern cipher suites, enable HSTS with preload, and redirect HTTP to HTTPS."
 
 Claude Opus generates:
 
@@ -138,7 +138,7 @@ GPT-4 includes TLS 1.2 alongside 1.3 (acceptable but not hardened). Cursor gets 
 
 Rate Limiting
 
-Request: "Implement rate limiting: max 100 requests per second per IP, burst up to 150, with 50ms delay for excess."
+Request - "Implement rate limiting: max 100 requests per second per IP, burst up to 150, with 50ms delay for excess."
 
 Claude Opus writes:
 
@@ -159,13 +159,13 @@ GPT-4 gets the basic syntax right but often misses the binary_remote_addr optimi
 
 Upstream Blocks
 
-Request: "Define upstream block with four servers, health checks every 3 seconds, and fallback to single backup server."
+Request - "Define upstream block with four servers, health checks every 3 seconds, and fallback to single backup server."
 
 Claude Opus generates complete upstream definition with proper health_check syntax. GPT-4 misses health_check details. Cursor gets it right. Codeium and Copilot struggle with the health_check directive syntax.
 
 Real-World Usage Patterns
 
-The best approach: Use Claude Opus for generating complete config sections, then validate in your editor with Cursor's real-time suggestions. For simple proxying, GPT-4 works fine. For rate limiting and load balancing, Claude Opus is the clear leader.
+The best approach - Use Claude Opus for generating complete config sections, then validate in your editor with Cursor's real-time suggestions. For simple proxying, GPT-4 works fine. For rate limiting and load balancing, Claude Opus is the clear leader.
 
 Most engineers working with complex nginx architectures use Claude for initial generation (90% accuracy on first pass), then iterate in Cursor for refinements (which catches syntax errors before saving).
 
@@ -194,7 +194,7 @@ Benchmark Summary
 
 Recommendation
 
-For production nginx work: Start with Claude Opus for architecture (reverse proxy design, upstream definitions, load balancing strategy). Use Cursor for in-editor refinement to catch syntax issues before deployment. Test everything in a staging environment, AI-generated configs are safer than manual work, but they're not magic.
+For production nginx work - Start with Claude Opus for architecture (reverse proxy design, upstream definitions, load balancing strategy). Use Cursor for in-editor refinement to catch syntax issues before deployment. Test everything in a staging environment, AI-generated configs are safer than manual work, but they're not magic.
 
 For teams without access to Cursor's Claude backend: Use Claude Opus directly, generate the full config, then use a nginx config linter (like `nginx -t` or Konfig) to validate before deploying.
 
@@ -208,7 +208,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -220,7 +220,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 
@@ -234,7 +234,7 @@ Testing AI-Generated Nginx Configs Safely
 
 Before deploying any AI-generated configuration, follow this validation workflow:
 
-Syntax Validation: Run `nginx -t` on the generated config to catch basic syntax errors. This should always be your first step.
+Syntax Validation - Run `nginx -t` on the generated config to catch basic syntax errors. This should always be your first step.
 
 ```bash
 Test the config for syntax errors
@@ -244,7 +244,7 @@ Run in verbose mode for detailed output
 nginx -T
 ```
 
-Load Testing: Use tools like `ab` (Apache Bench) or `wrk` to simulate traffic patterns your config was designed to handle. This reveals whether load balancing, rate limiting, and upstream selection work as expected.
+Load Testing - Use tools like `ab` (Apache Bench) or `wrk` to simulate traffic patterns your config was designed to handle. This reveals whether load balancing, rate limiting, and upstream selection work as expected.
 
 ```bash
 Test basic requests to your reverse proxy
@@ -254,7 +254,7 @@ Use wrk for more realistic load testing
 wrk -t4 -c100 -d30s http://localhost:80/
 ```
 
-Configuration Drift Detection: Compare AI-generated configs against your team's baseline. A tool like `diff` or a configuration management system (Terraform, Ansible) helps track what changed and why.
+Configuration Drift Detection - Compare AI-generated configs against your team's baseline. A tool like `diff` or a configuration management system (Terraform, Ansible) helps track what changed and why.
 
 ```bash
 Detect differences between new and existing config
@@ -268,13 +268,13 @@ Common Mistakes AI Tools Make
 
 Even the best tools occasionally generate problematic directives:
 
-Missing Proxy Headers: AI sometimes forgets `proxy_set_header X-Forwarded-For`, `X-Forwarded-Proto`, and `X-Real-IP`, which causes backend applications to see proxy IP instead of client IP. Always verify these headers are present.
+Missing Proxy Headers - AI sometimes forgets `proxy_set_header X-Forwarded-For`, `X-Forwarded-Proto`, and `X-Real-IP`, which causes backend applications to see proxy IP instead of client IP. Always verify these headers are present.
 
-Incorrect Upstream Context: Directives like `proxy_pass` that reference upstream blocks must appear in location blocks. AI occasionally places them in server blocks where they don't work.
+Incorrect Upstream Context - Directives like `proxy_pass` that reference upstream blocks must appear in location blocks. AI occasionally places them in server blocks where they don't work.
 
-SSL/TLS Configuration Gaps: AI might generate working SSL config but forget to enable OCSP stapling, certificate pinning, or HSTS preloading. Review security headers explicitly.
+SSL/TLS Configuration Gaps - AI might generate working SSL config but forget to enable OCSP stapling, certificate pinning, or HSTS preloading. Review security headers explicitly.
 
-Module Availability: Your nginx binary might not have the modules the AI suggested (gzip, ssl, stream, etc.). Verify module availability before using AI suggestions.
+Module Availability - Your nginx binary might not have the modules the AI suggested (gzip, ssl, stream, etc.). Verify module availability before using AI suggestions.
 
 ```bash
 Check which modules your nginx binary includes
@@ -284,11 +284,11 @@ If you see "stream" in the output, stream block directives will work
 If missing, you'll need to recompile nginx or find alternatives
 ```
 
-Real Production Scenario: Multi-Region Load Balancing
+Real Production Scenario - Multi-Region Load Balancing
 
 Here's a practical example where AI excels, generating a multi-region load balancing config:
 
-Requirement: Route API traffic to primary datacenter (us-east-1) with failover to secondary (us-west-2), health checks every 5 seconds, and fallback to backup server in each region.
+Requirement - Route API traffic to primary datacenter (us-east-1) with failover to secondary (us-west-2), health checks every 5 seconds, and fallback to backup server in each region.
 
 Claude Opus generates:
 
@@ -339,7 +339,7 @@ Building your first nginx config: Start with ChatGPT (GPT-4) to understand the b
 
 Production reverse proxy architecture: Use Claude Opus. Its understanding of nested contexts and security best practices makes it the best choice for critical infrastructure.
 
-Real-time development workflow: Use Cursor with Claude backend. The inline autocomplete catches errors before you save, and you get immediate feedback on your config changes.
+Real-time development workflow - Use Cursor with Claude backend. The inline autocomplete catches errors before you save, and you get immediate feedback on your config changes.
 
 Rate limiting and security hardening: Claude Opus again. It generates secure SSL configurations and rate limiting setups that ChatGPT often misses.
 
@@ -349,11 +349,11 @@ When to Write Nginx Config Manually
 
 Despite AI's improvements, some scenarios still benefit from manual work:
 
-Custom module configuration: If you've compiled nginx with third-party modules (Moesif, ModSecurity, etc.), AI won't know the directive syntax. Write these sections manually or ask AI for generic examples you can adapt.
+Custom module configuration - If you've compiled nginx with third-party modules (Moesif, ModSecurity, etc.), AI won't know the directive syntax. Write these sections manually or ask AI for generic examples you can adapt.
 
-Performance tuning: Worker process counts, buffer sizes, and timeouts depend on your specific hardware. AI can suggest starting values, but performance testing should drive final tuning.
+Performance tuning - Worker process counts, buffer sizes, and timeouts depend on your specific hardware. AI can suggest starting values, but performance testing should drive final tuning.
 
-Complex business logic: Some routing requirements, like percentage-based canary deployments or request inspection-based routing, are easier to write manually once you understand the pattern.
+Complex business logic - Some routing requirements, like percentage-based canary deployments or request inspection-based routing, are easier to write manually once you understand the pattern.
 
-Regulatory compliance: If your configs must meet specific compliance requirements (PCI DSS, HIPAA), review every line manually. AI doesn't understand your organization's specific requirements.
+Regulatory compliance - If your configs must meet specific compliance requirements (PCI DSS, HIPAA), review every line manually. AI doesn't understand your organization's specific requirements.
 

@@ -33,7 +33,7 @@ Top AI Tools for Prisma Schema Generation
 
 1. ChatGPT-4 (via API or Web)
 
-Price: $20/month (ChatGPT Plus) or $0.03-0.06 per 1K input tokens (API)
+Price - $20/month (ChatGPT Plus) or $0.03-0.06 per 1K input tokens (API)
 
 ChatGPT-4 handles Prisma schemas with high accuracy. Provide a data model description or ERD image, and it generates complete schemas with relations, enums, and validation.
 
@@ -118,11 +118,11 @@ Table of Contents
 - [Feature Comparison Table](#feature-comparison-table)
 - [Code Generation Accuracy Comparison](#code-generation-accuracy-comparison)
 - [Best Practices for AI Schema Generation](#best-practices-for-ai-schema-generation)
-- [Real-World Example: E-Commerce Platform](#real-world-example-e-commerce-platform)
+- [Real-World Example - E-Commerce Platform](#real-world-example-e-commerce-platform)
 - [Recommendations by Use Case](#recommendations-by-use-case)
 - [Related Reading](#related-reading)
 
-Price: $20/month or $200/year
+Price - $20/month or $200/year
 
 Cursor is an AI-first code editor built on VSCode that excels at schema generation through chat and inline editing.
 
@@ -156,7 +156,7 @@ Weaknesses:
 
 3. Claude (Anthropic via Web or API)
 
-Price: $20/month (Claude Pro) or $3-$15 per 1M input tokens (API)
+Price - $20/month (Claude Pro) or $3-$15 per 1M input tokens (API)
 
 Claude has strong schema generation capabilities and handles verbose natural language descriptions well.
 
@@ -302,7 +302,7 @@ Weaknesses:
 
 4. Replit Agent
 
-Price: Freemium ($39/month for Replit Boosts)
+Price - Freemium ($39/month for Replit Boosts)
 
 Replit's AI Agent can generate complete Prisma projects from scratch, including schema, migrations, and seed files.
 
@@ -329,7 +329,7 @@ Weaknesses:
 
 5. Prisma Studio + Introspection + AI Polish
 
-Price: Free (Prisma Studio) + cost of AI tool
+Price - Free (Prisma Studio) + cost of AI tool
 
 For existing databases, combine Prisma's built-in introspection with AI refinement:
 
@@ -391,18 +391,18 @@ Include proper relations, constraints, and indexes.
 Results:
 
 - ChatGPT-4: 95% accuracy. Missed index on `Reservation.date` for common queries.
-- Claude: 98% accuracy. Added thoughtful indexes and included soft delete timestamps.
-- Cursor: 100% accuracy (in project context). Auto-generated migration files.
-- Replit Agent: 88% accuracy. Simplified some relationships unnecessarily.
-- Prisma DB Pull: 100% accuracy (introspection), but would miss enums and custom logic.
+- Claude - 98% accuracy. Added thoughtful indexes and included soft delete timestamps.
+- Cursor - 100% accuracy (in project context). Auto-generated migration files.
+- Replit Agent - 88% accuracy. Simplified some relationships unnecessarily.
+- Prisma DB Pull - 100% accuracy (introspection), but would miss enums and custom logic.
 
 ---
 
 Best Practices for AI Schema Generation
 
 1. Provide Clear Relationships
-Bad: "Users and products"
-Good: "Users can create many products. Each product belongs to one user. Products have many images."
+Bad - "Users and products"
+Good - "Users can create many products. Each product belongs to one user. Products have many images."
 
 2. Specify Query Patterns
 Include expected queries to help tools optimize indexes:
@@ -434,7 +434,7 @@ npx prisma studio
 
 ---
 
-Real-World Example: E-Commerce Platform
+Real-World Example - E-Commerce Platform
 
 Prompt:
 ```
@@ -636,15 +636,15 @@ This schema was generated in under 5 minutes and requires minimal revision.
 
 Recommendations by Use Case
 
-Rapid Prototyping: Use Cursor or Replit Agent for fastest iteration with immediate environment setup.
+Rapid Prototyping - Use Cursor or Replit Agent for fastest iteration with immediate environment setup.
 
-Complex Enterprise Schemas: Use Claude API for verbose requirements and nuanced design decisions.
+Complex Enterprise Schemas - Use Claude API for verbose requirements and nuanced design decisions.
 
-Legacy Database Migration: Use `prisma db pull` + ChatGPT for optimization.
+Legacy Database Migration - Use `prisma db pull` + ChatGPT for optimization.
 
-Learning & Understanding: Use ChatGPT-4 with detailed explanations and walk-throughs.
+Learning & Understanding - Use ChatGPT-4 with detailed explanations and walk-throughs.
 
-Production Systems: Use Claude or ChatGPT-4 API with schema validation and peer review.
+Production Systems - Use Claude or ChatGPT-4 API with schema validation and peer review.
 
 ---
 
@@ -663,7 +663,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -675,6 +675,6 @@ AI tools generate queries well for common patterns, but always test generated qu
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

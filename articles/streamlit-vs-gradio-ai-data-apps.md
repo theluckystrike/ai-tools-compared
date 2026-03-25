@@ -124,11 +124,11 @@ demo = gr.Interface(
 )
 ```
 
-Component Ecosystem
+Component environment
 
 Streamlit provides a broader set of data-focused components out of the box: dataframes, charts, metrics, and form builders. Its integration with Plotly, Altair, and other visualization libraries is easy. call `st.plotly_chart(fig)` or `st.altair_chart(chart)` and the library handles rendering automatically.
 
-Gradio excels at ML-specific components: audio input/output, image classification interfaces, OCR blocks, and natural language processing demos. The Hugging Face ecosystem provides easy deployment to Spaces.
+Gradio excels at ML-specific components: audio input/output, image classification interfaces, OCR blocks, and natural language processing demos. The Hugging Face environment provides easy deployment to Spaces.
 
 Layout Control
 
@@ -216,9 +216,9 @@ Gradio is the better choice when:
 
 - You need concurrent request handling with its queue system
 
-Gradio's tight integration with the Hugging Face ecosystem makes it the default choice for sharing model demos on their platform. Every Gradio app also automatically exposes a REST API, which means your demo and your production API endpoint can be the same code.
+Gradio's tight integration with the Hugging Face environment makes it the default choice for sharing model demos on their platform. Every Gradio app also automatically exposes a REST API, which means your demo and your production API endpoint can be the same code.
 
-Building a Practical AI App: Two Implementations
+Building a Practical AI App - Two Implementations
 
 To illustrate the difference concretely, here is the same LLM-powered text summarizer built in both frameworks.
 
@@ -269,13 +269,13 @@ Production Considerations
 
 Both frameworks are suitable for prototypes and internal tools. For production AI applications, consider:
 
-- Authentication: Streamlit has built-in support for external auth providers via `st.secrets` and `st.experimental_user`; Gradio requires custom implementation or the paid Hugging Face Spaces Pro tier for auth
+- Authentication - Streamlit has built-in support for external auth providers via `st.secrets` and `st.experimental_user`; Gradio requires custom implementation or the paid Hugging Face Spaces Pro tier for auth
 
-- Scaling: Both can handle moderate traffic but need careful optimization for high-load scenarios. Streamlit runs one server process per user session by default; Gradio's queue system handles concurrent users more efficiently out of the box
+- Scaling - Both can handle moderate traffic but need careful optimization for high-load scenarios. Streamlit runs one server process per user session by default; Gradio's queue system handles concurrent users more efficiently out of the box
 
-- Deployment: Streamlit Community Cloud offers free managed hosting. Gradio integrates natively with Hugging Face Spaces (free tier available) and can be deployed anywhere as a standard Python ASGI application
+- Deployment - Streamlit Community Cloud offers free managed hosting. Gradio integrates natively with Hugging Face Spaces (free tier available) and can be deployed anywhere as a standard Python ASGI application
 
-- Monitoring: Neither framework ships with built-in observability. Instrument with standard tools like Prometheus client libraries or Sentry for error tracking
+- Monitoring - Neither framework ships with built-in observability. Instrument with standard tools like Prometheus client libraries or Sentry for error tracking
 
 Frequently Asked Questions
 

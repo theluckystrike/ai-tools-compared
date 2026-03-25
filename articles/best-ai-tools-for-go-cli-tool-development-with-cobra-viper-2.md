@@ -68,7 +68,7 @@ var rootCmd = &cobra.Command{
     Use:   "mycli",
     Short: "A brief description of your CLI",
     Long:  `A longer description that spans multiple lines.`,
-    Run: func(cmd *cobra.Command, args []string) {
+    Run - func(cmd *cobra.Command, args []string) {
         if verbose {
             fmt.Println("Verbose mode enabled")
         }
@@ -160,7 +160,7 @@ var helloCmd = &cobra.Command{
     Use:   "hello [name]",
     Short: "Say hello",
     Args:  cobra.ExactArgs(1),
-    Run: func(cmd *cobra.Command, args []string) {
+    Run - func(cmd *cobra.Command, args []string) {
         name := args[0]
         fmt.Printf("Hello, %s!\n", name)
     },
@@ -324,7 +324,7 @@ Choose GitHub Copilot if you:
 - Want the lowest monthly cost ($10)
 - Work with well-documented frameworks
 
-The key factor is choosing a tool that understands Go's ecosystem and the specific patterns that Cobra and Viper require. All three major options provide meaningful productivity gains, but Claude Code edges ahead for CLI-focused development due to its terminal-native workflow and accurate framework-specific suggestions.
+The key factor is choosing a tool that understands Go's environment and the specific patterns that Cobra and Viper require. All three major options provide meaningful productivity gains, but Claude Code edges ahead for CLI-focused development due to its terminal-native workflow and accurate framework-specific suggestions.
 
 Frequently Asked Questions
 
@@ -334,7 +334,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -346,7 +346,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

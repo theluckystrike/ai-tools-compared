@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand MCP Server Architecture
+Step 1 - Understand MCP Server Architecture
 
 MCP servers act as bridges between your AI assistant and external systems. Each server exposes specific capabilities through a well-defined interface, allowing AI models to interact with databases, file systems, APIs, and development tools. The protocol handles authentication, request formatting, and response parsing, letting you focus on workflow logic rather than plumbing.
 
@@ -36,7 +36,7 @@ The architecture follows a client-server model where your AI assistant (the clie
 
 MCP differs from traditional API integrations in a critical way: the AI model itself decides when and how to invoke your tools based on the user's intent. You define the tool schema (name, description, input parameters), and the model handles orchestration. This inverts the traditional programming model. instead of writing `if user_asks_about_db then query_db`, you describe what your tool does and let the model figure out when to use it.
 
-Step 2: Comparing MCP Server Approaches
+Step 2 - Comparing MCP Server Approaches
 
 Before writing your own MCP server, evaluate whether an existing server meets your needs:
 
@@ -50,7 +50,7 @@ Before writing your own MCP server, evaluate whether an existing server meets yo
 
 For most teams, the fastest ROI comes from wrapping existing internal tools (bash scripts, internal CLIs, REST APIs) as MCP tools rather than building greenfield servers.
 
-Step 3: Set Up Your First MCP Server Connection
+Step 3 - Set Up Your First MCP Server Connection
 
 Before building workflows, you need to establish basic server connectivity. Most MCP server implementations use JSON-RPC 2.0 for communication. Here's a minimal configuration example using a typical MCP server setup:
 
@@ -76,7 +76,7 @@ client = Client(config)
 
 This configuration defines two servers: one for filesystem operations and another for database interactions. Replace the connection string with your actual database credentials.
 
-Step 4: Step-by-Step: Building a Custom MCP Server in Python
+Step 4 - Step-by-Step: Building a Custom MCP Server in Python
 
 This walkthrough creates a custom MCP server that wraps your internal deployment API, making it accessible to Claude Code or any MCP-compatible client.
 
@@ -179,7 +179,7 @@ Add to your `~/.claude/config.json`:
 
 Claude Code will automatically discover the tools on next startup.
 
-Step 5: Build a Code Review Workflow
+Step 5 - Build a Code Review Workflow
 
 A practical use case involves automating code reviews. This workflow triggers analysis whenever you push changes to a repository:
 
@@ -213,7 +213,7 @@ async def code_review_workflow(commit_sha: str):
 
 This workflow demonstrates chaining multiple MCP server calls. The output from each server feeds into the next step, creating a pipeline that processes code changes automatically.
 
-Step 6: Create a Database Migration Assistant
+Step 6 - Create a Database Migration Assistant
 
 Another valuable workflow helps manage database migrations. This assistant can generate migration scripts based on schema changes:
 
@@ -272,7 +272,7 @@ Security requires careful handling of credentials. Never store sensitive values 
 
 Tool descriptions drive quality. The model selects tools based on your description strings. Vague descriptions ("do stuff with files") produce unreliable invocations. Precise descriptions ("read a file from the workspace directory, returns file contents as UTF-8 string") produce reliable behavior. Treat tool descriptions as a type of prompt engineering.
 
-Step 7: Scaling Your Workflows
+Step 7 - Scaling Your Workflows
 
 As your workflows grow more complex, consider organizing them into reusable components. Create a library of standard operations that combine frequently-used server calls:
 

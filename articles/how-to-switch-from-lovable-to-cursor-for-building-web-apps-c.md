@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Core Differences
+Step 1 - Understand the Core Differences
 
 Lovable operates as a conversational AI platform specifically designed for rapid web application prototyping. It uses a chat-based interface where you describe what you want to build, and the AI generates the code for you. The platform manages your project infrastructure and deployment automatically, making it particularly attractive for quickly spinning up MVPs and proof-of-concept applications.
 
@@ -43,11 +43,11 @@ Cursor, on the other hand, is an AI-powered code editor built on top of Visual S
 
 The fundamental shift when moving from Lovable to Cursor involves changing from a prompt-driven generation model to an augmented coding workflow. In Lovable, you describe features and receive generated code. In Cursor, you write code with AI assistance, maintaining full control over every line while letting the AI help with speed and accuracy.
 
-Step 2: Preparing Your Project for Migration
+Step 2 - Preparing Your Project for Migration
 
 Before transitioning to Cursor, you need to export your Lovable project. Lovable projects are typically stored in their cloud environment, so you will need to download the source code directly from the platform. Navigate to your project settings in Lovable and look for an export or download option that provides your complete codebase including all components, configurations, and dependencies.
 
-Once you have downloaded your project, organize the folder structure to match standard web development conventions. Lovable may generate a specific project structure that differs from typical React, Vue, or Next.js setups. You might need to refactor certain files to work outside the Lovable ecosystem.
+Once you have downloaded your project, organize the folder structure to match standard web development conventions. Lovable may generate a specific project structure that differs from typical React, Vue, or Next.js setups. You might need to refactor certain files to work outside the Lovable environment.
 
 Here is a typical transformation you might perform when adapting Lovable-generated code for Cursor:
 
@@ -105,7 +105,7 @@ export function UserProfile({ userId }: UserProfileProps) {
 
 This refactoring adds TypeScript typing, proper error handling, and follows more conventional React patterns that you would maintain and extend within Cursor.
 
-Step 3: Set Up Cursor for Web Development
+Step 3 - Set Up Cursor for Web Development
 
 After installing Cursor, you will want to configure it for optimal web development performance. Open Cursor settings and navigate to the Models section to select your preferred AI model. The default model works well for most tasks, but you can experiment with different options based on your needs.
 
@@ -131,7 +131,7 @@ When you need to implement a new feature in Cursor, start by creating the basic 
 
 This approach gives you more control but still uses AI for efficiency. You maintain ownership of the architecture while Cursor handles boilerplate and helps with complex implementations.
 
-Step 4: Manage Deployment and Infrastructure
+Step 4 - Manage Deployment and Infrastructure
 
 One significant change when switching from Lovable to Cursor involves handling deployment yourself. Lovable manages hosting and deployment automatically, while Cursor requires you to set up your own deployment pipeline.
 
@@ -157,7 +157,7 @@ Cursor makes sense if you want full control over your codebase, need to integrat
 
 Lovable remains useful for rapid prototyping when you need to validate ideas quickly without setting up development environments. The two tools can even complement each other in your workflow, using Lovable for quick experiments and Cursor for production applications.
 
-Step 5: Making the Transition Smooth
+Step 5 - Making the Transition Smooth
 
 Start by migrating one small project to Cursor rather than attempting to move everything at once. Spend time learning Cursor's keyboard shortcuts and AI commands. The initial learning curve is higher than Lovable, but the long-term benefits include greater control and more professional development practices.
 
@@ -171,7 +171,7 @@ Using Cursor's Documentation Integration
 
 Cursor can access framework documentation and reference it during coding. When working on a Next.js project migrated from Lovable, you can highlight a specific API pattern and ask Cursor to explain how it works in Next.js specifically. This is particularly valuable when adapting Lovable code that uses basic React patterns into more optimized Next.js-specific implementations.
 
-For example, if your Lovable project used simple client-side state management, you can ask Cursor: "Show me how to refactor this useState pattern into Next.js Server Components for better performance." Cursor will provide concrete examples using Next.js conventions that you may not be familiar with.
+For example, if your Lovable project used simple client-side state management, you can ask Cursor - "Show me how to refactor this useState pattern into Next.js Server Components for better performance." Cursor will provide concrete examples using Next.js conventions that you may not be familiar with.
 
 Building Reusable Component Libraries
 
@@ -271,7 +271,7 @@ Performance Optimization After Migration
 
 A key benefit of moving to Cursor is the opportunity to optimize your code. Lovable-generated code often prioritizes functionality over performance. In Cursor, you can ask for performance improvements specific to your framework.
 
-Ask Cursor: "Review this component for performance issues. I'm concerned about unnecessary re-renders." It will identify problems like missing dependency arrays, unchanged object references being passed as props, or expensive computations in render paths. Cursor can then provide optimized versions using React.memo, useMemo, useCallback, or other performance tools appropriate to your situation.
+Ask Cursor - "Review this component for performance issues. I'm concerned about unnecessary re-renders." It will identify problems like missing dependency arrays, unchanged object references being passed as props, or expensive computations in render paths. Cursor can then provide optimized versions using React.memo, useMemo, useCallback, or other performance tools appropriate to your situation.
 
 Debugging Complex Issues
 
@@ -279,13 +279,13 @@ As you work with Cursor, you will encounter problems that require deeper investi
 
 When you paste an error stack trace and describe unexpected behavior, Cursor analyzes the execution flow and identifies likely culprits. This is particularly valuable when migrating complex Lovable projects where the original code organization may obscure the root cause of issues.
 
-Step 6: Comparing Development Speed: Lovable vs Cursor
+Step 6 - Comparing Development Speed: Lovable vs Cursor
 
 Understanding the productivity tradeoff helps set realistic expectations for your migration.
 
-Lovable: Write description → receive complete feature implementation in seconds. Ideal for rapid prototyping.
+Lovable - Write description → receive complete feature implementation in seconds. Ideal for rapid prototyping.
 
-Cursor: Write basic structure → get AI assistance → refine → test. Takes longer per feature but results in more production-ready code that you fully understand and can maintain.
+Cursor - Write basic structure → get AI assistance → refine → test. Takes longer per feature but results in more production-ready code that you fully understand and can maintain.
 
 For a simple CRUD feature:
 - Lovable: 5-10 minutes start-to-finish
@@ -293,7 +293,7 @@ For a simple CRUD feature:
 
 However, modifying existing Lovable features is often painful (you must regenerate or manually edit). Modifying Cursor code is straightforward, you make changes and ask Cursor for help with specific parts.
 
-Step 7: Build Your First Project in Cursor
+Step 7 - Build Your First Project in Cursor
 
 Start with a new project rather than migrating immediately to establish confidence in the workflow:
 
@@ -305,7 +305,7 @@ Start with a new project rather than migrating immediately to establish confiden
 
 This approach builds muscle memory and reduces frustration when you encounter the differences between the two tools.
 
-Step 8: Long-term Considerations
+Step 8 - Long-term Considerations
 
 After migrating to Cursor, you will likely find that your development practices evolve. You will write more tests because Cursor makes test generation easy. You will refactor more often because modifying code is lower-friction than regenerating. You will care more about code organization because you maintain the codebase directly.
 

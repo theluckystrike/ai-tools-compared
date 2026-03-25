@@ -39,7 +39,7 @@ To get Claude to answer when it refuses your prompt, remove trigger words that a
 - The most common reasons: for refusals include: Certain words or phrases automatically activate content filters, even when the request itself is harmless.
 - Claude may also refuse: when it cannot determine whether a request is safe, or when previous conversation context creates ambiguity.
 - Focus on the legitimate goal: building, learning, debugging, rather than techniques that could be misused.
-- Before (triggers refusal): ```
+- Before (triggers refusal) - ```
 How do I handle passwords securely?
 ```
 
@@ -66,7 +66,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Fix 1: Remove Trigger Words and Phrases
+Step 1 - Fix 1: Remove Trigger Words and Phrases
 
 The fastest fix involves identifying and removing words that trigger refusal filters. Specific technical terms, when combined with certain modifiers, sometimes activate safety systems even when the actual request is harmless.
 
@@ -84,7 +84,7 @@ Explain common authentication patterns for my application
 
 The key principle is to describe what you want to accomplish rather than using words that describe prohibited actions. Focus on the legitimate goal, building, learning, debugging, rather than techniques that could be misused.
 
-Step 2: Fix 2: Provide Clear Context
+Step 2 - Fix 2: Provide Clear Context
 
 Claude may refuse requests that seem ambiguous or potentially harmful. Adding context helps Claude understand your legitimate intent and provide the assistance you need.
 
@@ -102,7 +102,7 @@ Show me a Python function that reads a JSON file and returns the parsed data. I'
 
 Including your purpose, the technology you're using, and what you're trying to accomplish transforms an ambiguous request into one Claude can confidently answer.
 
-Step 3: Fix 3: Explicitly State Your Intent
+Step 3 - Fix 3: Explicitly State Your Intent
 
 When working with sensitive topics that have legitimate use cases, explicitly stating your purpose removes ambiguity and helps Claude assess your request properly.
 
@@ -120,7 +120,7 @@ I'm building a user authentication system for a web application. What are best p
 
 The second version provides complete context: the technology (Node.js), the purpose (authentication system), and the specific question (password hashing best practices). Claude can now provide targeted, helpful information.
 
-Step 4: Fix 4: Break Down Complex Requests
+Step 4 - Fix 4: Break Down Complex Requests
 
 Complex multi-part requests sometimes trigger refusals because Claude cannot evaluate the safety of every component simultaneously. Breaking your request into smaller, focused parts often resolves this.
 
@@ -138,7 +138,7 @@ Write a Node.js script that makes HTTP requests and extracts structured data fro
 
 Start with the legitimate core of your request. Once that works, you can ask follow-up questions for additional features.
 
-Step 5: Fix 5: Use Educational Framing
+Step 5 - Fix 5: Use Educational Framing
 
 Questions framed as learning requests typically receive more answers. This approach works particularly well for topics that could have harmful applications but have legitimate educational value.
 
@@ -156,27 +156,27 @@ I'm learning about web application security. Can you explain what SQL injection 
 
 This transformation provides the same security knowledge while making Claude's educational purpose clear.
 
-Step 6: Diagnostic Tips
+Step 6 - Diagnostic Tips
 
 When rephrasing doesn't resolve the issue, these diagnostic steps help identify the root cause:
 
 Check for typos in keywords, since misspelled words sometimes create unexpected trigger patterns. Review recent conversation history, earlier requests may have created context that affects current responses. Test with a minimal prompt by removing everything except the core request to isolate the problem. Try synonyms when specific words trigger refusals, and check whether excessive requests in a short period may be causing temporary rate-limit refusals.
 
-Step 7: Common Scenarios and Solutions
+Step 7 - Common Scenarios and Solutions
 
-Scenario: Claude stops responding mid-conversation
+Scenario - Claude stops responding mid-conversation
 
 This often happens when conversation context becomes too complex or contains conflicting instructions. Start a new conversation and break your request into smaller steps.
 
-Scenario: Specific questions always get refused
+Scenario - Specific questions always get refused
 
 You may be using terminology associated with harmful activities. Research alternative terms for your legitimate use case, or explicitly state your purpose at the start of each request.
 
-Scenario: Code examples are refused
+Scenario - Code examples are refused
 
 Some code patterns can appear malicious. Provide more context about your project, the problem you're solving, and why you need that specific functionality.
 
-Step 8: API Limit and Rate Limit Handling
+Step 8 - API Limit and Rate Limit Handling
 
 When using Claude API for batch operations, be aware of rate limits that might trigger refusals:
 
@@ -272,13 +272,13 @@ def structured_prompt_for_sensitive_topic(
 ) -> str:
     """Build a well-structured prompt for sensitive topics."""
 
-    return f"""Context: I am learning about {topic} for {purpose}.
+    return f"""Context - I am learning about {topic} for {purpose}.
 
-Background: {context}
+Background - {context}
 
-Educational Goal: {educational_angle}
+Educational Goal - {educational_angle}
 
-Question: Can you explain {topic}, including:
+Question - Can you explain {topic}, including:
 1. How it works technically
 2. Common use cases
 3. What defenses or security measures prevent misuse
@@ -295,7 +295,7 @@ prompt = structured_prompt_for_sensitive_topic(
 )
 ```
 
-Step 9: Common Trigger Keywords to Avoid
+Step 9 - Common Trigger Keywords to Avoid
 
 When Claude refuses, analyze which terms might be triggering the safety systems:
 
@@ -310,7 +310,7 @@ When Claude refuses, analyze which terms might be triggering the safety systems:
 | steal | extract | "extract data from database" |
 | malicious | unexpected | "handle unexpected behavior" |
 
-Step 10: Batch Refusal Handling
+Step 10 - Batch Refusal Handling
 
 For applications processing many prompts, implement fallback strategies:
 

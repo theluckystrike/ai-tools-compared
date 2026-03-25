@@ -30,7 +30,7 @@ Table of Contents
 - [Step-by-Step Workflow for AI-Assisted Security Review](#step-by-step-workflow-for-ai-assisted-security-review)
 - [Common Security Gaps AI Tools Identify](#common-security-gaps-ai-tools-identify)
 - [Price Comparison for AI-Assisted Security Reviews](#price-comparison-for-ai-assisted-security-reviews)
-- [Practical Example: Full Security Architecture Review](#practical-example-full-security-architecture-review)
+- [Practical Example - Full Security Architecture Review](#practical-example-full-security-architecture-review)
 - [Integration with CI/CD Pipelines](#integration-with-cicd-pipelines)
 - [Limitations of AI-Assisted Security Reviews](#limitations-of-ai-assisted-security-reviews)
 
@@ -68,7 +68,7 @@ Consider a Python Flask application with user authentication. Here's how you mig
 
 ```
 Analyze the security architecture of this Flask application.
-Focus on: authentication flow, session management, password
+Focus on - authentication flow, session management, password
 storage, and API security. The main application is in app.py,
 authentication logic is in auth.py, and database models are
 in models.py. Provide a structured security review document.
@@ -81,7 +81,7 @@ Code Pattern Analysis
 AI assistants excel at identifying security anti-patterns in your code. For example, when analyzing authentication logic, they can detect:
 
 ```python
-Anti-pattern: SQL injection vulnerability
+Anti-pattern - SQL injection vulnerability
 def get_user(username):
     query = f"SELECT * FROM users WHERE username = '{username}'"
     return db.execute(query)
@@ -137,17 +137,17 @@ Tool Selection for Security Architecture Analysis
 
 Different AI tools bring distinct capabilities to security architecture review:
 
-Claude 3.5 Sonnet: Excels at understanding complex threat models and chaining attack vectors. Its reasoning depth makes it superior for identifying non-obvious vulnerabilities. Cost: ~$3, 15 per 1M input tokens via API.
+Claude 3.5 Sonnet - Excels at understanding complex threat models and chaining attack vectors. Its reasoning depth makes it superior for identifying non-obvious vulnerabilities. Cost - ~$3, 15 per 1M input tokens via API.
 
-GPT-4: Strong at following detailed review templates and producing structured output. Faster iteration than Claude but sometimes less thorough on subtle security issues. Cost: ~$0.03, 0.06 per 1K input tokens.
+GPT-4 - Strong at following detailed review templates and producing structured output. Faster iteration than Claude but sometimes less thorough on subtle security issues. Cost: ~$0.03, 0.06 per 1K input tokens.
 
-GitHub Copilot: Integrated into your IDE; useful for reviewing code patterns in real-time. Less effective for architecture reviews but excellent for catching security issues during coding. Cost: $10, 20/month flat rate.
+GitHub Copilot - Integrated into your IDE; useful for reviewing code patterns in real-time. Less effective for architecture reviews but excellent for catching security issues during coding. Cost - $10, 20/month flat rate.
 
 Specialized security tools like GitHub Advanced Security or CodeQL provide scanning automation but lack the reasoning capabilities of general LLMs. Best used alongside AI assistants.
 
 Step-by-Step Workflow for AI-Assisted Security Review
 
-Step 1: Prepare Your Repository Context
+Step 1 - Prepare Your Repository Context
 
 Gather the following for the AI:
 - Repository structure (directory tree)
@@ -156,7 +156,7 @@ Gather the following for the AI:
 - API security headers (middleware, CORS policies)
 - Dependency manifests (package.json, requirements.txt, go.mod)
 
-Step 2: Provide Architecture Narrative
+Step 2 - Provide Architecture Narrative
 
 Write a brief architecture description that includes:
 
@@ -170,7 +170,7 @@ Microservices architecture with:
 - Database has network-only access (no public IPs)
 ```
 
-Step 3: Run the AI Analysis
+Step 3 - Run the AI Analysis
 
 Provide a structured prompt:
 
@@ -191,7 +191,7 @@ Generate a security architecture review document covering:
 8. Remediation recommendations prioritized by severity
 ```
 
-Step 4: Validate and Expand
+Step 4 - Validate and Expand
 
 Review the AI output and ask follow-up questions:
 
@@ -233,18 +233,18 @@ AI-assisted approach:
 - GitHub Copilot: $20/month flat rate (amortized per project)
 - GPT-4 API: 2, 4 hours interaction = $3, 15 in API costs
 
-ROI: AI tools reduce security documentation effort by 70, 85%, cutting costs from thousands to tens of dollars.
+ROI - AI tools reduce security documentation effort by 70, 85%, cutting costs from thousands to tens of dollars.
 
-Practical Example: Full Security Architecture Review
+Practical Example - Full Security Architecture Review
 
 Here's a complete prompt that produces actionable output:
 
 ```
 Our application is a SaaS platform with:
 
-Frontend: React 18 app, uses Auth0 for authentication, stores JWT in httpOnly cookie
-Backend: Node.js/Express API, validates JWT on every request, PostgreSQL database
-Infrastructure: AWS EC2 instances in private subnets, RDS database encrypted at rest
+Frontend - React 18 app, uses Auth0 for authentication, stores JWT in httpOnly cookie
+Backend - Node.js/Express API, validates JWT on every request, PostgreSQL database
+Infrastructure - AWS EC2 instances in private subnets, RDS database encrypted at rest
 
 Current security controls:
 - HTTPS enforced everywhere
@@ -260,7 +260,7 @@ Please generate a complete security architecture review addressing:
 5. Specific implementation code for the top 3 recommendations
 ```
 
-Expected output quality: , 400, 600 word document with specific code examples and clear prioritization.
+Expected output quality - , 400, 600 word document with specific code examples and clear prioritization.
 
 Integration with CI/CD Pipelines
 
@@ -271,8 +271,8 @@ Many teams automate security review updates:
 Run monthly security architecture review update
 
 claude "Analyze our repository at ${REPO_PATH}.
-Configuration: [insert config]
-Architecture: [insert doc]
+Configuration - [insert config]
+Architecture - [insert doc]
 
 Generate an updated security architecture review for ${CURRENT_MONTH}.
 Focus on changes since last review."  > security-review-${DATE}.md

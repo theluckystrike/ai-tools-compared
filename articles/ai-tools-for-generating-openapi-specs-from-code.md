@@ -24,17 +24,17 @@ AI-powered spec generation flips this problem: feed your code, get a machine-rea
 
 The Two Approaches
 
-Approach A: AI Chat Models (Claude, ChatGPT, Copilot)
+Approach A - AI Chat Models (Claude, ChatGPT, Copilot)
 - You paste code, get spec suggestions
 - Good for one-off specs or legacy codebases
 - Requires iteration and validation
 
-Approach B: CLI Tools + Code Analysis (Swagger Codegen, openapi-generator)
+Approach B - CLI Tools + Code Analysis (Swagger Codegen, openapi-generator)
 - Automatic parsing of annotations/decorators
 - Language-specific; high accuracy
 - Best for greenfield APIs with proper structure
 
-Claude Code: Fastest for One-Off Analysis
+Claude Code - Fastest for One-Off Analysis
 
 Claude Code excels at reading large codebases in context and producing accurate OpenAPI specs without annotations.
 
@@ -46,7 +46,7 @@ Point Claude at your codebase directory
 
 Workflow:
 1. Open Claude Code, load your repo
-2. Ask: "Generate an OpenAPI 3.0 spec for all endpoints in /api directory"
+2. Ask - "Generate an OpenAPI 3.0 spec for all endpoints in /api directory"
 3. Claude reads route handlers, middleware, validators
 4. Returns complete YAML spec
 
@@ -90,13 +90,13 @@ Weaknesses:
 - Spec validation must be manual
 ---
 
-GitHub Copilot: IDE-Native Generation
+GitHub Copilot - IDE-Native Generation
 
 Table of Contents
 
-- [GitHub Copilot: IDE-Native Generation](#github-copilot-ide-native-generation)
-- [Cursor: Purpose-Built for Code Generation](#cursor-purpose-built-for-code-generation)
-- [Swagger Codegen: The Dedicated Tool](#swagger-codegen-the-dedicated-tool)
+- [GitHub Copilot - IDE-Native Generation](#github-copilot-ide-native-generation)
+- [Cursor - Purpose-Built for Code Generation](#cursor-purpose-built-for-code-generation)
+- [Swagger Codegen - The Dedicated Tool](#swagger-codegen-the-dedicated-tool)
 - [openapi-generator: Modern Alternative](#openapi-generator-modern-alternative)
 - [Comparison Table](#comparison-table)
 - [Workflow Recommendations](#workflow-recommendations)
@@ -148,7 +148,7 @@ Weaknesses:
 
 ---
 
-Cursor: Purpose-Built for Code Generation
+Cursor - Purpose-Built for Code Generation
 
 Cursor is a code editor with Claude baked in. For OpenAPI generation, it's competitive because it can read entire repos.
 
@@ -196,7 +196,7 @@ Weaknesses:
 
 ---
 
-Swagger Codegen: The Dedicated Tool
+Swagger Codegen - The Dedicated Tool
 
 Swagger Codegen is a Java-based CLI that auto-detects API specs from annotated code.
 
@@ -233,8 +233,8 @@ pom.xml
   </executions>
 </plugin>
 
-Run: mvn clean install
-Output: target/openapi.json
+Run - mvn clean install
+Output - target/openapi.json
 ```
 
 Example - FastAPI with automatic docs:
@@ -257,8 +257,8 @@ def get_item(item_id: int):
     """Get item by ID."""
     return {"item_id": item_id}
 
-Run: uvicorn app:app --reload
-Access: http://localhost:8000/openapi.json
+Run - uvicorn app:app --reload
+Access - http://localhost:8000/openapi.json
 Spec auto-generated, 100% accurate
 ```
 
@@ -337,7 +337,7 @@ openapi-generator-cli generate \
   -o ./generated \
   --additional-properties=packageName=my_api
 
-Generates: models, routes, validators all from spec
+Generates - models, routes, validators all from spec
 ```
 
 Pricing:
@@ -403,22 +403,22 @@ For Enterprise (High-Volume APIs):
 
 Pitfalls to Avoid
 
-Pitfall 1: Trusting AI Output Without Validation
+Pitfall 1 - Trusting AI Output Without Validation
 - Generated specs often miss edge cases
 - Always test against live API
 - Use `npx swagger-cli validate openapi.yaml`
 
-Pitfall 2: Not Version-Controlling the Spec
+Pitfall 2 - Not Version-Controlling the Spec
 - Treat OpenAPI YAML as source code
 - Commit every change
 - Makes diffs visible to team
 
-Pitfall 3: Generating Once, Then Forgetting
+Pitfall 3 - Generating Once, Then Forgetting
 - Specs drift if not regenerated with code
 - Schedule weekly regeneration
 - Or use annotation-based approach (always in sync)
 
-Pitfall 4: Ignoring Authentication
+Pitfall 4 - Ignoring Authentication
 - AI tools often miss securitySchemes
 - Manually add if absent:
 

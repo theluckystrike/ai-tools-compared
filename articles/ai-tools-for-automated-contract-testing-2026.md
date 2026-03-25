@@ -219,7 +219,7 @@ def test_api_contract(case):
     case.validate_response(response)
 
 
-Stateful test: POST /users → POST /orders (using returned user ID)
+Stateful test - POST /users → POST /orders (using returned user ID)
 @schema.parametrize(stateful=Stateful.links)
 def test_stateful_contract(case):
     """Test stateful sequence: create user then create order for that user."""

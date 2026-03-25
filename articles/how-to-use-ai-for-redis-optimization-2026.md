@@ -54,7 +54,7 @@ Claude response:
 
 1. SMEMBERS on `active_users` (45ms). `SMEMBERS` on a large set is O(N) and blocks. If this set has thousands of members, replace with: `SSCAN active_users 0 COUNT 100` in a loop, or use a sorted set (`ZRANGE`) if you need ordering. If you only need membership checks, `SISMEMBER` is O(1).
 
-2. KEYS `session:*` (38ms). `KEYS` is O(N) and scans the entire keyspace, blocking all other commands. Never use in production. Replace with `SCAN 0 MATCH session:* COUNT 100` in a loop. Better: maintain a dedicated set `active_sessions` and use `SMEMBERS`/`SSCAN`.
+2. KEYS `session:*` (38ms). `KEYS` is O(N) and scans the entire keyspace, blocking all other commands. Never use in production. Replace with `SCAN 0 MATCH session:* COUNT 100` in a loop. Better - maintain a dedicated set `active_sessions` and use `SMEMBERS`/`SSCAN`.
 
 3. LRANGE on notifications (12ms). `LRANGE key 0 -1` fetches the entire list, which becomes slow as the list grows. Add a `LTRIM notifications:user:10042 0 99` after each `LPUSH` to cap at 100 entries, or use a sorted set with timestamps as scores for efficient range queries."
 
@@ -65,8 +65,8 @@ Memory Policy Configuration
 Prompt:
 ```text
 My Redis instance is hitting maxmemory and evicting keys I need.
-Current config: maxmemory 6gb, maxmemory-policy allkeys-lru.
-We have: session data (must not evict), rate limit counters (can evict),
+Current config - maxmemory 6gb, maxmemory-policy allkeys-lru.
+We have - session data (must not evict), rate limit counters (can evict),
 cached API responses (can evict, prefer LRU).
 Suggest the right eviction policy and key structure.
 ```
@@ -76,7 +76,7 @@ Claude response:
 ```bash
 Redis config adjustments
 
-Use volatile-lru: only evict keys with an expiry set
+Use volatile-lru - only evict keys with an expiry set
 Keys without TTL (sessions) are never evicted
 maxmemory-policy volatile-lru
 
@@ -165,11 +165,11 @@ import redis
 
 r = redis.Redis(host='localhost', port=6379)
 
-SLOW: 1000 round trips
+SLOW - 1000 round trips
 for key in keys:
     r.incr(key)
 
-FAST: pipeline. 1 round trip
+FAST - pipeline. 1 round trip
 def batch_increment(keys: list[str]) -> None:
     pipe = r.pipeline(transaction=False)  # transaction=False for max throughput
     for key in keys:
@@ -331,7 +331,7 @@ Redis Stream Optimization
 Prompt:
 ```text
 I'm using Redis Streams for a message queue.
-Current setup: XADD to stream, XREAD to consume.
+Current setup - XADD to stream, XREAD to consume.
 Seeing latency spikes. What's wrong?
 ```
 

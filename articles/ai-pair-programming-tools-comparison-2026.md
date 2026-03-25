@@ -37,9 +37,9 @@ Limitations:
 - Web interface feels disconnected from your actual editor
 - No VS Code native extension yet (relies on CLI wrapper)
 
-Pricing: $15/month (API pay-as-you-go) or $20/month Claude Pro
+Pricing - $15/month (API pay-as-you-go) or $20/month Claude Pro
 
-Best For: Full-stack refactors, understanding large codebases, code review preparation
+Best For - Full-stack refactors, understanding large codebases, code review preparation
 
 ---
 
@@ -77,9 +77,9 @@ Limitations:
 - Chat misses file structure changes (resets context on edits)
 - Inconsistent quality for complex logic (trained on all public code, not curated)
 
-Pricing: $10/month, GitHub Business plan, or free tier (15 messages/month)
+Pricing - $10/month, GitHub Business plan, or free tier (15 messages/month)
 
-Best For: Inline completions, quick documentation, learning unfamiliar libraries
+Best For - Inline completions, quick documentation, learning unfamiliar libraries
 
 ---
 
@@ -100,9 +100,9 @@ Limitations:
 - Paid subscription required ($20/month even with GitHub Copilot subscription)
 - Syntax errors in multi-file edits sometimes require manual intervention
 
-Pricing: $20/month Cursor subscription (includes Copilot + Claude access)
+Pricing - $20/month Cursor subscription (includes Copilot + Claude access)
 
-Best For: Full feature development, rapid prototyping, teams that live in the editor
+Best For - Full feature development, rapid prototyping, teams that live in the editor
 
 ---
 
@@ -123,9 +123,9 @@ Limitations:
 - Requires manual git interaction for context (can't auto-scan directories)
 - Less suitable for front-end visual work
 
-Pricing: Free (pay for API calls to Claude/OpenAI: ~$2, 5 per session)
+Pricing - Free (pay for API calls to Claude/OpenAI: ~$2, 5 per session)
 
-Best For: Backend refactors, infrastructure changes, developers who prefer git workflows
+Best For - Backend refactors, infrastructure changes, developers who prefer git workflows
 
 ---
 
@@ -146,9 +146,9 @@ Limitations:
 - Less reliable multi-file editing than Cursor or Claude Code
 - Smaller community; fewer tutorials and workflows documented
 
-Pricing: Free (optionally pay for cloud models)
+Pricing - Free (optionally pay for cloud models)
 
-Best For: Privacy-sensitive work, enterprises avoiding vendor lock-in, local-model enthusiasts
+Best For - Privacy-sensitive work, enterprises avoiding vendor lock-in, local-model enthusiasts
 
 ---
 
@@ -274,21 +274,21 @@ Moving between tools:
 
 Real-World Workflow Examples
 
-Scenario 1: Migrating Legacy Express.js to Fastify (20 files)
+Scenario 1 - Migrating Legacy Express.js to Fastify (20 files)
 - Claude Code: 45 min (understands request/response patterns, generates migration consistently)
 - Cursor: 35 min (faster per-file, but requires more manual coordination across files)
 - Copilot Chat: 90+ min (manual file-by-file conversion, no architectural coherence)
 - Aider: 55 min (git commits validate each change, high confidence in correctness)
 - Continue (local): 120+ min (slow model speed)
 
-Scenario 2: Adding OAuth to Django app (5 files)
+Scenario 2 - Adding OAuth to Django app (5 files)
 - Claude Code: 20 min (understands Django patterns, generates correct middleware)
 - Cursor: 15 min (fast inline edits)
 - Copilot Chat: 25 min (understands patterns but requires manual review)
 - Aider: 18 min (git commits verify each integration point)
 - Continue (local): 45 min (model latency dominates)
 
-Scenario 3: Fixing bugs across monorepo (8 files, different languages)
+Scenario 3 - Fixing bugs across monorepo (8 files, different languages)
 - Claude Code: 30 min (200K context window holds all files)
 - Cursor: 25 min (capable, but context-switching overhead)
 - Copilot Chat: Manual, 60+ min (context too small for cross-file bugs)
@@ -339,15 +339,15 @@ For Aider:
 
 Bottom Line
 
-For most teams: Cursor strikes the best balance of speed, reliability, and ease. You lose context window depth compared to Claude Code, but gain IDE cohesion and faster completions.
+For most teams - Cursor strikes the best balance of speed, reliability, and ease. You lose context window depth compared to Claude Code, but gain IDE cohesion and faster completions.
 
-For large-scale refactors: Claude Code or Aider. Both handle multi-file changes with architectural clarity that smaller context windows miss.
+For large-scale refactors - Claude Code or Aider. Both handle multi-file changes with architectural clarity that smaller context windows miss.
 
-For tight budgets: Copilot Chat ($10/mo) covers 80% of use cases for teams that don't need complex multi-file reasoning.
+For tight budgets - Copilot Chat ($10/mo) covers 80% of use cases for teams that don't need complex multi-file reasoning.
 
-For compliance/privacy: Continue.dev (free, local models) or self-hosted Aider.
+For compliance/privacy - Continue.dev (free, local models) or self-hosted Aider.
 
-For git-first teams: Aider (every edit is a testable commit, full history preserved).
+For git-first teams - Aider (every edit is a testable commit, full history preserved).
 
 AI pair programming is now table stakes, the question isn't whether to use it, but which tool aligns with your team's workflow, budget, and codebase complexity. Start with Cursor or Copilot Chat; graduate to Claude Code or Aider when multi-file refactors become routine.
 

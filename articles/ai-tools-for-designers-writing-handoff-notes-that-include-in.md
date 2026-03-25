@@ -81,7 +81,7 @@ Default State
 Hover State
 - Background: #1D4ED8 (blue-700)
 - Transition: 150ms ease-out
-- Shadow: 0 4px 6px rgba(37, 99, 235, 0.3)
+- Shadow - 0 4px 6px rgba(37, 99, 235, 0.3)
 - Cursor: pointer
 
 Active/Pressed State
@@ -91,7 +91,7 @@ Active/Pressed State
 
 Loading State
 - Spinner: 20px white SVG icon
-- Text: "Signing in..."
+- Text - "Signing in..."
 - Background: #2563EB with 80% opacity
 - Disabled pointer-events
 
@@ -114,7 +114,7 @@ Claude excels at maintaining context across longer conversations. You can build 
 
 ```
 Create interaction state documentation for a form input field.
-Include: default, focus, error, success, and disabled states.
+Include - default, focus, error, success, and disabled states.
 Output in markdown format suitable for developer handoff.
 ```
 
@@ -135,8 +135,8 @@ Create prompt templates for common component types:
 ```
 Document the [component type] with these states:
 - [state list]
-Include: visual properties, behavior, accessibility considerations
-Output format: [markdown/json/yaml]
+Include - visual properties, behavior, accessibility considerations
+Output format - [markdown/json/yaml]
 ```
 
 Integration with Design Tools
@@ -189,7 +189,7 @@ Here's how AI tools expand minimal design specs into documentation:
 
 Initial Design Note:
 ```
-Login form: email & password inputs, submit button, error message
+Login form - email & password inputs, submit button, error message
 ```
 
 AI-Expanded Documentation:
@@ -199,7 +199,7 @@ Login Form Component
 States & Specifications
 
 Default State
-- Container: White background, 8px border radius, shadow (0 2px 8px rgba(0,0,0,0.1))
+- Container - White background, 8px border radius, shadow (0 2px 8px rgba(0,0,0,0.1))
 - Email input: 16px placeholder "Email address", 48px height
 - Password input: 16px placeholder "Password", 48px height
 - Submit button: Full width, blue-600 background, white text, 48px height
@@ -262,7 +262,7 @@ accessibility_requirements:
 
 ai_prompt: |
   Generate thorough interaction state documentation.
-  Include: default, focus, hover, disabled, error, success states.
+  Include - default, focus, hover, disabled, error, success states.
   Add accessibility requirements for screen readers.
   Format as developer-ready markdown.
 ```

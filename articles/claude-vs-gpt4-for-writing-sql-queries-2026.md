@@ -49,14 +49,14 @@ CREATE TABLE subscriptions (
 );
 ```
 
-Test 1: Cohort Retention Analysis
+Test 1 - Cohort Retention Analysis
 
 Prompt:
 ```text
 Write a PostgreSQL query to calculate weekly cohort retention.
 Group users by signup week. For each cohort, calculate what % of users
 returned and performed any event in weeks 1, 2, 3, and 4 after signup.
-Return: cohort_week, cohort_size, retained_w1, retained_w2, retained_w3, retained_w4
+Return - cohort_week, cohort_size, retained_w1, retained_w2, retained_w3, retained_w4
 as percentages.
 ```
 
@@ -119,7 +119,7 @@ GPT-4o generates a working query but:
 
 Claude. more precise handling of interval arithmetic.
 
-Test 2: Running Total with Reset
+Test 2 - Running Total with Reset
 
 Prompt:
 ```text
@@ -179,7 +179,7 @@ ORDER BY current_streak DESC NULLS LAST;
 
 The `date - ROW_NUMBER() * INTERVAL '1 day'` trick for grouping consecutive dates is the standard PostgreSQL pattern. Claude implements it correctly and uses `FILTER` on the aggregate (SQL:2003 syntax) for clean conditional aggregation.
 
-Test 3: Recursive CTE. Organizational Hierarchy
+Test 3 - Recursive CTE. Organizational Hierarchy
 
 Prompt:
 ```text
@@ -230,7 +230,7 @@ ORDER BY depth DESC;
 
 The cycle guard (`WHERE u.id <> ALL(rc.path)`) prevents infinite loops on malformed data. Claude uses `ARRAY` accumulation for both the path (IDs) and a human-readable path string.
 
-Test 4: JSONB Query. Properties Aggregation
+Test 4 - JSONB Query. Properties Aggregation
 
 Prompt:
 ```text
@@ -276,7 +276,7 @@ SELECT
 
 Claude correctly uses `jsonb_array_elements_text` with `LATERAL` to unnest the product ID array. this is the PostgreSQL-idiomatic approach. GPT-4o sometimes uses `json_each` (for plain JSON) or misses the `LATERAL` keyword.
 
-Test 5: Query Plan Analysis
+Test 5 - Query Plan Analysis
 
 This is where the comparison gets interesting. When given a slow query and its `EXPLAIN ANALYZE` output, both tools can suggest fixes. but the quality of reasoning differs.
 
@@ -326,11 +326,11 @@ LIMIT 100;
 -- Estimated query time after index: 800ms-1.2s
 ```
 
-Claude explains the reasoning: the composite index on `(event_type, occurred_at)` allows the planner to do an index range scan on the exact `event_type = 'page_view'` partition and then filter by date. eliminating the sequential scan. The partial index (`WHERE occurred_at > NOW() - INTERVAL '90 days'`) keeps the index small since data older than 90 days is never queried with this pattern.
+Claude explains the reasoning - the composite index on `(event_type, occurred_at)` allows the planner to do an index range scan on the exact `event_type = 'page_view'` partition and then filter by date. eliminating the sequential scan. The partial index (`WHERE occurred_at > NOW() - INTERVAL '90 days'`) keeps the index small since data older than 90 days is never queried with this pattern.
 
 GPT-4o suggests a similar index but omits the partial index option and doesn't explain why the column order matters (high-cardinality filter first, range filter second).
 
-Test 6: BigQuery vs PostgreSQL Syntax Differences
+Test 6 - BigQuery vs PostgreSQL Syntax Differences
 
 Prompt:
 ```text

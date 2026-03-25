@@ -51,7 +51,7 @@ Tools Under Test
 - GitHub Copilot Chat. In-editor generation with project awareness
 - Claude (direct API/Claude.ai). General-purpose but strong on UI
 
-Test prompt: "Create a data table component for displaying user records with sortable columns, row selection, pagination, and a search input. Use TypeScript and Tailwind."
+Test prompt - "Create a data table component for displaying user records with sortable columns, row selection, pagination, and a search input. Use TypeScript and Tailwind."
 
 v0.dev
 
@@ -137,7 +137,7 @@ and components/ui/Input.tsx. Include sortable columns, pagination, and search."
 
 Cursor reads your existing files and generates code that uses your actual utility functions, component library imports, and naming conventions. If your project uses a custom `useDebounce` hook, Cursor will use it.
 
-Cursor verdict: Best for matching existing patterns. Slightly less visually polished than v0.dev on greenfield components, but far more integrated with your codebase.
+Cursor verdict - Best for matching existing patterns. Slightly less visually polished than v0.dev on greenfield components, but far more integrated with your codebase.
 
 GitHub Copilot Chat
 
@@ -180,7 +180,7 @@ Recommended Workflow
 
 New project / greenfield component: Start with v0.dev, copy the output into your project, then use Cursor to adapt it to your design tokens and patterns.
 
-Adding to existing codebase: Use Cursor with your codebase open.
+Adding to existing codebase - Use Cursor with your codebase open.
 
 Complex, specification-heavy component: Write detailed requirements and use Claude. Its thoroughness on complex specs saves more iteration time than any other tool.
 
@@ -211,11 +211,11 @@ pagination using shadcn's Pagination component.
 
 v0.dev: Generates components using shadcn-compatible patterns automatically.
 
-Cursor: Reads your existing shadcn imports and generates compatible code.
+Cursor - Reads your existing shadcn imports and generates compatible code.
 
-GitHub Copilot: Requires explicit @file references to existing shadcn components.
+GitHub Copilot - Requires explicit @file references to existing shadcn components.
 
-Claude: Works best with pasted examples of your shadcn usage.
+Claude - Works best with pasted examples of your shadcn usage.
 
 Custom Hook Patterns
 
@@ -231,11 +231,11 @@ export function usePagination(items: unknown[], pageSize: number) {
 }
 ```
 
-For Cursor: Open that file in the editor, reference it explicitly.
+For Cursor - Open that file in the editor, reference it explicitly.
 
-For Claude: Paste the hook code into the conversation with "use this pattern throughout the generated component."
+For Claude - Paste the hook code into the conversation with "use this pattern throughout the generated component."
 
-For Copilot: Use `@workspace` and reference the file with `#file:hooks/usePagination.ts`.
+For Copilot - Use `@workspace` and reference the file with `#file:hooks/usePagination.ts`.
 
 Testing Generated Components
 
@@ -268,7 +268,7 @@ Output Quality by Framework
 Different frameworks have different quirks:
 
 React (Best)
-All tools handle React well. The ecosystem is mature and these tools train extensively on React code. Success rate: 85%.
+All tools handle React well. The environment is mature and these tools train extensively on React code. Success rate: 85%.
 
 Vue 3 (Good)
 Cursor and Claude handle Vue 3 Composition API well. v0.dev doesn't support Vue. GitHub Copilot has mixed results. Success rate: 70%.
@@ -294,19 +294,19 @@ Claude is fastest by wall time but requires copying output into your IDE. Cursor
 
 Selecting by Project Type
 
-Startup / MVP: Use v0.dev. Speed to visual polish matters more than pattern consistency.
+Startup / MVP - Use v0.dev. Speed to visual polish matters more than pattern consistency.
 
-Established SaaS product: Use Cursor. Your existing patterns matter more than raw speed.
+Established SaaS product - Use Cursor. Your existing patterns matter more than raw speed.
 
 Complex enterprise component system: Use Claude + your custom prompt library. You need maximum control.
 
-Learning / educational project: Use Claude. It generates the most thoroughly commented code with the best explanations.
+Learning / educational project - Use Claude. It generates the most thoroughly commented code with the best explanations.
 
 Component Generation Prompts That Work
 
-Bad prompt: "Create a data table component"
+Bad prompt - "Create a data table component"
 
-Good prompt: "Create a React TypeScript data table component with:
+Good prompt - "Create a React TypeScript data table component with:
 - 50 rows of sample user data
 - Sortable columns (name, email, status)
 - Pagination (10/20/50 rows per page)
@@ -318,7 +318,7 @@ Good prompt: "Create a React TypeScript data table component with:
 - Tests using Jest and React Testing Library
 Use Tailwind CSS. Follow the patterns in components/Table.tsx."
 
-The difference: specificity drives quality. One-sentence requests generate generic boilerplate. Detailed requests generate production-worthy code.
+The difference - specificity drives quality. One-sentence requests generate generic boilerplate. Detailed requests generate production-worthy code.
 
 Most Generated Components
 
@@ -354,7 +354,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -366,6 +366,6 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 {% endraw %}

@@ -278,11 +278,11 @@ Several OpenAPI features routinely trip up AI code generators.
 
 Polymorphic schemas (`oneOf`/`anyOf`): Claude handles these best, generating discriminated union types in TypeScript and using type guards correctly. ChatGPT sometimes collapses the union into `any`. Gemini often treats the first option as canonical and ignores the rest.
 
-Recursive schemas: Objects that reference themselves (e.g., tree structures, nested comments) require careful handling. Claude correctly generates Optional type wrappers to break the recursion. Other tools sometimes generate infinite type loops.
+Recursive schemas - Objects that reference themselves (e.g., tree structures, nested comments) require careful handling. Claude correctly generates Optional type wrappers to break the recursion. Other tools sometimes generate infinite type loops.
 
-Deprecated endpoints: OpenAPI marks deprecated operations with `deprecated: true`. Claude respects this flag and adds `@deprecated` annotations to the generated methods. Most other tools ignore the flag entirely.
+Deprecated endpoints - OpenAPI marks deprecated operations with `deprecated: true`. Claude respects this flag and adds `@deprecated` annotations to the generated methods. Most other tools ignore the flag entirely.
 
-Pagination patterns: Link-header pagination, cursor-based pagination, and page/offset patterns each require different client logic. Claude recognizes common pagination patterns from the schema structure and generates appropriate iterator abstractions. ChatGPT requires explicit prompting to handle non-obvious pagination schemes.
+Pagination patterns - Link-header pagination, cursor-based pagination, and page/offset patterns each require different client logic. Claude recognizes common pagination patterns from the schema structure and generates appropriate iterator abstractions. ChatGPT requires explicit prompting to handle non-obvious pagination schemes.
 
 Regeneration Without Losing Customizations
 

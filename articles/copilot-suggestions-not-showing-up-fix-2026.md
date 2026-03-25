@@ -36,7 +36,7 @@ GitHub Copilot has become an essential tool for developers seeking to accelerate
 
 - Authentication issues commonly cause: suggestion failures.
 - Verify your file uses: standard UTF-8 encoding.
-- To reset only Copilot settings: open the Command Palette (`Cmd+Shift+P`), run Preferences: Open User Settings (JSON), and remove any keys starting with `github.copilot`.
+- To reset only Copilot settings: open the Command Palette (`Cmd+Shift+P`), run Preferences - Open User Settings (JSON), and remove any keys starting with `github.copilot`.
 - If Copilot uses excessive: memory (over 500MB), restart the IDE or disable extensions consuming resources.
 - Some IDEs display tooltip: messages that reveal the underlying cause when you hover over the status indicator.
 - Running outdated versions may: cause suggestion failures.
@@ -118,7 +118,7 @@ Windows PowerShell
 Remove-Item -Recurse -Force "$env:APPDATA\Code\User\globalStorage\github.copilot*"
 ```
 
-Restart VS Code after clearing the cache. To reset only Copilot settings, open the Command Palette (`Cmd+Shift+P`), run Preferences: Open User Settings (JSON), and remove any keys starting with `github.copilot`.
+Restart VS Code after clearing the cache. To reset only Copilot settings, open the Command Palette (`Cmd+Shift+P`), run Preferences - Open User Settings (JSON), and remove any keys starting with `github.copilot`.
 
 Test with Sample Code
 
@@ -145,7 +145,7 @@ Common Hardware and System Issues
 
 Sometimes the problem stems from system resources rather than configuration. Copilot requires sufficient memory to operate effectively.
 
-Check your IDE's memory usage. In VS Code, run Developer: Toggle Developer Tools and monitor the memory tab. If Copilot uses excessive memory (over 500MB), restart the IDE or disable extensions consuming resources.
+Check your IDE's memory usage. In VS Code, run Developer - Toggle Developer Tools and monitor the memory tab. If Copilot uses excessive memory (over 500MB), restart the IDE or disable extensions consuming resources.
 
 For large projects with thousands of files, indexing can consume significant resources. Allow Copilot time to complete initial indexing after opening a project. Suggestions often appear sluggish until indexing completes.
 
@@ -201,7 +201,7 @@ Checking Workspace Trust and Security Settings
 
 VS Code's workspace trust feature can disable extensions in untrusted workspaces. When you open a folder, VS Code may show a notification asking whether you trust the workspace. If you select "Don't Trust", extensions including Copilot may be disabled.
 
-To fix: Open Command Palette (`Cmd+Shift+P`), run "Workspace: Trust Workspace", and confirm you trust the folder.
+To fix - Open Command Palette (`Cmd+Shift+P`), run "Workspace - Trust Workspace", and confirm you trust the folder.
 
 Additionally, check your VS Code security settings:
 
@@ -217,7 +217,7 @@ Additionally, check your VS Code security settings:
 
 Avoid overly restrictive security policies that might block extension communication.
 
-Advanced Diagnostics: Enabling Debug Logging
+Advanced Diagnostics - Enabling Debug Logging
 
 For persistent issues, enable detailed logging to understand what Copilot is doing:
 
@@ -312,7 +312,7 @@ If suggestions remain absent after attempting all these steps, gather diagnostic
 
 Include this information when opening a support ticket on GitHub's Copilot issues repository.
 
-Prevention: Maintaining Copilot Health
+Prevention - Maintaining Copilot Health
 
 To keep Copilot working smoothly:
 

@@ -142,7 +142,7 @@ Modern AI coding assistants provide context-aware explanations rather than simpl
 
 For example, when asked about sorting mostly numeric records from a database, an AI tool might recommend timsort (Python's default) because it automatically adapts to partially sorted data while providing stable O(n log n) performance.
 
-Practical Example: Choosing Based on Real Constraints
+Practical Example - Choosing Based on Real Constraints
 
 Consider a scenario where you're sorting user activity logs for analytics. The logs contain timestamps, user IDs, and action types. You need to sort by timestamp, and the dataset contains 10 million records.
 
@@ -217,25 +217,25 @@ AI tools can help you interpret benchmark results and explain performance differ
 
 Real-World Scenarios with Algorithm Recommendations
 
-Scenario 1: Database Query Results (Sorted by Date)
+Scenario 1 - Database Query Results (Sorted by Date)
 - Data characteristic: Mostly pre-sorted, ~5-10% out of order
 - AI recommendation: Timsort or insertion sort
 - Reasoning: Adaptive algorithms capitalize on existing order
 - Expected improvement: 2-5x faster than general quicksort
 
-Scenario 2: E-commerce Product Ranking
+Scenario 2 - E-commerce Product Ranking
 - Data characteristic: 100K products, ranked by relevance score
 - Data characteristic: Need stable sort (items with same score maintain original order)
 - AI recommendation: Merge sort or timsort (stable algorithms)
 - Reasoning: Stability matters for user experience; randomized quicksort would reorder equivalent items unpredictably
 
-Scenario 3: Real-time Analytics Pipeline
+Scenario 3 - Real-time Analytics Pipeline
 - Data characteristic: Continuous stream, 1000s of small sorts per second
 - Data characteristic: Low latency critical, exact order matters less than fast processing
 - AI recommendation: Quicksort or parallel merge sort
 - Reasoning: Speed over stability; modern hardware supports parallel sorting
 
-Scenario 4: Financial Transaction Sorting
+Scenario 4 - Financial Transaction Sorting
 - Data characteristic: Immutable records, correctness critical, moderate volume
 - Data characteristic: May need secondary sort (by timestamp, then by amount)
 - AI recommendation: Merge sort with custom comparator
@@ -264,7 +264,7 @@ Real-Time Complexity Calculator
 When comparing algorithms, ask your AI to calculate real performance:
 
 ```
-Dataset: 1 million records
+Dataset - 1 million records
 
 Quicksort average case:
 - Operations: 1,000,000 × log₂(1,000,000) ≈ 20 million ops
@@ -275,10 +275,10 @@ Merge sort guaranteed:
 - Typical time: 15-60ms on modern CPU (more overhead)
 
 Insertion sort (if data 90% sorted):
-- Operations: 1,000,000 × (0.1 × n) ≈ 100,000 ops
+- Operations - 1,000,000 × (0.1 × n) ≈ 100,000 ops
 - Typical time: <1ms
 
-Selection: Merge sort is stable, insertion sort much faster for this data pattern.
+Selection - Merge sort is stable, insertion sort much faster for this data pattern.
 ```
 
 Customizing Sorts for Your Exact Use Case

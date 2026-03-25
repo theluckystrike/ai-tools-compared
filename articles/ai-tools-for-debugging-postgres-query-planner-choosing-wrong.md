@@ -22,17 +22,17 @@ Table of Contents
 
 - [Understanding PostgreSQL Index Scan Selection](#understanding-postgresql-index-scan-selection)
 - [Why Index Scan Paths Go Wrong](#why-index-scan-paths-go-wrong)
-- [Practical Example: Identifying the Wrong Index Choice](#practical-example-identifying-the-wrong-index-choice)
+- [Practical Example - Identifying the Wrong Index Choice](#practical-example-identifying-the-wrong-index-choice)
 - [Using AI Tools for Query Analysis](#using-ai-tools-for-query-analysis)
 - [How AI Tools Analyze Execution Plans](#how-ai-tools-analyze-execution-plans)
 - [Common Fixes the AI Might Suggest](#common-fixes-the-ai-might-suggest)
 - [Real-World Debugging Workflow](#real-world-debugging-workflow)
 - [Prevention Strategies](#prevention-strategies)
-- [Advanced Analysis: Using pg_stat_statements with AI](#advanced-analysis-using-pgstatstatements-with-ai)
+- [Advanced Analysis - Using pg_stat_statements with AI](#advanced-analysis-using-pgstatstatements-with-ai)
 - [Planner Configuration Tuning](#planner-configuration-tuning)
 - [Building a Query Performance Dashboard](#building-a-query-performance-dashboard)
 - [AI Tool Effectiveness Comparison](#ai-tool-effectiveness-comparison)
-- [Real-World Example: Production Outage Response](#real-world-example-production-outage-response)
+- [Real-World Example - Production Outage Response](#real-world-example-production-outage-response)
 - [Building a Local AI Query Analyzer](#building-a-local-ai-query-analyzer)
 
 Understanding PostgreSQL Index Scan Selection
@@ -47,15 +47,15 @@ Why Index Scan Paths Go Wrong
 
 Several specific conditions commonly cause the PostgreSQL planner to choose suboptimal index scans:
 
-Outdated Statistics: After bulk inserts or large deletes, statistics may not reflect actual data distribution. A column that once had high selectivity might now have low selectivity, but the planner doesn't know this without updated statistics.
+Outdated Statistics - After bulk inserts or large deletes, statistics may not reflect actual data distribution. A column that once had high selectivity might now have low selectivity, but the planner doesn't know this without updated statistics.
 
-Correlation Issues: PostgreSQL tracks column correlation, how related the physical row order is to the logical column order. High correlation helps index scans perform well. Poor correlation estimates can cause the planner to avoid efficient index scans.
+Correlation Issues - PostgreSQL tracks column correlation, how related the physical row order is to the logical column order. High correlation helps index scans perform well. Poor correlation estimates can cause the planner to avoid efficient index scans.
 
-Index Column Order: For composite indexes, the column order matters. An index on `(status, customer_id)` performs differently than `(customer_id, status)` depending on your query pattern.
+Index Column Order - For composite indexes, the column order matters. An index on `(status, customer_id)` performs differently than `(customer_id, status)` depending on your query pattern.
 
-Data Type Mismatches: Implicit type conversions can prevent index usage entirely. If your query compares a numeric column with a string literal, PostgreSQL may skip the index.
+Data Type Mismatches - Implicit type conversions can prevent index usage entirely. If your query compares a numeric column with a string literal, PostgreSQL may skip the index.
 
-Practical Example: Identifying the Wrong Index Choice
+Practical Example - Identifying the Wrong Index Choice
 
 Consider an `orders` table with two indexes:
 
@@ -80,7 +80,7 @@ Using AI Tools for Query Analysis
 
 AI tools can analyze `EXPLAIN` output and suggest improvements. When you paste the query and its execution plan, these tools can identify patterns indicating misaligned index selection.
 
-Step 1: Capture the Execution Plan
+Step 1 - Capture the Execution Plan
 
 Run `EXPLAIN (ANALYZE, BUFFERS, FORMAT TEXT)` to get detailed timing and buffer information:
 
@@ -92,7 +92,7 @@ AND status = 'pending'
 AND created_at > '2025-01-01';
 ```
 
-Step 2: Analyze with AI Assistance
+Step 2 - Analyze with AI Assistance
 
 Paste the `EXPLAIN` output into an AI coding assistant. A good prompt would be:
 
@@ -203,7 +203,7 @@ Frequently Asked Questions
 What if the fix described here does not work?
 
 
-Advanced Analysis: Using pg_stat_statements with AI
+Advanced Analysis - Using pg_stat_statements with AI
 
 Combine PostgreSQL's built-in statistics with AI analysis for systematic performance improvement:
 
@@ -354,9 +354,9 @@ AI Tool Effectiveness Comparison
 
 Claude excels at understanding the reasoning behind the planner's decisions, while GPT-4 is faster at generating working rewrites.
 
-Real-World Example: Production Outage Response
+Real-World Example - Production Outage Response
 
-Scenario: Slow checkout causing 503 errors on e-commerce platform.
+Scenario - Slow checkout causing 503 errors on e-commerce platform.
 
 Immediate diagnosis using AI:
 
@@ -472,7 +472,7 @@ Provide:
 Frequently Asked Questions
 
 How do I know if ANALYZE needs to run on my table?
-Check `last_analyze` timestamp: `SELECT schemaname, tablename, last_analyze FROM pg_stat_user_tables;` If more than 1% of rows changed since last ANALYZE, run it.
+Check `last_analyze` timestamp - `SELECT schemaname, tablename, last_analyze FROM pg_stat_user_tables;` If more than 1% of rows changed since last ANALYZE, run it.
 
 Can I test optimizer changes safely?
 Yes, use `SET` within a transaction to test settings before committing: `BEGIN; SET random_page_cost = 1.1; EXPLAIN ...; ROLLBACK;`

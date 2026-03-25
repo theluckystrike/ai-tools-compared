@@ -20,11 +20,11 @@ Database performance tuning requires reading query plans, understanding statisti
 Table of Contents
 
 - [The Core Workflow](#the-core-workflow)
-- [Prerequisites: Enabling Query Tracking](#prerequisites-enabling-query-tracking)
+- [Prerequisites - Enabling Query Tracking](#prerequisites-enabling-query-tracking)
 - [Extracting Slow Queries](#extracting-slow-queries)
 - [AI Query Plan Interpretation](#ai-query-plan-interpretation)
 - [Index Recommendation Engine](#index-recommendation-engine)
-- [Reading EXPLAIN Output: What the AI Sees](#reading-explain-output-what-the-ai-sees)
+- [Reading EXPLAIN Output - What the AI Sees](#reading-explain-output-what-the-ai-sees)
 - [Query Rewrite Examples](#query-rewrite-examples)
 - [Automated Slow Query Report](#automated-slow-query-report)
 - [When AI Recommendations Fall Short](#when-ai-recommendations-fall-short)
@@ -45,7 +45,7 @@ Measure improvement (before/after latency)
 
 This loop works for both reactive tuning (fix slow queries in production) and proactive tuning (review new queries before they ship). The AI component fits at the interpretation and recommendation step. not at the measurement step, which requires real query execution.
 
-Prerequisites: Enabling Query Tracking
+Prerequisites - Enabling Query Tracking
 
 Before you can identify slow queries, you need the data. For PostgreSQL:
 
@@ -142,7 +142,7 @@ def interpret_query_plan(
 
 Query statistics:
 - Mean execution: {query_stats.get('mean_ms')}ms
-- Calls: {query_stats.get('calls')}
+- Calls - {query_stats.get('calls')}
 - Cache hit rate: {query_stats.get('cache_hit_pct')}%
 - Rows returned: {query_stats.get('rows', 0) / max(query_stats.get('calls', 1), 1):.1f} avg
 
@@ -234,9 +234,9 @@ def recommend_indexes(
             "role": "user",
             "content": f"""Recommend indexes for this PostgreSQL table.
 
-Table: {table_name}
-Size: {size}
-Columns: {json.dumps([{"name": c[0], "type": c[1], "nullable": c[2]} for c in columns], indent=2)}
+Table - {table_name}
+Size - {size}
+Columns - {json.dumps([{"name": c[0], "type": c[1], "nullable": c[2]} for c in columns], indent=2)}
 
 Existing indexes:
 {json.dumps([{"name": i[0], "def": i[1]} for i in indexes], indent=2)}
@@ -256,7 +256,7 @@ Based on column types and naming patterns (foreign keys, timestamps, status fiel
     return response.content[0].text
 ```
 
-Reading EXPLAIN Output: What the AI Sees
+Reading EXPLAIN Output - What the AI Sees
 
 To understand why AI interpretation helps, here's what a typical slow query plan looks like:
 
@@ -333,7 +333,7 @@ def generate_tuning_report(conn_string: str, output_path: str = "db_tuning_repor
 
     with open(output_path, "w") as f:
         f.write("# Database Performance Tuning Report\n\n")
-        f.write(f"Generated: {__import__('datetime').date.today()}\n\n")
+        f.write(f"Generated - {__import__('datetime').date.today()}\n\n")
 
         for i, item in enumerate(analyses, 1):
             f.write(f"## Query #{i}. {item['mean_ms']}ms avg ({item['calls']} calls)\n\n")
@@ -354,9 +354,9 @@ When AI Recommendations Fall Short
 
 AI tuning tools have two common failure modes worth knowing.
 
-Write-heavy tables: Index recommendations from AI tools optimize for read performance. On a table with 10,000 writes per second, adding an index on every filtered column will slow writes enough to create a different kind of incident. Always check `n_dead_tup` and `last_autovacuum` alongside index recommendations for high-write tables.
+Write-heavy tables - Index recommendations from AI tools optimize for read performance. On a table with 10,000 writes per second, adding an index on every filtered column will slow writes enough to create a different kind of incident. Always check `n_dead_tup` and `last_autovacuum` alongside index recommendations for high-write tables.
 
-Optimizer statistics mismatch: If `ANALYZE` hasn't run recently, the query planner is working from stale statistics. AI interpretation of the plan will be correct but the recommendations may not match production behavior. Run `ANALYZE table_name` before capturing EXPLAIN output for analysis.
+Optimizer statistics mismatch - If `ANALYZE` hasn't run recently, the query planner is working from stale statistics. AI interpretation of the plan will be correct but the recommendations may not match production behavior. Run `ANALYZE table_name` before capturing EXPLAIN output for analysis.
 
 Tool Comparison
 

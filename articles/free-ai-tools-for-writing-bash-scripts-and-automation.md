@@ -148,7 +148,7 @@ All four tools can significantly speed up bash script development, but the best 
 
 Advanced Bash Scripting Examples with AI Assistance
 
-Example 1: Automated Database Backup with Error Handling
+Example 1 - Automated Database Backup with Error Handling
 ```bash
 #!/bin/bash
 set -euo pipefail
@@ -189,7 +189,7 @@ AI can generate these patterns reliably:
 4. Proper quoting and variable expansion
 ```
 
-Example 2: Log Analysis and Alerting
+Example 2 - Log Analysis and Alerting
 ```bash
 #!/bin/bash
 Analyze logs and trigger alerts
@@ -215,11 +215,11 @@ if [ "$error_count" -gt "$ERROR_THRESHOLD" ]; then
         echo ""
         echo "Top errors:"
         echo "$top_errors"
-    } | mail -s "Alert: $error_count errors in app.log" "$ALERT_EMAIL"
+    } | mail -s "Alert - $error_count errors in app.log" "$ALERT_EMAIL"
 fi
 ```
 
-Example 3: Multi-Server Deployment Automation
+Example 3 - Multi-Server Deployment Automation
 ```bash
 #!/bin/bash
 Deploy application to multiple servers
@@ -291,7 +291,7 @@ Common Bash Patterns AI Struggles With
 
 Some patterns require explicit guidance for AI tools to handle correctly:
 
-Pattern 1: Complex Signal Handling
+Pattern 1 - Complex Signal Handling
 ```bash
 AI might miss proper signal handling
 Provide explicit requirements:
@@ -306,7 +306,7 @@ wait_for_jobs() {
 }
 ```
 
-Pattern 2: Heredoc with Variable Expansion
+Pattern 2 - Heredoc with Variable Expansion
 ```bash
 Easy to get wrong - be specific in prompt:
 "Use heredoc with variable expansion enabled"
@@ -323,7 +323,7 @@ DATABASE_PORT="${DB_PORT}"
 EOF
 ```
 
-Pattern 3: Parallel Execution with Process Management
+Pattern 3 - Parallel Execution with Process Management
 ```bash
 Requires careful coordination - specify the requirement:
 "Run up to 4 jobs in parallel, wait for all to complete"
@@ -347,7 +347,7 @@ done
 wait
 ```
 
-Workflow Comparison: Free AI Tools for Bash
+Workflow Comparison - Free AI Tools for Bash
 
 | Tool | Start-up Time | Learning Curve | Best Use Case | Limitations |
 |------|---|---|---|---|

@@ -25,7 +25,7 @@ Table of Contents
 - [Feature Comparison Across Tiers](#feature-comparison-across-tiers)
 - [Comparison with Competitors](#comparison-with-competitors)
 - [Strategic Recommendations for Enterprises](#strategic-recommendations-for-enterprises)
-- [Deep Dive: Cost Justification for Enterprise Decision Makers](#deep detailed look-cost-justification-for-enterprise-decision-makers)
+- [Deep Dive - Cost Justification for Enterprise Decision Makers](#deep detailed look-cost-justification-for-enterprise-decision-makers)
 - [Feature-by-Feature Pricing Justification](#feature-by-feature-pricing-justification)
 - [Detailed Cost Scenarios](#detailed-cost-scenarios)
 - [Alternative Scenarios and Vendor Comparison](#alternative-scenarios-and-vendor-comparison)
@@ -90,11 +90,11 @@ Cost Calculation Example
 For a 50-developer team, enterprise pricing typically breaks down as:
 
 ```
-Team Size: 50 developers
-Base per-seat annual: $300-600 (negotiated)
-Total annual cost: $15,000-30,000
-Monthly cost: $1,250-2,500
-Per-developer monthly: $25-50
+Team Size - 50 developers
+Base per-seat annual - $300-600 (negotiated)
+Total annual cost - $15,000-30,000
+Monthly cost - $1,250-2,500
+Per-developer monthly - $25-50
 ```
 
 For larger organizations (200+ developers), per-seat costs typically decrease to $20-35/month due to volume discounts, resulting in better overall ROI.
@@ -179,7 +179,7 @@ Gemini Code Assist positions itself in the premium enterprise segment, comparabl
 
 Strategic Recommendations for Enterprises
 
-Organizations considering Gemini Code Assist should evaluate their specific needs against the available tiers, considering both immediate costs and long-term value. The decision should factor in existing tooling, developer productivity gains, and the total ecosystem integration capabilities.
+Organizations considering Gemini Code Assist should evaluate their specific needs against the available tiers, considering both immediate costs and long-term value. The decision should factor in existing tooling, developer productivity gains, and the total environment integration capabilities.
 
 Evaluation Criteria
 
@@ -202,7 +202,7 @@ Many organizations find opportunities to optimize costs through careful seat man
 Cost Optimization Strategies:
 - Seat Management: Identify inactive users quarterly; recycle licenses to new team members
 - Tiered Adoption: Start with core engineering teams; expand to QA/DevOps once value is proven
-- Usage Monitoring: Track per-developer request volume; identify power users vs. infrequent users
+- Usage Monitoring - Track per-developer request volume; identify power users vs. infrequent users
 - Seasonal Adjustments: Reduce seats during low-activity periods (summer, holidays)
 - Negotiated Discounts: Use comparative pricing data during renewal negotiations
 - Feature Prioritization: Turn off expensive features (custom fine-tuning) if unused
@@ -237,11 +237,11 @@ What happens to my work if I cancel my subscription?
 
 Policies vary widely. Some tools let you access your data for a grace period after cancellation, while others lock you out immediately. Export your important work before canceling, and check the terms of service for data retention policies.
 
-Deep Dive: Cost Justification for Enterprise Decision Makers
+Deep Dive - Cost Justification for Enterprise Decision Makers
 
 When pitching Gemini Code Assist to leadership, quantify the ROI:
 
-Starting Point: Baseline Developer Productivity
+Starting Point - Baseline Developer Productivity
 
 ```
 Current state (no AI assistance):
@@ -307,14 +307,14 @@ Model Access (Worth $2,000-5,000/year):
 
 Detailed Cost Scenarios
 
-Scenario 1: Small Team (25 developers)
+Scenario 1 - Small Team (25 developers)
 ```
-Standard tier cost: 25 × $19 × 12 = $5,700/year
-Per-developer: $228/year
-Suitable for: Early-stage startups, limited AI integration
+Standard tier cost - 25 × $19 × 12 = $5,700/year
+Per-developer - $228/year
+Suitable for - Early-stage startups, limited AI integration
 ```
 
-Scenario 2: Growing Company (100 developers)
+Scenario 2 - Growing Company (100 developers)
 ```
 Enterprise negotiation (typical outcome):
 - Seat cost: $30/month (volume discount from $40)
@@ -325,9 +325,9 @@ Enterprise negotiation (typical outcome):
 - Suitable for: Series B/C companies, established dev teams
 ```
 
-Scenario 3: Large Enterprise (500 developers)
+Scenario 3 - Large Enterprise (500 developers)
 ```
-Enterprise negotiation (with substantial leverage):
+Enterprise negotiation (with substantial use):
 - Seat cost: $22/month (significant volume discount)
 - Annual cost: 500 × $22 × 12 = $132,000/year
 - Per-developer: $264/year
@@ -337,9 +337,9 @@ Enterprise negotiation (with substantial leverage):
 - Suitable for: Public companies, tech leaders, financial institutions
 ```
 
-Scenario 4: Global Enterprise (2,000 developers across regions)
+Scenario 4 - Global Enterprise (2,000 developers across regions)
 ```
-Enterprise negotiation (maximum volume leverage):
+Enterprise negotiation (maximum volume use):
 - Seat cost: $15-20/month (aggressive negotiation)
 - Base annual: 2,000 × $18 × 12 = $432,000/year
 - Regional compliance requirements: +$50,000/year
@@ -382,7 +382,7 @@ Amazon Q Enterprise:
 - Base pricing similar to Gemini ($25-40/seat)
 - Requires AWS integration setup: +$8,000
 - Total: ~$40,000/year
-- Comparable to Gemini but AWS-ecosystem bound
+- Comparable to Gemini but AWS-environment bound
 ```
 
 For teams already invested in Google Cloud, Gemini's integration advantage justifies the premium.
@@ -391,35 +391,35 @@ Budget Timeline and Approval Process
 
 For procurement teams preparing budget requests:
 
-Month 1: Evaluation Phase
+Month 1 - Evaluation Phase
 - Get 5 trial licenses for key teams
 - Run 4-week pilot measuring productivity
 - Cost: $0 (trial period)
 
-Month 2: Business Case Development
+Month 2 - Business Case Development
 - Document productivity improvements from pilot
 - Calculate ROI based on your data
 - Prepare budget justification
 - Cost: Internal time, no external cost
 
-Month 3: Executive Approval
+Month 3 - Executive Approval
 - Present ROI calculations
 - Discuss security/compliance advantages
 - Get executive sign-off
 - Cost: Internal time
 
-Month 4: Procurement
+Month 4 - Procurement
 - Request RFQ from Google sales
 - Negotiate volume pricing
 - Finalize contract terms
 - Expected lead time: 2-4 weeks
 
-Month 5: Implementation
+Month 5 - Implementation
 - Deploy to first 25 developers
 - Complete training
 - Gather feedback
 
-Month 6: Full Rollout
+Month 6 - Full Rollout
 - Deploy to remaining teams
 - Ongoing training and support
 - Monthly usage review

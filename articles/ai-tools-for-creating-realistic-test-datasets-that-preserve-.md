@@ -26,7 +26,7 @@ Table of Contents
 - [Automating Test Data Refresh in CI/CD](#automating-test-data-refresh-in-cicd)
 - [Choosing the Right Tool](#choosing-the-right-tool)
 - [Database-Specific Generation Patterns](#database-specific-generation-patterns)
-- [Advanced: Temporal Data and Distributions](#advanced-temporal-data-and-distributions)
+- [Advanced - Temporal Data and Distributions](#advanced-temporal-data-and-distributions)
 - [Performance Tuning for Large Datasets](#performance-tuning-for-large-datasets)
 - [Testing Against Generated Data](#testing-against-generated-data)
 
@@ -92,7 +92,7 @@ Implementing AI-Generated Test Data in Your Workflow
 
 Integrating these tools requires understanding your data model and testing requirements. Follow this practical approach:
 
-Step 1: Export Your Schema
+Step 1 - Export Your Schema
 
 Document your database structure including primary keys, foreign keys, and constraint rules:
 
@@ -111,7 +111,7 @@ JOIN information_schema.constraint_column_usage AS ccu
 WHERE tc.constraint_type = 'FOREIGN KEY';
 ```
 
-Step 2: Configure Your Data Generator
+Step 2 - Configure Your Data Generator
 
 Map your schema to the tool's configuration format. Specify relationship types and constraint boundaries:
 
@@ -129,7 +129,7 @@ relationships:
     max_records: 50
 ```
 
-Step 3: Generate and Validate
+Step 3 - Generate and Validate
 
 Run the generation and verify integrity before using the data:
 
@@ -154,11 +154,11 @@ Advanced Considerations
 
 For complex scenarios, consider these factors:
 
-Cyclic Relationships: Some databases contain circular references (A references B, B references A). Choose tools that handle these gracefully or split generation into multiple phases.
+Cyclic Relationships - Some databases contain circular references (A references B, B references A). Choose tools that handle these gracefully or split generation into multiple phases.
 
-Temporal Consistency: If your application tracks historical data, ensure generated records respect date boundaries. An order created in 2025 shouldn't reference a product added in 2026.
+Temporal Consistency - If your application tracks historical data, ensure generated records respect date boundaries. An order created in 2025 shouldn't reference a product added in 2026.
 
-Data Distribution: Realistic test data reflects actual usage patterns. Configure your tool to match distribution curves, some users place many orders, most place few:
+Data Distribution - Realistic test data reflects actual usage patterns. Configure your tool to match distribution curves, some users place many orders, most place few:
 
 ```python
 Weighted random generation for realistic distribution
@@ -290,7 +290,7 @@ db.users.insertMany([
 ]);
 ```
 
-Advanced: Temporal Data and Distributions
+Advanced - Temporal Data and Distributions
 
 For realistic data, match real-world distributions:
 

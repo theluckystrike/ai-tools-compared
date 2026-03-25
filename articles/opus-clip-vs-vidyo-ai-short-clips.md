@@ -199,7 +199,7 @@ Opus Clip provides export presets for major platforms:
 
 - Instagram Reels: Square and vertical options
 
-- LinkedIn: Landscape and portrait formats
+- LinkedIn: field and portrait formats
 
 Export quality settings include resolution options up to 4K and various bitrate configurations.
 

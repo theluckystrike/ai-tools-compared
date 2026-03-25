@@ -21,13 +21,13 @@ This guide covers the main options: a Claude-powered GitHub Action, GPT-4 via th
 Table of Contents
 
 - [The Test Diff](#the-test-diff)
-- [Option 1: Claude via GitHub Actions](#option-1-claude-via-github-actions)
+- [Option 1 - Claude via GitHub Actions](#option-1-claude-via-github-actions)
 - [What Changed](#what-changed)
 - [Why It Matters](#why-it-matters)
 - [Testing Notes](#testing-notes)
-- [Option 2: GPT-4 via API](#option-2-gpt-4-via-api)
+- [Option 2 - GPT-4 via API](#option-2-gpt-4-via-api)
 - [Summary](#summary)
-- [Option 3: GitHub Copilot Built-In](#option-3-github-copilot-built-in)
+- [Option 3 - GitHub Copilot Built-In](#option-3-github-copilot-built-in)
 - [Description](#description)
 - [Comparison Table](#comparison-table)
 - [PR Agent (Open Source)](#pr-agent-open-source)
@@ -46,7 +46,7 @@ The Test Diff
 
 All tools were given the same diff: a 200-line change adding Redis caching to a FastAPI endpoint, including a new `CacheManager` class, TTL configuration, and a cache invalidation hook.
 
-Option 1: Claude via GitHub Actions
+Option 1 - Claude via GitHub Actions
 
 This approach uses a GitHub Action that sends your diff to the Anthropic API and patches the PR body.
 
@@ -91,7 +91,7 @@ jobs:
               \"max_tokens\": 1024,
               \"messages\": [{
                 \"role\": \"user\",
-                \"content\": \"Write a concise PR description for this diff. Use markdown. Include: What changed (2-3 bullets), Why it matters (1 sentence), Testing notes (1-2 bullets). Keep it under 200 words.\n\nDiff:\n$DIFF\"
+                \"content\": \"Write a concise PR description for this diff. Use markdown. Include - What changed (2-3 bullets), Why it matters (1 sentence), Testing notes (1-2 bullets). Keep it under 200 words.\n\nDiff:\n$DIFF\"
               }]
             }")
           echo "$RESPONSE" | jq -r '.content[0].text' > /tmp/pr_body.md
@@ -133,7 +133,7 @@ Testing Notes
 
 Clean, accurate, and picks up the latency motivation from a code comment. The 500-line diff limit is a real constraint. large PRs need chunking.
 
-Option 2: GPT-4 via API
+Option 2 - GPT-4 via API
 
 ```python
 scripts/generate_pr_description.py
@@ -197,7 +197,7 @@ if __name__ == "__main__":
 GPT-4's output for the same diff:
 
 ```markdown
-Option 3: GitHub Copilot Built-In
+Option 3 - GitHub Copilot Built-In
 
 Copilot's PR description feature (available in GitHub.com UI) requires no setup. Click "Copilot" button in the PR description field.
 
@@ -295,7 +295,7 @@ Handling Large Diffs
 
 The biggest practical problem with AI PR descriptions is diff size. Anything over 500 lines pushes against token limits and produces vague summaries. Two approaches work well.
 
-Chunked summarization: Split the diff by file, summarize each file independently, then combine the file summaries into a final description.
+Chunked summarization - Split the diff by file, summarize each file independently, then combine the file summaries into a final description.
 
 ```python
 def summarize_large_diff(diff: str, max_chunk_lines: int = 200) -> str:
@@ -337,7 +337,7 @@ def summarize_large_diff(diff: str, max_chunk_lines: int = 200) -> str:
  return final.content[0].text
 ```
 
-Semantic diff filtering: For very large diffs, strip test files and auto-generated code before sending to the model. Test changes rarely add signal to the PR description, and generated files (migrations, protobuf output) are noise.
+Semantic diff filtering - For very large diffs, strip test files and auto-generated code before sending to the model. Test changes rarely add signal to the PR description, and generated files (migrations, protobuf output) are noise.
 
 ```bash
 git diff origin/main...HEAD \

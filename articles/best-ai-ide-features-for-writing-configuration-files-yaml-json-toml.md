@@ -121,7 +121,7 @@ replicas: 3  # AI shows:
              # Range: 0-10000
              # Default: 1
              # Description: Number of desired pods
-             # Docs: kubernetes.io/docs/concepts/workloads/...
+             # Docs - kubernetes.io/docs/concepts/workloads/...
 ```
 
 This eliminates the need to constantly switch between your IDE and documentation websites. The information appears exactly when you need it.
@@ -211,7 +211,7 @@ When you update dependencies or tools, AI can check your configuration files for
 
 Choosing the Right AI IDE
 
-Most major IDEs now offer these AI features. The best choice depends on your primary language and workflow. VS Code with appropriate extensions provides excellent configuration support. JetBrains IDEs offer deep integration for their supported languages. Newer AI-native editors like Cursor and Zed provide features but may lack some ecosystem integrations.
+Most major IDEs now offer these AI features. The best choice depends on your primary language and workflow. VS Code with appropriate extensions provides excellent configuration support. JetBrains IDEs offer deep integration for their supported languages. Newer AI-native editors like Cursor and Zed provide features but may lack some environment integrations.
 
 Regardless of which IDE you choose, enabling these AI features will dramatically improve your configuration file workflow. Start with schema validation and autocomplete, then gradually adopt more advanced features as you become comfortable.
 
@@ -299,11 +299,11 @@ Weaknesses:
 - Schema detection requires proper MIME types
 - No custom validation rules
 
-Best for: Individual developers, small projects, fast configuration editing
+Best for - Individual developers, small projects, fast configuration editing
 
 JetBrains IDEs (Best for Complex Validation)
 
-Available in: IntelliJ IDEA, PyCharm, GoLand, etc.
+Available in - IntelliJ IDEA, PyCharm, GoLand, etc.
 
 Capabilities:
 ```yaml
@@ -340,7 +340,7 @@ Weaknesses:
 - Steeper learning curve
 - IDE-specific (not cross-platform friendly)
 
-Best for: Large teams, complex configurations, strict validation requirements
+Best for - Large teams, complex configurations, strict validation requirements
 
 Cursor (Best for AI-Assisted Configuration)
 
@@ -377,11 +377,11 @@ Weaknesses:
 - Requires switching to Cursor editor
 - May over-suggest based on incorrect pattern assumptions
 
-Best for: Multi-file configuration in large projects
+Best for - Multi-file configuration in large projects
 
 Advanced Configuration Patterns with AI
 
-Pattern 1: Configuration Inheritance
+Pattern 1 - Configuration Inheritance
 
 ```yaml
 base-config.yaml
@@ -405,7 +405,7 @@ app:
     format: console  # Override parent's json
 ```
 
-Pattern 2: Dynamic Configuration Generation
+Pattern 2 - Dynamic Configuration Generation
 
 ```python
 config_generator.py using AI assistance
@@ -433,7 +433,7 @@ class ConfigGenerator:
         return yaml.dump(config)
 ```
 
-Pattern 3: Configuration Validation Schema
+Pattern 3 - Configuration Validation Schema
 
 ```python
 Using Pydantic for type-safe config with AI hints

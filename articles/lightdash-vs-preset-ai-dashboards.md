@@ -22,7 +22,7 @@ Table of Contents
 - [Architecture Overview](#architecture-overview)
 - [AI Features Comparison](#ai-features-comparison)
 - [Data Integration Patterns](#data-integration-patterns)
-- [Building AI Dashboards: Code Examples](#building-ai-dashboards-code-examples)
+- [Building AI Dashboards - Code Examples](#building-ai-dashboards-code-examples)
 - [Performance Considerations](#performance-considerations)
 - [Pricing and Team Size Fit](#pricing-and-team-size-fit)
 - [When to Choose Each Platform](#when-to-choose-each-platform)
@@ -132,7 +132,7 @@ Preset connects directly to your warehouse without dbt dependency. You can use d
 
 For teams evaluating which platform to adopt, the dbt dependency is the most important filter. If your data team already writes and maintains dbt models, Lightdash requires nearly zero additional configuration, it reads your existing YAML files. If you're starting fresh or your data lives in ad-hoc SQL scripts, Preset lets you get started immediately while dbt remains optional.
 
-Building AI Dashboards: Code Examples
+Building AI Dashboards - Code Examples
 
 Lightdash Approach
 

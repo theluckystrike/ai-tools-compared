@@ -47,21 +47,21 @@ Implementation
 
 The consolidation process follows this concrete workflow:
 
-Step 1: Inventory and Extract. Audit all existing documentation sources. Export from Confluence via API, pull markdown files from version control, extract key sections from email threads and Slack conversations.
+Step 1 - Inventory and Extract. Audit all existing documentation sources. Export from Confluence via API, pull markdown files from version control, extract key sections from email threads and Slack conversations.
 
-Step 2: Feed to AI Tool. Use a capable LLM with your entire source material as context. Provide the AI with target structure, audience level, and quality standards.
+Step 2 - Feed to AI Tool. Use a capable LLM with your entire source material as context. Provide the AI with target structure, audience level, and quality standards.
 
-Step 3: Review and Refine. Subject matter experts review AI output for accuracy, update outdated examples, add missing context.
+Step 3 - Review and Refine. Subject matter experts review AI output for accuracy, update outdated examples, add missing context.
 
-Step 4: Format and Publish. Convert to your portal's native format and publish with version tracking.
+Step 4 - Format and Publish. Convert to your portal's native format and publish with version tracking.
 
 Common Issues
 
-Issue: AI consolidates but loses critical nuance. Solution: Review with SMEs, have them add inline comments about domain-specific gotchas that the AI might miss.
+Issue - AI consolidates but loses critical nuance. Solution - Review with SMEs, have them add inline comments about domain-specific gotchas that the AI might miss.
 
-Issue: Code examples are outdated. Solution: Ask the AI to modernize examples as part of the consolidation prompt. Have developers test all code examples.
+Issue - Code examples are outdated. Solution - Ask the AI to modernize examples as part of the consolidation prompt. Have developers test all code examples.
 
-Issue: Formatting breaks during conversion. Solution: Provide the AI with example Markdown or HTML templates showing your exact formatting standards.
+Issue - Formatting breaks during conversion. Solution - Provide the AI with example Markdown or HTML templates showing your exact formatting standards.
 ```
 
 Successful internal developer portal consolidation requires both AI efficiency and human expertise. AI tools accelerate the heavy lifting of combining fragmented sources, while subject matter experts ensure accuracy and completeness.
@@ -173,7 +173,7 @@ Beyond simple consolidation, AI can transform documentation quality in specific 
 API Documentation Generation. Feed raw API schemas (OpenAPI/Swagger) to AI along with examples of well-written endpoint docs. The AI generates documentation maintaining your organization's voice and style.
 
 ```yaml
-Input: API Schema
+Input - API Schema
 /api/users/{id}/profile:
 GET:
  parameters:
@@ -206,17 +206,17 @@ Implementation Workflow
 
 A practical workflow for consolidating wiki content:
 
-1. Inventory your sources – List all relevant wiki pages, docs, and files. Note creation dates and last-modified dates.
+1. Inventory your sources, List all relevant wiki pages, docs, and files. Note creation dates and last-modified dates.
 
-2. Prioritize by usage – Focus on high-traffic, frequently searched topics first. Check analytics to see what docs people actually search for.
+2. Prioritize by usage, Focus on high-traffic, frequently searched topics first. Check analytics to see what docs people actually search for.
 
-3. Extract key information – Automated extraction using AI: export raw content from Confluence/wiki, batch process related documents.
+3. Extract key information, Automated extraction using AI: export raw content from Confluence/wiki, batch process related documents.
 
-4. Structure consistently – Apply your portal's template format. Use the same section headers, code example styles, and code language markers across all pages.
+4. Structure consistently, Apply your portal's template format. Use the same section headers, code example styles, and code language markers across all pages.
 
-5. Review and edit – Have subject matter experts verify technical accuracy. Create a review checklist for consistency.
+5. Review and edit, Have subject matter experts verify technical accuracy. Create a review checklist for consistency.
 
-6. Publish and track – Monitor usage to identify needed updates. Set up redirects from old wiki URLs to new portal locations. Track which pages get the most traffic.
+6. Publish and track, Monitor usage to identify needed updates. Set up redirects from old wiki URLs to new portal locations. Track which pages get the most traffic.
 
 AI Tools Comparison for Portal Content
 
@@ -233,17 +233,17 @@ Practical Portal Consolidation Workflow
 
 Here's a concrete approach that works at scale:
 
-Phase 1: Catalog (Day 1)
+Phase 1 - Catalog (Day 1)
 - List all existing documentation sources with URLs and update dates
 - Identify documentation owners for review assignments
 - Note which sections are outdated or deprecated
 
-Phase 2: Batch Processing (Day 2-3)
+Phase 2 - Batch Processing (Day 2-3)
 - Group related documentation by topic (Authentication, Deployment, Testing, etc.)
 - Create a consolidation prompt for each topic group
 - Run consolidation in parallel for different topics
 
-Phase 3: AI-Assisted Consolidation (Day 4-5)
+Phase 3 - AI-Assisted Consolidation (Day 4-5)
 - Feed all source material for a topic to your AI tool with a prompt like:
 
 ```
@@ -262,12 +262,12 @@ Requirements:
 - Output format: Markdown with code blocks
 ```
 
-Phase 4: Expert Review (Day 6-7)
+Phase 4 - Expert Review (Day 6-7)
 - SMEs review for accuracy, outdated examples, missing domain context
 - Document required corrections
 - Flag any confidential or security-sensitive content
 
-Phase 5: Refinement and Publishing
+Phase 5 - Refinement and Publishing
 - Apply corrections from review
 - Format for your portal platform
 - Set up redirects from old wiki URLs to new portal

@@ -21,7 +21,7 @@ Table of Contents
 
 - [What Is Pytest Parametrize?](#what-is-pytest-parametrize)
 - [Prerequisites](#prerequisites)
-- [Practical Example: Email Validation](#practical-example-email-validation)
+- [Practical Example - Email Validation](#practical-example-email-validation)
 - [Advanced Parametrize Patterns](#advanced-parametrize-patterns)
 - [Combining Parametrize with Other Pytest Features](#combining-parametrize-with-other-pytest-features)
 - [Troubleshooting](#troubleshooting)
@@ -54,7 +54,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How AI Helps Identify Edge Cases
+Step 1 - How AI Helps Identify Edge Cases
 
 When you ask an AI assistant to generate parametrize test cases, provide context about your function's purpose, input types, and any business rules. The AI can then suggest test values you might otherwise miss:
 
@@ -78,7 +78,7 @@ When you ask an AI assistant to generate parametrize test cases, provide context
 
 The key advantage AI brings is pattern recognition across thousands of known bug reports and test suites. When you describe a validation function, the AI recognizes common failure modes from similar functions it has been trained on and surfaces them as suggested test parameters.
 
-Practical Example: Email Validation
+Practical Example - Email Validation
 
 Consider a function that validates email addresses:
 
@@ -132,7 +132,7 @@ def test_validate_email(email, expected):
 
 This coverage would take significant time to compile manually. The AI identified boundary conditions like empty strings, missing components, and malformed addresses without you needing to think of each one. Notice it also caught the newline character case, a common injection vector that developers frequently overlook.
 
-Step 2: Crafting Effective AI Prompts for Test Generation
+Step 2 - Crafting Effective AI Prompts for Test Generation
 
 The quality of AI-generated parametrize cases depends heavily on what you tell the AI. Vague prompts produce generic tests; detailed prompts produce targeted edge case coverage.
 
@@ -150,7 +150,7 @@ Including the following in your prompt consistently improves output quality:
 - Any related functions or dependencies
 - Expected return types and error behavior
 
-Step 3: Refining AI-Generated Tests
+Step 3 - Refining AI-Generated Tests
 
 AI generates a solid foundation, but you should always review and refine the output:
 
@@ -164,9 +164,9 @@ AI generates a solid foundation, but you should always review and refine the out
 
 5. Run the tests immediately. Confirm each generated case passes or fails as expected before treating it as correct
 
-A common trap: AI sometimes generates plausible-looking expected values that are subtly wrong. For example, if your function returns `None` for invalid inputs rather than `False`, the AI might still generate `False` as the expected value. Always run generated tests and fix mismatches before merging.
+A common trap - AI sometimes generates plausible-looking expected values that are subtly wrong. For example, if your function returns `None` for invalid inputs rather than `False`, the AI might still generate `False` as the expected value. Always run generated tests and fix mismatches before merging.
 
-Step 4: Use AI for Regression Testing
+Step 4 - Use AI for Regression Testing
 
 After fixing bugs, add the failing input as a new parametrize case. Ask AI to suggest similar values that might reveal related issues:
 
@@ -270,7 +270,7 @@ def test_unicode_email(email, expected):
     assert validate_email(email) == expected
 ```
 
-Step 5: Common Pitfalls to Avoid
+Step 5 - Common Pitfalls to Avoid
 
 When using AI-generated parametrize tests, watch for these common issues:
 
@@ -286,7 +286,7 @@ Over-reliance on happy paths. Even with AI assistance, developers tend to confir
 
 Ignoring type edge cases. If your function accepts `Union[str, int]`, ask AI to generate inputs for both types, including type coercion scenarios.
 
-Step 6: Real-World Workflow
+Step 6 - Real-World Workflow
 
 Here's a practical workflow for integrating AI into your testing process:
 

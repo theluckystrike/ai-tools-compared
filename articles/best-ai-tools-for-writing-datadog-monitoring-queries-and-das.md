@@ -70,7 +70,7 @@ Limitations:
 - Dashboard JSON generation needs more guidance
 
 
-Pricing: Free for open source, $10/month for individuals, $19/user/month for business.
+Pricing - Free for open source, $10/month for individuals, $19/user/month for business.
 
 
 Cursor
@@ -114,7 +114,7 @@ Limitations:
 - Requires clear context about your Datadog metrics
 
 
-Pricing: Free tier available, Pro at $20/month, Business at $40/user/month.
+Pricing - Free tier available, Pro at $20/month, Business at $40/user/month.
 
 
 Claude (Anthropic)
@@ -162,7 +162,7 @@ Limitations:
 - Context window limits apply to very large dashboards
 
 
-Pricing: Free tier with limits, Pro at $20/month, Team at $25/user/month.
+Pricing - Free tier with limits, Pro at $20/month, Team at $25/user/month.
 
 
 Codeium
@@ -189,7 +189,7 @@ Limitations:
 - Smaller context window than competitors
 
 
-Pricing: Free for individuals, $12/user/month for teams.
+Pricing - Free for individuals, $12/user/month for teams.
 
 
 Amazon Q Developer
@@ -216,7 +216,7 @@ Limitations:
 - Requires AWS account linkage
 
 
-Pricing: Free tier, $19/user/month for Pro.
+Pricing - Free tier, $19/user/month for Pro.
 
 
 Tool Comparison for Datadog Work
@@ -240,7 +240,7 @@ Generating a Dashboard Query
 Here's how you might use AI to create a Datadog dashboard widget query:
 
 
-Prompt: "Create a Datadog query to show CPU usage percentage across all production EC2 instances grouped by instance type"
+Prompt - "Create a Datadog query to show CPU usage percentage across all production EC2 instances grouped by instance type"
 
 
 AI Suggested Query:
@@ -274,7 +274,7 @@ resource "datadog_monitor" "api_latency" {
 ```
 
 
-Step-by-Step: Building a Complete Dashboard with AI
+Step-by-Step - Building a Complete Dashboard with AI
 
 
 Here is a repeatable workflow for using AI to build Datadog dashboards from scratch.
@@ -400,7 +400,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -412,5 +412,5 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 {% endraw %}

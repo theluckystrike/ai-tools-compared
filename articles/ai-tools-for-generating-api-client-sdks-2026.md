@@ -120,7 +120,7 @@ generation:
 
 Amazon Ion Code Generator
 
-Amazon's Ion Code Generator is part of the Ion data serialization format ecosystem. It generates type-safe bindings for Ion schemas across multiple languages.
+Amazon's Ion Code Generator is part of the Ion data serialization format environment. It generates type-safe bindings for Ion schemas across multiple languages.
 
 Key Features:
 - Generates readers and writers for Ion binary format
@@ -196,7 +196,7 @@ Key Features:
 - Language-native code generation from .proto definitions
 - Bidirectional streaming support
 - Language support: Python, Go, Java, C++, Node.js, C#
-- Plugins extend generation (protoc plugins ecosystem)
+- Plugins extend generation (protoc plugins environment)
 - Full message versioning and backward compatibility
 - Widely used for microservices and mobile SDKs
 
@@ -265,21 +265,21 @@ Comparison Table
 
 Implementation Guide
 
-Step 1: Assess Your Spec Quality
+Step 1 - Assess Your Spec Quality
 Before choosing a tool, audit your OpenAPI/schema documentation:
 - Ensure all endpoints have descriptions
 - Verify request/response schemas are complete
 - Check that error responses are documented
 - Validate the spec against schema standards (jsonschema, asyncapi)
 
-Step 2: Test with Sample APIs
+Step 2 - Test with Sample APIs
 Generate SDKs for 3-5 of your most-used APIs using multiple tools. Evaluate:
 - Code readability and idiomaticity
 - Error handling patterns
 - Generated documentation quality
 - Type safety level
 
-Step 3: Establish Generation Pipeline
+Step 3 - Establish Generation Pipeline
 Integrate SDK generation into your CI/CD:
 
 ```yaml
@@ -308,14 +308,14 @@ jobs:
           cd ../ts-sdk && npm publish
 ```
 
-Step 4: Version Management
+Step 4 - Version Management
 Document versioning strategy for generated SDKs:
 - Semantic versioning aligned to API version
 - Changelog automation from spec changes
 - Deprecation warnings for removed endpoints
 - Beta SDKs for experimental APIs
 
-Step 5: Quality Assurance
+Step 5 - Quality Assurance
 Validate generated SDKs before publishing:
 - Run generated code against mock server
 - Verify all endpoints are callable
@@ -369,16 +369,16 @@ Choose Protobuf if:
 
 Common Issues and Solutions
 
-Issue: Generated code doesn't match our naming conventions
+Issue - Generated code doesn't match our naming conventions
 - Solution: Use generator templates to customize naming rules, or use a post-processing script to rename generated classes/functions
 
-Issue: Generated SDKs are too large to ship on mobile
+Issue - Generated SDKs are too large to ship on mobile
 - Solution: Use Protobuf/Ion for smaller message sizes, or generate minimal SDKs with only required operations
 
-Issue: Error handling doesn't match our patterns
+Issue - Error handling doesn't match our patterns
 - Solution: Most tools have hooks for custom error handling; customize these in template or post-generation phase
 
-Issue: Documentation is missing or unclear
+Issue - Documentation is missing or unclear
 - Solution: Ensure OpenAPI spec descriptions are rich (use markdown, examples); generators pull from these
 
 Frequently Asked Questions

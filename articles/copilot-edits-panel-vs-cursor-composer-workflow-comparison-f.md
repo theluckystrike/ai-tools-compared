@@ -50,7 +50,7 @@ Understanding Cursor Composer
 
 Cursor Composer takes a broader approach to AI-assisted editing. Accessible through Cmd+K or the dedicated Composer interface, it can generate and edit code across multiple files simultaneously. The system maintains conversation context, allowing you to build up complex refactoring operations incrementally.
 
-Composer handles multi-file refactoring with a single prompt. When you ask it to "extract this user authentication logic into a separate service module," Composer can identify all relevant files, generate the new service file, and update all import references in one operation. This holistic approach reduces the manual coordination required for larger refactoring tasks.
+Composer handles multi-file refactoring with a single prompt. When you ask it to "extract this user authentication logic into a separate service module," Composer can identify all relevant files, generate the new service file, and update all import references in one operation. This complete approach reduces the manual coordination required for larger refactoring tasks.
 
 The Edit REFACTOR (Cmd+Shift+R) feature provides structured refactoring assistance. It analyzes your selected code, suggests refactoring options, and can execute changes across your codebase. This includes capabilities like renaming variables throughout a project, extracting methods, and converting between coding patterns.
 
@@ -104,12 +104,12 @@ Cursor's approach combines chat context with direct code editing. You can refere
 
 Real Refactoring Workflow Comparison
 
-Refactoring Task: Convert legacy callback-heavy module to async/await
+Refactoring Task - Convert legacy callback-heavy module to async/await
 
 With Copilot Edits Panel:
 ```
-Prompt: "Convert this callback-based API client to async/await"
-Time: 5-8 minutes per operation
+Prompt - "Convert this callback-based API client to async/await"
+Time - 5-8 minutes per operation
 Steps:
 1. Select the function
 2. Open Edits Panel
@@ -118,21 +118,21 @@ Steps:
 5. Verify imports still work
 6. Repeat for related functions
 
-Iterations needed: 4-6 prompts for complex file
+Iterations needed - 4-6 prompts for complex file
 ```
 
 With Cursor Composer:
 ```
-Prompt: "Convert the entire api/ module from callbacks to async/await,
+Prompt - "Convert the entire api/ module from callbacks to async/await,
 including all service files that use these functions"
-Time: 3-5 minutes total
+Time - 3-5 minutes total
 Steps:
 1. Describe overall transformation
 2. Composer modifies multiple files atomically
 3. Review all changes together
 4. Accept or iterate once
 
-Iterations needed: 1-2 prompts for same scope
+Iterations needed - 1-2 prompts for same scope
 ```
 
 Workflow Efficiency Metrics
@@ -148,22 +148,22 @@ Workflow Efficiency Metrics
 
 Common Refactoring Scenarios
 
-Scenario 1: Rename a component + update all references
+Scenario 1 - Rename a component + update all references
 - Copilot: Select component, request rename, search for usages, request updates for each file
 - Cursor: "Rename this component and update all references" → done in 1 step
 - Winner: Cursor (60% faster)
 
-Scenario 2: Extract validation logic into separate module
+Scenario 2 - Extract validation logic into separate module
 - Copilot: Select logic, extract function, create file, add exports, update imports manually or iterate
 - Cursor: "Extract validation into separate utils module and update imports" → handles file creation + imports
 - Winner: Cursor (70% faster)
 
-Scenario 3: Convert component props to destructured parameters
+Scenario 3 - Convert component props to destructured parameters
 - Copilot: Good for single component, decent for multiple
 - Cursor: Excellent across entire component tree
 - Winner: Tie for single component, Cursor for component families
 
-Scenario 4: Migrate from prop drilling to Context API
+Scenario 4 - Migrate from prop drilling to Context API
 - Copilot: Requires explicit guidance for each file and context setup
 - Cursor: Can understand the architecture and create Context, Provider, and update all consumers
 - Winner: Cursor (5x faster)
@@ -173,7 +173,7 @@ Integration with Your Current Tools
 GitHub Users:
 - Copilot is native GitHub integration
 - Can reference other GitHub repos
-- Works well within GitHub's ecosystem
+- Works well within GitHub's environment
 - Bonus: GitHub Copilot Enterprise users get audit logs
 
 VS Code Users:
@@ -217,9 +217,9 @@ Select Cursor Composer for multi-file refactoring, when you need the AI to under
 
 Advanced Workflow Patterns
 
-Copilot Panel for Interactive Refinement: Copilot's conversational style excels when you're discovering the right approach. You can say "Actually, keep the error handling but remove the retry logic" and get targeted changes. This iterative exploration works well when you're not sure of the exact outcome upfront.
+Copilot Panel for Interactive Refinement - Copilot's conversational style excels when you're discovering the right approach. You can say "Actually, keep the error handling but remove the retry logic" and get targeted changes. This iterative exploration works well when you're not sure of the exact outcome upfront.
 
-Cursor for Batch Operations: Cursor shines when you have a clear architectural goal and need changes. "Migrate all service classes from dependency injection constructor params to factory pattern" gets handled holistically rather than file-by-file.
+Cursor for Batch Operations - Cursor shines when you have a clear architectural goal and need changes. "Migrate all service classes from dependency injection constructor params to factory pattern" gets handled holistically rather than file-by-file.
 
 Setting Up Your Workflow
 

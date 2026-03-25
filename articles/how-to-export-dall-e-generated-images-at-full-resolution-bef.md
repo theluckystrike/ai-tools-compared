@@ -46,7 +46,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Method 1: Manual ChatGPT Export
+Step 1 - Method 1: Manual ChatGPT Export
 
 
 The simplest approach uses ChatGPT's built-in download functionality. When Dall-E generates an image, hover over it and click the download icon. This saves the image directly to your device at the available resolution.
@@ -58,7 +58,7 @@ For individual images, this method works well. However, if you've generated hund
 To maximize what you can export manually, log into ChatGPT and navigate to your conversation history. Scroll through past conversations featuring Dall-E generations. Download each image individually. This process is time-consuming but requires no technical setup.
 
 
-Step 2: Method 2: OpenAI API for Programmatic Export
+Step 2 - Method 2: OpenAI API for Programmatic Export
 
 
 Developers can automate image export using the OpenAI API. This approach provides full control over resolution, format, and batch processing.
@@ -113,7 +113,7 @@ def download_image(url, filename, output_dir="dalle_exports"):
 The API approach requires you to generate images via API calls while your subscription is active. Store the returned image URLs and metadata in your own database. Then use the download function to export at any time.
 
 
-Step 3: Method 3: Browser Automation with Selenium
+Step 3 - Method 3: Browser Automation with Selenium
 
 
 For users who generated images through the ChatGPT web interface, browser automation provides an alternative. This method scrapes your conversation history and downloads images programmatically.
@@ -163,7 +163,7 @@ def export_chatgpt_dalle_images(email, password, output_dir="chatgpt_exports"):
 This approach works but requires careful handling of login sessions and rate limiting. OpenAI may block automated scraping, so use responsibly.
 
 
-Step 4: Method 4: Using the ChatGPT Legacy with API Integration
+Step 4 - Method 4: Using the ChatGPT Legacy with API Integration
 
 
 If you maintain API credits alongside your Plus subscription, generate new images via API for guaranteed high-resolution export. The API returns base64-encoded images or temporary URLs that you can immediately download.
@@ -201,7 +201,7 @@ def generate_and_download_dalle(prompt, output_dir="dalle_high_res"):
 The API approach gives you 1024x1024 resolution with Dall-E 3. For even higher resolution, the `dall-e-3` model supports 1024x1024, while older versions offer 512x512 or 1024x1024 options.
 
 
-Step 5: Resolution Considerations
+Step 5 - Resolution Considerations
 
 
 Dall-E 3 generates images at 1024x1024 pixels by default. This resolution works well for most use cases but may require upscaling for large print projects. When exporting, ensure you're downloading the full-resolution version, not a compressed preview.
@@ -210,7 +210,7 @@ Dall-E 3 generates images at 1024x1024 pixels by default. This resolution works 
 The ChatGPT interface sometimes displays smaller previews while storing the full resolution on OpenAI's servers. Always verify the downloaded file size, if a "full resolution" image is only 50KB, it's likely a compressed version.
 
 
-Step 6: Practical Workflow for Preservation
+Step 6 - Practical Workflow for Preservation
 
 
 Before canceling your ChatGPT Plus subscription, follow this checklist:
@@ -227,7 +227,7 @@ Before canceling your ChatGPT Plus subscription, follow this checklist:
 5. Backup storage: Store exports in multiple locations, local drive, cloud storage, and external backup
 
 
-Step 7: Handling Expired Subscriptions
+Step 7 - Handling Expired Subscriptions
 
 
 If your subscription has already expired, your options become more limited. Contact OpenAI support and request image retrieval. They may be able to provide access for a limited period or offer alternative solutions.
@@ -461,7 +461,7 @@ backed_up = backup.list_backed_up_images()
 print(f"Backed up {len(backed_up)} images to S3")
 ```
 
-Step 8: Export Timing Strategy
+Step 8 - Export Timing Strategy
 
 When to Export
 
@@ -486,15 +486,15 @@ Pre-Cancellation Export Checklist
 - [ ] Only then cancel subscription
 ```
 
-Step 9: Tools and Services for Export Automation
+Step 9 - Tools and Services for Export Automation
 
 DownloadThemAll (Firefox extension): Batch download images from ChatGPT conversations
 
-Selenium/Playwright: Browser automation for large-scale extraction
+Selenium/Playwright - Browser automation for large-scale extraction
 
-AWS Lambda + S3: Serverless backup pipeline for continuous archiving
+AWS Lambda + S3 - Serverless backup pipeline for continuous archiving
 
-Hugging Face Datasets: Store Dall-E generations in version-controlled datasets
+Hugging Face Datasets - Store Dall-E generations in version-controlled datasets
 
 Exporting Dall-E images at full resolution requires proactive effort. Whether you choose manual export, API automation, or browser scripting, the key is acting before losing subscription access. Start with a small batch to verify your process works, then scale up to export your entire generation history.
 

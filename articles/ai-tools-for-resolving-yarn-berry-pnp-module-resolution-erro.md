@@ -103,7 +103,7 @@ The most effective prompting strategy with ChatGPT is to provide the error messa
 
 Practical Examples of AI-Assisted PnP Resolution
 
-Example 1: Fixing Workspace Import Failures
+Example 1 - Fixing Workspace Import Failures
 
 Consider a monorepo where `@packages/common` cannot be resolved from `@packages/api`. An AI assistant would analyze both package.json files and likely find the issue:
 
@@ -116,7 +116,7 @@ Consider a monorepo where `@packages/common` cannot be resolved from `@packages/
 }
 ```
 
-The problem: using a specific version instead of the workspace protocol. The AI suggests:
+The problem - using a specific version instead of the workspace protocol. The AI suggests:
 
 ```json
 {
@@ -128,7 +128,7 @@ The problem: using a specific version instead of the workspace protocol. The AI 
 
 After making this change, run `yarn install` to regenerate the `.pnp.cjs` file. The AI will also remind you to delete any stale `.yarn/cache` entries for the affected package if the error persists after reinstallation.
 
-Example 2: TypeScript Path Mapping in PnP
+Example 2 - TypeScript Path Mapping in PnP
 
 TypeScript often struggles to resolve paths in PnP monorepos. An AI tool might generate a proper `tsconfig.json` path mapping:
 
@@ -155,7 +155,7 @@ yarn add -D @yarnpkg/typescript-pnp
 
 The TypeScript PnP loader intercepts module resolution at the compiler level so `tsc` and language server instances read from the `.pnp.cjs` map rather than scanning `node_modules`. Without it, TypeScript will report errors on imports that work fine at runtime through the PnP runtime loader.
 
-Example 3: ESLint Plugin Resolution
+Example 3 - ESLint Plugin Resolution
 
 ESLint frequently fails to find plugins in PnP mode. AI assistants recognize this pattern and suggest `.eslintrc` modifications:
 
@@ -176,7 +176,7 @@ yarn add -D eslint-import-resolver-yarn-pnp
 
 ESLint's import resolution and plugin loading are separate code paths, so you often need to fix both. The plugin loader uses Node's `require()` system and is patched automatically when PnP is active. The import resolver, however, is a separate package that ESLint calls explicitly and must be configured through `settings.import/resolver` in your ESLint config.
 
-Example 4: Debugging with yarn dlx
+Example 4 - Debugging with yarn dlx
 
 When a package fails to resolve at build time rather than install time, `yarn dlx` is a useful isolation tool that AI assistants frequently recommend:
 
@@ -220,7 +220,7 @@ AI tools work best for common PnP patterns but may struggle with highly custom c
 
 For issues involving native modules or complex peer dependency chains, the Yarn Berry Discord and GitHub issues often contain solutions that AI tools may not yet recognize.
 
-A rule of thumb: if you have pasted the error, your configuration files, and your workspace structure to an AI three times without a working fix, you are likely dealing with a platform-specific edge case that requires reading the Yarn Berry source code or filing a GitHub issue. AI tools are trained on publicly available examples and cannot reason about bugs that have not been documented yet. In those cases, the Yarn Berry Discord `#help` channel and the GitHub issue tracker are more reliable than any AI assistant.
+A rule of thumb - if you have pasted the error, your configuration files, and your workspace structure to an AI three times without a working fix, you are likely dealing with a platform-specific edge case that requires reading the Yarn Berry source code or filing a GitHub issue. AI tools are trained on publicly available examples and cannot reason about bugs that have not been documented yet. In those cases, the Yarn Berry Discord `#help` channel and the GitHub issue tracker are more reliable than any AI assistant.
 
 Comparing AI Tools for PnP Debugging
 

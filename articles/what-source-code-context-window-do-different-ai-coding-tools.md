@@ -28,7 +28,7 @@ Table of Contents
 - [Amazon CodeWhisperer Context Window](#amazon-codewhisperer-context-window)
 - [Cursor IDE Context Window](#cursor-ide-context-window)
 - [Practical Implications for Developers](#practical-implications-for-developers)
-- [API Cost Comparison: GPT-4 vs Alternatives](#api-cost-comparison-gpt-4-vs-alternatives)
+- [API Cost Comparison - GPT-4 vs Alternatives](#api-cost-comparison-gpt-4-vs-alternatives)
 - [Structured Output Extraction Comparison](#structured-output-extraction-comparison)
 
 What Is Context Window in AI Coding Tools
@@ -150,15 +150,15 @@ Practical Implications for Developers
 
 Choosing an AI coding tool involves balancing several factors:
 
-Privacy-sensitive projects: Tools like Tabnine Local or Claude Code offer local processing options. These prevent code from leaving your machine entirely, making them suitable for proprietary or regulated codebases.
+Privacy-sensitive projects - Tools like Tabnine Local or Claude Code offer local processing options. These prevent code from leaving your machine entirely, making them suitable for proprietary or regulated codebases.
 
-Large codebase analysis: Claude Code and Cursor provide significantly larger context windows. If you need to understand how components interact across many files, these tools excel.
+Large codebase analysis - Claude Code and Cursor provide significantly larger context windows. If you need to understand how components interact across many files, these tools excel.
 
-Latency considerations: Smaller context windows generally produce faster suggestions. Codeium optimizes for speed, while Claude-based tools trade latency for comprehensiveness.
+Latency considerations - Smaller context windows generally produce faster suggestions. Codeium optimizes for speed, while Claude-based tools trade latency for comprehensiveness.
 
-Enterprise requirements: GitHub Copilot Business and CodeWhisperer offer organizational controls over data handling. Enterprise plans typically include guarantees about how code gets processed and stored.
+Enterprise requirements - GitHub Copilot Business and CodeWhisperer offer organizational controls over data handling. Enterprise plans typically include guarantees about how code gets processed and stored.
 
-API Cost Comparison: GPT-4 vs Alternatives
+API Cost Comparison - GPT-4 vs Alternatives
 
 Token costs differ significantly across providers and significantly impact production workloads.
 

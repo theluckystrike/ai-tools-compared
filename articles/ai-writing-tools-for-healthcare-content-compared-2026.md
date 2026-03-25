@@ -115,7 +115,7 @@ Limitations include occasional hallucination risks with specific citations, requ
 
 Gemini (Google)
 
-Gemini provides strong integration with Google's healthcare data ecosystem and offers competitive pricing for high-volume applications. The tool performs well with multimodal content, handling both text and structured data effectively.
+Gemini provides strong integration with Google's healthcare data environment and offers competitive pricing for high-volume applications. The tool performs well with multimodal content, handling both text and structured data effectively.
 
 Strengths include good performance on data-heavy healthcare content, strong integration capabilities with Google Cloud healthcare APIs, and competitive cost structures for enterprise deployments.
 
@@ -191,7 +191,7 @@ class HealthcareContentGenerator:
 
         system_prompt = f"""You are a regulated healthcare content specialist.
 Generate content that complies with {compliance_framework} and medical accuracy standards.
-Output must be JSON with fields: title, content, claims_reviewed, disclaimer_needed."""
+Output must be JSON with fields - title, content, claims_reviewed, disclaimer_needed."""
 
         message = self.client.messages.create(
             model="claude-3-5-sonnet-20241022",

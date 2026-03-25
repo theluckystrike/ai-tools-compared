@@ -20,12 +20,12 @@ Claude outperforms competing AI tools for Ansible playbook generation due to sup
 Table of Contents
 
 - [Why Ansible Playbooks Are Uniquely Challenging for AI](#why-ansible-playbooks-are-uniquely-challenging-for-ai)
-- [Claude: The Highest Accuracy for Complex Requirements](#claude-the-highest-accuracy-for-complex-requirements)
-- [GPT-4: Functional but Overcomplicates](#gpt-4-functional-but-overcomplicates)
-- [GitHub Copilot: Best as Inline Assistant, Not Generator](#github-copilot-best-as-inline-assistant-not-generator)
+- [Claude - The Highest Accuracy for Complex Requirements](#claude-the-highest-accuracy-for-complex-requirements)
+- [GPT-4 - Functional but Overcomplicates](#gpt-4-functional-but-overcomplicates)
+- [GitHub Copilot - Best as Inline Assistant, Not Generator](#github-copilot-best-as-inline-assistant-not-generator)
 - [Specialized Ansible AI Tools](#specialized-ansible-ai-tools)
 - [Feature Comparison Table](#feature-comparison-table)
-- [Real-World Use Case: Deploying Docker Compose Stacks](#real-world-use-case-deploying-docker-compose-stacks)
+- [Real-World Use Case - Deploying Docker Compose Stacks](#real-world-use-case-deploying-docker-compose-stacks)
 - [Best Practices When Using AI for Ansible](#best-practices-when-using-ai-for-ansible)
 - [Vault Integration and Secrets Management](#vault-integration-and-secrets-management)
 - [Error Handling and Debugging](#error-handling-and-debugging)
@@ -41,7 +41,7 @@ Successful Ansible playbook generation depends on the AI tool understanding not 
 
 The role structure, directories like tasks/, handlers/, templates/, and files/, requires understanding filesystem conventions that generic code generation struggles with. Variables need proper scoping (play-level, host-level, task-level), facts collection depends on connection methods, and vault integration for secrets demands knowledge of encryption boundaries.
 
-Claude: The Highest Accuracy for Complex Requirements
+Claude - The Highest Accuracy for Complex Requirements
 
 Claude consistently generates production-ready Ansible playbooks that work on first execution. When asked to create a playbook for installing Kubernetes prerequisites, Claude produces task sequences respecting idempotency, includes proper error handling with register variables, and structures handlers correctly.
 
@@ -122,7 +122,7 @@ Claude excels at understanding requirements like "make this idempotent" or "add 
 
 Claude costs $20/month for Claude Pro or operates on token-based pricing with the API ($3 per million input tokens, $15 per million output tokens). For a small team generating 5-10 playbooks weekly, API costs stay under $50/month.
 
-GPT-4: Functional but Overcomplicates
+GPT-4 - Functional but Overcomplicates
 
 GPT-4 generates valid Ansible playbooks but tends toward unnecessary complexity. It often includes conditional logic that should be handled at the host inventory level, adds extra validation tasks that slow execution, and sometimes embeds hardcoded values that belong in vars files.
 
@@ -160,7 +160,7 @@ This approach works but bloats playbooks. GPT-4 sometimes doesn't understand tha
 
 GPT-4 costs $20/month for Plus subscribers or $0.03 per 1K input tokens, $0.06 per 1K output tokens via API. For infrastructure automation, token costs accumulate quickly when generating multi-file role structures.
 
-GitHub Copilot: Best as Inline Assistant, Not Generator
+GitHub Copilot - Best as Inline Assistant, Not Generator
 
 GitHub Copilot excels as an inline autocomplete tool within your editor but falls short when generating entire playbooks from scratch. Copilot works best when you've already written the task structure and it fills in repetitive patterns.
 
@@ -172,7 +172,7 @@ Specialized Ansible AI Tools
 
 Ansible's official documentation now includes AI-powered suggestions within the community. Tools like Ansible Lightspeed (technical preview) integrate directly into IDEs to suggest module usage and playbook structure. These specialized tools understand Ansible's module documentation and can suggest appropriate modules based on your task description.
 
-However, Ansible Lightspeed remains in preview with limited availability and no clear pricing model yet. It integrates deeply with Red Hat's Ansible ecosystem but lacks the flexibility of general-purpose AI models.
+However, Ansible Lightspeed remains in preview with limited availability and no clear pricing model yet. It integrates deeply with Red Hat's Ansible environment but lacks the flexibility of general-purpose AI models.
 
 Feature Comparison Table
 
@@ -188,7 +188,7 @@ Feature Comparison Table
 | Inline autocomplete | No | No | Yes | Yes |
 | Batch playbook generation | Excellent | Good | Poor | Excellent |
 
-Real-World Use Case: Deploying Docker Compose Stacks
+Real-World Use Case - Deploying Docker Compose Stacks
 
 A team needs an AI tool to generate a playbook for deploying Dockerized applications across 20 servers. The playbook must pull from a private registry, apply version-specific configurations, and restart only affected services.
 
@@ -246,7 +246,7 @@ playbook.yml
       no_log: yes  # Prevent password from appearing in logs
 ```
 
-Claude also knows that `no_log: yes` prevents Ansible output from exposing secrets in logs, and that register variables containing secrets should use no_log to avoid credential leakage in debug output.
+Claude also knows that `no_log - yes` prevents Ansible output from exposing secrets in logs, and that register variables containing secrets should use no_log to avoid credential leakage in debug output.
 
 Error Handling and Debugging
 

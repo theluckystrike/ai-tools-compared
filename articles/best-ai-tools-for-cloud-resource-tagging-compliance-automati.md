@@ -190,9 +190,9 @@ class EnterpriseTaggingOrchestrator:
         """Use Claude to infer appropriate tags from resource attributes."""
 
         prompt = f"""Given this AWS resource:
-Name: {resource.get('Name', 'unknown')}
-Type: {resource.get('Type', 'unknown')}
-Created: {resource.get('CreatedTime', 'unknown')}
+Name - {resource.get('Name', 'unknown')}
+Type - {resource.get('Type', 'unknown')}
+Created - {resource.get('CreatedTime', 'unknown')}
 
 And this tagging policy:
 {self.compliance_policy}
@@ -278,7 +278,7 @@ orchestrator = EnterpriseTaggingOrchestrator()
 
 Audit compliance
 audit_results = orchestrator.audit_tagging_compliance("123456789012")
-print(f"Compliance: {audit_results['compliance_percentage']:.1f}%")
+print(f"Compliance - {audit_results['compliance_percentage']:.1f}%")
 
 Auto-remediate non-compliant resources
 if audit_results['resources']:
@@ -331,8 +331,8 @@ class MultiCloudTagSynchronizer:
         """Use Claude to normalize tags from different clouds."""
 
         prompt = f"""Normalize these tags from different cloud providers:
-AWS tags: {aws_tags}
-Azure tags: {azure_tags}
+AWS tags - {aws_tags}
+Azure tags - {azure_tags}
 
 Provide normalized tags that work across both platforms."""
 
@@ -414,7 +414,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -426,7 +426,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

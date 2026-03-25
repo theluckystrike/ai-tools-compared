@@ -25,12 +25,12 @@ Table of Contents
 - [Provider Configuration Comparison](#provider-configuration-comparison)
 - [Variable Validation Patterns](#variable-validation-patterns)
 - [Practical Implementation Strategy](#practical-implementation-strategy)
-- [Real-World Module Example: Load Balancer](#real-world-module-example-load-balancer)
+- [Real-World Module Example - Load Balancer](#real-world-module-example-load-balancer)
 - [Cursor AI. Best for Inline Multi-File Editing](#cursor-ai-best-for-inline-multi-file-editing)
 - [Amazon CodeWhisperer. Best for AWS-Native Patterns](#amazon-codewhisperer-best-for-aws-native-patterns)
 - [Prompt Engineering for Better Terraform Output](#prompt-engineering-for-better-terraform-output)
 - [State Management and Remote Backends](#state-management-and-remote-backends)
-- [Tool Comparison: Full Stack Support](#tool-comparison-full-stack-support)
+- [Tool Comparison - Full Stack Support](#tool-comparison-full-stack-support)
 - [Cost Comparison for High-Volume Use](#cost-comparison-for-high-volume-use)
 - [Testing AI-Generated Modules](#testing-ai-generated-modules)
 - [Recommendations](#recommendations)
@@ -43,7 +43,7 @@ Claude (Opus 4.6). Best for Complex Logic
 
 Claude excels at understanding multi-resource architectures and generating well-commented HCL with detailed variable documentation.
 
-Pricing: Claude API at $15/1M input tokens, $75/1M output tokens.
+Pricing - Claude API at $15/1M input tokens, $75/1M output tokens.
 
 Strengths:
 - Generates self-documenting variables with descriptions and validation rules
@@ -86,13 +86,13 @@ output "vpc_id" {
 }
 ```
 
-Best For: Enterprise teams needing explanation alongside code, complex multi-cloud modules.
+Best For - Enterprise teams needing explanation alongside code, complex multi-cloud modules.
 
 GPT-4 (via OpenAI API). Best for Quick Generation
 
 GPT-4 generates functional Terraform quickly and handles provider-specific syntax well.
 
-Pricing: GPT-4 Turbo at $10/1M input tokens, $30/1M output tokens.
+Pricing - GPT-4 Turbo at $10/1M input tokens, $30/1M output tokens.
 
 Strengths:
 - Fast response times suitable for rapid iteration
@@ -135,13 +135,13 @@ data "aws_ami" "amazon_linux" {
 }
 ```
 
-Best For: Teams prioritizing speed, straightforward infrastructure patterns.
+Best For - Teams prioritizing speed, straightforward infrastructure patterns.
 
 GitHub Copilot. Best for IDE Integration
 
 Copilot provides inline code completion and context-aware suggestions directly in your editor.
 
-Pricing: GitHub Copilot at $10/month or $100/year per user.
+Pricing - GitHub Copilot at $10/month or $100/year per user.
 
 Strengths:
 - Real-time suggestions as you type HCL
@@ -173,7 +173,7 @@ resource "aws_subnet" "private" {
 }
 ```
 
-Best For: Individual developers, iterative development within existing projects.
+Best For - Individual developers, iterative development within existing projects.
 
 Provider Configuration Comparison
 
@@ -213,7 +213,7 @@ Practical Implementation Strategy
 2. Use GPT-4 for rapid prototyping and provider-specific patterns
 3. Employ Copilot for inline refinement and team consistency enforcement
 
-Real-World Module Example: Load Balancer
+Real-World Module Example - Load Balancer
 
 ```hcl
 resource "aws_lb" "main" {
@@ -278,7 +278,7 @@ Cursor AI. Best for Inline Multi-File Editing
 
 Cursor is an AI-native code editor built on VS Code that understands your entire infrastructure codebase, not just the current file.
 
-Pricing: Hobby tier free; Pro at $20/month per user.
+Pricing - Hobby tier free; Pro at $20/month per user.
 
 Strengths:
 - Understands cross-file variable references and module composition
@@ -290,13 +290,13 @@ Real Example Output. Multi-file Module Update:
 
 When you ask Cursor to "add a WAF association to this ALB module," it edits `main.tf`, `variables.tf`, and `outputs.tf` in a single operation, adding the `enable_waf` boolean variable with conditional validation, the `aws_wafv2_web_acl_association` resource block, and the corresponding output. without leaving the editor.
 
-Best For: Teams already using VS Code, developers working across large module repositories.
+Best For - Teams already using VS Code, developers working across large module repositories.
 
 Amazon CodeWhisperer. Best for AWS-Native Patterns
 
 AWS CodeWhisperer (now part of Amazon Q Developer) is trained specifically on AWS service documentation and generates idiomatic AWS-provider Terraform.
 
-Pricing: Individual tier free; Professional at $19/user/month.
+Pricing - Individual tier free; Professional at $19/user/month.
 
 Strengths:
 - Deep knowledge of AWS-specific resource arguments and defaults
@@ -338,7 +338,7 @@ resource "aws_iam_policy" "s3_access" {
 }
 ```
 
-Best For: AWS-focused teams, shops running large AWS footprints.
+Best For - AWS-focused teams, shops running large AWS footprints.
 
 Prompt Engineering for Better Terraform Output
 
@@ -384,7 +384,7 @@ terraform {
 
 GPT-4 and Copilot generate correct backend blocks but often miss the `dynamodb_table` locking argument without explicit prompting.
 
-Tool Comparison: Full Stack Support
+Tool Comparison - Full Stack Support
 
 | Feature | Claude | GPT-4 | Copilot | Cursor | CodeWhisperer |
 |---------|--------|-------|---------|--------|---------------|

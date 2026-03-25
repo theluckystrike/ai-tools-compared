@@ -200,7 +200,7 @@ Richpanel approaches automation through its workflow engine, which supports more
 
 
 ```yaml
-Richpanel: Workflow configuration example
+Richpanel - Workflow configuration example
 name: "VIP Customer Routing"
 trigger:
   conditions:
@@ -302,7 +302,7 @@ Decision Factors for Developers
 Your choice depends on your integration requirements:
 
 
-Choose Gorgias if you need deep Shopify integration, want a rule builder with templates, or prioritize a large ecosystem of pre-built automations. Their REST API and webhook support work well for standard integrations.
+Choose Gorgias if you need deep Shopify integration, want a rule builder with templates, or prioritize a large environment of pre-built automations. Their REST API and webhook support work well for standard integrations.
 
 
 Choose Richpanel if you prefer GraphQL flexibility, need stronger built-in AI analytics, or want a more modular setup where you can swap components. Their workflow engine handles complex routing scenarios more elegantly.

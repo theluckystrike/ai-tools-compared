@@ -23,7 +23,7 @@ Table of Contents
 - [Understanding Conventional Commits](#understanding-conventional-commits)
 - [AI-Powered Changelog Generation Tools](#ai-powered-changelog-generation-tools)
 - [Implementing AI Changelog Generation](#implementing-ai-changelog-generation)
-- [Practical Example: From Commits to Changelog](#practical-example-from-commits-to-changelog)
+- [Practical Example - From Commits to Changelog](#practical-example-from-commits-to-changelog)
 - [Release v2.1.0](#release-v210)
 - [Prompt Engineering for Better Output](#prompt-engineering-for-better-output)
 - [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
@@ -153,7 +153,7 @@ Implementing AI Changelog Generation
 
 Setting up AI-powered changelog generation requires three components: consistent conventional commits, an AI service integration, and a deployment pipeline.
 
-Step 1: Enforce Conventional Commits
+Step 1 - Enforce Conventional Commits
 
 Use Husky to validate commit messages before allowing pushes:
 
@@ -178,7 +178,7 @@ module.exports = {
 };
 ```
 
-Step 2: Choose Your AI Integration
+Step 2 - Choose Your AI Integration
 
 Select an AI provider based on your requirements:
 
@@ -191,7 +191,7 @@ Select an AI provider based on your requirements:
 
 For most projects, OpenAI or Claude provides the best balance of quality and implementation complexity. Claude 3.5 Sonnet handles long git log outputs especially well thanks to its 200k token context window.
 
-Step 3: Automate Release Pipeline
+Step 3 - Automate Release Pipeline
 
 Combine everything in a GitHub Actions workflow:
 
@@ -225,7 +225,7 @@ jobs:
         run: npx semantic-release
 ```
 
-Practical Example: From Commits to Changelog
+Practical Example - From Commits to Changelog
 
 Consider a project with these conventional commits between releases:
 
@@ -275,7 +275,7 @@ Strong prompt:
 ```
 You are writing release notes for a developer-facing SaaS API product.
 Your audience is technical but not familiar with the internal codebase.
-Group changes into: New Features, Bug Fixes, Performance, and Breaking Changes.
+Group changes into - New Features, Bug Fixes, Performance, and Breaking Changes.
 Rephrase each commit to describe user impact, not implementation details.
 Use present tense. Be concise. Omit chore and style commits.
 

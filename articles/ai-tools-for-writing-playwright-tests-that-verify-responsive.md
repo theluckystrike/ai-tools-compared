@@ -258,11 +258,11 @@ test('images load appropriate sources at each breakpoint', async ({ page }) => {
 
 Recommendations by Use Case
 
-For responsive test suites: Use Claude with clear instructions about all required breakpoints and the specific layout elements to verify
+For responsive test suites - Use Claude with clear instructions about all required breakpoints and the specific layout elements to verify
 
 For quick single-breakpoint tests: GitHub Copilot works well when you need fast inline suggestions
 
-For improving existing tests: Cursor's agent mode can expand single-viewport tests into coverage
+For improving existing tests - Cursor's agent mode can expand single-viewport tests into coverage
 
 For CI/CD integrated test generation: Aider provides efficient terminal-based workflows
 

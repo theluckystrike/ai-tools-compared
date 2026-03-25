@@ -20,7 +20,7 @@ Build a MCP server that exposes your deployment environment details to AI coding
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Practical Example: Generating Environment-Aware Code](#practical-example-generating-environment-aware-code)
+- [Practical Example - Generating Environment-Aware Code](#practical-example-generating-environment-aware-code)
 - [Security Considerations](#security-considerations)
 - [Troubleshooting](#troubleshooting)
 
@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand MCP Servers and Deployment Context
+Step 1 - Understand MCP Servers and Deployment Context
 
 
 MCP servers act as bridges between AI models and external systems. A deployment environment context server provides information about your infrastructure, cloud provider, region, container orchestration platform, environment variables, secrets management, and networking configuration. With this context, your AI assistant can generate Terraform configurations that match your AWS setup, Kubernetes manifests that respect your existing namespace conventions, or GitHub Actions workflows that deploy to your specific infrastructure.
@@ -43,7 +43,7 @@ MCP servers act as bridges between AI models and external systems. A deployment 
 The protocol follows a request-response pattern where the AI sends a request to your server, and your server returns structured data. Building this server gives you control over exactly what environment information your AI can access.
 
 
-Step 2: Set Up Your MCP Server Project
+Step 2 - Set Up Your MCP Server Project
 
 
 Start by creating a new Node.js project for your MCP server:
@@ -157,7 +157,7 @@ await server.connect(transport);
 ```
 
 
-Step 3: Connecting to Your Actual Infrastructure
+Step 3 - Connecting to Your Actual Infrastructure
 
 
 For production use, replace the hardcoded values with real infrastructure queries. The following examples show how to fetch actual deployment context from different sources.
@@ -227,7 +227,7 @@ async function getStorageClass(api: k8s.CoreV1Api) {
 ```
 
 
-Step 4: Registering Your Server with Claude Code
+Step 4 - Registering Your Server with Claude Code
 
 
 After building your server, register it with your AI assistant. For Claude Code, add it to your configuration:
@@ -242,7 +242,7 @@ claude mcp add deployment-context ./server.py
 For Cursor, add it through the settings interface under "MCP Servers" with the path to your server executable.
 
 
-Practical Example: Generating Environment-Aware Code
+Practical Example - Generating Environment-Aware Code
 
 
 With your deployment context server running, your AI assistant can now generate infrastructure-aware code. Consider this prompt:
@@ -307,7 +307,7 @@ spec:
 
 The manifest now includes your production namespace, appropriate resource limits, and secret references matching your actual Kubernetes configuration.
 
-Step 5: Extending Your Server
+Step 5 - Extending Your Server
 
 Beyond basic context, consider adding these capabilities:
 
@@ -325,7 +325,7 @@ When building your deployment context server, follow these practices:
 
 Never expose actual secrets or credentials through your MCP server. Return only metadata and configuration patterns. Implement authentication if your server will be used by multiple team members. Consider rate limiting to prevent abuse, and audit logging to track which tools accessed what information.
 
-Step 6: Test Your Implementation
+Step 6 - Test Your Implementation
 
 Verify your server works correctly before using it with your AI assistant:
 

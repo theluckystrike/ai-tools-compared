@@ -158,7 +158,7 @@ For maximum control and cost efficiency, ScrapeGraphAI runs locally after initia
 
 For teams without programming experience, Octoparse provides visual building blocks that handle most scraping scenarios without code.
 
-Practical Example: Extracting Product Data
+Practical Example - Extracting Product Data
 
 Here is a complete example using Firecrawl to extract product data from an e-commerce category page:
 
@@ -235,7 +235,7 @@ Use Octoparse when:
 
 Advanced Extraction Patterns
 
-Pattern 1: Handling Pagination Automatically
+Pattern 1 - Handling Pagination Automatically
 
 ```python
 from firecrawl import FirecrawlApp
@@ -260,7 +260,7 @@ for page in result.data:
     all_products.extend(page.get('products', []))
 ```
 
-Pattern 2: Handling JavaScript-Rendered Content
+Pattern 2 - Handling JavaScript-Rendered Content
 
 ```python
 from scrapingbee import ScrapingBeeClient
@@ -282,7 +282,7 @@ soup = BeautifulSoup(response.text, 'html.parser')
 products = soup.find_all('div', class_='product-item')
 ```
 
-Pattern 3: Handling Anti-Bot Systems
+Pattern 3 - Handling Anti-Bot Systems
 
 ```python
 Using Bright Data's Web Unlocker
@@ -344,7 +344,7 @@ Cost Optimization Strategies
 
 Minimize scraping costs by being strategic:
 
-Strategy 1: Selective Content Extraction
+Strategy 1 - Selective Content Extraction
 
 ```python
 Only extract needed fields
@@ -358,7 +358,7 @@ result = app.crawl_url(
 )
 ```
 
-Strategy 2: Smart Caching
+Strategy 2 - Smart Caching
 
 ```python
 import hashlib
@@ -392,13 +392,13 @@ class CachedScraper:
         return result
 ```
 
-Strategy 3: Batch Processing
+Strategy 3 - Batch Processing
 
 Process multiple pages in batches to trigger volume discounts.
 
 Common Scraping Pitfalls
 
-Pitfall 1: Not respecting robots.txt
+Pitfall 1 - Not respecting robots.txt
 
 ```python
 import requests
@@ -412,7 +412,7 @@ def can_scrape(url: str) -> bool:
     return rp.can_fetch('*', url)
 ```
 
-Pitfall 2: Missing User-Agent Headers
+Pitfall 2 - Missing User-Agent Headers
 
 ```python
 Always provide a descriptive User-Agent
@@ -423,7 +423,7 @@ headers = {
 response = requests.get(url, headers=headers)
 ```
 
-Pitfall 3: Ignoring Terms of Service
+Pitfall 3 - Ignoring Terms of Service
 
 Many websites prohibit automated scraping. Check ToS before scraping. Firecrawl and similar tools are designed for legal extraction, they won't help bypass legitimate restrictions.
 
@@ -459,7 +459,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -471,7 +471,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

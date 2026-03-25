@@ -47,11 +47,11 @@ All tests use:
 - Real development tasks, not synthetic benchmarks
 - Evaluation on correctness, completeness, and code quality
 
-Task 1: Database ERD to ORM Models
+Task 1 - Database ERD to ORM Models
 
-Input: A database entity-relationship diagram (PNG) showing 5 tables with relationships, indices, and foreign keys.
+Input - A database entity-relationship diagram (PNG) showing 5 tables with relationships, indices, and foreign keys.
 
-Prompt: "Generate SQLAlchemy models for all tables shown in this diagram. Include relationships, foreign keys, and the appropriate indices."
+Prompt - "Generate SQLAlchemy models for all tables shown in this diagram. Include relationships, foreign keys, and the appropriate indices."
 
 Gemini 1.5 Pro Output
 
@@ -80,7 +80,7 @@ class Product(Base):
 ... continued
 ```
 
-Assessment: Gemini read the diagram accurately, identified all tables and relationships, and used correct SQLAlchemy syntax. It missed the composite index shown in the diagram (`idx_orders_user_created` on `(user_id, created_at)`).
+Assessment - Gemini read the diagram accurately, identified all tables and relationships, and used correct SQLAlchemy syntax. It missed the composite index shown in the diagram (`idx_orders_user_created` on `(user_id, created_at)`).
 
 Claude Opus Output
 
@@ -103,13 +103,13 @@ class Order(Base):
 
 Claude also added `cascade='all, delete-orphan'` on the OrderItem relationship, which is visible in the ERD (the diamond notation indicates a composition relationship). Gemini missed this.
 
-Winner: Claude. more careful diagram reading, caught subtle annotation details.
+Winner - Claude. more careful diagram reading, caught subtle annotation details.
 
-Task 2: Screenshot to React Component
+Task 2 - Screenshot to React Component
 
-Input: A screenshot of a notification dropdown UI (bell icon, unread badge, list of notifications with icons, timestamps, and a "Mark all read" button).
+Input - A screenshot of a notification dropdown UI (bell icon, unread badge, list of notifications with icons, timestamps, and a "Mark all read" button).
 
-Prompt: "Convert this screenshot to a React TypeScript component using Tailwind CSS."
+Prompt - "Convert this screenshot to a React TypeScript component using Tailwind CSS."
 
 Both models produced working components. The difference was in fidelity:
 
@@ -140,13 +140,13 @@ Claude matched the screenshot more precisely:
 
 Claude noticed the unread count badge next to the title (Gemini missed it), used the exact border color visible in the screenshot, and matched the font size more closely.
 
-Winner: Claude. better visual fidelity in component generation.
+Winner - Claude. better visual fidelity in component generation.
 
-Task 3: Architecture Diagram to Kubernetes Config
+Task 3 - Architecture Diagram to Kubernetes Config
 
-Input: An AWS architecture diagram (PNG) showing: ALB → ECS cluster (2 services) → RDS → ElastiCache, with VPC subnets and security groups visible.
+Input - An AWS architecture diagram (PNG) showing: ALB → ECS cluster (2 services) → RDS → ElastiCache, with VPC subnets and security groups visible.
 
-Prompt: "Generate Kubernetes manifests that implement the architecture shown in this diagram, adapted for Kubernetes (ALB → Ingress, ECS → Deployments, ElastiCache → Redis)."
+Prompt - "Generate Kubernetes manifests that implement the architecture shown in this diagram, adapted for Kubernetes (ALB → Ingress, ECS → Deployments, ElastiCache → Redis)."
 
 Gemini's Approach:
 
@@ -222,17 +222,17 @@ spec:
 
 Claude noticed the security group arrows in the diagram and translated them to NetworkPolicies. a detail that significantly affects security posture.
 
-Winner: Claude. translated architecture constraints, not just topology.
+Winner - Claude. translated architecture constraints, not just topology.
 
-Task 4: API Documentation PDF to SDK Code
+Task 4 - API Documentation PDF to SDK Code
 
-Input: A 12-page PDF of an API reference for a payment gateway.
+Input - A 12-page PDF of an API reference for a payment gateway.
 
-Prompt: "Generate a Python SDK for this payment API with typed request/response models and proper error handling."
+Prompt - "Generate a Python SDK for this payment API with typed request/response models and proper error handling."
 
-Gemini: With its 1M token context window, Gemini read the entire PDF correctly and generated a complete SDK. Generation time: ~45 seconds.
+Gemini - With its 1M token context window, Gemini read the entire PDF correctly and generated a complete SDK. Generation time: ~45 seconds.
 
-Claude: Also read the PDF completely. Generation time: ~60 seconds.
+Claude - Also read the PDF completely. Generation time: ~60 seconds.
 
 Both generated similarly complete SDKs. Gemini's larger context window (1M vs Claude's 200K) would matter for very long documents, but most API PDFs are under 50 pages.
 

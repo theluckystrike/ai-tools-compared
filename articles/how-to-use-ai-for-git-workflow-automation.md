@@ -48,7 +48,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: AI-Powered Commit Messages
+Step 1 - AI-Powered Commit Messages
 
 The most common git automation task: generating commit messages from staged diffs.
 
@@ -87,7 +87,7 @@ response = client.messages.create(
 Rules:
 - First line: imperative mood, max 72 chars, no period (e.g. "Add user authentication")
 - Blank line after subject
-- Body: explain WHY this change was made (not what. the diff shows that)
+- Body - explain WHY this change was made (not what. the diff shows that)
 - Body lines: max 72 chars
 - No generic messages like "Update files" or "Fix bug"
 - If it's a bug fix, describe what was broken
@@ -130,7 +130,7 @@ Add an alias to `~/.gitconfig`:
 
 Now `git aic` generates a commit message, shows it for review, and commits on confirmation.
 
-Step 2: PR Description Generator
+Step 2 - PR Description Generator
 
 ```python
 #!/usr/bin/env python3
@@ -180,7 +180,7 @@ def generate_pr_description(info: dict) -> str:
             'role': 'user',
             'content': f"""Generate a GitHub pull request title and description.
 
-Branch: {info['branch']}
+Branch - {info['branch']}
 
 Commits:
 {info['commits']}
@@ -194,16 +194,16 @@ Code diff (sample):
 Output format:
 TITLE: <concise title under 72 chars>
 
-Step 3: What changed
+Step 3 - What changed
 <2-4 bullet points describing the changes>
 
-Step 4: Why
+Step 4 - Why
 <1-2 sentences on the motivation/problem solved>
 
-Step 5: Test
+Step 5 - Test
 <how to verify this works>
 
-Step 6: Notes for reviewer
+Step 6 - Notes for reviewer
 <anything specific to check or context that helps review>"""
         }]
     )
@@ -214,7 +214,7 @@ info = get_branch_info()
 description = generate_pr_description(info)
 print(description)
 
-Optionally: create the PR with gh CLI
+Optionally - create the PR with gh CLI
 if '--create' in sys.argv:
     lines = description.strip().split('\n')
     title = lines[0].replace('TITLE: ', '').strip()
@@ -227,14 +227,14 @@ if '--create' in sys.argv:
     ])
 ```
 
-Step 7: AI Git Hook: Pre-Push Code Review
+Step 7 - AI Git Hook: Pre-Push Code Review
 
 Run a lightweight AI check before pushing to catch obvious issues:
 
 ```bash
 #!/bin/bash
 .git/hooks/pre-push. AI review before push
-Make executable: chmod +x .git/hooks/pre-push
+Make executable - chmod +x .git/hooks/pre-push
 
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
@@ -298,7 +298,7 @@ fi
 
 This hook costs under $0.002 per push and catches the most common "oops before merge" mistakes.
 
-Step 8: Branch Naming from Issue Titles
+Step 8 - Branch Naming from Issue Titles
 
 ```python
 #!/usr/bin/env python3
@@ -340,7 +340,7 @@ def generate_branch_name(title: str, issue_number: str) -> str:
             'role': 'user',
             'content': f"""Convert this issue title to a git branch name.
 
-Issue #{issue_number}: {title}
+Issue #{issue_number} - {title}
 
 Rules:
 - Format: feature/123-short-description OR fix/123-short-description OR chore/123-description
@@ -355,7 +355,7 @@ Output only the branch name, nothing else."""
     return response.content[0].text.strip()
 
 if len(sys.argv) < 2:
-    print("Usage: branch-from-issue.py <github-issue-url>")
+    print("Usage - branch-from-issue.py <github-issue-url>")
     sys.exit(1)
 
 url = sys.argv[1]
@@ -371,7 +371,7 @@ print(f"Creating branch: {branch_name}")
 subprocess.run(['git', 'checkout', '-b', branch_name])
 ```
 
-Step 9: Merge Conflict Assistant
+Step 9 - Merge Conflict Assistant
 
 When `git merge` produces conflicts, get AI help understanding them:
 
@@ -386,7 +386,7 @@ if [ -z "$FILE" ]; then
   echo "Conflicted files:"
   echo "$FILES"
   echo ""
-  echo "Usage: resolve-conflict.sh <filename>"
+  echo "Usage - resolve-conflict.sh <filename>"
   exit 0
 fi
 
@@ -407,7 +407,7 @@ response = client.messages.create(
         "role": "user",
         "content": f"""Help resolve this git merge conflict.
 
-File: {filepath}
+File - {filepath}
 
 Conflicted content:
 {content}
@@ -444,7 +444,7 @@ Related Reading
 - [AI Git Commit Message Generators Compared](/ai-git-commit-message-generators-compared/)
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-for-automated-changelog-generation-2026/)
 - [How to Build an AI Code Review Bot](/how-to-build-ai-code-review-bot/)
-- [Example: GitHub Actions workflow for assessment tracking](https://welikeremotestack.com/how-to-set-up-remote-hiring-pipeline-with-async-interviews-f/)
+- [Example - GitHub Actions workflow for assessment tracking](https://welikeremotestack.com/how-to-set-up-remote-hiring-pipeline-with-async-interviews-f/)
 - [Remote Content Team Collaboration Workflow for Distributed](https://welikeremotestack.com/remote-content-team-collaboration-workflow-for-distributed-seo-writers-2026-guide/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

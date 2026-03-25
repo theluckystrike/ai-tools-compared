@@ -40,7 +40,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Use AI for SQL Translation
+Step 1 - Use AI for SQL Translation
 
 Modern AI language models understand database systems and can translate between dialects when given proper context. The key lies in providing clear prompts that specify both the source and target database systems.
 
@@ -143,7 +143,7 @@ Different AI tools handle SQL dialect conversion with varying reliability. Here 
 | Claude | PostgreSQL, MySQL, BigQuery, Snowflake, SQLite, MSSQL | Good. flags unsupported features | Explicit source + target | High |
 | ChatGPT | Same coverage | Moderate. sometimes silently drops features | Works with examples | Medium-High |
 | GitHub Copilot | Good for common dialects | Limited. needs manual hints | Inline comments | Medium |
-| Gemini | Strong on BigQuery | Excellent for GCP ecosystem | Conversational | High for BigQuery |
+| Gemini | Strong on BigQuery | Excellent for GCP environment | Conversational | High for BigQuery |
 
 For migrations between PostgreSQL and MySQL, Claude and ChatGPT perform similarly. For BigQuery-specific features like STRUCT, ARRAY_AGG with STRUCT, and PARTITION BY expressions, Gemini's GCP-native training gives it an edge.
 
@@ -155,11 +155,11 @@ Test the output thoroughly. AI generates correct translations most of the time, 
 
 Handle vendor-specific features carefully. PostgreSQL's `RETURNING` clause, MySQL's specific JOIN optimizations, BigQuery's nested records, and Snowflake's staging tables all require special attention. Describe these features in your prompt so AI accounts for them.
 
-Step 2: Effective Prompting Strategies
+Step 2 - Effective Prompting Strategies
 
 The way you frame the translation request determines how thorough the output is. These three prompt patterns produce consistently better results:
 
-Pattern 1: Specify both systems and the migration context
+Pattern 1 - Specify both systems and the migration context
 ```
 Convert this PostgreSQL 14 query to MySQL 8.0. The target database uses
 utf8mb4 charset. Flag any features that have no MySQL equivalent.
@@ -167,7 +167,7 @@ utf8mb4 charset. Flag any features that have no MySQL equivalent.
 [paste query]
 ```
 
-Pattern 2: Ask AI to annotate differences
+Pattern 2 - Ask AI to annotate differences
 ```
 Translate this BigQuery SQL to Snowflake. For each change you make,
 add a comment explaining why the syntax differs between the two systems.
@@ -175,7 +175,7 @@ add a comment explaining why the syntax differs between the two systems.
 [paste query]
 ```
 
-Pattern 3: Batch translation with validation hints
+Pattern 3 - Batch translation with validation hints
 ```
 Convert these 5 PostgreSQL queries to Redshift SQL. After each translation,
 note any performance considerations specific to Redshift's columnar storage
@@ -186,7 +186,7 @@ that might affect the query plan.
 
 Annotated translations are especially useful during migrations. the comments serve as documentation for the team reviewing the converted code.
 
-Step 3: Common Translation Scenarios
+Step 3 - Common Translation Scenarios
 
 Date Operations
 
@@ -253,7 +253,7 @@ JSON handling is one of the most dialect-specific areas. PostgreSQL has the rich
 -- PostgreSQL: extract nested JSON value
 SELECT data->>'user'->>'email' as email
 FROM events
-WHERE data @> '{"type": "signup"}';
+WHERE data @> '{"type" - "signup"}';
 ```
 
 MySQL 8.0 equivalent using JSON_EXTRACT:
@@ -274,7 +274,7 @@ WHERE JSON_VALUE(data, '$.type') = 'signup';
 
 AI tools handle these JSON conversions accurately when you specify the JSON column type explicitly in your prompt. Without that context, they sometimes omit the CAST or JSON_UNQUOTE that the target database requires.
 
-Step 4: Handling Bulk Migration with AI
+Step 4 - Handling Bulk Migration with AI
 
 For large schema migrations involving dozens or hundreds of queries, a structured batch approach works better than translating one query at a time. Group queries by function type: aggregations together, joins together, subqueries together. This lets the model build consistent translation patterns within each group.
 
@@ -288,7 +288,7 @@ A practical workflow for bulk translation:
 
 This staged approach catches systematic errors. such as AI consistently missing the CAST requirement on a specific column type. before they reach production.
 
-Step 5: Migration Validation Framework
+Step 5 - Migration Validation Framework
 
 After AI generates translated queries, validate them programmatically rather than by hand. The following approach runs the same logical operation against both the source and target databases and compares output:
 
@@ -347,7 +347,7 @@ print(msg)
 
 This validation script catches numeric precision differences, row ordering edge cases, and silently dropped rows. all failure modes that AI-translated queries can introduce without obvious syntax errors.
 
-Step 6: Schema-Level Differences That Affect Query Translation
+Step 6 - Schema-Level Differences That Affect Query Translation
 
 Query translation rarely lives in isolation. Schema differences between databases create translation failures that are not obvious at the query level:
 

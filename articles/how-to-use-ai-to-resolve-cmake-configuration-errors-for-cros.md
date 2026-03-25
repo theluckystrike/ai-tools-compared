@@ -22,8 +22,8 @@ Table of Contents
 
 - [Why CrOS Cross-Compilation Differs from Standard Targets](#why-cros-cross-compilation-differs-from-standard-targets)
 - [Prerequisites](#prerequisites)
-- [Practical Example: Resolving sysroot Path Errors](#practical-example-resolving-sysroot-path-errors)
-- [Practical Example: Fixing Missing Portage Dependencies](#practical-example-fixing-missing-portage-dependencies)
+- [Practical Example - Resolving sysroot Path Errors](#practical-example-resolving-sysroot-path-errors)
+- [Practical Example - Fixing Missing Portage Dependencies](#practical-example-fixing-missing-portage-dependencies)
 - [AI-Assisted Build System Troubleshooting](#ai-assisted-build-system-troubleshooting)
 - [Performance Optimization for CrOS Builds](#performance-optimization-for-cros-builds)
 - [Troubleshooting](#troubleshooting)
@@ -44,7 +44,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Common CMake Configuration Errors in CrOS Cross-Compilation
+Step 1 - Common CMake Configuration Errors in CrOS Cross-Compilation
 
 Several error patterns appear frequently when building for Chrome OS:
 
@@ -56,7 +56,7 @@ Missing dependencies occur because CrOS uses trimmed-down system libraries compa
 
 Portage library paths create confusion because libraries installed through the CrOS package manager reside in paths that CMake's find_module and find_package functions do not search by default.
 
-Step 2: Use AI to Diagnose CrOS CMake Errors
+Step 2 - Use AI to Diagnose CrOS CMake Errors
 
 When you encounter a CMake configuration failure for CrOS, provide your AI assistant with specific context to receive accurate solutions:
 
@@ -72,7 +72,7 @@ When you encounter a CMake configuration failure for CrOS, provide your AI assis
 
 This information allows the AI to identify whether your issue stems from incorrect sysroot settings, missing Portage packages, or toolchain misconfiguration.
 
-Practical Example: Resolving sysroot Path Errors
+Practical Example - Resolving sysroot Path Errors
 
 Consider this common error when cross-compiling a simple application for CrOS:
 
@@ -98,7 +98,7 @@ Specify the target architecture for the compiler
 set(CMAKE_C_COMPILER "${CROS_SDK_ROOT}/usr/bin/x86_64-cros-linux-gnu/x86_64-cros-linux-gnu-gcc")
 set(CMAKE_CXX_COMPILER "${CROS_SDK_ROOT}/usr/bin/x86_64-cros-linux-gnu/x86_64-cros-linux-gnu-g++")
 
-Critical: Tell CMake where to find libraries in the CrOS sysroot
+Critical - Tell CMake where to find libraries in the CrOS sysroot
 set(CMAKE_FIND_ROOT_PATH "${CMAKE_SYSROOT}")
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
@@ -107,7 +107,7 @@ set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 The key fix involves setting CMAKE_FIND_ROOT_PATH to point to your CrOS sysroot and configuring the search modes appropriately for each component type.
 
-Practical Example: Fixing Missing Portage Dependencies
+Practical Example - Fixing Missing Portage Dependencies
 
 Another frequent scenario involves CMake failing to find CrOS-specific libraries:
 
@@ -145,25 +145,25 @@ find_package_handle_standard_args(Brillo
         LIBBRILLO_INCLUDE_DIR)
 ```
 
-Step 3: Optimizing Your AI Prompts for CrOS CMake Issues
+Step 3 - Optimizing Your AI Prompts for CrOS CMake Issues
 
 Getting useful answers from AI requires asking the right questions. Structure your prompts to include:
 
-Error context: Paste the exact CMake error output, including any preceding warnings that might provide additional clues.
+Error context - Paste the exact CMake error output, including any preceding warnings that might provide additional clues.
 
-Toolchain file: Share your complete toolchain file so the AI can verify settings like CMAKE_SYSTEM_NAME and compiler paths.
+Toolchain file - Share your complete toolchain file so the AI can verify settings like CMAKE_SYSTEM_NAME and compiler paths.
 
-CMakeLists.txt: Include relevant portions of your build configuration, particularly any find_package or find_library calls that are failing.
+CMakeLists.txt - Include relevant portions of your build configuration, particularly any find_package or find_library calls that are failing.
 
-SDK information: Mention which CrOS board you are targeting and which SDK version you are using.
+SDK information - Mention which CrOS board you are targeting and which SDK version you are using.
 
-What you have tried: Describe any attempted solutions so the AI does not suggest the same approaches.
+What you have tried - Describe any attempted solutions so the AI does not suggest the same approaches.
 
 A well-structured prompt looks like:
 
 > I am cross-compiling for Chrome OS using the CrOS SDK on an Ubuntu 22.04 host, targeting the amd64-generic board. When running cmake, I receive this error: [paste error]. Here is my toolchain file: [paste content]. I have verified the sysroot path exists. What CMake configuration changes are needed to resolve this?
 
-Step 4: Preventing CrOS CMake Errors Before They Occur
+Step 4 - Preventing CrOS CMake Errors Before They Occur
 
 AI can also help you set up correct configurations from the start, reducing debugging time:
 
@@ -184,16 +184,16 @@ cmake -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake -P check_toolchain.cmake
 
 This proactive approach catches misconfigurations before they produce cascading errors throughout your build.
 
-Step 5: Common Error Patterns and AI Solutions
+Step 5 - Common Error Patterns and AI Solutions
 
 When you encounter these specific error patterns, knowing what to ask AI saves significant debugging time:
 
-Error Pattern 1: "Could NOT find Threads"
+Error Pattern 1 - "Could NOT find Threads"
 
 ```
 This typically indicates pthreads is not found in the CrOS sysroot.
 
-Ask AI: "I'm getting 'Could NOT find Threads' when cross-compiling for
+Ask AI - "I'm getting 'Could NOT find Threads' when cross-compiling for
 CrOS amd64-generic. My CMAKE_SYSROOT is [path]. How do I configure
 CMake to find pthreads in the CrOS sysroot?"
 
@@ -202,34 +202,34 @@ set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH "${CMAKE_SYSROOT}")
 ```
 
-Error Pattern 2: "Package not found" for CrOS-specific packages
+Error Pattern 2 - "Package not found" for CrOS-specific packages
 
 ```
 libbrillo, libmojo, and other Chrome OS packages require special handling.
 
-Ask AI: "I need to use libbrillo in my CrOS cross-compilation.
+Ask AI - "I need to use libbrillo in my CrOS cross-compilation.
 How do I configure CMake's find_package to locate it?"
 
 AI will explain Portage installation and custom find module creation.
 ```
 
-Error Pattern 3: Compiler not found
+Error Pattern 3 - Compiler not found
 
 ```
 CrOS uses cross-compiler paths like:
 /path/to/sdk/usr/bin/x86_64-cros-linux-gnu/x86_64-cros-linux-gnu-gcc
 
-Ask AI: "My toolchain specifies a compiler path [path]. CMake says
+Ask AI - "My toolchain specifies a compiler path [path]. CMake says
 'Compiler not found'. How do I verify the path is correct?"
 
-AI suggests: verify with `ls` and check CMAKE_FIND_ROOT_PATH settings.
+AI suggests - verify with `ls` and check CMAKE_FIND_ROOT_PATH settings.
 ```
 
-Step 6: Debugging Strategy with AI Assistance
+Step 6 - Debugging Strategy with AI Assistance
 
 Structure your debugging sessions for maximum AI effectiveness:
 
-Step 1: Capture Full Context
+Step 1 - Capture Full Context
 
 ```bash
 Collect all relevant information
@@ -249,15 +249,15 @@ echo "=== Toolchain File ===" >> debug_context.txt
 cat toolchain.cmake >> debug_context.txt
 ```
 
-Step 2: Ask AI Specific Questions
+Step 2 - Ask AI Specific Questions
 
-Instead of: "CMake won't compile for CrOS"
+Instead of - "CMake won't compile for CrOS"
 
-Ask: "When I run cmake with this toolchain file [paste], targeting
+Ask - "When I run cmake with this toolchain file [paste], targeting
 amd64-generic, I get this error [paste]. Here's my sysroot structure
 [paste]. What CMake variables need adjustment?"
 
-Step 3: Implement and Verify
+Step 3 - Implement and Verify
 
 ```bash
 After AI suggests changes
@@ -266,7 +266,7 @@ cmake -B build --verbose 2>&1 | grep -E "CMAKE_SYSROOT|find_package|Compiler"
 If still failing, provide the new error output back to AI
 ```
 
-Step 7: SDK Verification Checklist
+Step 7 - SDK Verification Checklist
 
 Before blaming your CMake configuration, verify your SDK is valid:
 
@@ -307,7 +307,7 @@ done
 
 Run this before debugging, then share the output with AI to get more targeted help.
 
-Step 8: Minimal CMakeLists.txt for Testing
+Step 8 - Minimal CMakeLists.txt for Testing
 
 When debugging toolchain issues, start with the simplest possible build:
 
@@ -333,7 +333,7 @@ This will fail if toolchain is wrong, succeed if configured correctly
 target_include_directories(hello PRIVATE ${CMAKE_SYSROOT}/usr/include)
 ```
 
-Then ask AI: "This minimal CMakeLists.txt fails with [error]. What's wrong with my toolchain setup?"
+Then ask AI - "This minimal CMakeLists.txt fails with [error]. What's wrong with my toolchain setup?"
 
 This isolates toolchain issues from project-specific complexity.
 
@@ -346,9 +346,9 @@ Capture detailed build output
 cmake --build . --verbose 2>&1 | tee build.log
 
 Share relevant portions with AI
-Specifically: compiler command, missing library paths, linker errors
+Specifically - compiler command, missing library paths, linker errors
 
-Ask AI: "The build fails with this linker error [paste].
+Ask AI - "The build fails with this linker error [paste].
 The library exists here [path]. Why isn't CMake finding it?"
 ```
 
@@ -359,7 +359,7 @@ Build failures usually stem from:
 
 AI can diagnose these quickly with concrete error messages and paths.
 
-Step 9: Documentation Resources to Combine with AI
+Step 9 - Documentation Resources to Combine with AI
 
 For best results, provide AI with supplementary context:
 
@@ -380,7 +380,7 @@ Bookmark these resources to reference in AI conversations:
 
 AI combined with official documentation provides superior results to either alone.
 
-Step 10: Preventing Configuration Issues During Project Setup
+Step 10 - Preventing Configuration Issues During Project Setup
 
 Rather than debugging after problems emerge, prevent them:
 
@@ -388,7 +388,7 @@ Rather than debugging after problems emerge, prevent them:
 Start with official CrOS toolchain template
 cp /path/to/cros-sdk/chromite/cbuildbot/toolchain-amd64-generic.cmake .
 
-Ask AI: "Review this official CrOS toolchain file and confirm
+Ask AI - "Review this official CrOS toolchain file and confirm
 it's correctly configured for my use case [explain use case]"
 
 Build minimal example first
@@ -418,7 +418,7 @@ Minimize debug symbols for faster linking
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -g0")
 ```
 
-Ask AI: "How can I optimize CrOS cross-compilation builds for faster iteration during development?"
+Ask AI - "How can I optimize CrOS cross-compilation builds for faster iteration during development?"
 
 Troubleshooting
 

@@ -105,7 +105,7 @@ Limitations:
 
 - Less focused on Superset-specific optimizations
 
-Pricing: Free for students and open source maintainers, $10/month for individuals, $19/user/month for business.
+Pricing - Free for students and open source maintainers, $10/month for individuals, $19/user/month for business.
 
 Cursor
 
@@ -148,7 +148,7 @@ Limitations:
 
 - Context limitations on very large codebases
 
-Pricing: Free for limited use, $20/month for Pro, $40/month for Business.
+Pricing - Free for limited use, $20/month for Pro, $40/month for Business.
 
 Zed AI
 
@@ -166,7 +166,7 @@ Strengths:
 
 Zed AI's speed advantage becomes noticeable in iterative SQL development sessions, where you're refining a query across multiple rounds. The near-instant response means you spend less time waiting and more time evaluating output.
 
-Pricing: Free tier available, $20/month for Pro.
+Pricing - Free tier available, $20/month for Pro.
 
 Claude (Anthropic)
 
@@ -240,7 +240,7 @@ Limitations:
 
 - Not a direct IDE autocomplete replacement
 
-Pricing: Free tier available, $15/month for Pro, $75/month for Max.
+Pricing - Free tier available, $15/month for Pro, $75/month for Max.
 
 Comparison Summary
 
@@ -255,15 +255,15 @@ Choosing the Right AI Assistant
 
 Consider these factors when selecting an AI assistant for Superset dashboard development:
 
-Integration requirements: If you prefer working directly in your IDE, Copilot or Cursor offer the smoothest experience. For complex data modeling, Claude provides deeper analytical capabilities.
+Integration requirements - If you prefer working directly in your IDE, Copilot or Cursor offer the smoothest experience. For complex data modeling, Claude provides deeper analytical capabilities.
 
-SQL complexity: For straightforward queries, any tool works well. For complex transformations involving window functions, CTEs, or data pivots, Claude and Cursor show stronger capabilities.
+SQL complexity - For straightforward queries, any tool works well. For complex transformations involving window functions, CTEs, or data pivots, Claude and Cursor show stronger capabilities.
 
-Configuration generation: Cursor excels at generating Superset's JSON configurations. Copilot provides reasonable assistance but may require more iteration.
+Configuration generation - Cursor excels at generating Superset's JSON configurations. Copilot provides reasonable assistance but may require more iteration.
 
-Budget: GitHub Copilot offers the best free tier for individual developers. Zed AI provides affordable features. Claude balances cost with powerful analytical capabilities.
+Budget - GitHub Copilot offers the best free tier for individual developers. Zed AI provides affordable features. Claude balances cost with powerful analytical capabilities.
 
-Team workflows: If your team version-controls dashboards as YAML, Cursor's ability to generate and modify configuration files makes it the most productive choice. For solo analysts focused on query correctness, Claude's analytical depth wins.
+Team workflows - If your team version-controls dashboards as YAML, Cursor's ability to generate and modify configuration files makes it the most productive choice. For solo analysts focused on query correctness, Claude's analytical depth wins.
 
 Practical Workflow Integration
 

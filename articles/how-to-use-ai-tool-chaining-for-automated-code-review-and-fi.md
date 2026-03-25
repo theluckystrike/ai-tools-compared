@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand AI Tool Chaining
+Step 1 - Understand AI Tool Chaining
 
 
 Tool chaining involves connecting several AI services or agents in sequence, where each tool handles a specific aspect of code review. Instead of relying on a single AI to do everything, you distribute responsibilities across specialized tools. This approach improves accuracy and provides clearer feedback loops.
@@ -39,7 +39,7 @@ Tool chaining involves connecting several AI services or agents in sequence, whe
 A typical chain might include a linter for style violations, a static analyzer for potential bugs, an AI code review agent for logic issues, and finally an automated fixer that applies safe corrections.
 
 
-Step 2: Build Your Review Pipeline
+Step 2 - Build Your Review Pipeline
 
 
 The first step is identifying what each tool in your chain should do. Here is a practical three-stage pipeline:
@@ -55,7 +55,7 @@ The first step is identifying what each tool in your chain should do. Here is a 
 This separation keeps each tool focused on what it does best.
 
 
-Step 3: Practical Implementation
+Step 3 - Practical Implementation
 
 
 Here is how you might implement this chain using common tools:
@@ -65,16 +65,16 @@ Here is how you might implement this chain using common tools:
 #!/bin/bash
 Simple AI code review pipeline
 
-Stage 1: Static analysis
+Stage 1 - Static analysis
 echo "Running static analysis..."
 eslint src/ --format json > static-results.json
 mypy src/ > type-results.txt
 
-Stage 2: AI review with Claude
+Stage 2 - AI review with Claude
 echo "Running AI code review..."
 claude -p "Review these files for security and logic issues" < static-results.json > ai-review.md
 
-Stage 3: Apply fixes
+Stage 3 - Apply fixes
 echo "Applying automated fixes..."
 fix-agent --apply --safe ai-review.md
 ```
@@ -83,7 +83,7 @@ fix-agent --apply --safe ai-review.md
 The script above demonstrates the concept. In production, you would likely use GitHub Actions or a similar CI system to trigger this pipeline on every pull request.
 
 
-Step 4: Connecting Claude Code with GitHub Actions
+Step 4 - Connecting Claude Code with GitHub Actions
 
 
 Claude Code integrates well with CI/CD systems. You can set up a workflow that runs on pull requests:
@@ -122,7 +122,7 @@ jobs:
 This workflow runs on every pull request and posts AI-generated feedback as a comment.
 
 
-Step 5: Handling Automatic Fixes
+Step 5 - Handling Automatic Fixes
 
 
 Not all fixes should be applied automatically. You need a strategy for determining what gets fixed without human approval:
@@ -172,7 +172,7 @@ def apply_fixes(review_results, safety_level="high"):
 ```
 
 
-Step 6: Use Cursor for Inline Reviews
+Step 6 - Use Cursor for Inline Reviews
 
 
 Cursor provides an alternative approach by integrating AI directly into your editor. You can set up automated review sessions:
@@ -188,7 +188,7 @@ Cursor provides an alternative approach by integrating AI directly into your edi
 Cursor's advantage is immediate feedback during development rather than waiting for CI to run.
 
 
-Step 7: Comparing AI Tools for Code Review Chaining
+Step 7 - Comparing AI Tools for Code Review Chaining
 
 Different tools in a chain contribute different strengths. The table below maps common review concerns to the tool best positioned to handle each one:
 
@@ -204,7 +204,7 @@ Different tools in a chain contribute different strengths. The table below maps 
 Using the right tool for each concern means your AI review agent spends its token budget on logic and design, the areas where language models genuinely outperform rules-based tools, rather than formatting issues that a linter handles for free.
 
 
-Step 8: Structuring Prompts for Maximum Accuracy
+Step 8 - Structuring Prompts for Maximum Accuracy
 
 The quality of an AI code review depends heavily on what context you provide. Weak prompts produce generic feedback; well-structured prompts produce actionable, file-specific observations.
 
@@ -220,8 +220,8 @@ Example prompt structure:
 ```
 You are a senior engineer reviewing a pull request.
 
-Language: TypeScript / Node.js 20
-Framework: Express 4
+Language - TypeScript / Node.js 20
+Framework - Express 4
 
 Review the following diff for:
 1. Unhandled promise rejections
@@ -260,7 +260,7 @@ Log everything. Keep records of what each stage found and what was fixed. This h
 Review the reviewer. Regularly check your AI's feedback against known issues. If it consistently misses problems or produces false positives, adjust your prompts.
 
 
-Step 9: Common Challenges
+Step 9 - Common Challenges
 
 
 Tool chaining introduces complexity that single-tool setups avoid:
@@ -275,7 +275,7 @@ Token limits. Long chains can exceed context windows. Process files in batches i
 Prompt drift. As you tweak prompts for different stages, they may conflict. Keep prompts documented and version-controlled.
 
 
-Step 10: Integrate with Pull Request Workflows
+Step 10 - Integrate with Pull Request Workflows
 
 The most effective chains activate automatically at pull request creation and update. Beyond posting a comment, you can configure the pipeline to block merges when the AI review flags critical issues.
 
@@ -302,7 +302,7 @@ sys.exit(0)
 Add this as a step after your AI review runs. Developers see a failed check directly in the GitHub PR interface and can click through to the AI comment for details. This tight integration ensures the pipeline is not advisory, it actively enforces review quality gates.
 
 
-Step 11: Measuring Pipeline Effectiveness
+Step 11 - Measuring Pipeline Effectiveness
 
 Track these metrics to determine whether your chained review pipeline is paying off:
 
@@ -314,7 +314,7 @@ Track these metrics to determine whether your chained review pipeline is paying 
 Review these numbers monthly. If defect escape rate drops but false positive rate climbs, tighten the AI's focus by narrowing the prompt scope. If auto-fix acceptance drops, tighten the categories you allow the fixer to touch automatically.
 
 
-Step 12: Extending Your Pipeline
+Step 12 - Extending Your Pipeline
 
 
 Once you have a working three-stage chain, consider adding:

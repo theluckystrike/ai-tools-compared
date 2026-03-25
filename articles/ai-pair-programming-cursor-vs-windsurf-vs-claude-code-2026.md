@@ -25,11 +25,11 @@ Table of Contents
 - [Understanding the Three Approaches](#understanding-the-three-approaches)
 - [Cursor](#cursor)
 - [Windsurf](#windsurf)
-- [Step 1: Understand current webhook handler](#step-1-understand-current-webhook-handler)
-- [Step 2: Design idempotency solution](#step-2-design-idempotency-solution)
-- [Step 3: Implementation plan](#step-3-implementation-plan)
+- [Step 1 - Understand current webhook handler](#step-1-understand-current-webhook-handler)
+- [Step 2 - Design idempotency solution](#step-2-design-idempotency-solution)
+- [Step 3 - Implementation plan](#step-3-implementation-plan)
 - [Claude Code](#claude-code)
-- [Comparison: Real-World Scenarios](#comparison-real-world-scenarios)
+- [Comparison - Real-World Scenarios](#comparison-real-world-scenarios)
 - [Detailed Comparison Table](#detailed-comparison-table)
 - [Choosing Your Tool](#choosing-your-tool)
 - [Productivity Gains in Practice](#productivity-gains-in-practice)
@@ -92,12 +92,12 @@ router.post('/users', async (req, res) => {
 
 Cursor excels at multi-file edits. Ask it to "refactor this component to extract a composable," and it modifies the component, creates the composable file, and updates imports, all automatically.
 
-Workflow: Refactoring a Feature
+Workflow - Refactoring a Feature
 
 ```
 1. Open feature file in Cursor
 2. Highlight problematic code section
-3. Type: "This function is doing too much. Split it into smaller, reusable functions"
+3. Type - "This function is doing too much. Split it into smaller, reusable functions"
 4. Cursor analyzes the function, creates helper functions, updates callsites
 5. You review suggested changes in diff view
 6. Accept/reject portions of the refactoring
@@ -127,21 +127,21 @@ Key Differences from Cursor
 Windsurf's competitive advantage is longer context windows and explicit reasoning steps. When you ask Windsurf to solve a problem, it reasons through the solution before generating code:
 
 ```python
-You: "I have a payment processing system with webhooks.
+You - "I have a payment processing system with webhooks.
 Add idempotency tracking so duplicate webhook notifications don't create double charges"
 
 Windsurf's reasoning (visible in interface):
-Step 1: Understand current webhook handler
-Located in: payment/webhooks.py:45-120
-Current behavior: Processes every webhook without duplicate checking
-Problem: If Stripe retries a webhook, two charges happen
+Step 1 - Understand current webhook handler
+Located in - payment/webhooks.py:45-120
+Current behavior - Processes every webhook without duplicate checking
+Problem - If Stripe retries a webhook, two charges happen
 
-Step 2: Design idempotency solution
-Approach: Track webhook IDs in database
-Add: idempotency_key field to Payment model
-Check: If key exists before processing, return existing result
+Step 2 - Design idempotency solution
+Approach - Track webhook IDs in database
+Add - idempotency_key field to Payment model
+Check - If key exists before processing, return existing result
 
-Step 3: Implementation plan
+Step 3 - Implementation plan
 1. Add Idempotency model to track processed webhooks
 2. Extract webhook_id from Stripe payload
 3. Query existing idempotency records before processing
@@ -223,7 +223,7 @@ View history of changes
 claude code history
 ```
 
-Complex Example: Building a Feature
+Complex Example - Building a Feature
 
 ```bash
 1. Describe the feature
@@ -267,31 +267,31 @@ Limitations
 - Terminal-only (UI expectations differ)
 - Steeper learning curve for non-CLI developers
 
-Comparison: Real-World Scenarios
+Comparison - Real-World Scenarios
 
-Scenario 1: Adding a New API Endpoint
+Scenario 1 - Adding a New API Endpoint
 
-Cursor: Fastest. Click on routes file, write comment describing endpoint, get suggestion, hit tab to accept.
+Cursor - Fastest. Click on routes file, write comment describing endpoint, get suggestion, hit tab to accept.
 
-Windsurf: Medium. Asks clarifying questions about authentication, response format, then generates complete implementation.
+Windsurf - Medium. Asks clarifying questions about authentication, response format, then generates complete implementation.
 
-Claude Code: Slower but thorough. Describe the endpoint, Claude modifies multiple files (routes, validation, tests).
+Claude Code - Slower but thorough. Describe the endpoint, Claude modifies multiple files (routes, validation, tests).
 
-Scenario 2: Refactoring Complex Component
+Scenario 2 - Refactoring Complex Component
 
-Cursor: Medium. Works well for medium-sized refactors, struggles with very complex architectural changes.
+Cursor - Medium. Works well for medium-sized refactors, struggles with very complex architectural changes.
 
-Windsurf: Best. Explicitly reasons through refactoring strategy, then executes it.
+Windsurf - Best. Explicitly reasons through refactoring strategy, then executes it.
 
-Claude Code: Good. Can understand complexity but requires back-and-forth via terminal.
+Claude Code - Good. Can understand complexity but requires back-and-forth via terminal.
 
-Scenario 3: Debugging Production Issue
+Scenario 3 - Debugging Production Issue
 
-Cursor: Good. See error logs in terminal, ask Cursor to fix, it modifies relevant files.
+Cursor - Good. See error logs in terminal, ask Cursor to fix, it modifies relevant files.
 
-Windsurf: Good. Can trace through multiple files to find root cause.
+Windsurf - Good. Can trace through multiple files to find root cause.
 
-Claude Code: Excellent. Describe the bug, paste error logs, Claude investigates and suggests fixes.
+Claude Code - Excellent. Describe the bug, paste error logs, Claude investigates and suggests fixes.
 
 Detailed Comparison Table
 

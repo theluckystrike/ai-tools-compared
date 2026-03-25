@@ -27,7 +27,7 @@ The AI Workflow for Memory Leak Hunting
 
 The key insight is that AI tools are not replacements for profilers. they are *interpreters*. The profiler gives you data, the AI tells you what the data means in the context of your codebase.
 
-Node.js: Heap Snapshot Analysis with Claude
+Node.js - Heap Snapshot Analysis with Claude
 
 Node.js heap snapshots are V8's native diagnostic format. They're large and hard to read manually.
 
@@ -45,7 +45,7 @@ app.get('/_debug/heap-snapshot', (req, res) => {
   res.json({ snapshot: filename });
 });
 
-// Alternative: use process.memoryUsage() for monitoring
+// Alternative - use process.memoryUsage() for monitoring
 app.get('/_debug/memory', (req, res) => {
   const usage = process.memoryUsage();
   res.json({
@@ -108,7 +108,7 @@ Top growing objects (Snapshot 1 → Snapshot 2):
 - EventEmitter: 12 → 4,891 objects
 - Socket: 8 → 4,880 objects
 
-The app uses: Express, Socket.io v4, Redis client (ioredis), and
+The app uses - Express, Socket.io v4, Redis client (ioredis), and
 PostgreSQL (pg pool). Event listeners are added per-request for realtime updates.
 
 What is likely causing the leak and how do I find it?
@@ -154,13 +154,13 @@ Confirming the Fix
 After applying a fix, always re-run the same load test and snapshot comparison. A clean result looks like this:
 
 ```
-Baseline: heapUsed=180MB
-After 6 hours under load: heapUsed=182MB (+2MB. normal GC variance)
+Baseline - heapUsed=180MB
+After 6 hours under load - heapUsed=182MB (+2MB. normal GC variance)
 ```
 
 If the heap still climbs, paste the new snapshot diff back to Claude with a note that the original fix didn't solve it. Claude will re-analyze with the new data.
 
-Python: tracemalloc Analysis
+Python - tracemalloc Analysis
 
 ```python
 memory_tracker.py. track Python memory allocation by location
@@ -199,7 +199,7 @@ def analyze_leak_with_claude(trace_output: str, context: str) -> str:
             "role": "user",
             "content": f"""Analyze this Python memory allocation trace for potential memory leaks.
 
-Context: {context}
+Context - {context}
 
 Allocation trace (tracemalloc snapshot diff):
 {trace_output}
@@ -252,7 +252,7 @@ Claude is particularly good at recognizing these Python-specific patterns from t
 - Circular references preventing GC: Python's reference-counting GC can't collect cycles. `tracemalloc` shows the allocation site, Claude identifies the cycle.
 - ORM session accumulation: SQLAlchemy sessions not explicitly closed, keeping objects in memory indefinitely.
 
-C/C++: Valgrind Output Analysis
+C/C++ - Valgrind Output Analysis
 
 For C/C++ programs, Valgrind memcheck output is invaluable but verbose:
 

@@ -81,7 +81,7 @@ Automatic1111 API example
 curl -X POST http://localhost:7860/sdapi/v1/txt2img \
   -H "Content-Type: application/json" \
   -d '{
-    "prompt": "a serene mountain landscape, digital art",
+    "prompt": "a serene mountain field, digital art",
     "steps": 25,
     "width": 512,
     "height": 512,
@@ -98,7 +98,7 @@ import requests
 prompt = {
   "nodes": [
     {"id": 1, "type": "CheckpointLoaderSimple", "widgets_values": ["model.safetensors"]},
-    {"id": 2, "type": "CLIPTextEncode", "widgets_values": ["a serene mountain landscape"]},
+    {"id": 2, "type": "CLIPTextEncode", "widgets_values": ["a serene mountain field"]},
     {"id": 3, "type": "KSampler", "widgets_values": [0, "fixed", 25, 7.0, "euler_ancestral", "normal", 1.0]},
     {"id": 4, "type": "EmptyLatentImage", "widgets_values": [512, 512, 1]},
     {"id": 5, "type": "VAEDecode", "widgets_values": []}
@@ -185,11 +185,11 @@ Automatic1111 common issues:
 
 ```bash
 CUDA/GPU not detected
-Solution: Install pytorch with CUDA support
+Solution - Install pytorch with CUDA support
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
 Out of memory errors
-Solution: Use optimizations flag
+Solution - Use optimizations flag
 ./webui.sh --medvram  # Slow but runs on 6GB
 ./webui.sh --lowvram  # Very slow but runs on 4GB
 ```
@@ -198,25 +198,25 @@ ComfyUI common issues:
 
 ```bash
 Missing node modules
-Solution: Check custom nodes directory
+Solution - Check custom nodes directory
 ls -la ComfyUI/custom_nodes/
 
 Model not found
-Solution: Verify checkpoints directory
+Solution - Verify checkpoints directory
 ls -la ComfyUI/models/checkpoints/
 ```
 
 Workflow Export and Portability
 
-Automatic1111: No standard workflow export format. Settings and extensions are tied to the running instance.
+Automatic1111 - No standard workflow export format. Settings and extensions are tied to the running instance.
 
-ComfyUI: Workflows export as JSON, making them portable:
+ComfyUI - Workflows export as JSON, making them portable:
 
 ```bash
 Export workflow
 curl -X GET http://127.0.0.1:8188/system/get_prompt_info > workflow.json
 
-Share workflow: Simply distribute the JSON file
+Share workflow - Simply distribute the JSON file
 ```
 
 Recommendation

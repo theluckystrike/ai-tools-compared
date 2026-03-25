@@ -25,10 +25,10 @@ Table of Contents
 - [Settings That Require New Approaches](#settings-that-require-new-approaches)
 - [Practical Migration Steps](#practical-migration-steps)
 - [Detailed Settings Migration Checklist](#detailed-settings-migration-checklist)
-- [Pricing Comparison: GitHub Copilot vs Cursor Business](#pricing-comparison-github-copilot-vs-cursor-business)
+- [Pricing Comparison - GitHub Copilot vs Cursor Business](#pricing-comparison-github-copilot-vs-cursor-business)
 - [Creating Organization-Wide `.cursorrules`](#creating-organization-wide-cursorrules)
 - [Testing Configuration Changes](#testing-configuration-changes)
-- [Handling Special Cases: Code Review Integration](#handling-special-cases-code-review-integration)
+- [Handling Special Cases - Code Review Integration](#handling-special-cases-code-review-integration)
 - [Team Enablement During Migration](#team-enablement-during-migration)
 - [What's Different?](#whats-different)
 - [Quick Start](#quick-start)
@@ -130,7 +130,7 @@ Certain GitHub Copilot configurations have no direct equivalent in Cursor. Plan 
 
 GitHub-Specific Integrations
 
-Copilot's deep integration with GitHub's ecosystem, including PR descriptions, issue summarization, and GitHub Actions workflow suggestions, does not transfer to Cursor. These features rely on GitHub's API and internal data. After switching, your team will need to either continue using GitHub's native AI features separately or accept reduced functionality in these specific areas.
+Copilot's deep integration with GitHub's environment, including PR descriptions, issue summarization, and GitHub Actions workflow suggestions, does not transfer to Cursor. These features rely on GitHub's API and internal data. After switching, your team will need to either continue using GitHub's native AI features separately or accept reduced functionality in these specific areas.
 
 Copilot for Business Seat Management
 
@@ -211,7 +211,7 @@ Mapping GitHub to Cursor Configuration
 }
 ```
 
-Pricing Comparison: GitHub Copilot vs Cursor Business
+Pricing Comparison - GitHub Copilot vs Cursor Business
 
 | Feature | GitHub Copilot | Cursor Business |
 |---------|-----------------|-----------------|
@@ -287,7 +287,7 @@ Simulate team policy
 cursor --test-org-policy "require_review_for:security/*"
 ```
 
-Handling Special Cases: Code Review Integration
+Handling Special Cases - Code Review Integration
 
 GitHub Copilot's PR code review feature doesn't directly transfer. Implement alternative workflow in Cursor:
 
@@ -401,7 +401,7 @@ cursor analytics --period "7d"
 If problems occur, rollback by disabling Cursor at org level
 while keeping GitHub Copilot active
 cursor org:disable --all-teams
-Keep GitHub Copilot: GitHub Copilot remains available
+Keep GitHub Copilot - GitHub Copilot remains available
 ```
 
 Frequently Asked Questions

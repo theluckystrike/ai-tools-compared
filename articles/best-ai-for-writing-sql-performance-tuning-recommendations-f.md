@@ -78,9 +78,9 @@ The analysis typically involves several stages. First, the AI parses each log en
 Example slow query log entry:
 
 ```
-Time: 2026-01-15T10:23:45.123456Z
-User@Host: app_user[app_user] @ localhost []
-Query_time: 3.452  Lock_time: 0.000 Rows_sent: 1523  Rows_examined: 450000
+Time - 2026-01-15T10:23:45.123456Z
+User@Host - app_user[app_user] @ localhost []
+Query_time - 3.452  Lock_time: 0.000 Rows_sent: 1523  Rows_examined: 450000
 SELECT o.*, u.name, u.email
 FROM orders o
 JOIN users u ON o.user_id = u.id
@@ -98,9 +98,9 @@ Effective prompt example:
 
 ```
 I have a PostgreSQL slow query that takes 4.2 seconds.
-Table: orders (id, user_id, status, created_at, total_amount)
-Table: order_items (id, order_id, product_id, quantity, price)
-Table: users (id, email, status, created_at)
+Table - orders (id, user_id, status, created_at, total_amount)
+Table - order_items (id, order_id, product_id, quantity, price)
+Table - users (id, email, status, created_at)
 
 Slow query:
 SELECT o.id, o.total_amount, u.email
@@ -111,7 +111,7 @@ WHERE o.status = 'pending'
 AND oi.product_id = 123
 AND o.created_at > '2025-01-01'
 
-EXPLAIN output shows: Seq Scan on orders (cost=0.00..15000.00)
+EXPLAIN output shows - Seq Scan on orders (cost=0.00..15000.00)
 Please suggest index improvements and query optimizations.
 ```
 
@@ -339,7 +339,7 @@ class SlowQueryOptimizer:
         """Send individual query to AI for optimization."""
         prompt = f"""
 This query appears {frequency} times in slow query logs.
-Average execution time: {avg_time}s
+Average execution time - {avg_time}s
 
 Query:
 {query}

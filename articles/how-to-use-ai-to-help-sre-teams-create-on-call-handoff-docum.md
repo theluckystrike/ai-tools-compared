@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Problem with Manual Handoff Documents
+Step 1 - The Problem with Manual Handoff Documents
 
 
 When engineers manually write handoff notes, several issues emerge. Notes become inconsistent between shifts, some engineers detail every system interaction while others provide minimal context. Important details get omitted because the outgoing engineer assumes "everyone knows" certain systems or processes. Time pressure leads to rushed documentation that lacks the specificity needed for effective incident response.
@@ -36,7 +36,7 @@ When engineers manually write handoff notes, several issues emerge. Notes become
 A well-structured handoff document should answer key questions: What issues are currently open? Which systems require active monitoring? What recent changes might have introduced risk? What workarounds exist for known issues? Manually answering these questions every shift drains time that engineers could spend on proactive reliability work.
 
 
-Step 2: AI-Assisted Handoff Workflows
+Step 2 - AI-Assisted Handoff Workflows
 
 
 AI tools can assist at multiple stages of the handoff process. The most effective approach combines automated data gathering with intelligent summarization, then allows engineers to review and augment the output.
@@ -88,17 +88,17 @@ Once you have raw context, AI can synthesize this information into readable summ
 
 
 ```
-Context: Recent deployments, open incidents, active alerts
-Task: Write a concise handoff summary for the incoming on-call engineer
-Include: Known issues, systems requiring attention, recent changes that might cause problems
-Style: Technical but accessible, bullet points preferred
+Context - Recent deployments, open incidents, active alerts
+Task - Write a concise handoff summary for the incoming on-call engineer
+Include - Known issues, systems requiring attention, recent changes that might cause problems
+Style - Technical but accessible, bullet points preferred
 ```
 
 
 The AI generates a first draft that the outgoing engineer reviews and refines. This human-in-the-loop approach maintains accuracy while dramatically reducing documentation time.
 
 
-Step 3: Practical Templates and Examples
+Step 3 - Practical Templates and Examples
 
 
 Effective AI-assisted handoffs work best with structured templates. Define what information matters for your team, then use AI to populate those sections intelligently.
@@ -111,16 +111,16 @@ Instead of manually listing every open incident, provide the AI with incident ID
 
 
 ```markdown
-Step 4: Current Incidents
+Step 4 - Current Incidents
 
-INC-1234: Elevated latency in payment service
+INC-1234 - Elevated latency in payment service
 - Status: Investigating
 - Timeline: Identified 2 hours ago, root cause not yet determined
 - Customer impact: 15% of transactions experiencing 500ms delay
 - Notes from on-call: We believe this relates to the database connection pool
   changes from yesterday's deployment. The rollback was delayed because...
 
-INC-1235: SSL certificate warning on api.example.com
+INC-1235 - SSL certificate warning on api.example.com
 - Status: Monitoring
 - Timeline: Detected 6 hours ago, temporary fix applied
 - Workaround: Using fallback certificate while renewal processes
@@ -137,7 +137,7 @@ For the systems overview section, generate a quick health check from monitoring 
 
 
 ```markdown
-Step 5: Systems Status
+Step 5 - Systems Status
 
 | System | Status | Notes |
 |--------|--------|-------|
@@ -158,7 +158,7 @@ Clearly list tasks that need attention during the next shift:
 
 
 ```markdown
-Step 6: Action Items
+Step 6 - Action Items
 
 1. Monitor user-service memory usage - may need to scale if it continues trending up
 2. Follow up with security team on INC-1235 certificate renewal
@@ -168,7 +168,7 @@ Step 6: Action Items
 ```
 
 
-Step 7: Automate the Workflow
+Step 7 - Automate the Workflow
 
 
 For teams ready to fully automate, integrate AI handoff generation into existing tooling. A CI/CD pipeline can run the context-gathering script, feed results to an AI model, and post the draft handoff document to your team's communication channel before each shift ends.
@@ -177,7 +177,7 @@ For teams ready to fully automate, integrate AI handoff generation into existing
 This automation works best when paired with clear team conventions. Define which data sources to include, establish the required sections, and create a review process. The AI handles the heavy lifting of aggregation and formatting while engineers provide the critical domain expertise that cannot be automated.
 
 
-Step 8: Tips for Effective AI-Assisted Handoffs
+Step 8 - Tips for Effective AI-Assisted Handoffs
 
 
 Start small. Use AI to assist with one section of your handoff document initially. Measure the time savings and refine your approach before expanding to other sections.
@@ -192,59 +192,59 @@ Maintain consistency. Use the same template every shift. This predictability hel
 Store historical handoffs. Having a searchable archive of past handoffs helps AI models improve their output over time and allows engineers to reference previous incidents.
 
 
-Step 9: Handoff Document Template with AI Placeholders
+Step 9 - Handoff Document Template with AI Placeholders
 
 ```markdown
 On-Call Handoff Report
-Date: [AUTO: current date]
-Outgoing Engineer: [NAME]
-Incoming Engineer: [NAME]
-Time: [AUTO: current time]
+Date - [AUTO: current date]
+Outgoing Engineer - [NAME]
+Incoming Engineer - [NAME]
+Time - [AUTO: current time]
 
 Executive Summary
 [AI SECTION: 2-3 sentence summary of current state]
 
-Step 10: Critical Issues Requiring Attention
+Step 10 - Critical Issues Requiring Attention
 [AI: Extract from incident tracking system]
 
-INC-[ID]: [AI: Generated title]
+INC-[ID] - [AI: Generated title]
 - Status: [AI: Current status]
 - Impact: [MANUAL: Human assessment of business impact]
 - Timeline: [AI: Structured timeline with timestamps]
 - Next Steps: [MANUAL: Specific actions needed]
 
-Step 11: System Health Dashboard
+Step 11 - System Health Dashboard
 [AI: Table generated from monitoring metrics]
 
 | System | Status | Trend | Alert Threshold |
 |--------|--------|-------|-----------------|
 | [AI: auto-populated] | [AI: auto-populated] | [AI: trend analysis] | [MANUAL: configured value] |
 
-Step 12: Recent Changes in Last 24 Hours
+Step 12 - Recent Changes in Last 24 Hours
 [AI: Pull from deployment logs]
 
 | Service | Change | Deployment Time | Status |
 |---------|--------|-----------------|--------|
 | [AI: service name] | [AI: brief change description] | [AI: timestamp] | [AI: success/pending] |
 
-Step 13: Known Workarounds and Limitations
+Step 13 - Known Workarounds and Limitations
 [AI: Extract from incident notes]
 
 1. [MANUAL: Issue Title] - [AI: Summary of workaround]
    - Implemented: [AI: timestamp]
    - Estimated resolution: [MANUAL: timeline]
 
-Step 14: Monitor Alerts to Watch For
+Step 14 - Monitor Alerts to Watch For
 [AI: High-alert items from monitoring system]
 
 - Alert name: [AI: populated from alert rules]
 - Current level: [AI: current value]
 - Action if triggered: [MANUAL: response procedure]
 
-Step 15: Escalation Contacts
+Step 15 - Escalation Contacts
 [MANUAL: Team-specific contacts]
 
-Step 16: Action Items for This Shift
+Step 16 - Action Items for This Shift
 [AI: Priority-ordered list from tickets]
 
 1. [Task description] - Assigned to: [incoming engineer] - Deadline: [AI: calculated from urgency]
@@ -253,7 +253,7 @@ Step 16: Action Items for This Shift
 *Generated with AI assistance at [timestamp] | Review time: [estimate minutes]*
 ```
 
-Step 17: Automation Scripts for Data Collection
+Step 17 - Automation Scripts for Data Collection
 
 For teams ready to fully automate, create scripts that feed AI with structured data:
 
@@ -367,7 +367,7 @@ if __name__ == "__main__":
  "'Generate concise handoff summary from this data'")
 ```
 
-Step 18: Integration with Slack for Automated Handoffs
+Step 18 - Integration with Slack for Automated Handoffs
 
 For teams using Slack, automate handoff document posting:
 
@@ -436,7 +436,7 @@ class HandoffSlackNotifier:
  print(f"Error posting to Slack: {e}")
 ```
 
-Step 19: Measuring Handoff Quality
+Step 19 - Measuring Handoff Quality
 
 Track whether handoffs effectively prevent information loss:
 

@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Common DALL-E Failure Modes
+Step 1 - Common DALL-E Failure Modes
 
 DALL-E API requests fail for several predictable reasons. Recognizing the error type is the first step toward resolving it.
 
@@ -41,7 +41,7 @@ Timeout errors occur when the generation takes longer than the allowed window. T
 
 Invalid request errors stem from malformed prompts, incorrect parameter values, or exceeding size limits. These 400-level errors often include specific details about what went wrong.
 
-Step 2: Step-by-Step Retry Strategies
+Step 2 - Step-by-Step Retry Strategies
 
 1. Implement Exponential Backoff
 
@@ -109,7 +109,7 @@ def validate_prompt(prompt):
     return True, None
 
 Usage
-is_valid, error = validate_prompt("Generate a landscape with mountains")
+is_valid, error = validate_prompt("Generate a field with mountains")
 if not is_valid:
     print(f"Cannot proceed: {error}")
 ```
@@ -154,7 +154,7 @@ class CircuitBreaker:
             raise e
 ```
 
-Step 3: Diagnostic Checklist
+Step 3 - Diagnostic Checklist
 
 When DALL-E failures persist, work through this checklist:
 
@@ -170,7 +170,7 @@ When DALL-E failures persist, work through this checklist:
 
 6. Check OpenAI status page. service disruptions affect all users
 
-Step 4: Reducing Failure Frequency
+Step 4 - Reducing Failure Frequency
 
 Preventive measures minimize retry scenarios. Consider these practices:
 
@@ -182,7 +182,7 @@ Monitoring and alerting catch patterns in your failures. Track failure rates and
 
 Graceful degradation prepares for total outages. Cache successful generations and have fallback content ready for when the API is unavailable.
 
-Step 5: Complete Production-Ready Retry Implementation
+Step 5 - Complete Production-Ready Retry Implementation
 
 For production systems, build a retry manager that handles all failure modes:
 
@@ -275,7 +275,7 @@ class DALLERetryManager:
                     return response.json()
 
                 error_category = self.categorize_error(response.status_code, response.text)
-                logger.warning(f"Error: {error_category.value} - {response.status_code}")
+                logger.warning(f"Error - {error_category.value} - {response.status_code}")
 
                 if not self.should_retry(error_category, attempt):
                     logger.error(f"Non-retryable error: {error_category.value}")
@@ -302,11 +302,11 @@ class DALLERetryManager:
 Usage example
 manager = DALLERetryManager(api_key="your-api-key")
 result = manager.generate_with_retry(
-    prompt="A serene mountain landscape with a clear blue sky"
+    prompt="A serene mountain field with a clear blue sky"
 )
 ```
 
-Step 6: When All Else Fails
+Step 6 - When All Else Fails
 
 If you continue experiencing failures after implementing these strategies, consider these options:
 
@@ -320,7 +320,7 @@ If you continue experiencing failures after implementing these strategies, consi
 
 - Implement caching for successful generations to reduce repeated requests
 
-Step 7: Monitor and Alerting
+Step 7 - Monitor and Alerting
 
 Track failure patterns to identify systemic issues:
 

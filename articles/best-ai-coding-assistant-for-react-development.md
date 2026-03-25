@@ -38,7 +38,7 @@ GitHub Copilot is the fastest option for React development, generating hooks, co
 - Does React offer a: free tier? Most major tools offer some form of free tier or trial period.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
-- GitHub Copilot GitHub Copilot: remains the most widely adopted option, integrated directly into VS Code and other editors.
+- GitHub Copilot GitHub Copilot - remains the most widely adopted option, integrated directly into VS Code and other editors.
 - Anthropic Claude (via API: integrations) For developers who prefer maximum control, integrating Claude through the API or tools like the Claude Code CLI provides exceptional React understanding.
 
 What Makes an AI Assistant Great for React

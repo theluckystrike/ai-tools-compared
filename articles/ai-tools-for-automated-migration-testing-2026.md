@@ -229,7 +229,7 @@ For migrations affecting millions of rows, ask Claude to generate performance te
 
 ```text
 Write pytest tests for a migration that backfills 10M rows in an users table.
-Include: test that migration completes within 5 minutes on production-like data,
+Include - test that migration completes within 5 minutes on production-like data,
 test that no rows are lost, test that indexes remain usable during migration.
 ```
 
@@ -329,7 +329,7 @@ Comparing Migration Tools
 | Rollback Support | Full | Limited | Full |
 | Learning Curve | Moderate | Low | High |
 
-Claude generates best-in-class tests for all three, but Alembic benefits most because Claude understands Python well and can generate comprehensive pytest fixtures that properly manage database state.
+Claude generates best-in-class tests for all three, but Alembic benefits most because Claude understands Python well and can generate complete pytest fixtures that properly manage database state.
 Related Reading
 
 - [AI Tools for Automated Contract Testing](/ai-tools-for-automated-contract-testing-2026/)

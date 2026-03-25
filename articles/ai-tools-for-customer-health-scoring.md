@@ -116,7 +116,7 @@ from sklearn.metrics import classification_report, precision_recall_curve
 import pandas as pd
 
 Prepare training data with known outcomes
-Label: 1 = healthy (renewed), 0 = churned
+Label - 1 = healthy (renewed), 0 = churned
 df = pd.read_csv('customer_health_data.csv')
 
 Feature engineering
@@ -156,7 +156,7 @@ Get probability scores for health
 health_probabilities = model.predict_proba(X_test)[:, 1]
 
 print(classification_report(y_test, model.predict(X_test)))
-print(f"Feature Importances: {dict(zip(features, model.feature_importances_.round(3)))}")
+print(f"Feature Importances - {dict(zip(features, model.feature_importances_.round(3)))}")
 ```
 
 The feature importance output reveals which signals most strongly predict customer outcomes, enabling informed decisions about score weighting.
@@ -205,7 +205,7 @@ support_tickets = [
 ]
 
 health_sentiment = extract_health_sentiment(support_tickets)
-print(f"Customer Sentiment Score: {health_sentiment:.2f} (-1 to 1)")
+print(f"Customer Sentiment Score - {health_sentiment:.2f} (-1 to 1)")
 ```
 
 Combining sentiment analysis with behavioral metrics provides a more complete picture of customer health than either approach alone.
@@ -301,13 +301,13 @@ Common Implementation Mistakes
 
 Several pitfalls frequently undermine health scoring systems:
 
-Over-complicating the score: Start simple. A transparent, understandable health score is more actionable than a complex composite that stakeholders cannot interpret.
+Over-complicating the score - Start simple. A transparent, understandable health score is more actionable than a complex composite that stakeholders cannot interpret.
 
-Ignoring segment differences: Health indicators vary by customer segment. Enterprise customers may show different patterns than SMB users. Build segment-specific models if needed.
+Ignoring segment differences - Health indicators vary by customer segment. Enterprise customers may show different patterns than SMB users. Build segment-specific models if needed.
 
-Failing to close the loop: Health scores only create value when they drive action. Integrate scoring into customer success workflows with clear response protocols.
+Failing to close the loop - Health scores only create value when they drive action. Integrate scoring into customer success workflows with clear response protocols.
 
-Neglecting data quality: Health scores inherit all your data quality issues. Invest in data pipeline monitoring and validation before deploying scoring systems.
+Neglecting data quality - Health scores inherit all your data quality issues. Invest in data pipeline monitoring and validation before deploying scoring systems.
 
 Selecting Your Approach
 

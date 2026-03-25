@@ -34,7 +34,7 @@ When selecting an AI chatbot platform for customer support automation, developer
 
 
 - The platform provides pre-built: templates for common use cases, which accelerates initial deployment but may limit customization for complex conversational flows.
-- Engati: Offers a free tier with limited conversations.
+- Engati - Offers a free tier with limited conversations.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - Webhook payloads include conversation: metadata, user attributes, and conversation logs.
@@ -89,7 +89,7 @@ Engati API
 Engati offers both REST API and SDK options for developers. Their API covers bot deployment, intent management, and conversation logging.
 
 ```python
-Engati API: Creating a custom intent via Python
+Engati API - Creating a custom intent via Python
 import requests
 import os
 
@@ -180,9 +180,9 @@ Pricing Structure
 
 Neither platform publishes public pricing, which is common in the enterprise chatbot space. Both typically operate on a per-seat or per-conversation model.
 
-Verloop: Pricing is quote-based, with costs scaling based on conversation volume, number of bots, and required integrations. Enterprise features like analytics dashboards and SLA support require higher-tier plans.
+Verloop - Pricing is quote-based, with costs scaling based on conversation volume, number of bots, and required integrations. Enterprise features like analytics dashboards and SLA support require higher-tier plans.
 
-Engati: Offers a free tier with limited conversations. Paid plans start at reasonable entry points for small teams, scaling upward with additional channels and advanced NLU features.
+Engati - Offers a free tier with limited conversations. Paid plans start at reasonable entry points for small teams, scaling upward with additional channels and advanced NLU features.
 
 Requesting quotes from both vendors with specific conversation volume estimates is recommended before committing.
 

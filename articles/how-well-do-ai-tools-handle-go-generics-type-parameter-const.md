@@ -212,17 +212,17 @@ Quality Assessment Criteria
 
 When evaluating AI-generated generic Go code, consider these key factors.
 
-1. Constraint Appropriateness: Does the constraint match the operations used within the generic function? Using `any` when specific operations are needed loses type safety benefits.
+1. Constraint Appropriateness - Does the constraint match the operations used within the generic function? Using `any` when specific operations are needed loses type safety benefits.
 
-2. Type Parameter Necessity: Are declared type parameters actually used? Unused type parameters add complexity without benefit.
+2. Type Parameter Necessity - Are declared type parameters actually used? Unused type parameters add complexity without benefit.
 
-3. Compilation Success: Does the generated code compile without errors? Generic code must satisfy all type constraints at compile time.
+3. Compilation Success - Does the generated code compile without errors? Generic code must satisfy all type constraints at compile time.
 
-4. Semantic Correctness: Does the constraint accept the intended types and reject inappropriate ones? Incorrect constraints either compile with reduced type safety or fail to compile when they should work.
+4. Semantic Correctness - Does the constraint accept the intended types and reject inappropriate ones? Incorrect constraints either compile with reduced type safety or fail to compile when they should work.
 
-5. Constraint Completeness: For custom constraints, are all necessary types included? Missing numeric types or improperly combined interfaces reduce utility.
+5. Constraint Completeness - For custom constraints, are all necessary types included? Missing numeric types or improperly combined interfaces reduce utility.
 
-6. Documentation Clarity: Are generic type parameters named clearly? Single letters like `T` and `U` are conventional, but complex code may benefit from descriptive names.
+6. Documentation Clarity - Are generic type parameters named clearly? Single letters like `T` and `U` are conventional, but complex code may benefit from descriptive names.
 
 Best Practices for AI-Assisted Generics Code
 

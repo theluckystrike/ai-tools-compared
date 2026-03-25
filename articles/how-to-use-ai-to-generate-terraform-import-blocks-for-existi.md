@@ -59,9 +59,9 @@ Which AI Tools Work Best for Terraform Import Blocks
 Several AI coding assistants handle Terraform generation well, each with different strengths:
 
 - Claude (claude-opus-4 / claude-sonnet-4): Excels at understanding complex HCL relationships and generating accurate resource configurations. Strong at multi-resource dependency chains.
-- GitHub Copilot: Useful inline as you type import blocks in your editor; suggests resource types based on open files.
+- GitHub Copilot - Useful inline as you type import blocks in your editor; suggests resource types based on open files.
 - ChatGPT GPT-4o: Good for interactive iteration where you refine requirements across multiple turns.
-- Amazon Q Developer: Purpose-built for AWS resources, with native knowledge of AWS resource identifiers and provider quirks.
+- Amazon Q Developer - Purpose-built for AWS resources, with native knowledge of AWS resource identifiers and provider quirks.
 
 For bulk Terraform import generation, Claude and Amazon Q tend to produce the fewest errors because they have deeper infrastructure-specific training. For quick one-off imports while already in VS Code, Copilot's in-editor context wins on convenience.
 
@@ -96,7 +96,7 @@ gcloud sql instances list --format="value(name)"
 
 Provide this information to your AI assistant as context.
 
-Step 2: Craft an Effective Prompt
+Step 2 - Craft an Effective Prompt
 
 The quality of AI-generated import blocks depends heavily on how you frame your request. Here's an effective prompt structure:
 
@@ -114,13 +114,13 @@ The quality of AI-generated import blocks depends heavily on how you frame your 
 
 > Format the output as complete Terraform code that can be applied directly."
 
-Step 3: Review AI-Generated Code Carefully
+Step 3 - Review AI-Generated Code Carefully
 
 AI generates correct import blocks most of the time, but you must verify the output. Check these common issues:
 
-Resource type accuracy: Ensure the AI chose the correct resource type. For example, `aws_instance` for EC2, not `aws_ec2_instance` (the legacy naming).
+Resource type accuracy - Ensure the AI chose the correct resource type. For example, `aws_instance` for EC2, not `aws_ec2_instance` (the legacy naming).
 
-Identifier format: Some resources require compound identifiers. An S3 bucket import might need:
+Identifier format - Some resources require compound identifiers. An S3 bucket import might need:
 
 ```hcl
 import {
@@ -138,7 +138,7 @@ import {
 }
 ```
 
-Provider configuration: Verify the provider in the generated code matches your setup. AWS resources might need:
+Provider configuration - Verify the provider in the generated code matches your setup. AWS resources might need:
 
 ```hcl
 provider "aws" {
@@ -146,7 +146,7 @@ provider "aws" {
 }
 ```
 
-Practical Example: Importing an AWS VPC
+Practical Example - Importing an AWS VPC
 
 Suppose you have an existing VPC with ID `vpc-0a1b2c3d4e5f6g7h8` that you need to manage with Terraform. Here's how to work with AI to generate the import:
 
@@ -184,9 +184,9 @@ Advanced AI Strategies for Bulk Imports
 
 When dealing with dozens or hundreds of resources, adjust your approach:
 
-Batch by resource type: Group similar resources together in your prompts. Ask for all EC2 instances first, then S3 buckets, then RDS instances. This reduces confusion and makes the AI's output more organized.
+Batch by resource type - Group similar resources together in your prompts. Ask for all EC2 instances first, then S3 buckets, then RDS instances. This reduces confusion and makes the AI's output more organized.
 
-Use state data sources: For resources already tracked in partial Terraform state, use data sources to read current configuration:
+Use state data sources - For resources already tracked in partial Terraform state, use data sources to read current configuration:
 
 ```hcl
 data "aws_instance" "existing" {
@@ -199,7 +199,7 @@ import {
 }
 ```
 
-Cross-reference documentation: When AI generates import blocks for unfamiliar resource types, ask it to include comments referencing the official Terraform provider documentation.
+Cross-reference documentation - When AI generates import blocks for unfamiliar resource types, ask it to include comments referencing the official Terraform provider documentation.
 
 Automating Resource Discovery Before Prompting
 

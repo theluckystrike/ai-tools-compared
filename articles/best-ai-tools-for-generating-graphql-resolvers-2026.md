@@ -34,10 +34,10 @@ Modern AI coding assistants can generate production-ready GraphQL resolvers with
 - const posts = await: db.query( 'SELECT * FROM posts WHERE user_id = $1', [user.id] ); return posts; } } ``` All three AI tools catch this.
 - Here's the wrong way: ```javascript
 // DON'T: Creates N+1 queries
-User: {
+User - {
   posts: async (user) => {
     // This fires one query per user!
-- When to use GPT-4: Building new TypeScript-based GraphQL server, need full type coverage, documentation requirement.
+- When to use GPT-4 - Building new TypeScript-based GraphQL server, need full type coverage, documentation requirement.
 - Claude (opus): GPT-4, and GitHub Copilot each handle N+1 query prevention, DataLoader integration, and error handling differently.
 - User + Posts Resolver Chain
 
@@ -138,7 +138,7 @@ const resolvers = {
     }
   },
 
-  User: {
+  User - {
     posts: async (user, _, { loaders }) => {
       // Batched loader prevents N+1
       return loaders.postsByUser.load(user.id);
@@ -243,7 +243,7 @@ const resolvers = {
     }
   },
 
-  User: {
+  User - {
     posts: async (user: User, _: any, context: Context) => {
       return context.loaders.postsByUserLoader.load(user.id);
     }
@@ -267,7 +267,7 @@ GitHub Copilot. Best for Incremental Development
 
 Copilot shines when integrated into your IDE during active development. Autocomplete suggestions are context-aware and follow your existing code patterns.
 
-Comparison Table: AI Tools for GraphQL Resolvers
+Comparison Table - AI Tools for GraphQL Resolvers
 
 | Feature | Claude | GPT-4 | Copilot |
 |---------|--------|-------|---------|
@@ -285,7 +285,7 @@ The most common resolver mistake is missing batch loaders. Here's the wrong way:
 
 ```javascript
 // DON'T: Creates N+1 queries
-User: {
+User - {
   posts: async (user) => {
     // This fires one query per user!
     const posts = await db.query(
@@ -355,11 +355,11 @@ Claude often includes this pattern. GPT-4 requires explicit request. Copilot lea
 
 Integration Timing
 
-When to use Claude: Complex schema with multiple data sources, need to prevent subtle performance issues, want accompanying explanations.
+When to use Claude - Complex schema with multiple data sources, need to prevent subtle performance issues, want accompanying explanations.
 
-When to use GPT-4: Building new TypeScript-based GraphQL server, need full type coverage, documentation requirement.
+When to use GPT-4 - Building new TypeScript-based GraphQL server, need full type coverage, documentation requirement.
 
-When to use Copilot: Active development in IDE, following established patterns, quick resolver expansion, preference for inline suggestions.
+When to use Copilot - Active development in IDE, following established patterns, quick resolver expansion, preference for inline suggestions.
 
 Related Articles
 

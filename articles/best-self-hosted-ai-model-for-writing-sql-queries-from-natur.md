@@ -36,18 +36,18 @@ Building a self-hosted solution for converting natural language to SQL queries g
 - A success rate below: 85% signals the model needs retraining on new schema patterns.
 - Cloud APIs introduce latency: that impacts user experience in real-time applications.
 - CodeLlama (34B Parameters) CodeLlama: from Meta provides solid SQL generation capabilities with the advantage of being well-maintained and widely supported.
-- Strengths: - Excellent dialect awareness
+- Strengths - - Excellent dialect awareness
 - Good at optimization suggestions
 - Supports more programming languages
 
 4.
-- Starcoder2 (15B Parameters) For: organizations with limited GPU resources, Starcoder2 offers a lighter alternative.
+- Starcoder2 (15B Parameters) For - organizations with limited GPU resources, Starcoder2 offers a lighter alternative.
 
 Why Self-Hosted for SQL Generation?
 
 Running your own AI model for SQL generation makes sense when you handle sensitive data. Financial records, customer information, and proprietary business data should never leave your infrastructure. Cloud APIs introduce latency that impacts user experience in real-time applications. Additionally, self-hosted solutions eliminate per-query costs once you invest in hardware.
 
-The trade-off is clear: you need technical expertise to set up and maintain the infrastructure, but the long-term savings and privacy benefits justify the initial investment for many organizations.
+The trade-off is clear - you need technical expertise to set up and maintain the infrastructure, but the long-term savings and privacy benefits justify the initial investment for many organizations.
 
 Top Models for Natural Language to SQL
 
@@ -69,7 +69,7 @@ API call example
 curl -X POST http://localhost:11434/api/generate \
   -d '{
     "model": "deepseek-coder:33b",
-    "prompt": "Write a SQL query to find customers who placed orders over $500 in the last 30 days. Tables: customers (id, name, email), orders (id, customer_id, total, order_date).",
+    "prompt": "Write a SQL query to find customers who placed orders over $500 in the last 30 days. Tables - customers (id, name, email), orders (id, customer_id, total, order_date).",
     "stream": false
   }'
 ```
@@ -132,7 +132,7 @@ def generate_sql_prompt(nl_query: str, schema: str, dialect: str) -> str:
     return f"""Given this database schema:
 {schema}
 
-Write a {dialect} SQL query for: {nl_query}
+Write a {dialect} SQL query for - {nl_query}
 
 Only return the SQL query, no explanations."""
 
@@ -422,7 +422,7 @@ class BatchSQLGenerator:
             f"{self.ollama_url}/api/generate",
             json={
                 "model": self.model,
-                "prompt": f"SQL for: {natural}\nSchema: {schema}"
+                "prompt": f"SQL for: {natural}\nSchema - {schema}"
             }
         )
         return response.json()["response"].strip()

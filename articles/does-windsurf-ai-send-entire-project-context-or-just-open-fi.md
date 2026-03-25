@@ -189,9 +189,9 @@ Hybrid Approaches
 Many teams use hybrid strategies:
 
 ```
-For proprietary code: Use local models via Continue.dev
-For open source: Use WindSurf for speed and capability
-For client projects: Use enterprise/private deployment
+For proprietary code - Use local models via Continue.dev
+For open source - Use WindSurf for speed and capability
+For client projects - Use enterprise/private deployment
 ```
 
 This balances productivity with privacy requirements.
@@ -286,10 +286,10 @@ Setting Up Security Monitoring
 Monitor what your AI tool sends by configuring your firewall:
 
 ```bash
-Mac: Monitor outbound connections
+Mac - Monitor outbound connections
 sudo lsof -i -P -n | grep ESTABLISHED | grep -i "windsurf\|codeium"
 
-Linux: Monitor DNS queries
+Linux - Monitor DNS queries
 sudo tcpdump -i any -n "port 53" | grep codeium
 ```
 

@@ -32,7 +32,7 @@ Three scenarios that distinguish good from mediocre fixture generation:
 
 ---
 
-Test 1: Database Fixture with Proper Teardown
+Test 1 - Database Fixture with Proper Teardown
 
 Prompt:
 ```
@@ -102,11 +102,11 @@ Copilot's output (inline in VS Code): Similar structure but it used `conn.commit
 
 Cursor generated the same structure as Claude but added a note recommending SQLAlchemy instead of raw psycopg2, which was unsolicited and not wrong, just off-topic.
 
-Winner: Claude. correct teardown semantics on the first try.
+Winner - Claude. correct teardown semantics on the first try.
 
 ---
 
-Test 2: Factory Fixture with Faker
+Test 2 - Factory Fixture with Faker
 
 Prompt:
 ```
@@ -178,7 +178,7 @@ For a pure Python model without ORM, you'd want `build_batch`. Claude would have
 
 ---
 
-Test 3: Parametrized Fixtures with `indirect`
+Test 3 - Parametrized Fixtures with `indirect`
 
 This is where most AI tools struggle. The `indirect` parameter to `@pytest.mark.parametrize` lets you pass values through a fixture before the test sees them.
 
@@ -248,7 +248,7 @@ Copilot generated `indirect=True` instead of `indirect=["auth_client"]`, which w
 
 Cursor got `indirect` right but generated `request.params` (plural) instead of `request.param`, a subtle typo that causes an AttributeError at runtime.
 
-Winner for this task: Claude. only tool that got both `indirect` syntax and `request.param` correct.
+Winner for this task - Claude. only tool that got both `indirect` syntax and `request.param` correct.
 
 ---
 
@@ -296,7 +296,7 @@ The more specific the prompt, the less time you spend fixing scope and teardown 
 
 Related Reading
 
-- [Copilot vs Cursor for Writing Pytest Fixtures](/copilot-vs-cursor-for-writing-comprehensive-pytest-fixtures-/)
+- [Copilot vs Cursor for Writing Pytest Fixtures](/copilot-vs-cursor-for-writing-complete-pytest-fixtures-/)
 - [AI Tools for Writing Pytest Tests with Moto for AWS](/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
 - [Best AI Assistant for Writing Pytest asyncio Tests](/best-ai-for-writing-pytest-asyncio-tests-for-websocket-handl/)
 

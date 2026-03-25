@@ -175,7 +175,7 @@ Cost Comparison for AI Teams
 
 For AI teams at early stages, Prefect's task-based pricing scales more favorably. For mature teams with dedicated DevOps, Dagster's seat-based model may be more predictable.
 
-Real-World Scenario: Retraining Pipeline
+Real-World Scenario - Retraining Pipeline
 
 Here's how each tool approaches a model retraining pipeline that runs daily:
 

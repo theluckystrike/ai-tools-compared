@@ -38,13 +38,13 @@ Moving your development team from GitHub Copilot Enterprise to Cursor Business r
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - Cursor maintains compatibility with: most VS Code extensions, so your current setup largely carries over.
-- Where Copilot uses Tab: to accept suggestions, Cursor also supports Cmd+Enter for inline edits that modify multiple locations simultaneously.
+- Where Copilot uses Tab - to accept suggestions, Cursor also supports Cmd+Enter for inline edits that modify multiple locations simultaneously.
 
 Why Teams Are Switching in 2026
 
 GitHub Copilot Enterprise costs $39 per seat per month and Cursor Business costs $40. At comparable prices, the decision comes down to features and fit. Teams report switching primarily because of Cursor's multi-file editing (Composer), its ability to reference entire codebases via `@codebase`, and the flexibility to switch models mid-session between Claude Sonnet, GPT-4o, and others.
 
-Copilot Enterprise holds advantages too: tighter GitHub integration, native PR description generation, and the ability to reference GitHub Issues and repositories directly in chat using `@github`. Teams deeply embedded in the GitHub ecosystem often find these integrations hard to replace.
+Copilot Enterprise holds advantages too: tighter GitHub integration, native PR description generation, and the ability to reference GitHub Issues and repositories directly in chat using `@github`. Teams deeply embedded in the GitHub environment often find these integrations hard to replace.
 
 The migration is worth doing when your team's primary use case is autonomous refactoring, complex multi-file changes, or you want model flexibility. It is worth pausing when your team relies heavily on Copilot's GitHub-native context features.
 
@@ -208,17 +208,17 @@ Team Deployment Strategy
 
 Rolling out Cursor to your entire team simultaneously risks disrupting productivity. A phased approach reduces risk and allows for feedback incorporation.
 
-Phase 1: Pilot Group
+Phase 1 - Pilot Group
 
 Select five to ten developers from different teams to use Cursor exclusively for two weeks. Their feedback identifies configuration issues and workflow incompatibilities before wider rollout.
 
 Ask each pilot developer to track time spent on three things: understanding a new codebase section, completing a non-trivial refactor, and debugging a production issue. Comparing these times with their Copilot baseline gives you concrete productivity data to present to stakeholders.
 
-Phase 2: Parallel Usage
+Phase 2 - Parallel Usage
 
 Allow the pilot group to continue using Cursor while the rest of the team maintains Copilot. This parallel period lets you compare productivity metrics and gather comparative data.
 
-Phase 3: Full Migration
+Phase 3 - Full Migration
 
 After validating the migration, extend Cursor access to the remaining team members. Provide documentation covering the differences identified during your pilot phase. A 30-minute "Copilot to Cursor" onboarding session reduces the time to productive usage significantly, most teams report developers reaching comfort within three to five days.
 

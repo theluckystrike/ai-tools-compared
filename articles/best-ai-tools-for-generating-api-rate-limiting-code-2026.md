@@ -35,7 +35,7 @@ Rate limiting protects APIs from abuse, controls costs, and ensures fair resourc
 
 - Tell the AI: "Free tier users get 100 requests/hour, paid users get 10,000 requests/hour." All three tools handle this well once the requirement is clear.
 - Rate limiting protects APIs from abuse: controls costs, and ensures fair resource allocation.
-- Weaknesses: Requires tracking state per user, doesn't scale easily across distributed systems without external storage.
+- Weaknesses - Requires tracking state per user, doesn't scale easily across distributed systems without external storage.
 - For example: "100 requests per minute" counts all requests in the last 60 seconds.
 - Each server increments a: user's request counter in Redis; if the counter exceeds the limit, the request is rejected.
 - This is useful for: returning HTTP headers like `X-RateLimit-Remaining`.
@@ -44,29 +44,29 @@ The Three Rate Limiting Patterns You Need to Know
 
 Before evaluating AI tools, understand the three dominant rate limiting patterns. Each has trade-offs that matter for performance, correctness, and operational complexity.
 
-Token Bucket: Smooth Burst Handling
+Token Bucket - Smooth Burst Handling
 
 The token bucket algorithm allows controlled bursts while enforcing an average rate. Tokens accumulate at a fixed rate; each request consumes tokens. If tokens are available, the request succeeds. If not, the request is rejected or queued.
 
-Strengths: Handles burst traffic gracefully, simple to reason about, works well in single-server or in-memory scenarios.
+Strengths - Handles burst traffic gracefully, simple to reason about, works well in single-server or in-memory scenarios.
 
-Weaknesses: Requires tracking state per user, doesn't scale easily across distributed systems without external storage.
+Weaknesses - Requires tracking state per user, doesn't scale easily across distributed systems without external storage.
 
-Sliding Window: Precise Per-Interval Counting
+Sliding Window - Precise Per-Interval Counting
 
 The sliding window algorithm counts requests within a moving time window. For example, "100 requests per minute" counts all requests in the last 60 seconds. As time moves forward, the window slides, and old requests fall out of scope.
 
-Strengths: Precise rate limiting, no burst accumulation, straightforward to understand.
+Strengths - Precise rate limiting, no burst accumulation, straightforward to understand.
 
-Weaknesses: Requires storing timestamps for all requests within the window, more memory-intensive than token bucket, edge cases at window boundaries.
+Weaknesses - Requires storing timestamps for all requests within the window, more memory-intensive than token bucket, edge cases at window boundaries.
 
-Distributed Rate Limiting: Redis-Based Counters
+Distributed Rate Limiting - Redis-Based Counters
 
 For production systems with multiple servers, rate limiting state must be shared. Redis provides fast, atomic operations on counters. Each server increments a user's request counter in Redis; if the counter exceeds the limit, the request is rejected.
 
-Strengths: Works across distributed systems, very fast with proper Redis configuration, handles real production scale.
+Strengths - Works across distributed systems, very fast with proper Redis configuration, handles real production scale.
 
-Weaknesses: Requires external dependency (Redis), adds network latency, requires careful handling of TTL and counter reset.
+Weaknesses - Requires external dependency (Redis), adds network latency, requires careful handling of TTL and counter reset.
 
 Evaluating Claude for Rate Limiting Code
 
@@ -290,7 +290,7 @@ Direct Code Output Comparison
 | Explanation Quality | Excellent trade-off analysis | Good, but prescriptive | Minimal explanation |
 | Production Readiness | High with minor review | High but needs feature trimming | Needs significant context and review |
 
-Practical Comparison: Building a Real Rate Limiter
+Practical Comparison - Building a Real Rate Limiter
 
 To understand how these tools perform in practice, ask each to build a rate limiter for a specific scenario: "Rate limit to 1000 requests per hour per user, using Redis for distributed state, return remaining quota in response headers."
 
@@ -327,13 +327,13 @@ Advanced Rate Limiting Considerations
 
 All three tools struggle with some advanced scenarios. If you need any of these, expect to guide the AI more carefully:
 
-Adaptive Rate Limiting: Adjust limits based on server load or time of day. None of the tools generated this without explicit prompting.
+Adaptive Rate Limiting - Adjust limits based on server load or time of day. None of the tools generated this without explicit prompting.
 
-Distributed Rate Limiting with Eventual Consistency: Rate limiting without a central coordinator. All three tools prefer the Redis approach.
+Distributed Rate Limiting with Eventual Consistency - Rate limiting without a central coordinator. All three tools prefer the Redis approach.
 
-Rate Limiting for Batch Operations: Different costs for different operations. You'll need to guide the AI on how to implement weighted tokens.
+Rate Limiting for Batch Operations - Different costs for different operations. You'll need to guide the AI on how to implement weighted tokens.
 
-Rate Limit Coordination: Sharing quota across multiple services or locations. Expect to provide clear domain guidance.
+Rate Limit Coordination - Sharing quota across multiple services or locations. Expect to provide clear domain guidance.
 
 Recommendations for Production Use
 
@@ -379,9 +379,9 @@ What's the performance impact of rate limiting?
 
 In-memory implementations (token bucket): negligible, microseconds per request.
 
-Redis-based: adds 1-5ms per request depending on Redis configuration and network latency.
+Redis-based - adds 1-5ms per request depending on Redis configuration and network latency.
 
-Sliding window: more expensive than simple counters due to timestamp storage.
+Sliding window - more expensive than simple counters due to timestamp storage.
 
 Choose based on your traffic volume and acceptable latency.
 

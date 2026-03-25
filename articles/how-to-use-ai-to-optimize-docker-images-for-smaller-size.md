@@ -55,7 +55,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Analyzing Your Current Docker Images
+Step 1 - Analyzing Your Current Docker Images
 
 Before optimizing, you need to understand what's bloating your images. Start by analyzing your current image size and identifying the largest layers.
 
@@ -86,7 +86,7 @@ CMD ["python3", "app.py"]
 
 This Dockerfile likely creates an image several hundred megabytes larger than necessary. Let's examine how AI can help identify and fix the issues.
 
-Step 2: AI-Powered Docker Optimization Strategies
+Step 2 - AI-Powered Docker Optimization Strategies
 
 Intelligent Base Image Selection
 
@@ -208,7 +208,7 @@ CMD ["node", "src/index.js"]
 
 The order matters because Docker caches each layer. When source code changes but dependencies don't, the expensive `npm ci` step uses cached results.
 
-Step 3: Use AI to Analyze and Optimize
+Step 3 - Use AI to Analyze and Optimize
 
 Automated Dockerfile Analysis
 
@@ -325,7 +325,7 @@ The optimized version:
 
 - Properly orders layers for caching
 
-Step 4: Verify Your Optimizations
+Step 4 - Verify Your Optimizations
 
 After implementing AI suggestions, verify the size reduction:
 

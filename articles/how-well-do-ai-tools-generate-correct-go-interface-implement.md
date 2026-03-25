@@ -147,11 +147,11 @@ Common Failure Patterns
 
 Across all tools tested, several recurring issues emerged:
 
-1. Pointer vs Value Receiver Confusion: The most common error, especially for methods that modify state or use sync primitives.
+1. Pointer vs Value Receiver Confusion - The most common error, especially for methods that modify state or use sync primitives.
 
-2. Error Handling Omissions: Returning only `nil` for error instead of descriptive errors or wrapping errors with `fmt.Errorf`.
+2. Error Handling Omissions - Returning only `nil` for error instead of descriptive errors or wrapping errors with `fmt.Errorf`.
 
-3. Context Handling: When interfaces include `context.Context` parameters, some tools placed it in the wrong position or ignored it entirely.
+3. Context Handling - When interfaces include `context.Context` parameters, some tools placed it in the wrong position or ignored it entirely.
 
 4. Generic Type Inference: For Go 1.18+ interfaces with type parameters, tools often failed to correctly infer constraints.
 
@@ -219,15 +219,15 @@ Best Practices for Working with AI-Generated Go Interfaces
 
 Based on testing results, here are recommendations for developers using AI tools for Go interface implementation:
 
-Always Specify Receiver Type Explicitly: Rather than letting the AI decide, explicitly state "use pointer receivers" in your prompt.
+Always Specify Receiver Type Explicitly - Rather than letting the AI decide, explicitly state "use pointer receivers" in your prompt.
 
 ```go
 // Better prompt: "Implement this interface using pointer receivers"
 ```
 
-Verify Compilation Immediately: Run `go build` or `go vet` after receiving generated code. The compiler catches most receiver type issues.
+Verify Compilation Immediately - Run `go build` or `go vet` after receiving generated code. The compiler catches most receiver type issues.
 
-Add Test Cases: Create compile-time checks using a simple pattern:
+Add Test Cases - Create compile-time checks using a simple pattern:
 
 ```go
 var _ Storage = (*memoryStorage)(nil)
@@ -235,7 +235,7 @@ var _ Storage = (*memoryStorage)(nil)
 
 This line fails compilation if `memoryStorage` doesn't implement all `Storage` methods, catching errors before runtime.
 
-Review Error Handling: AI-generated error handling often needs enhancement. Add context to errors and ensure proper error propagation.
+Review Error Handling - AI-generated error handling often needs enhancement. Add context to errors and ensure proper error propagation.
 
 Prompting Strategies that Improve AI Output
 

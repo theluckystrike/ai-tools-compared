@@ -36,7 +36,7 @@ Table of Contents
 - [Recommendations for Scientific Computing Development](#recommendations-for-scientific-computing-development)
 - [Advanced Testing Patterns for AI-Generated Code](#advanced-testing-patterns-for-ai-generated-code)
 - [AI Tool Performance Benchmarks](#ai-tool-performance-benchmarks)
-- [Migration Strategy: Loop-Based to Vectorized](#migration-strategy-loop-based-to-vectorized)
+- [Migration Strategy - Loop-Based to Vectorized](#migration-strategy-loop-based-to-vectorized)
 
 What Defines Quality in Scientific Computing Code Generation
 
@@ -52,7 +52,7 @@ Claude Code
 
 Claude Code demonstrates strong understanding of NumPy conventions and generates efficient, vectorized code. When asked to implement numerical algorithms, it consistently chooses NumPy operations over explicit Python loops, which significantly improves performance for large arrays.
 
-Example prompt: "Create a NumPy function to compute the moving average of a 1D array with variable window size."
+Example prompt - "Create a NumPy function to compute the moving average of a 1D array with variable window size."
 
 Claude Code produces:
 
@@ -92,7 +92,7 @@ GitHub Copilot
 
 GitHub Copilot provides reasonable suggestions for common NumPy patterns but sometimes generates code that relies on loops where vectorized solutions exist. It works well for standard operations but may require refinement for complex scientific computing tasks.
 
-Example prompt: "Write a function to normalize columns of a 2D NumPy array."
+Example prompt - "Write a function to normalize columns of a 2D NumPy array."
 
 Copilot might suggest:
 
@@ -114,7 +114,7 @@ Cursor
 
 Cursor integrates Claude and GPT models with IDE context awareness. It excels at understanding the surrounding codebase and can generate NumPy code that matches existing project patterns. Its chat interface allows for iterative refinement of scientific computing code.
 
-Example prompt: "Implement K-means clustering using only NumPy."
+Example prompt - "Implement K-means clustering using only NumPy."
 
 Cursor generates:
 
@@ -154,7 +154,7 @@ Amazon CodeWhisperer
 
 CodeWhisperer performs adequately for basic NumPy operations but shows limitations with advanced scientific computing patterns. It works best for straightforward data manipulation tasks rather than complex numerical algorithms.
 
-Example prompt: "Create a function to calculate Pearson correlation coefficient between two arrays."
+Example prompt - "Create a function to calculate Pearson correlation coefficient between two arrays."
 
 ```python
 import numpy as np
@@ -193,7 +193,7 @@ Key Differences in Scientific Computing Capabilities
 
 Vectorization understanding varies significantly across tools. Claude Code and Cursor consistently prefer vectorized operations, while Copilot and CodeWhisperer sometimes default to loop-based solutions. For scientific computing where performance matters, this distinction is critical.
 
-A practical benchmark: ask each tool to implement a pairwise Euclidean distance matrix for a set of n points in d dimensions. Claude Code immediately reaches for `scipy.spatial.distance.cdist` or the broadcasting pattern `np.sqrt(((X[:, None] - X[None])2).sum(-1))`. CodeWhisperer often produces a nested loop. The difference is not just style, it is the difference between code that handles 10,000 points in under a second and code that takes minutes.
+A practical benchmark - ask each tool to implement a pairwise Euclidean distance matrix for a set of n points in d dimensions. Claude Code immediately reaches for `scipy.spatial.distance.cdist` or the broadcasting pattern `np.sqrt(((X[:, None] - X[None])2).sum(-1))`. CodeWhisperer often produces a nested loop. The difference is not just style, it is the difference between code that handles 10,000 points in under a second and code that takes minutes.
 
 Numerical stability awareness differs among tools. Quality implementations handle edge cases like division by zero, NaN values, and numerical overflow. Claude Code explicitly addresses these concerns in generated code, while other tools may require manual intervention. When computing matrix inverses, Claude Code defaults to `np.linalg.lstsq` for near-singular cases rather than `np.linalg.inv`, avoiding the silent NaN cascade that haunts poorly conditioned systems.
 
@@ -305,7 +305,7 @@ AI Tool Performance Benchmarks
 Real-world comparison of code quality across tools:
 
 ```python
-Task: Implement pairwise Euclidean distance matrix
+Task - Implement pairwise Euclidean distance matrix
 
 Claude Code (excellent)
 def pairwise_distance_claude(X):
@@ -325,17 +325,17 @@ def pairwise_distance_copilot(X):
     return distances
 
 Performance comparison on 1000 samples, 128 features:
-Claude Code: 45ms (vectorized)
-Copilot: 8,900ms (nested loops)
-Speedup: 198x
+Claude Code - 45ms (vectorized)
+Copilot - 8,900ms (nested loops)
+Speedup - 198x
 ```
 
-Migration Strategy: Loop-Based to Vectorized
+Migration Strategy - Loop-Based to Vectorized
 
 Common patterns for converting AI suggestions from loops to vectorization:
 
 ```python
-Pattern 1: Summing operations
+Pattern 1 - Summing operations
 Loop-based (from Copilot)
 result = 0
 for i in range(len(arr)):
@@ -343,7 +343,7 @@ for i in range(len(arr)):
 Vectorized (request from Claude Code)
 result = np.sum(arr  2)
 
-Pattern 2: Element-wise comparisons
+Pattern 2 - Element-wise comparisons
 Loop-based
 count = 0
 for i in range(len(arr)):
@@ -352,7 +352,7 @@ for i in range(len(arr)):
 Vectorized
 count = np.sum(arr > threshold)
 
-Pattern 3: Row-wise operations
+Pattern 3 - Row-wise operations
 Loop-based
 for i in range(X.shape[0]):
     X[i, :] = X[i, :] / np.sum(X[i, :])
@@ -368,7 +368,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -380,7 +380,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

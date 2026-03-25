@@ -194,7 +194,7 @@ Advanced Prompt Techniques
 
 To maximize output quality from both ChatGPT and Gemini, use specific prompt patterns:
 
-Specify Design System: Instead of generic buttons, specify your design system:
+Specify Design System - Instead of generic buttons, specify your design system:
 
 ```
 Use these Tailwind classes for buttons:
@@ -204,7 +204,7 @@ Use these Tailwind classes for buttons:
 
 Both tools will use your specified classes consistently throughout the output.
 
-Provide Component Examples: Share existing component code to establish patterns:
+Provide Component Examples - Share existing component code to establish patterns:
 
 ```html
 <!-- Example: Existing card component -->
@@ -218,7 +218,7 @@ Provide Component Examples: Share existing component code to establish patterns:
 
 Both ChatGPT and Gemini learn from examples and produce consistent output.
 
-Request Accessibility: Explicitly request accessibility features:
+Request Accessibility - Explicitly request accessibility features:
 
 ```
 Generate this as production-ready code with:
@@ -376,11 +376,11 @@ Integration with Design Tools
 
 Both ChatGPT and Gemini work well with design tools:
 
-Figma Integration: Use AI-generated code as basis for Figma components.
+Figma Integration - Use AI-generated code as basis for Figma components.
 
-Storybook: Convert AI output into Storybook stories for component documentation.
+Storybook - Convert AI output into Storybook stories for component documentation.
 
-Component Libraries: Build reusable component libraries from AI-generated Tailwind.
+Component Libraries - Build reusable component libraries from AI-generated Tailwind.
 
 ```javascript
 // Export as reusable component
@@ -411,7 +411,7 @@ A practical end-to-end workflow combining both tools:
 5. Test: Verify responsive behavior and accessibility (10 minutes)
 6. Deploy: Integrate into project (10 minutes)
 
-Total time: ~35 minutes from sketch to production-ready code. Manual Tailwind from scratch would take 2-3 hours.
+Total time - ~35 minutes from sketch to production-ready code. Manual Tailwind from scratch would take 2-3 hours.
 
 Frequently Asked Questions
 

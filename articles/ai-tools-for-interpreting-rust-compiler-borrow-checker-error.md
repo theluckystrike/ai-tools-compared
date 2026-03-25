@@ -24,7 +24,7 @@ Table of Contents
 - [GitHub Copilot for Error Interpretation](#github-copilot-for-error-interpretation)
 - [Codeium for Rapid Error Resolution](#codeium-for-rapid-error-resolution)
 - [Claude and GPT-4 for Deep Explanations](#claude-and-gpt-4-for-deep-explanations)
-- [Practical Example: Fixing a Data Structure](#practical-example-fixing-a-data-structure)
+- [Practical Example - Fixing a Data Structure](#practical-example-fixing-a-data-structure)
 - [Choosing the Right Tool](#choosing-the-right-tool)
 - [Common Borrow Checker Errors and AI Solutions](#common-borrow-checker-errors-and-ai-solutions)
 - [Real-World Error Resolution Example](#real-world-error-resolution-example)
@@ -105,7 +105,7 @@ impl<'a> Parser<'a> {
 
 AI models explain that the lifetime parameter `'a` connects the input lifetime to the struct, ensuring references returned from methods are valid for as long as the struct exists.
 
-Practical Example: Fixing a Data Structure
+Practical Example - Fixing a Data Structure
 
 Let's examine a more complex scenario involving a struct with multiple fields:
 
@@ -162,11 +162,11 @@ Common Borrow Checker Errors and AI Solutions
 | Move after move | Value already consumed | Quick fixes | Clone or use reference instead |
 | Cannot move out of | Inside struct | Architectural help | Option<T> or take ownership properly |
 
-Tool recommendations: Claude and GPT-4 excel at lifetime issues (most complex). Copilot handles simple cases well.
+Tool recommendations - Claude and GPT-4 excel at lifetime issues (most complex). Copilot handles simple cases well.
 
 Real-World Error Resolution Example
 
-Scenario: Writing a string parser with mutable state
+Scenario - Writing a string parser with mutable state
 
 ```rust
 struct StringParser {
@@ -227,7 +227,7 @@ impl StringParser {
 }
 ```
 
-Option 2: Restructure to avoid overlapping borrows
+Option 2 - Restructure to avoid overlapping borrows
 ```rust
 impl StringParser {
     fn parse_and_advance(&mut self, delimiter: char, advance_count: usize) -> Option<String> {
@@ -246,7 +246,7 @@ Most AI tools recommend Option 2 for production code.
 
 Debugging Lifetime Errors
 
-Complex error: "lifetime mismatch in return type"
+Complex error - "lifetime mismatch in return type"
 
 ```rust
 struct Container<'a> {
@@ -273,16 +273,16 @@ impl<'a> Container<'a> {
 }
 ```
 
-AI explanation: Lifetimes represent "how long a reference is valid". By writing `&'a str` in the return type, you're promising the returned reference lives for `'a`. The borrow checker verifies this promise is true.
+AI explanation - Lifetimes represent "how long a reference is valid". By writing `&'a str` in the return type, you're promising the returned reference lives for `'a`. The borrow checker verifies this promise is true.
 
 Codeium vs Claude for Borrow Errors
 
-Codeium advantage: Real-time inline suggestions as you type
+Codeium advantage - Real-time inline suggestions as you type
 - Suggests patterns that prevent errors before compilation
 - Faster for immediate code fixes
 - Best for learning through repeated exposure to correct patterns
 
-Claude advantage: Deep explanation of why errors occur
+Claude advantage - Deep explanation of why errors occur
 - Teaches lifetime concepts, not just fixes
 - Helps with architectural decisions (when to use references vs owned types)
 - Explains the "why" behind Rust's restrictions
@@ -360,10 +360,10 @@ Borrow Checker Error Progression Tracker
 Track your improvement as you learn:
 
 ```
-Week 1: "simple cannot move" errors → Fixed by cloning
-Week 2: "lifetime mismatch" → Fixed with explicit lifetime parameters
-Week 3: Recognizing patterns → Preventing errors before compilation
-Week 4: Architectural decisions → Choosing ownership strategy for clean design
+Week 1 - "simple cannot move" errors → Fixed by cloning
+Week 2 - "lifetime mismatch" → Fixed with explicit lifetime parameters
+Week 3 - Recognizing patterns → Preventing errors before compilation
+Week 4 - Architectural decisions → Choosing ownership strategy for clean design
 ```
 
 Using AI to accelerate this progression typically reduces learning time from months to weeks while building genuine understanding rather than memorized patterns.

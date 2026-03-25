@@ -23,10 +23,10 @@ Table of Contents
 
 - [Why Operators Are Hard for AI](#why-operators-are-hard-for-ai)
 - [Top AI Tools for Operators](#top-ai-tools-for-operators)
-- [What Works: CRD Design](#what-works-crd-design)
-- [What Fails: Reconciliation Logic](#what-fails-reconciliation-logic)
-- [Better Approach: Operator SDK Scaffolding](#better-approach-operator-sdk-scaffolding)
-- [Testing: The Biggest Gap](#testing-the-biggest-gap)
+- [What Works - CRD Design](#what-works-crd-design)
+- [What Fails - Reconciliation Logic](#what-fails-reconciliation-logic)
+- [Better Approach - Operator SDK Scaffolding](#better-approach-operator-sdk-scaffolding)
+- [Testing - The Biggest Gap](#testing-the-biggest-gap)
 - [Real-World Tool Comparison](#real-world-tool-comparison)
 - [Practical Workflow](#practical-workflow)
 - [Tools for Each Operator Stage](#tools-for-each-operator-stage)
@@ -54,7 +54,7 @@ Top AI Tools for Operators
 | v0 (Vercel) | UI scaffolding only | Not applicable to operators | Free |
 | Replit AI | Quick prototyping | Poor on production-ready code | Free/paid |
 
-What Works: CRD Design
+What Works - CRD Design
 
 AI excels at generating CRD YAML when you describe the resource clearly.
 
@@ -119,9 +119,9 @@ spec:
         status: {}
 ```
 
-What needs fixing: CRON validation regex is aggressive and may be too strict. You'll verify with actual cron-parser library. Status properties should have descriptions. Add conditions array for event handling.
+What needs fixing - CRON validation regex is aggressive and may be too strict. You'll verify with actual cron-parser library. Status properties should have descriptions. Add conditions array for event handling.
 
-What Fails: Reconciliation Logic
+What Fails - Reconciliation Logic
 
 AI generates reconciliation loops that compile but lack production rigor.
 
@@ -189,7 +189,7 @@ job.SetOwnerReferences([]metav1.OwnerReference{
 })
 
 // Idempotency: check if job already exists before creating
-if err := r.Get(ctx, client.ObjectKey{Name: jobName, Namespace: backup.Namespace}, &batchv1.Job{}); err == nil {
+if err := r.Get(ctx, client.ObjectKey{Name - jobName, Namespace: backup.Namespace}, &batchv1.Job{}); err == nil {
     // Job exists, don't recreate
     return ctrl.Result{RequeueAfter: 10 * time.Second}, nil
 }
@@ -207,7 +207,7 @@ if err := runBackup(ctx, backup); err != nil {
 }
 ```
 
-Better Approach: Operator SDK Scaffolding
+Better Approach - Operator SDK Scaffolding
 
 Don't ask AI to write operators from scratch. Use Operator SDK to generate scaffolding, then ask AI to enhance specific reconciliation logic.
 
@@ -222,7 +222,7 @@ This generates:
 - Makefile, tests, Dockerfile
 - RBAC rules stub
 
-Then use AI: Ask Claude to implement specific reconciliation behavior, run backup job, update status, handle errors, within the generated Reconciler struct.
+Then use AI - Ask Claude to implement specific reconciliation behavior, run backup job, update status, handle errors, within the generated Reconciler struct.
 
 ```go
 // AI fills in THIS part only:
@@ -231,7 +231,7 @@ func (r *PGBackupReconciler) reconcileBackup(ctx context.Context, backup *dbv1.P
 }
 ```
 
-Testing: The Biggest Gap
+Testing - The Biggest Gap
 
 AI never generates controller tests. Example:
 
@@ -332,9 +332,9 @@ The Bottom Line
 
 AI tools excel at CRD design and can scaffold reconcilers. They struggle with production-ready error handling, testing, and Kubernetes-specific patterns. Use them to accelerate scaffolding and design, then build production hardening yourself.
 
-For most teams: Use Operator SDK to scaffold, ask Claude to explain Kubernetes patterns you don't understand, write reconciliation logic with Copilot suggestions, and manually build tests. This cuts development time by 40% compared to writing from scratch while maintaining code quality.
+For most teams - Use Operator SDK to scaffold, ask Claude to explain Kubernetes patterns you don't understand, write reconciliation logic with Copilot suggestions, and manually build tests. This cuts development time by 40% compared to writing from scratch while maintaining code quality.
 
-Estimated time: 2-3 weeks for simple operator (backup, scaling). Without AI: 4-5 weeks. The gap narrows for complex operators because AI can't handle architectural decisions, you're making those anyway.
+Estimated time - 2-3 weeks for simple operator (backup, scaling). Without AI: 4-5 weeks. The gap narrows for complex operators because AI can't handle architectural decisions, you're making those anyway.
 
 Frequently Asked Questions
 

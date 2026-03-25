@@ -18,7 +18,7 @@ voice-checked: true
 Use AI to write Jest snapshot tests that catch meaningful UI regressions instead of trivial formatting changes by generating focused snapshots of specific component behavior rather than entire rendered output. AI understands component structure and user patterns, helping you create snapshots that act as safety nets for actual functionality changes while reducing false positives from internal library updates or prop reordering.
 
 This is where AI assistance transforms the snapshot testing experience. By understanding component structure, user interaction patterns, and visual hierarchy, AI can help you write snapshot tests that act as a safety net for meaningful UI changes. Quarterly Reviews](#snapshot-maintenance-quarterly-reviews)
-- [Cost-Benefit Analysis: Snapshots vs Other Tests](#cost-benefit-analysis-snapshots-vs-other-tests)
+- [Cost-Benefit Analysis - Snapshots vs Other Tests](#cost-benefit-analysis-snapshots-vs-other-tests)
 - [Prompt Recipes for Snapshot Generation](#prompt-recipes-for-snapshot-generation)
 
 The Snapshot Testing Problem
@@ -45,7 +45,7 @@ Using AI to Write Smarter Snapshots
 
 AI excels at understanding component intent. Instead of snapshotting entire render trees, you can work with AI to identify which outputs truly matter.
 
-Step 1: Analyze Component Boundaries
+Step 1 - Analyze Component Boundaries
 
 Ask AI to examine your component and identify logical output boundaries. Components with clear responsibilities, rendering a single card, displaying a form field, producing a navigation item, make better snapshot candidates than monolithic pages.
 
@@ -61,7 +61,7 @@ Component code:
 [your component here]
 ```
 
-Step 2: Generate Targeted Test Cases
+Step 2 - Generate Targeted Test Cases
 
 Rather than snapshotting every possible prop combination, work with AI to generate tests for meaningful states:
 
@@ -95,7 +95,7 @@ describe('UserProfile snapshots', () => {
 
 AI can suggest these edge cases based on the component's prop types and usage patterns. The key is capturing states that represent different user experiences, not every permutation.
 
-Step 3: Configure Snapshot Matching
+Step 3 - Configure Snapshot Matching
 
 Jest provides options to make snapshots more resilient to trivial changes while remaining sensitive to meaningful ones:
 
@@ -216,7 +216,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 Advanced Snapshot Strategies for Different Component Types
 
-Strategy 1: Presentation Components (Low Logic)
+Strategy 1 - Presentation Components (Low Logic)
 
 For "dumb" components that just render props, snapshots provide solid value:
 
@@ -243,7 +243,7 @@ describe('Badge snapshots', () => {
 
 AI excels at generating these tests, each variant snapshot documents expected output.
 
-Strategy 2: Smart Components (Logic-Heavy)
+Strategy 2 - Smart Components (Logic-Heavy)
 
 For components with internal state, snapshots are less useful. Instead, test behavior:
 
@@ -279,26 +279,26 @@ Track how snapshot adoption affects your team:
 ```javascript
 // Metrics from a 6-person frontend team implementing AI-assisted snapshots
 
-Week 1: Learning phase
+Week 1 - Learning phase
 - Tests written with AI: 12
 - Snapshot quality (maintainability rating): 6/10
 - False positive rate: 35% (snapshots failing for trivial reasons)
 - Time per test: 15 minutes
 
-Week 2-3: Optimization phase
+Week 2-3 - Optimization phase
 - Tests written with AI: 28
 - Snapshot quality: 7.5/10
 - False positive rate: 18% (team refined prompts)
 - Time per test: 10 minutes
 
-Week 4+: Stable phase
+Week 4+ - Stable phase
 - Tests written with AI: 35-40/week
 - Snapshot quality: 8.5/10
 - False positive rate: 8% (aligned with manual testing)
 - Time per test: 7 minutes
 
-Productivity gain: +180% test generation speed
-Quality improvement: False positive reduction of 77%
+Productivity gain - +180% test generation speed
+Quality improvement - False positive reduction of 77%
 ```
 
 Integration with CI/CD Pipelines
@@ -326,7 +326,7 @@ GitHub Actions example
 
 This pipeline prevents accidental snapshot bloat, when snapshots change, reviewers must explicitly approve.
 
-Snapshot Maintenance: Quarterly Reviews
+Snapshot Maintenance - Quarterly Reviews
 
 Schedule regular snapshot audits:
 
@@ -343,7 +343,7 @@ async function auditSnapshots() {
 
     if (monthsOld > 6) {
       console.log(` ${file}: ${snapshotCount} snapshots unchanged for ${monthsOld} months`);
-      console.log('Consider: Are these snapshots still valuable? Should they be rewritten?');
+      console.log('Consider - Are these snapshots still valuable? Should they be rewritten?');
     }
   }
 }
@@ -351,7 +351,7 @@ async function auditSnapshots() {
 
 Snapshots that haven't changed in 6+ months often provide minimal value.
 
-Cost-Benefit Analysis: Snapshots vs Other Tests
+Cost-Benefit Analysis - Snapshots vs Other Tests
 
 For a component with 10 possible states:
 
@@ -377,7 +377,7 @@ Analysis:
 
 Prompt Recipes for Snapshot Generation
 
-Recipe 1: Visual Regression Snapshots
+Recipe 1 - Visual Regression Snapshots
 ```
 Generate Jest snapshot tests for this React component.
 Focus on visual differences across states:
@@ -391,7 +391,7 @@ Focus on visual differences across states:
 Use react-test-renderer. Make test names describe the visual state.
 ```
 
-Recipe 2: Accessibility Snapshots
+Recipe 2 - Accessibility Snapshots
 ```
 Generate snapshot tests for this component that verify accessibility.
 Include tests for:
@@ -403,7 +403,7 @@ Include tests for:
 Use react-test-renderer with accessibility assertions.
 ```
 
-Recipe 3: Mobile-Responsive Snapshots
+Recipe 3 - Mobile-Responsive Snapshots
 ```
 Generate snapshots testing this component at different breakpoints:
 1. Mobile (375px)

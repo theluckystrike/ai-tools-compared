@@ -46,7 +46,7 @@ Real-World Drag and Drop Scenarios
 
 Different drag scenarios require different testing approaches:
 
-Scenario 1: Kanban Board Column Reordering
+Scenario 1 - Kanban Board Column Reordering
 
 Testing moving cards between columns in a Kanban board:
 
@@ -77,7 +77,7 @@ test('move card between kanban columns', async ({ page }) => {
 });
 ```
 
-Scenario 2: Draggable Table Rows
+Scenario 2 - Draggable Table Rows
 
 Testing row reordering in a data table:
 
@@ -110,7 +110,7 @@ test('reorder table rows by dragging', async ({ page }) => {
 });
 ```
 
-Scenario 3: jQuery UI Sortable Lists
+Scenario 3 - jQuery UI Sortable Lists
 
 Testing with jQuery UI which uses different event model:
 

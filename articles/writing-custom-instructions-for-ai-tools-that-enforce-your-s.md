@@ -59,8 +59,8 @@ Always implement the following security headers in middleware or server configur
 
 1. Strict-Transport-Security: max-age=31536000; includeSubDomains
 2. Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'
-3. X-Content-Type-Options: nosniff
-4. X-Frame-Options: DENY
+3. X-Content-Type-Options - nosniff
+4. X-Frame-Options - DENY
 5. X-XSS-Protection: 1; mode=block
 6. Referrer-Policy: strict-origin-when-cross-origin
 7. Permissions-Policy: geolocation=(), microphone=(), camera=()
@@ -127,7 +127,7 @@ Cursor uses a `.cursorrules` file in your project root. Add security header enfo
 // Security Headers Requirement
 // All server code generation must include security middleware
 
-Framework: [Express/Next.js/NestJS/etc]
+Framework - [Express/Next.js/NestJS/etc]
 Security Requirements:
 - Always include security headers middleware
 - Use helmet.js for Express applications
@@ -275,8 +275,8 @@ curl -I https://yourdomain.com
 
 Expected output should include:
 Strict-Transport-Security: max-age=31536000
-X-Content-Type-Options: nosniff
-X-Frame-Options: DENY
+X-Content-Type-Options - nosniff
+X-Frame-Options - DENY
 ```
 
 For a grade, submit your domain to securityheaders.com or run Mozilla Observatory against it. An An or A+ rating indicates your headers are complete and correctly configured.

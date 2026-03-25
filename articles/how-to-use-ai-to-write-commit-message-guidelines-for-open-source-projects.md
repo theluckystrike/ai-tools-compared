@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Analyzing Your Project's Needs
+Step 1 - Analyzing Your Project's Needs
 
 Before creating commit message guidelines, understand your project's specific requirements. AI can help you analyze your project type and determine what conventions will be most valuable.
 
@@ -52,7 +52,7 @@ Different types of projects benefit from different commit message approaches:
 
 Team Size and Contributor Profile
 
-Consider your project's contributor ecosystem when designing guidelines:
+Consider your project's contributor environment when designing guidelines:
 
 - Large open source projects: May need detailed conventions with type prefixes, issue references, and scope specifications
 
@@ -60,7 +60,7 @@ Consider your project's contributor ecosystem when designing guidelines:
 
 - Projects with diverse contributors: Need explicit examples and clear explanations of each convention
 
-Step 2: Create Your Commit Message Framework
+Step 2 - Create Your Commit Message Framework
 
 AI can help you design a commit message structure that balances comprehensiveness with ease of use. Here's a proven framework that works well for most open source projects:
 
@@ -103,10 +103,10 @@ Use this prompt to generate tailored commit message guidelines:
 ```
 Create commit message guidelines for my [language/framework] open source project.
 
-Project type: [library/application/etc.]
-Main use case: [what the project does]
-Typical contributors: [experienced devs/beginners/mixed]
-Current issues: [any specific problems you want to address]
+Project type - [library/application/etc.]
+Main use case - [what the project does]
+Typical contributors - [experienced devs/beginners/mixed]
+Current issues - [any specific problems you want to address]
 
 Include:
 1. A commit message structure with examples
@@ -118,7 +118,7 @@ Include:
 7. Examples of good vs bad commit messages
 ```
 
-Step 3: Developing Detailed Conventions
+Step 3 - Developing Detailed Conventions
 
 Once you have a basic framework, use AI to elaborate on specific aspects of your conventions.
 
@@ -155,7 +155,7 @@ Clearly communicating breaking changes is crucial for library maintainers. Your 
 ```
 feat(api)!: change response format for /users endpoint
 
-BREAKING CHANGE: The /users endpoint now returns an array instead of
+BREAKING CHANGE - The /users endpoint now returns an array instead of
 an object with a 'data' key. Users must update their code:
 
 // Old format
@@ -182,7 +182,7 @@ fix: update dependencies (#100)
 Closes #100
 ```
 
-Step 4: Create Documentation
+Step 4 - Create Documentation
 
 Once you've developed your commit message conventions, use AI to create documentation.
 
@@ -191,7 +191,7 @@ Including Examples
 Provide multiple examples for each commit type to make the guidelines accessible:
 
 ```
-Step 5: Fix Commits
+Step 5 - Fix Commits
 
 fix: resolve null pointer in user authentication
 
@@ -229,7 +229,7 @@ Rules:
 - No period at end
 ```
 
-Step 6: Enforcing Conventions
+Step 6 - Enforcing Conventions
 
 Document how your project enforces commit message standards.
 
@@ -285,7 +285,7 @@ jobs:
           done
 ```
 
-Step 7: Adapting Conventions Over Time
+Step 7 - Adapting Conventions Over Time
 
 Your commit message guidelines should evolve with your project.
 

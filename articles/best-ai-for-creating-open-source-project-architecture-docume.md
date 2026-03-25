@@ -82,7 +82,7 @@ grep -rn "router\.\(get\|post\|put\|patch\|delete\)" src/routes/ | \
 
 Then paste into Claude with:
 "Generate Markdown API reference documentation for these routes.
- Include: endpoint, method, path params, query params, request body, responses."
+ Include - endpoint, method, path params, query params, request body, responses."
 ```
 
 For TypeScript projects, Claude can use your type definitions to generate accurate request/response schemas:
@@ -106,11 +106,11 @@ ADRs document why architectural decisions were made. Claude can draft ADRs from 
 Prompt:
 ```
 Write an Architecture Decision Record for this decision:
-Problem: We need to choose a caching strategy for API responses.
-Decision: Use Redis with a TTL-based cache invalidation strategy (not event-driven).
-Reason: Our data updates are infrequent (< 10 writes/hour) and our team lacks
+Problem - We need to choose a caching strategy for API responses.
+Decision - Use Redis with a TTL-based cache invalidation strategy (not event-driven).
+Reason - Our data updates are infrequent (< 10 writes/hour) and our team lacks
 the infrastructure to manage a message broker for cache invalidation events.
-Trade-offs: Occasional stale data (max TTL=60s), simpler operations.
+Trade-offs - Occasional stale data (max TTL=60s), simpler operations.
 ```
 
 Claude produces a properly formatted ADR with Status, Context, Decision, Consequences, and Alternatives Considered sections. Store these in `docs/adr/` numbered sequentially. GitHub renders them automatically and they become the canonical record of your architecture's evolution.

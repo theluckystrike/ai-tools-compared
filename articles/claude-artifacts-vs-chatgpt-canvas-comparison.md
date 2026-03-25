@@ -68,7 +68,7 @@ Canvas creates editable panels for:
 
 Side-by-Side Coding Workflow
 
-Task: Build a CSS animation demo
+Task - Build a CSS animation demo
 
 With Claude Artifacts:
 

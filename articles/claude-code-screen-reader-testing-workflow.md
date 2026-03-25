@@ -138,10 +138,10 @@ Navigate to your application URL
 Use following commands to test:
 
 Heading navigation: h key (next heading), 1-6 (specific level)
-Landmark navigation: d key (next landmark)
-Link navigation: k key (next link)
-Form field navigation: f key (next form field)
-Table navigation: t (next table), arrows (within table)
+Landmark navigation - d key (next landmark)
+Link navigation - k key (next link)
+Form field navigation - f key (next form field)
+Table navigation - t (next table), arrows (within table)
 
 Claude Code can generate test expectations:
 const nvdaTestCases = [
@@ -168,14 +168,14 @@ Testing with VoiceOver on macOS
 VoiceOver comes built into macOS and iOS. Enable and test:
 
 ```bash
-Enable VoiceOver: Cmd + F5
+Enable VoiceOver - Cmd + F5
 Open VoiceOver Utility for detailed configuration
 
 VoiceOver key commands (VO = Control + Option)
-VO + H: Heading navigation
-VO + J/L: Next/previous link
-VO + U: Rotor (quick navigation)
-VO + Arrows: Navigate within rotor
+VO + H - Heading navigation
+VO + J/L - Next/previous link
+VO + U - Rotor (quick navigation)
+VO + Arrows - Navigate within rotor
 
 Test script example:
 const voiceoverTests = [

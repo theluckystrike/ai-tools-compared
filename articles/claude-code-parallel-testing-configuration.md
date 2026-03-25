@@ -65,7 +65,7 @@ module.exports = {
 };
 ```
 
-The `maxWorkers: '50%'` setting is particularly useful when running tests locally while still having resources available for Claude Code's IDE integration.
+The `maxWorkers - '50%'` setting is particularly useful when running tests locally while still having resources available for Claude Code's IDE integration.
 
 Parallelizing Test Files with --maxWorkers
 
@@ -122,7 +122,7 @@ Default number of workers when -n is specified
 addopts = -n auto --tb=short
 
 Mark tests that can run in parallel
-Use: pytest -m parallel
+Use - pytest -m parallel
 markers =
     parallel: tests that can run in parallel
     sequential: tests that must run in order

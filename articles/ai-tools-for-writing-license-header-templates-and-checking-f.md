@@ -122,8 +122,8 @@ Here's a conceptual example of what such a script might look like:
 import os
 import re
 
-LICENSE_HEADER = """# Copyright (c) 2026 Acme Corp
-SPDX-License-Identifier: MIT
+LICENSE_HEADER = """Copyright (c) 2026 Acme Corp
+SPDX-License-Identifier - MIT
 #
 
 """
@@ -274,7 +274,7 @@ You can use AI to generate the regex patterns or validation logic:
 
 ```bash
 Find Python files missing the MIT license header
-grep -rL "SPDX-License-Identifier: MIT" --include="*.py" src/
+grep -rL "SPDX-License-Identifier - MIT" --include="*.py" src/
 
 Find JavaScript files without copyright notice
 find src -name "*.js" -exec grep -L "Copyright" {} \;

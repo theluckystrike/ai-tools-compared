@@ -30,25 +30,25 @@ The gap widens when:
 - The codebase is large and the change touches multiple systems
 - The correct approach isn't obvious from the surface structure
 
-Task 1: Boilerplate Code Generation
+Task 1 - Boilerplate Code Generation
 
-Winner: Sonnet
+Winner - Sonnet
 
 Generating CRUD endpoints, model definitions, test fixtures, and configuration files doesn't require deep reasoning. Sonnet produces output indistinguishable from Opus on tasks like:
 
 ```python
-Prompt: "Generate a FastAPI endpoint for creating a user with email/password,
+Prompt - "Generate a FastAPI endpoint for creating a user with email/password,
 validate the email format, hash the password with bcrypt, and return 409 if
 the email already exists."
 ```
 
 Both models produce correct, complete implementations. Sonnet does it in ~2s vs Opus at ~4s, and at 20% of the cost.
 
-Use Sonnet for: REST endpoint stubs, database model classes, CLI argument parsers, configuration templates, test data factories.
+Use Sonnet for - REST endpoint stubs, database model classes, CLI argument parsers, configuration templates, test data factories.
 
-Task 2: Debugging with a Stack Trace
+Task 2 - Debugging with a Stack Trace
 
-Winner: Sonnet (with one exception)
+Winner - Sonnet (with one exception)
 
 Stack trace analysis is pattern matching. Given a Python traceback, both models identify the root cause accurately:
 
@@ -61,13 +61,13 @@ Traceback (most recent call last):
 stripe.error.InvalidRequestError: No such customer: 'cus_deleted_12345'
 ```
 
-Sonnet correctly identifies: the customer ID is stale (likely deleted in Stripe but still in your database), the fix is to check customer existence before creating a PaymentIntent, and suggests adding a compensating lookup.
+Sonnet correctly identifies - the customer ID is stale (likely deleted in Stripe but still in your database), the fix is to check customer existence before creating a PaymentIntent, and suggests adding a compensating lookup.
 
-Exception: When debugging requires understanding how multiple systems interact. e.g., a race condition in a distributed system, or an error that only appears in a specific sequence of API calls. Opus consistently identifies the root cause correctly on first try while Sonnet requires follow-up prompts.
+Exception - When debugging requires understanding how multiple systems interact. e.g., a race condition in a distributed system, or an error that only appears in a specific sequence of API calls. Opus consistently identifies the root cause correctly on first try while Sonnet requires follow-up prompts.
 
-Task 3: Architecture Design
+Task 3 - Architecture Design
 
-Winner: Opus (clear)
+Winner - Opus (clear)
 
 Ask both models to design a system for a non-trivial requirement:
 
@@ -81,15 +81,15 @@ Design a notification delivery system that:
 - Has a dead letter queue for failed deliveries
 ```
 
-Sonnet's output: Correct but surface-level. Suggests SQS + Lambda + SNS with DynamoDB for preferences. Mentions idempotency but doesn't design the deduplication key structure. Doesn't address the 5-minute window specifically.
+Sonnet's output - Correct but surface-level. Suggests SQS + Lambda + SNS with DynamoDB for preferences. Mentions idempotency but doesn't design the deduplication key structure. Doesn't address the 5-minute window specifically.
 
-Opus's output: Designs the deduplication key as `sha256(user_id + notification_type + content_hash + 5min_window_bucket)`. Identifies that SQS visibility timeout must exceed Lambda execution time for at-least-once semantics. Calls out that dead letter queues need exponential backoff rather than immediate re-queueing to avoid thundering herd on transient failures. Suggests separate queues per notification type for independent scaling.
+Opus's output - Designs the deduplication key as `sha256(user_id + notification_type + content_hash + 5min_window_bucket)`. Identifies that SQS visibility timeout must exceed Lambda execution time for at-least-once semantics. Calls out that dead letter queues need exponential backoff rather than immediate re-queueing to avoid thundering herd on transient failures. Suggests separate queues per notification type for independent scaling.
 
 Opus adds 3-4 non-obvious design decisions that prevent failure modes in production. For architecture work, the quality difference justifies the cost.
 
-Task 4: Large Codebase Refactoring
+Task 4 - Large Codebase Refactoring
 
-Winner: Opus (usually)
+Winner - Opus (usually)
 
 Feed both models 2,000 lines of Python across 5 files and ask them to refactor a specific pattern:
 
@@ -104,11 +104,11 @@ Sonnet handles simple cases but misses edge cases: a `try/except/else` block whe
 
 Opus catches 95% of these patterns on first pass. It also identifies two places where the manual pattern itself was already buggy (connection not closed on exception in a nested call).
 
-Exception: If the refactoring is purely mechanical (rename a method, add a parameter everywhere it's called), Sonnet is sufficient and faster.
+Exception - If the refactoring is purely mechanical (rename a method, add a parameter everywhere it's called), Sonnet is sufficient and faster.
 
-Task 5: Code Review
+Task 5 - Code Review
 
-Winner: Sonnet for style/correctness, Opus for security
+Winner - Sonnet for style/correctness, Opus for security
 
 ```python
 Ask both to review this function:
@@ -126,9 +126,9 @@ Opus additionally flags:
 
 For security-sensitive review, Opus's second-order thinking matters.
 
-Task 6: Test Writing
+Task 6 - Test Writing
 
-Winner: Sonnet
+Winner - Sonnet
 
 Writing pytest/Jest/Go tests for a given function is a mechanical task once the function's behavior is understood. Both models write equivalent test coverage. Sonnet is faster and cheaper with no quality penalty.
 
@@ -163,9 +163,9 @@ For an agentic code review pipeline processing 500 PRs/day:
 - Sonnet 4.6: $3/M input, $15/M output
 - Opus 4.6: $15/M input, $75/M output
 
-Daily cost with Sonnet: (500 × 8,000 × 3/1,000,000) + (500 × 2,000 × 15/1,000,000) = $12 + $15 = $27/day
+Daily cost with Sonnet - (500 × 8,000 × 3/1,000,000) + (500 × 2,000 × 15/1,000,000) = $12 + $15 = $27/day
 
-Daily cost with Opus: (500 × 8,000 × 15/1,000,000) + (500 × 2,000 × 75/1,000,000) = $60 + $75 = $135/day
+Daily cost with Opus - (500 × 8,000 × 15/1,000,000) + (500 × 2,000 × 75/1,000,000) = $60 + $75 = $135/day
 
 For a code review task where Sonnet catches 90% of what Opus catches, use Sonnet and escalate only flagged PRs to Opus.
 
@@ -191,34 +191,34 @@ def review_pr(pr_diff: str, risk_level: str) -> str:
     return response.content[0].text
 ```
 
-Classify risk by: files touched (auth, payments, infra = high), number of files changed, whether tests are included.
+Classify risk by - files touched (auth, payments, infra = high), number of files changed, whether tests are included.
 
 Real-World Pricing Analysis
 
 Let's put this in perspective with actual use cases:
 
-Scenario 1: Small Team (5 developers, 100 coding tasks/day)
+Scenario 1 - Small Team (5 developers, 100 coding tasks/day)
 - Average task: 500 input tokens, 300 output tokens
 - Daily volume: 100 × 500 = 50K input tokens, 100 × 300 = 30K output tokens
 
 Using Sonnet:
 - Input: 50,000 × ($3/1M) = $0.15
-- Output: 30,000 × ($15/1M) = $0.45
+- Output - 30,000 × ($15/1M) = $0.45
 - Daily cost: $0.60
 - Monthly cost: $18
 
 Using Opus:
 - Input: 50,000 × ($15/1M) = $0.75
-- Output: 30,000 × ($75/1M) = $2.25
+- Output - 30,000 × ($75/1M) = $2.25
 - Daily cost: $3.00
 - Monthly cost: $90
 
-Savings: $72/month ($864/year) by using Sonnet for everything
+Savings - $72/month ($864/year) by using Sonnet for everything
 
-Scenario 2: Enterprise Scale (50 developers, 1000 tasks/day)
-Daily cost with all Sonnet: $6
-Daily cost with all Opus: $30
-Monthly savings: $720
+Scenario 2 - Enterprise Scale (50 developers, 1000 tasks/day)
+Daily cost with all Sonnet - $6
+Daily cost with all Opus - $30
+Monthly savings - $720
 
 But what if 10% of tasks genuinely need Opus (complex architecture design, critical security reviews)?
 - 900 tasks with Sonnet: $5.40
@@ -278,7 +278,7 @@ Quality vs Cost Tradeoff Matrix
 | Security review | No | Needs analysis | 60% with Sonnet, 95% with Opus |
 | Large refactoring | No | Multi-system impact | 75% with Sonnet, 95% with Opus |
 
-Quality definition: "The output is production-ready with no modifications"
+Quality definition - "The output is production-ready with no modifications"
 
 Measuring Model Performance on Your Codebase
 

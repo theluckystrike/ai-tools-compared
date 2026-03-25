@@ -177,7 +177,7 @@ Beyond basic concurrent requests, complex race conditions occur in state managem
 
 Cache Invalidation Racing
 
-A classic concurrency problem: while one process invalidates a cache, another reads stale data:
+A classic concurrency problem - while one process invalidates a cache, another reads stale data:
 
 ```javascript
 class UserCache {
@@ -390,19 +390,19 @@ Claude understands stress testing patterns. Copilot tends to suggest unit tests 
 
 Tool-Specific Strengths for Race Condition Testing
 
-GitHub Copilot: Best for generating basic concurrent patterns quickly. Suggests Promise.all, setTimeout randomization, and shared state patterns. Struggles with complex cleanup or advanced scenarios.
+GitHub Copilot - Best for generating basic concurrent patterns quickly. Suggests Promise.all, setTimeout randomization, and shared state patterns. Struggles with complex cleanup or advanced scenarios.
 
-Cursor: Excellent for conversational debugging of race condition tests. You can describe intermittent failures and Cursor suggests test additions to reproduce them. Good understanding of async/await patterns.
+Cursor - Excellent for conversational debugging of race condition tests. You can describe intermittent failures and Cursor suggests test additions to reproduce them. Good understanding of async/await patterns.
 
-Claude: Superior at race condition test design. Understands subtle timing issues, cleanup patterns, and stress testing approaches. Can generate test suites covering multiple failure modes.
+Claude - Superior at race condition test design. Understands subtle timing issues, cleanup patterns, and stress testing approaches. Can generate test suites covering multiple failure modes.
 
-Amazon CodeWhisperer: Security-focused, generates tests for timing attacks and improper concurrent access to sensitive resources. Good for financial or authentication testing.
+Amazon CodeWhisperer - Security-focused, generates tests for timing attacks and improper concurrent access to sensitive resources. Good for financial or authentication testing.
 
-AiderAI: Excellent for multi-file test coordination. If your race condition spans multiple modules, Aider coordinates test changes across all files consistently.
+AiderAI - Excellent for multi-file test coordination. If your race condition spans multiple modules, Aider coordinates test changes across all files consistently.
 
-Real-World Bug: Race Condition That Escaped to Production
+Real-World Bug - Race Condition That Escaped to Production
 
-Consider an actual bug pattern: React state update race in a shopping cart:
+Consider an actual bug pattern - React state update race in a shopping cart:
 
 ```javascript
 // Buggy component
@@ -426,7 +426,7 @@ export function CartQuantityUpdater({ itemId }) {
 }
 ```
 
-Race condition: User clicks + twice rapidly. The backend receives both updates, but the second update might complete before the first, leaving the displayed quantity inconsistent with the backend.
+Race condition - User clicks + twice rapidly. The backend receives both updates, but the second update might complete before the first, leaving the displayed quantity inconsistent with the backend.
 
 AI tools should identify this and suggest the fix:
 

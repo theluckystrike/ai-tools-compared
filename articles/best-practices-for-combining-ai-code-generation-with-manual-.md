@@ -19,7 +19,7 @@ Use AI to generate boilerplate (models, API stubs, test scaffolding) quickly; fo
 
 Table of Contents
 
-- [The Role Division: What AI Does Well](#the-role-division-what-ai-does-well)
+- [The Role Division - What AI Does Well](#the-role-division-what-ai-does-well)
 - [Practical Workflow for AI + Manual Review](#practical-workflow-for-ai-manual-review)
 - [Configuring AI Tools for Better Output](#configuring-ai-tools-for-better-output)
 - [Balancing Speed and Quality](#balancing-speed-and-quality)
@@ -27,7 +27,7 @@ Table of Contents
 - [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
 - [Measuring Success](#measuring-success)
 
-The Role Division: What AI Does Well
+The Role Division - What AI Does Well
 
 AI excels at generating repetitive boilerplate, scaffolding project structures, and creating test cases. It can rapidly produce code based on specifications, saving hours of manual typing. However, AI lacks understanding of your specific business context, security requirements, and architectural decisions.
 
@@ -35,7 +35,7 @@ The most effective approach assigns clear responsibilities: let AI handle the me
 
 Practical Workflow for AI + Manual Review
 
-Step 1: Generate with Clear Context
+Step 1 - Generate with Clear Context
 
 When prompting AI for code, provide sufficient context. Include relevant file paths, existing patterns in your codebase, and specific requirements:
 
@@ -49,7 +49,7 @@ Follow our existing patterns in models/user.py. Use Pydantic v2
 for validation. Return 422 on validation failure with error details."
 ```
 
-Step 2: Automated Pre-Check Before Human Review
+Step 2 - Automated Pre-Check Before Human Review
 
 Run basic checks before requesting manual review:
 
@@ -67,7 +67,7 @@ pytest generated_code_test.py
 
 This catches syntax errors, style violations, and basic type issues automatically.
 
-Step 3: Structured Manual Review Checklist
+Step 3 - Structured Manual Review Checklist
 
 When reviewing AI-generated code, use a systematic approach:
 
@@ -75,11 +75,11 @@ When reviewing AI-generated code, use a systematic approach:
 
 2. Edge cases: What happens with null values, empty inputs, or unexpected data?
 
-3. Security: Are there injection risks, exposed credentials, or permission issues?
+3. Security - Are there injection risks, exposed credentials, or permission issues?
 
-4. Performance: Are there obvious N+1 queries, missing indexes, or inefficient loops?
+4. Performance - Are there obvious N+1 queries, missing indexes, or inefficient loops?
 
-5. Dependencies: Are imported libraries necessary? Any version conflicts?
+5. Dependencies - Are imported libraries necessary? Any version conflicts?
 
 Reviewing AI-Generated API Endpoint
 

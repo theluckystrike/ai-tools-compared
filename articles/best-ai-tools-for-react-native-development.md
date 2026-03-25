@@ -20,10 +20,10 @@ React Native development has a unique set of AI challenges: the component model 
 Table of Contents
 
 - [The Test Cases](#the-test-cases)
-- [Task 1: Swipeable Card (Gesture Handler)](#task-1-swipeable-card-gesture-handler)
-- [Task 2: Custom Bottom Tab Bar with Haptics](#task-2-custom-bottom-tab-bar-with-haptics)
-- [Task 3: Offline-First Data Sync Hook](#task-3-offline-first-data-sync-hook)
-- [Task 4: FlatList Performance Fix](#task-4-flatlist-performance-fix)
+- [Task 1 - Swipeable Card (Gesture Handler)](#task-1-swipeable-card-gesture-handler)
+- [Task 2 - Custom Bottom Tab Bar with Haptics](#task-2-custom-bottom-tab-bar-with-haptics)
+- [Task 3 - Offline-First Data Sync Hook](#task-3-offline-first-data-sync-hook)
+- [Task 4 - FlatList Performance Fix](#task-4-flatlist-performance-fix)
 - [Tool Rankings for React Native](#tool-rankings-for-react-native)
 - [Related Reading](#related-reading)
 
@@ -36,7 +36,7 @@ Four tasks that cover the spectrum of React Native work:
 3. Write a hook for offline-first data sync
 4. Fix a common FlatList performance issue
 
-Task 1: Swipeable Card (Gesture Handler)
+Task 1 - Swipeable Card (Gesture Handler)
 
 This requires `react-native-gesture-handler` and `react-native-reanimated`. libraries with APIs that frequently trip up AI tools.
 
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
 
 Claude correctly used the new `GestureDetector` API, `runOnJS` for callbacks from the UI thread, and `withSpring` for natural animation. It also knew to warn about wrapping with `GestureHandlerRootView` at the app root.
 
-Task 2: Custom Bottom Tab Bar with Haptics
+Task 2 - Custom Bottom Tab Bar with Haptics
 
 ```tsx
 // Prompt: "Build a custom bottom tab bar with haptic feedback
@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
 
 Claude handles the iOS vs Android haptics difference and includes the safe area bottom padding without being prompted. Copilot missed both.
 
-Task 3: Offline-First Data Sync Hook
+Task 3 - Offline-First Data Sync Hook
 
 ```tsx
 // hooks/useOfflineSync.ts
@@ -358,7 +358,7 @@ export function useOfflineSync<T>({
 }
 ```
 
-Task 4: FlatList Performance Fix
+Task 4 - FlatList Performance Fix
 
 This is where AI tools differ most. Given a slow FlatList with 1,000 items:
 
@@ -374,9 +374,9 @@ This is where AI tools differ most. Given a slow FlatList with 1,000 items:
 />
 ```
 
-Copilot's fix: Added `keyExtractor` and `getItemLayout`. Correct but incomplete.
+Copilot's fix - Added `keyExtractor` and `getItemLayout`. Correct but incomplete.
 
-Claude's fix: Added `keyExtractor`, `getItemLayout`, `removeClippedSubviews`, `maxToRenderPerBatch`, `windowSize`, wrapped `renderItem` in `useCallback`, and extracted the item to a separate `React.memo` component. Also flagged the inline style object as a re-render cause.
+Claude's fix - Added `keyExtractor`, `getItemLayout`, `removeClippedSubviews`, `maxToRenderPerBatch`, `windowSize`, wrapped `renderItem` in `useCallback`, and extracted the item to a separate `React.memo` component. Also flagged the inline style object as a re-render cause.
 
 ```tsx
 // Claude's optimized version

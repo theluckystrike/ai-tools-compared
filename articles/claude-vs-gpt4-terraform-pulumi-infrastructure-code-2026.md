@@ -21,8 +21,8 @@ Table of Contents
 
 - [The Core Differences](#the-core-differences)
 - [Comparing Generated Code Quality](#comparing-generated-code-quality)
-- [Practical Workflow: Claude First, GPT-4 Refine](#practical-workflow-claude-first-gpt-4-refine)
-- [Code Example: Multi-Region Terraform](#code-example-multi-region-terraform)
+- [Practical Workflow - Claude First, GPT-4 Refine](#practical-workflow-claude-first-gpt-4-refine)
+- [Code Example - Multi-Region Terraform](#code-example-multi-region-terraform)
 - [When to Use Each Tool](#when-to-use-each-tool)
 
 The Core Differences
@@ -171,7 +171,7 @@ function = aws.lambda_.Function("my_function",
     code=pulumi.FileArchive("./lambda_code"))
 ```
 
-GPT-4 excels here: generates working code quickly, though it might lack sophistication like VPC configuration or reserved concurrency.
+GPT-4 excels here - generates working code quickly, though it might lack sophistication like VPC configuration or reserved concurrency.
 
 Comparing Generated Code Quality
 
@@ -187,9 +187,9 @@ Comparing Generated Code Quality
 | Python (Pulumi) accuracy | Excellent (95%) | Good (85%) |
 | HCL (Terraform) accuracy | Very good (90%) | Very good (90%) |
 
-Practical Workflow: Claude First, GPT-4 Refine
+Practical Workflow - Claude First, GPT-4 Refine
 
-Phase 1 - Claude: Architecture & Dependencies
+Phase 1 - Claude - Architecture & Dependencies
 
 ```hcl
 Ask Claude:
@@ -199,7 +199,7 @@ RDS, ALB, and ECS. Show dependencies."
 Claude outputs complete, dependency-aware architecture
 ```
 
-Phase 2 - GPT-4: Rapid module generation
+Phase 2 - GPT-4 - Rapid module generation
 
 ```hcl
 Ask GPT-4:
@@ -208,7 +208,7 @@ Ask GPT-4:
 GPT-4 quickly scaffolds input/output structure
 ```
 
-Phase 3 - Claude: Validation
+Phase 3 - Claude - Validation
 
 ```hcl
 Paste complete Terraform and ask Claude:
@@ -217,7 +217,7 @@ Paste complete Terraform and ask Claude:
 Claude identifies resource leaks, missing backups, etc.
 ```
 
-Code Example: Multi-Region Terraform
+Code Example - Multi-Region Terraform
 
 Here's a production pattern combining Claude's initial design with iterative refinement:
 

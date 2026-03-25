@@ -28,8 +28,8 @@ Table of Contents
 - [Upgrade Paths](#upgrade-paths)
 - [Offline and Local Alternatives](#offline-and-local-alternatives)
 - [Real-World Usage Patterns](#real-world-usage-patterns)
-- [Hybrid Strategy: Maximizing Free Tiers](#hybrid-strategy-maximizing-free-tiers)
-- [API Cost Comparison: GPT-4 vs Alternatives](#api-cost-comparison-gpt-4-vs-alternatives)
+- [Hybrid Strategy - Maximizing Free Tiers](#hybrid-strategy-maximizing-free-tiers)
+- [API Cost Comparison - GPT-4 vs Alternatives](#api-cost-comparison-gpt-4-vs-alternatives)
 - [Structured Output Extraction Comparison](#structured-output-extraction-comparison)
 
 Understanding Free Tier Limits
@@ -150,7 +150,7 @@ Choose Claude Free if you:
 
 For developers who need reliable daily access without paying, ChatGPT Free provides significantly more messages per day. The trade-off is using a less capable model. Claude Free offers stronger reasoning but requires careful message management, each interaction must be deliberate and well-planned.
 
-Many developers use both: ChatGPT Free for quick questions and iterations, Claude Free for complex problems that require deeper analysis. This hybrid approach maximizes the strengths of each platform while minimizing their respective limitations.
+Many developers use both - ChatGPT Free for quick questions and iterations, Claude Free for complex problems that require deeper analysis. This hybrid approach maximizes the strengths of each platform while minimizing their respective limitations.
 
 Calculating True Value Per Dollar
 
@@ -214,43 +214,43 @@ For developers with available compute resources (spare GPU, 16GB RAM), local mod
 
 Real-World Usage Patterns
 
-Scenario: Junior Developer Learning to Code
+Scenario - Junior Developer Learning to Code
 
-Ideal setup: ChatGPT Free primary, Claude Free secondary
+Ideal setup - ChatGPT Free primary, Claude Free secondary
 - ChatGPT Free's high message limit suits learning (lots of questions)
 - Claude Free as backup for conceptual understanding of complex topics
 - Switch to Claude Pro ($20/month) if learning pace requires more Claude usage
 
-Monthly cost: $0-20
+Monthly cost - $0-20
 
-Scenario: Freelancer Billing by Hour
+Scenario - Freelancer Billing by Hour
 
-Ideal setup: ChatGPT Plus ($20/month)
+Ideal setup - ChatGPT Plus ($20/month)
 - Unlimited access removes productivity bottlenecks
 - Fast iterations mean higher hourly output
 - Pays for itself with 1-2 extra billable hours per month
 
-Monthly cost: $20 (easily recoverable)
+Monthly cost - $20 (easily recoverable)
 
-Scenario: Open Source Contributor (No Budget)
+Scenario - Open Source Contributor (No Budget)
 
-Ideal setup: Ollama locally + ChatGPT Free
+Ideal setup - Ollama locally + ChatGPT Free
 - Ollama handles routine code generation (no per-message cost)
 - ChatGPT Free handles complex design questions when limits allow
 - Zero monetary cost, accepts latency limits
 
-Monthly cost: $0
+Monthly cost - $0
 
-Scenario: DevOps Engineer Managing Infrastructure
+Scenario - DevOps Engineer Managing Infrastructure
 
-Ideal setup: Claude Pro ($20/month)
+Ideal setup - Claude Pro ($20/month)
 - Infrastructure code requires precision (Claude's strength)
 - Message limit less relevant, fewer, higher-quality queries
 - Long-form outputs (full Terraform modules) count as fewer messages
 
-Monthly cost: $20
+Monthly cost - $20
 
-Hybrid Strategy: Maximizing Free Tiers
+Hybrid Strategy - Maximizing Free Tiers
 
 If you're committed to staying free, optimize usage:
 
@@ -268,7 +268,7 @@ If you're committed to staying free, optimize usage:
 
 With discipline, you can sustain development work on free tiers alone, it just requires more planning upfront and patience with reset windows.
 
-API Cost Comparison: GPT-4 vs Alternatives
+API Cost Comparison - GPT-4 vs Alternatives
 
 Token costs differ significantly across providers and significantly impact production workloads.
 

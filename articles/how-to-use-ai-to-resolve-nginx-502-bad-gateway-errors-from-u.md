@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the 502 Error in Nginx Context
+Step 1 - Understand the 502 Error in Nginx Context
 
 When nginx acts as a reverse proxy, it forwards client requests to upstream servers defined in your configuration. A 502 Bad Gateway error means nginx received an invalid response from at least one upstream server. The error can originate from several sources:
 
@@ -49,7 +49,7 @@ Before engaging an AI assistant, collect this information to get useful answers:
 
 With this context, AI tools can move directly to root cause analysis rather than asking follow-up questions.
 
-Step 2: Use AI to Analyze Your Upstream Configuration
+Step 2 - Use AI to Analyze Your Upstream Configuration
 
 Start by feeding your nginx configuration to an AI assistant. Include the relevant upstream block, server block, and location directives. Here's a typical problematic configuration:
 
@@ -72,7 +72,7 @@ server {
 
 When you encounter 502 errors with this setup, ask AI to review the configuration. The assistant will identify issues like missing timeout directives, incorrect proxy headers, or backend server availability problems.
 
-Step 3: Common Upstream Issues AI Can Detect
+Step 3 - Common Upstream Issues AI Can Detect
 
 1. Missing or Incorrect Proxy Headers
 
@@ -144,7 +144,7 @@ Slow backend operations, database queries, external API calls, heavy computation
 | ML inference | 60s, 120s | Model load adds latency |
 | Database-heavy | 60s, 90s | Watch for N+1 query patterns |
 
-Step 4: AI-Powered Log Analysis
+Step 4 - AI-Powered Log Analysis
 
 Nginx error logs contain valuable information about why 502 errors occur. Use AI to parse and interpret your error logs:
 
@@ -161,7 +161,7 @@ Additional log patterns and their AI-assisted diagnoses:
 - `recv() failed (104: Connection reset by peer)`. Backend crashed mid-response; check application logs and memory limits
 - `SSL_do_handshake() failed`. TLS mismatch between nginx and upstream; verify `proxy_ssl_verify` settings
 
-Step 5: Practical Workflow: AI-Assisted Debugging
+Step 5 - Practical Workflow: AI-Assisted Debugging
 
 1. Gather your configuration: Export your nginx.conf and any included files. Use `nginx -T` to dump the entire configuration.
 
@@ -173,7 +173,7 @@ Step 5: Practical Workflow: AI-Assisted Debugging
 
 AI responds with actionable configuration changes, explains why each change matters, and warns about potential side effects.
 
-Step 6: Example: Debugging a Node.js Application
+Step 6 - Example - Debugging a Node.js Application
 
 Suppose your Node.js API runs on port 3000 but returns 502 errors. AI might suggest this configuration:
 
@@ -201,9 +201,9 @@ server {
 }
 ```
 
-The key additions AI identifies: `proxy_http_version 1.1` for better connection handling, `Upgrade` headers for WebSocket support, and extended timeout values for API operations.
+The key additions AI identifies - `proxy_http_version 1.1` for better connection handling, `Upgrade` headers for WebSocket support, and extended timeout values for API operations.
 
-Step 7: Example: Debugging a Python Gunicorn/uWSGI Application
+Step 7 - Example: Debugging a Python Gunicorn/uWSGI Application
 
 Python WSGI applications have distinct failure modes. AI recognizes configuration patterns that indicate Gunicorn or uWSGI workers are exhausted:
 
@@ -229,7 +229,7 @@ server {
 
 AI notes that `fail_timeout=0` disables the health check backoff for Unix sockets, which is appropriate when a single Gunicorn process is guaranteed to be present. It also recommends `proxy_buffering off` for streaming responses from Python backends.
 
-Step 8: Preventing 502 Errors
+Step 8 - Preventing 502 Errors
 
 AI can recommend proactive measures:
 

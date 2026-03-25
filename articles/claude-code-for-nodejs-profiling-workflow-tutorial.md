@@ -109,7 +109,7 @@ app.listen(3000, () => {
 
 Profiling Workflow with Claude Code
 
-Step 1: Baseline Performance Measurement
+Step 1 - Baseline Performance Measurement
 
 Start by establishing a baseline using Node.js built-in performance tools. The `--inspect` flag enables Chrome DevTools integration:
 
@@ -131,7 +131,7 @@ node --prof-process isolate-*.log | head -50
 
 This is where Claude Code becomes invaluable. Instead of manually parsing complex output, you can ask Claude Code to analyze the results and explain what the data means in the context of your application.
 
-Step 2: Identifying Bottlenecks
+Step 2 - Identifying Bottlenecks
 
 Once you have profiling data, engage Claude Code to help interpret the results. Provide the profiling output and ask specific questions:
 
@@ -147,7 +147,7 @@ Claude Code can help you understand patterns like:
 
 - Callback hell and unnecessary async overhead
 
-Step 3: Memory Profiling
+Step 3 - Memory Profiling
 
 For memory issues, use heap snapshots:
 

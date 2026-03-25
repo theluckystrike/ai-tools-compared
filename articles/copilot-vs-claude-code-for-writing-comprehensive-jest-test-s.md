@@ -161,7 +161,7 @@ Component with hooks and async data: Claude produces more complete coverage, inc
 
 Context-dependent component (inside a provider): Claude suggests proper wrapper patterns. Copilot suggests mocking context, which often fails in practice.
 
-Complex form with validation: Claude includes tests for error states, field interactions, and form submission sequences. Copilot generates basic tests requiring significant expansion.
+Complex form with validation - Claude includes tests for error states, field interactions, and form submission sequences. Copilot generates basic tests requiring significant expansion.
 
 Decision Framework for Tool Selection
 
@@ -214,17 +214,17 @@ Claude produces tests addressing each requirement without being told exactly whi
 
 Common Pitfalls and Solutions
 
-Pitfall 1: Mock Setup Inconsistency
+Pitfall 1 - Mock Setup Inconsistency
 - Copilot often creates mocks that don't match actual module structure
 - Solution: Review mock definitions against your actual API
 - Claude usually asks about your mock strategy before generating
 
-Pitfall 2: Missing Async Handling
+Pitfall 2 - Missing Async Handling
 - Copilot frequently forgets `waitFor()` for async state updates
 - Solution: Add explicit async requirements to prompts
 - Claude defaults to proper async patterns
 
-Pitfall 3: Shallow Test Assertions
+Pitfall 3 - Shallow Test Assertions
 - Copilot sometimes generates tests that only check rendering
 - Solution: Specify "test user interactions and their effects" explicitly
 - Claude targets behavior-driven testing naturally

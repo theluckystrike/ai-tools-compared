@@ -20,11 +20,11 @@ AI tools excel at generating CI/CD pipeline configurations because YAML syntax i
 Table of Contents
 
 - [Why AI Helps with CI/CD Configuration](#why-ai-helps-with-cicd-configuration)
-- [GitHub Actions: Claude vs Copilot vs Cursor](#github-actions-claude-vs-copilot-vs-cursor)
-- [GitLab CI: Static Configs vs Dynamic Pipelines](#gitlab-ci-static-configs-vs-dynamic-pipelines)
-- [CircleCI: Orbs and Reusable Commands](#circleci-orbs-and-reusable-commands)
+- [GitHub Actions - Claude vs Copilot vs Cursor](#github-actions-claude-vs-copilot-vs-cursor)
+- [GitLab CI - Static Configs vs Dynamic Pipelines](#gitlab-ci-static-configs-vs-dynamic-pipelines)
+- [CircleCI - Orbs and Reusable Commands](#circleci-orbs-and-reusable-commands)
 - [Tool Comparison Matrix](#tool-comparison-matrix)
-- [Practical Workflow: Using Claude to Build Complex Pipelines](#practical-workflow-using-claude-to-build-complex-pipelines)
+- [Practical Workflow - Using Claude to Build Complex Pipelines](#practical-workflow-using-claude-to-build-complex-pipelines)
 - [Common Pitfalls and How AI Tools Handle Them](#common-pitfalls-and-how-ai-tools-handle-them)
 - [Choosing Your Tool](#choosing-your-tool)
 
@@ -36,7 +36,7 @@ AI tools handle the mechanical aspects well: they know GitHub Actions uses `on:`
 
 The real value appears in complex scenarios: conditional job execution based on branches or tags, matrix strategies for testing multiple Node versions, properly sequencing deployment stages, handling service dependencies, and correctly injecting secrets without exposing them in logs.
 
-GitHub Actions: Claude vs Copilot vs Cursor
+GitHub Actions - Claude vs Copilot vs Cursor
 
 GitHub Actions uses YAML with a straightforward structure: triggers under `on:`, jobs under `jobs:`, and steps within each job. All three tools handle basic configs well, but differences emerge in complex scenarios.
 
@@ -80,7 +80,7 @@ Copilot generates this reliably when you type `# GitHub Actions workflow`. Claud
 
 Complex Multi-Stage Pipeline with Conditional Deployment
 
-Here's where AI tools diverge meaningfully. Request: "GitHub Actions workflow that runs tests on all branches, but only deploys to staging on develop branch and production on main branch. Production deploys need approval."
+Here's where AI tools diverge meaningfully. Request - "GitHub Actions workflow that runs tests on all branches, but only deploys to staging on develop branch and production on main branch. Production deploys need approval."
 
 Claude's approach:
 Asks clarifying questions about deployment environment secrets, approval requirements, and post-deployment verification. Generates config with proper secret handling and status checks.
@@ -155,7 +155,7 @@ jobs:
     - name: Deploy to staging
       run: |
         curl -X POST https://staging-api.example.com/deploy \
-          -H "Authorization: Bearer ${{ secrets.STAGING_DEPLOY_TOKEN }}" \
+          -H "Authorization - Bearer ${{ secrets.STAGING_DEPLOY_TOKEN }}" \
           -H "Content-Type: application/json" \
           -d '{"image_tag":"staging-${{ github.sha }}"}'
 
@@ -185,7 +185,7 @@ jobs:
     - name: Deploy to production
       run: |
         curl -X POST https://api.example.com/deploy \
-          -H "Authorization: Bearer ${{ secrets.PRODUCTION_DEPLOY_TOKEN }}" \
+          -H "Authorization - Bearer ${{ secrets.PRODUCTION_DEPLOY_TOKEN }}" \
           -H "Content-Type: application/json" \
           -d '{"image_tag":"${{ github.sha }}"}'
 ```
@@ -198,7 +198,7 @@ Key details this requires understanding:
 
 Claude handles this better because it explains the `environment:` requirement and approval workflow. Copilot sometimes generates incomplete configs that technically work but miss approval integration. Cursor catches the pattern faster through iteration.
 
-GitLab CI: Static Configs vs Dynamic Pipelines
+GitLab CI - Static Configs vs Dynamic Pipelines
 
 GitLab CI differs fundamentally from GitHub Actions, it's more powerful for complex orchestration but requires understanding its specific concepts: stages, rules, artifacts, and cache.
 
@@ -335,7 +335,7 @@ include:
 
 Claude better understands this pattern and can explain when to use dynamic generation versus static configs. Copilot tends to suggest overly complex solutions or static alternatives.
 
-CircleCI: Orbs and Reusable Commands
+CircleCI - Orbs and Reusable Commands
 
 CircleCI uses a different philosophy, orbs are reusable command libraries, workflows orchestrate jobs, and everything is YAML. This requires understanding CircleCI's specific abstractions.
 
@@ -418,7 +418,7 @@ workflows:
               only: main
 ```
 
-CircleCI's orbs ecosystem is where Copilot excels, it knows common orbs (node, docker, aws) and can suggest appropriate versions. Claude performs well here too but sometimes generates custom commands where an orb would suffice. Cursor integrates CircleCI config validation via extensions.
+CircleCI's orbs environment is where Copilot excels, it knows common orbs (node, docker, aws) and can suggest appropriate versions. Claude performs well here too but sometimes generates custom commands where an orb would suffice. Cursor integrates CircleCI config validation via extensions.
 
 Orb comparison table:
 
@@ -449,17 +449,17 @@ Tool Comparison Matrix
 | Iteration speed | Slow (requires new prompts) | Fast (inline) | Fast (inline) |
 | Cost | $20/month API | Free or $10/month | Free or $20/month |
 
-Practical Workflow: Using Claude to Build Complex Pipelines
+Practical Workflow - Using Claude to Build Complex Pipelines
 
 For sophisticated multi-stage deployments, the effective workflow combines tools:
 
-1. Start with Claude: Describe your complete workflow. "Deploy to staging on develop branch with automated tests, deploy to production on main with manual approval, roll back capability."
+1. Start with Claude - Describe your complete workflow. "Deploy to staging on develop branch with automated tests, deploy to production on main with manual approval, roll back capability."
 
 2. Get the structure: Claude produces config with detailed comments explaining each section.
 
-3. Refine with Cursor: Copy the config into your project's `.github/workflows/` file. Cursor catches indentation errors and schema violations in real-time.
+3. Refine with Cursor - Copy the config into your project's `.github/workflows/` file. Cursor catches indentation errors and schema violations in real-time.
 
-4. Test with Copilot: Once deployed, if you need quick tweaks (add a new step, change a trigger), Copilot's inline suggestions are fastest.
+4. Test with Copilot - Once deployed, if you need quick tweaks (add a new step, change a trigger), Copilot's inline suggestions are fastest.
 
 Example prompt for Claude:
 
@@ -479,25 +479,25 @@ Claude produces 150+ lines of production-ready config with inline documentation.
 
 Common Pitfalls and How AI Tools Handle Them
 
-Pitfall 1: Secret Exposure in Logs
-Bad approach: `echo $DEPLOY_TOKEN | head -c 10` to verify it's set
-Good approach: Use `--mask-parameter` or check length without echoing
+Pitfall 1 - Secret Exposure in Logs
+Bad approach - `echo $DEPLOY_TOKEN | head -c 10` to verify it's set
+Good approach - Use `--mask-parameter` or check length without echoing
 
 Claude consistently uses proper masking. Copilot sometimes suggests unsafe approaches. Cursor validates secret patterns when configured.
 
-Pitfall 2: Missing Artifact Cleanup
+Pitfall 2 - Missing Artifact Cleanup
 Pipelines accumulate large build artifacts over time. CircleCI has `expire_in`, GitHub Actions uses `retention-days`.
 
 Claude proactively suggests retention policies. Copilot requires you to ask. Cursor shows warnings for missing cleanup.
 
-Pitfall 3: Service Dependency Timing
+Pitfall 3 - Service Dependency Timing
 Docker services in CI need health checks. Using sleep instead is fragile.
 
 ```yaml
-Bad: Arbitrary wait
+Bad - Arbitrary wait
 - run: sleep 10
 
-Good: Health check loop
+Good - Health check loop
 - run: |
     for i in {1..30}; do
       if nc -z localhost 5432; then exit 0; fi
@@ -508,7 +508,7 @@ Good: Health check loop
 
 Claude suggests this pattern automatically. Copilot needs explicit prompting.
 
-Pitfall 4: Matrix Jobs Not Using Strategy Correctly
+Pitfall 4 - Matrix Jobs Not Using Strategy Correctly
 GitHub Actions supports matrix strategies for parallel testing:
 
 ```yaml

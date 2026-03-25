@@ -22,7 +22,7 @@ Choose Jasper AI if you need a versatile AI copywriter that handles blogs, socia
 - Which is better for beginners: Jasper or Anyword?
 
 Jasper tends to be more accessible for users new to AI copywriting because its interface is more editor-focused.
-- Is Jasper or Anyword: more expensive? Anyword starts at $99/month versus Jasper's $39/month entry tier.
+- Is Jasper or Anyword - more expensive? Anyword starts at $99/month versus Jasper's $39/month entry tier.
 - Choose Jasper AI if: you need a versatile AI copywriter that handles blogs, social media, and ad copy in one platform with a straightforward REST API and broad integrations like HubSpot and Zapier.
 - In one documented e-commerce case: using Anyword's top-scored variants over randomly selected Jasper variants improved CTR by 18% on Google Ads and 12% on Facebook over a four-week test.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.

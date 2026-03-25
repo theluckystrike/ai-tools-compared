@@ -393,7 +393,7 @@ Relationship Management in Factories
 The most challenging aspect of test data factories is maintaining relationships between entities. Claude Code handles this better than Copilot:
 
 ```python
-Complex relationship example: User → Orders → LineItems → Products
+Complex relationship example - User → Orders → LineItems → Products
 class ProductFactory(factory.Factory):
     class Meta:
         model = Product

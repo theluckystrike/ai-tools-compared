@@ -17,17 +17,17 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 Technical documentation has a quality ceiling that most AI tools don't reach: accurate code examples, the right level of detail for the audience, and explanations that don't talk down to experienced engineers. This guide compares Claude and GPT-4 across four documentation types that actually get written in engineering teams.
 
-PYM-001: Payment Service P95 Latency > 2s
+PYM-001 - Payment Service P95 Latency > 2s
 
-Severity: P2. escalate to P1 if >5s or error rate >1%
-On-call contact: #payments-oncall
+Severity - P2. escalate to P1 if >5s or error rate >1%
+On-call contact - #payments-oncall
 
 1.
 - No constraints on `amount`: no explanation of when to use `idempotency_key`, no error scenarios.
 - Restart the service if: needed 5.
 - GPT-4's requires a senior: engineer to translate into actual steps.
 
-Test 1: API Reference from Code
+Test 1 - API Reference from Code
 
 Both models were given the same Python function with a docstring stub and asked to generate API reference documentation.
 
@@ -120,9 +120,9 @@ Notes
 
 Claude inferred the `amount` is in cents, provided a realistic example with `uuid4()` for idempotency, and added error types that make logical sense even without seeing the implementation.
 
-Test 2: Runbook for On-Call Engineers
+Test 2 - Runbook for On-Call Engineers
 
-Prompt: "Write a runbook section for: payment service P95 latency exceeds 2 seconds."
+Prompt - "Write a runbook section for: payment service P95 latency exceeds 2 seconds."
 
 Both models produced runbook entries, but the structure differed significantly.
 
@@ -145,10 +145,10 @@ Generic enough to apply to any service. No specific commands, no metrics to chec
 Claude's runbook:
 
 ```markdown
-PYM-001: Payment Service P95 Latency > 2s
+PYM-001 - Payment Service P95 Latency > 2s
 
-Severity: P2. escalate to P1 if >5s or error rate >1%
-On-call contact: #payments-oncall
+Severity - P2. escalate to P1 if >5s or error rate >1%
+On-call contact - #payments-oncall
 
 1. Triage (2 minutes)
 
@@ -162,7 +162,7 @@ kubectl logs -n payments -l app=payment-svc --since=10m | \
  grep '"level":"error"' | wc -l
 ```
 
-Check: [Payments Latency Dashboard](https://grafana.internal/d/payments-latency)
+Check - [Payments Latency Dashboard](https://grafana.internal/d/payments-latency)
 
 2. Identify the Layer (5 minutes)
 
@@ -207,9 +207,9 @@ Escalate to #payments-eng if:
 
 Claude's runbook is immediately actionable with real commands and thresholds. GPT-4's requires a senior engineer to translate into actual steps.
 
-Test 3: Tutorial Writing
+Test 3 - Tutorial Writing
 
-Prompt: "Write an introduction section for a tutorial on setting up Redis caching in a FastAPI app."
+Prompt - "Write an introduction section for a tutorial on setting up Redis caching in a FastAPI app."
 
 Both models write clear prose. The difference is in code example quality and conceptual accuracy.
 
@@ -230,7 +230,7 @@ Claude introduction:
 
 Claude explains *why* Redis fits FastAPI (async alignment), describes the cache-aside pattern before showing code, and gives a concrete prerequisite with a runnable Docker command. GPT-4 uses generic tutorial phrasing.
 
-Test 4: README Generation from Code
+Test 4 - README Generation from Code
 
 Claude consistently produces better READMEs by inferring purpose and usage from code structure. Given a Python CLI tool with argparse, Claude generates:
 - Accurate installation instructions based on the package structure

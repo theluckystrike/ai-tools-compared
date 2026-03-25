@@ -38,7 +38,7 @@ Code migration is one of the most time-intensive engineering tasks. and one wher
 2.
 - Code migration is one of the most time-intensive engineering tasks: and one where AI provides the clearest ROI.
 - Apply ONLY these transformations: 1.
-- OLD API: {old_signature}
+- OLD API - {old_signature}
 
 NEW API:
 {new_signature}
@@ -48,7 +48,7 @@ MIGRATION NOTES:
 
 Transform any code that calls the old API to use the new API.
 - If the file doesn't use this API: return it unchanged.
-- Test files: Often use the old API in mock setups with different patterns than production code.
+- Test files - Often use the old API in mock setups with different patterns than production code.
 
 Prerequisites
 
@@ -60,7 +60,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Migration Type 1: Library Upgrade with Breaking Changes
+Step 1 - Migration Type 1: Library Upgrade with Breaking Changes
 
 Migrating from React Router v5 to v6 (useHistory to useNavigate, Switch to Routes, etc.)
 
@@ -134,7 +134,7 @@ print(f"Changed: {len(results['changed'])} files")
 
 Always stage, validate, then apply. Never write AI-migrated code directly over source files without a validation step.
 
-Step 2: Migration Type 2: Language Port (Python 2 to Python 3)
+Step 2 - Migration Type 2: Language Port (Python 2 to Python 3)
 
 For large codebases, use the Anthropic Batch API to process hundreds of files concurrently at 50% cost:
 
@@ -181,7 +181,7 @@ print(f"Batch submitted: {batch.id}")
 print(f"Processing {len(batch_requests)} files at 50% API cost")
 ```
 
-Step 3: Migration Type 3: Internal API Breaking Changes
+Step 3 - Migration Type 3: Internal API Breaking Changes
 
 When you rename a method or change a signature, every call site needs updating.
 
@@ -231,7 +231,7 @@ result = subprocess.run(
 affected_files = result.stdout.strip().split("\n")
 ```
 
-Step 4: Validation After AI Migration
+Step 4 - Validation After AI Migration
 
 ```python
 import ast
@@ -264,9 +264,9 @@ The standard migration workflow:
 5. Human review of files flagged by any check
 6. Apply staging to source
 
-Step 5: What AI Migration Gets Wrong
+Step 5 - What AI Migration Gets Wrong
 
-Multi-line destructuring: An AI might correctly identify `useHistory()` but miss:
+Multi-line destructuring - An AI might correctly identify `useHistory()` but miss:
 
 ```javascript
 const { push, replace } = useHistory();
@@ -274,13 +274,13 @@ const { push, replace } = useHistory();
 // Then: push('/path') -> navigate('/path')
 ```
 
-Dynamic usage: `const method = condition ? history.push : history.replace`. transformation depends on runtime logic.
+Dynamic usage - `const method = condition ? history.push : history.replace`. transformation depends on runtime logic.
 
-Test files: Often use the old API in mock setups with different patterns than production code.
+Test files - Often use the old API in mock setups with different patterns than production code.
 
 Flag these categories for manual review rather than trusting automated migration.
 
-Step 6: Diff Review Workflow
+Step 6 - Diff Review Workflow
 
 The biggest risk with AI migration is silent correctness issues. code that passes the type checker but behaves differently. Build a diff review step into every migration:
 
@@ -308,7 +308,7 @@ with open("migration-review.diff", "w") as review:
 
 Run `git diff --stat migration-review.diff` or open it in a tool like `delta` to review all changes before applying. High-confidence mechanical changes (print statements, import renames) need less scrutiny. Low-confidence changes (async addition, parameter reordering) need a human read.
 
-Step 7: Sizing the Migration
+Step 7 - Sizing the Migration
 
 Rule of thumb for estimating AI migration effort:
 

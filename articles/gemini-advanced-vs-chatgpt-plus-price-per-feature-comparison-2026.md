@@ -47,7 +47,7 @@ Gemini Advanced provides access to Gemini 2.0 Ultra, Google's most capable model
 - Multimodal excellence: Particularly strong at processing and understanding images, videos, and audio
 
 
-The model excels at tasks requiring deep research, long-form content analysis, and integration with Google's ecosystem. If your workflow involves Google Workspace heavily, this integration adds significant value beyond the base AI capabilities.
+The model excels at tasks requiring deep research, long-form content analysis, and integration with Google's environment. If your workflow involves Google Workspace heavily, this integration adds significant value beyond the base AI capabilities.
 
 
 ChatGPT Plus (GPT-4o)
@@ -232,7 +232,7 @@ ChatGPT Plus:
 - Slower on very large files
 - Better at multipage document analysis than Gemini in some cases
 
-Winner for document analysis: Gemini Advanced for volume, ChatGPT Plus for precision.
+Winner for document analysis - Gemini Advanced for volume, ChatGPT Plus for precision.
 
 Code Analysis and Development
 
@@ -248,7 +248,7 @@ ChatGPT Plus:
 - Test hypotheses in real-time
 - Better for interactive debugging workflows
 
-Winner for development: ChatGPT Plus for hands-on debugging, Gemini Advanced for architectural analysis.
+Winner for development - ChatGPT Plus for hands-on debugging, Gemini Advanced for architectural analysis.
 
 Image Generation Quality Tiers
 
@@ -267,64 +267,64 @@ Usage Pattern Decision Tree
 
 Use this to determine which service matches your actual needs:
 
-Start: Are you a Google Workspace user?
+Start - Are you a Google Workspace user?
 - Yes → Consider Gemini Advanced (storage value)
 - No → Move to next question
 
-Question 2: Do you need image generation?
+Question 2 - Do you need image generation?
 - Yes → ChatGPT Plus (DALL-E 3)
 - No → Move to next question
 
-Question 3: Do you analyze long documents regularly?
+Question 3 - Do you analyze long documents regularly?
 - Yes (100+ pages monthly) → Gemini Advanced (context window)
 - No → Move to next question
 
-Question 4: Do you write code and need code execution?
+Question 4 - Do you write code and need code execution?
 - Yes → ChatGPT Plus (Data Analysis)
 - No → Either platform works equally well
 
-Question 5: What's your primary language?
+Question 5 - What's your primary language?
 - English + other languages → Gemini (multilingual strength)
 - English only → Either works
 
 Monthly Usage Scenarios and Costs
 
-Scenario 1: Student/Hobbyist
+Scenario 1 - Student/Hobbyist
 
-Expected usage: 10-15 conversations/week, no images, document reading
+Expected usage - 10-15 conversations/week, no images, document reading
 
 - Free alternatives: Claude free tier (5 msgs/day)
 - ChatGPT Plus: $20/month (only if free tier insufficient)
 - Gemini Advanced: $20/month (matches Plus, but not optimal for this use case)
 - Use free tiers first; upgrade only if needed
 
-Scenario 2: Freelance Writer/Creator
+Scenario 2 - Freelance Writer/Creator
 
-Expected usage: Daily use, image generation 20-30x/month, document analysis
+Expected usage - Daily use, image generation 20-30x/month, document analysis
 
 - ChatGPT Plus: $20/month is essential (image generation)
 - Gemini Advanced: Insufficient (image generation is weaker)
 - ChatGPT Plus ($240/year)
 
-Scenario 3: Data Analyst/Developer
+Scenario 3 - Data Analyst/Developer
 
-Expected usage: Daily code analysis, weekly document review, data processing
+Expected usage - Daily code analysis, weekly document review, data processing
 
 - ChatGPT Plus: Essential (Advanced Data Analysis)
 - Gemini Advanced: Useful (context window) but lacks execution
 - ChatGPT Plus for hands-on work, consider Gemini for specialized document analysis
 
-Scenario 4: Researcher/Academic
+Scenario 4 - Researcher/Academic
 
-Expected usage: Massive document analysis, multi-source research, synthesis
+Expected usage - Massive document analysis, multi-source research, synthesis
 
 - Gemini Advanced: Superior (1M token context)
 - ChatGPT Plus: Works but hit context limits frequently
 - Gemini Advanced ($240/year, plus storage savings if needed)
 
-Scenario 5: Business User (Marketer/Manager)
+Scenario 5 - Business User (Marketer/Manager)
 
-Expected usage: Campaign briefs, content generation, team collaboration
+Expected usage - Campaign briefs, content generation, team collaboration
 
 - ChatGPT Plus: Excellent (Canvas feature, image generation)
 - Gemini Advanced: Good (writing) but weaker at creative generation

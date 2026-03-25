@@ -20,14 +20,14 @@ Writing Playwright end-to-end tests requires understanding both test semantics (
 Table of Contents
 
 - [Why Playwright Benefits from AI Assistance](#why-playwright-benefits-from-ai-assistance)
-- [Locator Strategies: Generating Reliable Selectors](#locator-strategies-generating-reliable-selectors)
-- [Page Object Models: Organizing Tests at Scale](#page-object-models-organizing-tests-at-scale)
-- [Fixtures: Proper Test State Management](#fixtures-proper-test-state-management)
+- [Locator Strategies - Generating Reliable Selectors](#locator-strategies-generating-reliable-selectors)
+- [Page Object Models - Organizing Tests at Scale](#page-object-models-organizing-tests-at-scale)
+- [Fixtures - Proper Test State Management](#fixtures-proper-test-state-management)
 - [Visual Regression Testing](#visual-regression-testing)
 - [Playwright Inspector and Recording](#playwright-inspector-and-recording)
 - [Playwright Reporters for CI Integration](#playwright-reporters-for-ci-integration)
-- [Tool Comparison: Advanced Metrics](#tool-comparison-advanced-metrics)
-- [Practical Workflow: Building a Complete Test Suite](#practical-workflow-building-a-complete-test-suite)
+- [Tool Comparison - Advanced Metrics](#tool-comparison-advanced-metrics)
+- [Practical Workflow - Building a Complete Test Suite](#practical-workflow-building-a-complete-test-suite)
 - [Common Test Pitfalls and AI Solutions](#common-test-pitfalls-and-ai-solutions)
 
 Why Playwright Benefits from AI Assistance
@@ -38,7 +38,7 @@ AI tools have memorized Playwright's API surface thoroughly. They know that `pag
 
 The real value emerges in maintainability patterns: page object models that survive UI changes, proper fixture scoping to avoid state leakage, visual regression testing setup, and configuring reporters for CI integration. AI tools that understand these patterns produce tests that scale.
 
-Locator Strategies: Generating Reliable Selectors
+Locator Strategies - Generating Reliable Selectors
 
 The foundation of maintainable Playwright tests is using the right selector strategy. Bad tests break whenever HTML structure changes. Good tests use role-based locators that survive CSS/class refactors.
 
@@ -64,11 +64,11 @@ Selector Strategies Ranked by Maintainability
    page.locator('//button[contains(text(), "Submit")]')
 ```
 
-Claude's approach: Prioritizes role-based selectors, explains why, and suggests test IDs only when necessary. Generates selectors that work across responsive layouts.
+Claude's approach - Prioritizes role-based selectors, explains why, and suggests test IDs only when necessary. Generates selectors that work across responsive layouts.
 
-Copilot's approach: Generates working selectors but sometimes defaults to CSS classes without reasoning about maintainability.
+Copilot's approach - Generates working selectors but sometimes defaults to CSS classes without reasoning about maintainability.
 
-Cursor's approach: Type hints show available locator methods as you type, guiding toward better choices.
+Cursor's approach - Type hints show available locator methods as you type, guiding toward better choices.
 
 Here's a realistic login test with proper selectors:
 
@@ -105,7 +105,7 @@ test('should show error with invalid credentials', async ({ page }) => {
 
 All three tools produce this, but Claude explains the selector hierarchy. Copilot skips explanation. Cursor shows better IntelliSense.
 
-Page Object Models: Organizing Tests at Scale
+Page Object Models - Organizing Tests at Scale
 
 Real test suites have hundreds of tests. Page Object Models (POM) organize page interactions into reusable classes, reducing duplication and making UI changes cheaper to maintain.
 
@@ -231,7 +231,7 @@ Cursor's approach:
 - Autocomplete suggests methods within the page object class
 - Catches missing async/await keywords immediately
 
-Fixtures: Proper Test State Management
+Fixtures - Proper Test State Management
 
 Playwright fixtures provide reusable test setup and teardown. Proper fixture usage prevents flaky tests and state pollution between tests.
 
@@ -474,7 +474,7 @@ export default defineConfig({
 
 Claude explains reporter configuration and why certain choices matter (HTML for local debugging, JUnit for CI integration). Copilot generates working configs but skips rationale. Cursor validates reporter names against available options.
 
-Tool Comparison: Advanced Metrics
+Tool Comparison - Advanced Metrics
 
 | Capability | Claude 3.5 | Copilot | Cursor |
 |-----------|-----------|---------|--------|
@@ -489,7 +489,7 @@ Tool Comparison: Advanced Metrics
 | Codegen integration suggestions | Fair | Fair | Fair |
 | Test parallelization advice | Excellent | Fair | Fair |
 
-Practical Workflow: Building a Complete Test Suite
+Practical Workflow - Building a Complete Test Suite
 
 For a realistic e-commerce checkout flow:
 
@@ -531,7 +531,7 @@ tests/
 
 Common Test Pitfalls and AI Solutions
 
-Pitfall 1: Hardcoded Waits
+Pitfall 1 - Hardcoded Waits
 ```typescript
 // Bad
 await page.waitForTimeout(2000);
@@ -540,7 +540,7 @@ await page.waitForTimeout(2000);
 await page.waitForURL('/dashboard');
 ```
 
-Pitfall 2: Brittle Element Selection
+Pitfall 2 - Brittle Element Selection
 ```typescript
 // Bad
 page.locator('body > div:nth-child(2) > form > button')
@@ -549,7 +549,7 @@ page.locator('body > div:nth-child(2) > form > button')
 page.getByRole('button', { name: /submit/i })
 ```
 
-Pitfall 3: State Leakage Between Tests
+Pitfall 3 - State Leakage Between Tests
 ```typescript
 // Bad: Shared test state
 let userId;
@@ -567,7 +567,7 @@ test('create and delete user', async ({ page }) => {
 });
 ```
 
-Pitfall 4: Missing Error Handling
+Pitfall 4 - Missing Error Handling
 ```typescript
 // Good: Assert what happens when element isn't found
 try {
@@ -587,7 +587,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -599,7 +599,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

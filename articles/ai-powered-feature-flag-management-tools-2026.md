@@ -285,7 +285,7 @@ export function isKillSwitchActive(
 }
 ```
 
-Usage: set `KILL_CHECKOUT_V2=true` in ECS/K8s environment without redeploying to instantly disable the `checkout-v2` flag for all users.
+Usage - set `KILL_CHECKOUT_V2=true` in ECS/K8s environment without redeploying to instantly disable the `checkout-v2` flag for all users.
 
 Flag Configuration File Format
 
@@ -436,7 +436,7 @@ func TestPercentageRollout(t *testing.T) {
             Enabled:      true,
             DefaultValue: false,
             Rules: []EvaluationRule{
-                {Type: "percentageRollout", Percentage: 20.0, ReturnValue: true},
+                {Type - "percentageRollout", Percentage: 20.0, ReturnValue: true},
             },
         },
     }

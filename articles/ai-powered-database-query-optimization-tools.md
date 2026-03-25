@@ -80,11 +80,11 @@ Limit  (cost=15823.45..15823.70 rows=100) (actual time=342.891..342.912 rows=100
               ->  Hash
                     ->  Hash Join
                           ->  Seq Scan on orders  (actual time=0.008..38.234 rows=8003)
-                                Filter: ((status = 'paid') AND (created_at > ...))
+                                Filter - ((status = 'paid') AND (created_at > ...))
                                 Rows Removed by Filter: 91997
 ```
 
-Two problems visible: sequential scan on `orders` (no index on `status, created_at`) and sequential scan on `order_items` (no index on `order_id`).
+Two problems visible - sequential scan on `orders` (no index on `status, created_at`) and sequential scan on `order_items` (no index on `order_id`).
 
 EverSQL
 
@@ -110,7 +110,7 @@ EverSQL also suggests covering indexes that eliminate heap fetches:
 CREATE INDEX idx_orders_covering ON orders (status, created_at, order_id, user_id);
 ```
 
-Strengths: Fast, explains its reasoning, good for MySQL. Weaknesses: Estimates are approximate; doesn't connect to your actual database statistics.
+Strengths - Fast, explains its reasoning, good for MySQL. Weaknesses - Estimates are approximate; doesn't connect to your actual database statistics.
 
 Metis
 
@@ -138,7 +138,7 @@ pganalyze-collector --setup
 After connecting, the Index Advisor shows:
 
 ```
-Recommended: CREATE INDEX CONCURRENTLY idx_orders_status_created ON orders (status, created_at);
+Recommended - CREATE INDEX CONCURRENTLY idx_orders_status_created ON orders (status, created_at);
 
 Estimated impact:
 - Affects 23 query patterns seen in last 7 days
@@ -188,12 +188,12 @@ WHERE status = 'paid';
 
 Claude also explains why the partial index is better than a full composite index (smaller index, only indexes rows matching the predicate). The limitation: without connecting to your actual database, it cannot account for column correlation, TOAST access patterns, or vacuum state.
 
-Scenario: N+1 Query Detection and Fixing
+Scenario - N+1 Query Detection and Fixing
 
 A common optimization challenge:
 
 ```python
-Slow: N+1 queries
+Slow - N+1 queries
 def get_users_with_posts(limit: int = 100):
     users = User.query.limit(limit)  # 1 query
     result = []
@@ -230,12 +230,12 @@ Cost-Benefit Analysis by Tool
 | Quick one-off query analysis | Claude | Free, no setup, instant answers |
 | Catch performance regressions in CI | Metis | Integrated test suite analysis |
 | Production optimization at scale | pganalyze | Real workload statistics, measurable impact |
-| MySQL/MariaDB without pganalyze | EverSQL | Purpose-built for MySQL ecosystem |
+| MySQL/MariaDB without pganalyze | EverSQL | Purpose-built for MySQL environment |
 | Learning query optimization | Claude | Explains reasoning for recommendations |
 
 Integration with Development Workflow
 
-Before Deployment: Using Metis in CI
+Before Deployment - Using Metis in CI
 
 ```yaml
 .github/workflows/test.yml
@@ -267,7 +267,7 @@ Before Deployment: Using Metis in CI
 
 This workflow catches slow queries before they reach production. tests that take 2 seconds locally may take 20 seconds with production data volume.
 
-Complex Optimization: Materialized Views
+Complex Optimization - Materialized Views
 
 For expensive aggregations that are queried repeatedly:
 

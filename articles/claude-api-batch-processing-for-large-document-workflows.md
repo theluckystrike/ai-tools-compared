@@ -124,10 +124,10 @@ The batch will process in the background. You can check its status anytime:
 ```python
 Check batch status
 batch_status = client.beta.messages.batch.retrieve(batch.id)
-print(f"Status: {batch_status.state}")
-print(f"Processing: {batch_status.request_counts.processing}")
-print(f"Succeeded: {batch_status.request_counts.succeeded}")
-print(f"Errored: {batch_status.request_counts.errored}")
+print(f"Status - {batch_status.state}")
+print(f"Processing - {batch_status.request_counts.processing}")
+print(f"Succeeded - {batch_status.request_counts.succeeded}")
+print(f"Errored - {batch_status.request_counts.errored}")
 ```
 
 Real-World Document Analysis Example
@@ -342,7 +342,7 @@ Batch processing provides 50% cost reduction, but you can optimize further:
 
 1. Combine similar requests: Group requests requiring the same analysis to reuse context
 2. Adjust max_tokens: Set token limits precisely for your use case, over-provisioning wastes quota
-3. Use Claude Haiku: For straightforward classification tasks, Claude Haiku 4.5 costs less than Opus
+3. Use Claude Haiku - For straightforward classification tasks, Claude Haiku 4.5 costs less than Opus
 4. Batch timing: Submit batches during off-peak hours (evening/night in your timezone) for faster processing
 
 Error Handling and Retries
@@ -423,6 +423,6 @@ Related Articles
 - [How to Use Claude API Cheaply for Small Coding Projects](/how-to-use-claude-api-cheaply-for-small-coding-projects/)
 - [Writing CLAUDE MD Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
 - [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
-- [Example: Trigger BambooHR onboarding workflow via API](https://welikeremotestack.com/best-onboarding-platform-for-remote-companies-processing-mor/)
+- [Example - Trigger BambooHR onboarding workflow via API](https://welikeremotestack.com/best-onboarding-platform-for-remote-companies-processing-mor/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

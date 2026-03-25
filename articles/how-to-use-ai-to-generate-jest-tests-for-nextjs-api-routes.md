@@ -51,7 +51,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Set Up Jest for Next.js API Routes
+Step 1 - Set Up Jest for Next.js API Routes
 
 Before generating tests, ensure your Next.js project has Jest configured properly. Next.js 13 and later versions include Jest support out of the box, but you may need to install additional packages for API route testing.
 
@@ -85,7 +85,7 @@ Create your setup file to include testing utilities:
 import '@testing-library/jest-dom'
 ```
 
-Step 2: Use AI to Generate Test Cases
+Step 2 - Use AI to Generate Test Cases
 
 When you have an API route that needs testing, provide the AI tool with your route code and request specific test scenarios. The key is giving the AI enough context about what your route does.
 
@@ -130,7 +130,7 @@ export async function POST(request) {
 
 Ask your AI tool to generate Jest tests for this route. A good prompt includes the route code and specifies what behaviors to test.
 
-Step 3: Generated Test Structure
+Step 3 - Generated Test Structure
 
 The AI should produce tests covering various scenarios:
 
@@ -216,7 +216,7 @@ describe('POST /api/register', () => {
 })
 ```
 
-Step 4: Test More Complex API Routes
+Step 4 - Test More Complex API Routes
 
 For API routes that interact with databases or external services, use mocking to isolate your tests. The AI can help generate appropriate mock setups.
 
@@ -340,7 +340,7 @@ npm test -- --coverage
 
 This shows you which parts of your API routes remain untested, helping you identify gaps in your test coverage.
 
-Step 5: Test Authentication and Authorization in API Routes
+Step 5 - Test Authentication and Authorization in API Routes
 
 Most production Next.js API routes require authentication. AI can generate tests that verify protected routes reject unauthenticated requests and enforce role-based access.
 
@@ -403,7 +403,7 @@ describe('GET /api/admin/users', () => {
 
 Always verify that your auth tests cover all role combinations, not just the happy path. Missed role checks in tests often mean missed role checks in the actual routes.
 
-Step 6: Test API Routes with Database Interactions
+Step 6 - Test API Routes with Database Interactions
 
 When your API routes read from or write to a database, mock the database layer so tests run in isolation without a real DB connection. A practical pattern uses Jest module mocking to intercept Prisma or similar ORM calls:
 
@@ -446,7 +446,7 @@ describe('GET /api/posts/[id]', () => {
 
 When prompting AI to generate database-backed route tests, include your Prisma schema or data model in the prompt. This context lets the AI generate accurate mock return values that match your real data shapes.
 
-Step 7: Structuring AI Prompts for Better Test Output
+Step 7 - Structuring AI Prompts for Better Test Output
 
 The quality of AI-generated tests depends significantly on how you frame the prompt. Vague prompts produce generic tests; specific prompts produce immediately useful ones.
 

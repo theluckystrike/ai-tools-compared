@@ -25,7 +25,7 @@ Table of Contents
 - [Client-Side Considerations](#client-side-considerations)
 - [Real-World Performance Factors](#real-world-performance-factors)
 - [Recommendations](#recommendations)
-- [Advanced SSE Patterns: Client Registry and Broadcasting](#advanced-sse-patterns-client-registry-and-broadcasting)
+- [Advanced SSE Patterns - Client Registry and Broadcasting](#advanced-sse-patterns-client-registry-and-broadcasting)
 - [Reconnection Logic and Event IDs](#reconnection-logic-and-event-ids)
 - [Testing SSE Implementations](#testing-sse-implementations)
 - [Performance Considerations](#performance-considerations)
@@ -147,7 +147,7 @@ Many developers find value in using both tools for different aspects of SSE impl
 
 The choice depends on your familiarity with SSE patterns, your project requirements, and your preference for coding style.
 
-Advanced SSE Patterns: Client Registry and Broadcasting
+Advanced SSE Patterns - Client Registry and Broadcasting
 
 Production SSE implementations require sophisticated client management. Let's examine how each tool handles more complex scenarios.
 
@@ -347,7 +347,7 @@ Performance Considerations
 
 SSE performance depends on several factors that AI tools should help you address. Cursor typically considers these upfront; Copilot requires explicit prompting.
 
-Memory per connection: Each `SseEmitter` maintains a buffer. With 10,000 concurrent connections, memory usage becomes significant. Production systems should monitor this:
+Memory per connection - Each `SseEmitter` maintains a buffer. With 10,000 concurrent connections, memory usage becomes significant. Production systems should monitor this:
 
 ```java
 @Scheduled(fixedRate = 60000)
@@ -360,7 +360,7 @@ public void logConnectionMetrics() {
 }
 ```
 
-Backpressure handling: When clients slow down reading, the emitter buffer might fill up. Cursor suggests handling this explicitly:
+Backpressure handling - When clients slow down reading, the emitter buffer might fill up. Cursor suggests handling this explicitly:
 
 ```java
 public void broadcastWithBackpressure(String eventName, Object data) {

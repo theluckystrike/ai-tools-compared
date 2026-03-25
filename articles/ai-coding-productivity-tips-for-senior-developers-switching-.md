@@ -21,7 +21,7 @@ Table of Contents
 
 - [Understanding the Mental Model Shift](#understanding-the-mental-model-shift)
 - [Practical Strategies for AI-Assisted Development](#practical-strategies-for-ai-assisted-development)
-- [Real-World Example: Refactoring Legacy Code](#real-world-example-refactoring-legacy-code)
+- [Real-World Example - Refactoring Legacy Code](#real-world-example-refactoring-legacy-code)
 - [Measuring Productivity Gains](#measuring-productivity-gains)
 - [Advanced Techniques for Senior Developers](#advanced-techniques-for-senior-developers)
 - [Comparing AI Tool Capabilities for Senior Dev Work](#comparing-ai-tool-capabilities-for-senior-dev-work)
@@ -40,8 +40,8 @@ Practical Strategies for AI-Assisted Development
 The quality of AI-generated code directly correlates with prompt clarity. Vague requests produce mediocre results, while specific, contextual prompts generate useful code.
 
 ```python
-Instead of: "Write a function to process user data"
-Try: "Write a Python function that validates email format using regex,
+Instead of - "Write a function to process user data"
+Try - "Write a Python function that validates email format using regex,
 normalizes the username by stripping whitespace and converting to lowercase,
 and returns a dictionary with validation status and normalized data"
 
@@ -84,9 +84,9 @@ Senior developers understand that AI-generated code requires scrutiny. Establish
 
 - Edge cases: Does it handle null values, empty collections, and boundary conditions?
 
-- Security: Are there potential injection risks or credential exposures?
+- Security - Are there potential injection risks or credential exposures?
 
-- Performance: Are there obvious algorithmic inefficiencies?
+- Performance - Are there obvious algorithmic inefficiencies?
 
 4. Use AI for Repetitive Patterns, Not Novel Solutions
 
@@ -120,9 +120,9 @@ Example prompt template for API endpoints in FastAPI
 - Include docstrings and type hints"
 ```
 
-Real-World Example: Refactoring Legacy Code
+Real-World Example - Refactoring Legacy Code
 
-Consider a typical scenario: modernizing a legacy function that lacks type hints and modern Python patterns.
+Consider a typical scenario - modernizing a legacy function that lacks type hints and modern Python patterns.
 
 Before (legacy code):
 
@@ -275,7 +275,7 @@ Building Code Analysis Prompt Templates
 Create reusable prompts for common code review patterns:
 
 ```
-Template: Performance Analysis
+Template - Performance Analysis
 "Analyze this {LANGUAGE} code for performance issues.
 Focus on:
 1. Algorithmic complexity (report O(n²) patterns)
@@ -287,7 +287,7 @@ Focus on:
 For each issue, suggest specific improvements and estimate
 the performance impact."
 
-Template: Security Audit
+Template - Security Audit
 "Review this {LANGUAGE} code for security vulnerabilities.
 Check for:
 1. SQL injection risks
@@ -299,7 +299,7 @@ Check for:
 For each finding, rate severity (Critical/High/Medium/Low)
 and provide remediation code."
 
-Template: Test Coverage
+Template - Test Coverage
 "Generate test cases for this function to achieve 90% code coverage.
 Include:
 1. Happy path test

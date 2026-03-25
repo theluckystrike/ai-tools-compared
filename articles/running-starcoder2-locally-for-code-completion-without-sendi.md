@@ -31,11 +31,11 @@ Table of Contents
 - [When Local Code Completion Makes Sense](#when-local-code-completion-makes-sense)
 - [Advanced Configuration for Production](#advanced-configuration-for-production)
 - [Performance Benchmarking](#performance-benchmarking)
-- [Comparison: Starcoder2 vs Cloud Alternatives](#comparison-starcoder2-vs-cloud-alternatives)
+- [Comparison - Starcoder2 vs Cloud Alternatives](#comparison-starcoder2-vs-cloud-alternatives)
 - [Privacy Compliance and Data Handling](#privacy-compliance-and-data-handling)
 - [Integrating with CI/CD Pipelines](#integrating-with-cicd-pipelines)
 - [Troubleshooting and Optimization](#troubleshooting-and-optimization)
-- [Cost Analysis: Local vs Cloud](#cost-analysis-local-vs-cloud)
+- [Cost Analysis - Local vs Cloud](#cost-analysis-local-vs-cloud)
 
 Understanding Starcoder2 and Local Code Completion
 
@@ -300,7 +300,7 @@ results = bench.compare_models()
 
 This identifies which model size matches your latency requirements (typically 100-500ms is acceptable for IDE suggestions).
 
-Comparison: Starcoder2 vs Cloud Alternatives
+Comparison - Starcoder2 vs Cloud Alternatives
 
 | Factor | Starcoder2 Local | GitHub Copilot | Claude Code | Cursor |
 |--------|-----------------|-----------------|-------------|--------|
@@ -446,7 +446,7 @@ class TriageSolver:
         return {'ok': False, 'message': f'Low memory: {available:.1f}GB (need 10GB+)'}
 ```
 
-Cost Analysis: Local vs Cloud
+Cost Analysis - Local vs Cloud
 
 Calculate long-term costs for your team:
 

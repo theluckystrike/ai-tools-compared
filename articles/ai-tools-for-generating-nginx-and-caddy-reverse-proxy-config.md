@@ -46,7 +46,7 @@ Why Use AI for Reverse Proxy Configurations
 
 Reverse proxy setups involve numerous subtle decisions that affect performance, security, and maintainability. Nginx configurations can become complex with upstream definitions, location blocks, SSL certificates, and rate limiting. Caddy simplifies many of these decisions with its automatic HTTPS, but understanding its Caddyfile syntax remains important.
 
-AI tools help in several ways: they generate starting points from natural language descriptions, they suggest security best practices you might otherwise miss, and they explain existing configurations when you inherit someone else's setup. The best tools produce configs that work correctly on the first try, reducing the iteration cycle.
+AI tools help in several ways - they generate starting points from natural language descriptions, they suggest security best practices you might otherwise miss, and they explain existing configurations when you inherit someone else's setup. The best tools produce configs that work correctly on the first try, reducing the iteration cycle.
 
 Top AI Tools for Reverse Proxy Configuration
 
@@ -248,7 +248,7 @@ Common Configuration Mistakes AI Tools Make
 
 Understanding what AI tools often get wrong helps you review generated configs:
 
-Mistake 1: Buffer settings for large requests
+Mistake 1 - Buffer settings for large requests
 ```nginx
 AI might forget this:
 client_max_body_size 100M;
@@ -259,7 +259,7 @@ proxy_buffers 4 256k;
 
 Without these, large file uploads fail mysteriously. Always verify buffer settings for your use case.
 
-Mistake 2: Keeping-alive timeouts
+Mistake 2 - Keeping-alive timeouts
 ```nginx
 Copilot often misses connection optimization:
 keepalive_timeout 65;
@@ -271,7 +271,7 @@ proxy_read_timeout 60s;
 
 Default timeouts work for many cases but can cause issues with slow clients or large data transfers.
 
-Mistake 3: Redirect chains
+Mistake 3 - Redirect chains
 ```nginx
 Bad pattern AI sometimes generates:
 server {
@@ -279,7 +279,7 @@ server {
     return 301 https://$server_name$request_uri;
 }
 
-Better: consolidate
+Better - consolidate
 server {
     server_name www.api.example.com;
     return 301 https://api.example.com$request_uri;
@@ -288,7 +288,7 @@ server {
 
 Redirect chains add latency. AI tools don't always consolidate redirects optimally.
 
-Mistake 4: Missing IPv6
+Mistake 4 - Missing IPv6
 ```nginx
 AI sometimes forgets IPv6:
 listen 80;
@@ -316,7 +316,7 @@ Better prompt:
 - Health check endpoint
 - Gzip compression for responses > 1KB
 - Cache static assets for 30 days
-Domain: api.mycompany.com"
+Domain - api.mycompany.com"
 
 Even better (includes constraints):
 "Generate production Nginx config for:
@@ -379,7 +379,7 @@ Testing Generated Configs Before Deployment
 
 The safest workflow for AI-generated configs:
 
-Step 1: Syntax validation
+Step 1 - Syntax validation
 ```bash
 Nginx
 nginx -t -c /path/to/generated/nginx.conf
@@ -390,16 +390,16 @@ caddy validate --config /path/to/generated/Caddyfile
 
 If this passes, basic syntax is correct. If it fails, the error message usually pinpoints the issue.
 
-Step 2: Local testing
+Step 2 - Local testing
 ```bash
 Spin up your backend on localhost:3000
 docker run -p 3000:3000 your-api:latest
 
 Test the reverse proxy locally
-For Nginx development: just reload
+For Nginx development - just reload
 sudo nginx -s reload
 
-For Caddy development: restart
+For Caddy development - restart
 sudo systemctl restart caddy
 
 Test from another terminal
@@ -407,10 +407,10 @@ curl http://localhost/api/test
 curl -H "Authorization: Bearer token" http://localhost/api/protected
 ```
 
-Step 3: Staging deployment
+Step 3 - Staging deployment
 Deploy to a staging environment with actual traffic patterns before production.
 
-Step 4: Monitoring during deployment
+Step 4 - Monitoring during deployment
 Watch logs and metrics during the first hour:
 ```bash
 Watch Nginx error log

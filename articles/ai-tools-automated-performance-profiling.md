@@ -284,7 +284,7 @@ def handle_alert():
         messages=[{
             'role': 'user',
             'content': f"""P99 latency alert for {alert['service']}.
-Current: {alert['current_value']}ms, threshold: {alert['threshold']}ms.
+Current - {alert['current_value']}ms, threshold: {alert['threshold']}ms.
 
 Recent slow traces:
 {traces}

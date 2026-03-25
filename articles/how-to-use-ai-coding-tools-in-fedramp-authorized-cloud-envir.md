@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Self-Hosted AI Coding Solutions
+Step 1 - Self-Hosted AI Coding Solutions
 
 The most straightforward path to FedRAMP-compliant AI coding involves running AI models entirely within your authorized infrastructure. Tools like Continue.dev paired with Ollama running on your FedRAMP-authorized VM enable code completion and assistance without external network calls.
 
@@ -65,7 +65,7 @@ models:
 
 This setup processes all code locally. Your source code never leaves the authorized environment, maintaining compliance while providing AI assistance.
 
-Step 2: Configure Cloud-Based Tools with Data Restrictions
+Step 2 - Configure Cloud-Based Tools with Data Restrictions
 
 Some AI coding tools offer enterprise configurations that restrict data processing to specific geographic regions or dedicated infrastructure. If your organization uses GitHub Copilot Enterprise or similar services, verify that your administrative settings enforce data residency within FedRAMP-authorized regions.
 
@@ -83,7 +83,7 @@ copilot:
 
 Review the service's FedRAMP authorization documentation. Azure OpenAI Service, for example, offers government-region deployments with FedRAMP High authorization. Confirm that your specific configuration qualifies under your existing authorization boundary.
 
-Step 3: Network Architecture for Secure AI Tool Usage
+Step 3 - Network Architecture for Secure AI Tool Usage
 
 Network architecture plays a critical role in maintaining compliance. Implement a zero-trust approach where AI tooling operates within the same security boundary as your sensitive workloads.
 
@@ -102,7 +102,7 @@ Network segmentation strategy:
 
 Configure network security groups to block outbound traffic from your AI tooling to unapproved destinations. Use DNS filtering to prevent accidental connections to cloud AI services. Audit logs should capture all AI tool network activity for compliance verification.
 
-Step 4: Code Review Processes for AI-Assisted Development
+Step 4 - Code Review Processes for AI-Assisted Development
 
 Even with compliant tools, establish verification processes for AI-generated code. FedRAMP environments typically require code review before deployment, and AI-generated code warrants additional scrutiny.
 
@@ -120,7 +120,7 @@ Verification checklist for AI-generated code:
 
 Many organizations add AI-specific review notes to their compliance documentation. This demonstrates awareness of AI-generated code risks and provides audit trail evidence.
 
-Step 5: Alternative Approaches for Sensitive Workloads
+Step 5 - Alternative Approaches for Sensitive Workloads
 
 For the most sensitive workloads, consider segregating AI-assisted development from production systems. Use AI tools for prototyping and learning in isolated development environments, then implement hand-off procedures for production code.
 
@@ -140,7 +140,7 @@ Manual review required before merge
 
 This approach provides a safety buffer. Even if an AI tool introduces issues, they remain isolated from production systems until thorough human review.
 
-Step 6: Tool Recommendations for FedRAMP Environments
+Step 6 - Tool Recommendations for FedRAMP Environments
 
 Several tools work well in government-regulated environments:
 
@@ -170,11 +170,11 @@ Maintain documentation demonstrating your AI tooling complies with organizationa
 
 Regular audits verify that AI tool configurations haven't drifted from compliant settings. Automated policy enforcement through infrastructure-as-code helps maintain consistent compliance.
 
-Step 7: Practical Implementation: Setting Up a Compliant Workflow
+Step 7 - Practical Implementation: Setting Up a Compliant Workflow
 
 Walk through a concrete example of integrating Continue.dev with Ollama in a FedRAMP environment:
 
-Step 1: Deploy Ollama on an Authorized Instance
+Step 1 - Deploy Ollama on an Authorized Instance
 
 ```bash
 On your FedRAMP-authorized VM
@@ -188,7 +188,7 @@ netstat -ln | grep 11434
 Output should show 127.0.0.1:11434 (local only), not 0.0.0.0
 ```
 
-Step 2: Install Continue.dev IDE Extension
+Step 2 - Install Continue.dev IDE Extension
 
 ```bash
 In VS Code, install the Continue.dev extension from the marketplace
@@ -248,21 +248,21 @@ spec:
 
 This policy ensures development containers can only communicate with local AI services and authorized external endpoints. Attempting to connect to OpenAI, Anthropic, or other cloud AI services triggers network policy violations, visible in audit logs.
 
-Step 8: Common Pitfalls and How to Avoid Them
+Step 8 - Common Pitfalls and How to Avoid Them
 
-Pitfall 1: Running Ollama with Public API
+Pitfall 1 - Running Ollama with Public API
 
 ```bash
-Wrong: Creates internet-accessible endpoint
+Wrong - Creates internet-accessible endpoint
 ollama serve --host 0.0.0.0:11434
 
-Right: Localhost only
+Right - Localhost only
 ollama serve --host 127.0.0.1:11434
 ```
 
-Verify with: `curl http://0.0.0.0:11434/api/tags` - should fail if properly restricted.
+Verify with - `curl http://0.0.0.0:11434/api/tags` - should fail if properly restricted.
 
-Pitfall 2: Forgetting Logs Contains Code
+Pitfall 2 - Forgetting Logs Contains Code
 
 Even with local AI processing, logs might capture code snippets for debugging. Ensure logs are:
 - Stored on encrypted volumes
@@ -270,7 +270,7 @@ Even with local AI processing, logs might capture code snippets for debugging. E
 - Rotated and archived appropriately
 - Not exported to external logging services
 
-Pitfall 3: Model Updates During Compliance Review
+Pitfall 3 - Model Updates During Compliance Review
 
 Ollama can auto-pull model updates, potentially introducing untested code completion models during audits. Disable auto-updates:
 
@@ -282,7 +282,7 @@ Explicitly version your models in documentation
 codeqwen:7b-instruct-q4_K_M (specific digest, not latest tag)
 ```
 
-Step 9: Integration with Development Workflows
+Step 9 - Integration with Development Workflows
 
 Make compliant AI tooling the path of least resistance:
 

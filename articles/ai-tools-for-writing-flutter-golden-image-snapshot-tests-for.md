@@ -311,7 +311,7 @@ Future<void> validateGoldenFiles() async {
     if (file is File && file.path.endsWith('.png')) {
       final size = await File(file.path).length();
       if (size > 500000) {
-        print('Warning: Golden file ${file.path} is very large');
+        print('Warning - Golden file ${file.path} is very large');
       }
     }
   }

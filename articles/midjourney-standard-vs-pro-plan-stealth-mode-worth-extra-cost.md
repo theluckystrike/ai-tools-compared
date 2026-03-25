@@ -21,8 +21,8 @@ Table of Contents
 
 - [Understanding Midjourney's Subscription Tiers](#understanding-midjourneys-subscription-tiers)
 - [What Both Plans Share](#what-both-plans-share)
-- [The Standard Plan: What You Get](#the-standard-plan-what-you-get)
-- [The Pro Plan: Enhanced Capabilities](#the-pro-plan-enhanced-capabilities)
+- [The Standard Plan - What You Get](#the-standard-plan-what-you-get)
+- [The Pro Plan - Enhanced Capabilities](#the-pro-plan-enhanced-capabilities)
 - [What Is Stealth Mode?](#what-is-stealth-mode)
 - [Is Stealth Mode Worth the Extra Cost?](#is-stealth-mode-worth-the-extra-cost)
 - [How to Enable Stealth Mode](#how-to-enable-stealth-mode)
@@ -66,7 +66,7 @@ Before exploring the differenceswhat you get with both plans:
 
 Both plans allow you to create high-quality AI-generated images, and for many users, the Standard plan provides more than enough capabilities.
 
-The Standard Plan: What You Get
+The Standard Plan - What You Get
 
 The Standard plan typically costs around $30 per month (or $24 if billed annually). With this plan, you receive:
 
@@ -82,7 +82,7 @@ The Standard plan typically costs around $30 per month (or $24 if billed annuall
 
 For casual users, hobbyists, or those just starting with AI image generation, the Standard plan offers excellent value. The 15 hours of fast generation is typically enough for most projects, and the unlimited relaxed mode means you can continue generating images without hitting strict limits.
 
-The Pro Plan: Enhanced Capabilities
+The Pro Plan - Enhanced Capabilities
 
 The Pro plan, priced at approximately $60 per month (or $48 annually), includes everything in the Standard plan plus:
 
@@ -242,34 +242,34 @@ Comparing Alternative AI Image Generation Services
 DALL-E 3 (via ChatGPT Plus)
 
 ```
-Pricing: $20/month (ChatGPT Plus)
-Fast generations: Unlimited
-Speed: Standard
-Privacy: Private by default
-Strengths: Easy ChatGPT integration, good photorealism
-Limitations: Less creative fine-tuning, lower generation quality
+Pricing - $20/month (ChatGPT Plus)
+Fast generations - Unlimited
+Speed - Standard
+Privacy - Private by default
+Strengths - Easy ChatGPT integration, good photorealism
+Limitations - Less creative fine-tuning, lower generation quality
 ```
 
 Stable Diffusion (Self-Hosted)
 
 ```
-Pricing: Free (self-hosted) or $10-50/month (cloud)
-Fast generations: Depends on hardware
-Speed: Highly variable
-Privacy: Complete (if self-hosted)
-Strengths: Full control, no limits, extensible
-Limitations: Setup complexity, quality inconsistency
+Pricing - Free (self-hosted) or $10-50/month (cloud)
+Fast generations - Depends on hardware
+Speed - Highly variable
+Privacy - Complete (if self-hosted)
+Strengths - Full control, no limits, extensible
+Limitations - Setup complexity, quality inconsistency
 ```
 
 Adobe Firefly
 
 ```
-Pricing: $4.99-9.99/month or free credits
-Fast generations: Limited free tier
-Speed: Variable
-Privacy: Private by default
-Strengths: Adobe Creative Suite integration
-Limitations: More expensive per image, limited fine-tuning
+Pricing - $4.99-9.99/month or free credits
+Fast generations - Limited free tier
+Speed - Variable
+Privacy - Private by default
+Strengths - Adobe Creative Suite integration
+Limitations - More expensive per image, limited fine-tuning
 ```
 
 ROI Calculation for Professional Users
@@ -353,7 +353,7 @@ Evening (off-peak):
 - Build final composites
 ```
 
-Daily limitation: 30 minutes fast generation (15 hours / 30 days)
+Daily limitation - 30 minutes fast generation (15 hours / 30 days)
 
 Pro Plan Workflow
 
@@ -365,7 +365,7 @@ Work continuously:
 - Test creative directions without time pressure
 ```
 
-Benefit: 50+ minute fast generation daily (30 hours / 30 days)
+Benefit - 50+ minute fast generation daily (30 hours / 30 days)
 
 When Standard Is Truly Sufficient
 

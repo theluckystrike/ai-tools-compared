@@ -34,7 +34,7 @@ tags: [ai-tools-compared, troubleshooting]
 Perplexity has become a go-to tool for developers and researchers who need AI-powered search with citations. However, users sometimes encounter issues where the tool fails to return recent results or provides outdated information. This guide covers the most common causes and practical solutions.
 
 
-- Account and Subscription Tier: Free tier users sometimes experience limitations on search frequency and recency.
+- Account and Subscription Tier - Free tier users sometimes experience limitations on search frequency and recency.
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - This guide covers the: most common causes and practical solutions.
 - Test with the most: recent-capable model option For the most up-to-date information, Perplexity Pro with enhanced search often performs better than free tier options.
@@ -222,7 +222,7 @@ Perplexity includes citation metadata showing when sources were published. After
 
 Use the Focus Feature
 
-Perplexity's focus modes (Academic, Writing, Coding, etc.) sometimes limit search scope. Switch to "Focus: All" or "Focus: Search" for maximum recency.
+Perplexity's focus modes (Academic, Writing, Coding, etc.) sometimes limit search scope. Switch to "Focus - All" or "Focus: Search" for maximum recency.
 
 API Response Caching
 

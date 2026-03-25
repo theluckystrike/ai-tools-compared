@@ -26,7 +26,7 @@ Table of Contents
 - [Understanding Flaky Test Patterns](#understanding-flaky-test-patterns)
 - [Collecting the Right Data](#collecting-the-right-data)
 - [Using AI to Analyze Failure Patterns](#using-ai-to-analyze-failure-patterns)
-- [Practical Example: Debugging a Database Race Condition](#practical-example-debugging-a-database-race-condition)
+- [Practical Example - Debugging a Database Race Condition](#practical-example-debugging-a-database-race-condition)
 - [AI-Powered Log Analysis at Scale](#ai-powered-log-analysis-at-scale)
 - [Flakiness Classification Matrix](#flakiness-classification-matrix)
 - [Crafting High-Signal Prompts for Flaky Test Analysis](#crafting-high-signal-prompts-for-flaky-test-analysis)
@@ -80,18 +80,18 @@ Using AI to Analyze Failure Patterns
 
 Modern AI coding assistants can process test logs and identify patterns humans often miss. Here's a practical workflow:
 
-Step 1: Extract Relevant Failure Information
+Step 1 - Extract Relevant Failure Information
 
 Pull the specific failure messages and stack traces from your test output:
 
 ```
 FAILED tests/integration/test_user_auth.py::test_login_concurrent
-E           AssertionError: Expected 200, got 401
+E           AssertionError - Expected 200, got 401
 E           assert response.status_code == 200
 E            +  where response = <Response [401]>
 ```
 
-Step 2: Query the AI Tool
+Step 2 - Query the AI Tool
 
 Present the failure to your AI assistant with context:
 
@@ -99,7 +99,7 @@ Present the failure to your AI assistant with context:
 
 AI tools analyze similar past issues across codebases and provide targeted suggestions.
 
-Step 3: Analyze AI Suggestions
+Step 3 - Analyze AI Suggestions
 
 Typical AI responses highlight:
 
@@ -111,7 +111,7 @@ Typical AI responses highlight:
 
 - Missing test isolation cleanup from previous runs
 
-Practical Example: Debugging a Database Race Condition
+Practical Example - Debugging a Database Race Condition
 
 Consider this common scenario, a test fails intermittently when checking user data after creation:
 
@@ -212,7 +212,7 @@ Context:
 
 Failure pattern (occurs in 30% of CI runs):
 FAILED tests/integration/test_billing.py::test_charge_idempotency
-E  AssertionError: Expected exactly 1 charge record, found 2
+E  AssertionError - Expected exactly 1 charge record, found 2
 E  assert len(charges) == 1
 
 The test:

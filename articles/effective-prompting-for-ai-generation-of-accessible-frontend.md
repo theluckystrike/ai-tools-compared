@@ -129,7 +129,7 @@ Testing Your AI-Generated Code
 
 Prompting correctly produces accessible code, but verification remains essential. Use these methods to validate the output:
 
-Automated Testing: Run axe-core or Accessibility Insights to catch common issues:
+Automated Testing - Run axe-core or Accessibility Insights to catch common issues:
 
 ```javascript
 import { axe, toHaveNoViolations } from 'jest-axe';
@@ -141,7 +141,7 @@ test('button component should have no accessibility violations', async () => {
 });
 ```
 
-Screen Reader Testing: Navigate your component using VoiceOver (Cmd+F5) or NVDA. Verify that:
+Screen Reader Testing - Navigate your component using VoiceOver (Cmd+F5) or NVDA. Verify that:
 
 - All interactive elements are announced
 
@@ -149,7 +149,7 @@ Screen Reader Testing: Navigate your component using VoiceOver (Cmd+F5) or NVDA.
 
 - Form errors are clearly described
 
-Keyboard Testing: Complete all interactions using only the keyboard. Tab through the interface, activate all controls, and confirm no focus is lost or trapped unexpectedly.
+Keyboard Testing - Complete all interactions using only the keyboard. Tab through the interface, activate all controls, and confirm no focus is lost or trapped unexpectedly.
 
 Advanced Prompting Techniques
 
@@ -292,7 +292,7 @@ Select Dropdown:
 ```
 Create a custom select dropdown component using the Headless UI pattern.
 Use role="listbox" for the container, role="option" for items.
-Support keyboard: Arrow keys to navigate, Enter to select, Escape to close.
+Support keyboard - Arrow keys to navigate, Enter to select, Escape to close.
 Announce selected value to screen readers.
 ```
 

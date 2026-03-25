@@ -32,8 +32,8 @@ Poor rules create alert fatigue (false positives) or miss real incidents (false 
 AI Tools Comparison
 
 Claude (Opus 4.6, Haiku 4.5)
-Price: $3/month (Claude.ai Pro) or $20 per 1M input tokens (API)
-Best for: Complex multi-condition rules, recording rules, escalation logic
+Price - $3/month (Claude.ai Pro) or $20 per 1M input tokens (API)
+Best for - Complex multi-condition rules, recording rules, escalation logic
 
 Claude excels at PromQL-heavy rules. It understands:
 - histogram_quantile() for latency percentiles
@@ -54,7 +54,7 @@ annotations:
   description: "P99 latency is {{ $value }}s, threshold 0.5s"
 ```
 
-The rule is production-ready: uses histogram_quantile correctly, excludes internal services with label matcher, has appropriate duration (5m).
+The rule is production-ready - uses histogram_quantile correctly, excludes internal services with label matcher, has appropriate duration (5m).
 
 Strengths:
 - Understands label matching and cardinality implications
@@ -65,18 +65,18 @@ Weaknesses:
 - Requires explicit mention of metric names (doesn't auto-discover from Prometheus)
 - Needs context on what constitutes "bad" for your service
 
-Cost per rule: $0.15 (API) for complex multi-condition rules, $0.03 for simple counters.
+Cost per rule - $0.15 (API) for complex multi-condition rules, $0.03 for simple counters.
 
 OpenAI GPT-4o
-Price: $20/month (ChatGPT Plus) or $0.03/$0.15 per 1K input/output tokens (API)
-Best for: Basic counter and gauge rules
+Price - $20/month (ChatGPT Plus) or $0.03/$0.15 per 1K input/output tokens (API)
+Best for - Basic counter and gauge rules
 
 GPT-4o handles straightforward rules. Effective for:
 - Simple threshold-based alerts (CPU > 80%)
 - Memory usage rules
 - Disk space warnings
 
-Example prompt: "Write a Prometheus alert rule for when CPU usage exceeds 80%."
+Example prompt - "Write a Prometheus alert rule for when CPU usage exceeds 80%."
 
 GPT-4o produces:
 
@@ -86,18 +86,18 @@ expr: node_cpu_seconds_total > 0.8
 for: 5m
 ```
 
-This is incomplete: `node_cpu_seconds_total` is a counter, not CPU percentage. Should be `100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)`.
+This is incomplete - `node_cpu_seconds_total` is a counter, not CPU percentage. Should be `100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)`.
 
 Weaknesses:
 - Doesn't understand counter vs gauge semantics
 - Generates rules that compile but fire incorrectly
 - Limited understanding of label aggregations
 
-Cost per rule: $0.004 per simple rule, $0.015 for complex ones.
+Cost per rule - $0.004 per simple rule, $0.015 for complex ones.
 
 GitHub Copilot
-Price: $10/month or $100/year
-Best for: Inline alert additions, repo-aware context
+Price - $10/month or $100/year
+Best for - Inline alert additions, repo-aware context
 
 Copilot shines if your repo has existing alert rules.
 
@@ -111,13 +111,13 @@ Weaknesses:
 - No multi-turn conversation to refine thresholds
 - Can't explain why a rule triggers
 
-Best workflow: Use Copilot for 80% boilerplate, Claude for 20% validation.
+Best workflow - Use Copilot for 80% boilerplate, Claude for 20% validation.
 
-Cost per rule: $0 (already paid for).
+Cost per rule - $0 (already paid for).
 
 Grafana AI (Grafana Cloud)
-Price: $0 (included with Grafana Cloud, starts at $1/day)
-Best for: Rules based on existing Grafana dashboards
+Price - $0 (included with Grafana Cloud, starts at $1/day)
+Best for - Rules based on existing Grafana dashboards
 
 Grafana's AI integration can generate rules from dashboard panels.
 
@@ -142,19 +142,19 @@ Strengths:
 Weaknesses:
 - Limited to simple threshold rules
 - Can't generate complex multi-metric correlations
-- Locked into Grafana ecosystem
+- Locked into Grafana environment
 
-Cost per rule: $0 (included with Grafana Cloud).
+Cost per rule - $0 (included with Grafana Cloud).
 
 Google Gemini (Advanced)
-Price: $20/month
-Best for: Learning PromQL, prototype rules
+Price - $20/month
+Best for - Learning PromQL, prototype rules
 
 Gemini is comparable to GPT-4o for basics, weaker on Prometheus-specific patterns.
 
-Weakness: Limited Prometheus training data compared to Claude. Generates syntactically correct but semantically questionable rules.
+Weakness - Limited Prometheus training data compared to Claude. Generates syntactically correct but semantically questionable rules.
 
-Cost per rule: $0.004 per 1K tokens.
+Cost per rule - $0.004 per 1K tokens.
 
 Comparison Table
 
@@ -202,7 +202,7 @@ Real-World Rule Examples
 
 P99 Latency Alert
 
-Prompt to Claude: "Write a rule that alerts when p99 latency exceeds 500ms for any service, but exclude cache services (they have higher latency by design)."
+Prompt to Claude - "Write a rule that alerts when p99 latency exceeds 500ms for any service, but exclude cache services (they have higher latency by design)."
 
 Claude generates:
 
@@ -219,7 +219,7 @@ annotations:
 
 Error Rate Alert with Escalation
 
-Prompt: "Alert when error rate (5xx responses / total requests) exceeds 5% for 2 minutes. If it stays above 5% for 10 minutes, escalate to critical."
+Prompt - "Alert when error rate (5xx responses / total requests) exceeds 5% for 2 minutes. If it stays above 5% for 10 minutes, escalate to critical."
 
 Claude produces two rules:
 
@@ -239,7 +239,7 @@ labels:
 
 Memory Pressure Alert with Headroom
 
-Prompt: "Alert when available memory drops below 10% of system memory for 5 minutes. But only if the system isn't in a natural shrink period (drop slower than 100MB/min)."
+Prompt - "Alert when available memory drops below 10% of system memory for 5 minutes. But only if the system isn't in a natural shrink period (drop slower than 100MB/min)."
 
 Claude generates:
 
@@ -286,7 +286,7 @@ Q: How do I avoid false positives?
 A: Three strategies: (1) Increase the `for:` duration (wait longer before alerting), (2) Use multi-condition rules (AND multiple metrics), (3) Exclude known noisy periods (deployments, batch jobs).
 
 Q: Can AI tools generate Alertmanager routing configs?
-A: Claude can. It understands matchers, grouping, and escalation logic. Ask: "Generate an Alertmanager config that routes P99 latency alerts to #on-call and database alerts to #dba."
+A: Claude can. It understands matchers, grouping, and escalation logic. Ask - "Generate an Alertmanager config that routes P99 latency alerts to #on-call and database alerts to #dba."
 
 Q: How do I test alert thresholds without firing them?
 A: Use Prometheus UI to query the rule expression, then adjust the threshold until it would/wouldn't fire. Use `for: 0m` (temporarily) to test without waiting.

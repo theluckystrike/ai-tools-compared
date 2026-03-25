@@ -228,19 +228,19 @@ Quality Assessment Criteria
 
 When evaluating AI-generated table-driven tests, consider these key factors:
 
-1. Compilation Success: Does the generated code compile without errors? This is the most basic quality indicator.
+1. Compilation Success - Does the generated code compile without errors? This is the most basic quality indicator.
 
-2. Error Handling: Are error cases properly tested with appropriate assertions? Functions returning errors require dedicated error-path test cases.
+2. Error Handling - Are error cases properly tested with appropriate assertions? Functions returning errors require dedicated error-path test cases.
 
-3. Edge Case Coverage: Does the test suite include boundary conditions, empty inputs, and invalid states? Happy path only testing provides false confidence.
+3. Edge Case Coverage - Does the test suite include boundary conditions, empty inputs, and invalid states? Happy path only testing provides false confidence.
 
-4. Test Isolation: Do individual test cases properly clean up resources? Database tests especially need cleanup logic.
+4. Test Isolation - Do individual test cases properly clean up resources? Database tests especially need cleanup logic.
 
-5. Assertion Quality: Are assertions specific and informative? Generic assertions like `t.Fatal(err)` provide poor diagnostic information when tests fail.
+5. Assertion Quality - Are assertions specific and informative? Generic assertions like `t.Fatal(err)` provide poor diagnostic information when tests fail.
 
-6. Naming Clarity: Do subtest names clearly describe what's being tested? Use descriptive names that appear in test output.
+6. Naming Clarity - Do subtest names clearly describe what's being tested? Use descriptive names that appear in test output.
 
-7. Maintainability: Is the code structure consistent and easy to extend? Adding new test cases should not require restructuring existing code.
+7. Maintainability - Is the code structure consistent and easy to extend? Adding new test cases should not require restructuring existing code.
 
 Best Practices for AI-Assisted Test Generation
 

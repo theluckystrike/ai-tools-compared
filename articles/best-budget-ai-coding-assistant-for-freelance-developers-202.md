@@ -42,7 +42,7 @@ Before exploring specific tools, it's worth understanding what matters most for 
 
 The ideal budget AI coding assistant balances these factors without requiring a steep learning curve or expensive subscription.
 
-Time savings distribution: Research shows AI coding tools save most time on:
+Time savings distribution - Research shows AI coding tools save most time on:
 - Boilerplate and scaffolding (30-40% time reduction)
 - Test writing (20-35% reduction)
 - Debugging simple issues (15-25% reduction)
@@ -217,17 +217,17 @@ Measuring ROI on AI Coding Tools
 
 Don't just assume AI tools save time, measure it systematically. Here's a framework:
 
-Establish a baseline: For one week, track how long typical tasks take without AI. Record time spent on:
+Establish a baseline - For one week, track how long typical tasks take without AI. Record time spent on:
 - Writing boilerplate code
 - Debugging production issues
 - Code reviews and refactoring
 - Writing tests and documentation
 
-Test with AI: Use the free tier of your chosen tool for the next week on identical task types. Track time again.
+Test with AI - Use the free tier of your chosen tool for the next week on identical task types. Track time again.
 
-Calculate savings: If Claude saves 1 hour per day on debugging and you bill at $100/hour, the math is straightforward, that $20/month Claude Pro subscription returns $2,000/month in billable time. Most freelancers find far better returns.
+Calculate savings - If Claude saves 1 hour per day on debugging and you bill at $100/hour, the math is straightforward, that $20/month Claude Pro subscription returns $2,000/month in billable time. Most freelancers find far better returns.
 
-Track quality metrics: Don't optimize for speed alone. Monitor:
+Track quality metrics - Don't optimize for speed alone. Monitor:
 - Bug count in code written with AI assistance
 - Client satisfaction ratings
 - Time spent fixing AI-generated errors
@@ -238,25 +238,25 @@ Avoiding Common Pitfalls
 
 Even experienced developers make mistakes when integrating AI into workflows:
 
-Over-reliance on autocomplete: The feature that saves most time often introduces subtle bugs. Code completion suggestions are statistically likely but not always correct. Review every suggestion before accepting it.
+Over-reliance on autocomplete - The feature that saves most time often introduces subtle bugs. Code completion suggestions are statistically likely but not always correct. Review every suggestion before accepting it.
 
-Security blindness: AI tools don't inherently understand your project's security requirements. Review AI-generated code for SQL injection, credential leaks, and unsafe dependencies before deploying.
+Security blindness - AI tools don't inherently understand your project's security requirements. Review AI-generated code for SQL injection, credential leaks, and unsafe dependencies before deploying.
 
-Black-box code: If your AI tool generates complex logic you don't fully understand, that's a red flag. Ask the tool to explain its reasoning, then walk through the code. If it still seems opaque, write it yourself.
+Black-box code - If your AI tool generates complex logic you don't fully understand, that's a red flag. Ask the tool to explain its reasoning, then walk through the code. If it still seems opaque, write it yourself.
 
-Neglecting edge cases: AI models excel at common patterns. They often miss edge cases that cause production failures. Test AI-generated solutions against unusual inputs before deploying.
+Neglecting edge cases - AI models excel at common patterns. They often miss edge cases that cause production failures. Test AI-generated solutions against unusual inputs before deploying.
 
 Stacking Tools for Maximum Productivity
 
 The most effective freelancers don't choose just one AI tool, they combine several:
 
-Daily workflow: Use GitHub Copilot for quick completions and boilerplate while in your IDE. No context switching, instant suggestions.
+Daily workflow - Use GitHub Copilot for quick completions and boilerplate while in your IDE. No context switching, instant suggestions.
 
-Complex refactoring: Switch to Claude Code when dealing with multi-file changes or architectural decisions. Its longer context window and reasoning capabilities shine here.
+Complex refactoring - Switch to Claude Code when dealing with multi-file changes or architectural decisions. Its longer context window and reasoning capabilities shine here.
 
-AWS development: Add CodeWhisperer when working with cloud infrastructure. It understands CloudFormation, CDK, and Lambda patterns better than general-purpose tools.
+AWS development - Add CodeWhisperer when working with cloud infrastructure. It understands CloudFormation, CDK, and Lambda patterns better than general-purpose tools.
 
-Code review: Use whatever tool excels at analyzing full files, Claude or ChatGPT depending on your subscription, for security and performance reviews before deployment.
+Code review - Use whatever tool excels at analyzing full files, Claude or ChatGPT depending on your subscription, for security and performance reviews before deployment.
 
 This multi-tool approach costs roughly $20-30/month total but can add $20,000+ annually in productivity gains for full-time freelancers.
 

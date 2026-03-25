@@ -37,7 +37,7 @@ CSS specificity conflicts rank among the most frustrating challenges when integr
 - AI tools are most: useful when you specify the exact library.
 - CSS specificity conflicts rank: among the most frustrating challenges when integrating third-party component libraries into your projects.
 - The selector `.MuiButton-root .MuiButton-label`: uses two class selectors, giving it a score of (0,0,2).
-- Ant Design: Ant Design uses `:where()` in v5+, making overrides much simpler than earlier versions.
+- Ant Design - Ant Design uses `:where()` in v5+, making overrides much simpler than earlier versions.
 - Your styles simply do: not apply because the library's selectors carry more weight.
 
 The Core Problem
@@ -218,13 +218,13 @@ Framework-Specific Patterns
 
 Different component libraries require different override strategies. AI tools are most useful when you specify the exact library.
 
-Material UI (MUI) v5+: MUI v5 migrated to Emotion and exposes a `sx` prop. Claude handles MUI override questions well because it understands both the old `makeStyles` approach and the newer `sx` prop and `styled()` API.
+Material UI (MUI) v5+ - MUI v5 migrated to Emotion and exposes a `sx` prop. Claude handles MUI override questions well because it understands both the old `makeStyles` approach and the newer `sx` prop and `styled()` API.
 
-Tailwind CSS: Tailwind's specificity is intentionally low. Conflicts usually arise when Tailwind collides with another library. ChatGPT is effective here. it knows Tailwind's class precedence rules and can suggest `@layer` directives to control order.
+Tailwind CSS - Tailwind's specificity is intentionally low. Conflicts usually arise when Tailwind collides with another library. ChatGPT is effective here. it knows Tailwind's class precedence rules and can suggest `@layer` directives to control order.
 
-Bootstrap: Bootstrap uses a predictable specificity pattern. All three tools handle Bootstrap specificity questions reliably. The common fix involves targeting the exact Bootstrap selector chain from DevTools and matching or exceeding its score.
+Bootstrap - Bootstrap uses a predictable specificity pattern. All three tools handle Bootstrap specificity questions reliably. The common fix involves targeting the exact Bootstrap selector chain from DevTools and matching or exceeding its score.
 
-Ant Design: Ant Design uses `:where()` in v5+, making overrides much simpler than earlier versions. Mentioning the version number in your AI prompt gets you version-accurate advice.
+Ant Design - Ant Design uses `:where()` in v5+, making overrides much simpler than earlier versions. Mentioning the version number in your AI prompt gets you version-accurate advice.
 
 Frequently Asked Questions
 
@@ -299,7 +299,7 @@ Many modern libraries expose CSS custom properties specifically for overriding:
 }
 ```
 
-Prompt Claude with: "What CSS custom properties does [LIBRARY] expose for theming?" It will identify all available override points.
+Prompt Claude with - "What CSS custom properties does [LIBRARY] expose for theming?" It will identify all available override points.
 
 BEM with Utility Classes
 
@@ -334,7 +334,7 @@ Debugging Workflow with AI
 Using Browser DevTools with AI Assistance
 
 1. Inspect the element in DevTools to see which styles apply
-2. Ask Claude: "The selector `.library-class` sets color: blue with (0,0,2) specificity. I want to override it with my class `.my-override`. What's the minimum specificity I need?"
+2. Ask Claude - "The selector `.library-class` sets color: blue with (0,0,2) specificity. I want to override it with my class `.my-override`. What's the minimum specificity I need?"
 3. Claude responds with the specificity requirement and suggests solutions
 
 ```text
@@ -393,7 +393,7 @@ Tailwind's approach differs from traditional CSS. When integrating Tailwind with
 }
 ```
 
-Ask ChatGPT: "I have a Tailwind button conflicting with Bootstrap styles. Which approach works best?" It will guide you toward `@layer` for Tailwind.
+Ask ChatGPT - "I have a Tailwind button conflicting with Bootstrap styles. Which approach works best?" It will guide you toward `@layer` for Tailwind.
 
 Vue/React Component Styling
 
@@ -431,7 +431,7 @@ Claude and Copilot both recognize scoped style patterns and suggest appropriate 
 
 Prompt Templates for AI Tools
 
-For Claude (Most Comprehensive)
+For Claude (Most complete)
 
 ```text
 I'm integrating [LIBRARY] into a [FRAMEWORK] project and need to override
@@ -447,7 +447,7 @@ Explain:
 2. The best 3 solutions ranked by maintainability
 3. Trade-offs for each solution
 
-I prefer [PREFERENCE: maintainable/minimal-changes/semantic] code.
+I prefer [PREFERENCE - maintainable/minimal-changes/semantic] code.
 ```
 
 For ChatGPT (Quick Solutions)
@@ -458,7 +458,7 @@ CSS override template needed for [LIBRARY] [COMPONENT]
 Library CSS:
 [PASTE THE CONFLICT CSS]
 
-Goal: [DESCRIBE WHAT YOU WANT TO CHANGE]
+Goal - [DESCRIBE WHAT YOU WANT TO CHANGE]
 
 Show me the exact code to add to fix this.
 ```

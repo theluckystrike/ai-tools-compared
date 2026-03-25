@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What a Data Processing Agreement Actually Covers
+Step 1 - What a Data Processing Agreement Actually Covers
 
 A data processing agreement is a legally binding contract that defines how a vendor handles personal data and, more importantly for developers, how it handles your proprietary code and project data. For AI coding tools specifically, the DPA should address several critical questions:
 
@@ -51,7 +51,7 @@ A data processing agreement is a legally binding contract that defines how a ven
 
 Let's examine each of these areas in detail.
 
-Step 2: Data Collection and Transmission Scope
+Step 2 - Data Collection and Transmission Scope
 
 The first thing to verify is exactly what gets sent to the AI service. Some tools process everything locally on your machine, while others send code to cloud APIs for analysis.
 
@@ -65,13 +65,13 @@ Many AI coding tools send:
 - Recently edited files
 - Project structure information
 
-Ask vendors: "What exactly gets transmitted?"
-Look for: "minimal necessary context" vs "full file access"
+Ask vendors - "What exactly gets transmitted?"
+Look for - "minimal necessary context" vs "full file access"
 ```
 
 When evaluating vendors, request a technical explanation of the data flow. Reputable vendors publish architecture diagrams showing exactly what leaves your environment. If a vendor cannot clearly explain their data transmission scope, that's a red flag for enterprise consideration.
 
-Step 3: Ownership and Retention Policies
+Step 3 - Ownership and Retention Policies
 
 One of the most critical sections addresses data ownership. The ideal clause states that you retain full ownership of your code, and the vendor gains no rights to use it for any purpose, including model training.
 
@@ -87,7 +87,7 @@ Weak ownership language:
 
 The retention period also matters. Some tools delete processed data immediately after generating a response, while others retain it for months or years. For compliance with regulations like GDPR or industry standards, you need concrete retention timelines.
 
-Step 4: Processing Location and Cross-Border Transfers
+Step 4 - Processing Location and Cross-Border Transfers
 
 Enterprise environments often have data residency requirements. Financial services, healthcare, and government sectors frequently mandate that data stays within specific geographic boundaries.
 
@@ -126,7 +126,7 @@ compliance:
   backup_frequency: daily
 ```
 
-Step 5: Third-Party Data Sharing
+Step 5 - Third-Party Data Sharing
 
 AI coding tools often rely on subprocessors, other companies that handle data as part of providing the service. These might include cloud providers (AWS, GCP, Azure), AI model providers, or infrastructure partners.
 
@@ -140,11 +140,11 @@ The DPA should include a subprocessor list or provisions for notifying you of su
 
 Some agreements allow you to veto certain subprocessors, particularly those in jurisdictions with weaker privacy laws.
 
-Step 6: Practical Evaluation Framework
+Step 6 - Practical Evaluation Framework
 
 When systematically evaluating AI coding tool DPAs, use this structured approach:
 
-Phase 1: Document Request
+Phase 1 - Document Request
 
 Request the following from each vendor:
 
@@ -156,7 +156,7 @@ Request the following from each vendor:
 
 - Security whitepaper or architecture documentation
 
-Phase 2: Technical Verification
+Phase 2 - Technical Verification
 
 - Review data flow diagrams
 
@@ -164,7 +164,7 @@ Phase 2: Technical Verification
 
 - Verify encryption claims
 
-Phase 3: Legal Review
+Phase 3 - Legal Review
 
 - Have legal counsel review retention and ownership clauses
 
@@ -172,7 +172,7 @@ Phase 3: Legal Review
 
 - Verify geographic processing claims
 
-Phase 4: Negotiation
+Phase 4 - Negotiation
 
 Even standard agreements often have room for modification. Common negotiable items include:
 
@@ -184,7 +184,7 @@ Even standard agreements often have room for modification. Common negotiable ite
 
 - Deletion procedures upon contract termination
 
-Step 7: Common Pitfalls to Avoid
+Step 7 - Common Pitfalls to Avoid
 
 Several mistakes frequently occur in enterprise AI tool evaluations:
 
@@ -196,7 +196,7 @@ Ignoring indirect data sharing. Code snippets used to train improved models repr
 
 Failing to verify claims. Vendor marketing often makes broad privacy claims. Cross-reference with actual DPA language.
 
-Step 8: Making the Final Decision
+Step 8 - Making the Final Decision
 
 Data processing agreement evaluation is one piece of the enterprise AI tool selection puzzle, but it's a critical one. A tool with excellent code completion capabilities but problematic data practices creates unacceptable risk for organizations handling sensitive codebases.
 
@@ -218,7 +218,7 @@ When evaluating multiple AI coding tools for enterprise adoption, use this frame
 
 *Cursor has fewer public transparency commitments; request specific documentation during evaluation.
 
-Step 9: Create a DPA Scoring Matrix
+Step 9 - Create a DPA Scoring Matrix
 
 Build a standardized evaluation across vendors using weighted criteria:
 
@@ -279,18 +279,18 @@ for vendor, score in results:
     print(f"{vendor}: {score:.1f}/100")
 ```
 
-Step 10: Red Flag Language in DPAs
+Step 10 - Red Flag Language in DPAs
 
 Watch for these problematic phrases that suggest weak data protections:
 
-Problematic: "Vendor may use Customer Data to improve services"
-Better: "Vendor uses Customer Data solely to provide contracted services and will not use it for any other purpose without explicit written consent"
+Problematic - "Vendor may use Customer Data to improve services"
+Better - "Vendor uses Customer Data solely to provide contracted services and will not use it for any other purpose without explicit written consent"
 
-Problematic: "Data retention as needed for business purposes"
-Better: "Customer Data is deleted within 30 days of contract termination or at Customer's request, whichever is sooner"
+Problematic - "Data retention as needed for business purposes"
+Better - "Customer Data is deleted within 30 days of contract termination or at Customer's request, whichever is sooner"
 
-Problematic: "Standard encryption methods"
-Better: "AES-256 encryption at rest and TLS 1.3 encryption in transit, with key management by Customer"
+Problematic - "Standard encryption methods"
+Better - "AES-256 encryption at rest and TLS 1.3 encryption in transit, with key management by Customer"
 
 DPA Negotiation Checklist for Enterprise Deals
 

@@ -21,7 +21,7 @@ Table of Contents
 
 - [Why Terraform Providers Suit AI Assistance](#why-terraform-providers-suit-ai-assistance)
 - [AI-Assisted Provider Development Workflow](#ai-assisted-provider-development-workflow)
-- [Practical Example: Custom API Provider](#practical-example-custom-api-provider)
+- [Practical Example - Custom API Provider](#practical-example-custom-api-provider)
 - [Comparing AI Tools for Terraform Providers](#comparing-ai-tools-for-terraform-providers)
 - [Claude for Terraform Providers](#claude-for-terraform-providers)
 - [GPT-4 for Provider Scaffolding](#gpt-4-for-provider-scaffolding)
@@ -50,7 +50,7 @@ The most effective approach combines human design with AI implementation:
 
 This workflow typically requires 3-4 iterations per resource. The AI learns from test failures and refines implementations quickly.
 
-Practical Example: Custom API Provider
+Practical Example - Custom API Provider
 
 Consider building a provider for a SaaS platform with a simple REST API:
 
@@ -73,15 +73,15 @@ The API endpoints are:
 - PUT /api/v1/projects/{id} (updates name and description)
 - DELETE /api/v1/projects/{id}
 
-Authentication: Bearer token in Authorization header
-Base URL: https://api.myapi.com
+Authentication - Bearer token in Authorization header
+Base URL - https://api.myapi.com
 
 Terraform resource should support:
 - name (required, string)
 - description (optional, string)
 - tags (optional, map of strings)
 
-The API returns status codes: 200 (success), 404 (not found), 401 (unauthorized),
+The API returns status codes - 200 (success), 404 (not found), 401 (unauthorized),
 422 (validation error).
 ```
 
@@ -108,7 +108,7 @@ Workflow:
 4. Claude generates schema, CRUD methods, and tests
 5. Run tests, share error output, iterate
 
-Example cost: A complete 3-resource provider typically costs $0.15-0.30 in API usage.
+Example cost - A complete 3-resource provider typically costs $0.15-0.30 in API usage.
 
 Strengths:
 - Maintains architectural consistency across resources
@@ -200,7 +200,7 @@ func (r *ProjectResource) Schema(ctx context.Context, req resource.SchemaRequest
     resp *resource.SchemaResponse) {
   resp.Schema = schema.Schema{
     Description: "Manages a MyAPI project",
-    Attributes: map[string]schema.Attribute{
+    Attributes - map[string]schema.Attribute{
       "name": schema.StringAttribute{
         Required:    true,
         Description: "The name of the project",
@@ -268,7 +268,7 @@ func TestAccProjectResource(t *testing.T) {
   resource.Test(t, resource.TestCase{
     PreCheck:                 func() { testAccPreCheck(t) },
     ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
-    Steps: []resource.TestStep{
+    Steps - []resource.TestStep{
       // Create and Read testing
       {
         Config: testAccProjectResourceConfig("test-project", "A test project"),
@@ -308,13 +308,13 @@ resource "myapi_project" "test" {
 
 Common Pitfalls and Solutions
 
-Schema mismatch with API: The AI generates a schema that doesn't match your API's actual fields. Solution: Provide complete API response examples as JSON, not just descriptions.
+Schema mismatch with API - The AI generates a schema that doesn't match your API's actual fields. Solution - Provide complete API response examples as JSON, not just descriptions.
 
-Missing error handling: Generated code doesn't handle 422 validation errors or 401 auth failures appropriately. Solution: Explicitly ask the AI to handle specific HTTP status codes and API error response formats.
+Missing error handling - Generated code doesn't handle 422 validation errors or 401 auth failures appropriately. Solution - Explicitly ask the AI to handle specific HTTP status codes and API error response formats.
 
-State lifecycle issues: Resources update locally but not on the remote API. Solution: Ensure the AI includes state refresh logic in Update and Read methods.
+State lifecycle issues - Resources update locally but not on the remote API. Solution - Ensure the AI includes state refresh logic in Update and Read methods.
 
-Test configuration generation: Acceptance tests fail because generated HCL doesn't match actual provider syntax. Solution: Show the AI working examples from your provider's test suite before asking for new tests.
+Test configuration generation - Acceptance tests fail because generated HCL doesn't match actual provider syntax. Solution - Show the AI working examples from your provider's test suite before asking for new tests.
 
 Iterative Refinement Process
 
@@ -331,7 +331,7 @@ Performance Considerations
 
 For AI-assisted development:
 
-- Claude: Best for implementations; $0.05-0.15 per resource
+- Claude - Best for implementations; $0.05-0.15 per resource
 - GPT-4: Fast for quick scaffolding; $0.10-0.20 per resource
 - Copilot: Continuous assistance; $20/month flat rate (best for multiple providers)
 - Cursor: Full-project awareness; $20/month (best when building 3+ providers)
@@ -346,7 +346,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -358,7 +358,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

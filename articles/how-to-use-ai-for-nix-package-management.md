@@ -17,9 +17,9 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 How to Use AI for Nix Package Management
 
-Nix has one of the steepest learning curves in developer tooling. The language is purely functional, error messages are cryptic, and the ecosystem has diverged between legacy channels and Flakes. AI tools can significantly reduce the time to get working derivations. if you prompt them correctly.
+Nix has one of the steepest learning curves in developer tooling. The language is purely functional, error messages are cryptic, and the environment has diverged between legacy channels and Flakes. AI tools can significantly reduce the time to get working derivations. if you prompt them correctly.
 
-Setting Context: Flakes vs Legacy
+Setting Context - Flakes vs Legacy
 
 Start every Nix session by specifying your environment:
 
@@ -79,7 +79,7 @@ rustPlatform.buildRustPackage rec {
 
 Claude correctly uses `rustPlatform.buildRustPackage` instead of raw `stdenv.mkDerivation` for Rust projects. It separates `nativeBuildInputs` (build-time) from `buildInputs` (runtime), which is important for cross-compilation.
 
-One thing to correct: the `cargoHash` needs to be computed. Tell Claude: "The cargoHash is unknown. set it to the empty hash so Nix prints the correct one." Claude will then produce `cargoHash = lib.fakeHash;`, which triggers Nix to print the real hash on first build.
+One thing to correct - the `cargoHash` needs to be computed. Tell Claude - "The cargoHash is unknown. set it to the empty hash so Nix prints the correct one." Claude will then produce `cargoHash = lib.fakeHash;`, which triggers Nix to print the real hash on first build.
 
 Flake devShell
 
@@ -228,9 +228,9 @@ Debugging Nix Build Failures with AI
 
 When a derivation fails, paste the full error into Claude with context about your nixpkgs version. Common failure patterns Claude diagnoses well:
 
-Missing build inputs: Nix errors like `error: cannot find -lssl` mean the library isn't in `buildInputs`. Claude identifies the package name (`pkgs.openssl`) and the correct input list.
+Missing build inputs - Nix errors like `error: cannot find -lssl` mean the library isn't in `buildInputs`. Claude identifies the package name (`pkgs.openssl`) and the correct input list.
 
-Phase override issues: If a project has a non-standard build system, Claude writes the correct `buildPhase` and `installPhase` overrides:
+Phase override issues - If a project has a non-standard build system, Claude writes the correct `buildPhase` and `installPhase` overrides:
 
 ```nix
 buildPhase = ''
@@ -242,9 +242,9 @@ installPhase = ''
 '';
 ```
 
-Impure fetches: Any network access during build fails in the Nix sandbox. Claude suggests converting `fetchurl` with hash mismatches and flags when a derivation tries to access the network at build time.
+Impure fetches - Any network access during build fails in the Nix sandbox. Claude suggests converting `fetchurl` with hash mismatches and flags when a derivation tries to access the network at build time.
 
-String interpolation in paths: A common mistake is writing `"${pkgs.nodejs}/bin"` where Nix expects a derivation reference. Claude catches these and uses proper store path interpolation patterns.
+String interpolation in paths - A common mistake is writing `"${pkgs.nodejs}/bin"` where Nix expects a derivation reference. Claude catches these and uses proper store path interpolation patterns.
 
 Overlay Patterns for Customizing nixpkgs
 
@@ -287,7 +287,7 @@ Prompt:
 Write a Nix derivation for a Node.js application. Source is at github.com/example/myapp.
 The package.json is at the root. Build with npm ci && npm run build.
 Output goes to bin/myapp.js. Runtime deps: nodejs_20, systemd (for logging).
-Build deps: nodejs_20, git. Include a meta section.
+Build deps - nodejs_20, git. Include a meta section.
 ```
 
 Claude correctly generates:
@@ -328,7 +328,7 @@ stdenv.mkDerivation rec {
 }
 ```
 
-The key insight: `nativeBuildInputs` are tools used during build, `buildInputs` are runtime dependencies, and `propagatedBuildInputs` are propagated to packages that depend on this derivation.
+The key insight - `nativeBuildInputs` are tools used during build, `buildInputs` are runtime dependencies, and `propagatedBuildInputs` are propagated to packages that depend on this derivation.
 
 Using nixpkgs-unstable vs Stable
 

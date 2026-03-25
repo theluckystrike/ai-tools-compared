@@ -205,7 +205,7 @@ Implementation Strategy
 
 Integrating AI-powered container security into your pipeline requires a phased approach:
 
-Phase 1: Build-Time Scanning
+Phase 1 - Build-Time Scanning
 
 Start by scanning images during the build process. Add Trivy or Snyk to your CI pipeline to catch vulnerabilities before deployment:
 
@@ -225,7 +225,7 @@ Start by scanning images during the build process. Add Trivy or Snyk to your CI 
   run: docker push myapp:${{ github.sha }}
 ```
 
-Phase 2: Registry Scanning
+Phase 2 - Registry Scanning
 
 Configure automated scanning of images in your container registry. Both AWS ECR and Google Artifact Registry offer native vulnerability scanning. Enable enhanced scanning in ECR with:
 
@@ -237,7 +237,7 @@ aws ecr put-registry-scanning-configuration \
 
 This catches vulnerabilities in base images and dependencies that emerge after deployment, without requiring a new build.
 
-Phase 3: Runtime Protection
+Phase 3 - Runtime Protection
 
 Deploy runtime security tools like Falcon or Sysdig to monitor production containers. AI-powered behavior analysis catches threats that static scanning misses, particularly supply chain attacks where a dependency executes unexpected network calls or file operations after deployment.
 

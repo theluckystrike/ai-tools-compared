@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Peer Dependency Conflicts
+Step 1 - Understand Peer Dependency Conflicts
 
 When you install a package that requires a specific version of a dependency as a peer dependency, NPM checks whether that requirement can be satisfied by your project's existing dependency tree. If the versions don't align, you encounter the dreaded peer dependency conflict error.
 
@@ -53,7 +53,7 @@ npm ERR! Found: react@17.0.2
 npm ERR! Required by: package-b@1.0.0
 ```
 
-Step 2: How AI Tools Help Diagnose Conflicts
+Step 2 - How AI Tools Help Diagnose Conflicts
 
 AI coding assistants excel at parsing complex dependency trees and explaining what went wrong. When you paste an error message into an AI tool, it can break down the conflict chain and identify the root cause.
 
@@ -68,9 +68,9 @@ npm ERR! Required by: react-dom@18.1.0
 
 An AI tool can quickly explain that your project has React 17 installed, but react-dom 18.x requires React 18, creating an unsolvable dependency tree without modifications.
 
-Step 3: Practical Strategies for Resolution
+Step 3 - Practical Strategies for Resolution
 
-Strategy 1: AI-Powered Version Analysis
+Strategy 1 - AI-Powered Version Analysis
 
 Ask your AI assistant to analyze which packages are causing version conflicts. Provide the full error output and ask for a breakdown of the dependency chain. A well-prompted AI can identify which packages need updating or downgrading.
 
@@ -83,7 +83,7 @@ I'm getting this npm error:
 Can you identify which packages are in conflict and suggest which ones I should update or downgrade to resolve this?
 ```
 
-Strategy 2: Automated Resolution Suggestions
+Strategy 2 - Automated Resolution Suggestions
 
 Modern AI tools can suggest specific commands to resolve conflicts. After diagnosing the issue, they might recommend:
 
@@ -104,7 +104,7 @@ Or suggest using overrides in your package.json:
 
 The overrides field tells NPM to force all instances of these packages to use the specified version, regardless of what individual dependencies request.
 
-Strategy 3: Using AI to Find Compatible Package Versions
+Strategy 3 - Using AI to Find Compatible Package Versions
 
 Sometimes you need to find a version of a package that works with your existing dependency tree. AI tools can search for versions and identify which ones have compatible peer dependency requirements.
 
@@ -116,7 +116,7 @@ Which version of package-x supports React 17.x as a peer dependency?
 
 The AI can search its training data to identify compatible versions you can install.
 
-Step 4: Real-World Example
+Step 4 - Real-World Example
 
 Imagine you're building a Next.js application and try to install an UI component library:
 
@@ -153,7 +153,7 @@ Or adding to package.json:
 }
 ```
 
-Step 5: Prevention Techniques
+Step 5 - Prevention Techniques
 
 AI tools can also help you avoid conflicts before they happen. When adding new dependencies, ask the AI to check for potential peer dependency issues:
 
@@ -163,7 +163,7 @@ Before installing package-x, can you check if it has any known peer dependency c
 
 This proactive approach prevents integration headaches later in your project.
 
-Step 6: Use NPM Commands with AI Assistance
+Step 6 - Use NPM Commands with AI Assistance
 
 Combine AI diagnosis with NPM's built-in resolution tools. Commands like `npm ls` show your complete dependency tree, and AI can help interpret the output:
 
@@ -187,7 +187,7 @@ However, this approach risks runtime errors if the packages genuinely require di
 
 The overrides field (introduced in NPM 8.3) provides a safer middle ground by letting you specify exact versions that satisfy all peer dependency requirements throughout your tree.
 
-Step 7: Automated Dependency Auditing
+Step 7 - Automated Dependency Auditing
 
 Create automation to catch peer dependency issues before they cause problems. AI can help generate auditing scripts:
 
@@ -254,7 +254,7 @@ For monorepos using workspace dependencies, AI can help structure package.json f
 }
 ```
 
-Step 8: Debugging Nested Dependencies
+Step 8 - Debugging Nested Dependencies
 
 When conflicts occur deep in your dependency tree, use AI to help interpret complex outputs:
 
@@ -270,36 +270,36 @@ Output might show:
      react@17.0.2 (compatible)
 ```
 
-Ask AI: "I have react 17 required by package-b, but package-a needs react 18. What's the best resolution strategy?"
+Ask AI - "I have react 17 required by package-b, but package-a needs react 18. What's the best resolution strategy?"
 
 AI might suggest upgrading package-an or package-b to versions that support react 17, or using overrides if both are essential.
 
-Step 9: Real-World Dependency Resolution Workflow
+Step 9 - Real-World Dependency Resolution Workflow
 
 Here's a complete workflow AI can help guide:
 
 ```bash
-Step 1: Identify all conflicts
+Step 1 - Identify all conflicts
 npm install 2>&1 | tee install.log
 
-Step 2: Extract dependency information
+Step 2 - Extract dependency information
 npm ls --depth=0 > dependencies.txt
 npm ls --all > full-tree.txt
 
-Step 3: Use AI to analyze
+Step 3 - Use AI to analyze
 Paste install.log and relevant sections of full-tree.txt to AI assistant
-Ask: "What are the root causes of these peer dependency conflicts?"
+Ask - "What are the root causes of these peer dependency conflicts?"
 
-Step 4: Implement suggested fixes
+Step 4 - Implement suggested fixes
 npm install specific-package@new-version --save
 
-Step 5: Verify resolution
+Step 5 - Verify resolution
 npm ls
 npm audit
 npm test
 ```
 
-Step 10: Package.json Generators
+Step 10 - Package.json Generators
 
 AI can help generate package.json configurations for different project types:
 
@@ -334,7 +334,7 @@ AI can help generate package.json configurations for different project types:
 }
 ```
 
-Step 11: Configure CI/CD Integration for Dependency Management
+Step 11 - Configure CI/CD Integration for Dependency Management
 
 AI can generate automated checks that catch dependency issues in CI:
 
@@ -384,7 +384,7 @@ AI can help establish versioning conventions:
 }
 ```
 
-Step 12: Understand NPM Resolution Algorithm
+Step 12 - Understand NPM Resolution Algorithm
 
 Modern NPM uses a more sophisticated resolution algorithm. AI can explain how it works:
 
@@ -396,7 +396,7 @@ NPM 7+ Resolution Strategy:
 
 Troubleshooting Specific Scenarios
 
-Scenario: Next.js + Tailwind CSS Conflict
+Scenario - Next.js + Tailwind CSS Conflict
 
 ```
 npm ERR! ERESOLVE unable to resolve dependency tree
@@ -409,23 +409,23 @@ npm ERR! Needed by: tailwindcss@3.2.4
 AI helps identify that tailwindcss 3.2 needs older React. Solution:
 
 ```bash
-Option 1: Update tailwindcss
+Option 1 - Update tailwindcss
 npm install tailwindcss@latest
 
-Option 2: Use overrides
+Option 2 - Use overrides
 npm install --save tailwindcss@3.2.4 && npm install --save --force next@13 react@18
 ```
 
-Scenario: Testing Library Versions
+Scenario - Testing Library Versions
 
 ```
 npm ERR! Found: react@18.2.0
 npm ERR! Required by: @testing-library/react@13.4.0
 ```
 
-Solution: `npm install @testing-library/react@latest`
+Solution - `npm install @testing-library/react@latest`
 
-Step 13: Preventive Measures
+Step 13 - Preventive Measures
 
 To avoid peer dependency conflicts in the future:
 

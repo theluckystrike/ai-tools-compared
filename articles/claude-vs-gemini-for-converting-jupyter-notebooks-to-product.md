@@ -47,16 +47,16 @@ Jupyter notebook exploration
 import pandas as pd
 import numpy as np
 
-Cell 1: Load and explore data
+Cell 1 - Load and explore data
 df = pd.read_csv('sales_data.csv')
 print(df.head())
 print(df.describe())
 
-Cell 2: Data cleaning
+Cell 2 - Data cleaning
 df = df.dropna(subset=['revenue'])
 df['revenue'] = df['revenue'].astype(float)
 
-Cell 3: Analysis
+Cell 3 - Analysis
 avg_revenue = df.groupby('category')['revenue'].mean()
 print(avg_revenue)
 ```
@@ -257,11 +257,11 @@ Handling Notebook-Specific Patterns
 
 Both tools handle the most common notebook artifacts, but behave differently on edge cases.
 
-Magic commands: Claude replaces `%time` with Python's `time` module and wraps measured blocks. Gemini strips them without substitution. For notebooks relying on `%%capture` or `%%writefile`, Claude will suggest replacements; Gemini silently removes them.
+Magic commands - Claude replaces `%time` with Python's `time` module and wraps measured blocks. Gemini strips them without substitution. For notebooks relying on `%%capture` or `%%writefile`, Claude will suggest replacements; Gemini silently removes them.
 
-Display calls: `df.head()`, `plt.show()`, and `display()` calls get different treatment. Claude converts display calls into return values or removes them with an explanatory comment. Gemini removes them without comment, which can obscure which data was being inspected at each stage.
+Display calls - `df.head()`, `plt.show()`, and `display()` calls get different treatment. Claude converts display calls into return values or removes them with an explanatory comment. Gemini removes them without comment, which can obscure which data was being inspected at each stage.
 
-Global state: Notebooks commonly mutate a global `df` variable across cells. Claude refactors this into a pipeline where each function receives and returns a DataFrame. Gemini often preserves the mutation pattern, which can create subtle bugs in production where execution order matters.
+Global state - Notebooks commonly mutate a global `df` variable across cells. Claude refactors this into a pipeline where each function receives and returns a DataFrame. Gemini often preserves the mutation pattern, which can create subtle bugs in production where execution order matters.
 
 When to Choose Each Tool
 
@@ -294,7 +294,7 @@ Step-by-Step Conversion Workflow with Claude
 The most reliable results come from a structured prompt rather than pasting the notebook and asking for a conversion. Use this workflow:
 
 1. Export the notebook as a `.py` file using `jupyter nbconvert --to script notebook.ipynb`
-2. Paste the script into Claude with this prompt template: "Convert this Jupyter notebook script to production Python. Add: type hints, docstrings, structured logging with the `logging` module, specific exception handling for each function, input validation, and a `main()` entry point with an `if __name__ == '__main__'` guard."
+2. Paste the script into Claude with this prompt template: "Convert this Jupyter notebook script to production Python. Add - type hints, docstrings, structured logging with the `logging` module, specific exception handling for each function, input validation, and a `main()` entry point with an `if __name__ == '__main__'` guard."
 3. Review the generated output for any missed global variable mutations
 4. Ask Claude to generate a `requirements.txt` based on the imports
 5. Ask Claude to scaffold unit tests for each public function

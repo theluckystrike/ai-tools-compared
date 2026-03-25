@@ -17,7 +17,7 @@ voice-checked: true
 
 E2E test generation is one of the most time-consuming parts of QA. Writing Playwright tests that are reliable, maintainable, and cover realistic user flows takes days. AI tools can compress this to hours. if you know how to direct them past the common failure modes of generated tests (flaky selectors, hardcoded waits, missing assertions).
 
-Approach 1: Playwright MCP with Claude
+Approach 1 - Playwright MCP with Claude
 
 The Playwright MCP (Model Context Protocol) server gives Claude direct browser control. Claude can navigate your app, observe DOM state, and generate tests based on what it actually sees.
 
@@ -61,7 +61,7 @@ No hardcoded waits. use waitForSelector and network idle states.
 
 Claude will interact with the browser, observe what's there, and generate tests grounded in the actual DOM rather than guesses.
 
-Approach 2: Claude from User Stories
+Approach 2 - Claude from User Stories
 
 When you have a spec but not a running app, Claude can generate the test scaffolding from user stories:
 
@@ -109,7 +109,7 @@ stories = [
 ]
 
 context = """
-Login page: /login
+Login page - /login
 - Email input: data-testid="email-input"
 - Password input: data-testid="password-input"
 - Submit button: data-testid="login-submit"
@@ -193,7 +193,7 @@ test.describe('Authentication', () => {
 });
 ```
 
-Approach 3: Cursor for Test Maintenance
+Approach 3 - Cursor for Test Maintenance
 
 When you have existing tests that are breaking due to UI changes, Cursor is faster than Claude for targeted fixes:
 

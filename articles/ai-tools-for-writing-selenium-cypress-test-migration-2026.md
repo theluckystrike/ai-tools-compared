@@ -35,17 +35,17 @@ Migration Complexity
 
 Test migration isn't simple string replacement. Key differences:
 
-- Waits: Selenium uses explicit WebDriverWait; Cypress uses implicit retry-ability.
-- Navigation: Selenium opens new windows; Cypress stays in one browser context.
-- Assertions: Selenium uses AssertJ or unittest assertions; Cypress uses Chai.
-- Page Objects: Selenium patterns don't translate 1:1 to Cypress custom commands.
-- Screenshots/Reports: Different APIs, different event hooks.
+- Waits - Selenium uses explicit WebDriverWait; Cypress uses implicit retry-ability.
+- Navigation - Selenium opens new windows; Cypress stays in one browser context.
+- Assertions - Selenium uses AssertJ or unittest assertions; Cypress uses Chai.
+- Page Objects - Selenium patterns don't translate 1:1 to Cypress custom commands.
+- Screenshots/Reports - Different APIs, different event hooks.
 
-We tested five tools on a real 50-test Selenium suite (Python with Pytest, using Page Object Model). Metrics: conversion accuracy, amount of manual fixes needed, maintainability of output.
+We tested five tools on a real 50-test Selenium suite (Python with Pytest, using Page Object Model). Metrics - conversion accuracy, amount of manual fixes needed, maintainability of output.
 
 Claude 3.5 Sonnet
 
-Cost: $3 per 1M input tokens, $15 per 1M output tokens.
+Cost - $3 per 1M input tokens, $15 per 1M output tokens.
 
 Claude performed best overall. Given a Python Selenium test file and its corresponding Page Object class, it:
 
@@ -112,7 +112,7 @@ Claude is the clear choice for Selenium-to-Cypress migration. It understands bot
 
 ChatGPT Plus (GPT-4o)
 
-Cost: $20/month.
+Cost - $20/month.
 
 GPT-4o produced functional conversions but required more manual fixes. Its Page Object translations were weaker, it sometimes flattened the Page Object structure into inline cy.get() calls, losing the abstraction.
 
@@ -129,43 +129,43 @@ cy.get('iframe').then($iframe => {
 
 GPT-4o's custom commands were less idiomatic. It didn't use Cypress plugins (like cypress-iframe) and generated verbose assertion chains.
 
-Strength: good at understanding test intent. If you asked "what does this Selenium test do?", GPT-4o explained it well. Useful for scoping large migration projects.
+Strength - good at understanding test intent. If you asked "what does this Selenium test do?", GPT-4o explained it well. Useful for scoping large migration projects.
 
-Weakness: generated code that compiles but requires debugging. Needed manual fixes in 30% of tests.
+Weakness - generated code that compiles but requires debugging. Needed manual fixes in 30% of tests.
 
 Use GPT-4o for scoping and planning migrations, not for generating code. Pair with Claude for actual conversion.
 
 GitHub Copilot
 
-Cost: $10/month individual, $19/month business.
+Cost - $10/month individual, $19/month business.
 
 Copilot's inline suggestions during coding were fast. If you typed a Cypress custom command for login, it would suggest the body quickly. However, Copilot struggled with batch conversion of entire test suites.
 
 When given a full Selenium test class to convert, Copilot suggested partial solutions, it would convert the first half correctly, then degrade in quality. It also didn't understand Page Object patterns well. Often suggested inlining all selectors directly into tests, breaking the abstraction.
 
-Strength: excellent for incremental migration. If you refactor one test at a time, Copilot keeps pace and suggests valid patterns.
+Strength - excellent for incremental migration. If you refactor one test at a time, Copilot keeps pace and suggests valid patterns.
 
-Weakness: can't handle large context windows needed for full file conversion. Page Object understanding is weak.
+Weakness - can't handle large context windows needed for full file conversion. Page Object understanding is weak.
 
 Best for incremental conversion if your team codes actively in tests. Not for bulk migration.
 
 Cody Pro (Sourcegraph)
 
-Cost: $20/month pro tier.
+Cost - $20/month pro tier.
 
 Cody's repository context was helpful. When converting a test file, Cody scanned existing Cypress custom commands and suggested matching patterns. This consistency was strong.
 
 On the Selenium translation itself, Cody's performance was middling. It understood the basic conversion but sometimes suggested patterns that conflicted with the project's existing test structure. For example, it suggested a custom command that overlapped with an existing one, creating confusion.
 
-Strength: maintains consistency across a test suite. If your team has established Cypress patterns, Cody will follow them.
+Strength - maintains consistency across a test suite. If your team has established Cypress patterns, Cody will follow them.
 
-Weakness: sometimes too eager to match existing patterns, even when a fresh pattern would be better. Less sophisticated understanding of Selenium/Cypress differences compared to Claude.
+Weakness - sometimes too eager to match existing patterns, even when a fresh pattern would be better. Less sophisticated understanding of Selenium/Cypress differences compared to Claude.
 
 Good for teams with established Cypress patterns who want consistency. Not ideal for teams starting Cypress from scratch.
 
 Gemini Advanced
 
-Cost: $20/month.
+Cost - $20/month.
 
 Gemini generated correct syntax but verbose code. A simple assertion in Selenium became a multi-line setup in Cypress. Example:
 
@@ -184,9 +184,9 @@ This works but is redundant. Selenium translators should produce lean Cypress co
 
 On Page Objects, Gemini struggled to map the pattern. It suggested converting Page Objects to "helper functions" but didn't use Cypress custom commands properly.
 
-Strength: generates working code that passes tests.
+Strength - generates working code that passes tests.
 
-Weakness: verbosity makes output harder to maintain. Page Object understanding is weak.
+Weakness - verbosity makes output harder to maintain. Page Object understanding is weak.
 
 Acceptable for small migrations (under 50 tests). Not recommended for large suites.
 
@@ -202,23 +202,23 @@ Conversion Strategy Comparison
 
 Migration Workflow Recommendation
 
-Phase 1: Scoping (ChatGPT Plus)
+Phase 1 - Scoping (ChatGPT Plus)
 - Use ChatGPT Plus to analyze your test suite
 - Ask it to categorize tests by complexity
 - Identify patterns (login flows, form submissions, navigation)
 
-Phase 2: Custom Commands (Claude)
+Phase 2 - Custom Commands (Claude)
 - Use Claude to convert Page Objects into Cypress custom commands
 - Generate cy.cy.js with your command library
 - Claude handles this better than any other tool
 
-Phase 3: Test Conversion (Claude with Copilot)
+Phase 3 - Test Conversion (Claude with Copilot)
 - Use Claude to convert 10-15 representative tests
 - Establish patterns for your team
 - Use GitHub Copilot for remaining tests (inline suggestions)
 - Copilot learns your patterns from the initial conversions
 
-Phase 4: Validation (Manual)
+Phase 4 - Validation (Manual)
 - Run Cypress test suite against staging
 - Fix assertion mismatches
 - Verify flakiness is gone
@@ -229,7 +229,7 @@ Using Claude for full conversion: 50 tests with Page Objects converts in ~2 hour
 
 Using hybrid approach (Claude + Copilot): 50 tests in ~6 hours (1-2 hours planning, 2-3 hours custom command generation, 2-3 hours test conversion with Copilot suggestions, 1 hour validation).
 
-Manual conversion: 50 tests in 40-60 hours (real estimate from teams).
+Manual conversion - 50 tests in 40-60 hours (real estimate from teams).
 
 Cost Breakdown
 
@@ -254,7 +254,7 @@ Claude 3.5 Sonnet is the clear winner for Selenium-to-Cypress migration. It unde
 
 For teams with 100+ tests, the cost savings and time savings justify the Claude API over manual conversion. For small suites (under 20 tests), manual conversion might be faster.
 
-Strategy: Use Claude for the heavy lifting (batch conversion, custom commands), then validate and refine with human QA. This approach gets a 500-test suite converted in 1-2 weeks instead of 3-4 months.
+Strategy - Use Claude for the heavy lifting (batch conversion, custom commands), then validate and refine with human QA. This approach gets a 500-test suite converted in 1-2 weeks instead of 3-4 months.
 
 Frequently Asked Questions
 

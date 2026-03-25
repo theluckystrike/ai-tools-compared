@@ -22,7 +22,7 @@ Table of Contents
 
 - [Understanding API Contract Testing](#understanding-api-contract-testing)
 - [How We Tested AI Tools for Contract Testing](#how-we-tested-ai-tools-for-contract-testing)
-- [Results: AI Tool Performance](#results-ai-tool-performance)
+- [Results - AI Tool Performance](#results-ai-tool-performance)
 - [Best Practices for AI-Generated Contract Tests](#best-practices-for-ai-generated-contract-tests)
 - [Recommendations by Use Case](#recommendations-by-use-case)
 
@@ -52,7 +52,7 @@ We evaluated ChatGPT-4, Claude Sonnet, Gemini Advanced, and Cursor on generating
 
 Each tool received identical context including OpenAPI specifications and test requirements. We measured accuracy, completeness, and whether generated tests actually passed against mock APIs.
 
-Results: AI Tool Performance
+Results - AI Tool Performance
 
 ChatGPT-4
 

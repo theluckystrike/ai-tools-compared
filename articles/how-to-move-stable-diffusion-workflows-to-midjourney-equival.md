@@ -27,15 +27,15 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Fundamental Differences
+Step 1 - Understand the Fundamental Differences
 
 Stable Diffusion gives you control over every aspect of the generation process. You select the checkpoint model, configure sampling method, set CFG scale, choose step count, and often employ ControlNet for structural guidance. Midjourney abstracts many of these decisions into presets and style parameters, prioritizing aesthetic output over granular control.
 
 When migrating workflows, you trade explicit configuration for Midjourney's style-oriented parameters. Instead of specifying "Euler a sampler at 25 steps with CFG 7," you describe the visual outcome you want and let Midjourney's models interpret your intent.
 
-The tradeoff is real: you gain consistently polished output with less fiddling, but you lose reproducibility and the ability to make surgical adjustments. If your SD workflow depends on precise ControlNet poses or inpainting for specific edits, Midjourney will require workarounds or a hybrid approach.
+The tradeoff is real - you gain consistently polished output with less fiddling, but you lose reproducibility and the ability to make surgical adjustments. If your SD workflow depends on precise ControlNet poses or inpainting for specific edits, Midjourney will require workarounds or a hybrid approach.
 
-Step 2: Prompt Conversion Strategies
+Step 2 - Prompt Conversion Strategies
 
 The most immediate adjustment involves prompt syntax. Stable Diffusion prompts use weighted terms with parentheses and brackets:
 
@@ -58,7 +58,7 @@ Converting Weight Syntax
 Stable Diffusion uses parentheses for emphasis: `(term)` increases weight by approximately 1.1x, while `[term]` decreases it. Midjourney handles this through `--iw` (image weight) for reference images and the `::` syntax for prompt weights:
 
 ```
-cat::2 dog::1 landscape::0.5
+cat::2 dog::1 field::0.5
 ```
 
 For text prompts without explicit weighting, map your Stable Diffusion emphasis as follows:
@@ -70,7 +70,7 @@ For text prompts without explicit weighting, map your Stable Diffusion emphasis 
 | `[term]` | Omit or deprioritize in prompt |
 | Negative prompt | `--no term1 term2` |
 
-Step 3: Parameter Mapping Reference
+Step 3 - Parameter Mapping Reference
 
 Stable Diffusion users configure numerous explicit parameters. Here's how they translate to Midjourney:
 
@@ -92,7 +92,7 @@ Stable Diffusion's sampler selection (Euler, DPM++, DDIM) has no direct Midjourn
 Midjourney uses `--quality` or `--q` to adjust rendering time (0.25, 0.5, 1, 2). Higher values spend more GPU time and generally produce more detail.
 
 ```
-/imagine prompt: serene mountain landscape --quality 1
+/imagine prompt: serene mountain field --quality 1
 ```
 
 CFG Scale
@@ -110,7 +110,7 @@ Resolution and Aspect Ratio
 Stable Diffusion defaults to 512x512 or 768x768, with common XL outputs at 1024x1024. Midjourney uses aspect ratio flags:
 
 ```
---ar 16:9    # Landscape
+--ar 16:9    # field
 --ar 9:16    # Portrait
 --ar 1:1     # Square
 --ar 4:3     # Standard photo
@@ -118,7 +118,7 @@ Stable Diffusion defaults to 512x512 or 768x768, with common XL outputs at 1024x
 
 For high-resolution output, Midjourney's upscaling happens post-generation. Use the Upscale buttons after generation, or add `--upbeta` for the enhanced upscaling model.
 
-Step 4: Workflow Adaptation Patterns
+Step 4 - Workflow Adaptation Patterns
 
 From Automatic1111 to Discord
 
@@ -166,7 +166,7 @@ Stable Diffusion excels at batch generation for testing prompts or creating vari
 
 This generates four independent image sets from the same prompt, useful for rapid iteration. Note that `--repeat` consumes GPU time proportionally, `--repeat 4` uses four times your standard GPU allocation.
 
-Step 5: Model Version Management
+Step 5 - Model Version Management
 
 Stable Diffusion checkpoint files provide explicit model selection. Midjourney uses version flags:
 
@@ -188,7 +188,7 @@ For workflows requiring specific aesthetic characteristics, version selection re
 
 The `--stylize` flag (range 0-1000, default 100) controls how strongly Midjourney applies its aesthetic preferences. Lower values produce more literal prompt adherence; higher values lean into Midjourney's signature style.
 
-Practical Example: Portrait Workflow Conversion
+Practical Example - Portrait Workflow Conversion
 
 A Stable Diffusion portrait workflow might look like:
 
@@ -216,7 +216,7 @@ Equivalent Midjourney workflow:
 
 Note how negative prompts use `--no` in Midjourney rather than a separate parameter field.
 
-Step 6: Handling Multi-Step Pipelines
+Step 6 - Handling Multi-Step Pipelines
 
 Stable Diffusion workflows often chain multiple generation stages: initial generation, img2img refinement, inpainting for corrections, then upscaling. Midjourney handles this differently:
 

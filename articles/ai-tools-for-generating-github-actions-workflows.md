@@ -16,7 +16,7 @@ intent-checked: true
 
 {% raw %}
 
-GitHub Actions workflows are powerful but verbose, YAML syntax combined with conditional logic, secrets management, and job dependencies creates friction. AI tools can generate complete `.github/workflows/` files, but they vary significantly in accuracy, pricing, and understanding of GitHub's ecosystem constraints.
+GitHub Actions workflows are powerful but verbose, YAML syntax combined with conditional logic, secrets management, and job dependencies creates friction. AI tools can generate complete `.github/workflows/` files, but they vary significantly in accuracy, pricing, and understanding of GitHub's environment constraints.
 
 This guide compares three leading AI tools for workflow generation: Claude Code, GitHub Copilot, and Cursor. We'll evaluate accuracy, real-world examples, debugging workflows, and total cost of ownership.
 
@@ -318,7 +318,7 @@ Weaknesses
 
 Common Workflow Patterns
 
-Pattern 1: Only Deploy on Main
+Pattern 1 - Only Deploy on Main
 
 ```yaml
 if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -330,7 +330,7 @@ Claude Code uses this correctly. Copilot sometimes writes:
 if: github.event.ref == 'main'  # Wrong: event.ref doesn't exist
 ```
 
-Pattern 2: Matrix with Exclude
+Pattern 2 - Matrix with Exclude
 
 ```yaml
 strategy:
@@ -344,7 +344,7 @@ strategy:
 
 Claude Code and Cursor handle this. Copilot generates basic matrix but misses exclude syntax.
 
-Pattern 3: Secrets with Step Masking
+Pattern 3 - Secrets with Step Masking
 
 ```yaml
 - name: Push to registry
@@ -388,11 +388,11 @@ Similar to Claude Code, can walk through the entire workflow logic step-by-step 
 
 Pricing Comparison for a Team of 5
 
-Scenario: 5 engineers, each writing 2 workflows/month.
+Scenario - 5 engineers, each writing 2 workflows/month.
 
-- Claude Code: $20 × 5 = $100/month. Use for complex multi-step pipelines.
-- GitHub Copilot: $10 × 5 = $50/month. Use for quick fixes and completions in existing files.
-- Cursor: $20 × 2-3 engineers = $40-60/month. Use for IDE-native workflow design.
+- Claude Code - $20 × 5 = $100/month. Use for complex multi-step pipelines.
+- GitHub Copilot - $10 × 5 = $50/month. Use for quick fixes and completions in existing files.
+- Cursor - $20 × 2-3 engineers = $40-60/month. Use for IDE-native workflow design.
 
 Hybrid approach.
 - Copilot for everyone (cheapest, IDE integration).

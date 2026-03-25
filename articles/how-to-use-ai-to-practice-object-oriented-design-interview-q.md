@@ -88,17 +88,17 @@ The AI can then identify issues like tight coupling, violation of single respons
 
 Practical Workflow for OOD Practice
 
-Step 1: Understand Requirements Deeply
+Step 1 - Understand Requirements Deeply
 
 Before jumping to code or diagrams, clarify all requirements. Use AI to help you think through edge cases:
 
 ```
 "For a Parking Lot OOD problem, what edge cases should
-I consider? Think about: full capacity, payment methods,
+I consider? Think about - full capacity, payment methods,
 multiple vehicle types, lost tickets, premium spots"
 ```
 
-Step 2: Identify Core Entities
+Step 2 - Identify Core Entities
 
 List out all nouns in the problem description, these typically become your classes. AI can help validate your entity selection:
 
@@ -108,7 +108,7 @@ Order, Customer, Barista, MenuItem, and Payment.
 Are there any missing entities or redundant ones?"
 ```
 
-Step 3: Apply SOLID Principles
+Step 3 - Apply SOLID Principles
 
 Here's where AI becomes particularly useful. After initial design, ask for SOLID analysis:
 
@@ -134,7 +134,7 @@ class Order:
 
 AI can explain why mixing payment processing with order management violates the Single Responsibility Principle and suggest refactoring.
 
-Step 4: Create UML Diagrams
+Step 4 - Create UML Diagrams
 
 Use ASCII or markdown-based UML to sketch your design, then validate with AI:
 
@@ -157,7 +157,7 @@ Keeping these definitions sharp allows you to invoke them naturally under pressu
 
 Single Responsibility Principle (SRP): A class should have only one reason to change. In practice, this means separating data storage, business logic, and presentation into distinct classes. Prompt AI: "Give me three examples from my parking lot design where SRP might be violated."
 
-Open/Closed Principle (OCP): Classes should be open for extension but closed for modification. Designed correctly, adding a new vehicle type to your parking lot should require adding a class, not modifying existing ones. Prompt AI: "How would I apply OCP to support motorcycle parking without changing the existing Vehicle class?"
+Open/Closed Principle (OCP) - Classes should be open for extension but closed for modification. Designed correctly, adding a new vehicle type to your parking lot should require adding a class, not modifying existing ones. Prompt AI: "How would I apply OCP to support motorcycle parking without changing the existing Vehicle class?"
 
 Liskov Substitution Principle (LSP): Subclasses must be substitutable for their parent class without breaking the program. Prompt AI: "Create a scenario where my inheritance hierarchy violates LSP and show me how to fix it."
 
@@ -169,7 +169,7 @@ Sample Practice Session
 
 Here's a complete example of using AI to practice OOD:
 
-Problem: Design a coffee shop system
+Problem - Design a coffee shop system
 
 AI Prompt:
 

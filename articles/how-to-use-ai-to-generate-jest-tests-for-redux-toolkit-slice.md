@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Makes Redux Toolkit Testing Straightforward
+Step 1 - What Makes Redux Toolkit Testing Straightforward
 
 
 Redux Toolkit normalizes how you write state management. Each slice follows predictable patterns: you define initial state, create reducers with `createSlice`, and export actions and selectors. This consistency means AI tools can recognize slice structures and generate appropriate test coverage.
@@ -39,7 +39,7 @@ Redux Toolkit normalizes how you write state management. Each slice follows pred
 Before using AI generation, ensure your slice follows standard Redux Toolkit conventions. The more explicit your slice code, clear typing, properly typed actions, and organized selectors, the better AI tools can produce accurate tests.
 
 
-Step 2: Preparing Your Slice for Test Generation
+Step 2 - Preparing Your Slice for Test Generation
 
 
 Consider this example slice for a simple counter:
@@ -86,7 +86,7 @@ export default counterSlice.reducer;
 This slice demonstrates typical patterns: synchronous actions, a PayloadAction with a specific type, and enum-like status strings. When you feed this to an AI tool with the right prompt, you receive corresponding Jest tests.
 
 
-Step 3: Crafting Effective Prompts for Test Generation
+Step 3 - Crafting Effective Prompts for Test Generation
 
 
 The quality of generated tests depends heavily on your prompt. A well-structured prompt includes three elements: the slice code, the testing framework details, and specific test cases you want covered.
@@ -101,7 +101,7 @@ Here's a prompt that works well:
 Paste your slice code after this prompt. AI tools like Claude, GPT-4, and others recognize Redux Toolkit patterns and will generate appropriate test structures.
 
 
-Step 4: Understand Generated Test Output
+Step 4 - Understand Generated Test Output
 
 
 After generating tests, you'll see several test categories. Here's what typical output looks like:
@@ -155,7 +155,7 @@ describe('counter slice', () => {
 These tests cover the fundamental cases: initial state loading, each action's effect on state, and proper state mutation. The structure follows Redux Toolkit testing conventions using `describe` blocks grouped by functionality.
 
 
-Step 5: Test Async Operations with createAsyncThunk
+Step 5 - Test Async Operations with createAsyncThunk
 
 
 Most real-world slices include asynchronous actions via `createAsyncThunk`. AI can generate tests for these too, though you need to provide additional context about your async setup.
@@ -224,28 +224,28 @@ When generating tests for async slices, your prompt should specify that the slic
 The generated tests will verify each lifecycle state properly.
 
 
-Step 6: Validating and Refining Generated Tests
+Step 6 - Validating and Refining Generated Tests
 
 
 AI-generated tests require human review. Verify these key areas:
 
 
-State immutation: Redux Toolkit uses Immer internally, but tests should confirm state changes correctly. Check that assertions match expected outcomes.
+State immutation - Redux Toolkit uses Immer internally, but tests should confirm state changes correctly. Check that assertions match expected outcomes.
 
 
-Edge cases: AI may miss boundary conditions. Add tests for empty arrays, null values, or maximum numeric limits if your slice handles them.
+Edge cases - AI may miss boundary conditions. Add tests for empty arrays, null values, or maximum numeric limits if your slice handles them.
 
 
-Selector testing: If your slice exports selectors, ensure they're tested independently or through integration tests.
+Selector testing - If your slice exports selectors, ensure they're tested independently or through integration tests.
 
 
-Coverage gaps: Run your test suite with coverage reporting. Identify untested branches and prompt AI to generate additional cases:
+Coverage gaps - Run your test suite with coverage reporting. Identify untested branches and prompt AI to generate additional cases:
 
 
 > Add tests for: decrementing below zero, incrementByAmount with negative numbers, handling network timeouts in fetchUsers
 
 
-Step 7: Integrate AI Testing into Your Workflow
+Step 7 - Integrate AI Testing into Your Workflow
 
 
 Set up a consistent process for generating slice tests:
@@ -265,7 +265,7 @@ Set up a consistent process for generating slice tests:
 This workflow reduces boilerplate significantly. Teams report saving 15-20 minutes per slice when using AI-assisted test generation, with consistent test quality across projects.
 
 
-Step 8: Limitations to Recognize
+Step 8 - Limitations to Recognize
 
 
 AI test generation works best for standard patterns. Complex slices with side effects, conditional logic, or intricate state dependencies may need manual intervention. Always audit generated tests, trust but verify applies here.

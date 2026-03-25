@@ -22,13 +22,13 @@ Table of Contents
 
 - [Understanding the Problem](#understanding-the-problem)
 - [Diagnosing Your Network Configuration](#diagnosing-your-network-configuration)
-- [Solution 1: Configure VS Code Proxy Settings](#solution-1-configure-vs-code-proxy-settings)
-- [Solution 2: Set Environment Variables](#solution-2-set-environment-variables)
-- [Solution 3: Configure Git to Use Proxy](#solution-3-configure-git-to-use-proxy)
-- [Solution 4: Whitelist Copilot Endpoints](#solution-4-whitelist-copilot-endpoints)
-- [Solution 5: Use a SOCKS5 Proxy](#solution-5-use-a-socks5-proxy)
-- [Solution 6: Check Certificate Issues](#solution-6-check-certificate-issues)
-- [Solution 7: Use GitHub Copilot Business or Enterprise](#solution-7-use-github-copilot-business-or-enterprise)
+- [Solution 1 - Configure VS Code Proxy Settings](#solution-1-configure-vs-code-proxy-settings)
+- [Solution 2 - Set Environment Variables](#solution-2-set-environment-variables)
+- [Solution 3 - Configure Git to Use Proxy](#solution-3-configure-git-to-use-proxy)
+- [Solution 4 - Whitelist Copilot Endpoints](#solution-4-whitelist-copilot-endpoints)
+- [Solution 5 - Use a SOCKS5 Proxy](#solution-5-use-a-socks5-proxy)
+- [Solution 6 - Check Certificate Issues](#solution-6-check-certificate-issues)
+- [Solution 7 - Use GitHub Copilot Business or Enterprise](#solution-7-use-github-copilot-business-or-enterprise)
 - [Quick Troubleshooting Checklist](#quick-troubleshooting-checklist)
 - [Advanced Proxy Debugging](#advanced-proxy-debugging)
 - [Enterprise Environment Configurations](#enterprise-environment-configurations)
@@ -36,10 +36,10 @@ Table of Contents
 - [Monitoring and Logging](#monitoring-and-logging)
 - [Emergency Workarounds](#emergency-workarounds)
 - [Long-term Solutions](#long-term-solutions)
-- [Post-Mortem: Preventing Future Proxy Issues](#post-mortem-preventing-future-proxy-issues)
+- [Post-Mortem - Preventing Future Proxy Issues](#post-mortem-preventing-future-proxy-issues)
 - [If Copilot stops working:](#if-copilot-stops-working)
 - [Network info:](#network-info)
-- [Contact: IT Service Desk #2525](#contact-it-service-desk-2525)
+- [Contact - IT Service Desk #2525](#contact-it-service-desk-2525)
 
 Understanding the Problem
 
@@ -75,7 +75,7 @@ echo $HTTPS_PROXY
 echo $NO_PROXY
 ```
 
-Solution 1: Configure VS Code Proxy Settings
+Solution 1 - Configure VS Code Proxy Settings
 
 Visual Studio Code and its extensions respect the system's proxy settings, but you may need to explicitly configure them for Copilot to work properly.
 
@@ -103,7 +103,7 @@ Replace `http://your-proxy-server:8080` with your actual corporate proxy address
 }
 ```
 
-Solution 2: Set Environment Variables
+Solution 2 - Set Environment Variables
 
 For command-line tools and IDEs that do not have built-in proxy configuration, set environment variables. Add these to your shell profile (`~/.bashrc`, `~/.zshrc`, or `~/.profile`):
 
@@ -127,7 +127,7 @@ Apply the changes:
 source ~/.zshrc  # or source ~/.bashrc
 ```
 
-Solution 3: Configure Git to Use Proxy
+Solution 3 - Configure Git to Use Proxy
 
 Git operations often trigger Copilot authentication checks. Ensure Git uses your proxy:
 
@@ -153,7 +153,7 @@ Then set Git to use localhost:3128
 git config --global http.proxy http://localhost:3128
 ```
 
-Solution 4: Whitelist Copilot Endpoints
+Solution 4 - Whitelist Copilot Endpoints
 
 If you have network administrator access, configure your firewall or proxy to allow traffic to Copilot's required endpoints:
 
@@ -174,7 +174,7 @@ acl copilot_domains dstdomain .github.com .visualstudio.com .azure.com
 http_access allow copilot_domains
 ```
 
-Solution 5: Use a SOCKS5 Proxy
+Solution 5 - Use a SOCKS5 Proxy
 
 Some corporate firewalls inspect HTTPS traffic deeply, breaking end-to-end encryption that Copilot requires. A SOCKS5 proxy can bypass this inspection:
 
@@ -197,15 +197,15 @@ Run VS Code through proxy
 proxychains4 code
 ```
 
-Solution 6: Check Certificate Issues
+Solution 6 - Check Certificate Issues
 
 Corporate proxies often perform SSL inspection, replacing server certificates with their own. This breaks Copilot's connection validation. Two options exist:
 
-Option A: Disable SSL inspection (requires admin access)
+Option A - Disable SSL inspection (requires admin access)
 
 Work with your IT department to exclude Copilot endpoints from SSL inspection.
 
-Option B: Install corporate certificate
+Option B - Install corporate certificate
 
 If your organization uses a custom CA certificate:
 
@@ -218,7 +218,7 @@ sudo cp corporate-proxy-ca.crt /usr/local/share/ca-certificates/
 sudo update-ca-certificates
 ```
 
-Solution 7: Use GitHub Copilot Business or Enterprise
+Solution 7 - Use GitHub Copilot Business or Enterprise
 
 Organizations with GitHub Copilot Business or Enterprise can use Microsoft's Azure backbone, which often has better proxy compatibility. These plans provide:
 
@@ -455,10 +455,10 @@ Emergency Workarounds
 
 When proxy issues can't be fixed immediately:
 
-Option 1: Mobile Hotspot Bypass
+Option 1 - Mobile Hotspot Bypass
 Use your phone's hotspot to bypass corporate proxy temporarily. Not recommended for sensitive code, but useful for troubleshooting.
 
-Option 2: SSH Tunnel Through Jump Host
+Option 2 - SSH Tunnel Through Jump Host
 
 ```bash
 If you have access to a machine outside the proxy:
@@ -468,7 +468,7 @@ Then use SOCKS5 in Copilot
 export SOCKS_PROXY="socks5://localhost:1080"
 ```
 
-Option 3: VPN (with IT approval)
+Option 3 - VPN (with IT approval)
 
 Work with your IT team to authorize a company VPN that doesn't restrict Copilot access. Some corporate VPNs have better Copilot compatibility than others.
 
@@ -508,7 +508,7 @@ Enterprise plans include:
 - Custom endpoint options
 - Dedicated support
 
-Post-Mortem: Preventing Future Proxy Issues
+Post-Mortem - Preventing Future Proxy Issues
 
 After resolving proxy issues:
 
@@ -524,7 +524,7 @@ Copilot Behind Corporate Proxy - Team Runbook
 
 If Copilot stops working:
 
-1. Run: `curl -x http://proxy.corp:8080 https://api.github.com`
+1. Run - `curl -x http://proxy.corp:8080 https://api.github.com`
 2. If that fails, it's a network issue - contact IT
 3. If it works, restart VS Code
 4. If still broken, check ~/.vscode/settings.json for proxy config
@@ -532,9 +532,9 @@ If Copilot stops working:
 Network info:
 - Proxy: proxy.corp:8080
 - Auth: Use Windows credentials
-- Bypass: localhost,127.0.0.1,.local
+- Bypass - localhost,127.0.0.1,.local
 
-Contact: IT Service Desk #2525
+Contact - IT Service Desk #2525
 ```
 
 Related Articles

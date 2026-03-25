@@ -38,7 +38,7 @@ Music source separation, the process of extracting individual instrument stems f
 - Audioshake uses proprietary model: ensembles that often outperform single-model open-source approaches on challenging material with heavy reverb or distortion.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
-- It performs below Demucs: in most benchmarks but is simpler to integrate and ships with clear architectural documentation.
+- It performs below Demucs - in most benchmarks but is simpler to integrate and ships with clear architectural documentation.
 
 Understanding Music Source Separation
 
@@ -91,7 +91,7 @@ sources contains: drums, bass, other, vocals, guitar, piano
 
 Demucs requires more computational resources than Spleeter but delivers noticeably better results. The 6-source model provides additional instrument separation beyond the standard 4-stem approach. The `htdemucs` (hybrid transformer) variant is the current recommended model, it combines CNN and transformer layers to better capture long-range dependencies in musical structure.
 
-Common pitfall: Demucs by default outputs audio at the model's internal sample rate. Always resample the output explicitly when saving if you need to match the source file's rate, otherwise you will get subtle pitch drift on some DAW imports. Use `torchaudio.functional.resample` to normalize output before writing to disk.
+Common pitfall - Demucs by default outputs audio at the model's internal sample rate. Always resample the output explicitly when saving if you need to match the source file's rate, otherwise you will get subtle pitch drift on some DAW imports. Use `torchaudio.functional.resample` to normalize output before writing to disk.
 
 Open-Unmix
 

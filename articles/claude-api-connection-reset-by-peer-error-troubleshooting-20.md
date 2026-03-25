@@ -159,7 +159,7 @@ def validate_claude_request(messages: List[Dict[str, Any]], model: str) -> bool:
     ]
 
     if model not in valid_models:
-        print(f"Warning: Model {model} may not be current. Valid models: {valid_models}")
+        print(f"Warning - Model {model} may not be current. Valid models: {valid_models}")
 
     return True
 

@@ -19,7 +19,7 @@ Claude Artifacts and ChatGPT Canvas both enable live, interactive coding with AI
 
 This guide compares both tools across six critical dimensions: rendering speed, state management, debugging workflow, team collaboration, offline capability, and cost-effectiveness. By the end, you'll know which to reach for in any coding scenario.
 
-Architecture: How They Work Differently
+Architecture - How They Work Differently
 
 Claude Artifacts
 
@@ -73,9 +73,9 @@ Component Complexity vs Load Time:
 | ChatBot UI component | 0.9s | 0.4s | Canvas +55% faster |
 | Markdown renderer | 1.1s | 0.5s | Canvas +55% faster |
 
-Conclusion: Canvas is faster for simple code-centric tasks. Artifacts are required for complex interactive components.
+Conclusion - Canvas is faster for simple code-centric tasks. Artifacts are required for complex interactive components.
 
-Use Cases: When to Use Each
+Use Cases - When to Use Each
 
 Use Claude Artifacts For:
 
@@ -141,9 +141,9 @@ Canvas supports creating multiple files (HTML, CSS, JS separately), while Artifa
 
 Real-World Workflow Examples
 
-Scenario 1: Building a React Data Table Component (Artifacts)
+Scenario 1 - Building a React Data Table Component (Artifacts)
 
-Your goal: Create a filterable, sortable React table component for product inventory.
+Your goal - Create a filterable, sortable React table component for product inventory.
 
 ```
 // Step 1: Ask Claude to build initial component
@@ -170,11 +170,11 @@ Copy the Artifacts URL and send it to non-engineers.
 They can immediately see the table working without installing anything.
 ```
 
-Why Artifacts win here: Live rendering is essential for testing UX. Your team can validate the table behavior before code review.
+Why Artifacts win here - Live rendering is essential for testing UX. Your team can validate the table behavior before code review.
 
-Scenario 2: Writing a CLI Tool in Bash (Canvas)
+Scenario 2 - Writing a CLI Tool in Bash (Canvas)
 
-Your goal: Write a script to bulk-rename files matching a pattern.
+Your goal - Write a script to bulk-rename files matching a pattern.
 
 ```
 // Step 1: Ask ChatGPT in Canvas
@@ -198,11 +198,11 @@ Add proper error handling and logging.
 [Canvas updates the entire script]
 ```
 
-Why Canvas wins here: You're editing text-based code, not visual components. Speed matters more than rendering capability.
+Why Canvas wins here - You're editing text-based code, not visual components. Speed matters more than rendering capability.
 
-Scenario 3: Collaborative Pair Programming Session
+Scenario 3 - Collaborative Pair Programming Session
 
-Setup: Two engineers on different continents need to build a React component.
+Setup - Two engineers on different continents need to build a React component.
 
 With Artifacts:
 1. Engineer A: "Let's build a search component"
@@ -290,7 +290,7 @@ Canvas:
 
 Both are equally private for prototyping. Don't paste real API keys, database passwords, or PII into either tool.
 
-Choosing Your Tool: Decision Tree
+Choosing Your Tool - Decision Tree
 
 ```
 Are you building something visual/interactive?

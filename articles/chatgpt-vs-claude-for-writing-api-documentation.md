@@ -62,7 +62,7 @@ Generating Endpoint Documentation
 Both tools can document API endpoints, but their approaches differ. Consider a simple REST endpoint for an user management API:
 
 ```python
-Example endpoint: GET /users/{id}
+Example endpoint - GET /users/{id}
 @app.get("/users/{user_id}")
 async def get_user(user_id: int):
     return {"id": user_id, "name": "Example User"}
@@ -100,13 +100,13 @@ Prompt for Both:
 
 ```
 Write an authentication section for a REST API using Bearer tokens.
-Include: overview, how to obtain tokens, including tokens in requests,
+Include - overview, how to obtain tokens, including tokens in requests,
 token expiration, and error responses for invalid tokens.
 ```
 
 ChatGPT generates clean, readable content but sometimes omits edge cases. Claude tends to include more complete error scenarios and security considerations out of the box.
 
-A practical tip: when using ChatGPT for authentication sections, add "Include edge cases for expired tokens, revoked tokens, and malformed Authorization headers" to your prompt. This produces output comparable to Claude's default behavior without requiring a second generation pass.
+A practical tip - when using ChatGPT for authentication sections, add "Include edge cases for expired tokens, revoked tokens, and malformed Authorization headers" to your prompt. This produces output comparable to Claude's default behavior without requiring a second generation pass.
 
 Creating Code Examples
 
@@ -197,7 +197,7 @@ Document the breaking changes between API v1 and v2:
 - v1: GET /users returns array directly
 - v2: GET /users returns {data: [], meta: {total: 0}}
 
-Include: summary of changes, migration steps, code before/after.
+Include - summary of changes, migration steps, code before/after.
 ```
 
 Claude identifies the structural change accurately and provides clear migration guidance. It also anticipates follow-up questions developers might have. ChatGPT handles this well but may require more specific prompting to cover all necessary migration details.

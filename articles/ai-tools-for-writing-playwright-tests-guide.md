@@ -27,19 +27,19 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Test Quality Spectrum
+Step 1 - The Test Quality Spectrum
 
 ```
-Level 1: Brittle. querySelector selectors, arbitrary sleeps
-Level 2: Functional. getByRole/getByTestId, basic waits
-Level 3: Production. page object model, auth fixtures, network mocking
+Level 1 - Brittle. querySelector selectors, arbitrary sleeps
+Level 2 - Functional. getByRole/getByTestId, basic waits
+Level 3 - Production. page object model, auth fixtures, network mocking
 ```
 
 Most AI tools default to Level 1-2. Claude Code with context consistently reaches Level 3.
 
-Step 2: Task 1: Login Flow with Auth State
+Step 2 - Task 1: Login Flow with Auth State
 
-Prompt: "Write a Playwright test for login. Email/password form, redirects to dashboard on success."
+Prompt - "Write a Playwright test for login. Email/password form, redirects to dashboard on success."
 
 Copilot's output:
 
@@ -123,9 +123,9 @@ test.describe('Dashboard', () => {
 });
 ```
 
-Step 3: Task 2: Page Object Model
+Step 3 - Task 2: Page Object Model
 
-Prompt: "Create a Page Object for a shopping cart page."
+Prompt - "Create a Page Object for a shopping cart page."
 
 Cursor's output:
 
@@ -212,9 +212,9 @@ test('removing last item shows empty state', async ({ page }) => {
 });
 ```
 
-Step 4: Task 3: Network Mocking
+Step 4 - Task 3: Network Mocking
 
-Prompt: "Write a test that mocks the payment API to test error handling."
+Prompt - "Write a test that mocks the payment API to test error handling."
 
 ```typescript
 // Claude's network mock implementation
@@ -277,7 +277,7 @@ test.describe('Checkout error handling', () => {
 });
 ```
 
-Step 5: Task 4: Visual Regression Testing
+Step 5 - Task 4: Visual Regression Testing
 
 ```typescript
 // Claude adds visual regression snapshots properly

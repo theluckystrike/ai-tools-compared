@@ -54,7 +54,7 @@ Another common issue involves rate limiting. If you have recently made numerous 
 
 Step-by-Step Fixes
 
-Fix 1: Force Memory Refresh
+Fix 1 - Force Memory Refresh
 
 The simplest fix often involves forcing a complete memory refresh. Log out of your ChatGPT account completely, clear browser cookies and cache, then log back in. This process forces the client to fetch fresh memory data from the server rather than relying on cached copies.
 
@@ -69,35 +69,35 @@ def refresh_memory_session(client):
     return memory
 ```
 
-Fix 2: Verify Custom Instructions Syntax
+Fix 2 - Verify Custom Instructions Syntax
 
 Custom instructions often fail to save due to formatting issues. Ensure your instructions follow valid JSON or plain text format depending on your interface. Remove any special characters that might be interpreted as control characters. If using the web interface, copy your instructions into a plain text editor first to strip hidden formatting that might cause problems.
 
 When memory includes specific preferences, format them as clear, standalone statements rather than complex nested structures. The system parses these statements more reliably when they appear as discrete entries.
 
-Fix 3: Check Network Stability
+Fix 3 - Check Network Stability
 
 Network issues during memory writes cause silent failures. Run a connectivity test before and after making memory changes. Use a wired connection rather than WiFi when updating critical memory entries. If using a VPN, try disabling it temporarily to rule out routing issues.
 
 For users experiencing consistent network-related failures, consider implementing a retry mechanism in your workflow. Wait at least 30 seconds after making changes before closing the browser or switching to another task.
 
-Fix 4: Clear Browser Extensions and Cache
+Fix 4 - Clear Browser Extensions and Cache
 
 Extensions that modify headers or intercept requests can interfere with memory synchronization. Disable all browser extensions except essential ones, then test memory updates. If the issue resolves, re-enable extensions one by one to identify the culprit.
 
 Browser cache particularly affects memory because the system stores a local copy to reduce server requests. Clear both cache and local storage for the ChatGPT domain. In Chrome, navigate to Developer Tools, select Application tab, then clear Storage for chat.openai.com.
 
-Fix 5: Address Account Synchronization Issues
+Fix 5 - Address Account Synchronization Issues
 
 If you use ChatGPT across multiple devices, synchronization delays can create the appearance of memory not updating. Wait at least 5 minutes for changes to propagate between devices. Check which device last made the memory modification, as the most recent update takes precedence.
 
 To force synchronization, log out on all devices except one, make your memory changes, wait two minutes, then log back in on other devices. This sequential approach often resolves lingering sync issues.
 
-Fix 6: Handle Rate Limiting
+Fix 6 - Handle Rate Limiting
 
 The memory system imposes limits on how frequently you can make changes. If you have hit this limit, you will notice changes failing to save without clear error messages. Wait 24 hours before attempting additional modifications. Plan your memory updates in batches rather than making numerous small changes over time.
 
-Fix 7: Reset Memory Completely
+Fix 7 - Reset Memory Completely
 
 When all else fails, a complete memory reset provides a clean slate. In ChatGPT settings, locate the memory management section and select the option to clear all stored memories. After resetting, rebuild your memory gradually, adding entries one at a time to identify any problematic content that might trigger failures.
 
@@ -121,17 +121,17 @@ Advanced Diagnostic Workflow
 
 For developers experiencing persistent memory failures, follow this systematic diagnostic process:
 
-Step 1: Verify Memory State Across Sessions
+Step 1 - Verify Memory State Across Sessions
 
 Create a test conversation specifically designed to validate memory persistence:
 
 ```
-Write a unique identifier: TEST_TIMESTAMP_[current_date]
+Write a unique identifier - TEST_TIMESTAMP_[current_date]
 ```
 
 End the conversation, wait 5 minutes, then start a new conversation and ask ChatGPT to recall the identifier. If it cannot, memory synchronization is failing.
 
-Step 2: Check API Integration (if using API)
+Step 2 - Check API Integration (if using API)
 
 For developers using the ChatGPT API with memory features:
 
@@ -165,7 +165,7 @@ else:
     print("Memory persistence: FAILED")
 ```
 
-Step 3: Isolate Browser-Specific Issues
+Step 3 - Isolate Browser-Specific Issues
 
 Test memory updates in different browsers:
 
@@ -175,7 +175,7 @@ Test memory updates in different browsers:
 
 If memory works in one browser but not others, the issue is browser-specific, not account-level.
 
-Step 4: Network Analysis
+Step 4 - Network Analysis
 
 Use browser developer tools to monitor memory-related API calls:
 
@@ -187,13 +187,13 @@ Use browser developer tools to monitor memory-related API calls:
 
 Common Memory Failure Patterns
 
-Pattern 1: Gradual Memory Fade
+Pattern 1 - Gradual Memory Fade
 
-Symptoms: Recent memories persist, but older entries disappear over time
+Symptoms - Recent memories persist, but older entries disappear over time
 
-Root Cause: Memory storage quota reached; system automatically removes oldest entries
+Root Cause - Memory storage quota reached; system automatically removes oldest entries
 
-Fix: Trim your memory to essential information. Replace verbose entries with concise, structured data.
+Fix - Trim your memory to essential information. Replace verbose entries with concise, structured data.
 
 Before:
 ```
@@ -204,24 +204,24 @@ prefer detailed explanations over quick answers.
 
 After:
 ```
-ML engineer: Transformers, attention mechanisms, PyTorch, TensorFlow. Prefers detailed explanations.
+ML engineer - Transformers, attention mechanisms, PyTorch, TensorFlow. Prefers detailed explanations.
 ```
 
-Pattern 2: Selective Memory Loss
+Pattern 2 - Selective Memory Loss
 
-Symptoms: Some memories update correctly while others fail silently
+Symptoms - Some memories update correctly while others fail silently
 
-Root Cause: Specific memory entries contain characters or formatting that breaks serialization
+Root Cause - Specific memory entries contain characters or formatting that breaks serialization
 
-Fix: Remove special characters, unicode symbols, and complex formatting from memory entries. Test with plain ASCII text first.
+Fix - Remove special characters, unicode symbols, and complex formatting from memory entries. Test with plain ASCII text first.
 
-Pattern 3: Device-Specific Memory Inconsistency
+Pattern 3 - Device-Specific Memory Inconsistency
 
-Symptoms: Memory works on phone but not on desktop, or vice versa
+Symptoms - Memory works on phone but not on desktop, or vice versa
 
-Root Cause: Device synchronization delay exceeds typical wait time
+Root Cause - Device synchronization delay exceeds typical wait time
 
-Fix: When using multiple devices, always wait 15 minutes after updating memory on one device before using another device.
+Fix - When using multiple devices, always wait 15 minutes after updating memory on one device before using another device.
 
 Performance Metrics and Monitoring
 

@@ -31,7 +31,7 @@ tags: [ai-tools-compared, artificial-intelligence, kotlin, best-of]
 Kotlin Multiplatform has matured significantly, enabling developers to share code across Android, iOS, web, desktop, and server targets from a single codebase. However, writing correct shared code modules requires careful attention to platform-specific limitations, expect/actual patterns, and compilation targets. In 2026, AI coding assistants have developed varying levels of sophistication for handling these challenges. This guide evaluates which tools best help developers produce correct Kotlin Multiplatform implementations.
 
 
-- Use case: Serialization with kotlinx.serialization
+- Use case - Serialization with kotlinx.serialization
 
 The `@Serializable` annotation and `Json {}` configuration block are well understood by most AI tools.
 - Provide the list of: targets you need (e.g., `androidTarget`, `iosArm64`, `jvm`, `js`), the libraries you want to use, and the Kotlin version.
@@ -50,7 +50,7 @@ The expect/actual mechanism requires precise matching between expected declarati
 
 When sharing code between mobile and backend targets, developers encounter differences in threading models, I/O operations, and available APIs. An AI tool that understands these constraints can suggest appropriate alternatives or flag problematic code before it causes runtime errors.
 
-The `kotlinx` ecosystem. including `kotlinx.coroutines`, `kotlinx.serialization`, and `kotlinx.datetime`. is essential for KMP development because these libraries are explicitly designed with multiplatform compatibility in mind. AI tools with deep KMP knowledge will reach for these libraries rather than platform-specific equivalents.
+The `kotlinx` environment. including `kotlinx.coroutines`, `kotlinx.serialization`, and `kotlinx.datetime`. is essential for KMP development because these libraries are explicitly designed with multiplatform compatibility in mind. AI tools with deep KMP knowledge will reach for these libraries rather than platform-specific equivalents.
 
 Key Capabilities for Kotlin Multiplatform AI Tools
 
@@ -60,7 +60,7 @@ Context awareness matters significantly. A tool that understands the project's b
 
 Gradle configuration is another area where AI tools diverge. The `build.gradle.kts` files for KMP projects are complex, involving multiple source sets, target declarations, and dependency scoping. An AI that can generate or diagnose correct Gradle configurations saves significant setup time.
 
-Code Example: Expect/Actual Pattern
+Code Example - Expect/Actual Pattern
 
 Consider a common module that expects a platform-specific UUID generator:
 
@@ -87,7 +87,7 @@ actual class UUIDGenerator {
 
 An effective AI assistant should recognize this pattern, verify that actual implementations match expected signatures, and suggest appropriate implementations for each platform. It should also flag cases where a developer accidentally writes platform-specific imports in common code.
 
-Tool Comparison: AI Assistants for Kotlin Multiplatform
+Tool Comparison - AI Assistants for Kotlin Multiplatform
 
 Different AI coding assistants demonstrate varying levels of Kotlin Multiplatform expertise. Here is how the major tools perform across critical dimensions:
 
@@ -101,7 +101,7 @@ Different AI coding assistants demonstrate varying levels of Kotlin Multiplatfor
 
 Claude 3.7 Sonnet consistently generates expect/actual declarations with matching signatures and reaches for `kotlinx.datetime` and `kotlinx.coroutines` as first choices rather than platform-specific alternatives. GitHub Copilot and Cursor perform well for common patterns but occasionally suggest platform-specific APIs in common source sets. Tabnine's autocomplete-only model struggles with the multi-file, multi-module context required for KMP.
 
-Code Example: Platform-Specific API Handling
+Code Example - Platform-Specific API Handling
 
 A common challenge involves using platform-specific APIs in shared code:
 
@@ -142,11 +142,11 @@ actual fun getTimestamp(): Long {
 
 Tools that recognize the kotlinx.datetime library or similar cross-platform solutions provide more practical guidance than those that simply flag errors without offering solutions.
 
-Real-World Workflow: Setting Up a KMP Shared Module
+Real-World Workflow - Setting Up a KMP Shared Module
 
 Here is a realistic workflow for creating a shared networking module using Ktor. the KMP-native HTTP client. and how AI tools assist at each stage.
 
-Step 1: Define the build.gradle.kts configuration
+Step 1 - Define the build.gradle.kts configuration
 
 ```kotlin
 kotlin {
@@ -184,7 +184,7 @@ kotlin {
 
 Claude generates this configuration correctly on the first attempt, including the engine-specific dependencies for each platform. Copilot requires a prompt that specifies Ktor versions explicitly to avoid suggesting outdated dependency coordinates.
 
-Step 2: Write the shared API client
+Step 2 - Write the shared API client
 
 ```kotlin
 // commonMain
@@ -195,7 +195,7 @@ class ApiClient(private val httpClient: HttpClient) {
 }
 ```
 
-Step 3: Provide the engine via expect/actual
+Step 3 - Provide the engine via expect/actual
 
 ```kotlin
 // commonMain
@@ -220,15 +220,15 @@ AI tools that understand Ktor's multiplatform architecture generate this pattern
 
 Specific Use Cases and Limitations
 
-Use case: Shared business logic with coroutines
+Use case - Shared business logic with coroutines
 
 AI tools handle `kotlinx.coroutines` well in KMP context, including `CoroutineScope` management and `Dispatchers.IO` versus `Dispatchers.Default` for CPU versus I/O bound work. Claude correctly warns when developers use `Dispatchers.Main` in common code without importing the proper common coroutines artifact.
 
-Use case: Serialization with kotlinx.serialization
+Use case - Serialization with kotlinx.serialization
 
 The `@Serializable` annotation and `Json {}` configuration block are well understood by most AI tools. Where tools diverge is in edge cases like polymorphic serialization and custom serializers for platform-specific types.
 
-Use case: Shared ViewModels or Presentation Layer
+Use case - Shared ViewModels or Presentation Layer
 
 Some teams share ViewModels using the `moko-mvvm` library or KMP-NativeCoroutines for Swift interop. This is an area where AI tools often struggle, as the patterns are less represented in training data. Prompting with explicit library names and versions yields better results.
 
@@ -266,7 +266,7 @@ Q: Is Compose Multiplatform supported in AI training data?
 
 Partially. Compose Multiplatform has stabilized on desktop and is in beta on iOS. AI tools have reasonable coverage of standard composables but may suggest Android-specific Compose APIs (like `LocalContext.current`) in multiplatform contexts where they fail on iOS.
 
-Advanced: Custom AI Instructions for KMP Projects
+Advanced - Custom AI Instructions for KMP Projects
 
 Set up system prompts that teach AI tools your project's KMP conventions. Include this in your IDE settings or commit to the repository:
 

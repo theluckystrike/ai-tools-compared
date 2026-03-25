@@ -25,7 +25,7 @@ Table of Contents
 - [Cost-Effective API Strategies](#cost-effective-api-strategies)
 - [Strategic Model Selection](#strategic-model-selection)
 - [Building Cost Monitoring Into Your Workflow](#building-cost-monitoring-into-your-workflow)
-- [Practical Example: Full Workflow](#practical-example-full-workflow)
+- [Practical Example - Full Workflow](#practical-example-full-workflow)
 - [Maximizing Free Tier Usage](#maximizing-free-tier-usage)
 
 Understanding Claude's Pricing Structure
@@ -73,8 +73,8 @@ The Anthropic Console offers a free tier with limited usage each month. While no
 Example console session:
 
 ```
-You: Write a Python function to validate email addresses
-Claude: Here's a function using regex validation:
+You - Write a Python function to validate email addresses
+Claude - Here's a function using regex validation:
 
 import re
 
@@ -125,11 +125,11 @@ Optimizing Prompt Length
 Since you pay for input tokens, concise prompts save money. Instead of pasting entire files, include only the relevant sections.
 
 ```python
-Expensive: Full file context
+Expensive - Full file context
 prompt = f"""Review this entire file:
 {open('app.py').read()}"""
 
-Cost-effective: Relevant snippet only
+Cost-effective - Relevant snippet only
 prompt = """Review this function for bugs:
 def process_data(data):
     return data.filter(x => x > 0)
@@ -172,7 +172,7 @@ Project structure:
   - main.py: Entry point
   - utils.py: Helper functions
   - models.py: Data models
-Tech stack: Python 3.11, FastAPI, PostgreSQL
+Tech stack - Python 3.11, FastAPI, PostgreSQL
 """
 
 def ask_claude(prompt):
@@ -206,13 +206,13 @@ When to Use Each Model
 Cost comparison example:
 
 ```python
-Haiku for simple tasks: ~$0.0003 per request
+Haiku for simple tasks - ~$0.0003 per request
 haiku_response = client.messages.create(
     model="claude-3-haiku-20240307",
     messages=[{"role": "user", "content": "Write a hello world in Rust"}]
 )
 
-Same task with Opus: ~$0.015 per request (50x more expensive)
+Same task with Opus - ~$0.015 per request (50x more expensive)
 opus_response = client.messages.create(
     model="claude-3-opus-20240229",
     messages=[{"role": "user", "content": "Write a hello world in Rust"}]
@@ -261,7 +261,7 @@ Use Anthropic's billing dashboard to set spending alerts:
 
 You can also set hard spend limits that cut off API access once reached, preventing runaway costs if a bug causes infinite loops in your automation.
 
-Practical Example: Full Workflow
+Practical Example - Full Workflow
 
 Here's how a cost-effective Claude workflow might look for a Python project:
 

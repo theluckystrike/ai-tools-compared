@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Consistent Hashing Solves
+Step 1 - What Consistent Hashing Solves
 
 
 Before examining study methods, briefly understand why consistent hashing matters. In traditional hashing, when you add or remove servers from a pool, nearly all keys get remapped to different servers. This causes a massive cache invalidation storm.
@@ -42,13 +42,13 @@ Consistent hashing minimizes the number of keys that need to be reassigned when 
 This becomes critical for distributed caches like Redis or Memcached, load balancers, and data partitioning strategies. Interviewers frequently ask you to design systems requiring these properties.
 
 
-Step 2: Use AI to Generate Explanations
+Step 2 - Use AI to Generate Explanations
 
 
 AI tools excel at breaking down complex algorithms into digestible explanations. When studying consistent hashing, ask your AI assistant to explain the concept from first principles.
 
 
-An useful prompt structure: "Explain consistent hashing as if I were a junior developer with basic data structures knowledge. Include a simple Python implementation with comments."
+An useful prompt structure - "Explain consistent hashing as if I were a junior developer with basic data structures knowledge. Include a simple Python implementation with comments."
 
 
 The AI will likely generate a walkthrough covering the hash ring concept, virtual nodes for load balancing, and basic code. Review this output critically. Identify gaps in the explanation and ask follow-up questions like "Why do we use virtual nodes?" or "How does this handle server failures?"
@@ -57,7 +57,7 @@ The AI will likely generate a walkthrough covering the hash ring concept, virtua
 This iterative questioning approach reinforces learning far better than passive reading.
 
 
-Step 3: Build Working Implementations
+Step 3 - Build Working Implementations
 
 
 Theory alone does not satisfy interview requirements. You need to write working code under pressure. Use AI to generate practice implementations, then modify and extend them yourself.
@@ -115,7 +115,7 @@ class ConsistentHash:
 This implementation demonstrates the core algorithm. Study it, run it, then extend it. Add features like server weight support or a binary search optimization. The AI gives you a starting point; your modifications build genuine understanding.
 
 
-Step 4: Practicing Interview Variations
+Step 4 - Practicing Interview Variations
 
 
 Interviewers rarely ask straightforward "implement consistent hashing" questions. They probe edge cases and trade-offs. Use AI to generate interview-style questions and practice explaining answers aloud.
@@ -133,7 +133,7 @@ Try prompts like:
 When AI provides answers, do not simply memorize them. Practice verbalizing the concepts in your own words. Record yourself explaining each concept and compare against AI responses for completeness.
 
 
-Step 5: Simulating Real Interview Scenarios
+Step 5 - Simulating Real Interview Scenarios
 
 
 Use AI to create mock interview scenarios. Ask it to act as an interviewer:
@@ -145,7 +145,7 @@ Use AI to create mock interview scenarios. Ask it to act as an interviewer:
 This active practice mode reveals gaps in your understanding faster than passive study. The AI interviewer can cover variations you might not have prepared for otherwise.
 
 
-Step 6: Debugging Implementation Errors
+Step 6 - Debugging Implementation Errors
 
 
 When implementing consistent hashing during practice, you will encounter bugs. Use AI debugging assistance to identify and fix issues quickly. Paste your broken code and describe the unexpected behavior.
@@ -163,7 +163,7 @@ Common bugs include:
 AI can help identify these quickly, but ensure you understand why the bug occurred. This understanding matters more than the fix itself.
 
 
-Step 7: Create Study Materials
+Step 7 - Create Study Materials
 
 
 After working through implementations and practice questions, use AI to generate flashcards or summaries for quick review. Ask for concise bullet points covering:
@@ -178,7 +178,7 @@ After working through implementations and practice questions, use AI to generate
 These summaries serve as efficient review materials in the days leading up to your interview.
 
 
-Step 8: Beyond Consistent Hashing
+Step 8 - Beyond Consistent Hashing
 
 
 While focusing on consistent hashing, recognize how it connects to broader distributed systems topics. AI can help you draw connections to related concepts like:
@@ -193,7 +193,7 @@ While focusing on consistent hashing, recognize how it connects to broader distr
 Understanding these connections demonstrates depth to interviewers and reinforces overall system design knowledge.
 
 
-Step 9: Interview-Specific Prompting Techniques
+Step 9 - Interview-Specific Prompting Techniques
 
 
 Structure your AI interactions to mirror real interview scenarios:
@@ -237,14 +237,14 @@ The AI generates questions like:
 This prepares you for interviewers who test depth of understanding, not just recitation.
 
 
-Step 10: Build Intuition Through Variations
+Step 10 - Build Intuition Through Variations
 
 
 Instead of implementing consistent hashing once, ask AI for variations:
 
 
 ```python
-Variation 1: Simple implementation (academic)
+Variation 1 - Simple implementation (academic)
 class SimpleConsistentHash:
     def __init__(self, nodes):
         self.ring = {}
@@ -255,7 +255,7 @@ class SimpleConsistentHash:
             self.sorted_keys.append(h)
         self.sorted_keys.sort()
 
-Variation 2: With virtual nodes (production-ready)
+Variation 2 - With virtual nodes (production-ready)
 class VirtualNodeConsistentHash:
     def __init__(self, nodes, virtual_count=150):
         self.ring = {}
@@ -264,7 +264,7 @@ class VirtualNodeConsistentHash:
                 h = hash(f"{node}#{i}")
                 self.ring[h] = node
 
-Variation 3: With weighted nodes (uneven distribution)
+Variation 3 - With weighted nodes (uneven distribution)
 class WeightedConsistentHash:
     def __init__(self, nodes, weights):
         self.ring = {}
@@ -278,7 +278,7 @@ class WeightedConsistentHash:
 Implementing three versions deepens understanding far more than one. You understand trade-offs (complexity vs. features), optimization opportunities, and real-world requirements.
 
 
-Step 11: Create Your Interview Preparation Timeline
+Step 11 - Create Your Interview Preparation Timeline
 
 
 Use AI to structure a 2-4 week study plan:
@@ -317,7 +317,7 @@ Week 3:
 This structure ensures preparation without overwhelming yourself.
 
 
-Step 12: Post-Interview Learning
+Step 12 - Post-Interview Learning
 
 
 After your interview, use AI to analyze what you could have done better:
@@ -357,7 +357,7 @@ should I learn that build on it? Explain:
 This connects consistent hashing to real systems, impressing interviewers who ask "when would you actually use this?"
 
 
-Step 13: Resources Generated by AI
+Step 13 - Resources Generated by AI
 
 
 Beyond code and explanations, generate study materials:

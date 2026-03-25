@@ -61,7 +61,7 @@ How AI Tools Transform Error Analysis
 
 Modern AI assistants can analyze heap dump patterns, GC logs, and application code to identify the underlying cause. Rather than manually poring over memory histograms or hunting through thousands of lines of code, you can feed the error details to an AI and receive targeted analysis.
 
-Step 1: Gather Contextual Information
+Step 1 - Gather Contextual Information
 
 Before consulting AI, collect the relevant diagnostic data. A heap dump provides a snapshot of memory allocation at the time of failure. Enable automatic heap dump generation on OutOfMemory errors by adding JVM arguments:
 
@@ -76,7 +76,7 @@ For a quick analysis without a heap dump, enable GC logging to understand memory
 -Xlog:gc*:file=/var/log/gc.log:time,uptime,level,tags
 ```
 
-Step 2: Present the Error to AI
+Step 2 - Present the Error to AI
 
 When describing the problem to an AI assistant, include the full stack trace, relevant code snippets, and any GC logs. Structure your query like this:
 
@@ -86,7 +86,7 @@ The AI will analyze the allocation pattern and likely identify whether you're de
 
 Practical Examples of AI-Guided Diagnosis
 
-Example 1: Memory Leak in Collection
+Example 1 - Memory Leak in Collection
 
 An AI assistant analyzing this code would immediately flag the issue:
 
@@ -106,7 +106,7 @@ public class CacheManager {
 
 The AI recognizes that `HashMap` grows indefinitely without eviction logic. It would recommend implementing a bounded cache using `LinkedHashMap` with a size limit, or switching to `WeakHashMap` for reference-based cleanup, or using `Caffeine` library for sophisticated caching strategies.
 
-Example 2: Unbounded Data Loading
+Example 2 - Unbounded Data Loading
 
 This common mistake often triggers heap errors:
 
@@ -136,7 +136,7 @@ public Stream<Record> fetchRecordsBatched(int batchSize) {
 }
 ```
 
-Example 3: Incorrect Heap Sizing
+Example 3 - Incorrect Heap Sizing
 
 Sometimes the problem is simply insufficient heap allocation. AI can help calculate appropriate heap settings based on your application profile:
 
@@ -184,7 +184,7 @@ After implementing AI-suggested fixes, verify the solution by running load tests
 
 ```java
 MemoryMXBean memoryBean = ManagementFactory.getMemoryMXBean();
-System.out.println("Heap Usage: " + memoryBean.getHeapMemoryUsage());
+System.out.println("Heap Usage - " + memoryBean.getHeapMemoryUsage());
 ```
 
 If the application now operates within stable memory bounds during extended operation, the fix is validated.
@@ -267,7 +267,7 @@ AI Analysis:
 2. Caching layer misconfigured - Users cached without eviction policy
 3. Memory leak in third-party library - Possible but less likely given old image works
 
-Immediate fix: Add periodic cache clearing or implement LRU eviction. Investigate if user list should be paginated instead of loaded all at once."
+Immediate fix - Add periodic cache clearing or implement LRU eviction. Investigate if user list should be paginated instead of loaded all at once."
 
 You implement pagination instead of loading all users, resolving the issue.
 
@@ -292,7 +292,7 @@ Application Context
 
 Observations
 - Error timing: [When does it happen?]
-- Reproducibility: [Can you reproduce it?]
+- Reproducibility - [Can you reproduce it?]
 - Heap pattern: [Does it grow slowly or suddenly?]
 
 Code Snippet

@@ -20,7 +20,7 @@ Choose Claude for complex, multi-widget Datadog dashboards and debugging broken 
 
 Table of Contents
 
-- [The Task: Generating Datadog Terraform Resources](#the-task-generating-datadog-terraform-resources)
+- [The Task - Generating Datadog Terraform Resources](#the-task-generating-datadog-terraform-resources)
 - [Claude's Approach](#claudes-approach)
 - [ChatGPT's Approach](#chatgpts-approach)
 - [Testing Methodology](#testing-methodology)
@@ -31,7 +31,7 @@ Table of Contents
 - [Using Terraform Modules for Dashboard Reuse](#using-terraform-modules-for-dashboard-reuse)
 - [Migrating Existing Dashboards to Terraform](#migrating-existing-dashboards-to-terraform)
 
-The Task: Generating Datadog Terraform Resources
+The Task - Generating Datadog Terraform Resources
 
 Datadog's Terraform provider uses a specific structure for dashboards. A basic dashboard with a timeseries widget looks like this:
 

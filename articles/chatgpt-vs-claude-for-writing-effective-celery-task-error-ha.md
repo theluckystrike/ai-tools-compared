@@ -229,22 +229,22 @@ The choice ultimately depends on your requirements. If you're building a system 
 ---
 
 
-Celery Architecture Patterns: AI Comparison Deep Dive
+Celery Architecture Patterns - AI Comparison Deep Dive
 
 Table of Contents
 
-- [Celery Architecture Patterns: AI Comparison Deep Dive](#celery-architecture-patterns-ai-comparison-deep detailed look)
+- [Celery Architecture Patterns - AI Comparison Deep Dive](#celery-architecture-patterns-ai-comparison-deep detailed look)
 - [Real-World Performance Comparison](#real-world-performance-comparison)
 - [Tool Recommendation Matrix](#tool-recommendation-matrix)
 - [Advanced Celery Patterns Both Tools Handle Well](#advanced-celery-patterns-both-tools-handle-well)
-- [Testing: Another Key Difference](#testing-another-key-difference)
+- [Testing - Another Key Difference](#testing-another-key-difference)
 
 Let's compare how each AI handles a more realistic production scenario:
 
-Scenario: Distributed Task Processing with Multiple Failure Types
+Scenario - Distributed Task Processing with Multiple Failure Types
 
 ```python
-Request to both: "Design a Celery system for:
+Request to both - "Design a Celery system for:
 - Processing image uploads (may fail due to file size, format)
 - Calling external APIs (network failures, rate limits)
 - Database updates (constraint violations)
@@ -349,7 +349,7 @@ Both tools generate this effectively, though Claude's explanations of why expone
 2. Task Chord Patterns
 
 ```python
-Request: "Generate a Celery chord for: process 100 images,
+Request - "Generate a Celery chord for: process 100 images,
 then aggregate results once all complete"
 
 from celery import chord
@@ -376,7 +376,7 @@ def route_by_exception(exc, task_name, args, kwargs, einfo, _):
 
 ChatGPT rarely suggests this pattern without specific prompting.
 
-Testing: Another Key Difference
+Testing - Another Key Difference
 
 ChatGPT's Testing Suggestion:
 

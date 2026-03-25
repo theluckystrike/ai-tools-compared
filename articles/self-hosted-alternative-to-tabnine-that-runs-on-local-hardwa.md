@@ -22,19 +22,19 @@ Table of Contents
 
 - [Why Consider Self-Hosted Code Completion?](#why-consider-self-hosted-code-completion)
 - [Top Self-Hosted Alternatives to Tabnine](#top-self-hosted-alternatives-to-tabnine)
-- [Model Selection: Which Model Works Best](#model-selection-which-model-works-best)
+- [Model Selection - Which Model Works Best](#model-selection-which-model-works-best)
 - [Comparing Self-Hosted Directly to Tabnine](#comparing-self-hosted-directly-to-tabnine)
 - [Performance Comparison](#performance-comparison)
 - [Hardware Requirements](#hardware-requirements)
 - [Choosing the Right Solution](#choosing-the-right-solution)
 - [Setup Recommendations](#setup-recommendations)
 - [Performance Optimization and Tuning](#performance-optimization-and-tuning)
-- [Advanced Setup: Multi-Model Configuration](#advanced-setup-multi-model-configuration)
+- [Advanced Setup - Multi-Model Configuration](#advanced-setup-multi-model-configuration)
 - [Integration with Development Workflows](#integration-with-development-workflows)
-- [Cost Analysis: Self-Hosted vs. Cloud](#cost-analysis-self-hosted-vs-cloud)
+- [Cost Analysis - Self-Hosted vs. Cloud](#cost-analysis-self-hosted-vs-cloud)
 - [Common Issues and Solutions](#common-issues-and-solutions)
 - [Security Considerations](#security-considerations)
-- [Future Direction: Local Models in 2026](#future-direction-local-models-in-2026)
+- [Future Direction - Local Models in 2026](#future-direction-local-models-in-2026)
 
 Why Consider Self-Hosted Code Completion?
 
@@ -157,7 +157,7 @@ Run the server with a code model
 
 llama.cpp with Metal acceleration on Apple Silicon produces first-token latency under 200ms for 7B models, faster than many cloud services under load.
 
-Model Selection: Which Model Works Best
+Model Selection - Which Model Works Best
 
 Choosing the right model matters as much as choosing the right tool. Purpose-built code models from Alibaba and DeepSeek now outperform older options like CodeLlama on most benchmarks.
 
@@ -174,13 +174,13 @@ Comparing Self-Hosted Directly to Tabnine
 
 Tabnine's commercial advantages include whole-project context awareness, team-level learning, and enterprise support contracts. Here is how the best self-hosted options compare:
 
-Whole-project context: Tabby ML's repository indexing matches this feature directly. Continue with a 32K+ token context window approximates it for smaller projects.
+Whole-project context - Tabby ML's repository indexing matches this feature directly. Continue with a 32K+ token context window approximates it for smaller projects.
 
-Team learning: Self-hosted solutions can be fine-tuned on your codebase using LLaMA-Factory or Axolotl. This requires upfront GPU resources but produces genuinely organization-specific completions.
+Team learning - Self-hosted solutions can be fine-tuned on your codebase using LLaMA-Factory or Axolotl. This requires upfront GPU resources but produces genuinely organization-specific completions.
 
-Privacy guarantees: Self-hosted wins outright. No data leaves your infrastructure at any point, not for training, not for telemetry, not for billing.
+Privacy guarantees - Self-hosted wins outright. No data leaves your infrastructure at any point, not for training, not for telemetry, not for billing.
 
-Cost at scale: Tabnine Enterprise runs $39+ per seat per month. A shared Tabby ML server on a single RTX 4090 (roughly $1,600 hardware cost) serves 10-15 developers with sub-second latency indefinitely, breaking even in under four months.
+Cost at scale - Tabnine Enterprise runs $39+ per seat per month. A shared Tabby ML server on a single RTX 4090 (roughly $1,600 hardware cost) serves 10-15 developers with sub-second latency indefinitely, breaking even in under four months.
 
 Performance Comparison
 
@@ -242,7 +242,7 @@ Pull a capable model. Qwen2.5-Coder outperforms CodeLlama for most tasks
 ollama pull qwen2.5-coder:7b
 ```
 
-Once you have a working setup, benchmark it against your actual workflow before investing in a larger model. Many developers find that a fast 7B model responding in under a second feels better in practice than a higher-quality 13B model with 3-second latency. The local AI ecosystem continues evolving rapidly, and as inference hardware becomes cheaper, the quality gap between self-hosted solutions and commercial offerings continues to close.
+Once you have a working setup, benchmark it against your actual workflow before investing in a larger model. Many developers find that a fast 7B model responding in under a second feels better in practice than a higher-quality 13B model with 3-second latency. The local AI environment continues evolving rapidly, and as inference hardware becomes cheaper, the quality gap between self-hosted solutions and commercial offerings continues to close.
 
 Related Articles
 
@@ -255,7 +255,7 @@ Performance Optimization and Tuning
 
 Once you've selected a self-hosted solution, optimize it for your hardware:
 
-Model Quantization: Run smaller quantized versions (q4_K_M format in GGML) to reduce memory footprint and inference latency. A 7B parameter model quantized properly runs faster than an unquantized 3B model.
+Model Quantization - Run smaller quantized versions (q4_K_M format in GGML) to reduce memory footprint and inference latency. A 7B parameter model quantized properly runs faster than an unquantized 3B model.
 
 ```bash
 Using Ollama with optimized quantization
@@ -266,16 +266,16 @@ Test inference speed
 time ollama pull codellama:7b-q4_K_M
 ```
 
-Caching Strategies: Configure your local model server to cache frequently requested patterns. If developers repeatedly type similar completion patterns, caching avoids redundant inference.
+Caching Strategies - Configure your local model server to cache frequently requested patterns. If developers repeatedly type similar completion patterns, caching avoids redundant inference.
 
 ```yaml
 Typical Ollama cache configuration
-OLLAMA_NUM_PARALLEL: 2        # Parallel inference requests
-OLLAMA_NUM_THREAD: 8          # CPU threads (adjust to your hardware)
-OLLAMA_KEEP_ALIVE: 5m         # Keep model loaded for 5 minutes
+OLLAMA_NUM_PARALLEL - 2        # Parallel inference requests
+OLLAMA_NUM_THREAD - 8          # CPU threads (adjust to your hardware)
+OLLAMA_KEEP_ALIVE - 5m         # Keep model loaded for 5 minutes
 ```
 
-Memory Management: Monitor memory usage and swap behavior. If your machine is swapping, inference becomes unusable. Either reduce model size or add RAM.
+Memory Management - Monitor memory usage and swap behavior. If your machine is swapping, inference becomes unusable. Either reduce model size or add RAM.
 
 ```bash
 Monitor inference performance
@@ -285,7 +285,7 @@ Check system load during inference
 top -p $(pgrep -f ollama)
 ```
 
-Advanced Setup: Multi-Model Configuration
+Advanced Setup - Multi-Model Configuration
 
 For teams with diverse development stacks, run multiple models simultaneously:
 
@@ -313,7 +313,7 @@ This approach lets Python developers use optimized CodeLLama completions while R
 
 Integration with Development Workflows
 
-IDE Integration: Beyond VS Code, self-hosted solutions work with Neovim, Vim, Emacs, JetBrains IDEs, and even terminal editors.
+IDE Integration - Beyond VS Code, self-hosted solutions work with Neovim, Vim, Emacs, JetBrains IDEs, and even terminal editors.
 
 ```lua
 -- Neovim configuration with ollama backend
@@ -326,7 +326,7 @@ require('cmp').setup({
 })
 ```
 
-CI/CD Pipeline Integration: Use local code completion models in CI/CD to validate that generated code passes your linting and formatting standards.
+CI/CD Pipeline Integration - Use local code completion models in CI/CD to validate that generated code passes your linting and formatting standards.
 
 ```bash
 #!/bin/bash
@@ -336,18 +336,18 @@ python -m py_compile completion.py  # Validate syntax
 black --check completion.py          # Validate formatting
 ```
 
-Cost Analysis: Self-Hosted vs. Cloud
+Cost Analysis - Self-Hosted vs. Cloud
 
 Calculate the actual cost of running local models:
 
-Tabnine Pro: $180/year (single developer), $1,800+/year (team)
+Tabnine Pro - $180/year (single developer), $1,800+/year (team)
 
 Self-Hosted Hardware Costs:
 - Initial: 32GB RAM machine (~$400-600 one-time)
 - GPU (optional but recommended): $200-2000 depending on choice
 - Electricity: ~100W continuous = ~$50-100/year
 
-Breakeven Point: For a single developer, you break even after 2-3 years. For a team of 10, self-hosting saves thousands annually.
+Breakeven Point - For a single developer, you break even after 2-3 years. For a team of 10, self-hosting saves thousands annually.
 
 However, account for maintenance time. Self-hosted systems require monitoring, updates, and troubleshooting. Teams valuing operational simplicity may prefer subscriptions.
 
@@ -360,14 +360,14 @@ If 7B model fails:
 ollama pull mistral:7b-instruct-q4_K_M  # Smaller, faster
 ```
 
-Latency Over 5 Seconds: Your model is swapping to disk. Reduce model size or close other applications.
+Latency Over 5 Seconds - Your model is swapping to disk. Reduce model size or close other applications.
 
 ```bash
 Check if swapping is occurring
 vm_stat | grep "Swap"
 ```
 
-Completions Disappear Mid-Suggestion: Model timeout is too short. Increase timeout in your client configuration.
+Completions Disappear Mid-Suggestion - Model timeout is too short. Increase timeout in your client configuration.
 
 ```json
 {
@@ -375,7 +375,7 @@ Completions Disappear Mid-Suggestion: Model timeout is too short. Increase timeo
 }
 ```
 
-Different Completions Every Time: Increase temperature to 0.1-0.2 for more consistent suggestions.
+Different Completions Every Time - Increase temperature to 0.1-0.2 for more consistent suggestions.
 
 ```yaml
 LocalCode temperature adjustment
@@ -388,7 +388,7 @@ Security Considerations
 
 Self-hosted models don't transmit code to external servers, but they introduce new security concerns:
 
-Access Control: Your local model server should only listen on localhost by default.
+Access Control - Your local model server should only listen on localhost by default.
 
 ```bash
 Ensure Ollama only binds to localhost
@@ -398,16 +398,16 @@ Verify with netstat
 netstat -tuln | grep 11434
 ```
 
-Model Vetting: Open-source models don't undergo the security audits that commercial tools use. Review model sources and community feedback before deployment.
+Model Vetting - Open-source models don't undergo the security audits that commercial tools use. Review model sources and community feedback before deployment.
 
-Data Retention: Even local systems may retain conversation history in editor cache. Disable caching for sensitive code.
+Data Retention - Even local systems may retain conversation history in editor cache. Disable caching for sensitive code.
 
 ```bash
 Clear Ollama cache periodically
 rm -rf ~/.ollama/chroma/*
 ```
 
-Future Direction: Local Models in 2026
+Future Direction - Local Models in 2026
 
 The gap between local and cloud models continues narrowing. Expect:
 

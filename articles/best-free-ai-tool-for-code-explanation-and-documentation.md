@@ -38,7 +38,7 @@ When you inherit a messy codebase or need to understand a complex algorithm quic
 - This guide compares the: best free AI tools for breaking down code and generating useful documentation without spending a dime.
 - GitHub Copilot (Free for: Individual Users) GitHub Copilot's free tier now includes code explanation features directly in supported IDEs.
 - The free plan includes: substantial usage limits that work well for individual developers.
-- Right-click and select "Explain: Selection" or use the keyboard shortcut 3.
+- Right-click and select "Explain - Selection" or use the keyboard shortcut 3.
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.
 
 What to Look for in a Code Explanation Tool
@@ -166,7 +166,7 @@ Beyond simple explanations, these tools can generate documentation from code:
 
 | Codeium | Good | Fair | Fair |
 
-Practical Example: Documenting a TypeScript Function
+Practical Example - Documenting a TypeScript Function
 
 Here's a real workflow for documenting code using free AI tools:
 
@@ -279,7 +279,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -291,7 +291,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

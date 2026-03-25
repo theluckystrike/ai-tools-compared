@@ -21,8 +21,8 @@ AI tools can generate Jest test suites using Testing Library and user-event that
 Table of Contents
 
 - [Why Testing Library and User Events Matter](#why-testing-library-and-user-events-matter)
-- [Generating Tests with AI: Getting Started](#generating-tests-with-ai-getting-started)
-- [Practical Example: Testing a Form Component](#practical-example-testing-a-form-component)
+- [Generating Tests with AI - Getting Started](#generating-tests-with-ai-getting-started)
+- [Practical Example - Testing a Form Component](#practical-example-testing-a-form-component)
 - [Prerequisites](#prerequisites)
 - [Best Practices for AI-Assisted Test Generation](#best-practices-for-ai-assisted-test-generation)
 - [Troubleshooting](#troubleshooting)
@@ -34,7 +34,7 @@ Testing Library encourages tests that simulate real user interactions. Instead o
 
 This approach leads to more maintainable tests. When you refactor components, your tests remain valid as long as the user interface behavior stays consistent. Tests written against DOM queries and ARIA roles survive component rewrites far better than tests that reach into internal state or check specific CSS class names.
 
-Generating Tests with AI: Getting Started
+Generating Tests with AI - Getting Started
 
 AI code assistants can generate Jest tests using Testing Library and user events. Provide clear context about your component, including its props, state management, and expected user interactions.
 
@@ -59,7 +59,7 @@ When prompting an AI to generate tests, include the component code and specify T
 
 An effective prompt structure looks like this: "Generate Jest tests for the following React component using `@testing-library/react` and `@testing-library/user-event` v14. Use `userEvent.setup()` pattern, prefer `getByRole` and `getByLabelText` queries, and test all interactive behaviors." Providing the version is important because the user-event API changed significantly between v13 and v14.
 
-Practical Example: Testing a Form Component
+Practical Example - Testing a Form Component
 
 Consider a login form with email and password fields:
 
@@ -153,7 +153,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Refining AI-Generated Tests
+Step 1 - Refining AI-Generated Tests
 
 AI-generated tests provide a solid foundation, but you should review and enhance them. Consider adding:
 
@@ -178,7 +178,7 @@ it('displays error message for invalid email format', async () => {
 });
 ```
 
-Step 2: Test Async Components and API Calls
+Step 2 - Test Async Components and API Calls
 
 Many real-world components fetch data or call APIs. AI tools handle these cases well when you provide the right context, but the generated tests require a mocking strategy. The most reliable approach uses `jest.mock` at the module level and `waitFor` or `findBy` queries to handle async rendering:
 
@@ -214,7 +214,7 @@ describe('UserProfile', () => {
 
 When prompting AI for tests involving async data, explicitly state: "mock the API module with jest.mock, use findBy queries for async elements, and test both success and error states." This prevents AI from generating tests that assume synchronous rendering.
 
-Step 3: Prompt Patterns That Produce the Best Results
+Step 3 - Prompt Patterns That Produce the Best Results
 
 The quality of AI-generated tests depends heavily on prompt structure. These patterns consistently produce well-structured output:
 
@@ -230,17 +230,17 @@ Best Practices for AI-Assisted Test Generation
 
 When using AI to generate tests, follow these guidelines:
 
-Provide complete context: Include the full component code, any related components, and your application's testing setup. The more context you give, the more accurate the generated tests.
+Provide complete context - Include the full component code, any related components, and your application's testing setup. The more context you give, the more accurate the generated tests.
 
 Specify your testing library versions: Testing Library and user-event APIs evolve. Mention your installed versions in prompts to get compatible code.
 
-Use semantic queries: Tell AI to prioritize accessible queries like `getByRole`, `getByLabelText`, and `getByText` over generic selectors like `getByClassName`.
+Use semantic queries - Tell AI to prioritize accessible queries like `getByRole`, `getByLabelText`, and `getByText` over generic selectors like `getByClassName`.
 
-Review generated assertions: Verify that the assertions match your component's actual behavior. AI might make assumptions that don't align with your implementation.
+Review generated assertions - Verify that the assertions match your component's actual behavior. AI might make assumptions that don't align with your implementation.
 
 Test user flows, not implementation: Focus on what users can do with your component, not internal state changes.
 
-Step 4: Common Pitfalls in AI-Generated Tests
+Step 4 - Common Pitfalls in AI-Generated Tests
 
 Even with good prompts, AI tools produce predictable failure patterns. Knowing these in advance saves debugging time.
 
@@ -252,7 +252,7 @@ Missing `cleanup` between tests. Testing Library auto-runs cleanup after each te
 
 Asserting on `toBeVisible()` when `toBeInTheDocument()` is intended. These are different: a hidden element (`display: none`) is in the document but not visible. AI sometimes conflates the two. Review assertions carefully when testing conditional rendering to ensure the correct matcher is applied.
 
-Step 5: Automate Test Generation Workflow
+Step 5 - Automate Test Generation Workflow
 
 You can integrate AI test generation into your development workflow with a consistent process:
 

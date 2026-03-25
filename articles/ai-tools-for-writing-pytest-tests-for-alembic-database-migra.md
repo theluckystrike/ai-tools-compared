@@ -73,7 +73,7 @@ When prompting an AI tool, include your actual migration code. For example, a mi
 ```python
 """add_users_table
 
-Revision ID: 001
+Revision ID - 001
 Revises:
 Create Date: 2026-01-15 10:00:00.000000
 
@@ -218,11 +218,11 @@ Common Pitfalls to Avoid
 
 AI-generated tests require human review. Watch for these common issues:
 
-Missing foreign key handling: Tests may not account for tables with foreign key dependencies. Add explicit checks for related tables.
+Missing foreign key handling - Tests may not account for tables with foreign key dependencies. Add explicit checks for related tables.
 
-Transaction management: Ensure tests properly handle transactions and rollback on failure.
+Transaction management - Ensure tests properly handle transactions and rollback on failure.
 
-Database-specific behavior: SQLAlchemy and Alembic behave differently across databases. Verify tests work with your target database (PostgreSQL, MySQL, SQLite, etc.).
+Database-specific behavior - SQLAlchemy and Alembic behave differently across databases. Verify tests work with your target database (PostgreSQL, MySQL, SQLite, etc.).
 
 Comparing AI Tools for Migration Test Generation
 
@@ -241,11 +241,11 @@ Step-by-Step Workflow for AI-Assisted Migration Test Creation
 
 Here is a repeatable process for using AI tools to generate migration tests across your entire migration history.
 
-Step 1: Prepare a prompt template. Create a file called `prompts/migration_test_template.txt` in your repository. This template will be used with each migration file and should include your project's fixture conventions, the test database URL pattern, and any helper utilities already in your test suite.
+Step 1 - Prepare a prompt template. Create a file called `prompts/migration_test_template.txt` in your repository. This template will be used with each migration file and should include your project's fixture conventions, the test database URL pattern, and any helper utilities already in your test suite.
 
-Step 2: Feed the migration file to the AI. Copy the full contents of the migration file into the prompt, followed by your template. Ask the AI to generate tests that cover: table creation or modification, index creation, constraint enforcement, and clean teardown on downgrade.
+Step 2 - Feed the migration file to the AI. Copy the full contents of the migration file into the prompt, followed by your template. Ask the AI to generate tests that cover: table creation or modification, index creation, constraint enforcement, and clean teardown on downgrade.
 
-Step 3: Review generated constraints. AI tools often miss nullable constraints and default values. After generating the tests, add explicit assertions for every column constraint defined in the migration:
+Step 3 - Review generated constraints. AI tools often miss nullable constraints and default values. After generating the tests, add explicit assertions for every column constraint defined in the migration:
 
 ```python
 def test_email_column_is_not_nullable(alembic_config, engine):
@@ -255,7 +255,7 @@ def test_email_column_is_not_nullable(alembic_config, engine):
     assert columns['email']['nullable'] is False
 ```
 
-Step 4: Add index verification. Migrations that create indexes should have a corresponding test that verifies the index exists with the correct columns and uniqueness setting:
+Step 4 - Add index verification. Migrations that create indexes should have a corresponding test that verifies the index exists with the correct columns and uniqueness setting:
 
 ```python
 def test_email_index_is_unique(alembic_config, engine):
@@ -267,7 +267,7 @@ def test_email_index_is_unique(alembic_config, engine):
     assert email_indexes[0]['unique'] is True
 ```
 
-Step 5: Test the full migration chain. Beyond testing individual migrations in isolation, add a test that runs all migrations from scratch to the latest revision and then rolls back to base:
+Step 5 - Test the full migration chain. Beyond testing individual migrations in isolation, add a test that runs all migrations from scratch to the latest revision and then rolls back to base:
 
 ```python
 def test_full_migration_chain(alembic_config, engine):

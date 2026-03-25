@@ -222,19 +222,19 @@ Real-World Performance Testing
 
 For a concrete comparison, testing with actual codebases reveals differences:
 
-Test Scenario: React Component Refactoring
+Test Scenario - React Component Refactoring
 
-Continue Dev response time: 2-5 seconds for inline suggestions
-Cody response time: 3-7 seconds (network roundtrip to Sourcegraph)
+Continue Dev response time - 2-5 seconds for inline suggestions
+Cody response time - 3-7 seconds (network roundtrip to Sourcegraph)
 
 Both tools suggest similar code but with different verbosity levels. Cody tends toward more verbose explanations, while Continue Dev suggestions are typically concise.
 
-Test Scenario: Understanding External Function
+Test Scenario - Understanding External Function
 
-Question: "Where is UserService.findById called in the codebase?"
+Question - "Where is UserService.findById called in the codebase?"
 
-Continue Dev: Requires manual context selection or `/repo` command
-Cody: Automatically traces calls across the repository
+Continue Dev - Requires manual context selection or `/repo` command
+Cody - Automatically traces calls across the repository
 
 This is where Cody's code graph capabilities provide clear advantages for codebases with complex dependencies.
 
@@ -298,11 +298,11 @@ Migration Path Between Tools
 
 If you start with one tool and want to switch:
 
-From Continue Dev to Cody: Your habits transfer easily. Both use VS Code interfaces and similar chat interactions. You'll need to adjust to Cody's automatic context, which requires less manual selection.
+From Continue Dev to Cody - Your habits transfer easily. Both use VS Code interfaces and similar chat interactions. You'll need to adjust to Cody's automatic context, which requires less manual selection.
 
-From Cody to Continue Dev: You lose automatic code graph features but gain model flexibility. Set up your preferred LLM (Claude, GPT-4, or Mistral) in the configuration.
+From Cody to Continue Dev - You lose automatic code graph features but gain model flexibility. Set up your preferred LLM (Claude, GPT-4, or Mistral) in the configuration.
 
-Neither tool locks you into its ecosystem, switching between them takes minutes.
+Neither tool locks you into its environment, switching between them takes minutes.
 
 Open Source Philosophy
 

@@ -212,7 +212,7 @@ Version control your prompt templates. As you refine journal-specific editing pr
 
 Validate reference DOIs automatically. Append a CrossRef lookup step that checks every DOI in your references list for validity before submission. Many rejections stem from broken or incorrect citations that a basic HTTP check would catch in seconds.
 
-Use model temperature strategically by section. Set temperature to 0.1 for methods and results sections where precision is paramount, and allow up to 0.4 for introductions and discussions where stylistic variation is more acceptable. A single temperature setting applied uniformly across a full paper is a common mistake that leads to either overly rigid prose in narrative sections or imprecise language in technical ones.
+Use model temperature strategically by section. Set temperature to 0.1 for methods and results sections where precision is essential, and allow up to 0.4 for introductions and discussions where stylistic variation is more acceptable. A single temperature setting applied uniformly across a full paper is a common mistake that leads to either overly rigid prose in narrative sections or imprecise language in technical ones.
 
 Recommended Workflow for Power Users
 
@@ -232,15 +232,15 @@ Academic paper processing pipeline
 DOC=$1
 OUTPUT="edited_$DOC"
 
-Step 1: Grammar check with LanguageTool
+Step 1 - Grammar check with LanguageTool
 curl -X POST "http://localhost:8010/check" \
   -H "Content-Type: application/json" \
   -d "{\"text\": $(cat $DOC | jq -Rs .)}" > grammar_report.json
 
-Step 2: GPT-4 refinement
+Step 2 - GPT-4 refinement
 python academic_edit.py $DOC > temp_output.md
 
-Step 3: Citation validation
+Step 3 - Citation validation
 python validate_citations.py temp_output.md > citations.json
 
 Final output
@@ -270,7 +270,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -282,6 +282,6 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 {% endraw %}

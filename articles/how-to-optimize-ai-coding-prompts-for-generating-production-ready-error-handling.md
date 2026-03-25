@@ -29,13 +29,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Problem with Generic Error Handling Prompts
+Step 1 - The Problem with Generic Error Handling Prompts
 
 Most developers ask AI tools for error handling using vague requests like "add error handling" or "handle exceptions properly." These prompts produce generic try-catch blocks that catch Exception without distinguishing between recoverable errors, programming bugs, and system failures.
 
 Production-grade error handling demands specificity. Your prompts must communicate the error categories your application encounters, the recovery strategies appropriate for each, logging requirements, and whether errors should propagate or be contained.
 
-Step 2: Prompt Structure for Production Error Handling
+Step 2 - Prompt Structure for Production Error Handling
 
 Effective error handling prompts contain five distinct components:
 
@@ -60,7 +60,7 @@ Handle three error categories:
 Include structured logging with request IDs, and use custom exception classes.
 ```
 
-Step 3: Language-Specific Prompt Optimization
+Step 3 - Language-Specific Prompt Optimization
 
 Python FastAPI Applications
 
@@ -159,7 +159,7 @@ For Spring Boot, specify exception handler annotations and proper HTTP status ma
 
 ```
 Create a global exception handler using @ControllerAdvice for a Spring Boot REST API.
-Handle: MethodArgumentNotValidException (400), EntityNotFoundException (404),
+Handle - MethodArgumentNotValidException (400), EntityNotFoundException (404),
 DatabaseConnectionException (503), and generic exceptions (500).
 Include request tracking with MDC logging, and return RFC 7807 Problem Details.
 ```
@@ -172,7 +172,7 @@ Production systems require more than basic error catching. Include retry logic a
 
 ```
 Add circuit breaker logic to a Python function that calls a third-party API.
-Configure: 5 failure threshold, 30-second recovery timeout, half-open state testing.
+Configure - 5 failure threshold, 30-second recovery timeout, half-open state testing.
 On circuit open, raise CircuitBreakerOpenError with retry-after header.
 On retry, use exponential backoff with jitter (base: 1s, max: 30s).
 ```
@@ -200,7 +200,7 @@ Create a TypeScript function that attempts file processing with three strategies
 Log each strategy attempt with timing, and include metrics for strategy effectiveness.
 ```
 
-Step 4: Test Your Error Handling Prompts
+Step 4 - Test Your Error Handling Prompts
 
 Validate AI-generated error handling by prompting for test cases:
 
@@ -212,23 +212,23 @@ Generate Jest test cases for the error handling code above:
 4) Test that error responses include request ID for correlation
 ```
 
-Step 5: Common Prompt Failures and Fixes
+Step 5 - Common Prompt Failures and Fixes
 
-Problem: AI generates catch(Exception e) that hides bugs
+Problem - AI generates catch(Exception e) that hides bugs
 
-Fix: Explicitly ask for specific exception types and re-throw unknown ones
+Fix - Explicitly ask for specific exception types and re-throw unknown ones
 
-Problem: Errors lose context when propagating across layers
+Problem - Errors lose context when propagating across layers
 
-Fix: Request error enrichment at each layer with additional context
+Fix - Request error enrichment at each layer with additional context
 
-Problem: Missing logging makes debugging impossible
+Problem - Missing logging makes debugging impossible
 
-Fix: Specify log structure including timestamps, request IDs, and error hierarchies
+Fix - Specify log structure including timestamps, request IDs, and error hierarchies
 
-Problem: Inconsistent error formats across endpoints
+Problem - Inconsistent error formats across endpoints
 
-Fix: Request a unified error response schema and global error handler
+Fix - Request a unified error response schema and global error handler
 
 Troubleshooting
 

@@ -19,7 +19,7 @@ Rust's borrow checker, lifetime annotations, and trait system create an uniquely
 
 This comparison tests Claude Code and GitHub Copilot on four Rust tasks that require real language understanding.
 
-Task 1: Fixing Borrow Checker Errors
+Task 1 - Fixing Borrow Checker Errors
 
 Given this code that fails to compile:
 
@@ -90,7 +90,7 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 
 Claude provided two fixes and explained why the lifetime annotation alone doesn't solve the scope problem.
 
-Task 2: Async Error Handling with `?`
+Task 2 - Async Error Handling with `?`
 
 A common Rust async pattern that trips up AI tools:
 
@@ -169,7 +169,7 @@ async fn main() {
 
 Claude chose `thiserror` over `Box<dyn Error>`, separated HTTP errors from parse errors, and showed the caller code to demonstrate why typed errors matter.
 
-Task 3: Trait Implementation with Generics
+Task 3 - Trait Implementation with Generics
 
 ```rust
 // Prompt: "Implement a generic LRU cache in Rust with
@@ -267,7 +267,7 @@ mod tests {
 
 Claude made it generic with proper trait bounds, added a capacity assertion, included `len()` and `is_empty()`, and added a test demonstrating the eviction order. Copilot's was narrowly typed and untested.
 
-Task 4: Channel-Based Concurrency
+Task 4 - Channel-Based Concurrency
 
 ```rust
 // Prompt: "Write a worker pool that processes jobs from a

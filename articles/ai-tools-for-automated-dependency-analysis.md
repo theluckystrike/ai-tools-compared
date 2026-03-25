@@ -23,7 +23,7 @@ Three Problems AI Solves Well
 2. Upgrade impact analysis: "If I upgrade lodash from 4.17.15 to 4.17.21, which of my 47 dependencies actually use it?"
 3. Vulnerability prioritization: "Of these 12 CVEs, which are exploitable given my actual call graph?"
 
-Setup: Build a Dependency Graph
+Setup - Build a Dependency Graph
 
 Start with the actual dependency data. Here's how to extract it for npm, pip, and Go:
 
@@ -96,7 +96,7 @@ Paste the Mermaid output into a prompt for visual context
 
 Mermaid diagrams paste cleanly into Claude prompts and allow you to ask questions like "explain the path between `auth-service` and `db-driver` in this graph."
 
-AI Analysis: Circular Dependency Explanation
+AI Analysis - Circular Dependency Explanation
 
 ```python
 analyze_deps.py
@@ -122,7 +122,7 @@ def explain_circular_dependency(cycle: list[str], dep_graph: dict) -> str:
             "role": "user",
             "content": f"""Analyze this circular dependency and explain how to break it.
 
-Cycle: {cycle_str}
+Cycle - {cycle_str}
 
 Relevant dependency edges:
 {json.dumps(relevant_edges[:30], indent=2)}
@@ -218,9 +218,9 @@ def analyze_vulnerability_blast_radius(
             "role": "user",
             "content": f"""Assess the blast radius of this vulnerability in our codebase.
 
-CVE: {cve_id}
-Vulnerable package: {vulnerable_package}
-Description: {vuln_description}
+CVE - {cve_id}
+Vulnerable package - {vulnerable_package}
+Description - {vuln_description}
 
 Dependency paths to vulnerable package:
 {paths_str}
@@ -230,10 +230,10 @@ Exposed endpoints/surfaces:
 
 Provide:
 EXPLOITABILITY: [Critical/High/Medium/Low]. can this actually be reached?
-ATTACK_VECTOR: How would an attacker trigger this?
-AFFECTED_FEATURES: What parts of the product are at risk?
-IMMEDIATE_MITIGATION: What to do right now if patching is delayed?
-PRIORITY: Should this block the current release?"""
+ATTACK_VECTOR - How would an attacker trigger this?
+AFFECTED_FEATURES - What parts of the product are at risk?
+IMMEDIATE_MITIGATION - What to do right now if patching is delayed?
+PRIORITY - Should this block the current release?"""
         }]
     )
     return response.content[0].text
@@ -319,10 +319,10 @@ installed but no direct imports found in source code:
 
 For each package, advise:
 SAFE_TO_REMOVE: [Yes/No/Maybe]
-REASON: Why it might be needed even without direct imports
+REASON - Why it might be needed even without direct imports
   (e.g., pytest plugins, build tools, transitive deps pulled in intentionally)
 
-Format as a table: Package | Safe | Reason"""
+Format as a table - Package | Safe | Reason"""
         }]
     )
     return response.content[0].text

@@ -36,7 +36,7 @@ Making the switch from ChatGPT Search to Perplexity Pro Search represents a sign
 
 - Free users receive limited: search queries per day, while ChatGPT Plus subscribers ($20/month) get higher limits and access to advanced features.
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- The integration with the: broader ChatGPT ecosystem means Plus users also access GPT-4o, image generation, and other capabilities.
+- The integration with the: broader ChatGPT environment means Plus users also access GPT-4o, image generation, and other capabilities.
 - Perplexity Pro Search operates: on a credit-based system with the Pro tier at $20/month or $200/year.
 - Does ChatGPT offer a: free tier? Most major tools offer some form of free tier or trial period.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
@@ -77,7 +77,7 @@ Perplexity Pro Search focuses on individual query-response cycles but offers "Re
 
 Pricing and Subscription Tiers
 
-ChatGPT Search is available through multiple subscription tiers. Free users receive limited search queries per day, while ChatGPT Plus subscribers ($20/month) get higher limits and access to advanced features. The integration with the broader ChatGPT ecosystem means Plus users also access GPT-4o, image generation, and other capabilities.
+ChatGPT Search is available through multiple subscription tiers. Free users receive limited search queries per day, while ChatGPT Plus subscribers ($20/month) get higher limits and access to advanced features. The integration with the broader ChatGPT environment means Plus users also access GPT-4o, image generation, and other capabilities.
 
 Perplexity Pro Search operates on a credit-based system with the Pro tier at $20/month or $200/year. Pro subscribers receive significant benefits including unlimited Pro searches, access to advanced models, file upload capabilities, and priority processing. The free tier provides a taste of the platform but with strict daily limits.
 
@@ -127,7 +127,7 @@ Both platforms continue evolving rapidly, but here are the key distinctions as o
 
 When to Choose Each Platform
 
-Choose ChatGPT Search when you need deep integration with other OpenAI tools, prefer conversational research that builds over multiple sessions, or want an unified interface for both search and general AI assistance. It's particularly strong for developers already using the OpenAI ecosystem.
+Choose ChatGPT Search when you need deep integration with other OpenAI tools, prefer conversational research that builds over multiple sessions, or want an unified interface for both search and general AI assistance. It's particularly strong for developers already using the OpenAI environment.
 
 Choose Perplexity Pro Search when source verification is critical, you prefer a search-engine-like interface, need more granular control over search parameters, or want the most responsive search experience. Academic researchers, journalists, and fact-checkers often prefer Perplexity's citation clarity.
 
@@ -137,7 +137,7 @@ Understanding how these platforms handle actual queries reveals their strengths:
 
 Technical Documentation Queries
 
-Query: "How do I implement OAuth 2.0 in a Node.js Express application with TypeScript?"
+Query - "How do I implement OAuth 2.0 in a Node.js Express application with TypeScript?"
 
 ChatGPT Search would provide an answer explaining OAuth concepts, then suggest code patterns. It might reference official OAuth documentation, Stack Overflow discussions, and contemporary best practices. The response emphasizes conversational clarity.
 
@@ -145,7 +145,7 @@ Perplexity Pro Search would immediately provide working code examples, link to s
 
 Historical or Factual Queries
 
-Query: "What were the economic impacts of the 2024 US election results on technology stocks?"
+Query - "What were the economic impacts of the 2024 US election results on technology stocks?"
 
 ChatGPT Search might provide balanced analysis drawing from multiple sources, though it may struggle with very recent events depending on its training data and when it last updated its search index.
 
@@ -169,9 +169,9 @@ Both platforms support advanced techniques that power users should know.
 ChatGPT Search allows filtering by date range in custom settings and supports conversation memory across sessions. You can ask follow-up questions that reference earlier parts of the conversation without repeating context. Use this for deep research projects that span multiple sessions.
 
 ```
-Session 1: "Research quantum computing breakthroughs in 2024"
-Session 2: "Compare those to the 2023 announcements" (system remembers 2024 context)
-Session 3: "What were the stock impacts on Nvidia after announcement X?" (references Session 1 info)
+Session 1 - "Research quantum computing breakthroughs in 2024"
+Session 2 - "Compare those to the 2023 announcements" (system remembers 2024 context)
+Session 3 - "What were the stock impacts on Nvidia after announcement X?" (references Session 1 info)
 ```
 
 Perplexity Pro supports advanced search operators:
@@ -200,7 +200,7 @@ Perplexity Pro API
 - Native API access for Pro subscribers
 - Designed for custom applications
 - Simpler pricing structure than OpenAI
-- Less mature ecosystem of third-party tools
+- Less mature environment of third-party tools
 
 Workflow Examples by Use Case
 
@@ -220,9 +220,9 @@ Pricing Deep Dive
 
 Understanding the actual cost per search matters for heavy users:
 
-ChatGPT Plus: $20/month for approximately 40 searches/day = $0.017 per search
+ChatGPT Plus - $20/month for approximately 40 searches/day = $0.017 per search
 
-Perplexity Pro: $20/month for unlimited searches = effectively $0/per additional search after initial cost
+Perplexity Pro - $20/month for unlimited searches = effectively $0/per additional search after initial cost
 
 If you perform 300+ searches monthly, Perplexity offers better economics despite both costing $20.
 
@@ -264,7 +264,7 @@ Many power users maintain subscriptions to both:
 2. Secondary tool: For queries where first tool underperforms
 3. Cross-check: Critical information gets verified in the other tool
 
-For example: Find news in Perplexity, verify analysis in ChatGPT, or find code examples in Perplexity, refine approach through ChatGPT conversation.
+For example - Find news in Perplexity, verify analysis in ChatGPT, or find code examples in Perplexity, refine approach through ChatGPT conversation.
 
 Transition Costs and Learning Curve
 
@@ -274,7 +274,7 @@ Switching to a new search tool isn't free in terms of time:
 - Adjusting to interface differences: 1-2 hours
 - Identifying which tool for which task: 4-5 hours of experimentation
 
-Total transition time: 7-10 hours. For frequent users (3+ searches daily), this breaks even in about 2-3 weeks as you gain efficiency.
+Total transition time - 7-10 hours. For frequent users (3+ searches daily), this breaks even in about 2-3 weeks as you gain efficiency.
 
 Making the Decision
 

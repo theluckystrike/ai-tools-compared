@@ -21,7 +21,7 @@ Table of Contents
 
 - [Why AI Assistants Matter for Pulumi Development](#why-ai-assistants-matter-for-pulumi-development)
 - [Evaluating AI Assistants for Pulumi TypeScript Projects](#evaluating-ai-assistants-for-pulumi-typescript-projects)
-- [Practical Workflow: AI-Assisted Pulumi Development](#practical-workflow-ai-assisted-pulumi-development)
+- [Practical Workflow - AI-Assisted Pulumi Development](#practical-workflow-ai-assisted-pulumi-development)
 - [Code Generation Example](#code-generation-example)
 - [Real-World Multi-Stack Pulumi Project](#real-world-multi-stack-pulumi-project)
 - [Cost Optimization Tips (AI-Generated)](#cost-optimization-tips-ai-generated)
@@ -91,7 +91,7 @@ Claude provides strong reasoning capabilities for infrastructure code. Its exten
 
 When working with multi-environment Pulumi setups, Claude can analyze your stack definitions and suggest consolidation strategies or help migrate resources between stacks.
 
-Practical Workflow: AI-Assisted Pulumi Development
+Practical Workflow - AI-Assisted Pulumi Development
 
 Combining AI assistants with Pulumi workflows significantly improves productivity. Here's how to integrate these tools effectively:
 
@@ -200,7 +200,7 @@ const apiRole = new aws.iam.Role(`${environment}-api-role`, {
     Statement: [{
       Action: "sts:AssumeRole",
       Effect: "Allow",
-      Principal: { Service: "lambda.amazonaws.com" },
+      Principal - { Service: "lambda.amazonaws.com" },
     }],
   }),
 });

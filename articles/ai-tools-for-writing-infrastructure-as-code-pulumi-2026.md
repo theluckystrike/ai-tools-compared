@@ -20,15 +20,15 @@ Writing Pulumi infrastructure-as-code (IaC) requires understanding both cloud pr
 Table of Contents
 
 - [Why Pulumi IaC Is Different From Other Code](#why-pulumi-iac-is-different-from-other-code)
-- [Tool Comparison: Claude vs Copilot vs Cursor](#tool-comparison-claude-vs-copilot-vs-cursor)
-- [Comparison Table: Capabilities Matrix](#comparison-table-capabilities-matrix)
-- [Real-World Examples: TypeScript Pulumi Generation](#real-world-examples-typescript-pulumi-generation)
-- [Practical Workflow: Which Tool for Which Task](#practical-workflow-which-tool-for-which-task)
+- [Tool Comparison - Claude vs Copilot vs Cursor](#tool-comparison-claude-vs-copilot-vs-cursor)
+- [Comparison Table - Capabilities Matrix](#comparison-table-capabilities-matrix)
+- [Real-World Examples - TypeScript Pulumi Generation](#real-world-examples-typescript-pulumi-generation)
+- [Practical Workflow - Which Tool for Which Task](#practical-workflow-which-tool-for-which-task)
 - [CLI Commands for Pulumi Workflow](#cli-commands-for-pulumi-workflow)
-- [Decision Framework: Accuracy vs Velocity](#decision-framework-accuracy-vs-velocity)
+- [Decision Framework - Accuracy vs Velocity](#decision-framework-accuracy-vs-velocity)
 - [Common Mistakes AI Tools Make](#common-mistakes-ai-tools-make)
 - [Testing Generated Infrastructure Code](#testing-generated-infrastructure-code)
-- [Cost Comparison: Per-Project Basis](#cost-comparison-per-project-basis)
+- [Cost Comparison - Per-Project Basis](#cost-comparison-per-project-basis)
 
 Why Pulumi IaC Is Different From Other Code
 
@@ -41,7 +41,7 @@ AI assistants trained on large codebases understand both language semantics and 
 - State management comprehension: Understanding stack references and outputs
 - Performance optimization awareness: Whether they suggest parallel resource creation
 
-Tool Comparison: Claude vs Copilot vs Cursor
+Tool Comparison - Claude vs Copilot vs Cursor
 
 Claude (Opus or Sonnet)
 
@@ -58,7 +58,7 @@ Weaknesses:
 - No real-time IDE integration without third-party tools
 - Slower response times than lighter models
 
-Real pricing: Claude API: $3/1M input tokens, $15/1M output tokens (Opus). For a 50,000-token infrastructure context: ~$0.15 input cost.
+Real pricing - Claude API: $3/1M input tokens, $15/1M output tokens (Opus). For a 50,000-token infrastructure context: ~$0.15 input cost.
 
 Example prompt pattern:
 ```
@@ -95,7 +95,7 @@ Weaknesses:
 - Struggles with complex multi-resource dependencies
 - Cannot see external documentation unless you paste it
 
-Real pricing: $10/month for individuals, $21/month for business accounts. Enterprise: custom pricing.
+Real pricing - $10/month for individuals, $21/month for business accounts. Enterprise - custom pricing.
 
 Practical example:
 You're writing a new ECS service definition. Copilot watches your existing Pulumi patterns and suggests:
@@ -126,7 +126,7 @@ Weaknesses:
 - Subscription cost on top of model pricing
 - Learning curve for power users comfortable with standard VSCode
 
-Real pricing: $20/month for Cursor Pro with unlimited Claude usage.
+Real pricing - $20/month for Cursor Pro with unlimited Claude usage.
 
 Practical workflow:
 You open your `infrastructure/vpc.ts` file. Cursor sees the entire project structure. You press Cmd+K and write:
@@ -139,7 +139,7 @@ in the application stack.
 
 Cursor generates both files, understanding the project structure automatically.
 
-Comparison Table: Capabilities Matrix
+Comparison Table - Capabilities Matrix
 
 | Feature | Claude | Copilot | Cursor |
 |---------|--------|---------|--------|
@@ -153,9 +153,9 @@ Comparison Table: Capabilities Matrix
 | Stack reference generation | Excellent | Fair | Excellent |
 | Learning from codebase | No | Yes | Yes |
 
-Real-World Examples: TypeScript Pulumi Generation
+Real-World Examples - TypeScript Pulumi Generation
 
-Example 1: VPC + RDS Stack with Network Access
+Example 1 - VPC + RDS Stack with Network Access
 
 Prompt to Claude:
 ```
@@ -232,7 +232,7 @@ This approach:
 - Implements security group ingress rules
 - Exports endpoint/port for cross-stack consumption
 
-Example 2: ECS Service with Auto-scaling
+Example 2 - ECS Service with Auto-scaling
 
 Prompt to Claude:
 ```
@@ -255,13 +255,13 @@ const dbPassword = dbStackRef.getOutput("dbPassword");
 
 const taskExecutionRole = new aws.iam.Role("ecs-task-exec-role", {
   assumeRolePolicy: aws.iam.assumeRolePolicyForPrincipal({
-    Service: "ecs-tasks.amazonaws.com",
+    Service - "ecs-tasks.amazonaws.com",
   }),
 });
 
 const taskRole = new aws.iam.Role("ecs-task-role", {
   assumeRolePolicy: aws.iam.assumeRolePolicyForPrincipal({
-    Service: "ecs-tasks.amazonaws.com",
+    Service - "ecs-tasks.amazonaws.com",
   }),
 });
 
@@ -343,7 +343,7 @@ new aws.appautoscaling.Policy("cpu-scaling", {
 
 Claude generates complete, production-ready patterns including proper IAM roles, cross-stack references, and auto-scaling thresholds.
 
-Practical Workflow: Which Tool for Which Task
+Practical Workflow - Which Tool for Which Task
 
 Use Claude When:
 - Designing large infrastructure (5+ interconnected stacks)
@@ -391,7 +391,7 @@ pulumi stack select prod
 pulumi stack export
 ```
 
-Decision Framework: Accuracy vs Velocity
+Decision Framework - Accuracy vs Velocity
 
 Ask yourself these questions:
 
@@ -447,7 +447,7 @@ pulumi stack select staging
 pulumi stack export > export.json
 ```
 
-Cost Comparison: Per-Project Basis
+Cost Comparison - Per-Project Basis
 
 For a typical infrastructure project (5 stacks, ~1000 lines total):
 

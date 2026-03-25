@@ -20,10 +20,10 @@ Nginx configuration has a deceptively simple syntax but a long tail of security 
 Table of Contents
 
 - [The Security Baseline Test](#the-security-baseline-test)
-- [Task 2: Caching Layer Configuration](#task-2-caching-layer-configuration)
-- [Task 3: Load Balancing Configuration](#task-3-load-balancing-configuration)
-- [Task 4: Security-Hardened API Gateway](#task-4-security-hardened-api-gateway)
-- [Task 5: Geo-Blocking and Bot Mitigation](#task-5-geo-blocking-and-bot-mitigation)
+- [Task 2 - Caching Layer Configuration](#task-2-caching-layer-configuration)
+- [Task 3 - Load Balancing Configuration](#task-3-load-balancing-configuration)
+- [Task 4 - Security-Hardened API Gateway](#task-4-security-hardened-api-gateway)
+- [Task 5 - Geo-Blocking and Bot Mitigation](#task-5-geo-blocking-and-bot-mitigation)
 - [Why Security Context Matters More Than Syntax](#why-security-context-matters-more-than-syntax)
 - [Tool Comparison](#tool-comparison)
 - [Practical Advice for Using AI with Nginx](#practical-advice-for-using-ai-with-nginx)
@@ -184,9 +184,9 @@ server {
 }
 ```
 
-Task 2: Caching Layer Configuration
+Task 2 - Caching Layer Configuration
 
-Prompt: "Add nginx caching for API responses with cache invalidation support."
+Prompt - "Add nginx caching for API responses with cache invalidation support."
 
 ```nginx
 Claude's caching configuration
@@ -238,7 +238,7 @@ http {
 }
 ```
 
-Task 3: Load Balancing Configuration
+Task 3 - Load Balancing Configuration
 
 ```nginx
 Claude's load balancer with health checks
@@ -272,7 +272,7 @@ server {
 }
 ```
 
-Task 4: Security-Hardened API Gateway
+Task 4 - Security-Hardened API Gateway
 
 ```nginx
 Claude's API gateway with auth and injection protection
@@ -316,12 +316,12 @@ server {
 }
 ```
 
-Task 5: Geo-Blocking and Bot Mitigation
+Task 5 - Geo-Blocking and Bot Mitigation
 
 One scenario where Copilot and Cursor both produced incomplete output was geo-blocking combined with bot mitigation. Claude generated a complete working block using the MaxMind GeoIP2 module:
 
 ```nginx
-Requires: ngx_http_geoip2_module and MaxMind GeoLite2-Country database
+Requires - ngx_http_geoip2_module and MaxMind GeoLite2-Country database
 geoip2 /usr/share/GeoIP/GeoLite2-Country.mmdb {
     $geoip2_data_country_code country iso_code;
 }
@@ -375,7 +375,7 @@ All three tools can write syntactically valid nginx config. The differentiator i
 | Rate limiting with burst queue | Yes | Basic | No |
 | Explains `if` directive risks | Yes | No | No |
 
-The pattern is consistent: Claude tends to generate configs that would pass a Mozilla Observatory scan on the first attempt. The others require one or two review cycles to reach the same standard.
+The pattern is consistent - Claude tends to generate configs that would pass a Mozilla Observatory scan on the first attempt. The others require one or two review cycles to reach the same standard.
 
 Tool Comparison
 

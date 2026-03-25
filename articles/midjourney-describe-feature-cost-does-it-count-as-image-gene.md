@@ -20,14 +20,14 @@ No, Midjourney's `/describe` command does not count toward your image generation
 Table of Contents
 
 - [What Midjourney /describe Actually Does](#what-midjourney-describe-actually-does)
-- [The Cost Question: Does It Count as Image Generation?](#the-cost-question-does-it-count-as-image-generation)
+- [The Cost Question - Does It Count as Image Generation?](#the-cost-question-does-it-count-as-image-generation)
 - [Practical Implications for Developers](#practical-implications-for-developers)
 - [When Describe Costs Might Matter](#when-describe-costs-might-matter)
-- [Technical Details: How Describe Works](#technical-details-how-describe-works)
-- [Practical Example: Using Describe for Prompt Engineering](#practical-example-using-describe-for-prompt-engineering)
+- [Technical Details - How Describe Works](#technical-details-how-describe-works)
+- [Practical Example - Using Describe for Prompt Engineering](#practical-example-using-describe-for-prompt-engineering)
 - [Advanced Describe Strategies for Developers](#advanced-describe-strategies-for-developers)
 - [Cost Optimization Comparison](#cost-optimization-comparison)
-- [Real Example: Product Design Workflow](#real-example-product-design-workflow)
+- [Real Example - Product Design Workflow](#real-example-product-design-workflow)
 - [API Integration Considerations](#api-integration-considerations)
 - [Billing Edge Cases](#billing-edge-cases)
 - [Practical Quota Management](#practical-quota-management)
@@ -48,9 +48,9 @@ When you run `/describe`, you upload an image and receive four prompt variations
 
 This makes `/describe` valuable for prompt engineering, style extraction, and understanding how Midjourney interprets visual content.
 
-The Cost Question: Does It Count as Image Generation?
+The Cost Question - Does It Count as Image Generation?
 
-The direct answer: No, `/describe` does not count as image generation and does not consume your GPU minutes or monthly generation quota.
+The direct answer - No, `/describe` does not count as image generation and does not consume your GPU minutes or monthly generation quota.
 
 When Midjourney processes a `/describe` request, it runs a different model operation, one focused on computer vision and text generation rather than the diffusion process that creates new images. The computational cost is significantly lower than generating a new image, which is why the company does not apply image generation charges to describe operations.
 
@@ -114,13 +114,13 @@ When Describe Costs Might Matter
 
 While `/describe` itself is free, certain scenarios warrant attention:
 
-Rate limiting: Midjourney imposes rate limits on all commands, including `/describe`. If you're automating describe operations at scale, you may hit these limits even though each operation is free.
+Rate limiting - Midjourney imposes rate limits on all commands, including `/describe`. If you're automating describe operations at scale, you may hit these limits even though each operation is free.
 
-Third-party services: Some commercial services that wrap Midjourney functionality may charge for `/describe` usage regardless of Midjourney's native policy. Always verify pricing if you're using external tools.
+Third-party services - Some commercial services that wrap Midjourney functionality may charge for `/describe` usage regardless of Midjourney's native policy. Always verify pricing if you're using external tools.
 
-Team plans: On Midjourney team subscriptions, describe usage is unlimited just like individual accounts, but team administrators should track usage patterns to ensure fair distribution of generation quota.
+Team plans - On Midjourney team subscriptions, describe usage is unlimited just like individual accounts, but team administrators should track usage patterns to ensure fair distribution of generation quota.
 
-Technical Details: How Describe Works
+Technical Details - How Describe Works
 
 For the technically inclined, here's what happens during a describe operation:
 
@@ -136,7 +136,7 @@ When you upload an image to `/describe`, Midjourney's vision model performs the 
 
 This process runs on different infrastructure than the image generation diffusion model, which explains why the cost structure differs.
 
-Practical Example: Using Describe for Prompt Engineering
+Practical Example - Using Describe for Prompt Engineering
 
 Suppose you're building a design system and want to establish consistent visual styles. Here's a practical approach:
 
@@ -171,11 +171,11 @@ Advanced Describe Strategies for Developers
 
 For developers building Midjourney workflows, consider these optimization patterns:
 
-Batch describe operations: If you're analyzing multiple reference images, run all describe operations first. This costs nothing but provides style data for informed generation decisions.
+Batch describe operations - If you're analyzing multiple reference images, run all describe operations first. This costs nothing but provides style data for informed generation decisions.
 
-Describe feedback loop: Use describe results to guide iterative refinement. Describe your generated image, compare the extracted prompts to your intent, then re-generate with adjusted parameters. This reduces wasted generation quota.
+Describe feedback loop - Use describe results to guide iterative refinement. Describe your generated image, compare the extracted prompts to your intent, then re-generate with adjusted parameters. This reduces wasted generation quota.
 
-Building prompt libraries: Create internal libraries of describe outputs from successful images. Tag them by style, subject, mood, or medium. These become reusable foundations for new projects at zero cost.
+Building prompt libraries - Create internal libraries of describe outputs from successful images. Tag them by style, subject, mood, or medium. These become reusable foundations for new projects at zero cost.
 
 Cost Optimization Comparison
 
@@ -188,7 +188,7 @@ Cost Optimization Comparison
 
 The "describe first" approach typically saves 30-40% on generation costs while improving consistency.
 
-Real Example: Product Design Workflow
+Real Example - Product Design Workflow
 
 A product design team wants to generate UI mockups with a consistent visual style:
 
@@ -198,7 +198,7 @@ Old approach (describe-unaware):
 3. Describe what you liked (costs nothing)
 4. Use that description for new variations
 5. Repeat until you find the right direction
-Total cost: $2-4 per final design, with 5-8 iterations
+Total cost - $2-4 per final design, with 5-8 iterations
 
 New approach (describe-first):
 1. Find a reference image (existing brand asset, competitor example)
@@ -207,7 +207,7 @@ New approach (describe-first):
 4. Generate 4 variations based on those prompts ($0.32 in credits)
 5. Pick the best; describe it again if refining
 6. Done with 1-2 more generations if needed
-Total cost: $0.40-0.60 per final design, with 2-3 iterations
+Total cost - $0.40-0.60 per final design, with 2-3 iterations
 
 The describe-first approach costs 75% less while producing more consistent results because it works from extracted visual patterns rather than guessing at what the AI understood.
 
@@ -249,31 +249,31 @@ Be aware of these nuances:
 
 Slash commands: Using /describe costs nothing. Using /settings or /info also costs nothing. Only image-generation commands (/imagine, /remix with generation, /vary) consume quota.
 
-Upscale operations: The U1-U4 buttons for upscaling do consume quota. Describe on an upscaled image is free, but the upscaling itself isn't.
+Upscale operations - The U1-U4 buttons for upscaling do consume quota. Describe on an upscaled image is free, but the upscaling itself isn't.
 
-Variations: The V1-V4 buttons for generating variations consume quota. Use describe first to understand what you're varying, then decide if the variation is worth the credit cost.
+Variations - The V1-V4 buttons for generating variations consume quota. Use describe first to understand what you're varying, then decide if the variation is worth the credit cost.
 
 Practical Quota Management
 
 For users and teams managing monthly quotas:
 
 ```
-Monthly allocation: 200 fast hours
+Monthly allocation - 200 fast hours
 
-Week 1: Explore concepts
+Week 1 - Explore concepts
 - 8 describe operations (free)
 - 20 generation iterations (5 fast hours)
 
-Week 2-3: Refine winning directions
+Week 2-3 - Refine winning directions
 - 12 describe operations (free)
 - 40 generation iterations (10 fast hours)
 
-Week 4: Final polish and variations
+Week 4 - Final polish and variations
 - 6 describe operations (free)
 - 60 generation iterations (15 fast hours)
 
-Total: 26 describe ops (free), 120 generations (30 fast hours)
-Remaining quota: 170 fast hours available
+Total - 26 describe ops (free), 120 generations (30 fast hours)
+Remaining quota - 170 fast hours available
 ```
 
 This allocation prioritizes understanding and refinement before committing heavy quota to generation.

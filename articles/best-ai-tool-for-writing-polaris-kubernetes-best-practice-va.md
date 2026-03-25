@@ -21,7 +21,7 @@ Table of Contents
 
 - [Understanding Polaris Validation Configs](#understanding-polaris-validation-configs)
 - [Testing Methodology](#testing-methodology)
-- [Results: Config Generation Quality](#results-config-generation-quality)
+- [Results - Config Generation Quality](#results-config-generation-quality)
 - [Performance Benchmarks](#performance-benchmarks)
 - [Practical Recommendations](#practical-recommendations)
 - [Integrating AI-Generated Polaris Configs into CI/CD Pipelines](#integrating-ai-generated-polaris-configs-into-cicd-pipelines)
@@ -79,7 +79,7 @@ I tested four AI coding assistants for generating Polaris validation configs:
 
 Each tool was given the same prompt: "Generate a Polaris validation config for a production Kubernetes cluster. Include checks for resource limits, security contexts, image pull policies, and readiness probes."
 
-Results: Config Generation Quality
+Results - Config Generation Quality
 
 Claude 3.5 Sonnet
 
@@ -127,7 +127,7 @@ checks:
         policy: 
 ```
 
-Strengths: Correct YAML structure, coverage, proper severity levels, and sensible default policies. Claude understood Polaris's schema without requiring additional context.
+Strengths - Correct YAML structure, coverage, proper severity levels, and sensible default policies. Claude understood Polaris's schema without requiring additional context.
 
 GitHub Copilot
 
@@ -143,7 +143,7 @@ checks:
     severity: warning
 ```
 
-Strengths: Basic structure is correct. Weaknesses: Missing container-specific policies, incomplete severity mapping, and required minimal additional validation.
+Strengths - Basic structure is correct. Weaknesses - Missing container-specific policies, incomplete severity mapping, and required minimal additional validation.
 
 Cursor
 
@@ -171,7 +171,7 @@ checks:
         policy: Host IPC must not be set
 ```
 
-Strengths: Good YAML structure, includes additional security checks. Minor issues: Some policy descriptions slightly differ from Polaris syntax.
+Strengths - Good YAML structure, includes additional security checks. Minor issues: Some policy descriptions slightly differ from Polaris syntax.
 
 GPT-4o
 
@@ -187,7 +187,7 @@ checks:
     severity: error
 ```
 
-Strengths: Understands Kubernetes concepts. Weaknesses: Less precise Polaris syntax, missing container-level policies.
+Strengths - Understands Kubernetes concepts. Weaknesses - Less precise Polaris syntax, missing container-level policies.
 
 Performance Benchmarks
 
@@ -263,10 +263,10 @@ jobs:
 
 The `--set-exit-code-on-danger` flag causes the pipeline to fail when any check with severity `error` fires. The `--set-exit-code-below-score` flag provides a score-based threshold. Adjust the threshold based on your team's current compliance baseline, starting at 70 and incrementing by 5 each sprint is a practical approach for brownfield clusters.
 
-Custom check definitions: Polaris supports custom checks written in Rego or JSON Schema. AI tools generate these well when given a specific policy to encode:
+Custom check definitions - Polaris supports custom checks written in Rego or JSON Schema. AI tools generate these well when given a specific policy to encode:
 
 ```yaml
-Custom check: ensure all deployments have a topology spread constraint
+Custom check - ensure all deployments have a topology spread constraint
 checks:
   topologySpreadMissing:
     severity: warning
@@ -340,7 +340,7 @@ Maintaining and Evolving Your Polaris Config Over Time
 
 Kubernetes best practices evolve with each release, and your Polaris configuration should evolve with them. AI tools provide ongoing value by helping you update configs when new Polaris versions introduce additional checks, or when your organization's policies change.
 
-Version tracking: Pin your Polaris config to specific check IDs and use AI to generate a migration plan when upgrading Polaris versions:
+Version tracking - Pin your Polaris config to specific check IDs and use AI to generate a migration plan when upgrading Polaris versions:
 
 ```bash
 Audit current config against the new Polaris version
@@ -351,7 +351,7 @@ polaris audit --config polaris-config.yaml --audit-path kubernetes/ --format jso
 
 Paste this list of failing checks to Claude with the message: "These checks are failing in our Polaris audit output. For each one, suggest whether we should fix the Kubernetes manifests, adjust the check severity, or add an exemption, given that this is a production cluster with a 2-week deploy cycle."
 
-Exemptions for legacy workloads: Polaris supports resource-level exemptions for workloads that legitimately cannot meet a specific check. AI tools generate exemption annotations accurately:
+Exemptions for legacy workloads - Polaris supports resource-level exemptions for workloads that legitimately cannot meet a specific check. AI tools generate exemption annotations accurately:
 
 ```yaml
 Add to Deployment metadata to exempt a specific check
@@ -371,7 +371,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -383,7 +383,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

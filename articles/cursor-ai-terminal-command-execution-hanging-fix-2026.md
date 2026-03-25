@@ -71,17 +71,17 @@ If CPU is 0% and no output appears, you have a genuine hang. If CPU is active, t
 Also distinguish between Cursor's AI agent hanging (when you ask Cursor to run a terminal command via the AI chat) and the integrated terminal itself hanging. AI agent hangs often occur because the agent is waiting for a confirmation prompt that never appears in the output it monitors. Use non-interactive flags to prevent this:
 
 ```bash
-Instead of: npm install (may prompt for confirmations)
+Instead of - npm install (may prompt for confirmations)
 npm install --yes
 
-Instead of: pip install package
+Instead of - pip install package
 pip install package --quiet --no-input
 
-Instead of: git clone URL
+Instead of - git clone URL
 git clone URL --quiet
 ```
 
-Fix 1: Kill Stuck Terminal Processes
+Fix 1 - Kill Stuck Terminal Processes
 
 When your terminal hangs, the quickest solution involves terminating stuck processes. Open a new terminal window and use these commands:
 
@@ -115,7 +115,7 @@ open -a Cursor
 
 Save this as `cleanup-cursor-terminals.sh` and run it when terminal hangs persist.
 
-Fix 2: Configure Terminal Shell Settings
+Fix 2 - Configure Terminal Shell Settings
 
 Cursor AI allows you to specify which shell to use and how it initializes. Misconfigured shell settings frequently cause hanging issues.
 
@@ -168,7 +168,7 @@ Add this to your Cursor settings JSON (`settings.json`):
 }
 ```
 
-Fix 3: Manage Subprocesses Correctly
+Fix 3 - Manage Subprocesses Correctly
 
 Long-running or interactive commands require proper handling to prevent terminal hangs.
 
@@ -255,7 +255,7 @@ if __name__ == "__main__":
     manager.kill_all()
 ```
 
-Fix 4: Clear Terminal State and Cache
+Fix 4 - Clear Terminal State and Cache
 
 Accumulated terminal state often causes performance degradation leading to hangs.
 
@@ -300,7 +300,7 @@ Remove terminal-specific settings
 Then restart Cursor to regenerate defaults
 ```
 
-Fix 5: Update and Reinstall Cursor
+Fix 5 - Update and Reinstall Cursor
 
 Outdated Cursor installations often contain bugs causing terminal issues.
 
@@ -326,7 +326,7 @@ rm -rf ~/Library/Application\ Support/Cursor
 Reinstall from cursor.sh
 ```
 
-Fix 6: Adjust Cursor's AI Terminal Timeout Settings
+Fix 6 - Adjust Cursor's AI Terminal Timeout Settings
 
 Cursor has configurable timeouts for AI-driven terminal command execution. When the AI agent runs commands on your behalf, it uses an internal timeout before declaring a command hung. You can surface and extend this in settings:
 

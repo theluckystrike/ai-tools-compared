@@ -22,9 +22,9 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Practical Examples](#practical-examples)
 - [Best Practices for AI-Assisted CMake Debugging](#best-practices-for-ai-assisted-cmake-debugging)
-- [Advanced Scenarios: When AI Struggles](#advanced-scenarios-when-ai-struggles)
+- [Advanced Scenarios - When AI Struggles](#advanced-scenarios-when-ai-struggles)
 - [Troubleshooting](#troubleshooting)
-- [Tool-Specific Comparison: Which AI Assistant Is Best for CMake](#tool-specific-comparison-which-ai-assistant-is-best-for-cmake)
+- [Tool-Specific Comparison - Which AI Assistant Is Best for CMake](#tool-specific-comparison-which-ai-assistant-is-best-for-cmake)
 
 Prerequisites
 
@@ -36,13 +36,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Cross-Compilation CMake Errors
+Step 1 - Understand Cross-Compilation CMake Errors
 
 Cross-compilation requires CMake to understand three critical pieces of information: the target architecture, the sysroot location, and the appropriate toolchain files. When any of these elements is misconfigured, CMake produces errors that often appear cryptic to developers unfamiliar with the specific target platform.
 
 Common error patterns include mismatched compiler binaries, missing sysroot paths, incorrect target system specifications, and incompatible CMake generator selections. The error messages themselves frequently reference internal CMake variables or flags that require understanding of both CMake's internals and your target platform's requirements.
 
-Step 2: How AI Assists with CMake Cross-Compilation Issues
+Step 2 - How AI Assists with CMake Cross-Compilation Issues
 
 AI coding assistants can analyze your CMakeLists.txt files, toolchain configurations, and error messages to identify the root cause of configuration failures. The key is providing the AI with complete context about your build environment, including your host system, target architecture, and the specific error you're encountering.
 
@@ -50,7 +50,7 @@ When you share your toolchain file, CMakeLists.txt, and the exact error output, 
 
 Practical Examples
 
-Example 1: Fixing Toolchain File Misconfiguration
+Example 1 - Fixing Toolchain File Misconfiguration
 
 Consider a scenario where you're targeting an ARM64 embedded system using a GCC toolchain. Your toolchain file contains:
 
@@ -75,7 +75,7 @@ Or add explicit library paths
 set(CMAKE_EXE_LINKER_FLAGS "-L/opt/toolchain/aarch64-linux-gnu/lib64")
 ```
 
-Example 2: Resolving sysroot Path Issues
+Example 2 - Resolving sysroot Path Issues
 
 A common problem occurs when the sysroot path is incorrectly specified or missing entirely. Suppose your error message shows:
 
@@ -91,7 +91,7 @@ set(CMAKE_SYSROOT /path/to/your/target/sysroot)
 set(CMAKE_LIBRARY_PATH ${CMAKE_SYSROOT}/usr/lib/${CMAKE_SYSTEM_PROCESSOR})
 ```
 
-Example 3: Debugging CMake Generator Mismatches
+Example 3 - Debugging CMake Generator Mismatches
 
 Cross-compilation sometimes fails because you're using a generator incompatible with your target. If you encounter errors about Visual Studio generators not supporting Linux targets, an AI can recommend using Ninja or Unix Makefiles instead:
 
@@ -99,7 +99,7 @@ Cross-compilation sometimes fails because you're using a generator incompatible 
 cmake -G "Ninja Multi-Config" -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_C_COMPILER=aarch64-linux-gnu-gcc ..
 ```
 
-Example 4: Handling CUDA Cross-Compilation
+Example 4 - Handling CUDA Cross-Compilation
 
 CUDA cross-compilation adds another layer of complexity. When targeting NVIDIA Jetson devices, you need to specify the CUDA architecture:
 
@@ -123,10 +123,10 @@ When using AI to resolve CMake cross-compilation issues, provide the following i
 Effective Prompt Template for AI Assistance
 
 ```
-HOST SYSTEM: macOS Ventura on Apple Silicon
-TARGET: ARM64 Linux (Raspberry Pi 4)
-TOOLCHAIN: /opt/rpi-toolchain/arm-rpi-linux-gnueabihf-10.2.0/
-ERROR OUTPUT: [paste complete CMake error message]
+HOST SYSTEM - macOS Ventura on Apple Silicon
+TARGET - ARM64 Linux (Raspberry Pi 4)
+TOOLCHAIN - /opt/rpi-toolchain/arm-rpi-linux-gnueabihf-10.2.0/
+ERROR OUTPUT - [paste complete CMake error message]
 
 CMakeLists.txt snippet:
 [include relevant portions]
@@ -139,7 +139,7 @@ WHAT I'VE TRIED:
 2. Adjusted CMAKE_LIBRARY_PATH_MODE_LIBRARY to BOTH
 3. Specified CMAKE_SYSROOT explicitly
 
-QUESTION: Why is CMake unable to locate libpthread.so despite it existing at [full path]?
+QUESTION - Why is CMake unable to locate libpthread.so despite it existing at [full path]?
 ```
 
 Also describe what you've already attempted. This context helps the AI avoid suggesting solutions you've already tried and focuses on genuinely different approaches.
@@ -158,7 +158,7 @@ For a development team working on cross-compilation projects, each project typic
 
 Real-World Project Scenario
 
-Project: Embedded image processing pipeline for ARM64 edge devices
+Project - Embedded image processing pipeline for ARM64 edge devices
 - 5 developers
 - 8-month development cycle
 - 45 estimated cross-compilation debugging sessions
@@ -170,28 +170,28 @@ Project: Embedded image processing pipeline for ARM64 edge devices
 
 Effective Prompting Examples
 
-Poor prompt: "CMake doesn't work. Help?"
+Poor prompt - "CMake doesn't work. Help?"
 - Generic CMake advice that doesn't address your specific issue
 - Time to resolution: 60+ minutes (vague feedback loops)
 
-Good prompt: "I'm cross-compiling for ARM64 on macOS. CMake error: 'Cannot find target libraries in /opt/toolchain/sysroot/lib/aarch64-linux-gnu'. The toolchain file specifies CMAKE_FIND_ROOT_PATH correctly. gcc binary exists at /opt/toolchain/bin/aarch64-linux-gnu-gcc. What's preventing CMake from finding libc.so.6?"
+Good prompt - "I'm cross-compiling for ARM64 on macOS. CMake error: 'Cannot find target libraries in /opt/toolchain/sysroot/lib/aarch64-linux-gnu'. The toolchain file specifies CMAKE_FIND_ROOT_PATH correctly. gcc binary exists at /opt/toolchain/bin/aarch64-linux-gnu-gcc. What's preventing CMake from finding libc.so.6?"
 - Focused diagnosis identifying CMAKE_FIND_ROOT_PATH_MODE_LIBRARY setting issue
 - Time to resolution: 8-12 minutes (specific feedback, actionable suggestions)
 
 The difference is specificity. AI's weakness is generic requests; its strength is detailed context analysis.
 
-Advanced Scenarios: When AI Struggles
+Advanced Scenarios - When AI Struggles
 
 AI excels at common CMake issues but faces challenges with edge cases:
 
-Scenario 1: Custom toolchain chains
-Some embedded toolchains have multiple wrapper scripts or custom compilers that don't follow standard naming conventions. AI may misidentify the actual compiler executable. Mitigation: Provide explicit compiler paths and test compilation with a minimal example.
+Scenario 1 - Custom toolchain chains
+Some embedded toolchains have multiple wrapper scripts or custom compilers that don't follow standard naming conventions. AI may misidentify the actual compiler executable. Mitigation - Provide explicit compiler paths and test compilation with a minimal example.
 
-Scenario 2: Conflicting system libraries
-When target sysroot contains different versions of libraries than the build host (e.g., libc 2.31 on host, libc 2.27 on target), CMake's library detection fails unpredictably. AI struggles here because the error patterns are non-deterministic. Workaround: Explicitly disable conflicting features using CMAKE_DISABLE_FIND_PACKAGE variables.
+Scenario 2 - Conflicting system libraries
+When target sysroot contains different versions of libraries than the build host (e.g., libc 2.31 on host, libc 2.27 on target), CMake's library detection fails unpredictably. AI struggles here because the error patterns are non-deterministic. Workaround - Explicitly disable conflicting features using CMAKE_DISABLE_FIND_PACKAGE variables.
 
-Scenario 3: GPU toolchain interactions (CUDA + cross-compilation)
-CUDA cross-compilation requires understanding both CUDA-specific CMake modules and cross-compilation principles. AI's knowledge of both is weaker than single-domain expertise. Solution: Provide AI with NVIDIA's official cross-compilation guide and ask it to map your specific target to those instructions.
+Scenario 3 - GPU toolchain interactions (CUDA + cross-compilation)
+CUDA cross-compilation requires understanding both CUDA-specific CMake modules and cross-compilation principles. AI's knowledge of both is weaker than single-domain expertise. Solution - Provide AI with NVIDIA's official cross-compilation guide and ask it to map your specific target to those instructions.
 
 When to stop using AI and escalate to human experts:
 - Error patterns repeat across multiple clean builds (suggests systemic issue, not configuration typo)
@@ -201,7 +201,7 @@ When to stop using AI and escalate to human experts:
 
 In these cases, AI saves time getting 80% of the way, but the final 20% requires domain expertise. It's perfectly valid to use AI for initial diagnosis, then hand off to a toolchain expert.
 
-Organizational Approach: Team-Wide CMake Debugging
+Organizational Approach - Team-Wide CMake Debugging
 
 For teams regularly doing cross-compilation (embedded systems, ARM development, IoT):
 
@@ -259,7 +259,7 @@ Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-Tool-Specific Comparison: Which AI Assistant Is Best for CMake
+Tool-Specific Comparison - Which AI Assistant Is Best for CMake
 
 | Tool | Strength | Weakness | Best For |
 |------|----------|----------|----------|
@@ -268,9 +268,9 @@ Tool-Specific Comparison: Which AI Assistant Is Best for CMake
 | GitHub Copilot | IDE-integrated, learns your local patterns | Limited context without explicit file uploads | Incremental fixes while actively editing CMakeLists |
 | Cursor | Project-aware, understands full toolchain context | May over-suggest based on project patterns | Large projects with custom toolchain frameworks |
 
-Step 3: Real-World Case Studies
+Step 3 - Real-World Case Studies
 
-Case Study 1: ARM Cross-Compilation for Raspberry Pi
+Case Study 1 - ARM Cross-Compilation for Raspberry Pi
 
 A team building an OpenCV-based image processing application for Raspberry Pi 4 (ARM32hf) encountered this error:
 
@@ -299,12 +299,12 @@ find_package(OpenCV REQUIRED CONFIG PATHS /opt/rpi-sysroot/usr/lib/cmake)
 
 Error resolved in 12 minutes with AI assistance vs. 2-3 hours of manual trial-and-error.
 
-Case Study 2: CUDA Cross-Compilation for Jetson Nano
+Case Study 2 - CUDA Cross-Compilation for Jetson Nano
 
 A robotics company targeting NVIDIA Jetson Nano (ARM64 with CUDA 10.2) faced:
 
 ```
-CUDA error: no kernel image is available for execution on the device
+CUDA error - no kernel image is available for execution on the device
 ```
 
 After uploading their CMakeLists.txt and toolchain file, Claude noticed:
@@ -319,7 +319,7 @@ But Jetson Nano has architecture 53. The fix required:
 
 What seemed like a hardware incompatibility was actually a CMake architecture mismatch, fixed in 15 minutes.
 
-Case Study 3: Bare-Metal ARM (STM32) Compilation
+Case Study 3 - Bare-Metal ARM (STM32) Compilation
 
 An embedded systems team building firmware for STM32H7 discovered AI was less helpful than expected:
 
@@ -329,18 +329,18 @@ CMake Error at toolchain/stm32h7.cmake:12: Generator not compatible with STM32 H
 
 This error fell outside common patterns AI has seen. The workaround: provide AI with the official STMicroelectronics build instructions and ask it to map their CMake setup to the official guide. This took 45 minutes vs. estimated 4-5 hours of manual investigation.
 
-Lesson: AI is excellent at common configurations (Linux cross-compilation, standard architectures) but struggles with vendor-specific toolchains without explicit guidance.
+Lesson - AI is excellent at common configurations (Linux cross-compilation, standard architectures) but struggles with vendor-specific toolchains without explicit guidance.
 
-Step 4: Preventing CMake Issues: Proactive AI Strategies
+Step 4 - Preventing CMake Issues: Proactive AI Strategies
 
 Rather than debugging broken builds, use AI proactively to validate configurations before running CMake:
 
 Validation Prompt Template:
 ```
 I'm setting up cross-compilation for [TARGET DESCRIPTION].
-Host: [OS and CPU]
-Target: [Architecture and OS]
-Toolchain location: [PATH]
+Host - [OS and CPU]
+Target - [Architecture and OS]
+Toolchain location - [PATH]
 
 Here's my CMakeLists.txt:
 [FILE CONTENT]
@@ -358,7 +358,7 @@ Before I run cmake, does this configuration have any obvious issues? Check:
 
 This proactive validation catches 70-80% of configuration issues before you encounter runtime errors.
 
-Step 5: Integration with Build Pipelines
+Step 5 - Integration with Build Pipelines
 
 For CI/CD automation, implement AI-assisted validation as a pre-build check:
 
