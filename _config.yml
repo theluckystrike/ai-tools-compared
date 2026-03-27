@@ -1,22 +1,25 @@
 title: "AI Tools Compared"
-description: "Side-by-side comparisons of AI tools, LLMs, and productivity assistants to help you choose the right one"
+tagline: "ChatGPT vs Claude vs Gemini — Honest Reviews & Benchmarks (2026)"
+description: "Unbiased AI tool comparisons with real-world tests. We benchmark ChatGPT, Claude, Gemini, Copilot and more so you pick the right assistant for coding, writing, and research."
 url: "https://bestremotetools.com"
 baseurl: ""
 permalink: /:title/
 twitter:
   username: _alphashark_
-  card: summary_large_image
+    card: summary_large_image
 
-author: "Michael Lip"
+    author:
+      name: Michael Lip
+        url: https://github.com/theluckystrike
 
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-feed
-defaults:
-  - scope:
-      path: "articles"
-    values:
-      layout: default
-      image: /assets/og-default.svg
-
+        plugins:
+          - jekyll-sitemap
+            - jekyll-seo-tag
+              - jekyll-feed
+              defaults:
+                - scope:
+                      path: "articles"
+                          values:
+                                layout: default
+                                      image: /assets/og-default.svg
+                                      
