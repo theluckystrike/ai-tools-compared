@@ -4,7 +4,7 @@ title: "Migrating from JetBrains AI to Copilot in IntelliJ"
 description: "Switch from JetBrains AI to GitHub Copilot in IntelliJ: plugin removal, Copilot setup, keybinding migration, and feature gap workarounds."
 keywords: "JetBrains AI, GitHub Copilot, IntelliJ IDEA, migration guide, AI coding assistant"
 voice-checked: "true"
-last-updated: "2026-03-21"
+last-updated: 2026-03-21
 permalink: /migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/
 reviewed: true
 score: 9

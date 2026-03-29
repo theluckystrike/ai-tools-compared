@@ -2,8 +2,8 @@
 title: "AI Tools for Generating OpenTelemetry Instrumentation Code"
 description: "Compare Claude, GPT-4, and Copilot for generating OTel spans, metrics, and traces. Real Python, Go, and Java instrumentation code examples."
 author: "theluckystrike"
-date: "2026-03-22"
-updated: "2026-03-22"
+date: 2026-03-22
+updated: 2026-03-22
 reviewed: true
 score: 9
 voice-checked: true
