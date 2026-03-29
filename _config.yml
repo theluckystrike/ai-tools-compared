@@ -6,20 +6,20 @@ baseurl: ""
 permalink: /:title/
 twitter:
   username: _alphashark_
-    card: summary_large_image
+  card: summary_large_image
 
-    author:
-      name: Michael Lip
-        url: https://github.com/theluckystrike
+author:
+  name: Michael Lip
+  url: https://github.com/theluckystrike
 
-        plugins:
-          - jekyll-sitemap
-            - jekyll-seo-tag
-              - jekyll-feed
-              defaults:
-                - scope:
-                      path: "articles"
-                          values:
-                                layout: default
-                                      image: /assets/og-default.svg
-                                      
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+defaults:
+  - scope:
+      path: "articles"
+    values:
+      layout: default
+      image: /assets/og-default.svg
+
