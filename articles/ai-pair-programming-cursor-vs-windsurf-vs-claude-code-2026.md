@@ -329,6 +329,8 @@ Choose Claude Code if:
 - You want terminal-first workflows
 - You prefer paying per-use vs subscription
 
+If Claude Code fits your workflow, this <a href="https://claudecodeguides.com/claude-code-for-beginners-complete-getting-started-2026/">complete getting started guide for Claude Code</a> covers installation, API configuration, and practical tips for your first coding session.
+
 Productivity Gains in Practice
 
 Across all three tools, typical productivity improvements:
@@ -353,7 +355,7 @@ Best Practices Across All Tools
 
 5. Use for high-use tasks: Let AI generate boilerplate, tests, and documentation. Spend your focus on business logic and architectural decisions.
 
-The best AI pair programming tool depends on your editor preferences and workflow style. All three tools are capable; the difference is integration and philosophy. Try all three with a small feature before committing to one.
+The best AI pair programming tool depends on your editor preferences and workflow style. All three tools are capable; the difference is integration and philosophy. Try all three with a small feature before committing to one. For a broader look at how autonomous AI coding agents compare to these pair programming tools, see this <a href="https://claudecodeguides.com/claude-code-vs-devin-ai-agent-comparison-2026/">detailed comparison of Claude Code and Devin</a>, which evaluates them on autonomy, code quality, and real project outcomes.
 
 Frequently Asked Questions
 

@@ -315,7 +315,7 @@ Argument for Claude Code:
 - Anthropic's recent improvements to reasoning are state-of-the-art
 - Fewer switching costs for developers already using Claude elsewhere
 
-Try both for 1-2 weeks on real work, then choose based on which feels more natural to your workflow. Most developers find one tool clicks better than the other fairly quickly.
+Try both for 1-2 weeks on real work, then choose based on which feels more natural to your workflow. Most developers find one tool clicks better than the other fairly quickly. If you run into timeout issues during long-running Claude Code sessions, this <a href="https://claudecodeguides.com/claude-code-skill-timeout-error-how-to-increase-the-limit/">guide to fixing Claude Code timeout errors</a> explains how to increase the limit and avoid interrupted workflows.
 
 Integration with Existing Tools
 
