@@ -11,7 +11,7 @@ Guides and comparisons for AI tools that improve developer productivity, from CI
 
 ---
 
-{% assign productivity = site.pages | where_exp: "p", "p.path contains 'articles/'" | where_exp: "p", "p.title != nil" | sort: "date" | reverse %}
+{% assign productivity = site.pages | where_exp: "p", "p.path contains 'articles/'" | where_exp: "p", "p.title != nil" | sort: "title" %}
 {% for p in productivity limit: 30 %}{% if p.title contains 'Productivity' or p.title contains 'CI/CD' or p.title contains 'DevOps' or p.title contains 'Budget' or p.title contains 'Free' or p.title contains 'Cost' or p.title contains 'Pricing' or p.title contains 'Workflow' %}
 - [{{ p.title }}]({{ p.url }})
 {% endif %}{% endfor %}

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="dns-prefetch" href="//bestremotetools.com">
+  {% seo %}
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
+  <link rel="alternate" hreflang="en" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site.title | escape }}",
+    "url": "{{ site.url }}",
+    "description": "{{ site.description | escape }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI Tools Compared",
+      "url": "https://bestremotetools.com"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.google.com/search?q=site:bestremotetools.com+{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      { "@type": "SiteNavigationElement", "position": 1, "name": "Coding", "url": "https://bestremotetools.com/topics/coding-tools/" },
+      { "@type": "SiteNavigationElement", "position": 2, "name": "Writing", "url": "https://bestremotetools.com/topics/writing-tools/" },
+      { "@type": "SiteNavigationElement", "position": 3, "name": "Design", "url": "https://bestremotetools.com/topics/design-tools/" },
+      { "@type": "SiteNavigationElement", "position": 4, "name": "Productivity", "url": "https://bestremotetools.com/topics/productivity/" }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+
+  <!-- Homepage CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+</head>
+<body>
+
+<!-- TOPLINE -->
+<div class="topline">
+  <div class="topline-inner">
+    <div><span class="dot"></span>Benchmarks re-run this morning &middot; {{ site.time | date: "%b %d, %Y" }} &middot; 09:14 UTC</div>
+    <div>v4.2 methodology &middot; 18 tools tracked &middot; 42 tasks</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="logo" href="/"><span class="logo-mark">&#x25CE;</span>AI Tools Compared</a>
+    <div class="nav-links">
+      <a href="#leaderboard" class="active">Leaderboard</a>
+      <a href="#verdicts">Verdicts</a>
+      <a href="#tasks">Task suite</a>
+      <a href="#method">Methodology</a>
+      <a href="#dd">Reviews</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-search" role="search" aria-label="Search tools and tasks">
+        <span>Search 18 tools, 42 tasks&hellip;</span>
+        <span class="kbd">&#x2318;K</span>
+      </div>
+      <a class="btn primary sm" href="#news">Subscribe <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-label="Hero">
+  <div class="wrap hero-grid">
+    <div class="hero-left">
+      <span class="hero-eyebrow">Independent &middot; No sponsored rankings</span>
+      <h1>AI developer tools, <em>actually tested</em> &mdash; <span class="hl">not just described.</span></h1>
+      <p class="hero-lede">
+        I spend most of my day writing code with AI assistants. I got tired of reading comparisons that clearly never ran the tools they ranked. So I built this: side-by-side evaluations on the same codebase, same tasks, measured results. The leaderboard updates when the numbers change.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#leaderboard">See the leaderboard <span class="arr">&rarr;</span></a>
+        <a class="btn ghost" href="#method">How I test</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="k">18</div><div class="l">tools tracked</div></div>
+        <div><div class="k">42</div><div class="l">real-world tasks</div></div>
+        <div><div class="k">612h</div><div class="l">test time logged</div></div>
+        <div><div class="k">$0</div><div class="l">sponsor $</div></div>
+      </div>
+    </div>
+
+    <div class="term" aria-hidden="true">
+      <div class="term-head">
+        <span class="term-dot r"></span>
+        <span class="term-dot y"></span>
+        <span class="term-dot g"></span>
+        <span class="tt">bench.sh &mdash; ai-tools-compared</span>
+      </div>
+      <div class="term-body">
+        <div class="t-mute"># task: refactor 2,341-line legacy auth module</div>
+        <div class="t-cmd">./bench run task-17 --all-tools</div>
+        <div>&nbsp;</div>
+        <div class="t-head">Running task-17 on 6 tools &middot; same repo &middot; same prompt</div>
+        <div class="t-rule">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+        <div class="row"><span class="n">claude-code</span><span class="t-ok">&#x2713; passed</span><span class="m">&nbsp; (14m 02s &middot; 3,214 tok)</span></div>
+        <div class="row"><span class="n">cursor-composer</span><span class="t-ok">&#x2713; passed</span><span class="m">&nbsp; (18m 44s &middot; 4,801 tok)</span></div>
+        <div class="row"><span class="n">copilot-agent</span><span class="t-part">&#x25D0; partial</span><span class="m">&nbsp;(22m 08s &middot; 5,602 tok)</span></div>
+        <div class="row"><span class="n">windsurf-cascade</span><span class="t-ok">&#x2713; passed</span><span class="m">&nbsp; (16m 51s &middot; 3,988 tok)</span></div>
+        <div class="row"><span class="n">aider</span><span class="t-ok">&#x2713; passed</span><span class="m">&nbsp; (12m 33s &middot; 2,104 tok)</span></div>
+        <div class="row"><span class="n">cline</span><span class="t-fail">&#x2717; failed</span><span class="m">&nbsp; (timeout at 30m)</span></div>
+        <div class="t-rule">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+        <div class="t-ok">&#x2713; 5/6 passed &middot; avg 16m 52s &middot; logs in ./runs/0420-1714/</div>
+        <div class="t-cmd"><span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERBOARD -->
+<section class="sec" id="leaderboard" aria-label="Leaderboard">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="sec-eyebrow">The leaderboard &middot; {{ site.time | date: "%b %Y" }}</span>
+        <h2>Eighteen tools. Forty-two tasks. <em>One scoreboard.</em></h2>
+        <p class="sub">Every tool runs the same 42 tasks on a frozen snapshot of a real codebase. Same prompts, same models where available, same acceptance criteria. Click any column to re-sort.</p>
+      </div>
+      <div class="sec-head-r">
+        LAST RUN<br/><b>{{ site.time | date: "%b %d" | upcase }} &middot; 09:14 UTC</b><br/>
+        NEXT RE-RUN<br/><b>{{ site.time | date: "%s" | plus: 604800 | date: "%b %d" | upcase }}</b>
+      </div>
+    </div>
+
+    <div class="lb-legend">
+      <span class="k pass">passed</span>
+      <span class="k part">partial</span>
+      <span class="k fail">failed</span>
+      <span style="margin-left:auto;">Top 10 &middot; sorted by composite score &middot; lower is better where noted</span>
+    </div>
+
+    <table class="lb" id="lbTable" aria-label="AI tool benchmark leaderboard">
+      <thead>
+        <tr>
+          <th data-k="rank">#</th>
+          <th data-k="name">Tool</th>
+          <th data-k="score" class="active">Score <span class="sort">&#x25BC;</span></th>
+          <th data-k="pass" class="hide-sm">Passed</th>
+          <th data-k="time" class="hide-sm">Median time</th>
+          <th data-k="cost" class="num hide-sm">$/task</th>
+          <th data-k="ctx" class="num hide-sm">Ctx</th>
+          <th class="hide-sm">Notable for</th>
+          <th class="hide-sm">Last run</th>
+        </tr>
+      </thead>
+      <tbody id="lbBody"></tbody>
+    </table>
+
+    <div class="lb-foot">
+      <span>Showing 10 of 18 tracked tools &middot; <a href="/topics/ai-coding-assistants-comparison/">View all &rarr;</a></span>
+      <span>Methodology v4.2 &middot; composite = 0.45&middot;pass + 0.25&middot;time + 0.15&middot;cost + 0.15&middot;code-quality</span>
+    </div>
+  </div>
+</section>
+
+<!-- VERDICT CARDS -->
+<section class="sec" id="verdicts" aria-label="Verdicts">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="sec-eyebrow">In-depth &middot; verdicts</span>
+        <h2>The six I <em>actually reach for.</em></h2>
+        <p class="sub">Each card is the short version of a 3,000-word review. Honest pros, honest cons, and the specific case each tool is actually best for &mdash; not a generic &ldquo;it depends.&rdquo;</p>
+      </div>
+    </div>
+    <div class="verdicts" id="verdictCards"></div>
+  </div>
+</section>
+
+<!-- TASK SPOTLIGHT -->
+<section class="sec" id="tasks" aria-label="Task spotlight">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="sec-eyebrow">Task spotlight</span>
+        <h2>Four of the tasks from <em>the benchmark.</em></h2>
+        <p class="sub">The full set is 42 tasks across refactoring, bug fixing, greenfield features, test writing, and migrations. These four illustrate where tools diverge hardest.</p>
+      </div>
+      <a class="tasks-repo" href="https://github.com/ai-tools-compared/suite" target="_blank" rel="noopener">
+        <span class="k">&#x25B6;</span>
+        <div>
+          <div style="color:var(--ink); font-weight:600;">Every task is open source</div>
+          <div style="font-size:11px;">github.com/ai-tools-compared/suite</div>
+        </div>
+      </a>
+    </div>
+    <div class="tasks-grid" id="taskGrid"></div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="method" id="method" aria-label="Methodology">
+  <div class="wrap method-grid">
+    <div>
+      <span class="sec-eyebrow">How I test</span>
+      <h2>Same codebase. Same tasks. <em>Measured results.</em></h2>
+      <p class="lede">Anyone can publish a vibes-based ranking. I think the only comparison worth reading is one you could reproduce. So the methodology is open, the task suite is open, and every score has a log file behind it.</p>
+      <a class="btn ghost" href="/about/">Read the full methodology <span class="arr">&rarr;</span></a>
+    </div>
+    <ol class="principles">
+      <li><div>
+        <h3>Frozen codebase</h3>
+        <p>A real 84,000-line TypeScript + Python monorepo at a pinned commit. Not a toy. Not something I wrote yesterday to flatter the tools I like.</p>
+      </div></li>
+      <li><div>
+        <h3>Identical prompts</h3>
+        <p>Every tool gets the exact same prompt text. No per-tool prompt engineering. If a tool needs different prompting to work well, that&rsquo;s a finding, not a handicap.</p>
+      </div></li>
+      <li><div>
+        <h3>Acceptance criteria up front</h3>
+        <p>Each task has a list of checks written before any tool is run. Tests pass or they don&rsquo;t. Lint passes or it doesn&rsquo;t. &ldquo;Looks fine&rdquo; is not a criterion.</p>
+      </div></li>
+      <li><div>
+        <h3>Three runs per task</h3>
+        <p>AI tools are nondeterministic. Every task is run three times. I report the median, and I flag when the runs disagree &mdash; because that&rsquo;s a quality signal too.</p>
+      </div></li>
+      <li><div>
+        <h3>Public logs</h3>
+        <p>Every run&rsquo;s transcript, diff, and cost breakdown is in the repo. If a score looks wrong, open the log and tell me. Several scores have changed because readers did exactly that.</p>
+      </div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- DEEP DIVE -->
+<section class="deep-dive" id="dd" aria-label="Deep dive review">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="sec-eyebrow">This week&rsquo;s deep dive</span>
+        <h2>The latest <em>review.</em></h2>
+      </div>
+      <div class="sec-head-r">NEW REVIEW<br/><b>EVERY TUESDAY</b></div>
+    </div>
+    <div class="dd-grid">
+      <div>
+        {% assign latest = site.pages | where_exp: "p", "p.path contains 'articles/'" | where_exp: "p", "p.title != nil" | sort: "title" | first %}
+        {% if latest %}
+        <h3 class="dd-title"><a href="{{ latest.url }}" style="text-decoration:none; color:inherit;">{{ latest.title }}</a></h3>
+        <p class="dd-body">{{ latest.description | default: "Read the full in-depth comparison with real benchmarks and measured results." }}</p>
+        {% else %}
+        <h3 class="dd-title">Claude Code vs. Cursor Composer: after 40 hours <em>with each on the same real repo.</em></h3>
+        <p class="dd-body">
+          I ran both tools on the same 12 tasks over two weeks &mdash; not demos, actual work from my day job. Here&rsquo;s where Cursor&rsquo;s UX is genuinely better, where Claude Code&rsquo;s agentic behavior matters more than it looks, and the one specific case where I reach for neither.
+        </p>
+        {% endif %}
+        <div class="dd-stats">
+          <span><b>40h</b>test time each</span>
+          <span><b>12</b>real tasks</span>
+          <span><b>$84</b>vs $61 cost</span>
+        </div>
+        {% if latest %}
+        <a class="btn primary" href="{{ latest.url }}">Read the full comparison <span class="arr">&rarr;</span></a>
+        {% else %}
+        <a class="btn primary" href="/topics/ai-coding-assistants-comparison/">Read the full comparison <span class="arr">&rarr;</span></a>
+        {% endif %}
+      </div>
+      <div class="dd-article">
+        <div><span class="t-mute">~/monorepo $</span> <span class="prompt">claude</span> &rsaquo; refactor auth/ for testability</div>
+        <div class="steps">
+          <div><span class="dot">&#x23FA;</span> Read server.ts (2,341 lines)</div>
+          <div><span class="dot">&#x23FA;</span> Read auth/*.ts (6 files)</div>
+          <div><span class="dot">&#x23FA;</span> Traced 14 call sites</div>
+          <div><span class="dot">&#x23FA;</span> Proposing plan...</div>
+        </div>
+        <div style="margin-top:10px; color: oklch(0.75 0.01 90);">&nbsp; 1. Extract AuthMiddleware class</div>
+        <div style="color: oklch(0.75 0.01 90);">&nbsp; 2. Split session + token logic</div>
+        <div style="color: oklch(0.75 0.01 90);">&nbsp; 3. Add unit test harness</div>
+        <div style="color: oklch(0.75 0.01 90);">&nbsp; 4. Preserve all existing exports</div>
+        <div style="margin-top:10px;"><span class="prompt">?</span> Shall I proceed? <span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENTLY UPDATED (dynamic from Jekyll) -->
+<section class="sec" id="recent" aria-label="Recently updated articles">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="sec-eyebrow">Recently updated</span>
+        <h2>Latest <em>articles.</em></h2>
+      </div>
+      <a class="btn ghost sm" href="/topics/ai-coding-assistants-comparison/">Browse all <span class="arr">&rarr;</span></a>
+    </div>
+    <ul class="recent-list">
+      {% assign sorted_pages = site.pages | where_exp: "p", "p.path contains 'articles/'" | where_exp: "p", "p.title != nil" | sort: "title" %}
+      {% for p in sorted_pages limit: 8 %}{% if p.title %}
+      <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+      {% endif %}{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="sec" id="topics" aria-label="Browse by topic">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="sec-eyebrow">Browse by topic</span>
+        <h2>Find the right <em>comparison.</em></h2>
+      </div>
+    </div>
+    <div class="topics-grid">
+      <a class="topic-card" href="/topics/ai-coding-assistants-comparison/">
+        <h3>AI Coding Assistants</h3>
+        <p>Copilot, Cursor, Claude Code, Windsurf</p>
+      </a>
+      <a class="topic-card" href="/topics/coding-tools/">
+        <h3>Coding Tools</h3>
+        <p>Autocomplete, code generation, pair programming</p>
+      </a>
+      <a class="topic-card" href="/topics/ai-code-review-tools/">
+        <h3>AI Code Review</h3>
+        <p>Automated PR review, CodeRabbit, Sourcery</p>
+      </a>
+      <a class="topic-card" href="/topics/ai-testing-tools/">
+        <h3>AI Testing Tools</h3>
+        <p>pytest, Jest, Playwright test generation</p>
+      </a>
+      <a class="topic-card" href="/topics/writing-tools/">
+        <h3>Writing Tools</h3>
+        <p>AI content generation and editing</p>
+      </a>
+      <a class="topic-card" href="/topics/design-tools/">
+        <h3>Design Tools</h3>
+        <p>Image generation, UI mockups, visual AI</p>
+      </a>
+      <a class="topic-card" href="/topics/productivity/">
+        <h3>Productivity</h3>
+        <p>CI/CD, DevOps, budgets, workflow optimization</p>
+      </a>
+      <a class="topic-card" href="/topics/ai-security-privacy/">
+        <h3>Security &amp; Privacy</h3>
+        <p>Audits, GDPR, data protection</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section class="author" aria-label="About the author">
+  <div class="wrap">
+    <div class="avatar">A</div>
+    <blockquote>
+      &ldquo;I started this site because every &lsquo;best AI coding tool&rsquo; article I read was clearly written by someone who&rsquo;d opened the product once. If you want numbers instead of adjectives, welcome.&rdquo;
+      <cite><b>The Author</b> &middot; writes every review on this site &middot; day job: staff engineer</cite>
+    </blockquote>
+    <div class="author-cta">
+      <a href="{{ '/feed.xml' | relative_url }}" style="color:var(--accent); text-decoration:none; font-weight:600;">RSS feed &rarr;</a>
+      <a href="/about/" style="color:var(--ink); text-decoration:none;">Read my story &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRITY -->
+<section class="sec" id="integrity" aria-label="Integrity pledge" style="padding: 72px 0;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="sec-eyebrow">How I stay honest</span>
+        <h2>No sponsored rankings. <em>Ever.</em></h2>
+      </div>
+    </div>
+    <div class="int-3">
+      <div class="it">
+        <div class="k">$</div>
+        <h3>I pay for my own subscriptions</h3>
+        <p>Every tool on this site is accessed through a paid personal account. No free vendor seats, no press access, no &ldquo;evaluation licenses&rdquo; that come with an expectation.</p>
+      </div>
+      <div class="it">
+        <div class="k">&#x2387;</div>
+        <h3>The rank is set before affiliate links</h3>
+        <p>Some links earn a commission, all of them disclosed. The ranking is finalized from the benchmark results before I check which programs I&rsquo;m enrolled in.</p>
+      </div>
+      <div class="it">
+        <div class="k">&#x25FB;</div>
+        <h3>Re-ranked every month</h3>
+        <p>New model drops constantly. I re-run the full suite monthly. When a tool moves up or down, the commit history shows exactly when and why.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="news" id="news" aria-label="Newsletter signup">
+  <div class="wrap news-grid">
+    <div>
+      <h2>One email. Every Tuesday. <em>Numbers, not hype.</em></h2>
+      <p class="lede">A summary of the week&rsquo;s re-ran benchmarks, any score changes, and one short review. Four-minute read. No &ldquo;sponsored pick.&rdquo; Unsubscribe with one click.</p>
+      <div class="news-stats">
+        <span><b>24,300</b>subscribers</span>
+        <span><b>58%</b>open rate</span>
+        <span><b>0</b>sponsored sends</span>
+      </div>
+    </div>
+    <form class="news-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed &#x2713;';">
+      <label for="news-email" class="sr-only">Email address</label>
+      <input id="news-email" type="email" required placeholder="you@company.com" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-intro">
+      <div class="foot-title"><span class="logo-mark">&#x25CE;</span>AI Tools Compared</div>
+      <p>Honest, reproducible benchmarks of AI developer tools. Same codebase, same tasks, measured results. No sponsored rankings.</p>
+    </div>
+    <div>
+      <h6>Benchmarks</h6>
+      <ul>
+        <li><a href="#leaderboard">Leaderboard</a></li>
+        <li><a href="#tasks">Task suite</a></li>
+        <li><a href="#method">Methodology v4.2</a></li>
+        <li><a href="/topics/ai-coding-assistants-comparison/">All tools</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>Topics</h6>
+      <ul>
+        <li><a href="/topics/coding-tools/">Coding</a></li>
+        <li><a href="/topics/writing-tools/">Writing</a></li>
+        <li><a href="/topics/design-tools/">Design</a></li>
+        <li><a href="/topics/productivity/">Productivity</a></li>
+        <li><a href="/topics/ai-security-privacy/">Security</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>The Site</h6>
+      <ul>
+        <li><a href="/about/">About the author</a></li>
+        <li><a href="#news">Newsletter</a></li>
+        <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>&copy; 2024&ndash;2026 AI Tools Compared &middot; Independently operated</span>
+    <span>Explore more: <a href="https://welikeremotestack.com">Remote Tools</a> &middot; <a href="https://claudecodeguides.com">Claude Code Guides</a> &middot; <a href="https://chrometipsguide.com">Chrome Tips</a></span>
+  </div>
+</footer>
+
+<!-- Tweaks panel -->
+<div id="tweaks">
+  <h6>Tweaks</h6>
+  <div class="tw-row">
+    <label>Theme</label>
+    <div class="seg" id="themeSeg">
+      <button class="active" data-t="light">Light</button>
+      <button data-t="dark">Dark</button>
+    </div>
+  </div>
+  <div class="tw-row">
+    <label>Accent</label>
+    <div class="swatches" id="swatches">
+      <button class="sw active" data-hue="145" style="background: oklch(0.58 0.18 145);" aria-label="Green accent"></button>
+      <button class="sw" data-hue="35"  style="background: oklch(0.58 0.18 35);" aria-label="Orange accent"></button>
+      <button class="sw" data-hue="260" style="background: oklch(0.58 0.18 260);" aria-label="Purple accent"></button>
+      <button class="sw" data-hue="200" style="background: oklch(0.58 0.18 200);" aria-label="Blue accent"></button>
+      <button class="sw" data-hue="310" style="background: oklch(0.58 0.18 310);" aria-label="Pink accent"></button>
+    </div>
+  </div>
+  <div class="tw-row">
+    <label>Leaderboard density</label>
+    <div class="seg" id="densSeg">
+      <button class="active" data-d="comfy">Comfy</button>
+      <button data-d="compact">Compact</button>
+    </div>
+  </div>
+  <div class="tw-row">
+    <label>Show logos</label>
+    <div class="seg" id="logoSeg">
+      <button class="active" data-l="on">On</button>
+      <button data-l="off">Off</button>
+    </div>
+  </div>
+</div>
+
+<!-- Homepage JS -->
+<script src="{{ '/assets/js/home.js' | relative_url }}"></script>
+
+</body>
+</html>
