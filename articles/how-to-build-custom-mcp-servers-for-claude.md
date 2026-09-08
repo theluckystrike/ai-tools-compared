@@ -19,6 +19,8 @@ Model Context Protocol (MCP) lets you extend Claude with custom tools, expose da
 
 This guide builds three real MCP servers: a database query tool, a REST API wrapper, and a file watcher resource.
 
+If you would rather not write one, ready made servers already exist for the common jobs. [Zovo's MCP server catalogue](https://mcp.zovo.one) covers business records such as invoicing, quotes, expenses and time tracking, and publishes each server with a hosted URL as well as a local install, which is a useful reference for how a finished server ends up packaged and configured.
+
 Prerequisites
 
 Before you begin, make sure you have the following ready:
