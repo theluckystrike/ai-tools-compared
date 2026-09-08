@@ -23,3 +23,9 @@ defaults:
       layout: default
       image: /assets/og-default.svg
 
+# Jekyll excludes dot-directories by default. This one holds a single text file that
+# proves control of this domain to the Model Context Protocol registry, which fetches
+# https://bestremotetools.com/.well-known/mcp-registry-auth and reads an Ed25519 public
+# key from it. Nothing else lives under .well-known and no page references it.
+include:
+  - .well-known
