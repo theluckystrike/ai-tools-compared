@@ -16,4 +16,7 @@ Guides and comparisons for AI tools that improve developer productivity, from CI
 - [{{ p.title }}]({{ p.url }})
 {% endif %}{% endfor %}
 
+Also relevant:
+- [Assistants Inside the Chat: Telegram Bots vs Standalone AI Tools](/telegram-bots-vs-standalone-ai-assistants/)
+
 [Back to home](/)
